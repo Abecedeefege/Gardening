@@ -42,7 +42,7 @@ OG_DIR.mkdir(parents=True, exist_ok=True)
 # URL pública de tu GitHub Pages.
 # Ejemplo: "https://juan.github.io/jardineando-pacha-mama"
 # Si está vacío, los previews de WhatsApp no van a funcionar (links rotos).
-SITE_URL = "https://YOUR-USERNAME.github.io/jardineando-pacha-mama"
+SITE_URL = "https://gardening-git-main-andys-projects-8bfb617c.vercel.app"
 
 
 # ============================================================
