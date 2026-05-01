@@ -284,16 +284,18 @@ HUERTA_LOCATION_IDEAS = [
 # CONTACTOS WhatsApp por defecto (el usuario los puede editar en la UI)
 # ============================================================
 DEFAULT_CONTACTS = [
+    {"id": "sofi", "name": "Sofi", "icon": "💚", "phone": "+59899516634",
+     "default_template": "Hola Sofi! Tengo esta tarea pendiente del jardín:\n\n📌 \"{task}\"\n\nMás info acá: {link}"},
     {"id": "jardinero", "name": "Jardinero", "icon": "🌿", "phone": "",
-     "default_template": "Hola! Necesito ayuda con una tarea de jardinería en casa: \"{task}\". ¿Cuándo podrías venir? Saludos."},
+     "default_template": "Hola! Necesito ayuda con una tarea de jardinería en casa: \"{task}\".\n\nDetalle acá: {link}\n\n¿Cuándo podrías venir? Saludos."},
     {"id": "jornalero", "name": "Jornalero multiuso", "icon": "🛠️", "phone": "",
-     "default_template": "Hola! Tengo una tarea para hacer en casa: \"{task}\". ¿Tendrías disponibilidad esta semana? Gracias."},
+     "default_template": "Hola! Tengo una tarea para hacer en casa: \"{task}\".\n\nMás info: {link}\n\n¿Tendrías disponibilidad esta semana? Gracias."},
     {"id": "piscina", "name": "Empresa de piscina", "icon": "🏊", "phone": "",
-     "default_template": "Hola! Necesitaría coordinar un servicio de piscina relacionado con: \"{task}\". ¿Cuándo podrían pasar?"},
+     "default_template": "Hola! Necesitaría coordinar un servicio de piscina relacionado con: \"{task}\".\n\n{link}\n\n¿Cuándo podrían pasar?"},
     {"id": "electricista", "name": "Electricista", "icon": "⚡", "phone": "",
-     "default_template": "Hola! Necesito un electricista para: \"{task}\". ¿Tendrías disponibilidad?"},
+     "default_template": "Hola! Necesito un electricista para: \"{task}\".\n\n{link}\n\n¿Tendrías disponibilidad?"},
     {"id": "vivero", "name": "Vivero / Plantas", "icon": "🌱", "phone": "",
-     "default_template": "Hola! Quería consultar sobre: \"{task}\". ¿Tienen disponibilidad?"},
+     "default_template": "Hola! Quería consultar sobre: \"{task}\".\n\n{link}\n\n¿Tienen disponibilidad?"},
     {"id": "leniador", "name": "Leñador / Podador", "icon": "🪓", "phone": "",
-     "default_template": "Hola! Necesito un servicio de poda/extracción: \"{task}\". ¿Cuándo podrías venir a evaluar?"},
+     "default_template": "Hola! Necesito un servicio de poda/extracción: \"{task}\".\n\n{link}\n\n¿Cuándo podrías venir a evaluar?"},
 ]

@@ -13,8 +13,19 @@ Incluye:
 
 JS = r"""
 // ============================================================
-// TAB SWITCHING (top-level: Timeline / Frente / Fondo)
+// CONSTANTES
 // ============================================================
+// Logo oficial de WhatsApp (path SVG monocromo, hereda color via currentColor)
+const WHATSAPP_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>';
+
+// ============================================================
+// TAB SWITCHING (top-level: Todo / Frente / Fondo / Timeline)
+// ============================================================
+function setBodyZone(zone) {
+  document.body.classList.remove('zone-todo', 'zone-frente', 'zone-fondo', 'zone-timeline');
+  document.body.classList.add(`zone-${zone}`);
+}
+
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -22,6 +33,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.add('active');
     const zone = btn.dataset.zone;
     document.querySelector(`.zone-content[data-zone="${zone}"]`).classList.add('active');
+    setBodyZone(zone);
     window.scrollTo({top: 0, behavior: 'smooth'});
     if (zone === 'timeline') renderTimeline();
   });
@@ -209,13 +221,12 @@ function renderTaskCard(task) {
     statusPill = `<span class="task-status-pill snoozed">😴 Pospuesta hasta ${fmtDate(st.snoozed_until)}</span>`;
   }
 
+  // Solo "Hecho" / "Reactivar" como botones — snooze y whatsapp se hacen por swipe
   let actions = '';
   if (cls === 'active') {
     actions = `
       <div class="task-actions">
-        <button class="task-btn task-btn-done" data-action="done" data-task-id="${task.id}">✅ Hecho</button>
-        <button class="task-btn task-btn-snooze" data-action="snooze" data-task-id="${task.id}">😴 Posponer</button>
-        <button class="task-btn task-btn-whatsapp" data-action="whatsapp" data-task-id="${task.id}">💬 WhatsApp</button>
+        <button class="task-btn task-btn-done" data-action="done" data-task-id="${task.id}">✅ Marcar como hecho</button>
       </div>`;
   } else {
     actions = `
@@ -227,26 +238,65 @@ function renderTaskCard(task) {
   const dueClass = overdue && cls === 'active' ? 'overdue' : '';
   const dueText = task.due_label || dueLabel(task);
 
+  // Sección expandible con detalle + por qué + cómo
+  const fmtMd = (s) => (s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br>');
+
+  const howToHtml = task.how_to
+    ? `<div class="task-detail-section">
+        <div class="task-detail-label">🛠️ Cómo hacerlo bien</div>
+        <div class="task-detail-text task-howto">${fmtMd(task.how_to)}</div>
+      </div>`
+    : '';
+
+  const detailHtml = `
+    <div class="task-detail">
+      <div class="task-detail-section">
+        <div class="task-detail-label">💡 Por qué hacerlo</div>
+        <div class="task-detail-text">${task.why || 'Sin justificación adicional.'}</div>
+      </div>
+      ${howToHtml}
+    </div>`;
+
+  // Side hints — solo para tareas activas (no se pueden swipear las done/snoozed)
+  const sideHintLeft = (cls === 'active') ? `
+    <div class="task-side-hint left" aria-label="Deslizar a la izquierda para posponer">
+      <span class="hint-arrow">‹</span>
+      <span class="hint-icon">😴</span>
+    </div>` : '';
+  const sideHintRight = (cls === 'active') ? `
+    <div class="task-side-hint right" aria-label="Deslizar a la derecha para WhatsApp">
+      <span class="hint-icon">${WHATSAPP_SVG}</span>
+      <span class="hint-arrow">›</span>
+    </div>` : '';
+
   return `
     <article class="task-card priority-${task.priority} ${cls === 'done' ? 'completed' : ''} ${cls === 'snoozed' ? 'snoozed' : ''}"
              data-task-id="${task.id}" style="--swipe-strength: 0">
-      <div class="swipe-hint left">😴</div>
-      <div class="swipe-hint right">✅</div>
-      <div class="task-header">
-        ${photoHtml}
-        <div class="task-meta">
-          <div class="task-meta-top">
-            <span class="task-priority-pill" style="background: ${prio.color}">${prio.emo} ${prio.label}</span>
-            <span class="task-zone-pill">${task.plant_codes.join(', ')}</span>
-            ${statusPill}
+      ${sideHintLeft}
+      <div class="task-content-wrap">
+        <div class="task-header">
+          ${photoHtml}
+          <div class="task-meta">
+            <div class="task-meta-top">
+              <span class="task-priority-pill" style="background: ${prio.color}">${prio.emo} ${prio.label}</span>
+              <span class="task-zone-pill">${task.plant_codes.join(', ')}</span>
+              ${statusPill}
+              <span class="task-expand-chevron" aria-hidden="true">▾</span>
+            </div>
+            <h3 class="task-title">${task.title}</h3>
+            <div class="task-plant">${task.plant_common}</div>
+            ${dueText ? `<div class="task-due ${dueClass}">📅 ${overdue && cls === 'active' ? 'Vencida — ' : ''}${dueText}</div>` : ''}
           </div>
-          <h3 class="task-title">${task.title}</h3>
-          <div class="task-plant">${task.plant_common}</div>
-          ${dueText ? `<div class="task-due ${dueClass}">📅 ${overdue && cls === 'active' ? 'Vencida — ' : ''}${dueText}</div>` : ''}
         </div>
+        ${detailHtml}
+        ${actions}
       </div>
-      <div class="task-description">${task.description}</div>
-      ${actions}
+      ${sideHintRight}
     </article>`;
 }
 
@@ -290,7 +340,7 @@ function renderTimeline() {
 // TIMELINE — TASK INTERACTIONS (clicks + swipe)
 // ============================================================
 function setupTaskInteractions(scope) {
-  // Click handlers
+  // Click handlers para botones de acción
   scope.querySelectorAll('button[data-action]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -305,7 +355,23 @@ function setupTaskInteractions(scope) {
     });
   });
 
-  // Swipe (touch + mouse)
+  // Click en task-header para expandir/colapsar.
+  // Se ignora si:
+  //   - el target es un botón (los maneja el handler de arriba)
+  //   - el target es la foto (se abre lightbox)
+  //   - hubo swipe reciente (flag justSwiped seteada por setupSwipe)
+  scope.querySelectorAll('.task-card').forEach(card => {
+    const header = card.querySelector('.task-header');
+    if (!header) return;
+    header.addEventListener('click', (e) => {
+      if (e.target.closest('button')) return;
+      if (e.target.closest('img')) return;
+      if (card.dataset.justSwiped === '1') return;
+      card.classList.toggle('expanded');
+    });
+  });
+
+  // Swipe en cada card
   scope.querySelectorAll('.task-card').forEach(card => {
     setupSwipe(card);
   });
@@ -358,14 +424,20 @@ function setupSwipe(card) {
     if (!isDragging) return;
     const dx = currentX - startX;
     card.classList.remove('swiping');
+
+    // Marcar flag para que el click handler ignore este "click" residual
+    card.dataset.justSwiped = '1';
+    setTimeout(() => { delete card.dataset.justSwiped; }, 350);
+
     const taskId = card.dataset.taskId;
     const task = TASKS.find(t => t.id === taskId);
 
     if (Math.abs(dx) > 100 && task) {
       if (dx > 0) {
-        // swipe derecha → marcar hecho
-        card.classList.add('swipe-out-right');
-        setTimeout(() => markDone(task), 300);
+        // swipe derecha → abrir modal WhatsApp
+        card.style.transform = '';
+        card.style.setProperty('--swipe-strength', 0);
+        openWhatsAppModal(task);
       } else {
         // swipe izquierda → modal snooze
         card.style.transform = '';
@@ -514,7 +586,16 @@ function fillWhatsAppMessage(contactId, task) {
   const c = contacts.find(x => x.id === contactId);
   if (!c) return;
   const taskText = `${task.title} — ${task.plant_common} (${task.plant_codes.join(', ')})`;
-  const msg = (c.default_template || '').replace('{task}', taskText);
+  const taskLink = SITE_URL ? `${SITE_URL}/tasks/${task.id}.html` : '';
+
+  let msg = (c.default_template || '').replace(/\{task\}/g, taskText);
+  if (msg.includes('{link}')) {
+    msg = msg.replace(/\{link\}/g, taskLink || '(link no disponible)');
+  } else if (taskLink) {
+    // Si la plantilla no incluye {link}, lo agregamos al final automáticamente.
+    msg = msg + '\n\n📎 ' + taskLink;
+  }
+
   document.getElementById('whatsapp-message').value = msg;
   document.getElementById('btn-send-whatsapp').disabled = !c.phone || c.phone.trim() === '';
 }
@@ -613,4 +694,77 @@ document.querySelectorAll('.timeline-filters .ftag').forEach(btn => {
 // INIT
 // ============================================================
 renderTimeline();
+
+// Si la URL trae #task=ID (viene de un share), abrir Timeline + expandir + scroll
+function openTaskFromHash() {
+  const m = (window.location.hash || '').match(/^#task=(.+)$/);
+  if (!m) return;
+  const taskId = decodeURIComponent(m[1]);
+  // Switch a Timeline tab
+  const tlBtn = document.querySelector('.tab-btn[data-zone="timeline"]');
+  if (tlBtn && !tlBtn.classList.contains('active')) tlBtn.click();
+  // Buscar la tarea — puede estar en filter "active" o no, así que vamos a "all"
+  const task = TASKS.find(t => t.id === taskId);
+  if (!task) return;
+  // Cambiar al filtro "all" para asegurar que la veamos sea cual sea su estado
+  const allBtn = document.querySelector('.timeline-filters .ftag[data-filter="all"]');
+  if (allBtn) {
+    document.querySelectorAll('.timeline-filters .ftag').forEach(b => b.classList.remove('active'));
+    allBtn.classList.add('active');
+    currentFilter = 'all';
+    renderTimeline();
+  }
+  // Expandir y scroll después del render
+  setTimeout(() => {
+    const card = document.querySelector(`.task-card[data-task-id="${taskId}"]`);
+    if (card) {
+      card.classList.add('expanded');
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Highlight visual breve
+      card.style.transition = 'box-shadow 0.4s ease';
+      card.style.boxShadow = '0 0 0 3px rgba(21, 128, 61, 0.4)';
+      setTimeout(() => { card.style.boxShadow = ''; }, 2200);
+    }
+  }, 200);
+}
+openTaskFromHash();
+window.addEventListener('hashchange', openTaskFromHash);
+
+// ============================================================
+// CLIMA EN MONTEVIDEO (Open-Meteo, sin API key)
+// ============================================================
+function weatherCondition(code) {
+  // WMO weather codes → emoji + label
+  if (code === 0) return { emoji: '☀️', label: 'despejado' };
+  if (code <= 2) return { emoji: '🌤️', label: 'algo nublado' };
+  if (code === 3) return { emoji: '☁️', label: 'nublado' };
+  if (code <= 48) return { emoji: '🌫️', label: 'niebla' };
+  if (code <= 57) return { emoji: '🌦️', label: 'llovizna' };
+  if (code <= 67) return { emoji: '🌧️', label: 'lluvia' };
+  if (code <= 77) return { emoji: '🌨️', label: 'nieve' };
+  if (code <= 82) return { emoji: '🌧️', label: 'chubascos' };
+  if (code >= 95) return { emoji: '⛈️', label: 'tormenta' };
+  return { emoji: '🌤️', label: '' };
+}
+
+async function loadWeather() {
+  const el = document.getElementById('weather-line');
+  if (!el) return;
+  try {
+    // Montevideo, Uruguay — coords
+    const url = 'https://api.open-meteo.com/v1/forecast?latitude=-34.9011&longitude=-56.1645&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m&timezone=America%2FMontevideo';
+    const r = await fetch(url, { cache: 'no-store' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const data = await r.json();
+    const c = data.current;
+    const w = weatherCondition(c.weather_code);
+    const temp = Math.round(c.temperature_2m);
+    const wind = Math.round(c.wind_speed_10m);
+    const hum = Math.round(c.relative_humidity_2m);
+    el.innerHTML = `<span class="weather-emoji">${w.emoji}</span><span class="weather-text"><strong>${temp}°</strong> ${w.label} <span class="weather-sep">·</span> 💨 ${wind} km/h <span class="weather-sep">·</span> 💧 ${hum}% <span class="weather-sep">·</span> Montevideo</span>`;
+  } catch (err) {
+    el.innerHTML = '<span class="weather-emoji">🌱</span><span class="weather-text">Montevideo, Uruguay</span>';
+  }
+}
+loadWeather();
 """

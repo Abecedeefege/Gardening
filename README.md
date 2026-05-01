@@ -86,6 +86,18 @@ start docs/index.html
 
 ✅ **Listo, tu jardín ya está online.**
 
+### Paso 4.5 — Configurar SITE_URL para previews de WhatsApp
+
+**Una sola vez**, abrí `build.py` y editá la constante `SITE_URL` con la URL de GitHub Pages que acabás de obtener (sin barra final):
+
+```python
+SITE_URL = "https://TU_USUARIO.github.io/jardineando-pacha-mama"
+```
+
+Después corré `python build.py` y hacé `git add . && git commit -m "Configurar SITE_URL" && git push`.
+
+Esto activa los previews de WhatsApp: cuando compartís una tarea, va a aparecer con foto, título y descripción de esa planta específica. Si no lo configurás, los links de tareas no van a tener preview rico (todo lo demás funciona igual).
+
 ### Paso 5 — Abrir con Claude Code
 
 [Claude Code](https://claude.com/claude-code) es la CLI de Anthropic para programar con IA en tu terminal/IDE.

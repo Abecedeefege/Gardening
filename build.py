@@ -30,7 +30,19 @@ from scripts import JS
 ROOT = Path(__file__).parent
 IMAGES_DIR = ROOT / "images"
 OUTPUT = ROOT / "docs" / "index.html"
+TASKS_DIR = ROOT / "docs" / "tasks"
+OG_DIR = ROOT / "docs" / "og"
 OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+TASKS_DIR.mkdir(parents=True, exist_ok=True)
+OG_DIR.mkdir(parents=True, exist_ok=True)
+
+# ============================================================
+# CONFIGURACIÓN — editar antes del primer deploy
+# ============================================================
+# URL pública de tu GitHub Pages.
+# Ejemplo: "https://juan.github.io/jardineando-pacha-mama"
+# Si está vacío, los previews de WhatsApp no van a funcionar (links rotos).
+SITE_URL = "https://YOUR-USERNAME.github.io/jardineando-pacha-mama"
 
 
 # ============================================================
@@ -128,6 +140,140 @@ def light_icon(light_str):
 # ============================================================
 # Generación de tareas para Timeline
 # ============================================================
+
+# Mapeo: id_code (primer código) → "por qué hacer esta tarea"
+# Justificación botánica que aparece al expandir la tarjeta.
+WHY_BY_PLANT_ID = {
+    "F-2": "La bignonia florece en madera nueva del año. Sin poda fuerte de invierno (40-60%), las ramas viejas dominan y las nuevas — que son las que producen las flores rosas — quedan ahogadas. Una poda severa en junio-julio asegura una floración explosiva de noviembre a abril.",
+    "F-4": "Los Prunus (ciruelos) podan en plena dormancia para evitar 'gomosis' (exudado de savia que los enferma). En junio están sin savia activa, entonces la herida cierra limpia. Además podando ahora se elimina madera vieja improductiva y se mantiene la silueta abierta para que la luz entre al centro.",
+    "F-8": "Es una nativa charrúa (Aguaribay/Molle) que no está bien documentada en el catálogo todavía. Necesitamos una foto desde la calle con su número visible para tener la referencia geográfica completa del jardín y poder ubicarlo en el mapa mental del frente.",
+    "B-2": "Sin floración no podemos identificar este arbusto con certeza. La forma de la flor, color, perfume y patrón de inflorescencia son los datos clave para distinguir entre los muchos 'jazmines' posibles (de leche, del país, etc).",
+    "B-5a": "Las hortensias en macetas chicas sufren estrés hídrico crónico — necesitan grandes volúmenes de agua y raíces extensas. Restringidas amarillean las hojas y la floración cae drásticamente. Junio es ideal porque están dormantes y no sufren el trasplante.",
+    "B-9": "El crespón florece EXCLUSIVAMENTE en madera del año. Sin poda fuerte (50-70%), las flores aparecen en las puntas de ramas largas y débiles, dando una floración pobre y caída. Cuanto más drástica la poda invernal, más espectacular la floración estival — el famoso 'crepe murder' es un mito.",
+    "B-13": "Las clivias forman colonias densas, pero cuando los bulbos asoman fuera del sustrato significa que ya no hay espacio para más raíces. Esto reduce la floración del año siguiente. Junio es el momento ideal porque está post-floración y entrando en reposo invernal.",
+    "B-14": "Por la silueta y la posición podría ser un lapacho rosa (Handroanthus) — pero solo la floración primaveral con sus flores rosa-violáceas confirma. Si lo es, sería una nativa muy valiosa para sumar al inventario del jardín.",
+    "B-15": "Desde lejos es imposible identificar — puede ser hiedra, parra silvestre, jazmín del país o un arbusto trepador. Una foto cercana de hojas y tallo es suficiente para clasificar y decidir si conviene mantenerla, podarla o reemplazarla.",
+    "B-18": "Como el crespón, la Rosa de Siria florece en madera nueva. Una poda severa en invierno (40-50%) produce ramas vigorosas en primavera que cargan flores grandes y abundantes desde diciembre a marzo. Sin podar, la planta se vuelve leñosa y florece poco.",
+    "B-20": "Sin hojas ni flores en mayo no hay datos suficientes para identificar. La hoja recién brotada y el patrón de ramas tiernas suelen ser distintivos — en septiembre tendremos el material para foto. Mientras tanto, la planta solo necesita riego mínimo.",
+    "B-27": "Tiene flores secas pero sin certeza de la especie. La floración fresca da color, forma y disposición exacta — datos imprescindibles para identificar correctamente y poder dar consejos de cuidado precisos.",
+    "B-29": "La lantana es nativa pero se vuelve leñosa y poco florífera si no se rejuvenece. Cortar a 30cm del suelo en invierno la obliga a renovar todo el follaje y volver a florecer espectacularmente en madera nueva — atrayendo mariposas y picaflores en primavera-verano.",
+    "B-30": "REGLA #1 de los frutales de hueso: la fruta se forma en madera del año anterior. Sin poda invernal el durazno NO fructifica bien — las ramas viejas se cargan poco y la fruta es pequeña, escasa y de mala calidad. Es la tarea más crítica del año para este árbol.",
+    "B-32": "Sin hojas ni flores no hay datos para identificar. El brote primaveral revela hoja, color, patrón y vigor. Esperar a septiembre permite una identificación precisa antes de tomar decisiones sobre poda o cuidados específicos.",
+    "B-34": "La foto actual es panorámica y no permite ver detalles. Un closeup de hojas, tallo y flores (si las hay) basta para identificar. Sin esto no se pueden dar tips de poda o cuidados específicos.",
+    "B-38": "Igual que el durazno — es un Prunus de hueso. Florece en agosto y fructifica en madera vieja del año anterior. La poda invernal renueva ramas y elimina las viejas que ya no producirán, permitiendo que la energía vaya a las nuevas que sí van a dar fruta.",
+    "B-39": "Las peras necesitan poda invernal para mantener forma piramidal y eliminar 'chupones' (ramas verticales agresivas que no fructifican y le sacan energía al árbol). Sin podar, la planta se vuelve un caos de ramas y la fruta crece donde no llega luz, quedando pequeña y poco dulce.",
+    "B-41": "Los caquis jóvenes necesitan poda de FORMACIÓN durante los primeros años para definir el tronco y las 3-4 ramas principales (estructura 'vaso'). Sin formación temprana, la planta puede tener una estructura débil que después es muy difícil de corregir y que no soporta bien el peso de los frutos.",
+}
+
+
+# Mapeo: id_code (primer código) → "cómo hacer la tarea bien" (instrucciones prácticas)
+# Herramientas, técnica, época específica, qué evitar.
+HOW_TO_DO_BY_PLANT_ID = {
+    "F-2": (
+        "**Cuándo:** día sin lluvia ni helada, esperá 3 días secos previos. Mañana mejor (sin sol fuerte).\n"
+        "**Herramientas:** tijera de podar afilada + desinfectada con alcohol al 70%. Para ramas gruesas, serrucho de poda.\n"
+        "**Pasos:** (1) Identificá las 3-4 ramas estructurales que querés conservar. (2) Cortá todas las guías largas a 30-40cm desde el origen. (3) Eliminá ramas cruzadas, secas o que se rozan. (4) Cada corte en bisel a 45°, 5mm sobre una yema externa.\n"
+        "**Importante:** la bignonia rebrota fuerte — no tengas miedo de cortar mucho."
+    ),
+    "F-4": (
+        "**Cuándo:** junio-julio cuando perdió todas las hojas. Día seco, frío, sin lluvia pronosticada 48h después.\n"
+        "**Herramientas:** tijera afilada + serrucho para ramas gruesas. **DESINFECTAR con alcohol entre cada corte** (los Prunus son MUY sensibles a hongos).\n"
+        "**Pasos:** (1) Eliminá ramas muertas, enfermas o rotas. (2) Eliminá chupones (verticales) y ramas que crecen al centro. (3) Acortá ramas principales 1/3 para mantener silueta abierta en V. (4) Cortes en bisel a 5mm de yema externa.\n"
+        "**Crítico:** pintá los cortes mayores a 1.5cm con pasta cicatrizante — los Prunus pueden tomar gomosis por heridas abiertas."
+    ),
+    "F-8": (
+        "**Cuándo:** día soleado entre 10-15h para mejor luz natural.\n"
+        "**Posición:** parate en la calle, en la esquina opuesta del jardín, para encuadrar el árbol completo.\n"
+        "**Pasos:** (1) Foto vertical mostrando el árbol entero. (2) Si podés, escribí el número 'F-8' en un cartón y ponelo cerca de la base. (3) Tomá 2-3 ángulos para tener opciones."
+    ),
+    "B-2": (
+        "**Cuándo:** durante plena floración (5+ flores abiertas, primavera-verano).\n"
+        "**Cámara/celular:** modo macro o acercate hasta enfocar.\n"
+        "**Pasos:** (1) Closeup de UNA flor sola (a 1-2cm del lente). (2) Foto de toda la inflorescencia/racimo. (3) Foto de hoja por encima Y por debajo. (4) Anotá si tiene perfume y describilo (azahar, dulce, etc).\n"
+        "**Hora ideal:** media mañana (10-11h), las flores están más abiertas."
+    ),
+    "B-5a": (
+        "**Maceta nueva:** mínimo 40cm de diámetro × 40cm de profundidad. Mejor de barro o terracota (transpira).\n"
+        "**Sustrato:** 60% tierra negra + 30% turba + 10% perlita. Las hortensias necesitan sustrato ácido (pH 5-6).\n"
+        "**Pasos:** (1) Regá la planta 2h antes para que el cepellón se mantenga compacto. (2) Sacala con cuidado, no rompas el cepellón. (3) Si las raíces giran en espiral, rompelas levemente para que se expandan. (4) Centrala en maceta nueva al mismo nivel del suelo. (5) Riego abundante (que drene 2 veces). (6) Sombra durante 1 semana, después luz indirecta.\n"
+        "**Tip:** para flores azules, agregá 5 clavos oxidados al fondo. Para rosa, una cucharada de cal."
+    ),
+    "B-9": (
+        "**Cuándo:** junio-julio en plena dormancia (sin hojas).\n"
+        "**Herramientas:** tijera grande + serrucho. Desinfectá con alcohol.\n"
+        "**Pasos:** (1) Identificá 3-5 ramas principales para conservar. (2) Cortá el resto a 5-15cm de la base. (3) Las ramas conservadas: acortalas a la mitad o 1/3. (4) Cortes en bisel 45° hacia afuera de la yema.\n"
+        "**No tengas miedo:** el crespón tolera podas drásticas y rebrota con flores enormes. La 'crepe murder' (poda al ras) es exagerada pero no mata el árbol."
+    ),
+    "B-13": (
+        "**Maceta nueva:** apenas 5cm más de diámetro que la actual. Las clivias FLORECEN MEJOR cuando están un poco apretadas.\n"
+        "**Sustrato:** mezcla para orquídeas + perlita + tierra común (proporciones 1:1:1).\n"
+        "**Pasos:** (1) Sacá el cepellón entero. (2) Si tiene bulbos hijos, separalos con cuidado (cada uno será una nueva planta). (3) NO cortes raíces sanas — odian que se las toquen. (4) Plantá dejando 1/3 del bulbo expuesto al aire. (5) Regá moderadamente y esperá 2 semanas para volver a regar.\n"
+        "**Ubicación:** sombra parcial, jamás sol directo de tarde."
+    ),
+    "B-14": (
+        "**Cuándo:** primavera (septiembre-octubre) durante floración. Si es lapacho rosa, las flores aparecen ANTES que las hojas.\n"
+        "**Pasos:** (1) Foto closeup de 1 flor entera. (2) Foto de la inflorescencia (racimo de flores). (3) Foto de la corteza del tronco (los lapachos tienen corteza distintiva). (4) Foto general del árbol completo desde lejos.\n"
+        "**Pista:** si las flores son rosa-violáceas en racimos terminales, casi seguro es Handroanthus heptaphyllus (lapacho rosa)."
+    ),
+    "B-15": (
+        "**Cuándo:** cualquier día con luz natural (no a mediodía con sol fuerte).\n"
+        "**Pasos:** (1) Acercate hasta 30cm de la planta. (2) Foto de hojas — frente y dorso. (3) Foto del tallo principal mostrando textura. (4) Si tiene flores/frutos, closeup de esos. (5) Anotá: ¿trepa por el galpón o crece encima? ¿Tiene zarcillos? ¿Es leñosa o herbácea?"
+    ),
+    "B-18": (
+        "**Cuándo:** junio-julio plena dormancia (sin hojas).\n"
+        "**Herramientas:** tijera afilada y desinfectada con alcohol.\n"
+        "**Pasos:** (1) Identificá 5-6 ramas principales sanas para conservar. (2) Cortá todas las demás a ras del suelo. (3) Las principales: cortalas a 30-50cm sobre el suelo. (4) Eliminá ramas que se cruzan o crecen al centro. (5) Cortes en bisel 45° hacia afuera de la yema.\n"
+        "**Resultado esperado:** parecerá esqueleto pero rebrota con vigor en septiembre y florecerá fuerte en diciembre."
+    ),
+    "B-20": (
+        "**Cuándo:** septiembre-octubre cuando empiece a brotar.\n"
+        "**Pasos:** (1) Foto de hoja recién brotada (closeup). (2) Foto del patrón de ramificación general. (3) Si florece, foto de flor entera + closeup. (4) Anotá si las flores aparecen antes, después o junto con las hojas (dato clave para identificar)."
+    ),
+    "B-27": (
+        "**Cuándo:** primavera durante floración fresca.\n"
+        "**Pasos:** (1) Closeup de 1 flor sola. (2) Foto del racimo o conjunto de flores. (3) Foto general mostrando el porte colgante. (4) Anotá el color exacto (¿blanco, amarillo, lila?) y si tiene perfume."
+    ),
+    "B-29": (
+        "**Cuándo:** junio-julio en invierno cuando casi no hay flores.\n"
+        "**Equipo:** GUANTES (la lantana puede irritar la piel) + manga larga + tijera afilada.\n"
+        "**Pasos:** (1) Cortá TODAS las ramas a 30cm del suelo. (2) No dejes ramas más gruesas de 1cm de diámetro. (3) Recogé TODOS los restos — incluidas bayas (que son tóxicas, especialmente para mascotas). (4) Regá bien después y aplicá mulch grueso.\n"
+        "**Resultado:** parece destruida pero rebrota explosivamente en octubre, atrayendo mariposas y picaflores todo el verano."
+    ),
+    "B-30": (
+        "**Cuándo:** JUNIO-JULIO en plena dormancia, sin hojas. Esta es la tarea más crítica del año para el durazno.\n"
+        "**Herramientas:** tijera afilada + serrucho + alcohol al 70% para desinfectar **entre cada corte** (los Prunus son MUY sensibles a hongos como la monilia).\n"
+        "**Pasos:** (1) Forma 'vaso abierto': dejá 3-4 ramas principales abiertas en V, eliminá el resto. (2) Eliminá 100% de los chupones (ramas verticales del centro). (3) Identificá las ramas que dieron fruta el año pasado (tienen cicatrices) y cortalas a 1/3. (4) Acortá ramas largas a 50cm. (5) Cortes en bisel 45°, 5mm sobre una yema externa.\n"
+        "**CRÍTICO:** pintá TODOS los cortes de más de 1.5cm con pasta cicatrizante. Sin esto, el durazno puede contraer gomosis y morir en 2-3 años."
+    ),
+    "B-32": (
+        "**Cuándo:** septiembre cuando empiezen a brotar.\n"
+        "**Pasos:** (1) Foto de la primera hoja recién brotada. (2) Foto del patrón de ramas completo. (3) Si tiene flores tempranas, foto de esas también."
+    ),
+    "B-34": (
+        "**Cuándo:** día con luz natural difusa (no sol directo a mediodía).\n"
+        "**Pasos:** (1) Distancia 30-50cm de la planta. (2) Foto de hojas frente Y dorso. (3) Foto del tallo y patrón general. (4) Si hay flores o frutos, closeup. (5) Anotá tamaño aproximado de la planta."
+    ),
+    "B-38": (
+        "**Cuándo:** junio-julio dormancia.\n"
+        "**Herramientas:** tijera afilada + serrucho + alcohol para desinfectar entre cortes.\n"
+        "**Pasos:** (1) Forma 'vaso abierto' como el durazno: 3-4 ramas principales. (2) Eliminá chupones verticales. (3) Acortá ramas que dieron fruto a 1/3. (4) Eliminá ramas más viejas que 4 años (las identificás por la corteza más oscura/agrietada).\n"
+        "**Importante:** pintá cortes grandes con pasta cicatrizante (es Prunus, sensible a hongos)."
+    ),
+    "B-39": (
+        "**Cuándo:** junio-julio dormancia.\n"
+        "**Forma:** PIRAMIDAL (no vaso como Prunus): eje central + ramas en pisos horizontales.\n"
+        "**Pasos:** (1) Mantené el eje central dominante. (2) Eliminá TODOS los chupones verticales — son ramas que no fructifican. (3) Acortá ramas largas a 1/3. (4) Eliminá ramas que se cruzan.\n"
+        "**Ventaja:** no es necesario pintar cortes (los perales son menos sensibles a hongos que los Prunus)."
+    ),
+    "B-41": (
+        "**Cuándo:** junio-julio dormancia.\n"
+        "**Si es joven (< 4 años):** definí el tronco a 1m de altura y elegí 3-4 ramas principales bien distribuidas en distintas direcciones. Eliminá lo demás.\n"
+        "**Si ya tiene estructura:** mantené la forma. Eliminá ramas que se cruzan o invaden el centro. Cortá 1/3 de las ramas más viejas (rebrota fácil en madera nueva).\n"
+        "**Cortes:** en bisel sobre yema externa. No necesita pasta cicatrizante."
+    ),
+}
+
+
 def generate_tasks_from_plants(plants):
     """
     Genera la lista canónica de tareas desde el catálogo de plantas.
@@ -158,6 +304,8 @@ def generate_tasks_from_plants(plants):
             "plant_photo": plant.get("main_photo", ""),
             "title": urg["action"],
             "description": f"{plant['common']} ({', '.join(plant['id_codes'])}) — {urg['action']}.",
+            "why": WHY_BY_PLANT_ID.get(plant['id_codes'][0], "Esta tarea aparece en el catálogo como pendiente. Marcala como hecha cuando la completes."),
+            "how_to": HOW_TO_DO_BY_PLANT_ID.get(plant['id_codes'][0], ""),
             "priority": urg["priority"],
             "due_label": urg["when"],
             "due_month": urg.get("due_month"),
@@ -305,8 +453,8 @@ def render_huerta_card(h):
 </article>"""
 
 
-def render_calendar_grid(zone, plants):
-    plants_zone = [p for p in plants if p["zone"] == zone and any([p.get("flowering"), p.get("fruiting"), p.get("pruning")])]
+def render_calendar_grid(plants_in_view):
+    plants_zone = [p for p in plants_in_view if any([p.get("flowering"), p.get("fruiting"), p.get("pruning")])]
     plants_zone.sort(key=lambda p: p["common"])
 
     rows = []
@@ -361,20 +509,25 @@ def render_huerta_locations():
 
 
 # ============================================================
-# Build de cada zona (Frente / Fondo)
+# Build de cada zona (Todo / Frente / Fondo)
 # ============================================================
-def build_zone(zone_name, zone_label, plants, img_data, tasks_by_zone):
-    info_cards = "\n".join(render_plant_info_card(p, img_data) for p in plants if p["zone"] == zone_name)
-    care_cards = "\n".join(render_plant_care_card(p) for p in plants if p["zone"] == zone_name)
-    ideas_list = NEW_IDEAS_FRENTE if zone_name == "frente" else NEW_IDEAS_FONDO
+def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_locations, img_data):
+    """
+    plants_in_view: lista de plantas a mostrar (frente, fondo, o todas).
+    ideas_list: lista de ideas nuevas a mostrar (puede ser combinación frente+fondo).
+    show_huerta_locations: si True, muestra el intro con opciones de espacios para huerta
+        (más apropiado para "fondo" y "todo"). Si False, muestra el intro corto del frente.
+    """
+    info_cards = "\n".join(render_plant_info_card(p, img_data) for p in plants_in_view)
+    care_cards = "\n".join(render_plant_care_card(p) for p in plants_in_view)
     new_ideas = "\n".join(render_idea_card(i) for i in ideas_list)
     huerta_cards = "\n".join(render_huerta_card(h) for h in HUERTA)
-    huerta_intro = render_huerta_locations() if zone_name == "fondo" else """
+    huerta_intro = render_huerta_locations() if show_huerta_locations else """
 <div class="frente-huerta-intro">
   <h3>🌿 Aromáticas para el frente</h3>
   <p>El frente no es ideal para huerta clásica (visibilidad, espacio limitado). Pero podés sumar aromáticas y comestibles ornamentales que decoran y se cosechan.</p>
 </div>"""
-    cal_grid = render_calendar_grid(zone_name, plants)
+    cal_grid = render_calendar_grid(plants_in_view)
 
     return f"""
 <section class="zone-content" data-zone="{zone_name}">
@@ -533,6 +686,115 @@ def build_timeline_view(tasks, img_data):
 
 
 # ============================================================
+# OG IMAGES + TASK PAGES (para WhatsApp / Facebook previews)
+# ============================================================
+def build_og_image(src_path: Path, dst_path: Path):
+    """
+    Genera una imagen 1200x630 (estándar Open Graph) con la foto de la tarea
+    centrada y recortada estilo 'cover'.
+    """
+    target_w, target_h = 1200, 630
+    img = Image.open(src_path).convert("RGB")
+
+    # Resize escalando para "cover" (la imagen llena todo el target)
+    src_ratio = img.width / img.height
+    target_ratio = target_w / target_h
+    if src_ratio > target_ratio:
+        # imagen más ancha — escalar por altura, recortar lados
+        new_h = target_h
+        new_w = int(target_h * src_ratio)
+    else:
+        new_w = target_w
+        new_h = int(target_w / src_ratio)
+
+    img = img.resize((new_w, new_h), Image.Resampling.LANCZOS)
+
+    # Crop centrado
+    left = (new_w - target_w) // 2
+    top = (new_h - target_h) // 2
+    img = img.crop((left, top, left + target_w, top + target_h))
+
+    img.save(dst_path, "JPEG", quality=82, optimize=True)
+
+
+def build_task_page(task: dict, plant: dict | None):
+    """
+    Genera docs/tasks/{taskId}.html con OG meta tags específicos para esa tarea.
+    Esta página al ser abierta en navegador redirige al index principal.
+    Cuando se comparte el link por WhatsApp, los OG tags muestran el preview correcto.
+    """
+    task_id = task["id"]
+    title = f"{task['title']} — {task['plant_common']}"
+
+    # Description corta para OG (max ~200 chars)
+    why = task.get("why") or task.get("description", "")
+    if len(why) > 200:
+        desc = why[:197].rsplit(" ", 1)[0] + "..."
+    else:
+        desc = why
+
+    # OG image absoluta
+    og_img_filename = f"{task_id}.jpg"
+    og_image_url = f"{SITE_URL}/og/{og_img_filename}" if SITE_URL else ""
+    page_url = f"{SITE_URL}/tasks/{task_id}.html" if SITE_URL else ""
+
+    # Si no hay foto de planta, og_image queda vacío (no agregamos meta)
+    has_og_image = task.get("plant_photo") and (IMAGES_DIR / task["plant_photo"]).exists()
+
+    og_image_meta = ""
+    if has_og_image and SITE_URL:
+        og_image_meta = f"""
+  <meta property="og:image" content="{esc(og_image_url)}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{esc(task['plant_common'])}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{esc(og_image_url)}">"""
+
+    page_url_meta = f'  <meta property="og:url" content="{esc(page_url)}">' if page_url else ""
+
+    redirect_target = f"../index.html#task={task_id}"
+
+    html = f"""<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>{esc(title)} · Jardineando · Pacha Mama</title>
+<meta name="description" content="{esc(desc)}">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Jardineando · Pacha Mama">
+<meta property="og:title" content="{esc(title)}">
+<meta property="og:description" content="{esc(desc)}">
+{page_url_meta}
+{og_image_meta}
+
+<meta name="twitter:title" content="{esc(title)}">
+<meta name="twitter:description" content="{esc(desc)}">
+
+<meta http-equiv="refresh" content="0; url={redirect_target}">
+<link rel="canonical" href="{esc(page_url) if page_url else redirect_target}">
+<style>
+  body {{ font-family: -apple-system, BlinkMacSystemFont, sans-serif; padding: 40px; max-width: 600px; margin: 0 auto; text-align: center; color: #3f3f46; }}
+  h1 {{ color: #15803d; font-size: 1.4rem; }}
+  a {{ color: #2563eb; }}
+</style>
+</head>
+<body>
+<h1>🌿 Jardineando · Pacha Mama</h1>
+<p>Redirigiendo a la tarea...</p>
+<p><strong>{esc(title)}</strong></p>
+<p><a href="{redirect_target}">Si no se redirige automáticamente, hacé click acá</a></p>
+<script>window.location.replace("{redirect_target}");</script>
+</body>
+</html>"""
+
+    out_path = TASKS_DIR / f"{task_id}.html"
+    out_path.write_text(html, encoding="utf-8")
+    return out_path
+
+
+# ============================================================
 # Main
 # ============================================================
 def main():
@@ -557,6 +819,27 @@ def main():
     tasks = generate_tasks_from_plants(PLANTS)
     print(f"📋 Tareas generadas: {len(tasks)}")
 
+    # 2.5 Generar páginas OG por tarea + imágenes OG (1200x630)
+    if SITE_URL and "YOUR-USERNAME" not in SITE_URL:
+        og_count = 0
+        page_count = 0
+        plant_by_first_id = {p["id_codes"][0]: p for p in PLANTS}
+        for task in tasks:
+            plant = plant_by_first_id.get(task["plant_codes"][0])
+            # Imagen OG si hay foto disponible
+            if task.get("plant_photo"):
+                src = IMAGES_DIR / task["plant_photo"]
+                if src.exists():
+                    dst = OG_DIR / f"{task['id']}.jpg"
+                    build_og_image(src, dst)
+                    og_count += 1
+            build_task_page(task, plant)
+            page_count += 1
+        print(f"🔗 Páginas OG generadas: {page_count} (con imagen: {og_count})")
+    else:
+        print("⚠️  SITE_URL no configurado — páginas OG no generadas.")
+        print("   Editá build.py y poné tu URL de GitHub Pages para activarlas.")
+
     # 3. Stats
     total_plants = len(PLANTS)
     total_native = sum(1 for p in PLANTS if "nativa" in p["tags"])
@@ -564,14 +847,31 @@ def main():
     total_urgent = sum(1 for p in PLANTS if p.get("urgency"))
 
     # 4. Build zonas
-    frente_html = build_zone("frente", "Frente", PLANTS, img_data, None)
-    fondo_html = build_zone("fondo", "Fondo", PLANTS, img_data, None)
+    frente_plants = [p for p in PLANTS if p["zone"] == "frente"]
+    fondo_plants = [p for p in PLANTS if p["zone"] == "fondo"]
+
+    todo_html = build_zone(
+        "todo", "Todo el jardín", PLANTS,
+        ideas_list=NEW_IDEAS_FRENTE + NEW_IDEAS_FONDO,
+        show_huerta_locations=True, img_data=img_data,
+    )
+    frente_html = build_zone(
+        "frente", "Frente", frente_plants,
+        ideas_list=NEW_IDEAS_FRENTE,
+        show_huerta_locations=False, img_data=img_data,
+    )
+    fondo_html = build_zone(
+        "fondo", "Fondo", fondo_plants,
+        ideas_list=NEW_IDEAS_FONDO,
+        show_huerta_locations=True, img_data=img_data,
+    )
     timeline_html = build_timeline_view(tasks, img_data)
 
     # 5. Inyectar datos como JSON para el JS
     img_js = "const IMG = " + json.dumps(img_data) + ";"
     tasks_js = "const TASKS = " + json.dumps(tasks, ensure_ascii=False) + ";"
     contacts_js = "const DEFAULT_CONTACTS = " + json.dumps(DEFAULT_CONTACTS, ensure_ascii=False) + ";"
+    site_url_js = "const SITE_URL = " + json.dumps(SITE_URL if SITE_URL and "YOUR-USERNAME" not in SITE_URL else "") + ";"
 
     # 6. HTML final
     html_doc = f"""<!DOCTYPE html>
@@ -582,30 +882,37 @@ def main():
 <title>Jardineando · Pacha Mama</title>
 <style>{CSS}</style>
 </head>
-<body>
+<body class="zone-todo">
 <div class="container">
   <header class="main-header">
     <h1 class="brand"><span class="brand-emoji">🌿</span> Jardineando</h1>
     <h2 class="subbrand">Pacha Mama</h2>
-    <p class="tagline">Catálogo vivo del jardín · {total_plants} especies · {total_native} nativas · {total_frutal} frutales · clima Montevideo</p>
+    <div class="weather-line" id="weather-line">
+      <span class="weather-emoji">🌱</span>
+      <span class="weather-text">Consultando clima en Montevideo…</span>
+    </div>
   </header>
 
-  <div class="mini-stats">
-    <span class="mini-stat">🌱 <strong>{total_plants}</strong> especies catalogadas</span>
-    <span class="mini-stat">🇺🇾 <strong>{total_native}</strong> nativas uruguayas</span>
-    <span class="mini-stat">🍑 <strong>{total_frutal}</strong> frutales</span>
-    <span class="mini-stat">🚨 <strong>{total_urgent}</strong> con acción pendiente</span>
+  <div class="stats-strip">
+    <span class="stat-chip"><span class="chip-icon">🌱</span><strong>{total_plants}</strong> especies</span>
+    <span class="stat-chip"><span class="chip-icon">🇺🇾</span><strong>{total_native}</strong> nativas</span>
+    <span class="stat-chip"><span class="chip-icon">🍑</span><strong>{total_frutal}</strong> frutales</span>
+    <span class="stat-chip"><span class="chip-icon">🚨</span><strong>{total_urgent}</strong> pendientes</span>
   </div>
 
   <nav class="main-tabs">
-    <button class="tab-btn active" data-zone="timeline">📋 Timeline</button>
-    <button class="tab-btn" data-zone="frente">🏡 Frente</button>
-    <button class="tab-btn" data-zone="fondo">🌳 Fondo</button>
+    <button class="tab-btn active" data-zone="todo"><span class="tab-emoji">🏡</span><span class="tab-label">Todo</span></button>
+    <button class="tab-btn" data-zone="frente"><span class="tab-emoji">🌳</span><span class="tab-label">Frente</span></button>
+    <button class="tab-btn" data-zone="fondo"><span class="tab-emoji">🏊</span><span class="tab-label">Fondo</span></button>
+    <button class="tab-btn" data-zone="timeline"><span class="tab-emoji">📋</span><span class="tab-label">Timeline</span></button>
   </nav>
+</div>
 
-  <div class="zone-content active" data-zone="timeline">{timeline_html.split('<section class="zone-content" data-zone="timeline">', 1)[1].split('</section>', 1)[0]}</div>
+<div class="container container-zones">
+  {todo_html.replace('class="zone-content"', 'class="zone-content active"', 1)}
   {frente_html}
   {fondo_html}
+  <div class="zone-content" data-zone="timeline">{timeline_html.split('<section class="zone-content" data-zone="timeline">', 1)[1].split('</section>', 1)[0]}</div>
   {timeline_html.split('</section>', 1)[1]}
 </div>
 
@@ -617,6 +924,7 @@ def main():
 {img_js}
 {tasks_js}
 {contacts_js}
+{site_url_js}
 {JS}
 </script>
 </body>
