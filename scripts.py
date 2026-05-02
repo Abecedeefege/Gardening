@@ -29,6 +29,7 @@ function setBodyZone(zone) {
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.todo-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.zone-content').forEach(z => z.classList.remove('active'));
     btn.classList.add('active');
     const zone = btn.dataset.zone;
@@ -43,7 +44,9 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 document.querySelectorAll('.todo-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.todo-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.zone-content').forEach(z => z.classList.remove('active'));
+    btn.classList.add('active');
     const zone = btn.dataset.zone;
     document.querySelector(`.zone-content[data-zone="${zone}"]`).classList.add('active');
     setBodyZone(zone);

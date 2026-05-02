@@ -307,19 +307,28 @@ h2.subbrand {
 }
 .todo-btn {
   flex: 0 0 auto;
-  background: var(--text);
-  color: white;
-  border: none;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--text-2);
+  border: 1px solid var(--border-strong);
   border-radius: var(--r-md);
   padding: 8px 14px;
   font-size: 0.85rem; font-weight: 600;
   cursor: pointer;
   display: inline-flex; align-items: center; gap: 6px;
-  transition: opacity var(--t), transform var(--t);
+  transition: background var(--t), color var(--t), border-color var(--t), transform 150ms;
   white-space: nowrap;
 }
-.todo-btn:hover { opacity: 0.92; }
+.todo-btn:hover {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text);
+  border-color: var(--text-3);
+}
 .todo-btn:active { transform: scale(0.97); }
+.todo-btn.active {
+  background: var(--text);
+  color: white;
+  border-color: var(--text);
+}
 .todo-label {
   color: var(--text-3);
   font-size: 0.85rem;
@@ -8201,6 +8210,7 @@ function setBodyZone(zone) {
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.todo-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.zone-content').forEach(z => z.classList.remove('active'));
     btn.classList.add('active');
     const zone = btn.dataset.zone;
@@ -8215,7 +8225,9 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 document.querySelectorAll('.todo-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.todo-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.zone-content').forEach(z => z.classList.remove('active'));
+    btn.classList.add('active');
     const zone = btn.dataset.zone;
     document.querySelector(`.zone-content[data-zone="${zone}"]`).classList.add('active');
     setBodyZone(zone);
