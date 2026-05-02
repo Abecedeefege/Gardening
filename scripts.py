@@ -322,21 +322,30 @@ function renderTaskCard(task) {
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\n/g, '<br>');
 
-  const howToHtml = task.how_to
+  const detailSection = task.detail
     ? `<div class="task-detail-section">
-        <div class="task-detail-label">🛠️ Cómo hacerlo bien</div>
+        <div class="task-detail-label">📖 Qué es / Por qué</div>
+        <div class="task-detail-text">${fmtMd(task.detail)}</div>
+      </div>`
+    : '';
+
+  const howToSection = task.how_to
+    ? `<div class="task-detail-section">
+        <div class="task-detail-label">🛠️ Cómo hacerla bien</div>
         <div class="task-detail-text task-howto">${fmtMd(task.how_to)}</div>
       </div>`
     : '';
 
-  const detailHtml = `
-    <div class="task-detail">
-      <div class="task-detail-section">
-        <div class="task-detail-label">💡 Por qué hacerlo</div>
-        <div class="task-detail-text">${task.why || 'Sin justificación adicional.'}</div>
-      </div>
-      ${howToHtml}
-    </div>`;
+  const tipsSection = task.tips
+    ? `<div class="task-detail-section">
+        <div class="task-detail-label">💡 Tips & tricks</div>
+        <div class="task-detail-text">${fmtMd(task.tips)}</div>
+      </div>`
+    : '';
+
+  const detailHtml = (detailSection || howToSection || tipsSection)
+    ? `<div class="task-detail">${detailSection}${howToSection}${tipsSection}</div>`
+    : '';
 
   // Side hints — solo para tareas activas (no se pueden swipear las done/snoozed)
   const sideHintLeft = (cls === 'active') ? `
@@ -366,6 +375,7 @@ function renderTaskCard(task) {
             </div>
             <h3 class="task-title">${task.title}</h3>
             <div class="task-plant">${task.plant_common}</div>
+            ${task.short_desc ? `<p class="task-short">${task.short_desc}</p>` : ''}
             ${dueText ? `<div class="task-due ${dueClass}">📅 ${overdue && cls === 'active' ? 'Vencida — ' : ''}${dueText}</div>` : ''}
             <span class="task-expand-chevron" aria-hidden="true">▾</span>
           </div>

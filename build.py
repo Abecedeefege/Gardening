@@ -553,49 +553,54 @@ def generate_contextual_how_to(plant: dict, urgency: dict, action_type: str) -> 
 def generate_tasks_from_plants(plants):
     """
     Genera la lista canónica de tareas desde el catálogo de plantas.
-    Cada planta puede tener `urgency` como dict (1 sola tarea) o como
-    lista de dicts (múltiples tareas — ej. una urgencia atrasada del otoño
-    + una próxima de invierno). Cada urgency produce 1 tarea independiente
-    con su propia prioridad y fecha.
+    Schema nuevo de urgencia (preferido):
+        {priority, title, short_desc, detail, how_to, tips, when, due_month, due_year}
+    Schema legacy (fallback durante migración):
+        {priority, action, when, due_month, due_year}
+        → title=action, short_desc="", detail/how_to vienen de WHY/HOW_TO_DO_BY_PLANT_ID
+          o de generate_contextual_*() para urgencias adicionales.
     """
     tasks = []
     for plant in plants:
         urgencies = plant.get("urgency")
         if urgencies is None:
             continue
-        # Backward compat: dict suelto → lista de un elemento
         if isinstance(urgencies, dict):
             urgencies = [urgencies]
 
         plant_id = plant["id_codes"][0]
         for idx, urg in enumerate(urgencies):
-            action_type = classify_action(urg["action"])
-            # Sugerir contacto basado en el action_type clasificado
+            # Resolver título: nuevo schema gana; sino usar action legacy.
+            title = urg.get("title") or urg.get("action", "")
+            short_desc = urg.get("short_desc", "")
+            tips = urg.get("tips", "")
+
+            action_type = classify_action(urg.get("title") or urg.get("action") or "")
             if action_type in ("poda", "trasplante"):
                 suggested_contact = "jardinero"
             elif action_type in ("identificar", "foto"):
-                suggested_contact = None  # tarea propia
+                suggested_contact = None
             elif action_type in ("fertilizacion", "control_plagas"):
                 suggested_contact = "jardinero"
             else:
                 suggested_contact = "jornalero"
 
-            # Solo la urgencia "principal" (idx=0) usa los WHY/HOW_TO curados
-            # de los dicts hardcodeados — esos están escritos para esa acción
-            # específica. Las urgencias adicionales generan why contextual.
-            if idx == 0 and plant_id in WHY_BY_PLANT_ID:
-                why = WHY_BY_PLANT_ID[plant_id]
-            else:
-                why = generate_contextual_why(plant, urg, action_type)
-            # how_to: usar el dict curado solo para la urgencia principal; para
-            # urgencias adicionales o plantas sin entrada curada, generar contextual.
-            if idx == 0 and plant_id in HOW_TO_DO_BY_PLANT_ID:
-                how_to = HOW_TO_DO_BY_PLANT_ID[plant_id]
-            else:
-                how_to = generate_contextual_how_to(plant, urg, action_type)
+            # Detail (descripción detallada / por qué). Si el dict trae detail explícito úsalo.
+            # Fallback: WHY curado por plant_id (idx=0) o contextual.
+            detail = urg.get("detail")
+            if detail is None:
+                if idx == 0 and plant_id in WHY_BY_PLANT_ID:
+                    detail = WHY_BY_PLANT_ID[plant_id]
+                else:
+                    detail = generate_contextual_why(plant, urg, action_type)
 
-            # ID estable: la urgencia principal mantiene "plant-XXX" (sin sufijo);
-            # las adicionales reciben "plant-XXX-2", "plant-XXX-3", etc.
+            how_to = urg.get("how_to")
+            if how_to is None:
+                if idx == 0 and plant_id in HOW_TO_DO_BY_PLANT_ID:
+                    how_to = HOW_TO_DO_BY_PLANT_ID[plant_id]
+                else:
+                    how_to = generate_contextual_how_to(plant, urg, action_type)
+
             task_id = f"plant-{plant_id}" if idx == 0 else f"plant-{plant_id}-{idx + 1}"
 
             tasks.append({
@@ -605,10 +610,12 @@ def generate_tasks_from_plants(plants):
                 "plant_common": plant["common"],
                 "plant_zone": plant["zone"],
                 "plant_photo": plant.get("main_photo", ""),
-                "title": urg["action"],
-                "description": f"{plant['common']} ({', '.join(plant['id_codes'])}) — {urg['action']}.",
-                "why": why,
+                "title": title,
+                "short_desc": short_desc,
+                "description": f"{plant['common']} ({', '.join(plant['id_codes'])}) — {title}.",
+                "detail": detail,
                 "how_to": how_to,
+                "tips": tips,
                 "priority": urg["priority"],
                 "due_label": urg["when"],
                 "due_month": urg.get("due_month"),
@@ -1078,12 +1085,13 @@ def build_task_page(task: dict, plant: dict | None):
     task_id = task["id"]
     title = f"{task['title']} — {task['plant_common']}"
 
-    # Description corta para OG (max ~200 chars)
-    why = task.get("why") or task.get("description", "")
-    if len(why) > 200:
-        desc = why[:197].rsplit(" ", 1)[0] + "..."
+    # Description corta para OG (max ~200 chars).
+    # Prefiere short_desc → detail → description.
+    src = task.get("short_desc") or task.get("detail") or task.get("description", "")
+    if len(src) > 200:
+        desc = src[:197].rsplit(" ", 1)[0] + "..."
     else:
-        desc = why
+        desc = src
 
     # OG image absoluta
     og_img_filename = f"{task_id}.jpg"
@@ -1155,6 +1163,8 @@ def main():
     for p in PLANTS:
         if p.get("loc_photo"): unique_files.add(p["loc_photo"])
         if p.get("main_photo"): unique_files.add(p["main_photo"])
+        for fname in p.get("gallery", []) or []:
+            if fname: unique_files.add(fname)
 
     print(f"📷 Procesando {len(unique_files)} imágenes...")
     img_data = {}

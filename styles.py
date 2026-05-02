@@ -1245,6 +1245,14 @@ h2.subbrand {
   text-align: center;
   margin: 0;
 }
+.task-short {
+  font-size: 0.88rem; color: var(--text-2);
+  text-align: center;
+  margin: 6px 4px 0;
+  line-height: 1.35;
+  max-width: 60ch;
+  margin-inline: auto;
+}
 .task-due {
   display: inline-flex; align-items: center; gap: 4px;
   margin: 4px auto 0;
