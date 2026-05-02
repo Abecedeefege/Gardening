@@ -966,7 +966,7 @@ def main():
   </nav>
 
   <div class="todo-strip">
-    <button class="todo-btn" data-zone="timeline"><span aria-hidden="true">📋</span> To-Do's</button>
+    <button class="todo-btn" data-zone="timeline"><span aria-hidden="true">📋</span> Tareas</button>
     <span class="todo-label" id="todo-count">…</span>
   </div>
 </div>

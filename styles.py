@@ -930,31 +930,37 @@ h2.subbrand {
 .btn-contacts:hover {
   background: var(--text); color: white; border-color: var(--text);
 }
+/* Timeline summary — bloque informativo flat en una sola línea (estilo weather) */
 .timeline-summary {
-  background: var(--bg-card);
-  border-radius: var(--r-lg);
-  padding: 10px 14px; margin-bottom: 12px;
-  box-shadow: none; display: flex;
-  gap: 12px; flex-wrap: wrap;
-  border: 1px solid var(--border);
-  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: auto;
+  max-width: 460px;
+  margin: 0 auto 12px;
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0.78rem;
+  color: var(--text-3);
+  gap: 14px;
+  white-space: nowrap;
+  overflow: visible;
 }
-@media (min-width: 700px) {
-  .timeline-summary { padding: 14px 20px; gap: 24px; margin-bottom: 14px; }
+.timeline-summary .summary-cell {
+  display: inline-flex; align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+  line-height: 1.2;
 }
-.timeline-summary .stat-block { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
-.timeline-summary .stat-num {
-  font-size: 1.4rem; font-weight: 700;
-  font-family: inherit; color: var(--text);
-  line-height: 1; letter-spacing: -0.02em;
-}
-@media (min-width: 700px) {
-  .timeline-summary .stat-num { font-size: 1.75rem; }
-}
-.timeline-summary .stat-label {
-  font-size: 0.78rem; color: var(--text-3);
-  font-weight: 500; text-transform: uppercase;
-  letter-spacing: 0.05em;
+.timeline-summary .summary-cell strong {
+  color: var(--text);
+  font-weight: 700;
+  font-feature-settings: 'tnum';
+  font-size: 0.92rem;
 }
 .timeline-feed {
   display: flex; flex-direction: column;

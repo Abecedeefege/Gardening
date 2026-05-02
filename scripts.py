@@ -212,7 +212,7 @@ function updateTodoCount() {
     }
     if (status === 'active') active++;
   });
-  el.textContent = `${active} ${active === 1 ? 'tarea pendiente' : 'tareas pendientes'}`;
+  el.textContent = `${active} ${active === 1 ? 'pendiente' : 'pendientes'}`;
 }
 function getTaskState(taskId) {
   const states = loadStates();
@@ -389,11 +389,11 @@ function renderTimeline() {
     buckets.all.push(task);
   });
 
-  // Resumen
+  // Resumen — bloque informativo plano, una sola línea (estilo weather-line)
   summary.innerHTML = `
-    <div class="stat-block"><div class="stat-num">${buckets.active.length}</div><div class="stat-label">📌 Activas</div></div>
-    <div class="stat-block"><div class="stat-num">${buckets.done.length}</div><div class="stat-label">✅ Hechas</div></div>
-    <div class="stat-block"><div class="stat-num">${buckets.snoozed.length}</div><div class="stat-label">😴 Pospuestas</div></div>
+    <span class="summary-cell"><strong>${buckets.active.length}</strong> 📌 activas</span>
+    <span class="summary-cell"><strong>${buckets.done.length}</strong> ✅ hechas</span>
+    <span class="summary-cell"><strong>${buckets.snoozed.length}</strong> 😴 pospuestas</span>
   `;
 
   // Render filtered feed
