@@ -24,7 +24,7 @@ PLANTS = [
         "flowering": [10, 11, 12],
         "fruiting": [3, 4, 5],
         "pruning": [6, 7, 8],
-        "urgency": None,
+        "urgency": {"priority": "baja", "action": "Limpieza de ramas secas y podridas (poda muy ligera — es nativo y soporta poco corte)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
     },
     {
         "id_codes": ["F-2"], "zone": "frente",
@@ -66,7 +66,7 @@ PLANTS = [
         "flowering": [10, 11],
         "fruiting": [],
         "pruning": [9, 2],
-        "urgency": None,
+        "urgency": {"priority": "baja", "action": "Poda primaveral después del brote rojo (recortar para forzar el siguiente brote)", "when": "Septiembre 2026", "due_month": 9, "due_year": 2026},
     },
     {
         "id_codes": ["F-4"], "zone": "frente",
@@ -108,7 +108,7 @@ PLANTS = [
         "flowering": [10, 11],
         "fruiting": [],
         "pruning": [11, 12],
-        "urgency": None,
+        "urgency": {"priority": "baja", "action": "Confirmar identificación viendo floración primavera (¿Spiraea cantoniensis?)", "when": "Octubre-noviembre 2026", "due_month": 10, "due_year": 2026},
     },
     {
         "id_codes": ["F-7"], "zone": "frente",
@@ -129,7 +129,7 @@ PLANTS = [
         "flowering": [11, 12, 1, 2, 3, 4, 5],
         "fruiting": [],
         "pruning": [8, 9],
-        "urgency": None,
+        "urgency": {"priority": "baja", "action": "Poda de fin de invierno antes del brote primaveral", "when": "Agosto-septiembre 2026", "due_month": 8, "due_year": 2026},
     },
     {
         "id_codes": ["F-8"], "zone": "frente",
@@ -215,7 +215,7 @@ PLANTS = [
         "flowering": [11, 12, 1, 2, 3],
         "fruiting": [],
         "pruning": [4, 8],
-        "urgency": None,
+        "urgency": {"priority": "alta", "action": "Poda invernal severa — es vigorosa, sin podar se descontrola y florece menos", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
     },
     {
         "id_codes": ["B-2", "B-2B", "B-2C"], "zone": "fondo",
@@ -257,7 +257,7 @@ PLANTS = [
         "flowering": [10, 11, 12, 1],
         "fruiting": [],
         "pruning": [2, 3, 8],
-        "urgency": None,
+        "urgency": {"priority": "baja", "action": "Poda de formación post-floración (mantener guías ordenadas en el cerco)", "when": "Febrero 2027", "due_month": 2, "due_year": 2027},
     },
     {
         "id_codes": ["B-4"], "zone": "fondo",
@@ -278,7 +278,7 @@ PLANTS = [
         "flowering": [10, 11, 12, 1, 2, 3, 4],
         "fruiting": [],
         "pruning": [8, 9],
-        "urgency": None,
+        "urgency": {"priority": "media", "action": "Poda fuerte de fin de invierno — rebrota agresivo y florece en madera nueva", "when": "Agosto 2026", "due_month": 8, "due_year": 2026},
     },
     {
         "id_codes": ["B-5a", "B-5b"], "zone": "fondo",
@@ -320,7 +320,7 @@ PLANTS = [
         "flowering": [10, 11, 12],
         "fruiting": [],
         "pruning": [5, 6],
-        "urgency": None,
+        "urgency": {"priority": "baja", "action": "Control de invasividad — dividir rizomas si crece muy denso o invade vecinos", "when": "Cuando puedan", "due_month": 7, "due_year": 2026},
     },
     {
         "id_codes": ["B-7", "B-11", "B-31", "B-33"], "zone": "fondo",
@@ -341,7 +341,7 @@ PLANTS = [
         "flowering": [10, 11],
         "fruiting": [3, 4, 5],
         "pruning": [5, 6, 8],
-        "urgency": None,
+        "urgency": {"priority": "media", "action": "Poda de formación de cerco — recortar parejo los 4 ejemplares (cerco vivo)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
     },
     {
         "id_codes": ["B-8", "B-21", "B-28"], "zone": "fondo",
@@ -362,7 +362,7 @@ PLANTS = [
         "flowering": [11, 12, 1],
         "fruiting": [3, 4, 5, 6, 7],
         "pruning": [6, 7],
-        "urgency": None,
+        "urgency": {"priority": "baja", "action": "Limpieza de hojas secas/caídas en las 3 palmeras (NUNCA podar el punto de crecimiento)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
     },
     {
         "id_codes": ["B-9"], "zone": "fondo",
@@ -404,7 +404,7 @@ PLANTS = [
         "flowering": [9, 10, 11, 12, 1, 2, 3, 4, 5],
         "fruiting": [],
         "pruning": [3, 4, 8],
-        "urgency": None,
+        "urgency": {"priority": "media", "action": "Poda post-floración 2 ejemplares — NUNCA cortar madera vieja sin hojas (las lavandas se mueren si las cortás abajo del verde)", "when": "Noviembre 2026", "due_month": 11, "due_year": 2026},
     },
     {
         "id_codes": ["B-12", "B-17"], "zone": "fondo",
@@ -425,7 +425,7 @@ PLANTS = [
         "flowering": [10, 11, 12, 1],
         "fruiting": [],
         "pruning": [],
-        "urgency": None,
+        "urgency": {"priority": "baja", "action": "Dividir matas si están muy llenas o las macetas chicas las aprietan — bonus: regalás esquejes", "when": "Cuando puedan", "due_month": 9, "due_year": 2026},
     },
     {
         "id_codes": ["B-13"], "zone": "fondo",
@@ -509,7 +509,7 @@ PLANTS = [
         "flowering": [10, 11, 12],
         "fruiting": [3, 4, 5],
         "pruning": [6, 7],
-        "urgency": None,
+        "urgency": {"priority": "baja", "action": "Riego semanal en verano (es nativa pero está joven, todavía no auto-suficiente)", "when": "Diciembre 2026 - febrero 2027", "due_month": 12, "due_year": 2026},
     },
     {
         "id_codes": ["B-18"], "zone": "fondo",
@@ -572,7 +572,7 @@ PLANTS = [
         "flowering": [9, 10, 11],
         "fruiting": [4, 5, 6, 7],
         "pruning": [9, 10],
-        "urgency": None,
+        "urgency": {"priority": "media", "action": "Poda ligera de formación + chequear cochinilla en hojas (frutal — atención)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
     },
     {
         "id_codes": ["B-23"], "zone": "fondo",
@@ -593,7 +593,7 @@ PLANTS = [
         "flowering": [9, 10, 11, 3, 4],
         "fruiting": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
         "pruning": [8, 9, 2],
-        "urgency": None,
+        "urgency": {"priority": "media", "action": "Poda de formación + control de cochinilla y pulgones (cítricos atraen plagas)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
     },
     {
         "id_codes": ["B-24"], "zone": "fondo",
@@ -614,7 +614,7 @@ PLANTS = [
         "flowering": [9, 10, 11],
         "fruiting": [4, 5, 6, 7, 8],
         "pruning": [8, 9, 2],
-        "urgency": None,
+        "urgency": {"priority": "media", "action": "Poda de formación + control de plagas (cochinilla, minador de los cítricos)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
     },
     {
         "id_codes": ["B-25"], "zone": "fondo",
@@ -635,7 +635,7 @@ PLANTS = [
         "flowering": [10, 11, 12, 1, 2],
         "fruiting": [],
         "pruning": [3, 4],
-        "urgency": None,
+        "urgency": {"priority": "media", "action": "Fertilización ácida (sulfato de hierro / quelatos) + control de cochinilla — gardenia es exigente", "when": "Agosto 2026", "due_month": 8, "due_year": 2026},
     },
     {
         "id_codes": ["B-26"], "zone": "fondo",
@@ -656,7 +656,7 @@ PLANTS = [
         "flowering": [6, 7, 8, 9, 10],
         "fruiting": [],
         "pruning": [10, 11, 2],
-        "urgency": None,
+        "urgency": {"priority": "baja", "action": "Poda post-floración para mantener forma compacta (NUNCA cortar madera vieja sin hojas)", "when": "Octubre-noviembre 2026", "due_month": 10, "due_year": 2026},
     },
     {
         "id_codes": ["B-27"], "zone": "fondo",
@@ -782,7 +782,7 @@ PLANTS = [
         "flowering": [9, 10],
         "fruiting": [5, 6, 7, 8, 9, 10],
         "pruning": [9],
-        "urgency": None,
+        "urgency": {"priority": "media", "action": "Poda ligera + chequear cochinilla y trips (palto exige control)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
     },
     {
         "id_codes": ["B-37"], "zone": "fondo",
@@ -803,7 +803,7 @@ PLANTS = [
         "flowering": [10, 11],
         "fruiting": [3, 4, 5],
         "pruning": [6, 7],
-        "urgency": None,
+        "urgency": {"priority": "alta", "action": "Poda de formación invernal (caduco — aprovechar dormancia para sacar ramas cruzadas)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
     },
     {
         "id_codes": ["B-38"], "zone": "fondo",
@@ -866,7 +866,7 @@ PLANTS = [
         "flowering": [11, 12],
         "fruiting": [3, 4],
         "pruning": [8, 2],
-        "urgency": None,
+        "urgency": {"priority": "media", "action": "Poda fuerte post-floración (vigorosa — sin control invade el cerco entero)", "when": "Octubre 2026", "due_month": 10, "due_year": 2026},
     },
     {
         "id_codes": ["B-41"], "zone": "fondo",
@@ -994,7 +994,7 @@ PLANTS = [
         "flowering": [],
         "fruiting": [],
         "pruning": [10, 11, 12, 1, 2, 3],
-        "urgency": None,
+        "urgency": {"priority": "baja", "action": "Trasplantar a maceta más grande cuando aprietan las raíces (sale por el orificio de drenaje = momento de cambiar)", "when": "Cuando vean raíces apretadas", "due_month": 11, "due_year": 2026},
     },
     {
         "id_codes": ["I-2"], "zone": "interior",

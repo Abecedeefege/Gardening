@@ -149,8 +149,6 @@ h2.subbrand {
    ====================================================== */
 :root { --strip-gap: 6px; }
 
-.weather-line,
-.stats-strip,
 .main-tabs,
 .subtab-nav {
   display: flex;
@@ -170,45 +168,73 @@ h2.subbrand {
   box-sizing: border-box;
 }
 
-/* WEATHER */
+/* WEATHER — bloque informativo plano (no botón) */
 .weather-line {
-  font-size: 0.72rem;
-  color: var(--text-3);
-  font-weight: 500;
-}
-.weather-cell {
-  flex: 1 1 0; min-width: 0;
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 4px;
-  padding: 5px 4px;
-  white-space: nowrap;
-  overflow: hidden; text-overflow: ellipsis;
-  line-height: 1;
-}
-.weather-cell + .weather-cell { border-left: 1px solid var(--border-soft); }
-.weather-cell .weather-emoji { font-size: 0.95rem; line-height: 1; flex-shrink: 0; }
-.weather-cell .weather-val {
-  overflow: hidden; text-overflow: ellipsis;
-  font-feature-settings: 'tnum';
-}
-.weather-cell strong { color: var(--text); font-weight: 600; }
-
-/* STATS — antes "stats-strip" con scroll, ahora 4 segmentos iguales */
-.stats-strip { font-size: 0.72rem; }
-.stat-chip {
-  flex: 1 1 0; min-width: 0;
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 4px;
-  padding: 5px 4px;
+  display: flex;
+  width: 100%; max-width: 100%;
+  margin: 0 0 var(--strip-gap);
+  padding: 6px 8px;
   background: transparent;
   border: none;
   border-radius: 0;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  font-size: 0.72rem;
+  color: var(--text-3);
+  font-weight: 500;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  white-space: nowrap;
+  overflow: visible;
+  box-sizing: border-box;
+}
+.weather-cell {
+  flex: 0 1 auto;
+  display: inline-flex; align-items: center;
+  gap: 4px;
+  padding: 0;
+  white-space: nowrap;
+  overflow: visible; text-overflow: clip;
+  line-height: 1;
+}
+.weather-cell + .weather-cell { border-left: none; }
+.weather-cell .weather-emoji { font-size: 0.95rem; line-height: 1; flex-shrink: 0; }
+.weather-cell .weather-val { font-feature-settings: 'tnum'; }
+.weather-cell strong { color: var(--text); font-weight: 600; }
+
+/* STATS — bloque informativo plano (no botón) */
+.stats-strip {
+  display: flex;
+  width: 100%; max-width: 100%;
+  margin: 0 0 var(--strip-gap);
+  padding: 4px 8px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  font-size: 0.72rem;
+  color: var(--text-3);
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+.stat-chip {
+  flex: 0 1 auto;
+  display: inline-flex; align-items: center;
+  gap: 4px;
+  padding: 0;
+  background: transparent; border: none; border-radius: 0;
   color: var(--text-3);
   line-height: 1.2;
   white-space: nowrap;
-  overflow: hidden; text-overflow: ellipsis;
 }
-.stat-chip + .stat-chip { border-left: 1px solid var(--border-soft); }
+.stat-chip + .stat-chip { border-left: none; }
 .stat-chip strong {
   color: var(--text);
   font-weight: 700;
@@ -237,8 +263,8 @@ h2.subbrand {
   background: transparent;
   border: none;
   border-radius: 0;
-  padding: 10px 4px;
-  font-size: 0.78rem;
+  padding: 10px 6px;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   color: var(--text-2);
@@ -247,11 +273,8 @@ h2.subbrand {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
   white-space: nowrap;
-}
-@media (min-width: 700px) {
-  .tab-btn { padding: 10px 8px; font-size: 0.85rem; gap: 6px; }
 }
 .tab-btn + .tab-btn { border-left: 1px solid var(--border-soft); }
 .tab-btn:hover:not(.active) {
@@ -267,6 +290,42 @@ h2.subbrand {
 }
 .tab-emoji { font-size: 1rem; line-height: 1; flex-shrink: 0; }
 .tab-label { line-height: 1; overflow: hidden; text-overflow: ellipsis; }
+
+/* IDEAS + HUERTA dentro del mismo subtab — separador visual */
+.ideas-huerta-divider {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-soft);
+}
+
+/* TO-DO'S STRIP — botón pequeño + label "X tareas pendientes" */
+.todo-strip {
+  display: flex; align-items: center; gap: 10px;
+  margin: 0 0 var(--strip-gap);
+  padding: 2px 4px;
+}
+.todo-btn {
+  flex: 0 0 auto;
+  background: var(--text);
+  color: white;
+  border: none;
+  border-radius: var(--r-md);
+  padding: 8px 14px;
+  font-size: 0.85rem; font-weight: 600;
+  cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: opacity var(--t), transform var(--t);
+  white-space: nowrap;
+}
+.todo-btn:hover { opacity: 0.92; }
+.todo-btn:active { transform: scale(0.97); }
+.todo-label {
+  color: var(--text-3);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+  font-feature-settings: 'tnum';
+}
 
 /* container que envuelve las zonas — sticky main-tabs + subtab-nav siguen pegados */
 .container-zones {

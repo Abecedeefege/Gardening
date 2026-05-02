@@ -544,7 +544,6 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
     <button class="subtab-btn" data-sub="care">✂️ Cuidado</button>
     <button class="subtab-btn" data-sub="new">💡 Ideas</button>
-    <button class="subtab-btn" data-sub="huerta">🥬 Huerta</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
 
@@ -581,11 +580,11 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
       <p>Basado en tu jardín actual, clima Montevideo y mantenimiento medio. Énfasis en nativas y polinizadores.</p>
     </div>
     <div class="cards-grid ideas-grid">{new_ideas}</div>
-  </div>
 
-  <div class="subtab-pane" data-sub="huerta">
-    {huerta_intro}
-    <div class="cards-grid huerta-grid">{huerta_cards}</div>
+    <div class="ideas-huerta-divider">
+      {huerta_intro}
+      <div class="cards-grid huerta-grid">{huerta_cards}</div>
+    </div>
   </div>
 
   <div class="subtab-pane" data-sub="cal">
@@ -920,7 +919,6 @@ def main():
     <span class="stat-chip"><span class="chip-icon">🌱</span><strong>{total_plants}</strong> especies</span>
     <span class="stat-chip"><span class="chip-icon">🇺🇾</span><strong>{total_native}</strong> nativas</span>
     <span class="stat-chip"><span class="chip-icon">🍑</span><strong>{total_frutal}</strong> frutales</span>
-    <span class="stat-chip"><span class="chip-icon">🚨</span><strong>{total_urgent}</strong> pendientes</span>
   </div>
 
   <nav class="main-tabs">
@@ -928,8 +926,12 @@ def main():
     <button class="tab-btn" data-zone="frente"><span class="tab-emoji">🌳</span><span class="tab-label">Frente</span></button>
     <button class="tab-btn" data-zone="fondo"><span class="tab-emoji">🏊</span><span class="tab-label">Fondo</span></button>
     <button class="tab-btn" data-zone="interior"><span class="tab-emoji">🪴</span><span class="tab-label">Interior</span></button>
-    <button class="tab-btn" data-zone="timeline"><span class="tab-emoji">📋</span><span class="tab-label">Timeline</span></button>
   </nav>
+
+  <div class="todo-strip">
+    <button class="todo-btn" data-zone="timeline"><span aria-hidden="true">📋</span> To-Do's</button>
+    <span class="todo-label" id="todo-count">…</span>
+  </div>
 </div>
 
 <div class="container container-zones">

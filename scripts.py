@@ -39,6 +39,19 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
+// To-Do's button — entra al timeline (no es una zona-tab, es un CTA aparte)
+document.querySelectorAll('.todo-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.zone-content').forEach(z => z.classList.remove('active'));
+    const zone = btn.dataset.zone;
+    document.querySelector(`.zone-content[data-zone="${zone}"]`).classList.add('active');
+    setBodyZone(zone);
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    renderTimeline();
+  });
+});
+
 // ============================================================
 // SUBTAB SWITCHING (within zone)
 // ============================================================
@@ -169,7 +182,7 @@ document.addEventListener('click', (e) => {
 // ============================================================
 // TIMELINE — STATE MANAGEMENT (localStorage)
 // ============================================================
-const STATE_KEY = 'jardineando_task_states_v1';
+const STATE_KEY = 'jardineando_task_states_v2';
 const CONTACTS_KEY = 'jardineando_contacts_v1';
 
 function loadStates() {
@@ -178,6 +191,25 @@ function loadStates() {
 }
 function saveStates(states) {
   localStorage.setItem(STATE_KEY, JSON.stringify(states));
+  updateTodoCount();
+}
+
+// Cuenta tareas activas (auto-reactiva snoozed vencidas) y actualiza el label del To-Do's strip
+function updateTodoCount() {
+  const el = document.getElementById('todo-count');
+  if (!el || typeof TASKS === 'undefined') return;
+  const states = loadStates();
+  const now = new Date();
+  let active = 0;
+  TASKS.forEach(t => {
+    const s = states[t.id] || { status: 'active', snoozed_until: null };
+    let status = s.status;
+    if (status === 'snoozed' && s.snoozed_until && new Date(s.snoozed_until) <= now) {
+      status = 'active';
+    }
+    if (status === 'active') active++;
+  });
+  el.textContent = `${active} ${active === 1 ? 'tarea pendiente' : 'tareas pendientes'}`;
 }
 function getTaskState(taskId) {
   const states = loadStates();
@@ -735,15 +767,16 @@ document.querySelectorAll('.timeline-filters .ftag').forEach(btn => {
 // INIT
 // ============================================================
 renderTimeline();
+updateTodoCount();
 
 // Si la URL trae #task=ID (viene de un share), abrir Timeline + expandir + scroll
 function openTaskFromHash() {
   const m = (window.location.hash || '').match(/^#task=(.+)$/);
   if (!m) return;
   const taskId = decodeURIComponent(m[1]);
-  // Switch a Timeline tab
-  const tlBtn = document.querySelector('.tab-btn[data-zone="timeline"]');
-  if (tlBtn && !tlBtn.classList.contains('active')) tlBtn.click();
+  // Switch a Timeline (ahora vive en el To-Do's strip, no en main-tabs)
+  const tlBtn = document.querySelector('.todo-btn[data-zone="timeline"]');
+  if (tlBtn) tlBtn.click();
   // Buscar la tarea — puede estar en filter "active" o no, así que vamos a "all"
   const task = TASKS.find(t => t.id === taskId);
   if (!task) return;
