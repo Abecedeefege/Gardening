@@ -22,7 +22,7 @@ const WHATSAPP_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="
 // TAB SWITCHING (top-level: Todo / Frente / Fondo / Timeline)
 // ============================================================
 function setBodyZone(zone) {
-  document.body.classList.remove('zone-todo', 'zone-frente', 'zone-fondo', 'zone-timeline');
+  document.body.classList.remove('zone-todo', 'zone-frente', 'zone-fondo', 'zone-interior', 'zone-timeline');
   document.body.classList.add(`zone-${zone}`);
 }
 

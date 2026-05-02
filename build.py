@@ -522,7 +522,16 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
     care_cards = "\n".join(render_plant_care_card(p) for p in plants_in_view)
     new_ideas = "\n".join(render_idea_card(i) for i in ideas_list)
     huerta_cards = "\n".join(render_huerta_card(h) for h in HUERTA)
-    huerta_intro = render_huerta_locations() if show_huerta_locations else """
+    if zone_name == "interior":
+        huerta_intro = """
+<div class="frente-huerta-intro">
+  <h3>🪴 Comestibles en interior</h3>
+  <p>Adentro no hay huerta clásica, pero podés sumar aromáticas en macetas (albahaca, perejil, ciboulette, menta) cerca de ventanas con luz indirecta brillante. También plantas comestibles tropicales (jengibre, cúrcuma) y micro-greens en bandejas.</p>
+</div>"""
+    elif show_huerta_locations:
+        huerta_intro = render_huerta_locations()
+    else:
+        huerta_intro = """
 <div class="frente-huerta-intro">
   <h3>🌿 Aromáticas para el frente</h3>
   <p>El frente no es ideal para huerta clásica (visibilidad, espacio limitado). Pero podés sumar aromáticas y comestibles ornamentales que decoran y se cosechan.</p>
@@ -854,6 +863,7 @@ def main():
     # 4. Build zonas
     frente_plants = [p for p in PLANTS if p["zone"] == "frente"]
     fondo_plants = [p for p in PLANTS if p["zone"] == "fondo"]
+    interior_plants = [p for p in PLANTS if p["zone"] == "interior"]
 
     todo_html = build_zone(
         "todo", "Todo el jardín", PLANTS,
@@ -869,6 +879,11 @@ def main():
         "fondo", "Fondo", fondo_plants,
         ideas_list=NEW_IDEAS_FONDO,
         show_huerta_locations=True, img_data=img_data,
+    )
+    interior_html = build_zone(
+        "interior", "Interior", interior_plants,
+        ideas_list=[],
+        show_huerta_locations=False, img_data=img_data,
     )
     timeline_html = build_timeline_view(tasks, img_data)
 
@@ -912,6 +927,7 @@ def main():
     <button class="tab-btn active" data-zone="todo"><span class="tab-emoji">🏡</span><span class="tab-label">Todo</span></button>
     <button class="tab-btn" data-zone="frente"><span class="tab-emoji">🌳</span><span class="tab-label">Frente</span></button>
     <button class="tab-btn" data-zone="fondo"><span class="tab-emoji">🏊</span><span class="tab-label">Fondo</span></button>
+    <button class="tab-btn" data-zone="interior"><span class="tab-emoji">🪴</span><span class="tab-label">Interior</span></button>
     <button class="tab-btn" data-zone="timeline"><span class="tab-emoji">📋</span><span class="tab-label">Timeline</span></button>
   </nav>
 </div>
@@ -920,6 +936,7 @@ def main():
   {todo_html.replace('class="zone-content"', 'class="zone-content active"', 1)}
   {frente_html}
   {fondo_html}
+  {interior_html}
   <div class="zone-content" data-zone="timeline">{timeline_html.split('<section class="zone-content" data-zone="timeline">', 1)[1].split('</section>', 1)[0]}</div>
   {timeline_html.split('</section>', 1)[1]}
 </div>

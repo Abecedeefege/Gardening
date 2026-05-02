@@ -83,10 +83,11 @@ body {
 }
 
 /* Backgrounds pastel — uno por zona, perceptibles pero suaves */
-body.zone-todo    { background-color: #f5f5f7; }   /* zinc neutral */
-body.zone-frente  { background-color: #fbf3e6; }   /* crema cálido — sol */
-body.zone-fondo   { background-color: #e6f0fa; }   /* celeste agua — piscina */
-body.zone-timeline{ background-color: #eef5e8; }   /* verde menta — tareas */
+body.zone-todo     { background-color: #f5f5f7; }   /* zinc neutral */
+body.zone-frente   { background-color: #fbf3e6; }   /* crema cálido — sol */
+body.zone-fondo    { background-color: #e6f0fa; }   /* celeste agua — piscina */
+body.zone-interior { background-color: #efeaf5; }   /* lavanda suave — adentro */
+body.zone-timeline { background-color: #eef5e8; }   /* verde menta — tareas */
 
 button, input, textarea, select {
   font-family: inherit;
@@ -236,8 +237,8 @@ h2.subbrand {
   background: transparent;
   border: none;
   border-radius: 0;
-  padding: 10px 6px;
-  font-size: 0.85rem;
+  padding: 10px 4px;
+  font-size: 0.78rem;
   font-weight: 600;
   cursor: pointer;
   color: var(--text-2);
@@ -246,8 +247,11 @@ h2.subbrand {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
   white-space: nowrap;
+}
+@media (min-width: 700px) {
+  .tab-btn { padding: 10px 8px; font-size: 0.85rem; gap: 6px; }
 }
 .tab-btn + .tab-btn { border-left: 1px solid var(--border-soft); }
 .tab-btn:hover:not(.active) {
