@@ -396,7 +396,7 @@ function renderTimeline() {
     <span class="summary-cell"><strong>${buckets.snoozed.length}</strong> 😴 pospuestas</span>
   `;
 
-  // Render filtered feed
+  // Render filtered feed agrupado por mes (atrasadas → mes actual → futuros → sin fecha)
   const tasks = buckets[currentFilter] || [];
 
   if (tasks.length === 0) {
@@ -404,12 +404,70 @@ function renderTimeline() {
     empty.style.display = 'block';
   } else {
     empty.style.display = 'none';
-    feed.innerHTML = tasks.map(renderTaskCard).join('');
+    feed.innerHTML = renderTasksGroupedByMonth(tasks);
     // hidratar imágenes y bind swipe + lightbox
     feed.querySelectorAll('img[data-img]').forEach(loadImg);
     setupLightbox(feed);
     setupTaskInteractions(feed);
   }
+}
+
+// Agrupa una lista de tareas por mes y devuelve el HTML con separadores.
+// Hoy → "Mayo 2026"; meses anteriores con tareas pendientes → "⚠️ Atrasadas";
+// meses futuros en orden cronológico ascendente; sin fecha al final.
+const MONTH_NAMES_ES = [
+  'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+  'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre',
+];
+
+function renderTasksGroupedByMonth(tasks) {
+  const today = new Date();
+  const curYear = today.getFullYear();
+  const curMonth = today.getMonth() + 1;  // 1-12
+
+  function bucketKey(t) {
+    if (!t.due_year || !t.due_month) return 'sin-fecha';
+    if (t.due_year < curYear || (t.due_year === curYear && t.due_month < curMonth)) {
+      return 'atrasadas';
+    }
+    return `${t.due_year}-${String(t.due_month).padStart(2, '0')}`;
+  }
+  function bucketLabel(key) {
+    if (key === 'atrasadas') return '⚠️ Atrasadas';
+    if (key === 'sin-fecha') return 'Sin fecha';
+    const [y, m] = key.split('-');
+    return `${MONTH_NAMES_ES[parseInt(m, 10) - 1]} ${y}`;
+  }
+
+  // Agrupar
+  const groups = new Map();  // preserva orden de inserción
+  tasks.forEach(t => {
+    const k = bucketKey(t);
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(t);
+  });
+
+  // Orden de los buckets: atrasadas primero, luego YYYY-MM ascendente, sin-fecha al final
+  const sortedKeys = [...groups.keys()].sort((a, b) => {
+    if (a === b) return 0;
+    if (a === 'atrasadas') return -1;
+    if (b === 'atrasadas') return 1;
+    if (a === 'sin-fecha') return 1;
+    if (b === 'sin-fecha') return -1;
+    return a < b ? -1 : 1;  // YYYY-MM string sort = chronological
+  });
+
+  return sortedKeys.map(k => {
+    const items = groups.get(k);
+    const headerCls = k === 'atrasadas' ? 'month-header overdue' : 'month-header';
+    return (
+      `<div class="${headerCls}" data-key="${k}">` +
+        `<span class="month-label">${bucketLabel(k)}</span>` +
+        `<span class="month-count">${items.length}</span>` +
+      `</div>` +
+      items.map(renderTaskCard).join('')
+    );
+  }).join('');
 }
 
 // ============================================================

@@ -973,6 +973,44 @@ h2.subbrand {
   display: flex; flex-direction: column;
   gap: 12px; max-width: 720px; margin: 0 auto;
 }
+
+/* Separadores de mes dentro del feed (atrasadas / mayo 2026 / junio 2026 / ...) */
+.month-header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 10px;
+  margin: 18px 4px 2px;
+  padding: 10px 0 8px;
+  font-size: 0.78rem; font-weight: 700;
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-top: 1px solid var(--border-soft);
+}
+.month-header:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+.month-header.overdue {
+  color: #b91c1c;
+  border-top-color: rgba(185, 28, 28, 0.25);
+}
+.month-header.overdue .month-count {
+  background: rgba(185, 28, 28, 0.12);
+  color: #b91c1c;
+}
+.month-header .month-label { line-height: 1; }
+.month-header .month-count {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-3);
+  background: var(--bg-soft);
+  padding: 2px 8px;
+  border-radius: var(--r-full);
+  letter-spacing: 0;
+  text-transform: none;
+  font-feature-settings: 'tnum';
+}
 .timeline-empty {
   text-align: center; padding: 80px 24px;
   background: var(--bg-card);
