@@ -468,7 +468,14 @@ function renderTasksGroupedByMonth(tasks) {
     return a < b ? -1 : 1;  // YYYY-MM string sort = chronological
   });
 
-  return sortedKeys.map(k => {
+  const curMonthKey = `${curYear}-${String(curMonth).padStart(2, '0')}`;
+  // "Futuro" = meses estrictamente posteriores al actual (no se pueden adelantar
+  // por estar atadas a estación / floración / dormancia). Van en un módulo
+  // colapsable cerrado por defecto para reducir ruido.
+  const isFutureKey = (k) =>
+    k !== 'atrasadas' && k !== 'sin-fecha' && k > curMonthKey;
+
+  function renderGroup(k) {
     const items = groups.get(k);
     const headerCls = k === 'atrasadas' ? 'month-header overdue' : 'month-header';
     return (
@@ -478,7 +485,29 @@ function renderTasksGroupedByMonth(tasks) {
       `</div>` +
       items.map(renderTaskCard).join('')
     );
-  }).join('');
+  }
+
+  const presentKeys = sortedKeys.filter(k => !isFutureKey(k));
+  const futureKeys = sortedKeys.filter(isFutureKey);
+
+  let html = presentKeys.map(renderGroup).join('');
+
+  if (futureKeys.length > 0) {
+    const futureCount = futureKeys.reduce((n, k) => n + groups.get(k).length, 0);
+    const inner = futureKeys.map(renderGroup).join('');
+    html += (
+      `<details class="future-tasks">` +
+        `<summary class="future-tasks-summary">` +
+          `<span class="future-tasks-label">🗓️ Tareas futuras (no se pueden adelantar)</span>` +
+          `<span class="future-tasks-count">${futureCount}</span>` +
+          `<span class="future-tasks-chevron" aria-hidden="true">▾</span>` +
+        `</summary>` +
+        `<div class="future-tasks-body">${inner}</div>` +
+      `</details>`
+    );
+  }
+
+  return html;
 }
 
 // ============================================================

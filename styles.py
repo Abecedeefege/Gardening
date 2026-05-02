@@ -1047,6 +1047,51 @@ h2.subbrand {
   text-transform: none;
   font-feature-settings: 'tnum';
 }
+
+/* ---- Tareas futuras (módulo colapsable) ---- */
+.future-tasks {
+  margin: 24px 0 8px;
+  border: 1px dashed var(--border-soft);
+  border-radius: var(--r-lg);
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+.future-tasks-summary {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-2);
+  list-style: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.future-tasks-summary::-webkit-details-marker { display: none; }
+.future-tasks-summary::marker { content: ''; }
+.future-tasks-label { flex: 1; }
+.future-tasks-count {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-3);
+  background: var(--bg-card);
+  padding: 2px 9px;
+  border-radius: var(--r-full);
+  font-feature-settings: 'tnum';
+}
+.future-tasks-chevron {
+  transition: transform 0.2s ease;
+  color: var(--text-3);
+  font-size: 1rem;
+}
+.future-tasks[open] .future-tasks-chevron { transform: rotate(180deg); }
+.future-tasks-body {
+  padding: 0 14px 12px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-soft);
+}
+.future-tasks-body .month-header:first-child { padding-top: 12px; }
+
 .timeline-empty {
   text-align: center; padding: 80px 24px;
   background: var(--bg-card);
