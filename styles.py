@@ -205,36 +205,43 @@ h2.subbrand {
 .weather-cell .weather-val { font-feature-settings: 'tnum'; }
 .weather-cell strong { color: var(--text); font-weight: 600; }
 
-/* STATS TICKER — boletín auto-rotativo de categorías (no accionable) */
+/* STATS TICKER — marquee continuo de derecha a izquierda (no accionable) */
 .stats-ticker {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  max-width: 380px;
-  min-height: 22px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto var(--strip-gap);
-  padding: 4px 12px;
+  padding: 6px 0;
   font-size: 0.78rem;
   color: var(--text-3);
-  background: transparent;
-  border: none;
-  white-space: nowrap;
   overflow: hidden;
-  box-sizing: border-box;
-  transition: opacity 320ms ease;
+  position: relative;
+  /* Fade en los bordes para que los items aparezcan/salgan suaves */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 28px, black calc(100% - 28px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, black 28px, black calc(100% - 28px), transparent 100%);
 }
-.stats-ticker.ticker-fading { opacity: 0; }
+.ticker-track {
+  display: inline-flex;
+  gap: 28px;
+  white-space: nowrap;
+  animation: ticker-slide 38s linear infinite;
+  will-change: transform;
+}
+.ticker-track:hover { animation-play-state: paused; }
+@keyframes ticker-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
 .ticker-item {
   display: inline-flex; align-items: center;
-  gap: 6px;
+  gap: 6px; flex: 0 0 auto;
   line-height: 1.2;
 }
 .ticker-item strong {
-  color: var(--text);
-  font-weight: 700;
-  font-feature-settings: 'tnum';
-  font-size: 0.82rem;
+  color: var(--text); font-weight: 700;
+  font-feature-settings: 'tnum'; font-size: 0.82rem;
 }
 .ticker-emoji { font-size: 0.95rem; line-height: 1; flex-shrink: 0; }
 .ticker-label { color: var(--text-3); }
@@ -1515,7 +1522,6 @@ h2.subbrand {
   .subtab-btn { padding: 7px 10px; font-size: 0.78rem; }
   .care-grid { grid-template-columns: 1fr; }
   .hbar { grid-template-columns: 80px 1fr; }
-  .filter-bar { flex-direction: column; align-items: stretch; }
   .task-detail-section { padding: 10px 14px; }
   .modal-content { padding: 20px; border-radius: var(--r-lg); }
   .snooze-options { grid-template-columns: 1fr 1fr; }

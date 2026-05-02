@@ -1074,6 +1074,20 @@ def main():
     contacts_js = "const DEFAULT_CONTACTS = " + json.dumps(DEFAULT_CONTACTS, ensure_ascii=False) + ";"
     templates_js = "const WHATSAPP_TEMPLATES = " + json.dumps(WHATSAPP_TEMPLATES_BY_ACTION, ensure_ascii=False) + ";"
     ticker_js = "const STATS_TICKER = " + json.dumps(stats_ticker, ensure_ascii=False) + ";"
+
+    # Marquee del ticker — render server-side de TODOS los items, duplicados
+    # para que el loop de la animación CSS (translateX -50%) sea seamless.
+    ticker_html_inner = "".join(
+        f'<span class="ticker-item">'
+        f'<span class="ticker-emoji">{esc(item["emoji"])}</span>'
+        f'<strong>{item["count"]}</strong> '
+        f'<span class="ticker-label">{esc(item["label"])}</span>'
+        f'</span>'
+        for item in stats_ticker
+    )
+    ticker_aria = "Catálogo: " + " · ".join(
+        f'{item["count"]} {item["label"]}' for item in stats_ticker
+    )
     site_url_js = "const SITE_URL = " + json.dumps(SITE_URL if SITE_URL and "YOUR-USERNAME" not in SITE_URL else "") + ";"
 
     # 6. HTML final
@@ -1099,10 +1113,8 @@ def main():
     <span class="weather-cell"><span class="weather-emoji">📍</span><span class="weather-val">Montevideo</span></span>
   </div>
 
-  <div class="stats-ticker" id="stats-ticker" aria-live="polite" aria-atomic="true">
-    <span class="ticker-item">
-      <span class="ticker-emoji">🌱</span><strong>{total_plants}</strong> <span class="ticker-label">especies</span>
-    </span>
+  <div class="stats-ticker" aria-label="{ticker_aria}">
+    <div class="ticker-track">{ticker_html_inner}{ticker_html_inner}</div>
   </div>
 
   <nav class="main-tabs">

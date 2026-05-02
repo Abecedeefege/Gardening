@@ -206,36 +206,43 @@ h2.subbrand {
 .weather-cell .weather-val { font-feature-settings: 'tnum'; }
 .weather-cell strong { color: var(--text); font-weight: 600; }
 
-/* STATS TICKER — boletín auto-rotativo de categorías (no accionable) */
+/* STATS TICKER — marquee continuo de derecha a izquierda (no accionable) */
 .stats-ticker {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  max-width: 380px;
-  min-height: 22px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto var(--strip-gap);
-  padding: 4px 12px;
+  padding: 6px 0;
   font-size: 0.78rem;
   color: var(--text-3);
-  background: transparent;
-  border: none;
-  white-space: nowrap;
   overflow: hidden;
-  box-sizing: border-box;
-  transition: opacity 320ms ease;
+  position: relative;
+  /* Fade en los bordes para que los items aparezcan/salgan suaves */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 28px, black calc(100% - 28px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, black 28px, black calc(100% - 28px), transparent 100%);
 }
-.stats-ticker.ticker-fading { opacity: 0; }
+.ticker-track {
+  display: inline-flex;
+  gap: 28px;
+  white-space: nowrap;
+  animation: ticker-slide 38s linear infinite;
+  will-change: transform;
+}
+.ticker-track:hover { animation-play-state: paused; }
+@keyframes ticker-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
 .ticker-item {
   display: inline-flex; align-items: center;
-  gap: 6px;
+  gap: 6px; flex: 0 0 auto;
   line-height: 1.2;
 }
 .ticker-item strong {
-  color: var(--text);
-  font-weight: 700;
-  font-feature-settings: 'tnum';
-  font-size: 0.82rem;
+  color: var(--text); font-weight: 700;
+  font-feature-settings: 'tnum'; font-size: 0.82rem;
 }
 .ticker-emoji { font-size: 0.95rem; line-height: 1; flex-shrink: 0; }
 .ticker-label { color: var(--text-3); }
@@ -1516,7 +1523,6 @@ h2.subbrand {
   .subtab-btn { padding: 7px 10px; font-size: 0.78rem; }
   .care-grid { grid-template-columns: 1fr; }
   .hbar { grid-template-columns: 80px 1fr; }
-  .filter-bar { flex-direction: column; align-items: stretch; }
   .task-detail-section { padding: 10px 14px; }
   .modal-content { padding: 20px; border-radius: var(--r-lg); }
   .snooze-options { grid-template-columns: 1fr 1fr; }
@@ -1546,10 +1552,8 @@ h2.subbrand {
     <span class="weather-cell"><span class="weather-emoji">📍</span><span class="weather-val">Montevideo</span></span>
   </div>
 
-  <div class="stats-ticker" id="stats-ticker" aria-live="polite" aria-atomic="true">
-    <span class="ticker-item">
-      <span class="ticker-emoji">🌱</span><strong>48</strong> <span class="ticker-label">especies</span>
-    </span>
+  <div class="stats-ticker" aria-label="Catálogo: 48 especies · 5 nativas · 33 exóticas · 11 frutales · 3 aromáticas · 26 ornamentales · 5 trepadoras · 14 polinizadoras · 2 para abejas · 3 para mariposas · 4 con perfume · 30 perennes · 4 semi-perennes · 13 caducas">
+    <div class="ticker-track"><span class="ticker-item"><span class="ticker-emoji">🌱</span><strong>48</strong> <span class="ticker-label">especies</span></span><span class="ticker-item"><span class="ticker-emoji">🇺🇾</span><strong>5</strong> <span class="ticker-label">nativas</span></span><span class="ticker-item"><span class="ticker-emoji">🌍</span><strong>33</strong> <span class="ticker-label">exóticas</span></span><span class="ticker-item"><span class="ticker-emoji">🍑</span><strong>11</strong> <span class="ticker-label">frutales</span></span><span class="ticker-item"><span class="ticker-emoji">🌿</span><strong>3</strong> <span class="ticker-label">aromáticas</span></span><span class="ticker-item"><span class="ticker-emoji">✨</span><strong>26</strong> <span class="ticker-label">ornamentales</span></span><span class="ticker-item"><span class="ticker-emoji">🌿</span><strong>5</strong> <span class="ticker-label">trepadoras</span></span><span class="ticker-item"><span class="ticker-emoji">🐝</span><strong>14</strong> <span class="ticker-label">polinizadoras</span></span><span class="ticker-item"><span class="ticker-emoji">🐝</span><strong>2</strong> <span class="ticker-label">para abejas</span></span><span class="ticker-item"><span class="ticker-emoji">🦋</span><strong>3</strong> <span class="ticker-label">para mariposas</span></span><span class="ticker-item"><span class="ticker-emoji">👃</span><strong>4</strong> <span class="ticker-label">con perfume</span></span><span class="ticker-item"><span class="ticker-emoji">🌲</span><strong>30</strong> <span class="ticker-label">perennes</span></span><span class="ticker-item"><span class="ticker-emoji">🍃</span><strong>4</strong> <span class="ticker-label">semi-perennes</span></span><span class="ticker-item"><span class="ticker-emoji">🍂</span><strong>13</strong> <span class="ticker-label">caducas</span></span><span class="ticker-item"><span class="ticker-emoji">🌱</span><strong>48</strong> <span class="ticker-label">especies</span></span><span class="ticker-item"><span class="ticker-emoji">🇺🇾</span><strong>5</strong> <span class="ticker-label">nativas</span></span><span class="ticker-item"><span class="ticker-emoji">🌍</span><strong>33</strong> <span class="ticker-label">exóticas</span></span><span class="ticker-item"><span class="ticker-emoji">🍑</span><strong>11</strong> <span class="ticker-label">frutales</span></span><span class="ticker-item"><span class="ticker-emoji">🌿</span><strong>3</strong> <span class="ticker-label">aromáticas</span></span><span class="ticker-item"><span class="ticker-emoji">✨</span><strong>26</strong> <span class="ticker-label">ornamentales</span></span><span class="ticker-item"><span class="ticker-emoji">🌿</span><strong>5</strong> <span class="ticker-label">trepadoras</span></span><span class="ticker-item"><span class="ticker-emoji">🐝</span><strong>14</strong> <span class="ticker-label">polinizadoras</span></span><span class="ticker-item"><span class="ticker-emoji">🐝</span><strong>2</strong> <span class="ticker-label">para abejas</span></span><span class="ticker-item"><span class="ticker-emoji">🦋</span><strong>3</strong> <span class="ticker-label">para mariposas</span></span><span class="ticker-item"><span class="ticker-emoji">👃</span><strong>4</strong> <span class="ticker-label">con perfume</span></span><span class="ticker-item"><span class="ticker-emoji">🌲</span><strong>30</strong> <span class="ticker-label">perennes</span></span><span class="ticker-item"><span class="ticker-emoji">🍃</span><strong>4</strong> <span class="ticker-label">semi-perennes</span></span><span class="ticker-item"><span class="ticker-emoji">🍂</span><strong>13</strong> <span class="ticker-label">caducas</span></span></div>
   </div>
 
   <nav class="main-tabs">
@@ -8964,38 +8968,10 @@ document.querySelectorAll('.timeline-filters .ftag').forEach(btn => {
 });
 
 // ============================================================
-// STATS TICKER — rota lento entre los conteos por categoría
-// ============================================================
-function startStatsTicker() {
-  const el = document.getElementById('stats-ticker');
-  if (!el || typeof STATS_TICKER === 'undefined' || STATS_TICKER.length < 2) return;
-  let idx = 0;
-  const renderTickerItem = (item) => {
-    el.innerHTML =
-      '<span class="ticker-item">' +
-        '<span class="ticker-emoji">' + item.emoji + '</span>' +
-        '<strong>' + item.count + '</strong> ' +
-        '<span class="ticker-label">' + item.label + '</span>' +
-      '</span>';
-  };
-  // Render inicial con el primer item del array (sobrescribe el placeholder del HTML)
-  renderTickerItem(STATS_TICKER[0]);
-  setInterval(() => {
-    idx = (idx + 1) % STATS_TICKER.length;
-    el.classList.add('ticker-fading');
-    setTimeout(() => {
-      renderTickerItem(STATS_TICKER[idx]);
-      el.classList.remove('ticker-fading');
-    }, 320);  // matchea --ticker-fade del CSS
-  }, 3500);
-}
-
-// ============================================================
 // INIT
 // ============================================================
 renderTimeline();
 updateTodoCount();
-startStatsTicker();
 
 // Si la URL trae #task=ID (viene de un share), abrir Timeline + expandir + scroll
 function openTaskFromHash() {
