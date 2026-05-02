@@ -24,7 +24,19 @@ PLANTS = [
         "flowering": [10, 11, 12],
         "fruiting": [3, 4, 5],
         "pruning": [6, 7, 8],
-        "urgency": {"priority": "baja", "action": "Limpieza de ramas secas y podridas (poda muy ligera — es nativo y soporta poco corte)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+        "urgency": [
+            {
+                "priority": "baja",
+                "title": "Limpieza invernal de ramas secas",
+                "short_desc": "Sacar solo ramas muertas, rotas o podridas — el guayabo soporta MUY poca poda.",
+                "detail": "El guayabo del país (Acca sellowiana) es un nativo que cicatriza lento y resiente la poda fuerte. En invierno (junio-julio, post-cosecha) se hace solo limpieza — sacar lo que ya está muerto o enfermo, sin tocar madera viva. Esto previene que ramas podridas dejen entrar hongos al resto del árbol y mantiene la silueta natural redondeada que es parte del valor ornamental de la especie. NO se hace poda de formación: las flores y frutos salen en la madera del año anterior, así que cortar ramas vivas significa quedarse sin floración roja-blanca en primavera.",
+                "how_to": "1) Tijera de podar afilada y desinfectada con alcohol 70%. 2) Identificar ramas secas (sin yemas verdes, color grisáceo, se quiebran fácil), rotas (cuelgan o están partidas) o podridas (corteza esponjosa, manchas oscuras). 3) Cortar al ras del nacimiento, dejando el 'collar' (engrosamiento en la base de la rama) intacto. 4) NO acortar ramas sanas. NO eliminar más del 10% del follaje. 5) Recoger restos del piso para evitar focos de hongo.",
+                "tips": "Si dudás si una rama está viva, raspá con la uña: verde debajo = viva (dejala). Marrón seco = muerta (cortala). NO usar pasta cicatrizante en este árbol, cierra solo.",
+                "when": "Junio-julio 2026",
+                "due_month": 6,
+                "due_year": 2026,
+            },
+        ],
     },
     {
         "id_codes": ["F-2"], "zone": "frente",
@@ -45,7 +57,19 @@ PLANTS = [
         "flowering": [11, 12, 1, 2, 3, 4],
         "fruiting": [],
         "pruning": [6, 7, 8],
-        "urgency": {"priority": "media", "action": "Poda fuerte de invierno", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+        "urgency": [
+            {
+                "priority": "media",
+                "title": "Poda fuerte de invierno",
+                "short_desc": "Acortar ramas largas y viejas un 40-60% para que florezca compacta el verano que viene.",
+                "detail": "La Podranea florece sobre madera del año (brotes nuevos), así que la poda fuerte de invierno multiplica la floración: cuantas más yemas vigorosas dejes, más racimos tendrás de noviembre a abril. Sin podar se descontrola, alarga 'guías' (ramas largas y delgadas que escapan por encima del cerco buscando luz) y termina floreciendo poco y arriba. La poda en plena dormancia (junio-julio) también permite ver bien la estructura sin hojas y reordenar la trepadora sobre el cerco.",
+                "how_to": "1) Esperar día seco, planta sin hojas o con muy pocas. 2) Tijera y serrucho de poda desinfectados con alcohol 70%. 3) Identificar las ramas principales pegadas al cerco — esas son la 'estructura' a conservar. 4) De cada rama principal acortar las laterales dejando solo 3-4 yemas vigorosas (yemas = bultitos en la rama de donde sale el brote nuevo). 5) Sacar ramas viejas, secas, rotas o las que crecen lejos del cerco. 6) Atar las ramas principales al cerco si están sueltas. 7) Recoger restos.",
+                "tips": "No tengas miedo de cortar fuerte — la Podranea rebrota con vigor y las ramas nuevas dan más flor que las viejas. Cortes en bisel justo encima de una yema externa.",
+                "when": "Junio-julio 2026",
+                "due_month": 6,
+                "due_year": 2026,
+            },
+        ],
     },
     {
         "id_codes": ["F-3", "F-6", "F-11"], "zone": "frente",
@@ -66,7 +90,19 @@ PLANTS = [
         "flowering": [10, 11],
         "fruiting": [],
         "pruning": [9, 2],
-        "urgency": {"priority": "baja", "action": "Poda primaveral después del brote rojo (recortar para forzar el siguiente brote)", "when": "Septiembre 2026", "due_month": 9, "due_year": 2026},
+        "urgency": [
+            {
+                "priority": "baja",
+                "title": "Recorte primaveral del cerco",
+                "short_desc": "Cuando el primer brote rojo vire a verde, recortar 10-15 cm parejo para forzar un segundo brote rojo.",
+                "detail": "La Fotinia 'Red Robin' es famosa por sus brotes rojo-coral en primavera, que después viran a verde brillante. El truco para mantener el cerco con color rojo casi todo el año es recortar cada vez que el brote nuevo termina de virar: cada corte estimula otro brote rojo desde la yema de abajo. En septiembre se hace el primer recorte del año a las tres ejemplares (F-6 esquina, F-11 centro, F-3 contra el vecino) para uniformar el cerco y forzar el segundo brote.",
+                "how_to": "1) Tijera de seto eléctrica o manual, afilada. 2) Pasar paño con alcohol 70% por las hojas para desinfectar (la Fotinia es propensa a manchas foliares por hongos). 3) Recortar el contorno superior y los laterales 10-15 cm — todas las hojas se cortan a la misma altura. 4) Mantener la base más ancha que el tope (forma trapezoidal) para que la luz llegue abajo y no se pele. 5) Recoger todos los recortes — los restos en el piso son foco de hongos.",
+                "tips": "Evitar recortar con humedad alta o lluvia próxima: las heridas mojadas son entrada para Entomosporium (mancha foliar). Si ves manchas rojo-marrón con borde oscuro en hojas viejas, sacalas y avisame antes del corte general.",
+                "when": "Septiembre 2026",
+                "due_month": 9,
+                "due_year": 2026,
+            },
+        ],
     },
     {
         "id_codes": ["F-4"], "zone": "frente",
@@ -124,7 +160,19 @@ PLANTS = [
         "flowering": [10, 11],
         "fruiting": [],
         "pruning": [11, 12],
-        "urgency": {"priority": "baja", "action": "Confirmar identificación viendo floración primavera (¿Spiraea cantoniensis?)", "when": "Octubre-noviembre 2026", "due_month": 10, "due_year": 2026},
+        "urgency": [
+            {
+                "priority": "baja",
+                "title": "Confirmar especie viendo la floración",
+                "short_desc": "En primavera fotografiar flores y hojas para verificar si es Spiraea cantoniensis o algo distinto.",
+                "detail": "La identificación tentativa es Spiraea cantoniensis ('coronita de novia'), pero sin ver la floración no se confirma — varias especies de arbusto bajo con hojas grisáceas se confunden entre sí (otras Spiraeas, Deutzia, Ribes ornamental). La Spiraea cantoniensis tiene un patrón muy característico: ramas arqueadas que se cubren de racimos blancos en cascada en octubre-noviembre. Si en esa ventana NO florece blanca o lo hace de otra manera, hay que reabrir la ID. Una vez confirmada la especie podemos definir cuándo y cómo podarla con seguridad.",
+                "how_to": "1) Esperar a octubre-noviembre, momento esperado de floración. 2) Si florece: sacar 4 fotos — (a) planta entera mostrando porte, (b) rama con racimo de flores en primer plano con regla o moneda como escala, (c) flor individual de cerca mostrando pétalos y centro, (d) hoja sobre fondo blanco con escala. 3) Si NO florece en esa ventana: foto del follaje + nota de fecha y avisame. 4) Subir las fotos al grupo de plantas o consultar con jardinero/vivero local para confirmar.",
+                "tips": "Spiraea cantoniensis tiene flores muy chicas (0.5-1 cm) en racimos densos blancos puros; si las flores son grandes, rosadas o aisladas, NO es esta especie. Mientras tanto NO podar — podríamos cortar justo las ramas que iban a florecer.",
+                "when": "Octubre-noviembre 2026",
+                "due_month": 10,
+                "due_year": 2026,
+            },
+        ],
     },
     {
         "id_codes": ["F-7"], "zone": "frente",
