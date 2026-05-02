@@ -682,7 +682,7 @@ def render_plant_care_card(p):
         urgency_html = f"""
 <div class="urgency-banner" style="border-left-color: {color}">
   <span class="urgency-badge" style="background: {color}">{emo} {label}</span>
-  <strong>{esc(u["action"])}</strong>
+  <strong>{esc(u.get("title") or u.get("action", ""))}</strong>
   <span class="urgency-when">📅 {esc(u["when"])}</span>
 </div>"""
 
