@@ -315,7 +315,7 @@ def classify_action(action_str: str) -> str:
     a = (action_str or "").lower()
     if "identific" in a or "confirmar especie" in a or "saber qué" in a:
         return "identificar"
-    if "sacar foto" in a or "fotograf" in a:
+    if "sacar foto" in a or "fotograf" in a or " foto " in f" {a} ":
         return "foto"
     if "poda" in a or "podar" in a or "rejuven" in a or "cortar a" in a or "cortar tallo" in a:
         return "poda"
@@ -439,6 +439,117 @@ def generate_contextual_why(plant: dict, urgency: dict, action_type: str) -> str
     return why
 
 
+def generate_contextual_how_to(plant: dict, urgency: dict, action_type: str) -> str:
+    """
+    Genera el contenido de "Cómo hacerlo bien" cuando no hay entrada curada
+    en HOW_TO_DO_BY_PLANT_ID. Reusa los campos `prune_when`, `prune_how`,
+    `water`, `light` de la planta cuando aplican (ya están escritos por especie),
+    y agrega instrucciones genéricas según action_type.
+    Devuelve un string en formato markdown ligero (**bold** y \\n).
+    """
+    common = plant.get("common", "Esta planta")
+    prune_when = plant.get("prune_when", "") or ""
+    prune_how = plant.get("prune_how", "") or ""
+    water = plant.get("water", "") or ""
+    light = plant.get("light", "") or ""
+    tags = plant.get("tags", []) or []
+    is_frutal = "frutal" in tags
+    when = urgency.get("when") or ""
+    action = urgency.get("action", "")
+
+    if action_type == "identificar":
+        return (
+            "**Pasos:** (1) Acercate hasta 30 cm de la planta. "
+            "(2) Foto de hojas — anverso y reverso, con buena luz natural. "
+            "(3) Foto del tallo principal mostrando textura/corteza. "
+            "(4) Si tiene flor o fruto, closeup. "
+            "(5) Anotá tamaño aproximado y forma general (arbusto, trepadora, árbol).\n"
+            "**Cómo confirmar:** subir las fotos a iNaturalist o consultar al jardinero/vivero. "
+            "Si está sin floración, puede convenir esperar a la próxima — la flor es el mejor identificador."
+        )
+
+    if action_type == "foto":
+        otoñal = "**Tip otoñal:** capturalo antes de la caída de hoja — la ventana de color dura pocas semanas. " if "otoñal" in action.lower() or "otoño" in action.lower() else ""
+        return (
+            f"**Cuándo:** día con luz suave (mañana o tarde, evitando sol cenital).\n"
+            f"**Cómo:** acercate hasta que la hoja/flor llene el cuadro. Foco en el detalle. "
+            f"Si la planta es alta, tomá una panorámica + 2-3 closeups.\n"
+            f"{otoñal}"
+            f"**Guardá:** fecha y código de planta en el nombre del archivo para tener trazabilidad."
+        )
+
+    if action_type == "poda":
+        cuando = f"**Cuándo:** {prune_when}\n" if prune_when else (f"**Cuándo:** {when}\n" if when else "")
+        como = f"**Cómo:** {prune_how}\n" if prune_how else "**Cómo:** Eliminar primero ramas secas, cruzadas o mal orientadas; después dar forma. No más del 30% del follaje en una sola pasada (salvo poda severa programada).\n"
+        cosecha = " Para frutales, mantener copa abierta favorece la fructificación." if is_frutal else ""
+        return (
+            f"{cuando}{como}"
+            f"**Herramienta:** tijera limpia, desinfectada con alcohol al 70% entre cortes. "
+            f"Corte en bisel sobre yema externa, ~5 mm arriba del nudo. "
+            f"Sin pasta cicatrizante salvo cortes gruesos (>3 cm).{cosecha}"
+        )
+
+    if action_type == "trasplante":
+        return (
+            f"**Cuándo:** preferentemente en invierno (junio-julio) o fin de verano. Día sin sol fuerte ni lluvia.\n"
+            f"**Pasos:** (1) Regar la planta el día anterior — facilita sacar el cepellón entero. "
+            f"(2) Maceta nueva 1-2 tallas más grande, con drenaje generoso (piedras o arlita en el fondo). "
+            f"(3) Sustrato fresco — universal + perlita o arena para mejorar drenaje. "
+            f"(4) Sacudir suavemente las raíces y cortar las que estén estranguladas o muertas. "
+            f"(5) Plantar al mismo nivel que estaba (no enterrar el cuello). "
+            f"(6) Riego abundante y proteger del sol directo durante 1 semana."
+        )
+
+    if action_type == "fertilizacion":
+        light_tip = f" Esta planta prefiere {light.lower()} — un buen lugar bien iluminado ayuda a que aproveche el fertilizante." if light else ""
+        return (
+            f"**Cuándo:** mañana, con sustrato húmedo (no seco — quema raíces).\n"
+            f"**Producto:** según la especie — fertilizante balanceado para verdes, ácido (sulfato de hierro / quelatos) para acidófilas como gardenia y hortensia, específico para frutales.\n"
+            f"**Dosis:** seguir etiqueta del fabricante. **Mejor menos que más.**\n"
+            f"**Frecuencia:** una aplicación ahora; siguiente recordatorio se programa solo según especie.{light_tip}"
+        )
+
+    if action_type == "control_plagas":
+        return (
+            f"**Identificación primero:** revisá hojas (anverso y reverso), brotes nuevos y axilas. "
+            f"Cochinilla = bolitas blancas/marrones pegadas al tallo o al envés. "
+            f"Pulgones = verdes o negros agrupados en brotes tiernos. "
+            f"Trips = manchas plateadas y pequeños puntos negros (deyecciones).\n"
+            f"**Tratamiento orgánico:** alcohol 70% diluido (1 parte alcohol : 5 partes agua) con hisopo para focos chicos. "
+            f"Para infestación: pulverizar jabón potásico (~10 ml/L) + aceite de neem (~5 ml/L) cada 7-10 días.\n"
+            f"**Eliminar lo más afectado:** podar ramas muy infestadas — no recuperan y siguen contagiando.\n"
+            f"**Repetir:** 2-3 aplicaciones espaciadas 7 días para cortar el ciclo de huevos/ninfas."
+        )
+
+    if action_type == "limpieza":
+        return (
+            f"**Pasos:** (1) Sacar todas las hojas y ramas secas con tijera limpia o mano enguantada. "
+            f"(2) Limpiar el suelo alrededor del tronco — las hojas en descomposición son reservorio de hongos durante el invierno. "
+            f"(3) Si hay rebrotes desde la base, decidir si los dejás (renovación natural) o los sacás (quita energía a la planta principal). "
+            f"(4) Compostar lo sano, descartar a la basura lo enfermo o con plagas.\n"
+            f"**Tip:** desinfectar la tijera con alcohol después de plantas con plagas — evita transmisión."
+        )
+
+    if action_type == "riego":
+        freq = f"**Frecuencia recomendada:** {water}\n" if water else ""
+        return (
+            f"{freq}"
+            f"**Cómo regar bien:** profundo y espaciado, no superficial y diario. Mejor dejar un día seco que tener raíces siempre mojadas.\n"
+            f"**Indicador:** meter el dedo 2-3 cm en el sustrato — si está seco, regar; si está húmedo, esperar.\n"
+            f"**Cuándo:** mañana temprano o atardecer. Evitar mediodía (mucho se evapora antes de absorber).\n"
+            f"**No mojar:** el follaje (favorece hongos), salvo limpieza ocasional."
+        )
+
+    # mantenimiento (default)
+    return (
+        f"**Pasos generales:** (1) Inspeccioná {common} de cerca — hojas, tallos y base. "
+        f"(2) Realizá la acción específica: {action}. "
+        f"(3) Documentá con foto si hay cambio visible (antes/después).\n"
+        f"**Limpieza siempre:** sacar hojas y ramas secas, comprobar drenaje del sustrato, "
+        f"limpiar el suelo alrededor del cuello para evitar hongos."
+    )
+
+
 def generate_tasks_from_plants(plants):
     """
     Genera la lista canónica de tareas desde el catálogo de plantas.
@@ -476,7 +587,12 @@ def generate_tasks_from_plants(plants):
                 why = WHY_BY_PLANT_ID[plant_id]
             else:
                 why = generate_contextual_why(plant, urg, action_type)
-            how_to = HOW_TO_DO_BY_PLANT_ID.get(plant_id, "") if idx == 0 else ""
+            # how_to: usar el dict curado solo para la urgencia principal; para
+            # urgencias adicionales o plantas sin entrada curada, generar contextual.
+            if idx == 0 and plant_id in HOW_TO_DO_BY_PLANT_ID:
+                how_to = HOW_TO_DO_BY_PLANT_ID[plant_id]
+            else:
+                how_to = generate_contextual_how_to(plant, urg, action_type)
 
             # ID estable: la urgencia principal mantiene "plant-XXX" (sin sufijo);
             # las adicionales reciben "plant-XXX-2", "plant-XXX-3", etc.

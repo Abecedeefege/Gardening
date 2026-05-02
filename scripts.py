@@ -361,6 +361,7 @@ function renderTaskCard(task) {
           <div class="task-meta">
             <div class="task-meta-top">
               <span class="task-zone-pill">${task.plant_codes.join(', ')}</span>
+              <span class="task-id-badge" title="ID de la tarea — clickear para copiar">${task.id}</span>
               ${statusPill}
             </div>
             <h3 class="task-title">${task.title}</h3>

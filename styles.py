@@ -1169,6 +1169,20 @@ h2.subbrand {
   border: 1px solid var(--border-soft); font-weight: 500;
   white-space: nowrap;
 }
+.task-id-badge {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px dashed var(--border-soft);
+  padding: 2px 6px;
+  border-radius: var(--r-sm);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  user-select: all;
+  -webkit-user-select: all;
+  cursor: text;
+}
 .task-status-pill {
   padding: 3px 10px; border-radius: var(--r-full);
   font-size: 0.7rem; font-weight: 600;
