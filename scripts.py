@@ -221,12 +221,14 @@ function renderTaskCard(task) {
     statusPill = `<span class="task-status-pill snoozed">😴 Pospuesta hasta ${fmtDate(st.snoozed_until)}</span>`;
   }
 
-  // Solo "Hecho" / "Reactivar" como botones — snooze y whatsapp se hacen por swipe
+  // Activas: 3 botones (Hecho / Posponer / WhatsApp). Hechas/Pospuestas: solo Reactivar.
   let actions = '';
   if (cls === 'active') {
     actions = `
       <div class="task-actions">
-        <button class="task-btn task-btn-done" data-action="done" data-task-id="${task.id}">✅ Marcar como hecho</button>
+        <button class="task-btn task-btn-done" data-action="done" data-task-id="${task.id}">✅ Hecho</button>
+        <button class="task-btn task-btn-snooze" data-action="snooze" data-task-id="${task.id}">😴 Posponer</button>
+        <button class="task-btn task-btn-whatsapp" data-action="whatsapp" data-task-id="${task.id}">💬 WhatsApp</button>
       </div>`;
   } else {
     actions = `
@@ -277,20 +279,20 @@ function renderTaskCard(task) {
   return `
     <article class="task-card priority-${task.priority} ${cls === 'done' ? 'completed' : ''} ${cls === 'snoozed' ? 'snoozed' : ''}"
              data-task-id="${task.id}" style="--swipe-strength: 0">
+      <span class="task-priority-dot" aria-hidden="true"></span>
       ${sideHintLeft}
       <div class="task-content-wrap">
         <div class="task-header">
           ${photoHtml}
           <div class="task-meta">
             <div class="task-meta-top">
-              <span class="task-priority-pill" style="background: ${prio.color}">${prio.emo} ${prio.label}</span>
               <span class="task-zone-pill">${task.plant_codes.join(', ')}</span>
               ${statusPill}
-              <span class="task-expand-chevron" aria-hidden="true">▾</span>
             </div>
             <h3 class="task-title">${task.title}</h3>
             <div class="task-plant">${task.plant_common}</div>
             ${dueText ? `<div class="task-due ${dueClass}">📅 ${overdue && cls === 'active' ? 'Vencida — ' : ''}${dueText}</div>` : ''}
+            <span class="task-expand-chevron" aria-hidden="true">▾</span>
           </div>
         </div>
         ${detailHtml}
