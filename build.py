@@ -170,139 +170,6 @@ def light_icon(light_str):
 # Generación de tareas para Timeline
 # ============================================================
 
-# Mapeo: id_code (primer código) → "por qué hacer esta tarea"
-# Justificación botánica que aparece al expandir la tarjeta.
-WHY_BY_PLANT_ID = {
-    "F-2": "La bignonia florece en madera nueva del año. Sin poda fuerte de invierno (40-60%), las ramas viejas dominan y las nuevas — que son las que producen las flores rosas — quedan ahogadas. Una poda severa en junio-julio asegura una floración explosiva de noviembre a abril.",
-    "F-4": "Los Prunus (ciruelos) podan en plena dormancia para evitar 'gomosis' (exudado de savia que los enferma). En junio están sin savia activa, entonces la herida cierra limpia. Además podando ahora se elimina madera vieja improductiva y se mantiene la silueta abierta para que la luz entre al centro.",
-    "F-8": "Es una nativa charrúa (Aguaribay/Molle) que no está bien documentada en el catálogo todavía. Necesitamos una foto desde la calle con su número visible para tener la referencia geográfica completa del jardín y poder ubicarlo en el mapa mental del frente.",
-    "B-2": "Sin floración no podemos identificar este arbusto con certeza. La forma de la flor, color, perfume y patrón de inflorescencia son los datos clave para distinguir entre los muchos 'jazmines' posibles (de leche, del país, etc).",
-    "B-5a": "Las hortensias en macetas chicas sufren estrés hídrico crónico — necesitan grandes volúmenes de agua y raíces extensas. Restringidas amarillean las hojas y la floración cae drásticamente. Junio es ideal porque están dormantes y no sufren el trasplante.",
-    "B-9": "El crespón florece EXCLUSIVAMENTE en madera del año. Sin poda fuerte (50-70%), las flores aparecen en las puntas de ramas largas y débiles, dando una floración pobre y caída. Cuanto más drástica la poda invernal, más espectacular la floración estival — el famoso 'crepe murder' es un mito.",
-    "B-13": "Las clivias forman colonias densas, pero cuando los bulbos asoman fuera del sustrato significa que ya no hay espacio para más raíces. Esto reduce la floración del año siguiente. Junio es el momento ideal porque está post-floración y entrando en reposo invernal.",
-    "B-14": "Por la silueta y la posición podría ser un lapacho rosa (Handroanthus) — pero solo la floración primaveral con sus flores rosa-violáceas confirma. Si lo es, sería una nativa muy valiosa para sumar al inventario del jardín.",
-    "B-15": "Desde lejos es imposible identificar — puede ser hiedra, parra silvestre, jazmín del país o un arbusto trepador. Una foto cercana de hojas y tallo es suficiente para clasificar y decidir si conviene mantenerla, podarla o reemplazarla.",
-    "B-18": "Como el crespón, la Rosa de Siria florece en madera nueva. Una poda severa en invierno (40-50%) produce ramas vigorosas en primavera que cargan flores grandes y abundantes desde diciembre a marzo. Sin podar, la planta se vuelve leñosa y florece poco.",
-    "B-20": "Sin hojas ni flores en mayo no hay datos suficientes para identificar. La hoja recién brotada y el patrón de ramas tiernas suelen ser distintivos — en septiembre tendremos el material para foto. Mientras tanto, la planta solo necesita riego mínimo.",
-    "B-27": "Tiene flores secas pero sin certeza de la especie. La floración fresca da color, forma y disposición exacta — datos imprescindibles para identificar correctamente y poder dar consejos de cuidado precisos.",
-    "B-29": "La lantana es nativa pero se vuelve leñosa y poco florífera si no se rejuvenece. Cortar a 30cm del suelo en invierno la obliga a renovar todo el follaje y volver a florecer espectacularmente en madera nueva — atrayendo mariposas y picaflores en primavera-verano.",
-    "B-30": "REGLA #1 de los frutales de hueso: la fruta se forma en madera del año anterior. Sin poda invernal el durazno NO fructifica bien — las ramas viejas se cargan poco y la fruta es pequeña, escasa y de mala calidad. Es la tarea más crítica del año para este árbol.",
-    "B-32": "Sin hojas ni flores no hay datos para identificar. El brote primaveral revela hoja, color, patrón y vigor. Esperar a septiembre permite una identificación precisa antes de tomar decisiones sobre poda o cuidados específicos.",
-    "B-34": "La foto actual es panorámica y no permite ver detalles. Un closeup de hojas, tallo y flores (si las hay) basta para identificar. Sin esto no se pueden dar tips de poda o cuidados específicos.",
-    "B-38": "Igual que el durazno — es un Prunus de hueso. Florece en agosto y fructifica en madera vieja del año anterior. La poda invernal renueva ramas y elimina las viejas que ya no producirán, permitiendo que la energía vaya a las nuevas que sí van a dar fruta.",
-    "B-39": "Las peras necesitan poda invernal para mantener forma piramidal y eliminar 'chupones' (ramas verticales agresivas que no fructifican y le sacan energía al árbol). Sin podar, la planta se vuelve un caos de ramas y la fruta crece donde no llega luz, quedando pequeña y poco dulce.",
-    "B-41": "Los caquis jóvenes necesitan poda de FORMACIÓN durante los primeros años para definir el tronco y las 3-4 ramas principales (estructura 'vaso'). Sin formación temprana, la planta puede tener una estructura débil que después es muy difícil de corregir y que no soporta bien el peso de los frutos.",
-}
-
-
-# Mapeo: id_code (primer código) → "cómo hacer la tarea bien" (instrucciones prácticas)
-# Herramientas, técnica, época específica, qué evitar.
-HOW_TO_DO_BY_PLANT_ID = {
-    "F-2": (
-        "**Cuándo:** día sin lluvia ni helada, esperá 3 días secos previos. Mañana mejor (sin sol fuerte).\n"
-        "**Herramientas:** tijera de podar afilada + desinfectada con alcohol al 70%. Para ramas gruesas, serrucho de poda.\n"
-        "**Pasos:** (1) Identificá las 3-4 ramas estructurales que querés conservar. (2) Cortá todas las guías largas a 30-40cm desde el origen. (3) Eliminá ramas cruzadas, secas o que se rozan. (4) Cada corte en bisel a 45°, 5mm sobre una yema externa.\n"
-        "**Importante:** la bignonia rebrota fuerte — no tengas miedo de cortar mucho."
-    ),
-    "F-4": (
-        "**Cuándo:** junio-julio cuando perdió todas las hojas. Día seco, frío, sin lluvia pronosticada 48h después.\n"
-        "**Herramientas:** tijera afilada + serrucho para ramas gruesas. **DESINFECTAR con alcohol entre cada corte** (los Prunus son MUY sensibles a hongos).\n"
-        "**Pasos:** (1) Eliminá ramas muertas, enfermas o rotas. (2) Eliminá chupones (verticales) y ramas que crecen al centro. (3) Acortá ramas principales 1/3 para mantener silueta abierta en V. (4) Cortes en bisel a 5mm de yema externa.\n"
-        "**Crítico:** pintá los cortes mayores a 1.5cm con pasta cicatrizante — los Prunus pueden tomar gomosis por heridas abiertas."
-    ),
-    "F-8": (
-        "**Cuándo:** día soleado entre 10-15h para mejor luz natural.\n"
-        "**Posición:** parate en la calle, en la esquina opuesta del jardín, para encuadrar el árbol completo.\n"
-        "**Pasos:** (1) Foto vertical mostrando el árbol entero. (2) Si podés, escribí el número 'F-8' en un cartón y ponelo cerca de la base. (3) Tomá 2-3 ángulos para tener opciones."
-    ),
-    "B-2": (
-        "**Cuándo:** durante plena floración (5+ flores abiertas, primavera-verano).\n"
-        "**Cámara/celular:** modo macro o acercate hasta enfocar.\n"
-        "**Pasos:** (1) Closeup de UNA flor sola (a 1-2cm del lente). (2) Foto de toda la inflorescencia/racimo. (3) Foto de hoja por encima Y por debajo. (4) Anotá si tiene perfume y describilo (azahar, dulce, etc).\n"
-        "**Hora ideal:** media mañana (10-11h), las flores están más abiertas."
-    ),
-    "B-5a": (
-        "**Maceta nueva:** mínimo 40cm de diámetro × 40cm de profundidad. Mejor de barro o terracota (transpira).\n"
-        "**Sustrato:** 60% tierra negra + 30% turba + 10% perlita. Las hortensias necesitan sustrato ácido (pH 5-6).\n"
-        "**Pasos:** (1) Regá la planta 2h antes para que el cepellón se mantenga compacto. (2) Sacala con cuidado, no rompas el cepellón. (3) Si las raíces giran en espiral, rompelas levemente para que se expandan. (4) Centrala en maceta nueva al mismo nivel del suelo. (5) Riego abundante (que drene 2 veces). (6) Sombra durante 1 semana, después luz indirecta.\n"
-        "**Tip:** para flores azules, agregá 5 clavos oxidados al fondo. Para rosa, una cucharada de cal."
-    ),
-    "B-9": (
-        "**Cuándo:** junio-julio en plena dormancia (sin hojas).\n"
-        "**Herramientas:** tijera grande + serrucho. Desinfectá con alcohol.\n"
-        "**Pasos:** (1) Identificá 3-5 ramas principales para conservar. (2) Cortá el resto a 5-15cm de la base. (3) Las ramas conservadas: acortalas a la mitad o 1/3. (4) Cortes en bisel 45° hacia afuera de la yema.\n"
-        "**No tengas miedo:** el crespón tolera podas drásticas y rebrota con flores enormes. La 'crepe murder' (poda al ras) es exagerada pero no mata el árbol."
-    ),
-    "B-13": (
-        "**Maceta nueva:** apenas 5cm más de diámetro que la actual. Las clivias FLORECEN MEJOR cuando están un poco apretadas.\n"
-        "**Sustrato:** mezcla para orquídeas + perlita + tierra común (proporciones 1:1:1).\n"
-        "**Pasos:** (1) Sacá el cepellón entero. (2) Si tiene bulbos hijos, separalos con cuidado (cada uno será una nueva planta). (3) NO cortes raíces sanas — odian que se las toquen. (4) Plantá dejando 1/3 del bulbo expuesto al aire. (5) Regá moderadamente y esperá 2 semanas para volver a regar.\n"
-        "**Ubicación:** sombra parcial, jamás sol directo de tarde."
-    ),
-    "B-14": (
-        "**Cuándo:** primavera (septiembre-octubre) durante floración. Si es lapacho rosa, las flores aparecen ANTES que las hojas.\n"
-        "**Pasos:** (1) Foto closeup de 1 flor entera. (2) Foto de la inflorescencia (racimo de flores). (3) Foto de la corteza del tronco (los lapachos tienen corteza distintiva). (4) Foto general del árbol completo desde lejos.\n"
-        "**Pista:** si las flores son rosa-violáceas en racimos terminales, casi seguro es Handroanthus heptaphyllus (lapacho rosa)."
-    ),
-    "B-15": (
-        "**Cuándo:** cualquier día con luz natural (no a mediodía con sol fuerte).\n"
-        "**Pasos:** (1) Acercate hasta 30cm de la planta. (2) Foto de hojas — frente y dorso. (3) Foto del tallo principal mostrando textura. (4) Si tiene flores/frutos, closeup de esos. (5) Anotá: ¿trepa por el galpón o crece encima? ¿Tiene zarcillos? ¿Es leñosa o herbácea?"
-    ),
-    "B-18": (
-        "**Cuándo:** junio-julio plena dormancia (sin hojas).\n"
-        "**Herramientas:** tijera afilada y desinfectada con alcohol.\n"
-        "**Pasos:** (1) Identificá 5-6 ramas principales sanas para conservar. (2) Cortá todas las demás a ras del suelo. (3) Las principales: cortalas a 30-50cm sobre el suelo. (4) Eliminá ramas que se cruzan o crecen al centro. (5) Cortes en bisel 45° hacia afuera de la yema.\n"
-        "**Resultado esperado:** parecerá esqueleto pero rebrota con vigor en septiembre y florecerá fuerte en diciembre."
-    ),
-    "B-20": (
-        "**Cuándo:** septiembre-octubre cuando empiece a brotar.\n"
-        "**Pasos:** (1) Foto de hoja recién brotada (closeup). (2) Foto del patrón de ramificación general. (3) Si florece, foto de flor entera + closeup. (4) Anotá si las flores aparecen antes, después o junto con las hojas (dato clave para identificar)."
-    ),
-    "B-27": (
-        "**Cuándo:** primavera durante floración fresca.\n"
-        "**Pasos:** (1) Closeup de 1 flor sola. (2) Foto del racimo o conjunto de flores. (3) Foto general mostrando el porte colgante. (4) Anotá el color exacto (¿blanco, amarillo, lila?) y si tiene perfume."
-    ),
-    "B-29": (
-        "**Cuándo:** junio-julio en invierno cuando casi no hay flores.\n"
-        "**Equipo:** GUANTES (la lantana puede irritar la piel) + manga larga + tijera afilada.\n"
-        "**Pasos:** (1) Cortá TODAS las ramas a 30cm del suelo. (2) No dejes ramas más gruesas de 1cm de diámetro. (3) Recogé TODOS los restos — incluidas bayas (que son tóxicas, especialmente para mascotas). (4) Regá bien después y aplicá mulch grueso.\n"
-        "**Resultado:** parece destruida pero rebrota explosivamente en octubre, atrayendo mariposas y picaflores todo el verano."
-    ),
-    "B-30": (
-        "**Cuándo:** JUNIO-JULIO en plena dormancia, sin hojas. Esta es la tarea más crítica del año para el durazno.\n"
-        "**Herramientas:** tijera afilada + serrucho + alcohol al 70% para desinfectar **entre cada corte** (los Prunus son MUY sensibles a hongos como la monilia).\n"
-        "**Pasos:** (1) Forma 'vaso abierto': dejá 3-4 ramas principales abiertas en V, eliminá el resto. (2) Eliminá 100% de los chupones (ramas verticales del centro). (3) Identificá las ramas que dieron fruta el año pasado (tienen cicatrices) y cortalas a 1/3. (4) Acortá ramas largas a 50cm. (5) Cortes en bisel 45°, 5mm sobre una yema externa.\n"
-        "**CRÍTICO:** pintá TODOS los cortes de más de 1.5cm con pasta cicatrizante. Sin esto, el durazno puede contraer gomosis y morir en 2-3 años."
-    ),
-    "B-32": (
-        "**Cuándo:** septiembre cuando empiezen a brotar.\n"
-        "**Pasos:** (1) Foto de la primera hoja recién brotada. (2) Foto del patrón de ramas completo. (3) Si tiene flores tempranas, foto de esas también."
-    ),
-    "B-34": (
-        "**Cuándo:** día con luz natural difusa (no sol directo a mediodía).\n"
-        "**Pasos:** (1) Distancia 30-50cm de la planta. (2) Foto de hojas frente Y dorso. (3) Foto del tallo y patrón general. (4) Si hay flores o frutos, closeup. (5) Anotá tamaño aproximado de la planta."
-    ),
-    "B-38": (
-        "**Cuándo:** junio-julio dormancia.\n"
-        "**Herramientas:** tijera afilada + serrucho + alcohol para desinfectar entre cortes.\n"
-        "**Pasos:** (1) Forma 'vaso abierto' como el durazno: 3-4 ramas principales. (2) Eliminá chupones verticales. (3) Acortá ramas que dieron fruto a 1/3. (4) Eliminá ramas más viejas que 4 años (las identificás por la corteza más oscura/agrietada).\n"
-        "**Importante:** pintá cortes grandes con pasta cicatrizante (es Prunus, sensible a hongos)."
-    ),
-    "B-39": (
-        "**Cuándo:** junio-julio dormancia.\n"
-        "**Forma:** PIRAMIDAL (no vaso como Prunus): eje central + ramas en pisos horizontales.\n"
-        "**Pasos:** (1) Mantené el eje central dominante. (2) Eliminá TODOS los chupones verticales — son ramas que no fructifican. (3) Acortá ramas largas a 1/3. (4) Eliminá ramas que se cruzan.\n"
-        "**Ventaja:** no es necesario pintar cortes (los perales son menos sensibles a hongos que los Prunus)."
-    ),
-    "B-41": (
-        "**Cuándo:** junio-julio dormancia.\n"
-        "**Si es joven (< 4 años):** definí el tronco a 1m de altura y elegí 3-4 ramas principales bien distribuidas en distintas direcciones. Eliminá lo demás.\n"
-        "**Si ya tiene estructura:** mantené la forma. Eliminá ramas que se cruzan o invaden el centro. Cortá 1/3 de las ramas más viejas (rebrota fácil en madera nueva).\n"
-        "**Cortes:** en bisel sobre yema externa. No necesita pasta cicatrizante."
-    ),
-}
-
-
 def classify_action(action_str: str) -> str:
     """
     Clasifica un string de urgency.action en uno de 9 action_types.
@@ -332,233 +199,11 @@ def classify_action(action_str: str) -> str:
     return "mantenimiento"
 
 
-def generate_contextual_why(plant: dict, urgency: dict, action_type: str) -> str:
-    """
-    Genera el texto de "Por qué hacerlo" cuando no hay entrada curada en
-    WHY_BY_PLANT_ID. Usa los datos disponibles de la planta para que el
-    mensaje sea específico a la especie y a la acción, no genérico.
-    """
-    common = plant.get("common", "Esta planta")
-    sci = plant.get("sci", "") or ""
-    is_unidentified = ("a determinar" in sci.lower()) or ("a confirmar" in sci.lower()) or ("pendiente" in sci.lower())
-    ptype = (plant.get("type", "") or "").lower()
-    is_caduco = "caduco" in ptype
-    is_perenne = "perenne" in ptype and "semi" not in ptype
-    pruning_months = plant.get("pruning") or []
-    tags = plant.get("tags", []) or []
-    is_native = bool(plant.get("charrua")) or "nativa" in tags
-    is_frutal = "frutal" in tags
-    when = urgency.get("when") or ""
-    action = urgency.get("action", "")
-
-    def month_names(months):
-        nombres = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
-                   "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
-        return ", ".join(nombres[m - 1] for m in months if 1 <= m <= 12)
-
-    if action_type == "identificar":
-        unident = (
-            "Su nombre científico todavía está marcado como provisional. "
-            if is_unidentified else ""
-        )
-        why = (
-            f"{common} todavía no está identificada con certeza. {unident}"
-            f"Confirmar la especie nos permite ajustar riego, poda y fertilización "
-            f"con precisión — los cuidados pueden variar mucho entre familias parecidas. "
-            f"Ventana sugerida: {when.lower() if when else 'cuando puedas'}."
-        )
-    elif action_type == "foto":
-        why = (
-            f"Falta una foto cercana de {common} para tener buena referencia visual del catálogo. "
-            f"Una foto clara permite consultar a especialistas con material útil y comparar la "
-            f"evolución de la planta en el tiempo."
-        )
-    elif action_type == "poda":
-        if is_caduco:
-            estructura = (
-                "aprovecha la dormancia para no estresar la planta y permite formar la estructura "
-                "del próximo brote sin perder savia. Sin podar a tiempo, la copa se desordena y la "
-                "fructificación o floración del año baja"
-            )
-        elif is_perenne:
-            estructura = (
-                "estimula nuevo brote y mantiene la forma compacta. Sin poda, el ejemplar se vuelve "
-                "patilargo y pierde densidad de follaje"
-            )
-        else:
-            estructura = (
-                "ordena el crecimiento, equilibra la silueta y abre la planta a más luz y aire. "
-                "Sin poda regular se descontrola y baja la floración"
-            )
-        meses = f" Los meses recomendados son {month_names(pruning_months)}." if pruning_months else ""
-        why = (
-            f"{common} es {ptype or 'de hábito perenne'} — la poda en {when.lower() if when else 'su momento'} "
-            f"{estructura}.{meses}"
-        )
-    elif action_type == "trasplante":
-        why = (
-            f"{common} necesita más espacio para sus raíces. Postergar el trasplante limita el "
-            f"crecimiento, vuelve la planta inestable en la maceta y suele aparecer amarilleo "
-            f"por agotamiento del sustrato (las raíces ya consumieron lo que había)."
-        )
-    elif action_type == "fertilizacion":
-        why = (
-            f"{common} es exigente con los nutrientes. Una fertilización bien dosificada en "
-            f"{when.lower() if when else 'la ventana óptima'} previene clorosis, deficiencias y "
-            f"plagas oportunistas que aprovechan plantas debilitadas."
-        )
-    elif action_type == "control_plagas":
-        why = (
-            f"{common} mostró signos de plaga (o es propensa por especie). Tratar temprano evita "
-            f"que la población explote y se contagie a las plantas vecinas — la cochinilla y los "
-            f"pulgones se duplican rápido si no se interviene."
-        )
-    elif action_type == "limpieza":
-        why = (
-            f"Acumulación de ramas/hojas secas en {common} aumenta el riesgo de hongos y plagas, "
-            f"y dificulta la circulación de aire. Una limpieza periódica mantiene la planta sana "
-            f"y la mata se ve mejor."
-        )
-    elif action_type == "riego":
-        why = (
-            f"{common} necesita riego consistente en {when.lower() if when else 'temporada seca'}. "
-            f"El estrés hídrico se manifiesta antes que la marchitez visible: hojas opacas, "
-            f"brotes que se detienen, caída prematura de flores."
-        )
-    else:  # mantenimiento
-        why = (
-            f"{common} requiere atención: {action}. Hacerlo en {when.lower() if when else 'su ventana'} "
-            f"evita que se atrase y desencadene problemas mayores (forma desordenada, plagas, "
-            f"pérdida de floración o cosecha)."
-        )
-
-    if is_native:
-        why += " Es nativa rioplatense — vale extra cuidado, ofrece valor ecológico al entorno."
-    if is_frutal:
-        why += " Cuidarla bien repercute directo en la cosecha."
-    return why
-
-
-def generate_contextual_how_to(plant: dict, urgency: dict, action_type: str) -> str:
-    """
-    Genera el contenido de "Cómo hacerlo bien" cuando no hay entrada curada
-    en HOW_TO_DO_BY_PLANT_ID. Reusa los campos `prune_when`, `prune_how`,
-    `water`, `light` de la planta cuando aplican (ya están escritos por especie),
-    y agrega instrucciones genéricas según action_type.
-    Devuelve un string en formato markdown ligero (**bold** y \\n).
-    """
-    common = plant.get("common", "Esta planta")
-    prune_when = plant.get("prune_when", "") or ""
-    prune_how = plant.get("prune_how", "") or ""
-    water = plant.get("water", "") or ""
-    light = plant.get("light", "") or ""
-    tags = plant.get("tags", []) or []
-    is_frutal = "frutal" in tags
-    when = urgency.get("when") or ""
-    action = urgency.get("action", "")
-
-    if action_type == "identificar":
-        return (
-            "**Pasos:** (1) Acercate hasta 30 cm de la planta. "
-            "(2) Foto de hojas — anverso y reverso, con buena luz natural. "
-            "(3) Foto del tallo principal mostrando textura/corteza. "
-            "(4) Si tiene flor o fruto, closeup. "
-            "(5) Anotá tamaño aproximado y forma general (arbusto, trepadora, árbol).\n"
-            "**Cómo confirmar:** subir las fotos a iNaturalist o consultar al jardinero/vivero. "
-            "Si está sin floración, puede convenir esperar a la próxima — la flor es el mejor identificador."
-        )
-
-    if action_type == "foto":
-        otoñal = "**Tip otoñal:** capturalo antes de la caída de hoja — la ventana de color dura pocas semanas. " if "otoñal" in action.lower() or "otoño" in action.lower() else ""
-        return (
-            f"**Cuándo:** día con luz suave (mañana o tarde, evitando sol cenital).\n"
-            f"**Cómo:** acercate hasta que la hoja/flor llene el cuadro. Foco en el detalle. "
-            f"Si la planta es alta, tomá una panorámica + 2-3 closeups.\n"
-            f"{otoñal}"
-            f"**Guardá:** fecha y código de planta en el nombre del archivo para tener trazabilidad."
-        )
-
-    if action_type == "poda":
-        cuando = f"**Cuándo:** {prune_when}\n" if prune_when else (f"**Cuándo:** {when}\n" if when else "")
-        como = f"**Cómo:** {prune_how}\n" if prune_how else "**Cómo:** Eliminar primero ramas secas, cruzadas o mal orientadas; después dar forma. No más del 30% del follaje en una sola pasada (salvo poda severa programada).\n"
-        cosecha = " Para frutales, mantener copa abierta favorece la fructificación." if is_frutal else ""
-        return (
-            f"{cuando}{como}"
-            f"**Herramienta:** tijera limpia, desinfectada con alcohol al 70% entre cortes. "
-            f"Corte en bisel sobre yema externa, ~5 mm arriba del nudo. "
-            f"Sin pasta cicatrizante salvo cortes gruesos (>3 cm).{cosecha}"
-        )
-
-    if action_type == "trasplante":
-        return (
-            f"**Cuándo:** preferentemente en invierno (junio-julio) o fin de verano. Día sin sol fuerte ni lluvia.\n"
-            f"**Pasos:** (1) Regar la planta el día anterior — facilita sacar el cepellón entero. "
-            f"(2) Maceta nueva 1-2 tallas más grande, con drenaje generoso (piedras o arlita en el fondo). "
-            f"(3) Sustrato fresco — universal + perlita o arena para mejorar drenaje. "
-            f"(4) Sacudir suavemente las raíces y cortar las que estén estranguladas o muertas. "
-            f"(5) Plantar al mismo nivel que estaba (no enterrar el cuello). "
-            f"(6) Riego abundante y proteger del sol directo durante 1 semana."
-        )
-
-    if action_type == "fertilizacion":
-        light_tip = f" Esta planta prefiere {light.lower()} — un buen lugar bien iluminado ayuda a que aproveche el fertilizante." if light else ""
-        return (
-            f"**Cuándo:** mañana, con sustrato húmedo (no seco — quema raíces).\n"
-            f"**Producto:** según la especie — fertilizante balanceado para verdes, ácido (sulfato de hierro / quelatos) para acidófilas como gardenia y hortensia, específico para frutales.\n"
-            f"**Dosis:** seguir etiqueta del fabricante. **Mejor menos que más.**\n"
-            f"**Frecuencia:** una aplicación ahora; siguiente recordatorio se programa solo según especie.{light_tip}"
-        )
-
-    if action_type == "control_plagas":
-        return (
-            f"**Identificación primero:** revisá hojas (anverso y reverso), brotes nuevos y axilas. "
-            f"Cochinilla = bolitas blancas/marrones pegadas al tallo o al envés. "
-            f"Pulgones = verdes o negros agrupados en brotes tiernos. "
-            f"Trips = manchas plateadas y pequeños puntos negros (deyecciones).\n"
-            f"**Tratamiento orgánico:** alcohol 70% diluido (1 parte alcohol : 5 partes agua) con hisopo para focos chicos. "
-            f"Para infestación: pulverizar jabón potásico (~10 ml/L) + aceite de neem (~5 ml/L) cada 7-10 días.\n"
-            f"**Eliminar lo más afectado:** podar ramas muy infestadas — no recuperan y siguen contagiando.\n"
-            f"**Repetir:** 2-3 aplicaciones espaciadas 7 días para cortar el ciclo de huevos/ninfas."
-        )
-
-    if action_type == "limpieza":
-        return (
-            f"**Pasos:** (1) Sacar todas las hojas y ramas secas con tijera limpia o mano enguantada. "
-            f"(2) Limpiar el suelo alrededor del tronco — las hojas en descomposición son reservorio de hongos durante el invierno. "
-            f"(3) Si hay rebrotes desde la base, decidir si los dejás (renovación natural) o los sacás (quita energía a la planta principal). "
-            f"(4) Compostar lo sano, descartar a la basura lo enfermo o con plagas.\n"
-            f"**Tip:** desinfectar la tijera con alcohol después de plantas con plagas — evita transmisión."
-        )
-
-    if action_type == "riego":
-        freq = f"**Frecuencia recomendada:** {water}\n" if water else ""
-        return (
-            f"{freq}"
-            f"**Cómo regar bien:** profundo y espaciado, no superficial y diario. Mejor dejar un día seco que tener raíces siempre mojadas.\n"
-            f"**Indicador:** meter el dedo 2-3 cm en el sustrato — si está seco, regar; si está húmedo, esperar.\n"
-            f"**Cuándo:** mañana temprano o atardecer. Evitar mediodía (mucho se evapora antes de absorber).\n"
-            f"**No mojar:** el follaje (favorece hongos), salvo limpieza ocasional."
-        )
-
-    # mantenimiento (default)
-    return (
-        f"**Pasos generales:** (1) Inspeccioná {common} de cerca — hojas, tallos y base. "
-        f"(2) Realizá la acción específica: {action}. "
-        f"(3) Documentá con foto si hay cambio visible (antes/después).\n"
-        f"**Limpieza siempre:** sacar hojas y ramas secas, comprobar drenaje del sustrato, "
-        f"limpiar el suelo alrededor del cuello para evitar hongos."
-    )
-
-
 def generate_tasks_from_plants(plants):
     """
     Genera la lista canónica de tareas desde el catálogo de plantas.
-    Schema nuevo de urgencia (preferido):
+    Cada urgencia es self-contained con shape:
         {priority, title, short_desc, detail, how_to, tips, when, due_month, due_year}
-    Schema legacy (fallback durante migración):
-        {priority, action, when, due_month, due_year}
-        → title=action, short_desc="", detail/how_to vienen de WHY/HOW_TO_DO_BY_PLANT_ID
-          o de generate_contextual_*() para urgencias adicionales.
     """
     tasks = []
     for plant in plants:
@@ -570,36 +215,14 @@ def generate_tasks_from_plants(plants):
 
         plant_id = plant["id_codes"][0]
         for idx, urg in enumerate(urgencies):
-            # Resolver título: nuevo schema gana; sino usar action legacy.
-            title = urg.get("title") or urg.get("action", "")
-            short_desc = urg.get("short_desc", "")
-            tips = urg.get("tips", "")
-
-            action_type = classify_action(urg.get("title") or urg.get("action") or "")
-            if action_type in ("poda", "trasplante"):
+            title = urg["title"]
+            action_type = classify_action(title)
+            if action_type in ("poda", "trasplante", "fertilizacion", "control_plagas"):
                 suggested_contact = "jardinero"
             elif action_type in ("identificar", "foto"):
                 suggested_contact = None
-            elif action_type in ("fertilizacion", "control_plagas"):
-                suggested_contact = "jardinero"
             else:
                 suggested_contact = "jornalero"
-
-            # Detail (descripción detallada / por qué). Si el dict trae detail explícito úsalo.
-            # Fallback: WHY curado por plant_id (idx=0) o contextual.
-            detail = urg.get("detail")
-            if detail is None:
-                if idx == 0 and plant_id in WHY_BY_PLANT_ID:
-                    detail = WHY_BY_PLANT_ID[plant_id]
-                else:
-                    detail = generate_contextual_why(plant, urg, action_type)
-
-            how_to = urg.get("how_to")
-            if how_to is None:
-                if idx == 0 and plant_id in HOW_TO_DO_BY_PLANT_ID:
-                    how_to = HOW_TO_DO_BY_PLANT_ID[plant_id]
-                else:
-                    how_to = generate_contextual_how_to(plant, urg, action_type)
 
             task_id = f"plant-{plant_id}" if idx == 0 else f"plant-{plant_id}-{idx + 1}"
 
@@ -611,11 +234,11 @@ def generate_tasks_from_plants(plants):
                 "plant_zone": plant["zone"],
                 "plant_photo": plant.get("main_photo", ""),
                 "title": title,
-                "short_desc": short_desc,
+                "short_desc": urg.get("short_desc", ""),
                 "description": f"{plant['common']} ({', '.join(plant['id_codes'])}) — {title}.",
-                "detail": detail,
-                "how_to": how_to,
-                "tips": tips,
+                "detail": urg.get("detail", ""),
+                "how_to": urg.get("how_to", ""),
+                "tips": urg.get("tips", ""),
                 "priority": urg["priority"],
                 "due_label": urg["when"],
                 "due_month": urg.get("due_month"),
