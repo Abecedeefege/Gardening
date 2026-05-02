@@ -542,16 +542,21 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
   <div class="subtab-pane active" data-sub="info">
     <div class="filter-bar">
       <input type="text" class="search" placeholder="🔍 Buscar planta...">
-      <div class="filter-tags" data-zone="{zone_name}">
-        <button class="ftag active" data-filter="all">Todas</button>
-        <button class="ftag" data-filter="nativa">🇺🇾 Nativas</button>
-        <button class="ftag" data-filter="frutal">🍑 Frutales</button>
-        <button class="ftag" data-filter="aromatica">🌿 Aromáticas</button>
-        <button class="ftag" data-filter="ornamental">✨ Ornamentales</button>
-        <button class="ftag" data-filter="trepadora">🌿 Trepadoras</button>
-        <button class="ftag" data-filter="polinizadores">🐝 Polinizadores</button>
-        <button class="ftag" data-filter="pendiente">⏳ Pendientes</button>
-      </div>
+      <button class="filter-toggle" data-zone="{zone_name}" aria-expanded="false" aria-label="Filtrar por categoría" type="button">
+        <svg class="filter-svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 5h18l-7 9v5l-4-2v-3L3 5z" fill="currentColor"/></svg>
+        <span class="filter-current">Todas</span>
+        <span class="filter-caret" aria-hidden="true">▾</span>
+      </button>
+    </div>
+    <div class="filter-panel" data-zone="{zone_name}" hidden>
+      <button class="ftag active" data-filter="all">Todas</button>
+      <button class="ftag" data-filter="nativa">🇺🇾 Nativas</button>
+      <button class="ftag" data-filter="frutal">🍑 Frutales</button>
+      <button class="ftag" data-filter="aromatica">🌿 Aromáticas</button>
+      <button class="ftag" data-filter="ornamental">✨ Ornamentales</button>
+      <button class="ftag" data-filter="trepadora">🌿 Trepadoras</button>
+      <button class="ftag" data-filter="polinizadores">🐝 Polinizadores</button>
+      <button class="ftag" data-filter="pendiente">⏳ Pendientes</button>
     </div>
     <div class="cards-grid">{info_cards}</div>
   </div>
@@ -883,7 +888,7 @@ def main():
 <style>{CSS}</style>
 </head>
 <body class="zone-todo">
-<div class="container">
+<div class="container container-top">
   <header class="main-header">
     <h1 class="brand"><span class="brand-emoji">🌿</span> Jardineando</h1>
     <h2 class="subbrand">Pacha Mama</h2>

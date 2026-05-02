@@ -108,23 +108,62 @@ document.querySelectorAll('.search').forEach(input => {
   });
 });
 
-document.querySelectorAll('.filter-tags').forEach(filterBar => {
-  // Skip timeline filter — handled separately
-  if (filterBar.classList.contains('timeline-filters')) return;
-  filterBar.querySelectorAll('.ftag').forEach(btn => {
+// Filtro de especies — chips dentro del panel desplegable
+document.querySelectorAll('.filter-panel').forEach(panel => {
+  panel.querySelectorAll('.ftag').forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBar.querySelectorAll('.ftag').forEach(b => b.classList.remove('active'));
+      panel.querySelectorAll('.ftag').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.dataset.filter;
-      const pane = filterBar.closest('.subtab-pane');
-      if (!pane) return;
-      pane.querySelectorAll('.plant-card').forEach(card => {
-        const tags = card.dataset.tags || '';
-        const visible = filter === 'all' || tags.includes(filter);
-        card.style.display = visible ? '' : 'none';
-      });
+      const pane = panel.closest('.subtab-pane');
+      if (pane) {
+        pane.querySelectorAll('.plant-card').forEach(card => {
+          const tags = card.dataset.tags || '';
+          const visible = filter === 'all' || tags.includes(filter);
+          card.style.display = visible ? '' : 'none';
+        });
+      }
+      // Actualizar label del toggle (texto sin emoji) + cerrar el panel
+      const zone = panel.dataset.zone;
+      const toggle = document.querySelector(`.filter-toggle[data-zone="${zone}"]`);
+      if (toggle) {
+        const label = btn.textContent.replace(/^[^\p{L}\p{N}]+/u, '').trim();
+        toggle.querySelector('.filter-current').textContent = label || 'Todas';
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+      panel.hidden = true;
     });
   });
+});
+
+// Toggle del panel (abrir/cerrar al apretar el ícono) + cerrar al click outside
+document.addEventListener('click', (e) => {
+  const toggle = e.target.closest('.filter-toggle');
+  if (toggle) {
+    e.stopPropagation();
+    const zone = toggle.dataset.zone;
+    const panel = document.querySelector(`.filter-panel[data-zone="${zone}"]`);
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    // Cerrar todos los toggles+paneles abiertos
+    document.querySelectorAll('.filter-toggle[aria-expanded="true"]').forEach(t => {
+      t.setAttribute('aria-expanded', 'false');
+      const p = document.querySelector(`.filter-panel[data-zone="${t.dataset.zone}"]`);
+      if (p) p.hidden = true;
+    });
+    if (!isOpen && panel) {
+      toggle.setAttribute('aria-expanded', 'true');
+      panel.hidden = false;
+    }
+    return;
+  }
+  // Click fuera del panel → cerrar
+  if (!e.target.closest('.filter-panel')) {
+    document.querySelectorAll('.filter-toggle[aria-expanded="true"]').forEach(t => {
+      t.setAttribute('aria-expanded', 'false');
+      const p = document.querySelector(`.filter-panel[data-zone="${t.dataset.zone}"]`);
+      if (p) p.hidden = true;
+    });
+  }
 });
 
 // ============================================================

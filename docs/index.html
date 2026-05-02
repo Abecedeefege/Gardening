@@ -65,7 +65,7 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0; padding: 0;
-  background: var(--bg);
+  background-color: var(--bg);
   background-image:
     radial-gradient(ellipse at 15% 0%, rgba(21, 128, 61, 0.06) 0%, transparent 55%),
     radial-gradient(ellipse at 85% 100%, rgba(37, 99, 235, 0.04) 0%, transparent 55%);
@@ -83,11 +83,11 @@ body {
   transition: background-color 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Backgrounds pastel — sutiles pero notorios — uno por zona */
-body.zone-todo    { background: #fafafa; }      /* zinc neutral */
-body.zone-frente  { background: #fbf7ec; }      /* crema cálido — calle, sol */
-body.zone-fondo   { background: #eff5fc; }      /* celeste agua — piscina */
-body.zone-timeline{ background: #f1f7ec; }      /* verde menta — tareas */
+/* Backgrounds pastel — uno por zona, perceptibles pero suaves */
+body.zone-todo    { background-color: #f5f5f7; }   /* zinc neutral */
+body.zone-frente  { background-color: #fbf3e6; }   /* crema cálido — sol */
+body.zone-fondo   { background-color: #e6f0fa; }   /* celeste agua — piscina */
+body.zone-timeline{ background-color: #eef5e8; }   /* verde menta — tareas */
 
 button, input, textarea, select {
   font-family: inherit;
@@ -102,6 +102,10 @@ button, input, textarea, select {
 }
 @media (min-width: 700px) {
   .container { padding: 32px 24px 96px; }
+}
+.container.container-top { padding-bottom: 0; }
+@media (min-width: 700px) {
+  .container.container-top { padding-bottom: 0; }
 }
 
 /* HEADER — compacto, ≤30% viewport en móvil */
@@ -212,13 +216,16 @@ h2.subbrand {
 }
 .stat-chip .chip-icon { font-size: 0.9rem; line-height: 1; flex-shrink: 0; }
 
-/* MAIN TABS — pill segmented control full-width sticky */
+/* MAIN TABS — pestañas segmentadas full-width, edge-to-edge */
 .main-tabs {
   position: sticky;
   top: 8px;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.92);
+  padding: 0;
+  gap: 0;
+  border-radius: 10px;
   border-color: var(--border-strong);
+  background: rgba(255, 255, 255, 0.92);
   box-shadow:
     0 1px 2px rgba(9, 9, 11, 0.04),
     0 8px 24px rgba(9, 9, 11, 0.06);
@@ -229,33 +236,31 @@ h2.subbrand {
   flex: 1 1 0; min-width: 0;
   background: transparent;
   border: none;
-  padding: 8px 6px;
+  border-radius: 0;
+  padding: 10px 6px;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  border-radius: var(--r-full);
   color: var(--text-2);
   transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1),
-              background 200ms cubic-bezier(0.4, 0, 0.2, 1),
-              transform 150ms;
+              background 200ms cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   white-space: nowrap;
 }
-.tab-btn:hover {
+.tab-btn + .tab-btn { border-left: 1px solid var(--border-soft); }
+.tab-btn:hover:not(.active) {
   color: var(--text);
   background: rgba(0, 0, 0, 0.04);
 }
-.tab-btn:active { transform: scale(0.97); }
+.tab-btn:active { transform: scale(0.985); }
 .tab-btn.active {
   color: white;
   background: var(--text);
-  font-weight: 600;
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.06),
-    0 2px 6px rgba(0, 0, 0, 0.08);
+  font-weight: 700;
+  box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.06);
 }
 .tab-emoji { font-size: 1rem; line-height: 1; flex-shrink: 0; }
 .tab-label { line-height: 1; overflow: hidden; text-overflow: ellipsis; }
@@ -308,20 +313,20 @@ h2.subbrand {
 
 /* FILTERS */
 .filter-bar {
-  display: flex; gap: 10px;
-  margin-bottom: 16px; flex-wrap: wrap;
-  align-items: center;
+  display: flex; gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: nowrap;
+  align-items: stretch;
 }
 .search {
-  flex: 1 1 100%; min-width: 0;
-  padding: 10px 16px;
+  flex: 1 1 0; min-width: 0;
+  padding: 10px 14px;
   font-size: 0.9rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
   color: var(--text);
   transition: border-color var(--t), box-shadow var(--t);
-  width: 100%;
   max-width: 100%;
 }
 .search::placeholder { color: var(--text-muted); }
@@ -329,28 +334,59 @@ h2.subbrand {
   outline: none; border-color: var(--text-2);
   box-shadow: 0 0 0 3px rgba(9, 9, 11, 0.04);
 }
-.filter-tags {
-  display: flex; gap: 6px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  padding: 2px 0;
-  scroll-snap-type: x proximity;
-  min-width: 0;
+
+/* FILTER TOGGLE — botón ícono+label que abre el panel de chips */
+.filter-toggle {
+  flex: 0 0 auto;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: border-color var(--t), background var(--t), color var(--t);
+  white-space: nowrap;
 }
-.filter-tags::-webkit-scrollbar { display: none; }
+.filter-toggle:hover { background: var(--bg-soft); border-color: var(--border-strong); color: var(--text); }
+.filter-toggle .filter-svg { flex-shrink: 0; }
+.filter-toggle .filter-current { font-weight: 600; max-width: 90px; overflow: hidden; text-overflow: ellipsis; }
+.filter-toggle .filter-caret {
+  font-size: 0.7rem; opacity: 0.7;
+  transition: transform 200ms ease;
+  line-height: 1;
+}
+.filter-toggle[aria-expanded="true"] {
+  background: var(--text); color: white; border-color: var(--text);
+}
+.filter-toggle[aria-expanded="true"] .filter-caret { transform: rotate(180deg); }
+
+/* FILTER PANEL — chips que se despliegan abajo del bar */
+.filter-panel {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: 0 4px 12px rgba(9, 9, 11, 0.05);
+  max-height: 60vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  animation: fadeIn 0.18s ease;
+}
+.filter-panel[hidden] { display: none; }
+
 .ftag {
   background: var(--bg-card);
   border: 1px solid var(--border-strong);
-  padding: 7px 14px;
+  padding: 7px 12px;
   font-size: 0.82rem; font-weight: 600;
   cursor: pointer; border-radius: var(--r-full);
   color: var(--text-2);
   transition: all var(--t);
   white-space: nowrap;
-  flex: 0 0 auto;
-  scroll-snap-align: start;
 }
 .ftag:hover { background: var(--bg-soft); border-color: var(--text-3); }
 .ftag.active {
@@ -800,7 +836,19 @@ h2.subbrand {
   flex-wrap: nowrap; gap: 8px; align-items: center;
   min-width: 0;
 }
-.timeline-controls .filter-tags { flex: 1 1 auto; min-width: 0; }
+/* TIMELINE FILTERS — chips horizontal scroll (queda como estaba) */
+.filter-tags.timeline-filters {
+  display: flex; gap: 6px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 2px 0;
+  scroll-snap-type: x proximity;
+  flex: 1 1 auto; min-width: 0;
+}
+.filter-tags.timeline-filters::-webkit-scrollbar { display: none; }
+.filter-tags.timeline-filters .ftag { flex: 0 0 auto; scroll-snap-align: start; }
 .btn-contacts {
   background: var(--bg-card);
   border: 1px solid var(--border-strong);
@@ -1410,7 +1458,7 @@ h2.subbrand {
 </style>
 </head>
 <body class="zone-todo">
-<div class="container">
+<div class="container container-top">
   <header class="main-header">
     <h1 class="brand"><span class="brand-emoji">🌿</span> Jardineando</h1>
     <h2 class="subbrand">Pacha Mama</h2>
@@ -1452,16 +1500,21 @@ h2.subbrand {
   <div class="subtab-pane active" data-sub="info">
     <div class="filter-bar">
       <input type="text" class="search" placeholder="🔍 Buscar planta...">
-      <div class="filter-tags" data-zone="todo">
-        <button class="ftag active" data-filter="all">Todas</button>
-        <button class="ftag" data-filter="nativa">🇺🇾 Nativas</button>
-        <button class="ftag" data-filter="frutal">🍑 Frutales</button>
-        <button class="ftag" data-filter="aromatica">🌿 Aromáticas</button>
-        <button class="ftag" data-filter="ornamental">✨ Ornamentales</button>
-        <button class="ftag" data-filter="trepadora">🌿 Trepadoras</button>
-        <button class="ftag" data-filter="polinizadores">🐝 Polinizadores</button>
-        <button class="ftag" data-filter="pendiente">⏳ Pendientes</button>
-      </div>
+      <button class="filter-toggle" data-zone="todo" aria-expanded="false" aria-label="Filtrar por categoría" type="button">
+        <svg class="filter-svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 5h18l-7 9v5l-4-2v-3L3 5z" fill="currentColor"/></svg>
+        <span class="filter-current">Todas</span>
+        <span class="filter-caret" aria-hidden="true">▾</span>
+      </button>
+    </div>
+    <div class="filter-panel" data-zone="todo" hidden>
+      <button class="ftag active" data-filter="all">Todas</button>
+      <button class="ftag" data-filter="nativa">🇺🇾 Nativas</button>
+      <button class="ftag" data-filter="frutal">🍑 Frutales</button>
+      <button class="ftag" data-filter="aromatica">🌿 Aromáticas</button>
+      <button class="ftag" data-filter="ornamental">✨ Ornamentales</button>
+      <button class="ftag" data-filter="trepadora">🌿 Trepadoras</button>
+      <button class="ftag" data-filter="polinizadores">🐝 Polinizadores</button>
+      <button class="ftag" data-filter="pendiente">⏳ Pendientes</button>
     </div>
     <div class="cards-grid">
 <article class="plant-card" data-plant-id="F-1" data-name="guayabo del país" data-tags="nativa frutal polinizadores aves ornamental">
@@ -3906,16 +3959,21 @@ h2.subbrand {
   <div class="subtab-pane active" data-sub="info">
     <div class="filter-bar">
       <input type="text" class="search" placeholder="🔍 Buscar planta...">
-      <div class="filter-tags" data-zone="frente">
-        <button class="ftag active" data-filter="all">Todas</button>
-        <button class="ftag" data-filter="nativa">🇺🇾 Nativas</button>
-        <button class="ftag" data-filter="frutal">🍑 Frutales</button>
-        <button class="ftag" data-filter="aromatica">🌿 Aromáticas</button>
-        <button class="ftag" data-filter="ornamental">✨ Ornamentales</button>
-        <button class="ftag" data-filter="trepadora">🌿 Trepadoras</button>
-        <button class="ftag" data-filter="polinizadores">🐝 Polinizadores</button>
-        <button class="ftag" data-filter="pendiente">⏳ Pendientes</button>
-      </div>
+      <button class="filter-toggle" data-zone="frente" aria-expanded="false" aria-label="Filtrar por categoría" type="button">
+        <svg class="filter-svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 5h18l-7 9v5l-4-2v-3L3 5z" fill="currentColor"/></svg>
+        <span class="filter-current">Todas</span>
+        <span class="filter-caret" aria-hidden="true">▾</span>
+      </button>
+    </div>
+    <div class="filter-panel" data-zone="frente" hidden>
+      <button class="ftag active" data-filter="all">Todas</button>
+      <button class="ftag" data-filter="nativa">🇺🇾 Nativas</button>
+      <button class="ftag" data-filter="frutal">🍑 Frutales</button>
+      <button class="ftag" data-filter="aromatica">🌿 Aromáticas</button>
+      <button class="ftag" data-filter="ornamental">✨ Ornamentales</button>
+      <button class="ftag" data-filter="trepadora">🌿 Trepadoras</button>
+      <button class="ftag" data-filter="polinizadores">🐝 Polinizadores</button>
+      <button class="ftag" data-filter="pendiente">⏳ Pendientes</button>
     </div>
     <div class="cards-grid">
 <article class="plant-card" data-plant-id="F-1" data-name="guayabo del país" data-tags="nativa frutal polinizadores aves ornamental">
@@ -4620,16 +4678,21 @@ h2.subbrand {
   <div class="subtab-pane active" data-sub="info">
     <div class="filter-bar">
       <input type="text" class="search" placeholder="🔍 Buscar planta...">
-      <div class="filter-tags" data-zone="fondo">
-        <button class="ftag active" data-filter="all">Todas</button>
-        <button class="ftag" data-filter="nativa">🇺🇾 Nativas</button>
-        <button class="ftag" data-filter="frutal">🍑 Frutales</button>
-        <button class="ftag" data-filter="aromatica">🌿 Aromáticas</button>
-        <button class="ftag" data-filter="ornamental">✨ Ornamentales</button>
-        <button class="ftag" data-filter="trepadora">🌿 Trepadoras</button>
-        <button class="ftag" data-filter="polinizadores">🐝 Polinizadores</button>
-        <button class="ftag" data-filter="pendiente">⏳ Pendientes</button>
-      </div>
+      <button class="filter-toggle" data-zone="fondo" aria-expanded="false" aria-label="Filtrar por categoría" type="button">
+        <svg class="filter-svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 5h18l-7 9v5l-4-2v-3L3 5z" fill="currentColor"/></svg>
+        <span class="filter-current">Todas</span>
+        <span class="filter-caret" aria-hidden="true">▾</span>
+      </button>
+    </div>
+    <div class="filter-panel" data-zone="fondo" hidden>
+      <button class="ftag active" data-filter="all">Todas</button>
+      <button class="ftag" data-filter="nativa">🇺🇾 Nativas</button>
+      <button class="ftag" data-filter="frutal">🍑 Frutales</button>
+      <button class="ftag" data-filter="aromatica">🌿 Aromáticas</button>
+      <button class="ftag" data-filter="ornamental">✨ Ornamentales</button>
+      <button class="ftag" data-filter="trepadora">🌿 Trepadoras</button>
+      <button class="ftag" data-filter="polinizadores">🐝 Polinizadores</button>
+      <button class="ftag" data-filter="pendiente">⏳ Pendientes</button>
     </div>
     <div class="cards-grid">
 <article class="plant-card" data-plant-id="B-1" data-name="santa rita / buganvilia" data-tags="exotica trepadora ornamental polinizadores">
@@ -6833,23 +6896,62 @@ document.querySelectorAll('.search').forEach(input => {
   });
 });
 
-document.querySelectorAll('.filter-tags').forEach(filterBar => {
-  // Skip timeline filter — handled separately
-  if (filterBar.classList.contains('timeline-filters')) return;
-  filterBar.querySelectorAll('.ftag').forEach(btn => {
+// Filtro de especies — chips dentro del panel desplegable
+document.querySelectorAll('.filter-panel').forEach(panel => {
+  panel.querySelectorAll('.ftag').forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBar.querySelectorAll('.ftag').forEach(b => b.classList.remove('active'));
+      panel.querySelectorAll('.ftag').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.dataset.filter;
-      const pane = filterBar.closest('.subtab-pane');
-      if (!pane) return;
-      pane.querySelectorAll('.plant-card').forEach(card => {
-        const tags = card.dataset.tags || '';
-        const visible = filter === 'all' || tags.includes(filter);
-        card.style.display = visible ? '' : 'none';
-      });
+      const pane = panel.closest('.subtab-pane');
+      if (pane) {
+        pane.querySelectorAll('.plant-card').forEach(card => {
+          const tags = card.dataset.tags || '';
+          const visible = filter === 'all' || tags.includes(filter);
+          card.style.display = visible ? '' : 'none';
+        });
+      }
+      // Actualizar label del toggle (texto sin emoji) + cerrar el panel
+      const zone = panel.dataset.zone;
+      const toggle = document.querySelector(`.filter-toggle[data-zone="${zone}"]`);
+      if (toggle) {
+        const label = btn.textContent.replace(/^[^\p{L}\p{N}]+/u, '').trim();
+        toggle.querySelector('.filter-current').textContent = label || 'Todas';
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+      panel.hidden = true;
     });
   });
+});
+
+// Toggle del panel (abrir/cerrar al apretar el ícono) + cerrar al click outside
+document.addEventListener('click', (e) => {
+  const toggle = e.target.closest('.filter-toggle');
+  if (toggle) {
+    e.stopPropagation();
+    const zone = toggle.dataset.zone;
+    const panel = document.querySelector(`.filter-panel[data-zone="${zone}"]`);
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    // Cerrar todos los toggles+paneles abiertos
+    document.querySelectorAll('.filter-toggle[aria-expanded="true"]').forEach(t => {
+      t.setAttribute('aria-expanded', 'false');
+      const p = document.querySelector(`.filter-panel[data-zone="${t.dataset.zone}"]`);
+      if (p) p.hidden = true;
+    });
+    if (!isOpen && panel) {
+      toggle.setAttribute('aria-expanded', 'true');
+      panel.hidden = false;
+    }
+    return;
+  }
+  // Click fuera del panel → cerrar
+  if (!e.target.closest('.filter-panel')) {
+    document.querySelectorAll('.filter-toggle[aria-expanded="true"]').forEach(t => {
+      t.setAttribute('aria-expanded', 'false');
+      const p = document.querySelector(`.filter-panel[data-zone="${t.dataset.zone}"]`);
+      if (p) p.hidden = true;
+    });
+  }
 });
 
 // ============================================================
