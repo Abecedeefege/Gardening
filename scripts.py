@@ -664,7 +664,18 @@ function fillWhatsAppMessage(contactId, task) {
   const taskText = `${task.title} — ${task.plant_common} (${task.plant_codes.join(', ')})`;
   const taskLink = SITE_URL ? `${SITE_URL}/tasks/${task.id}.html` : '';
 
-  let msg = (c.default_template || '').replace(/\{task\}/g, taskText);
+  // Preferir plantilla específica por action_type × contacto si existe;
+  // si no, caer al default_template del contacto.
+  let template = null;
+  if (task.action_type && typeof WHATSAPP_TEMPLATES !== 'undefined') {
+    const byAction = WHATSAPP_TEMPLATES[task.action_type];
+    if (byAction && byAction[contactId]) {
+      template = byAction[contactId];
+    }
+  }
+  if (!template) template = c.default_template || '';
+
+  let msg = template.replace(/\{task\}/g, taskText);
   if (msg.includes('{link}')) {
     msg = msg.replace(/\{link\}/g, taskLink || '(link no disponible)');
   } else if (taskLink) {

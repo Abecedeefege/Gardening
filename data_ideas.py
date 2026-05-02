@@ -299,3 +299,57 @@ DEFAULT_CONTACTS = [
     {"id": "leniador", "name": "Leñador / Podador", "icon": "🪓", "phone": "",
      "default_template": "Hola! Necesito un servicio de poda/extracción: \"{task}\".\n\n{link}\n\n¿Cuándo podrías venir a evaluar?"},
 ]
+
+# ============================================================
+# Plantillas de WhatsApp por TIPO de acción × CONTACTO
+# Si un (action_type, contact_id) tiene entrada acá, gana sobre el
+# default_template del contacto. Si no, cae al default_template.
+# ============================================================
+WHATSAPP_TEMPLATES_BY_ACTION = {
+    "identificar": {
+        "sofi":      "Hola! Mirá esta planta del jardín — todavía no la identifiqué con certeza:\n\n📌 \"{task}\"\n\n¿Te suena? Detalle y fotos: {link}",
+        "jardinero": "Hola! ¿Me ayudás a confirmar el nombre de esta planta? Quiero ajustar bien sus cuidados.\n\n📌 \"{task}\"\n\nFotos en el detalle: {link}",
+        "vivero":    "Hola! ¿Me ayudás a identificar esta planta para saber qué cuidados específicos necesita?\n\n📌 \"{task}\"\n\nFotos: {link}",
+    },
+    "foto": {
+        "sofi":      "Hola! Recordame sacarle foto cercana a esta planta cuando puedas:\n\n📌 \"{task}\"\n\nReferencia: {link}",
+        "jardinero": "Hola! Cuando vengas, ¿podés sacar una foto cercana de esta planta? Necesito buena referencia para el catálogo.\n\n📌 \"{task}\"\n\n{link}",
+    },
+    "poda": {
+        "sofi":      "Hola! Tarea de poda agendada:\n\n📌 \"{task}\"\n\nDetalle de cuándo y cómo: {link}",
+        "jardinero": "Hola! Necesito una poda. ¿Cuándo podrías venir?\n\n📌 \"{task}\"\n\nDetalle de la planta y la poda recomendada: {link}",
+        "jornalero": "Hola! Tarea de poda en el jardín:\n\n📌 \"{task}\"\n\n¿Tendrías disponibilidad esta semana? Detalle: {link}",
+        "leniador":  "Hola! Necesito servicio de poda — esta planta requiere intervención fuerte:\n\n📌 \"{task}\"\n\nDetalle: {link}\n\n¿Podés pasar a evaluar?",
+    },
+    "trasplante": {
+        "sofi":      "Hola! Hay que trasplantar a maceta más grande:\n\n📌 \"{task}\"\n\n{link}",
+        "jardinero": "Hola! Necesito ayuda con un trasplante — la planta está apretada en su maceta actual:\n\n📌 \"{task}\"\n\nDetalle: {link}",
+        "vivero":    "Hola! Necesito una maceta más grande para esta planta. ¿Tenés algo del tamaño adecuado y sustrato recomendado?\n\n📌 \"{task}\"\n\nReferencia: {link}",
+    },
+    "fertilizacion": {
+        "sofi":      "Hola! Hay que fertilizar:\n\n📌 \"{task}\"\n\nDetalle del producto y momento: {link}",
+        "jardinero": "Hola! Necesito fertilizar/tratar esta planta — está exigiendo nutrientes específicos:\n\n📌 \"{task}\"\n\nDetalle: {link}",
+        "vivero":    "Hola! ¿Tenés fertilizante específico para esta planta? Es exigente con los nutrientes:\n\n📌 \"{task}\"\n\nDetalle: {link}",
+    },
+    "control_plagas": {
+        "sofi":      "Hola! Detecté/sospecho plaga en:\n\n📌 \"{task}\"\n\nDetalle: {link}",
+        "jardinero": "Hola! Detecté plaga (cochinilla / pulgones / similar) en esta planta. ¿Cuándo podés pasar a revisar y tratar antes de que se contagie?\n\n📌 \"{task}\"\n\nDetalle: {link}",
+        "vivero":    "Hola! Necesito producto/recomendación para tratar plagas en esta planta. ¿Qué me recomendás?\n\n📌 \"{task}\"\n\nDetalle: {link}",
+    },
+    "limpieza": {
+        "sofi":      "Hola! Tarea de limpieza/mantenimiento ligero:\n\n📌 \"{task}\"\n\nDetalle: {link}",
+        "jardinero": "Hola! Tarea de limpieza/mantenimiento — ramas/hojas secas, división de matas, etc.:\n\n📌 \"{task}\"\n\nDetalle: {link}",
+        "jornalero": "Hola! Necesito una mano con limpieza en el jardín:\n\n📌 \"{task}\"\n\n¿Tendrías una tarde libre? Detalle: {link}",
+        "leniador":  "Hola! Tarea de limpieza con ramas grandes/extracción — algo que requiere herramientas:\n\n📌 \"{task}\"\n\nDetalle: {link}",
+    },
+    "riego": {
+        "sofi":      "Hola! Recordatorio de riego:\n\n📌 \"{task}\"\n\nDetalle: {link}",
+        "jardinero": "Hola! Consulta sobre riego — hay que ajustar la frecuencia para esta planta:\n\n📌 \"{task}\"\n\nDetalle: {link}",
+    },
+    "mantenimiento": {
+        "sofi":      "Hola! Tarea pendiente del jardín:\n\n📌 \"{task}\"\n\nDetalle: {link}",
+        "jardinero": "Hola! Necesito hacer mantenimiento general en el jardín:\n\n📌 \"{task}\"\n\nDetalle: {link}",
+        "jornalero": "Hola! Tarea de mantenimiento general:\n\n📌 \"{task}\"\n\nDetalle: {link}",
+        "leniador":  "Hola! Tarea de mantenimiento que requiere herramientas:\n\n📌 \"{task}\"\n\nDetalle: {link}",
+    },
+}

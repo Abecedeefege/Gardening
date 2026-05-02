@@ -23,6 +23,7 @@ from data_ideas import (
     HUERTA,
     HUERTA_LOCATION_IDEAS,
     DEFAULT_CONTACTS,
+    WHATSAPP_TEMPLATES_BY_ACTION,
 )
 from styles import CSS
 from scripts import JS
@@ -274,6 +275,142 @@ HOW_TO_DO_BY_PLANT_ID = {
 }
 
 
+def classify_action(action_str: str) -> str:
+    """
+    Clasifica un string de urgency.action en uno de 9 action_types.
+    El orden importa: la primera regla que matchea gana.
+    Identificar gana sobre foto (acciones tipo "Identificar — sacar foto..."
+    deben caer en identificar). Poda gana sobre control_plagas para acciones
+    combinadas como "Poda + control de cochinilla" — la categoría dominante
+    es la poda.
+    """
+    a = (action_str or "").lower()
+    if "identific" in a or "confirmar especie" in a or "saber qué" in a:
+        return "identificar"
+    if "sacar foto" in a or "fotograf" in a:
+        return "foto"
+    if "poda" in a or "podar" in a or "rejuven" in a or "cortar a" in a or "cortar tallo" in a:
+        return "poda"
+    if "trasplant" in a or "maceta más grande" in a:
+        return "trasplante"
+    if "fertiliz" in a or "abonar" in a:
+        return "fertilizacion"
+    if any(k in a for k in ("cochinilla", "pulgón", "pulgones", "plaga", "trips", "minador")):
+        return "control_plagas"
+    if any(k in a for k in ("limpieza", "limpiar", "ramas secas", "hojas secas", "dividir")):
+        return "limpieza"
+    if "riego" in a or "regar" in a:
+        return "riego"
+    return "mantenimiento"
+
+
+def generate_contextual_why(plant: dict, urgency: dict, action_type: str) -> str:
+    """
+    Genera el texto de "Por qué hacerlo" cuando no hay entrada curada en
+    WHY_BY_PLANT_ID. Usa los datos disponibles de la planta para que el
+    mensaje sea específico a la especie y a la acción, no genérico.
+    """
+    common = plant.get("common", "Esta planta")
+    sci = plant.get("sci", "") or ""
+    is_unidentified = ("a determinar" in sci.lower()) or ("a confirmar" in sci.lower()) or ("pendiente" in sci.lower())
+    ptype = (plant.get("type", "") or "").lower()
+    is_caduco = "caduco" in ptype
+    is_perenne = "perenne" in ptype and "semi" not in ptype
+    pruning_months = plant.get("pruning") or []
+    tags = plant.get("tags", []) or []
+    is_native = bool(plant.get("charrua")) or "nativa" in tags
+    is_frutal = "frutal" in tags
+    when = urgency.get("when") or ""
+    action = urgency.get("action", "")
+
+    def month_names(months):
+        nombres = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
+                   "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+        return ", ".join(nombres[m - 1] for m in months if 1 <= m <= 12)
+
+    if action_type == "identificar":
+        unident = (
+            "Su nombre científico todavía está marcado como provisional. "
+            if is_unidentified else ""
+        )
+        why = (
+            f"{common} todavía no está identificada con certeza. {unident}"
+            f"Confirmar la especie nos permite ajustar riego, poda y fertilización "
+            f"con precisión — los cuidados pueden variar mucho entre familias parecidas. "
+            f"Ventana sugerida: {when.lower() if when else 'cuando puedas'}."
+        )
+    elif action_type == "foto":
+        why = (
+            f"Falta una foto cercana de {common} para tener buena referencia visual del catálogo. "
+            f"Una foto clara permite consultar a especialistas con material útil y comparar la "
+            f"evolución de la planta en el tiempo."
+        )
+    elif action_type == "poda":
+        if is_caduco:
+            estructura = (
+                "aprovecha la dormancia para no estresar la planta y permite formar la estructura "
+                "del próximo brote sin perder savia. Sin podar a tiempo, la copa se desordena y la "
+                "fructificación o floración del año baja"
+            )
+        elif is_perenne:
+            estructura = (
+                "estimula nuevo brote y mantiene la forma compacta. Sin poda, el ejemplar se vuelve "
+                "patilargo y pierde densidad de follaje"
+            )
+        else:
+            estructura = (
+                "ordena el crecimiento, equilibra la silueta y abre la planta a más luz y aire. "
+                "Sin poda regular se descontrola y baja la floración"
+            )
+        meses = f" Los meses recomendados son {month_names(pruning_months)}." if pruning_months else ""
+        why = (
+            f"{common} es {ptype or 'de hábito perenne'} — la poda en {when.lower() if when else 'su momento'} "
+            f"{estructura}.{meses}"
+        )
+    elif action_type == "trasplante":
+        why = (
+            f"{common} necesita más espacio para sus raíces. Postergar el trasplante limita el "
+            f"crecimiento, vuelve la planta inestable en la maceta y suele aparecer amarilleo "
+            f"por agotamiento del sustrato (las raíces ya consumieron lo que había)."
+        )
+    elif action_type == "fertilizacion":
+        why = (
+            f"{common} es exigente con los nutrientes. Una fertilización bien dosificada en "
+            f"{when.lower() if when else 'la ventana óptima'} previene clorosis, deficiencias y "
+            f"plagas oportunistas que aprovechan plantas debilitadas."
+        )
+    elif action_type == "control_plagas":
+        why = (
+            f"{common} mostró signos de plaga (o es propensa por especie). Tratar temprano evita "
+            f"que la población explote y se contagie a las plantas vecinas — la cochinilla y los "
+            f"pulgones se duplican rápido si no se interviene."
+        )
+    elif action_type == "limpieza":
+        why = (
+            f"Acumulación de ramas/hojas secas en {common} aumenta el riesgo de hongos y plagas, "
+            f"y dificulta la circulación de aire. Una limpieza periódica mantiene la planta sana "
+            f"y la mata se ve mejor."
+        )
+    elif action_type == "riego":
+        why = (
+            f"{common} necesita riego consistente en {when.lower() if when else 'temporada seca'}. "
+            f"El estrés hídrico se manifiesta antes que la marchitez visible: hojas opacas, "
+            f"brotes que se detienen, caída prematura de flores."
+        )
+    else:  # mantenimiento
+        why = (
+            f"{common} requiere atención: {action}. Hacerlo en {when.lower() if when else 'su ventana'} "
+            f"evita que se atrase y desencadene problemas mayores (forma desordenada, plagas, "
+            f"pérdida de floración o cosecha)."
+        )
+
+    if is_native:
+        why += " Es nativa rioplatense — vale extra cuidado, ofrece valor ecológico al entorno."
+    if is_frutal:
+        why += " Cuidarla bien repercute directo en la cosecha."
+    return why
+
+
 def generate_tasks_from_plants(plants):
     """
     Genera la lista canónica de tareas desde el catálogo de plantas.
@@ -286,17 +423,25 @@ def generate_tasks_from_plants(plants):
         if not plant.get("urgency"):
             continue
         urg = plant["urgency"]
-        # Sugerir contacto basado en tipo de acción
-        action_lower = urg["action"].lower()
-        if "poda" in action_lower or "trasplant" in action_lower:
+        action_type = classify_action(urg["action"])
+        # Sugerir contacto basado en el action_type clasificado
+        if action_type in ("poda", "trasplante"):
             suggested_contact = "jardinero"
-        elif "foto" in action_lower or "identificar" in action_lower:
+        elif action_type in ("identificar", "foto"):
             suggested_contact = None  # tarea propia
+        elif action_type in ("fertilizacion", "control_plagas"):
+            suggested_contact = "jardinero"
         else:
             suggested_contact = "jornalero"
 
+        plant_id = plant["id_codes"][0]
+        if plant_id in WHY_BY_PLANT_ID:
+            why = WHY_BY_PLANT_ID[plant_id]
+        else:
+            why = generate_contextual_why(plant, urg, action_type)
+
         tasks.append({
-            "id": f"plant-{plant['id_codes'][0]}",
+            "id": f"plant-{plant_id}",
             "kind": "plant_action",
             "plant_codes": plant["id_codes"],
             "plant_common": plant["common"],
@@ -304,13 +449,14 @@ def generate_tasks_from_plants(plants):
             "plant_photo": plant.get("main_photo", ""),
             "title": urg["action"],
             "description": f"{plant['common']} ({', '.join(plant['id_codes'])}) — {urg['action']}.",
-            "why": WHY_BY_PLANT_ID.get(plant['id_codes'][0], "Esta tarea aparece en el catálogo como pendiente. Marcala como hecha cuando la completes."),
-            "how_to": HOW_TO_DO_BY_PLANT_ID.get(plant['id_codes'][0], ""),
+            "why": why,
+            "how_to": HOW_TO_DO_BY_PLANT_ID.get(plant_id, ""),
             "priority": urg["priority"],
             "due_label": urg["when"],
             "due_month": urg.get("due_month"),
             "due_year": urg.get("due_year"),
             "suggested_contact": suggested_contact,
+            "action_type": action_type,
         })
 
     # Ordenar por prioridad y luego por fecha
@@ -926,6 +1072,7 @@ def main():
     img_js = "const IMG = " + json.dumps(img_data) + ";"
     tasks_js = "const TASKS = " + json.dumps(tasks, ensure_ascii=False) + ";"
     contacts_js = "const DEFAULT_CONTACTS = " + json.dumps(DEFAULT_CONTACTS, ensure_ascii=False) + ";"
+    templates_js = "const WHATSAPP_TEMPLATES = " + json.dumps(WHATSAPP_TEMPLATES_BY_ACTION, ensure_ascii=False) + ";"
     ticker_js = "const STATS_TICKER = " + json.dumps(stats_ticker, ensure_ascii=False) + ";"
     site_url_js = "const SITE_URL = " + json.dumps(SITE_URL if SITE_URL and "YOUR-USERNAME" not in SITE_URL else "") + ";"
 
@@ -988,6 +1135,7 @@ def main():
 {img_js}
 {tasks_js}
 {contacts_js}
+{templates_js}
 {ticker_js}
 {site_url_js}
 {JS}
