@@ -168,12 +168,13 @@ h2.subbrand {
   box-sizing: border-box;
 }
 
-/* WEATHER — bloque informativo plano (no botón) */
+/* WEATHER — bloque informativo centrado, no a full width */
 .weather-line {
   display: flex;
-  width: 100%; max-width: 100%;
-  margin: 0 0 var(--strip-gap);
-  padding: 6px 8px;
+  width: auto;
+  max-width: 380px;
+  margin: 0 auto var(--strip-gap);
+  padding: 6px 12px;
   background: transparent;
   border: none;
   border-radius: 0;
@@ -184,14 +185,14 @@ h2.subbrand {
   color: var(--text-3);
   font-weight: 500;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  justify-content: center;
+  gap: 14px;
   white-space: nowrap;
   overflow: visible;
   box-sizing: border-box;
 }
 .weather-cell {
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   display: inline-flex; align-items: center;
   gap: 4px;
   padding: 0;
@@ -204,43 +205,39 @@ h2.subbrand {
 .weather-cell .weather-val { font-feature-settings: 'tnum'; }
 .weather-cell strong { color: var(--text); font-weight: 600; }
 
-/* STATS — bloque informativo plano (no botón) */
-.stats-strip {
+/* STATS TICKER — boletín auto-rotativo de categorías (no accionable) */
+.stats-ticker {
   display: flex;
-  width: 100%; max-width: 100%;
-  margin: 0 0 var(--strip-gap);
-  padding: 4px 8px;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  max-width: 380px;
+  min-height: 22px;
+  margin: 0 auto var(--strip-gap);
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  color: var(--text-3);
   background: transparent;
   border: none;
-  border-radius: 0;
-  box-shadow: none;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-  font-size: 0.72rem;
-  color: var(--text-3);
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
   white-space: nowrap;
+  overflow: hidden;
   box-sizing: border-box;
+  transition: opacity 320ms ease;
 }
-.stat-chip {
-  flex: 0 1 auto;
+.stats-ticker.ticker-fading { opacity: 0; }
+.ticker-item {
   display: inline-flex; align-items: center;
-  gap: 4px;
-  padding: 0;
-  background: transparent; border: none; border-radius: 0;
-  color: var(--text-3);
+  gap: 6px;
   line-height: 1.2;
-  white-space: nowrap;
 }
-.stat-chip + .stat-chip { border-left: none; }
-.stat-chip strong {
+.ticker-item strong {
   color: var(--text);
   font-weight: 700;
   font-feature-settings: 'tnum';
+  font-size: 0.82rem;
 }
-.stat-chip .chip-icon { font-size: 0.9rem; line-height: 1; flex-shrink: 0; }
+.ticker-emoji { font-size: 0.95rem; line-height: 1; flex-shrink: 0; }
+.ticker-label { color: var(--text-3); }
 
 /* MAIN TABS — pestañas segmentadas full-width, edge-to-edge */
 .main-tabs {

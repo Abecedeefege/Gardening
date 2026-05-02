@@ -859,6 +859,42 @@ def main():
     total_frutal = sum(1 for p in PLANTS if "frutal" in p["tags"])
     total_urgent = sum(1 for p in PLANTS if p.get("urgency"))
 
+    # Stats ticker — items rotativos para el bloque informativo
+    def count_tag(tag):
+        return sum(1 for p in PLANTS if tag in p.get("tags", []))
+
+    def count_type_starts(prefix):
+        # "perenne (a confirmar)" cuenta como perenne; "semi-perenne" se evalúa antes que "perenne"
+        if prefix == "perenne":
+            return sum(1 for p in PLANTS if p.get("type", "").startswith("perenne"))
+        if prefix == "semi-perenne":
+            return sum(1 for p in PLANTS if p.get("type", "").startswith("semi-perenne"))
+        if prefix == "caduco":
+            return sum(1 for p in PLANTS if p.get("type", "").startswith("caduco"))
+        return 0
+
+    ticker_raw = [
+        ("🌱", total_plants,                       "especies"),
+        ("🇺🇾", count_tag("nativa"),              "nativas"),
+        ("🌍", count_tag("exotica"),               "exóticas"),
+        ("🍑", count_tag("frutal"),                "frutales"),
+        ("🌿", count_tag("aromatica"),             "aromáticas"),
+        ("✨", count_tag("ornamental"),            "ornamentales"),
+        ("🌿", count_tag("trepadora"),             "trepadoras"),
+        ("🐝", count_tag("polinizadores"),         "polinizadoras"),
+        ("🐝", count_tag("abejas"),                "para abejas"),
+        ("🦋", count_tag("mariposas"),             "para mariposas"),
+        ("👃", count_tag("perfume"),               "con perfume"),
+        ("🌲", count_type_starts("perenne"),       "perennes"),
+        ("🍃", count_type_starts("semi-perenne"),  "semi-perennes"),
+        ("🍂", count_type_starts("caduco"),        "caducas"),
+    ]
+    # Filtrar items con count=0 — no tiene sentido rotar a "0 mariposas"
+    stats_ticker = [
+        {"emoji": e, "count": c, "label": l}
+        for (e, c, l) in ticker_raw if c > 0
+    ]
+
     # 4. Build zonas
     frente_plants = [p for p in PLANTS if p["zone"] == "frente"]
     fondo_plants = [p for p in PLANTS if p["zone"] == "fondo"]
@@ -890,6 +926,7 @@ def main():
     img_js = "const IMG = " + json.dumps(img_data) + ";"
     tasks_js = "const TASKS = " + json.dumps(tasks, ensure_ascii=False) + ";"
     contacts_js = "const DEFAULT_CONTACTS = " + json.dumps(DEFAULT_CONTACTS, ensure_ascii=False) + ";"
+    ticker_js = "const STATS_TICKER = " + json.dumps(stats_ticker, ensure_ascii=False) + ";"
     site_url_js = "const SITE_URL = " + json.dumps(SITE_URL if SITE_URL and "YOUR-USERNAME" not in SITE_URL else "") + ";"
 
     # 6. HTML final
@@ -915,10 +952,10 @@ def main():
     <span class="weather-cell"><span class="weather-emoji">📍</span><span class="weather-val">Montevideo</span></span>
   </div>
 
-  <div class="stats-strip">
-    <span class="stat-chip"><span class="chip-icon">🌱</span><strong>{total_plants}</strong> especies</span>
-    <span class="stat-chip"><span class="chip-icon">🇺🇾</span><strong>{total_native}</strong> nativas</span>
-    <span class="stat-chip"><span class="chip-icon">🍑</span><strong>{total_frutal}</strong> frutales</span>
+  <div class="stats-ticker" id="stats-ticker" aria-live="polite" aria-atomic="true">
+    <span class="ticker-item">
+      <span class="ticker-emoji">🌱</span><strong>{total_plants}</strong> <span class="ticker-label">especies</span>
+    </span>
   </div>
 
   <nav class="main-tabs">
@@ -951,6 +988,7 @@ def main():
 {img_js}
 {tasks_js}
 {contacts_js}
+{ticker_js}
 {site_url_js}
 {JS}
 </script>

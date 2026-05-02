@@ -767,10 +767,38 @@ document.querySelectorAll('.timeline-filters .ftag').forEach(btn => {
 });
 
 // ============================================================
+// STATS TICKER — rota lento entre los conteos por categoría
+// ============================================================
+function startStatsTicker() {
+  const el = document.getElementById('stats-ticker');
+  if (!el || typeof STATS_TICKER === 'undefined' || STATS_TICKER.length < 2) return;
+  let idx = 0;
+  const renderTickerItem = (item) => {
+    el.innerHTML =
+      '<span class="ticker-item">' +
+        '<span class="ticker-emoji">' + item.emoji + '</span>' +
+        '<strong>' + item.count + '</strong> ' +
+        '<span class="ticker-label">' + item.label + '</span>' +
+      '</span>';
+  };
+  // Render inicial con el primer item del array (sobrescribe el placeholder del HTML)
+  renderTickerItem(STATS_TICKER[0]);
+  setInterval(() => {
+    idx = (idx + 1) % STATS_TICKER.length;
+    el.classList.add('ticker-fading');
+    setTimeout(() => {
+      renderTickerItem(STATS_TICKER[idx]);
+      el.classList.remove('ticker-fading');
+    }, 320);  // matchea --ticker-fade del CSS
+  }, 3500);
+}
+
+// ============================================================
 // INIT
 // ============================================================
 renderTimeline();
 updateTodoCount();
+startStatsTicker();
 
 // Si la URL trae #task=ID (viene de un share), abrir Timeline + expandir + scroll
 function openTaskFromHash() {
