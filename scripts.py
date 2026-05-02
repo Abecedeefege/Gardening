@@ -763,9 +763,14 @@ async function loadWeather() {
     const temp = Math.round(c.temperature_2m);
     const wind = Math.round(c.wind_speed_10m);
     const hum = Math.round(c.relative_humidity_2m);
-    el.innerHTML = `<span class="weather-emoji">${w.emoji}</span><span class="weather-text"><strong>${temp}°</strong> ${w.label} <span class="weather-sep">·</span> 💨 ${wind} km/h <span class="weather-sep">·</span> 💧 ${hum}% <span class="weather-sep">·</span> Montevideo</span>`;
+    el.innerHTML = `
+      <span class="weather-cell" title="${w.label}"><span class="weather-emoji">${w.emoji}</span><span class="weather-val"><strong>${temp}°</strong></span></span>
+      <span class="weather-cell" title="Viento"><span class="weather-emoji">💨</span><span class="weather-val">${wind} km/h</span></span>
+      <span class="weather-cell" title="Humedad"><span class="weather-emoji">💧</span><span class="weather-val">${hum}%</span></span>
+      <span class="weather-cell" title="Ubicación"><span class="weather-emoji">📍</span><span class="weather-val">Montevideo</span></span>`;
   } catch (err) {
-    el.innerHTML = '<span class="weather-emoji">🌱</span><span class="weather-text">Montevideo, Uruguay</span>';
+    el.innerHTML = `
+      <span class="weather-cell"><span class="weather-emoji">🌱</span><span class="weather-val">Montevideo</span></span>`;
   }
 }
 loadWeather();

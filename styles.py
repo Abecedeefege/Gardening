@@ -106,13 +106,13 @@ button, input, textarea, select {
 /* HEADER — compacto, ≤30% viewport en móvil */
 header.main-header {
   text-align: center;
-  padding: 4px 0 8px;
+  padding: 4px 0 var(--strip-gap);
   border-bottom: none;
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
 }
 h1.brand {
   font-size: clamp(1.85rem, 7vw, 3.5rem);
@@ -136,105 +136,100 @@ h2.subbrand {
   font-style: normal;
   line-height: 1.1;
 }
-.weather-line {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
-  color: var(--text-3);
-  margin: 0;
-  padding: 5px 12px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border);
-  border-radius: var(--r-full);
-  font-weight: 500;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
-  white-space: nowrap;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.weather-line .weather-emoji { font-size: 1.05rem; line-height: 1; }
-.weather-line strong { color: var(--text); font-weight: 600; }
-.weather-line .weather-sep { color: var(--text-muted); margin: 0 2px; }
+/* ======================================================
+   STRIPS UNIFICADAS — weather, stats, main-tabs, subtabs
+   Todas son barras segmentadas full-width con items
+   distribuidos por igual (flex: 1 1 0). Separación
+   constante entre módulos (--strip-gap).
+   ====================================================== */
+:root { --strip-gap: 6px; }
 
-/* STATS STRIP — siempre una fila, scroll horizontal si no entran */
-.stats-strip {
+.weather-line,
+.stats-strip,
+.main-tabs,
+.subtab-nav {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 6px;
-  margin: 8px 0 12px;
-  padding: 2px 0;
-  justify-content: flex-start;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x proximity;
+  width: 100%;
   max-width: 100%;
-}
-.stats-strip::-webkit-scrollbar { display: none; }
-@media (min-width: 700px) {
-  .stats-strip { margin: 12px 0 20px; padding: 0; }
-}
-.stat-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 4px 10px;
-  background: var(--bg-card);
+  margin: 0 0 var(--strip-gap);
+  padding: 3px;
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.78);
   border: 1px solid var(--border);
   border-radius: var(--r-full);
-  font-size: 0.75rem;
+  box-shadow: 0 1px 2px rgba(9, 9, 11, 0.03);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  flex-wrap: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* WEATHER */
+.weather-line {
+  font-size: 0.72rem;
   color: var(--text-3);
-  line-height: 1.4;
+  font-weight: 500;
+}
+.weather-cell {
+  flex: 1 1 0; min-width: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 4px;
+  padding: 5px 4px;
   white-space: nowrap;
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-}
-.stat-chip strong {
-  color: var(--text);
-  font-weight: 600;
-  font-feature-settings: 'tnum';
-}
-.stat-chip .chip-icon {
-  font-size: 0.85rem;
+  overflow: hidden; text-overflow: ellipsis;
   line-height: 1;
 }
-/* MAIN TABS — pill segmented control centrado */
-.main-tabs {
-  display: flex;
+.weather-cell + .weather-cell { border-left: 1px solid var(--border-soft); }
+.weather-cell .weather-emoji { font-size: 0.95rem; line-height: 1; flex-shrink: 0; }
+.weather-cell .weather-val {
+  overflow: hidden; text-overflow: ellipsis;
+  font-feature-settings: 'tnum';
+}
+.weather-cell strong { color: var(--text); font-weight: 600; }
+
+/* STATS — antes "stats-strip" con scroll, ahora 4 segmentos iguales */
+.stats-strip { font-size: 0.72rem; }
+.stat-chip {
+  flex: 1 1 0; min-width: 0;
+  display: inline-flex; align-items: center; justify-content: center;
   gap: 4px;
-  margin: 0 auto 16px;
-  padding: 4px;
+  padding: 5px 4px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: var(--text-3);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.stat-chip + .stat-chip { border-left: 1px solid var(--border-soft); }
+.stat-chip strong {
+  color: var(--text);
+  font-weight: 700;
+  font-feature-settings: 'tnum';
+}
+.stat-chip .chip-icon { font-size: 0.9rem; line-height: 1; flex-shrink: 0; }
+
+/* MAIN TABS — pill segmented control full-width sticky */
+.main-tabs {
   position: sticky;
   top: 8px;
   z-index: 50;
-  width: fit-content;
-  max-width: 100%;
   background: rgba(255, 255, 255, 0.92);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--r-full);
+  border-color: var(--border-strong);
   box-shadow:
     0 1px 2px rgba(9, 9, 11, 0.04),
     0 8px 24px rgba(9, 9, 11, 0.06);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
 }
-@media (min-width: 700px) {
-  .main-tabs { margin: 0 auto 24px; }
-}
-.main-tabs::-webkit-scrollbar { display: none; }
 .tab-btn {
-  flex: 0 0 auto;
+  flex: 1 1 0; min-width: 0;
   background: transparent;
   border: none;
-  padding: 8px 16px;
-  font-size: 0.88rem;
+  padding: 8px 6px;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   border-radius: var(--r-full);
@@ -261,48 +256,34 @@ h2.subbrand {
     0 1px 2px rgba(0, 0, 0, 0.06),
     0 2px 6px rgba(0, 0, 0, 0.08);
 }
-.tab-emoji { font-size: 1rem; line-height: 1; }
-.tab-label { line-height: 1; }
+.tab-emoji { font-size: 1rem; line-height: 1; flex-shrink: 0; }
+.tab-label { line-height: 1; overflow: hidden; text-overflow: ellipsis; }
 
-/* container que envuelve las zonas — agrega padding top luego del nav sticky */
+/* container que envuelve las zonas — sticky main-tabs + subtab-nav siguen pegados */
 .container-zones {
-  padding-top: 8px;
+  padding-top: 0;
 }
 @media (min-width: 700px) {
-  .container-zones { padding-top: 20px; }
+  .container-zones { padding-top: 8px; }
 }
 
-/* SUBTABS */
+/* SUBTAB NAV — segmented full-width, comparte estilos arriba */
 .subtab-nav {
-  display: flex;
-  gap: 3px;
-  margin: 0 auto 16px;
-  padding: 3px;
   background: rgba(255, 255, 255, 0.7);
-  border-radius: var(--r-full);
-  border: 1px solid var(--border);
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
-  width: fit-content;
-  max-width: 100%;
-  box-shadow: 0 1px 2px rgba(9, 9, 11, 0.04);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  justify-content: center;
 }
-.subtab-nav::-webkit-scrollbar { display: none; }
 .subtab-btn {
   background: transparent; border: none;
-  padding: 7px 14px;
-  font-size: 0.83rem; font-weight: 500;
+  padding: 7px 4px;
+  font-size: 0.78rem; font-weight: 500;
   cursor: pointer; border-radius: var(--r-full);
   color: var(--text-3);
   transition:
     color 200ms cubic-bezier(0.4, 0, 0.2, 1),
     background 200ms cubic-bezier(0.4, 0, 0.2, 1);
-  flex: 0 1 auto; min-width: auto;
+  flex: 1 1 0; min-width: 0;
   white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+  display: inline-flex; align-items: center; justify-content: center; gap: 4px;
 }
 .subtab-btn:hover { background: rgba(0, 0, 0, 0.04); color: var(--text); }
 .subtab-btn.active {

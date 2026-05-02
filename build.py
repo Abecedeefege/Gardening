@@ -532,10 +532,10 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
     return f"""
 <section class="zone-content" data-zone="{zone_name}">
   <nav class="subtab-nav">
-    <button class="subtab-btn active" data-sub="info">🪴 Nombres e info</button>
-    <button class="subtab-btn" data-sub="care">✂️ Podas y cuidado</button>
-    <button class="subtab-btn" data-sub="new">💡 Ideas nuevas</button>
-    <button class="subtab-btn" data-sub="huerta">🥬 Ideas de huerta</button>
+    <button class="subtab-btn active" data-sub="info">🪴 Info</button>
+    <button class="subtab-btn" data-sub="care">✂️ Cuidado</button>
+    <button class="subtab-btn" data-sub="new">💡 Ideas</button>
+    <button class="subtab-btn" data-sub="huerta">🥬 Huerta</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
 
@@ -887,11 +887,14 @@ def main():
   <header class="main-header">
     <h1 class="brand"><span class="brand-emoji">🌿</span> Jardineando</h1>
     <h2 class="subbrand">Pacha Mama</h2>
-    <div class="weather-line" id="weather-line">
-      <span class="weather-emoji">🌱</span>
-      <span class="weather-text">Consultando clima en Montevideo…</span>
-    </div>
   </header>
+
+  <div class="weather-line" id="weather-line">
+    <span class="weather-cell"><span class="weather-emoji">🌱</span><span class="weather-val">…</span></span>
+    <span class="weather-cell"><span class="weather-emoji">💨</span><span class="weather-val">…</span></span>
+    <span class="weather-cell"><span class="weather-emoji">💧</span><span class="weather-val">…</span></span>
+    <span class="weather-cell"><span class="weather-emoji">📍</span><span class="weather-val">Montevideo</span></span>
+  </div>
 
   <div class="stats-strip">
     <span class="stat-chip"><span class="chip-icon">🌱</span><strong>{total_plants}</strong> especies</span>
