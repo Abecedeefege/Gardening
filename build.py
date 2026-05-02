@@ -12,6 +12,7 @@ Salida:
 import base64
 import json
 import html as html_mod
+from datetime import date
 from io import BytesIO
 from pathlib import Path
 from PIL import Image
@@ -106,6 +107,33 @@ PRIORITY_STYLE = {
     "media": ("🟡", "#ca8a04", "Media"),
     "baja": ("🟢", "#16a34a", "Baja"),
 }
+
+
+def _select_primary_urgency(urgency_field):
+    """Soporta urgency como dict (1 sola) o list (múltiples). Devuelve la más
+    urgente para mostrar en banners de cards: atrasada > alta > fecha temprana.
+    Devuelve None si no hay nada."""
+    if not urgency_field:
+        return None
+    if isinstance(urgency_field, dict):
+        return urgency_field
+    today = date.today()
+    prio = {"alta": 0, "media": 1, "baja": 2}
+
+    def sort_key(u):
+        is_overdue = bool(
+            u.get("due_year") and u.get("due_month") and
+            (u["due_year"] < today.year or
+             (u["due_year"] == today.year and u["due_month"] < today.month))
+        )
+        return (
+            0 if is_overdue else 1,
+            prio.get(u.get("priority"), 3),
+            u.get("due_year") or 9999,
+            u.get("due_month") or 13,
+        )
+
+    return sorted(urgency_field, key=sort_key)[0]
 
 
 def render_tags(tags):
@@ -414,50 +442,64 @@ def generate_contextual_why(plant: dict, urgency: dict, action_type: str) -> str
 def generate_tasks_from_plants(plants):
     """
     Genera la lista canónica de tareas desde el catálogo de plantas.
-    Cada planta con `urgency` produce 1 tarea.
-    Si en el futuro queremos auto-derivar tareas estacionales (por ej. 'hay que regar'),
-    se hace acá.
+    Cada planta puede tener `urgency` como dict (1 sola tarea) o como
+    lista de dicts (múltiples tareas — ej. una urgencia atrasada del otoño
+    + una próxima de invierno). Cada urgency produce 1 tarea independiente
+    con su propia prioridad y fecha.
     """
     tasks = []
     for plant in plants:
-        if not plant.get("urgency"):
+        urgencies = plant.get("urgency")
+        if urgencies is None:
             continue
-        urg = plant["urgency"]
-        action_type = classify_action(urg["action"])
-        # Sugerir contacto basado en el action_type clasificado
-        if action_type in ("poda", "trasplante"):
-            suggested_contact = "jardinero"
-        elif action_type in ("identificar", "foto"):
-            suggested_contact = None  # tarea propia
-        elif action_type in ("fertilizacion", "control_plagas"):
-            suggested_contact = "jardinero"
-        else:
-            suggested_contact = "jornalero"
+        # Backward compat: dict suelto → lista de un elemento
+        if isinstance(urgencies, dict):
+            urgencies = [urgencies]
 
         plant_id = plant["id_codes"][0]
-        if plant_id in WHY_BY_PLANT_ID:
-            why = WHY_BY_PLANT_ID[plant_id]
-        else:
-            why = generate_contextual_why(plant, urg, action_type)
+        for idx, urg in enumerate(urgencies):
+            action_type = classify_action(urg["action"])
+            # Sugerir contacto basado en el action_type clasificado
+            if action_type in ("poda", "trasplante"):
+                suggested_contact = "jardinero"
+            elif action_type in ("identificar", "foto"):
+                suggested_contact = None  # tarea propia
+            elif action_type in ("fertilizacion", "control_plagas"):
+                suggested_contact = "jardinero"
+            else:
+                suggested_contact = "jornalero"
 
-        tasks.append({
-            "id": f"plant-{plant_id}",
-            "kind": "plant_action",
-            "plant_codes": plant["id_codes"],
-            "plant_common": plant["common"],
-            "plant_zone": plant["zone"],
-            "plant_photo": plant.get("main_photo", ""),
-            "title": urg["action"],
-            "description": f"{plant['common']} ({', '.join(plant['id_codes'])}) — {urg['action']}.",
-            "why": why,
-            "how_to": HOW_TO_DO_BY_PLANT_ID.get(plant_id, ""),
-            "priority": urg["priority"],
-            "due_label": urg["when"],
-            "due_month": urg.get("due_month"),
-            "due_year": urg.get("due_year"),
-            "suggested_contact": suggested_contact,
-            "action_type": action_type,
-        })
+            # Solo la urgencia "principal" (idx=0) usa los WHY/HOW_TO curados
+            # de los dicts hardcodeados — esos están escritos para esa acción
+            # específica. Las urgencias adicionales generan why contextual.
+            if idx == 0 and plant_id in WHY_BY_PLANT_ID:
+                why = WHY_BY_PLANT_ID[plant_id]
+            else:
+                why = generate_contextual_why(plant, urg, action_type)
+            how_to = HOW_TO_DO_BY_PLANT_ID.get(plant_id, "") if idx == 0 else ""
+
+            # ID estable: la urgencia principal mantiene "plant-XXX" (sin sufijo);
+            # las adicionales reciben "plant-XXX-2", "plant-XXX-3", etc.
+            task_id = f"plant-{plant_id}" if idx == 0 else f"plant-{plant_id}-{idx + 1}"
+
+            tasks.append({
+                "id": task_id,
+                "kind": "plant_action",
+                "plant_codes": plant["id_codes"],
+                "plant_common": plant["common"],
+                "plant_zone": plant["zone"],
+                "plant_photo": plant.get("main_photo", ""),
+                "title": urg["action"],
+                "description": f"{plant['common']} ({', '.join(plant['id_codes'])}) — {urg['action']}.",
+                "why": why,
+                "how_to": how_to,
+                "priority": urg["priority"],
+                "due_label": urg["when"],
+                "due_month": urg.get("due_month"),
+                "due_year": urg.get("due_year"),
+                "suggested_contact": suggested_contact,
+                "action_type": action_type,
+            })
 
     # Ordenar por prioridad y luego por fecha
     prio_order = {"alta": 0, "media": 1, "baja": 2}
@@ -511,8 +553,8 @@ def render_plant_care_card(p):
         for m in range(1, 13)
     )
     urgency_html = ""
-    if p.get("urgency"):
-        u = p["urgency"]
+    u = _select_primary_urgency(p.get("urgency"))
+    if u:
         emo, color, label = PRIORITY_STYLE.get(u["priority"], ("", "#6b6457", u["priority"]))
         urgency_html = f"""
 <div class="urgency-banner" style="border-left-color: {color}">

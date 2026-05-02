@@ -87,7 +87,10 @@ PLANTS = [
         "flowering": [8, 9],
         "fruiting": [12, 1],
         "pruning": [6, 7],
-        "urgency": {"priority": "alta", "action": "Poda invernal", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+        "urgency": [
+            {"priority": "alta", "action": "Poda invernal", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+            {"priority": "alta", "action": "Foto del color púrpura otoñal antes de la caída total de hoja", "when": "Abril 2026 (atrasado — última ventana en mayo)", "due_month": 4, "due_year": 2026},
+        ],
     },
     {
         "id_codes": ["F-5"], "zone": "frente",
@@ -572,7 +575,10 @@ PLANTS = [
         "flowering": [9, 10, 11],
         "fruiting": [4, 5, 6, 7],
         "pruning": [9, 10],
-        "urgency": {"priority": "media", "action": "Poda ligera de formación + chequear cochinilla en hojas (frutal — atención)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+        "urgency": [
+            {"priority": "media", "action": "Poda ligera de formación + chequear cochinilla en hojas (frutal — atención)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+            {"priority": "media", "action": "Mulching pre-invierno alrededor de la base — proteger raíces y enriquecer suelo", "when": "Abril 2026 (atrasado pero todavía hacible en mayo)", "due_month": 4, "due_year": 2026},
+        ],
     },
     {
         "id_codes": ["B-23"], "zone": "fondo",
@@ -593,7 +599,10 @@ PLANTS = [
         "flowering": [9, 10, 11, 3, 4],
         "fruiting": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
         "pruning": [8, 9, 2],
-        "urgency": {"priority": "media", "action": "Poda de formación + control de cochinilla y pulgones (cítricos atraen plagas)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+        "urgency": [
+            {"priority": "media", "action": "Poda de formación + control de cochinilla y pulgones (cítricos atraen plagas)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+            {"priority": "media", "action": "Chequeo y tratamiento de cochinilla otoñal (cítricos las atraen fuerte en otoño)", "when": "Marzo 2026 (atrasado)", "due_month": 3, "due_year": 2026},
+        ],
     },
     {
         "id_codes": ["B-24"], "zone": "fondo",
@@ -614,7 +623,10 @@ PLANTS = [
         "flowering": [9, 10, 11],
         "fruiting": [4, 5, 6, 7, 8],
         "pruning": [8, 9, 2],
-        "urgency": {"priority": "media", "action": "Poda de formación + control de plagas (cochinilla, minador de los cítricos)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+        "urgency": [
+            {"priority": "media", "action": "Poda de formación + control de plagas (cochinilla, minador de los cítricos)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+            {"priority": "media", "action": "Chequeo y tratamiento de cochinilla otoñal (cítricos las atraen fuerte en otoño)", "when": "Marzo 2026 (atrasado)", "due_month": 3, "due_year": 2026},
+        ],
     },
     {
         "id_codes": ["B-25"], "zone": "fondo",
@@ -635,7 +647,10 @@ PLANTS = [
         "flowering": [10, 11, 12, 1, 2],
         "fruiting": [],
         "pruning": [3, 4],
-        "urgency": {"priority": "media", "action": "Fertilización ácida (sulfato de hierro / quelatos) + control de cochinilla — gardenia es exigente", "when": "Agosto 2026", "due_month": 8, "due_year": 2026},
+        "urgency": [
+            {"priority": "media", "action": "Fertilización ácida (sulfato de hierro / quelatos) + control de cochinilla — gardenia es exigente", "when": "Agosto 2026", "due_month": 8, "due_year": 2026},
+            {"priority": "alta", "action": "Chequeo de cochinilla otoñal — gardenia es muy propensa, tratar temprano evita pérdida de hojas", "when": "Marzo 2026 (atrasado)", "due_month": 3, "due_year": 2026},
+        ],
     },
     {
         "id_codes": ["B-26"], "zone": "fondo",
@@ -719,7 +734,10 @@ PLANTS = [
         "flowering": [8, 9],
         "fruiting": [12, 1, 2],
         "pruning": [6, 7],
-        "urgency": {"priority": "alta", "action": "Poda invernal urgente — sin podar fructifica mal", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+        "urgency": [
+            {"priority": "alta", "action": "Poda invernal urgente — sin podar fructifica mal", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+            {"priority": "alta", "action": "Aplicación de azufre/cobre preventivo + limpieza de hojas caídas (control de cribado y leaf curl antes de la dormancia plena)", "when": "Abril 2026 (atrasado)", "due_month": 4, "due_year": 2026},
+        ],
     },
     {
         "id_codes": ["B-32"], "zone": "fondo",
@@ -782,7 +800,10 @@ PLANTS = [
         "flowering": [9, 10],
         "fruiting": [5, 6, 7, 8, 9, 10],
         "pruning": [9],
-        "urgency": {"priority": "media", "action": "Poda ligera + chequear cochinilla y trips (palto exige control)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+        "urgency": [
+            {"priority": "media", "action": "Poda ligera + chequear cochinilla y trips (palto exige control)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+            {"priority": "media", "action": "Mulching pre-invierno alrededor de la base — proteger raíces y enriquecer suelo", "when": "Abril 2026 (atrasado pero todavía hacible en mayo)", "due_month": 4, "due_year": 2026},
+        ],
     },
     {
         "id_codes": ["B-37"], "zone": "fondo",
@@ -803,7 +824,10 @@ PLANTS = [
         "flowering": [10, 11],
         "fruiting": [3, 4, 5],
         "pruning": [6, 7],
-        "urgency": {"priority": "alta", "action": "Poda de formación invernal (caduco — aprovechar dormancia para sacar ramas cruzadas)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+        "urgency": [
+            {"priority": "alta", "action": "Poda de formación invernal (caduco — aprovechar dormancia para sacar ramas cruzadas)", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+            {"priority": "alta", "action": "Foto del color rojo-naranja otoñal espectacular — registro pre-poda invernal", "when": "Abril 2026 (atrasado — última ventana antes que tire la hoja)", "due_month": 4, "due_year": 2026},
+        ],
     },
     {
         "id_codes": ["B-38"], "zone": "fondo",
@@ -887,7 +911,10 @@ PLANTS = [
         "flowering": [10, 11],
         "fruiting": [5, 6, 7],
         "pruning": [6, 7],
-        "urgency": {"priority": "alta", "action": "Poda invernal de formación", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+        "urgency": [
+            {"priority": "alta", "action": "Poda invernal de formación", "when": "Junio-julio 2026", "due_month": 6, "due_year": 2026},
+            {"priority": "alta", "action": "Cosecha de caquis maduros + foto del color rojo otoñal antes de la caída de hoja", "when": "Abril 2026 (atrasado — la fruta y el follaje no esperan)", "due_month": 4, "due_year": 2026},
+        ],
     },
     {
         "id_codes": ["B-42"], "zone": "fondo",
