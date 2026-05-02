@@ -842,10 +842,37 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
 </div>"""
     cal_grid = render_calendar_grid(plants_in_view)
 
+    # Mapa subtab — vista aérea de la zona
+    aerials_by_zone = {
+        "frente": [("Aerea_Frente.png", "Vista aérea del frente — desde el techo mirando hacia la calle")],
+        "fondo":  [("Aerea_Fondo.png",  "Vista aérea del fondo — desde el techo mirando hacia la pileta y el padel")],
+        "todo":   [
+            ("Aerea_Frente.png", "Frente — desde el techo mirando hacia la calle"),
+            ("Aerea_Fondo.png",  "Fondo — desde el techo mirando hacia la pileta y el padel"),
+        ],
+        "interior": [],
+    }
+    aerial_imgs = aerials_by_zone.get(zone_name, [])
+    if aerial_imgs:
+        map_blocks = "\n".join(
+            f'<figure class="map-figure">'
+            f'<img class="map-photo" data-img="{esc(fname)}" data-action="lightbox" alt="{esc(caption)}">'
+            f'<figcaption>{esc(caption)}</figcaption>'
+            f'</figure>'
+            for fname, caption in aerial_imgs
+        )
+    else:
+        map_blocks = (
+            '<div class="map-empty">'
+            '<p>📐 Esta zona no tiene vista aérea (las plantas viven adentro).</p>'
+            '</div>'
+        )
+
     return f"""
 <section class="zone-content" data-zone="{zone_name}">
   <nav class="subtab-nav">
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
+    <button class="subtab-btn" data-sub="map">📐 Mapa</button>
     <button class="subtab-btn" data-sub="care">✂️ Cuidado</button>
     <button class="subtab-btn" data-sub="new">💡 Ideas</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
@@ -871,6 +898,14 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
       <button class="ftag" data-filter="pendiente">⏳ Pendientes</button>
     </div>
     <div class="cards-grid">{info_cards}</div>
+  </div>
+
+  <div class="subtab-pane" data-sub="map">
+    <div class="ideas-intro">
+      <h3>📐 Vista aérea</h3>
+      <p>Tomada desde el techo. Click en cada foto para verla en grande.</p>
+    </div>
+    <div class="map-container">{map_blocks}</div>
   </div>
 
   <div class="subtab-pane" data-sub="care">

@@ -721,6 +721,42 @@ h2.subbrand {
 }
 .ideas-intro p { margin: 0; color: var(--text-3); font-size: 0.88rem; line-height: 1.55; }
 
+/* MAPA — vista aérea por zona */
+.map-container {
+  display: flex; flex-direction: column;
+  gap: 18px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.map-figure {
+  margin: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(9, 9, 11, 0.05);
+}
+.map-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: zoom-in;
+  background: var(--bg-soft);
+}
+.map-figure figcaption {
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: var(--text-3);
+  border-top: 1px solid var(--border-soft);
+  line-height: 1.4;
+}
+.map-empty {
+  text-align: center;
+  padding: 60px 24px;
+  color: var(--text-3);
+  font-size: 0.95rem;
+}
+
 /* HUERTA CARD */
 .huerta-card {
   background: var(--bg-card);
