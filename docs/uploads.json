@@ -9,6 +9,16 @@
       "task_title_snapshot": "Identificar especie con fotos clave",
       "ai_status": "pending",
       "ai_evaluation": null
+    },
+    {
+      "filename": "plant-F-10_20260503-161849.jpg",
+      "uploaded_at": "2026-05-03T16:18:49.130Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-F-10",
+      "task_title_snapshot": "Identificar especie con fotos clave",
+      "ai_status": "pending",
+      "ai_evaluation": null
     }
   ]
 }
