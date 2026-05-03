@@ -104,6 +104,66 @@ Implementado en `setupSwipe(card)` (scripts.py). Soporta touch + mouse:
 - Ignora si el target es un `<button>` (para que los botones funcionen)
 - Distingue swipe horizontal vs scroll vertical en los primeros 12px
 
+### Estructura de uploads (fotos subidas runtime desde el browser)
+
+Las fotos que el usuario sube desde el sitio (botón "📷 Subir foto" en tareas o "📷 Sumar foto" en cards de especie) NO entran al pipeline de `images/` (curated, base64-inline). Tienen su propia rama paralela:
+
+```
+docs/
+├── images/
+│   └── uploads/                   ← Fotos subidas runtime (referenciadas via URL relativa, NO base64)
+│       ├── B-25/
+│       │   ├── plant-B-25-2_20260503-153012.jpg     ← upload de tarea
+│       │   └── species-B-25_20260512-091040.jpg     ← upload de especie
+│       └── ...
+├── uploads.json                   ← Índice de uploads (estado pending/processed/n_a)
+└── sync/
+    ├── task_states.json           ← Backup + sync de localStorage.jardineando_task_states_v1
+    └── contacts.json              ← Backup + sync de localStorage.jardineando_contacts_v1
+```
+
+Convención de filename:
+- Tarea: `<task_id>_<YYYYMMDD-HHMMSS>.jpg` → `plant-B-25-2_20260503-153012.jpg`
+- Especie: `species-<plant_id>_<YYYYMMDD-HHMMSS>.jpg` → `species-B-25_20260512-091040.jpg`
+
+Las fotos llevan un overlay quemado en la esquina inferior izquierda con `task_id` + fecha + título corto (cuando son uploads de tarea). Sirve como referencia visual y como sanity check al procesar con `/actualizar-tareas`.
+
+`docs/uploads.json` shape:
+```json
+{
+  "<plant_id>": [
+    {
+      "filename": "...",
+      "uploaded_at": "ISO",
+      "uploaded_by": "device-name",
+      "context": "task" | "species",
+      "task_id": "plant-XXX" (solo si context=task),
+      "task_title_snapshot": "..." (solo task),
+      "ai_status": "pending" | "processed" | "needs_retake" | "needs_review" | "superseded" | "orphaned" | "n/a",
+      "ai_evaluation": null | { "resolved": bool, "summary": "...", "next_steps": "...", "processed_at": "ISO" }
+    }
+  ]
+}
+```
+
+### Slash commands de Claude Code
+
+Viven en `.claude/commands/<nombre>.md`. Son markdown con frontmatter YAML que describe permisos y body con instrucciones para Claude Code.
+
+Comandos definidos:
+
+- **`/actualizar-tareas`** — procesador manual de fotos uploadeadas. Lee `docs/uploads.json`, filtra entries con `ai_status: "pending"`, evalúa cada foto contra el contexto de su tarea, propone resoluciones (marcar hecha o `description_override`) y commitea cuando el usuario confirma. Usa la visión nativa de Claude Code, sin Anthropic API key separada.
+
+### Sync engine
+
+Estado del usuario (tareas hechas/pospuestas, contactos, evaluaciones de IA) vive en `localStorage`. Para que sincronice entre dispositivos, el browser **lee** `docs/sync/task_states.json` y `docs/sync/contacts.json` al cargar la página y al recuperar foco (`visibilitychange`), y los **escribe** vía GitHub API después de cada cambio (debounce 5 s).
+
+Conflict resolution: last-write-wins por taskId basado en `last_modified_at`. Si el browser hace PUT y recibe 409 (alguien más pushó en el medio), refetch + remerge + reintento (max 3).
+
+Status visible en barra arriba del Timeline: 🟢 sincronizado · 🟡 sincronizando · 🔴 N pendientes · ⚫ deshabilitado.
+
+API keys (GitHub PAT, device name) viven SOLO en localStorage de cada device — NUNCA se sincronizan al repo.
+
 ## Workflow para iterar
 
 1. Editar `.py` (data o build/styles/scripts)
@@ -159,6 +219,7 @@ Estas son ideas que el usuario podría querer pedirte:
 
 - ❌ No introducir frameworks (React, Vue, etc) — la simplicidad es un feature
 - ❌ No usar `<form>` ni `submit` events — el usuario reportó que en Claude Artifacts dan problema
-- ❌ No agregar fetch a APIs externas sin avisar — el sitio debe funcionar offline
-- ❌ No subir teléfonos al repo — los contactos viven solo en localStorage
+- ❌ No agregar fetch a APIs externas sin avisar — el sitio debe funcionar offline.
+  *Excepción documentada:* sync engine y upload de fotos llaman a la GitHub API (PAT del usuario en localStorage) y a `docs/sync/*.json` y `docs/uploads.json` del propio repo. Es opt-in: sin PAT, sync queda deshabilitado y el sitio sigue funcionando 100% offline.
+- ❌ No subir teléfonos al repo — los contactos viven solo en localStorage. Tampoco se sincronizan API keys ni el GitHub PAT — quedan locales por device.
 - ❌ No cambiar estructura de `docs/` — GitHub Pages depende de eso
