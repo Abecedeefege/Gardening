@@ -68,5 +68,30 @@
         "processed_at": "2026-05-03T16:55:00.000Z"
       }
     }
+  ],
+  "B-37": [
+    {
+      "filename": "species-B-37_20260503-170000.jpg",
+      "uploaded_at": "2026-05-03T17:00:00.000Z",
+      "uploaded_by": "claude-code-cli",
+      "context": "species",
+      "ai_status": "n/a",
+      "note": "Vista del fondo: pileta + palmera + liquidámbar a la derecha. Útil como foto de ubicación general."
+    },
+    {
+      "filename": "plant-B-37-2_20260503-170010.jpg",
+      "uploaded_at": "2026-05-03T17:00:10.000Z",
+      "uploaded_by": "claude-code-cli",
+      "context": "task",
+      "task_id": "plant-B-37-2",
+      "task_title_snapshot": "Foto del follaje otoñal",
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Liquidámbar B-37 fotografiado entero el 03/05. Copa redondeada vigorosa, follaje aún MAYORMENTE VERDE con leves amarilleos puntuales — la coloración otoñal pico (rojo-naranja-borgoña) todavía no llegó. En Montevideo el peak suele ser mediados/fines de mayo, así que estamos ~2-3 semanas antes.",
+        "next_steps": "Re-fotografiar en 2-3 semanas (mediados/fines de mayo) cuando el árbol esté en peak rojo-borgoña. La tarea original ya quedó marcada done por el usuario el 02/05.",
+        "processed_at": "2026-05-03T17:05:00.000Z"
+      }
+    }
   ]
 }
