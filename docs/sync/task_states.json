@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-03T16:30:00.000Z",
-  "_last_writer": "claude-code-cli",
+  "_synced_at": "2026-05-03T16:54:20.838Z",
+  "_last_writer": "pix9",
   "tasks": {
     "plant-F-10": {
       "status": "done",
@@ -9,6 +9,52 @@
       "completed_via_ai": true,
       "ai_summary": "Fraxinus sp. (fresno), probablemente F. pennsylvanica — hoja pinnada compuesta opuesta de 7 foliolos lanceolados aserrados, y base de tronco con rebrotes finos por poda fuerte previa. Sin frutos visibles (puede ser pie macho o todavía recuperándose).",
       "last_modified_at": "2026-05-03T16:30:00.000Z"
+    },
+    "plant-B-30-2": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-02T19:17:10.186Z"
+    },
+    "plant-B-37-2": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-02T19:20:14.303Z"
+    },
+    "plant-B-23-2": {
+      "status": "snoozed",
+      "snoozed_until": "2026-05-03T19:23:15.929Z",
+      "completed_at": null
+    },
+    "plant-B-24-2": {
+      "status": "snoozed",
+      "snoozed_until": "2026-05-03T19:23:19.839Z",
+      "completed_at": null
+    },
+    "plant-B-22-2": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-02T19:24:41.331Z"
+    },
+    "plant-B-41-2": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-02T19:30:01.420Z"
+    },
+    "plant-B-44": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-02T19:36:21.558Z"
+    },
+    "plant-F-4-2": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-02T21:20:40.327Z"
+    },
+    "plant-F-1-2": {
+      "status": "snoozed",
+      "snoozed_until": "2026-05-04T16:54:15.366Z",
+      "completed_at": null,
+      "last_modified_at": "2026-05-03T16:54:15.368Z"
     }
   }
 }
