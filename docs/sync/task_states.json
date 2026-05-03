@@ -1,5 +1,14 @@
 {
-  "_synced_at": null,
-  "_last_writer": null,
-  "tasks": {}
+  "_synced_at": "2026-05-03T16:30:00.000Z",
+  "_last_writer": "claude-code-cli",
+  "tasks": {
+    "plant-F-10": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-03T16:30:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Fraxinus sp. (fresno), probablemente F. pennsylvanica — hoja pinnada compuesta opuesta de 7 foliolos lanceolados aserrados, y base de tronco con rebrotes finos por poda fuerte previa. Sin frutos visibles (puede ser pie macho o todavía recuperándose).",
+      "last_modified_at": "2026-05-03T16:30:00.000Z"
+    }
+  }
 }

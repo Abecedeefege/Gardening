@@ -7,7 +7,7 @@
       "context": "task",
       "task_id": "plant-F-10",
       "task_title_snapshot": "Identificar especie con fotos clave",
-      "ai_status": "pending",
+      "ai_status": "superseded",
       "ai_evaluation": null
     },
     {
@@ -17,8 +17,24 @@
       "context": "task",
       "task_id": "plant-F-10",
       "task_title_snapshot": "Identificar especie con fotos clave",
-      "ai_status": "pending",
-      "ai_evaluation": null
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Fraxinus sp. (fresno), probablemente F. pennsylvanica — hoja pinnada compuesta opuesta de 7 foliolos lanceolados aserrados, y base de tronco con rebrotes finos por poda fuerte previa. Sin frutos visibles (puede ser pie macho o todavía recuperándose).",
+        "next_steps": "",
+        "processed_at": "2026-05-03T16:30:00.000Z"
+      }
+    },
+    {
+      "filename": "plant-F-10_20260503-161913.jpg",
+      "uploaded_at": "2026-05-03T16:19:13.000Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-F-10",
+      "task_title_snapshot": "Identificar especie con fotos clave",
+      "ai_status": "superseded",
+      "ai_evaluation": null,
+      "_orphan_recovered": true
     },
     {
       "filename": "plant-F-10_20260503-162013.jpg",
@@ -27,8 +43,13 @@
       "context": "task",
       "task_id": "plant-F-10",
       "task_title_snapshot": "Identificar especie con fotos clave",
-      "ai_status": "pending",
-      "ai_evaluation": null
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Fraxinus sp. (fresno), probablemente F. pennsylvanica — hoja pinnada compuesta opuesta de 7 foliolos lanceolados aserrados, y base de tronco con rebrotes finos por poda fuerte previa. Sin frutos visibles (puede ser pie macho o todavía recuperándose).",
+        "next_steps": "",
+        "processed_at": "2026-05-03T16:30:00.000Z"
+      }
     }
   ]
 }
