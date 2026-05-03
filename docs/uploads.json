@@ -51,5 +51,17 @@
         "processed_at": "2026-05-03T16:30:00.000Z"
       }
     }
+  ],
+  "F-9": [
+    {
+      "filename": "plant-F-9_20260503-165403.jpg",
+      "uploaded_at": "2026-05-03T16:54:03.820Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-F-9",
+      "task_title_snapshot": "Confirmar especie y decidir si saca Fotinia",
+      "ai_status": "pending",
+      "ai_evaluation": null
+    }
   ]
 }
