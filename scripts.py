@@ -220,8 +220,11 @@ function getTaskState(taskId) {
 }
 function setTaskState(taskId, state) {
   const states = loadStates();
-  states[taskId] = state;
+  // Stamp last_modified_at automáticamente para que el sync sepa cuál es la versión más nueva.
+  states[taskId] = { ...state, last_modified_at: new Date().toISOString() };
   saveStates(states);
+  // Notificar al sync engine para que pushee debounced (definido más abajo).
+  if (typeof markStateDirty === 'function') markStateDirty();
 }
 
 function loadContacts() {
@@ -290,9 +293,28 @@ function renderTaskCard(task) {
 
   let statusPill = '';
   if (cls === 'done') {
-    statusPill = `<span class="task-status-pill done">✅ Hecha · ${fmtDate(st.completed_at)}</span>`;
+    const aiBadge = st.completed_via_ai ? ' · 🤖 IA' : '';
+    statusPill = `<span class="task-status-pill done">✅ Hecha · ${fmtDate(st.completed_at)}${aiBadge}</span>`;
   } else if (cls === 'snoozed') {
     statusPill = `<span class="task-status-pill snoozed">😴 Pospuesta hasta ${fmtDate(st.snoozed_until)}</span>`;
+  }
+
+  // Banner de IA refresh: aparece en active si el slash command actualizó la descripción.
+  let aiBanner = '';
+  if (cls === 'active' && st.description_override) {
+    const when = st.description_override_at ? fmtDate(st.description_override_at) : '';
+    aiBanner = `<div class="task-ai-banner" title="Actualización por IA tras revisar foto">
+      <div class="task-ai-banner-head">🤖 IA refresh${when ? ' · ' + when : ''}</div>
+      <div class="task-ai-banner-body">${(st.description_override || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+    </div>`;
+  }
+  // Summary del último análisis cuando la tarea quedó hecha por IA
+  let aiSummaryBlock = '';
+  if (cls === 'done' && st.completed_via_ai && st.ai_summary) {
+    aiSummaryBlock = `<div class="task-ai-summary">
+      <span class="task-ai-summary-tag">🤖 Resolución IA</span>
+      <span class="task-ai-summary-text">${st.ai_summary.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span>
+    </div>`;
   }
 
   // Activas: 3 botones (Hecho / Posponer / WhatsApp). Hechas/Pospuestas: solo Reactivar.
@@ -377,6 +399,8 @@ function renderTaskCard(task) {
             <h3 class="task-title">${task.title}</h3>
             <div class="task-plant">${task.plant_common}</div>
             ${task.short_desc ? `<p class="task-short">${task.short_desc}</p>` : ''}
+            ${aiBanner}
+            ${aiSummaryBlock}
             ${dueText ? `<div class="task-due ${dueClass}">📅 ${overdue && cls === 'active' ? 'Vencida — ' : ''}${dueText}</div>` : ''}
             <span class="task-expand-chevron" aria-hidden="true">▾</span>
           </div>
@@ -1275,6 +1299,68 @@ function blobToBase64(blob) {
     reader.readAsDataURL(blob);
   });
 }
+
+// ============================================================
+// SYNC ENGINE — read-on-load (write se agrega en Batch 6)
+// ============================================================
+// Estado de sync (placeholder, write debounce viene después).
+let _stateDirty = false;
+function markStateDirty() {
+  _stateDirty = true;
+  // El sync write real se conecta en Batch 6.
+}
+
+// Fetch público del task_states.json del repo (no necesita auth — repo público).
+async function fetchRemoteTaskStates() {
+  // Se referencia con path relativo así sirve también localmente con file://, vía dev server, o GH Pages.
+  // En GH Pages: docs/index.html → docs/sync/task_states.json es '../sync/task_states.json' a partir
+  // de la URL, pero como el sitio es servido desde docs/ como raíz, el path es 'sync/task_states.json'.
+  try {
+    const url = `sync/task_states.json?_=${Date.now()}`;  // bust cache
+    const r = await fetch(url, { cache: 'no-store' });
+    if (!r.ok) return null;
+    return await r.json();
+  } catch {
+    return null;
+  }
+}
+
+// Merge per-task: gana el last_modified_at más reciente.
+function mergeRemoteIntoLocal(remote) {
+  if (!remote || !remote.tasks) return { merged: 0, skipped: 0 };
+  const local = loadStates();
+  let merged = 0;
+  let skipped = 0;
+  Object.entries(remote.tasks).forEach(([taskId, remoteState]) => {
+    const localState = local[taskId];
+    const localTs = localState?.last_modified_at || '0';
+    const remoteTs = remoteState?.last_modified_at || '0';
+    if (remoteTs > localTs) {
+      local[taskId] = remoteState;
+      merged++;
+    } else {
+      skipped++;
+    }
+  });
+  saveStates(local);
+  return { merged, skipped };
+}
+
+async function syncReadFromRepo() {
+  const remote = await fetchRemoteTaskStates();
+  if (!remote) return;
+  const { merged } = mergeRemoteIntoLocal(remote);
+  if (merged > 0 && typeof renderTimeline === 'function') {
+    // Si estamos viendo el timeline, refrescar el render para que aparezcan los cambios.
+    renderTimeline();
+  }
+}
+
+// Disparar al cargar la página y al recuperar foco (vuelve a la pestaña).
+syncReadFromRepo();
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') syncReadFromRepo();
+});
 
 async function uploadPendingPhoto() {
   if (!pendingPhotoBlob || !pendingPhotoTask) return;

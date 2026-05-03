@@ -1244,6 +1244,52 @@ h2.subbrand {
   border-color: rgba(99, 102, 241, 0.5);
 }
 
+/* Banner de IA refresh — aparece cuando /actualizar-tareas hizo description_override */
+.task-ai-banner {
+  background: rgba(245, 158, 11, 0.10);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: var(--r-md);
+  padding: 8px 11px;
+  margin: 8px 4px 0;
+  text-align: left;
+}
+.task-ai-banner-head {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #92400e;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+.task-ai-banner-body {
+  font-size: 0.86rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+/* Summary IA en tareas done por IA */
+.task-ai-summary {
+  display: flex; align-items: flex-start; gap: 8px;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: var(--r-md);
+  padding: 7px 10px;
+  margin: 6px 4px 0;
+  font-size: 0.84rem;
+  line-height: 1.4;
+  text-align: left;
+}
+.task-ai-summary-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #166534;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.task-ai-summary-text {
+  color: var(--text-2);
+  flex: 1 1 auto;
+}
+
 /* Timeline summary — bloque informativo flat en una sola línea (estilo weather) */
 .timeline-summary {
   display: flex;
