@@ -1203,12 +1203,18 @@ function handleTransferImport() {
     const decoded = decodeURIComponent(escape(atob(padded)));
     payload = JSON.parse(decoded);
   } catch {
-    alert('El link de transferencia es inválido o está corrupto.');
     cleanImportTokenFromUrl();
     return;
   }
   if (!payload || !payload.t) {
-    alert('El link no contiene un token válido.');
+    cleanImportTokenFromUrl();
+    return;
+  }
+
+  // Si el token en el URL ya coincide con el guardado, no preguntamos —
+  // strip silente. Caso típico: bookmark / home-screen shortcut con el
+  // link de transfer queda abriéndose siempre con ?import_token=.
+  if (loadGitHubToken() === payload.t) {
     cleanImportTokenFromUrl();
     return;
   }

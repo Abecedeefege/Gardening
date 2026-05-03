@@ -1175,6 +1175,21 @@ h2.subbrand {
   line-height: 1.4;
 }
 
+/* Visually hidden — para inputs file que se disparan vía <label>.
+   En mobile (iOS Safari + Android Chrome), `hidden` o `display:none`
+   bloquea el dispatch del click hacia el input, por eso necesita
+   estar en el flujo del DOM pero invisible. */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  opacity: 0;
+}
+
 /* TASK PHOTO MODAL — captura + preview + upload */
 .task-photo-name {
   font-size: 0.85rem;

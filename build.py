@@ -697,12 +697,12 @@ def build_timeline_view(tasks, img_data):
     <div class="task-photo-stage" data-stage="pick">
       <div class="task-photo-buttons">
         <label class="task-photo-btn">
-          <input type="file" accept="image/*" capture="environment" id="species-photo-camera-input" hidden>
+          <input type="file" accept="image/*" capture="environment" id="species-photo-camera-input" class="visually-hidden">
           <span class="task-photo-btn-emoji">📸</span>
           <span class="task-photo-btn-label">Sacá una foto</span>
         </label>
         <label class="task-photo-btn">
-          <input type="file" accept="image/*" id="species-photo-gallery-input" hidden>
+          <input type="file" accept="image/*" id="species-photo-gallery-input" class="visually-hidden">
           <span class="task-photo-btn-emoji">🖼️</span>
           <span class="task-photo-btn-label">Subí una existente</span>
         </label>
@@ -749,12 +749,12 @@ def build_timeline_view(tasks, img_data):
     <div class="task-photo-stage" data-stage="pick">
       <div class="task-photo-buttons">
         <label class="task-photo-btn">
-          <input type="file" accept="image/*" capture="environment" id="task-photo-camera-input" hidden>
+          <input type="file" accept="image/*" capture="environment" id="task-photo-camera-input" class="visually-hidden">
           <span class="task-photo-btn-emoji">📸</span>
           <span class="task-photo-btn-label">Sacá una foto</span>
         </label>
         <label class="task-photo-btn">
-          <input type="file" accept="image/*" id="task-photo-gallery-input" hidden>
+          <input type="file" accept="image/*" id="task-photo-gallery-input" class="visually-hidden">
           <span class="task-photo-btn-emoji">🖼️</span>
           <span class="task-photo-btn-label">Subí una existente</span>
         </label>

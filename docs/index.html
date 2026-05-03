@@ -1176,6 +1176,21 @@ h2.subbrand {
   line-height: 1.4;
 }
 
+/* Visually hidden — para inputs file que se disparan vía <label>.
+   En mobile (iOS Safari + Android Chrome), `hidden` o `display:none`
+   bloquea el dispatch del click hacia el input, por eso necesita
+   estar en el flujo del DOM pero invisible. */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  opacity: 0;
+}
+
 /* TASK PHOTO MODAL — captura + preview + upload */
 .task-photo-name {
   font-size: 0.85rem;
@@ -9057,12 +9072,12 @@ h2.subbrand {
     <div class="task-photo-stage" data-stage="pick">
       <div class="task-photo-buttons">
         <label class="task-photo-btn">
-          <input type="file" accept="image/*" capture="environment" id="species-photo-camera-input" hidden>
+          <input type="file" accept="image/*" capture="environment" id="species-photo-camera-input" class="visually-hidden">
           <span class="task-photo-btn-emoji">📸</span>
           <span class="task-photo-btn-label">Sacá una foto</span>
         </label>
         <label class="task-photo-btn">
-          <input type="file" accept="image/*" id="species-photo-gallery-input" hidden>
+          <input type="file" accept="image/*" id="species-photo-gallery-input" class="visually-hidden">
           <span class="task-photo-btn-emoji">🖼️</span>
           <span class="task-photo-btn-label">Subí una existente</span>
         </label>
@@ -9109,12 +9124,12 @@ h2.subbrand {
     <div class="task-photo-stage" data-stage="pick">
       <div class="task-photo-buttons">
         <label class="task-photo-btn">
-          <input type="file" accept="image/*" capture="environment" id="task-photo-camera-input" hidden>
+          <input type="file" accept="image/*" capture="environment" id="task-photo-camera-input" class="visually-hidden">
           <span class="task-photo-btn-emoji">📸</span>
           <span class="task-photo-btn-label">Sacá una foto</span>
         </label>
         <label class="task-photo-btn">
-          <input type="file" accept="image/*" id="task-photo-gallery-input" hidden>
+          <input type="file" accept="image/*" id="task-photo-gallery-input" class="visually-hidden">
           <span class="task-photo-btn-emoji">🖼️</span>
           <span class="task-photo-btn-label">Subí una existente</span>
         </label>
@@ -10428,12 +10443,18 @@ function handleTransferImport() {
     const decoded = decodeURIComponent(escape(atob(padded)));
     payload = JSON.parse(decoded);
   } catch {
-    alert('El link de transferencia es inválido o está corrupto.');
     cleanImportTokenFromUrl();
     return;
   }
   if (!payload || !payload.t) {
-    alert('El link no contiene un token válido.');
+    cleanImportTokenFromUrl();
+    return;
+  }
+
+  // Si el token en el URL ya coincide con el guardado, no preguntamos —
+  // strip silente. Caso típico: bookmark / home-screen shortcut con el
+  // link de transfer queda abriéndose siempre con ?import_token=.
+  if (loadGitHubToken() === payload.t) {
     cleanImportTokenFromUrl();
     return;
   }
