@@ -60,8 +60,13 @@
       "context": "task",
       "task_id": "plant-F-9",
       "task_title_snapshot": "Confirmar especie y decidir si saca Fotinia",
-      "ai_status": "pending",
-      "ai_evaluation": null
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Ligustrum sp. confirmado — filotaxia opuesta, hojas elípticas verde brillante, racimos de frutos en distintos estadios de maduración (verdes, rojizos y morado-azulado/negro). El usuario también confirmó la ID a mano. Especie tentativa: L. lucidum.",
+        "next_steps": "Cosechar AHORA los frutos maduros (los morado-azulado/negro) antes de que las aves los dispersen — bolsa cerrada a la basura, NO compost. Después, inspección lado a lado base de Fotinia F-6 vs ligustro para decidir manejo (ver urgencia actualizada en F-9: convive / podar brazos que tocan F-6 / eliminar entero).",
+        "processed_at": "2026-05-03T16:55:00.000Z"
+      }
     }
   ]
 }
