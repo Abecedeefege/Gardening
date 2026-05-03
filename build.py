@@ -823,22 +823,36 @@ def build_timeline_view(tasks, img_data):
       <input type="text" id="settings-device-name" class="settings-input" placeholder="iPhone-Lucia / Laptop-Casa">
     </div>
 
+    <div class="settings-section">
+      <label class="settings-label" for="settings-canonical-url">
+        <strong>URL canónica del sitio</strong>
+        <span class="settings-hint">Para que los links de transferencia funcionen siempre, pegá la URL <em>estable</em> del sitio (no una preview de Vercel ni un dominio temporal). Ej: tu URL de GitHub Pages o tu dominio principal de Vercel.</span>
+      </label>
+      <input type="url" id="settings-canonical-url" class="settings-input" placeholder="https://tu-sitio.vercel.app/ o https://usuario.github.io/Gardening/">
+      <div class="settings-feedback" id="settings-canonical-feedback"></div>
+    </div>
+
     <div class="settings-section" id="settings-transfer-section" hidden>
       <label class="settings-label">
         <strong>📲 Transferir a otro device</strong>
-        <span class="settings-hint">Generá un link de uso único que carga el token en el otro device sin que tengas que tipearlo.</span>
+        <span class="settings-hint">Generá un QR + link de uso único que carga el token en el otro device sin que tengas que tipearlo.</span>
       </label>
-      <button class="btn-secondary" id="btn-gen-transfer-link">Generar link de transferencia</button>
+      <button class="btn-secondary" id="btn-gen-transfer-link">Generar QR + link de transferencia</button>
       <div id="transfer-link-output" hidden>
         <div class="transfer-warn">
-          ⚠️ Este link contiene tu PAT en claro. <strong>Mandátelo solo a vos mismo</strong> (WhatsApp/Telegram/Mail/AirDrop). Borralo del historial cuando termines.
+          ⚠️ El QR y el link contienen tu PAT en claro. <strong>Mostralo solo a tu otro device</strong>. Si usás link, mandátelo solo a vos mismo y borralo del historial cuando termines.
         </div>
+        <div class="transfer-qr-wrap">
+          <div id="transfer-qr"></div>
+          <p class="transfer-qr-hint">📷 Escaneá con la cámara del otro device.</p>
+        </div>
+        <div class="transfer-or">— o copiá el link —</div>
         <textarea id="transfer-link-text" readonly rows="3"></textarea>
         <div class="transfer-actions">
           <button class="btn-secondary" id="btn-copy-transfer-link">📋 Copiar al portapapeles</button>
         </div>
         <div class="transfer-hint">
-          Cuando lo abras en el otro device, te pregunta si querés importar el token y lo guarda en ese navegador. El link funciona una sola vez (después se elimina de la URL).
+          Cuando lo abras en el otro device, te pregunta si querés importar el token y lo guarda en ese navegador. El token se borra de la URL apenas se importa.
         </div>
       </div>
     </div>

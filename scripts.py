@@ -990,6 +990,7 @@ loadWeather();
 // ============================================================
 const GITHUB_TOKEN_KEY = 'jardineando_github_token_v1';
 const DEVICE_NAME_KEY = 'jardineando_device_name_v1';
+const CANONICAL_URL_KEY = 'jardineando_canonical_url_v1';
 
 function loadGitHubToken() {
   return localStorage.getItem(GITHUB_TOKEN_KEY) || '';
@@ -1004,6 +1005,30 @@ function loadDeviceName() {
 function saveDeviceName(name) {
   if (name) localStorage.setItem(DEVICE_NAME_KEY, name);
   else localStorage.removeItem(DEVICE_NAME_KEY);
+}
+function loadCanonicalUrl() {
+  return localStorage.getItem(CANONICAL_URL_KEY) || '';
+}
+function saveCanonicalUrl(url) {
+  if (url) localStorage.setItem(CANONICAL_URL_KEY, url);
+  else localStorage.removeItem(CANONICAL_URL_KEY);
+}
+
+// Detectar si la URL actual parece un Vercel preview (URLs con hash que rotan
+// en cada deploy y a los días dejan de funcionar).
+function isEphemeralHostname(host) {
+  // Vercel preview: <project>-git-<branch>-<team>-<8hexhash>.vercel.app
+  if (/-[0-9a-f]{8}\.vercel\.app$/i.test(host)) return true;
+  // Vercel deployment URL: <project>-<8hexhash>-<team>.vercel.app
+  if (/-[0-9a-z]{9,}\.vercel\.app$/i.test(host)) return true;
+  // Netlify deploy preview
+  if (/--[a-f0-9]{6,}\.netlify\.app$/i.test(host)) return true;
+  return false;
+}
+
+function getEffectiveSiteUrl() {
+  const canonical = loadCanonicalUrl();
+  return canonical || (window.location.origin + window.location.pathname);
 }
 
 async function testGitHubToken(token) {
@@ -1037,8 +1062,18 @@ function openSettingsModal() {
   const token = loadGitHubToken();
   document.getElementById('settings-github-token').value = token;
   document.getElementById('settings-device-name').value = loadDeviceName();
+  document.getElementById('settings-canonical-url').value = loadCanonicalUrl();
   document.getElementById('settings-github-feedback').textContent = '';
   document.getElementById('settings-github-feedback').className = 'settings-feedback';
+  // Avisar si estamos en una URL ephemeral y no hay canonical configurada.
+  const fb = document.getElementById('settings-canonical-feedback');
+  if (!loadCanonicalUrl() && isEphemeralHostname(window.location.hostname)) {
+    fb.textContent = '⚠️ Estás en una URL temporal (preview de Vercel). Configurá la URL canónica para que los links de transferencia no se rompan.';
+    fb.className = 'settings-feedback warn';
+  } else {
+    fb.textContent = '';
+    fb.className = 'settings-feedback';
+  }
   // Sección de transfer solo aparece si ya hay token configurado.
   document.getElementById('settings-transfer-section').hidden = !token;
   document.getElementById('transfer-link-output').hidden = true;
@@ -1079,8 +1114,10 @@ document.getElementById('btn-clear-github-token').addEventListener('click', () =
 document.getElementById('btn-save-settings').addEventListener('click', () => {
   const token = document.getElementById('settings-github-token').value.trim();
   const deviceName = document.getElementById('settings-device-name').value.trim();
+  const canonical = document.getElementById('settings-canonical-url').value.trim();
   saveGitHubToken(token);
   saveDeviceName(deviceName);
+  saveCanonicalUrl(canonical);
   closeModal('settings');
 });
 
@@ -1098,17 +1135,39 @@ function generateTransferLink() {
   // base64 URL-safe (sin + / =).
   const b64 = btoa(unescape(encodeURIComponent(payload)))
     .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-  const baseUrl = window.location.origin + window.location.pathname;
-  return `${baseUrl}?import_token=${b64}`;
+  const baseUrl = getEffectiveSiteUrl();
+  // Separador correcto según si baseUrl ya tiene query string.
+  const sep = baseUrl.includes('?') ? '&' : '?';
+  return `${baseUrl}${sep}import_token=${b64}`;
 }
 
 document.getElementById('btn-gen-transfer-link').addEventListener('click', () => {
-  const link = generateTransferLink();
-  if (!link) {
+  const token = loadGitHubToken();
+  if (!token) {
     alert('No hay token configurado todavía. Pegá uno arriba y guardá primero.');
     return;
   }
+  // Validar canonical URL antes de generar.
+  if (!loadCanonicalUrl() && isEphemeralHostname(window.location.hostname)) {
+    const ok = confirm(
+      '⚠️ Estás en una URL temporal (preview de Vercel). El link de transferencia ' +
+      'apuntará a esta URL y puede dejar de funcionar en pocos días cuando Vercel ' +
+      'reasigne la preview.\n\n' +
+      'Mejor cerrá esto, andá al campo "URL canónica del sitio" arriba, pegá tu URL ' +
+      'estable y guardá. ¿Generar igual?'
+    );
+    if (!ok) return;
+  }
+  const link = generateTransferLink();
   document.getElementById('transfer-link-text').value = link;
+  // Renderizar QR.
+  try {
+    const svg = qrEncodeSvg(link, { cellSize: 5, margin: 4 });
+    document.getElementById('transfer-qr').innerHTML = svg;
+  } catch (err) {
+    document.getElementById('transfer-qr').innerHTML =
+      `<div class="transfer-qr-error">⚠️ No se pudo generar el QR (${err.message}). Usá el link de abajo.</div>`;
+  }
   document.getElementById('transfer-link-output').hidden = false;
 });
 
@@ -1183,6 +1242,411 @@ function cleanImportTokenFromUrl() {
 }
 
 handleTransferImport();
+
+// ============================================================
+// QR ENCODER — byte mode, EC level L, versions 1-10
+// Implementación propia basada en ISO/IEC 18004:2015. Soporta hasta
+// ~270 bytes de payload, suficiente para el link de transferencia.
+// Sin dependencias externas. Output: SVG string.
+// ============================================================
+const QR_GF_EXP = new Array(512);
+const QR_GF_LOG = new Array(256);
+(function initQrGf() {
+  let x = 1;
+  for (let i = 0; i < 255; i++) {
+    QR_GF_EXP[i] = x;
+    QR_GF_LOG[x] = i;
+    x <<= 1;
+    if (x & 0x100) x ^= 0x11D;
+  }
+  for (let i = 255; i < 512; i++) QR_GF_EXP[i] = QR_GF_EXP[i - 255];
+})();
+
+function qrGfMul(a, b) {
+  if (a === 0 || b === 0) return 0;
+  return QR_GF_EXP[QR_GF_LOG[a] + QR_GF_LOG[b]];
+}
+
+function qrRsGen(degree) {
+  let g = [1];
+  for (let i = 0; i < degree; i++) {
+    const next = new Array(g.length + 1).fill(0);
+    for (let j = 0; j < g.length; j++) {
+      next[j] ^= g[j];
+      next[j + 1] ^= qrGfMul(g[j], QR_GF_EXP[i]);
+    }
+    g = next;
+  }
+  return g;
+}
+
+function qrRsEcc(data, eccLen) {
+  const gen = qrRsGen(eccLen);
+  const buf = data.concat(new Array(eccLen).fill(0));
+  for (let i = 0; i < data.length; i++) {
+    const f = buf[i];
+    if (f === 0) continue;
+    for (let j = 0; j < gen.length; j++) {
+      buf[i + j] ^= qrGfMul(gen[j], f);
+    }
+  }
+  return buf.slice(data.length);
+}
+
+// ISO/IEC 18004 Tabla 9 — level L, versiones 1..10.
+const QR_PARAMS_L = [
+  null,
+  { ecPerBlock: 7,  blocks: [[1, 19]] },                    // v1
+  { ecPerBlock: 10, blocks: [[1, 34]] },                    // v2
+  { ecPerBlock: 15, blocks: [[1, 55]] },                    // v3
+  { ecPerBlock: 20, blocks: [[1, 80]] },                    // v4
+  { ecPerBlock: 26, blocks: [[1, 108]] },                   // v5
+  { ecPerBlock: 18, blocks: [[2, 68]] },                    // v6
+  { ecPerBlock: 20, blocks: [[2, 78]] },                    // v7
+  { ecPerBlock: 24, blocks: [[2, 97]] },                    // v8
+  { ecPerBlock: 30, blocks: [[2, 116]] },                   // v9
+  { ecPerBlock: 18, blocks: [[2, 68], [2, 69]] },           // v10
+];
+
+const QR_ALIGN_CENTERS = [
+  null, [], [6, 18], [6, 22], [6, 26], [6, 30],
+  [6, 34], [6, 22, 38], [6, 24, 42], [6, 26, 46], [6, 28, 50],
+];
+
+function qrTotalDataCw(p) {
+  return p.blocks.reduce((s, b) => s + b[0] * b[1], 0);
+}
+
+function qrPickVersion(byteLen) {
+  for (let v = 1; v <= 10; v++) {
+    const dc = qrTotalDataCw(QR_PARAMS_L[v]);
+    const ccBits = v <= 9 ? 8 : 16;
+    const cap = Math.floor((dc * 8 - 4 - ccBits) / 8);
+    if (byteLen <= cap) return v;
+  }
+  throw new Error('texto muy largo (>270 bytes)');
+}
+
+function qrEncodeData(text) {
+  const bytes = Array.from(new TextEncoder().encode(text));
+  const version = qrPickVersion(bytes.length);
+  const params = QR_PARAMS_L[version];
+  const dc = qrTotalDataCw(params);
+
+  // Construir bit stream.
+  const bits = [];
+  function pushBits(v, n) { for (let i = n - 1; i >= 0; i--) bits.push((v >> i) & 1); }
+  pushBits(0b0100, 4);                          // mode indicator: byte
+  pushBits(bytes.length, version <= 9 ? 8 : 16); // char count indicator
+  for (const b of bytes) pushBits(b, 8);
+
+  const totalBits = dc * 8;
+  for (let i = 0; i < 4 && bits.length < totalBits; i++) bits.push(0); // terminador
+  while (bits.length % 8 !== 0) bits.push(0);                          // pad a byte
+  const padBytes = [0xEC, 0x11];
+  let pi = 0;
+  while (bits.length < totalBits) pushBits(padBytes[pi++ & 1], 8);     // pad codewords
+
+  // Bits → bytes.
+  const data = [];
+  for (let i = 0; i < bits.length; i += 8) {
+    let b = 0;
+    for (let j = 0; j < 8; j++) b = (b << 1) | bits[i + j];
+    data.push(b);
+  }
+
+  // Split en bloques + ECC.
+  const blocks = [];
+  const eccBlocks = [];
+  let pos = 0;
+  for (const [count, dpb] of params.blocks) {
+    for (let k = 0; k < count; k++) {
+      const blk = data.slice(pos, pos + dpb);
+      pos += dpb;
+      blocks.push(blk);
+      eccBlocks.push(qrRsEcc(blk, params.ecPerBlock));
+    }
+  }
+
+  // Interleave: data column-major, luego ECC column-major.
+  const out = [];
+  const maxData = Math.max(...blocks.map(b => b.length));
+  for (let i = 0; i < maxData; i++) {
+    for (const blk of blocks) if (i < blk.length) out.push(blk[i]);
+  }
+  for (let i = 0; i < params.ecPerBlock; i++) {
+    for (const blk of eccBlocks) out.push(blk[i]);
+  }
+
+  return { version, codewords: out };
+}
+
+function qrSize(version) { return 17 + version * 4; }
+
+// Determina si un módulo está reservado y su valor (si lo está). Construye
+// la matriz con finder + timing + alignment + dark module + reserva format info.
+function qrPlaceFunctionPatterns(version) {
+  const N = qrSize(version);
+  const m = Array.from({ length: N }, () => new Array(N).fill(null));
+  const reserved = Array.from({ length: N }, () => new Array(N).fill(false));
+
+  function placeFinder(r, c) {
+    for (let i = -1; i <= 7; i++) {
+      for (let j = -1; j <= 7; j++) {
+        const rr = r + i, cc = c + j;
+        if (rr < 0 || rr >= N || cc < 0 || cc >= N) continue;
+        let v;
+        if (i === -1 || i === 7 || j === -1 || j === 7) v = 0;
+        else if (i === 0 || i === 6 || j === 0 || j === 6) v = 1;
+        else if (i >= 2 && i <= 4 && j >= 2 && j <= 4) v = 1;
+        else v = 0;
+        m[rr][cc] = v;
+        reserved[rr][cc] = true;
+      }
+    }
+  }
+  placeFinder(0, 0);
+  placeFinder(0, N - 7);
+  placeFinder(N - 7, 0);
+
+  // Timing patterns.
+  for (let i = 8; i < N - 8; i++) {
+    if (m[6][i] === null) { m[6][i] = (i % 2 === 0) ? 1 : 0; reserved[6][i] = true; }
+    if (m[i][6] === null) { m[i][6] = (i % 2 === 0) ? 1 : 0; reserved[i][6] = true; }
+  }
+
+  // Dark module (siempre 1).
+  m[N - 8][8] = 1; reserved[N - 8][8] = true;
+
+  // Reservar área de format info (15 módulos).
+  for (let i = 0; i <= 8; i++) { reserved[8][i] = true; reserved[i][8] = true; }
+  for (let i = 0; i < 8; i++) { reserved[8][N - 1 - i] = true; reserved[N - 1 - i][8] = true; }
+
+  // Reservar área de version info (versión 7+): 6x3 arriba-derecha + 3x6 abajo-izquierda.
+  if (version >= 7) {
+    for (let i = 0; i < 18; i++) {
+      const a = Math.floor(i / 3), b = i % 3;
+      reserved[a][N - 11 + b] = true;
+      reserved[N - 11 + b][a] = true;
+    }
+  }
+
+  // Alignment patterns (versión 2+).
+  const centers = QR_ALIGN_CENTERS[version];
+  for (const r of centers) {
+    for (const c of centers) {
+      // Saltar overlap con finders (esquinas).
+      if ((r < 8 && c < 8) || (r < 8 && c > N - 9) || (r > N - 9 && c < 8)) continue;
+      for (let i = -2; i <= 2; i++) {
+        for (let j = -2; j <= 2; j++) {
+          const rr = r + i, cc = c + j;
+          if (rr < 0 || rr >= N || cc < 0 || cc >= N) continue;
+          const dist = Math.max(Math.abs(i), Math.abs(j));
+          const v = (dist === 1) ? 0 : 1;
+          m[rr][cc] = v;
+          reserved[rr][cc] = true;
+        }
+      }
+    }
+  }
+
+  return { matrix: m, reserved, size: N };
+}
+
+// Coloca codewords en zigzag empezando por la esquina inferior derecha.
+function qrPlaceData(matrix, reserved, codewords) {
+  const N = matrix.length;
+  const totalBits = codewords.length * 8;
+  let bitIdx = 0;
+  let dir = -1; // -1 = sube, +1 = baja
+  let col = N - 1;
+  while (col > 0) {
+    if (col === 6) col--;
+    let row = (dir === -1) ? N - 1 : 0;
+    while (row >= 0 && row < N) {
+      for (let dx = 0; dx < 2; dx++) {
+        const c = col - dx;
+        const r = row;
+        if (!reserved[r][c]) {
+          let bit = 0;
+          if (bitIdx < totalBits) {
+            const byte = codewords[bitIdx >> 3];
+            bit = (byte >> (7 - (bitIdx & 7))) & 1;
+            bitIdx++;
+          }
+          matrix[r][c] = bit;
+        }
+      }
+      row += dir;
+    }
+    dir = -dir;
+    col -= 2;
+  }
+}
+
+const QR_MASK_FNS = [
+  (r, c) => (r + c) % 2 === 0,
+  (r, c) => r % 2 === 0,
+  (r, c) => c % 3 === 0,
+  (r, c) => (r + c) % 3 === 0,
+  (r, c) => (Math.floor(r / 2) + Math.floor(c / 3)) % 2 === 0,
+  (r, c) => ((r * c) % 2 + (r * c) % 3) === 0,
+  (r, c) => ((r * c) % 2 + (r * c) % 3) % 2 === 0,
+  (r, c) => ((r + c) % 2 + (r * c) % 3) % 2 === 0,
+];
+
+function qrApplyMask(matrix, reserved, mask) {
+  const fn = QR_MASK_FNS[mask];
+  const N = matrix.length;
+  for (let r = 0; r < N; r++) {
+    for (let c = 0; c < N; c++) {
+      if (!reserved[r][c] && matrix[r][c] !== null) {
+        if (fn(r, c)) matrix[r][c] ^= 1;
+      }
+    }
+  }
+}
+
+// Format info: BCH(15,5) + máscara 0x5412. Level L = 01.
+function qrFormatBits(level, mask) {
+  const data = (level << 3) | mask;
+  let r = data << 10;
+  for (let i = 14; i >= 10; i--) {
+    if ((r >> i) & 1) r ^= 0b10100110111 << (i - 10);
+  }
+  return ((data << 10) | r) ^ 0b101010000010010;
+}
+
+// Version info: BCH(18,6) sobre el número de versión. Solo aplica versión 7+.
+function qrVersionInfoBits(version) {
+  let v = version << 12;
+  for (let i = 17; i >= 12; i--) {
+    if ((v >> i) & 1) v ^= 0x1F25 << (i - 12);
+  }
+  return (version << 12) | (v & 0xFFF);
+}
+
+function qrPlaceVersionInfo(matrix, version) {
+  if (version < 7) return;
+  const N = matrix.length;
+  const bits = qrVersionInfoBits(version);
+  for (let i = 0; i < 18; i++) {
+    const bit = (bits >> i) & 1;
+    const a = Math.floor(i / 3), b = i % 3;
+    matrix[a][N - 11 + b] = bit;          // top-right block (6 filas × 3 cols)
+    matrix[N - 11 + b][a] = bit;          // bottom-left block (3 filas × 6 cols)
+  }
+}
+
+function qrPlaceFormat(matrix, formatBits) {
+  const N = matrix.length;
+  // Posiciones top-left (15 módulos): bit 0 → (8,0), ..., bit 14 → (0,8).
+  // Saltando timing en (6,8) y (8,6).
+  const tl = [
+    [8, 0], [8, 1], [8, 2], [8, 3], [8, 4], [8, 5], [8, 7], [8, 8],
+    [7, 8], [5, 8], [4, 8], [3, 8], [2, 8], [1, 8], [0, 8],
+  ];
+  for (let i = 0; i < 15; i++) {
+    const bit = (formatBits >> i) & 1;
+    matrix[tl[i][0]][tl[i][1]] = bit;
+  }
+  // Top-right (bits 0..7) + bottom-left (bits 8..14).
+  for (let i = 0; i < 8; i++) {
+    matrix[8][N - 1 - i] = (formatBits >> i) & 1;
+  }
+  for (let i = 0; i < 7; i++) {
+    matrix[N - 7 + i][8] = (formatBits >> (8 + i)) & 1;
+  }
+  // Re-marcar dark module (puede haber sido pisado).
+  matrix[N - 8][8] = 1;
+}
+
+// Penalty score per ISO/IEC 18004 §7.8.3 — para elegir mejor máscara.
+function qrPenalty(matrix) {
+  const N = matrix.length;
+  let p = 0;
+  // 1) Runs ≥ 5 del mismo color.
+  for (let r = 0; r < N; r++) {
+    let run = 1, prev = matrix[r][0];
+    for (let c = 1; c < N; c++) {
+      if (matrix[r][c] === prev) { run++; if (run === 5) p += 3; else if (run > 5) p += 1; }
+      else { run = 1; prev = matrix[r][c]; }
+    }
+  }
+  for (let c = 0; c < N; c++) {
+    let run = 1, prev = matrix[0][c];
+    for (let r = 1; r < N; r++) {
+      if (matrix[r][c] === prev) { run++; if (run === 5) p += 3; else if (run > 5) p += 1; }
+      else { run = 1; prev = matrix[r][c]; }
+    }
+  }
+  // 2) Bloques 2x2 mismo color.
+  for (let r = 0; r < N - 1; r++) {
+    for (let c = 0; c < N - 1; c++) {
+      const v = matrix[r][c];
+      if (v === matrix[r][c+1] && v === matrix[r+1][c] && v === matrix[r+1][c+1]) p += 3;
+    }
+  }
+  // 3) Patrón finder-like (1011101 con 4 light a un lado) en filas/columnas.
+  function check(line) {
+    const target = [1,0,1,1,1,0,1];
+    let count = 0;
+    for (let i = 0; i <= line.length - 11; i++) {
+      let match = true;
+      for (let j = 0; j < 7; j++) if (line[i + 2 + j] !== target[j]) { match = false; break; }
+      if (!match) continue;
+      const left = i + 2 - 4;
+      const right = i + 2 + 7 + 4 - 1;
+      if (left >= 0 && line.slice(left, left + 4).every(x => x === 0)) count++;
+      if (right < line.length && line.slice(i + 9, i + 13).every(x => x === 0)) count++;
+    }
+    return count;
+  }
+  for (let r = 0; r < N; r++) p += 40 * check(matrix[r]);
+  for (let c = 0; c < N; c++) {
+    const col = matrix.map(row => row[c]);
+    p += 40 * check(col);
+  }
+  // 4) Balance dark/light.
+  let dark = 0;
+  for (let r = 0; r < N; r++) for (let c = 0; c < N; c++) if (matrix[r][c]) dark++;
+  const ratio = (dark * 100) / (N * N);
+  p += 10 * Math.floor(Math.abs(ratio - 50) / 5);
+  return p;
+}
+
+function qrEncodeSvg(text, opts = {}) {
+  const cellSize = opts.cellSize || 5;
+  const margin = opts.margin == null ? 4 : opts.margin;
+  const { version, codewords } = qrEncodeData(text);
+
+  // Probar las 8 máscaras y elegir la de menor penalty.
+  let best = null;
+  for (let mask = 0; mask < 8; mask++) {
+    const { matrix, reserved } = qrPlaceFunctionPatterns(version);
+    qrPlaceData(matrix, reserved, codewords);
+    qrApplyMask(matrix, reserved, mask);
+    qrPlaceFormat(matrix, qrFormatBits(0b01, mask)); // L = 01
+    qrPlaceVersionInfo(matrix, version);
+    const score = qrPenalty(matrix);
+    if (!best || score < best.score) best = { matrix, score };
+  }
+
+  const N = best.matrix.length;
+  const total = N + margin * 2;
+  const px = total * cellSize;
+  let rects = '';
+  for (let r = 0; r < N; r++) {
+    for (let c = 0; c < N; c++) {
+      if (best.matrix[r][c] === 1) {
+        const x = (c + margin) * cellSize;
+        const y = (r + margin) * cellSize;
+        rects += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}"/>`;
+      }
+    }
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${px}" height="${px}" viewBox="0 0 ${px} ${px}" shape-rendering="crispEdges"><rect width="${px}" height="${px}" fill="#ffffff"/><g fill="#000000">${rects}</g></svg>`;
+}
 
 // ============================================================
 // GITHUB API CLIENT — read/write archivos en el repo

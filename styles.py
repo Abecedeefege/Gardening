@@ -1113,6 +1113,43 @@ h2.subbrand {
   line-height: 1.4;
   margin-bottom: 10px;
 }
+.transfer-qr-wrap {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 6px;
+  padding: 14px;
+  background: white;
+  border-radius: var(--r-md);
+  margin-bottom: 12px;
+}
+#transfer-qr {
+  display: flex; justify-content: center;
+}
+#transfer-qr svg {
+  width: 280px; height: 280px;
+  max-width: 100%;
+  display: block;
+}
+.transfer-qr-hint {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  margin: 0;
+  text-align: center;
+}
+.transfer-qr-error {
+  font-size: 0.85rem;
+  color: #991b1b;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: var(--r-md);
+  padding: 12px;
+}
+.transfer-or {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-3);
+  margin: 8px 0 6px;
+  letter-spacing: 0.04em;
+}
 #transfer-link-text {
   width: 100%;
   font-family: monospace;
