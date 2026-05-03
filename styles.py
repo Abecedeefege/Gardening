@@ -1495,6 +1495,59 @@ h2.subbrand {
   flex: 1 1 auto;
 }
 
+/* SYNC STATUS BAR — arriba del Timeline, abajo del header */
+.sync-status-bar {
+  display: flex; align-items: center; gap: 10px;
+  margin: 4px auto 12px;
+  max-width: 460px;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  border-radius: var(--r-full);
+  background: var(--bg-soft);
+  border: 1px solid var(--border-soft);
+  color: var(--text-2);
+}
+.sync-status-bar .sync-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  background: var(--text-3);
+}
+.sync-status-bar[data-state="ok"] .sync-dot { background: #22c55e; }
+.sync-status-bar[data-state="syncing"] .sync-dot {
+  background: #eab308;
+  animation: sync-pulse 1.2s ease-in-out infinite;
+}
+.sync-status-bar[data-state="pending"] .sync-dot { background: #eab308; }
+.sync-status-bar[data-state="error"] .sync-dot { background: #ef4444; }
+.sync-status-bar[data-state="disabled"] .sync-dot { background: var(--text-3); }
+@keyframes sync-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.sync-status-bar .sync-label {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sync-retry-btn {
+  flex: 0 0 auto;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-full);
+  padding: 2px 10px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+}
+.sync-retry-btn:hover {
+  background: var(--text);
+  color: white;
+  border-color: var(--text);
+}
+
 /* Timeline summary — bloque informativo flat en una sola línea (estilo weather) */
 .timeline-summary {
   display: flex;

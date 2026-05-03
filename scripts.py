@@ -1150,6 +1150,21 @@ async function ghWriteJsonFile(path, data, message) {
 let pendingPhotoTask = null;
 let pendingPhotoBlob = null;
 
+const PRIVACY_SEEN_KEY = 'jardineando_privacy_seen_v1';
+
+function ensurePrivacyAcknowledged() {
+  if (localStorage.getItem(PRIVACY_SEEN_KEY) === '1') return true;
+  const ok = confirm(
+    'Recordatorio:\n\n' +
+    '• La foto que subas se commitea al repo público de GitHub. Cualquiera con el link al sitio puede verla.\n' +
+    '• El contenido del estado de tareas (sync) también es público.\n' +
+    '• Tu GitHub PAT y nombre del device viven solo en este navegador (localStorage).\n\n' +
+    '¿Continuamos?'
+  );
+  if (ok) localStorage.setItem(PRIVACY_SEEN_KEY, '1');
+  return ok;
+}
+
 function openTaskPhotoModal(task) {
   pendingPhotoTask = task;
   pendingPhotoBlob = null;
@@ -1157,6 +1172,7 @@ function openTaskPhotoModal(task) {
 
   // Mostrar la stage correcta según si hay token configurado.
   const hasToken = !!loadGitHubToken();
+  if (hasToken && !ensurePrivacyAcknowledged()) return;
   setTaskPhotoStage(hasToken ? 'pick' : 'setup');
   document.getElementById('task-photo-modal').classList.add('active');
 }
@@ -1504,6 +1520,7 @@ function openSpeciesPhotoModal(plant) {
   document.getElementById('species-photo-name').textContent = `🌿 ${plant.common} (${plant.id_codes.join(', ')})`;
   document.getElementById('species-photo-note').value = '';
   const hasToken = !!loadGitHubToken();
+  if (hasToken && !ensurePrivacyAcknowledged()) return;
   setSpeciesPhotoStage(hasToken ? 'pick' : 'setup');
   document.getElementById('species-photo-modal').classList.add('active');
 }
@@ -1642,14 +1659,133 @@ async function uploadPendingSpeciesPhoto() {
 }
 
 // ============================================================
-// SYNC ENGINE — read-on-load (write se agrega en Batch 6)
+// SYNC ENGINE — read on load + write debounced al repo
 // ============================================================
-// Estado de sync (placeholder, write debounce viene después).
 let _stateDirty = false;
+let _syncFlushTimer = null;
+let _syncInProgress = false;
+const SYNC_DEBOUNCE_MS = 5000;
+const SYNC_PATH = 'docs/sync/task_states.json';
+
 function markStateDirty() {
   _stateDirty = true;
-  // El sync write real se conecta en Batch 6.
+  scheduleSyncFlush();
+  updateSyncStatus();
 }
+
+function scheduleSyncFlush() {
+  if (!loadGitHubToken()) return;  // sin token, no hay sync write
+  if (_syncFlushTimer) clearTimeout(_syncFlushTimer);
+  _syncFlushTimer = setTimeout(flushSync, SYNC_DEBOUNCE_MS);
+}
+
+async function flushSync(retries = 3) {
+  if (_syncInProgress) return;
+  if (!loadGitHubToken()) return;
+  if (!_stateDirty) return;
+  _syncInProgress = true;
+  updateSyncStatus();
+  try {
+    // 1. Leer remoto.
+    const { sha, data } = await ghReadJsonFile(SYNC_PATH);
+    const remoteTasks = (data && data.tasks) || {};
+
+    // 2. Mergear con local — gana el last_modified_at más reciente.
+    const local = loadStates();
+    const merged = { ...remoteTasks };
+    Object.entries(local).forEach(([taskId, localState]) => {
+      const remoteState = remoteTasks[taskId];
+      const localTs = localState?.last_modified_at || '0';
+      const remoteTs = remoteState?.last_modified_at || '0';
+      if (localTs >= remoteTs) merged[taskId] = localState;
+    });
+
+    // 3. Construir nuevo JSON y escribir.
+    const payload = {
+      _synced_at: new Date().toISOString(),
+      _last_writer: loadDeviceName() || 'browser',
+      tasks: merged,
+    };
+    const json = JSON.stringify(payload, null, 2) + '\n';
+    const base64 = btoa(unescape(encodeURIComponent(json)));
+    await ghPutFile(SYNC_PATH, base64, `sync: actualizar task_states desde ${loadDeviceName() || 'browser'}`, sha);
+
+    // 4. Reemplazar local con merged (ahora todos tienen last_modified_at acordado).
+    saveStates(merged);
+    _stateDirty = false;
+    updateSyncStatus({ ok: true });
+  } catch (err) {
+    console.warn('Sync flush falló:', err);
+    if (retries > 0 && /409|412/.test(String(err.message))) {
+      // Conflict — refetch + retry.
+      await new Promise(r => setTimeout(r, 600));
+      _syncInProgress = false;
+      return flushSync(retries - 1);
+    }
+    updateSyncStatus({ error: err.message });
+  } finally {
+    _syncInProgress = false;
+  }
+}
+
+function updateSyncStatus(opts = {}) {
+  const bar = document.getElementById('sync-status-bar');
+  const label = document.getElementById('sync-label');
+  const retryBtn = document.getElementById('sync-retry-btn');
+  if (!bar) return;
+  const hasToken = !!loadGitHubToken();
+
+  if (!hasToken) {
+    bar.dataset.state = 'disabled';
+    label.textContent = 'Sync deshabilitado · configurá tu GitHub PAT en ⚙️';
+    retryBtn.hidden = true;
+    bar.hidden = false;
+    return;
+  }
+  if (_syncInProgress) {
+    bar.dataset.state = 'syncing';
+    label.textContent = 'Sincronizando…';
+    retryBtn.hidden = true;
+    bar.hidden = false;
+    return;
+  }
+  if (opts.error) {
+    bar.dataset.state = 'error';
+    label.textContent = `Error de sync: ${opts.error.slice(0, 80)}`;
+    retryBtn.hidden = false;
+    bar.hidden = false;
+    return;
+  }
+  if (_stateDirty) {
+    bar.dataset.state = 'pending';
+    label.textContent = 'Sync pendiente · se subirá en unos segundos';
+    retryBtn.hidden = false;
+    bar.hidden = false;
+    return;
+  }
+  // Sin pendientes → ocultar la barra para no hacer ruido visual.
+  bar.dataset.state = 'ok';
+  bar.hidden = true;
+}
+
+// Flush al perder foco / cerrar pestaña.
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden' && _stateDirty) {
+    flushSync();
+  }
+});
+window.addEventListener('beforeunload', () => {
+  if (_stateDirty) {
+    // Best-effort — sendBeacon no sirve para PUT con auth; intentamos fetch sin await.
+    flushSync();
+  }
+});
+
+// Botón "Reintentar" en la status bar.
+document.getElementById('sync-retry-btn')?.addEventListener('click', () => flushSync());
+
+// Update inicial de la status bar (puede que ya haya cambios pending desde una sesión vieja).
+updateSyncStatus();
 
 // Fetch público del task_states.json del repo (no necesita auth — repo público).
 async function fetchRemoteTaskStates() {

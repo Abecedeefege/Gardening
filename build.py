@@ -596,6 +596,11 @@ def build_timeline_view(tasks, img_data):
   </div>
 
   <div class="timeline-summary" id="timeline-summary"></div>
+  <div class="sync-status-bar" id="sync-status-bar" data-state="disabled" hidden>
+    <span class="sync-dot"></span>
+    <span class="sync-label" id="sync-label">Sync deshabilitado</span>
+    <button class="sync-retry-btn" id="sync-retry-btn" hidden>↻ Reintentar</button>
+  </div>
   <div class="timeline-feed" id="timeline-feed"></div>
   <div class="timeline-empty" id="timeline-empty" style="display:none">
     <div class="empty-icon">🌿</div>
