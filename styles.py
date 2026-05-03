@@ -1099,6 +1099,151 @@ h2.subbrand {
   margin-top: 18px;
 }
 
+/* TASK PHOTO MODAL — captura + preview + upload */
+.task-photo-name {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  background: var(--bg-soft);
+  padding: 8px 12px;
+  border-radius: var(--r-md);
+  margin: 0 0 16px;
+}
+.task-photo-warning {
+  font-size: 0.88rem;
+  color: #92400e;
+  background: rgba(245, 158, 11, 0.12);
+  padding: 12px 14px;
+  border-radius: var(--r-md);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.task-photo-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+@media (max-width: 480px) {
+  .task-photo-buttons { grid-template-columns: 1fr; }
+}
+.task-photo-btn {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px;
+  padding: 28px 14px;
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--r-lg);
+  background: var(--bg-soft);
+  cursor: pointer;
+  transition: all var(--t);
+}
+.task-photo-btn:hover {
+  background: var(--bg-card);
+  border-color: var(--text);
+}
+.task-photo-btn-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+.task-photo-btn-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.task-photo-preview-wrap {
+  background: var(--bg);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 12px;
+}
+#task-photo-canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.task-photo-overlay-note {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  text-align: center;
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+.task-photo-actions {
+  display: flex; gap: 10px;
+}
+.task-photo-actions > button { flex: 1 1 auto; }
+.task-photo-uploading {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-2);
+  padding: 32px 16px;
+}
+.task-photo-success {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.task-photo-success-title {
+  font-size: 1rem; font-weight: 700;
+  color: #166534;
+  margin-bottom: 6px;
+}
+.task-photo-success p {
+  font-size: 0.88rem;
+  color: var(--text-2);
+  margin: 6px 0;
+  line-height: 1.5;
+}
+.task-photo-success-hint { color: var(--text-3); }
+.task-photo-success-cmd {
+  display: inline-block;
+  background: var(--text);
+  color: white;
+  padding: 4px 10px;
+  border-radius: var(--r-md);
+  font-family: monospace;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin: 4px 0;
+}
+.task-photo-success-link a {
+  color: var(--text);
+  text-decoration: underline;
+  font-size: 0.85rem;
+}
+.task-photo-error {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.task-photo-error-title {
+  font-size: 1rem; font-weight: 700;
+  color: #991b1b;
+  margin-bottom: 6px;
+}
+.task-photo-error p {
+  font-size: 0.88rem;
+  color: var(--text-2);
+  margin: 0;
+  word-break: break-word;
+}
+
+/* Botón "📷 Subir foto" en task-actions */
+.task-btn-photo {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.3);
+  color: #4338ca;
+}
+.task-btn-photo:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
 /* Timeline summary — bloque informativo flat en una sola línea (estilo weather) */
 .timeline-summary {
   display: flex;
@@ -1502,7 +1647,7 @@ h2.subbrand {
 /* ACTIONS — grid 3-up, ancho completo, mismo size */
 .task-actions {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
   gap: 6px;
   padding: 10px 12px 14px;
   border-top: 1px solid var(--border-soft);

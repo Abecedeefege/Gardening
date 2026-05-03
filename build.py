@@ -667,6 +667,58 @@ def build_timeline_view(tasks, img_data):
   </div>
 </div>
 
+<!-- Modal: Subir foto en tarea -->
+<div class="modal" id="task-photo-modal">
+  <div class="modal-content modal-wide">
+    <button class="modal-close" data-close="task-photo">✕</button>
+    <h3>📷 Subir foto a la tarea</h3>
+    <p class="task-photo-name" id="task-photo-name"></p>
+
+    <!-- Pantalla 1: setup falta -->
+    <div class="task-photo-stage" data-stage="setup" hidden>
+      <div class="task-photo-warning">
+        ⚠️ Necesitás configurar tu GitHub Personal Access Token antes de subir fotos.
+      </div>
+      <button class="btn-primary" id="btn-photo-go-settings">⚙️ Ir a Configuración</button>
+    </div>
+
+    <!-- Pantalla 2: elegir foto -->
+    <div class="task-photo-stage" data-stage="pick">
+      <div class="task-photo-buttons">
+        <label class="task-photo-btn">
+          <input type="file" accept="image/*" capture="environment" id="task-photo-camera-input" hidden>
+          <span class="task-photo-btn-emoji">📸</span>
+          <span class="task-photo-btn-label">Sacá una foto</span>
+        </label>
+        <label class="task-photo-btn">
+          <input type="file" accept="image/*" id="task-photo-gallery-input" hidden>
+          <span class="task-photo-btn-emoji">🖼️</span>
+          <span class="task-photo-btn-label">Subí una existente</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Pantalla 3: preview + confirmar -->
+    <div class="task-photo-stage" data-stage="preview" hidden>
+      <div class="task-photo-preview-wrap">
+        <canvas id="task-photo-canvas"></canvas>
+      </div>
+      <p class="task-photo-overlay-note">
+        🏷️ La foto incluye un overlay con el ID de la tarea, fecha y título corto. Sirve para identificarla después.
+      </p>
+      <div class="task-photo-actions">
+        <button class="btn-secondary" id="btn-photo-change">↺ Cambiar foto</button>
+        <button class="btn-primary" id="btn-photo-upload">📤 Subir al repo</button>
+      </div>
+    </div>
+
+    <!-- Pantalla 4: subiendo / éxito / error -->
+    <div class="task-photo-stage" data-stage="result" hidden>
+      <div class="task-photo-result" id="task-photo-result"></div>
+    </div>
+  </div>
+</div>
+
 <!-- Modal: Configuración (GitHub PAT + device name) -->
 <div class="modal" id="settings-modal">
   <div class="modal-content modal-wide">

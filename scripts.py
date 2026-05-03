@@ -302,6 +302,7 @@ function renderTaskCard(task) {
       <div class="task-actions">
         <button class="task-btn task-btn-done" data-action="done" data-task-id="${task.id}">✅ Hecho</button>
         <button class="task-btn task-btn-snooze" data-action="snooze" data-task-id="${task.id}">😴 Posponer</button>
+        <button class="task-btn task-btn-photo" data-action="photo" data-task-id="${task.id}">📷 Subir foto</button>
         <button class="task-btn task-btn-whatsapp" data-action="whatsapp" data-task-id="${task.id}">💬 WhatsApp</button>
       </div>`;
   } else {
@@ -525,6 +526,7 @@ function setupTaskInteractions(scope) {
       if (action === 'done') markDone(task);
       else if (action === 'snooze') openSnoozeModal(task);
       else if (action === 'whatsapp') openWhatsAppModal(task);
+      else if (action === 'photo') openTaskPhotoModal(task);
       else if (action === 'reactivate') reactivateTask(task);
     });
   });
@@ -1053,4 +1055,290 @@ document.getElementById('btn-save-settings').addEventListener('click', () => {
   saveDeviceName(deviceName);
   closeModal('settings');
 });
+
+// ============================================================
+// GITHUB API CLIENT — read/write archivos en el repo
+// ============================================================
+const GH_REPO = 'abecedeefege/gardening';
+const GH_API = `https://api.github.com/repos/${GH_REPO}/contents`;
+
+async function ghGetFile(path) {
+  const token = loadGitHubToken();
+  if (!token) throw new Error('Sin GitHub PAT configurado');
+  const r = await fetch(`${GH_API}/${path}?ref=main`, {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Accept': 'application/vnd.github+json',
+    },
+  });
+  if (r.status === 404) return null;
+  if (!r.ok) throw new Error(`GET ${path}: HTTP ${r.status}`);
+  return await r.json();
+}
+
+async function ghPutFile(path, base64Content, message, sha = null) {
+  const token = loadGitHubToken();
+  if (!token) throw new Error('Sin GitHub PAT configurado');
+  const body = { message, content: base64Content, branch: 'main' };
+  if (sha) body.sha = sha;
+  const r = await fetch(`${GH_API}/${path}`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Accept': 'application/vnd.github+json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) {
+    const txt = await r.text();
+    throw new Error(`PUT ${path}: HTTP ${r.status} — ${txt.slice(0, 200)}`);
+  }
+  return await r.json();
+}
+
+// JSON de docs (uploads.json, sync/*.json) — fetch + merge + put.
+async function ghReadJsonFile(path) {
+  const meta = await ghGetFile(path);
+  if (!meta) return { sha: null, data: null };
+  // GitHub devuelve content base64 con saltos de línea.
+  const decoded = atob(meta.content.replace(/\n/g, ''));
+  // Decodificar UTF-8 desde la cadena ISO-Latin-1 que devuelve atob.
+  const utf8 = decodeURIComponent(escape(decoded));
+  return { sha: meta.sha, data: JSON.parse(utf8) };
+}
+
+async function ghWriteJsonFile(path, data, message) {
+  // Encode UTF-8 → ISO Latin-1 → base64.
+  const utf8 = unescape(encodeURIComponent(JSON.stringify(data, null, 2) + '\n'));
+  const base64 = btoa(utf8);
+  let sha = null;
+  try {
+    const existing = await ghReadJsonFile(path);
+    sha = existing.sha;
+  } catch (e) { /* si falla el read, intentamos crear */ }
+  return await ghPutFile(path, base64, message, sha);
+}
+
+// ============================================================
+// TASK PHOTO UPLOAD MODAL
+// ============================================================
+let pendingPhotoTask = null;
+let pendingPhotoBlob = null;
+
+function openTaskPhotoModal(task) {
+  pendingPhotoTask = task;
+  pendingPhotoBlob = null;
+  document.getElementById('task-photo-name').textContent = `📌 ${task.title} · ${task.plant_common} (${task.plant_codes.join(', ')})`;
+
+  // Mostrar la stage correcta según si hay token configurado.
+  const hasToken = !!loadGitHubToken();
+  setTaskPhotoStage(hasToken ? 'pick' : 'setup');
+  document.getElementById('task-photo-modal').classList.add('active');
+}
+
+function setTaskPhotoStage(stage) {
+  document.querySelectorAll('#task-photo-modal .task-photo-stage').forEach(s => {
+    s.hidden = (s.dataset.stage !== stage);
+  });
+}
+
+document.getElementById('btn-photo-go-settings').addEventListener('click', () => {
+  closeModal('task-photo');
+  openSettingsModal();
+});
+
+['task-photo-camera-input', 'task-photo-gallery-input'].forEach(id => {
+  document.getElementById(id).addEventListener('change', async (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    e.target.value = '';  // permitir reseleccionar el mismo archivo después
+    await loadAndPreviewPhoto(file);
+  });
+});
+
+document.getElementById('btn-photo-change').addEventListener('click', () => {
+  pendingPhotoBlob = null;
+  setTaskPhotoStage('pick');
+});
+
+document.getElementById('btn-photo-upload').addEventListener('click', uploadPendingPhoto);
+
+async function loadAndPreviewPhoto(file) {
+  if (!pendingPhotoTask) return;
+  try {
+    const blob = await resizeAndStampImage(file, pendingPhotoTask, 1024, 0.85);
+    pendingPhotoBlob = blob;
+    // Mostrar preview en el canvas que ya está renderizado.
+    const canvas = document.getElementById('task-photo-canvas');
+    const url = URL.createObjectURL(blob);
+    const img = new Image();
+    img.onload = () => {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      canvas.getContext('2d').drawImage(img, 0, 0);
+      URL.revokeObjectURL(url);
+      setTaskPhotoStage('preview');
+    };
+    img.src = url;
+  } catch (err) {
+    setTaskPhotoStage('result');
+    document.getElementById('task-photo-result').innerHTML = `
+      <div class="task-photo-error">❌ Error procesando la foto: ${err.message}</div>
+      <button class="btn-secondary" onclick="setTaskPhotoStage('pick')">↺ Reintentar</button>`;
+  }
+}
+
+// Resize la imagen a maxSide px (lado mayor) y quema overlay con metadata
+// de la tarea en la esquina inferior izquierda. Devuelve un Blob JPEG.
+async function resizeAndStampImage(file, task, maxSide, quality) {
+  // 1. Cargar imagen.
+  const img = await new Promise((resolve, reject) => {
+    const i = new Image();
+    i.onload = () => resolve(i);
+    i.onerror = () => reject(new Error('No se pudo leer la imagen'));
+    i.src = URL.createObjectURL(file);
+  });
+
+  // 2. Calcular dimensiones.
+  let { width, height } = img;
+  if (width > maxSide || height > maxSide) {
+    if (width >= height) {
+      height = Math.round(height * (maxSide / width));
+      width = maxSide;
+    } else {
+      width = Math.round(width * (maxSide / height));
+      height = maxSide;
+    }
+  }
+
+  // 3. Dibujar en canvas.
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0, width, height);
+  URL.revokeObjectURL(img.src);
+
+  // 4. Quemar overlay.
+  drawTaskOverlay(ctx, width, height, task);
+
+  // 5. Exportar a Blob.
+  return await new Promise((resolve, reject) => {
+    canvas.toBlob(b => b ? resolve(b) : reject(new Error('Falló toBlob')), 'image/jpeg', quality);
+  });
+}
+
+function drawTaskOverlay(ctx, width, height, task) {
+  // Banda semi-transparente abajo, ~12% del alto (mínimo 56px, máximo 84px).
+  const bandH = Math.max(56, Math.min(84, Math.round(height * 0.12)));
+  const padX = 14;
+  const padY = 10;
+
+  // Fondo de banda.
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.62)';
+  ctx.fillRect(0, height - bandH, width, bandH);
+
+  // Construir las 2 líneas.
+  const now = new Date();
+  const monthShort = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const dd = String(now.getDate()).padStart(2, '0');
+  const mm = monthShort[now.getMonth()];
+  const yy = String(now.getFullYear()).slice(-2);
+  const hh = String(now.getHours()).padStart(2, '0');
+  const mi = String(now.getMinutes()).padStart(2, '0');
+  const line1 = `📌 ${task.id} · ${dd} ${mm} ${yy} · ${hh}:${mi}`;
+  let line2 = task.title || '';
+  if (line2.length > 55) line2 = line2.slice(0, 52) + '…';
+
+  // Texto.
+  const fontSize = Math.max(14, Math.min(20, Math.round(bandH * 0.30)));
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.96)';
+  ctx.font = `600 ${fontSize}px -apple-system, "Segoe UI", Roboto, sans-serif`;
+  ctx.textBaseline = 'top';
+  ctx.fillText(line1, padX, height - bandH + padY);
+
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+  ctx.font = `400 ${fontSize - 2}px -apple-system, "Segoe UI", Roboto, sans-serif`;
+  ctx.fillText(line2, padX, height - bandH + padY + fontSize + 4);
+}
+
+// Convierte Blob → base64 string sin prefijo "data:image/jpeg;base64,".
+function blobToBase64(blob) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const dataUrl = reader.result;
+      resolve(dataUrl.split(',')[1]);
+    };
+    reader.onerror = () => reject(new Error('Error leyendo blob'));
+    reader.readAsDataURL(blob);
+  });
+}
+
+async function uploadPendingPhoto() {
+  if (!pendingPhotoBlob || !pendingPhotoTask) return;
+  setTaskPhotoStage('result');
+  const result = document.getElementById('task-photo-result');
+  result.innerHTML = `<div class="task-photo-uploading">⏳ Subiendo foto al repo…</div>`;
+
+  try {
+    const task = pendingPhotoTask;
+    const plantId = task.plant_codes[0];
+    const now = new Date();
+    const stamp = now.toISOString().replace(/[-:]/g, '').replace(/\..+/, '').replace('T', '-').slice(0, 15);
+    const filename = `${task.id}_${stamp}.jpg`;
+    const path = `docs/images/uploads/${plantId}/${filename}`;
+    const base64 = await blobToBase64(pendingPhotoBlob);
+
+    // 1. Push de la imagen al repo.
+    await ghPutFile(path, base64, `upload: foto para ${task.id}`);
+
+    // 2. Append entry a docs/uploads.json.
+    const uploadsPath = 'docs/uploads.json';
+    const { sha, data } = await ghReadJsonFile(uploadsPath);
+    const idx = data || {};
+    if (!idx[plantId]) idx[plantId] = [];
+    const entry = {
+      filename,
+      uploaded_at: now.toISOString(),
+      uploaded_by: loadDeviceName() || 'desconocido',
+      context: 'task',
+      task_id: task.id,
+      task_title_snapshot: task.title,
+      ai_status: 'pending',
+      ai_evaluation: null,
+    };
+    idx[plantId].push(entry);
+    const newJson = JSON.stringify(idx, null, 2) + '\n';
+    const newBase64 = btoa(unescape(encodeURIComponent(newJson)));
+    await ghPutFile(uploadsPath, newBase64, `upload: registrar ${filename} en uploads.json`, sha);
+
+    // 3. Mostrar éxito.
+    const fileUrl = `https://github.com/${GH_REPO}/blob/main/${path}`;
+    result.innerHTML = `
+      <div class="task-photo-success">
+        <div class="task-photo-success-title">✅ Foto subida al repo</div>
+        <p>Quedó registrada como <strong>pending</strong>.</p>
+        <p class="task-photo-success-hint">
+          Para evaluarla y actualizar la tarea, abrí Claude Code en este repo y corré:
+        </p>
+        <code class="task-photo-success-cmd">/actualizar-tareas</code>
+        <p class="task-photo-success-link">
+          <a href="${fileUrl}" target="_blank" rel="noopener">Ver foto en GitHub →</a>
+        </p>
+      </div>
+      <button class="btn-primary" onclick="closeModal('task-photo')">Listo</button>`;
+  } catch (err) {
+    result.innerHTML = `
+      <div class="task-photo-error">
+        <div class="task-photo-error-title">❌ No se pudo subir</div>
+        <p>${err.message}</p>
+      </div>
+      <div class="task-photo-actions">
+        <button class="btn-secondary" onclick="setTaskPhotoStage('preview')">↺ Volver al preview</button>
+        <button class="btn-secondary" onclick="closeModal('task-photo')">Cancelar</button>
+      </div>`;
+  }
+}
 """
