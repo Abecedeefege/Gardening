@@ -1,1 +1,14 @@
-{}
+{
+  "F-10": [
+    {
+      "filename": "plant-F-10_20260503-161254.jpg",
+      "uploaded_at": "2026-05-03T16:12:54.233Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-F-10",
+      "task_title_snapshot": "Identificar especie con fotos clave",
+      "ai_status": "pending",
+      "ai_evaluation": null
+    }
+  ]
+}
