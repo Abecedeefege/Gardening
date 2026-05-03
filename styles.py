@@ -1099,6 +1099,45 @@ h2.subbrand {
   margin-top: 18px;
 }
 
+/* TRANSFER LINK SECTION */
+#transfer-link-output {
+  margin-top: 12px;
+}
+.transfer-warn {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  color: #92400e;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+#transfer-link-text {
+  width: 100%;
+  font-family: monospace;
+  font-size: 0.78rem;
+  padding: 9px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  color: var(--text);
+  resize: vertical;
+  word-break: break-all;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+.transfer-actions {
+  display: flex; gap: 8px;
+  margin-bottom: 8px;
+}
+.transfer-actions .btn-secondary { flex: 1 1 auto; }
+.transfer-hint {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  line-height: 1.4;
+}
+
 /* TASK PHOTO MODAL — captura + preview + upload */
 .task-photo-name {
   font-size: 0.85rem;

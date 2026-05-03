@@ -1100,6 +1100,45 @@ h2.subbrand {
   margin-top: 18px;
 }
 
+/* TRANSFER LINK SECTION */
+#transfer-link-output {
+  margin-top: 12px;
+}
+.transfer-warn {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  color: #92400e;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+#transfer-link-text {
+  width: 100%;
+  font-family: monospace;
+  font-size: 0.78rem;
+  padding: 9px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  color: var(--text);
+  resize: vertical;
+  word-break: break-all;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+.transfer-actions {
+  display: flex; gap: 8px;
+  margin-bottom: 8px;
+}
+.transfer-actions .btn-secondary { flex: 1 1 auto; }
+.transfer-hint {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  line-height: 1.4;
+}
+
 /* TASK PHOTO MODAL — captura + preview + upload */
 .task-photo-name {
   font-size: 0.85rem;
@@ -9107,6 +9146,26 @@ h2.subbrand {
       <input type="text" id="settings-device-name" class="settings-input" placeholder="iPhone-Lucia / Laptop-Casa">
     </div>
 
+    <div class="settings-section" id="settings-transfer-section" hidden>
+      <label class="settings-label">
+        <strong>📲 Transferir a otro device</strong>
+        <span class="settings-hint">Generá un link de uso único que carga el token en el otro device sin que tengas que tipearlo.</span>
+      </label>
+      <button class="btn-secondary" id="btn-gen-transfer-link">Generar link de transferencia</button>
+      <div id="transfer-link-output" hidden>
+        <div class="transfer-warn">
+          ⚠️ Este link contiene tu PAT en claro. <strong>Mandátelo solo a vos mismo</strong> (WhatsApp/Telegram/Mail/AirDrop). Borralo del historial cuando termines.
+        </div>
+        <textarea id="transfer-link-text" readonly rows="3"></textarea>
+        <div class="transfer-actions">
+          <button class="btn-secondary" id="btn-copy-transfer-link">📋 Copiar al portapapeles</button>
+        </div>
+        <div class="transfer-hint">
+          Cuando lo abras en el otro device, te pregunta si querés importar el token y lo guarda en ese navegador. El link funciona una sola vez (después se elimina de la URL).
+        </div>
+      </div>
+    </div>
+
     <div class="settings-footer">
       <button class="btn-primary" id="btn-save-settings">💾 Guardar</button>
     </div>
@@ -10149,10 +10208,14 @@ async function testGitHubToken(token) {
 }
 
 function openSettingsModal() {
-  document.getElementById('settings-github-token').value = loadGitHubToken();
+  const token = loadGitHubToken();
+  document.getElementById('settings-github-token').value = token;
   document.getElementById('settings-device-name').value = loadDeviceName();
   document.getElementById('settings-github-feedback').textContent = '';
   document.getElementById('settings-github-feedback').className = 'settings-feedback';
+  // Sección de transfer solo aparece si ya hay token configurado.
+  document.getElementById('settings-transfer-section').hidden = !token;
+  document.getElementById('transfer-link-output').hidden = true;
   document.getElementById('settings-modal').classList.add('active');
 }
 
@@ -10194,6 +10257,106 @@ document.getElementById('btn-save-settings').addEventListener('click', () => {
   saveDeviceName(deviceName);
   closeModal('settings');
 });
+
+// ============================================================
+// TRANSFER LINK — pasar el PAT a otro device sin tipear
+// ============================================================
+// Se genera un URL `<sitio>?import_token=<base64>` que el usuario manda a su
+// otro device por canal privado (WhatsApp Web a sí mismo, AirDrop, mail).
+// El token NUNCA pasa por el repo. Es una transferencia entre devices del
+// mismo usuario, end-to-end (vía el canal que él elija).
+function generateTransferLink() {
+  const token = loadGitHubToken();
+  if (!token) return null;
+  const payload = JSON.stringify({ t: token, d: loadDeviceName() });
+  // base64 URL-safe (sin + / =).
+  const b64 = btoa(unescape(encodeURIComponent(payload)))
+    .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  const baseUrl = window.location.origin + window.location.pathname;
+  return `${baseUrl}?import_token=${b64}`;
+}
+
+document.getElementById('btn-gen-transfer-link').addEventListener('click', () => {
+  const link = generateTransferLink();
+  if (!link) {
+    alert('No hay token configurado todavía. Pegá uno arriba y guardá primero.');
+    return;
+  }
+  document.getElementById('transfer-link-text').value = link;
+  document.getElementById('transfer-link-output').hidden = false;
+});
+
+document.getElementById('btn-copy-transfer-link').addEventListener('click', async () => {
+  const ta = document.getElementById('transfer-link-text');
+  const text = ta.value;
+  const btn = document.getElementById('btn-copy-transfer-link');
+  const orig = btn.textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+    btn.textContent = '✓ Copiado';
+  } catch {
+    // Fallback sin clipboard API (iOS viejo, file://, etc.).
+    ta.removeAttribute('readonly');
+    ta.select();
+    try { document.execCommand('copy'); btn.textContent = '✓ Copiado'; }
+    catch { btn.textContent = '⚠️ Seleccioná y copiá manualmente'; }
+    ta.setAttribute('readonly', 'true');
+  }
+  setTimeout(() => { btn.textContent = orig; }, 2200);
+});
+
+// Receive-side: si la URL trae ?import_token=..., ofrecer importarlo.
+function handleTransferImport() {
+  const params = new URLSearchParams(window.location.search);
+  const importToken = params.get('import_token');
+  if (!importToken) return;
+
+  let payload = null;
+  try {
+    const b64 = importToken.replace(/-/g, '+').replace(/_/g, '/');
+    const padded = b64 + '==='.slice(0, (4 - b64.length % 4) % 4);
+    const decoded = decodeURIComponent(escape(atob(padded)));
+    payload = JSON.parse(decoded);
+  } catch {
+    alert('El link de transferencia es inválido o está corrupto.');
+    cleanImportTokenFromUrl();
+    return;
+  }
+  if (!payload || !payload.t) {
+    alert('El link no contiene un token válido.');
+    cleanImportTokenFromUrl();
+    return;
+  }
+
+  const tokenPreview = payload.t.length > 20
+    ? payload.t.slice(0, 16) + '…' + payload.t.slice(-4)
+    : payload.t;
+  const ok = confirm(
+    'Importar GitHub PAT desde el link?\n\n' +
+    `Token: ${tokenPreview}\n` +
+    `Device origen: ${payload.d || '(sin nombre)'}\n\n` +
+    'Se va a guardar en este navegador (localStorage). Después se elimina el token de la URL.'
+  );
+  if (ok) {
+    saveGitHubToken(payload.t);
+    if (!loadDeviceName()) {
+      const suggested = (payload.d ? payload.d + '-2' : '') || 'device-' + Math.floor(Math.random() * 100);
+      const chosen = prompt('Nombre para este device (recomendado: distinguilo del origen):', suggested);
+      if (chosen) saveDeviceName(chosen);
+    }
+    alert('✅ Token importado. Probá tareas y sync.');
+    updateSyncStatus();
+  }
+  cleanImportTokenFromUrl();
+}
+
+function cleanImportTokenFromUrl() {
+  const url = new URL(window.location.href);
+  url.searchParams.delete('import_token');
+  history.replaceState({}, '', url.toString());
+}
+
+handleTransferImport();
 
 // ============================================================
 // GITHUB API CLIENT — read/write archivos en el repo

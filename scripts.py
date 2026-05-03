@@ -1034,10 +1034,14 @@ async function testGitHubToken(token) {
 }
 
 function openSettingsModal() {
-  document.getElementById('settings-github-token').value = loadGitHubToken();
+  const token = loadGitHubToken();
+  document.getElementById('settings-github-token').value = token;
   document.getElementById('settings-device-name').value = loadDeviceName();
   document.getElementById('settings-github-feedback').textContent = '';
   document.getElementById('settings-github-feedback').className = 'settings-feedback';
+  // Sección de transfer solo aparece si ya hay token configurado.
+  document.getElementById('settings-transfer-section').hidden = !token;
+  document.getElementById('transfer-link-output').hidden = true;
   document.getElementById('settings-modal').classList.add('active');
 }
 
@@ -1079,6 +1083,106 @@ document.getElementById('btn-save-settings').addEventListener('click', () => {
   saveDeviceName(deviceName);
   closeModal('settings');
 });
+
+// ============================================================
+// TRANSFER LINK — pasar el PAT a otro device sin tipear
+// ============================================================
+// Se genera un URL `<sitio>?import_token=<base64>` que el usuario manda a su
+// otro device por canal privado (WhatsApp Web a sí mismo, AirDrop, mail).
+// El token NUNCA pasa por el repo. Es una transferencia entre devices del
+// mismo usuario, end-to-end (vía el canal que él elija).
+function generateTransferLink() {
+  const token = loadGitHubToken();
+  if (!token) return null;
+  const payload = JSON.stringify({ t: token, d: loadDeviceName() });
+  // base64 URL-safe (sin + / =).
+  const b64 = btoa(unescape(encodeURIComponent(payload)))
+    .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  const baseUrl = window.location.origin + window.location.pathname;
+  return `${baseUrl}?import_token=${b64}`;
+}
+
+document.getElementById('btn-gen-transfer-link').addEventListener('click', () => {
+  const link = generateTransferLink();
+  if (!link) {
+    alert('No hay token configurado todavía. Pegá uno arriba y guardá primero.');
+    return;
+  }
+  document.getElementById('transfer-link-text').value = link;
+  document.getElementById('transfer-link-output').hidden = false;
+});
+
+document.getElementById('btn-copy-transfer-link').addEventListener('click', async () => {
+  const ta = document.getElementById('transfer-link-text');
+  const text = ta.value;
+  const btn = document.getElementById('btn-copy-transfer-link');
+  const orig = btn.textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+    btn.textContent = '✓ Copiado';
+  } catch {
+    // Fallback sin clipboard API (iOS viejo, file://, etc.).
+    ta.removeAttribute('readonly');
+    ta.select();
+    try { document.execCommand('copy'); btn.textContent = '✓ Copiado'; }
+    catch { btn.textContent = '⚠️ Seleccioná y copiá manualmente'; }
+    ta.setAttribute('readonly', 'true');
+  }
+  setTimeout(() => { btn.textContent = orig; }, 2200);
+});
+
+// Receive-side: si la URL trae ?import_token=..., ofrecer importarlo.
+function handleTransferImport() {
+  const params = new URLSearchParams(window.location.search);
+  const importToken = params.get('import_token');
+  if (!importToken) return;
+
+  let payload = null;
+  try {
+    const b64 = importToken.replace(/-/g, '+').replace(/_/g, '/');
+    const padded = b64 + '==='.slice(0, (4 - b64.length % 4) % 4);
+    const decoded = decodeURIComponent(escape(atob(padded)));
+    payload = JSON.parse(decoded);
+  } catch {
+    alert('El link de transferencia es inválido o está corrupto.');
+    cleanImportTokenFromUrl();
+    return;
+  }
+  if (!payload || !payload.t) {
+    alert('El link no contiene un token válido.');
+    cleanImportTokenFromUrl();
+    return;
+  }
+
+  const tokenPreview = payload.t.length > 20
+    ? payload.t.slice(0, 16) + '…' + payload.t.slice(-4)
+    : payload.t;
+  const ok = confirm(
+    'Importar GitHub PAT desde el link?\n\n' +
+    `Token: ${tokenPreview}\n` +
+    `Device origen: ${payload.d || '(sin nombre)'}\n\n` +
+    'Se va a guardar en este navegador (localStorage). Después se elimina el token de la URL.'
+  );
+  if (ok) {
+    saveGitHubToken(payload.t);
+    if (!loadDeviceName()) {
+      const suggested = (payload.d ? payload.d + '-2' : '') || 'device-' + Math.floor(Math.random() * 100);
+      const chosen = prompt('Nombre para este device (recomendado: distinguilo del origen):', suggested);
+      if (chosen) saveDeviceName(chosen);
+    }
+    alert('✅ Token importado. Probá tareas y sync.');
+    updateSyncStatus();
+  }
+  cleanImportTokenFromUrl();
+}
+
+function cleanImportTokenFromUrl() {
+  const url = new URL(window.location.href);
+  url.searchParams.delete('import_token');
+  history.replaceState({}, '', url.toString());
+}
+
+handleTransferImport();
 
 // ============================================================
 // GITHUB API CLIENT — read/write archivos en el repo

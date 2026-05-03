@@ -823,6 +823,26 @@ def build_timeline_view(tasks, img_data):
       <input type="text" id="settings-device-name" class="settings-input" placeholder="iPhone-Lucia / Laptop-Casa">
     </div>
 
+    <div class="settings-section" id="settings-transfer-section" hidden>
+      <label class="settings-label">
+        <strong>📲 Transferir a otro device</strong>
+        <span class="settings-hint">Generá un link de uso único que carga el token en el otro device sin que tengas que tipearlo.</span>
+      </label>
+      <button class="btn-secondary" id="btn-gen-transfer-link">Generar link de transferencia</button>
+      <div id="transfer-link-output" hidden>
+        <div class="transfer-warn">
+          ⚠️ Este link contiene tu PAT en claro. <strong>Mandátelo solo a vos mismo</strong> (WhatsApp/Telegram/Mail/AirDrop). Borralo del historial cuando termines.
+        </div>
+        <textarea id="transfer-link-text" readonly rows="3"></textarea>
+        <div class="transfer-actions">
+          <button class="btn-secondary" id="btn-copy-transfer-link">📋 Copiar al portapapeles</button>
+        </div>
+        <div class="transfer-hint">
+          Cuando lo abras en el otro device, te pregunta si querés importar el token y lo guarda en ese navegador. El link funciona una sola vez (después se elimina de la URL).
+        </div>
+      </div>
+    </div>
+
     <div class="settings-footer">
       <button class="btn-primary" id="btn-save-settings">💾 Guardar</button>
     </div>
