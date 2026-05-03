@@ -1244,6 +1244,211 @@ h2.subbrand {
   border-color: rgba(99, 102, 241, 0.5);
 }
 
+/* SPECIES DETAIL MODAL — abre al click en una plant-card */
+.species-detail-head {
+  margin-bottom: 14px;
+}
+.species-detail-codes {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-3);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.species-detail-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 2px;
+  color: var(--text);
+}
+.species-detail-sci {
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--text-2);
+}
+.species-detail-other {
+  font-size: 0.82rem;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+
+.species-photos-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 8px;
+  margin: 14px 0 18px;
+}
+.species-photo-cell {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--border-soft);
+  background: var(--bg-soft);
+  transition: transform var(--t), border-color var(--t);
+}
+.species-photo-cell:hover {
+  transform: scale(1.02);
+  border-color: var(--text);
+}
+.species-photo-cell img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.species-photo-tag {
+  position: absolute;
+  bottom: 4px; left: 4px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--r-full);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+.species-photo-tag.main { background: rgba(34, 197, 94, 0.85); }
+.species-photo-tag.loc { background: rgba(59, 130, 246, 0.85); }
+.species-photo-tag.upload { background: rgba(0, 0, 0, 0.75); }
+
+.species-photo-cell.add {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 4px;
+  border: 2px dashed var(--border-strong);
+  background: transparent;
+}
+.species-photo-cell.add:hover {
+  border-color: var(--text);
+  background: var(--bg-soft);
+}
+.species-add-plus {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-3);
+  line-height: 1;
+}
+.species-add-label {
+  font-size: 0.74rem;
+  color: var(--text-3);
+  font-weight: 600;
+}
+
+.species-no-photos {
+  grid-column: 1 / -1;
+  padding: 24px;
+  text-align: center;
+  color: var(--text-3);
+  font-size: 0.88rem;
+  font-style: italic;
+}
+
+.species-detail-section {
+  padding: 12px 0;
+  border-top: 1px solid var(--border-soft);
+}
+.species-charrua {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  margin-bottom: 6px;
+}
+.species-desc {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 8px 0;
+}
+.species-funfact {
+  background: var(--bg-soft);
+  border-left: 3px solid var(--border-strong);
+  padding: 8px 12px;
+  border-radius: var(--r-md);
+  font-size: 0.85rem;
+  color: var(--text-2);
+  margin: 8px 0;
+}
+.species-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 8px;
+}
+.species-tag-chip {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: var(--bg-soft);
+  color: var(--text-2);
+  padding: 3px 8px;
+  border-radius: var(--r-full);
+}
+
+.species-care {
+  display: grid; gap: 6px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border-soft);
+}
+.species-care-row {
+  display: grid;
+  grid-template-columns: 28px 110px 1fr;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+@media (max-width: 480px) {
+  .species-care-row {
+    grid-template-columns: 28px 1fr;
+  }
+  .species-care-label { display: none; }
+}
+.species-care-icon { font-size: 1rem; }
+.species-care-label {
+  font-weight: 600;
+  color: var(--text-2);
+}
+.species-care-val { color: var(--text); }
+
+.species-tasks {
+  padding: 12px 0 4px;
+  border-top: 1px solid var(--border-soft);
+}
+.species-tasks h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+.species-task-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 0;
+  font-size: 0.82rem;
+  border-bottom: 1px dashed var(--border-soft);
+}
+.species-task-row:last-child { border-bottom: none; }
+.species-task-chip {
+  flex: 0 0 auto;
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--r-full);
+  letter-spacing: 0.02em;
+}
+.species-task-chip.active { background: rgba(245, 158, 11, 0.18); color: #92400e; }
+.species-task-chip.done { background: rgba(34, 197, 94, 0.18); color: #166534; }
+.species-task-chip.snoozed { background: rgba(99, 102, 241, 0.18); color: #4338ca; }
+.species-task-title {
+  flex: 1 1 auto;
+  color: var(--text);
+  font-weight: 500;
+}
+.species-task-when {
+  flex: 0 0 auto;
+  color: var(--text-3);
+  font-size: 0.74rem;
+  white-space: nowrap;
+}
+
 /* Banner de IA refresh — aparece cuando /actualizar-tareas hizo description_override */
 .task-ai-banner {
   background: rgba(245, 158, 11, 0.10);

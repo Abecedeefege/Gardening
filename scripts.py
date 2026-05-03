@@ -1301,6 +1301,347 @@ function blobToBase64(blob) {
 }
 
 // ============================================================
+// SPECIES DETAIL MODAL — click en plant-card abre detalle con galería
+// ============================================================
+
+// Cache del índice de uploads (docs/uploads.json) — fetch perezoso.
+let _uploadsIndexCache = null;
+let _uploadsIndexFetchedAt = 0;
+async function loadUploadsIndex(forceRefresh = false) {
+  const TTL_MS = 30 * 1000;  // 30s cache
+  if (!forceRefresh && _uploadsIndexCache && Date.now() - _uploadsIndexFetchedAt < TTL_MS) {
+    return _uploadsIndexCache;
+  }
+  try {
+    const url = `uploads.json?_=${Date.now()}`;
+    const r = await fetch(url, { cache: 'no-store' });
+    if (!r.ok) { _uploadsIndexCache = {}; }
+    else _uploadsIndexCache = await r.json();
+  } catch {
+    _uploadsIndexCache = {};
+  }
+  _uploadsIndexFetchedAt = Date.now();
+  return _uploadsIndexCache;
+}
+
+// Encontrá la planta en PLANTS_INFO por id_code (cualquier elemento de id_codes).
+function findPlantByCode(code) {
+  if (typeof PLANTS_INFO === 'undefined') return null;
+  return PLANTS_INFO.find(p => p.id_codes.includes(code));
+}
+
+// Tareas del Timeline filtradas por plant_code.
+function tasksForPlant(code) {
+  if (typeof TASKS === 'undefined') return [];
+  return TASKS.filter(t => t.plant_codes.includes(code));
+}
+
+const MONTH_SHORT_ES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+function fmtMonths(arr) {
+  if (!arr || !arr.length) return '—';
+  return arr.map(m => MONTH_SHORT_ES[m - 1] || '?').join(' · ');
+}
+
+let _currentSpeciesPlant = null;
+
+async function openSpeciesDetailModal(plantCode) {
+  const plant = findPlantByCode(plantCode);
+  if (!plant) return;
+  _currentSpeciesPlant = plant;
+  const primaryCode = plant.id_codes[0];
+  const idx = await loadUploadsIndex();
+  const uploads = idx[primaryCode] || [];
+
+  // Construir tira de fotos: main + loc + uploads (más recientes primero).
+  const photoCells = [];
+  if (plant.main_photo && IMG[plant.main_photo]) {
+    photoCells.push({ kind: 'main', src_data: IMG[plant.main_photo], filename: plant.main_photo, label: 'Foto principal' });
+  }
+  if (plant.loc_photo && IMG[plant.loc_photo] && plant.loc_photo !== plant.main_photo) {
+    photoCells.push({ kind: 'loc', src_data: IMG[plant.loc_photo], filename: plant.loc_photo, label: 'Vista aérea / ubicación' });
+  }
+  // Uploads ordenados por uploaded_at descendente.
+  const sortedUploads = [...uploads].sort((a, b) => (b.uploaded_at || '').localeCompare(a.uploaded_at || ''));
+  sortedUploads.forEach(u => {
+    photoCells.push({
+      kind: 'upload',
+      src_url: `images/uploads/${primaryCode}/${u.filename}`,
+      filename: u.filename,
+      label: u.context === 'task' ? `Tarea: ${u.task_title_snapshot || u.task_id}` : (u.note || 'Foto del catálogo'),
+      uploaded_at: u.uploaded_at,
+      uploaded_by: u.uploaded_by,
+      ai_evaluation: u.ai_evaluation,
+    });
+  });
+
+  const photosHtml = photoCells.length ? photoCells.map((c, i) => {
+    const src = c.src_data || c.src_url;
+    const tooltip = c.uploaded_at
+      ? `${c.label}\n${new Date(c.uploaded_at).toLocaleString('es-UY')}`
+      : c.label;
+    const tag = c.kind === 'main' ? '<span class="species-photo-tag main">Principal</span>'
+              : c.kind === 'loc'  ? '<span class="species-photo-tag loc">Ubicación</span>'
+              : c.kind === 'upload' ? `<span class="species-photo-tag upload">${c.uploaded_by || 'Subida'}</span>`
+              : '';
+    return `<div class="species-photo-cell" data-idx="${i}" title="${tooltip.replace(/"/g,'&quot;')}">
+      <img src="${src}" alt="${c.label}" loading="lazy">
+      ${tag}
+    </div>`;
+  }).join('') : '<div class="species-no-photos">Sin fotos todavía.</div>';
+
+  // Lista de tareas próximas / activas para esta planta.
+  const plantTasks = tasksForPlant(primaryCode);
+  const tasksHtml = plantTasks.length ? `
+    <div class="species-tasks">
+      <h4>📋 Tareas del Timeline</h4>
+      ${plantTasks.map(t => {
+        const st = getTaskState(t.id);
+        const cls = classifyTask(t);
+        const stChip = cls === 'done'    ? '<span class="species-task-chip done">✅ Hecha</span>'
+                    : cls === 'snoozed' ? '<span class="species-task-chip snoozed">😴 Pospuesta</span>'
+                    : '<span class="species-task-chip active">📌 Activa</span>';
+        return `<div class="species-task-row">
+          ${stChip}
+          <span class="species-task-title">${t.title}</span>
+          <span class="species-task-when">${t.due_label || ''}</span>
+        </div>`;
+      }).join('')}
+    </div>` : '';
+
+  // Datos curados de cuidados.
+  const careRows = [];
+  if (plant.water) careRows.push({ icon: '💧', label: 'Riego', val: plant.water });
+  if (plant.light) careRows.push({ icon: '☀️', label: 'Luz', val: plant.light });
+  if (plant.prune_when) careRows.push({ icon: '✂️', label: 'Cuándo podar', val: plant.prune_when });
+  if (plant.prune_how) careRows.push({ icon: '🛠️', label: 'Cómo podar', val: plant.prune_how });
+  if (plant.flowering && plant.flowering.length) careRows.push({ icon: '🌸', label: 'Florece', val: fmtMonths(plant.flowering) });
+  if (plant.fruiting && plant.fruiting.length) careRows.push({ icon: '🍎', label: 'Fructifica', val: fmtMonths(plant.fruiting) });
+  if (plant.pruning && plant.pruning.length) careRows.push({ icon: '🗓️', label: 'Meses de poda', val: fmtMonths(plant.pruning) });
+  const careHtml = careRows.length ? `
+    <div class="species-care">
+      ${careRows.map(r => `<div class="species-care-row">
+        <span class="species-care-icon">${r.icon}</span>
+        <span class="species-care-label">${r.label}</span>
+        <span class="species-care-val">${r.val}</span>
+      </div>`).join('')}
+    </div>` : '';
+
+  const charruaHtml = plant.charrua ? `<div class="species-charrua">🪶 <strong>Originario:</strong> ${plant.charrua}</div>` : '';
+  const funFactHtml = plant.fun_fact && plant.fun_fact !== '—' ? `<div class="species-funfact">💡 <em>${plant.fun_fact}</em></div>` : '';
+  const tagsHtml = (plant.tags || []).map(t => `<span class="species-tag-chip">${t}</span>`).join('');
+
+  document.getElementById('species-detail-body').innerHTML = `
+    <div class="species-detail-head">
+      <div class="species-detail-codes">${plant.id_codes.join(', ')} · ${plant.zone}</div>
+      <h3 class="species-detail-title">${plant.common}</h3>
+      <div class="species-detail-sci">${plant.sci || ''}</div>
+      ${plant.other_names ? `<div class="species-detail-other">↳ ${plant.other_names}</div>` : ''}
+    </div>
+
+    <div class="species-photos-strip" id="species-photos-strip">
+      ${photosHtml}
+      <div class="species-photo-cell add" data-action="add-species-photo" title="Sumar foto al catálogo">
+        <span class="species-add-plus">+</span>
+        <span class="species-add-label">Sumar foto</span>
+      </div>
+    </div>
+
+    <div class="species-detail-section">
+      ${charruaHtml}
+      <p class="species-desc">${plant.desc || ''}</p>
+      ${funFactHtml}
+      <div class="species-tags">${tagsHtml}</div>
+    </div>
+
+    ${careHtml}
+    ${tasksHtml}
+  `;
+
+  // Bind click en thumbnails → lightbox; en "+" → upload modal.
+  const strip = document.getElementById('species-photos-strip');
+  strip.querySelectorAll('.species-photo-cell:not(.add)').forEach(cell => {
+    cell.addEventListener('click', () => {
+      const img = cell.querySelector('img');
+      if (img && img.src) openLightboxWithUrl(img.src);
+    });
+  });
+  strip.querySelector('[data-action="add-species-photo"]').addEventListener('click', () => {
+    closeModal('species-detail');
+    openSpeciesPhotoModal(plant);
+  });
+
+  document.getElementById('species-detail-modal').classList.add('active');
+}
+
+// Abrir lightbox con un URL (en lugar de un nombre de archivo en IMG).
+function openLightboxWithUrl(url) {
+  const img = document.getElementById('lightbox-img');
+  const lb = document.getElementById('lightbox');
+  if (!img || !lb) return;
+  img.src = url;
+  lb.classList.add('active');
+}
+
+// Bind click en TODAS las plant-card (todos los tabs Frente/Fondo/Interior/Todos).
+document.querySelectorAll('.plant-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('a, button')) return;  // dejar que links/botones internos sigan funcionando
+    const code = card.dataset.plantId?.split(',')[0]?.trim();
+    if (code) openSpeciesDetailModal(code);
+  });
+  card.style.cursor = 'pointer';
+});
+
+// ============================================================
+// SPECIES PHOTO UPLOAD — sumar foto al catálogo (sin AI eval)
+// ============================================================
+let pendingSpeciesPhotoBlob = null;
+let pendingSpeciesPhotoPlant = null;
+
+function openSpeciesPhotoModal(plant) {
+  pendingSpeciesPhotoPlant = plant;
+  pendingSpeciesPhotoBlob = null;
+  document.getElementById('species-photo-name').textContent = `🌿 ${plant.common} (${plant.id_codes.join(', ')})`;
+  document.getElementById('species-photo-note').value = '';
+  const hasToken = !!loadGitHubToken();
+  setSpeciesPhotoStage(hasToken ? 'pick' : 'setup');
+  document.getElementById('species-photo-modal').classList.add('active');
+}
+
+function setSpeciesPhotoStage(stage) {
+  document.querySelectorAll('#species-photo-modal .task-photo-stage').forEach(s => {
+    s.hidden = (s.dataset.stage !== stage);
+  });
+}
+
+document.getElementById('btn-species-photo-go-settings').addEventListener('click', () => {
+  closeModal('species-photo');
+  openSettingsModal();
+});
+
+['species-photo-camera-input', 'species-photo-gallery-input'].forEach(id => {
+  document.getElementById(id).addEventListener('change', async (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    e.target.value = '';
+    await loadAndPreviewSpeciesPhoto(file);
+  });
+});
+
+document.getElementById('btn-species-photo-change').addEventListener('click', () => {
+  pendingSpeciesPhotoBlob = null;
+  setSpeciesPhotoStage('pick');
+});
+
+document.getElementById('btn-species-photo-upload').addEventListener('click', uploadPendingSpeciesPhoto);
+
+async function loadAndPreviewSpeciesPhoto(file) {
+  if (!pendingSpeciesPhotoPlant) return;
+  try {
+    // Sin overlay para fotos de especie — son del catálogo.
+    const blob = await resizeImageNoOverlay(file, 1024, 0.85);
+    pendingSpeciesPhotoBlob = blob;
+    const canvas = document.getElementById('species-photo-canvas');
+    const url = URL.createObjectURL(blob);
+    const img = new Image();
+    img.onload = () => {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      canvas.getContext('2d').drawImage(img, 0, 0);
+      URL.revokeObjectURL(url);
+      setSpeciesPhotoStage('preview');
+    };
+    img.src = url;
+  } catch (err) {
+    setSpeciesPhotoStage('result');
+    document.getElementById('species-photo-result').innerHTML = `
+      <div class="task-photo-error">❌ Error procesando la foto: ${err.message}</div>
+      <button class="btn-secondary" onclick="setSpeciesPhotoStage('pick')">↺ Reintentar</button>`;
+  }
+}
+
+async function resizeImageNoOverlay(file, maxSide, quality) {
+  const img = await new Promise((resolve, reject) => {
+    const i = new Image();
+    i.onload = () => resolve(i);
+    i.onerror = () => reject(new Error('No se pudo leer la imagen'));
+    i.src = URL.createObjectURL(file);
+  });
+  let { width, height } = img;
+  if (width > maxSide || height > maxSide) {
+    if (width >= height) { height = Math.round(height * (maxSide / width)); width = maxSide; }
+    else { width = Math.round(width * (maxSide / height)); height = maxSide; }
+  }
+  const canvas = document.createElement('canvas');
+  canvas.width = width; canvas.height = height;
+  canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+  URL.revokeObjectURL(img.src);
+  return await new Promise((resolve, reject) => {
+    canvas.toBlob(b => b ? resolve(b) : reject(new Error('Falló toBlob')), 'image/jpeg', quality);
+  });
+}
+
+async function uploadPendingSpeciesPhoto() {
+  if (!pendingSpeciesPhotoBlob || !pendingSpeciesPhotoPlant) return;
+  setSpeciesPhotoStage('result');
+  const result = document.getElementById('species-photo-result');
+  result.innerHTML = `<div class="task-photo-uploading">⏳ Subiendo foto al catálogo…</div>`;
+  try {
+    const plant = pendingSpeciesPhotoPlant;
+    const plantId = plant.id_codes[0];
+    const note = document.getElementById('species-photo-note').value.trim();
+    const now = new Date();
+    const stamp = now.toISOString().replace(/[-:]/g, '').replace(/\..+/, '').replace('T', '-').slice(0, 15);
+    const filename = `species-${plantId}_${stamp}.jpg`;
+    const path = `docs/images/uploads/${plantId}/${filename}`;
+    const base64 = await blobToBase64(pendingSpeciesPhotoBlob);
+
+    await ghPutFile(path, base64, `upload: foto al catálogo de ${plantId} (${plant.common})`);
+
+    const uploadsPath = 'docs/uploads.json';
+    const { sha, data } = await ghReadJsonFile(uploadsPath);
+    const idx = data || {};
+    if (!idx[plantId]) idx[plantId] = [];
+    const entry = {
+      filename,
+      uploaded_at: now.toISOString(),
+      uploaded_by: loadDeviceName() || 'desconocido',
+      context: 'species',
+      ai_status: 'n/a',
+    };
+    if (note) entry.note = note;
+    idx[plantId].push(entry);
+    const newJson = JSON.stringify(idx, null, 2) + '\n';
+    const newBase64 = btoa(unescape(encodeURIComponent(newJson)));
+    await ghPutFile(uploadsPath, newBase64, `upload: registrar ${filename} en uploads.json (especie)`, sha);
+
+    // Invalidar cache para que el modal de detalle muestre la nueva foto al reabrir.
+    _uploadsIndexCache = null;
+
+    const fileUrl = `https://github.com/${GH_REPO}/blob/main/${path}`;
+    result.innerHTML = `
+      <div class="task-photo-success">
+        <div class="task-photo-success-title">✅ Foto agregada al catálogo</div>
+        <p>Quedó visible en la galería de <strong>${plant.common}</strong>.</p>
+        <p class="task-photo-success-link">
+          <a href="${fileUrl}" target="_blank" rel="noopener">Ver foto en GitHub →</a>
+        </p>
+      </div>
+      <button class="btn-primary" onclick="closeModal('species-photo')">Listo</button>`;
+  } catch (err) {
+    result.innerHTML = `
+      <div class="task-photo-error">
+        <div class="task-photo-error-title">❌ No se pudo subir</div>
+        <p>${err.message}</p>
+      </div>
+      <div class="task-photo-actions">
+        <button class="btn-secondary" onclick="setSpeciesPhotoStage('preview')">↺ Volver al preview</button>
+        <button class="btn-secondary" onclick="closeModal('species-photo')">Cancelar</button>
+      </div>`;
+  }
+}
+
+// ============================================================
 // SYNC ENGINE — read-on-load (write se agrega en Batch 6)
 // ============================================================
 // Estado de sync (placeholder, write debounce viene después).

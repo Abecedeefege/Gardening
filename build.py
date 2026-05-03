@@ -667,6 +667,64 @@ def build_timeline_view(tasks, img_data):
   </div>
 </div>
 
+<!-- Modal: Detalle de especie -->
+<div class="modal" id="species-detail-modal">
+  <div class="modal-content modal-wide">
+    <button class="modal-close" data-close="species-detail">✕</button>
+    <div id="species-detail-body"></div>
+  </div>
+</div>
+
+<!-- Modal: Subir foto en especie -->
+<div class="modal" id="species-photo-modal">
+  <div class="modal-content modal-wide">
+    <button class="modal-close" data-close="species-photo">✕</button>
+    <h3>📷 Sumar foto al catálogo</h3>
+    <p class="task-photo-name" id="species-photo-name"></p>
+
+    <div class="task-photo-stage" data-stage="setup" hidden>
+      <div class="task-photo-warning">
+        ⚠️ Necesitás configurar tu GitHub Personal Access Token antes de subir fotos.
+      </div>
+      <button class="btn-primary" id="btn-species-photo-go-settings">⚙️ Ir a Configuración</button>
+    </div>
+
+    <div class="task-photo-stage" data-stage="pick">
+      <div class="task-photo-buttons">
+        <label class="task-photo-btn">
+          <input type="file" accept="image/*" capture="environment" id="species-photo-camera-input" hidden>
+          <span class="task-photo-btn-emoji">📸</span>
+          <span class="task-photo-btn-label">Sacá una foto</span>
+        </label>
+        <label class="task-photo-btn">
+          <input type="file" accept="image/*" id="species-photo-gallery-input" hidden>
+          <span class="task-photo-btn-emoji">🖼️</span>
+          <span class="task-photo-btn-label">Subí una existente</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="task-photo-stage" data-stage="preview" hidden>
+      <div class="task-photo-preview-wrap">
+        <canvas id="species-photo-canvas"></canvas>
+      </div>
+      <label class="settings-label" style="margin-top: 10px;">
+        <strong>Nota corta (opcional)</strong>
+        <span class="settings-hint">Aparece como tooltip al pasar el mouse en la galería.</span>
+      </label>
+      <input type="text" id="species-photo-note" class="settings-input" maxlength="120" placeholder="Ej: floración temprana, cambio de color...">
+      <div class="task-photo-actions" style="margin-top: 10px;">
+        <button class="btn-secondary" id="btn-species-photo-change">↺ Cambiar foto</button>
+        <button class="btn-primary" id="btn-species-photo-upload">📤 Subir al catálogo</button>
+      </div>
+    </div>
+
+    <div class="task-photo-stage" data-stage="result" hidden>
+      <div class="task-photo-result" id="species-photo-result"></div>
+    </div>
+  </div>
+</div>
+
 <!-- Modal: Subir foto en tarea -->
 <div class="modal" id="task-photo-modal">
   <div class="modal-content modal-wide">
@@ -997,6 +1055,35 @@ def main():
     # 5. Inyectar datos como JSON para el JS
     img_js = "const IMG = " + json.dumps(img_data) + ";"
     tasks_js = "const TASKS = " + json.dumps(tasks, ensure_ascii=False) + ";"
+
+    # PLANTS_INFO — info por planta para el modal de detalle (no incluye urgencies,
+    # esas viven en TASKS y se filtran por plant_codes desde el JS).
+    plants_info = []
+    for p in PLANTS:
+        plants_info.append({
+            "id_codes": p["id_codes"],
+            "zone": p["zone"],
+            "common": p.get("common", ""),
+            "sci": p.get("sci", ""),
+            "charrua": p.get("charrua", ""),
+            "other_names": p.get("other_names", ""),
+            "desc": p.get("desc", ""),
+            "type": p.get("type", ""),
+            "fun_fact": p.get("fun_fact", ""),
+            "prune_when": p.get("prune_when", ""),
+            "prune_how": p.get("prune_how", ""),
+            "water": p.get("water", ""),
+            "light": p.get("light", ""),
+            "tags": p.get("tags", []),
+            "main_photo": p.get("main_photo", ""),
+            "loc_photo": p.get("loc_photo", ""),
+            "gallery": p.get("gallery", []),
+            "flowering": p.get("flowering", []),
+            "fruiting": p.get("fruiting", []),
+            "pruning": p.get("pruning", []),
+        })
+    plants_info_js = "const PLANTS_INFO = " + json.dumps(plants_info, ensure_ascii=False) + ";"
+
     contacts_js = "const DEFAULT_CONTACTS = " + json.dumps(DEFAULT_CONTACTS, ensure_ascii=False) + ";"
     templates_js = "const WHATSAPP_TEMPLATES = " + json.dumps(WHATSAPP_TEMPLATES_BY_ACTION, ensure_ascii=False) + ";"
     ticker_js = "const STATS_TICKER = " + json.dumps(stats_ticker, ensure_ascii=False) + ";"
@@ -1072,6 +1159,7 @@ def main():
 <script>
 {img_js}
 {tasks_js}
+{plants_info_js}
 {contacts_js}
 {templates_js}
 {ticker_js}
