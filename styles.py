@@ -973,6 +973,132 @@ h2.subbrand {
 .btn-contacts:hover {
   background: var(--text); color: white; border-color: var(--text);
 }
+.btn-settings {
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  padding: 7px 10px;
+  font-size: 1rem;
+  cursor: pointer; border-radius: var(--r-full);
+  color: var(--text-2); transition: all var(--t);
+  flex: 0 0 auto;
+  line-height: 1;
+}
+.btn-settings:hover {
+  background: var(--text); color: white; border-color: var(--text);
+}
+
+/* SETTINGS MODAL */
+.settings-intro {
+  font-size: 0.85rem; color: var(--text-2);
+  background: var(--bg-soft);
+  border-left: 3px solid var(--border-strong);
+  padding: 10px 12px;
+  border-radius: var(--r-md);
+  margin-bottom: 16px;
+}
+.settings-section {
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.settings-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.settings-label {
+  display: flex; flex-direction: column; gap: 4px;
+  margin-bottom: 8px;
+}
+.settings-label strong {
+  font-size: 0.92rem;
+  color: var(--text);
+}
+.settings-hint {
+  font-size: 0.78rem; color: var(--text-3);
+  font-weight: 400;
+  line-height: 1.4;
+}
+.settings-input {
+  width: 100%;
+  padding: 9px 12px;
+  font-size: 0.9rem;
+  font-family: monospace;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  color: var(--text);
+  box-sizing: border-box;
+}
+.settings-input:focus {
+  outline: none;
+  border-color: var(--text);
+}
+.settings-details {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--text-2);
+}
+.settings-details summary {
+  cursor: pointer;
+  user-select: none;
+  padding: 4px 0;
+  color: var(--text-3);
+}
+.settings-details summary:hover { color: var(--text); }
+.settings-steps {
+  margin: 8px 0 0 0;
+  padding-left: 24px;
+  line-height: 1.5;
+}
+.settings-steps code {
+  background: var(--bg-soft);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.78rem;
+}
+.settings-steps a {
+  color: var(--text);
+  text-decoration: underline;
+}
+.settings-actions {
+  display: flex; gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.settings-actions .btn-secondary {
+  flex: 1 1 auto;
+}
+.btn-secondary.btn-danger {
+  flex: 0 0 auto;
+}
+.settings-feedback {
+  margin-top: 10px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  border-radius: var(--r-md);
+  min-height: 1.5em;
+  background: transparent;
+}
+.settings-feedback:empty {
+  display: none;
+}
+.settings-feedback.ok {
+  background: rgba(34, 197, 94, 0.12);
+  color: #166534;
+}
+.settings-feedback.err {
+  background: rgba(239, 68, 68, 0.12);
+  color: #991b1b;
+}
+.settings-feedback.warn {
+  background: rgba(245, 158, 11, 0.12);
+  color: #92400e;
+}
+.settings-footer {
+  display: flex; justify-content: flex-end;
+  margin-top: 18px;
+}
+
 /* Timeline summary — bloque informativo flat en una sola línea (estilo weather) */
 .timeline-summary {
   display: flex;
@@ -1567,6 +1693,14 @@ h2.subbrand {
   cursor: pointer; transition: all var(--t);
 }
 .btn-secondary:hover { background: var(--bg-soft); border-color: var(--border-strong); }
+.btn-secondary.btn-danger {
+  color: #991b1b;
+  border-color: rgba(185, 28, 28, 0.25);
+}
+.btn-secondary.btn-danger:hover {
+  background: rgba(185, 28, 28, 0.06);
+  border-color: rgba(185, 28, 28, 0.5);
+}
 .whatsapp-section { margin-bottom: 18px; }
 .whatsapp-label {
   display: block; font-size: 0.78rem;

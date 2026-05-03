@@ -958,4 +958,99 @@ async function loadWeather() {
   }
 }
 loadWeather();
+
+// ============================================================
+// SETTINGS — GitHub PAT + device name (localStorage only)
+// ============================================================
+const GITHUB_TOKEN_KEY = 'jardineando_github_token_v1';
+const DEVICE_NAME_KEY = 'jardineando_device_name_v1';
+
+function loadGitHubToken() {
+  return localStorage.getItem(GITHUB_TOKEN_KEY) || '';
+}
+function saveGitHubToken(token) {
+  if (token) localStorage.setItem(GITHUB_TOKEN_KEY, token);
+  else localStorage.removeItem(GITHUB_TOKEN_KEY);
+}
+function loadDeviceName() {
+  return localStorage.getItem(DEVICE_NAME_KEY) || '';
+}
+function saveDeviceName(name) {
+  if (name) localStorage.setItem(DEVICE_NAME_KEY, name);
+  else localStorage.removeItem(DEVICE_NAME_KEY);
+}
+
+async function testGitHubToken(token) {
+  if (!token) throw new Error('Falta token');
+  const r = await fetch('https://api.github.com/user', {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Accept': 'application/vnd.github+json',
+    },
+  });
+  if (!r.ok) {
+    if (r.status === 401) throw new Error('Token inválido o revocado');
+    if (r.status === 403) throw new Error('Token sin permisos suficientes');
+    throw new Error(`HTTP ${r.status}`);
+  }
+  const data = await r.json();
+  // Validar acceso al repo específico
+  const repoR = await fetch('https://api.github.com/repos/abecedeefege/gardening', {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Accept': 'application/vnd.github+json',
+    },
+  });
+  if (!repoR.ok) {
+    throw new Error('No tiene acceso al repo abecedeefege/gardening');
+  }
+  return { user: data.login };
+}
+
+function openSettingsModal() {
+  document.getElementById('settings-github-token').value = loadGitHubToken();
+  document.getElementById('settings-device-name').value = loadDeviceName();
+  document.getElementById('settings-github-feedback').textContent = '';
+  document.getElementById('settings-github-feedback').className = 'settings-feedback';
+  document.getElementById('settings-modal').classList.add('active');
+}
+
+document.getElementById('btn-open-settings').addEventListener('click', openSettingsModal);
+
+document.getElementById('btn-test-github-token').addEventListener('click', async () => {
+  const token = document.getElementById('settings-github-token').value.trim();
+  const fb = document.getElementById('settings-github-feedback');
+  if (!token) {
+    fb.textContent = '⚠️ Pegá un token primero';
+    fb.className = 'settings-feedback warn';
+    return;
+  }
+  fb.textContent = '⏳ Probando…';
+  fb.className = 'settings-feedback';
+  try {
+    const result = await testGitHubToken(token);
+    fb.textContent = `✅ Conectado como ${result.user} · acceso al repo OK`;
+    fb.className = 'settings-feedback ok';
+  } catch (err) {
+    fb.textContent = `❌ ${err.message}`;
+    fb.className = 'settings-feedback err';
+  }
+});
+
+document.getElementById('btn-clear-github-token').addEventListener('click', () => {
+  if (!confirm('¿Borrar el token de este dispositivo? Sin token no podrás subir fotos ni sincronizar.')) return;
+  saveGitHubToken('');
+  document.getElementById('settings-github-token').value = '';
+  const fb = document.getElementById('settings-github-feedback');
+  fb.textContent = '🗑 Token eliminado';
+  fb.className = 'settings-feedback';
+});
+
+document.getElementById('btn-save-settings').addEventListener('click', () => {
+  const token = document.getElementById('settings-github-token').value.trim();
+  const deviceName = document.getElementById('settings-device-name').value.trim();
+  saveGitHubToken(token);
+  saveDeviceName(deviceName);
+  closeModal('settings');
+});
 """

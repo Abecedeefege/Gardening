@@ -591,6 +591,7 @@ def build_timeline_view(tasks, img_data):
         <button class="ftag" data-filter="all">📚 Todas</button>
       </div>
       <button class="btn-contacts" id="btn-edit-contacts">📞 Mis contactos</button>
+      <button class="btn-settings" id="btn-open-settings" aria-label="Configuración">⚙️</button>
     </div>
   </div>
 
@@ -662,6 +663,53 @@ def build_timeline_view(tasks, img_data):
     <div class="contacts-footer">
       <button class="btn-secondary" id="btn-reset-contacts">↺ Restaurar defaults</button>
       <button class="btn-primary" id="btn-save-contacts">💾 Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Configuración (GitHub PAT + device name) -->
+<div class="modal" id="settings-modal">
+  <div class="modal-content modal-wide">
+    <button class="modal-close" data-close="settings">✕</button>
+    <h3>⚙️ Configuración</h3>
+    <p class="settings-intro">
+      Estos datos se guardan SOLO en este navegador (localStorage). Nunca se suben al repo ni se comparten entre dispositivos.
+    </p>
+
+    <div class="settings-section">
+      <label class="settings-label" for="settings-github-token">
+        <strong>GitHub Personal Access Token</strong>
+        <span class="settings-hint">Habilita subir fotos al repo y sincronizar el estado entre dispositivos.</span>
+      </label>
+      <input type="password" id="settings-github-token" class="settings-input" placeholder="github_pat_...">
+      <details class="settings-details">
+        <summary>¿Cómo genero un PAT?</summary>
+        <ol class="settings-steps">
+          <li>Andá a <a href="https://github.com/settings/personal-access-tokens" target="_blank" rel="noopener">github.com/settings/personal-access-tokens</a></li>
+          <li>Click "Generate new token" → "Fine-grained".</li>
+          <li>Repository access: solo <code>abecedeefege/gardening</code>.</li>
+          <li>Permisos: <code>Contents: Read and write</code>.</li>
+          <li>Expiración: la que prefieras (90 días default).</li>
+          <li>Copiá el token y pegalo acá.</li>
+        </ol>
+      </details>
+      <div class="settings-actions">
+        <button class="btn-secondary" id="btn-test-github-token">Probar conexión</button>
+        <button class="btn-secondary btn-danger" id="btn-clear-github-token">🗑 Eliminar</button>
+      </div>
+      <div class="settings-feedback" id="settings-github-feedback"></div>
+    </div>
+
+    <div class="settings-section">
+      <label class="settings-label" for="settings-device-name">
+        <strong>Nombre de este dispositivo</strong>
+        <span class="settings-hint">Aparece en los commits de sync para saber desde qué device se hizo cada cambio.</span>
+      </label>
+      <input type="text" id="settings-device-name" class="settings-input" placeholder="iPhone-Lucia / Laptop-Casa">
+    </div>
+
+    <div class="settings-footer">
+      <button class="btn-primary" id="btn-save-settings">💾 Guardar</button>
     </div>
   </div>
 </div>"""

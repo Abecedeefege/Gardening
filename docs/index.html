@@ -974,6 +974,132 @@ h2.subbrand {
 .btn-contacts:hover {
   background: var(--text); color: white; border-color: var(--text);
 }
+.btn-settings {
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  padding: 7px 10px;
+  font-size: 1rem;
+  cursor: pointer; border-radius: var(--r-full);
+  color: var(--text-2); transition: all var(--t);
+  flex: 0 0 auto;
+  line-height: 1;
+}
+.btn-settings:hover {
+  background: var(--text); color: white; border-color: var(--text);
+}
+
+/* SETTINGS MODAL */
+.settings-intro {
+  font-size: 0.85rem; color: var(--text-2);
+  background: var(--bg-soft);
+  border-left: 3px solid var(--border-strong);
+  padding: 10px 12px;
+  border-radius: var(--r-md);
+  margin-bottom: 16px;
+}
+.settings-section {
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.settings-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.settings-label {
+  display: flex; flex-direction: column; gap: 4px;
+  margin-bottom: 8px;
+}
+.settings-label strong {
+  font-size: 0.92rem;
+  color: var(--text);
+}
+.settings-hint {
+  font-size: 0.78rem; color: var(--text-3);
+  font-weight: 400;
+  line-height: 1.4;
+}
+.settings-input {
+  width: 100%;
+  padding: 9px 12px;
+  font-size: 0.9rem;
+  font-family: monospace;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  color: var(--text);
+  box-sizing: border-box;
+}
+.settings-input:focus {
+  outline: none;
+  border-color: var(--text);
+}
+.settings-details {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--text-2);
+}
+.settings-details summary {
+  cursor: pointer;
+  user-select: none;
+  padding: 4px 0;
+  color: var(--text-3);
+}
+.settings-details summary:hover { color: var(--text); }
+.settings-steps {
+  margin: 8px 0 0 0;
+  padding-left: 24px;
+  line-height: 1.5;
+}
+.settings-steps code {
+  background: var(--bg-soft);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.78rem;
+}
+.settings-steps a {
+  color: var(--text);
+  text-decoration: underline;
+}
+.settings-actions {
+  display: flex; gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.settings-actions .btn-secondary {
+  flex: 1 1 auto;
+}
+.btn-secondary.btn-danger {
+  flex: 0 0 auto;
+}
+.settings-feedback {
+  margin-top: 10px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  border-radius: var(--r-md);
+  min-height: 1.5em;
+  background: transparent;
+}
+.settings-feedback:empty {
+  display: none;
+}
+.settings-feedback.ok {
+  background: rgba(34, 197, 94, 0.12);
+  color: #166534;
+}
+.settings-feedback.err {
+  background: rgba(239, 68, 68, 0.12);
+  color: #991b1b;
+}
+.settings-feedback.warn {
+  background: rgba(245, 158, 11, 0.12);
+  color: #92400e;
+}
+.settings-footer {
+  display: flex; justify-content: flex-end;
+  margin-top: 18px;
+}
+
 /* Timeline summary — bloque informativo flat en una sola línea (estilo weather) */
 .timeline-summary {
   display: flex;
@@ -1568,6 +1694,14 @@ h2.subbrand {
   cursor: pointer; transition: all var(--t);
 }
 .btn-secondary:hover { background: var(--bg-soft); border-color: var(--border-strong); }
+.btn-secondary.btn-danger {
+  color: #991b1b;
+  border-color: rgba(185, 28, 28, 0.25);
+}
+.btn-secondary.btn-danger:hover {
+  background: rgba(185, 28, 28, 0.06);
+  border-color: rgba(185, 28, 28, 0.5);
+}
 .whatsapp-section { margin-bottom: 18px; }
 .whatsapp-label {
   display: block; font-size: 0.78rem;
@@ -8291,6 +8425,7 @@ h2.subbrand {
         <button class="ftag" data-filter="all">📚 Todas</button>
       </div>
       <button class="btn-contacts" id="btn-edit-contacts">📞 Mis contactos</button>
+      <button class="btn-settings" id="btn-open-settings" aria-label="Configuración">⚙️</button>
     </div>
   </div>
 
@@ -8363,6 +8498,53 @@ h2.subbrand {
     <div class="contacts-footer">
       <button class="btn-secondary" id="btn-reset-contacts">↺ Restaurar defaults</button>
       <button class="btn-primary" id="btn-save-contacts">💾 Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Configuración (GitHub PAT + device name) -->
+<div class="modal" id="settings-modal">
+  <div class="modal-content modal-wide">
+    <button class="modal-close" data-close="settings">✕</button>
+    <h3>⚙️ Configuración</h3>
+    <p class="settings-intro">
+      Estos datos se guardan SOLO en este navegador (localStorage). Nunca se suben al repo ni se comparten entre dispositivos.
+    </p>
+
+    <div class="settings-section">
+      <label class="settings-label" for="settings-github-token">
+        <strong>GitHub Personal Access Token</strong>
+        <span class="settings-hint">Habilita subir fotos al repo y sincronizar el estado entre dispositivos.</span>
+      </label>
+      <input type="password" id="settings-github-token" class="settings-input" placeholder="github_pat_...">
+      <details class="settings-details">
+        <summary>¿Cómo genero un PAT?</summary>
+        <ol class="settings-steps">
+          <li>Andá a <a href="https://github.com/settings/personal-access-tokens" target="_blank" rel="noopener">github.com/settings/personal-access-tokens</a></li>
+          <li>Click "Generate new token" → "Fine-grained".</li>
+          <li>Repository access: solo <code>abecedeefege/gardening</code>.</li>
+          <li>Permisos: <code>Contents: Read and write</code>.</li>
+          <li>Expiración: la que prefieras (90 días default).</li>
+          <li>Copiá el token y pegalo acá.</li>
+        </ol>
+      </details>
+      <div class="settings-actions">
+        <button class="btn-secondary" id="btn-test-github-token">Probar conexión</button>
+        <button class="btn-secondary btn-danger" id="btn-clear-github-token">🗑 Eliminar</button>
+      </div>
+      <div class="settings-feedback" id="settings-github-feedback"></div>
+    </div>
+
+    <div class="settings-section">
+      <label class="settings-label" for="settings-device-name">
+        <strong>Nombre de este dispositivo</strong>
+        <span class="settings-hint">Aparece en los commits de sync para saber desde qué device se hizo cada cambio.</span>
+      </label>
+      <input type="text" id="settings-device-name" class="settings-input" placeholder="iPhone-Lucia / Laptop-Casa">
+    </div>
+
+    <div class="settings-footer">
+      <button class="btn-primary" id="btn-save-settings">💾 Guardar</button>
     </div>
   </div>
 </div>
@@ -9326,6 +9508,101 @@ async function loadWeather() {
   }
 }
 loadWeather();
+
+// ============================================================
+// SETTINGS — GitHub PAT + device name (localStorage only)
+// ============================================================
+const GITHUB_TOKEN_KEY = 'jardineando_github_token_v1';
+const DEVICE_NAME_KEY = 'jardineando_device_name_v1';
+
+function loadGitHubToken() {
+  return localStorage.getItem(GITHUB_TOKEN_KEY) || '';
+}
+function saveGitHubToken(token) {
+  if (token) localStorage.setItem(GITHUB_TOKEN_KEY, token);
+  else localStorage.removeItem(GITHUB_TOKEN_KEY);
+}
+function loadDeviceName() {
+  return localStorage.getItem(DEVICE_NAME_KEY) || '';
+}
+function saveDeviceName(name) {
+  if (name) localStorage.setItem(DEVICE_NAME_KEY, name);
+  else localStorage.removeItem(DEVICE_NAME_KEY);
+}
+
+async function testGitHubToken(token) {
+  if (!token) throw new Error('Falta token');
+  const r = await fetch('https://api.github.com/user', {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Accept': 'application/vnd.github+json',
+    },
+  });
+  if (!r.ok) {
+    if (r.status === 401) throw new Error('Token inválido o revocado');
+    if (r.status === 403) throw new Error('Token sin permisos suficientes');
+    throw new Error(`HTTP ${r.status}`);
+  }
+  const data = await r.json();
+  // Validar acceso al repo específico
+  const repoR = await fetch('https://api.github.com/repos/abecedeefege/gardening', {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Accept': 'application/vnd.github+json',
+    },
+  });
+  if (!repoR.ok) {
+    throw new Error('No tiene acceso al repo abecedeefege/gardening');
+  }
+  return { user: data.login };
+}
+
+function openSettingsModal() {
+  document.getElementById('settings-github-token').value = loadGitHubToken();
+  document.getElementById('settings-device-name').value = loadDeviceName();
+  document.getElementById('settings-github-feedback').textContent = '';
+  document.getElementById('settings-github-feedback').className = 'settings-feedback';
+  document.getElementById('settings-modal').classList.add('active');
+}
+
+document.getElementById('btn-open-settings').addEventListener('click', openSettingsModal);
+
+document.getElementById('btn-test-github-token').addEventListener('click', async () => {
+  const token = document.getElementById('settings-github-token').value.trim();
+  const fb = document.getElementById('settings-github-feedback');
+  if (!token) {
+    fb.textContent = '⚠️ Pegá un token primero';
+    fb.className = 'settings-feedback warn';
+    return;
+  }
+  fb.textContent = '⏳ Probando…';
+  fb.className = 'settings-feedback';
+  try {
+    const result = await testGitHubToken(token);
+    fb.textContent = `✅ Conectado como ${result.user} · acceso al repo OK`;
+    fb.className = 'settings-feedback ok';
+  } catch (err) {
+    fb.textContent = `❌ ${err.message}`;
+    fb.className = 'settings-feedback err';
+  }
+});
+
+document.getElementById('btn-clear-github-token').addEventListener('click', () => {
+  if (!confirm('¿Borrar el token de este dispositivo? Sin token no podrás subir fotos ni sincronizar.')) return;
+  saveGitHubToken('');
+  document.getElementById('settings-github-token').value = '';
+  const fb = document.getElementById('settings-github-feedback');
+  fb.textContent = '🗑 Token eliminado';
+  fb.className = 'settings-feedback';
+});
+
+document.getElementById('btn-save-settings').addEventListener('click', () => {
+  const token = document.getElementById('settings-github-token').value.trim();
+  const deviceName = document.getElementById('settings-device-name').value.trim();
+  saveGitHubToken(token);
+  saveDeviceName(deviceName);
+  closeModal('settings');
+});
 
 </script>
 </body>
