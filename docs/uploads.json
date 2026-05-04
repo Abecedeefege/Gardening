@@ -143,18 +143,6 @@
         "processed_at": "2026-05-04T16:30:00.000Z"
       },
       "_stamp": "20260504-162230"
-    },
-    {
-      "filename": null,
-      "uploaded_at": "2026-05-04T17:12:25.196Z",
-      "uploaded_by": "pix9",
-      "context": "task_text",
-      "task_id": "plant-B-46",
-      "task_title_snapshot": "Identificar plantines desconocidos",
-      "user_context": "Esta tarea no me dice nada.  Subí específicas que refieran a las especies puntuales y otra para capturar las desconocidas.  Así no sirve.\n\nPalmeras - dejarlas en un lugar con poca luz directa, húmedo, etc\nRomero - llevarlos al sol\nEtc\n\nQuiero tareas accionables \n\nBorra esta despues",
-      "ai_status": "pending",
-      "ai_evaluation": null,
-      "_stamp": "20260504-171225"
     }
   ],
   "B-37": [
@@ -190,7 +178,7 @@
       "context": "task",
       "task_id": "plant-B-23-2",
       "task_title_snapshot": "Inspección de cochinilla y minador",
-      "ai_status": "pending",
+      "ai_status": "superseded",
       "ai_evaluation": null,
       "user_context": "La veo bien"
     },
@@ -201,8 +189,13 @@
       "context": "task",
       "task_id": "plant-B-23-2",
       "task_title_snapshot": "Inspección de cochinilla y minador",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Limonero con flores tardías sanas y sin cochinilla, pero hay galerías plateadas serpenteantes y hojas levemente enrolladas en brotes nuevos = minador de cítricos (Phyllocnistis citrella). Síntoma leve, no compromete el árbol.",
+        "next_steps": "Tratamiento orgánico: aceite de neem 3-5 ml/L pulverizado en envés de hojas al atardecer. Repetir c/7 días por 3 semanas. Cuando termine la brotación nueva (junio) baja sola. NO podar las hojas afectadas — la planta las tira sola.",
+        "processed_at": "2026-05-04T17:30:00.000Z"
+      },
       "user_context": "Lo veo bien?"
     }
   ],
@@ -214,8 +207,13 @@
       "context": "task",
       "task_id": "plant-B-24-2",
       "task_title_snapshot": "Inspección de cochinilla y minador",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Mandarina criolla con minador de cítricos confirmado — las hojas 'enruladas' que mencionás son galerías de Phyllocnistis citrella. Sin signos de cochinilla. Porte ralo normal en otoño post-cosecha.",
+        "next_steps": "Mismo tratamiento que B-23: aceite de neem 3-5 ml/L en envés c/7 días por 3 semanas. Aprovechar y tratar ambos cítricos en la misma pasada.",
+        "processed_at": "2026-05-04T17:30:00.000Z"
+      },
       "user_context": "La veo bien, algunas hojas \"enrulecidas\" solo"
     }
   ],
@@ -227,7 +225,7 @@
       "context": "task",
       "task_id": "plant-B-36",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
+      "ai_status": "superseded",
       "ai_evaluation": null,
       "user_context": "Palta haas"
     },
@@ -238,8 +236,13 @@
       "context": "task",
       "task_id": "plant-B-36",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Palta Hass fotografiada vertical con árbol llenando el frame, paltas verdes ovoides colgantes visibles, copa densa. Cumple criterio de hero photo de la especie.",
+        "next_steps": "",
+        "processed_at": "2026-05-04T17:30:00.000Z"
+      },
       "user_context": "Haas otro angulo"
     },
     {
@@ -249,8 +252,13 @@
       "context": "task",
       "task_id": "plant-B-36-3",
       "task_title_snapshot": "Cubrir base con compost otoñal",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Base del palto a la vista — tierra prácticamente desnuda con apenas algunas hojas secas dispersas. Esto NO es el mulching que pide la tarea: hace falta un anillo grueso (5 cm de altura) de compost o pasto seco bien distribuido en radio de 60+ cm, dejando 10 cm libres del cuello del tronco.",
+        "next_steps": "1) Conseguir compost (~3 baldes 10L) o pasto seco. 2) Limpiar las hojas dispersas y agregar el material en anillo grueso uniforme alrededor de la base. 3) DEJAR 10 cm libres pegado al tronco — mulch tocando la corteza pudre el cuello. 4) El anillo debería verse claramente desde 5 m de distancia como un círculo más oscuro alrededor del árbol.",
+        "processed_at": "2026-05-04T17:30:00.000Z"
+      },
       "user_context": "Así?"
     }
   ]

@@ -211,7 +211,9 @@ Marcá `ai_status: "orphaned"` y avisá al usuario al final.
 
 ## Reglas duras
 
-- NUNCA commitear sin confirmación explícita.
-- NUNCA modificar `data_plants.py` sin pedir permiso.
+- NUNCA commitear sin confirmación explícita ("sí" / "adelante").
+- **`data_plants.py` se modifica automáticamente cuando el feedback lo amerite** — sin pedir permiso aparte. Casos típicos: el user pide reescribir una urgencia, agregar urgencias por tipo, eliminar tareas no útiles, ajustar wording, o cambiar `due_month`. Incluí esos cambios dentro del batch que se confirma. Si el user elimina una urgencia que tenía estado `done`/`snoozed` en `sync/task_states.json`, migrar el sync state para que el índice quede consistente (preservar el estado del task_id correcto).
 - NO inventar plagas/enfermedades sin evidencia visual clara.
 - Si dudás de la evaluación de una foto, marcala `resolved=false` con `next_steps="Volver a sacar la foto con [criterio específico]"`. Más vale conservador que cerrar tarea sin certeza.
+- **Cuando el user dice "borra esta" sobre una entry de uploads.json, eliminala del JSON** (no marques superseded — borrá el registro).
+- Las tareas (`urgency` en data_plants.py) deben ser **accionables**: title = la acción, short_desc = 1 oración, detail máximo 2-3 oraciones, how_to en 3-5 pasos numerados de 1 oración cada uno. Si el user pide "tareas accionables" o critica que una tarea "no le dice nada", refactorizar ese formato.

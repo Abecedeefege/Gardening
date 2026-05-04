@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-04T17:19:33.571Z",
-  "_last_writer": "pix9",
+  "_synced_at": "2026-05-04T17:30:00.000Z",
+  "_last_writer": "claude-code-cli",
   "tasks": {
     "plant-F-9": {
       "status": "done",
@@ -29,14 +29,22 @@
       "completed_at": "2026-05-02T19:20:14.303Z"
     },
     "plant-B-23-2": {
-      "status": "snoozed",
-      "snoozed_until": "2026-05-03T19:23:15.929Z",
-      "completed_at": null
+      "status": "active",
+      "snoozed_until": null,
+      "completed_at": null,
+      "description_override": "Limonero CON minador de cítricos confirmado (galerías plateadas serpenteantes en hojas nuevas, hojas levemente enrolladas). NO hay cochinilla. Tratamiento: aceite de neem 3-5 ml/L pulverizado en envés de hojas al atardecer, c/7 días por 3 semanas. Cuando termine la brotación nueva (junio) baja sola. NO podar las hojas afectadas — la planta las tira sola.",
+      "description_override_at": "2026-05-04T17:30:00.000Z",
+      "last_ai_summary": "Limonero con flores tardías sanas y sin cochinilla, pero hay galerías plateadas serpenteantes y hojas levemente enrolladas en brotes nuevos = minador de cítricos (Phyllocnistis citrella). Síntoma leve, no compromete el árbol.",
+      "last_modified_at": "2026-05-04T17:30:00.000Z"
     },
     "plant-B-24-2": {
-      "status": "snoozed",
-      "snoozed_until": "2026-05-03T19:23:19.839Z",
-      "completed_at": null
+      "status": "active",
+      "snoozed_until": null,
+      "completed_at": null,
+      "description_override": "Mandarina criolla CON minador de cítricos confirmado (las hojas 'enruladas' son galerías de Phyllocnistis citrella). Sin cochinilla. Mismo tratamiento que B-23: neem 3-5 ml/L en envés c/7 días por 3 semanas. Porte ralo es normal post-cosecha en otoño.",
+      "description_override_at": "2026-05-04T17:30:00.000Z",
+      "last_ai_summary": "Mandarina criolla con minador de cítricos confirmado — las hojas 'enruladas' que mencionás son galerías de Phyllocnistis citrella. Sin signos de cochinilla. Porte ralo normal en otoño post-cosecha.",
+      "last_modified_at": "2026-05-04T17:30:00.000Z"
     },
     "plant-B-22-2": {
       "status": "done",
@@ -81,6 +89,23 @@
       "snoozed_until": null,
       "completed_at": "2026-05-04T17:19:28.042Z",
       "last_modified_at": "2026-05-04T17:19:28.042Z"
+    },
+    "plant-B-36": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-04T17:30:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Palta Hass fotografiada vertical con árbol llenando el frame, paltas verdes ovoides colgantes visibles, copa densa. Cumple criterio de hero photo de la especie.",
+      "last_modified_at": "2026-05-04T17:30:00.000Z"
+    },
+    "plant-B-36-3": {
+      "status": "active",
+      "snoozed_until": null,
+      "completed_at": null,
+      "description_override": "Base del palto a la vista — tierra prácticamente desnuda con apenas algunas hojas secas dispersas. Esto NO es mulching: hace falta un anillo grueso (5 cm de altura) de compost o pasto seco bien distribuido en radio de 60+ cm, dejando 10 cm libres del cuello del tronco. Pasos: 1) Conseguir compost (~3 baldes 10L) o pasto seco. 2) Limpiar hojas dispersas y agregar el material en anillo grueso uniforme. 3) DEJAR 10 cm libres pegado al tronco — mulch tocando la corteza pudre el cuello. 4) El anillo se debe ver desde 5 m de distancia como un círculo más oscuro alrededor del árbol.",
+      "description_override_at": "2026-05-04T17:30:00.000Z",
+      "last_ai_summary": "Foto del 04/05 muestra base con tierra desnuda y hojas secas dispersas — todavía no es el mulching grueso que pide la tarea.",
+      "last_modified_at": "2026-05-04T17:30:00.000Z"
     }
   }
 }
