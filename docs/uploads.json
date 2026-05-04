@@ -205,5 +205,18 @@
       "ai_evaluation": null,
       "user_context": "Lo veo bien?"
     }
+  ],
+  "B-24": [
+    {
+      "filename": "plant-B-24-2_20260504-171613.jpg",
+      "uploaded_at": "2026-05-04T17:16:13.346Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-24-2",
+      "task_title_snapshot": "Inspección de cochinilla y minador",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "La veo bien, algunas hojas \"enrulecidas\" solo"
+    }
   ]
 }
