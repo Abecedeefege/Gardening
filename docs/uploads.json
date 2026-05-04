@@ -241,6 +241,17 @@
       "ai_status": "pending",
       "ai_evaluation": null,
       "user_context": "Haas otro angulo"
+    },
+    {
+      "filename": "plant-B-36-3_20260504-172224.jpg",
+      "uploaded_at": "2026-05-04T17:22:24.772Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-36-3",
+      "task_title_snapshot": "Cubrir base con compost otoñal",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Así?"
     }
   ]
 }
