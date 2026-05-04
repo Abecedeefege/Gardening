@@ -1417,6 +1417,7 @@ h2.subbrand {
   gap: 6px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 12px;
 }
 .species-hero-chip {
   display: inline-block;
@@ -1429,6 +1430,30 @@ h2.subbrand {
   padding: 4px 10px;
   border-radius: 999px;
   letter-spacing: 0.04em;
+}
+.species-hero-location {
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.45;
+  margin: 4px auto 10px;
+  max-width: 90%;
+  text-align: center;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+  text-wrap: balance;
+}
+.species-hero-tags {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.species-hero-tags .species-tag-chip {
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: white;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
 }
 .species-hero-close {
   position: absolute;
@@ -1451,37 +1476,31 @@ h2.subbrand {
   background: rgba(0, 0, 0, 0.7);
 }
 
-/* Sections debajo del hero */
-.species-section {
-  padding: 18px 22px;
+/* Sección de fotos debajo del hero — grid edge-to-edge */
+.species-section-photos {
   border-bottom: 1px solid var(--border-soft);
+  padding-bottom: 0;
 }
-.species-section-photos { padding-bottom: 22px; }
 .species-section-label {
   font-size: 0.74rem;
   font-weight: 700;
   color: var(--text-3);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.species-location-line {
-  font-size: 0.95rem;
-  color: var(--text);
-  line-height: 1.5;
-  margin: 0 0 10px;
+  padding: 18px 22px 10px;
+  margin: 0;
 }
 
-/* Photos grid: 2 columnas, square, rounded, sin tags overlaid */
+/* Photos grid: 2 columnas, square, sin radius (edge-to-edge), gap mínimo */
 .species-photos-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6px;
+  gap: 2px;
+  padding: 0;
 }
 .species-photo-cell {
   position: relative;
   aspect-ratio: 1 / 1;
-  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   background: var(--bg-soft);
@@ -1499,12 +1518,13 @@ h2.subbrand {
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: 4px;
-  border: 2px dashed var(--border-strong);
-  background: transparent;
+  background: var(--bg-soft);
+  outline: 2px dashed var(--border-strong);
+  outline-offset: -8px;
 }
 .species-photo-cell.add:hover {
-  border-color: var(--text);
-  background: var(--bg-soft);
+  outline-color: var(--text);
+  background: var(--bg);
 }
 .species-add-plus {
   font-size: 2rem;

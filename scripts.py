@@ -83,6 +83,21 @@ document.querySelectorAll('img[data-img]').forEach(loadImg);
 // LIGHTBOX
 // ============================================================
 function setupLightbox(scope) {
+  // Imágenes con data-action="open-species" abren el modal de detalle de
+  // especie en vez del lightbox — útil para que tap en la foto de una tarea
+  // del Timeline lleve directo al perfil de la planta.
+  scope.querySelectorAll('img[data-action="open-species"]').forEach(img => {
+    if (img.dataset.speciesBound) return;
+    img.dataset.speciesBound = '1';
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const code = img.getAttribute('data-plant-code');
+      if (code && typeof openSpeciesDetailModal === 'function') {
+        openSpeciesDetailModal(code);
+      }
+    });
+  });
+
   scope.querySelectorAll('img[data-action="lightbox"]').forEach(img => {
     if (img.dataset.lightboxBound) return;
     img.dataset.lightboxBound = '1';
@@ -288,7 +303,7 @@ function renderTaskCard(task) {
   const overdue = isOverdue(task);
 
   const photoHtml = task.plant_photo && IMG[task.plant_photo]
-    ? `<img class="task-photo" data-img="${task.plant_photo}" data-action="lightbox" alt="">`
+    ? `<img class="task-photo" data-img="${task.plant_photo}" data-action="open-species" data-plant-code="${task.plant_codes[0]}" alt="">`
     : `<div class="task-photo-placeholder">🌱</div>`;
 
   let statusPill = '';
@@ -1963,15 +1978,19 @@ async function openSpeciesDetailModal(plantCode) {
     });
   });
 
-  // Hero photo: loc_photo > main_photo > primer upload species > primer upload task.
+  // Hero photo: prioridad main_photo (close-up de especie) > species upload >
+  // loc_photo (vista de ubicación) > task upload. Esto pone la especie en
+  // primer plano en vez de la zona donde vive.
   let heroSrc = null;
-  if (plant.loc_photo && IMG[plant.loc_photo]) heroSrc = IMG[plant.loc_photo];
-  else if (plant.main_photo && IMG[plant.main_photo]) heroSrc = IMG[plant.main_photo];
+  if (plant.main_photo && IMG[plant.main_photo]) heroSrc = IMG[plant.main_photo];
   else {
     const firstSpecies = sortedUploads.find(u => u.context === 'species');
-    const firstTask = sortedUploads.find(u => u.context === 'task');
     if (firstSpecies) heroSrc = `images/uploads/${primaryCode}/${firstSpecies.filename}`;
-    else if (firstTask) heroSrc = `images/uploads/${primaryCode}/${firstTask.filename}`;
+    else if (plant.loc_photo && IMG[plant.loc_photo]) heroSrc = IMG[plant.loc_photo];
+    else {
+      const firstTask = sortedUploads.find(u => u.context === 'task');
+      if (firstTask) heroSrc = `images/uploads/${primaryCode}/${firstTask.filename}`;
+    }
   }
 
   // Photos grid (todas las fotos, sin tags overlaid — limpio).
@@ -2045,16 +2064,12 @@ async function openSpeciesDetailModal(plantCode) {
           <span class="species-hero-chip">${plant.id_codes.join(', ')}</span>
           <span class="species-hero-chip">${zoneLabel}</span>
         </div>
+        ${locationLine ? `<p class="species-hero-location">📍 ${locationLine}</p>` : ''}
+        ${tagsHtml ? `<div class="species-hero-tags">${tagsHtml}</div>` : ''}
       </div>
     </div>
 
-    <div class="species-section species-section-location">
-      <div class="species-section-label">📍 Ubicación</div>
-      ${locationLine ? `<p class="species-location-line">${locationLine}</p>` : ''}
-      ${tagsHtml ? `<div class="species-tags">${tagsHtml}</div>` : ''}
-    </div>
-
-    <div class="species-section species-section-photos">
+    <div class="species-section-photos">
       <div class="species-section-label">📷 Fotos${photoCount ? ` · ${photoCount}` : ''}</div>
       <div class="species-photos-grid" id="species-photos-grid">
         ${photosGridHtml}
