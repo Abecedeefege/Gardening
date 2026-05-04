@@ -310,5 +310,19 @@
       "ai_evaluation": null,
       "user_context": "No le veo frutos ni hojas"
     }
+  ],
+  "B-9": [
+    {
+      "filename": null,
+      "uploaded_at": "2026-05-04T18:15:07.586Z",
+      "uploaded_by": "pix9",
+      "context": "task_text",
+      "task_id": "plant-B-9-4",
+      "task_title_snapshot": "Marcar caducos a podar en junio",
+      "user_context": "Si ya identificamos a todos no va a haber problema en saber cuál es cuál.",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "_stamp": "20260504-181507"
+    }
   ]
 }
