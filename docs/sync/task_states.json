@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-04T17:30:00.000Z",
-  "_last_writer": "claude-code-cli",
+  "_synced_at": "2026-05-04T18:04:51.245Z",
+  "_last_writer": "pix9",
   "tasks": {
     "plant-F-9": {
       "status": "done",
@@ -29,13 +29,10 @@
       "completed_at": "2026-05-02T19:20:14.303Z"
     },
     "plant-B-23-2": {
-      "status": "active",
+      "status": "done",
       "snoozed_until": null,
-      "completed_at": null,
-      "description_override": "Limonero CON minador de cítricos confirmado (galerías plateadas serpenteantes en hojas nuevas, hojas levemente enrolladas). NO hay cochinilla. Tratamiento: aceite de neem 3-5 ml/L pulverizado en envés de hojas al atardecer, c/7 días por 3 semanas. Cuando termine la brotación nueva (junio) baja sola. NO podar las hojas afectadas — la planta las tira sola.",
-      "description_override_at": "2026-05-04T17:30:00.000Z",
-      "last_ai_summary": "Limonero con flores tardías sanas y sin cochinilla, pero hay galerías plateadas serpenteantes y hojas levemente enrolladas en brotes nuevos = minador de cítricos (Phyllocnistis citrella). Síntoma leve, no compromete el árbol.",
-      "last_modified_at": "2026-05-04T17:30:00.000Z"
+      "completed_at": "2026-05-04T18:04:45.603Z",
+      "last_modified_at": "2026-05-04T18:04:45.604Z"
     },
     "plant-B-24-2": {
       "status": "active",
