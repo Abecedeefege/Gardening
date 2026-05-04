@@ -2491,4 +2491,55 @@ h2.subbrand {
   .tab-label { font-size: 0.82rem; }
   .tab-btn { padding: 10px 8px; gap: 5px; }
 }
+
+/* PWA install banner — aparece SI Chrome dispara beforeinstallprompt.
+   Su sola aparición confirma que el sitio cumple criterio installable. */
+#pwa-install-banner {
+  position: fixed;
+  bottom: 16px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #2d5016;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  font-size: 0.88rem;
+  font-weight: 600;
+  max-width: calc(100vw - 24px);
+  animation: slideUpFade 0.4s ease;
+}
+@keyframes slideUpFade {
+  from { transform: translate(-50%, 30px); opacity: 0; }
+  to { transform: translate(-50%, 0); opacity: 1; }
+}
+#pwa-install-banner .pwa-install-icon { font-size: 1.2rem; }
+#pwa-install-banner .pwa-install-btn {
+  background: white;
+  color: #2d5016;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+#pwa-install-banner .pwa-install-btn:hover { background: rgba(255, 255, 255, 0.85); }
+#pwa-install-banner .pwa-install-dismiss {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: none;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.95rem;
+  display: flex; align-items: center; justify-content: center;
+}
+#pwa-install-banner .pwa-install-dismiss:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
 """

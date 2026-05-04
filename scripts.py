@@ -1014,6 +1014,47 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+// PWA install prompt — capturar el evento y mostrar un banner visible
+// para que el usuario sepa que el sitio es installable. Sin este listener,
+// Chrome solo muestra "Install app" en su menú interno (poco visible).
+let _deferredInstallPrompt = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  _deferredInstallPrompt = e;
+  showInstallBanner();
+});
+
+function showInstallBanner() {
+  if (document.getElementById('pwa-install-banner')) return;
+  const banner = document.createElement('div');
+  banner.id = 'pwa-install-banner';
+  banner.innerHTML = `
+    <span class="pwa-install-icon">📲</span>
+    <span class="pwa-install-text">Instalar Jardineando como app</span>
+    <button class="pwa-install-btn">Instalar</button>
+    <button class="pwa-install-dismiss" aria-label="Cerrar">✕</button>
+  `;
+  document.body.appendChild(banner);
+  banner.querySelector('.pwa-install-btn').addEventListener('click', async () => {
+    if (!_deferredInstallPrompt) return;
+    _deferredInstallPrompt.prompt();
+    const { outcome } = await _deferredInstallPrompt.userChoice;
+    _deferredInstallPrompt = null;
+    banner.remove();
+  });
+  banner.querySelector('.pwa-install-dismiss').addEventListener('click', () => {
+    banner.remove();
+    localStorage.setItem('pwa_install_dismissed', '1');
+  });
+}
+
+// Si ya se instaló antes, log y nada más.
+window.addEventListener('appinstalled', () => {
+  console.log('[PWA] instalada — banner cerrado');
+  const banner = document.getElementById('pwa-install-banner');
+  if (banner) banner.remove();
+});
+
 // ============================================================
 // SETTINGS — GitHub PAT + device name (localStorage only)
 // ============================================================
