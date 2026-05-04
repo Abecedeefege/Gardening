@@ -323,6 +323,16 @@
       "ai_status": "pending",
       "ai_evaluation": null,
       "_stamp": "20260504-181507"
+    },
+    {
+      "filename": "plant-B-9-3_20260504-181635.jpg",
+      "uploaded_at": "2026-05-04T18:16:35.005Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-9-3",
+      "task_title_snapshot": "Foto de corteza antes de la poda",
+      "ai_status": "pending",
+      "ai_evaluation": null
     }
   ]
 }
