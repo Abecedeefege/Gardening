@@ -346,6 +346,7 @@ function renderTaskCard(task) {
         <button class="task-btn task-btn-done" data-action="done" data-task-id="${task.id}">✅ Hecho</button>
         <button class="task-btn task-btn-snooze" data-action="snooze" data-task-id="${task.id}">😴 Posponer</button>
         <button class="task-btn task-btn-photo" data-action="photo" data-task-id="${task.id}">📷 Subir foto</button>
+        <button class="task-btn task-btn-text" data-action="text" data-task-id="${task.id}">💬 Responder</button>
         <button class="task-btn task-btn-whatsapp" data-action="whatsapp" data-task-id="${task.id}">💬 WhatsApp</button>
       </div>`;
   } else {
@@ -573,6 +574,7 @@ function setupTaskInteractions(scope) {
       else if (action === 'snooze') openSnoozeModal(task);
       else if (action === 'whatsapp') openWhatsAppModal(task);
       else if (action === 'photo') openTaskPhotoModal(task);
+      else if (action === 'text') openTaskTextModal(task);
       else if (action === 'reactivate') reactivateTask(task);
     });
   });
@@ -1926,6 +1928,8 @@ function openTaskPhotoModal(task) {
   pendingPhotoTask = task;
   pendingPhotoBlob = null;
   document.getElementById('task-photo-name').textContent = `📌 ${task.title} · ${task.plant_common} (${task.plant_codes.join(', ')})`;
+  const ctx = document.getElementById('task-photo-context');
+  if (ctx) ctx.value = '';
 
   // Mostrar la stage correcta según si hay token configurado.
   const hasToken = !!loadGitHubToken();
@@ -2652,6 +2656,7 @@ async function uploadPendingPhoto() {
     const { sha, data } = await ghReadJsonFile(uploadsPath);
     const idx = data || {};
     if (!idx[plantId]) idx[plantId] = [];
+    const userContext = (document.getElementById('task-photo-context')?.value || '').trim();
     const entry = {
       filename,
       uploaded_at: now.toISOString(),
@@ -2662,6 +2667,7 @@ async function uploadPendingPhoto() {
       ai_status: 'pending',
       ai_evaluation: null,
     };
+    if (userContext) entry.user_context = userContext;
     idx[plantId].push(entry);
     const newJson = JSON.stringify(idx, null, 2) + '\n';
     const newBase64 = btoa(unescape(encodeURIComponent(newJson)));
@@ -2694,4 +2700,116 @@ async function uploadPendingPhoto() {
       </div>`;
   }
 }
+
+// ============================================================
+// TASK TEXT RESPONSE MODAL — responder con texto, sin foto
+// ============================================================
+let pendingTextTask = null;
+
+function openTaskTextModal(task) {
+  pendingTextTask = task;
+  document.getElementById('task-text-name').textContent = `📌 ${task.title} · ${task.plant_common} (${task.plant_codes.join(', ')})`;
+  document.getElementById('task-text-content').value = '';
+  const hasToken = !!loadGitHubToken();
+  if (hasToken && !ensurePrivacyAcknowledged()) return;
+  setTaskTextStage(hasToken ? 'write' : 'setup');
+  document.getElementById('task-text-modal').classList.add('active');
+}
+
+function setTaskTextStage(stage) {
+  document.querySelectorAll('#task-text-modal .task-photo-stage').forEach(s => {
+    s.hidden = (s.dataset.stage !== stage);
+  });
+}
+
+document.getElementById('btn-text-go-settings')?.addEventListener('click', () => {
+  closeModal('task-text');
+  openSettingsModal();
+});
+
+// "Marcar hecha con esta nota" — sin AI eval, solo guarda nota como respuesta directa
+// del usuario en sync/task_states.json (campo user_note) y marca done.
+document.getElementById('btn-text-mark-done')?.addEventListener('click', async () => {
+  if (!pendingTextTask) return;
+  const text = document.getElementById('task-text-content').value.trim();
+  if (!text) {
+    alert('Escribí una nota primero.');
+    return;
+  }
+  setTaskTextStage('result');
+  const result = document.getElementById('task-text-result');
+  result.innerHTML = `<div class="task-photo-uploading">⏳ Marcando hecha con tu nota…</div>`;
+  try {
+    setTaskState(pendingTextTask.id, {
+      status: 'done',
+      snoozed_until: null,
+      completed_at: new Date().toISOString(),
+      user_note: text,
+    });
+    renderTimeline();
+    result.innerHTML = `
+      <div class="task-photo-success">
+        <div class="task-photo-success-title">✅ Tarea marcada hecha</div>
+        <p>Tu nota: <em>${text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</em></p>
+      </div>
+      <button class="btn-primary" onclick="closeModal('task-text')">Listo</button>`;
+  } catch (err) {
+    result.innerHTML = `<div class="task-photo-error">❌ ${err.message}</div>
+      <button class="btn-secondary" onclick="setTaskTextStage('write')">↺ Volver</button>`;
+  }
+});
+
+// "Subir nota + pedir evaluación IA" — pushea entry text-only a uploads.json
+// con context="task_text", ai_status="pending". /actualizar-tareas la procesa.
+document.getElementById('btn-text-ask-ai')?.addEventListener('click', async () => {
+  if (!pendingTextTask) return;
+  const text = document.getElementById('task-text-content').value.trim();
+  if (!text) {
+    alert('Escribí algo primero.');
+    return;
+  }
+  setTaskTextStage('result');
+  const result = document.getElementById('task-text-result');
+  result.innerHTML = `<div class="task-photo-uploading">⏳ Subiendo tu nota al repo…</div>`;
+  try {
+    const task = pendingTextTask;
+    const plantId = task.plant_codes[0];
+    const now = new Date();
+    const stamp = now.toISOString().replace(/[-:]/g, '').replace(/\..+/, '').replace('T', '-').slice(0, 15);
+    const entry = {
+      filename: null,
+      uploaded_at: now.toISOString(),
+      uploaded_by: loadDeviceName() || 'desconocido',
+      context: 'task_text',
+      task_id: task.id,
+      task_title_snapshot: task.title,
+      user_context: text,
+      ai_status: 'pending',
+      ai_evaluation: null,
+      _stamp: stamp,
+    };
+    const uploadsPath = 'docs/uploads.json';
+    const { sha, data } = await ghReadJsonFile(uploadsPath);
+    const idx = data || {};
+    if (!idx[plantId]) idx[plantId] = [];
+    idx[plantId].push(entry);
+    const newJson = JSON.stringify(idx, null, 2) + '\n';
+    const newBase64 = btoa(unescape(encodeURIComponent(newJson)));
+    await ghPutFile(uploadsPath, newBase64, `text-note: respuesta de texto para ${task.id}`, sha);
+    result.innerHTML = `
+      <div class="task-photo-success">
+        <div class="task-photo-success-title">✅ Nota subida</div>
+        <p>Quedó registrada como <strong>pending</strong> de evaluación IA.</p>
+        <p class="task-photo-success-hint">Para que se procese, abrí Claude Code y corré:</p>
+        <code class="task-photo-success-cmd">/actualizar-tareas</code>
+      </div>
+      <button class="btn-primary" onclick="closeModal('task-text')">Listo</button>`;
+  } catch (err) {
+    result.innerHTML = `<div class="task-photo-error">❌ ${err.message}</div>
+      <div class="task-photo-actions">
+        <button class="btn-secondary" onclick="setTaskTextStage('write')">↺ Volver</button>
+        <button class="btn-secondary" onclick="closeModal('task-text')">Cancelar</button>
+      </div>`;
+  }
+});
 """

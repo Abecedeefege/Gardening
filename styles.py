@@ -1343,6 +1343,16 @@ h2.subbrand {
   background: rgba(99, 102, 241, 0.2);
   border-color: rgba(99, 102, 241, 0.5);
 }
+/* Botón "💬 Responder" — variante violeta clara */
+.task-btn-text {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.3);
+  color: #7e22ce;
+}
+.task-btn-text:hover {
+  background: rgba(168, 85, 247, 0.2);
+  border-color: rgba(168, 85, 247, 0.5);
+}
 
 /* SPECIES DETAIL MODAL — estilo "Memories" con hero a sangre */
 .species-modal {

@@ -769,7 +769,12 @@ def build_timeline_view(tasks, img_data):
       <p class="task-photo-overlay-note">
         🏷️ La foto incluye un overlay con el ID de la tarea, fecha y título corto. Sirve para identificarla después.
       </p>
-      <div class="task-photo-actions">
+      <label class="settings-label" style="margin-top: 8px;">
+        <strong>Contexto opcional</strong>
+        <span class="settings-hint">Lo que querés que sepa la IA al evaluar esta foto. Ej: "ambas plantas comparten la base", "la foto se sacó al atardecer", etc.</span>
+      </label>
+      <textarea id="task-photo-context" class="settings-input" rows="3" maxlength="500" placeholder="Notas sobre lo que se ve en la foto, ángulo, condiciones..."></textarea>
+      <div class="task-photo-actions" style="margin-top: 10px;">
         <button class="btn-secondary" id="btn-photo-change">↺ Cambiar foto</button>
         <button class="btn-primary" id="btn-photo-upload">📤 Subir al repo</button>
       </div>
@@ -778,6 +783,38 @@ def build_timeline_view(tasks, img_data):
     <!-- Pantalla 4: subiendo / éxito / error -->
     <div class="task-photo-stage" data-stage="result" hidden>
       <div class="task-photo-result" id="task-photo-result"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Responder con texto (sin foto) -->
+<div class="modal" id="task-text-modal">
+  <div class="modal-content modal-wide">
+    <button class="modal-close" data-close="task-text">✕</button>
+    <h3>💬 Responder con texto</h3>
+    <p class="task-photo-name" id="task-text-name"></p>
+
+    <div class="task-photo-stage" data-stage="setup" hidden>
+      <div class="task-photo-warning">
+        ⚠️ Necesitás configurar tu GitHub Personal Access Token antes de subir notas al repo.
+      </div>
+      <button class="btn-primary" id="btn-text-go-settings">⚙️ Ir a Configuración</button>
+    </div>
+
+    <div class="task-photo-stage" data-stage="write">
+      <label class="settings-label">
+        <strong>Tu respuesta o nota</strong>
+        <span class="settings-hint">Describí qué hiciste, qué viste, una pregunta, etc. La IA puede leer este texto cuando corras /actualizar-tareas.</span>
+      </label>
+      <textarea id="task-text-content" class="settings-input" rows="6" maxlength="1500" placeholder="Ej: 'Ya regué el plantín'. O 'Sigue sin germinar después de 3 semanas, qué hago?'"></textarea>
+      <div class="task-photo-actions" style="margin-top: 12px;">
+        <button class="btn-secondary" id="btn-text-mark-done">✅ Marcar hecha con esta nota</button>
+        <button class="btn-primary" id="btn-text-ask-ai">🤖 Subir nota + pedir evaluación IA</button>
+      </div>
+    </div>
+
+    <div class="task-photo-stage" data-stage="result" hidden>
+      <div class="task-photo-result" id="task-text-result"></div>
     </div>
   </div>
 </div>

@@ -30,9 +30,14 @@ Leé `docs/uploads.json`. Tiene la forma:
 }
 ```
 
-Filtrar entries con `ai_status: "pending"`. Si no hay ninguna, decir "No hay fotos pendientes de evaluar" y terminar.
+Filtrar entries con `ai_status: "pending"`. Si no hay ninguna, decir "No hay items pendientes de evaluar" y terminar.
 
-Las entries con `context: "species"` no requieren evaluación de IA — sólo registran fotos del catálogo. Saltarlas (no procesarlas, dejar `ai_status: "n/a"` como están).
+Tipos de entries posibles según `context`:
+- `"task"` → upload de foto para una tarea. Tiene `filename` válido, leer la imagen.
+- `"task_text"` → respuesta SOLO TEXTO sin foto. `filename` es `null`. El contenido a evaluar está en `user_context`. NO intentar leer una imagen.
+- `"species"` → foto de catálogo, no requiere evaluación de IA. Saltar (dejar `ai_status: "n/a"`).
+
+**Importante:** Si una entry tiene campo `user_context`, ese texto es contexto valioso del usuario (ej: "ambas comparten la base de un tronco viejo", "no germina hace 3 semanas"). Leerlo SIEMPRE antes de evaluar y usarlo para informar la decisión. Para `task_text`, ES la respuesta del usuario; para `task` con foto, complementa lo que se observa.
 
 ### 2. Para cada entry pendiente
 

@@ -1384,6 +1384,16 @@ h2.subbrand {
   background: rgba(99, 102, 241, 0.2);
   border-color: rgba(99, 102, 241, 0.5);
 }
+/* Botón "💬 Responder" — variante violeta clara */
+.task-btn-text {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.3);
+  color: #7e22ce;
+}
+.task-btn-text:hover {
+  background: rgba(168, 85, 247, 0.2);
+  border-color: rgba(168, 85, 247, 0.5);
+}
 
 /* SPECIES DETAIL MODAL — estilo "Memories" con hero a sangre */
 .species-modal {
@@ -9514,7 +9524,12 @@ ID exacta de cada plantín pendiente — ver urgencia &#x27;Mapeo del vivero&#x2
       <p class="task-photo-overlay-note">
         🏷️ La foto incluye un overlay con el ID de la tarea, fecha y título corto. Sirve para identificarla después.
       </p>
-      <div class="task-photo-actions">
+      <label class="settings-label" style="margin-top: 8px;">
+        <strong>Contexto opcional</strong>
+        <span class="settings-hint">Lo que querés que sepa la IA al evaluar esta foto. Ej: "ambas plantas comparten la base", "la foto se sacó al atardecer", etc.</span>
+      </label>
+      <textarea id="task-photo-context" class="settings-input" rows="3" maxlength="500" placeholder="Notas sobre lo que se ve en la foto, ángulo, condiciones..."></textarea>
+      <div class="task-photo-actions" style="margin-top: 10px;">
         <button class="btn-secondary" id="btn-photo-change">↺ Cambiar foto</button>
         <button class="btn-primary" id="btn-photo-upload">📤 Subir al repo</button>
       </div>
@@ -9523,6 +9538,38 @@ ID exacta de cada plantín pendiente — ver urgencia &#x27;Mapeo del vivero&#x2
     <!-- Pantalla 4: subiendo / éxito / error -->
     <div class="task-photo-stage" data-stage="result" hidden>
       <div class="task-photo-result" id="task-photo-result"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Responder con texto (sin foto) -->
+<div class="modal" id="task-text-modal">
+  <div class="modal-content modal-wide">
+    <button class="modal-close" data-close="task-text">✕</button>
+    <h3>💬 Responder con texto</h3>
+    <p class="task-photo-name" id="task-text-name"></p>
+
+    <div class="task-photo-stage" data-stage="setup" hidden>
+      <div class="task-photo-warning">
+        ⚠️ Necesitás configurar tu GitHub Personal Access Token antes de subir notas al repo.
+      </div>
+      <button class="btn-primary" id="btn-text-go-settings">⚙️ Ir a Configuración</button>
+    </div>
+
+    <div class="task-photo-stage" data-stage="write">
+      <label class="settings-label">
+        <strong>Tu respuesta o nota</strong>
+        <span class="settings-hint">Describí qué hiciste, qué viste, una pregunta, etc. La IA puede leer este texto cuando corras /actualizar-tareas.</span>
+      </label>
+      <textarea id="task-text-content" class="settings-input" rows="6" maxlength="1500" placeholder="Ej: 'Ya regué el plantín'. O 'Sigue sin germinar después de 3 semanas, qué hago?'"></textarea>
+      <div class="task-photo-actions" style="margin-top: 12px;">
+        <button class="btn-secondary" id="btn-text-mark-done">✅ Marcar hecha con esta nota</button>
+        <button class="btn-primary" id="btn-text-ask-ai">🤖 Subir nota + pedir evaluación IA</button>
+      </div>
+    </div>
+
+    <div class="task-photo-stage" data-stage="result" hidden>
+      <div class="task-photo-result" id="task-text-result"></div>
     </div>
   </div>
 </div>
@@ -9965,6 +10012,7 @@ function renderTaskCard(task) {
         <button class="task-btn task-btn-done" data-action="done" data-task-id="${task.id}">✅ Hecho</button>
         <button class="task-btn task-btn-snooze" data-action="snooze" data-task-id="${task.id}">😴 Posponer</button>
         <button class="task-btn task-btn-photo" data-action="photo" data-task-id="${task.id}">📷 Subir foto</button>
+        <button class="task-btn task-btn-text" data-action="text" data-task-id="${task.id}">💬 Responder</button>
         <button class="task-btn task-btn-whatsapp" data-action="whatsapp" data-task-id="${task.id}">💬 WhatsApp</button>
       </div>`;
   } else {
@@ -10192,6 +10240,7 @@ function setupTaskInteractions(scope) {
       else if (action === 'snooze') openSnoozeModal(task);
       else if (action === 'whatsapp') openWhatsAppModal(task);
       else if (action === 'photo') openTaskPhotoModal(task);
+      else if (action === 'text') openTaskTextModal(task);
       else if (action === 'reactivate') reactivateTask(task);
     });
   });
@@ -11545,6 +11594,8 @@ function openTaskPhotoModal(task) {
   pendingPhotoTask = task;
   pendingPhotoBlob = null;
   document.getElementById('task-photo-name').textContent = `📌 ${task.title} · ${task.plant_common} (${task.plant_codes.join(', ')})`;
+  const ctx = document.getElementById('task-photo-context');
+  if (ctx) ctx.value = '';
 
   // Mostrar la stage correcta según si hay token configurado.
   const hasToken = !!loadGitHubToken();
@@ -12271,6 +12322,7 @@ async function uploadPendingPhoto() {
     const { sha, data } = await ghReadJsonFile(uploadsPath);
     const idx = data || {};
     if (!idx[plantId]) idx[plantId] = [];
+    const userContext = (document.getElementById('task-photo-context')?.value || '').trim();
     const entry = {
       filename,
       uploaded_at: now.toISOString(),
@@ -12281,6 +12333,7 @@ async function uploadPendingPhoto() {
       ai_status: 'pending',
       ai_evaluation: null,
     };
+    if (userContext) entry.user_context = userContext;
     idx[plantId].push(entry);
     const newJson = JSON.stringify(idx, null, 2) + '\n';
     const newBase64 = btoa(unescape(encodeURIComponent(newJson)));
@@ -12313,6 +12366,118 @@ async function uploadPendingPhoto() {
       </div>`;
   }
 }
+
+// ============================================================
+// TASK TEXT RESPONSE MODAL — responder con texto, sin foto
+// ============================================================
+let pendingTextTask = null;
+
+function openTaskTextModal(task) {
+  pendingTextTask = task;
+  document.getElementById('task-text-name').textContent = `📌 ${task.title} · ${task.plant_common} (${task.plant_codes.join(', ')})`;
+  document.getElementById('task-text-content').value = '';
+  const hasToken = !!loadGitHubToken();
+  if (hasToken && !ensurePrivacyAcknowledged()) return;
+  setTaskTextStage(hasToken ? 'write' : 'setup');
+  document.getElementById('task-text-modal').classList.add('active');
+}
+
+function setTaskTextStage(stage) {
+  document.querySelectorAll('#task-text-modal .task-photo-stage').forEach(s => {
+    s.hidden = (s.dataset.stage !== stage);
+  });
+}
+
+document.getElementById('btn-text-go-settings')?.addEventListener('click', () => {
+  closeModal('task-text');
+  openSettingsModal();
+});
+
+// "Marcar hecha con esta nota" — sin AI eval, solo guarda nota como respuesta directa
+// del usuario en sync/task_states.json (campo user_note) y marca done.
+document.getElementById('btn-text-mark-done')?.addEventListener('click', async () => {
+  if (!pendingTextTask) return;
+  const text = document.getElementById('task-text-content').value.trim();
+  if (!text) {
+    alert('Escribí una nota primero.');
+    return;
+  }
+  setTaskTextStage('result');
+  const result = document.getElementById('task-text-result');
+  result.innerHTML = `<div class="task-photo-uploading">⏳ Marcando hecha con tu nota…</div>`;
+  try {
+    setTaskState(pendingTextTask.id, {
+      status: 'done',
+      snoozed_until: null,
+      completed_at: new Date().toISOString(),
+      user_note: text,
+    });
+    renderTimeline();
+    result.innerHTML = `
+      <div class="task-photo-success">
+        <div class="task-photo-success-title">✅ Tarea marcada hecha</div>
+        <p>Tu nota: <em>${text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</em></p>
+      </div>
+      <button class="btn-primary" onclick="closeModal('task-text')">Listo</button>`;
+  } catch (err) {
+    result.innerHTML = `<div class="task-photo-error">❌ ${err.message}</div>
+      <button class="btn-secondary" onclick="setTaskTextStage('write')">↺ Volver</button>`;
+  }
+});
+
+// "Subir nota + pedir evaluación IA" — pushea entry text-only a uploads.json
+// con context="task_text", ai_status="pending". /actualizar-tareas la procesa.
+document.getElementById('btn-text-ask-ai')?.addEventListener('click', async () => {
+  if (!pendingTextTask) return;
+  const text = document.getElementById('task-text-content').value.trim();
+  if (!text) {
+    alert('Escribí algo primero.');
+    return;
+  }
+  setTaskTextStage('result');
+  const result = document.getElementById('task-text-result');
+  result.innerHTML = `<div class="task-photo-uploading">⏳ Subiendo tu nota al repo…</div>`;
+  try {
+    const task = pendingTextTask;
+    const plantId = task.plant_codes[0];
+    const now = new Date();
+    const stamp = now.toISOString().replace(/[-:]/g, '').replace(/\..+/, '').replace('T', '-').slice(0, 15);
+    const entry = {
+      filename: null,
+      uploaded_at: now.toISOString(),
+      uploaded_by: loadDeviceName() || 'desconocido',
+      context: 'task_text',
+      task_id: task.id,
+      task_title_snapshot: task.title,
+      user_context: text,
+      ai_status: 'pending',
+      ai_evaluation: null,
+      _stamp: stamp,
+    };
+    const uploadsPath = 'docs/uploads.json';
+    const { sha, data } = await ghReadJsonFile(uploadsPath);
+    const idx = data || {};
+    if (!idx[plantId]) idx[plantId] = [];
+    idx[plantId].push(entry);
+    const newJson = JSON.stringify(idx, null, 2) + '\n';
+    const newBase64 = btoa(unescape(encodeURIComponent(newJson)));
+    await ghPutFile(uploadsPath, newBase64, `text-note: respuesta de texto para ${task.id}`, sha);
+    result.innerHTML = `
+      <div class="task-photo-success">
+        <div class="task-photo-success-title">✅ Nota subida</div>
+        <p>Quedó registrada como <strong>pending</strong> de evaluación IA.</p>
+        <p class="task-photo-success-hint">Para que se procese, abrí Claude Code y corré:</p>
+        <code class="task-photo-success-cmd">/actualizar-tareas</code>
+      </div>
+      <button class="btn-primary" onclick="closeModal('task-text')">Listo</button>`;
+  } catch (err) {
+    result.innerHTML = `<div class="task-photo-error">❌ ${err.message}</div>
+      <div class="task-photo-actions">
+        <button class="btn-secondary" onclick="setTaskTextStage('write')">↺ Volver</button>
+        <button class="btn-secondary" onclick="closeModal('task-text')">Cancelar</button>
+      </div>`;
+  }
+});
 
 </script>
 </body>
