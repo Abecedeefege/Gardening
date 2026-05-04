@@ -75,8 +75,14 @@
       "context": "task",
       "task_id": "plant-F-9",
       "task_title_snapshot": "Decidir si compite con Fotinia F-6",
-      "ai_status": "pending",
-      "ai_evaluation": null
+      "user_context": "Ambas comparten la base de lo que parecería ser un tronco de árbol grande y viejo.",
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Foto del nudo basal muestra varios troncos delgados saliendo de una base gruesa y oscura tipo tocón viejo, consistente con la observación del usuario: ambas plantas (Fotinia F-6 y Ligustro F-9) parecen compartir la misma base. Es probable que sean rebrotes del mismo cepellón viejo, no plantas separadas compitiendo.",
+        "next_steps": "Confirmar con 2-3 fotos adicionales: (a) vista del nudo desde otro lado, (b) tronco principal arriba mostrando inserción de las ramas distintas, (c) escarbar 5-10 cm el suelo para ver el cuello/raíz. Si se confirma que comparten base, replantear la decisión: ya no es 'sacar uno y dejar otro' sino (1) aceptar como seto mixto y podar para equilibrar copa, o (2) eliminar todo el cepellón viejo y replantar.",
+        "processed_at": "2026-05-04T16:00:00.000Z"
+      }
     }
   ],
   "B-46": [
