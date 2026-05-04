@@ -285,5 +285,17 @@
       "ai_evaluation": null,
       "user_context": "Las hojas parecen algo enfermas, está bien el árbol?"
     }
+  ],
+  "F-8": [
+    {
+      "filename": "plant-F-8_20260504-181023.jpg",
+      "uploaded_at": "2026-05-04T18:10:23.367Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-F-8",
+      "task_title_snapshot": "Foto panorámica numerada del frente",
+      "ai_status": "pending",
+      "ai_evaluation": null
+    }
   ]
 }
