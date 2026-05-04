@@ -273,6 +273,17 @@
       "ai_status": "pending",
       "ai_evaluation": null,
       "user_context": "Así está bien?"
+    },
+    {
+      "filename": "plant-F-1-2_20260504-180924.jpg",
+      "uploaded_at": "2026-05-04T18:09:24.326Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-F-1-2",
+      "task_title_snapshot": "Rastrillado del cantero del frente",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Las hojas parecen algo enfermas, está bien el árbol?"
     }
   ]
 }
