@@ -1156,7 +1156,21 @@ def main():
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Apple touch icons (multiple sizes para iPhone/iPad/iPad Pro) -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180.png">
+
+<!-- iOS standalone web app meta -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Jardineando">
+
+<!-- Safari pinned tab -->
+<link rel="mask-icon" href="mask-icon.svg" color="#2d5016">
 
 <!-- PWA -->
 <link rel="manifest" href="manifest.webmanifest">
