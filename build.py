@@ -1169,6 +1169,10 @@ def main():
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Jardineando">
 
+<!-- Android standalone web app meta -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Jardineando">
+
 <!-- Safari pinned tab -->
 <link rel="mask-icon" href="mask-icon.svg" color="#2d5016">
 

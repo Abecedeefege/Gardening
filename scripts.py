@@ -1001,6 +1001,20 @@ async function loadWeather() {
 loadWeather();
 
 // ============================================================
+// SERVICE WORKER — registro mínimo para que Chrome/Android consideren
+// el sitio "instalable" y use el icon de la manifest en home screen.
+// El SW no cachea nada (passthrough); existe solo para cumplir el
+// criterio de installability de PWA.
+// ============================================================
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(err => {
+      console.warn('SW registration failed:', err);
+    });
+  });
+}
+
+// ============================================================
 // SETTINGS — GitHub PAT + device name (localStorage only)
 // ============================================================
 const GITHUB_TOKEN_KEY = 'jardineando_github_token_v1';
