@@ -265,8 +265,9 @@ def render_plant_info_card(p, img_data):
     has_main = bool(p.get("main_photo") and img_data.get(p.get("main_photo")))
     has_loc = bool(p.get("loc_photo") and img_data.get(p.get("loc_photo")))
 
-    photo_html = f'<img class="card-photo" data-img="{esc(p["main_photo"])}" data-action="lightbox" alt="">' if has_main else ''
-    locs_html = f'<img class="card-loc-photo" data-img="{esc(p["loc_photo"])}" data-action="lightbox" alt="" title="Ver ubicación">' if has_loc else ''
+    primary_code = p["id_codes"][0]
+    photo_html = f'<img class="card-photo" data-img="{esc(p["main_photo"])}" data-action="open-species" data-plant-code="{esc(primary_code)}" alt="">' if has_main else ''
+    locs_html = f'<img class="card-loc-photo" data-img="{esc(p["loc_photo"])}" data-action="open-species" data-plant-code="{esc(primary_code)}" alt="" title="Ver detalles de la especie">' if has_loc else ''
     type_badge = {"caduco": "🍂 Caduco", "perenne": "🌲 Perenne", "semi-perenne": "🍃 Semi-perenne", "semi-caduco": "🍃 Semi-caduco"}.get(p.get("type", ""), p.get("type", ""))
     charrua_html = f'<div class="card-charrua">🪶 <strong>Originario:</strong> {esc(p["charrua"])}</div>' if p.get("charrua") else ''
     funfact_html = f'<div class="card-funfact">💡 <em>{esc(p["fun_fact"])}</em></div>' if p.get("fun_fact") and p["fun_fact"] != "—" else ''

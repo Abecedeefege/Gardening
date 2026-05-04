@@ -9,6 +9,25 @@ Sitio estático de un jardín casero en Montevideo, Uruguay. Catálogo de 40 pla
 - Catálogo de huerta
 - **Timeline de tareas** estilo Tinder con WhatsApp pre-armado por contacto
 
+## Orientación del jardín (datos físicos clave)
+
+La casa tiene una alineación casi perfecta este-oeste. Esto define el comportamiento solar de cada zona y debe usarse para razonar sobre cuidados (sol directo, exposición al frío, sombra de mediodía, etc.):
+
+| Punto cardinal | Zona/landmark | Implicancia solar |
+|---|---|---|
+| **Este** | Fondo (zona "fondo" en `data_plants.py`) | Sale el sol acá. Sol matinal hasta el mediodía. Donde está el liquidámbar B-37, la pileta, el palto B-36. |
+| **Oeste** | Frente (zona "frente") | Se oculta el sol acá. Sol vespertino hasta el atardecer. Las Fotinias F-1..F-6, F-9 (ligustro), F-10 (fresno) están en este eje. |
+| **Norte** | Muro del hibisco y el lapachillo | Pared/landmark que mira norte → recibe sol todo el día en invierno (hemisferio sur). Lado más cálido y luminoso del año. |
+| **Sur** | Pera Williams | Lado que mira sur → menos sol directo en invierno, más sombra. Suele acumular más humedad. |
+
+**Reglas de pulgar para Montevideo (lat ~34.9° S):**
+- Las plantas **heliófilas** (necesitan sol pleno: frutales, rosales, hierbas mediterráneas) andan mejor en frente o muro norte.
+- Las plantas de **sombra parcial** o **interior tropical** (helechos, hortensias, gardenias) prefieren fondo (este) o sur — luz suave.
+- En **invierno**, el sol pasa más bajo y por el norte: revisar si las podas estructurales liberan luz al lado norte.
+- **Heladas tardías** (junio-agosto) pegan más fuerte al sur y al este al amanecer — proteger pies tiernos en esa franja.
+
+Esta info se puede extender a futuro como campo `cardinal_exposure` derivado por planta en `data_plants.py` (no implementado todavía).
+
 ## Stack y arquitectura
 
 **Build-time:** Python 3 con Pillow para optimizar e incrustar imágenes como base64.

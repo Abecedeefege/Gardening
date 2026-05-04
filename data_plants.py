@@ -1,6 +1,15 @@
 """
 Catálogo de plantas del jardín Pacha Mama.
 Cada planta tiene su info, calendario, urgencia y tags.
+
+Orientación del jardín (Montevideo, ~34.9° S):
+  Este  = fondo  (sale el sol; sol matinal hasta mediodía)
+  Oeste = frente (se oculta el sol; sol vespertino al atardecer)
+  Norte = muro del hibisco y el lapachillo (más sol en invierno)
+  Sur   = pera Williams (menos sol en invierno, más sombra)
+
+Esta orientación es relevante para razonar sobre water/light/prune_when y
+para sugerir trasplantes — ver CLAUDE.md sección "Orientación del jardín".
 """
 
 PLANTS = [
