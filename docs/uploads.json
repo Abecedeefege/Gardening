@@ -121,6 +121,18 @@
       "context": "species",
       "ai_status": "n/a",
       "note": "Lote C: ~10-15 plantines de palmera (Butia odorata o Syagrus romanzoffiana, hojas en abanico) + alguno con hoja fina tipo esparraguera. Balde rojo invertido como apoyo."
+    },
+    {
+      "filename": null,
+      "uploaded_at": "2026-05-04T16:22:30.567Z",
+      "uploaded_by": "pix9",
+      "context": "task_text",
+      "task_id": "plant-B-46",
+      "task_title_snapshot": "Mapeo del vivero — identificar y etiquetar cada plantín",
+      "user_context": "Separa esta tarea en los diferentes plantines que hay.\nLos plantines son mayormente palmeras, algunas paltas, algunos romeros y algunos liquidámbar.  Hay algunas que aún no conozco que te puedo subir fotos",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "_stamp": "20260504-162230"
     }
   ],
   "B-37": [
