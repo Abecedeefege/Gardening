@@ -1,5 +1,5 @@
 {
-  "_synced_at": "2026-05-04T18:04:51.245Z",
+  "_synced_at": "2026-05-04T18:06:19.820Z",
   "_last_writer": "pix9",
   "tasks": {
     "plant-F-9": {
@@ -35,13 +35,10 @@
       "last_modified_at": "2026-05-04T18:04:45.604Z"
     },
     "plant-B-24-2": {
-      "status": "active",
+      "status": "done",
       "snoozed_until": null,
-      "completed_at": null,
-      "description_override": "Mandarina criolla CON minador de cítricos confirmado (las hojas 'enruladas' son galerías de Phyllocnistis citrella). Sin cochinilla. Mismo tratamiento que B-23: neem 3-5 ml/L en envés c/7 días por 3 semanas. Porte ralo es normal post-cosecha en otoño.",
-      "description_override_at": "2026-05-04T17:30:00.000Z",
-      "last_ai_summary": "Mandarina criolla con minador de cítricos confirmado — las hojas 'enruladas' que mencionás son galerías de Phyllocnistis citrella. Sin signos de cochinilla. Porte ralo normal en otoño post-cosecha.",
-      "last_modified_at": "2026-05-04T17:30:00.000Z"
+      "completed_at": "2026-05-04T18:05:09.615Z",
+      "last_modified_at": "2026-05-04T18:05:09.615Z"
     },
     "plant-B-22-2": {
       "status": "done",
