@@ -371,5 +371,18 @@
       "ai_evaluation": null,
       "user_context": "Son 2 de hecho.  Una alta de tras y una pitosporo que crece en la base al lado"
     }
+  ],
+  "B-25": [
+    {
+      "filename": "plant-B-25-2_20260504-182539.jpg",
+      "uploaded_at": "2026-05-04T18:25:39.766Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-25-2",
+      "task_title_snapshot": "Inspección + foto cercana de hojas",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Tiene hormigas"
+    }
   ]
 }
