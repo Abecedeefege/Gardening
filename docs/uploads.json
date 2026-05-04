@@ -334,5 +334,18 @@
       "ai_status": "pending",
       "ai_evaluation": null
     }
+  ],
+  "B-45": [
+    {
+      "filename": "plant-B-45_20260504-181830.jpg",
+      "uploaded_at": "2026-05-04T18:18:30.093Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-45",
+      "task_title_snapshot": "Foto de la especie centrada",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "No es una planta que trepe la pared. Crece de un tronco al lado de la pared"
+    }
   ]
 }
