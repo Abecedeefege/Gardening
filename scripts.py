@@ -1848,10 +1848,15 @@ const GH_API = `https://api.github.com/repos/${GH_REPO}/contents`;
 async function ghGetFile(path) {
   const token = loadGitHubToken();
   if (!token) throw new Error('Sin GitHub PAT configurado');
-  const r = await fetch(`${GH_API}/${path}?ref=main`, {
+  // cache: 'no-store' + ?_=timestamp para bypass total del cache HTTP del browser
+  // y de cualquier CDN intermedio. Sin esto, después de un 409 el retry
+  // recibía el sha viejo cacheado y volvía a fallar en loop.
+  const r = await fetch(`${GH_API}/${path}?ref=main&_=${Date.now()}`, {
+    cache: 'no-store',
     headers: {
       'Authorization': `Bearer ${token}`,
       'Accept': 'application/vnd.github+json',
+      'Cache-Control': 'no-cache',
     },
   });
   if (r.status === 404) return null;
@@ -2473,14 +2478,14 @@ function scheduleSyncFlush() {
   _syncFlushTimer = setTimeout(flushSync, SYNC_DEBOUNCE_MS);
 }
 
-async function flushSync(retries = 3) {
+async function flushSync(retries = 5) {
   if (_syncInProgress) return;
   if (!loadGitHubToken()) return;
   if (!_stateDirty) return;
   _syncInProgress = true;
   updateSyncStatus();
   try {
-    // 1. Leer remoto.
+    // 1. Leer remoto (cache: no-store via ghGetFile).
     const { sha, data } = await ghReadJsonFile(SYNC_PATH);
     const remoteTasks = (data && data.tasks) || {};
 
@@ -2509,10 +2514,12 @@ async function flushSync(retries = 3) {
     _stateDirty = false;
     updateSyncStatus({ ok: true });
   } catch (err) {
-    console.warn('Sync flush falló:', err);
-    if (retries > 0 && /409|412/.test(String(err.message))) {
-      // Conflict — refetch + retry.
-      await new Promise(r => setTimeout(r, 600));
+    console.warn(`Sync flush falló (retries restantes: ${retries}):`, err);
+    if (retries > 0 && /409|412|5\d\d/.test(String(err.message))) {
+      // Conflict (409/412) o error transitorio del servidor (5xx) — backoff
+      // exponencial y reintentar. 600ms, 1.2s, 2.4s, 4.8s, 9.6s.
+      const delay = 600 * Math.pow(2, 5 - retries);
+      await new Promise(r => setTimeout(r, delay));
       _syncInProgress = false;
       return flushSync(retries - 1);
     }
