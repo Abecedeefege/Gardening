@@ -1149,12 +1149,34 @@ def main():
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jardineando · Pacha Mama</title>
+<meta name="description" content="Catálogo y timeline de tareas del jardín Pacha Mama (Montevideo). 48 plantas, calendario anual, fotos.">
+<meta name="theme-color" content="#2d5016">
+
+<!-- Favicons -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.webmanifest">
+
+<!-- Open Graph / WhatsApp / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jardineando · Pacha Mama">
+<meta property="og:description" content="Catálogo y timeline de tareas del jardín Pacha Mama (Montevideo).">
+<meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="og-image.png">
+
 <style>{CSS}</style>
 </head>
 <body class="zone-todo">
 <div class="container container-top">
   <header class="main-header">
-    <h1 class="brand"><span class="brand-emoji">🌿</span> Jardineando</h1>
+    <h1 class="brand"><img class="brand-logo" src="icon-96.png" alt="" width="40" height="40"> Jardineando</h1>
     <h2 class="subbrand">Pacha Mama</h2>
   </header>
 

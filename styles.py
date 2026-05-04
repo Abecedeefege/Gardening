@@ -130,6 +130,15 @@ h1.brand {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-logo {
+  width: clamp(36px, 7vw, 56px);
+  height: auto;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
 }
 .brand-emoji { display: none; }
 h2.subbrand {
