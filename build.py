@@ -673,9 +673,8 @@ def build_timeline_view(tasks, img_data):
 </div>
 
 <!-- Modal: Detalle de especie -->
-<div class="modal" id="species-detail-modal">
-  <div class="modal-content modal-wide">
-    <button class="modal-close" data-close="species-detail">✕</button>
+<div class="modal species-modal" id="species-detail-modal">
+  <div class="modal-content species-modal-content">
     <div id="species-detail-body"></div>
   </div>
 </div>

@@ -1942,15 +1942,14 @@ async function openSpeciesDetailModal(plantCode) {
   const idx = await loadUploadsIndex();
   const uploads = idx[primaryCode] || [];
 
-  // Construir tira de fotos: main + loc + uploads (más recientes primero).
+  // Construir set de fotos: main + loc + uploads (más recientes primero).
   const photoCells = [];
   if (plant.main_photo && IMG[plant.main_photo]) {
     photoCells.push({ kind: 'main', src_data: IMG[plant.main_photo], filename: plant.main_photo, label: 'Foto principal' });
   }
   if (plant.loc_photo && IMG[plant.loc_photo] && plant.loc_photo !== plant.main_photo) {
-    photoCells.push({ kind: 'loc', src_data: IMG[plant.loc_photo], filename: plant.loc_photo, label: 'Vista aérea / ubicación' });
+    photoCells.push({ kind: 'loc', src_data: IMG[plant.loc_photo], filename: plant.loc_photo, label: 'Vista de ubicación' });
   }
-  // Uploads ordenados por uploaded_at descendente.
   const sortedUploads = [...uploads].sort((a, b) => (b.uploaded_at || '').localeCompare(a.uploaded_at || ''));
   sortedUploads.forEach(u => {
     photoCells.push({
@@ -1960,26 +1959,34 @@ async function openSpeciesDetailModal(plantCode) {
       label: u.context === 'task' ? `Tarea: ${u.task_title_snapshot || u.task_id}` : (u.note || 'Foto del catálogo'),
       uploaded_at: u.uploaded_at,
       uploaded_by: u.uploaded_by,
-      ai_evaluation: u.ai_evaluation,
+      context: u.context,
     });
   });
 
-  const photosHtml = photoCells.length ? photoCells.map((c, i) => {
+  // Hero photo: loc_photo > main_photo > primer upload species > primer upload task.
+  let heroSrc = null;
+  if (plant.loc_photo && IMG[plant.loc_photo]) heroSrc = IMG[plant.loc_photo];
+  else if (plant.main_photo && IMG[plant.main_photo]) heroSrc = IMG[plant.main_photo];
+  else {
+    const firstSpecies = sortedUploads.find(u => u.context === 'species');
+    const firstTask = sortedUploads.find(u => u.context === 'task');
+    if (firstSpecies) heroSrc = `images/uploads/${primaryCode}/${firstSpecies.filename}`;
+    else if (firstTask) heroSrc = `images/uploads/${primaryCode}/${firstTask.filename}`;
+  }
+
+  // Photos grid (todas las fotos, sin tags overlaid — limpio).
+  const photosGridHtml = photoCells.length ? photoCells.map((c, i) => {
     const src = c.src_data || c.src_url;
-    const tooltip = c.uploaded_at
-      ? `${c.label}\n${new Date(c.uploaded_at).toLocaleString('es-UY')}`
-      : c.label;
-    const tag = c.kind === 'main' ? '<span class="species-photo-tag main">Principal</span>'
-              : c.kind === 'loc'  ? '<span class="species-photo-tag loc">Ubicación</span>'
-              : c.kind === 'upload' ? `<span class="species-photo-tag upload">${c.uploaded_by || 'Subida'}</span>`
-              : '';
+    const tooltip = c.kind === 'main' ? 'Principal'
+                  : c.kind === 'loc' ? 'Ubicación'
+                  : (c.uploaded_by ? `Subida (${c.uploaded_by})` : 'Subida')
+                  + (c.uploaded_at ? ` · ${new Date(c.uploaded_at).toLocaleDateString('es-UY')}` : '');
     return `<div class="species-photo-cell" data-idx="${i}" title="${tooltip.replace(/"/g,'&quot;')}">
       <img src="${src}" alt="${c.label}" loading="lazy">
-      ${tag}
     </div>`;
-  }).join('') : '<div class="species-no-photos">Sin fotos todavía.</div>';
+  }).join('') : '';
 
-  // Lista de tareas próximas / activas para esta planta.
+  // Tareas + cuidados — todo en el <details> de "Detalles".
   const plantTasks = tasksForPlant(primaryCode);
   const tasksHtml = plantTasks.length ? `
     <div class="species-tasks">
@@ -1998,7 +2005,6 @@ async function openSpeciesDetailModal(plantCode) {
       }).join('')}
     </div>` : '';
 
-  // Datos curados de cuidados.
   const careRows = [];
   if (plant.water) careRows.push({ icon: '💧', label: 'Riego', val: plant.water });
   if (plant.light) careRows.push({ icon: '☀️', label: 'Luz', val: plant.light });
@@ -2020,42 +2026,69 @@ async function openSpeciesDetailModal(plantCode) {
   const funFactHtml = plant.fun_fact && plant.fun_fact !== '—' ? `<div class="species-funfact">💡 <em>${plant.fun_fact}</em></div>` : '';
   const tagsHtml = (plant.tags || []).map(t => `<span class="species-tag-chip">${t}</span>`).join('');
 
-  document.getElementById('species-detail-body').innerHTML = `
-    <div class="species-detail-head">
-      <div class="species-detail-codes">${plant.id_codes.join(', ')} · ${plant.zone}</div>
-      <h3 class="species-detail-title">${plant.common}</h3>
-      <div class="species-detail-sci">${plant.sci || ''}</div>
-      ${plant.other_names ? `<div class="species-detail-other">↳ ${plant.other_names}</div>` : ''}
-    </div>
+  // Ubicación: zone capitalizada + primera oración del desc + tags.
+  const zoneLabel = (plant.zone || '').replace(/^\w/, c => c.toUpperCase());
+  // Extraer 1ra oración del desc — usualmente trae info de ubicación.
+  const firstSentence = (plant.desc || '').split(/(?<=\.)\s/)[0] || '';
+  const locationLine = firstSentence.length > 0 && firstSentence.length < 240 ? firstSentence : '';
 
-    <div class="species-photos-strip" id="species-photos-strip">
-      ${photosHtml}
-      <div class="species-photo-cell add" data-action="add-species-photo" title="Sumar foto al catálogo">
-        <span class="species-add-plus">+</span>
-        <span class="species-add-label">Sumar foto</span>
+  const photoCount = photoCells.length;
+
+  document.getElementById('species-detail-body').innerHTML = `
+    <div class="species-hero ${heroSrc ? '' : 'species-hero-fallback'}"
+         ${heroSrc ? `style="background-image:url('${heroSrc.replace(/'/g, "%27")}')"` : ''}>
+      <button class="species-hero-close" data-action="close-species" aria-label="Cerrar">✕</button>
+      <div class="species-hero-overlay">
+        <h2 class="species-hero-name">${plant.common}</h2>
+        ${plant.sci ? `<div class="species-hero-sci">${plant.sci}</div>` : ''}
+        <div class="species-hero-meta">
+          <span class="species-hero-chip">${plant.id_codes.join(', ')}</span>
+          <span class="species-hero-chip">${zoneLabel}</span>
+        </div>
       </div>
     </div>
 
-    <div class="species-detail-section">
-      ${charruaHtml}
-      <p class="species-desc">${plant.desc || ''}</p>
-      ${funFactHtml}
-      <div class="species-tags">${tagsHtml}</div>
+    <div class="species-section species-section-location">
+      <div class="species-section-label">📍 Ubicación</div>
+      ${locationLine ? `<p class="species-location-line">${locationLine}</p>` : ''}
+      ${tagsHtml ? `<div class="species-tags">${tagsHtml}</div>` : ''}
     </div>
 
-    ${careHtml}
-    ${tasksHtml}
+    <div class="species-section species-section-photos">
+      <div class="species-section-label">📷 Fotos${photoCount ? ` · ${photoCount}` : ''}</div>
+      <div class="species-photos-grid" id="species-photos-grid">
+        ${photosGridHtml}
+        <div class="species-photo-cell add" data-action="add-species-photo" title="Sumar foto al catálogo">
+          <span class="species-add-plus">+</span>
+          <span class="species-add-label">Sumar foto</span>
+        </div>
+      </div>
+    </div>
+
+    <details class="species-details">
+      <summary class="species-details-summary">Detalles</summary>
+      <div class="species-details-body">
+        ${charruaHtml}
+        ${plant.desc ? `<p class="species-desc">${plant.desc}</p>` : ''}
+        ${plant.other_names ? `<div class="species-detail-other">↳ ${plant.other_names}</div>` : ''}
+        ${funFactHtml}
+        ${careHtml}
+        ${tasksHtml}
+      </div>
+    </details>
   `;
 
-  // Bind click en thumbnails → lightbox; en "+" → upload modal.
-  const strip = document.getElementById('species-photos-strip');
-  strip.querySelectorAll('.species-photo-cell:not(.add)').forEach(cell => {
+  // Bind clicks: close hero / thumbnails → lightbox / "+" → upload.
+  const body = document.getElementById('species-detail-body');
+  body.querySelector('[data-action="close-species"]')?.addEventListener('click', () => closeModal('species-detail'));
+  const grid = document.getElementById('species-photos-grid');
+  grid.querySelectorAll('.species-photo-cell:not(.add)').forEach(cell => {
     cell.addEventListener('click', () => {
       const img = cell.querySelector('img');
       if (img && img.src) openLightboxWithUrl(img.src);
     });
   });
-  strip.querySelector('[data-action="add-species-photo"]').addEventListener('click', () => {
+  grid.querySelector('[data-action="add-species-photo"]')?.addEventListener('click', () => {
     closeModal('species-detail');
     openSpeciesPhotoModal(plant);
   });

@@ -4,7 +4,7 @@ Inter font · paleta neutra zinc + accent verde · bordes en lugar de sombras pe
 """
 
 CSS = r"""
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   /* Surfaces */
@@ -1335,76 +1335,166 @@ h2.subbrand {
   border-color: rgba(99, 102, 241, 0.5);
 }
 
-/* SPECIES DETAIL MODAL — abre al click en una plant-card */
-.species-detail-head {
-  margin-bottom: 14px;
+/* SPECIES DETAIL MODAL — estilo "Memories" con hero a sangre */
+.species-modal {
+  padding: 0;
 }
-.species-detail-codes {
+.species-modal-content {
+  padding: 0 !important;
+  max-width: 520px !important;
+  border-radius: 20px;
+  overflow: hidden;
+}
+@media (max-width: 640px) {
+  .species-modal-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+}
+
+/* Hero con foto a sangre + overlay degradado + nombre grande */
+.species-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-color: #1a1a1a;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px 22px;
+}
+@media (max-width: 640px) {
+  .species-hero {
+    height: 52vh;
+    min-height: 320px;
+  }
+}
+.species-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.05) 38%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  pointer-events: none;
+}
+.species-hero-fallback {
+  background: linear-gradient(135deg, #2d3a4f 0%, #1a1a1a 100%);
+}
+.species-hero-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.species-hero-name {
+  font-family: 'Anton', 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 8vw, 3.4rem);
+  letter-spacing: 0.05em;
+  color: white;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  line-height: 1.05;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+  text-wrap: balance;
+}
+.species-hero-sci {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 10px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+.species-hero-meta {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.species-hero-chip {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: white;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+.species-hero-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.45);
+  border: none;
+  color: white;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  font-size: 1.05rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background var(--t);
+}
+.species-hero-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Sections debajo del hero */
+.species-section {
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.species-section-photos { padding-bottom: 22px; }
+.species-section-label {
   font-size: 0.74rem;
   font-weight: 700;
   color: var(--text-3);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
 }
-.species-detail-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin: 0 0 2px;
+.species-location-line {
+  font-size: 0.95rem;
   color: var(--text);
-}
-.species-detail-sci {
-  font-size: 0.92rem;
-  font-style: italic;
-  color: var(--text-2);
-}
-.species-detail-other {
-  font-size: 0.82rem;
-  color: var(--text-3);
-  margin-top: 2px;
+  line-height: 1.5;
+  margin: 0 0 10px;
 }
 
-.species-photos-strip {
+/* Photos grid: 2 columnas, square, rounded, sin tags overlaid */
+.species-photos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  gap: 8px;
-  margin: 14px 0 18px;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
 }
 .species-photo-cell {
   position: relative;
   aspect-ratio: 1 / 1;
-  border-radius: var(--r-md);
+  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  border: 1px solid var(--border-soft);
   background: var(--bg-soft);
-  transition: transform var(--t), border-color var(--t);
+  transition: transform 0.15s ease;
 }
-.species-photo-cell:hover {
-  transform: scale(1.02);
-  border-color: var(--text);
+.species-photo-cell:active {
+  transform: scale(0.97);
 }
 .species-photo-cell img {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
 }
-.species-photo-tag {
-  position: absolute;
-  bottom: 4px; left: 4px;
-  font-size: 0.62rem;
-  font-weight: 700;
-  padding: 2px 6px;
-  border-radius: var(--r-full);
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  letter-spacing: 0.02em;
-  pointer-events: none;
-}
-.species-photo-tag.main { background: rgba(34, 197, 94, 0.85); }
-.species-photo-tag.loc { background: rgba(59, 130, 246, 0.85); }
-.species-photo-tag.upload { background: rgba(0, 0, 0, 0.75); }
-
 .species-photo-cell.add {
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
@@ -1418,39 +1508,73 @@ h2.subbrand {
 }
 .species-add-plus {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 300;
   color: var(--text-3);
   line-height: 1;
 }
 .species-add-label {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   color: var(--text-3);
   font-weight: 600;
 }
 
-.species-no-photos {
-  grid-column: 1 / -1;
-  padding: 24px;
-  text-align: center;
+/* Detalles collapsable */
+.species-details {
+  border-top: 1px solid var(--border-soft);
+}
+.species-details-summary {
+  padding: 16px 22px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.species-details-summary::-webkit-details-marker { display: none; }
+.species-details-summary::before {
+  content: '▸';
+  display: inline-block;
+  transition: transform var(--t);
   color: var(--text-3);
-  font-size: 0.88rem;
-  font-style: italic;
+}
+.species-details[open] .species-details-summary::before {
+  transform: rotate(90deg);
+}
+.species-details-body {
+  padding: 0 22px 22px;
 }
 
-.species-detail-section {
-  padding: 12px 0;
-  border-top: 1px solid var(--border-soft);
+/* Tags / charrua / desc / funfact / care / tasks (re-skin para el details) */
+.species-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.species-tag-chip {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: var(--bg-soft);
+  color: var(--text-2);
+  padding: 3px 8px;
+  border-radius: 999px;
 }
 .species-charrua {
   font-size: 0.85rem;
   color: var(--text-2);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 .species-desc {
   font-size: 0.92rem;
   color: var(--text);
   line-height: 1.5;
   margin: 8px 0;
+}
+.species-detail-other {
+  font-size: 0.82rem;
+  color: var(--text-3);
+  margin: 4px 0 8px;
 }
 .species-funfact {
   background: var(--bg-soft);
@@ -1461,22 +1585,10 @@ h2.subbrand {
   color: var(--text-2);
   margin: 8px 0;
 }
-.species-tags {
-  display: flex; flex-wrap: wrap; gap: 6px;
-  margin-top: 8px;
-}
-.species-tag-chip {
-  font-size: 0.72rem;
-  font-weight: 600;
-  background: var(--bg-soft);
-  color: var(--text-2);
-  padding: 3px 8px;
-  border-radius: var(--r-full);
-}
-
 .species-care {
   display: grid; gap: 6px;
-  padding: 12px 0;
+  padding-top: 12px;
+  margin-top: 12px;
   border-top: 1px solid var(--border-soft);
 }
 .species-care-row {
@@ -1499,9 +1611,9 @@ h2.subbrand {
   color: var(--text-2);
 }
 .species-care-val { color: var(--text); }
-
 .species-tasks {
-  padding: 12px 0 4px;
+  padding-top: 12px;
+  margin-top: 12px;
   border-top: 1px solid var(--border-soft);
 }
 .species-tasks h4 {
@@ -1522,7 +1634,7 @@ h2.subbrand {
   font-size: 0.66rem;
   font-weight: 700;
   padding: 2px 7px;
-  border-radius: var(--r-full);
+  border-radius: 999px;
   letter-spacing: 0.02em;
 }
 .species-task-chip.active { background: rgba(245, 158, 11, 0.18); color: #92400e; }
