@@ -181,5 +181,18 @@
         "processed_at": "2026-05-03T17:05:00.000Z"
       }
     }
+  ],
+  "B-23": [
+    {
+      "filename": "plant-B-23-2_20260504-171413.jpg",
+      "uploaded_at": "2026-05-04T17:14:13.110Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-23-2",
+      "task_title_snapshot": "Inspección de cochinilla y minador",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "La veo bien"
+    }
   ]
 }
