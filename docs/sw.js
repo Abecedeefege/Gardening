@@ -1,19 +1,22 @@
-// Service Worker mínimo — solo para que Chrome considere el sitio
-// instalable como PWA (necesita SW registrado + manifest + start_url).
-// No cachea nada — el sitio funciona online normal. Si en el futuro
-// querés offline support, expandir aquí.
+// Service Worker mínimo — necesario para que Chrome considere el sitio
+// instalable como PWA y use el icon de la manifest en home screen.
+// El SW NO cachea contenido (passthrough explícito); existe solo para
+// cumplir el criterio "fetch handler responde a requests" de Chrome.
+// Si en el futuro querés offline support, expandir el fetch handler.
+
+const SW_VERSION = 'v1.0.0';
 
 self.addEventListener('install', (event) => {
-  // Skip waiting para que la nueva versión active enseguida.
   self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
-  // Tomar control de todos los clients (tabs abiertas) en cuanto se activa.
   event.waitUntil(self.clients.claim());
 });
 
-// Pasthrough: dejamos que el browser maneje todos los fetches normalmente.
 self.addEventListener('fetch', (event) => {
-  // No interceptar — comportamiento default.
+  // Passthrough explícito — respondWith con la fetch original.
+  // Chrome requiere que el SW participe activamente en fetches para
+  // considerar el sitio installable.
+  event.respondWith(fetch(event.request));
 });
