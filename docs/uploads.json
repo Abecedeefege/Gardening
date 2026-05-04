@@ -92,8 +92,13 @@
       "task_id": "plant-F-9",
       "task_title_snapshot": "Decidir si compite con Fotinia F-6",
       "user_context": "No creo que compitan, son plantas viejas y ya ambas establecidas.  Parecería que la fotinia le está sacando luz al ligustro.\nTiene sentido que le corté las ramas con hojas balas a la fotinia que ya es un árbol bastante grande?",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "El usuario corrige la evaluación previa: NO comparten base ni compiten — son plantas viejas y establecidas que conviven. La fotinia (más grande, arriba) sombra al ligustro abajo, no al revés. Confirmó que tiene sentido podar las ramas con hojas secas/dañadas de la fotinia.",
+        "next_steps": "Sí — podar las ramas con hojas secas/dañadas de la fotinia tiene doble beneficio: (1) saca peso muerto y la fotinia redirige energía a ramas sanas, (2) abre corredores de luz al ligustro abajo. Ventana ideal: fines de agosto o inicio de septiembre, antes del brote de primavera. Cortes al ras del cuello de la rama, ángulo 45°, sellar cortes >3 cm. Máximo 20% del follaje por sesión. Aprovechar la pasada para cosechar y descartar los frutos maduros del ligustro (morado-azulados/negros) antes de que las aves los dispersen — bolsa cerrada a la basura, NO compost.",
+        "processed_at": "2026-05-04T16:30:00.000Z"
+      },
       "_stamp": "20260504-161848"
     }
   ],
@@ -130,8 +135,13 @@
       "task_id": "plant-B-46",
       "task_title_snapshot": "Mapeo del vivero — identificar y etiquetar cada plantín",
       "user_context": "Separa esta tarea en los diferentes plantines que hay.\nLos plantines son mayormente palmeras, algunas paltas, algunos romeros y algunos liquidámbar.  Hay algunas que aún no conozco que te puedo subir fotos",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "El usuario confirmó los 4 tipos predominantes del vivero: palmeras, paltas, romeros, liquidámbar. La urgencia genérica 'Mapeo del vivero' se reemplazó en data_plants.py por 'Identificar plantines desconocidos' (focalizada en lo que falta). Y se agregaron 4 urgencias nuevas con cuidados específicos por tipo: Plantines de palmera, Plantines de palta, Plantines de romero, Plantines de liquidámbar. Total de B-46: 7 urgencias ahora.",
+        "next_steps": "Próximo input esperado del usuario: fotos cercanas con escala de los plantines incógnita (probablemente las macetas blancas grandes del lote B). Después de subirlos, correr /actualizar-tareas y los identificamos.",
+        "processed_at": "2026-05-04T16:30:00.000Z"
+      },
       "_stamp": "20260504-162230"
     }
   ],
