@@ -261,5 +261,18 @@
       },
       "user_context": "Así?"
     }
+  ],
+  "F-1": [
+    {
+      "filename": "plant-F-1-2_20260504-180802.jpg",
+      "uploaded_at": "2026-05-04T18:08:02.106Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-F-1-2",
+      "task_title_snapshot": "Rastrillado del cantero del frente",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Así está bien?"
+    }
   ]
 }
