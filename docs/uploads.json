@@ -297,5 +297,18 @@
       "ai_status": "pending",
       "ai_evaluation": null
     }
+  ],
+  "B-41": [
+    {
+      "filename": "plant-B-41-3_20260504-181357.jpg",
+      "uploaded_at": "2026-05-04T18:13:57.676Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-41-3",
+      "task_title_snapshot": "Confirmar variedad del caqui",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "No le veo frutos ni hojas"
+    }
   ]
 }
