@@ -230,6 +230,17 @@
       "ai_status": "pending",
       "ai_evaluation": null,
       "user_context": "Palta haas"
+    },
+    {
+      "filename": "plant-B-36_20260504-172118.jpg",
+      "uploaded_at": "2026-05-04T17:21:18.954Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-36",
+      "task_title_snapshot": "Foto de la especie centrada",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Haas otro angulo"
     }
   ]
 }
