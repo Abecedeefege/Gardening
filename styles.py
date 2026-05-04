@@ -2492,6 +2492,27 @@ h2.subbrand {
   .tab-btn { padding: 10px 8px; gap: 5px; }
 }
 
+/* PWA status panel en settings — diagnóstico autónomo */
+.pwa-status-panel {
+  background: var(--bg-soft);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.pwa-st-row { padding: 3px 0; }
+.pwa-st-row code {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  word-break: break-all;
+}
+.pwa-st-ok { color: #166534; font-weight: 700; margin-right: 4px; }
+.pwa-st-err { color: #991b1b; font-weight: 700; margin-right: 4px; }
+.pwa-st-wait { color: #92400e; font-weight: 700; margin-right: 4px; }
+
 /* PWA install banner — aparece SI Chrome dispara beforeinstallprompt.
    Su sola aparición confirma que el sitio cumple criterio installable. */
 #pwa-install-banner {

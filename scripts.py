@@ -278,8 +278,14 @@ function dueLabel(task) {
 
 function isOverdue(task) {
   if (!task.due_month || !task.due_year) return false;
-  const due = new Date(task.due_year, task.due_month - 1, 28); // último día del mes objetivo
-  return due < new Date();
+  // Tareas del mes ACTUAL (o anterior) ya cuentan como atrasadas — el usuario
+  // espera ver flagged todo lo "que se puede hacer hoy o ayer".
+  // Para fechas con día específico podríamos refinar pero no hay due_day en
+  // los datos, así que usamos granularidad mensual: due_month <= curMonth = atrasada.
+  const today = new Date();
+  const curY = today.getFullYear();
+  const curM = today.getMonth() + 1;
+  return task.due_year < curY || (task.due_year === curY && task.due_month <= curM);
 }
 
 function priorityInfo(p) {
@@ -478,7 +484,8 @@ function renderTasksGroupedByMonth(tasks) {
 
   function bucketKey(t) {
     if (!t.due_year || !t.due_month) return 'sin-fecha';
-    if (t.due_year < curYear || (t.due_year === curYear && t.due_month < curMonth)) {
+    // Mismo criterio que isOverdue: mes actual o anterior → atrasadas.
+    if (t.due_year < curYear || (t.due_year === curYear && t.due_month <= curMonth)) {
       return 'atrasadas';
     }
     return `${t.due_year}-${String(t.due_month).padStart(2, '0')}`;
@@ -1006,22 +1013,126 @@ loadWeather();
 // El SW no cachea nada (passthrough); existe solo para cumplir el
 // criterio de installability de PWA.
 // ============================================================
-if ('serviceWorker' in navigator) {
+// Estado del PWA — usado por el panel de diagnóstico en settings.
+const _pwaState = {
+  swSupported: 'serviceWorker' in navigator,
+  swRegistered: false,
+  swActive: false,
+  swError: null,
+  manifestStatus: 'checking',
+  manifestError: null,
+  installable: false,
+  installed: false,
+  isStandalone: window.matchMedia('(display-mode: standalone)').matches,
+};
+
+if (_pwaState.swSupported) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch(err => {
-      console.warn('SW registration failed:', err);
-    });
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => {
+        _pwaState.swRegistered = true;
+        _pwaState.swActive = !!reg.active;
+        reg.addEventListener('updatefound', () => {
+          const nw = reg.installing;
+          if (nw) nw.addEventListener('statechange', () => {
+            if (nw.state === 'activated') _pwaState.swActive = true;
+            updatePwaStatusPanel();
+          });
+        });
+        updatePwaStatusPanel();
+      })
+      .catch(err => {
+        _pwaState.swError = err.message || String(err);
+        console.warn('SW registration failed:', err);
+        updatePwaStatusPanel();
+      });
   });
 }
 
-// PWA install prompt — capturar el evento y mostrar un banner visible
-// para que el usuario sepa que el sitio es installable. Sin este listener,
-// Chrome solo muestra "Install app" en su menú interno (poco visible).
+// Verificar manifest fetch + parse.
+fetch('manifest.webmanifest', { cache: 'no-store' })
+  .then(r => {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const ct = r.headers.get('content-type') || '';
+    if (!ct.includes('manifest') && !ct.includes('json')) {
+      _pwaState.manifestError = 'MIME incorrecto: ' + ct;
+    }
+    return r.json();
+  })
+  .then(m => {
+    _pwaState.manifestStatus = 'ok';
+    _pwaState.manifestData = { name: m.name, icons: (m.icons || []).length };
+    updatePwaStatusPanel();
+  })
+  .catch(err => {
+    _pwaState.manifestStatus = 'fail';
+    _pwaState.manifestError = err.message || String(err);
+    updatePwaStatusPanel();
+  });
+
+// PWA install prompt — capturar el evento.
 let _deferredInstallPrompt = null;
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   _deferredInstallPrompt = e;
+  _pwaState.installable = true;
   showInstallBanner();
+  updatePwaStatusPanel();
+});
+
+window.addEventListener('appinstalled', () => {
+  _pwaState.installed = true;
+  updatePwaStatusPanel();
+});
+
+function updatePwaStatusPanel() {
+  const panel = document.getElementById('pwa-status-panel');
+  const btn = document.getElementById('btn-trigger-install');
+  if (!panel) return;
+  const yes = '<span class="pwa-st-ok">✓</span>';
+  const no = '<span class="pwa-st-err">✗</span>';
+  const wait = '<span class="pwa-st-wait">⏳</span>';
+  let html = '<div class="pwa-st-row">' + (_pwaState.swSupported ? yes : no) + ' Service Worker support en este browser</div>';
+  if (_pwaState.swSupported) {
+    if (_pwaState.swError) {
+      html += `<div class="pwa-st-row">${no} SW registrado — error: <code>${_pwaState.swError}</code></div>`;
+    } else if (_pwaState.swRegistered) {
+      html += `<div class="pwa-st-row">${yes} SW registrado${_pwaState.swActive ? ' y activo' : ' (activando…)'}</div>`;
+    } else {
+      html += `<div class="pwa-st-row">${wait} SW registrando…</div>`;
+    }
+  }
+  if (_pwaState.manifestStatus === 'ok') {
+    html += `<div class="pwa-st-row">${yes} Manifest cargado (${_pwaState.manifestData?.icons || 0} icons)</div>`;
+  } else if (_pwaState.manifestStatus === 'fail') {
+    html += `<div class="pwa-st-row">${no} Manifest falla: <code>${_pwaState.manifestError}</code></div>`;
+  } else {
+    html += `<div class="pwa-st-row">${wait} Manifest verificando…</div>`;
+  }
+  if (_pwaState.isStandalone || _pwaState.installed) {
+    html += `<div class="pwa-st-row">${yes} App ya instalada (corriendo en standalone)</div>`;
+  } else if (_pwaState.installable) {
+    html += `<div class="pwa-st-row">${yes} Chrome dice que es installable — click el botón abajo</div>`;
+  } else {
+    html += `<div class="pwa-st-row">${wait} Chrome aún no disparó <code>beforeinstallprompt</code>. Causas: engagement insuficiente (navegá unos minutos), o algún criterio falla.</div>`;
+  }
+  panel.innerHTML = html;
+  if (btn) {
+    btn.disabled = !_deferredInstallPrompt;
+    btn.textContent = _deferredInstallPrompt ? '📲 Instalar app ahora' : 'Esperando que Chrome lo habilite…';
+  }
+}
+
+// Bind del botón manual.
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('btn-trigger-install');
+  if (btn) btn.addEventListener('click', async () => {
+    if (!_deferredInstallPrompt) return;
+    _deferredInstallPrompt.prompt();
+    await _deferredInstallPrompt.userChoice;
+    _deferredInstallPrompt = null;
+    updatePwaStatusPanel();
+  });
 });
 
 function showInstallBanner() {
@@ -1148,6 +1259,8 @@ function openSettingsModal() {
   document.getElementById('settings-transfer-section').hidden = !token;
   document.getElementById('transfer-link-output').hidden = true;
   document.getElementById('settings-modal').classList.add('active');
+  // Refrescar el panel de PWA status al abrir.
+  if (typeof updatePwaStatusPanel === 'function') updatePwaStatusPanel();
 }
 
 document.getElementById('btn-open-settings').addEventListener('click', openSettingsModal);

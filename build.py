@@ -857,6 +857,15 @@ def build_timeline_view(tasks, img_data):
       </div>
     </div>
 
+    <div class="settings-section">
+      <label class="settings-label">
+        <strong>📲 Estado de la app instalable (PWA)</strong>
+        <span class="settings-hint">Diagnóstico de por qué Chrome puede o no ofrecer "Install app".</span>
+      </label>
+      <div id="pwa-status-panel" class="pwa-status-panel">Verificando…</div>
+      <button class="btn-secondary" id="btn-trigger-install" disabled>Instalar app</button>
+    </div>
+
     <div class="settings-footer">
       <button class="btn-primary" id="btn-save-settings">💾 Guardar</button>
     </div>
