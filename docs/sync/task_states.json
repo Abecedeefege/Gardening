@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-05T14:30:00.000Z",
-  "_last_writer": "claude-code-cli",
+  "_synced_at": "2026-05-05T14:49:43.713Z",
+  "_last_writer": "pix9",
   "tasks": {
     "plant-F-9": {
       "status": "done",
@@ -170,6 +170,12 @@
       "completed_via_ai": true,
       "ai_summary": "Inspección reveló PLAGA: pulgones (áfidos) negros agrupados en pecíolos y brotes nuevos de la gardenia + hormigas negras protegiéndolos (simbiosis hormiga-pulgón) + hojas nuevas curvadas. Tarea de inspección cumplida. Agregada urgencia nueva 'Tratar pulgones + cortar tránsito de hormigas' (alta prioridad, mayo 2026) con plan de 4 pasos.",
       "last_modified_at": "2026-05-05T14:30:00.000Z"
+    },
+    "plant-B-46-4": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-05T14:49:37.815Z",
+      "last_modified_at": "2026-05-05T14:49:37.816Z"
     }
   }
 }
