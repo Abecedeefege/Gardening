@@ -569,6 +569,16 @@
         "processed_at": "2026-05-05T15:30:00.000Z"
       },
       "user_context": "Además hay otra igual, más grande que creció cerca de la base del arbusto de al lado"
+    },
+    {
+      "filename": "plant-B-43_20260505-174749.jpg",
+      "uploaded_at": "2026-05-05T17:47:49.999Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-43",
+      "task_title_snapshot": "Foto de la especie centrada",
+      "ai_status": "pending",
+      "ai_evaluation": null
     }
   ],
   "B-25": [
