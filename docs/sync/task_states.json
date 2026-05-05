@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-05T17:55:00.000Z",
-  "_last_writer": "claude-code-cli",
+  "_synced_at": "2026-05-05T18:46:25.017Z",
+  "_last_writer": "pix9",
   "tasks": {
     "plant-F-9": {
       "status": "done",
@@ -224,13 +224,27 @@
       "last_modified_at": "2026-05-05T17:55:00.000Z"
     },
     "plant-B-47-2": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-05T18:46:19.274Z",
+      "last_modified_at": "2026-05-05T18:46:19.275Z"
+    },
+    "plant-B-46-8": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-05T15:30:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Plantín X-1 confirmado como Quercus sp. (roble joven) — hojas con lóbulos redondeados característicos del género claramente visibles en la foto del 05/05.",
+      "last_modified_at": "2026-05-05T15:30:00.000Z"
+    },
+    "plant-B-46-9": {
       "status": "active",
       "snoozed_until": null,
       "completed_at": null,
-      "description_override": "Foto del 05/05 17:43 muestra eofilos (primeras hojas juveniles) lanceolados-lineales rígidos verde oscuro brillante de los plantines de palmera. Identificación tentativa: **Butia odorata (butiá)** por la postura RÍGIDA y ERECTA de los eofilos — los plantines de pindó tienen eofilos más laxos péndulos. Pero NO se puede confirmar 100% en este estadio: las hojas pinnadas adultas (segundo año) son las que diferencian definitivamente butiá vs pindó. Próxima evaluación recomendada: febrero-marzo 2027 cuando aparezcan las primeras hojas pinnadas.",
-      "description_override_at": "2026-05-05T17:55:00.000Z",
-      "last_ai_summary": "Eofilos rígidos lineales — más probable Butia odorata (butiá). Confirmación definitiva con primeras hojas pinnadas (feb-mar 2027).",
-      "last_modified_at": "2026-05-05T17:55:00.000Z"
+      "description_override": "Foto del 05/05 muestra que el plantín X-2 NO es trifoliada como yo había evaluado antes — es pinnada compuesta (raquis con varios foliolos pareados). Posibles candidatos: Koelreuteria paniculata (jabonero de la China), Fraxinus pennsylvanica (fresno juvenil, hijo del B-37 vía samara), o Sapindus. Para confirmar: foto cercana del raquis completo mostrando el patrón pinnado (foliolos pareados u opuestos) + foto del nudo de inserción + medir cuántos foliolos por hoja entera.",
+      "description_override_at": "2026-05-05T15:30:00.000Z",
+      "last_ai_summary": "Hoja pinnada compuesta confirmada (no trifoliada). Pendiente foto cercana del raquis para ID exacta.",
+      "last_modified_at": "2026-05-05T15:30:00.000Z"
     }
   }
 }
