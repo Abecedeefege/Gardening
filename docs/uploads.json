@@ -629,8 +629,13 @@
       "task_id": "plant-B-43",
       "task_title_snapshot": "Foto de la especie centrada",
       "user_context": "Este es a partir de ahora el pitosporo.  Ajusta la especie y cierra la tarea",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Usuario confirmó que B-43 es Pittosporum tobira (pitósporo). Refactor aplicado en data_plants.py con info completa.",
+        "next_steps": "",
+        "processed_at": "2026-05-05T19:00:00.000Z"
+      },
       "_stamp": "20260505-184752"
     }
   ],
@@ -711,8 +716,13 @@
       "task_id": "plant-B-42",
       "task_title_snapshot": "Foto de la especie centrada",
       "user_context": "Este son los 2 especies detrás del romero y el pitosporo.\nCon todas las fotos que subí aún no determinas la especie?",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "B-42 identificada definitivamente como Bauhinia forficata (Pata de vaca) — la hoja en pezuña doble de fotos previas era inequívoca. User reporta que en el sector hay 2 especies; agregada urgencia separada para confirmar la otra alta dentada.",
+        "next_steps": "Para la segunda especie del sector (alta con hojas dentadas brillantes): foto cercana de UNA hoja sola para confirmar Ligustrum japonicum o Eleagnus pungens.",
+        "processed_at": "2026-05-05T19:00:00.000Z"
+      },
       "_stamp": "20260505-184839"
     }
   ],
@@ -780,8 +790,13 @@
       "task_id": "plant-I-1",
       "task_title_snapshot": "Foto de la especie centrada",
       "user_context": "La foto actual es excelente, muestra las hojas perfecto.  La tarea no tiene sentido",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Usuario confirma que la foto actual del Singonio es excelente. Tarea cerrada por innecesaria.",
+        "next_steps": "",
+        "processed_at": "2026-05-05T19:00:00.000Z"
+      },
       "_stamp": "20260505-184931"
     }
   ],
@@ -794,8 +809,13 @@
       "task_id": "plant-I-2",
       "task_title_snapshot": "Foto de la especie centrada",
       "user_context": "La foto es excelente.  Que más precisas?",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Usuario confirma que la foto actual de la Difenbaquia es excelente. Tarea cerrada por innecesaria.",
+        "next_steps": "",
+        "processed_at": "2026-05-05T19:00:00.000Z"
+      },
       "_stamp": "20260505-185032"
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-05T18:52:04.856Z",
-  "_last_writer": "pix9",
+  "_synced_at": "2026-05-05T19:00:00.000Z",
+  "_last_writer": "claude-code-cli",
   "tasks": {
     "plant-F-9": {
       "status": "done",
@@ -152,13 +152,12 @@
       "last_modified_at": "2026-05-05T17:55:00.000Z"
     },
     "plant-B-43": {
-      "status": "active",
+      "status": "done",
       "snoozed_until": null,
-      "completed_at": null,
-      "description_override": "Foto del 05/05 17:48 muestra hojas alargadas elípticas-lanceoladas verde oscuro brillantes con borde levemente dentado. Refinando candidatos: Ligustrum japonicum joven (más probable por borde aserrado fino) o Eleagnus pungens. Murraya y Trachelospermum quedan menos probables (esos tienen bordes lisos). Próximo paso: foto cercana de UNA hoja sola en mano contra fondo blanco para ver el borde con detalle. NOTA: hay un avispero/celdas pequeño marrón visible en la pared atrás (esquina izq) — no afecta la planta pero cuidado al manipular.",
-      "description_override_at": "2026-05-05T17:55:00.000Z",
-      "last_ai_summary": "Hojas alargadas brillantes con borde dentado fino — más probable Ligustrum japonicum joven que jazmín. Vespa visible en la pared atrás (cuidado al manipular).",
-      "last_modified_at": "2026-05-05T17:55:00.000Z"
+      "completed_at": "2026-05-05T19:00:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "B-43 confirmado por el usuario como Pittosporum tobira (pitósporo). Refactor aplicado en data_plants.py: common, sci, desc, fun_fact, cuidados completos. La urgencia 'Identificar planta alta de atrás' eliminada — eso pasa a ser parte de B-42 (Bauhinia + alta dentada).",
+      "last_modified_at": "2026-05-05T19:00:00.000Z"
     },
     "plant-B-25-2": {
       "status": "done",
@@ -181,13 +180,12 @@
       "last_modified_at": "2026-05-05T14:50:10.550Z"
     },
     "plant-B-42": {
-      "status": "active",
+      "status": "done",
       "snoozed_until": null,
-      "completed_at": null,
-      "description_override": "El user reportó que NO ubica B-42 físicamente. B-42 figura en el catálogo como 'planta entre el romero (B-26) y B-27 (mirto), arriba'. Posibilidades: (a) B-42 EXISTE pero el user no la identifica visualmente sin referencia, (b) B-42 fue un error de catálogo y no corresponde a ninguna planta real. ACCIÓN PARA EL USER: Pararse en el sector entre el romero B-26 y el mirto B-27, mirar hacia arriba. ¿Hay un arbusto/planta chica colgante o trepando que NO sea ninguno de los dos? Si SÍ existe, foto desde lejos para mostrarme la ubicación. Si NO existe físicamente nada distinguible, marcame esta tarea como 'no aplica' y eliminamos B-42 del catálogo.",
-      "description_override_at": "2026-05-05T17:55:00.000Z",
-      "last_ai_summary": "User no ubica B-42. Pendiente clarificar si la planta existe físicamente o si fue error de catálogo.",
-      "last_modified_at": "2026-05-05T17:55:00.000Z"
+      "completed_at": "2026-05-05T19:00:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "B-42 identificada como Bauhinia forficata (Pata de vaca) — hoja en pezuña doble inequívoca confirmada en fotos previas (18:22 del 04/05). Refactor completo aplicado: nativa rioplatense, ornamental con flor blanca en primavera-verano, uso medicinal hipoglucemiante. User mencionó que en el sector hay 2 especies — agregada urgencia separada para confirmar la otra alta de hojas dentadas.",
+      "last_modified_at": "2026-05-05T19:00:00.000Z"
     },
     "plant-B-27": {
       "status": "done",
@@ -257,6 +255,22 @@
       "snoozed_until": "2026-05-06T18:52:00.868Z",
       "completed_at": null,
       "last_modified_at": "2026-05-05T18:52:00.869Z"
+    },
+    "plant-I-1": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-05T19:00:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "User confirma que la foto actual del Singonio (I-1) ya es excelente y la tarea de 'foto centrada' no tiene sentido. Cerrada por innecesaria.",
+      "last_modified_at": "2026-05-05T19:00:00.000Z"
+    },
+    "plant-I-2": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-05T19:00:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "User confirma que la foto actual de la Difenbaquia (I-2) ya es excelente y la tarea de 'foto centrada' no tiene sentido. Cerrada por innecesaria.",
+      "last_modified_at": "2026-05-05T19:00:00.000Z"
     }
   }
 }
