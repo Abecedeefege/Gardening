@@ -565,6 +565,18 @@
         "processed_at": "2026-05-05T14:30:00.000Z"
       },
       "user_context": "Tiene hormigas"
+    },
+    {
+      "filename": null,
+      "uploaded_at": "2026-05-05T17:40:14.694Z",
+      "uploaded_by": "pix9",
+      "context": "task_text",
+      "task_id": "plant-B-25-3",
+      "task_title_snapshot": "Tratar pulgones + cortar tránsito de hormigas (Gardenia)",
+      "user_context": "Que solución más casera se te ocurre? que hormiguizida es el ideal?",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "_stamp": "20260505-174014"
     }
   ],
   "B-42": [
