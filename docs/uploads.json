@@ -620,6 +620,18 @@
         "next_steps": "Foto cercana de UNA hoja sola en mano contra fondo blanco para ver el borde dentado claramente y confirmar Ligustrum vs Eleagnus.",
         "processed_at": "2026-05-05T17:55:00.000Z"
       }
+    },
+    {
+      "filename": null,
+      "uploaded_at": "2026-05-05T18:47:52.254Z",
+      "uploaded_by": "pix9",
+      "context": "task_text",
+      "task_id": "plant-B-43",
+      "task_title_snapshot": "Foto de la especie centrada",
+      "user_context": "Este es a partir de ahora el pitosporo.  Ajusta la especie y cierra la tarea",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "_stamp": "20260505-184752"
     }
   ],
   "B-25": [
