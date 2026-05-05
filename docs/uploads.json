@@ -217,8 +217,13 @@
       "context": "task",
       "task_id": "plant-B-46-9",
       "task_title_snapshot": "Plantín X-2: identificar trifoliada (3 foliolos por hoja)",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Foto cercana del plantín X-2 muestra hojas trifoliadas (3 foliolos por peciolo) verde brillante con foliolos ovalados-redondeados lisos. Identificación tentativa refinada: posible glicinia juvenil (Wisteria sinensis).",
+        "next_steps": "Migrado a B-49 (entry separada). Esperar flor en oct-nov 2026 para confirmación definitiva. Tarea separada plant-B-49 creada.",
+        "processed_at": "2026-05-05T17:55:00.000Z"
+      },
       "user_context": "Actualiza el numero de referencia y la foto de perfil de la tarea para que entienda mejor a qué planta referimos.  Dividamos en tareas y especies dentro de lo posible las fotos"
     }
   ],
@@ -345,8 +350,13 @@
       "context": "task",
       "task_id": "plant-B-36-3",
       "task_title_snapshot": "Cubrir base con compost otoñal",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Mejoró notablemente vs la foto anterior — ahora hay capa de hojas secas distribuidas alrededor del tronco del palto cumpliendo función de mulch básico. No es compost denso ideal pero la función protectora se cumple parcialmente.",
+        "next_steps": "Si querés mejorar más: agregar compost (~3 baldes 10L) sobre las hojas para tener anillo grueso de 5 cm uniforme. Pero como está ya protege razonablemente.",
+        "processed_at": "2026-05-05T17:55:00.000Z"
+      },
       "user_context": "Así?"
     }
   ],
@@ -523,8 +533,13 @@
       "context": "task",
       "task_id": "plant-B-45",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Hojas opuestas elípticas brillantes verde oscuro con venación marcada + leve clorosis férrica visible (amarilleo entre venas). ID tentativa: madreselva (Lonicera japonica) o jazmín solano (Solanum jasminoides).",
+        "next_steps": "Tarea de foto centrada cumplida. Confirmación de especie con flor en oct-dic 2026 vía urgencia plant-B-45-2 (que sigue activa).",
+        "processed_at": "2026-05-05T17:55:00.000Z"
+      },
       "user_context": "Si no hace falta más nada actualiza la fecha de la tarea"
     }
   ],
@@ -588,7 +603,7 @@
       "context": "task",
       "task_id": "plant-B-43",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
+      "ai_status": "superseded",
       "ai_evaluation": null
     },
     {
@@ -598,8 +613,13 @@
       "context": "task",
       "task_id": "plant-B-43",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
-      "ai_evaluation": null
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Foto muestra hojas alargadas elípticas-lanceoladas verde oscuro brillantes con borde levemente dentado/aserrado fino. Refina candidatos: Ligustrum japonicum joven (más probable) o Eleagnus pungens. Murraya y Trachelospermum descartados (bordes lisos). Aviso: hay un nido de vespa pequeño marrón visible en la pared atrás (esquina izq).",
+        "next_steps": "Foto cercana de UNA hoja sola en mano contra fondo blanco para ver el borde dentado claramente y confirmar Ligustrum vs Eleagnus.",
+        "processed_at": "2026-05-05T17:55:00.000Z"
+      }
     }
   ],
   "B-25": [
@@ -627,8 +647,13 @@
       "task_id": "plant-B-25-3",
       "task_title_snapshot": "Tratar pulgones + cortar tránsito de hormigas (Gardenia)",
       "user_context": "Que solución más casera se te ocurre? que hormiguizida es el ideal?",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Usuario pregunta por opciones caseras y comerciales de hormiguicida. Respuesta detallada agregada al description_override de la tarea con 3 niveles: casero (bicarbonato+azúcar), comercial seguro (MataBicho gel), y opciones a evitar.",
+        "next_steps": "Aplicar bicarbonato + azúcar (1:1) en taza chica cerca del camino de hormigas. Si en 7 días no responde, pasar a MataBicho gel comercial. NO usar sprays de cipermetrina (mata polinizadores buenos).",
+        "processed_at": "2026-05-05T17:55:00.000Z"
+      },
       "_stamp": "20260505-174014"
     }
   ],
@@ -657,8 +682,13 @@
       "task_id": "plant-B-42",
       "task_title_snapshot": "Foto de la especie centrada",
       "user_context": "No entiendo cuál referencias",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Usuario reporta que no ubica B-42 físicamente. Pendiente clarificar si existe o fue error de catálogo.",
+        "next_steps": "User: ir al sector entre romero (B-26) y mirto (B-27), mirar arriba. Si hay arbusto chico colgante/trepando distinto a esos dos = foto desde lejos. Si NO hay nada distinguible = marcar tarea como \"no aplica\" y eliminamos B-42 del catálogo.",
+        "processed_at": "2026-05-05T17:55:00.000Z"
+      },
       "_stamp": "20260505-174637"
     }
   ],
@@ -678,7 +708,7 @@
       "context": "task",
       "task_id": "plant-B-47-2",
       "task_title_snapshot": "Confirmar especie: butiá vs pindó",
-      "ai_status": "pending",
+      "ai_status": "superseded",
       "ai_evaluation": null
     },
     {
@@ -688,8 +718,33 @@
       "context": "task",
       "task_id": "plant-B-47-2",
       "task_title_snapshot": "Confirmar especie: butiá vs pindó",
-      "ai_status": "pending",
-      "ai_evaluation": null
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Eofilos (primeras hojas juveniles) lanceolados-lineales rígidos verde oscuro brillante. Postura rígida y erecta sugiere Butia odorata (butiá) más que pindó (que tiene eofilos laxos péndulos).",
+        "next_steps": "No se puede confirmar 100% en este estadio juvenil. Esperar feb-mar 2027 cuando aparezcan las primeras hojas pinnadas adultas — esas sí distinguen butiá vs pindó definitivamente.",
+        "processed_at": "2026-05-05T17:55:00.000Z"
+      }
+    }
+  ],
+  "B-48": [
+    {
+      "filename": "species-B-48_20260505-145137.jpg",
+      "uploaded_at": "2026-05-05T14:51:37.944Z",
+      "uploaded_by": "claude-code-cli",
+      "context": "species",
+      "ai_status": "n/a",
+      "note": "Plantín de roble joven (Quercus sp.) — migrado desde B-46/plant-B-46-8 a entry propia B-48. Hojas con lóbulos redondeados característicos del género visibles."
+    }
+  ],
+  "B-49": [
+    {
+      "filename": "species-B-49_20260505-174158.jpg",
+      "uploaded_at": "2026-05-05T17:41:58.619Z",
+      "uploaded_by": "claude-code-cli",
+      "context": "species",
+      "ai_status": "n/a",
+      "note": "Plantín trifoliado (posible glicinia o leguminosa) — migrado desde B-46/plant-B-46-9 a entry propia B-49. Hojas trifoliadas con foliolos ovalados lisos brillantes."
     }
   ]
 }
