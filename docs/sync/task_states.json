@@ -1,5 +1,5 @@
 {
-  "_synced_at": "2026-05-05T18:46:25.017Z",
+  "_synced_at": "2026-05-05T18:50:22.684Z",
   "_last_writer": "pix9",
   "tasks": {
     "plant-F-9": {
@@ -245,6 +245,12 @@
       "description_override_at": "2026-05-05T15:30:00.000Z",
       "last_ai_summary": "Hoja pinnada compuesta confirmada (no trifoliada). Pendiente foto cercana del raquis para ID exacta.",
       "last_modified_at": "2026-05-05T15:30:00.000Z"
+    },
+    "plant-I-1-3": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-05T18:50:16.756Z",
+      "last_modified_at": "2026-05-05T18:50:16.757Z"
     }
   }
 }
