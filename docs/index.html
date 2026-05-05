@@ -9655,7 +9655,10 @@ ID exacta de cada plantín pendiente — ver urgencia &#x27;Mapeo del vivero&#x2
         <span class="settings-hint">Diagnóstico de por qué Chrome puede o no ofrecer "Install app".</span>
       </label>
       <div id="pwa-status-panel" class="pwa-status-panel">Verificando…</div>
-      <button class="btn-secondary" id="btn-trigger-install" disabled>Instalar app</button>
+      <div class="settings-actions">
+        <button class="btn-secondary" id="btn-trigger-install" disabled>Instalar app</button>
+        <button class="btn-secondary" id="btn-reset-sw">🔄 Resetear SW</button>
+      </div>
     </div>
 
     <div class="settings-footer">
@@ -10824,6 +10827,24 @@ document.addEventListener('DOMContentLoaded', () => {
     _deferredInstallPrompt = null;
     updatePwaStatusPanel();
   });
+
+  const resetBtn = document.getElementById('btn-reset-sw');
+  if (resetBtn) resetBtn.addEventListener('click', async () => {
+    if (!confirm('Resetear el Service Worker? Después de esto recargá la página para registrar la versión nueva.')) return;
+    try {
+      if ('serviceWorker' in navigator) {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map(r => r.unregister()));
+      }
+      if (window.caches) {
+        const keys = await caches.keys();
+        await Promise.all(keys.map(k => caches.delete(k)));
+      }
+      alert('SW reseteado y caches borrados. Recargá la página (Ctrl+Shift+R o cerrá y reabrí la pestaña).');
+    } catch (e) {
+      alert('Error al resetear SW: ' + (e.message || e));
+    }
+  });
 });
 
 function showInstallBanner() {
@@ -11537,15 +11558,15 @@ const GH_API = `https://api.github.com/repos/${GH_REPO}/contents`;
 async function ghGetFile(path) {
   const token = loadGitHubToken();
   if (!token) throw new Error('Sin GitHub PAT configurado');
-  // cache: 'no-store' + ?_=timestamp para bypass total del cache HTTP del browser
-  // y de cualquier CDN intermedio. Sin esto, después de un 409 el retry
-  // recibía el sha viejo cacheado y volvía a fallar en loop.
+  // cache: 'no-store' + ?_=timestamp para bypass del cache HTTP del browser
+  // y de cualquier CDN intermedio. NO agregar Cache-Control header — GitHub
+  // no lo permite en CORS preflight (no está en access-control-allow-headers)
+  // y rompe el fetch con TypeError.
   const r = await fetch(`${GH_API}/${path}?ref=main&_=${Date.now()}`, {
     cache: 'no-store',
     headers: {
       'Authorization': `Bearer ${token}`,
       'Accept': 'application/vnd.github+json',
-      'Cache-Control': 'no-cache',
     },
   });
   if (r.status === 404) return null;
@@ -12134,10 +12155,15 @@ async function uploadPendingSpeciesPhoto() {
       </div>
       <button class="btn-primary" onclick="closeModal('species-photo')">Listo</button>`;
   } catch (err) {
+    const msg = err.message || String(err);
+    const isType = err.name === 'TypeError';
+    const detail = isType
+      ? `<p>Probable causa: CORS preflight rechazado, network error, o Service Worker viejo. Probá "Resetear SW" en ⚙️ Configuración y recargar.</p><p style="font-size:0.78rem;color:#666">Detalle técnico: ${msg}</p>`
+      : `<p>${msg}</p>`;
     result.innerHTML = `
       <div class="task-photo-error">
         <div class="task-photo-error-title">❌ No se pudo subir</div>
-        <p>${err.message}</p>
+        ${detail}
       </div>
       <div class="task-photo-actions">
         <button class="btn-secondary" onclick="setSpeciesPhotoStage('preview')">↺ Volver al preview</button>
@@ -12385,10 +12411,15 @@ async function uploadPendingPhoto() {
       </div>
       <button class="btn-primary" onclick="closeModal('task-photo')">Listo</button>`;
   } catch (err) {
+    const msg = err.message || String(err);
+    const isType = err.name === 'TypeError';
+    const detail = isType
+      ? `<p>Probable causa: CORS preflight rechazado, network error, o Service Worker viejo. Probá "Resetear SW" en ⚙️ Configuración y recargar.</p><p style="font-size:0.78rem;color:#666">Detalle técnico: ${msg}</p>`
+      : `<p>${msg}</p>`;
     result.innerHTML = `
       <div class="task-photo-error">
         <div class="task-photo-error-title">❌ No se pudo subir</div>
-        <p>${err.message}</p>
+        ${detail}
       </div>
       <div class="task-photo-actions">
         <button class="btn-secondary" onclick="setTaskPhotoStage('preview')">↺ Volver al preview</button>

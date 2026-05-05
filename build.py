@@ -900,7 +900,10 @@ def build_timeline_view(tasks, img_data):
         <span class="settings-hint">Diagnóstico de por qué Chrome puede o no ofrecer "Install app".</span>
       </label>
       <div id="pwa-status-panel" class="pwa-status-panel">Verificando…</div>
-      <button class="btn-secondary" id="btn-trigger-install" disabled>Instalar app</button>
+      <div class="settings-actions">
+        <button class="btn-secondary" id="btn-trigger-install" disabled>Instalar app</button>
+        <button class="btn-secondary" id="btn-reset-sw">🔄 Resetear SW</button>
+      </div>
     </div>
 
     <div class="settings-footer">
