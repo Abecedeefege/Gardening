@@ -617,6 +617,18 @@
         "processed_at": "2026-05-05T15:30:00.000Z"
       },
       "user_context": "La planta de al lado, la b27, la grande, tiene estos coquitos.  Porque no hay tarea de esa si aún no está identificada?"
+    },
+    {
+      "filename": null,
+      "uploaded_at": "2026-05-05T17:46:37.556Z",
+      "uploaded_by": "pix9",
+      "context": "task_text",
+      "task_id": "plant-B-42",
+      "task_title_snapshot": "Foto de la especie centrada",
+      "user_context": "No entiendo cuál referencias",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "_stamp": "20260505-174637"
     }
   ],
   "B-47": [
