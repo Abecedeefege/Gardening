@@ -637,6 +637,22 @@
         "processed_at": "2026-05-05T19:00:00.000Z"
       },
       "_stamp": "20260505-184752"
+    },
+    {
+      "filename": "species-B-43_20260505-164139.jpg",
+      "uploaded_at": "2026-05-05T16:41:39.000Z",
+      "uploaded_by": "claude-code-cli",
+      "context": "species",
+      "ai_status": "n/a",
+      "note": "Close-up del pitósporo en plena floración — flores amarillas en racimos terminales + follaje denso verde oscuro brillante. Atípico de P. tobira (típicamente flor blanca) — agregada urgencia opcional para verificar variedad."
+    },
+    {
+      "filename": "species-B-43_20260505-164200.jpg",
+      "uploaded_at": "2026-05-05T16:42:00.000Z",
+      "uploaded_by": "claude-code-cli",
+      "context": "species",
+      "ai_status": "n/a",
+      "note": "Vista general del pitósporo (~3-4 m de altura) marcado con círculo verde. Crece atrás contra la pared, tapa parcialmente la vista al vecino. User pidió poda fuerte para bajarlo a 2-3 m — agregada urgencia para julio-agosto 2026."
     }
   ],
   "B-25": [
