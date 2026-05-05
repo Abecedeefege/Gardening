@@ -159,6 +159,16 @@
         "processed_at": "2026-05-05T14:30:00.000Z"
       },
       "user_context": "Estás 2 nose que son.  Separalos en tareas independientes para dar seguimiento"
+    },
+    {
+      "filename": "plant-B-46-8_20260505-145102.jpg",
+      "uploaded_at": "2026-05-05T14:51:02.716Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-46-8",
+      "task_title_snapshot": "Plantín X-1: confirmar si es roble (Quercus sp.)",
+      "ai_status": "pending",
+      "ai_evaluation": null
     }
   ],
   "B-37": [
