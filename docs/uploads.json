@@ -481,6 +481,17 @@
       "task_title_snapshot": "Foto de la especie centrada",
       "ai_status": "pending",
       "ai_evaluation": null
+    },
+    {
+      "filename": "plant-B-43_20260505-145633.jpg",
+      "uploaded_at": "2026-05-05T14:56:33.049Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-43",
+      "task_title_snapshot": "Foto de la especie centrada",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Además hay otra igual, más grande que creció cerca de la base del arbusto de al lado"
     }
   ],
   "B-25": [
