@@ -143,6 +143,17 @@
         "processed_at": "2026-05-04T16:30:00.000Z"
       },
       "_stamp": "20260504-162230"
+    },
+    {
+      "filename": "plant-B-46_20260505-141431.jpg",
+      "uploaded_at": "2026-05-05T14:14:31.080Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-46",
+      "task_title_snapshot": "Subir fotos de plantines incógnita",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Estás 2 nose que son.  Separalos en tareas independientes para dar seguimiento"
     }
   ],
   "B-37": [
