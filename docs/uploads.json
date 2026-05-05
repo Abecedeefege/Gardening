@@ -702,6 +702,18 @@
         "processed_at": "2026-05-05T17:55:00.000Z"
       },
       "_stamp": "20260505-174637"
+    },
+    {
+      "filename": null,
+      "uploaded_at": "2026-05-05T18:48:39.208Z",
+      "uploaded_by": "pix9",
+      "context": "task_text",
+      "task_id": "plant-B-42",
+      "task_title_snapshot": "Foto de la especie centrada",
+      "user_context": "Este son los 2 especies detrás del romero y el pitosporo.\nCon todas las fotos que subí aún no determinas la especie?",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "_stamp": "20260505-184839"
     }
   ],
   "B-47": [
