@@ -584,5 +584,15 @@
       },
       "user_context": "La planta de al lado, la b27, la grande, tiene estos coquitos.  Porque no hay tarea de esa si aún no está identificada?"
     }
+  ],
+  "B-47": [
+    {
+      "filename": "species-B-47-1_20260505-140929.jpg",
+      "uploaded_at": "2026-05-05T14:09:29.000Z",
+      "uploaded_by": "claude-code-cli",
+      "context": "species",
+      "ai_status": "n/a",
+      "note": "~56 plantines de palmera (Butia odorata o Syagrus romanzoffiana, a confirmar) agrupados en hilera contra la pared del fondo, separados intencionalmente del resto del vivero (B-46) con espacio entre macetas. Hojas plumosas pinnadas características de palmera nativa rioplatense."
+    }
   ]
 }
