@@ -626,6 +626,16 @@
       "task_title_snapshot": "Confirmar especie: butiá vs pindó",
       "ai_status": "pending",
       "ai_evaluation": null
+    },
+    {
+      "filename": "plant-B-47-2_20260505-174312.jpg",
+      "uploaded_at": "2026-05-05T17:43:12.407Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-47-2",
+      "task_title_snapshot": "Confirmar especie: butiá vs pindó",
+      "ai_status": "pending",
+      "ai_evaluation": null
     }
   ]
 }
