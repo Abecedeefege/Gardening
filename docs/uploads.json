@@ -616,6 +616,16 @@
       "context": "species",
       "ai_status": "n/a",
       "note": "~56 plantines de palmera (Butia odorata o Syagrus romanzoffiana, a confirmar) agrupados en hilera contra la pared del fondo, separados intencionalmente del resto del vivero (B-46) con espacio entre macetas. Hojas plumosas pinnadas características de palmera nativa rioplatense."
+    },
+    {
+      "filename": "plant-B-47-2_20260505-174246.jpg",
+      "uploaded_at": "2026-05-05T17:42:46.238Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-47-2",
+      "task_title_snapshot": "Confirmar especie: butiá vs pindó",
+      "ai_status": "pending",
+      "ai_evaluation": null
     }
   ]
 }
