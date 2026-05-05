@@ -471,6 +471,16 @@
       "task_title_snapshot": "Foto de la especie centrada",
       "ai_status": "pending",
       "ai_evaluation": null
+    },
+    {
+      "filename": "plant-B-43_20260505-145456.jpg",
+      "uploaded_at": "2026-05-05T14:54:56.610Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-43",
+      "task_title_snapshot": "Foto de la especie centrada",
+      "ai_status": "pending",
+      "ai_evaluation": null
     }
   ],
   "B-25": [
