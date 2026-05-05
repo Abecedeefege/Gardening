@@ -167,7 +167,7 @@
       "context": "task",
       "task_id": "plant-B-46-8",
       "task_title_snapshot": "Plantín X-1: confirmar si es roble (Quercus sp.)",
-      "ai_status": "pending",
+      "ai_status": "superseded",
       "ai_evaluation": null
     },
     {
@@ -177,8 +177,13 @@
       "context": "task",
       "task_id": "plant-B-46-8",
       "task_title_snapshot": "Plantín X-1: confirmar si es roble (Quercus sp.)",
-      "ai_status": "pending",
-      "ai_evaluation": null
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Quercus sp. (roble joven) confirmado — hojas con lóbulos redondeados característicos del género claramente visibles. El plantín X-1 queda identificado.",
+        "next_steps": "",
+        "processed_at": "2026-05-05T15:30:00.000Z"
+      }
     },
     {
       "filename": "plant-B-46-9_20260505-145233.jpg",
@@ -187,7 +192,7 @@
       "context": "task",
       "task_id": "plant-B-46-9",
       "task_title_snapshot": "Plantín X-2: identificar trifoliada (3 foliolos por hoja)",
-      "ai_status": "pending",
+      "ai_status": "superseded",
       "ai_evaluation": null
     },
     {
@@ -197,8 +202,13 @@
       "context": "task",
       "task_id": "plant-B-46-9",
       "task_title_snapshot": "Plantín X-2: identificar trifoliada (3 foliolos por hoja)",
-      "ai_status": "pending",
-      "ai_evaluation": null
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Plantín X-2 NO es trifoliada como evaluamos antes — es pinnada compuesta (raquis con varios foliolos pareados). Posibles candidatos: Koelreuteria, Fraxinus juvenil o Sapindus.",
+        "next_steps": "Foto cercana del raquis completo mostrando el patrón pinnado (foliolos pareados u opuestos) + foto del nudo de inserción + medir cuántos foliolos por hoja entera.",
+        "processed_at": "2026-05-05T15:30:00.000Z"
+      }
     }
   ],
   "B-37": [
@@ -422,8 +432,13 @@
       "context": "task",
       "task_id": "plant-B-9-3",
       "task_title_snapshot": "Foto de corteza antes de la poda",
-      "ai_status": "pending",
-      "ai_evaluation": null
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Foto del 05/05 sí enfoca el TRONCO del Crespón. Corteza canela exfoliante todavía no muy notable — el árbol parece joven (troncos múltiples delgados). Tarea cumplida.",
+        "next_steps": "",
+        "processed_at": "2026-05-05T15:30:00.000Z"
+      }
     }
   ],
   "B-45": [
@@ -461,7 +476,7 @@
       "context": "task",
       "task_id": "plant-B-45",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
+      "ai_status": "superseded",
       "ai_evaluation": null
     },
     {
@@ -471,8 +486,13 @@
       "context": "task",
       "task_id": "plant-B-45",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
-      "ai_evaluation": null
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Hojas opuestas elípticas verde brillante con venación marcada, porte arbusto-laxo. Identificación tentativa: posible Lonicera japonica (madreselva) o jazmín solano (Solanum jasminoides).",
+        "next_steps": "Esperar floración (octubre-diciembre) y fotografiar la flor — diagnóstico definitivo. Ver urgencia plant-B-45-2 que ya cubre eso.",
+        "processed_at": "2026-05-05T15:30:00.000Z"
+      }
     }
   ],
   "B-43": [
@@ -499,7 +519,7 @@
       "context": "task",
       "task_id": "plant-B-43",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
+      "ai_status": "superseded",
       "ai_evaluation": null
     },
     {
@@ -509,7 +529,7 @@
       "context": "task",
       "task_id": "plant-B-43",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
+      "ai_status": "superseded",
       "ai_evaluation": null
     },
     {
@@ -519,8 +539,13 @@
       "context": "task",
       "task_id": "plant-B-43",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "User marcó con verde la planta alta de atrás. Hojas lanceoladas estrechas alargadas, verde oscuro brillante, ramas largas con porte trepador-laxo. Candidatos: Murraya paniculata, Trachelospermum jasminoides o Ligustrum japonicum joven. User reporta otra IGUAL más grande cerca.",
+        "next_steps": "Foto cercana de UNA hoja anverso/reverso + foto de un nudo del tallo. Esperar primavera para flor.",
+        "processed_at": "2026-05-05T15:30:00.000Z"
+      },
       "user_context": "Además hay otra igual, más grande que creció cerca de la base del arbusto de al lado"
     }
   ],
@@ -550,8 +575,13 @@
       "context": "task",
       "task_id": "plant-B-42",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Foto subida en B-42 era en realidad de B-27 (la planta grande de al lado). Identificada como Mirto común (Myrtus communis) por sus bayas negras + hojas opuestas brillantes. B-27 actualizado en data_plants.py con info completa. B-42 sigue sin foto válida.",
+        "next_steps": "Sacar foto cercana del VERDADERO B-42 (entre romero y B-27, arriba) — hoja anverso/reverso + porte general — para identificación.",
+        "processed_at": "2026-05-05T15:30:00.000Z"
+      },
       "user_context": "La planta de al lado, la b27, la grande, tiene estos coquitos.  Porque no hay tarea de esa si aún no está identificada?"
     }
   ]

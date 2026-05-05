@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-05T14:53:43.564Z",
-  "_last_writer": "pix9",
+  "_synced_at": "2026-05-05T15:30:00.000Z",
+  "_last_writer": "claude-code-cli",
   "tasks": {
     "plant-F-9": {
       "status": "done",
@@ -137,31 +137,30 @@
       "last_modified_at": "2026-05-05T14:30:00.000Z"
     },
     "plant-B-9-3": {
-      "status": "active",
+      "status": "done",
       "snoozed_until": null,
-      "completed_at": null,
-      "description_override": "La foto del 04/05 muestra el follaje del Crespón (B-9), no la corteza canela exfoliante que pide la tarea. Re-sacar la foto enfocando el TRONCO, no las hojas. Buscar la base del Crespón, fotografiar la corteza canela que se desprende en placas papelosas. Idealmente al sol directo para que se vea el contraste de tonos canela-naranja-gris.",
-      "description_override_at": "2026-05-05T14:30:00.000Z",
-      "last_ai_summary": "Foto muestra follaje verde del Crespón pero no captura la corteza canela exfoliante que pide la tarea — angle apunta a hojas no al tronco.",
-      "last_modified_at": "2026-05-05T14:30:00.000Z"
+      "completed_at": "2026-05-05T15:30:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Foto del 05/05 sí enfoca el tronco del Crespón (B-9). La corteza canela exfoliante todavía no es muy notable — el árbol parece relativamente joven (troncos múltiples delgados). La exfoliación característica se desarrolla con la edad. Tarea cumplida con la foto del tronco aunque el efecto canela no es espectacular aún.",
+      "last_modified_at": "2026-05-05T15:30:00.000Z"
     },
     "plant-B-45": {
       "status": "active",
       "snoozed_until": null,
       "completed_at": null,
-      "description_override": "Confusión a aclarar: el usuario corrigió que B-45 NO es trepadora (la foto 18:18 era una trepadora amarillenta que NO es B-45). La foto 18:22 mostró Bauhinia forficata (pata de vaca) pero el usuario aclaró que es OTRA especie atrás del romero, no B-45. Re-sacar foto del verdadero B-45: el arbusto/arbolito que crece de un tronco al lado de la pared. Foto del tronco + hoja anverso/reverso + porte general.",
-      "description_override_at": "2026-05-05T14:30:00.000Z",
-      "last_ai_summary": "Foto 18:22 identificó Bauhinia forficata (pata de vaca) — especie nueva del jardín atrás del romero, NO es B-45. B-45 sigue sin foto válida.",
-      "last_modified_at": "2026-05-05T14:30:00.000Z"
+      "description_override": "Foto del 05/05 15:00 muestra follaje con hojas opuestas elípticas verde brillante con venación marcada, porte arbusto-laxo. Identificación tentativa: posible Lonicera japonica (madreselva) o jazmín solano (Solanum jasminoides). Sin flor es difícil confirmar. La urgencia 'Foto hoja+flor primavera' (plant-B-45-2) cubre el siguiente paso — esperar floración octubre-diciembre y fotografiar.",
+      "description_override_at": "2026-05-05T15:30:00.000Z",
+      "last_ai_summary": "Hojas opuestas elípticas verde brillante con venación marcada — posible madreselva o jazmín solano. Confirmación requiere flor.",
+      "last_modified_at": "2026-05-05T15:30:00.000Z"
     },
     "plant-B-43": {
       "status": "active",
       "snoozed_until": null,
       "completed_at": null,
-      "description_override": "B-43 son 2 plantas: Pittosporum tobira (pitósporo) en la base — confirmado por la hoja en aspas/abanico característica — y una planta alta atrás con hojas estrechas elongadas, sin identificar. Falta foto cercana de la planta alta (hoja anverso+reverso, nudo del tallo, porte general) para confirmar especie. La urgencia 'Identificar planta alta de atrás' fue agregada al catálogo.",
-      "description_override_at": "2026-05-05T14:30:00.000Z",
-      "last_ai_summary": "Foto 04/05 confirmó pitósporo en la base (Pittosporum tobira) + planta alta atrás sin identificar (posible jazmín por hojas alargadas).",
-      "last_modified_at": "2026-05-05T14:30:00.000Z"
+      "description_override": "Foto del 05/05 14:56 marca con verde la planta alta de atrás. Lo que veo: hojas lanceoladas estrechas alargadas, verde oscuro brillante, semi-coriáceas, en ramas largas con porte trepador-laxo. Candidatos: Murraya paniculata (azahar de la china), Trachelospermum jasminoides (jazmín del Cabo) o Ligustrum japonicum joven. Usuario reportó que hay otra IGUAL más grande cerca de la base del arbusto de al lado — sumar esa info a la inspección. Próximo paso: foto cercana de UNA hoja anverso/reverso + foto de un nudo del tallo. Esperar primavera para flor.",
+      "description_override_at": "2026-05-05T15:30:00.000Z",
+      "last_ai_summary": "Hojas lanceoladas alargadas brillantes con porte trepador-laxo. Hay otra planta igual más grande cerca. Identificación pendiente con flor.",
+      "last_modified_at": "2026-05-05T15:30:00.000Z"
     },
     "plant-B-25-2": {
       "status": "done",
@@ -182,6 +181,40 @@
       "snoozed_until": null,
       "completed_at": "2026-05-05T14:50:10.550Z",
       "last_modified_at": "2026-05-05T14:50:10.550Z"
+    },
+    "plant-B-46-8": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-05T15:30:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Plantín X-1 confirmado como Quercus sp. (roble joven) — hojas con lóbulos redondeados característicos del género claramente visibles en la foto del 05/05.",
+      "last_modified_at": "2026-05-05T15:30:00.000Z"
+    },
+    "plant-B-46-9": {
+      "status": "active",
+      "snoozed_until": null,
+      "completed_at": null,
+      "description_override": "Foto del 05/05 muestra que el plantín X-2 NO es trifoliada como yo había evaluado antes — es pinnada compuesta (raquis con varios foliolos pareados). Posibles candidatos: Koelreuteria paniculata (jabonero de la China), Fraxinus pennsylvanica (fresno juvenil, hijo del B-37 vía samara), o Sapindus. Para confirmar: foto cercana del raquis completo mostrando el patrón pinnado (foliolos pareados u opuestos) + foto del nudo de inserción + medir cuántos foliolos por hoja entera.",
+      "description_override_at": "2026-05-05T15:30:00.000Z",
+      "last_ai_summary": "Hoja pinnada compuesta confirmada (no trifoliada). Pendiente foto cercana del raquis para ID exacta.",
+      "last_modified_at": "2026-05-05T15:30:00.000Z"
+    },
+    "plant-B-42": {
+      "status": "active",
+      "snoozed_until": null,
+      "completed_at": null,
+      "description_override": "La foto subida en B-42 el 05/05 era en realidad de B-27 (la planta grande de al lado, ya identificada como Mirto común / Myrtus communis). B-42 sigue sin foto válida. Sacar foto cercana del verdadero B-42 (la planta entre el romero y B-27, arriba) para identificación.",
+      "description_override_at": "2026-05-05T15:30:00.000Z",
+      "last_ai_summary": "Foto subida correspondía a B-27 (mirto, ya identificado), no a B-42. B-42 sigue sin identificar.",
+      "last_modified_at": "2026-05-05T15:30:00.000Z"
+    },
+    "plant-B-27": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-05T15:30:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "B-27 IDENTIFICADO como Mirto común (Myrtus communis) — confirmado por bayas negras pequeñas en racimos + hojas opuestas elípticas brillantes verde oscuro visibles en foto del 05/05 (subida por error a B-42 pero contenido era de B-27). Refactor aplicado: common, sci, desc, fun_fact, prune, water, light. Reemplazada urgencia 'Foto en floración para identificar' por 2 nuevas: 'Cosechar bayas de mirto (otoño)' y 'Foto en floración (referencia catálogo)'.",
+      "last_modified_at": "2026-05-05T15:30:00.000Z"
     }
   }
 }
