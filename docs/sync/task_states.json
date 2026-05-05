@@ -1,5 +1,5 @@
 {
-  "_synced_at": "2026-05-05T14:50:16.296Z",
+  "_synced_at": "2026-05-05T14:53:43.564Z",
   "_last_writer": "pix9",
   "tasks": {
     "plant-F-9": {
@@ -69,10 +69,10 @@
       "last_modified_at": "2026-05-05T14:30:00.000Z"
     },
     "plant-B-13-3": {
-      "status": "snoozed",
-      "snoozed_until": "2026-05-04T21:37:22.991Z",
-      "completed_at": null,
-      "last_modified_at": "2026-05-03T21:37:22.993Z"
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-05T14:53:37.600Z",
+      "last_modified_at": "2026-05-05T14:53:37.602Z"
     },
     "plant-B-46-2": {
       "status": "done",
