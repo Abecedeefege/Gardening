@@ -209,6 +209,17 @@
         "next_steps": "Foto cercana del raquis completo mostrando el patrón pinnado (foliolos pareados u opuestos) + foto del nudo de inserción + medir cuántos foliolos por hoja entera.",
         "processed_at": "2026-05-05T15:30:00.000Z"
       }
+    },
+    {
+      "filename": "plant-B-46-9_20260505-174158.jpg",
+      "uploaded_at": "2026-05-05T17:41:58.619Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-46-9",
+      "task_title_snapshot": "Plantín X-2: identificar trifoliada (3 foliolos por hoja)",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Actualiza el numero de referencia y la foto de perfil de la tarea para que entienda mejor a qué planta referimos.  Dividamos en tareas y especies dentro de lo posible las fotos"
     }
   ],
   "B-37": [
