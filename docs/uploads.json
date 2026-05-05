@@ -414,6 +414,16 @@
         "next_steps": "Re-sacar foto enfocando el tronco. Buscar la base del Crespón, fotografiar la corteza canela que se desprende en placas papelosas. Mejor con sol directo.",
         "processed_at": "2026-05-05T14:30:00.000Z"
       }
+    },
+    {
+      "filename": "plant-B-9-3_20260505-150140.jpg",
+      "uploaded_at": "2026-05-05T15:01:40.012Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-9-3",
+      "task_title_snapshot": "Foto de corteza antes de la poda",
+      "ai_status": "pending",
+      "ai_evaluation": null
     }
   ],
   "B-45": [
