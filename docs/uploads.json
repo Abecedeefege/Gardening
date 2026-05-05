@@ -511,5 +511,18 @@
       },
       "user_context": "Tiene hormigas"
     }
+  ],
+  "B-42": [
+    {
+      "filename": "plant-B-42_20260505-145838.jpg",
+      "uploaded_at": "2026-05-05T14:58:38.396Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-42",
+      "task_title_snapshot": "Foto de la especie centrada",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "La planta de al lado, la b27, la grande, tiene estos coquitos.  Porque no hay tarea de esa si aún no está identificada?"
+    }
   ]
 }
