@@ -1,10 +1,14 @@
 // Service Worker mínimo — necesario para que Chrome considere el sitio
 // instalable como PWA y use el icon de la manifest en home screen.
-// El SW NO cachea contenido (passthrough explícito); existe solo para
+// El SW NO cachea contenido. Solo intercepta GETs SAME-ORIGIN para
 // cumplir el criterio "fetch handler responde a requests" de Chrome.
-// Si en el futuro querés offline support, expandir el fetch handler.
+//
+// IMPORTANT: NO interceptar PUTs/POSTs ni cross-origin requests —
+// rompía los uploads a GitHub API (PUT con body base64 grande tiraba
+// "Failed to fetch" porque event.request no se puede re-fetch con body
+// confiablemente).
 
-const SW_VERSION = 'v1.0.0';
+const SW_VERSION = 'v1.1.0';
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
@@ -15,8 +19,12 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Passthrough explícito — respondWith con la fetch original.
-  // Chrome requiere que el SW participe activamente en fetches para
-  // considerar el sitio installable.
+  // Solo interceptamos GETs same-origin. El resto pasa derecho al browser.
+  if (event.request.method !== 'GET') return;
+  let url;
+  try { url = new URL(event.request.url); } catch { return; }
+  if (url.origin !== self.location.origin) return;
+  // Passthrough — re-fetch del request original. Esto satisface el
+  // criterio de Chrome de "SW participa en fetches" sin afectar nada.
   event.respondWith(fetch(event.request));
 });
