@@ -515,6 +515,17 @@
         "next_steps": "Esperar floración (octubre-diciembre) y fotografiar la flor — diagnóstico definitivo. Ver urgencia plant-B-45-2 que ya cubre eso.",
         "processed_at": "2026-05-05T15:30:00.000Z"
       }
+    },
+    {
+      "filename": "plant-B-45_20260505-175104.jpg",
+      "uploaded_at": "2026-05-05T17:51:04.819Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-45",
+      "task_title_snapshot": "Foto de la especie centrada",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Si no hace falta más nada actualiza la fecha de la tarea"
     }
   ],
   "B-43": [
