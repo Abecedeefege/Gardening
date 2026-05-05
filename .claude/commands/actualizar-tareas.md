@@ -77,43 +77,18 @@ Reglas:
 - summary describe lo OBSERVADO, no el contexto general de la planta.
 - next_steps son pasos accionables y concretos, no consejos genéricos.
 
-### 3. Mostrar el batch ANTES de modificar nada
+### 3. Aplicar cambios INMEDIATAMENTE — sin confirmación
 
-Presentá un resumen en el chat con este formato:
+**El flow es autónomo.** Cuando el user invoca `/actualizar-tareas`, el comportamiento esperado es: procesar todo + aplicar + commit + push. Sin presentar batch para confirmación, sin pedir permiso, sin esperar.
 
-```
-Encontré N fotos pendientes:
+**Si necesitás clarificación de algo (foto ambigua, decisión que requiere juicio del user), NO preguntes en el chat.** En su lugar:
+- Agregá una **nueva urgencia accionable** en `data_plants.py` para esa planta describiendo qué necesitás (ej: "Sacar foto cercana del nudo de B-43 — confirmar si es jazmín solano o jasminum").
+- Esa urgencia aparece en la app del user como una tarea más, donde él la responde con foto o texto cuando puede.
+- Marcá la entry actual como `processed` con el summary de lo que detectaste y el next_steps que apunta a la nueva urgencia.
 
-📷 [1] plant-B-25-2 (Inspección gardenia)
-   Foto: docs/images/uploads/B-25/plant-B-25-2_20260503-153012.jpg
-   → resolved=false. Veo cochinilla algodonosa en el envés de 2 hojas inferiores.
-   → Propongo description_override="Tratar zona afectada con jabón potásico (5 ml/L) pulverizado sobre envés. Repetir a los 7 días."
+**Las preguntas, dudas y pedidos de más info viajan SIEMPRE por la app (urgencies en data_plants.py)**, nunca por el chat de Claude Code. El chat es solo para reportar lo que se hizo después del push.
 
-📷 [2] plant-F-1-2 (Rastrillado del frente)
-   Foto: docs/images/uploads/F-1/plant-F-1-2_20260503-160245.jpg
-   → resolved=true. Cantero limpio, hojas removidas, base de los árboles despejada.
-   → Propongo marcar hecha con summary="Cantero limpio, sin hojas acumuladas".
-
-📷 [3] plant-B-9-3 (Foto de corteza Crespón)
-   Foto: docs/images/uploads/B-9/plant-B-9-3_20260503-161030.jpg
-   → resolved=true. Corteza canela exfoliante visible y bien enfocada, consistente con L. indica.
-   → Propongo marcar hecha + sumar la foto al gallery del catálogo.
-
-¿Aplico estos cambios y commiteo? (sí / no / detalles de N / saltear N)
-```
-
-### 4. Esperar confirmación del usuario
-
-Opciones que el usuario puede responder:
-- **"sí"** o **"adelante"** → aplicá todos los cambios + commit + push.
-- **"no"** o **"cancelar"** → no toques nada.
-- **"detalles de N"** → mostrá el contenido completo de la entry N y la decisión, sin commitear nada.
-- **"saltear N"** → marcá la entry N como `ai_status: "needs_review"` (la dejamos para revisar manualmente después) y aplicá solo el resto.
-- Cualquier corrección puntual ("la 1 marcala hecha igual" / "la 2 cambiá el next_steps a X") → ajustá según lo que pida y volvé a presentar el batch.
-
-NUNCA apliques cambios sin confirmación explícita del usuario.
-
-### 5. Aplicar cambios (cuando el usuario confirme)
+### 4. Aplicar cambios
 
 Para cada entry procesada, hacé estas modificaciones:
 
@@ -211,8 +186,9 @@ Marcá `ai_status: "orphaned"` y avisá al usuario al final.
 
 ## Reglas duras
 
-- NUNCA commitear sin confirmación explícita ("sí" / "adelante").
-- **`data_plants.py` se modifica automáticamente cuando el feedback lo amerite** — sin pedir permiso aparte. Casos típicos: el user pide reescribir una urgencia, agregar urgencias por tipo, eliminar tareas no útiles, ajustar wording, o cambiar `due_month`. Incluí esos cambios dentro del batch que se confirma. Si el user elimina una urgencia que tenía estado `done`/`snoozed` en `sync/task_states.json`, migrar el sync state para que el índice quede consistente (preservar el estado del task_id correcto).
+- **El flow es 100% AUTÓNOMO**: procesar + aplicar + commit + push, todo en una pasada sin pedir confirmación. El user invoca el comando esperando que cuando termine, todo esté hecho y pusheado. NO presentar batch para que confirme.
+- **Las preguntas, dudas y feedback que necesites del user van como urgencies nuevas en data_plants.py** (que aparecen como tareas en la app), NUNCA por chat. El chat es solo para reportar lo hecho al final.
+- **`data_plants.py` se modifica automáticamente cuando el feedback lo amerite** — sin pedir permiso aparte. Casos típicos: refactor de urgencias, agregar urgencias nuevas (por tipo, por incógnita, por plaga detectada), reschedule (cambiar `due_year`/`due_month`), eliminar tareas no útiles, ajustar wording. Si eliminás una urgencia que tenía estado `done`/`snoozed` en `sync/task_states.json`, migrar el sync state para preservar el estado del task_id correcto.
 - NO inventar plagas/enfermedades sin evidencia visual clara.
 - Si dudás de la evaluación de una foto, marcala `resolved=false` con `next_steps="Volver a sacar la foto con [criterio específico]"`. Más vale conservador que cerrar tarea sin certeza.
 - **Cuando el user dice "borra esta" sobre una entry de uploads.json, eliminala del JSON** (no marques superseded — borrá el registro).

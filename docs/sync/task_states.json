@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-04T18:06:19.820Z",
-  "_last_writer": "pix9",
+  "_synced_at": "2026-05-05T14:30:00.000Z",
+  "_last_writer": "claude-code-cli",
   "tasks": {
     "plant-F-9": {
       "status": "done",
@@ -61,10 +61,12 @@
       "completed_at": "2026-05-02T21:20:40.327Z"
     },
     "plant-F-1-2": {
-      "status": "snoozed",
-      "snoozed_until": "2026-05-04T16:54:15.366Z",
-      "completed_at": null,
-      "last_modified_at": "2026-05-03T16:54:15.368Z"
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-05T14:30:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Foto 18:08 muestra base del Guayabo F-1 prácticamente despejada — rastrillado cumplido. Foto 18:09 con consulta sobre 'hojas enfermas' resuelta: las manchas blanco-grises son envés plateado natural del Acca sellowiana + polvo ambiental, NO patología. Agregada urgencia opcional 'Lavar follaje con manguera' para sacar polvo.",
+      "last_modified_at": "2026-05-05T14:30:00.000Z"
     },
     "plant-B-13-3": {
       "status": "snoozed",
@@ -100,6 +102,74 @@
       "description_override_at": "2026-05-04T17:30:00.000Z",
       "last_ai_summary": "Foto del 04/05 muestra base con tierra desnuda y hojas secas dispersas — todavía no es el mulching grueso que pide la tarea.",
       "last_modified_at": "2026-05-04T17:30:00.000Z"
+    },
+    "plant-B-46": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-05T14:30:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Fotos del 05/05 mostraron 2 plantines incógnita. X-1: probable roble (Quercus sp.) por hoja lobulada característica. X-2: trifoliada con foliolos en grupos de 3, especie por confirmar. Agregadas 2 urgencias para seguimiento individual.",
+      "last_modified_at": "2026-05-05T14:30:00.000Z"
+    },
+    "plant-F-8": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-05T14:30:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Aguaribay (Schinus molle) fotografiado entero al frente del portón con copa frondosa visible. Cumple criterio de panorámica del frente.",
+      "last_modified_at": "2026-05-05T14:30:00.000Z"
+    },
+    "plant-B-41-3": {
+      "status": "active",
+      "snoozed_until": null,
+      "completed_at": null,
+      "description_override": "Foto del 04/05 confirma que el caqui está en dormancia invernal — tronco desnudo sin hojas ni frutos. Imposible identificar variedad ahora. Tarea reschedulada en data_plants.py a mayo 2027 cuando haya cosecha. Volver a fotografiar cuando aparezcan los caquis maduros.",
+      "description_override_at": "2026-05-05T14:30:00.000Z",
+      "last_ai_summary": "Caqui sin follaje ni fruto — dormancia invernal. Imposible identificar variedad sin hoja/fruto.",
+      "last_modified_at": "2026-05-05T14:30:00.000Z"
+    },
+    "plant-B-9-4": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-05T14:30:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Usuario confirma que ya identifica todos los caducos sin necesidad de marcarlos con cinta — tarea cerrada por innecesaria.",
+      "last_modified_at": "2026-05-05T14:30:00.000Z"
+    },
+    "plant-B-9-3": {
+      "status": "active",
+      "snoozed_until": null,
+      "completed_at": null,
+      "description_override": "La foto del 04/05 muestra el follaje del Crespón (B-9), no la corteza canela exfoliante que pide la tarea. Re-sacar la foto enfocando el TRONCO, no las hojas. Buscar la base del Crespón, fotografiar la corteza canela que se desprende en placas papelosas. Idealmente al sol directo para que se vea el contraste de tonos canela-naranja-gris.",
+      "description_override_at": "2026-05-05T14:30:00.000Z",
+      "last_ai_summary": "Foto muestra follaje verde del Crespón pero no captura la corteza canela exfoliante que pide la tarea — angle apunta a hojas no al tronco.",
+      "last_modified_at": "2026-05-05T14:30:00.000Z"
+    },
+    "plant-B-45": {
+      "status": "active",
+      "snoozed_until": null,
+      "completed_at": null,
+      "description_override": "Confusión a aclarar: el usuario corrigió que B-45 NO es trepadora (la foto 18:18 era una trepadora amarillenta que NO es B-45). La foto 18:22 mostró Bauhinia forficata (pata de vaca) pero el usuario aclaró que es OTRA especie atrás del romero, no B-45. Re-sacar foto del verdadero B-45: el arbusto/arbolito que crece de un tronco al lado de la pared. Foto del tronco + hoja anverso/reverso + porte general.",
+      "description_override_at": "2026-05-05T14:30:00.000Z",
+      "last_ai_summary": "Foto 18:22 identificó Bauhinia forficata (pata de vaca) — especie nueva del jardín atrás del romero, NO es B-45. B-45 sigue sin foto válida.",
+      "last_modified_at": "2026-05-05T14:30:00.000Z"
+    },
+    "plant-B-43": {
+      "status": "active",
+      "snoozed_until": null,
+      "completed_at": null,
+      "description_override": "B-43 son 2 plantas: Pittosporum tobira (pitósporo) en la base — confirmado por la hoja en aspas/abanico característica — y una planta alta atrás con hojas estrechas elongadas, sin identificar. Falta foto cercana de la planta alta (hoja anverso+reverso, nudo del tallo, porte general) para confirmar especie. La urgencia 'Identificar planta alta de atrás' fue agregada al catálogo.",
+      "description_override_at": "2026-05-05T14:30:00.000Z",
+      "last_ai_summary": "Foto 04/05 confirmó pitósporo en la base (Pittosporum tobira) + planta alta atrás sin identificar (posible jazmín por hojas alargadas).",
+      "last_modified_at": "2026-05-05T14:30:00.000Z"
+    },
+    "plant-B-25-2": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-05T14:30:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Inspección reveló PLAGA: pulgones (áfidos) negros agrupados en pecíolos y brotes nuevos de la gardenia + hormigas negras protegiéndolos (simbiosis hormiga-pulgón) + hojas nuevas curvadas. Tarea de inspección cumplida. Agregada urgencia nueva 'Tratar pulgones + cortar tránsito de hormigas' (alta prioridad, mayo 2026) con plan de 4 pasos.",
+      "last_modified_at": "2026-05-05T14:30:00.000Z"
     }
   }
 }

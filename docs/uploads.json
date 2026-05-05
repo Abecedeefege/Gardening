@@ -151,8 +151,13 @@
       "context": "task",
       "task_id": "plant-B-46",
       "task_title_snapshot": "Subir fotos de plantines incógnita",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Plantines incógnita identificados tentativamente: X-1 = posible roble (Quercus sp.) por hojas grandes lobuladas, X-2 = trifoliada (3 foliolos por hoja) sin especie definida. Agregadas 2 urgencias en B-46 para seguimiento individual.",
+        "next_steps": "",
+        "processed_at": "2026-05-05T14:30:00.000Z"
+      },
       "user_context": "Estás 2 nose que son.  Separalos en tareas independientes para dar seguimiento"
     }
   ],
@@ -281,7 +286,7 @@
       "context": "task",
       "task_id": "plant-F-1-2",
       "task_title_snapshot": "Rastrillado del cantero del frente",
-      "ai_status": "pending",
+      "ai_status": "superseded",
       "ai_evaluation": null,
       "user_context": "Así está bien?"
     },
@@ -292,8 +297,13 @@
       "context": "task",
       "task_id": "plant-F-1-2",
       "task_title_snapshot": "Rastrillado del cantero del frente",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Foto 18:08 mostró cantero del Guayabo F-1 prácticamente despejado — rastrillado cumplido. Foto 18:09 mostraba follaje con manchas blanco-grises: identificadas como envés naturalmente plateado del Acca sellowiana + polvo ambiental, NO patología.",
+        "next_steps": "Manguerar el follaje del frente para sacar polvo (urgencia nueva agregada en F-1, prioridad baja).",
+        "processed_at": "2026-05-05T14:30:00.000Z"
+      },
       "user_context": "Las hojas parecen algo enfermas, está bien el árbol?"
     }
   ],
@@ -305,8 +315,13 @@
       "context": "task",
       "task_id": "plant-F-8",
       "task_title_snapshot": "Foto panorámica numerada del frente",
-      "ai_status": "pending",
-      "ai_evaluation": null
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Aguaribay (Schinus molle) fotografiado entero al frente del portón con copa frondosa visible y tronco serpenteado típico. Cumple criterio de panorámica.",
+        "next_steps": "",
+        "processed_at": "2026-05-05T14:30:00.000Z"
+      }
     }
   ],
   "B-41": [
@@ -317,8 +332,13 @@
       "context": "task",
       "task_id": "plant-B-41-3",
       "task_title_snapshot": "Confirmar variedad del caqui",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Caqui en dormancia invernal — tronco desnudo sin hojas ni frutos. Imposible identificar variedad Hachiya/Fuyu sin fruto.",
+        "next_steps": "Tarea reschedulada a mayo 2027 (cuando haya cosecha). Re-fotografiar entonces con frutos enteros + cortados al medio + hoja con escala.",
+        "processed_at": "2026-05-05T14:30:00.000Z"
+      },
       "user_context": "No le veo frutos ni hojas"
     }
   ],
@@ -331,8 +351,13 @@
       "task_id": "plant-B-9-4",
       "task_title_snapshot": "Marcar caducos a podar en junio",
       "user_context": "Si ya identificamos a todos no va a haber problema en saber cuál es cuál.",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Usuario confirma que ya identifica todos los caducos sin necesidad de marcarlos con cinta — tarea cerrada por innecesaria.",
+        "next_steps": "",
+        "processed_at": "2026-05-05T14:30:00.000Z"
+      },
       "_stamp": "20260504-181507"
     },
     {
@@ -342,8 +367,13 @@
       "context": "task",
       "task_id": "plant-B-9-3",
       "task_title_snapshot": "Foto de corteza antes de la poda",
-      "ai_status": "pending",
-      "ai_evaluation": null
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Foto muestra follaje verde del Crespón (B-9) pero NO la corteza canela exfoliante que pide la tarea — el ángulo apunta a las hojas, no al tronco.",
+        "next_steps": "Re-sacar foto enfocando el tronco. Buscar la base del Crespón, fotografiar la corteza canela que se desprende en placas papelosas. Mejor con sol directo.",
+        "processed_at": "2026-05-05T14:30:00.000Z"
+      }
     }
   ],
   "B-45": [
@@ -354,7 +384,7 @@
       "context": "task",
       "task_id": "plant-B-45",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
+      "ai_status": "superseded",
       "ai_evaluation": null,
       "user_context": "No es una planta que trepe la pared. Crece de un tronco al lado de la pared"
     },
@@ -365,8 +395,13 @@
       "context": "task",
       "task_id": "plant-B-45",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Foto identifica Bauhinia forficata (Pata de vaca) por hojas características en forma de pezuña doble. Pero el user aclaró que NO es B-45 — es otra especie atrás del romero. B-45 sigue sin foto válida.",
+        "next_steps": "Re-fotografiar el verdadero B-45 (arbusto al lado de la pared, NO la trepadora ni la pata de vaca). La Bauhinia identificada puede agregarse como entry nueva si se quiere — avisar al respecto.",
+        "processed_at": "2026-05-05T14:30:00.000Z"
+      },
       "user_context": "Hay otra especie más atrás del romero, subo foto"
     }
   ],
@@ -378,8 +413,13 @@
       "context": "task",
       "task_id": "plant-B-43",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "B-43 son 2 plantas: Pittosporum tobira (pitósporo) en la base confirmado + planta alta atrás con hojas estrechas elongadas sin identificar.",
+        "next_steps": "Foto cercana de la planta alta atrás (hoja anverso+reverso + nudo + porte). Posible jazmín por porte trepador-laxo. Urgencia agregada al catálogo.",
+        "processed_at": "2026-05-05T14:30:00.000Z"
+      },
       "user_context": "Son 2 de hecho.  Una alta de tras y una pitosporo que crece en la base al lado"
     }
   ],
@@ -391,8 +431,13 @@
       "context": "task",
       "task_id": "plant-B-25-2",
       "task_title_snapshot": "Inspección + foto cercana de hojas",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Inspección reveló pulgones negros agrupados en pecíolos + hormigas protegiéndolos + hojas nuevas curvadas en la gardenia. Plaga confirmada.",
+        "next_steps": "Agregada urgencia nueva en B-25 con plan de tratamiento en 4 pasos (jabón potásico + cortar tránsito hormigas + neem si persiste).",
+        "processed_at": "2026-05-05T14:30:00.000Z"
+      },
       "user_context": "Tiene hormigas"
     }
   ]
