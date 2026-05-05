@@ -770,5 +770,19 @@
       "ai_status": "n/a",
       "note": "Plantín trifoliado (posible glicinia o leguminosa) — migrado desde B-46/plant-B-46-9 a entry propia B-49. Hojas trifoliadas con foliolos ovalados lisos brillantes."
     }
+  ],
+  "I-1": [
+    {
+      "filename": null,
+      "uploaded_at": "2026-05-05T18:49:31.706Z",
+      "uploaded_by": "pix9",
+      "context": "task_text",
+      "task_id": "plant-I-1",
+      "task_title_snapshot": "Foto de la especie centrada",
+      "user_context": "La foto actual es excelente, muestra las hojas perfecto.  La tarea no tiene sentido",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "_stamp": "20260505-184931"
+    }
   ]
 }
