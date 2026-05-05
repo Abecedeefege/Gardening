@@ -784,5 +784,19 @@
       "ai_evaluation": null,
       "_stamp": "20260505-184931"
     }
+  ],
+  "I-2": [
+    {
+      "filename": null,
+      "uploaded_at": "2026-05-05T18:50:32.795Z",
+      "uploaded_by": "pix9",
+      "context": "task_text",
+      "task_id": "plant-I-2",
+      "task_title_snapshot": "Foto de la especie centrada",
+      "user_context": "La foto es excelente.  Que más precisas?",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "_stamp": "20260505-185032"
+    }
   ]
 }
