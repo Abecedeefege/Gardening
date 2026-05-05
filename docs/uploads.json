@@ -443,6 +443,16 @@
         "processed_at": "2026-05-05T14:30:00.000Z"
       },
       "user_context": "Hay otra especie más atrás del romero, subo foto"
+    },
+    {
+      "filename": "plant-B-45_20260505-150016.jpg",
+      "uploaded_at": "2026-05-05T15:00:16.036Z",
+      "uploaded_by": "pix9",
+      "context": "task",
+      "task_id": "plant-B-45",
+      "task_title_snapshot": "Foto de la especie centrada",
+      "ai_status": "pending",
+      "ai_evaluation": null
     }
   ],
   "B-43": [
