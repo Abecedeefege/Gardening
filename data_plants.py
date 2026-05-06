@@ -1151,6 +1151,17 @@ PLANTS = [
                 "due_month": 5,
                 "due_year": 2026,
             },
+            {
+                "priority": "alta",
+                "title": "Poda post-floración ATRASADA — ligera urgente",
+                "short_desc": "Ventana óptima fue marzo-abril, ya estamos en mayo. Hacer SOLO poda ligera ahora (10-15%) — quitar flores marchitas + ramas cruzadas. NO podar fuerte ni acortar puntas sanas.",
+                "detail": "La gardenia florece primavera-verano (oct-feb), así que el momento ideal de poda es JUSTO después de floración (marzo-abril) cuando todavía tiene reservas y no entra en reposo profundo. Mayo es tarde pero todavía mejor que dejarlo para el invierno (los cortes en frío profundo cicatrizan mal y la planta es delicada). Hacer SOLO poda ligera ahora — sacrificar tarea de poda fuerte para marzo-abril 2027.",
+                "how_to": "1) Día seco, sin pronóstico de heladas en 7 días. 2) Tijera afilada + alcohol 70% para desinfectar. 3) Quitar TODAS las flores marchitas/secas — corte justo abajo del cáliz. 4) Eliminar ramas que se cruzan rozando con otras (la peor orientada). 5) Sacar ramas con hojas amarillas/cloróticas (señal de pH alcalino — atacar la raíz con quelato de hierro en agosto). 6) NO acortar puntas sanas — ahí están las yemas florales para primavera próxima. 7) Pasta cicatrizante en cortes >1 cm. 8) Riego abundante post-poda + cobertura de tierra ácida (acículas de pino o turba) en la base.",
+                "tips": "La gardenia es delicada con la poda. Si dudás de cortar una rama, mejor dejarla — siempre podés cortar en la ventana correcta el año próximo (marzo-abril 2027). Aprovechar para chequear pulgones en envés — están todavía activos según la urgencia plant-B-25-3.",
+                "when": "Marzo-abril 2026 (ATRASADO — hacer ahora ligera)",
+                "due_month": 3,
+                "due_year": 2026,
+            },
         ],
     },
     {
