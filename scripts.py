@@ -219,8 +219,13 @@ function updateTodoCount() {
   const states = loadStates();
   const now = new Date();
   let active = 0;
-  TASKS.forEach(t => {
-    const s = states[t.id] || { status: 'active', snoozed_until: null };
+  const userIds = (typeof USER_TASKS !== 'undefined' && USER_TASKS) ? Object.keys(USER_TASKS) : [];
+  const allIds = [
+    ...TASKS.map(t => t.id),
+    ...userIds,
+  ];
+  allIds.forEach(id => {
+    const s = states[id] || { status: 'active', snoozed_until: null };
     let status = s.status;
     if (status === 'snoozed' && s.snoozed_until && new Date(s.snoozed_until) <= now) {
       status = 'active';
@@ -307,10 +312,12 @@ function renderTaskCard(task) {
   const cls = classifyTask(task);
   const prio = priorityInfo(task.priority);
   const overdue = isOverdue(task);
+  const isUserCreated = !!task.is_user_created;
+  const isQuestion = task.kind === 'question';
 
   const photoHtml = task.plant_photo && IMG[task.plant_photo]
     ? `<img class="task-photo" data-img="${task.plant_photo}" data-action="open-species" data-plant-code="${task.plant_codes[0]}" alt="">`
-    : `<div class="task-photo-placeholder">🌱</div>`;
+    : `<div class="task-photo-placeholder">${isQuestion ? '❓' : (isUserCreated ? '✏️' : '🌱')}</div>`;
 
   let statusPill = '';
   if (cls === 'done') {
@@ -338,17 +345,56 @@ function renderTaskCard(task) {
     </div>`;
   }
 
-  // Activas: 3 botones (Hecho / Posponer / WhatsApp). Hechas/Pospuestas: solo Reactivar.
+  // Bloque de respuesta para preguntas: si /actualizar-tareas ya respondió,
+  // mostrar el resumen de la respuesta inline en la tarjeta.
+  let answerBlock = '';
+  if (isQuestion && task.ai_answer && task.ai_answer.summary) {
+    const ans = task.ai_answer.summary.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g, '<br>');
+    const when = task.ai_answer.answered_at ? fmtDate(task.ai_answer.answered_at) : '';
+    answerBlock = `<div class="task-answer-block">
+      <div class="task-answer-head">💬 Respuesta IA${when ? ' · ' + when : ''}</div>
+      <div class="task-answer-body">${ans}</div>
+    </div>`;
+  } else if (isQuestion && cls === 'active') {
+    answerBlock = `<div class="task-answer-pending">⏳ Esperando respuesta — corré <code>/actualizar-tareas</code> en Claude Code.</div>`;
+  }
+
+  // Badges de origen — tarea propia / pregunta.
+  let originBadge = '';
+  if (isQuestion) originBadge = '<span class="task-origin-badge question">❓ Pregunta</span>';
+  else if (isUserCreated) originBadge = '<span class="task-origin-badge user">✏️ Tarea propia</span>';
+
+  // Activas: botones según tipo. Las preguntas con respuesta tienen "Marcar leída" en lugar de los botones de acción.
   let actions = '';
   if (cls === 'active') {
-    actions = `
-      <div class="task-actions">
-        <button class="task-btn task-btn-done" data-action="done" data-task-id="${task.id}">✅ Hecho</button>
-        <button class="task-btn task-btn-snooze" data-action="snooze" data-task-id="${task.id}">😴 Posponer</button>
-        <button class="task-btn task-btn-photo" data-action="photo" data-task-id="${task.id}">📷 Subir foto</button>
-        <button class="task-btn task-btn-text" data-action="text" data-task-id="${task.id}">💬 Responder</button>
-        <button class="task-btn task-btn-whatsapp" data-action="whatsapp" data-task-id="${task.id}">💬 WhatsApp</button>
-      </div>`;
+    if (isQuestion) {
+      // Preguntas: solo "Marcar leída" (= done). Sumar foto/responder más contexto si querés.
+      const hasAnswer = !!(task.ai_answer && task.ai_answer.summary);
+      actions = `
+        <div class="task-actions">
+          <button class="task-btn task-btn-done" data-action="done" data-task-id="${task.id}">${hasAnswer ? '✅ Marcar leída' : '✅ Cerrar'}</button>
+          <button class="task-btn task-btn-photo" data-action="photo" data-task-id="${task.id}">📷 Sumar foto</button>
+          <button class="task-btn task-btn-text" data-action="text" data-task-id="${task.id}">💬 Sumar contexto</button>
+        </div>`;
+    } else if (isUserCreated) {
+      // Tareas propias: hecho / posponer / foto / texto. Sin WhatsApp (no tiene contacto sugerido).
+      actions = `
+        <div class="task-actions">
+          <button class="task-btn task-btn-done" data-action="done" data-task-id="${task.id}">✅ Hecho</button>
+          <button class="task-btn task-btn-snooze" data-action="snooze" data-task-id="${task.id}">😴 Posponer</button>
+          <button class="task-btn task-btn-photo" data-action="photo" data-task-id="${task.id}">📷 Subir foto</button>
+          <button class="task-btn task-btn-text" data-action="text" data-task-id="${task.id}">💬 Responder</button>
+        </div>`;
+    } else {
+      actions = `
+        <div class="task-actions">
+          <button class="task-btn task-btn-done" data-action="done" data-task-id="${task.id}">✅ Hecho</button>
+          <button class="task-btn task-btn-snooze" data-action="snooze" data-task-id="${task.id}">😴 Posponer</button>
+          <button class="task-btn task-btn-photo" data-action="photo" data-task-id="${task.id}">📷 Subir foto</button>
+          <button class="task-btn task-btn-text" data-action="text" data-task-id="${task.id}">💬 Responder</button>
+          <button class="task-btn task-btn-whatsapp" data-action="whatsapp" data-task-id="${task.id}">💬 WhatsApp</button>
+        </div>`;
+    }
   } else {
     actions = `
       <div class="task-actions">
@@ -414,13 +460,15 @@ function renderTaskCard(task) {
           ${photoHtml}
           <div class="task-meta">
             <div class="task-meta-top">
-              <span class="task-zone-pill">${task.plant_codes.join(', ')}</span>
+              <span class="task-zone-pill">${task.plant_codes.join(', ').replace(/_general/g, 'Sin planta')}</span>
               <span class="task-id-badge" title="ID de la tarea — clickear para copiar">${task.id}</span>
+              ${originBadge}
               ${statusPill}
             </div>
             <h3 class="task-title">${task.title}</h3>
             <div class="task-plant">${task.plant_common}</div>
             ${task.short_desc ? `<p class="task-short">${task.short_desc}</p>` : ''}
+            ${answerBlock}
             ${aiBanner}
             ${aiSummaryBlock}
             ${dueText ? `<div class="task-due ${dueClass}">📅 ${overdue && cls === 'active' ? 'Vencida — ' : ''}${dueText}</div>` : ''}
@@ -434,14 +482,48 @@ function renderTaskCard(task) {
     </article>`;
 }
 
+// Convierte un user_task (questions / user-created) al shape de Task que espera renderTaskCard.
+function userTaskToTaskShape(ut) {
+  return {
+    id: ut.id,
+    kind: ut.kind || 'user_task',
+    plant_codes: ut.plant_codes && ut.plant_codes.length ? ut.plant_codes : ['_general'],
+    plant_common: ut.plant_common || (ut.plant_codes && ut.plant_codes.length ? '' : 'Sin planta'),
+    plant_zone: ut.plant_zone || null,
+    plant_photo: null,
+    title: ut.title || (ut.kind === 'question' ? 'Pregunta' : 'Tarea propia'),
+    short_desc: '',
+    description: ut.user_context || '',
+    detail: ut.user_context || '',
+    how_to: '',
+    tips: '',
+    priority: 'media',
+    due_label: '',
+    due_month: null,
+    due_year: null,
+    suggested_contact: null,
+    is_user_created: true,
+    has_photo: !!ut.has_photo,
+    photo_filename: ut.photo_filename || null,
+    ai_answer: ut.ai_answer || null,
+    created_at: ut.created_at || null,
+  };
+}
+
 function renderTimeline() {
   const feed = document.getElementById('timeline-feed');
   const empty = document.getElementById('timeline-empty');
   const summary = document.getElementById('timeline-summary');
 
+  // Combinar TASKS del catálogo + user_tasks creadas desde la app.
+  const userTaskList = (typeof USER_TASKS !== 'undefined' && USER_TASKS)
+    ? Object.values(USER_TASKS).map(userTaskToTaskShape)
+    : [];
+  const allTasks = [...TASKS, ...userTaskList];
+
   // Clasificar todas las tareas
   const buckets = { active: [], snoozed: [], done: [], all: [] };
-  TASKS.forEach(task => {
+  allTasks.forEach(task => {
     const cls = classifyTask(task);
     buckets[cls].push(task);
     buckets.all.push(task);
@@ -561,6 +643,14 @@ function renderTasksGroupedByMonth(tasks) {
 // ============================================================
 // TIMELINE — TASK INTERACTIONS (clicks + swipe)
 // ============================================================
+// Busca una tarea por id en el catálogo + las user_tasks creadas desde la app.
+function findAnyTask(taskId) {
+  const fromCat = TASKS.find(t => t.id === taskId);
+  if (fromCat) return fromCat;
+  const ut = USER_TASKS && USER_TASKS[taskId];
+  return ut ? userTaskToTaskShape(ut) : null;
+}
+
 function setupTaskInteractions(scope) {
   // Click handlers para botones de acción
   scope.querySelectorAll('button[data-action]').forEach(btn => {
@@ -568,7 +658,7 @@ function setupTaskInteractions(scope) {
       e.stopPropagation();
       const action = btn.dataset.action;
       const taskId = btn.dataset.taskId;
-      const task = TASKS.find(t => t.id === taskId);
+      const task = findAnyTask(taskId);
       if (!task) return;
       if (action === 'done') markDone(task);
       else if (action === 'snooze') openSnoozeModal(task);
@@ -654,13 +744,18 @@ function setupSwipe(card) {
     setTimeout(() => { delete card.dataset.justSwiped; }, 350);
 
     const taskId = card.dataset.taskId;
-    const task = TASKS.find(t => t.id === taskId);
+    const task = findAnyTask(taskId);
 
     if (Math.abs(dx) > 100 && task) {
       if (dx > 0) {
-        // swipe derecha → abrir modal WhatsApp
+        // swipe derecha → abrir modal WhatsApp (solo catálogo — user_tasks/questions no tienen contacto)
         card.style.transform = '';
         card.style.setProperty('--swipe-strength', 0);
+        if (task.is_user_created) {
+          // Para user-created sólo permitimos snooze a la izquierda; swipe a derecha no aplica.
+          card.style.transform = '';
+          return;
+        }
         openWhatsAppModal(task);
       } else {
         // swipe izquierda → modal snooze
@@ -2287,6 +2382,11 @@ async function openSpeciesDetailModal(plantCode) {
       </div>
     </div>
 
+    <div class="species-actions">
+      <button class="species-action-btn" data-action="ask-question" type="button">❓ Hacer pregunta</button>
+      <button class="species-action-btn" data-action="add-task" type="button">➕ Agregar tarea</button>
+    </div>
+
     <div class="species-section-photos">
       <div class="species-section-label">📷 Fotos${photoCount ? ` · ${photoCount}` : ''}</div>
       <div class="species-photos-grid" id="species-photos-grid">
@@ -2324,6 +2424,14 @@ async function openSpeciesDetailModal(plantCode) {
   grid.querySelector('[data-action="add-species-photo"]')?.addEventListener('click', () => {
     closeModal('species-detail');
     openSpeciesPhotoModal(plant);
+  });
+  body.querySelector('[data-action="ask-question"]')?.addEventListener('click', () => {
+    closeModal('species-detail');
+    openTaskComposeModal({ mode: 'question', plantCode: plant.id_codes[0] });
+  });
+  body.querySelector('[data-action="add-task"]')?.addEventListener('click', () => {
+    closeModal('species-detail');
+    openTaskComposeModal({ mode: 'user_task', plantCode: plant.id_codes[0] });
   });
 
   document.getElementById('species-detail-modal').classList.add('active');
@@ -2870,4 +2978,396 @@ document.getElementById('btn-text-ask-ai')?.addEventListener('click', async () =
       </div>`;
   }
 });
+
+// ============================================================
+// USER TASKS — tareas y preguntas creadas desde la app
+// Persistidas en docs/sync/user_tasks.json (sincronizado entre devices)
+// y cacheadas en localStorage para render inmediato.
+// ============================================================
+const USER_TASKS_KEY = 'jardineando_user_tasks_v1';
+const USER_TASKS_PATH = 'docs/sync/user_tasks.json';
+let USER_TASKS = {};   // { id: {kind, title, user_context, plant_codes, ...} }
+
+function loadUserTasksLocal() {
+  try {
+    const raw = localStorage.getItem(USER_TASKS_KEY);
+    if (raw) USER_TASKS = JSON.parse(raw);
+  } catch { USER_TASKS = {}; }
+  return USER_TASKS;
+}
+function saveUserTasksLocal() {
+  localStorage.setItem(USER_TASKS_KEY, JSON.stringify(USER_TASKS));
+}
+loadUserTasksLocal();
+
+// Fetch público de user_tasks.json (igual que task_states.json — público).
+async function fetchRemoteUserTasks() {
+  try {
+    const url = `sync/user_tasks.json?_=${Date.now()}`;
+    const r = await fetch(url, { cache: 'no-store' });
+    if (!r.ok) return null;
+    return await r.json();
+  } catch { return null; }
+}
+
+function mergeRemoteUserTasks(remote) {
+  if (!remote || !remote.tasks) return 0;
+  let changed = 0;
+  Object.entries(remote.tasks).forEach(([id, ut]) => {
+    const localUt = USER_TASKS[id];
+    const localTs = localUt?.last_modified_at || localUt?.created_at || '0';
+    const remoteTs = ut.last_modified_at || ut.created_at || '0';
+    if (remoteTs > localTs) {
+      USER_TASKS[id] = ut;
+      changed++;
+    }
+  });
+  // Si remote no tiene un id que sí está local, mantenemos el local (será pusheado en próxima escritura).
+  if (changed > 0) saveUserTasksLocal();
+  return changed;
+}
+
+async function syncReadUserTasks() {
+  const remote = await fetchRemoteUserTasks();
+  if (!remote) return;
+  const changed = mergeRemoteUserTasks(remote);
+  if (changed > 0 && typeof renderTimeline === 'function') renderTimeline();
+}
+syncReadUserTasks();
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') syncReadUserTasks();
+});
+
+// Push de user_tasks.json al repo (full snapshot, last-write-wins por id).
+async function flushUserTasksToRepo(retries = 3) {
+  if (!loadGitHubToken()) return;
+  try {
+    const { sha, data } = await ghReadJsonFile(USER_TASKS_PATH);
+    const remoteTasks = (data && data.tasks) || {};
+    const merged = { ...remoteTasks };
+    Object.entries(USER_TASKS).forEach(([id, localUt]) => {
+      const remoteUt = remoteTasks[id];
+      const localTs = localUt?.last_modified_at || localUt?.created_at || '0';
+      const remoteTs = remoteUt?.last_modified_at || remoteUt?.created_at || '0';
+      if (localTs >= remoteTs) merged[id] = localUt;
+    });
+    const payload = {
+      _synced_at: new Date().toISOString(),
+      _last_writer: loadDeviceName() || 'browser',
+      tasks: merged,
+    };
+    const json = JSON.stringify(payload, null, 2) + '\n';
+    const base64 = btoa(unescape(encodeURIComponent(json)));
+    await ghPutFile(USER_TASKS_PATH, base64, `user-tasks: actualizar desde ${loadDeviceName() || 'browser'}`, sha);
+    USER_TASKS = merged;
+    saveUserTasksLocal();
+  } catch (err) {
+    if (retries > 0 && /409|412|5\d\d/.test(String(err.message))) {
+      const delay = 600 * Math.pow(2, 3 - retries);
+      await new Promise(r => setTimeout(r, delay));
+      return flushUserTasksToRepo(retries - 1);
+    }
+    console.warn('user_tasks flush falló:', err);
+    throw err;
+  }
+}
+
+// ============================================================
+// TASK-COMPOSE MODAL — crear tarea propia o hacer pregunta
+// Se invoca desde el botón "+ Nueva tarea" del Timeline o desde
+// los botones "❓ Hacer pregunta" / "➕ Agregar tarea" del species modal.
+// ============================================================
+let composeState = { mode: null, plantCode: null, blob: null };
+
+function openTaskComposeModal({ mode, plantCode } = {}) {
+  composeState = { mode: mode || 'user_task', plantCode: plantCode || null, blob: null };
+
+  const titleEl = document.getElementById('task-compose-title');
+  const ctxEl = document.getElementById('task-compose-context');
+  const titleLabel = document.getElementById('compose-title-label');
+  const titleInput = document.getElementById('compose-title');
+  const textLabel = document.getElementById('compose-text-label');
+  const textHint = document.getElementById('compose-text-hint');
+  const textArea = document.getElementById('compose-text');
+  const submitBtn = document.getElementById('btn-compose-submit');
+  const plantRow = document.getElementById('compose-plant-row');
+  const plantSelect = document.getElementById('compose-plant-select');
+  const previewWrap = document.getElementById('compose-photo-preview-wrap');
+  const photoPick = document.getElementById('compose-photo-pick');
+
+  // Reset
+  titleInput.value = '';
+  textArea.value = '';
+  if (previewWrap) previewWrap.hidden = true;
+  if (photoPick) photoPick.hidden = false;
+
+  // Buscar la planta si hay plantCode
+  let plantInfo = null;
+  if (plantCode && typeof PLANTS_INFO !== 'undefined') {
+    plantInfo = PLANTS_INFO.find(p => (p.id_codes || []).includes(plantCode));
+  }
+  composeState.plantInfo = plantInfo;
+
+  if (composeState.mode === 'question') {
+    titleEl.textContent = '❓ Hacer pregunta';
+    titleLabel.style.display = 'none';
+    titleInput.style.display = 'none';
+    textLabel.querySelector('strong').textContent = 'Tu pregunta';
+    textHint.textContent = 'Sé concreto: ¿qué querés saber? Sumá foto si ayuda.';
+    textArea.placeholder = 'Ej: ¿es buen momento para podar fuerte? ¿Qué tiene esta hoja?';
+    submitBtn.textContent = '📤 Hacer pregunta';
+  } else {
+    titleEl.textContent = '＋ Nueva tarea';
+    titleLabel.style.display = '';
+    titleInput.style.display = '';
+    textLabel.querySelector('strong').textContent = 'Detalles / contexto';
+    textHint.textContent = 'Lo que querés que sepa la IA al procesar esto. Opcional.';
+    textArea.placeholder = 'Ej: regué con manguera, parece que necesita drenar mejor...';
+    submitBtn.textContent = '📤 Crear tarea';
+  }
+
+  // Subtítulo de contexto + selector de planta (solo modo user_task sin plantCode)
+  if (plantInfo) {
+    const codes = plantInfo.id_codes.join(', ');
+    ctxEl.textContent = `🌱 ${plantInfo.common} (${codes})`;
+    plantRow.hidden = true;
+  } else if (composeState.mode === 'question') {
+    ctxEl.textContent = '🌱 Sin planta — pregunta general';
+    plantRow.hidden = true;
+  } else {
+    ctxEl.textContent = '';
+    plantRow.hidden = false;
+    if (plantSelect && typeof PLANTS_INFO !== 'undefined') {
+      // Llenar el select solo una vez
+      if (plantSelect.options.length <= 1) {
+        const sorted = [...PLANTS_INFO].sort((a, b) => (a.common || '').localeCompare(b.common || ''));
+        sorted.forEach(p => {
+          const opt = document.createElement('option');
+          opt.value = p.id_codes[0];
+          opt.textContent = `${p.common} (${p.id_codes.join(', ')})`;
+          plantSelect.appendChild(opt);
+        });
+      }
+      plantSelect.value = '';
+    }
+  }
+
+  const hasToken = !!loadGitHubToken();
+  if (hasToken && !ensurePrivacyAcknowledged()) return;
+  setComposeStage(hasToken ? 'write' : 'setup');
+  document.getElementById('task-compose-modal').classList.add('active');
+}
+
+function setComposeStage(stage) {
+  document.querySelectorAll('#task-compose-modal .task-photo-stage').forEach(s => {
+    s.hidden = (s.dataset.stage !== stage);
+  });
+}
+
+document.getElementById('btn-compose-go-settings')?.addEventListener('click', () => {
+  closeModal('task-compose');
+  openSettingsModal();
+});
+
+// Botón principal del Timeline.
+document.getElementById('btn-create-task')?.addEventListener('click', () => {
+  openTaskComposeModal({ mode: 'user_task' });
+});
+
+// File inputs (cámara / galería).
+['compose-camera-input', 'compose-gallery-input'].forEach(id => {
+  document.getElementById(id)?.addEventListener('change', async (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    e.target.value = '';
+    await loadAndPreviewComposePhoto(file);
+  });
+});
+
+document.getElementById('btn-compose-photo-remove')?.addEventListener('click', () => {
+  composeState.blob = null;
+  const wrap = document.getElementById('compose-photo-preview-wrap');
+  const pick = document.getElementById('compose-photo-pick');
+  if (wrap) wrap.hidden = true;
+  if (pick) pick.hidden = false;
+});
+
+async function loadAndPreviewComposePhoto(file) {
+  try {
+    // Resize sin overlay (las tareas/preguntas creadas por el user no tienen task_id del catálogo).
+    const blob = await resizeImagePlain(file, 1024, 0.85);
+    composeState.blob = blob;
+    const canvas = document.getElementById('compose-photo-canvas');
+    const url = URL.createObjectURL(blob);
+    const img = new Image();
+    img.onload = () => {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      canvas.getContext('2d').drawImage(img, 0, 0);
+      URL.revokeObjectURL(url);
+      const wrap = document.getElementById('compose-photo-preview-wrap');
+      const pick = document.getElementById('compose-photo-pick');
+      if (wrap) wrap.hidden = false;
+      if (pick) pick.hidden = true;
+    };
+    img.src = url;
+  } catch (err) {
+    alert('Error procesando la foto: ' + err.message);
+  }
+}
+
+// Resize sin overlay (similar a resizeAndStampImage pero sin la metadata burnt-in).
+async function resizeImagePlain(file, maxSide, quality) {
+  const img = await new Promise((resolve, reject) => {
+    const i = new Image();
+    i.onload = () => resolve(i);
+    i.onerror = () => reject(new Error('No se pudo leer la imagen'));
+    i.src = URL.createObjectURL(file);
+  });
+  let { width, height } = img;
+  if (width > maxSide || height > maxSide) {
+    if (width >= height) {
+      height = Math.round(height * (maxSide / width));
+      width = maxSide;
+    } else {
+      width = Math.round(width * (maxSide / height));
+      height = maxSide;
+    }
+  }
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+  URL.revokeObjectURL(img.src);
+  return await new Promise((resolve, reject) => {
+    canvas.toBlob(b => b ? resolve(b) : reject(new Error('toBlob falló')), 'image/jpeg', quality);
+  });
+}
+
+document.getElementById('btn-compose-submit')?.addEventListener('click', submitCompose);
+
+async function submitCompose() {
+  const mode = composeState.mode || 'user_task';
+  const text = (document.getElementById('compose-text').value || '').trim();
+  let title = (document.getElementById('compose-title').value || '').trim();
+
+  if (mode === 'user_task' && !title) {
+    alert('Escribí un título corto para la tarea.');
+    return;
+  }
+  if (mode === 'question' && !text && !composeState.blob) {
+    alert('Escribí la pregunta o sumá una foto.');
+    return;
+  }
+
+  // Determinar plantCode final: el que vino en composeState o el del select
+  let plantCode = composeState.plantCode;
+  if (!plantCode && mode === 'user_task') {
+    const sel = document.getElementById('compose-plant-select');
+    if (sel && sel.value) plantCode = sel.value;
+  }
+  let plantInfo = composeState.plantInfo;
+  if (!plantInfo && plantCode && typeof PLANTS_INFO !== 'undefined') {
+    plantInfo = PLANTS_INFO.find(p => (p.id_codes || []).includes(plantCode));
+  }
+
+  // Para preguntas, si no hay título usamos el primer renglón del texto.
+  if (mode === 'question') {
+    title = (text.split('\n')[0] || 'Pregunta').slice(0, 80);
+  }
+
+  setComposeStage('result');
+  const result = document.getElementById('task-compose-result');
+  result.innerHTML = `<div class="task-photo-uploading">⏳ Subiendo al repo…</div>`;
+
+  try {
+    const now = new Date();
+    const stamp = now.toISOString().replace(/[-:]/g, '').replace(/\..+/, '').replace('T', '-').slice(0, 15);
+    const rand = Math.random().toString(16).slice(2, 6);
+    const id = `user-${now.getTime()}-${rand}`;
+    const bucketKey = plantCode || '_general';
+
+    let filename = null;
+    let photoPath = null;
+    if (composeState.blob) {
+      filename = `${id}_${stamp}.jpg`;
+      photoPath = `docs/images/uploads/${bucketKey}/${filename}`;
+      const base64 = await blobToBase64(composeState.blob);
+      await ghPutFile(photoPath, base64, `compose: foto para ${id}`);
+    }
+
+    // 1. Crear el user_task entry y pushearlo a sync/user_tasks.json
+    const userTask = {
+      id,
+      kind: mode,  // "user_task" | "question"
+      title,
+      user_context: text || '',
+      plant_codes: plantCode ? [plantCode] : [],
+      plant_common: plantInfo ? (plantInfo.common || '') : '',
+      plant_zone: plantInfo ? (plantInfo.zone || '') : '',
+      created_at: now.toISOString(),
+      created_by: loadDeviceName() || 'browser',
+      last_modified_at: now.toISOString(),
+      has_photo: !!filename,
+      photo_filename: filename,
+      ai_answer: null,
+    };
+    USER_TASKS[id] = userTask;
+    saveUserTasksLocal();
+    await flushUserTasksToRepo();
+
+    // 2. Append entry a docs/uploads.json para que /actualizar-tareas lo procese.
+    const uploadsPath = 'docs/uploads.json';
+    const { sha, data } = await ghReadJsonFile(uploadsPath);
+    const idx = data || {};
+    if (!idx[bucketKey]) idx[bucketKey] = [];
+    const uploadEntry = {
+      filename,  // null si no hay foto
+      uploaded_at: now.toISOString(),
+      uploaded_by: loadDeviceName() || 'desconocido',
+      context: mode,  // "user_task" | "question"
+      task_id: id,
+      task_title_snapshot: title,
+      ai_status: 'pending',
+      ai_evaluation: null,
+    };
+    if (text) uploadEntry.user_context = text;
+    if (plantCode) uploadEntry.plant_id = plantCode;
+    idx[bucketKey].push(uploadEntry);
+    const newJson = JSON.stringify(idx, null, 2) + '\n';
+    const newBase64 = btoa(unescape(encodeURIComponent(newJson)));
+    await ghPutFile(uploadsPath, newBase64, `compose: registrar ${id} en uploads.json`, sha);
+
+    // 3. Setear estado inicial active en task_states.json (para que aparezca en feed Activas).
+    setTaskState(id, { status: 'active', snoozed_until: null, completed_at: null });
+
+    // 4. Re-render timeline.
+    if (typeof renderTimeline === 'function') renderTimeline();
+
+    const labelKind = mode === 'question' ? 'pregunta' : 'tarea';
+    const photoLink = photoPath
+      ? `<p class="task-photo-success-link"><a href="https://github.com/${GH_REPO}/blob/main/${photoPath}" target="_blank" rel="noopener">Ver foto en GitHub →</a></p>`
+      : '';
+    result.innerHTML = `
+      <div class="task-photo-success">
+        <div class="task-photo-success-title">✅ ${labelKind[0].toUpperCase() + labelKind.slice(1)} subida</div>
+        <p>Aparece en el Timeline como <strong>activa</strong> y queda <strong>pending</strong> de evaluación IA.</p>
+        <p class="task-photo-success-hint">Para procesarla, abrí Claude Code y corré:</p>
+        <code class="task-photo-success-cmd">/actualizar-tareas</code>
+        ${photoLink}
+      </div>
+      <button class="btn-primary" onclick="closeModal('task-compose')">Listo</button>`;
+  } catch (err) {
+    const msg = err.message || String(err);
+    result.innerHTML = `
+      <div class="task-photo-error">
+        <div class="task-photo-error-title">❌ No se pudo subir</div>
+        <p>${msg}</p>
+      </div>
+      <div class="task-photo-actions">
+        <button class="btn-secondary" onclick="setComposeStage('write')">↺ Volver</button>
+        <button class="btn-secondary" onclick="closeModal('task-compose')">Cancelar</button>
+      </div>`;
+  }
+}
 """

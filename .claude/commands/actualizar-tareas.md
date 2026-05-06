@@ -33,9 +33,11 @@ Leé `docs/uploads.json`. Tiene la forma:
 Filtrar entries con `ai_status: "pending"`. Si no hay ninguna, decir "No hay items pendientes de evaluar" y terminar.
 
 Tipos de entries posibles según `context`:
-- `"task"` → upload de foto para una tarea. Tiene `filename` válido, leer la imagen.
-- `"task_text"` → respuesta SOLO TEXTO sin foto. `filename` es `null`. El contenido a evaluar está en `user_context`. NO intentar leer una imagen.
+- `"task"` → upload de foto para una tarea del catálogo. Tiene `filename` válido, leer la imagen.
+- `"task_text"` → respuesta SOLO TEXTO sin foto a una tarea del catálogo. `filename` es `null`. El contenido a evaluar está en `user_context`. NO intentar leer una imagen.
 - `"species"` → foto de catálogo, no requiere evaluación de IA. Saltar (dejar `ai_status: "n/a"`).
+- `"user_task"` → **tarea creada por el user desde la app** (botón "＋ Nueva tarea" del Timeline o "➕ Agregar tarea" del species modal). `task_id` empieza con `user-`. Puede tener foto (`filename` válido) o ser solo-texto (`filename: null`). El user describió la tarea en `task_title_snapshot` y `user_context`. La tarea vive en `docs/sync/user_tasks.json` con `kind: "user_task"`.
+- `"question"` → **pregunta del user sobre una planta** (botón "❓ Hacer pregunta" del species modal). Mismo shape que `user_task` pero esperás generar una respuesta. La pregunta vive en `docs/sync/user_tasks.json` con `kind: "question"`. Si tiene foto, leerla. La pregunta está en `user_context` (y/o se ve en la foto).
 
 **Importante:** Si una entry tiene campo `user_context`, ese texto es contexto valioso del usuario (ej: "ambas comparten la base de un tronco viejo", "no germina hace 3 semanas"). Leerlo SIEMPRE antes de evaluar y usarlo para informar la decisión. Para `task_text`, ES la respuesta del usuario; para `task` con foto, complementa lo que se observa.
 
@@ -171,6 +173,38 @@ Después del push, reportá:
 ### Foto de upload de especie (`context: "species"`)
 
 No requiere evaluación. Solo registrar (ya está en uploads.json). Si querés, podés sumar a gallery de la planta en `data_plants.py` (campo `gallery: [...]`) — preguntale al usuario si lo hacemos. Marcar `ai_status: "n/a"` (no es pending).
+
+### Tarea creada por el user (`context: "user_task"`)
+
+Estas tareas viven en `docs/sync/user_tasks.json` (no en `data_plants.py`). El `task_id` empieza con `user-`. El user las creó porque quiere recordar/hacer algo que el catálogo no cubre.
+
+Posibles decisiones:
+
+1. **Marcar hecha** (si la foto/texto evidencia que ya está cumplida): igual que `task` — actualizar `task_states.json` con `status: "done"`, `completed_at`, `completed_via_ai: true`, `ai_summary`. La entry se queda en `user_tasks.json` para que se vea en feed "Hechas".
+
+2. **Override con next_steps** (si falta info o la tarea no se completó): mismo patrón que `task` — `description_override` + `last_ai_summary` en `task_states.json`.
+
+3. **Promover a urgency en `data_plants.py`** (si la tarea es estructural/recurrente — ej. "regar este plantín cada 3 días", "podar este arbusto cada año"): agregá una nueva urgencia en la planta correspondiente y, en el mismo commit, **eliminá la entry de `user_tasks.json`**. Si tenía estado en `task_states.json`, migrá ese estado al nuevo `task_id` del catálogo (formato `plant-<id>-N` según idx). En el commit message indicar "promote: user-XXX → plant-YYY-N".
+
+4. **Hacer la pregunta al user** (si la tarea es ambigua): agregá una urgency clarificadora en `data_plants.py` y override la `description_override` de la user_task apuntando al nuevo task del catálogo.
+
+### Pregunta del user (`context: "question"`)
+
+Vive en `docs/sync/user_tasks.json` con `kind: "question"`. Esperás generar una respuesta concreta:
+
+1. Leer la pregunta (`user_context` y/o foto).
+2. Generar respuesta (1-3 párrafos en español uruguayo, accionable, sin inventar).
+3. Escribir en `docs/sync/user_tasks.json[id].ai_answer`:
+   ```json
+   {
+     "summary": "<respuesta concreta>",
+     "answered_at": "<now ISO>"
+   }
+   ```
+   Y actualizar `last_modified_at` de la entry.
+4. **NO marcar la tarea como done** — el user la cierra manualmente cuando lee la respuesta (botón "Marcar leída").
+5. Si la pregunta revela una tarea necesaria (ej. "¿debería podar?" → sí + acción concreta), agregá ADEMÁS una urgency en `data_plants.py` para esa planta. Mencionalo al final del `ai_answer.summary` ("Te dejé una urgency nueva con los pasos concretos").
+6. En `uploads.json`, marcar la entry como `ai_status: "processed"` con `ai_evaluation: { resolved: true, summary: "<resp>", processed_at: "<now>" }`.
 
 ### Múltiples fotos para la misma tarea
 

@@ -584,6 +584,9 @@ def build_timeline_view(tasks, img_data):
       <h3>📋 Timeline de tareas</h3>
       <p>Tu próxima acción aparece arriba. Marcá hecho, posponé, o pedí ayuda con un mensaje pre-armado de WhatsApp.</p>
     </div>
+    <div class="timeline-actions">
+      <button class="btn-create-task" id="btn-create-task">＋ Nueva tarea</button>
+    </div>
     <div class="timeline-controls">
       <div class="filter-tags timeline-filters">
         <button class="ftag active" data-filter="active">📌 Activas</button>
@@ -815,6 +818,81 @@ def build_timeline_view(tasks, img_data):
 
     <div class="task-photo-stage" data-stage="result" hidden>
       <div class="task-photo-result" id="task-text-result"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Compose (crear tarea propia / hacer pregunta) -->
+<div class="modal" id="task-compose-modal">
+  <div class="modal-content modal-wide">
+    <button class="modal-close" data-close="task-compose">✕</button>
+    <h3 id="task-compose-title">＋ Nueva tarea</h3>
+    <p class="task-photo-name" id="task-compose-context"></p>
+
+    <!-- Stage: setup falta PAT -->
+    <div class="task-photo-stage" data-stage="setup" hidden>
+      <div class="task-photo-warning">
+        ⚠️ Necesitás configurar tu GitHub Personal Access Token antes de crear tareas o preguntas.
+      </div>
+      <button class="btn-primary" id="btn-compose-go-settings">⚙️ Ir a Configuración</button>
+    </div>
+
+    <!-- Stage: write -->
+    <div class="task-photo-stage" data-stage="write">
+      <div class="compose-plant-row" id="compose-plant-row" hidden>
+        <label class="settings-label">
+          <strong>Planta (opcional)</strong>
+          <span class="settings-hint">Atá esta tarea a una planta específica para mejor contexto.</span>
+        </label>
+        <select id="compose-plant-select" class="settings-input">
+          <option value="">— Sin planta específica —</option>
+        </select>
+      </div>
+
+      <label class="settings-label" id="compose-title-label">
+        <strong>Título corto</strong>
+        <span class="settings-hint">Resumí en 1 línea (max 80 caracteres).</span>
+      </label>
+      <input type="text" id="compose-title" class="settings-input" maxlength="80" placeholder="Ej: Trasplantar el helecho del fondo">
+
+      <label class="settings-label" style="margin-top: 10px;">
+        <strong id="compose-text-label">Detalles / contexto</strong>
+        <span class="settings-hint" id="compose-text-hint">Lo que querés que sepa la IA al procesar esto.</span>
+      </label>
+      <textarea id="compose-text" class="settings-input" rows="4" maxlength="1000" placeholder="Notas, contexto, ángulo, etc."></textarea>
+
+      <div class="compose-photo-section">
+        <label class="settings-label">
+          <strong>Foto (opcional)</strong>
+          <span class="settings-hint">Sumá una foto si ayuda a explicar.</span>
+        </label>
+        <div class="task-photo-buttons" id="compose-photo-pick">
+          <label class="task-photo-btn">
+            <input type="file" accept="image/*" capture="environment" id="compose-camera-input" class="visually-hidden">
+            <span class="task-photo-btn-emoji">📸</span>
+            <span class="task-photo-btn-label">Sacá una foto</span>
+          </label>
+          <label class="task-photo-btn">
+            <input type="file" accept="image/*" id="compose-gallery-input" class="visually-hidden">
+            <span class="task-photo-btn-emoji">🖼️</span>
+            <span class="task-photo-btn-label">Subí una existente</span>
+          </label>
+        </div>
+        <div class="task-photo-preview-wrap" id="compose-photo-preview-wrap" hidden>
+          <canvas id="compose-photo-canvas"></canvas>
+          <button class="btn-secondary" id="btn-compose-photo-remove" style="margin-top: 8px;">↺ Quitar foto</button>
+        </div>
+      </div>
+
+      <div class="task-photo-actions" style="margin-top: 12px;">
+        <button class="btn-secondary" data-close="task-compose">Cancelar</button>
+        <button class="btn-primary" id="btn-compose-submit">📤 Crear</button>
+      </div>
+    </div>
+
+    <!-- Stage: result -->
+    <div class="task-photo-stage" data-stage="result" hidden>
+      <div class="task-photo-result" id="task-compose-result"></div>
     </div>
   </div>
 </div>

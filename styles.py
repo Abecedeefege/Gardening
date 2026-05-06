@@ -996,6 +996,119 @@ h2.subbrand {
   background: var(--text); color: white; border-color: var(--text);
 }
 
+/* TIMELINE — botón "+ Nueva tarea" arriba del feed */
+.timeline-actions {
+  display: flex; justify-content: flex-end;
+  margin-bottom: 2px;
+}
+.btn-create-task {
+  background: var(--text);
+  color: white;
+  border: 1px solid var(--text);
+  padding: 9px 16px;
+  font-size: 0.92rem; font-weight: 600;
+  cursor: pointer; border-radius: var(--r-full);
+  transition: all var(--t);
+  letter-spacing: -0.005em;
+  flex: 0 0 auto;
+}
+.btn-create-task:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+.btn-create-task:active {
+  transform: translateY(0);
+}
+
+/* SPECIES MODAL — botones de acción "Hacer pregunta" / "Agregar tarea" */
+.species-actions {
+  display: flex; gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+.species-action-btn {
+  flex: 1 1 auto;
+  min-width: 140px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  padding: 10px 14px;
+  font-size: 0.92rem; font-weight: 600;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: all var(--t);
+}
+.species-action-btn:hover {
+  background: var(--text); color: white; border-color: var(--text);
+  transform: translateY(-1px);
+}
+.species-action-btn:active { transform: translateY(0); }
+
+/* TASK CARD — badges de origen + bloque de respuesta IA para preguntas */
+.task-origin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: var(--r-full);
+  letter-spacing: -0.005em;
+}
+.task-origin-badge.user {
+  background: rgba(99, 102, 241, 0.12);
+  color: #4f46e5;
+  border: 1px solid rgba(79, 70, 229, 0.25);
+}
+.task-origin-badge.question {
+  background: rgba(217, 119, 6, 0.12);
+  color: #b45309;
+  border: 1px solid rgba(180, 83, 9, 0.25);
+}
+.task-answer-block {
+  margin: 8px 0;
+  padding: 10px 12px;
+  background: rgba(34, 197, 94, 0.08);
+  border-left: 3px solid #16a34a;
+  border-radius: var(--r-md);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+.task-answer-head {
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: #15803d;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.task-answer-pending {
+  margin: 8px 0;
+  padding: 8px 10px;
+  background: var(--bg-soft);
+  border-left: 3px solid var(--border-strong);
+  border-radius: var(--r-md);
+  font-size: 0.82rem;
+  color: var(--text-2);
+}
+.task-answer-pending code {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.78rem;
+}
+
+/* COMPOSE MODAL — sección de foto opcional */
+.compose-photo-section {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-soft);
+}
+.compose-plant-row {
+  margin-bottom: 14px;
+}
+
 /* SETTINGS MODAL */
 .settings-intro {
   font-size: 0.85rem; color: var(--text-2);
