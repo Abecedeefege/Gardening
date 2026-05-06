@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-05T19:00:00.000Z",
-  "_last_writer": "claude-code-cli",
+  "_synced_at": "2026-05-06T18:19:43.517Z",
+  "_last_writer": "pix9",
   "tasks": {
     "plant-F-9": {
       "status": "done",
@@ -271,6 +271,12 @@
       "completed_via_ai": true,
       "ai_summary": "User confirma que la foto actual de la Difenbaquia (I-2) ya es excelente y la tarea de 'foto centrada' no tiene sentido. Cerrada por innecesaria.",
       "last_modified_at": "2026-05-05T19:00:00.000Z"
+    },
+    "plant-B-6-2": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-06T18:19:37.508Z",
+      "last_modified_at": "2026-05-06T18:19:37.512Z"
     }
   }
 }
