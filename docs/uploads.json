@@ -875,6 +875,17 @@
       "ai_status": "pending",
       "ai_evaluation": null,
       "user_context": "Dame una lista de las opciones ideales para plantar ahora en mayo"
+    },
+    {
+      "filename": null,
+      "uploaded_at": "2026-05-07T13:33:34.168Z",
+      "uploaded_by": "pix9",
+      "context": "user_task",
+      "task_id": "user-1778160814168-a314",
+      "task_title_snapshot": "Tareas para plantas aún no identificadas",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Crea una tarea para cada una de las especies que aún no están 100% confirmadas así cerramos ese tema"
     }
   ]
 }
