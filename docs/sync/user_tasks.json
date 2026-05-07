@@ -1,5 +1,21 @@
 {
-  "_synced_at": "2026-05-06T19:00:00.000Z",
-  "_last_writer": "claude-code-cli",
-  "tasks": {}
+  "_synced_at": "2026-05-07T13:32:38.874Z",
+  "_last_writer": "pix9",
+  "tasks": {
+    "user-1778160757771-7240": {
+      "id": "user-1778160757771-7240",
+      "kind": "user_task",
+      "title": "Frutas y verduras ideales para plantar en mayo",
+      "user_context": "Dame una lista de las opciones ideales para plantar ahora en mayo",
+      "plant_codes": [],
+      "plant_common": "",
+      "plant_zone": "",
+      "created_at": "2026-05-07T13:32:37.771Z",
+      "created_by": "pix9",
+      "last_modified_at": "2026-05-07T13:32:37.771Z",
+      "has_photo": false,
+      "photo_filename": null,
+      "ai_answer": null
+    }
+  }
 }
