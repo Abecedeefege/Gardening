@@ -5,7 +5,20 @@ allowed-tools: Read, Bash, Edit, Write
 
 # /actualizar-tareas — Procesador de fotos pendientes
 
-Tu trabajo: revisar las fotos que el usuario subió desde el sitio web a `docs/images/uploads/` y decidir si cada tarea asociada queda resuelta o necesita pasos adicionales. NO haces commits automáticamente — siempre proponés primero y esperás confirmación.
+Tu trabajo: revisar las fotos que el usuario subió desde el sitio web a `docs/images/uploads/` y decidir si cada tarea asociada queda resuelta o necesita pasos adicionales.
+
+## Reglas de autonomía total
+
+El user invoca `/actualizar-tareas` esperando que cuando termines, **TODO esté hecho y pusheado**. Eso incluye:
+
+- **Procesar TODOS los canales de feedback en este orden**:
+  1. `docs/uploads.json` — entries con `ai_status: "pending"` (incluye `task`, `task_text`, `user_task`, `question`).
+  2. `docs/sync/user_tasks.json` — tasks con `kind: "user_task"` sin estado final en `task_states.json` + questions con `kind: "question"` sin `ai_answer`.
+  3. Cualquier rincón nuevo que el user empiece a usar — si descubrís algo, procesarlo igual.
+- **Si `user_tasks.json` aparece sospechosamente vacío** y el user reporta que creó tareas, asumí que el sync no está corriendo (probable bug en producción). Pedí screenshot o el contenido de `localStorage.jardineando_user_tasks_v1`. Reconstruí y procesá.
+- **Mergear PRs propios y pushear a `main` directamente** si bloquean el deploy de fixes que la app necesita para funcionar. La regla de "develop on the designated branch" cae cuando se trata de unblockear producción para que el feedback del user empiece a fluir de nuevo. Si la branch es ancestro estricto de `main` o vice versa, hacer `git merge --ff-only` + `git push origin main` sin preguntar.
+- **No pedirle al user que haga PRs, pushes, merges ni clicks de admin.** El user da feedback (foto, texto, tarea creada) y eso es todo lo que se le pide. Todo el resto es responsabilidad de Claude Code.
+- **Sin batches de confirmación**: procesar + aplicar + commit + push, todo en una pasada. El user invocó el comando esperando que cuando termines, esté todo hecho.
 
 ## Procedimiento
 

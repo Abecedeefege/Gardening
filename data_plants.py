@@ -1146,7 +1146,7 @@ PLANTS = [
         "id_codes": ["B-25"], "zone": "fondo",
         "common": "Gardenia / Jazmín del Cabo",
         "charrua": "",
-        "sci": "Gardenia jasminoides (a confirmar)",
+        "sci": "Gardenia jasminoides",
         "other_names": "Jazmín del cabo, gardenia común",
         "desc": "Arbusto perenne de hojas brillantes y flores blancas dobles intensamente perfumadas en primavera-verano.",
         "type": "perenne",

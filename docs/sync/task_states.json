@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-07T13:33:44.162Z",
-  "_last_writer": "pix9",
+  "_synced_at": "2026-05-07T14:00:00.000Z",
+  "_last_writer": "claude-code-cli",
   "tasks": {
     "plant-F-9": {
       "status": "done",
@@ -251,10 +251,13 @@
       "last_modified_at": "2026-05-05T18:50:16.757Z"
     },
     "plant-F-1-3": {
-      "status": "snoozed",
-      "snoozed_until": "2026-05-06T18:52:00.868Z",
+      "status": "active",
+      "snoozed_until": null,
       "completed_at": null,
-      "last_modified_at": "2026-05-05T18:52:00.869Z"
+      "description_override": "Buen ojo en preguntar — la lluvia ayuda pero NO sustituye la manguereada porque el agua que cae moja casi todo el anverso pero deja seco el envés (donde se acumula más polvo y donde se esconden plagas). Lo que sí podés hacer hoy: dejar que la lluvia limpie lo que pueda, y volver mañana o pasado con sol y manguera para chequear. **Si después de eso el follaje SIGUE con manchas blanco-grises, no es polvo — pasamos a inspección.** Sacá foto MUY cercana (10 cm de la hoja) del anverso y reverso de 2-3 hojas afectadas, contra fondo blanco/mano si podés. Diferencias diagnósticas: (a) **polvo/tierra** — sale completo con agua a presión y dedo, hojas sanas debajo; (b) **oídio** — pátina blanca harinosa que se levanta con el dedo pero deja la hoja con tinte amarillo debajo; (c) **escama/cochinilla** — escudos duros adheridos, no salen con agua; (d) **entomosporium** (típico en Fotinia, raro en Acca) — manchas circulares rojo-marrón con halo. Cuando subas las fotos cercanas vemos qué tratamiento corresponde.",
+      "description_override_at": "2026-05-07T14:00:00.000Z",
+      "last_ai_summary": "User pregunta si la lluvia alcanza para limpiar y sospecha que NO es solo polvo. La lluvia no reemplaza manguereada (no llega bien al envés) y la sospecha es razonable — pedir foto cercana del envés contra fondo blanco para diagnosticar polvo vs oídio vs escama vs entomosporium.",
+      "last_modified_at": "2026-05-07T14:00:00.000Z"
     },
     "plant-I-1": {
       "status": "done",
@@ -321,16 +324,20 @@
       "last_modified_at": "2026-05-07T13:28:36.177Z"
     },
     "user-1778160757771-7240": {
-      "status": "active",
+      "status": "done",
       "snoozed_until": null,
-      "completed_at": null,
-      "last_modified_at": "2026-05-07T13:32:42.540Z"
+      "completed_at": "2026-05-07T14:00:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Listado para Montevideo (lat -34.9°S, otoño/inicio invierno). VERDURAS para sembrar/transplantar AHORA en mayo: ajo (a diente directo, 10-15 cm enterrado, cosecha enero), cebolla (de almácigo a definitivo), habas, arvejas (semilla directa), lechuga de invierno (mantecosa, romana — plantines), espinaca, acelga, rúcula, perejil, cilantro, repollo y coliflor (plantines). HIERBAS: tomillo, orégano, ciboulette ya establecidos toleran trasplante; lavanda mejor en jul-ago. FRUTAS: la ventana óptima de plantación de frutales caducos (manzano, ciruelo, durazno, peral, cerezo, higo, kaki, ciruelo japonés) es JULIO-AGOSTO a raíz desnuda en plena dormancia — en mayo es prematuro pero podés ir abonando los lugares previstos. Cítricos NO van en mayo (frío) — esperar octubre. BERRIES: frutillas SÍ van bien ahora (corona descubierta, lugar soleado, riego moderado). Arándano y frambuesa también van bien plantar a partir de junio. EVITAR en mayo: tomate, morrón, zapallo, pepino, sandía, melón, berenjena (todos van en sept-oct). Si querés un plan concreto para tu jardín avísame qué espacio tenés disponible (cantero, maceta, fondo) y armo lista priorizada con compañeros plantados.",
+      "last_modified_at": "2026-05-07T14:00:00.000Z"
     },
     "user-1778160814168-a314": {
-      "status": "active",
+      "status": "done",
       "snoozed_until": null,
-      "completed_at": null,
-      "last_modified_at": "2026-05-07T13:33:38.616Z"
+      "completed_at": "2026-05-07T14:00:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Auditoría completa: las 16 especies no 100% confirmadas YA TIENEN cada una su urgency de identificación específica. Listado y ventana esperada (mes recomendado para foto/foto+flor que cierra ID): F-5 Coronita de novia (Spiraea? — flor sept-oct) → existing 'Confirmar especie viendo la floración'; B-2 Jazmín → 'Foto en floración + decidir hijos' (oct-dic); B-9 Crespón (Lagerstroemia? — confirmado por hojas/corteza, falta flor) → 'Confirmar especie en floración' (ene-feb); B-13 Clivia (confirmado por porte) → 'Confirmar especie en floración' (sept-oct para flor naranja); B-14 sospecha lapachillo → 'Foto en floración para ID' (ago-sept); B-15 vegetación galpón → 'Acercarse y fotografiar de cerca' (cuando puedas con escalera); B-20 arbusto caduco → 'Foto al brotar (sept-oct)'; B-25 Gardenia (confirmado por síntomas) → ahora marcado 100%, no necesita más confirmación; B-32 varitas peladas → 'Foto del brote primaveral' (sept-oct); B-34 Mandioca brava (recién identificada tentativa) → 'Confirmar con foto de flor' (oct-dic); B-40 Lonicera nitida → 'Confirmar en floración' (oct-nov); B-41 Caqui → 'Confirmar variedad' refoto en mayo 2027 con frutos; B-45 sin identificar → 'Foto hoja + flor' (oct-dic); B-46 vivero → '6 urgencies por subgrupo' + 'Subir fotos plantines incógnita'; B-47 palmeras butiá vs pindó → 'Confirmar especie' (esperar hojas pinnadas adultas, feb 2027); B-49 trifoliado → 'Confirmar trifoliado (esperar flor primavera)' (oct-nov 2026). Refactor adicional aplicado: B-25 Gardenia removido '(a confirmar)' — los síntomas (pulgones, hormigas, cloración férrica) son inequívocos. ⚠️ NADA QUE HACER POR EL USER AHORA: cada urgency está scheduleada para su ventana botánica óptima.",
+      "last_modified_at": "2026-05-07T14:00:00.000Z"
     }
   }
 }
