@@ -67,6 +67,60 @@ def esc(s):
 MONTH_NAMES = ["", "ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
 MONTH_FULL = ["", "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
+# ============================================================
+# Mes actual (hemisferio sur — Montevideo)
+# ============================================================
+import re
+
+CURRENT_MONTH = date.today().month
+CURRENT_MONTH_NAME = MONTH_FULL[CURRENT_MONTH]
+
+_MONTH_NAME_TO_NUM = {n: i for i, n in enumerate(MONTH_FULL) if n}
+_SEASON_TO_MONTHS = {
+    "otoño": [3, 4, 5],
+    "otono": [3, 4, 5],
+    "invierno": [6, 7, 8],
+    "primavera": [9, 10, 11],
+    "verano": [12, 1, 2],
+}
+_MONTH_RE = "(" + "|".join(_MONTH_NAME_TO_NUM.keys()) + ")"
+
+
+def parse_planting_months(text):
+    """Extrae los meses de plantación posibles de un string libre tipo
+    'Otoño (abril-mayo) o primavera temprana (agosto-septiembre)'.
+    Devuelve un set de números de mes (1-12)."""
+    if not text:
+        return set()
+    text = text.lower().strip()
+    if "cualquier época" in text or "cualquier epoca" in text:
+        return set(range(1, 13))
+    months = set()
+    for m in re.finditer(_MONTH_RE + r"\s*-\s*" + _MONTH_RE, text):
+        a = _MONTH_NAME_TO_NUM[m.group(1)]
+        b = _MONTH_NAME_TO_NUM[m.group(2)]
+        if a <= b:
+            months.update(range(a, b + 1))
+        else:
+            months.update(list(range(a, 13)) + list(range(1, b + 1)))
+    for m in re.finditer(r"\b" + _MONTH_RE + r"\b", text):
+        months.add(_MONTH_NAME_TO_NUM[m.group(1)])
+    for season, mnths in _SEASON_TO_MONTHS.items():
+        if season in text:
+            months.update(mnths)
+    return months
+
+
+def idea_is_optimal_now(idea):
+    """Bool para NEW_IDEAS — usa el campo `season_plant`."""
+    return CURRENT_MONTH in parse_planting_months(idea.get("season_plant", ""))
+
+
+def huerta_is_optimal_now(h):
+    """Bool para HUERTA — usa los arrays `siembra` y `transplante`."""
+    return CURRENT_MONTH in (h.get("siembra", []) or []) or CURRENT_MONTH in (h.get("transplante", []) or [])
+
+
 TAG_STYLE = {
     "nativa": ("🇺🇾 nativa", "#4a6b3f"),
     "exotica": ("🌍 exótica", "#7a8c5c"),
@@ -344,9 +398,13 @@ def render_idea_card(idea):
     season = f'<div class="idea-season">📅 <strong>Plantar:</strong> {esc(idea["season_plant"])}</div>' if "season_plant" in idea else ''
     where = f'<div class="idea-where">📍 <strong>Dónde:</strong> {esc(idea["where"])}</div>' if "where" in idea else ''
     size = f'<div class="idea-size">📐 <strong>Tamaño:</strong> {esc(idea["size"])}</div>' if "size" in idea else ''
+    is_now = idea_is_optimal_now(idea)
+    now_class = " is-now" if is_now else ""
+    now_badge = f'<div class="now-badge">📅 Óptimo plantar AHORA ({esc(CURRENT_MONTH_NAME)})</div>' if is_now else ''
 
     return f"""
-<article class="idea-card" data-name="{esc(idea['common'].lower())}" data-tags="{esc(' '.join(idea.get('tags', [])))}">
+<article class="idea-card{now_class}" data-name="{esc(idea['common'].lower())}" data-tags="{esc(' '.join(idea.get('tags', [])))}">
+  {now_badge}
   <h3 class="idea-title">{esc(idea['common'])}</h3>
   <div class="idea-sci">{esc(idea.get('sci', ''))}</div>
   <div class="idea-type">{esc(idea['type'])}</div>
@@ -361,7 +419,7 @@ def render_idea_card(idea):
 def render_huerta_card(h):
     def month_bar(months, color, label):
         bars = "".join(
-            f'<div class="hcell {"active" if m in months else ""}" style="--c:{color}" title="{MONTH_FULL[m]}">{MONTH_NAMES[m]}</div>'
+            f'<div class="hcell {"active" if m in months else ""} {"current" if m == CURRENT_MONTH else ""}" style="--c:{color}" title="{MONTH_FULL[m]}">{MONTH_NAMES[m]}</div>'
             for m in range(1, 13)
         )
         return f'<div class="hbar"><div class="hbar-label">{label}</div><div class="hbar-cells">{bars}</div></div>'
@@ -371,8 +429,19 @@ def render_huerta_card(h):
     if h.get("transplante"): cal_html += month_bar(h["transplante"], "#0d9488", "🪴 Trasplante")
     if h.get("cosecha"): cal_html += month_bar(h["cosecha"], "#d97706", "🧺 Cosecha")
 
+    is_now = huerta_is_optimal_now(h)
+    now_class = " is-now" if is_now else ""
+    if CURRENT_MONTH in (h.get("siembra", []) or []):
+        now_label = f"🌱 Sembrá AHORA ({esc(CURRENT_MONTH_NAME)})"
+    elif CURRENT_MONTH in (h.get("transplante", []) or []):
+        now_label = f"🪴 Trasplantá AHORA ({esc(CURRENT_MONTH_NAME)})"
+    else:
+        now_label = ""
+    now_badge = f'<div class="now-badge">{now_label}</div>' if is_now else ''
+
     return f"""
-<article class="huerta-card" data-name="{esc(h['common'].lower())}" data-tags="{esc(' '.join(h.get('tags', [])))}">
+<article class="huerta-card{now_class}" data-name="{esc(h['common'].lower())}" data-tags="{esc(' '.join(h.get('tags', [])))}">
+  {now_badge}
   <div class="huerta-header">
     <h3 class="huerta-title">{esc(h['common'])}</h3>
     <div class="huerta-sci">{esc(h.get('sci', ''))}</div>
@@ -432,15 +501,7 @@ def render_huerta_locations():
   <div class="hloc-cons"><strong>⚠️ Contras:</strong> {esc(idea["cons"])}</div>
   <div class="hloc-best"><strong>👍 Mejor para:</strong> {esc(idea["best_for"])}</div>
 </article>""" for idea in HUERTA_LOCATION_IDEAS)
-    return f"""
-<div class="hloc-intro">
-  <h3>🤔 Aún no decidiste el espacio — acá te dejo opciones:</h3>
-  <p>Ordenadas según mi recomendación (de mejor a más simple).</p>
-</div>
-<div class="hloc-grid">{cards}</div>
-<h3 class="huerta-list-title">📋 Catálogo de cultivos para Uruguay</h3>
-<p class="huerta-list-intro">Estos son los más recomendados para tu clima (Montevideo) y tu nivel de mantenimiento medio. Calendario marcado en meses.</p>
-"""
+    return f'<div class="hloc-grid">{cards}</div>'
 
 
 # ============================================================
@@ -455,22 +516,60 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
     """
     info_cards = "\n".join(render_plant_info_card(p, img_data) for p in plants_in_view)
     care_cards = "\n".join(render_plant_care_card(p) for p in plants_in_view)
-    new_ideas = "\n".join(render_idea_card(i) for i in ideas_list)
-    huerta_cards = "\n".join(render_huerta_card(h) for h in HUERTA)
+
+    # Ideas ordenadas: óptimas-para-este-mes primero, resto en orden original.
+    ideas_sorted = sorted(ideas_list, key=lambda i: not idea_is_optimal_now(i))
+    huerta_sorted = sorted(HUERTA, key=lambda h: not huerta_is_optimal_now(h))
+
+    new_ideas = "\n".join(render_idea_card(i) for i in ideas_sorted)
+    huerta_cards = "\n".join(render_huerta_card(h) for h in huerta_sorted)
+
+    # Highlights cross-section: lo que va óptimo este mes, en cualquier categoría.
+    optimal_ideas = [i for i in ideas_list if idea_is_optimal_now(i)]
+    optimal_huerta = [h for h in HUERTA if huerta_is_optimal_now(h)]
+    highlights_html = ""
+    if optimal_ideas or optimal_huerta:
+        h_cards = ""
+        if optimal_ideas:
+            h_cards += "\n".join(render_idea_card(i) for i in optimal_ideas)
+        if optimal_huerta:
+            h_cards += "\n".join(render_huerta_card(h) for h in optimal_huerta)
+        highlights_html = f"""
+<div class="ideas-section ideas-section-now">
+  <div class="ideas-intro">
+    <h3>🎯 Para plantar ESTE MES ({esc(CURRENT_MONTH_NAME)})</h3>
+    <p>Lo que tiene ventana óptima ahora — del catálogo de ideas y de huerta. {len(optimal_ideas)} ornamental{'es' if len(optimal_ideas) != 1 else ''} + {len(optimal_huerta)} hortícola{'s' if len(optimal_huerta) != 1 else ''}.</p>
+  </div>
+  <div class="cards-grid ideas-grid">{h_cards}</div>
+</div>"""
+
+    # Sección 1: "Qué hacer con espacios verdes"
     if zone_name == "interior":
-        huerta_intro = """
-<div class="frente-huerta-intro">
-  <h3>🪴 Comestibles en interior</h3>
-  <p>Adentro no hay huerta clásica, pero podés sumar aromáticas en macetas (albahaca, perejil, ciboulette, menta) cerca de ventanas con luz indirecta brillante. También plantas comestibles tropicales (jengibre, cúrcuma) y micro-greens en bandejas.</p>
+        spaces_section = """
+<div class="ideas-section">
+  <div class="ideas-intro">
+    <h3>🏡 Qué hacer con tus espacios verdes</h3>
+    <p>Adentro no hay huerta clásica, pero podés sumar aromáticas en macetas (albahaca, perejil, ciboulette, menta) cerca de ventanas con luz indirecta brillante. También plantas comestibles tropicales (jengibre, cúrcuma) y micro-greens en bandejas.</p>
+  </div>
 </div>"""
     elif show_huerta_locations:
-        huerta_intro = render_huerta_locations()
-    else:
-        huerta_intro = """
-<div class="frente-huerta-intro">
-  <h3>🌿 Aromáticas para el frente</h3>
-  <p>El frente no es ideal para huerta clásica (visibilidad, espacio limitado). Pero podés sumar aromáticas y comestibles ornamentales que decoran y se cosechan.</p>
+        spaces_section = f"""
+<div class="ideas-section">
+  <div class="ideas-intro">
+    <h3>🏡 Qué hacer con tus espacios verdes</h3>
+    <p>Opciones estructurales para sumar canteros, camas elevadas, macetones o aromáticas integradas. Ordenadas de mejor a más simple.</p>
+  </div>
+  {render_huerta_locations()}
 </div>"""
+    else:
+        spaces_section = """
+<div class="ideas-section">
+  <div class="ideas-intro">
+    <h3>🏡 Qué hacer con tus espacios verdes</h3>
+    <p>El frente no es ideal para huerta clásica (visibilidad, espacio limitado). Pero podés sumar aromáticas y comestibles ornamentales que decoran y se cosechan en el cantero existente.</p>
+  </div>
+</div>"""
+
     cal_grid = render_calendar_grid(plants_in_view)
 
     # Mapa subtab — vista aérea de la zona
@@ -545,14 +644,23 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
   </div>
 
   <div class="subtab-pane" data-sub="new">
-    <div class="ideas-intro">
-      <h3>💡 Plantas recomendadas para sumar al {zone_label.lower()}</h3>
-      <p>Basado en tu jardín actual, clima Montevideo y mantenimiento medio. Énfasis en nativas y polinizadores.</p>
-    </div>
-    <div class="cards-grid ideas-grid">{new_ideas}</div>
+    {highlights_html}
 
-    <div class="ideas-huerta-divider">
-      {huerta_intro}
+    {spaces_section}
+
+    <div class="ideas-section">
+      <div class="ideas-intro">
+        <h3>🌳 Plantas para plantar ({zone_label.lower()})</h3>
+        <p>Especies ornamentales/estructurales sugeridas para sumar — nativas, polinizadoras, frutales. Las óptimas para plantar este mes aparecen primero.</p>
+      </div>
+      <div class="cards-grid ideas-grid">{new_ideas}</div>
+    </div>
+
+    <div class="ideas-section">
+      <div class="ideas-intro">
+        <h3>🥬 Frutas y verduras de huerta para plantar</h3>
+        <p>Catálogo de cultivos para Montevideo, calendario marcado en meses. Las que se siembran/trasplantan este mes aparecen primero.</p>
+      </div>
       <div class="cards-grid huerta-grid">{huerta_cards}</div>
     </div>
   </div>

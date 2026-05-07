@@ -304,11 +304,52 @@ h2.subbrand {
 .tab-emoji { font-size: 1rem; line-height: 1; flex-shrink: 0; }
 .tab-label { line-height: 1; overflow: hidden; text-overflow: ellipsis; }
 
-/* IDEAS + HUERTA dentro del mismo subtab — separador visual */
-.ideas-huerta-divider {
+/* IDEAS — secciones (Espacios verdes / Plantas / Huerta) */
+.ideas-section {
   margin-top: 32px;
   padding-top: 24px;
   border-top: 1px solid var(--border-soft);
+}
+.ideas-section:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+.ideas-section-now {
+  background: linear-gradient(180deg, rgba(22, 163, 74, 0.07) 0%, rgba(22, 163, 74, 0) 100%);
+  margin-left: -16px;
+  margin-right: -16px;
+  padding: 16px 16px 8px;
+  border-radius: 14px;
+  border: 1px solid rgba(22, 163, 74, 0.18);
+}
+.ideas-section-now .ideas-intro h3 { color: #166534; }
+
+/* Badge "óptimo plantar AHORA" en idea-card y huerta-card */
+.now-badge {
+  display: inline-block;
+  background: #16a34a;
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(22, 163, 74, 0.32);
+}
+.idea-card.is-now,
+.huerta-card.is-now {
+  border-color: #86efac;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.12);
+}
+
+/* Mes actual marcado en el calendario de cada huerta-card */
+.hcell.current {
+  outline: 2px solid #16a34a;
+  outline-offset: -2px;
+  z-index: 1;
+  position: relative;
 }
 
 /* TO-DO'S STRIP — botón pequeño + label "X tareas pendientes" */
