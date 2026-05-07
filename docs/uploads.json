@@ -387,6 +387,18 @@
         "processed_at": "2026-05-05T14:30:00.000Z"
       },
       "user_context": "Las hojas parecen algo enfermas, está bien el árbol?"
+    },
+    {
+      "filename": null,
+      "uploaded_at": "2026-05-07T13:29:07.772Z",
+      "uploaded_by": "pix9",
+      "context": "task_text",
+      "task_id": "plant-F-1-3",
+      "task_title_snapshot": "Lavar follaje del frente con manguera",
+      "user_context": "Esta lloviendo ahora, alcanza con eso?  No me suena que sea un simple tema de mugre/tierra/polvo",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "_stamp": "20260507-132907"
     }
   ],
   "F-8": [
