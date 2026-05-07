@@ -219,7 +219,7 @@ function updateTodoCount() {
   const states = loadStates();
   const now = new Date();
   let active = 0;
-  const userIds = (typeof USER_TASKS !== 'undefined' && USER_TASKS) ? Object.keys(USER_TASKS) : [];
+  const userIds = Object.keys(USER_TASKS);
   const allIds = [
     ...TASKS.map(t => t.id),
     ...userIds,
@@ -262,6 +262,14 @@ function saveContacts(contacts) {
 // TIMELINE — RENDERING
 // ============================================================
 let currentFilter = 'active';
+
+// USER_TASKS — declarado acá arriba (no al final del archivo) para que esté
+// inicializado antes del bloque INIT que llama renderTimeline() / updateTodoCount()
+// (línea ~1026). Si se declara con `let` cerca del final, esas llamadas tempranas
+// crashean con TDZ ReferenceError aunque uses `typeof` como guard (typeof tira en TDZ).
+const USER_TASKS_KEY = 'jardineando_user_tasks_v1';
+const USER_TASKS_PATH = 'docs/sync/user_tasks.json';
+let USER_TASKS = {};   // { id: {kind, title, user_context, plant_codes, ...} }
 
 function classifyTask(task) {
   const st = getTaskState(task.id);
@@ -516,9 +524,7 @@ function renderTimeline() {
   const summary = document.getElementById('timeline-summary');
 
   // Combinar TASKS del catálogo + user_tasks creadas desde la app.
-  const userTaskList = (typeof USER_TASKS !== 'undefined' && USER_TASKS)
-    ? Object.values(USER_TASKS).map(userTaskToTaskShape)
-    : [];
+  const userTaskList = Object.values(USER_TASKS).map(userTaskToTaskShape);
   const allTasks = [...TASKS, ...userTaskList];
 
   // Clasificar todas las tareas
@@ -647,7 +653,7 @@ function renderTasksGroupedByMonth(tasks) {
 function findAnyTask(taskId) {
   const fromCat = TASKS.find(t => t.id === taskId);
   if (fromCat) return fromCat;
-  const ut = USER_TASKS && USER_TASKS[taskId];
+  const ut = USER_TASKS[taskId];
   return ut ? userTaskToTaskShape(ut) : null;
 }
 
@@ -2983,10 +2989,9 @@ document.getElementById('btn-text-ask-ai')?.addEventListener('click', async () =
 // USER TASKS — tareas y preguntas creadas desde la app
 // Persistidas en docs/sync/user_tasks.json (sincronizado entre devices)
 // y cacheadas en localStorage para render inmediato.
+// (declaraciones de USER_TASKS_KEY / USER_TASKS_PATH / USER_TASKS están más
+// arriba, en el bloque de state management, para evitar TDZ con renderTimeline).
 // ============================================================
-const USER_TASKS_KEY = 'jardineando_user_tasks_v1';
-const USER_TASKS_PATH = 'docs/sync/user_tasks.json';
-let USER_TASKS = {};   // { id: {kind, title, user_context, plant_codes, ...} }
 
 function loadUserTasksLocal() {
   try {
