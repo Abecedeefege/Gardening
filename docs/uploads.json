@@ -863,5 +863,18 @@
       "ai_status": "n/a",
       "note": "Seguís sin poder identificar? Crea una tarea"
     }
+  ],
+  "_general": [
+    {
+      "filename": null,
+      "uploaded_at": "2026-05-07T13:32:37.771Z",
+      "uploaded_by": "pix9",
+      "context": "user_task",
+      "task_id": "user-1778160757771-7240",
+      "task_title_snapshot": "Frutas y verduras ideales para plantar en mayo",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Dame una lista de las opciones ideales para plantar ahora en mayo"
+    }
   ]
 }
