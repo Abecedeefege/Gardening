@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-08T11:11:51.183Z",
-  "_last_writer": "pix9",
+  "_synced_at": "2026-05-08T14:00:00.000Z",
+  "_last_writer": "claude-code-cli",
   "tasks": {
     "plant-F-9": {
       "status": "done",
@@ -251,13 +251,20 @@
       "last_modified_at": "2026-05-05T18:50:16.757Z"
     },
     "plant-F-1-3": {
-      "status": "active",
+      "status": "done",
       "snoozed_until": null,
-      "completed_at": null,
-      "description_override": "Buen ojo en preguntar — la lluvia ayuda pero NO sustituye la manguereada porque el agua que cae moja casi todo el anverso pero deja seco el envés (donde se acumula más polvo y donde se esconden plagas). Lo que sí podés hacer hoy: dejar que la lluvia limpie lo que pueda, y volver mañana o pasado con sol y manguera para chequear. **Si después de eso el follaje SIGUE con manchas blanco-grises, no es polvo — pasamos a inspección.** Sacá foto MUY cercana (10 cm de la hoja) del anverso y reverso de 2-3 hojas afectadas, contra fondo blanco/mano si podés. Diferencias diagnósticas: (a) **polvo/tierra** — sale completo con agua a presión y dedo, hojas sanas debajo; (b) **oídio** — pátina blanca harinosa que se levanta con el dedo pero deja la hoja con tinte amarillo debajo; (c) **escama/cochinilla** — escudos duros adheridos, no salen con agua; (d) **entomosporium** (típico en Fotinia, raro en Acca) — manchas circulares rojo-marrón con halo. Cuando subas las fotos cercanas vemos qué tratamiento corresponde.",
-      "description_override_at": "2026-05-07T14:00:00.000Z",
-      "last_ai_summary": "User pregunta si la lluvia alcanza para limpiar y sospecha que NO es solo polvo. La lluvia no reemplaza manguereada (no llega bien al envés) y la sospecha es razonable — pedir foto cercana del envés contra fondo blanco para diagnosticar polvo vs oídio vs escama vs entomosporium.",
-      "last_modified_at": "2026-05-07T14:00:00.000Z"
+      "completed_at": "2026-05-08T14:00:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Lluvia + foto cercana cumplieron la función diagnóstica. El user tenía razón: NO era polvo. La foto reveló fumagina (sooty mold) clara — manchas negras adherentes que no se van con la lluvia, parche con zonas verdes intactas. Tarea cerrada. Tratamiento se mueve a urgency nueva plant-F-1-4 (alta prioridad).",
+      "last_modified_at": "2026-05-08T14:00:00.000Z"
+    },
+    "user-1778238699918-71e2": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-08T14:00:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "🔬 DIAGNÓSTICO: el Guayabo F-1 tiene FUMAGINA (sooty mold) — un hongo negro carbonáceo (Capnodium / Cladosporium). NO es tierra ni polvo: se ve por el patrón de cobertura adherente que no se va con la lluvia y deja zonas verdes parcheadas debajo. ⚠️ La fumagina por sí sola no enferma al árbol — crece sobre la MELAZA (sustancia pegajosa azucarada) que segregan insectos chupadores: cochinilla, escama, pulgones o mosca blanca. El problema real es la plaga, la fumagina es el síntoma. PLAN concreto creado como urgency plant-F-1-4 (alta prioridad, 'Tratar fumagina + buscar plaga origen'): (1) detective con linterna en envés/brotes/bifurcaciones para encontrar la plaga, también mirar plantas de arriba que puedan dejar caer melaza, (2) pulverizar aceite de neem 5 ml/L + jabón potásico 3 ml/L cada 7 días por 3 semanas al atardecer, (3) limpiar fumagina con paño + jabón (no urgente, sale sola una vez cortada la melaza). Foto a la semana 2 para ver evolución.",
+      "last_modified_at": "2026-05-08T14:00:00.000Z"
     },
     "plant-I-1": {
       "status": "done",

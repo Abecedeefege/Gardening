@@ -412,8 +412,13 @@
       "context": "user_task",
       "task_id": "user-1778238699918-71e2",
       "task_title_snapshot": "Enfermo?",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Diagnóstico FUMAGINA (sooty mold) — hongo negro carbonáceo Capnodium/Cladosporium. NO es polvo: el patrón de cobertura adherente con zonas verdes parcheadas debajo es inequívoco, y no se va con la lluvia. La fumagina crece sobre la MELAZA que segregan insectos chupadores (cochinilla, escama, pulgones, mosca blanca). El árbol no está enfermo en sí — la fumagina es síntoma, no causa.",
+        "next_steps": "Plan completo en urgency nueva plant-F-1-4 (alta prioridad): (1) detective con linterna en envés/brotes/bifurcaciones para encontrar la plaga origen + revisar plantas de arriba que puedan dejar caer melaza; (2) pulverizar aceite de neem 5 ml/L + jabón potásico 3 ml/L al atardecer cada 7 días por 3 semanas; (3) limpiar fumagina con paño + jabón (no urgente, sale sola una vez cortada la melaza); (4) foto a la semana 2 para ver evolución.",
+        "processed_at": "2026-05-08T14:00:00.000Z"
+      },
       "user_context": "Ayer llovió durante horas.  Sigue con estas manchas negras en las hojas como si fueran tierra",
       "plant_id": "F-1"
     }

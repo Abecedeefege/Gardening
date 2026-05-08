@@ -67,6 +67,18 @@ PLANTS = [
                 "due_month": 5,
                 "due_year": 2026,
             },
+            {
+                "priority": "alta",
+                "title": "Tratar fumagina + buscar plaga origen",
+                "short_desc": "Foto del 08/05 confirma fumagina (sooty mold) — hongo negro sobre melaza de plaga chupadora. Tratar con neem + jabón potásico y buscar la plaga origen.",
+                "detail": "El follaje está cubierto de un hongo negro carbonáceo (fumagina, Capnodium/Cladosporium) que crece sobre la melaza pegajosa que segregan insectos chupadores (cochinilla harinosa, escama, pulgones o mosca blanca). El hongo en sí no enferma al árbol pero bloquea la fotosíntesis y debilita la planta a mediano plazo. La causa real es la plaga — puede estar en el mismo Guayabo o en una planta arriba que cae melaza. Sin tratar la plaga, la fumagina vuelve.",
+                "how_to": "1) **Detective**: con linterna, inspeccionar envés de hojas, brotes nuevos y bifurcaciones de ramas. Buscar cochinilla (puntos blancos algodonosos), escama (escudos marrones inmóviles), pulgones (verdes/negros agrupados en brotes) o mosca blanca (vuela al sacudir). Mirar también plantas/árboles de arriba (rama del vecino, ramas de F-2/Bignonia) que puedan estar dejando caer melaza. 2) **Tratar plaga** con aceite de neem 5 ml/L + jabón potásico 3 ml/L en agua, pulverizar envés y haz al atardecer. Repetir cada 7 días por 3 semanas. 3) **Limpiar fumagina**: paño con agua + jabón potásico, pasar suave por las hojas más afectadas (no es urgente — el sol y la lluvia eventualmente la sacan una vez cortada la melaza). 4) Foto a la semana 2 para ver si bajó la plaga.",
+                "tips": "Si al pasar el dedo sobre la melaza sentís pegajoso = plaga activa. Si está seca = ya fue, solo limpieza. Si encontrás MUCHA plaga (pulgones por todos lados), avisame antes — puede valer la pena tratamiento más fuerte. NO usar piretroides (matan vaquitas y polinizadores).",
+                "when": "Mayo 2026 — empezar YA",
+                "due_month": 5,
+                "due_year": 2026,
+                "action_type": "control_plagas",
+            },
         ],
     },
     {
