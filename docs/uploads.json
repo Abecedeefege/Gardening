@@ -404,6 +404,18 @@
         "processed_at": "2026-05-07T14:00:00.000Z"
       },
       "_stamp": "20260507-132907"
+    },
+    {
+      "filename": "user-1778238699918-71e2_20260508-111139.jpg",
+      "uploaded_at": "2026-05-08T11:11:39.918Z",
+      "uploaded_by": "pix9",
+      "context": "user_task",
+      "task_id": "user-1778238699918-71e2",
+      "task_title_snapshot": "Enfermo?",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Ayer llovió durante horas.  Sigue con estas manchas negras en las hojas como si fueran tierra",
+      "plant_id": "F-1"
     }
   ],
   "F-8": [
