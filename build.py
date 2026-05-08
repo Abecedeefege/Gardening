@@ -493,15 +493,38 @@ def render_calendar_grid(plants_in_view):
 
 
 def render_huerta_locations():
-    cards = "".join(f"""
+    card_htmls = [f"""
 <article class="hloc-card">
   <h4 class="hloc-title">{esc(idea["title"])}</h4>
   <p class="hloc-desc">{esc(idea["desc"])}</p>
   <div class="hloc-pros"><strong>✅ Pros:</strong> {esc(idea["pros"])}</div>
   <div class="hloc-cons"><strong>⚠️ Contras:</strong> {esc(idea["cons"])}</div>
   <div class="hloc-best"><strong>👍 Mejor para:</strong> {esc(idea["best_for"])}</div>
-</article>""" for idea in HUERTA_LOCATION_IDEAS)
-    return f'<div class="hloc-grid">{cards}</div>'
+</article>""" for idea in HUERTA_LOCATION_IDEAS]
+    if len(card_htmls) <= 2:
+        return f'<div class="hloc-grid">{"".join(card_htmls)}</div>'
+    visible = "".join(card_htmls[:2])
+    hidden = "".join(card_htmls[2:])
+    n_more = len(card_htmls) - 2
+    return f"""<div class="hloc-grid">{visible}</div>
+<div class="hloc-grid ideas-collapsed" hidden data-collapsed-grid>{hidden}</div>
+<button type="button" class="btn-show-all" data-show-all aria-expanded="false">▾ Ver todas las opciones — {n_more} más</button>"""
+
+
+def render_collapsible_grid(card_htmls, grid_class, visible_count=2, label="ver más"):
+    """Renderiza una grid donde los primeros `visible_count` cards quedan
+    visibles y el resto colapsado bajo un botón 'Ver todas (N más)' que
+    se expande con click. Si hay <= visible_count cards, no genera botón."""
+    if len(card_htmls) <= visible_count:
+        return f'<div class="cards-grid {grid_class}">{"".join(card_htmls)}</div>'
+
+    visible = "".join(card_htmls[:visible_count])
+    hidden = "".join(card_htmls[visible_count:])
+    n_more = len(card_htmls) - visible_count
+    plural = "" if n_more == 1 else "s"
+    return f"""<div class="cards-grid {grid_class}">{visible}</div>
+<div class="cards-grid {grid_class} ideas-collapsed" hidden data-collapsed-grid>{hidden}</div>
+<button type="button" class="btn-show-all" data-show-all aria-expanded="false">▾ Ver {label} — {n_more} más</button>"""
 
 
 # ============================================================
@@ -521,26 +544,38 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
     ideas_sorted = sorted(ideas_list, key=lambda i: not idea_is_optimal_now(i))
     huerta_sorted = sorted(HUERTA, key=lambda h: not huerta_is_optimal_now(h))
 
-    new_ideas = "\n".join(render_idea_card(i) for i in ideas_sorted)
-    huerta_cards = "\n".join(render_huerta_card(h) for h in huerta_sorted)
+    new_ideas_grid = render_collapsible_grid(
+        [render_idea_card(i) for i in ideas_sorted],
+        "ideas-grid",
+        label="todas las plantas",
+    )
+    huerta_grid = render_collapsible_grid(
+        [render_huerta_card(h) for h in huerta_sorted],
+        "huerta-grid",
+        label="todas las hortalizas",
+    )
 
     # Highlights cross-section: lo que va óptimo este mes, en cualquier categoría.
     optimal_ideas = [i for i in ideas_list if idea_is_optimal_now(i)]
     optimal_huerta = [h for h in HUERTA if huerta_is_optimal_now(h)]
     highlights_html = ""
     if optimal_ideas or optimal_huerta:
-        h_cards = ""
-        if optimal_ideas:
-            h_cards += "\n".join(render_idea_card(i) for i in optimal_ideas)
-        if optimal_huerta:
-            h_cards += "\n".join(render_huerta_card(h) for h in optimal_huerta)
+        highlights_card_htmls = (
+            [render_idea_card(i) for i in optimal_ideas]
+            + [render_huerta_card(h) for h in optimal_huerta]
+        )
+        highlights_grid = render_collapsible_grid(
+            highlights_card_htmls,
+            "ideas-grid",
+            label="todas las óptimas de este mes",
+        )
         highlights_html = f"""
 <div class="ideas-section ideas-section-now">
   <div class="ideas-intro">
     <h3>🎯 Para plantar ESTE MES ({esc(CURRENT_MONTH_NAME)})</h3>
     <p>Lo que tiene ventana óptima ahora — del catálogo de ideas y de huerta. {len(optimal_ideas)} ornamental{'es' if len(optimal_ideas) != 1 else ''} + {len(optimal_huerta)} hortícola{'s' if len(optimal_huerta) != 1 else ''}.</p>
   </div>
-  <div class="cards-grid ideas-grid">{h_cards}</div>
+  {highlights_grid}
 </div>"""
 
     # Sección 1: "Qué hacer con espacios verdes"
@@ -653,7 +688,7 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
         <h3>🌳 Plantas para plantar ({zone_label.lower()})</h3>
         <p>Especies ornamentales/estructurales sugeridas para sumar — nativas, polinizadoras, frutales. Las óptimas para plantar este mes aparecen primero.</p>
       </div>
-      <div class="cards-grid ideas-grid">{new_ideas}</div>
+      {new_ideas_grid}
     </div>
 
     <div class="ideas-section">
@@ -661,7 +696,7 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
         <h3>🥬 Frutas y verduras de huerta para plantar</h3>
         <p>Catálogo de cultivos para Montevideo, calendario marcado en meses. Las que se siembran/trasplantan este mes aparecen primero.</p>
       </div>
-      <div class="cards-grid huerta-grid">{huerta_cards}</div>
+      {huerta_grid}
     </div>
   </div>
 

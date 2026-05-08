@@ -352,6 +352,32 @@ h2.subbrand {
   position: relative;
 }
 
+/* "Ver todas" — botón que expande el resto de cards colapsadas */
+.btn-show-all {
+  display: block;
+  width: 100%;
+  margin: 14px 0 4px;
+  padding: 12px 16px;
+  background: rgba(22, 163, 74, 0.08);
+  color: #166534;
+  border: 1px dashed rgba(22, 163, 74, 0.4);
+  border-radius: var(--r-md);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-show-all:hover {
+  background: rgba(22, 163, 74, 0.14);
+}
+.btn-show-all[aria-expanded="true"] {
+  background: rgba(22, 163, 74, 0.04);
+  border-style: solid;
+}
+.ideas-collapsed {
+  margin-top: 12px;
+}
+
 /* TO-DO'S STRIP — botón pequeño + label "X tareas pendientes" */
 .todo-strip {
   display: flex; align-items: center; gap: 10px;

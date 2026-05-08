@@ -71,6 +71,26 @@ document.querySelectorAll('.zone-content').forEach(zoneEl => {
 });
 
 // ============================================================
+// IDEAS — botón "Ver todas" para expandir cards colapsadas
+// ============================================================
+document.querySelectorAll('button[data-show-all]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const grid = btn.previousElementSibling;
+    if (!grid || !grid.matches('[data-collapsed-grid]')) return;
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    if (isExpanded) {
+      grid.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+      btn.textContent = btn.textContent.replace(/^▴/, '▾').replace(/Ocultar/, 'Ver');
+    } else {
+      grid.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      btn.textContent = btn.textContent.replace(/^▾/, '▴').replace(/Ver/, 'Ocultar');
+    }
+  });
+});
+
+// ============================================================
 // IMAGE LAZY LOADING (data-img)
 // ============================================================
 function loadImg(img) {
