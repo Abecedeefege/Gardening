@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-07T14:00:00.000Z",
-  "_last_writer": "claude-code-cli",
+  "_synced_at": "2026-05-08T11:11:51.183Z",
+  "_last_writer": "pix9",
   "tasks": {
     "plant-F-9": {
       "status": "done",
@@ -338,6 +338,12 @@
       "completed_via_ai": true,
       "ai_summary": "Auditoría completa: las 16 especies no 100% confirmadas YA TIENEN cada una su urgency de identificación específica. Listado y ventana esperada (mes recomendado para foto/foto+flor que cierra ID): F-5 Coronita de novia (Spiraea? — flor sept-oct) → existing 'Confirmar especie viendo la floración'; B-2 Jazmín → 'Foto en floración + decidir hijos' (oct-dic); B-9 Crespón (Lagerstroemia? — confirmado por hojas/corteza, falta flor) → 'Confirmar especie en floración' (ene-feb); B-13 Clivia (confirmado por porte) → 'Confirmar especie en floración' (sept-oct para flor naranja); B-14 sospecha lapachillo → 'Foto en floración para ID' (ago-sept); B-15 vegetación galpón → 'Acercarse y fotografiar de cerca' (cuando puedas con escalera); B-20 arbusto caduco → 'Foto al brotar (sept-oct)'; B-25 Gardenia (confirmado por síntomas) → ahora marcado 100%, no necesita más confirmación; B-32 varitas peladas → 'Foto del brote primaveral' (sept-oct); B-34 Mandioca brava (recién identificada tentativa) → 'Confirmar con foto de flor' (oct-dic); B-40 Lonicera nitida → 'Confirmar en floración' (oct-nov); B-41 Caqui → 'Confirmar variedad' refoto en mayo 2027 con frutos; B-45 sin identificar → 'Foto hoja + flor' (oct-dic); B-46 vivero → '6 urgencies por subgrupo' + 'Subir fotos plantines incógnita'; B-47 palmeras butiá vs pindó → 'Confirmar especie' (esperar hojas pinnadas adultas, feb 2027); B-49 trifoliado → 'Confirmar trifoliado (esperar flor primavera)' (oct-nov 2026). Refactor adicional aplicado: B-25 Gardenia removido '(a confirmar)' — los síntomas (pulgones, hormigas, cloración férrica) son inequívocos. ⚠️ NADA QUE HACER POR EL USER AHORA: cada urgency está scheduleada para su ventana botánica óptima.",
       "last_modified_at": "2026-05-07T14:00:00.000Z"
+    },
+    "user-1778238699918-71e2": {
+      "status": "active",
+      "snoozed_until": null,
+      "completed_at": null,
+      "last_modified_at": "2026-05-08T11:11:45.685Z"
     }
   }
 }
