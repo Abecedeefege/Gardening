@@ -419,6 +419,16 @@ h2.subbrand {
   margin-top: 12px;
 }
 
+/* IMPORTANTE: el atributo HTML `hidden` lo aplica el UA stylesheet como
+   display:none, pero las reglas .cards-grid { display: grid } y
+   .hloc-grid { display: grid } de autor lo pisan. Hace falta forzar
+   con [hidden] de mayor especificidad para que el colapso funcione. */
+.cards-grid[hidden],
+.hloc-grid[hidden],
+.ideas-collapsed[hidden] {
+  display: none !important;
+}
+
 /* TO-DO'S STRIP — botón pequeño + label "X tareas pendientes" */
 .todo-strip {
   display: flex; align-items: center; gap: 10px;
