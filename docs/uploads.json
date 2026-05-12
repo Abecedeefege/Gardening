@@ -989,5 +989,19 @@
       "user_context": "Ahí? Podés identificar o leer el cartel?",
       "plant_id": "B-32"
     }
+  ],
+  "F-2": [
+    {
+      "filename": "user-1778598817730-f154_20260512-151337.jpg",
+      "uploaded_at": "2026-05-12T15:13:37.730Z",
+      "uploaded_by": "pix9",
+      "context": "question",
+      "task_id": "user-1778598817730-f154",
+      "task_title_snapshot": "Está bien podarla ahora para liberar el camino?",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Está bien podarla ahora para liberar el camino?",
+      "plant_id": "F-2"
+    }
   ]
 }
