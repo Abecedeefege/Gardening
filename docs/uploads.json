@@ -975,5 +975,19 @@
       "context": "species",
       "ai_status": "n/a"
     }
+  ],
+  "B-32": [
+    {
+      "filename": "user-1778598164393-d77d_20260512-150244.jpg",
+      "uploaded_at": "2026-05-12T15:02:44.393Z",
+      "uploaded_by": "pix9",
+      "context": "question",
+      "task_id": "user-1778598164393-d77d",
+      "task_title_snapshot": "Ahí? Podés identificar o leer el cartel?",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Ahí? Podés identificar o leer el cartel?",
+      "plant_id": "B-32"
+    }
   ]
 }
