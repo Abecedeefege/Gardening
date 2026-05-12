@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-08T14:00:00.000Z",
-  "_last_writer": "claude-code-cli",
+  "_synced_at": "2026-05-12T14:53:06.830Z",
+  "_last_writer": "pix9",
   "tasks": {
     "user-1778160757771-7240": {
       "id": "user-1778160757771-7240",
@@ -47,6 +47,23 @@
       "last_modified_at": "2026-05-08T14:00:00.000Z",
       "has_photo": true,
       "photo_filename": "user-1778238699918-71e2_20260508-111139.jpg",
+      "ai_answer": null
+    },
+    "user-1778597583144-7d3d": {
+      "id": "user-1778597583144-7d3d",
+      "kind": "question",
+      "title": "Debo podarla un poco para que no le quite luz a la palmera?",
+      "user_context": "Debo podarla un poco para que no le quite luz a la palmera?",
+      "plant_codes": [
+        "B-29"
+      ],
+      "plant_common": "Lantana / Camará",
+      "plant_zone": "fondo",
+      "created_at": "2026-05-12T14:53:03.144Z",
+      "created_by": "pix9",
+      "last_modified_at": "2026-05-12T14:53:03.144Z",
+      "has_photo": true,
+      "photo_filename": "user-1778597583144-7d3d_20260512-145303.jpg",
       "ai_answer": null
     }
   }
