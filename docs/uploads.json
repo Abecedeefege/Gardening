@@ -928,8 +928,13 @@
       "context": "question",
       "task_id": "user-1778597583144-7d3d",
       "task_title_snapshot": "Debo podarla un poco para que no le quite luz a la palmera?",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Lantana camara robusta con flores activas. A la izquierda hay una yuca/agave joven probablemente sombreado parcialmente. Respuesta entregada como ai_answer en user_tasks.json. Agregada urgency 'Recorte ligero hacia la yuca vecina' (plant-B-29-2, mayo 2026) con plan: cortar 15-20% de las ramas que apuntan hacia la yuca, dejando intacto el resto.",
+        "next_steps": "",
+        "processed_at": "2026-05-12T17:00:00.000Z"
+      },
       "user_context": "Debo podarla un poco para que no le quite luz a la palmera?",
       "plant_id": "B-29"
     },
@@ -949,8 +954,13 @@
       "context": "question",
       "task_id": "user-1778597898416-9661",
       "task_title_snapshot": "Este es un Lapachillo",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "User confirmó la identificación de B-14 como Lapachillo (Poecilanthe parviflora, leguminosa nativa del Río de la Plata). Catálogo actualizado: common, sci, desc, fun_fact, cuidados base completos. Tags actualizados ('pendiente' removido, agregados 'nativa'/'ornamental'/'polinizadores'). Urgency reemplazada por 'Foto en floración — confirmar variedad' (plant-B-14, oct 2026) para registro completo del catálogo.",
+        "next_steps": "",
+        "processed_at": "2026-05-12T17:00:00.000Z"
+      },
       "user_context": "Este es un Lapachillo",
       "plant_id": "B-14"
     }
@@ -963,8 +973,13 @@
       "context": "question",
       "task_id": "user-1778597957937-4aa6",
       "task_title_snapshot": "Ahi podés identificarla?",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "B-15 identificada como HIEDRA COMÚN (Hedera helix). Hojas palmeadas 3-5 lóbulos verde oscuro brillante con venación marcada — inequívoco. Trepadora exótica común en jardines uruguayos. Catálogo actualizado: common, sci, desc, fun_fact (fases juvenil/adulta), cuidados base, tags ('exotica', 'trepadora', 'cobertura', 'sombra'). Urgency reemplazada por 'Control de invasión sobre galpón' (plant-B-15, ago 2026) para evaluar si la hiedra está deteriorando revoque/techo y decidir manejo.",
+        "next_steps": "",
+        "processed_at": "2026-05-12T17:00:00.000Z"
+      },
       "user_context": "Ahi podés identificarla?",
       "plant_id": "B-15"
     },
@@ -984,8 +999,13 @@
       "context": "question",
       "task_id": "user-1778598164393-d77d",
       "task_title_snapshot": "Ahí? Podés identificar o leer el cartel?",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Cartel-CD ilegible — letras a marcador parcialmente borradas, fragmentos tipo 'ELECTRA'/'ATRENA' sin certeza. Por las hojas (elípticas brillantes pequeñas opuestas en pares), ID tentativa: posible arrayán juvenil (Luma apiculata) o ligustro ornamental, pero hay varios candidatos sin foto cercana de hoja.",
+        "next_steps": "Repasar las letras del cartel con marcador permanente nuevo y foto del cartel solo contra fondo claro. Alternativamente, foto cercana de una hoja anverso/reverso sobre fondo blanco. Ver urgency nueva plant-B-32-2 con los pasos. Urgency original (foto del brote primaveral, plant-B-32, sept 2026) también vigente.",
+        "processed_at": "2026-05-12T17:00:00.000Z"
+      },
       "user_context": "Ahí? Podés identificar o leer el cartel?",
       "plant_id": "B-32"
     }
@@ -998,8 +1018,13 @@
       "context": "question",
       "task_id": "user-1778598817730-f154",
       "task_title_snapshot": "Está bien podarla ahora para liberar el camino?",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Bignonia/Podranea invadiendo el portón de entrada. La Podranea ricasoliana tolera poda en cualquier época — la limpieza puntual para liberar pasaje no requiere esperar a invierno. Respuesta entregada como ai_answer en user_tasks.json. Agregada urgency 'Limpieza de pasaje sobre el portón' (plant-F-2-2, mayo 2026) con plan: cortar las guías que invaden el camino al ras del nudo de origen, máximo 20-25% del follaje. La poda fuerte estructural (plant-F-2, jun-jul 2026) sigue programada.",
+        "next_steps": "",
+        "processed_at": "2026-05-12T17:00:00.000Z"
+      },
       "user_context": "Está bien podarla ahora para liberar el camino?",
       "plant_id": "F-2"
     }
