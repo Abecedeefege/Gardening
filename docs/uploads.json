@@ -967,6 +967,13 @@
       "ai_evaluation": null,
       "user_context": "Ahi podés identificarla?",
       "plant_id": "B-15"
+    },
+    {
+      "filename": "species-B-15_20260512-145948.jpg",
+      "uploaded_at": "2026-05-12T14:59:48.965Z",
+      "uploaded_by": "pix9",
+      "context": "species",
+      "ai_status": "n/a"
     }
   ]
 }
