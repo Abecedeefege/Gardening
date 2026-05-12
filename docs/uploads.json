@@ -940,5 +940,19 @@
       "context": "species",
       "ai_status": "n/a"
     }
+  ],
+  "B-14": [
+    {
+      "filename": null,
+      "uploaded_at": "2026-05-12T14:58:18.416Z",
+      "uploaded_by": "pix9",
+      "context": "question",
+      "task_id": "user-1778597898416-9661",
+      "task_title_snapshot": "Este es un Lapachillo",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Este es un Lapachillo",
+      "plant_id": "B-14"
+    }
   ]
 }
