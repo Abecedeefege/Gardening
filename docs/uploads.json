@@ -956,6 +956,17 @@
       "ai_evaluation": null,
       "user_context": "Crear una explicación con las fotos en forma de slide show para explicar sus diferentes partes (usa estas fotos nuevas)",
       "plant_id": "B-29"
+    },
+    {
+      "filename": "user-1778611776683-eeef_20260512-184936.jpg",
+      "uploaded_at": "2026-05-12T18:49:36.683Z",
+      "uploaded_by": "pix9",
+      "context": "question",
+      "task_id": "user-1778611776683-eeef",
+      "task_title_snapshot": "Pregunta",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "plant_id": "B-29"
     }
   ],
   "B-14": [
