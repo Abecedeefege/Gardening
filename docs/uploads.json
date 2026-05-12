@@ -919,5 +919,19 @@
       },
       "user_context": "Crea una tarea para cada una de las especies que aún no están 100% confirmadas así cerramos ese tema"
     }
+  ],
+  "B-29": [
+    {
+      "filename": "user-1778597583144-7d3d_20260512-145303.jpg",
+      "uploaded_at": "2026-05-12T14:53:03.144Z",
+      "uploaded_by": "pix9",
+      "context": "question",
+      "task_id": "user-1778597583144-7d3d",
+      "task_title_snapshot": "Debo podarla un poco para que no le quite luz a la palmera?",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Debo podarla un poco para que no le quite luz a la palmera?",
+      "plant_id": "B-29"
+    }
   ]
 }
