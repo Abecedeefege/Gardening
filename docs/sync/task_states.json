@@ -1,5 +1,5 @@
 {
-  "_synced_at": "2026-05-12T14:59:29.782Z",
+  "_synced_at": "2026-05-12T15:02:56.035Z",
   "_last_writer": "pix9",
   "tasks": {
     "plant-F-9": {
@@ -363,6 +363,12 @@
       "snoozed_until": null,
       "completed_at": null,
       "last_modified_at": "2026-05-12T14:59:24.109Z"
+    },
+    "user-1778598164393-d77d": {
+      "status": "active",
+      "snoozed_until": null,
+      "completed_at": null,
+      "last_modified_at": "2026-05-12T15:02:50.311Z"
     }
   }
 }
