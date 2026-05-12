@@ -1,5 +1,5 @@
 {
-  "_synced_at": "2026-05-12T14:53:06.830Z",
+  "_synced_at": "2026-05-12T14:58:19.254Z",
   "_last_writer": "pix9",
   "tasks": {
     "user-1778160757771-7240": {
@@ -64,6 +64,23 @@
       "last_modified_at": "2026-05-12T14:53:03.144Z",
       "has_photo": true,
       "photo_filename": "user-1778597583144-7d3d_20260512-145303.jpg",
+      "ai_answer": null
+    },
+    "user-1778597898416-9661": {
+      "id": "user-1778597898416-9661",
+      "kind": "question",
+      "title": "Este es un Lapachillo",
+      "user_context": "Este es un Lapachillo",
+      "plant_codes": [
+        "B-14"
+      ],
+      "plant_common": "Pendiente identificación (¿lapachillo?)",
+      "plant_zone": "fondo",
+      "created_at": "2026-05-12T14:58:18.416Z",
+      "created_by": "pix9",
+      "last_modified_at": "2026-05-12T14:58:18.416Z",
+      "has_photo": false,
+      "photo_filename": null,
       "ai_answer": null
     }
   }
