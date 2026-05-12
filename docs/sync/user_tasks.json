@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-12T15:13:40.459Z",
-  "_last_writer": "pix9",
+  "_synced_at": "2026-05-12T17:00:00.000Z",
+  "_last_writer": "claude-code-cli",
   "tasks": {
     "user-1778160757771-7240": {
       "id": "user-1778160757771-7240",
@@ -61,10 +61,13 @@
       "plant_zone": "fondo",
       "created_at": "2026-05-12T14:53:03.144Z",
       "created_by": "pix9",
-      "last_modified_at": "2026-05-12T14:53:03.144Z",
+      "last_modified_at": "2026-05-12T17:00:00.000Z",
       "has_photo": true,
       "photo_filename": "user-1778597583144-7d3d_20260512-145303.jpg",
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "Sí podés. La Lantana camara tolera poda en cualquier momento y la 'palmera' que mencionás (en la foto es más bien una yuca o agave joven a la izquierda) probablemente sí está recibiendo menos sol del lado del arbusto. RECOMENDACIÓN: hacé un recorte LIGERO ahora (15-20% del follaje) cortando solo las ramas que apuntan hacia la yuca/agave — no la planta entera. La poda fuerte (severa de rejuvenecimiento a 30 cm del suelo) reservala para jun-jul cuando esté en dormancia plena. Te dejé una urgency nueva 'Recorte ligero hacia la yuca vecina' (plant-B-29-2) con los pasos concretos. Importante: guantes y manga larga — la lantana irrita piel sensible, y las bayas son tóxicas si las muerden mascotas o niños.",
+        "answered_at": "2026-05-12T17:00:00.000Z"
+      }
     },
     "user-1778597898416-9661": {
       "id": "user-1778597898416-9661",
@@ -74,14 +77,17 @@
       "plant_codes": [
         "B-14"
       ],
-      "plant_common": "Pendiente identificación (¿lapachillo?)",
+      "plant_common": "Lapachillo",
       "plant_zone": "fondo",
       "created_at": "2026-05-12T14:58:18.416Z",
       "created_by": "pix9",
-      "last_modified_at": "2026-05-12T14:58:18.416Z",
+      "last_modified_at": "2026-05-12T17:00:00.000Z",
       "has_photo": false,
       "photo_filename": null,
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "Confirmado. Actualicé B-14 en el catálogo: common='Lapachillo', sci='Poecilanthe parviflora' (lapachillo nativo del Río de la Plata, leguminosa). Removí el tag 'pendiente' y agregué 'nativa', 'ornamental', 'polinizadores'. Cuidados base: poda ligera en jun-jul (10-15%), riego bajo, sol pleno. Floración prevista oct-ene con racimos blanco-amarillentos discretos. Te dejé una urgency 'Foto en floración — confirmar variedad' (plant-B-14) en prioridad baja, para que cuando florezca en oct-ene 2026/27 sumemos foto al catálogo y confirmemos especie exacta dentro del género Poecilanthe.",
+        "answered_at": "2026-05-12T17:00:00.000Z"
+      }
     },
     "user-1778597957937-4aa6": {
       "id": "user-1778597957937-4aa6",
@@ -91,14 +97,17 @@
       "plant_codes": [
         "B-15"
       ],
-      "plant_common": "Vegetación pendiente sobre galpón",
+      "plant_common": "Hiedra común",
       "plant_zone": "fondo",
       "created_at": "2026-05-12T14:59:17.937Z",
       "created_by": "pix9",
-      "last_modified_at": "2026-05-12T14:59:17.937Z",
+      "last_modified_at": "2026-05-12T17:00:00.000Z",
       "has_photo": true,
       "photo_filename": "user-1778597957937-4aa6_20260512-145917.jpg",
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "Sí, claramente: es HIEDRA COMÚN (Hedera helix). Hojas palmeadas 3-5 lóbulos verde oscuro brillante con venación blanco-verdosa marcada — inequívoco. Es una trepadora EXÓTICA muy común en jardines de Uruguay. Trepa con raíces aéreas adhesivas y tiende a invadir. Actualicé B-15 en el catálogo: common='Hiedra común', sci='Hedera helix', cuidados y tags ('exotica', 'trepadora', 'cobertura', 'sombra'). DATO interesante: la hiedra tiene 2 fases — la 'juvenil' (la que ves: trepadora con hojas lobuladas y raíces aéreas) y la 'adulta' (no trepa, hojas ovaladas enteras, FLORECE en otoño con flores melíferas valiosas para abejas). Te dejé urgency 'Control de invasión sobre galpón' (plant-B-15) para evaluar en agosto 2026 si la hiedra está deteriorando el revoque/techo o si conviene mantenerla como ornamental.",
+        "answered_at": "2026-05-12T17:00:00.000Z"
+      }
     },
     "user-1778598164393-d77d": {
       "id": "user-1778598164393-d77d",
@@ -112,10 +121,13 @@
       "plant_zone": "fondo",
       "created_at": "2026-05-12T15:02:44.393Z",
       "created_by": "pix9",
-      "last_modified_at": "2026-05-12T15:02:44.393Z",
+      "last_modified_at": "2026-05-12T17:00:00.000Z",
       "has_photo": true,
       "photo_filename": "user-1778598164393-d77d_20260512-150244.jpg",
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "El cartel (CD colgado) tiene las letras a marcador parcialmente borradas — alcanzo a ver fragmentos tipo 'ELECTRA' / 'ATRENA' pero sin certeza. NO se puede leer con seguridad. Por las hojas: elípticas brillantes pequeñas en pares opuestos, multiple stems desde una base, planta en maceta clay. ID tentativa basada solo en hoja: podría ser un arrayán juvenil (Luma apiculata / Myrcianthes) o un ligustro ornamental, pero hay otras opciones (mirto, alfilerillo). Te dejé una urgency 'Foto cercana y legible del cartel' (plant-B-32-2) — basta con repasar las letras del cartel con marcador permanente nuevo y sacar foto del cartel solo contra fondo claro. Mientras tanto la urgency original 'Foto del brote primaveral' (plant-B-32, sept 2026) sigue valiendo si querés que la identifiquemos por brote nuevo en lugar de cartel.",
+        "answered_at": "2026-05-12T17:00:00.000Z"
+      }
     },
     "user-1778598817730-f154": {
       "id": "user-1778598817730-f154",
@@ -129,10 +141,13 @@
       "plant_zone": "frente",
       "created_at": "2026-05-12T15:13:37.730Z",
       "created_by": "pix9",
-      "last_modified_at": "2026-05-12T15:13:37.730Z",
+      "last_modified_at": "2026-05-12T17:00:00.000Z",
       "has_photo": true,
       "photo_filename": "user-1778598817730-f154_20260512-151337.jpg",
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "SÍ, podés. La Podranea es muy tolerante a la poda en cualquier época — la fuerte estructural se reserva para jun-jul (dormancia), pero LIMPIEZA puntual para liberar el pasaje del portón se puede hacer ahora sin problema. En la foto se ve que está invadiendo el portón de entrada — ese tipo de intervención no afecta la estructura ni la próxima floración. Recomendación: recortar SOLO las guías que invaden el camino/portón, cortándolas al ras del nudo donde se ramificaron del eje principal (no a media rama). Máximo 20-25% del follaje en esta limpieza. La poda fuerte de invierno (plant-F-2, jun-jul 2026, severa 40-60%) sigue programada — esta es solo paliativa. Te dejé urgency 'Limpieza de pasaje sobre el portón' (plant-F-2-2) con los pasos concretos. Si la rama es leñosa gruesa, usar serrucho con técnica de 3 cortes (uno por debajo, otro arriba para sacar peso, y el final al ras) para que no se desgarre la corteza.",
+        "answered_at": "2026-05-12T17:00:00.000Z"
+      }
     }
   }
 }
