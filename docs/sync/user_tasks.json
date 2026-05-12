@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-12T17:00:00.000Z",
-  "_last_writer": "claude-code-cli",
+  "_synced_at": "2026-05-12T18:49:01.758Z",
+  "_last_writer": "pix9",
   "tasks": {
     "user-1778160757771-7240": {
       "id": "user-1778160757771-7240",
@@ -148,6 +148,23 @@
         "summary": "SÍ, podés. La Podranea es muy tolerante a la poda en cualquier época — la fuerte estructural se reserva para jun-jul (dormancia), pero LIMPIEZA puntual para liberar el pasaje del portón se puede hacer ahora sin problema. En la foto se ve que está invadiendo el portón de entrada — ese tipo de intervención no afecta la estructura ni la próxima floración. Recomendación: recortar SOLO las guías que invaden el camino/portón, cortándolas al ras del nudo donde se ramificaron del eje principal (no a media rama). Máximo 20-25% del follaje en esta limpieza. La poda fuerte de invierno (plant-F-2, jun-jul 2026, severa 40-60%) sigue programada — esta es solo paliativa. Te dejé urgency 'Limpieza de pasaje sobre el portón' (plant-F-2-2) con los pasos concretos. Si la rama es leñosa gruesa, usar serrucho con técnica de 3 cortes (uno por debajo, otro arriba para sacar peso, y el final al ras) para que no se desgarre la corteza.",
         "answered_at": "2026-05-12T17:00:00.000Z"
       }
+    },
+    "user-1778611738232-a5e1": {
+      "id": "user-1778611738232-a5e1",
+      "kind": "user_task",
+      "title": "Education",
+      "user_context": "Crear una explicación con las fotos en forma de slide show para explicar sus diferentes partes (usa estas fotos nuevas)",
+      "plant_codes": [
+        "B-29"
+      ],
+      "plant_common": "Lantana / Camará",
+      "plant_zone": "fondo",
+      "created_at": "2026-05-12T18:48:58.232Z",
+      "created_by": "pix9",
+      "last_modified_at": "2026-05-12T18:48:58.232Z",
+      "has_photo": true,
+      "photo_filename": "user-1778611738232-a5e1_20260512-184858.jpg",
+      "ai_answer": null
     }
   }
 }
