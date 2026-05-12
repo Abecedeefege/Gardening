@@ -954,5 +954,19 @@
       "user_context": "Este es un Lapachillo",
       "plant_id": "B-14"
     }
+  ],
+  "B-15": [
+    {
+      "filename": "user-1778597957937-4aa6_20260512-145917.jpg",
+      "uploaded_at": "2026-05-12T14:59:17.937Z",
+      "uploaded_by": "pix9",
+      "context": "question",
+      "task_id": "user-1778597957937-4aa6",
+      "task_title_snapshot": "Ahi podés identificarla?",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Ahi podés identificarla?",
+      "plant_id": "B-15"
+    }
   ]
 }
