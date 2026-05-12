@@ -1038,6 +1038,18 @@
       },
       "user_context": "Ahí? Podés identificar o leer el cartel?",
       "plant_id": "B-32"
+    },
+    {
+      "filename": null,
+      "uploaded_at": "2026-05-12T18:52:01.637Z",
+      "uploaded_by": "pix9",
+      "context": "task_text",
+      "task_id": "plant-B-32-2",
+      "task_title_snapshot": "Foto cercana y legible del cartel",
+      "user_context": "Puede ser que diga rupretchia?",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "_stamp": "20260512-185201"
     }
   ],
   "F-2": [
