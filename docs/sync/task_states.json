@@ -1,5 +1,5 @@
 {
-  "_synced_at": "2026-05-12T18:49:48.483Z",
+  "_synced_at": "2026-05-12T18:50:46.923Z",
   "_last_writer": "pix9",
   "tasks": {
     "plant-F-9": {
@@ -213,13 +213,10 @@
       "last_modified_at": "2026-05-05T17:55:00.000Z"
     },
     "plant-B-25-3": {
-      "status": "active",
-      "snoozed_until": null,
+      "status": "snoozed",
+      "snoozed_until": "2026-05-13T18:50:33.586Z",
       "completed_at": null,
-      "description_override": "**Hormiguicidas — opciones del más casero al más comercial:**\n\n• **CASERO 1 (recomendado):** Bicarbonato + azúcar (1:1). Mezclar 50g de cada uno y poner en taza chica al lado del nido o sobre el camino de hormigas. Las hormigas comen el cebo dulce, el bicarbonato les rompe el pH interno y mueren. Llevan al nido y matan a la reina. Resultado en 3-7 días. CERO riesgo para mascotas, niños o polinizadores.\n\n• **CASERO 2:** Borax + azúcar (1:3). Más letal pero borax es mediano-tóxico para mascotas si lo lamen. No recomendado si tenés perros o gatos sueltos.\n\n• **REPELENTE (no mata, solo desvía):** Vinagre + agua (1:1) en spray sobre el camino de hormigas. Borra el rastro de feromonas. También: cáscaras de pepino o pomelo + canela en polvo en el camino.\n\n• **COMERCIAL IDEAL:** **MataBicho** o **MataHormigas** en gel/cebo (formulaciones con hidrametilnón o spinosad). Las hormigas llevan al nido y matan a la reina. Más rápido que el bicarbonato (2-4 días). Compatible con jardín porque no afecta polinizadores.\n\n• **EVITAR:** Sprays de cipermetrina o piretroides cerca de la gardenia — matan vaquitas, sírfidos y abejas que son aliados.\n\n**Recomendación:** Empezar con bicarbonato + azúcar el primer día. Si en 7 días siguen las hormigas, pasar a MataBicho gel.",
-      "description_override_at": "2026-05-05T17:55:00.000Z",
-      "last_ai_summary": "Respuesta del usuario sobre alternativas caseras vs comerciales para hormiguicida. Recomendación: bicarbonato+azúcar primero (seguro), MataBicho gel si no responde.",
-      "last_modified_at": "2026-05-05T17:55:00.000Z"
+      "last_modified_at": "2026-05-12T18:50:33.586Z"
     },
     "plant-B-47-2": {
       "status": "done",
@@ -387,6 +384,18 @@
       "snoozed_until": null,
       "completed_at": null,
       "last_modified_at": "2026-05-12T18:49:42.692Z"
+    },
+    "plant-F-1-4": {
+      "status": "snoozed",
+      "snoozed_until": "2026-05-13T18:50:30.201Z",
+      "completed_at": null,
+      "last_modified_at": "2026-05-12T18:50:30.201Z"
+    },
+    "plant-B-29-2": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-12T18:50:38.028Z",
+      "last_modified_at": "2026-05-12T18:50:38.028Z"
     }
   }
 }
