@@ -1,5 +1,5 @@
 {
-  "_synced_at": "2026-05-12T14:59:20.886Z",
+  "_synced_at": "2026-05-12T15:02:47.081Z",
   "_last_writer": "pix9",
   "tasks": {
     "user-1778160757771-7240": {
@@ -98,6 +98,23 @@
       "last_modified_at": "2026-05-12T14:59:17.937Z",
       "has_photo": true,
       "photo_filename": "user-1778597957937-4aa6_20260512-145917.jpg",
+      "ai_answer": null
+    },
+    "user-1778598164393-d77d": {
+      "id": "user-1778598164393-d77d",
+      "kind": "question",
+      "title": "Ahí? Podés identificar o leer el cartel?",
+      "user_context": "Ahí? Podés identificar o leer el cartel?",
+      "plant_codes": [
+        "B-32"
+      ],
+      "plant_common": "Varitas peladas pendientes",
+      "plant_zone": "fondo",
+      "created_at": "2026-05-12T15:02:44.393Z",
+      "created_by": "pix9",
+      "last_modified_at": "2026-05-12T15:02:44.393Z",
+      "has_photo": true,
+      "photo_filename": "user-1778598164393-d77d_20260512-150244.jpg",
       "ai_answer": null
     }
   }
