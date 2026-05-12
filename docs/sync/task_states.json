@@ -1,5 +1,5 @@
 {
-  "_synced_at": "2026-05-12T18:50:46.923Z",
+  "_synced_at": "2026-05-12T18:52:59.017Z",
   "_last_writer": "pix9",
   "tasks": {
     "plant-F-9": {
@@ -350,16 +350,16 @@
       "last_modified_at": "2026-05-12T14:53:10.655Z"
     },
     "user-1778597898416-9661": {
-      "status": "active",
+      "status": "done",
       "snoozed_until": null,
-      "completed_at": null,
-      "last_modified_at": "2026-05-12T14:58:22.919Z"
+      "completed_at": "2026-05-12T18:52:52.770Z",
+      "last_modified_at": "2026-05-12T18:52:52.770Z"
     },
     "user-1778597957937-4aa6": {
-      "status": "active",
+      "status": "done",
       "snoozed_until": null,
-      "completed_at": null,
-      "last_modified_at": "2026-05-12T14:59:24.109Z"
+      "completed_at": "2026-05-12T18:52:58.655Z",
+      "last_modified_at": "2026-05-12T18:52:58.656Z"
     },
     "user-1778598164393-d77d": {
       "status": "active",
