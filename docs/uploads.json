@@ -944,6 +944,18 @@
       "uploaded_by": "pix9",
       "context": "species",
       "ai_status": "n/a"
+    },
+    {
+      "filename": "user-1778611738232-a5e1_20260512-184858.jpg",
+      "uploaded_at": "2026-05-12T18:48:58.232Z",
+      "uploaded_by": "pix9",
+      "context": "user_task",
+      "task_id": "user-1778611738232-a5e1",
+      "task_title_snapshot": "Education",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Crear una explicación con las fotos en forma de slide show para explicar sus diferentes partes (usa estas fotos nuevas)",
+      "plant_id": "B-29"
     }
   ],
   "B-14": [
