@@ -932,6 +932,13 @@
       "ai_evaluation": null,
       "user_context": "Debo podarla un poco para que no le quite luz a la palmera?",
       "plant_id": "B-29"
+    },
+    {
+      "filename": "species-B-29_20260512-145328.jpg",
+      "uploaded_at": "2026-05-12T14:53:28.872Z",
+      "uploaded_by": "pix9",
+      "context": "species",
+      "ai_status": "n/a"
     }
   ]
 }
