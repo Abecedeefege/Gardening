@@ -1050,6 +1050,18 @@
       "ai_status": "pending",
       "ai_evaluation": null,
       "_stamp": "20260512-185201"
+    },
+    {
+      "filename": null,
+      "uploaded_at": "2026-05-12T18:54:00.849Z",
+      "uploaded_by": "pix9",
+      "context": "task_text",
+      "task_id": "user-1778598164393-d77d",
+      "task_title_snapshot": "Ahí? Podés identificar o leer el cartel?",
+      "user_context": "Alicitolif?",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "_stamp": "20260512-185400"
     }
   ],
   "F-2": [
