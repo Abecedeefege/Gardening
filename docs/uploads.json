@@ -967,6 +967,13 @@
       "ai_status": "pending",
       "ai_evaluation": null,
       "plant_id": "B-29"
+    },
+    {
+      "filename": "species-B-29_20260512-184959.jpg",
+      "uploaded_at": "2026-05-12T18:49:59.037Z",
+      "uploaded_by": "pix9",
+      "context": "species",
+      "ai_status": "n/a"
     }
   ],
   "B-14": [
