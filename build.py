@@ -348,53 +348,6 @@ def render_plant_info_card(p, img_data):
 </article>"""
 
 
-def render_plant_care_card(p):
-    loc_codes = ", ".join(p["id_codes"])
-    pruning_months = "".join(
-        f'<span class="month-pill {"active" if m in p.get("pruning", []) else ""}">{MONTH_NAMES[m]}</span>'
-        for m in range(1, 13)
-    )
-    urgency_html = ""
-    u = _select_primary_urgency(p.get("urgency"))
-    if u:
-        emo, color, label = PRIORITY_STYLE.get(u["priority"], ("", "#6b6457", u["priority"]))
-        urgency_html = f"""
-<div class="urgency-banner" style="border-left-color: {color}">
-  <span class="urgency-badge" style="background: {color}">{emo} {label}</span>
-  <strong>{esc(u.get("title") or u.get("action", ""))}</strong>
-  <span class="urgency-when">📅 {esc(u["when"])}</span>
-</div>"""
-
-    return f"""
-<article class="care-card" data-plant-id="{esc(loc_codes)}" data-name="{esc(p['common'].lower())}">
-  <div class="care-header">
-    <div class="care-id">{esc(loc_codes)}</div>
-    <h3 class="care-title">{esc(p['common'])}</h3>
-    <div class="care-sci">{esc(p['sci'])}</div>
-  </div>
-  {urgency_html}
-  <div class="care-grid">
-    <div class="care-section">
-      <div class="care-label">✂️ Cuándo podar</div>
-      <div class="care-value">{esc(p['prune_when'])}</div>
-      <div class="month-row">{pruning_months}</div>
-    </div>
-    <div class="care-section">
-      <div class="care-label">📏 Cuánto podar</div>
-      <div class="care-value">{esc(p['prune_how'])}</div>
-    </div>
-    <div class="care-section">
-      <div class="care-label">💧 Riego <span class="big-icons">{water_dots(p['water'])}</span></div>
-      <div class="care-value">{esc(p['water'])}</div>
-    </div>
-    <div class="care-section">
-      <div class="care-label">{light_icon(p['light'])} Luz</div>
-      <div class="care-value">{esc(p['light'])}</div>
-    </div>
-  </div>
-</article>"""
-
-
 def render_idea_card(idea):
     season = f'<div class="idea-season">📅 <strong>Plantar:</strong> {esc(idea["season_plant"])}</div>' if "season_plant" in idea else ''
     where = f'<div class="idea-where">📍 <strong>Dónde:</strong> {esc(idea["where"])}</div>' if "where" in idea else ''
@@ -621,7 +574,6 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
         (más apropiado para "fondo" y "todo"). Si False, muestra el intro corto del frente.
     """
     info_cards = "\n".join(render_plant_info_card(p, img_data) for p in plants_in_view)
-    care_cards = "\n".join(render_plant_care_card(p) for p in plants_in_view)
 
     # Ideas ordenadas: óptimas-para-este-mes primero, resto en orden original.
     ideas_sorted = sorted(ideas_list, key=lambda i: not idea_is_optimal_now(i))
@@ -690,40 +642,12 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
 
     cal_grid = render_calendar_grid(plants_in_view)
 
-    # Mapa subtab — vista aérea de la zona
-    aerials_by_zone = {
-        "frente": [("Aerea_Frente.png", "Vista aérea del frente — desde el techo mirando hacia la calle")],
-        "fondo":  [("Aerea_Fondo.png",  "Vista aérea del fondo — desde el techo mirando hacia la pileta y el padel")],
-        "todo":   [
-            ("Aerea_Frente.png", "Frente — desde el techo mirando hacia la calle"),
-            ("Aerea_Fondo.png",  "Fondo — desde el techo mirando hacia la pileta y el padel"),
-        ],
-        "interior": [],
-    }
-    aerial_imgs = aerials_by_zone.get(zone_name, [])
-    if aerial_imgs:
-        map_blocks = "\n".join(
-            f'<figure class="map-figure">'
-            f'<img class="map-photo" data-img="{esc(fname)}" data-action="lightbox" alt="{esc(caption)}">'
-            f'<figcaption>{esc(caption)}</figcaption>'
-            f'</figure>'
-            for fname, caption in aerial_imgs
-        )
-    else:
-        map_blocks = (
-            '<div class="map-empty">'
-            '<p>📐 Esta zona no tiene vista aérea (las plantas viven adentro).</p>'
-            '</div>'
-        )
-
     improvements_html = render_improvements_section(zone_name)
 
     return f"""
 <section class="zone-content" data-zone="{zone_name}">
   <nav class="subtab-nav">
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
-    <button class="subtab-btn" data-sub="map">📐 Mapa</button>
-    <button class="subtab-btn" data-sub="care">✂️ Cuidado</button>
     <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
     <button class="subtab-btn" data-sub="new">💡 Ideas</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
@@ -749,19 +673,6 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
       <button class="ftag" data-filter="pendiente">⏳ Pendientes</button>
     </div>
     <div class="cards-grid">{info_cards}</div>
-  </div>
-
-  <div class="subtab-pane" data-sub="map">
-    <div class="ideas-intro">
-      <h3>📐 Vista aérea</h3>
-      <p>Tomada desde el techo. Click en cada foto para verla en grande.</p>
-    </div>
-    <div class="map-container">{map_blocks}</div>
-  </div>
-
-  <div class="subtab-pane" data-sub="care">
-    <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar planta..."></div>
-    <div class="cards-grid care-grid-list">{care_cards}</div>
   </div>
 
   <div class="subtab-pane" data-sub="improvements">
