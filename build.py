@@ -1386,13 +1386,9 @@ def main():
     timeline_html = build_timeline_view(tasks, img_data)
 
     # 5. Inyectar datos como JSON para el JS
-    # IMG es un Proxy: IMG['foo.jpg'] devuelve 'images/foo.jpg' (path relativo).
-    # Mantiene compat con todo el JS existente que hacía IMG[k] esperando un data URI.
-    img_js = (
-        "const IMG = new Proxy({}, { "
-        "get: (_, k) => (typeof k === 'string' && k) ? 'images/' + k : '' "
-        "});"
-    )
+    # Las imágenes viven en docs/images/ y se referencian por path via imgUrl()
+    # en scripts.py; no se inyecta dict global.
+    img_js = ""
     tasks_js = "const TASKS = " + json.dumps(tasks, ensure_ascii=False) + ";"
 
     # PLANTS_INFO — info por planta para el modal de detalle (no incluye urgencies,
