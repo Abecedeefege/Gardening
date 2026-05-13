@@ -2804,6 +2804,136 @@ h2.subbrand {
   background: rgba(255, 255, 255, 0.15);
   color: white;
 }
+
+/* IMPROVEMENTS — Mejoras pagas/gratis por zona */
+.improvements-tier {
+  margin-top: 22px;
+}
+.improvements-tier:first-of-type { margin-top: 12px; }
+.improvements-tier-header {
+  font-family: inherit;
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: var(--text);
+  letter-spacing: -0.005em;
+  padding-left: 10px;
+  border-left: 4px solid var(--tier-color, #16a34a);
+}
+.improvements-tier-count {
+  color: var(--text-3);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+.improvements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.improvement-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow:
+    0 1px 2px rgba(9, 9, 11, 0.04),
+    0 1px 3px rgba(9, 9, 11, 0.05);
+  transition:
+    border-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.improvement-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 8px rgba(9, 9, 11, 0.06),
+    0 12px 28px rgba(9, 9, 11, 0.07);
+}
+.improvement-card.tier-free       { border-left-color: #16a34a; }
+.improvement-card.tier-under10    { border-left-color: #ca8a04; }
+.improvement-card.tier-under100   { border-left-color: #ea580c; }
+
+.improvement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.tier-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  color: white;
+}
+.tier-badge.tier-free      { background: #16a34a; }
+.tier-badge.tier-under10   { background: #ca8a04; }
+.tier-badge.tier-under100  { background: #ea580c; }
+.improvement-cost {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-2);
+}
+.improvement-title {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.improvement-category {
+  font-size: 0.75rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  padding: 2px 9px;
+  border-radius: var(--r-sm);
+  display: inline-block;
+  color: var(--text-2);
+  margin-bottom: 10px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.improvement-line {
+  font-size: 0.85rem;
+  margin: 7px 0;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+.improvement-line strong { color: var(--text); font-weight: 600; }
+.improvement-applies {
+  font-size: 0.85rem;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-soft);
+  color: var(--text-2);
+}
+.improvement-applies strong { color: var(--text); font-weight: 600; margin-right: 4px; }
+.improvement-applies-chip {
+  display: inline-block;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin: 2px 4px 2px 0;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 150ms, border-color 150ms, transform 150ms;
+}
+.improvement-applies-chip:hover {
+  background: var(--accent, #16a34a);
+  border-color: var(--accent, #16a34a);
+  color: white;
+  transform: translateY(-1px);
+}
 </style>
 </head>
 <body class="zone-todo">
@@ -2844,6 +2974,7 @@ h2.subbrand {
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
     <button class="subtab-btn" data-sub="map">📐 Mapa</button>
     <button class="subtab-btn" data-sub="care">✂️ Cuidado</button>
+    <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
     <button class="subtab-btn" data-sub="new">💡 Ideas</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
@@ -5542,6 +5673,241 @@ ID exacta de cada plantín pendiente — ver urgencia &#x27;Mapeo del vivero&#x2
 </article></div>
   </div>
 
+  <div class="subtab-pane" data-sub="improvements">
+    <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar mejora..."></div>
+    <div class="ideas-section">
+<div class="ideas-intro">
+  <h3>💰 Mejoras para esta zona</h3>
+  <p>Inversiones (o trabajo gratis) para subir un escalón el jardín — agrupado por presupuesto. Empezá por lo gratis y subí si tiene sentido.</p>
+</div>
+<div class="improvements-tier" style="--tier-color:#16a34a">
+  <h4 class="improvements-tier-header">🆓 Gratis <span class="improvements-tier-count">· 2</span></h4>
+  <div class="cards-grid improvements-grid">
+<article class="improvement-card tier-free" data-name="compostera casera con palets reciclados" data-tags="sustrato compost">
+  <div class="improvement-header">
+    <span class="tier-badge tier-free">🆓 Gratis</span>
+    <span class="improvement-cost">Gratis</span>
+  </div>
+  <h3 class="improvement-title">Compostera casera con palets reciclados</h3>
+  <div class="improvement-category">sustrato</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> 4 palets de descarte + alambre o tornillos.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Fertilizante gratis y constante para todo el jardín. Cierra el ciclo de los restos verdes (poda, césped cortado, restos de cocina vegetales).</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Armar caja de ~1×1×1 m con palets en rincón sombrío del fondo. Alternar capas verdes (césped, restos cocina) y secas (hojarasca, ramitas). Voltear cada 3 semanas. Listo en 4–6 meses.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Cualquier época. Empieza ya.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Gratis — palets de descarte de barracas/supermercados.</div>
+  
+</article>
+<article class="improvement-card tier-free" data-name="recolección de agua de lluvia con baldes" data-tags="riego">
+  <div class="improvement-header">
+    <span class="tier-badge tier-free">🆓 Gratis</span>
+    <span class="improvement-cost">Gratis</span>
+  </div>
+  <h3 class="improvement-title">Recolección de agua de lluvia con baldes</h3>
+  <div class="improvement-category">riego</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Baldes/tachos que ya tengas (mínimo 2 × 20 L).</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> El agua de lluvia es ácida (pH ~6) y sin cloro — ideal para hortensias, helechos, camelias y plantas de interior que sufren con agua de canilla.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Poner los tachos bajo bajadas de canaleta. Tapar con malla mosquitera para no juntar larvas. Usar dentro de 2 semanas.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Todo el año — abril–octubre es cuando más llueve en Montevideo.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Gratis — material que ya tenés.</div>
+  
+</article></div>
+</div>
+<div class="improvements-tier" style="--tier-color:#ca8a04">
+  <h4 class="improvements-tier-header">💵 Menos de USD 10 <span class="improvements-tier-count">· 8</span></h4>
+  <div class="cards-grid improvements-grid">
+<article class="improvement-card tier-under10" data-name="spray foliar de agua + sales para tropicales" data-tags="nutrientes interior">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 4</span>
+  </div>
+  <h3 class="improvement-title">Spray foliar de agua + sales para tropicales</h3>
+  <div class="improvement-category">nutrientes</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Pulverizador 1 L + fertilizante foliar líquido NPK 6-6-6, frasco 250 ml.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Helechos, aroides y plantas de interior agradecen humedad ambiente alta. El spray foliar suplementa nutrientes vía hoja y simula el ambiente tropical.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Diluir 2 ml/L y pulverizar el envés de la hoja una vez por semana en primavera–verano. Solo agua en otoño–invierno.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Septiembre–marzo, semanal.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Viveros · supermercados con sección de jardín.</div>
+  
+</article>
+<article class="improvement-card tier-under10" data-name="sulfato de hierro para fotinias amarillentas" data-tags="nutrientes fotinias">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 5</span>
+  </div>
+  <h3 class="improvement-title">Sulfato de hierro para fotinias amarillentas</h3>
+  <div class="improvement-category">nutrientes</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Sulfato ferroso (FeSO₄), bolsa de 500 g.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Las fotinias F-1..F-6 muestran clorosis (hojas amarillas con nervios verdes) cuando el suelo es muy alcalino. El hierro recupera el rojo intenso del rebrote.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Disolver 5 g/L de agua y regar al pie 1 vez por mes durante 3 meses. No mojar follaje a pleno sol.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Primavera (septiembre–noviembre) cuando empieza el rebrote.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Agroveterinarias · viveros grandes — pedir &#x27;sulfato de hierro soluble&#x27;.</div>
+  <div class="improvement-applies"><strong>🪴 Aplica a:</strong> <button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-1">F-1</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-2">F-2</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-3">F-3</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-4">F-4</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-5">F-5</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-6">F-6</button></div>
+</article></div>
+<div class="cards-grid improvements-grid ideas-collapsed" hidden data-collapsed-grid>
+<article class="improvement-card tier-under10" data-name="fertilizante específico para cítricos" data-tags="nutrientes frutal">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 6</span>
+  </div>
+  <h3 class="improvement-title">Fertilizante específico para cítricos</h3>
+  <div class="improvement-category">nutrientes</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> NPK 12-5-14 con micronutrientes (Mg, Fe, Zn), bolsa de 1 kg.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Los cítricos son ávidos de nitrógeno y muy susceptibles a clorosis. Un fertilizante balanceado les da hojas verde-oscuro y mejor cuaje de fruta.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> 30 g por planta repartido en 3 aplicaciones: agosto, noviembre, febrero. Espolvorear bajo la copa y regar.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> 3 veces al año (primavera, fin de primavera, verano).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Agroveterinarias · viveros — pedir &#x27;fertilizante cítricos&#x27;.</div>
+  <div class="improvement-applies"><strong>🪴 Aplica a:</strong> <button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-23">B-23</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-24">B-24</button></div>
+</article>
+<article class="improvement-card tier-under10" data-name="abono para frutales de carozo y pepita" data-tags="nutrientes frutal invierno">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 7</span>
+  </div>
+  <h3 class="improvement-title">Abono para frutales de carozo y pepita</h3>
+  <div class="improvement-category">nutrientes</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Fertilizante de invierno tipo 10-10-10 + materia orgánica, 2 kg.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Durazno y peral necesitan reservas para fructificación abundante. Una aplicación en pleno reposo invernal recarga reservas para la brotación.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> 200 g enterrados levemente en corona alrededor del tronco (radio de la copa). Regar después.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Julio (pleno invierno, antes de la brotación).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Agroveterinarias.</div>
+  <div class="improvement-applies"><strong>🪴 Aplica a:</strong> <button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-30">B-30</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-39">B-39</button></div>
+</article>
+<article class="improvement-card tier-under10" data-name="resembrar el césped del cantero" data-tags="césped otoño">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 8</span>
+  </div>
+  <h3 class="improvement-title">Resembrar el césped del cantero</h3>
+  <div class="improvement-category">césped</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Mezcla de semilla festuca + ryegrass anual shade-tolerant (1 kg cubre ~30 m²).</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> El frente tiene parches ralos bajo las fotinias. Una resiembra de otoño llena los claros antes del invierno y deja un colchón verde.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Rastrillar superficial para abrir el suelo, sembrar a voleo 30 g/m², tapar con 1 cm de compost fino, regar liviano 10 días seguidos.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Marzo–mayo (mejor) o agosto–septiembre.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Vivero Antares · Casa Sasso · Mercado Libre — buscar &#x27;mezcla resiembra sombra&#x27;.</div>
+  
+</article>
+<article class="improvement-card tier-under10" data-name="kit de medición de ph y humedad del suelo" data-tags="herramientas">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 8</span>
+  </div>
+  <h3 class="improvement-title">Kit de medición de pH y humedad del suelo</h3>
+  <div class="improvement-category">herramientas</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Medidor analógico 3 en 1 (pH, humedad, luz), sin batería.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Antes de invertir en enmiendas, saber el pH real evita errores. Las hortensias quieren pH ácido (5–6), los frutales neutro (6.5–7), las aromáticas mediterráneas alcalino (7+).</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Clavar el sensor 10 cm en suelo húmedo. Esperar 1 minuto. Anotar lectura por zona.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Cualquier época, mejor 2 horas después de regar.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Mercado Libre · viveros — buscar &#x27;medidor pH suelo 3 en 1&#x27;.</div>
+  
+</article>
+<article class="improvement-card tier-under10" data-name="tutor reforzado para el palto" data-tags="estructura">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 9</span>
+  </div>
+  <h3 class="improvement-title">Tutor reforzado para el palto</h3>
+  <div class="improvement-category">estructura</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Tutor de bambú o caña tacuara de 2.5 m + atadura goma elástica.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> El palto B-36 todavía es joven y el viento del este (sale el sol acá) lo mueve. Un tutor firme los primeros 2–3 años evita inclinación permanente.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Clavar el tutor 40 cm en suelo, a 10 cm del tronco. Atar en 8 con goma cada 60 cm — nunca cordel rígido (estrangula).</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Cualquier época, mejor antes de los vientos de primavera (septiembre).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Ferreterías · viveros · Mercado Libre.</div>
+  <div class="improvement-applies"><strong>🪴 Aplica a:</strong> <button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-36">B-36</button></div>
+</article>
+<article class="improvement-card tier-under10" data-name="sustrato específico para aroides (monstera, philodendron)" data-tags="sustrato interior">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 9</span>
+  </div>
+  <h3 class="improvement-title">Sustrato específico para aroides (Monstera, Philodendron)</h3>
+  <div class="improvement-category">sustrato</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Mezcla con corteza de pino, perlita, fibra de coco y carbón vegetal — 5 L.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Las aroides se pudren en tierra común. El sustrato chunky drena rápido y deja oxígeno en la raíz aérea, evitando el podrido de cuello.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Trasplantar a maceta solo 2 cm más ancha. Rellenar con la mezcla, regar abundante una sola vez y dejar secar 5 días.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Septiembre–octubre (inicio de crecimiento activo).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Viveros especializados · Mercado Libre — &#x27;sustrato aroides&#x27;.</div>
+  
+</article></div>
+<button type="button" class="btn-show-all" data-show-all aria-expanded="false">▾ Ver todas las mejoras — 6 más</button>
+</div>
+<div class="improvements-tier" style="--tier-color:#ea580c">
+  <h4 class="improvements-tier-header">💰 Menos de USD 100 <span class="improvements-tier-count">· 5</span></h4>
+  <div class="cards-grid improvements-grid">
+<article class="improvement-card tier-under100" data-name="malla anti-helada para rosales y jazmín" data-tags="protección invierno">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under100">💰 Menos de USD 100</span>
+    <span class="improvement-cost">~USD 25</span>
+  </div>
+  <h3 class="improvement-title">Malla anti-helada para rosales y jazmín</h3>
+  <div class="improvement-category">protección</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Tela TNT agryl 17 g/m², rollo de 3×5 m.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> El frente recibe heladas tardías al amanecer (junio–agosto). Cubrir rosales jóvenes y trepadoras tiernas evita quemado de yemas florales.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Cubrir las plantas las noches que pronostican &lt; 2 °C. Retirar al sol del mediodía para no condensar humedad.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Junio–agosto, las 6–10 noches más frías del año.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Casa Sasso · viveros grandes · Mercado Libre — &#x27;tela antiheladas agryl 17&#x27;.</div>
+  
+</article>
+<article class="improvement-card tier-under100" data-name="tijera de podar bypass fiskars (o equivalente)" data-tags="herramientas">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under100">💰 Menos de USD 100</span>
+    <span class="improvement-cost">~USD 35</span>
+  </div>
+  <h3 class="improvement-title">Tijera de podar bypass Fiskars (o equivalente)</h3>
+  <div class="improvement-category">herramientas</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Tijera de podar profesional bypass, hoja de acero al carbono.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Una tijera afilada hace cortes limpios que cicatrizan rápido. Las baratas aplastan el tallo y dejan entradas para hongos. Una buena dura 20 años.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Limpiar con alcohol entre planta y planta (evita contagio de virus). Afilar 2× al año con piedra fina.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Comprar antes de la temporada de poda (mayo–agosto).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Sodimac · Mercado Libre · ferreterías grandes.</div>
+  
+</article></div>
+<div class="cards-grid improvements-grid ideas-collapsed" hidden data-collapsed-grid>
+<article class="improvement-card tier-under100" data-name="mulch de corteza de pino para canteros" data-tags="sustrato verano">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under100">💰 Menos de USD 100</span>
+    <span class="improvement-cost">~USD 40</span>
+  </div>
+  <h3 class="improvement-title">Mulch de corteza de pino para canteros</h3>
+  <div class="improvement-category">sustrato</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Bolsa de 50 L de corteza de pino mediana (cubre ~2 m² a 3 cm).</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Conserva humedad en verano (riego más espaciado), suprime malezas, y al descomponerse acidifica un poco el suelo — ideal para fotinias y abelia.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Capa de 3–5 cm alrededor del tronco dejando 5 cm de aire en el cuello. Renovar cada 18 meses.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Noviembre (antes del calor fuerte).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Viveros · barracas de paisajismo.</div>
+  <div class="improvement-applies"><strong>🪴 Aplica a:</strong> <button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-5">F-5</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-7">F-7</button></div>
+</article>
+<article class="improvement-card tier-under100" data-name="panel led full-spectrum para plantas" data-tags="iluminación invierno interior">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under100">💰 Menos de USD 100</span>
+    <span class="improvement-cost">~USD 45</span>
+  </div>
+  <h3 class="improvement-title">Panel LED full-spectrum para plantas</h3>
+  <div class="improvement-category">iluminación</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Panel LED 30 W full-spectrum (rojo + azul + blanco), con timer USB.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> En invierno los días son cortos y muchas tropicales pierden hojas por falta de luz. Un panel suplementa 6 h/día y mantiene el follaje.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Colgar a 40–60 cm de la planta. Encender 6 h/día (idealmente con timer 8:00–14:00).</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Mayo–agosto (días más cortos).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Mercado Libre · Amazon — buscar &#x27;grow light LED full spectrum&#x27;.</div>
+  
+</article>
+<article class="improvement-card tier-under100" data-name="kit de riego por goteo para frutales" data-tags="riego verano">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under100">💰 Menos de USD 100</span>
+    <span class="improvement-cost">~USD 60</span>
+  </div>
+  <h3 class="improvement-title">Kit de riego por goteo para frutales</h3>
+  <div class="improvement-category">riego</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Kit con 25 m de manguera, 10 goteros autocompensados, conectores y timer mecánico.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Los frutales del fondo (durazno, peral, palto, cítricos) producen mucho más con riego constante en verano. Goteo gasta 70% menos agua que aspersión.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Tender la manguera a 30 cm del tronco, 2 goteros por árbol grande, 30 min/día con timer. Tapar con mulch para que no se degrade el plástico.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Instalar en septiembre antes de la temporada seca.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Casa Sasso · agroveterinarias · Sodimac.</div>
+  <div class="improvement-applies"><strong>🪴 Aplica a:</strong> <button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-23">B-23</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-24">B-24</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-30">B-30</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-36">B-36</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-39">B-39</button></div>
+</article></div>
+<button type="button" class="btn-show-all" data-show-all aria-expanded="false">▾ Ver todas las mejoras — 3 más</button>
+</div></div>
+  </div>
+
   <div class="subtab-pane" data-sub="new">
     
 <div class="ideas-section ideas-section-now">
@@ -6285,6 +6651,7 @@ ID exacta de cada plantín pendiente — ver urgencia &#x27;Mapeo del vivero&#x2
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
     <button class="subtab-btn" data-sub="map">📐 Mapa</button>
     <button class="subtab-btn" data-sub="care">✂️ Cuidado</button>
+    <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
     <button class="subtab-btn" data-sub="new">💡 Ideas</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
@@ -6779,6 +7146,143 @@ ID exacta de cada plantín pendiente — ver urgencia &#x27;Mapeo del vivero&#x2
     </div>
   </div>
 </article></div>
+  </div>
+
+  <div class="subtab-pane" data-sub="improvements">
+    <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar mejora..."></div>
+    <div class="ideas-section">
+<div class="ideas-intro">
+  <h3>💰 Mejoras para esta zona</h3>
+  <p>Inversiones (o trabajo gratis) para subir un escalón el jardín — agrupado por presupuesto. Empezá por lo gratis y subí si tiene sentido.</p>
+</div>
+<div class="improvements-tier" style="--tier-color:#16a34a">
+  <h4 class="improvements-tier-header">🆓 Gratis <span class="improvements-tier-count">· 2</span></h4>
+  <div class="cards-grid improvements-grid">
+<article class="improvement-card tier-free" data-name="compostera casera con palets reciclados" data-tags="sustrato compost">
+  <div class="improvement-header">
+    <span class="tier-badge tier-free">🆓 Gratis</span>
+    <span class="improvement-cost">Gratis</span>
+  </div>
+  <h3 class="improvement-title">Compostera casera con palets reciclados</h3>
+  <div class="improvement-category">sustrato</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> 4 palets de descarte + alambre o tornillos.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Fertilizante gratis y constante para todo el jardín. Cierra el ciclo de los restos verdes (poda, césped cortado, restos de cocina vegetales).</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Armar caja de ~1×1×1 m con palets en rincón sombrío del fondo. Alternar capas verdes (césped, restos cocina) y secas (hojarasca, ramitas). Voltear cada 3 semanas. Listo en 4–6 meses.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Cualquier época. Empieza ya.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Gratis — palets de descarte de barracas/supermercados.</div>
+  
+</article>
+<article class="improvement-card tier-free" data-name="recolección de agua de lluvia con baldes" data-tags="riego">
+  <div class="improvement-header">
+    <span class="tier-badge tier-free">🆓 Gratis</span>
+    <span class="improvement-cost">Gratis</span>
+  </div>
+  <h3 class="improvement-title">Recolección de agua de lluvia con baldes</h3>
+  <div class="improvement-category">riego</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Baldes/tachos que ya tengas (mínimo 2 × 20 L).</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> El agua de lluvia es ácida (pH ~6) y sin cloro — ideal para hortensias, helechos, camelias y plantas de interior que sufren con agua de canilla.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Poner los tachos bajo bajadas de canaleta. Tapar con malla mosquitera para no juntar larvas. Usar dentro de 2 semanas.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Todo el año — abril–octubre es cuando más llueve en Montevideo.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Gratis — material que ya tenés.</div>
+  
+</article></div>
+</div>
+<div class="improvements-tier" style="--tier-color:#ca8a04">
+  <h4 class="improvements-tier-header">💵 Menos de USD 10 <span class="improvements-tier-count">· 3</span></h4>
+  <div class="cards-grid improvements-grid">
+<article class="improvement-card tier-under10" data-name="sulfato de hierro para fotinias amarillentas" data-tags="nutrientes fotinias">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 5</span>
+  </div>
+  <h3 class="improvement-title">Sulfato de hierro para fotinias amarillentas</h3>
+  <div class="improvement-category">nutrientes</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Sulfato ferroso (FeSO₄), bolsa de 500 g.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Las fotinias F-1..F-6 muestran clorosis (hojas amarillas con nervios verdes) cuando el suelo es muy alcalino. El hierro recupera el rojo intenso del rebrote.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Disolver 5 g/L de agua y regar al pie 1 vez por mes durante 3 meses. No mojar follaje a pleno sol.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Primavera (septiembre–noviembre) cuando empieza el rebrote.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Agroveterinarias · viveros grandes — pedir &#x27;sulfato de hierro soluble&#x27;.</div>
+  <div class="improvement-applies"><strong>🪴 Aplica a:</strong> <button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-1">F-1</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-2">F-2</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-3">F-3</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-4">F-4</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-5">F-5</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-6">F-6</button></div>
+</article>
+<article class="improvement-card tier-under10" data-name="resembrar el césped del cantero" data-tags="césped otoño">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 8</span>
+  </div>
+  <h3 class="improvement-title">Resembrar el césped del cantero</h3>
+  <div class="improvement-category">césped</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Mezcla de semilla festuca + ryegrass anual shade-tolerant (1 kg cubre ~30 m²).</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> El frente tiene parches ralos bajo las fotinias. Una resiembra de otoño llena los claros antes del invierno y deja un colchón verde.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Rastrillar superficial para abrir el suelo, sembrar a voleo 30 g/m², tapar con 1 cm de compost fino, regar liviano 10 días seguidos.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Marzo–mayo (mejor) o agosto–septiembre.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Vivero Antares · Casa Sasso · Mercado Libre — buscar &#x27;mezcla resiembra sombra&#x27;.</div>
+  
+</article></div>
+<div class="cards-grid improvements-grid ideas-collapsed" hidden data-collapsed-grid>
+<article class="improvement-card tier-under10" data-name="kit de medición de ph y humedad del suelo" data-tags="herramientas">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 8</span>
+  </div>
+  <h3 class="improvement-title">Kit de medición de pH y humedad del suelo</h3>
+  <div class="improvement-category">herramientas</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Medidor analógico 3 en 1 (pH, humedad, luz), sin batería.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Antes de invertir en enmiendas, saber el pH real evita errores. Las hortensias quieren pH ácido (5–6), los frutales neutro (6.5–7), las aromáticas mediterráneas alcalino (7+).</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Clavar el sensor 10 cm en suelo húmedo. Esperar 1 minuto. Anotar lectura por zona.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Cualquier época, mejor 2 horas después de regar.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Mercado Libre · viveros — buscar &#x27;medidor pH suelo 3 en 1&#x27;.</div>
+  
+</article></div>
+<button type="button" class="btn-show-all" data-show-all aria-expanded="false">▾ Ver todas las mejoras — 1 más</button>
+</div>
+<div class="improvements-tier" style="--tier-color:#ea580c">
+  <h4 class="improvements-tier-header">💰 Menos de USD 100 <span class="improvements-tier-count">· 3</span></h4>
+  <div class="cards-grid improvements-grid">
+<article class="improvement-card tier-under100" data-name="malla anti-helada para rosales y jazmín" data-tags="protección invierno">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under100">💰 Menos de USD 100</span>
+    <span class="improvement-cost">~USD 25</span>
+  </div>
+  <h3 class="improvement-title">Malla anti-helada para rosales y jazmín</h3>
+  <div class="improvement-category">protección</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Tela TNT agryl 17 g/m², rollo de 3×5 m.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> El frente recibe heladas tardías al amanecer (junio–agosto). Cubrir rosales jóvenes y trepadoras tiernas evita quemado de yemas florales.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Cubrir las plantas las noches que pronostican &lt; 2 °C. Retirar al sol del mediodía para no condensar humedad.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Junio–agosto, las 6–10 noches más frías del año.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Casa Sasso · viveros grandes · Mercado Libre — &#x27;tela antiheladas agryl 17&#x27;.</div>
+  
+</article>
+<article class="improvement-card tier-under100" data-name="tijera de podar bypass fiskars (o equivalente)" data-tags="herramientas">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under100">💰 Menos de USD 100</span>
+    <span class="improvement-cost">~USD 35</span>
+  </div>
+  <h3 class="improvement-title">Tijera de podar bypass Fiskars (o equivalente)</h3>
+  <div class="improvement-category">herramientas</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Tijera de podar profesional bypass, hoja de acero al carbono.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Una tijera afilada hace cortes limpios que cicatrizan rápido. Las baratas aplastan el tallo y dejan entradas para hongos. Una buena dura 20 años.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Limpiar con alcohol entre planta y planta (evita contagio de virus). Afilar 2× al año con piedra fina.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Comprar antes de la temporada de poda (mayo–agosto).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Sodimac · Mercado Libre · ferreterías grandes.</div>
+  
+</article></div>
+<div class="cards-grid improvements-grid ideas-collapsed" hidden data-collapsed-grid>
+<article class="improvement-card tier-under100" data-name="mulch de corteza de pino para canteros" data-tags="sustrato verano">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under100">💰 Menos de USD 100</span>
+    <span class="improvement-cost">~USD 40</span>
+  </div>
+  <h3 class="improvement-title">Mulch de corteza de pino para canteros</h3>
+  <div class="improvement-category">sustrato</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Bolsa de 50 L de corteza de pino mediana (cubre ~2 m² a 3 cm).</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Conserva humedad en verano (riego más espaciado), suprime malezas, y al descomponerse acidifica un poco el suelo — ideal para fotinias y abelia.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Capa de 3–5 cm alrededor del tronco dejando 5 cm de aire en el cuello. Renovar cada 18 meses.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Noviembre (antes del calor fuerte).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Viveros · barracas de paisajismo.</div>
+  <div class="improvement-applies"><strong>🪴 Aplica a:</strong> <button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-5">F-5</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="F-7">F-7</button></div>
+</article></div>
+<button type="button" class="btn-show-all" data-show-all aria-expanded="false">▾ Ver todas las mejoras — 1 más</button>
+</div></div>
   </div>
 
   <div class="subtab-pane" data-sub="new">
@@ -7350,6 +7854,7 @@ ID exacta de cada plantín pendiente — ver urgencia &#x27;Mapeo del vivero&#x2
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
     <button class="subtab-btn" data-sub="map">📐 Mapa</button>
     <button class="subtab-btn" data-sub="care">✂️ Cuidado</button>
+    <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
     <button class="subtab-btn" data-sub="new">💡 Ideas</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
@@ -9486,6 +9991,141 @@ ID exacta de cada plantín pendiente — ver urgencia &#x27;Mapeo del vivero&#x2
 </article></div>
   </div>
 
+  <div class="subtab-pane" data-sub="improvements">
+    <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar mejora..."></div>
+    <div class="ideas-section">
+<div class="ideas-intro">
+  <h3>💰 Mejoras para esta zona</h3>
+  <p>Inversiones (o trabajo gratis) para subir un escalón el jardín — agrupado por presupuesto. Empezá por lo gratis y subí si tiene sentido.</p>
+</div>
+<div class="improvements-tier" style="--tier-color:#16a34a">
+  <h4 class="improvements-tier-header">🆓 Gratis <span class="improvements-tier-count">· 2</span></h4>
+  <div class="cards-grid improvements-grid">
+<article class="improvement-card tier-free" data-name="compostera casera con palets reciclados" data-tags="sustrato compost">
+  <div class="improvement-header">
+    <span class="tier-badge tier-free">🆓 Gratis</span>
+    <span class="improvement-cost">Gratis</span>
+  </div>
+  <h3 class="improvement-title">Compostera casera con palets reciclados</h3>
+  <div class="improvement-category">sustrato</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> 4 palets de descarte + alambre o tornillos.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Fertilizante gratis y constante para todo el jardín. Cierra el ciclo de los restos verdes (poda, césped cortado, restos de cocina vegetales).</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Armar caja de ~1×1×1 m con palets en rincón sombrío del fondo. Alternar capas verdes (césped, restos cocina) y secas (hojarasca, ramitas). Voltear cada 3 semanas. Listo en 4–6 meses.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Cualquier época. Empieza ya.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Gratis — palets de descarte de barracas/supermercados.</div>
+  
+</article>
+<article class="improvement-card tier-free" data-name="recolección de agua de lluvia con baldes" data-tags="riego">
+  <div class="improvement-header">
+    <span class="tier-badge tier-free">🆓 Gratis</span>
+    <span class="improvement-cost">Gratis</span>
+  </div>
+  <h3 class="improvement-title">Recolección de agua de lluvia con baldes</h3>
+  <div class="improvement-category">riego</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Baldes/tachos que ya tengas (mínimo 2 × 20 L).</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> El agua de lluvia es ácida (pH ~6) y sin cloro — ideal para hortensias, helechos, camelias y plantas de interior que sufren con agua de canilla.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Poner los tachos bajo bajadas de canaleta. Tapar con malla mosquitera para no juntar larvas. Usar dentro de 2 semanas.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Todo el año — abril–octubre es cuando más llueve en Montevideo.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Gratis — material que ya tenés.</div>
+  
+</article></div>
+</div>
+<div class="improvements-tier" style="--tier-color:#ca8a04">
+  <h4 class="improvements-tier-header">💵 Menos de USD 10 <span class="improvements-tier-count">· 4</span></h4>
+  <div class="cards-grid improvements-grid">
+<article class="improvement-card tier-under10" data-name="fertilizante específico para cítricos" data-tags="nutrientes frutal">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 6</span>
+  </div>
+  <h3 class="improvement-title">Fertilizante específico para cítricos</h3>
+  <div class="improvement-category">nutrientes</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> NPK 12-5-14 con micronutrientes (Mg, Fe, Zn), bolsa de 1 kg.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Los cítricos son ávidos de nitrógeno y muy susceptibles a clorosis. Un fertilizante balanceado les da hojas verde-oscuro y mejor cuaje de fruta.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> 30 g por planta repartido en 3 aplicaciones: agosto, noviembre, febrero. Espolvorear bajo la copa y regar.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> 3 veces al año (primavera, fin de primavera, verano).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Agroveterinarias · viveros — pedir &#x27;fertilizante cítricos&#x27;.</div>
+  <div class="improvement-applies"><strong>🪴 Aplica a:</strong> <button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-23">B-23</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-24">B-24</button></div>
+</article>
+<article class="improvement-card tier-under10" data-name="abono para frutales de carozo y pepita" data-tags="nutrientes frutal invierno">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 7</span>
+  </div>
+  <h3 class="improvement-title">Abono para frutales de carozo y pepita</h3>
+  <div class="improvement-category">nutrientes</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Fertilizante de invierno tipo 10-10-10 + materia orgánica, 2 kg.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Durazno y peral necesitan reservas para fructificación abundante. Una aplicación en pleno reposo invernal recarga reservas para la brotación.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> 200 g enterrados levemente en corona alrededor del tronco (radio de la copa). Regar después.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Julio (pleno invierno, antes de la brotación).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Agroveterinarias.</div>
+  <div class="improvement-applies"><strong>🪴 Aplica a:</strong> <button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-30">B-30</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-39">B-39</button></div>
+</article></div>
+<div class="cards-grid improvements-grid ideas-collapsed" hidden data-collapsed-grid>
+<article class="improvement-card tier-under10" data-name="kit de medición de ph y humedad del suelo" data-tags="herramientas">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 8</span>
+  </div>
+  <h3 class="improvement-title">Kit de medición de pH y humedad del suelo</h3>
+  <div class="improvement-category">herramientas</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Medidor analógico 3 en 1 (pH, humedad, luz), sin batería.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Antes de invertir en enmiendas, saber el pH real evita errores. Las hortensias quieren pH ácido (5–6), los frutales neutro (6.5–7), las aromáticas mediterráneas alcalino (7+).</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Clavar el sensor 10 cm en suelo húmedo. Esperar 1 minuto. Anotar lectura por zona.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Cualquier época, mejor 2 horas después de regar.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Mercado Libre · viveros — buscar &#x27;medidor pH suelo 3 en 1&#x27;.</div>
+  
+</article>
+<article class="improvement-card tier-under10" data-name="tutor reforzado para el palto" data-tags="estructura">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 9</span>
+  </div>
+  <h3 class="improvement-title">Tutor reforzado para el palto</h3>
+  <div class="improvement-category">estructura</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Tutor de bambú o caña tacuara de 2.5 m + atadura goma elástica.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> El palto B-36 todavía es joven y el viento del este (sale el sol acá) lo mueve. Un tutor firme los primeros 2–3 años evita inclinación permanente.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Clavar el tutor 40 cm en suelo, a 10 cm del tronco. Atar en 8 con goma cada 60 cm — nunca cordel rígido (estrangula).</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Cualquier época, mejor antes de los vientos de primavera (septiembre).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Ferreterías · viveros · Mercado Libre.</div>
+  <div class="improvement-applies"><strong>🪴 Aplica a:</strong> <button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-36">B-36</button></div>
+</article></div>
+<button type="button" class="btn-show-all" data-show-all aria-expanded="false">▾ Ver todas las mejoras — 2 más</button>
+</div>
+<div class="improvements-tier" style="--tier-color:#ea580c">
+  <h4 class="improvements-tier-header">💰 Menos de USD 100 <span class="improvements-tier-count">· 2</span></h4>
+  <div class="cards-grid improvements-grid">
+<article class="improvement-card tier-under100" data-name="tijera de podar bypass fiskars (o equivalente)" data-tags="herramientas">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under100">💰 Menos de USD 100</span>
+    <span class="improvement-cost">~USD 35</span>
+  </div>
+  <h3 class="improvement-title">Tijera de podar bypass Fiskars (o equivalente)</h3>
+  <div class="improvement-category">herramientas</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Tijera de podar profesional bypass, hoja de acero al carbono.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Una tijera afilada hace cortes limpios que cicatrizan rápido. Las baratas aplastan el tallo y dejan entradas para hongos. Una buena dura 20 años.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Limpiar con alcohol entre planta y planta (evita contagio de virus). Afilar 2× al año con piedra fina.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Comprar antes de la temporada de poda (mayo–agosto).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Sodimac · Mercado Libre · ferreterías grandes.</div>
+  
+</article>
+<article class="improvement-card tier-under100" data-name="kit de riego por goteo para frutales" data-tags="riego verano">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under100">💰 Menos de USD 100</span>
+    <span class="improvement-cost">~USD 60</span>
+  </div>
+  <h3 class="improvement-title">Kit de riego por goteo para frutales</h3>
+  <div class="improvement-category">riego</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Kit con 25 m de manguera, 10 goteros autocompensados, conectores y timer mecánico.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Los frutales del fondo (durazno, peral, palto, cítricos) producen mucho más con riego constante en verano. Goteo gasta 70% menos agua que aspersión.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Tender la manguera a 30 cm del tronco, 2 goteros por árbol grande, 30 min/día con timer. Tapar con mulch para que no se degrade el plástico.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Instalar en septiembre antes de la temporada seca.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Casa Sasso · agroveterinarias · Sodimac.</div>
+  <div class="improvement-applies"><strong>🪴 Aplica a:</strong> <button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-23">B-23</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-24">B-24</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-30">B-30</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-36">B-36</button><button type="button" class="improvement-applies-chip" data-action="open-species" data-plant-code="B-39">B-39</button></div>
+</article></div>
+</div></div>
+  </div>
+
   <div class="subtab-pane" data-sub="new">
     
 <div class="ideas-section ideas-section-now">
@@ -10086,6 +10726,7 @@ ID exacta de cada plantín pendiente — ver urgencia &#x27;Mapeo del vivero&#x2
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
     <button class="subtab-btn" data-sub="map">📐 Mapa</button>
     <button class="subtab-btn" data-sub="care">✂️ Cuidado</button>
+    <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
     <button class="subtab-btn" data-sub="new">💡 Ideas</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
@@ -10223,6 +10864,127 @@ ID exacta de cada plantín pendiente — ver urgencia &#x27;Mapeo del vivero&#x2
     </div>
   </div>
 </article></div>
+  </div>
+
+  <div class="subtab-pane" data-sub="improvements">
+    <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar mejora..."></div>
+    <div class="ideas-section">
+<div class="ideas-intro">
+  <h3>💰 Mejoras para esta zona</h3>
+  <p>Inversiones (o trabajo gratis) para subir un escalón el jardín — agrupado por presupuesto. Empezá por lo gratis y subí si tiene sentido.</p>
+</div>
+<div class="improvements-tier" style="--tier-color:#16a34a">
+  <h4 class="improvements-tier-header">🆓 Gratis <span class="improvements-tier-count">· 2</span></h4>
+  <div class="cards-grid improvements-grid">
+<article class="improvement-card tier-free" data-name="compostera casera con palets reciclados" data-tags="sustrato compost">
+  <div class="improvement-header">
+    <span class="tier-badge tier-free">🆓 Gratis</span>
+    <span class="improvement-cost">Gratis</span>
+  </div>
+  <h3 class="improvement-title">Compostera casera con palets reciclados</h3>
+  <div class="improvement-category">sustrato</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> 4 palets de descarte + alambre o tornillos.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Fertilizante gratis y constante para todo el jardín. Cierra el ciclo de los restos verdes (poda, césped cortado, restos de cocina vegetales).</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Armar caja de ~1×1×1 m con palets en rincón sombrío del fondo. Alternar capas verdes (césped, restos cocina) y secas (hojarasca, ramitas). Voltear cada 3 semanas. Listo en 4–6 meses.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Cualquier época. Empieza ya.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Gratis — palets de descarte de barracas/supermercados.</div>
+  
+</article>
+<article class="improvement-card tier-free" data-name="recolección de agua de lluvia con baldes" data-tags="riego">
+  <div class="improvement-header">
+    <span class="tier-badge tier-free">🆓 Gratis</span>
+    <span class="improvement-cost">Gratis</span>
+  </div>
+  <h3 class="improvement-title">Recolección de agua de lluvia con baldes</h3>
+  <div class="improvement-category">riego</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Baldes/tachos que ya tengas (mínimo 2 × 20 L).</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> El agua de lluvia es ácida (pH ~6) y sin cloro — ideal para hortensias, helechos, camelias y plantas de interior que sufren con agua de canilla.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Poner los tachos bajo bajadas de canaleta. Tapar con malla mosquitera para no juntar larvas. Usar dentro de 2 semanas.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Todo el año — abril–octubre es cuando más llueve en Montevideo.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Gratis — material que ya tenés.</div>
+  
+</article></div>
+</div>
+<div class="improvements-tier" style="--tier-color:#ca8a04">
+  <h4 class="improvements-tier-header">💵 Menos de USD 10 <span class="improvements-tier-count">· 3</span></h4>
+  <div class="cards-grid improvements-grid">
+<article class="improvement-card tier-under10" data-name="spray foliar de agua + sales para tropicales" data-tags="nutrientes interior">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 4</span>
+  </div>
+  <h3 class="improvement-title">Spray foliar de agua + sales para tropicales</h3>
+  <div class="improvement-category">nutrientes</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Pulverizador 1 L + fertilizante foliar líquido NPK 6-6-6, frasco 250 ml.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Helechos, aroides y plantas de interior agradecen humedad ambiente alta. El spray foliar suplementa nutrientes vía hoja y simula el ambiente tropical.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Diluir 2 ml/L y pulverizar el envés de la hoja una vez por semana en primavera–verano. Solo agua en otoño–invierno.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Septiembre–marzo, semanal.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Viveros · supermercados con sección de jardín.</div>
+  
+</article>
+<article class="improvement-card tier-under10" data-name="kit de medición de ph y humedad del suelo" data-tags="herramientas">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 8</span>
+  </div>
+  <h3 class="improvement-title">Kit de medición de pH y humedad del suelo</h3>
+  <div class="improvement-category">herramientas</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Medidor analógico 3 en 1 (pH, humedad, luz), sin batería.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Antes de invertir en enmiendas, saber el pH real evita errores. Las hortensias quieren pH ácido (5–6), los frutales neutro (6.5–7), las aromáticas mediterráneas alcalino (7+).</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Clavar el sensor 10 cm en suelo húmedo. Esperar 1 minuto. Anotar lectura por zona.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Cualquier época, mejor 2 horas después de regar.</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Mercado Libre · viveros — buscar &#x27;medidor pH suelo 3 en 1&#x27;.</div>
+  
+</article></div>
+<div class="cards-grid improvements-grid ideas-collapsed" hidden data-collapsed-grid>
+<article class="improvement-card tier-under10" data-name="sustrato específico para aroides (monstera, philodendron)" data-tags="sustrato interior">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under10">💵 Menos de USD 10</span>
+    <span class="improvement-cost">~USD 9</span>
+  </div>
+  <h3 class="improvement-title">Sustrato específico para aroides (Monstera, Philodendron)</h3>
+  <div class="improvement-category">sustrato</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Mezcla con corteza de pino, perlita, fibra de coco y carbón vegetal — 5 L.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Las aroides se pudren en tierra común. El sustrato chunky drena rápido y deja oxígeno en la raíz aérea, evitando el podrido de cuello.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Trasplantar a maceta solo 2 cm más ancha. Rellenar con la mezcla, regar abundante una sola vez y dejar secar 5 días.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Septiembre–octubre (inicio de crecimiento activo).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Viveros especializados · Mercado Libre — &#x27;sustrato aroides&#x27;.</div>
+  
+</article></div>
+<button type="button" class="btn-show-all" data-show-all aria-expanded="false">▾ Ver todas las mejoras — 1 más</button>
+</div>
+<div class="improvements-tier" style="--tier-color:#ea580c">
+  <h4 class="improvements-tier-header">💰 Menos de USD 100 <span class="improvements-tier-count">· 2</span></h4>
+  <div class="cards-grid improvements-grid">
+<article class="improvement-card tier-under100" data-name="tijera de podar bypass fiskars (o equivalente)" data-tags="herramientas">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under100">💰 Menos de USD 100</span>
+    <span class="improvement-cost">~USD 35</span>
+  </div>
+  <h3 class="improvement-title">Tijera de podar bypass Fiskars (o equivalente)</h3>
+  <div class="improvement-category">herramientas</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Tijera de podar profesional bypass, hoja de acero al carbono.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> Una tijera afilada hace cortes limpios que cicatrizan rápido. Las baratas aplastan el tallo y dejan entradas para hongos. Una buena dura 20 años.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Limpiar con alcohol entre planta y planta (evita contagio de virus). Afilar 2× al año con piedra fina.</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Comprar antes de la temporada de poda (mayo–agosto).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Sodimac · Mercado Libre · ferreterías grandes.</div>
+  
+</article>
+<article class="improvement-card tier-under100" data-name="panel led full-spectrum para plantas" data-tags="iluminación invierno interior">
+  <div class="improvement-header">
+    <span class="tier-badge tier-under100">💰 Menos de USD 100</span>
+    <span class="improvement-cost">~USD 45</span>
+  </div>
+  <h3 class="improvement-title">Panel LED full-spectrum para plantas</h3>
+  <div class="improvement-category">iluminación</div>
+  <div class="improvement-line"><strong>🛒 Qué:</strong> Panel LED 30 W full-spectrum (rojo + azul + blanco), con timer USB.</div>
+  <div class="improvement-line"><strong>💚 Por qué:</strong> En invierno los días son cortos y muchas tropicales pierden hojas por falta de luz. Un panel suplementa 6 h/día y mantiene el follaje.</div>
+  <div class="improvement-line"><strong>🔧 Cómo:</strong> Colgar a 40–60 cm de la planta. Encender 6 h/día (idealmente con timer 8:00–14:00).</div>
+  <div class="improvement-line"><strong>📅 Cuándo:</strong> Mayo–agosto (días más cortos).</div>
+  <div class="improvement-line"><strong>📍 Dónde comprar:</strong> Mercado Libre · Amazon — buscar &#x27;grow light LED full spectrum&#x27;.</div>
+  
+</article></div>
+</div></div>
   </div>
 
   <div class="subtab-pane" data-sub="new">
@@ -11176,6 +11938,19 @@ function setupLightbox(scope) {
     });
   });
 
+  // Chips de "Aplica a" en cards de mejoras → abren modal de detalle
+  scope.querySelectorAll('button[data-action="open-species"]').forEach(btn => {
+    if (btn.dataset.speciesBound) return;
+    btn.dataset.speciesBound = '1';
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const code = btn.getAttribute('data-plant-code');
+      if (code && typeof openSpeciesDetailModal === 'function') {
+        openSpeciesDetailModal(code);
+      }
+    });
+  });
+
   scope.querySelectorAll('img[data-action="lightbox"]').forEach(img => {
     if (img.dataset.lightboxBound) return;
     img.dataset.lightboxBound = '1';
@@ -11208,7 +11983,7 @@ document.querySelectorAll('.search').forEach(input => {
     const pane = input.closest('.subtab-pane');
     if (!pane) return;
     const q = input.value.toLowerCase().trim();
-    pane.querySelectorAll('.plant-card, .care-card, .idea-card, .huerta-card').forEach(card => {
+    pane.querySelectorAll('.plant-card, .care-card, .idea-card, .huerta-card, .improvement-card').forEach(card => {
       const name = card.dataset.name || '';
       const tags = card.dataset.tags || '';
       const visible = !q || name.includes(q) || tags.includes(q);

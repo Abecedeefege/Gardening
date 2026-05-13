@@ -118,6 +118,19 @@ function setupLightbox(scope) {
     });
   });
 
+  // Chips de "Aplica a" en cards de mejoras → abren modal de detalle
+  scope.querySelectorAll('button[data-action="open-species"]').forEach(btn => {
+    if (btn.dataset.speciesBound) return;
+    btn.dataset.speciesBound = '1';
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const code = btn.getAttribute('data-plant-code');
+      if (code && typeof openSpeciesDetailModal === 'function') {
+        openSpeciesDetailModal(code);
+      }
+    });
+  });
+
   scope.querySelectorAll('img[data-action="lightbox"]').forEach(img => {
     if (img.dataset.lightboxBound) return;
     img.dataset.lightboxBound = '1';
@@ -150,7 +163,7 @@ document.querySelectorAll('.search').forEach(input => {
     const pane = input.closest('.subtab-pane');
     if (!pane) return;
     const q = input.value.toLowerCase().trim();
-    pane.querySelectorAll('.plant-card, .care-card, .idea-card, .huerta-card').forEach(card => {
+    pane.querySelectorAll('.plant-card, .care-card, .idea-card, .huerta-card, .improvement-card').forEach(card => {
       const name = card.dataset.name || '';
       const tags = card.dataset.tags || '';
       const visible = !q || name.includes(q) || tags.includes(q);
