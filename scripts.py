@@ -1023,7 +1023,7 @@ function renderContactsForm() {
   `).join('');
 }
 
-document.getElementById('btn-edit-contacts').addEventListener('click', openContactsModal);
+document.getElementById('btn-edit-contacts')?.addEventListener('click', openContactsModal);
 
 document.getElementById('btn-save-contacts').addEventListener('click', () => {
   const contacts = loadContacts();
@@ -1457,7 +1457,7 @@ function openSettingsModal() {
   if (typeof updatePwaStatusPanel === 'function') updatePwaStatusPanel();
 }
 
-document.getElementById('btn-open-settings').addEventListener('click', openSettingsModal);
+document.getElementById('btn-open-settings')?.addEventListener('click', openSettingsModal);
 
 document.getElementById('btn-test-github-token').addEventListener('click', async () => {
   const token = document.getElementById('settings-github-token').value.trim();

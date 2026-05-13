@@ -406,6 +406,7 @@ h2.subbrand {
   display: inline-flex; align-items: center; gap: 6px;
   transition: background var(--t), color var(--t), border-color var(--t), transform 150ms;
   white-space: nowrap;
+  text-decoration: none;
 }
 .todo-btn:hover {
   background: rgba(255, 255, 255, 0.95);
