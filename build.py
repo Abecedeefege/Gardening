@@ -1225,7 +1225,7 @@ def build_task_page(task: dict, plant: dict | None):
 
     page_url_meta = f'  <meta property="og:url" content="{esc(page_url)}">' if page_url else ""
 
-    redirect_target = f"../index.html#task={task_id}"
+    redirect_target = f"../tareas.html#task={task_id}"
 
     html = f"""<!DOCTYPE html>
 <html lang="es">
@@ -1338,8 +1338,7 @@ def _render_top_nav(active_page: str, ticker_html_inner: str = "", ticker_aria: 
   </nav>
 
   <div class="todo-strip">
-    <button class="todo-btn" data-zone="timeline"><span aria-hidden="true">📋</span> Tareas</button>
-    <span class="todo-label" id="todo-count">…</span>
+    <a class="todo-btn" href="tareas.html"><span aria-hidden="true">📋</span> Tareas <span class="todo-label" id="todo-count">…</span></a>
     <a class="todo-btn" href="ideas.html"><span aria-hidden="true">💡</span> Ideas</a>
   </div>"""
     else:
@@ -1494,6 +1493,53 @@ def build_ideas_html(ticker_html_inner: str = "", ticker_aria: str = "",
         description="Ideas de plantas nuevas, huerta y espacios verdes para el jardín Pacha Mama (Montevideo).",
         og_image="og-image.png",
         body_class="zone-ideas",
+        body_html=body,
+        page_globals_js=page_globals,
+    )
+
+
+def build_tareas_html(tasks, img_data, ticker_html_inner: str = "", ticker_aria: str = "",
+                      tasks_js: str = "", plants_info_js: str = "",
+                      contacts_js: str = "", templates_js: str = "",
+                      ticker_js: str = "", site_url_js: str = "") -> str:
+    """Página standalone con el Timeline + todos los modales asociados.
+    Recibe los JS-globals ya serializados desde main() para no duplicar
+    la lógica de serialización."""
+    top_nav = _render_top_nav("tareas", ticker_html_inner, ticker_aria)
+
+    timeline_html = build_timeline_view(tasks, img_data)
+    # El section sale con class="zone-content"; en esta página standalone
+    # tiene que estar activa por defecto.
+    timeline_active = timeline_html.replace(
+        '<section class="zone-content" data-zone="timeline">',
+        '<section class="zone-content active" data-zone="timeline">',
+        1,
+    )
+
+    body = f"""{top_nav}
+
+<div class="container container-zones">
+  {timeline_active}
+</div>
+
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img" alt="">
+</div>"""
+
+    page_globals = "\n".join([
+        tasks_js or "const TASKS = [];",
+        plants_info_js or "const PLANTS_INFO = [];",
+        contacts_js or "const DEFAULT_CONTACTS = [];",
+        templates_js or "const WHATSAPP_TEMPLATES = {};",
+        ticker_js or "const STATS_TICKER = [];",
+        site_url_js or 'const SITE_URL = "";',
+    ])
+
+    return _page_shell(
+        title="Tareas · Jardineando",
+        description="Timeline de tareas del jardín Pacha Mama: poda, riego, fertilización, control de plagas.",
+        og_image="og-image.png",
+        body_class="zone-tareas",
         body_html=body,
         page_globals_js=page_globals,
     )
@@ -1716,6 +1762,24 @@ def main():
     ideas_size_kb = ideas_out.stat().st_size / 1024
     print(f"✅ Generado: {ideas_out}")
     print(f"   {ideas_size_kb:.0f} KB")
+
+    # 8. Generar docs/tareas.html
+    tareas_html_doc = build_tareas_html(
+        tasks, img_data,
+        ticker_html_inner=ticker_html_inner,
+        ticker_aria=ticker_aria,
+        tasks_js=tasks_js,
+        plants_info_js=plants_info_js,
+        contacts_js=contacts_js,
+        templates_js=templates_js,
+        ticker_js=ticker_js,
+        site_url_js=site_url_js,
+    )
+    tareas_out = ROOT / "docs" / "tareas.html"
+    tareas_out.write_text(tareas_html_doc, encoding="utf-8")
+    tareas_size_kb = tareas_out.stat().st_size / 1024
+    print(f"✅ Generado: {tareas_out}")
+    print(f"   {tareas_size_kb:.0f} KB")
     print(f"\n👉 Para subir a GitHub Pages:")
     print(f"   git add docs/index.html && git commit -m 'rebuild' && git push")
 

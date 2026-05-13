@@ -4767,14 +4767,17 @@ document.querySelectorAll('.timeline-filters .ftag').forEach(btn => {
 renderTimeline();
 updateTodoCount();
 
-// Si la URL trae #task=ID (viene de un share), abrir Timeline + expandir + scroll
+// Si la URL trae #task=ID (viene de un share), abrir Timeline + expandir + scroll.
+// Compat: si estamos en index.html (sin timeline-feed local), redirige a
+// tareas.html preservando el hash.
 function openTaskFromHash() {
   const m = (window.location.hash || '').match(/^#task=(.+)$/);
   if (!m) return;
   const taskId = decodeURIComponent(m[1]);
-  // Switch a Timeline (ahora vive en el To-Do's strip, no en main-tabs)
-  const tlBtn = document.querySelector('.todo-btn[data-zone="timeline"]');
-  if (tlBtn) tlBtn.click();
+  if (!document.getElementById('timeline-feed')) {
+    window.location.replace('tareas.html' + window.location.hash);
+    return;
+  }
   // Buscar la tarea — puede estar en filter "active" o no, así que vamos a "all"
   const task = TASKS.find(t => t.id === taskId);
   if (!task) return;
