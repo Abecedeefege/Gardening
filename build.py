@@ -61,6 +61,26 @@ def encode_image(path: Path, max_width: int = 800, quality: int = 78) -> str:
     return f"data:image/jpeg;base64,{base64.b64encode(buf.getvalue()).decode('ascii')}"
 
 
+def copy_curated_image(src: Path, dst: Path, max_width: int = 800, quality: int = 78) -> None:
+    """Resize una imagen curada y escribirla a dst preservando el formato del
+    archivo de origen (jpg/jpeg/webp/png). Las imágenes curadas se cachean
+    por el browser y se comparten entre las distintas páginas del sitio."""
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    ext = src.suffix.lower().lstrip(".")
+    fmt_map = {"jpg": "JPEG", "jpeg": "JPEG", "webp": "WEBP", "png": "PNG"}
+    fmt = fmt_map.get(ext, "JPEG")
+    img = Image.open(src)
+    if fmt in ("JPEG", "WEBP"):
+        img = img.convert("RGB")
+    if img.width > max_width:
+        ratio = max_width / img.width
+        img = img.resize((max_width, int(img.height * ratio)), Image.Resampling.LANCZOS)
+    save_kwargs = {"format": fmt, "optimize": True}
+    if fmt in ("JPEG", "WEBP"):
+        save_kwargs["quality"] = quality
+    img.save(dst, **save_kwargs)
+
+
 def esc(s):
     return html_mod.escape(str(s) if s is not None else "", quote=True)
 
@@ -1259,15 +1279,17 @@ def main():
             if fname: unique_files.add(fname)
 
     print(f"📷 Procesando {len(unique_files)} imágenes...")
+    docs_images_dir = ROOT / "docs" / "images"
     img_data = {}
     for fname in sorted(unique_files):
         path = IMAGES_DIR / fname
         if path.exists():
-            img_data[fname] = encode_image(path)
+            copy_curated_image(path, docs_images_dir / fname)
+            img_data[fname] = fname  # truthy marker para checks de existencia
         else:
             img_data[fname] = ""
             print(f"  ⚠ Faltante: {fname}")
-    print(f"   ✅ {sum(1 for v in img_data.values() if v)} embebidas")
+    print(f"   ✅ {sum(1 for v in img_data.values() if v)} copiadas a docs/images/")
 
     # 2. Generar tareas
     tasks = generate_tasks_from_plants(PLANTS)
@@ -1364,7 +1386,13 @@ def main():
     timeline_html = build_timeline_view(tasks, img_data)
 
     # 5. Inyectar datos como JSON para el JS
-    img_js = "const IMG = " + json.dumps(img_data) + ";"
+    # IMG es un Proxy: IMG['foo.jpg'] devuelve 'images/foo.jpg' (path relativo).
+    # Mantiene compat con todo el JS existente que hacía IMG[k] esperando un data URI.
+    img_js = (
+        "const IMG = new Proxy({}, { "
+        "get: (_, k) => (typeof k === 'string' && k) ? 'images/' + k : '' "
+        "});"
+    )
     tasks_js = "const TASKS = " + json.dumps(tasks, ensure_ascii=False) + ";"
 
     # PLANTS_INFO — info por planta para el modal de detalle (no incluye urgencies,
