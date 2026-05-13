@@ -586,82 +586,11 @@ def render_collapsible_grid(card_htmls, grid_class, visible_count=2, label="ver 
 # ============================================================
 # Build de cada zona (Todo / Frente / Fondo)
 # ============================================================
-def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_locations, img_data):
-    """
-    plants_in_view: lista de plantas a mostrar (frente, fondo, o todas).
-    ideas_list: lista de ideas nuevas a mostrar (puede ser combinación frente+fondo).
-    show_huerta_locations: si True, muestra el intro con opciones de espacios para huerta
-        (más apropiado para "fondo" y "todo"). Si False, muestra el intro corto del frente.
-    """
+def build_zone(zone_name, zone_label, plants_in_view, img_data):
+    """plants_in_view: lista de plantas a mostrar (frente, fondo, todas o interior).
+    Las "Ideas" viven en docs/ideas.html (página separada)."""
     info_cards = "\n".join(render_plant_info_card(p, img_data) for p in plants_in_view)
-
-    # Ideas ordenadas: óptimas-para-este-mes primero, resto en orden original.
-    ideas_sorted = sorted(ideas_list, key=lambda i: not idea_is_optimal_now(i))
-    huerta_sorted = sorted(HUERTA, key=lambda h: not huerta_is_optimal_now(h))
-
-    new_ideas_grid = render_collapsible_grid(
-        [render_idea_card(i) for i in ideas_sorted],
-        "ideas-grid",
-        label="todas las plantas",
-    )
-    huerta_grid = render_collapsible_grid(
-        [render_huerta_card(h) for h in huerta_sorted],
-        "huerta-grid",
-        label="todas las hortalizas",
-    )
-
-    # Highlights cross-section: lo que va óptimo este mes, en cualquier categoría.
-    optimal_ideas = [i for i in ideas_list if idea_is_optimal_now(i)]
-    optimal_huerta = [h for h in HUERTA if huerta_is_optimal_now(h)]
-    highlights_html = ""
-    if optimal_ideas or optimal_huerta:
-        highlights_card_htmls = (
-            [render_idea_card(i) for i in optimal_ideas]
-            + [render_huerta_card(h) for h in optimal_huerta]
-        )
-        highlights_grid = render_collapsible_grid(
-            highlights_card_htmls,
-            "ideas-grid",
-            label="todas las óptimas de este mes",
-        )
-        highlights_html = f"""
-<div class="ideas-section ideas-section-now">
-  <div class="ideas-intro">
-    <h3>🎯 Para plantar ESTE MES ({esc(CURRENT_MONTH_NAME)})</h3>
-    <p>Lo que tiene ventana óptima ahora — del catálogo de ideas y de huerta. {len(optimal_ideas)} ornamental{'es' if len(optimal_ideas) != 1 else ''} + {len(optimal_huerta)} hortícola{'s' if len(optimal_huerta) != 1 else ''}.</p>
-  </div>
-  {highlights_grid}
-</div>"""
-
-    # Sección 1: "Qué hacer con espacios verdes"
-    if zone_name == "interior":
-        spaces_section = """
-<div class="ideas-section">
-  <div class="ideas-intro">
-    <h3>🏡 Qué hacer con tus espacios verdes</h3>
-    <p>Adentro no hay huerta clásica, pero podés sumar aromáticas en macetas (albahaca, perejil, ciboulette, menta) cerca de ventanas con luz indirecta brillante. También plantas comestibles tropicales (jengibre, cúrcuma) y micro-greens en bandejas.</p>
-  </div>
-</div>"""
-    elif show_huerta_locations:
-        spaces_section = f"""
-<div class="ideas-section">
-  <div class="ideas-intro">
-    <h3>🏡 Qué hacer con tus espacios verdes</h3>
-    <p>Opciones estructurales para sumar canteros, camas elevadas, macetones o aromáticas integradas. Ordenadas de mejor a más simple.</p>
-  </div>
-  {render_huerta_locations()}
-</div>"""
-    else:
-        spaces_section = """
-<div class="ideas-section">
-  <div class="ideas-intro">
-    <h3>🏡 Qué hacer con tus espacios verdes</h3>
-    <p>El frente no es ideal para huerta clásica (visibilidad, espacio limitado). Pero podés sumar aromáticas y comestibles ornamentales que decoran y se cosechan en el cantero existente.</p>
-  </div>
-</div>"""
-
     cal_grid = render_calendar_grid(plants_in_view)
-
     improvements_html = render_improvements_section(zone_name)
 
     return f"""
@@ -669,7 +598,6 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
   <nav class="subtab-nav">
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
     <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
-    <button class="subtab-btn" data-sub="new">💡 Ideas</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
 
@@ -698,28 +626,6 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
   <div class="subtab-pane" data-sub="improvements">
     <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar mejora..."></div>
     {improvements_html}
-  </div>
-
-  <div class="subtab-pane" data-sub="new">
-    {highlights_html}
-
-    {spaces_section}
-
-    <div class="ideas-section">
-      <div class="ideas-intro">
-        <h3>🌳 Plantas para plantar ({zone_label.lower()})</h3>
-        <p>Especies ornamentales/estructurales sugeridas para sumar — nativas, polinizadoras, frutales. Las óptimas para plantar este mes aparecen primero.</p>
-      </div>
-      {new_ideas_grid}
-    </div>
-
-    <div class="ideas-section">
-      <div class="ideas-intro">
-        <h3>🥬 Frutas y verduras de huerta para plantar</h3>
-        <p>Catálogo de cultivos para Montevideo, calendario marcado en meses. Las que se siembran/trasplantan este mes aparecen primero.</p>
-      </div>
-      {huerta_grid}
-    </div>
   </div>
 
   <div class="subtab-pane" data-sub="cal">
@@ -1642,27 +1548,10 @@ def main():
     fondo_plants = [p for p in PLANTS if p["zone"] == "fondo"]
     interior_plants = [p for p in PLANTS if p["zone"] == "interior"]
 
-    todo_html = build_zone(
-        "todo", "Todo el jardín", PLANTS,
-        ideas_list=NEW_IDEAS_FRENTE + NEW_IDEAS_FONDO,
-        show_huerta_locations=True, img_data=img_data,
-    )
-    frente_html = build_zone(
-        "frente", "Frente", frente_plants,
-        ideas_list=NEW_IDEAS_FRENTE,
-        show_huerta_locations=False, img_data=img_data,
-    )
-    fondo_html = build_zone(
-        "fondo", "Fondo", fondo_plants,
-        ideas_list=NEW_IDEAS_FONDO,
-        show_huerta_locations=True, img_data=img_data,
-    )
-    interior_html = build_zone(
-        "interior", "Interior", interior_plants,
-        ideas_list=[],
-        show_huerta_locations=False, img_data=img_data,
-    )
-    timeline_html = build_timeline_view(tasks, img_data)
+    todo_html = build_zone("todo", "Todo el jardín", PLANTS, img_data=img_data)
+    frente_html = build_zone("frente", "Frente", frente_plants, img_data=img_data)
+    fondo_html = build_zone("fondo", "Fondo", fondo_plants, img_data=img_data)
+    interior_html = build_zone("interior", "Interior", interior_plants, img_data=img_data)
 
     # 5. Inyectar datos como JSON para el JS
     # Las imágenes viven en docs/images/ y se referencian por path via imgUrl()
@@ -1719,6 +1608,12 @@ def main():
 
     # 6. HTML final — usar shell + nav helpers
     top_nav = _render_top_nav("home", ticker_html_inner, ticker_aria)
+    # La home no muestra Timeline (vive en tareas.html). Igual necesita los
+    # modales que vienen como cola de build_timeline_view (species-detail,
+    # species-photo, settings, etc.) para que el modal de planta se abra al
+    # clickear cards. Extraemos sólo eso.
+    full_timeline_html = build_timeline_view(tasks, img_data)
+    timeline_modals = full_timeline_html.split('</section>', 1)[1]
     home_body = f"""{top_nav}
 
 <div class="container container-zones">
@@ -1726,13 +1621,13 @@ def main():
   {frente_html}
   {fondo_html}
   {interior_html}
-  <div class="zone-content" data-zone="timeline">{timeline_html.split('<section class="zone-content" data-zone="timeline">', 1)[1].split('</section>', 1)[0]}</div>
-  {timeline_html.split('</section>', 1)[1]}
 </div>
 
 <div class="lightbox" id="lightbox">
   <img id="lightbox-img" alt="">
-</div>"""
+</div>
+
+{timeline_modals}"""
 
     page_globals = "\n".join([img_js, tasks_js, plants_info_js, contacts_js, templates_js, ticker_js, site_url_js])
 

@@ -40,8 +40,12 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-// To-Do's button — entra al timeline (no es una zona-tab, es un CTA aparte)
+// To-Do's strip — los items son <a href="..."> que navegan a otras páginas
+// (tareas.html, ideas.html, index.html). El browser hace la navegación;
+// acá sólo manejamos legacy .todo-btn con data-zone (no debería haber más,
+// pero el guard previene crashes si alguno queda).
 document.querySelectorAll('.todo-btn').forEach(btn => {
+  if (!btn.dataset.zone) return;
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.todo-btn').forEach(b => b.classList.remove('active'));
@@ -562,6 +566,7 @@ function userTaskToTaskShape(ut) {
 
 function renderTimeline() {
   const feed = document.getElementById('timeline-feed');
+  if (!feed) return;  // No estamos en una página con Timeline (home/ideas).
   const empty = document.getElementById('timeline-empty');
   const summary = document.getElementById('timeline-summary');
 
