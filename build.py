@@ -1340,6 +1340,7 @@ def _render_top_nav(active_page: str, ticker_html_inner: str = "", ticker_aria: 
   <div class="todo-strip">
     <button class="todo-btn" data-zone="timeline"><span aria-hidden="true">📋</span> Tareas</button>
     <span class="todo-label" id="todo-count">…</span>
+    <a class="todo-btn" href="ideas.html"><span aria-hidden="true">💡</span> Ideas</a>
   </div>"""
     else:
         tareas_active = " active" if active_page == "tareas" else ""
@@ -1386,6 +1387,116 @@ def _page_shell(*, title: str, description: str, og_image: str = "og-image.png",
 </script>
 </body>
 </html>"""
+
+
+def build_ideas_html(ticker_html_inner: str = "", ticker_aria: str = "",
+                     ticker_js: str = "", site_url_js: str = "") -> str:
+    """Página standalone con todas las ideas y la huerta. Subtabs internos:
+    Ornamentales / Huerta / Espacios verdes."""
+    top_nav = _render_top_nav("ideas", ticker_html_inner, ticker_aria)
+
+    # Combinar ornamentales de las dos zonas (frente + fondo)
+    all_ideas = NEW_IDEAS_FRENTE + NEW_IDEAS_FONDO
+    ideas_sorted = sorted(all_ideas, key=lambda i: not idea_is_optimal_now(i))
+    huerta_sorted = sorted(HUERTA, key=lambda h: not huerta_is_optimal_now(h))
+
+    ornament_grid = render_collapsible_grid(
+        [render_idea_card(i) for i in ideas_sorted],
+        "ideas-grid", label="todas las plantas",
+    )
+    huerta_grid = render_collapsible_grid(
+        [render_huerta_card(h) for h in huerta_sorted],
+        "huerta-grid", label="todas las hortalizas",
+    )
+    locations_html = render_huerta_locations()
+
+    # Highlights cross-section: lo óptimo de este mes
+    optimal_ideas = [i for i in all_ideas if idea_is_optimal_now(i)]
+    optimal_huerta = [h for h in HUERTA if huerta_is_optimal_now(h)]
+    highlights_html = ""
+    if optimal_ideas or optimal_huerta:
+        highlights_grid = render_collapsible_grid(
+            [render_idea_card(i) for i in optimal_ideas]
+            + [render_huerta_card(h) for h in optimal_huerta],
+            "ideas-grid", label="todas las óptimas de este mes",
+        )
+        highlights_html = f"""
+<div class="ideas-section ideas-section-now">
+  <div class="ideas-intro">
+    <h3>🎯 Para plantar ESTE MES ({esc(CURRENT_MONTH_NAME)})</h3>
+    <p>Lo que tiene ventana óptima ahora. {len(optimal_ideas)} ornamental{'es' if len(optimal_ideas) != 1 else ''} + {len(optimal_huerta)} hortícola{'s' if len(optimal_huerta) != 1 else ''}.</p>
+  </div>
+  {highlights_grid}
+</div>"""
+
+    body = f"""{top_nav}
+
+<div class="container container-zones">
+  <section class="zone-content active" data-zone="ideas">
+    <nav class="subtab-nav">
+      <button class="subtab-btn active" data-sub="ornament">🌸 Ornamentales</button>
+      <button class="subtab-btn" data-sub="huerta">🥬 Huerta</button>
+      <button class="subtab-btn" data-sub="espacios">🏡 Espacios verdes</button>
+    </nav>
+
+    {highlights_html}
+
+    <div class="subtab-pane active" data-sub="ornament">
+      <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar planta..."></div>
+      <div class="ideas-section">
+        <div class="ideas-intro">
+          <h3>🌳 Plantas para plantar</h3>
+          <p>Especies ornamentales sugeridas para sumar — nativas, polinizadoras, frutales. Las óptimas para plantar este mes aparecen primero.</p>
+        </div>
+        {ornament_grid}
+      </div>
+    </div>
+
+    <div class="subtab-pane" data-sub="huerta">
+      <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar hortaliza..."></div>
+      <div class="ideas-section">
+        <div class="ideas-intro">
+          <h3>🥬 Frutas y verduras de huerta</h3>
+          <p>Catálogo de cultivos para Montevideo, calendario marcado en meses. Las que se siembran/trasplantan este mes aparecen primero.</p>
+        </div>
+        {huerta_grid}
+      </div>
+    </div>
+
+    <div class="subtab-pane" data-sub="espacios">
+      <div class="ideas-section">
+        <div class="ideas-intro">
+          <h3>🏡 Qué hacer con tus espacios verdes</h3>
+          <p>Opciones estructurales para sumar canteros, camas elevadas, macetones o aromáticas integradas. Ordenadas de mejor a más simple.</p>
+        </div>
+        {locations_html}
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img" alt="">
+</div>"""
+
+    # Stubs para evitar ReferenceError en handlers que esperan TASKS/PLANTS_INFO/etc.
+    page_globals = "\n".join([
+        "const TASKS = [];",
+        "const PLANTS_INFO = [];",
+        "const DEFAULT_CONTACTS = [];",
+        "const WHATSAPP_TEMPLATES = {};",
+        ticker_js or "const STATS_TICKER = [];",
+        site_url_js or 'const SITE_URL = "";',
+    ])
+
+    return _page_shell(
+        title="Ideas · Jardineando",
+        description="Ideas de plantas nuevas, huerta y espacios verdes para el jardín Pacha Mama (Montevideo).",
+        og_image="og-image.png",
+        body_class="zone-ideas",
+        body_html=body,
+        page_globals_js=page_globals,
+    )
 
 
 # ============================================================
@@ -1592,6 +1703,19 @@ def main():
     size_mb = OUTPUT.stat().st_size / 1024 / 1024
     print(f"\n✅ Generado: {OUTPUT}")
     print(f"   {size_mb:.1f} MB · {total_plants} plantas · {len(tasks)} tareas")
+
+    # 7. Generar docs/ideas.html
+    ideas_html_doc = build_ideas_html(
+        ticker_html_inner=ticker_html_inner,
+        ticker_aria=ticker_aria,
+        ticker_js=ticker_js,
+        site_url_js=site_url_js,
+    )
+    ideas_out = ROOT / "docs" / "ideas.html"
+    ideas_out.write_text(ideas_html_doc, encoding="utf-8")
+    ideas_size_kb = ideas_out.stat().st_size / 1024
+    print(f"✅ Generado: {ideas_out}")
+    print(f"   {ideas_size_kb:.0f} KB")
     print(f"\n👉 Para subir a GitHub Pages:")
     print(f"   git add docs/index.html && git commit -m 'rebuild' && git push")
 
