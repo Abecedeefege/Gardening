@@ -1675,6 +1675,17 @@ def main():
     tareas_size_kb = tareas_out.stat().st_size / 1024
     print(f"✅ Generado: {tareas_out}")
     print(f"   {tareas_size_kb:.0f} KB")
+
+    # Resumen final
+    images_bytes = sum(
+        p.stat().st_size for p in docs_images_dir.rglob("*")
+        if p.is_file() and "uploads" not in p.parts
+    )
+    print(f"\n📦 Resumen:")
+    print(f"   docs/index.html   → {OUTPUT.stat().st_size/1024:>6.0f} KB")
+    print(f"   docs/tareas.html  → {tareas_out.stat().st_size/1024:>6.0f} KB")
+    print(f"   docs/ideas.html   → {ideas_out.stat().st_size/1024:>6.0f} KB")
+    print(f"   docs/images/      → {images_bytes/1024/1024:>6.1f} MB (cacheado por browser)")
     print(f"\n👉 Para subir a GitHub Pages:")
     print(f"   git add docs/index.html && git commit -m 'rebuild' && git push")
 
