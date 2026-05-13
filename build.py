@@ -26,6 +26,7 @@ from data_ideas import (
     DEFAULT_CONTACTS,
     WHATSAPP_TEMPLATES_BY_ACTION,
 )
+from data_improvements import IMPROVEMENTS
 from styles import CSS
 from scripts import JS
 
@@ -457,6 +458,88 @@ def render_huerta_card(h):
 </article>"""
 
 
+TIER_META = {
+    "free":       ("🆓", "Gratis",          "#16a34a", "tier-free"),
+    "under_10":   ("💵", "Menos de USD 10", "#ca8a04", "tier-under10"),
+    "under_100":  ("💰", "Menos de USD 100","#ea580c", "tier-under100"),
+}
+TIER_ORDER = ["free", "under_10", "under_100"]
+
+
+def render_improvement_card(imp):
+    tier_emoji, tier_label, _, tier_class = TIER_META[imp["tier"]]
+    cost = imp.get("cost_usd", 0)
+    cost_text = "Gratis" if cost == 0 else f"~USD {cost}"
+
+    def block(icon, label, key):
+        val = imp.get(key)
+        if not val:
+            return ""
+        return f'<div class="improvement-line"><strong>{icon} {label}:</strong> {esc(val)}</div>'
+
+    applies = ""
+    if imp.get("applies_to"):
+        chips = "".join(
+            f'<button type="button" class="improvement-applies-chip" '
+            f'data-action="open-species" data-plant-code="{esc(code)}">'
+            f'{esc(code)}</button>'
+            for code in imp["applies_to"]
+        )
+        applies = f'<div class="improvement-applies"><strong>🪴 Aplica a:</strong> {chips}</div>'
+
+    return f"""
+<article class="improvement-card {tier_class}" data-name="{esc(imp['title'].lower())}" data-tags="{esc(' '.join(imp.get('tags', [])))}">
+  <div class="improvement-header">
+    <span class="tier-badge {tier_class}">{tier_emoji} {esc(tier_label)}</span>
+    <span class="improvement-cost">{esc(cost_text)}</span>
+  </div>
+  <h3 class="improvement-title">{esc(imp['title'])}</h3>
+  <div class="improvement-category">{esc(imp.get('category', ''))}</div>
+  {block('🛒', 'Qué', 'what')}
+  {block('💚', 'Por qué', 'why')}
+  {block('🔧', 'Cómo', 'how')}
+  {block('📅', 'Cuándo', 'when')}
+  {block('📍', 'Dónde comprar', 'where_buy')}
+  {applies}
+</article>"""
+
+
+def render_improvements_section(zone_name):
+    if zone_name == "todo":
+        # Vista global: todas las mejoras de todas las zonas
+        relevant = list(IMPROVEMENTS)
+    else:
+        relevant = [
+            imp for imp in IMPROVEMENTS
+            if imp["zone"] == zone_name or imp["zone"] == "all"
+        ]
+    if not relevant:
+        return '<div class="ideas-section"><div class="ideas-intro"><h3>💰 Mejoras</h3><p>(Sin sugerencias todavía para esta zona.)</p></div></div>'
+
+    blocks = []
+    for tier in TIER_ORDER:
+        tier_items = [imp for imp in relevant if imp["tier"] == tier]
+        if not tier_items:
+            continue
+        # ordenar por costo ascendente dentro del tier
+        tier_items.sort(key=lambda x: x.get("cost_usd", 0))
+        emoji, label, color, _ = TIER_META[tier]
+        card_htmls = [render_improvement_card(imp) for imp in tier_items]
+        grid = render_collapsible_grid(card_htmls, "improvements-grid", label="todas las mejoras")
+        blocks.append(f"""
+<div class="improvements-tier" style="--tier-color:{color}">
+  <h4 class="improvements-tier-header">{emoji} {esc(label)} <span class="improvements-tier-count">· {len(tier_items)}</span></h4>
+  {grid}
+</div>""")
+
+    intro = """
+<div class="ideas-intro">
+  <h3>💰 Mejoras para esta zona</h3>
+  <p>Inversiones (o trabajo gratis) para subir un escalón el jardín — agrupado por presupuesto. Empezá por lo gratis y subí si tiene sentido.</p>
+</div>"""
+    return f'<div class="ideas-section">{intro}{"".join(blocks)}</div>'
+
+
 def render_calendar_grid(plants_in_view):
     plants_zone = [p for p in plants_in_view if any([p.get("flowering"), p.get("fruiting"), p.get("pruning")])]
     plants_zone.sort(key=lambda p: p["common"])
@@ -633,12 +716,15 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
             '</div>'
         )
 
+    improvements_html = render_improvements_section(zone_name)
+
     return f"""
 <section class="zone-content" data-zone="{zone_name}">
   <nav class="subtab-nav">
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
     <button class="subtab-btn" data-sub="map">📐 Mapa</button>
     <button class="subtab-btn" data-sub="care">✂️ Cuidado</button>
+    <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
     <button class="subtab-btn" data-sub="new">💡 Ideas</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
@@ -676,6 +762,11 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
   <div class="subtab-pane" data-sub="care">
     <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar planta..."></div>
     <div class="cards-grid care-grid-list">{care_cards}</div>
+  </div>
+
+  <div class="subtab-pane" data-sub="improvements">
+    <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar mejora..."></div>
+    {improvements_html}
   </div>
 
   <div class="subtab-pane" data-sub="new">
