@@ -40,8 +40,12 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-// To-Do's button — entra al timeline (no es una zona-tab, es un CTA aparte)
+// To-Do's strip — los items son <a href="..."> que navegan a otras páginas
+// (tareas.html, ideas.html, index.html). El browser hace la navegación;
+// acá sólo manejamos legacy .todo-btn con data-zone (no debería haber más,
+// pero el guard previene crashes si alguno queda).
 document.querySelectorAll('.todo-btn').forEach(btn => {
+  if (!btn.dataset.zone) return;
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.todo-btn').forEach(b => b.classList.remove('active'));
@@ -91,11 +95,20 @@ document.querySelectorAll('button[data-show-all]').forEach(btn => {
 });
 
 // ============================================================
-// IMAGE LAZY LOADING (data-img)
+// IMAGE LAZY LOADING (data-img → images/<filename>)
+// Las imágenes curadas viven en docs/images/ y se cargan por path
+// con loading="lazy" nativo del browser.
 // ============================================================
+function imgUrl(filename) {
+  return filename ? 'images/' + filename : '';
+}
 function loadImg(img) {
   const k = img.getAttribute('data-img');
-  if (k && IMG[k] && !img.src) img.src = IMG[k];
+  if (k && !img.src) {
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.src = imgUrl(k);
+  }
 }
 document.querySelectorAll('img[data-img]').forEach(loadImg);
 
@@ -137,8 +150,8 @@ function setupLightbox(scope) {
     img.addEventListener('click', (e) => {
       e.stopPropagation();
       const k = img.getAttribute('data-img');
-      if (k && IMG[k]) {
-        document.getElementById('lightbox-img').src = IMG[k];
+      if (k) {
+        document.getElementById('lightbox-img').src = imgUrl(k);
         document.getElementById('lightbox').classList.add('active');
       }
     });
@@ -356,8 +369,8 @@ function renderTaskCard(task) {
   const isUserCreated = !!task.is_user_created;
   const isQuestion = task.kind === 'question';
 
-  const photoHtml = task.plant_photo && IMG[task.plant_photo]
-    ? `<img class="task-photo" data-img="${task.plant_photo}" data-action="open-species" data-plant-code="${task.plant_codes[0]}" alt="">`
+  const photoHtml = task.plant_photo
+    ? `<img class="task-photo" src="${imgUrl(task.plant_photo)}" loading="lazy" decoding="async" data-action="open-species" data-plant-code="${task.plant_codes[0]}" alt="">`
     : `<div class="task-photo-placeholder">${isQuestion ? '❓' : (isUserCreated ? '✏️' : '🌱')}</div>`;
 
   let statusPill = '';
@@ -553,6 +566,7 @@ function userTaskToTaskShape(ut) {
 
 function renderTimeline() {
   const feed = document.getElementById('timeline-feed');
+  if (!feed) return;  // No estamos en una página con Timeline (home/ideas).
   const empty = document.getElementById('timeline-empty');
   const summary = document.getElementById('timeline-summary');
 
@@ -1065,14 +1079,17 @@ document.querySelectorAll('.timeline-filters .ftag').forEach(btn => {
 renderTimeline();
 updateTodoCount();
 
-// Si la URL trae #task=ID (viene de un share), abrir Timeline + expandir + scroll
+// Si la URL trae #task=ID (viene de un share), abrir Timeline + expandir + scroll.
+// Compat: si estamos en index.html (sin timeline-feed local), redirige a
+// tareas.html preservando el hash.
 function openTaskFromHash() {
   const m = (window.location.hash || '').match(/^#task=(.+)$/);
   if (!m) return;
   const taskId = decodeURIComponent(m[1]);
-  // Switch a Timeline (ahora vive en el To-Do's strip, no en main-tabs)
-  const tlBtn = document.querySelector('.todo-btn[data-zone="timeline"]');
-  if (tlBtn) tlBtn.click();
+  if (!document.getElementById('timeline-feed')) {
+    window.location.replace('tareas.html' + window.location.hash);
+    return;
+  }
   // Buscar la tarea — puede estar en filter "active" o no, así que vamos a "all"
   const task = TASKS.find(t => t.id === taskId);
   if (!task) return;
@@ -2311,11 +2328,11 @@ async function openSpeciesDetailModal(plantCode) {
 
   // Construir set de fotos: main + loc + uploads (más recientes primero).
   const photoCells = [];
-  if (plant.main_photo && IMG[plant.main_photo]) {
-    photoCells.push({ kind: 'main', src_data: IMG[plant.main_photo], filename: plant.main_photo, label: 'Foto principal' });
+  if (plant.main_photo) {
+    photoCells.push({ kind: 'main', src_data: imgUrl(plant.main_photo), filename: plant.main_photo, label: 'Foto principal' });
   }
-  if (plant.loc_photo && IMG[plant.loc_photo] && plant.loc_photo !== plant.main_photo) {
-    photoCells.push({ kind: 'loc', src_data: IMG[plant.loc_photo], filename: plant.loc_photo, label: 'Vista de ubicación' });
+  if (plant.loc_photo && plant.loc_photo !== plant.main_photo) {
+    photoCells.push({ kind: 'loc', src_data: imgUrl(plant.loc_photo), filename: plant.loc_photo, label: 'Vista de ubicación' });
   }
   const sortedUploads = [...uploads].sort((a, b) => (b.uploaded_at || '').localeCompare(a.uploaded_at || ''));
   sortedUploads.forEach(u => {
@@ -2334,11 +2351,11 @@ async function openSpeciesDetailModal(plantCode) {
   // loc_photo (vista de ubicación) > task upload. Esto pone la especie en
   // primer plano en vez de la zona donde vive.
   let heroSrc = null;
-  if (plant.main_photo && IMG[plant.main_photo]) heroSrc = IMG[plant.main_photo];
+  if (plant.main_photo) heroSrc = imgUrl(plant.main_photo);
   else {
     const firstSpecies = sortedUploads.find(u => u.context === 'species');
     if (firstSpecies) heroSrc = `images/uploads/${primaryCode}/${firstSpecies.filename}`;
-    else if (plant.loc_photo && IMG[plant.loc_photo]) heroSrc = IMG[plant.loc_photo];
+    else if (plant.loc_photo) heroSrc = imgUrl(plant.loc_photo);
     else {
       const firstTask = sortedUploads.find(u => u.context === 'task');
       if (firstTask) heroSrc = `images/uploads/${primaryCode}/${firstTask.filename}`;

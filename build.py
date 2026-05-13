@@ -61,6 +61,26 @@ def encode_image(path: Path, max_width: int = 800, quality: int = 78) -> str:
     return f"data:image/jpeg;base64,{base64.b64encode(buf.getvalue()).decode('ascii')}"
 
 
+def copy_curated_image(src: Path, dst: Path, max_width: int = 800, quality: int = 78) -> None:
+    """Resize una imagen curada y escribirla a dst preservando el formato del
+    archivo de origen (jpg/jpeg/webp/png). Las imágenes curadas se cachean
+    por el browser y se comparten entre las distintas páginas del sitio."""
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    ext = src.suffix.lower().lstrip(".")
+    fmt_map = {"jpg": "JPEG", "jpeg": "JPEG", "webp": "WEBP", "png": "PNG"}
+    fmt = fmt_map.get(ext, "JPEG")
+    img = Image.open(src)
+    if fmt in ("JPEG", "WEBP"):
+        img = img.convert("RGB")
+    if img.width > max_width:
+        ratio = max_width / img.width
+        img = img.resize((max_width, int(img.height * ratio)), Image.Resampling.LANCZOS)
+    save_kwargs = {"format": fmt, "optimize": True}
+    if fmt in ("JPEG", "WEBP"):
+        save_kwargs["quality"] = quality
+    img.save(dst, **save_kwargs)
+
+
 def esc(s):
     return html_mod.escape(str(s) if s is not None else "", quote=True)
 
@@ -566,82 +586,11 @@ def render_collapsible_grid(card_htmls, grid_class, visible_count=2, label="ver 
 # ============================================================
 # Build de cada zona (Todo / Frente / Fondo)
 # ============================================================
-def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_locations, img_data):
-    """
-    plants_in_view: lista de plantas a mostrar (frente, fondo, o todas).
-    ideas_list: lista de ideas nuevas a mostrar (puede ser combinación frente+fondo).
-    show_huerta_locations: si True, muestra el intro con opciones de espacios para huerta
-        (más apropiado para "fondo" y "todo"). Si False, muestra el intro corto del frente.
-    """
+def build_zone(zone_name, zone_label, plants_in_view, img_data):
+    """plants_in_view: lista de plantas a mostrar (frente, fondo, todas o interior).
+    Las "Ideas" viven en docs/ideas.html (página separada)."""
     info_cards = "\n".join(render_plant_info_card(p, img_data) for p in plants_in_view)
-
-    # Ideas ordenadas: óptimas-para-este-mes primero, resto en orden original.
-    ideas_sorted = sorted(ideas_list, key=lambda i: not idea_is_optimal_now(i))
-    huerta_sorted = sorted(HUERTA, key=lambda h: not huerta_is_optimal_now(h))
-
-    new_ideas_grid = render_collapsible_grid(
-        [render_idea_card(i) for i in ideas_sorted],
-        "ideas-grid",
-        label="todas las plantas",
-    )
-    huerta_grid = render_collapsible_grid(
-        [render_huerta_card(h) for h in huerta_sorted],
-        "huerta-grid",
-        label="todas las hortalizas",
-    )
-
-    # Highlights cross-section: lo que va óptimo este mes, en cualquier categoría.
-    optimal_ideas = [i for i in ideas_list if idea_is_optimal_now(i)]
-    optimal_huerta = [h for h in HUERTA if huerta_is_optimal_now(h)]
-    highlights_html = ""
-    if optimal_ideas or optimal_huerta:
-        highlights_card_htmls = (
-            [render_idea_card(i) for i in optimal_ideas]
-            + [render_huerta_card(h) for h in optimal_huerta]
-        )
-        highlights_grid = render_collapsible_grid(
-            highlights_card_htmls,
-            "ideas-grid",
-            label="todas las óptimas de este mes",
-        )
-        highlights_html = f"""
-<div class="ideas-section ideas-section-now">
-  <div class="ideas-intro">
-    <h3>🎯 Para plantar ESTE MES ({esc(CURRENT_MONTH_NAME)})</h3>
-    <p>Lo que tiene ventana óptima ahora — del catálogo de ideas y de huerta. {len(optimal_ideas)} ornamental{'es' if len(optimal_ideas) != 1 else ''} + {len(optimal_huerta)} hortícola{'s' if len(optimal_huerta) != 1 else ''}.</p>
-  </div>
-  {highlights_grid}
-</div>"""
-
-    # Sección 1: "Qué hacer con espacios verdes"
-    if zone_name == "interior":
-        spaces_section = """
-<div class="ideas-section">
-  <div class="ideas-intro">
-    <h3>🏡 Qué hacer con tus espacios verdes</h3>
-    <p>Adentro no hay huerta clásica, pero podés sumar aromáticas en macetas (albahaca, perejil, ciboulette, menta) cerca de ventanas con luz indirecta brillante. También plantas comestibles tropicales (jengibre, cúrcuma) y micro-greens en bandejas.</p>
-  </div>
-</div>"""
-    elif show_huerta_locations:
-        spaces_section = f"""
-<div class="ideas-section">
-  <div class="ideas-intro">
-    <h3>🏡 Qué hacer con tus espacios verdes</h3>
-    <p>Opciones estructurales para sumar canteros, camas elevadas, macetones o aromáticas integradas. Ordenadas de mejor a más simple.</p>
-  </div>
-  {render_huerta_locations()}
-</div>"""
-    else:
-        spaces_section = """
-<div class="ideas-section">
-  <div class="ideas-intro">
-    <h3>🏡 Qué hacer con tus espacios verdes</h3>
-    <p>El frente no es ideal para huerta clásica (visibilidad, espacio limitado). Pero podés sumar aromáticas y comestibles ornamentales que decoran y se cosechan en el cantero existente.</p>
-  </div>
-</div>"""
-
     cal_grid = render_calendar_grid(plants_in_view)
-
     improvements_html = render_improvements_section(zone_name)
 
     return f"""
@@ -649,7 +598,6 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
   <nav class="subtab-nav">
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
     <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
-    <button class="subtab-btn" data-sub="new">💡 Ideas</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
 
@@ -678,28 +626,6 @@ def build_zone(zone_name, zone_label, plants_in_view, ideas_list, show_huerta_lo
   <div class="subtab-pane" data-sub="improvements">
     <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar mejora..."></div>
     {improvements_html}
-  </div>
-
-  <div class="subtab-pane" data-sub="new">
-    {highlights_html}
-
-    {spaces_section}
-
-    <div class="ideas-section">
-      <div class="ideas-intro">
-        <h3>🌳 Plantas para plantar ({zone_label.lower()})</h3>
-        <p>Especies ornamentales/estructurales sugeridas para sumar — nativas, polinizadoras, frutales. Las óptimas para plantar este mes aparecen primero.</p>
-      </div>
-      {new_ideas_grid}
-    </div>
-
-    <div class="ideas-section">
-      <div class="ideas-intro">
-        <h3>🥬 Frutas y verduras de huerta para plantar</h3>
-        <p>Catálogo de cultivos para Montevideo, calendario marcado en meses. Las que se siembran/trasplantan este mes aparecen primero.</p>
-      </div>
-      {huerta_grid}
-    </div>
   </div>
 
   <div class="subtab-pane" data-sub="cal">
@@ -1205,7 +1131,7 @@ def build_task_page(task: dict, plant: dict | None):
 
     page_url_meta = f'  <meta property="og:url" content="{esc(page_url)}">' if page_url else ""
 
-    redirect_target = f"../index.html#task={task_id}"
+    redirect_target = f"../tareas.html#task={task_id}"
 
     html = f"""<!DOCTYPE html>
 <html lang="es">
@@ -1247,6 +1173,285 @@ def build_task_page(task: dict, plant: dict | None):
 
 
 # ============================================================
+# Helpers de página — shell HTML + nav cross-page
+# ============================================================
+HEAD_META = """<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2d5016">
+
+<!-- Favicons -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+
+<!-- Apple touch icons -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180.png">
+
+<!-- iOS standalone web app meta -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Jardineando">
+
+<!-- Android standalone web app meta -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Jardineando">
+
+<!-- Safari pinned tab -->
+<link rel="mask-icon" href="mask-icon.svg" color="#2d5016">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.webmanifest">
+
+<!-- Open Graph / WhatsApp / Twitter (defaults; las páginas pueden overridear) -->
+<meta property="og:type" content="website">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">"""
+
+
+def _render_top_nav(active_page: str, ticker_html_inner: str = "", ticker_aria: str = "") -> str:
+    """Renderiza el header + weather line + ticker + nav cross-page.
+    active_page ∈ {"home","tareas","ideas"}. En "home" se incluyen las 4 tabs
+    de zona; en las otras páginas se muestra sólo un strip simple con links
+    a Home / Tareas / Ideas.
+    """
+    header = """<header class="main-header">
+    <h1 class="brand"><img class="brand-logo" src="icon-96.png" alt="" width="40" height="40"> Jardineando</h1>
+    <h2 class="subbrand">Pacha Mama</h2>
+  </header>"""
+
+    weather = """<div class="weather-line" id="weather-line">
+    <span class="weather-cell"><span class="weather-emoji">🌱</span><span class="weather-val">…</span></span>
+    <span class="weather-cell"><span class="weather-emoji">💨</span><span class="weather-val">…</span></span>
+    <span class="weather-cell"><span class="weather-emoji">💧</span><span class="weather-val">…</span></span>
+    <span class="weather-cell"><span class="weather-emoji">📍</span><span class="weather-val">Montevideo</span></span>
+  </div>"""
+
+    ticker = f"""<div class="stats-ticker" aria-label="{esc(ticker_aria)}">
+    <div class="ticker-track">{ticker_html_inner}{ticker_html_inner}</div>
+  </div>""" if ticker_html_inner else ""
+
+    if active_page == "home":
+        nav_block = """<nav class="main-tabs">
+    <button class="tab-btn active" data-zone="todo"><span class="tab-emoji">🏡</span><span class="tab-label">Todo</span></button>
+    <button class="tab-btn" data-zone="frente"><span class="tab-emoji">🌳</span><span class="tab-label">Frente</span></button>
+    <button class="tab-btn" data-zone="fondo"><span class="tab-emoji">🏊</span><span class="tab-label">Fondo</span></button>
+    <button class="tab-btn" data-zone="interior"><span class="tab-emoji">🪴</span><span class="tab-label">Interior</span></button>
+  </nav>
+
+  <div class="todo-strip">
+    <a class="todo-btn" href="tareas.html"><span aria-hidden="true">📋</span> Tareas <span class="todo-label" id="todo-count">…</span></a>
+    <a class="todo-btn" href="ideas.html"><span aria-hidden="true">💡</span> Ideas</a>
+  </div>"""
+    else:
+        tareas_active = " active" if active_page == "tareas" else ""
+        ideas_active = " active" if active_page == "ideas" else ""
+        nav_block = f"""<div class="todo-strip cross-page-strip">
+    <a class="todo-btn" href="index.html"><span aria-hidden="true">🏡</span> Home</a>
+    <a class="todo-btn{tareas_active}" href="tareas.html"><span aria-hidden="true">📋</span> Tareas <span class="todo-label" id="todo-count">…</span></a>
+    <a class="todo-btn{ideas_active}" href="ideas.html"><span aria-hidden="true">💡</span> Ideas</a>
+  </div>"""
+
+    return f"""<div class="container container-top">
+  {header}
+
+  {weather}
+
+  {ticker}
+
+  {nav_block}
+</div>"""
+
+
+def _page_shell(*, title: str, description: str, og_image: str = "og-image.png",
+                body_class: str, body_html: str, page_globals_js: str) -> str:
+    """Envuelve body_html en un documento HTML completo con HEAD_META + CSS +
+    JS inline. og_image puede sobrescribirse por página."""
+    return f"""<!DOCTYPE html>
+<html lang="es">
+<head>
+{HEAD_META}
+<title>{esc(title)}</title>
+<meta name="description" content="{esc(description)}">
+<meta property="og:title" content="{esc(title)}">
+<meta property="og:description" content="{esc(description)}">
+<meta property="og:image" content="{esc(og_image)}">
+<meta name="twitter:image" content="{esc(og_image)}">
+
+<style>{CSS}</style>
+</head>
+<body class="{body_class}">
+{body_html}
+<script>
+{page_globals_js}
+{JS}
+</script>
+</body>
+</html>"""
+
+
+def build_ideas_html(ticker_html_inner: str = "", ticker_aria: str = "",
+                     ticker_js: str = "", site_url_js: str = "") -> str:
+    """Página standalone con todas las ideas y la huerta. Subtabs internos:
+    Ornamentales / Huerta / Espacios verdes."""
+    top_nav = _render_top_nav("ideas", ticker_html_inner, ticker_aria)
+
+    # Combinar ornamentales de las dos zonas (frente + fondo)
+    all_ideas = NEW_IDEAS_FRENTE + NEW_IDEAS_FONDO
+    ideas_sorted = sorted(all_ideas, key=lambda i: not idea_is_optimal_now(i))
+    huerta_sorted = sorted(HUERTA, key=lambda h: not huerta_is_optimal_now(h))
+
+    ornament_grid = render_collapsible_grid(
+        [render_idea_card(i) for i in ideas_sorted],
+        "ideas-grid", label="todas las plantas",
+    )
+    huerta_grid = render_collapsible_grid(
+        [render_huerta_card(h) for h in huerta_sorted],
+        "huerta-grid", label="todas las hortalizas",
+    )
+    locations_html = render_huerta_locations()
+
+    # Highlights cross-section: lo óptimo de este mes
+    optimal_ideas = [i for i in all_ideas if idea_is_optimal_now(i)]
+    optimal_huerta = [h for h in HUERTA if huerta_is_optimal_now(h)]
+    highlights_html = ""
+    if optimal_ideas or optimal_huerta:
+        highlights_grid = render_collapsible_grid(
+            [render_idea_card(i) for i in optimal_ideas]
+            + [render_huerta_card(h) for h in optimal_huerta],
+            "ideas-grid", label="todas las óptimas de este mes",
+        )
+        highlights_html = f"""
+<div class="ideas-section ideas-section-now">
+  <div class="ideas-intro">
+    <h3>🎯 Para plantar ESTE MES ({esc(CURRENT_MONTH_NAME)})</h3>
+    <p>Lo que tiene ventana óptima ahora. {len(optimal_ideas)} ornamental{'es' if len(optimal_ideas) != 1 else ''} + {len(optimal_huerta)} hortícola{'s' if len(optimal_huerta) != 1 else ''}.</p>
+  </div>
+  {highlights_grid}
+</div>"""
+
+    body = f"""{top_nav}
+
+<div class="container container-zones">
+  <section class="zone-content active" data-zone="ideas">
+    <nav class="subtab-nav">
+      <button class="subtab-btn active" data-sub="ornament">🌸 Ornamentales</button>
+      <button class="subtab-btn" data-sub="huerta">🥬 Huerta</button>
+      <button class="subtab-btn" data-sub="espacios">🏡 Espacios verdes</button>
+    </nav>
+
+    {highlights_html}
+
+    <div class="subtab-pane active" data-sub="ornament">
+      <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar planta..."></div>
+      <div class="ideas-section">
+        <div class="ideas-intro">
+          <h3>🌳 Plantas para plantar</h3>
+          <p>Especies ornamentales sugeridas para sumar — nativas, polinizadoras, frutales. Las óptimas para plantar este mes aparecen primero.</p>
+        </div>
+        {ornament_grid}
+      </div>
+    </div>
+
+    <div class="subtab-pane" data-sub="huerta">
+      <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar hortaliza..."></div>
+      <div class="ideas-section">
+        <div class="ideas-intro">
+          <h3>🥬 Frutas y verduras de huerta</h3>
+          <p>Catálogo de cultivos para Montevideo, calendario marcado en meses. Las que se siembran/trasplantan este mes aparecen primero.</p>
+        </div>
+        {huerta_grid}
+      </div>
+    </div>
+
+    <div class="subtab-pane" data-sub="espacios">
+      <div class="ideas-section">
+        <div class="ideas-intro">
+          <h3>🏡 Qué hacer con tus espacios verdes</h3>
+          <p>Opciones estructurales para sumar canteros, camas elevadas, macetones o aromáticas integradas. Ordenadas de mejor a más simple.</p>
+        </div>
+        {locations_html}
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img" alt="">
+</div>"""
+
+    # Stubs para evitar ReferenceError en handlers que esperan TASKS/PLANTS_INFO/etc.
+    page_globals = "\n".join([
+        "const TASKS = [];",
+        "const PLANTS_INFO = [];",
+        "const DEFAULT_CONTACTS = [];",
+        "const WHATSAPP_TEMPLATES = {};",
+        ticker_js or "const STATS_TICKER = [];",
+        site_url_js or 'const SITE_URL = "";',
+    ])
+
+    return _page_shell(
+        title="Ideas · Jardineando",
+        description="Ideas de plantas nuevas, huerta y espacios verdes para el jardín Pacha Mama (Montevideo).",
+        og_image="og-image.png",
+        body_class="zone-ideas",
+        body_html=body,
+        page_globals_js=page_globals,
+    )
+
+
+def build_tareas_html(tasks, img_data, ticker_html_inner: str = "", ticker_aria: str = "",
+                      tasks_js: str = "", plants_info_js: str = "",
+                      contacts_js: str = "", templates_js: str = "",
+                      ticker_js: str = "", site_url_js: str = "") -> str:
+    """Página standalone con el Timeline + todos los modales asociados.
+    Recibe los JS-globals ya serializados desde main() para no duplicar
+    la lógica de serialización."""
+    top_nav = _render_top_nav("tareas", ticker_html_inner, ticker_aria)
+
+    timeline_html = build_timeline_view(tasks, img_data)
+    # El section sale con class="zone-content"; en esta página standalone
+    # tiene que estar activa por defecto.
+    timeline_active = timeline_html.replace(
+        '<section class="zone-content" data-zone="timeline">',
+        '<section class="zone-content active" data-zone="timeline">',
+        1,
+    )
+
+    body = f"""{top_nav}
+
+<div class="container container-zones">
+  {timeline_active}
+</div>
+
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img" alt="">
+</div>"""
+
+    page_globals = "\n".join([
+        tasks_js or "const TASKS = [];",
+        plants_info_js or "const PLANTS_INFO = [];",
+        contacts_js or "const DEFAULT_CONTACTS = [];",
+        templates_js or "const WHATSAPP_TEMPLATES = {};",
+        ticker_js or "const STATS_TICKER = [];",
+        site_url_js or 'const SITE_URL = "";',
+    ])
+
+    return _page_shell(
+        title="Tareas · Jardineando",
+        description="Timeline de tareas del jardín Pacha Mama: poda, riego, fertilización, control de plagas.",
+        og_image="og-image.png",
+        body_class="zone-tareas",
+        body_html=body,
+        page_globals_js=page_globals,
+    )
+
+
+# ============================================================
 # Main
 # ============================================================
 def main():
@@ -1259,15 +1464,17 @@ def main():
             if fname: unique_files.add(fname)
 
     print(f"📷 Procesando {len(unique_files)} imágenes...")
+    docs_images_dir = ROOT / "docs" / "images"
     img_data = {}
     for fname in sorted(unique_files):
         path = IMAGES_DIR / fname
         if path.exists():
-            img_data[fname] = encode_image(path)
+            copy_curated_image(path, docs_images_dir / fname)
+            img_data[fname] = fname  # truthy marker para checks de existencia
         else:
             img_data[fname] = ""
             print(f"  ⚠ Faltante: {fname}")
-    print(f"   ✅ {sum(1 for v in img_data.values() if v)} embebidas")
+    print(f"   ✅ {sum(1 for v in img_data.values() if v)} copiadas a docs/images/")
 
     # 2. Generar tareas
     tasks = generate_tasks_from_plants(PLANTS)
@@ -1341,30 +1548,15 @@ def main():
     fondo_plants = [p for p in PLANTS if p["zone"] == "fondo"]
     interior_plants = [p for p in PLANTS if p["zone"] == "interior"]
 
-    todo_html = build_zone(
-        "todo", "Todo el jardín", PLANTS,
-        ideas_list=NEW_IDEAS_FRENTE + NEW_IDEAS_FONDO,
-        show_huerta_locations=True, img_data=img_data,
-    )
-    frente_html = build_zone(
-        "frente", "Frente", frente_plants,
-        ideas_list=NEW_IDEAS_FRENTE,
-        show_huerta_locations=False, img_data=img_data,
-    )
-    fondo_html = build_zone(
-        "fondo", "Fondo", fondo_plants,
-        ideas_list=NEW_IDEAS_FONDO,
-        show_huerta_locations=True, img_data=img_data,
-    )
-    interior_html = build_zone(
-        "interior", "Interior", interior_plants,
-        ideas_list=[],
-        show_huerta_locations=False, img_data=img_data,
-    )
-    timeline_html = build_timeline_view(tasks, img_data)
+    todo_html = build_zone("todo", "Todo el jardín", PLANTS, img_data=img_data)
+    frente_html = build_zone("frente", "Frente", frente_plants, img_data=img_data)
+    fondo_html = build_zone("fondo", "Fondo", fondo_plants, img_data=img_data)
+    interior_html = build_zone("interior", "Interior", interior_plants, img_data=img_data)
 
     # 5. Inyectar datos como JSON para el JS
-    img_js = "const IMG = " + json.dumps(img_data) + ";"
+    # Las imágenes viven en docs/images/ y se referencian por path via imgUrl()
+    # en scripts.py; no se inyecta dict global.
+    img_js = ""
     tasks_js = "const TASKS = " + json.dumps(tasks, ensure_ascii=False) + ";"
 
     # PLANTS_INFO — info por planta para el modal de detalle (no incluye urgencies,
@@ -1414,116 +1606,86 @@ def main():
     )
     site_url_js = "const SITE_URL = " + json.dumps(SITE_URL if SITE_URL and "YOUR-USERNAME" not in SITE_URL else "") + ";"
 
-    # 6. HTML final
-    html_doc = f"""<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jardineando · Pacha Mama</title>
-<meta name="description" content="Catálogo y timeline de tareas del jardín Pacha Mama (Montevideo). 48 plantas, calendario anual, fotos.">
-<meta name="theme-color" content="#2d5016">
-
-<!-- Favicons -->
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-
-<!-- Apple touch icons (multiple sizes para iPhone/iPad/iPad Pro) -->
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152.png">
-<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180.png">
-
-<!-- iOS standalone web app meta -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Jardineando">
-
-<!-- Android standalone web app meta -->
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="application-name" content="Jardineando">
-
-<!-- Safari pinned tab -->
-<link rel="mask-icon" href="mask-icon.svg" color="#2d5016">
-
-<!-- PWA -->
-<link rel="manifest" href="manifest.webmanifest">
-
-<!-- Open Graph / WhatsApp / Twitter -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jardineando · Pacha Mama">
-<meta property="og:description" content="Catálogo y timeline de tareas del jardín Pacha Mama (Montevideo).">
-<meta property="og:image" content="og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="og-image.png">
-
-<style>{CSS}</style>
-</head>
-<body class="zone-todo">
-<div class="container container-top">
-  <header class="main-header">
-    <h1 class="brand"><img class="brand-logo" src="icon-96.png" alt="" width="40" height="40"> Jardineando</h1>
-    <h2 class="subbrand">Pacha Mama</h2>
-  </header>
-
-  <div class="weather-line" id="weather-line">
-    <span class="weather-cell"><span class="weather-emoji">🌱</span><span class="weather-val">…</span></span>
-    <span class="weather-cell"><span class="weather-emoji">💨</span><span class="weather-val">…</span></span>
-    <span class="weather-cell"><span class="weather-emoji">💧</span><span class="weather-val">…</span></span>
-    <span class="weather-cell"><span class="weather-emoji">📍</span><span class="weather-val">Montevideo</span></span>
-  </div>
-
-  <div class="stats-ticker" aria-label="{ticker_aria}">
-    <div class="ticker-track">{ticker_html_inner}{ticker_html_inner}</div>
-  </div>
-
-  <nav class="main-tabs">
-    <button class="tab-btn active" data-zone="todo"><span class="tab-emoji">🏡</span><span class="tab-label">Todo</span></button>
-    <button class="tab-btn" data-zone="frente"><span class="tab-emoji">🌳</span><span class="tab-label">Frente</span></button>
-    <button class="tab-btn" data-zone="fondo"><span class="tab-emoji">🏊</span><span class="tab-label">Fondo</span></button>
-    <button class="tab-btn" data-zone="interior"><span class="tab-emoji">🪴</span><span class="tab-label">Interior</span></button>
-  </nav>
-
-  <div class="todo-strip">
-    <button class="todo-btn" data-zone="timeline"><span aria-hidden="true">📋</span> Tareas</button>
-    <span class="todo-label" id="todo-count">…</span>
-  </div>
-</div>
+    # 6. HTML final — usar shell + nav helpers
+    top_nav = _render_top_nav("home", ticker_html_inner, ticker_aria)
+    # La home no muestra Timeline (vive en tareas.html). Igual necesita los
+    # modales que vienen como cola de build_timeline_view (species-detail,
+    # species-photo, settings, etc.) para que el modal de planta se abra al
+    # clickear cards. Extraemos sólo eso.
+    full_timeline_html = build_timeline_view(tasks, img_data)
+    timeline_modals = full_timeline_html.split('</section>', 1)[1]
+    home_body = f"""{top_nav}
 
 <div class="container container-zones">
   {todo_html.replace('class="zone-content"', 'class="zone-content active"', 1)}
   {frente_html}
   {fondo_html}
   {interior_html}
-  <div class="zone-content" data-zone="timeline">{timeline_html.split('<section class="zone-content" data-zone="timeline">', 1)[1].split('</section>', 1)[0]}</div>
-  {timeline_html.split('</section>', 1)[1]}
 </div>
 
 <div class="lightbox" id="lightbox">
   <img id="lightbox-img" alt="">
 </div>
 
-<script>
-{img_js}
-{tasks_js}
-{plants_info_js}
-{contacts_js}
-{templates_js}
-{ticker_js}
-{site_url_js}
-{JS}
-</script>
-</body>
-</html>"""
+{timeline_modals}"""
+
+    page_globals = "\n".join([img_js, tasks_js, plants_info_js, contacts_js, templates_js, ticker_js, site_url_js])
+
+    html_doc = _page_shell(
+        title="Jardineando · Pacha Mama",
+        description="Catálogo y timeline de tareas del jardín Pacha Mama (Montevideo). 48 plantas, calendario anual, fotos.",
+        og_image="og-image.png",
+        body_class="zone-todo",
+        body_html=home_body,
+        page_globals_js=page_globals,
+    )
 
     OUTPUT.write_text(html_doc, encoding="utf-8")
     size_mb = OUTPUT.stat().st_size / 1024 / 1024
     print(f"\n✅ Generado: {OUTPUT}")
     print(f"   {size_mb:.1f} MB · {total_plants} plantas · {len(tasks)} tareas")
+
+    # 7. Generar docs/ideas.html
+    ideas_html_doc = build_ideas_html(
+        ticker_html_inner=ticker_html_inner,
+        ticker_aria=ticker_aria,
+        ticker_js=ticker_js,
+        site_url_js=site_url_js,
+    )
+    ideas_out = ROOT / "docs" / "ideas.html"
+    ideas_out.write_text(ideas_html_doc, encoding="utf-8")
+    ideas_size_kb = ideas_out.stat().st_size / 1024
+    print(f"✅ Generado: {ideas_out}")
+    print(f"   {ideas_size_kb:.0f} KB")
+
+    # 8. Generar docs/tareas.html
+    tareas_html_doc = build_tareas_html(
+        tasks, img_data,
+        ticker_html_inner=ticker_html_inner,
+        ticker_aria=ticker_aria,
+        tasks_js=tasks_js,
+        plants_info_js=plants_info_js,
+        contacts_js=contacts_js,
+        templates_js=templates_js,
+        ticker_js=ticker_js,
+        site_url_js=site_url_js,
+    )
+    tareas_out = ROOT / "docs" / "tareas.html"
+    tareas_out.write_text(tareas_html_doc, encoding="utf-8")
+    tareas_size_kb = tareas_out.stat().st_size / 1024
+    print(f"✅ Generado: {tareas_out}")
+    print(f"   {tareas_size_kb:.0f} KB")
+
+    # Resumen final
+    images_bytes = sum(
+        p.stat().st_size for p in docs_images_dir.rglob("*")
+        if p.is_file() and "uploads" not in p.parts
+    )
+    print(f"\n📦 Resumen:")
+    print(f"   docs/index.html   → {OUTPUT.stat().st_size/1024:>6.0f} KB")
+    print(f"   docs/tareas.html  → {tareas_out.stat().st_size/1024:>6.0f} KB")
+    print(f"   docs/ideas.html   → {ideas_out.stat().st_size/1024:>6.0f} KB")
+    print(f"   docs/images/      → {images_bytes/1024/1024:>6.1f} MB (cacheado por browser)")
     print(f"\n👉 Para subir a GitHub Pages:")
     print(f"   git add docs/index.html && git commit -m 'rebuild' && git push")
 
