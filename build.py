@@ -1267,6 +1267,128 @@ def build_task_page(task: dict, plant: dict | None):
 
 
 # ============================================================
+# Helpers de página — shell HTML + nav cross-page
+# ============================================================
+HEAD_META = """<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2d5016">
+
+<!-- Favicons -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+
+<!-- Apple touch icons -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180.png">
+
+<!-- iOS standalone web app meta -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Jardineando">
+
+<!-- Android standalone web app meta -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Jardineando">
+
+<!-- Safari pinned tab -->
+<link rel="mask-icon" href="mask-icon.svg" color="#2d5016">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.webmanifest">
+
+<!-- Open Graph / WhatsApp / Twitter (defaults; las páginas pueden overridear) -->
+<meta property="og:type" content="website">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">"""
+
+
+def _render_top_nav(active_page: str, ticker_html_inner: str = "", ticker_aria: str = "") -> str:
+    """Renderiza el header + weather line + ticker + nav cross-page.
+    active_page ∈ {"home","tareas","ideas"}. En "home" se incluyen las 4 tabs
+    de zona; en las otras páginas se muestra sólo un strip simple con links
+    a Home / Tareas / Ideas.
+    """
+    header = """<header class="main-header">
+    <h1 class="brand"><img class="brand-logo" src="icon-96.png" alt="" width="40" height="40"> Jardineando</h1>
+    <h2 class="subbrand">Pacha Mama</h2>
+  </header>"""
+
+    weather = """<div class="weather-line" id="weather-line">
+    <span class="weather-cell"><span class="weather-emoji">🌱</span><span class="weather-val">…</span></span>
+    <span class="weather-cell"><span class="weather-emoji">💨</span><span class="weather-val">…</span></span>
+    <span class="weather-cell"><span class="weather-emoji">💧</span><span class="weather-val">…</span></span>
+    <span class="weather-cell"><span class="weather-emoji">📍</span><span class="weather-val">Montevideo</span></span>
+  </div>"""
+
+    ticker = f"""<div class="stats-ticker" aria-label="{esc(ticker_aria)}">
+    <div class="ticker-track">{ticker_html_inner}{ticker_html_inner}</div>
+  </div>""" if ticker_html_inner else ""
+
+    if active_page == "home":
+        nav_block = """<nav class="main-tabs">
+    <button class="tab-btn active" data-zone="todo"><span class="tab-emoji">🏡</span><span class="tab-label">Todo</span></button>
+    <button class="tab-btn" data-zone="frente"><span class="tab-emoji">🌳</span><span class="tab-label">Frente</span></button>
+    <button class="tab-btn" data-zone="fondo"><span class="tab-emoji">🏊</span><span class="tab-label">Fondo</span></button>
+    <button class="tab-btn" data-zone="interior"><span class="tab-emoji">🪴</span><span class="tab-label">Interior</span></button>
+  </nav>
+
+  <div class="todo-strip">
+    <button class="todo-btn" data-zone="timeline"><span aria-hidden="true">📋</span> Tareas</button>
+    <span class="todo-label" id="todo-count">…</span>
+  </div>"""
+    else:
+        tareas_active = " active" if active_page == "tareas" else ""
+        ideas_active = " active" if active_page == "ideas" else ""
+        nav_block = f"""<div class="todo-strip cross-page-strip">
+    <a class="todo-btn" href="index.html"><span aria-hidden="true">🏡</span> Home</a>
+    <a class="todo-btn{tareas_active}" href="tareas.html"><span aria-hidden="true">📋</span> Tareas <span class="todo-label" id="todo-count">…</span></a>
+    <a class="todo-btn{ideas_active}" href="ideas.html"><span aria-hidden="true">💡</span> Ideas</a>
+  </div>"""
+
+    return f"""<div class="container container-top">
+  {header}
+
+  {weather}
+
+  {ticker}
+
+  {nav_block}
+</div>"""
+
+
+def _page_shell(*, title: str, description: str, og_image: str = "og-image.png",
+                body_class: str, body_html: str, page_globals_js: str) -> str:
+    """Envuelve body_html en un documento HTML completo con HEAD_META + CSS +
+    JS inline. og_image puede sobrescribirse por página."""
+    return f"""<!DOCTYPE html>
+<html lang="es">
+<head>
+{HEAD_META}
+<title>{esc(title)}</title>
+<meta name="description" content="{esc(description)}">
+<meta property="og:title" content="{esc(title)}">
+<meta property="og:description" content="{esc(description)}">
+<meta property="og:image" content="{esc(og_image)}">
+<meta name="twitter:image" content="{esc(og_image)}">
+
+<style>{CSS}</style>
+</head>
+<body class="{body_class}">
+{body_html}
+<script>
+{page_globals_js}
+{JS}
+</script>
+</body>
+</html>"""
+
+
+# ============================================================
 # Main
 # ============================================================
 def main():
@@ -1438,85 +1560,9 @@ def main():
     )
     site_url_js = "const SITE_URL = " + json.dumps(SITE_URL if SITE_URL and "YOUR-USERNAME" not in SITE_URL else "") + ";"
 
-    # 6. HTML final
-    html_doc = f"""<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jardineando · Pacha Mama</title>
-<meta name="description" content="Catálogo y timeline de tareas del jardín Pacha Mama (Montevideo). 48 plantas, calendario anual, fotos.">
-<meta name="theme-color" content="#2d5016">
-
-<!-- Favicons -->
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-
-<!-- Apple touch icons (multiple sizes para iPhone/iPad/iPad Pro) -->
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152.png">
-<link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180.png">
-
-<!-- iOS standalone web app meta -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Jardineando">
-
-<!-- Android standalone web app meta -->
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="application-name" content="Jardineando">
-
-<!-- Safari pinned tab -->
-<link rel="mask-icon" href="mask-icon.svg" color="#2d5016">
-
-<!-- PWA -->
-<link rel="manifest" href="manifest.webmanifest">
-
-<!-- Open Graph / WhatsApp / Twitter -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jardineando · Pacha Mama">
-<meta property="og:description" content="Catálogo y timeline de tareas del jardín Pacha Mama (Montevideo).">
-<meta property="og:image" content="og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="og-image.png">
-
-<style>{CSS}</style>
-</head>
-<body class="zone-todo">
-<div class="container container-top">
-  <header class="main-header">
-    <h1 class="brand"><img class="brand-logo" src="icon-96.png" alt="" width="40" height="40"> Jardineando</h1>
-    <h2 class="subbrand">Pacha Mama</h2>
-  </header>
-
-  <div class="weather-line" id="weather-line">
-    <span class="weather-cell"><span class="weather-emoji">🌱</span><span class="weather-val">…</span></span>
-    <span class="weather-cell"><span class="weather-emoji">💨</span><span class="weather-val">…</span></span>
-    <span class="weather-cell"><span class="weather-emoji">💧</span><span class="weather-val">…</span></span>
-    <span class="weather-cell"><span class="weather-emoji">📍</span><span class="weather-val">Montevideo</span></span>
-  </div>
-
-  <div class="stats-ticker" aria-label="{ticker_aria}">
-    <div class="ticker-track">{ticker_html_inner}{ticker_html_inner}</div>
-  </div>
-
-  <nav class="main-tabs">
-    <button class="tab-btn active" data-zone="todo"><span class="tab-emoji">🏡</span><span class="tab-label">Todo</span></button>
-    <button class="tab-btn" data-zone="frente"><span class="tab-emoji">🌳</span><span class="tab-label">Frente</span></button>
-    <button class="tab-btn" data-zone="fondo"><span class="tab-emoji">🏊</span><span class="tab-label">Fondo</span></button>
-    <button class="tab-btn" data-zone="interior"><span class="tab-emoji">🪴</span><span class="tab-label">Interior</span></button>
-  </nav>
-
-  <div class="todo-strip">
-    <button class="todo-btn" data-zone="timeline"><span aria-hidden="true">📋</span> Tareas</button>
-    <span class="todo-label" id="todo-count">…</span>
-  </div>
-</div>
+    # 6. HTML final — usar shell + nav helpers
+    top_nav = _render_top_nav("home", ticker_html_inner, ticker_aria)
+    home_body = f"""{top_nav}
 
 <div class="container container-zones">
   {todo_html.replace('class="zone-content"', 'class="zone-content active"', 1)}
@@ -1529,20 +1575,18 @@ def main():
 
 <div class="lightbox" id="lightbox">
   <img id="lightbox-img" alt="">
-</div>
+</div>"""
 
-<script>
-{img_js}
-{tasks_js}
-{plants_info_js}
-{contacts_js}
-{templates_js}
-{ticker_js}
-{site_url_js}
-{JS}
-</script>
-</body>
-</html>"""
+    page_globals = "\n".join([img_js, tasks_js, plants_info_js, contacts_js, templates_js, ticker_js, site_url_js])
+
+    html_doc = _page_shell(
+        title="Jardineando · Pacha Mama",
+        description="Catálogo y timeline de tareas del jardín Pacha Mama (Montevideo). 48 plantas, calendario anual, fotos.",
+        og_image="og-image.png",
+        body_class="zone-todo",
+        body_html=home_body,
+        page_globals_js=page_globals,
+    )
 
     OUTPUT.write_text(html_doc, encoding="utf-8")
     size_mb = OUTPUT.stat().st_size / 1024 / 1024
