@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-12T18:49:39.482Z",
-  "_last_writer": "pix9",
+  "_synced_at": "2026-05-13T17:00:00.000Z",
+  "_last_writer": "claude-code-cli",
   "tasks": {
     "user-1778160757771-7240": {
       "id": "user-1778160757771-7240",
@@ -161,10 +161,13 @@
       "plant_zone": "fondo",
       "created_at": "2026-05-12T18:48:58.232Z",
       "created_by": "pix9",
-      "last_modified_at": "2026-05-12T18:48:58.232Z",
+      "last_modified_at": "2026-05-13T17:00:00.000Z",
       "has_photo": true,
       "photo_filename": "user-1778611738232-a5e1_20260512-184858.jpg",
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "Listo. Creé un tour educativo con tus 2 fotos en la ficha de la Lantana. Lo encontrás en el botón '📚 Tour educativo' (al lado de '❓ Hacer pregunta' / '📷 Sumar foto') del modal de B-29. Son 2 slides con callouts (puntos naranjas con etiquetas) que apuntan a las partes anatómicas visibles en cada foto:\n\n• SLIDE 1 (foto floración polícroma): explica el cambio de color amarillo→naranja→rojo como señal evolutiva a los polinizadores. Callouts: flores recién abiertas, botones cerrados rosa-magenta, flores viejas ya polinizadas, hojas opuestas escabrosas.\n\n• SLIDE 2 (foto de bayas inmaduras): explica la transformación flor→fruto y advierte que las bayas verdes son TÓXICAS para perros, gatos y niños. Callouts: bayas inmaduras, hoja ovada dentada, tallo cuadrangular (rasgo de Verbenaceae).\n\nNavegación: flechas en pantalla, teclas ← →, swipe horizontal, ESC para cerrar. Si querés agregar más slides o callouts, sumá entries al campo 'education_slides' de B-29 en data_plants.py (con title, caption y callouts donde x/y son fracciones 0–1 del frame).",
+        "answered_at": "2026-05-13T17:00:00.000Z"
+      }
     },
     "user-1778611776683-eeef": {
       "id": "user-1778611776683-eeef",
@@ -178,10 +181,13 @@
       "plant_zone": "fondo",
       "created_at": "2026-05-12T18:49:36.683Z",
       "created_by": "pix9",
-      "last_modified_at": "2026-05-12T18:49:36.683Z",
+      "last_modified_at": "2026-05-13T17:00:00.000Z",
       "has_photo": true,
       "photo_filename": "user-1778611776683-eeef_20260512-184936.jpg",
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "La foto vino sin pregunta en texto, pero es preciosa — captura el momento donde la Lantana muestra su feature distintivo: las flores cambiando de color amarillo→naranja→rojo en la misma inflorescencia. Eso pasa porque la planta 'apaga' la recompensa (néctar) en las flores ya polinizadas para reorientar a los polinizadores hacia las frescas. Las rosa-magenta son botones cerrados (todavía no abrieron); las amarillas son recién abiertas (con polen disponible); las naranjas y rojas ya fueron visitadas y están de salida. Es decir: una sola inflorescencia funciona como un 'menú con etiquetas de fecha' para abejas, mariposas y picaflores.\n\nLa incluí como Slide 1 del Tour educativo nuevo (botón '📚 Tour educativo' en la ficha de B-29). También te dejé la otra foto (la de bayas) como Slide 2. Si querés sumar más detalles o slides nuevos, decime y los agregamos.",
+        "answered_at": "2026-05-13T17:00:00.000Z"
+      }
     }
   }
 }

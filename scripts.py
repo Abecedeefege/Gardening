@@ -2428,6 +2428,7 @@ async function openSpeciesDetailModal(plantCode) {
     <div class="species-actions">
       <button class="species-action-btn" data-action="ask-question" type="button">❓ Hacer pregunta</button>
       <button class="species-action-btn" data-action="add-species-photo" type="button">📷 Sumar foto</button>
+      ${(plant.education_slides && plant.education_slides.length) ? `<button class="species-action-btn species-action-edu" data-action="open-edu" type="button">📚 Tour educativo</button>` : ''}
     </div>
 
     <div class="species-section-photos">
@@ -2468,6 +2469,9 @@ async function openSpeciesDetailModal(plantCode) {
     closeModal('species-detail');
     openSpeciesPhotoModal(plant);
   });
+  body.querySelector('[data-action="open-edu"]')?.addEventListener('click', () => {
+    openEducationSlideshow(plant);
+  });
 
   document.getElementById('species-detail-modal').classList.add('active');
 }
@@ -2480,6 +2484,138 @@ function openLightboxWithUrl(url) {
   img.src = url;
   lb.classList.add('active');
 }
+
+// ============================================================
+// EDUCATION SLIDESHOW — tour anotado con callouts sobre la foto
+// ============================================================
+let _eduSlides = null;
+let _eduIdx = 0;
+
+function openEducationSlideshow(plant) {
+  if (!plant || !plant.education_slides || !plant.education_slides.length) return;
+  _eduSlides = plant.education_slides;
+  _eduIdx = 0;
+  const modal = document.getElementById('edu-slideshow');
+  if (!modal) return;
+  modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
+  renderEduSlide();
+}
+
+function closeEducationSlideshow() {
+  const modal = document.getElementById('edu-slideshow');
+  if (!modal) return;
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
+  _eduSlides = null;
+  _eduIdx = 0;
+}
+
+function renderEduSlide() {
+  if (!_eduSlides) return;
+  const slide = _eduSlides[_eduIdx];
+  if (!slide) return;
+  const img = document.getElementById('edu-img');
+  const calloutsEl = document.getElementById('edu-callouts');
+  const titleEl = document.getElementById('edu-title');
+  const captionEl = document.getElementById('edu-caption');
+  const counterEl = document.getElementById('edu-counter');
+  const stage = document.getElementById('edu-stage');
+  const prevBtn = document.getElementById('edu-prev');
+  const nextBtn = document.getElementById('edu-next');
+
+  // fade transition
+  stage.classList.add('edu-fade');
+  setTimeout(() => stage.classList.remove('edu-fade'), 220);
+
+  // photo: paths que arrancan con "uploads/" o subdir referencian carpeta uploads/
+  // Cualquier otro filename va por imgUrl() (curated en docs/images/).
+  const photo = slide.photo || '';
+  img.src = photo.startsWith('uploads/') ? 'images/' + photo : (typeof imgUrl === 'function' ? imgUrl(photo) : 'images/' + photo);
+  img.alt = slide.title || '';
+  titleEl.textContent = slide.title || '';
+  captionEl.textContent = slide.caption || '';
+  counterEl.textContent = `${_eduIdx + 1} / ${_eduSlides.length}`;
+
+  calloutsEl.innerHTML = '';
+  (slide.callouts || []).forEach((c) => {
+    const x = (typeof c.x === 'number' ? c.x : 0.5) * 100;
+    const y = (typeof c.y === 'number' ? c.y : 0.5) * 100;
+    const el = document.createElement('div');
+    el.className = 'edu-callout';
+    el.style.left = x + '%';
+    el.style.top = y + '%';
+    const dot = document.createElement('span');
+    dot.className = 'edu-callout-dot';
+    const label = document.createElement('span');
+    label.className = 'edu-callout-label';
+    label.textContent = c.label || '';
+    el.appendChild(dot);
+    el.appendChild(label);
+    calloutsEl.appendChild(el);
+  });
+
+  prevBtn.classList.toggle('edu-disabled', _eduIdx === 0);
+  nextBtn.classList.toggle('edu-disabled', _eduIdx >= _eduSlides.length - 1);
+}
+
+function eduGoTo(idx) {
+  if (!_eduSlides) return;
+  if (idx < 0 || idx >= _eduSlides.length) return;
+  _eduIdx = idx;
+  renderEduSlide();
+}
+function eduPrev() { eduGoTo(_eduIdx - 1); }
+function eduNext() { eduGoTo(_eduIdx + 1); }
+
+(function bindEduSlideshow() {
+  const modal = document.getElementById('edu-slideshow');
+  if (!modal) return;
+  document.getElementById('edu-close')?.addEventListener('click', closeEducationSlideshow);
+  document.getElementById('edu-prev')?.addEventListener('click', eduPrev);
+  document.getElementById('edu-next')?.addEventListener('click', eduNext);
+
+  // Cerrar al clickear el fondo (no en stage/nav/caption/close).
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeEducationSlideshow();
+  });
+
+  // Teclado: ← → para navegar, ESC para cerrar.
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('active')) return;
+    if (e.key === 'ArrowLeft') eduPrev();
+    else if (e.key === 'ArrowRight') eduNext();
+    else if (e.key === 'Escape') closeEducationSlideshow();
+  });
+
+  // Swipe horizontal en el stage (umbral 12px, mismo patrón que setupSwipe).
+  const stage = document.getElementById('edu-stage');
+  let sx = 0, sy = 0, dragging = false, ptrDown = false;
+  function start(x, y) { ptrDown = true; sx = x; sy = y; dragging = false; }
+  function move(x, y) {
+    if (!ptrDown) return;
+    const dx = x - sx, dy = y - sy;
+    if (!dragging) {
+      if (Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy)) dragging = true;
+      else if (Math.abs(dy) > 12) { ptrDown = false; return; }
+    }
+  }
+  function end(x) {
+    if (!ptrDown) return;
+    const dx = x - sx;
+    ptrDown = false;
+    if (!dragging) return;
+    if (Math.abs(dx) > 60) {
+      if (dx > 0) eduPrev(); else eduNext();
+    }
+  }
+  stage.addEventListener('touchstart', (e) => start(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+  stage.addEventListener('touchmove', (e) => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+  stage.addEventListener('touchend', (e) => end(e.changedTouches[0].clientX));
+  stage.addEventListener('mousedown', (e) => start(e.clientX, e.clientY));
+  document.addEventListener('mousemove', (e) => { if (ptrDown) move(e.clientX, e.clientY); });
+  document.addEventListener('mouseup', (e) => end(e.clientX));
+})();
 
 // Bind click en TODAS las plant-card (todos los tabs Frente/Fondo/Interior/Todos).
 document.querySelectorAll('.plant-card').forEach(card => {
