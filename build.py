@@ -1351,21 +1351,20 @@ def build_ideas_html(ticker_html_inner: str = "", ticker_aria: str = "",
     )
     locations_html = render_huerta_locations()
 
-    # Highlights cross-section: lo óptimo de este mes
+    # Highlights del subtab Ornamentales: ornamentales con ventana óptima ahora.
+    # (Las hortalizas óptimas aparecen primero en el pane Huerta vía huerta_sorted.)
     optimal_ideas = [i for i in all_ideas if idea_is_optimal_now(i)]
-    optimal_huerta = [h for h in HUERTA if huerta_is_optimal_now(h)]
     highlights_html = ""
-    if optimal_ideas or optimal_huerta:
+    if optimal_ideas:
         highlights_grid = render_collapsible_grid(
-            [render_idea_card(i) for i in optimal_ideas]
-            + [render_huerta_card(h) for h in optimal_huerta],
-            "ideas-grid", label="todas las óptimas de este mes",
+            [render_idea_card(i) for i in optimal_ideas],
+            "ideas-grid", label="todas las ornamentales óptimas",
         )
         highlights_html = f"""
 <div class="ideas-section ideas-section-now">
   <div class="ideas-intro">
     <h3>🎯 Para plantar ESTE MES ({esc(CURRENT_MONTH_NAME)})</h3>
-    <p>Lo que tiene ventana óptima ahora. {len(optimal_ideas)} ornamental{'es' if len(optimal_ideas) != 1 else ''} + {len(optimal_huerta)} hortícola{'s' if len(optimal_huerta) != 1 else ''}.</p>
+    <p>Lo que tiene ventana óptima ahora. {len(optimal_ideas)} planta{'s' if len(optimal_ideas) != 1 else ''} ornamental{'es' if len(optimal_ideas) != 1 else ''}.</p>
   </div>
   {highlights_grid}
 </div>"""
@@ -1380,9 +1379,8 @@ def build_ideas_html(ticker_html_inner: str = "", ticker_aria: str = "",
       <button class="subtab-btn" data-sub="espacios">🏡 Espacios verdes</button>
     </nav>
 
-    {highlights_html}
-
     <div class="subtab-pane active" data-sub="ornament">
+      {highlights_html}
       <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar planta..."></div>
       <div class="ideas-section">
         <div class="ideas-intro">
