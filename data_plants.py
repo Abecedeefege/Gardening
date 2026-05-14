@@ -1331,10 +1331,10 @@ PLANTS = [
                 "title": "Cambio de color polícromo — su feature distintivo",
                 "caption": "Lo más característico de la Lantana camara: las flores cambian de color según su edad. Es una señal evolutiva para los polinizadores — las rosadas y amarillas son nuevas (con néctar y polen disponibles); las naranjas y rojas ya fueron polinizadas y la planta 'apaga' la recompensa para reorientar a los visitantes hacia las frescas. Por eso la inflorescencia se ve siempre multicolor.",
                 "callouts": [
-                    {"x": 0.22, "y": 0.18, "label": "Flores recién abiertas (amarillo + rojo)"},
-                    {"x": 0.55, "y": 0.30, "label": "Botones cerrados rosa-magenta"},
-                    {"x": 0.65, "y": 0.55, "label": "Flores viejas (rojo-coral) — ya polinizadas"},
-                    {"x": 0.20, "y": 0.55, "label": "Hojas opuestas escabrosas (rugosas al tacto)"},
+                    {"x": 0.20, "y": 0.20, "label": "Flores recién abiertas (amarillas-naranjas)"},
+                    {"x": 0.55, "y": 0.32, "label": "Botones cerrados rosa-magenta"},
+                    {"x": 0.70, "y": 0.55, "label": "Flores tardías (rojo-coral) — ya polinizadas"},
+                    {"x": 0.22, "y": 0.70, "label": "Hojas opuestas, escabrosas al tacto"},
                 ],
             },
             {
@@ -1342,9 +1342,9 @@ PLANTS = [
                 "title": "Bayas inmaduras y arquitectura del arbusto",
                 "caption": "Después de la polinización las flores se transforman en pequeñas drupas verdes que maduran a negro-violáceo. ATENCIÓN: las bayas verdes son TÓXICAS si se ingieren — peligroso para perros, gatos y niños. El tallo es cuadrangular (típico de Verbenaceae) y las hojas tienen dentado regular con superficie rugosa al tacto.",
                 "callouts": [
-                    {"x": 0.30, "y": 0.30, "label": "Bayas inmaduras (verdes, tóxicas)"},
-                    {"x": 0.55, "y": 0.55, "label": "Hoja ovada, dentada, escabrosa"},
-                    {"x": 0.50, "y": 0.10, "label": "Tallo cuadrangular (Verbenaceae)"},
+                    {"x": 0.28, "y": 0.28, "label": "Bayas inmaduras (verdes, tóxicas)"},
+                    {"x": 0.52, "y": 0.55, "label": "Hoja ovada, dentada, escabrosa"},
+                    {"x": 0.45, "y": 0.08, "label": "Tallo cuadrangular (Verbenaceae)"},
                 ],
             },
         ],
