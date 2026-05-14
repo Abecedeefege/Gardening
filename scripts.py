@@ -2486,7 +2486,7 @@ function openLightboxWithUrl(url) {
 }
 
 // ============================================================
-// EDUCATION SLIDESHOW — tour anotado con callouts sobre la foto
+// EDUCATION SLIDESHOW — filmstrip horizontal con callouts anotados
 // ============================================================
 let _eduSlides = null;
 let _eduIdx = 0;
@@ -2497,9 +2497,80 @@ function openEducationSlideshow(plant) {
   _eduIdx = 0;
   const modal = document.getElementById('edu-slideshow');
   if (!modal) return;
+  const filmstrip = document.getElementById('edu-filmstrip');
+  if (!filmstrip) return;
+
+  // Render todos los paneles side-by-side en el filmstrip.
+  filmstrip.innerHTML = '';
+  _eduSlides.forEach((slide, i) => {
+    const photo = slide.photo || '';
+    const src = photo.startsWith('uploads/') ? 'images/' + photo : (typeof imgUrl === 'function' ? imgUrl(photo) : 'images/' + photo);
+
+    const panel = document.createElement('div');
+    panel.className = 'edu-slide-panel';
+    panel.dataset.idx = String(i);
+
+    const stage = document.createElement('div');
+    stage.className = 'edu-stage';
+
+    const img = document.createElement('img');
+    img.className = 'edu-img';
+    img.src = src;
+    img.alt = slide.title || '';
+    img.loading = 'lazy';
+    stage.appendChild(img);
+
+    const callouts = document.createElement('div');
+    callouts.className = 'edu-callouts';
+    (slide.callouts || []).forEach((c) => {
+      const x = (typeof c.x === 'number' ? c.x : 0.5) * 100;
+      const y = (typeof c.y === 'number' ? c.y : 0.5) * 100;
+      const co = document.createElement('div');
+      // Lado del label: si el dot está en la mitad derecha, el label va a la
+      // izquierda del dot (y viceversa) — así no se sale del frame.
+      const side = (c.x > 0.5) ? 'edu-callout-flip' : 'edu-callout-normal';
+      co.className = 'edu-callout ' + side;
+      co.style.left = x + '%';
+      co.style.top = y + '%';
+      const dot = document.createElement('span');
+      dot.className = 'edu-callout-dot';
+      const label = document.createElement('span');
+      label.className = 'edu-callout-label';
+      label.textContent = c.label || '';
+      co.appendChild(dot);
+      co.appendChild(label);
+      callouts.appendChild(co);
+    });
+    stage.appendChild(callouts);
+    panel.appendChild(stage);
+
+    const cap = document.createElement('div');
+    cap.className = 'edu-caption-block';
+    const counter = document.createElement('div');
+    counter.className = 'edu-caption-counter';
+    counter.textContent = `${i + 1} / ${_eduSlides.length}`;
+    const title = document.createElement('div');
+    title.className = 'edu-title';
+    title.textContent = slide.title || '';
+    const caption = document.createElement('div');
+    caption.className = 'edu-caption';
+    caption.textContent = slide.caption || '';
+    cap.appendChild(counter);
+    cap.appendChild(title);
+    cap.appendChild(caption);
+    panel.appendChild(cap);
+
+    filmstrip.appendChild(panel);
+  });
+
   modal.classList.add('active');
   modal.setAttribute('aria-hidden', 'false');
-  renderEduSlide();
+  // Resetear scroll al primer panel y refrescar UI.
+  requestAnimationFrame(() => {
+    filmstrip.scrollLeft = 0;
+    _eduIdx = 0;
+    eduUpdateUiForIdx(0);
+  });
 }
 
 function closeEducationSlideshow() {
@@ -2511,59 +2582,26 @@ function closeEducationSlideshow() {
   _eduIdx = 0;
 }
 
-function renderEduSlide() {
+function eduUpdateUiForIdx(idx) {
   if (!_eduSlides) return;
-  const slide = _eduSlides[_eduIdx];
-  if (!slide) return;
-  const img = document.getElementById('edu-img');
-  const calloutsEl = document.getElementById('edu-callouts');
-  const titleEl = document.getElementById('edu-title');
-  const captionEl = document.getElementById('edu-caption');
-  const counterEl = document.getElementById('edu-counter');
-  const stage = document.getElementById('edu-stage');
+  const progress = document.getElementById('edu-progress');
+  if (progress) progress.textContent = `${idx + 1} / ${_eduSlides.length}`;
   const prevBtn = document.getElementById('edu-prev');
   const nextBtn = document.getElementById('edu-next');
-
-  // fade transition
-  stage.classList.add('edu-fade');
-  setTimeout(() => stage.classList.remove('edu-fade'), 220);
-
-  // photo: paths que arrancan con "uploads/" o subdir referencian carpeta uploads/
-  // Cualquier otro filename va por imgUrl() (curated en docs/images/).
-  const photo = slide.photo || '';
-  img.src = photo.startsWith('uploads/') ? 'images/' + photo : (typeof imgUrl === 'function' ? imgUrl(photo) : 'images/' + photo);
-  img.alt = slide.title || '';
-  titleEl.textContent = slide.title || '';
-  captionEl.textContent = slide.caption || '';
-  counterEl.textContent = `${_eduIdx + 1} / ${_eduSlides.length}`;
-
-  calloutsEl.innerHTML = '';
-  (slide.callouts || []).forEach((c) => {
-    const x = (typeof c.x === 'number' ? c.x : 0.5) * 100;
-    const y = (typeof c.y === 'number' ? c.y : 0.5) * 100;
-    const el = document.createElement('div');
-    el.className = 'edu-callout';
-    el.style.left = x + '%';
-    el.style.top = y + '%';
-    const dot = document.createElement('span');
-    dot.className = 'edu-callout-dot';
-    const label = document.createElement('span');
-    label.className = 'edu-callout-label';
-    label.textContent = c.label || '';
-    el.appendChild(dot);
-    el.appendChild(label);
-    calloutsEl.appendChild(el);
-  });
-
-  prevBtn.classList.toggle('edu-disabled', _eduIdx === 0);
-  nextBtn.classList.toggle('edu-disabled', _eduIdx >= _eduSlides.length - 1);
+  prevBtn?.classList.toggle('edu-disabled', idx === 0);
+  nextBtn?.classList.toggle('edu-disabled', idx >= _eduSlides.length - 1);
+  const hint = document.querySelector('.edu-hint');
+  if (hint) hint.style.opacity = (idx === 0 && _eduSlides.length > 1) ? '1' : '0';
 }
 
 function eduGoTo(idx) {
   if (!_eduSlides) return;
   if (idx < 0 || idx >= _eduSlides.length) return;
-  _eduIdx = idx;
-  renderEduSlide();
+  const filmstrip = document.getElementById('edu-filmstrip');
+  const panel = filmstrip?.children[idx];
+  if (!panel) return;
+  filmstrip.scrollTo({ left: panel.offsetLeft, behavior: 'smooth' });
+  // _eduIdx + UI se actualizan automáticamente por el scroll listener.
 }
 function eduPrev() { eduGoTo(_eduIdx - 1); }
 function eduNext() { eduGoTo(_eduIdx + 1); }
@@ -2575,11 +2613,6 @@ function eduNext() { eduGoTo(_eduIdx + 1); }
   document.getElementById('edu-prev')?.addEventListener('click', eduPrev);
   document.getElementById('edu-next')?.addEventListener('click', eduNext);
 
-  // Cerrar al clickear el fondo (no en stage/nav/caption/close).
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeEducationSlideshow();
-  });
-
   // Teclado: ← → para navegar, ESC para cerrar.
   document.addEventListener('keydown', (e) => {
     if (!modal.classList.contains('active')) return;
@@ -2588,33 +2621,31 @@ function eduNext() { eduGoTo(_eduIdx + 1); }
     else if (e.key === 'Escape') closeEducationSlideshow();
   });
 
-  // Swipe horizontal en el stage (umbral 12px, mismo patrón que setupSwipe).
-  const stage = document.getElementById('edu-stage');
-  let sx = 0, sy = 0, dragging = false, ptrDown = false;
-  function start(x, y) { ptrDown = true; sx = x; sy = y; dragging = false; }
-  function move(x, y) {
-    if (!ptrDown) return;
-    const dx = x - sx, dy = y - sy;
-    if (!dragging) {
-      if (Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy)) dragging = true;
-      else if (Math.abs(dy) > 12) { ptrDown = false; return; }
-    }
-  }
-  function end(x) {
-    if (!ptrDown) return;
-    const dx = x - sx;
-    ptrDown = false;
-    if (!dragging) return;
-    if (Math.abs(dx) > 60) {
-      if (dx > 0) eduPrev(); else eduNext();
-    }
-  }
-  stage.addEventListener('touchstart', (e) => start(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
-  stage.addEventListener('touchmove', (e) => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
-  stage.addEventListener('touchend', (e) => end(e.changedTouches[0].clientX));
-  stage.addEventListener('mousedown', (e) => start(e.clientX, e.clientY));
-  document.addEventListener('mousemove', (e) => { if (ptrDown) move(e.clientX, e.clientY); });
-  document.addEventListener('mouseup', (e) => end(e.clientX));
+  // Scroll listener: detecta qué panel está más centrado y actualiza _eduIdx.
+  const filmstrip = document.getElementById('edu-filmstrip');
+  if (!filmstrip) return;
+  let scrollTimer = null;
+  filmstrip.addEventListener('scroll', () => {
+    if (!_eduSlides) return;
+    if (scrollTimer) cancelAnimationFrame(scrollTimer);
+    scrollTimer = requestAnimationFrame(() => {
+      const rect = filmstrip.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      let bestIdx = 0;
+      let bestDist = Infinity;
+      for (let i = 0; i < filmstrip.children.length; i++) {
+        const p = filmstrip.children[i];
+        const pr = p.getBoundingClientRect();
+        const pc = pr.left + pr.width / 2;
+        const d = Math.abs(pc - centerX);
+        if (d < bestDist) { bestDist = d; bestIdx = i; }
+      }
+      if (bestIdx !== _eduIdx) {
+        _eduIdx = bestIdx;
+        eduUpdateUiForIdx(_eduIdx);
+      }
+    });
+  }, { passive: true });
 })();
 
 // Bind click en TODAS las plant-card (todos los tabs Frente/Fondo/Interior/Todos).

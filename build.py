@@ -774,20 +774,14 @@ def build_timeline_view(tasks, img_data):
   </div>
 </div>
 
-<!-- Modal: Tour educativo (slideshow anotado con callouts) -->
+<!-- Modal: Tour educativo (filmstrip horizontal con callouts) -->
 <div class="edu-slideshow" id="edu-slideshow" aria-hidden="true">
   <button class="edu-close" id="edu-close" aria-label="Cerrar">×</button>
-  <div class="edu-stage" id="edu-stage">
-    <img class="edu-img" id="edu-img" alt="">
-    <div class="edu-callouts" id="edu-callouts"></div>
-  </div>
-  <div class="edu-nav edu-nav-prev" id="edu-prev" aria-label="Anterior">‹</div>
-  <div class="edu-nav edu-nav-next" id="edu-next" aria-label="Siguiente">›</div>
-  <div class="edu-caption-block">
-    <div class="edu-counter" id="edu-counter"></div>
-    <div class="edu-title" id="edu-title"></div>
-    <div class="edu-caption" id="edu-caption"></div>
-  </div>
+  <div class="edu-progress" id="edu-progress" aria-live="polite"></div>
+  <button class="edu-nav edu-nav-prev" id="edu-prev" aria-label="Anterior">‹</button>
+  <button class="edu-nav edu-nav-next" id="edu-next" aria-label="Siguiente">›</button>
+  <div class="edu-filmstrip" id="edu-filmstrip"></div>
+  <div class="edu-hint">Desliza horizontalmente para recorrer la historia →</div>
 </div>
 
 <!-- Modal: Subir foto en especie -->
