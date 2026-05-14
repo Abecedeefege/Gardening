@@ -116,28 +116,15 @@ document.querySelectorAll('img[data-img]').forEach(loadImg);
 // LIGHTBOX
 // ============================================================
 function setupLightbox(scope) {
-  // Imágenes con data-action="open-species" abren el modal de detalle de
-  // especie en vez del lightbox — útil para que tap en la foto de una tarea
-  // del Timeline lleve directo al perfil de la planta.
-  scope.querySelectorAll('img[data-action="open-species"]').forEach(img => {
-    if (img.dataset.speciesBound) return;
-    img.dataset.speciesBound = '1';
-    img.addEventListener('click', (e) => {
+  // Cualquier elemento con data-action="open-species" abre el modal de
+  // detalle de especie (imgs de tareas, chips "Aplica a" de mejoras,
+  // wrapper de la card de planta).
+  scope.querySelectorAll('[data-action="open-species"]').forEach(el => {
+    if (el.dataset.speciesBound) return;
+    el.dataset.speciesBound = '1';
+    el.addEventListener('click', (e) => {
       e.stopPropagation();
-      const code = img.getAttribute('data-plant-code');
-      if (code && typeof openSpeciesDetailModal === 'function') {
-        openSpeciesDetailModal(code);
-      }
-    });
-  });
-
-  // Chips de "Aplica a" en cards de mejoras → abren modal de detalle
-  scope.querySelectorAll('button[data-action="open-species"]').forEach(btn => {
-    if (btn.dataset.speciesBound) return;
-    btn.dataset.speciesBound = '1';
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const code = btn.getAttribute('data-plant-code');
+      const code = el.getAttribute('data-plant-code');
       if (code && typeof openSpeciesDetailModal === 'function') {
         openSpeciesDetailModal(code);
       }
@@ -2412,7 +2399,7 @@ async function openSpeciesDetailModal(plantCode) {
 
   const charruaHtml = plant.charrua ? `<div class="species-charrua">🪶 <strong>Originario:</strong> ${plant.charrua}</div>` : '';
   const funFactHtml = plant.fun_fact && plant.fun_fact !== '—' ? `<div class="species-funfact">💡 <em>${plant.fun_fact}</em></div>` : '';
-  const tagsHtml = (plant.tags || []).map(t => `<span class="species-tag-chip">${t}</span>`).join('');
+  const tagsHtml = plant.chips_html || '';
 
   // Ubicación: zone capitalizada + primera oración del desc + tags.
   const zoneLabel = (plant.zone || '').replace(/^\w/, c => c.toUpperCase());
@@ -2440,21 +2427,17 @@ async function openSpeciesDetailModal(plantCode) {
 
     <div class="species-actions">
       <button class="species-action-btn" data-action="ask-question" type="button">❓ Hacer pregunta</button>
-      <button class="species-action-btn" data-action="add-task" type="button">➕ Agregar tarea</button>
+      <button class="species-action-btn" data-action="add-species-photo" type="button">📷 Sumar foto</button>
     </div>
 
     <div class="species-section-photos">
       <div class="species-section-label">📷 Fotos${photoCount ? ` · ${photoCount}` : ''}</div>
       <div class="species-photos-grid" id="species-photos-grid">
         ${photosGridHtml}
-        <div class="species-photo-cell add" data-action="add-species-photo" title="Sumar foto al catálogo">
-          <span class="species-add-plus">+</span>
-          <span class="species-add-label">Sumar foto</span>
-        </div>
       </div>
     </div>
 
-    <details class="species-details">
+    <details class="species-details" open>
       <summary class="species-details-summary">Detalles</summary>
       <div class="species-details-body">
         ${charruaHtml}
@@ -2467,27 +2450,23 @@ async function openSpeciesDetailModal(plantCode) {
     </details>
   `;
 
-  // Bind clicks: close hero / thumbnails → lightbox / "+" → upload.
+  // Bind clicks: close hero / thumbnails → lightbox / botones de acción.
   const body = document.getElementById('species-detail-body');
   body.querySelector('[data-action="close-species"]')?.addEventListener('click', () => closeModal('species-detail'));
   const grid = document.getElementById('species-photos-grid');
-  grid.querySelectorAll('.species-photo-cell:not(.add)').forEach(cell => {
+  grid.querySelectorAll('.species-photo-cell').forEach(cell => {
     cell.addEventListener('click', () => {
       const img = cell.querySelector('img');
       if (img && img.src) openLightboxWithUrl(img.src);
     });
   });
-  grid.querySelector('[data-action="add-species-photo"]')?.addEventListener('click', () => {
-    closeModal('species-detail');
-    openSpeciesPhotoModal(plant);
-  });
   body.querySelector('[data-action="ask-question"]')?.addEventListener('click', () => {
     closeModal('species-detail');
     openTaskComposeModal({ mode: 'question', plantCode: plant.id_codes[0] });
   });
-  body.querySelector('[data-action="add-task"]')?.addEventListener('click', () => {
+  body.querySelector('[data-action="add-species-photo"]')?.addEventListener('click', () => {
     closeModal('species-detail');
-    openTaskComposeModal({ mode: 'user_task', plantCode: plant.id_codes[0] });
+    openSpeciesPhotoModal(plant);
   });
 
   document.getElementById('species-detail-modal').classList.add('active');
