@@ -2428,7 +2428,6 @@ async function openSpeciesDetailModal(plantCode) {
     <div class="species-actions">
       <button class="species-action-btn" data-action="ask-question" type="button">❓ Hacer pregunta</button>
       <button class="species-action-btn" data-action="add-species-photo" type="button">📷 Sumar foto</button>
-      ${(plant.education_slides && plant.education_slides.length) ? `<button class="species-action-btn species-action-edu" data-action="open-edu" type="button">📚 Tour educativo</button>` : ''}
     </div>
 
     <div class="species-section-photos">
@@ -2469,9 +2468,6 @@ async function openSpeciesDetailModal(plantCode) {
     closeModal('species-detail');
     openSpeciesPhotoModal(plant);
   });
-  body.querySelector('[data-action="open-edu"]')?.addEventListener('click', () => {
-    openEducationSlideshow(plant);
-  });
 
   document.getElementById('species-detail-modal').classList.add('active');
 }
@@ -2484,169 +2480,6 @@ function openLightboxWithUrl(url) {
   img.src = url;
   lb.classList.add('active');
 }
-
-// ============================================================
-// EDUCATION SLIDESHOW — filmstrip horizontal con callouts anotados
-// ============================================================
-let _eduSlides = null;
-let _eduIdx = 0;
-
-function openEducationSlideshow(plant) {
-  if (!plant || !plant.education_slides || !plant.education_slides.length) return;
-  _eduSlides = plant.education_slides;
-  _eduIdx = 0;
-  const modal = document.getElementById('edu-slideshow');
-  if (!modal) return;
-  const filmstrip = document.getElementById('edu-filmstrip');
-  if (!filmstrip) return;
-
-  // Render todos los paneles side-by-side en el filmstrip.
-  filmstrip.innerHTML = '';
-  _eduSlides.forEach((slide, i) => {
-    const photo = slide.photo || '';
-    const src = photo.startsWith('uploads/') ? 'images/' + photo : (typeof imgUrl === 'function' ? imgUrl(photo) : 'images/' + photo);
-
-    const panel = document.createElement('div');
-    panel.className = 'edu-slide-panel';
-    panel.dataset.idx = String(i);
-
-    const stage = document.createElement('div');
-    stage.className = 'edu-stage';
-
-    const img = document.createElement('img');
-    img.className = 'edu-img';
-    img.src = src;
-    img.alt = slide.title || '';
-    img.loading = 'lazy';
-    stage.appendChild(img);
-
-    const callouts = document.createElement('div');
-    callouts.className = 'edu-callouts';
-    (slide.callouts || []).forEach((c) => {
-      const x = (typeof c.x === 'number' ? c.x : 0.5) * 100;
-      const y = (typeof c.y === 'number' ? c.y : 0.5) * 100;
-      const co = document.createElement('div');
-      // Lado del label: si el dot está en la mitad derecha, el label va a la
-      // izquierda del dot (y viceversa) — así no se sale del frame.
-      const side = (c.x > 0.5) ? 'edu-callout-flip' : 'edu-callout-normal';
-      co.className = 'edu-callout ' + side;
-      co.style.left = x + '%';
-      co.style.top = y + '%';
-      const dot = document.createElement('span');
-      dot.className = 'edu-callout-dot';
-      const label = document.createElement('span');
-      label.className = 'edu-callout-label';
-      label.textContent = c.label || '';
-      co.appendChild(dot);
-      co.appendChild(label);
-      callouts.appendChild(co);
-    });
-    stage.appendChild(callouts);
-    panel.appendChild(stage);
-
-    const cap = document.createElement('div');
-    cap.className = 'edu-caption-block';
-    const counter = document.createElement('div');
-    counter.className = 'edu-caption-counter';
-    counter.textContent = `${i + 1} / ${_eduSlides.length}`;
-    const title = document.createElement('div');
-    title.className = 'edu-title';
-    title.textContent = slide.title || '';
-    const caption = document.createElement('div');
-    caption.className = 'edu-caption';
-    caption.textContent = slide.caption || '';
-    cap.appendChild(counter);
-    cap.appendChild(title);
-    cap.appendChild(caption);
-    panel.appendChild(cap);
-
-    filmstrip.appendChild(panel);
-  });
-
-  modal.classList.add('active');
-  modal.setAttribute('aria-hidden', 'false');
-  // Resetear scroll al primer panel y refrescar UI.
-  requestAnimationFrame(() => {
-    filmstrip.scrollLeft = 0;
-    _eduIdx = 0;
-    eduUpdateUiForIdx(0);
-  });
-}
-
-function closeEducationSlideshow() {
-  const modal = document.getElementById('edu-slideshow');
-  if (!modal) return;
-  modal.classList.remove('active');
-  modal.setAttribute('aria-hidden', 'true');
-  _eduSlides = null;
-  _eduIdx = 0;
-}
-
-function eduUpdateUiForIdx(idx) {
-  if (!_eduSlides) return;
-  const progress = document.getElementById('edu-progress');
-  if (progress) progress.textContent = `${idx + 1} / ${_eduSlides.length}`;
-  const prevBtn = document.getElementById('edu-prev');
-  const nextBtn = document.getElementById('edu-next');
-  prevBtn?.classList.toggle('edu-disabled', idx === 0);
-  nextBtn?.classList.toggle('edu-disabled', idx >= _eduSlides.length - 1);
-  const hint = document.querySelector('.edu-hint');
-  if (hint) hint.style.opacity = (idx === 0 && _eduSlides.length > 1) ? '1' : '0';
-}
-
-function eduGoTo(idx) {
-  if (!_eduSlides) return;
-  if (idx < 0 || idx >= _eduSlides.length) return;
-  const filmstrip = document.getElementById('edu-filmstrip');
-  const panel = filmstrip?.children[idx];
-  if (!panel) return;
-  filmstrip.scrollTo({ left: panel.offsetLeft, behavior: 'smooth' });
-  // _eduIdx + UI se actualizan automáticamente por el scroll listener.
-}
-function eduPrev() { eduGoTo(_eduIdx - 1); }
-function eduNext() { eduGoTo(_eduIdx + 1); }
-
-(function bindEduSlideshow() {
-  const modal = document.getElementById('edu-slideshow');
-  if (!modal) return;
-  document.getElementById('edu-close')?.addEventListener('click', closeEducationSlideshow);
-  document.getElementById('edu-prev')?.addEventListener('click', eduPrev);
-  document.getElementById('edu-next')?.addEventListener('click', eduNext);
-
-  // Teclado: ← → para navegar, ESC para cerrar.
-  document.addEventListener('keydown', (e) => {
-    if (!modal.classList.contains('active')) return;
-    if (e.key === 'ArrowLeft') eduPrev();
-    else if (e.key === 'ArrowRight') eduNext();
-    else if (e.key === 'Escape') closeEducationSlideshow();
-  });
-
-  // Scroll listener: detecta qué panel está más centrado y actualiza _eduIdx.
-  const filmstrip = document.getElementById('edu-filmstrip');
-  if (!filmstrip) return;
-  let scrollTimer = null;
-  filmstrip.addEventListener('scroll', () => {
-    if (!_eduSlides) return;
-    if (scrollTimer) cancelAnimationFrame(scrollTimer);
-    scrollTimer = requestAnimationFrame(() => {
-      const rect = filmstrip.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      let bestIdx = 0;
-      let bestDist = Infinity;
-      for (let i = 0; i < filmstrip.children.length; i++) {
-        const p = filmstrip.children[i];
-        const pr = p.getBoundingClientRect();
-        const pc = pr.left + pr.width / 2;
-        const d = Math.abs(pc - centerX);
-        if (d < bestDist) { bestDist = d; bestIdx = i; }
-      }
-      if (bestIdx !== _eduIdx) {
-        _eduIdx = bestIdx;
-        eduUpdateUiForIdx(_eduIdx);
-      }
-    });
-  }, { passive: true });
-})();
 
 // Bind click en TODAS las plant-card (todos los tabs Frente/Fondo/Interior/Todos).
 document.querySelectorAll('.plant-card').forEach(card => {
