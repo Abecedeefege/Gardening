@@ -1014,6 +1014,148 @@ h2.subbrand {
   object-fit: contain; border-radius: var(--r-md);
 }
 
+/* EDUCATION SLIDESHOW — tour anotado con callouts sobre la foto */
+.edu-slideshow {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(9, 9, 11, 0.96);
+  z-index: 1100;
+  padding: 16px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.edu-slideshow.active { display: flex; }
+.edu-close {
+  position: absolute; top: 12px; right: 14px;
+  width: 38px; height: 38px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  font-size: 1.5rem; line-height: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2;
+}
+.edu-close:hover { background: rgba(255,255,255,0.22); }
+.edu-stage {
+  position: relative;
+  max-width: 95vw;
+  max-height: 60vh;
+  display: flex; align-items: center; justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: opacity 0.22s;
+}
+.edu-stage.edu-fade { opacity: 0.4; }
+.edu-img {
+  display: block;
+  max-width: 95vw; max-height: 60vh;
+  object-fit: contain;
+  border-radius: var(--r-md);
+  pointer-events: none;
+}
+.edu-callouts {
+  position: absolute; inset: 0;
+  pointer-events: none;
+}
+.edu-callout {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  display: flex; align-items: center;
+  gap: 6px;
+}
+.edu-callout-dot {
+  width: 14px; height: 14px;
+  background: #ff6b35;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(255,107,53,0.35), 0 2px 6px rgba(0,0,0,0.4);
+  flex: 0 0 auto;
+  animation: edu-pulse 2s ease-in-out infinite;
+}
+@keyframes edu-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(255,107,53,0.35), 0 2px 6px rgba(0,0,0,0.4); }
+  50% { box-shadow: 0 0 0 7px rgba(255,107,53,0.15), 0 2px 6px rgba(0,0,0,0.4); }
+}
+.edu-callout-label {
+  background: rgba(0,0,0,0.82);
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--r-full);
+  white-space: nowrap;
+  max-width: 60vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.edu-nav {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 46px; height: 46px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  font-size: 1.8rem; line-height: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2;
+  user-select: none;
+}
+.edu-nav:hover { background: rgba(255,255,255,0.22); }
+.edu-nav-prev { left: 14px; }
+.edu-nav-next { right: 14px; }
+.edu-nav.edu-disabled { opacity: 0.25; cursor: default; pointer-events: none; }
+.edu-caption-block {
+  margin-top: 16px;
+  max-width: 720px;
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r-md);
+  padding: 12px 16px;
+  color: white;
+}
+.edu-counter {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+.edu-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.edu-caption {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+@media (max-width: 600px) {
+  .edu-callout-label { font-size: 0.68rem; max-width: 50vw; }
+  .edu-nav { width: 38px; height: 38px; font-size: 1.4rem; }
+  .edu-title { font-size: 0.98rem; }
+  .edu-caption { font-size: 0.82rem; }
+}
+/* Botón "📚 Tour educativo" — variante del species-action-btn */
+.species-action-edu {
+  background: linear-gradient(135deg, #fff8e7, #ffeaa7);
+  border-color: #d4a544;
+}
+.species-action-edu:hover {
+  background: linear-gradient(135deg, #d4a544, #b8860b);
+  border-color: #b8860b;
+}
+
 /* TIMELINE */
 .timeline-header {
   display: flex; flex-direction: column;

@@ -952,8 +952,13 @@
       "context": "user_task",
       "task_id": "user-1778611738232-a5e1",
       "task_title_snapshot": "Education",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Foto cercana de bayas inmaduras + hoja escabrosa de la Lantana — usada como Slide 2 del nuevo Tour educativo de B-29. Se implementó la feature completa: modal de slideshow con callouts anotados (puntos naranjas con etiquetas), navegación prev/next + flechas + swipe + ESC. Accesible desde el botón '📚 Tour educativo' del modal de especie. Detalles en ai_answer de user_tasks.json.",
+        "next_steps": "",
+        "processed_at": "2026-05-13T17:00:00.000Z"
+      },
       "user_context": "Crear una explicación con las fotos en forma de slide show para explicar sus diferentes partes (usa estas fotos nuevas)",
       "plant_id": "B-29"
     },
@@ -964,8 +969,13 @@
       "context": "question",
       "task_id": "user-1778611776683-eeef",
       "task_title_snapshot": "Pregunta",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Foto sin pregunta en texto, mostrando la Lantana en plena floración con el cambio de color polícromo característico (amarillo→naranja→rojo) — usada como Slide 1 del nuevo Tour educativo de B-29. Respuesta entregada en ai_answer de user_tasks.json explicando el feature evolutivo del cambio de color como señal a polinizadores.",
+        "next_steps": "",
+        "processed_at": "2026-05-13T17:00:00.000Z"
+      },
       "plant_id": "B-29"
     },
     {
@@ -1047,8 +1057,13 @@
       "task_id": "plant-B-32-2",
       "task_title_snapshot": "Foto cercana y legible del cartel",
       "user_context": "Puede ser que diga rupretchia?",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Aceptado — Ruprechtia laxiflora (viraró, nativo de Polygonaceae) encaja botánicamente con las hojas pequeñas opuestas brillantes observadas. B-32 actualizado en data_plants.py: common='Viraró', sci='Ruprechtia laxiflora', desc/fun_fact/cuidados completos + tags (nativa, caduco, ornamental, polinizadores). Urgencias originales (cartel + brote primaveral) eliminadas; reemplazadas por una sola en sept-nov 2026 para foto de floración + frutos con sépalos rosados (dado que la especie es dioica, esto también va a confirmar si el ejemplar es pie macho o hembra).",
+        "next_steps": "",
+        "processed_at": "2026-05-13T17:00:00.000Z"
+      },
       "_stamp": "20260512-185201"
     },
     {
@@ -1059,8 +1074,13 @@
       "task_id": "user-1778598164393-d77d",
       "task_title_snapshot": "Ahí? Podés identificar o leer el cartel?",
       "user_context": "Alicitolif?",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "La lectura 'Alicitolif' no encaja con ningún nombre botánico conocido. La otra lectura propuesta ('rupretchia' = Ruprechtia laxiflora, viraró) sí encaja: nativa del Río de la Plata, hojas elípticas pequeñas en pares subopuestos, brillantes — match con lo observado en la foto. Acepté esa ID y actualicé B-32 en el catálogo (common='Viraró', sci='Ruprechtia laxiflora'). La pregunta queda cerrada y la urgency del cartel también — ya no se necesita el cartel para identificarla.",
+        "next_steps": "",
+        "processed_at": "2026-05-13T17:00:00.000Z"
+      },
       "_stamp": "20260512-185400"
     }
   ],
