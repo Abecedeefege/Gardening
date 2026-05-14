@@ -335,35 +335,55 @@ def generate_tasks_from_plants(plants):
 # ============================================================
 # Renderers — Plant cards (zone view)
 # ============================================================
-def render_plant_info_card(p, img_data):
-    loc_codes = ", ".join(p["id_codes"])
-    has_main = bool(p.get("main_photo") and img_data.get(p.get("main_photo")))
-    has_loc = bool(p.get("loc_photo") and img_data.get(p.get("loc_photo")))
+TYPE_BADGES = {
+    "caduco": "🍂 Caduco",
+    "perenne": "🌲 Perenne",
+    "semi-perenne": "🍃 Semi-perenne",
+    "semi-caduco": "🍃 Semi-caduco",
+}
 
+
+def render_card_chips(p):
+    """Tags coloreados + type badge — una sola línea de chips reutilizable
+    por la card de zona y por el hero del modal de detalle."""
+    tag_html = render_tags(p.get("tags", []))
+    raw_type = p.get("type", "")
+    type_label = TYPE_BADGES.get(raw_type, raw_type)
+    type_html = (
+        f'<span class="card-type-chip">{esc(type_label)}</span>' if type_label else ''
+    )
+    return tag_html + type_html
+
+
+def render_plant_info_card(p, img_data):
+    has_main = bool(p.get("main_photo") and img_data.get(p.get("main_photo")))
     primary_code = p["id_codes"][0]
-    photo_html = f'<img class="card-photo" data-img="{esc(p["main_photo"])}" data-action="open-species" data-plant-code="{esc(primary_code)}" alt="">' if has_main else ''
-    locs_html = f'<img class="card-loc-photo" data-img="{esc(p["loc_photo"])}" data-action="open-species" data-plant-code="{esc(primary_code)}" alt="" title="Ver detalles de la especie">' if has_loc else ''
-    type_badge = {"caduco": "🍂 Caduco", "perenne": "🌲 Perenne", "semi-perenne": "🍃 Semi-perenne", "semi-caduco": "🍃 Semi-caduco"}.get(p.get("type", ""), p.get("type", ""))
-    charrua_html = f'<div class="card-charrua">🪶 <strong>Originario:</strong> {esc(p["charrua"])}</div>' if p.get("charrua") else ''
-    funfact_html = f'<div class="card-funfact">💡 <em>{esc(p["fun_fact"])}</em></div>' if p.get("fun_fact") and p["fun_fact"] != "—" else ''
-    other_names_html = f'<div class="card-other">↳ {esc(p["other_names"])}</div>' if p.get("other_names") and p["other_names"] != "—" else ''
+    loc_codes = ", ".join(p["id_codes"])
+    photo_html = (
+        f'<img class="card-photo" data-img="{esc(p["main_photo"])}" '
+        f'data-action="open-species" data-plant-code="{esc(primary_code)}" alt="">'
+        if has_main else ''
+    )
+
+    other_html = (
+        f'<div class="card-other">↳ {esc(p["other_names"])}</div>'
+        if p.get("other_names") and p["other_names"] != "—" else ''
+    )
+
+    chips_html = render_card_chips(p)
 
     return f"""
 <article class="plant-card" data-plant-id="{esc(loc_codes)}" data-name="{esc(p['common'].lower())}" data-tags="{esc(' '.join(p['tags']))}">
-  <div class="card-photo-wrap">
+  <div class="card-photo-wrap" data-action="open-species" data-plant-code="{esc(primary_code)}">
     {photo_html}
-    <div class="card-loc-overlay">{locs_html}</div>
-    <div class="card-id-pill">{esc(loc_codes)}</div>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">{esc(p['common'])}</h3>
-    <div class="card-sci">{esc(p['sci'])}</div>
-    {charrua_html}
-    {other_names_html}
-    <div class="card-tags">{render_tags(p['tags'])}</div>
-    <div class="card-type">{type_badge}</div>
-    <p class="card-desc">{esc(p['desc'])}</p>
-    {funfact_html}
+    <div class="card-overlay">
+      <h3 class="card-title">{esc(p['common'])}</h3>
+      <div class="card-overlay-bottom">
+        <div class="card-sci">{esc(p['sci'])}</div>
+        {other_html}
+        <div class="card-chips">{chips_html}</div>
+      </div>
+    </div>
   </div>
 </article>"""
 
@@ -1578,6 +1598,7 @@ def main():
             "water": p.get("water", ""),
             "light": p.get("light", ""),
             "tags": p.get("tags", []),
+            "chips_html": render_card_chips(p),
             "main_photo": p.get("main_photo", ""),
             "loc_photo": p.get("loc_photo", ""),
             "gallery": p.get("gallery", []),

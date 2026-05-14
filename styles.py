@@ -565,7 +565,7 @@ h2.subbrand {
 }
 .cards-grid.care-grid-list { grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); }
 
-/* PLANT INFO CARD */
+/* PLANT INFO CARD — overlay layout (foto fill con texto encima) */
 .plant-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -578,7 +578,6 @@ h2.subbrand {
     border-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
     transform 250ms cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex; flex-direction: column;
 }
 .plant-card:hover {
   border-color: var(--border-strong);
@@ -588,83 +587,86 @@ h2.subbrand {
     0 16px 36px rgba(9, 9, 11, 0.08);
 }
 .card-photo-wrap {
-  position: relative; width: 100%; height: 200px;
-  overflow: hidden; background: var(--bg-soft);
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  background: var(--bg-soft);
+  cursor: pointer;
 }
 .card-photo {
   width: 100%; height: 100%;
-  object-fit: cover; cursor: zoom-in;
+  object-fit: cover;
   transition: transform 0.4s ease;
 }
-.card-photo:hover { transform: scale(1.03); }
-.card-loc-overlay {
-  position: absolute; bottom: 12px; right: 12px;
-  width: 52px; height: 52px;
-  border-radius: var(--r-md);
-  overflow: hidden;
-  border: 2px solid var(--bg-card);
-  box-shadow: var(--shadow-md);
-  background: var(--bg-card);
+.card-photo-wrap:hover .card-photo { transform: scale(1.03); }
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px 16px;
+  color: white;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.0) 22%, rgba(0,0,0,0.0) 48%, rgba(0,0,0,0.72) 100%);
 }
-.card-loc-photo { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; }
-.card-id-pill {
-  position: absolute; top: 12px; left: 12px;
-  background: rgba(9, 9, 11, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: white; padding: 4px 10px;
-  border-radius: var(--r-sm);
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.72rem; font-weight: 500;
-}
-.card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
 .card-title {
-  font-size: 1.05rem; font-weight: 600;
-  margin: 0 0 2px; color: var(--text);
-  line-height: 1.3; letter-spacing: -0.01em;
+  font-size: 1.05rem; font-weight: 700;
+  margin: 0;
+  color: white;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
   font-family: inherit;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.65);
+  align-self: flex-start;
+  max-width: 90%;
+}
+.card-overlay-bottom {
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  width: 100%;
 }
 .card-sci {
-  font-style: italic; color: var(--text-3);
-  font-size: 0.82rem; margin-bottom: 12px;
+  font-style: italic;
+  color: rgba(255,255,255,0.92);
+  font-size: 0.82rem;
   font-weight: 400;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  margin: 0;
 }
-.card-charrua {
-  font-size: 0.78rem; color: var(--text-2);
-  margin-bottom: 8px; background: var(--bg-soft);
-  padding: 4px 8px; border-radius: var(--r-sm);
-  display: inline-block; font-weight: 500;
+.card-other {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  margin: 0;
 }
-.card-charrua strong { font-weight: 600; }
-.card-other { font-size: 0.78rem; color: var(--text-3); margin-bottom: 8px; }
-.card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0 12px; }
+.card-chips {
+  display: flex; flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+  margin-top: 2px;
+}
 .tag {
   font-size: 0.7rem; padding: 3px 8px;
   border-radius: var(--r-sm);
   color: white; white-space: nowrap;
   font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.35);
 }
-.card-type {
-  font-size: 0.78rem; color: var(--text-2);
-  margin-bottom: 12px; padding: 3px 10px;
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
+.card-type-chip {
+  font-size: 0.7rem; padding: 3px 8px;
   border-radius: var(--r-sm);
-  display: inline-block; font-weight: 500;
+  background: rgba(255,255,255,0.92);
+  color: var(--text);
+  white-space: nowrap;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.35);
 }
-.card-desc {
-  font-size: 0.88rem; line-height: 1.55;
-  color: var(--text-2); margin: 8px 0 0; flex: 1;
-}
-.card-funfact {
-  font-size: 0.82rem; color: var(--text-2);
-  background: var(--accent-soft);
-  border: 1px solid #dcfce7;
-  padding: 10px 12px; margin-top: 12px;
-  border-radius: var(--r-md);
-  border-left: none; line-height: 1.5;
-}
-.card-funfact em { font-style: normal; color: var(--accent-text); }
 
 /* CARE CARD */
 .care-card {
@@ -1098,11 +1100,11 @@ h2.subbrand {
   transform: translateY(0);
 }
 
-/* SPECIES MODAL — botones de acción "Hacer pregunta" / "Agregar tarea" */
+/* SPECIES MODAL — botones de acción "Hacer pregunta" / "Sumar foto" */
 .species-actions {
   display: flex; gap: 8px;
   flex-wrap: wrap;
-  margin: 12px 0;
+  margin: 8px 0;
 }
 .species-action-btn {
   flex: 1 1 auto;
@@ -1697,14 +1699,14 @@ h2.subbrand {
   color: var(--text-3);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 18px 22px 10px;
+  padding: 10px 22px 6px;
   margin: 0;
 }
 
-/* Photos grid: 2 columnas, square, sin radius (edge-to-edge), gap mínimo */
+/* Photos grid: 3 columnas, square, sin radius (edge-to-edge), gap mínimo */
 .species-photos-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2px;
   padding: 0;
 }
@@ -1762,7 +1764,9 @@ h2.subbrand {
   list-style: none;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  text-align: center;
 }
 .species-details-summary::-webkit-details-marker { display: none; }
 .species-details-summary::before {
@@ -2687,7 +2691,7 @@ h2.subbrand {
 @media (max-width: 480px) {
   h1.brand { font-size: 2rem; }
   .cards-grid { gap: 12px; }
-  .card-photo-wrap { height: 180px; }
+  .card-photo-wrap { height: 280px; }
   .tab-emoji { font-size: 1.05rem; }
   .tab-label { font-size: 0.82rem; }
   .tab-btn { padding: 10px 8px; gap: 5px; }
