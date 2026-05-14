@@ -1325,29 +1325,6 @@ PLANTS = [
         "flowering": [10, 11, 12, 1, 2, 3, 4, 5],
         "fruiting": [],
         "pruning": [6, 7, 1],
-        "education_slides": [
-            {
-                "photo": "uploads/B-29/user-1778611776683-eeef_20260512-184936.jpg",
-                "title": "Cambio de color polícromo — su feature distintivo",
-                "caption": "Lo más característico de la Lantana camara: las flores cambian de color según su edad. Es una señal evolutiva para los polinizadores — las rosadas y amarillas son nuevas (con néctar y polen disponibles); las naranjas y rojas ya fueron polinizadas y la planta 'apaga' la recompensa para reorientar a los visitantes hacia las frescas. Por eso la inflorescencia se ve siempre multicolor.",
-                "callouts": [
-                    {"x": 0.20, "y": 0.20, "label": "Flores recién abiertas (amarillas-naranjas)"},
-                    {"x": 0.55, "y": 0.32, "label": "Botones cerrados rosa-magenta"},
-                    {"x": 0.70, "y": 0.55, "label": "Flores tardías (rojo-coral) — ya polinizadas"},
-                    {"x": 0.22, "y": 0.70, "label": "Hojas opuestas, escabrosas al tacto"},
-                ],
-            },
-            {
-                "photo": "uploads/B-29/user-1778611738232-a5e1_20260512-184858.jpg",
-                "title": "Bayas inmaduras y arquitectura del arbusto",
-                "caption": "Después de la polinización las flores se transforman en pequeñas drupas verdes que maduran a negro-violáceo. ATENCIÓN: las bayas verdes son TÓXICAS si se ingieren — peligroso para perros, gatos y niños. El tallo es cuadrangular (típico de Verbenaceae) y las hojas tienen dentado regular con superficie rugosa al tacto.",
-                "callouts": [
-                    {"x": 0.28, "y": 0.28, "label": "Bayas inmaduras (verdes, tóxicas)"},
-                    {"x": 0.52, "y": 0.55, "label": "Hoja ovada, dentada, escabrosa"},
-                    {"x": 0.45, "y": 0.08, "label": "Tallo cuadrangular (Verbenaceae)"},
-                ],
-            },
-        ],
         "urgency": [
             {
                 "priority": "media",

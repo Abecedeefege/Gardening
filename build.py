@@ -774,16 +774,6 @@ def build_timeline_view(tasks, img_data):
   </div>
 </div>
 
-<!-- Modal: Tour educativo (filmstrip horizontal con callouts) -->
-<div class="edu-slideshow" id="edu-slideshow" aria-hidden="true">
-  <button class="edu-close" id="edu-close" aria-label="Cerrar">×</button>
-  <div class="edu-progress" id="edu-progress" aria-live="polite"></div>
-  <button class="edu-nav edu-nav-prev" id="edu-prev" aria-label="Anterior">‹</button>
-  <button class="edu-nav edu-nav-next" id="edu-next" aria-label="Siguiente">›</button>
-  <div class="edu-filmstrip" id="edu-filmstrip"></div>
-  <div class="edu-hint">Desliza horizontalmente para recorrer la historia →</div>
-</div>
-
 <!-- Modal: Subir foto en especie -->
 <div class="modal" id="species-photo-modal">
   <div class="modal-content modal-wide">
@@ -1613,7 +1603,6 @@ def main():
             "flowering": p.get("flowering", []),
             "fruiting": p.get("fruiting", []),
             "pruning": p.get("pruning", []),
-            "education_slides": p.get("education_slides", []),
         })
     plants_info_js = "const PLANTS_INFO = " + json.dumps(plants_info, ensure_ascii=False) + ";"
 
