@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-13T17:00:00.000Z",
-  "_last_writer": "claude-code-cli",
+  "_synced_at": "2026-05-16T15:55:20.293Z",
+  "_last_writer": "pix9",
   "tasks": {
     "plant-F-9": {
       "status": "done",
@@ -387,9 +387,9 @@
     },
     "plant-F-1-4": {
       "status": "snoozed",
-      "snoozed_until": "2026-05-13T18:50:30.201Z",
+      "snoozed_until": "2026-05-17T15:55:14.481Z",
       "completed_at": null,
-      "last_modified_at": "2026-05-12T18:50:30.201Z"
+      "last_modified_at": "2026-05-16T15:55:14.485Z"
     },
     "plant-B-29-2": {
       "status": "done",
