@@ -1,5 +1,5 @@
 {
-  "_synced_at": "2026-05-16T15:55:20.293Z",
+  "_synced_at": "2026-05-24T22:53:40.170Z",
   "_last_writer": "pix9",
   "tasks": {
     "plant-F-9": {
@@ -404,6 +404,12 @@
       "completed_via_ai": true,
       "ai_summary": "Cartel ya no necesario — B-32 identificada como Ruprechtia laxiflora (viraró, nativa de Polygonaceae). El user aceptó la lectura 'rupretchia' del cartel y encaja con las hojas pequeñas opuestas brillantes. Catálogo actualizado: common='Viraró', sci='Ruprechtia laxiflora', desc/fun_fact completos. Urgency original reemplazada por 'Foto de floración + frutos con sépalos rosados' (sept-nov 2026) para documentar el feature ornamental y confirmar si es pie macho o hembra.",
       "last_modified_at": "2026-05-13T17:00:00.000Z"
+    },
+    "plant-F-2-2": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-05-24T22:53:34.250Z",
+      "last_modified_at": "2026-05-24T22:53:34.254Z"
     }
   }
 }
