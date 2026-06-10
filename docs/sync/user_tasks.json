@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-05-13T17:00:00.000Z",
-  "_last_writer": "claude-code-cli",
+  "_synced_at": "2026-06-10T17:56:47.000Z",
+  "_last_writer": "pix9",
   "tasks": {
     "user-1778160757771-7240": {
       "id": "user-1778160757771-7240",
@@ -188,6 +188,23 @@
         "summary": "La foto vino sin pregunta en texto, pero es preciosa — captura el momento donde la Lantana muestra su feature distintivo: las flores cambiando de color amarillo→naranja→rojo en la misma inflorescencia. Eso pasa porque la planta 'apaga' la recompensa (néctar) en las flores ya polinizadas para reorientar a los polinizadores hacia las frescas. Las rosa-magenta son botones cerrados (todavía no abrieron); las amarillas son recién abiertas (con polen disponible); las naranjas y rojas ya fueron visitadas y están de salida. Es decir: una sola inflorescencia funciona como un 'menú con etiquetas de fecha' para abejas, mariposas y picaflores.\n\nLa incluí como Slide 1 del Tour educativo nuevo (botón '📚 Tour educativo' en la ficha de B-29). También te dejé la otra foto (la de bayas) como Slide 2. Si querés sumar más detalles o slides nuevos, decime y los agregamos.",
         "answered_at": "2026-05-13T17:00:00.000Z"
       }
+    },
+    "user-1781114206236-60d0": {
+      "id": "user-1781114206236-60d0",
+      "kind": "question",
+      "title": "Esto es un guayabo del pais",
+      "user_context": "Esto es un guayabo del pais",
+      "plant_codes": [
+        "B-15"
+      ],
+      "plant_common": "Hiedra común",
+      "plant_zone": "fondo",
+      "created_at": "2026-06-10T17:56:46.236Z",
+      "created_by": "pix9",
+      "last_modified_at": "2026-06-10T17:56:46.236Z",
+      "has_photo": false,
+      "photo_filename": null,
+      "ai_answer": null
     }
   }
 }
