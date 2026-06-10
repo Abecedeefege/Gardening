@@ -1029,6 +1029,18 @@
       "uploaded_by": "pix9",
       "context": "species",
       "ai_status": "n/a"
+    },
+    {
+      "filename": null,
+      "uploaded_at": "2026-06-10T17:56:46.236Z",
+      "uploaded_by": "pix9",
+      "context": "question",
+      "task_id": "user-1781114206236-60d0",
+      "task_title_snapshot": "Esto es un guayabo del pais",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Esto es un guayabo del pais",
+      "plant_id": "B-15"
     }
   ],
   "B-32": [
