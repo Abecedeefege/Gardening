@@ -1,0 +1,15 @@
+{
+  "device": "pix9",
+  "subscription": {
+    "endpoint": "https://fcm.googleapis.com/fcm/send/c7vSBBLme2o:APA91bGSB4F0vkRf5dEVtxeCC03o1Hl-eciYBSEK-gSj-x4s15xEaaaGRgrZClr_tpOC5JxvfLkuvpQj7zGFPjPyA5K4ukbd6aeQKm2FayJbe3XOBUlCW_C1ncjPsW9MoZlfikmCQo51",
+    "expirationTime": null,
+    "keys": {
+      "p256dh": "BCBhweaxxt5e7Cmz7jEfxwOvg5xaF74BagoszowIIN5d9lp32CBxyPNcZ2s0fk1aSOxFfvNAOi8OeuyATVQitCA",
+      "auth": "z7A_SskWtZgxL32RMDT4Tw"
+    }
+  },
+  "status": "active",
+  "updated_at": "2026-06-11T20:58:04.769Z",
+  "invalidated_at": null,
+  "invalid_reason": null
+}
