@@ -1,0 +1,57 @@
+# Dispatcher de notificaciones push — corre cada 30 min en horario de
+# vigilia de Montevideo (UTC-3): 10:00-23:30 UTC = 07:00-20:30 local.
+# Lee docs/notifications/queue.json (escrita por el agente diario de
+# engagement), manda lo vencido vía Web Push (VAPID) y commitea los
+# cambios de status. Ver tools/send_push.js.
+#
+# Secret requerido: VAPID_PRIVATE_KEY (par de docs/notifications/vapid_public.txt).
+name: push-dispatch
+
+on:
+  schedule:
+    - cron: '*/30 10-23 * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: push-dispatch
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install web-push
+        working-directory: tools
+        run: npm install --no-audit --no-fund
+
+      - name: Send due notifications
+        run: node tools/send_push.js
+        env:
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+
+      - name: Commit queue updates
+        run: |
+          if [ -n "$(git status --porcelain docs/notifications docs/sync/push_subscription.json)" ]; then
+            git config user.name "push-dispatcher"
+            git config user.email "actions@users.noreply.github.com"
+            git add docs/notifications docs/sync/push_subscription.json
+            git commit -m "push: dispatch $(date -u +%FT%TZ)"
+            # El agente diario o el sync del browser pueden pushear en el
+            # medio — rebase y reintento.
+            for i in 1 2 3; do
+              git push origin main && break || git pull --rebase origin main
+            done
+          else
+            echo "Sin cambios para commitear."
+          fi

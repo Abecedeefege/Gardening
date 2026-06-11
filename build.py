@@ -45,7 +45,7 @@ OG_DIR.mkdir(parents=True, exist_ok=True)
 # URL pública de tu GitHub Pages.
 # Ejemplo: "https://juan.github.io/jardineando-pacha-mama"
 # Si está vacío, los previews de WhatsApp no van a funcionar (links rotos).
-SITE_URL = "https://gardening-git-main-andys-projects-8bfb617c.vercel.app"
+SITE_URL = "https://gardening-chi.vercel.app"
 
 
 # ============================================================
@@ -1073,6 +1073,19 @@ def build_timeline_view(tasks, img_data):
         <button class="btn-secondary" id="btn-trigger-install" disabled>Instalar app</button>
         <button class="btn-secondary" id="btn-reset-sw">🔄 Resetear SW</button>
       </div>
+    </div>
+
+    <div class="settings-section">
+      <label class="settings-label">
+        <strong>🔔 Notificaciones push</strong>
+        <span class="settings-hint">Recordatorios diarios del jardín en este dispositivo. Requiere el GitHub PAT configurado. La suscripción se guarda en el repo (público): técnicamente cualquiera con el repo podría mandarte notificaciones — mismo modelo de privacidad que el sync.</span>
+      </label>
+      <div id="push-status-panel" class="pwa-status-panel">Verificando…</div>
+      <div class="settings-actions">
+        <button class="btn-secondary" id="btn-enable-push">🔔 Activar notificaciones</button>
+        <button class="btn-secondary btn-danger" id="btn-disable-push" hidden>🔕 Desactivar</button>
+      </div>
+      <div class="settings-feedback" id="settings-push-feedback"></div>
     </div>
 
     <div class="settings-footer">

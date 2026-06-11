@@ -2760,8 +2760,10 @@ h2.subbrand {
 .pwa-st-wait { color: #92400e; font-weight: 700; margin-right: 4px; }
 
 /* PWA install banner — aparece SI Chrome dispara beforeinstallprompt.
-   Su sola aparición confirma que el sitio cumple criterio installable. */
-#pwa-install-banner {
+   Su sola aparición confirma que el sitio cumple criterio installable.
+   #push-resub-banner (reactivar notificaciones) comparte el mismo look. */
+#pwa-install-banner,
+#push-resub-banner {
   position: fixed;
   bottom: 16px; left: 50%;
   transform: translateX(-50%);
@@ -2783,8 +2785,10 @@ h2.subbrand {
   from { transform: translate(-50%, 30px); opacity: 0; }
   to { transform: translate(-50%, 0); opacity: 1; }
 }
-#pwa-install-banner .pwa-install-icon { font-size: 1.2rem; }
-#pwa-install-banner .pwa-install-btn {
+#pwa-install-banner .pwa-install-icon,
+#push-resub-banner .pwa-install-icon { font-size: 1.2rem; }
+#pwa-install-banner .pwa-install-btn,
+#push-resub-banner .pwa-install-btn {
   background: white;
   color: #2d5016;
   border: none;
@@ -2794,8 +2798,10 @@ h2.subbrand {
   font-size: 0.82rem;
   cursor: pointer;
 }
-#pwa-install-banner .pwa-install-btn:hover { background: rgba(255, 255, 255, 0.85); }
-#pwa-install-banner .pwa-install-dismiss {
+#pwa-install-banner .pwa-install-btn:hover,
+#push-resub-banner .pwa-install-btn:hover { background: rgba(255, 255, 255, 0.85); }
+#pwa-install-banner .pwa-install-dismiss,
+#push-resub-banner .pwa-install-dismiss {
   background: transparent;
   color: rgba(255, 255, 255, 0.7);
   border: none;
@@ -2805,7 +2811,8 @@ h2.subbrand {
   font-size: 0.95rem;
   display: flex; align-items: center; justify-content: center;
 }
-#pwa-install-banner .pwa-install-dismiss:hover {
+#pwa-install-banner .pwa-install-dismiss:hover,
+#push-resub-banner .pwa-install-dismiss:hover {
   background: rgba(255, 255, 255, 0.15);
   color: white;
 }
@@ -3374,6 +3381,19 @@ h2.subbrand {
       </div>
     </div>
 
+    <div class="settings-section">
+      <label class="settings-label">
+        <strong>🔔 Notificaciones push</strong>
+        <span class="settings-hint">Recordatorios diarios del jardín en este dispositivo. Requiere el GitHub PAT configurado. La suscripción se guarda en el repo (público): técnicamente cualquiera con el repo podría mandarte notificaciones — mismo modelo de privacidad que el sync.</span>
+      </label>
+      <div id="push-status-panel" class="pwa-status-panel">Verificando…</div>
+      <div class="settings-actions">
+        <button class="btn-secondary" id="btn-enable-push">🔔 Activar notificaciones</button>
+        <button class="btn-secondary btn-danger" id="btn-disable-push" hidden>🔕 Desactivar</button>
+      </div>
+      <div class="settings-feedback" id="settings-push-feedback"></div>
+    </div>
+
     <div class="settings-footer">
       <button class="btn-primary" id="btn-save-settings">💾 Guardar</button>
     </div>
@@ -3390,7 +3410,7 @@ const PLANTS_INFO = [{"id_codes": ["F-1"], "zone": "frente", "common": "Guayabo 
 const DEFAULT_CONTACTS = [{"id": "sofi", "name": "Sofi", "icon": "💚", "phone": "+59899516634", "default_template": "Hola Sofi! Tengo esta tarea pendiente del jardín:\n\n📌 \"{task}\"\n\nMás info acá: {link}"}, {"id": "jardinero", "name": "Jardinero", "icon": "🌿", "phone": "", "default_template": "Hola! Necesito ayuda con una tarea de jardinería en casa: \"{task}\".\n\nDetalle acá: {link}\n\n¿Cuándo podrías venir? Saludos."}, {"id": "jornalero", "name": "Jornalero multiuso", "icon": "🛠️", "phone": "", "default_template": "Hola! Tengo una tarea para hacer en casa: \"{task}\".\n\nMás info: {link}\n\n¿Tendrías disponibilidad esta semana? Gracias."}, {"id": "piscina", "name": "Empresa de piscina", "icon": "🏊", "phone": "", "default_template": "Hola! Necesitaría coordinar un servicio de piscina relacionado con: \"{task}\".\n\n{link}\n\n¿Cuándo podrían pasar?"}, {"id": "electricista", "name": "Electricista", "icon": "⚡", "phone": "", "default_template": "Hola! Necesito un electricista para: \"{task}\".\n\n{link}\n\n¿Tendrías disponibilidad?"}, {"id": "vivero", "name": "Vivero / Plantas", "icon": "🌱", "phone": "", "default_template": "Hola! Quería consultar sobre: \"{task}\".\n\n{link}\n\n¿Tienen disponibilidad?"}, {"id": "leniador", "name": "Leñador / Podador", "icon": "🪓", "phone": "", "default_template": "Hola! Necesito un servicio de poda/extracción: \"{task}\".\n\n{link}\n\n¿Cuándo podrías venir a evaluar?"}];
 const WHATSAPP_TEMPLATES = {"identificar": {"sofi": "Hola! Mirá esta planta del jardín — todavía no la identifiqué con certeza:\n\n📌 \"{task}\"\n\n¿Te suena? Detalle y fotos: {link}", "jardinero": "Hola! ¿Me ayudás a confirmar el nombre de esta planta? Quiero ajustar bien sus cuidados.\n\n📌 \"{task}\"\n\nFotos en el detalle: {link}", "vivero": "Hola! ¿Me ayudás a identificar esta planta para saber qué cuidados específicos necesita?\n\n📌 \"{task}\"\n\nFotos: {link}"}, "foto": {"sofi": "Hola! Recordame sacarle foto cercana a esta planta cuando puedas:\n\n📌 \"{task}\"\n\nReferencia: {link}", "jardinero": "Hola! Cuando vengas, ¿podés sacar una foto cercana de esta planta? Necesito buena referencia para el catálogo.\n\n📌 \"{task}\"\n\n{link}"}, "poda": {"sofi": "Hola! Tarea de poda agendada:\n\n📌 \"{task}\"\n\nDetalle de cuándo y cómo: {link}", "jardinero": "Hola! Necesito una poda. ¿Cuándo podrías venir?\n\n📌 \"{task}\"\n\nDetalle de la planta y la poda recomendada: {link}", "jornalero": "Hola! Tarea de poda en el jardín:\n\n📌 \"{task}\"\n\n¿Tendrías disponibilidad esta semana? Detalle: {link}", "leniador": "Hola! Necesito servicio de poda — esta planta requiere intervención fuerte:\n\n📌 \"{task}\"\n\nDetalle: {link}\n\n¿Podés pasar a evaluar?"}, "trasplante": {"sofi": "Hola! Hay que trasplantar a maceta más grande:\n\n📌 \"{task}\"\n\n{link}", "jardinero": "Hola! Necesito ayuda con un trasplante — la planta está apretada en su maceta actual:\n\n📌 \"{task}\"\n\nDetalle: {link}", "vivero": "Hola! Necesito una maceta más grande para esta planta. ¿Tenés algo del tamaño adecuado y sustrato recomendado?\n\n📌 \"{task}\"\n\nReferencia: {link}"}, "fertilizacion": {"sofi": "Hola! Hay que fertilizar:\n\n📌 \"{task}\"\n\nDetalle del producto y momento: {link}", "jardinero": "Hola! Necesito fertilizar/tratar esta planta — está exigiendo nutrientes específicos:\n\n📌 \"{task}\"\n\nDetalle: {link}", "vivero": "Hola! ¿Tenés fertilizante específico para esta planta? Es exigente con los nutrientes:\n\n📌 \"{task}\"\n\nDetalle: {link}"}, "control_plagas": {"sofi": "Hola! Detecté/sospecho plaga en:\n\n📌 \"{task}\"\n\nDetalle: {link}", "jardinero": "Hola! Detecté plaga (cochinilla / pulgones / similar) en esta planta. ¿Cuándo podés pasar a revisar y tratar antes de que se contagie?\n\n📌 \"{task}\"\n\nDetalle: {link}", "vivero": "Hola! Necesito producto/recomendación para tratar plagas en esta planta. ¿Qué me recomendás?\n\n📌 \"{task}\"\n\nDetalle: {link}"}, "limpieza": {"sofi": "Hola! Tarea de limpieza/mantenimiento ligero:\n\n📌 \"{task}\"\n\nDetalle: {link}", "jardinero": "Hola! Tarea de limpieza/mantenimiento — ramas/hojas secas, división de matas, etc.:\n\n📌 \"{task}\"\n\nDetalle: {link}", "jornalero": "Hola! Necesito una mano con limpieza en el jardín:\n\n📌 \"{task}\"\n\n¿Tendrías una tarde libre? Detalle: {link}", "leniador": "Hola! Tarea de limpieza con ramas grandes/extracción — algo que requiere herramientas:\n\n📌 \"{task}\"\n\nDetalle: {link}"}, "riego": {"sofi": "Hola! Recordatorio de riego:\n\n📌 \"{task}\"\n\nDetalle: {link}", "jardinero": "Hola! Consulta sobre riego — hay que ajustar la frecuencia para esta planta:\n\n📌 \"{task}\"\n\nDetalle: {link}"}, "mantenimiento": {"sofi": "Hola! Tarea pendiente del jardín:\n\n📌 \"{task}\"\n\nDetalle: {link}", "jardinero": "Hola! Necesito hacer mantenimiento general en el jardín:\n\n📌 \"{task}\"\n\nDetalle: {link}", "jornalero": "Hola! Tarea de mantenimiento general:\n\n📌 \"{task}\"\n\nDetalle: {link}", "leniador": "Hola! Tarea de mantenimiento que requiere herramientas:\n\n📌 \"{task}\"\n\nDetalle: {link}"}};
 const STATS_TICKER = [{"emoji": "🌱", "count": 52, "label": "especies"}, {"emoji": "🇺🇾", "count": 10, "label": "nativas"}, {"emoji": "🌍", "count": 35, "label": "exóticas"}, {"emoji": "🍑", "count": 11, "label": "frutales"}, {"emoji": "🌿", "count": 4, "label": "aromáticas"}, {"emoji": "✨", "count": 34, "label": "ornamentales"}, {"emoji": "🌿", "count": 6, "label": "trepadoras"}, {"emoji": "🐝", "count": 16, "label": "polinizadoras"}, {"emoji": "🐝", "count": 2, "label": "para abejas"}, {"emoji": "🦋", "count": 3, "label": "para mariposas"}, {"emoji": "👃", "count": 5, "label": "con perfume"}, {"emoji": "🌲", "count": 31, "label": "perennes"}, {"emoji": "🍃", "count": 4, "label": "semi-perennes"}, {"emoji": "🍂", "count": 12, "label": "caducas"}];
-const SITE_URL = "https://gardening-git-main-andys-projects-8bfb617c.vercel.app";
+const SITE_URL = "https://gardening-chi.vercel.app";
 
 // ============================================================
 // CONSTANTES
@@ -4728,6 +4748,237 @@ window.addEventListener('appinstalled', () => {
 });
 
 // ============================================================
+// PUSH NOTIFICATIONS — suscripción VAPID + engagement tracking
+// La suscripción se guarda en docs/sync/push_subscription.json (vía
+// GitHub API con el PAT). El dispatcher (GitHub Actions) la lee para
+// mandar los pushes que el agente diario encola en
+// docs/notifications/queue.json.
+// ============================================================
+const PUSH_SUB_PATH = 'docs/sync/push_subscription.json';
+const ENGAGEMENT_PATH = 'docs/sync/engagement.json';
+const PUSH_CHECK_KEY = 'jardineando_push_check_v1';
+const SEEN_NIDS_KEY = 'jardineando_seen_nids_v1';
+
+function urlBase64ToUint8Array(base64String) {
+  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+  const raw = atob(base64);
+  const arr = new Uint8Array(raw.length);
+  for (let i = 0; i < raw.length; i++) arr[i] = raw.charCodeAt(i);
+  return arr;
+}
+
+async function fetchVapidPublicKey() {
+  const r = await fetch('notifications/vapid_public.txt', { cache: 'no-store' });
+  if (!r.ok) throw new Error('No se pudo leer la clave VAPID pública (HTTP ' + r.status + ')');
+  return (await r.text()).trim();
+}
+
+async function getLocalPushSubscription() {
+  if (!('serviceWorker' in navigator) || !('PushManager' in window)) return null;
+  const reg = await navigator.serviceWorker.ready;
+  return await reg.pushManager.getSubscription();
+}
+
+async function uploadPushSubscription(sub) {
+  await ghWriteJsonFile(PUSH_SUB_PATH, {
+    device: loadDeviceName() || 'sin-nombre',
+    subscription: sub.toJSON(),
+    status: 'active',
+    updated_at: new Date().toISOString(),
+    invalidated_at: null,
+    invalid_reason: null,
+  }, `push: registrar suscripción desde ${loadDeviceName() || 'device'}`);
+}
+
+async function enablePushNotifications() {
+  const fb = document.getElementById('settings-push-feedback');
+  const setFb = (msg, cls) => { if (fb) { fb.textContent = msg; fb.className = 'settings-feedback' + (cls ? ' ' + cls : ''); } };
+  if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
+    setFb('❌ Este navegador no soporta Web Push.', 'err');
+    return;
+  }
+  if (!loadGitHubToken()) {
+    setFb('⚠️ Configurá el GitHub PAT primero (arriba) — la suscripción se guarda en el repo.', 'warn');
+    return;
+  }
+  try {
+    setFb('⏳ Pidiendo permiso…');
+    const perm = await Notification.requestPermission();
+    if (perm !== 'granted') {
+      setFb('❌ Permiso denegado. Para reactivarlo: Chrome → ⋮ → Configuración del sitio → Notificaciones → Permitir.', 'err');
+      updatePushStatusPanel();
+      return;
+    }
+    setFb('⏳ Suscribiendo…');
+    const reg = await navigator.serviceWorker.ready;
+    const vapidKey = await fetchVapidPublicKey();
+    let sub = await reg.pushManager.getSubscription();
+    if (!sub) {
+      sub = await reg.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(vapidKey),
+      });
+    }
+    setFb('⏳ Guardando suscripción en el repo…');
+    await uploadPushSubscription(sub);
+    setFb('✅ Notificaciones activadas en este dispositivo.', 'ok');
+  } catch (err) {
+    setFb('❌ ' + (err.message || err), 'err');
+  }
+  updatePushStatusPanel();
+}
+
+async function disablePushNotifications() {
+  const fb = document.getElementById('settings-push-feedback');
+  const setFb = (msg, cls) => { if (fb) { fb.textContent = msg; fb.className = 'settings-feedback' + (cls ? ' ' + cls : ''); } };
+  try {
+    const sub = await getLocalPushSubscription();
+    if (sub) await sub.unsubscribe();
+    if (loadGitHubToken()) {
+      await ghWriteJsonFile(PUSH_SUB_PATH, {
+        device: loadDeviceName() || 'sin-nombre',
+        subscription: null,
+        status: 'disabled',
+        updated_at: new Date().toISOString(),
+        invalidated_at: null,
+        invalid_reason: 'desactivado por el usuario',
+      }, `push: desactivar notificaciones desde ${loadDeviceName() || 'device'}`);
+    }
+    setFb('🔕 Notificaciones desactivadas.', 'ok');
+  } catch (err) {
+    setFb('❌ ' + (err.message || err), 'err');
+  }
+  updatePushStatusPanel();
+}
+
+async function updatePushStatusPanel() {
+  const panel = document.getElementById('push-status-panel');
+  const btnOn = document.getElementById('btn-enable-push');
+  const btnOff = document.getElementById('btn-disable-push');
+  if (!panel) return;
+  const yes = '<span class="pwa-st-ok">✓</span>';
+  const no = '<span class="pwa-st-err">✗</span>';
+  let html = '';
+  const supported = ('serviceWorker' in navigator) && ('PushManager' in window);
+  html += `<div class="pwa-st-row">${supported ? yes : no} Web Push soportado en este browser</div>`;
+  const perm = (typeof Notification !== 'undefined') ? Notification.permission : 'unsupported';
+  html += `<div class="pwa-st-row">${perm === 'granted' ? yes : no} Permiso de notificaciones: <code>${perm}</code></div>`;
+  let sub = null;
+  try { sub = await getLocalPushSubscription(); } catch (e) {}
+  html += `<div class="pwa-st-row">${sub ? yes : no} Suscripción local ${sub ? 'activa' : 'inexistente'}</div>`;
+  panel.innerHTML = html;
+  if (btnOn) btnOn.hidden = !!sub && perm === 'granted';
+  if (btnOff) btnOff.hidden = !sub;
+}
+
+// Chequeo diario al cargar: si la suscripción remota está marcada como
+// inválida (el dispatcher recibió 404/410) o difiere de la local,
+// re-suscribir silenciosamente (con PAT) o mostrar banner.
+async function checkPushSubscriptionOnLoad() {
+  if (!('serviceWorker' in navigator) || !('PushManager' in window)) return;
+  if (typeof Notification === 'undefined' || Notification.permission !== 'granted') return;
+  const last = parseInt(localStorage.getItem(PUSH_CHECK_KEY) || '0', 10);
+  if (Date.now() - last < 24 * 60 * 60 * 1000) return;
+  localStorage.setItem(PUSH_CHECK_KEY, String(Date.now()));
+  try {
+    const local = await getLocalPushSubscription();
+    // Leer el estado remoto same-origin (sin PAT — el archivo es público).
+    const r = await fetch('sync/push_subscription.json', { cache: 'no-store' });
+    const remote = r.ok ? await r.json() : null;
+    const remoteEndpoint = remote?.subscription?.endpoint || null;
+    const needsRepair = !local || (remote && remote.status === 'invalid') ||
+      (local && remoteEndpoint && local.endpoint !== remoteEndpoint);
+    if (!needsRepair) return;
+    if (loadGitHubToken()) {
+      const reg = await navigator.serviceWorker.ready;
+      const vapidKey = await fetchVapidPublicKey();
+      const sub = local || await reg.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(vapidKey),
+      });
+      await uploadPushSubscription(sub);
+      console.log('[push] suscripción reparada automáticamente');
+    } else {
+      showPushResubscribeBanner();
+    }
+  } catch (e) {
+    console.warn('[push] check de suscripción falló:', e);
+  }
+}
+
+function showPushResubscribeBanner() {
+  if (document.getElementById('push-resub-banner')) return;
+  const banner = document.createElement('div');
+  banner.id = 'push-resub-banner';
+  banner.innerHTML = `
+    <span class="pwa-install-icon">🔔</span>
+    <span class="pwa-install-text">Las notificaciones se desactivaron — tocá para reactivar</span>
+    <button class="pwa-install-btn">Reactivar</button>
+    <button class="pwa-install-dismiss" aria-label="Cerrar">✕</button>
+  `;
+  document.body.appendChild(banner);
+  banner.querySelector('.pwa-install-btn').addEventListener('click', async () => {
+    banner.remove();
+    openSettingsModal();
+    await enablePushNotifications();
+  });
+  banner.querySelector('.pwa-install-dismiss').addEventListener('click', () => banner.remove());
+}
+
+// ------------------------------------------------------------
+// ENGAGEMENT TRACKING — clicks de notificaciones y visitas.
+// Solo escribe si hay PAT (el device principal lo tiene). El agente
+// diario lee docs/sync/engagement.json para decidir el contenido
+// del día siguiente.
+// ------------------------------------------------------------
+async function logEngagementEvents(events) {
+  if (!loadGitHubToken() || !events.length) return;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const { data } = await ghReadJsonFile(ENGAGEMENT_PATH);
+      const doc = data || { _updated_at: null, events: [], daily_summary: {} };
+      doc.events = (doc.events || []).concat(events);
+      doc._updated_at = new Date().toISOString();
+      await ghWriteJsonFile(ENGAGEMENT_PATH, doc, `engage: ${events.map(e => e.type).join(', ')} desde ${loadDeviceName() || 'device'}`);
+      return;
+    } catch (e) {
+      if (attempt === 1) console.warn('[engage] no se pudo loguear:', e);
+    }
+  }
+}
+
+function trackNotificationLanding() {
+  let params;
+  try { params = new URLSearchParams(window.location.search); } catch (e) { return; }
+  const nid = params.get('nid');
+  if (!nid) return;
+  const page = window.location.pathname.split('/').pop() || 'index.html';
+  const seen = JSON.parse(localStorage.getItem(SEEN_NIDS_KEY) || '[]');
+  const events = [];
+  const now = new Date().toISOString();
+  if (!seen.includes(nid)) {
+    seen.push(nid);
+    localStorage.setItem(SEEN_NIDS_KEY, JSON.stringify(seen.slice(-50)));
+    events.push({ type: 'notification_clicked', nid, page, ts: now, device: loadDeviceName() || 'sin-nombre' });
+    events.push({ type: 'page_visit', page, nid, src: params.get('src') || 'push', ts: now, device: loadDeviceName() || 'sin-nombre' });
+  }
+  // Limpiar la URL para que reload/share no re-loguee ni arrastre params.
+  params.delete('nid');
+  params.delete('src');
+  const clean = window.location.pathname + (params.toString() ? '?' + params.toString() : '') + window.location.hash;
+  history.replaceState(null, '', clean);
+  logEngagementEvents(events);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('btn-enable-push')?.addEventListener('click', enablePushNotifications);
+  document.getElementById('btn-disable-push')?.addEventListener('click', disablePushNotifications);
+  trackNotificationLanding();
+});
+window.addEventListener('load', () => { checkPushSubscriptionOnLoad(); });
+
+// ============================================================
 // SETTINGS — GitHub PAT + device name (localStorage only)
 // ============================================================
 const GITHUB_TOKEN_KEY = 'jardineando_github_token_v1';
@@ -4822,6 +5073,7 @@ function openSettingsModal() {
   document.getElementById('settings-modal').classList.add('active');
   // Refrescar el panel de PWA status al abrir.
   if (typeof updatePwaStatusPanel === 'function') updatePwaStatusPanel();
+  if (typeof updatePushStatusPanel === 'function') updatePushStatusPanel();
 }
 
 document.getElementById('btn-open-settings')?.addEventListener('click', openSettingsModal);

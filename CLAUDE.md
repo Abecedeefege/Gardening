@@ -172,6 +172,37 @@ Viven en `.claude/commands/<nombre>.md`. Son markdown con frontmatter YAML que d
 Comandos definidos:
 
 - **`/actualizar-tareas`** — procesador manual de fotos uploadeadas. Lee `docs/uploads.json`, filtra entries con `ai_status: "pending"`, evalúa cada foto contra el contexto de su tarea, propone resoluciones (marcar hecha o `description_override`) y commitea cuando el usuario confirma. Usa la visión nativa de Claude Code, sin Anthropic API key separada.
+- **`/engagement`** — agente diario de engagement (lo corre una Routine de Claude Code ~06:00 UY). Gestiona proposals, encola las 3 notificaciones push del día y commitea a main. Ver sección "Sistema de engagement" abajo.
+
+### Sistema de engagement (push + proposals)
+
+Tres actores con ownership disjunto de archivos (NO cruzar escrituras):
+
+| Actor | Corre | Escribe |
+|---|---|---|
+| Agente diario (`/engagement` vía Routine) | 1×/día ~06:00 UY | `docs/notifications/queue.json` (rewrite), `docs/engage/*` , data files + build |
+| Dispatcher (`.github/workflows/push-dispatch.yml` → `tools/send_push.js`) | cron cada 30 min, 07:00–20:30 UY | statuses de la queue, `docs/notifications/send_log.json`, invalidación de suscripción |
+| Browser (PAT, scripts.py + `docs/engage/engage.js`) | al interactuar | `docs/sync/push_subscription.json`, `docs/sync/engagement.json` |
+
+Estructura:
+
+```
+docs/
+├── notifications/
+│   ├── vapid_public.txt           ← Clave VAPID pública (la privada es secret VAPID_PRIVATE_KEY en GitHub Actions — NUNCA al repo)
+│   ├── queue.json                 ← Cola del día (el agente escribe, el dispatcher manda y actualiza status)
+│   └── send_log.json              ← Log de envíos del dispatcher
+├── engage/
+│   ├── engage.js                  ← Tracking + aprobación para páginas proposal (standalone)
+│   ├── proposals.json             ← Registro de proposals (pending/approved/promoted/dropped)
+│   ├── learnings.md               ← Memoria del agente (se reescribe, máx ~150 líneas)
+│   └── <YYYY-MM-DD>-<slug>.html   ← Páginas proposal (efímeras: sin aprobación, se borran al día siguiente)
+└── sync/
+    ├── push_subscription.json     ← Suscripción Web Push del device (status active/disabled/invalid)
+    └── engagement.json            ← Eventos: notification_clicked / page_visit / proposal_approved / proposal_rejected
+```
+
+Flujo: el agente encola 3 notificaciones con `send_at` (-03:00) → Vercel deploya → el dispatcher manda lo vencido → el SW (`docs/sw.js`) muestra la notificación y al click abre el deep link con `?nid=&src=push` → el cliente loguea el click/visita en `engagement.json` → el agente lee los datos a la mañana siguiente y adapta. Las proposals necesitan aprobación explícita (botón en la página) para sobrevivir; aprobadas se promueven al sitio principal.
 
 ### Sync engine
 

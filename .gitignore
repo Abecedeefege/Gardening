@@ -31,3 +31,7 @@ Thumbs.db
 node_modules/
 package.json
 package-lock.json
+
+# Excepción: el dispatcher de push SÍ necesita su package.json en el repo
+# (lo instala el workflow .github/workflows/push-dispatch.yml)
+!tools/package.json

@@ -1,0 +1,8 @@
+{
+  "name": "jardineando-tools",
+  "private": true,
+  "description": "Dispatcher de web push — usado por .github/workflows/push-dispatch.yml",
+  "dependencies": {
+    "web-push": "^3.6.7"
+  }
+}
