@@ -3,75 +3,60 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Calendario de poda · invierno 2026 · Jardineando</title>
+<title>Calendario de poda · invierno-primavera 2026 · Jardineando</title>
 <style>
   :root { --verde: #2d5016; --verde2: #4a7c2a; --fondo: #f5faf0; }
   * { box-sizing: border-box; }
-  body {
-    margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: var(--fondo); color: #233018; line-height: 1.5;
-    padding: 0 16px 48px;
-  }
-  .back {
-    display: inline-block; margin: 14px 0 4px; color: var(--verde2);
-    text-decoration: none; font-weight: 600; font-size: 0.95rem;
-  }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--fondo); color: #233018; line-height: 1.5; padding: 0 16px 48px; }
+  .back { display: inline-block; margin: 14px 0 4px; color: var(--verde2);
+    text-decoration: none; font-weight: 600; font-size: 0.95rem; }
   .back:active { opacity: 0.6; }
-  header { max-width: 640px; margin: 0 auto; }
+  header, main { max-width: 640px; margin: 0 auto; }
   h1 { color: var(--verde); font-size: 1.5rem; margin: 10px 0 4px; }
   .sub { color: #5a6b4a; font-size: 0.95rem; margin: 0 0 6px; }
-  .fix-note {
-    max-width: 640px; margin: 10px auto 0; background: #fdf3e3; border: 1px solid #ecd9b0;
-    border-radius: 12px; padding: 12px 14px; font-size: 0.88rem; color: #6b5418;
-  }
+  .fix-note { max-width: 640px; margin: 10px auto 0; background: #fdf3e3; border: 1px solid #ecd9b0;
+    border-radius: 12px; padding: 12px 14px; font-size: 0.88rem; color: #6b5418; }
   .counts { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 4px; }
-  .chip {
-    background: #fff; border: 1px solid #d8e6c8; border-radius: 999px;
-    padding: 6px 12px; font-size: 0.85rem; font-weight: 600; color: var(--verde);
-  }
+  .chip { background: #fff; border: 1px solid #d8e6c8; border-radius: 999px;
+    padding: 6px 12px; font-size: 0.85rem; font-weight: 600; color: var(--verde); }
   .chip b { font-size: 1.05rem; }
-  main { max-width: 640px; margin: 0 auto; }
-  h2 {
-    color: var(--verde); font-size: 1.1rem; margin: 26px 0 4px;
-    border-bottom: 2px solid #d8e6c8; padding-bottom: 6px;
-  }
-  .window-note { font-size: 0.85rem; color: #5a6b4a; margin: 4px 0 10px; }
-  .card {
-    background: #fff; border: 1px solid #e3eed6; border-radius: 12px;
-    padding: 12px 14px; margin: 10px 0; box-shadow: 0 1px 3px rgba(45,80,22,0.06);
-  }
+  h2 { color: var(--verde); font-size: 1.15rem; margin: 30px 0 4px;
+    border-bottom: 2px solid #d8e6c8; padding-bottom: 6px; }
+  .window-note { font-size: 0.88rem; color: #44543a; margin: 8px 0 12px; background: #eef5e5;
+    border-radius: 10px; padding: 10px 12px; }
+  .window-note b { color: var(--verde); }
+  .card { background: #fff; border: 1px solid #e3eed6; border-radius: 12px;
+    padding: 12px 14px; margin: 10px 0; box-shadow: 0 1px 3px rgba(45,80,22,0.06); }
   .card.alta { border-left: 5px solid #c0392b; }
   .card.media { border-left: 5px solid #e08e0b; }
   .card.baja { border-left: 5px solid #7f8c8d; }
   .card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
   .card h3 { font-size: 1rem; margin: 0; color: #233018; }
-  .badge {
-    font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.03em; padding: 3px 8px; border-radius: 6px; white-space: nowrap;
-  }
+  .badge { font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.03em; padding: 3px 8px; border-radius: 6px; white-space: nowrap; }
   .badge.alta { background: #fcebea; color: #c0392b; }
   .badge.media { background: #fdf3e3; color: #b9770a; }
   .badge.baja { background: #eef1f1; color: #5a6b4a; }
   .codes { color: var(--verde2); font-size: 0.82rem; font-weight: 600; margin: 2px 0 6px; }
-  .short { font-size: 0.9rem; margin: 0; color: #3c4a30; }
-  .why {
-    max-width: 640px; margin: 22px auto 0; background: #eaf3e0;
-    border-radius: 12px; padding: 14px 16px; font-size: 0.9rem; color: #3c4a30;
-  }
+  .when-tag { display: inline-block; background: #eef5e5; color: var(--verde); border-radius: 6px;
+    font-size: 0.75rem; font-weight: 700; padding: 2px 8px; margin-left: 6px; }
+  .short { font-size: 0.9rem; margin: 0 0 4px; color: #3c4a30; }
+  .why-line { font-size: 0.85rem; margin: 6px 0 0; color: #44543a; background: #f4f9ee;
+    border-radius: 8px; padding: 8px 10px; }
+  .why-line b { color: var(--verde); }
+  .guide-link { display: inline-block; margin-top: 8px; font-size: 0.85rem; font-weight: 700;
+    color: var(--verde2); text-decoration: none; }
+  .why { max-width: 640px; margin: 22px auto 0; background: #eaf3e0;
+    border-radius: 12px; padding: 14px 16px; font-size: 0.9rem; color: #3c4a30; }
   .why b { color: var(--verde); }
-  .engage-actions {
-    max-width: 640px; margin: 26px auto 0; display: flex; gap: 10px; flex-wrap: wrap;
-  }
-  .engage-actions button {
-    flex: 1 1 160px; padding: 14px 12px; border: none; border-radius: 12px;
-    font-size: 1rem; font-weight: 700; cursor: pointer;
-  }
+  .engage-actions { max-width: 640px; margin: 26px auto 0; display: flex; gap: 10px; flex-wrap: wrap; }
+  .engage-actions button { flex: 1 1 160px; padding: 14px 12px; border: none; border-radius: 12px;
+    font-size: 1rem; font-weight: 700; cursor: pointer; }
   .engage-actions button:first-child { background: var(--verde); color: #fff; }
   .engage-actions button:last-child { background: #fff; color: #5a6b4a; border: 1px solid #cdd9be; }
-  .engage-feedback {
-    max-width: 640px; margin: 26px auto 0; text-align: center;
-    font-size: 1rem; font-weight: 600; color: var(--verde);
-  }
+  .engage-feedback { max-width: 640px; margin: 26px auto 0; text-align: center;
+    font-size: 1rem; font-weight: 600; color: var(--verde); }
   footer { max-width: 640px; margin: 28px auto 0; text-align: center; font-size: 0.8rem; color: #8a9a78; }
   footer a { color: var(--verde2); }
 </style>
@@ -79,19 +64,19 @@
 <body>
 <a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
 <header>
-  <h1>✂️ Calendario de poda — invierno 2026</h1>
-  <p class="sub">Qué va <b>ahora</b>, qué espera a <b>fines del invierno</b> y qué recién <b>pasadas las heladas</b>. Una sola pantalla con toda la temporada, ordenada por ventana.</p>
+  <h1>✂️ Calendario de poda — invierno y salida del invierno 2026</h1>
+  <p class="sub">Cuatro ventanas bien distintas: lo que va <b>hoy</b>, lo que espera a <b>fines de julio-agosto</b>, lo que recién va <b>pasadas las heladas</b> y lo que es de <b>primavera</b>. Cada tarea con su porqué y el link a la guía paso a paso.</p>
   <div class="counts" id="counts"></div>
 </header>
 
 <div class="fix-note">
-  ⚠️ <b>Versión corregida.</b> La primera versión de esta página mandaba todo a junio. Revisando las fuentes quedó claro que la mayoría de las podas conviene hacerlas a <b>fines del invierno</b>: las heridas tardías cicatrizan más rápido al reanudarse el crecimiento, hay menos exposición a gomosis y hongos, y las especies sensibles al frío no arriesgan el rebrote a una helada. En junio solo van las limpiezas de madera muerta y los trasplantes en dormancia.
+  ⚠️ <b>Versión corregida (11/06).</b> La primera versión mandaba todo a junio, y una segunda agrupaba "junio-julio" como si 8 semanas fueran lo mismo. No lo son: una herida de poda hecha hoy queda abierta dos meses; la misma herida a fines de la dormancia cierra en días. Esta versión separa las ventanas de verdad y fundamenta cada una.
 </div>
 
 <main id="list"></main>
 
 <div class="why">
-  <b>¿Por qué una pantalla aparte?</b> Estas tareas están repartidas por todo el Timeline. Acá quedan juntas y ordenadas por ventana de poda, para planificar la temporada de un vistazo (y para coordinar con el jardinero de una sola vez por ventana). Si esto te sirve, lo dejo fijo en el sitio como vista de temporada.
+  <b>¿Por qué una pantalla aparte?</b> Estas tareas están repartidas por todo el Timeline. Acá quedan juntas y ordenadas por ventana real de ejecución, para planificar la temporada de un vistazo y coordinar con el jardinero una sola vez por ventana. Si te sirve, la dejo fija en el sitio como vista de temporada.
 </div>
 
 <div class="engage-actions">
@@ -105,71 +90,468 @@
 </footer>
 
 <script>
-  // Datos inlineados desde data_plants.py (urgencias de poda invierno-primavera 2026, fechas corregidas 11/06).
+  // Generado desde data_plants.py via build.generate_tasks_from_plants (fechas corregidas 11/06).
   var TASKS = [
-    // win: "ahora" (junio-julio) | "fines" (fines de julio-agosto) | "post" (septiembre, pasadas las heladas)
-    {win:"ahora",codes:["B-37"],common:"Liquidámbar",priority:"alta",title:"Limpieza de copa en dormancia",short:"Solo ramas secas, cruzadas o mal orientadas — el liquidámbar NO se poda fuerte, define su forma solo."},
-    {win:"ahora",codes:["B-5a","B-5b"],common:"Hortensia",priority:"alta",title:"Trasplantar a maceta grande o cantero",short:"En plena dormancia es el momento ideal para moverlas: a maceta de 40+ cm o a tierra antes del rebrote."},
-    {win:"ahora",codes:["B-39"],common:"Pera Williams",priority:"alta",title:"Poda en forma piramidal (julio-agosto)",short:"La pera tolera bien la poda en dormancia: sacar chupones y mantener el eje central. Julio-agosto."},
-    {win:"ahora",codes:["B-43"],common:"Pitósporo",priority:"alta",title:"Poda fuerte de reducción (julio-agosto)",short:"Bajarlo a 2-3 m como pantalla, a fines de invierno con reservas acumuladas para rebrotar en primavera."},
-    {win:"ahora",codes:["F-10"],common:"Fresno (americano)",priority:"media",title:"Evaluar liberar copa — recibe poca luz",short:"Decidir este invierno: moverlo, abrirle un corredor de luz entre las Fotinias, o aceptarlo de tercera línea."},
-    {win:"ahora",codes:["F-1"],common:"Guayabo del país",priority:"baja",title:"Limpieza invernal de ramas secas",short:"Sacar solo ramas muertas, rotas o podridas — el guayabo soporta MUY poca poda."},
-    {win:"ahora",codes:["B-8","B-21","B-28"],common:"Palmera pindó",priority:"baja",title:"Limpieza de hojas secas en las 3 pindó",short:"Cortar a ras del tronco solo las hojas amarillas/secas. NO tocar las verdes ni el cogollo central."},
-    {win:"ahora",codes:["B-6"],common:"Esparraguera cola de zorro",priority:"baja",title:"Dividir mata si está muy densa (julio)",short:"División en dormancia si la mata desborda la maceta."},
-    {win:"ahora",codes:["B-44"],common:"Evónimo japonés variegado",priority:"baja",title:"Decidir si se queda o se trasplanta",short:"Decisión de invierno: si se muda, el trasplante en dormancia es el de menor estrés."},
-
-    {win:"fines",codes:["B-30","B-35"],common:"Durazno",priority:"alta",title:"Poda en vaso abierto",short:"Sacar 40-50%, formar 3-4 ramas tipo copa. Justo antes de que hinchen las yemas: heridas que cierran rápido, menos gomosis."},
-    {win:"fines",codes:["F-4"],common:"Ciruelo de jardín",priority:"alta",title:"Poda de formación",short:"Ramas cruzadas, chupones y abrir el centro en V — tarde en la dormancia para que cicatrice al reanudarse el crecimiento."},
-    {win:"fines",codes:["B-38"],common:"Ciruela amarilla",priority:"alta",title:"Poda en copa abierta",short:"Sacar 30%, renovar madera de más de 4 años. Misma lógica que el durazno: fines de la dormancia."},
-    {win:"fines",codes:["B-41"],common:"Caqui / Persimón",priority:"alta",title:"Poda en copa abierta",short:"Sacar 25-35%, antes de que el árbol movilice savia. Vigilar la zona del injerto al pie."},
-    {win:"fines",codes:["B-9"],common:"Crespón / Mirto de crepe",priority:"alta",title:"Poda severa de formación",short:"Reducir 50-70% — florece en madera nueva. En agosto el rebrote llega enseguida, sin semanas de heladas encima."},
-    {win:"fines",codes:["B-18"],common:"Rosa de Siria / Althea",priority:"alta",title:"Poda severa",short:"Reducir 40-50% dejando 2-3 yemas por rama — brota tarde, agosto es su ventana natural."},
-    {win:"fines",codes:["F-2"],common:"Bignonia rosada / Podranea",priority:"media",title:"Poda fuerte",short:"Acortar 40-60% las ramas largas — florece en madera del año y el rebrote no come heladas."},
-    {win:"fines",codes:["B-7","B-11","B-31","B-33"],common:"Azarero / Pitósporo",priority:"media",title:"Recorte parejo de cerco (4 ejemplares)",short:"Fines de agosto: pasado el grueso de las heladas, el rebrote tierno del recorte no se quema."},
-    {win:"fines",codes:["B-4"],common:"Hibisco / Rosa china",priority:"media",title:"Poda de fin de invierno",short:"Antes del brote primaveral, sobre el muro norte que le da calor todo el invierno."},
-    {win:"fines",codes:["F-7"],common:"Abelia",priority:"baja",title:"Poda previa al brote",short:"Agosto-septiembre, justo antes de que hinchen las yemas — florece en madera nueva."},
-    {win:"fines",codes:["F-9"],common:"Ligustro",priority:"media",title:"Poda selectiva de Fotinia F-6",short:"Abrir corredores de luz hacia el ligustro, antes del brote de primavera."},
-    {win:"fines",codes:["B-40"],common:"Madreselva china",priority:"media",title:"Poda de limpieza",short:"Agosto, antes de la brotación."},
-
-    {win:"post",codes:["B-1"],common:"Santa Rita / Buganvilia",priority:"alta",title:"Poda severa de guías",short:"Sensible al frío: se poda en septiembre, pasado el riesgo de heladas, para que el rebrote no se queme."},
-    {win:"post",codes:["B-29"],common:"Lantana / Camará",priority:"media",title:"Poda severa de rejuvenecimiento",short:"Cortar a 30 cm recién pasada la última helada — los tallos viejos protegen la mata durante el invierno."},
-    {win:"post",codes:["B-23"],common:"Limonero",priority:"media",title:"Poda de formación + chupones",short:"Tras la cosecha y pasadas las heladas: una helada sobre cortes frescos daña al cítrico."},
-    {win:"post",codes:["B-24"],common:"Mandarina criolla",priority:"media",title:"Poda de formación + abrir centro",short:"Igual que el limonero: fines de agosto-septiembre, sin riesgo de helada."},
-    {win:"post",codes:["B-22"],common:"Palta uruguaya",priority:"media",title:"Poda ligera + inspección de plagas",short:"La palta no quiere cortes con frío por delante: septiembre, pasadas las heladas."},
-    {win:"post",codes:["B-36"],common:"Palta Haas",priority:"media",title:"Poda ligera + inspección visual",short:"Chupones del injerto y ramas cruzadas, en septiembre."},
-    {win:"post",codes:["F-3","F-6","F-11"],common:"Fotinia",priority:"media",title:"Poda post-segundo-brote",short:"Septiembre, antes del brote primaveral."}
-  ];
+  {
+    "id": "plant-B-37",
+    "win": "hoy",
+    "codes": [
+      "B-37"
+    ],
+    "common": "Liquidámbar",
+    "priority": "alta",
+    "title": "Limpieza de copa en dormancia",
+    "when": "Junio-julio 2026",
+    "short": "Sacar solo ramas secas, cruzadas o mal orientadas — el liquidámbar NO se poda fuerte, define su forma sola.",
+    "why": "Sacar solo madera muerta o mal puesta no hiere tejido activo ni dispara rebrote — no hay nada que la helada pueda quemar. Y sin hojas, la estructura de la copa se lee perfecto.",
+    "como": "Cortes al ras del collar (el engrosamiento en la base de la rama), solo lo seco/cruzado. El liquidámbar NO se poda fuerte: define su forma solo."
+  },
+  {
+    "id": "plant-B-5a",
+    "win": "hoy",
+    "codes": [
+      "B-5a",
+      "B-5b"
+    ],
+    "common": "Hortensia",
+    "priority": "alta",
+    "title": "Trasplantar a maceta grande o cantero",
+    "when": "Junio-julio 2026",
+    "short": "Los 2 ejemplares en macetas chicas: pasarlos a maceta de 40+ cm o a tierra antes del rebrote.",
+    "why": "Sin hojas la planta casi no transpira, así que el shock de raíz es mínimo, y le quedan ~10 semanas para enraizar antes del rebrote. Lo peor sería moverla cuando está brotando (sept-oct).",
+    "como": "Rootball generoso, maceta de 40+ cm o cantero, regar al asentar. Sin fertilizante hasta que brote."
+  },
+  {
+    "id": "plant-F-1",
+    "win": "hoy",
+    "codes": [
+      "F-1"
+    ],
+    "common": "Guayabo del país",
+    "priority": "baja",
+    "title": "Limpieza invernal de ramas secas",
+    "when": "Junio-julio 2026",
+    "short": "Sacar solo ramas muertas, rotas o podridas — el guayabo soporta MUY poca poda.",
+    "why": "Las ramas muertas o podridas son puerta de entrada de hongos; sacarlas no toca madera viva. La floración (madera del año anterior) no se pierde porque esa madera no se toca.",
+    "como": "Solo lo gris, quebradizo o esponjoso, al ras del collar. Máximo 10% del follaje."
+  },
+  {
+    "id": "plant-B-8",
+    "win": "hoy",
+    "codes": [
+      "B-8",
+      "B-21",
+      "B-28"
+    ],
+    "common": "Palmera pindó",
+    "priority": "baja",
+    "title": "Limpieza de hojas secas en las 3 pindó",
+    "when": "Junio-julio 2026",
+    "short": "Cortar a ras del tronco solo las hojas amarillas/secas. NO tocar las verdes ni el cogollo central.",
+    "why": "Las hojas amarillas/secas ya no fotosintetizan — cortarlas no le cuesta nada a la palmera, en cualquier época.",
+    "como": "A ras del tronco, solo las secas. JAMÁS tocar las verdes ni el cogollo central."
+  },
+  {
+    "id": "plant-F-10",
+    "win": "hoy",
+    "codes": [
+      "F-10"
+    ],
+    "common": "Fresno (americano)",
+    "priority": "media",
+    "title": "Evaluar liberar copa — recibe poca luz",
+    "when": "Junio-julio 2026",
+    "short": "Queda atrás de Fotinias I y II y casi no recibe sol directo. Decidir si vale moverlo, podar las Fotinias para abrirle un corredor de luz, o aceptar que va a quedar como árbol pequeño de tercera línea.",
+    "why": "Es una decisión, no una poda. Con el sol de invierno (el más bajo del año) ves el peor escenario de luz del fresno — el mejor momento para medir y decidir. Si lo movés, julio en dormancia.",
+    "como": "Anotar horas de sol directo (mañana/mediodía/tarde) durante una semana y elegir: trasplante en julio, corredor de luz en las Fotinias en agosto, o aceptarlo de tercera línea."
+  },
+  {
+    "id": "plant-B-44",
+    "win": "hoy",
+    "codes": [
+      "B-44"
+    ],
+    "common": "Evónimo japonés variegado",
+    "priority": "baja",
+    "title": "Decidir si se queda o se trasplanta",
+    "when": "Junio 2026 (cuando esté la planta en reposo)",
+    "short": "Definir en invierno si queda al pie del B-27 o se mueve a otro lugar — la planta está en reposo y tolera el cambio.",
+    "why": "Otra decisión. Si se muda, el trasplante en dormancia es el de menor estrés para un perenne rústico.",
+    "como": "Decidir destino; si va trasplante, julio con rootball amplio."
+  },
+  {
+    "id": "plant-B-30",
+    "win": "fines",
+    "codes": [
+      "B-30",
+      "B-35"
+    ],
+    "common": "Durazno",
+    "priority": "alta",
+    "title": "Poda invernal en vaso abierto",
+    "when": "Fines de julio-agosto 2026",
+    "short": "Sacar 40-50% del follaje, formar 3-4 ramas principales abiertas tipo copa de vaso — sin podar fructifica mal.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-F-4",
+    "win": "fines",
+    "codes": [
+      "F-4"
+    ],
+    "common": "Ciruelo de jardín",
+    "priority": "alta",
+    "title": "Poda invernal de formación",
+    "when": "Fines de julio-agosto 2026",
+    "short": "Sacar ramas cruzadas, chupones verticales y abrir el centro en V — fines de julio-agosto, justo antes de la brotación.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-38",
+    "win": "fines",
+    "codes": [
+      "B-38"
+    ],
+    "common": "Ciruela amarilla",
+    "priority": "alta",
+    "title": "Poda invernal en copa abierta",
+    "when": "Fines de julio-agosto 2026",
+    "short": "Sacar 30% del follaje, eliminar madera de más de 4 años y abrir el centro tipo copa de vaso.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-41",
+    "win": "fines",
+    "codes": [
+      "B-41"
+    ],
+    "common": "Caqui / Persimón",
+    "priority": "alta",
+    "title": "Poda invernal en copa abierta",
+    "when": "Fines de julio-agosto 2026",
+    "short": "Sacar 25-35% del follaje, formar copa abierta y cuidar la zona del injerto al pie del tronco.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-39",
+    "win": "fines",
+    "codes": [
+      "B-39"
+    ],
+    "common": "Pera Williams",
+    "priority": "alta",
+    "title": "Poda invernal forma piramidal",
+    "when": "Fines de julio-agosto 2026",
+    "short": "Sacar 25-35% del follaje, eliminar chupones y mantener forma piramidal con un eje central vertical.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-9",
+    "win": "fines",
+    "codes": [
+      "B-9"
+    ],
+    "common": "Crespón / Mirto de crepe",
+    "priority": "alta",
+    "title": "Poda invernal severa de formación",
+    "when": "Agosto 2026",
+    "short": "Reducir 50-70% en plena dormancia — el crespón florece en madera nueva y tolera el corte fuerte.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-18",
+    "win": "fines",
+    "codes": [
+      "B-18"
+    ],
+    "common": "Rosa de Siria / Althea",
+    "priority": "alta",
+    "title": "Poda invernal severa de la althea",
+    "when": "Agosto 2026",
+    "short": "Reducir 40-50% en plena dormancia, dejando ramas con 2-3 yemas — florece en madera nueva del año.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-43-2",
+    "win": "fines",
+    "codes": [
+      "B-43"
+    ],
+    "common": "Pitósporo",
+    "priority": "alta",
+    "title": "Poda fuerte de reducción — bajarlo a 2-3 m como pantalla",
+    "when": "Agosto 2026 (fines de invierno)",
+    "short": "Agosto 2026 (fines de invierno, antes del brote). Bajar altura del actual ~3-4 m a 2-3 m manteniendo forma natural redondeada para tapar al vecino.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-F-2",
+    "win": "fines",
+    "codes": [
+      "F-2"
+    ],
+    "common": "Bignonia rosada / Podranea",
+    "priority": "media",
+    "title": "Poda fuerte de invierno",
+    "when": "Agosto 2026",
+    "short": "Acortar ramas largas y viejas un 40-60% para que florezca compacta el verano que viene.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-7",
+    "win": "fines",
+    "codes": [
+      "B-7",
+      "B-11",
+      "B-31",
+      "B-33"
+    ],
+    "common": "Azarero / Pitósporo",
+    "priority": "media",
+    "title": "Recorte parejo de cerco (4 ejemplares)",
+    "when": "Fines de agosto 2026",
+    "short": "Cortar los 4 azareros (B-7, B-11, B-31, B-33) a la misma altura y ancho — cerco vivo prolijo antes de la primavera.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-4",
+    "win": "fines",
+    "codes": [
+      "B-4"
+    ],
+    "common": "Hibisco / Rosa china",
+    "priority": "media",
+    "title": "Poda de fin de invierno",
+    "when": "Agosto 2026",
+    "short": "Acortar 25-30% antes de la brotación, sacar madera vieja y ramas débiles — florece en madera nueva.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-F-9",
+    "win": "fines",
+    "codes": [
+      "F-9"
+    ],
+    "common": "Ligustro",
+    "priority": "media",
+    "title": "Poda selectiva de Fotinia F-6 — liberar luz al ligustro",
+    "when": "Agosto-septiembre 2026",
+    "short": "El usuario confirmó (04/05) que NO compiten — son plantas viejas y establecidas que conviven. La fotinia (más grande y arriba) sombrea al ligustro abajo. Solución: podar selectivamente la fotinia para abrir luz hacia el ligustro.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-40-3",
+    "win": "fines",
+    "codes": [
+      "B-40"
+    ],
+    "common": "Madreselva china siempreverde",
+    "priority": "media",
+    "title": "Poda limpieza Madreselva china",
+    "when": "Agosto 2026",
+    "short": "Recorte de mantenimiento — sacar guías largas y ramas secas. Recurrente, próxima ventana agosto 2026 (pre-brote primaveral).",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-F-7",
+    "win": "fines",
+    "codes": [
+      "F-7"
+    ],
+    "common": "Abelia",
+    "priority": "baja",
+    "title": "Poda fin de invierno previa al brote",
+    "when": "Agosto-septiembre 2026",
+    "short": "Acortar el tercio superior y sacar ramas viejas antes que arranque la brotación primaveral.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-1",
+    "win": "post",
+    "codes": [
+      "B-1"
+    ],
+    "common": "Santa Rita / Buganvilia",
+    "priority": "alta",
+    "title": "Poda invernal severa de guías",
+    "when": "Septiembre 2026 (pasadas las heladas)",
+    "short": "Acortar guías largas 30-50% en plena dormancia — sin esto en verano florece poco y se descontrola.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-29",
+    "win": "post",
+    "codes": [
+      "B-29"
+    ],
+    "common": "Lantana / Camará",
+    "priority": "media",
+    "title": "Poda severa de rejuvenecimiento",
+    "when": "Septiembre 2026 (pasada la última helada)",
+    "short": "Cortar la lantana a 30 cm del suelo — florece todo el verano sobre madera nueva.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-23",
+    "win": "post",
+    "codes": [
+      "B-23"
+    ],
+    "common": "Limonero",
+    "priority": "media",
+    "title": "Poda de formación + sacar chupones",
+    "when": "Fines de agosto-septiembre 2026",
+    "short": "Abrir el centro del limonero, sacar ramas verticales agresivas y madera seca tras la cosecha mayor.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-24",
+    "win": "post",
+    "codes": [
+      "B-24"
+    ],
+    "common": "Mandarina criolla",
+    "priority": "media",
+    "title": "Poda de formación + abrir centro",
+    "when": "Fines de agosto-septiembre 2026",
+    "short": "Sacar ramas internas, cruzadas y madera seca para que entre luz al corazón de la copa.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-22",
+    "win": "post",
+    "codes": [
+      "B-22"
+    ],
+    "common": "Palta uruguaya",
+    "priority": "media",
+    "title": "Poda ligera + inspección de plagas",
+    "when": "Septiembre 2026 (pasadas las heladas)",
+    "short": "Sacar chupones y ramas cruzadas, mantener altura cosechable. De paso revisar envés de hojas con linterna.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-36-2",
+    "win": "post",
+    "codes": [
+      "B-36"
+    ],
+    "common": "Palta Haas",
+    "priority": "media",
+    "title": "Poda ligera + inspección visual",
+    "when": "Septiembre 2026 (pasadas las heladas)",
+    "short": "Sacar chupones del injerto, ramas cruzadas y secas. De paso revisar envés de hojas con linterna.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-F-3-2",
+    "win": "post",
+    "codes": [
+      "F-3",
+      "F-6",
+      "F-11"
+    ],
+    "common": "Fotinia",
+    "priority": "media",
+    "title": "Poda Fotinia post-segundo-brote",
+    "when": "Septiembre 2026",
+    "short": "Recortar 10-15 cm del cerco para forzar el segundo brote rojo de primavera. Próxima ventana: septiembre.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-13",
+    "win": "prima",
+    "codes": [
+      "B-13"
+    ],
+    "common": "Clivia / Lirio del Cabo",
+    "priority": "media",
+    "title": "Trasplantar o rellenar tierra",
+    "when": "Octubre 2026 (tras la floración)",
+    "short": "El bulbo está saliendo de la maceta — pasarla a maceta apenas más grande o sumarle tierra arriba.",
+    "why": null,
+    "como": null
+  },
+  {
+    "id": "plant-B-6",
+    "win": "prima",
+    "codes": [
+      "B-6"
+    ],
+    "common": "Esparraguera cola de zorro",
+    "priority": "baja",
+    "title": "Dividir mata si está muy densa",
+    "when": "Primavera 2026 (octubre, cuando moleste)",
+    "short": "Si la mata desbordó la maceta o invade plantas vecinas: sacarla, partir el rizoma en 2-3 con pala y replantar.",
+    "why": null,
+    "como": null
+  }
+];
   var PR_ORDER = { alta: 0, media: 1, baja: 2 };
   var PR_LABEL = { alta: "Alta", media: "Media", baja: "Baja" };
+  var SITE = "https://gardening-chi.vercel.app";
 
-  var n = { ahora: 0, fines: 0, post: 0 };
-  TASKS.forEach(function (t) { n[t.win]++; });
+  var WINDOWS = [
+    { key: "hoy", label: "🟢 HOY — se puede hacer ya, en junio",
+      note: "<b>Por qué estas sí van ahora:</b> o no cortan tejido vivo (limpiezas de madera muerta y hojas secas — no generan herida nueva ni estimulan rebrote, así que las heladas que vienen no tienen nada que quemar), o aprovechan la dormancia profunda (trasplantes — sin hojas casi no hay demanda de agua, y las raíces tienen ~10 semanas para agarrarse antes del brote), o son decisiones que conviene tomar mirando el sol de invierno. Cada tarjeta tiene su fundamento." },
+    { key: "fines", label: "✂️ Fines de julio — agosto: el grueso de la temporada",
+      note: "<b>Por qué acá y no antes:</b> una herida de poda hecha en junio queda abierta 8+ semanas, expuesta a heladas, humedad y esporas de hongos — en los Prunus (durazno, ciruelos) eso es invitación a la gomosis. La misma herida hecha tarde en la dormancia cicatriza en días, porque el árbol reactiva el crecimiento enseguida. Y el corte tardío no dispara brotes anticipados que después quema una helada. <b>La señal para agarrar la tijera:</b> las yemas se empiezan a hinchar pero todavía no abren." },
+    { key: "post", label: "☀️ Septiembre — recién pasada la última helada",
+      note: "<b>Por qué esperan:</b> estas especies son sensibles al frío. La poda les fuerza un rebrote tierno que una sola helada quema (buganvilia, lantana), y en cítricos y paltas una helada sobre cortes frescos daña la madera. En Montevideo la última helada puede caer hasta fines de agosto o principios de septiembre — se espera a que pase y recién entonces se corta." },
+    { key: "prima", label: "🌸 Primavera — octubre",
+      note: "<b>Por qué en primavera:</b> la clivia se mueve después de florecer, para no interferir con la vara floral que arma durante el invierno. Las divisiones de mata (esparraguera) cicatrizan y rebrotan rápido con la planta en crecimiento activo, en vez de quedar semanas con heridas abiertas en frío y humedad." }
+  ];
+
+  var counts = {};
+  TASKS.forEach(function (t) { counts[t.win] = (counts[t.win] || 0) + 1; });
   document.getElementById("counts").innerHTML =
-    '<span class="chip"><b>' + n.ahora + '</b> ahora</span>' +
-    '<span class="chip"><b>' + n.fines + '</b> fines jul-ago</span>' +
-    '<span class="chip"><b>' + n.post + '</b> post-heladas</span>';
+    '<span class="chip">🟢 <b>' + (counts.hoy || 0) + '</b> hoy</span>' +
+    '<span class="chip">✂️ <b>' + (counts.fines || 0) + '</b> fines jul-ago</span>' +
+    '<span class="chip">☀️ <b>' + (counts.post || 0) + '</b> post-heladas</span>' +
+    '<span class="chip">🌸 <b>' + (counts.prima || 0) + '</b> primavera</span>';
 
-  function renderWindow(win, label, note) {
-    var items = TASKS.filter(function (t) { return t.win === win; })
+  var html = "";
+  WINDOWS.forEach(function (w) {
+    var items = TASKS.filter(function (t) { return t.win === w.key; })
       .sort(function (a, b) { return PR_ORDER[a.priority] - PR_ORDER[b.priority]; });
-    if (!items.length) return "";
-    var html = '<h2>' + label + ' (' + items.length + ')</h2><p class="window-note">' + note + '</p>';
+    if (!items.length) return;
+    html += '<h2>' + w.label + ' (' + items.length + ')</h2>' +
+            '<div class="window-note">' + w.note + '</div>';
     items.forEach(function (t) {
       html += '<div class="card ' + t.priority + '">' +
         '<div class="card-top"><h3>' + t.title + '</h3>' +
         '<span class="badge ' + t.priority + '">' + PR_LABEL[t.priority] + '</span></div>' +
-        '<div class="codes">' + t.common + ' · ' + t.codes.join(", ") + '</div>' +
-        '<p class="short">' + t.short + '</p></div>';
+        '<div class="codes">' + t.common + ' · ' + t.codes.join(", ") +
+        '<span class="when-tag">' + t.when + '</span></div>' +
+        '<p class="short">' + t.short + '</p>' +
+        (t.why ? '<p class="why-line"><b>Por qué ahora:</b> ' + t.why + '</p>' : '') +
+        (t.como ? '<p class="why-line"><b>Cómo:</b> ' + t.como + '</p>' : '') +
+        '<a class="guide-link" href="' + SITE + '/tasks/' + t.id + '.html">Guía paso a paso →</a>' +
+        '</div>';
     });
-    return html;
-  }
-  document.getElementById("list").innerHTML =
-    renderWindow("ahora", "🧤 Ahora — junio-julio",
-      "Limpiezas de madera muerta, trasplantes en dormancia y decisiones. Lo único que de verdad va en pleno invierno.") +
-    renderWindow("fines", "✂️ Fines de julio — agosto",
-      "El grueso de la temporada: frutales de carozo, caqui y arbustos que florecen en madera nueva. Tarde en la dormancia las heridas cicatrizan rápido y el rebrote no espera semanas bajo helada.") +
-    renderWindow("post", "☀️ Septiembre — pasadas las heladas",
-      "Especies sensibles al frío (buganvilia, lantana, cítricos, paltas): el rebrote tierno post-poda se quema con helada, así que esperan a que pase la última.");
+  });
+  document.getElementById("list").innerHTML = html;
 </script>
 <script src="engage.js"></script>
 </body>
