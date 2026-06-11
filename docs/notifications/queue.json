@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-11T21:19:33-03:00",
+  "_updated_at": "2026-06-11T21:47:53Z",
   "notifications": [
     {
       "id": "2026-06-11-a",
@@ -8,9 +8,9 @@
       "url": "https://gardening-chi.vercel.app/tareas.html",
       "send_at": "2026-06-11T19:30:00-03:00",
       "expires_at": "2026-06-11T22:00:00-03:00",
-      "status": "pending",
+      "status": "cancelled",
       "sent_at": null,
-      "fail_reason": null,
+      "fail_reason": "Cancelada por el usuario: el timing de poda (junio) requiere verificación — la mayoría de las especies conviene podarlas a fines de invierno (jul-ago).",
       "created_by": "engagement-agent 2026-06-11"
     },
     {
@@ -20,9 +20,9 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-06-11-poda-invernal.html",
       "send_at": "2026-06-11T20:00:00-03:00",
       "expires_at": "2026-06-11T22:00:00-03:00",
-      "status": "pending",
+      "status": "cancelled",
       "sent_at": null,
-      "fail_reason": null,
+      "fail_reason": "Cancelada por el usuario: el timing de poda (junio) requiere verificación — la mayoría de las especies conviene podarlas a fines de invierno (jul-ago).",
       "created_by": "engagement-agent 2026-06-11"
     },
     {
@@ -32,9 +32,9 @@
       "url": "https://gardening-chi.vercel.app/index.html",
       "send_at": "2026-06-11T20:30:00-03:00",
       "expires_at": "2026-06-11T22:00:00-03:00",
-      "status": "pending",
+      "status": "cancelled",
       "sent_at": null,
-      "fail_reason": null,
+      "fail_reason": "Cancelada por el usuario: el timing de poda (junio) requiere verificación — la mayoría de las especies conviene podarlas a fines de invierno (jul-ago).",
       "created_by": "engagement-agent 2026-06-11"
     }
   ]
