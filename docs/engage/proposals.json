@@ -2,12 +2,14 @@
   "proposals": [
     {
       "id": "2026-06-11-poda-invernal",
-      "title": "Plan de poda invernal 2026",
+      "title": "Calendario de poda — invierno 2026 (corregido)",
       "page": "engage/2026-06-11-poda-invernal.html",
       "created": "2026-06-11",
       "status": "pending",
-      "hypothesis": "Junio concentra 19 podas de invierno repartidas por todo el Timeline. Una pantalla estacional única que las agrupa por zona y prioridad hace tangible la ventana corta de dormancia y empuja a actuar mejor que la lista dispersa. Si engancha, se vuelve una vista de temporada permanente.",
-      "notified_by": ["2026-06-11-b"],
+      "hypothesis": "Una vista estacional única con las podas agrupadas por ventana (junio limpiezas / fines jul-ago carozo y madera nueva / septiembre post-helada sensibles al frío) planifica la temporada mejor que la lista dispersa del Timeline. REVISADA 11/06: la v1 mandaba todo a junio sin verificar; el usuario lo señaló y se corrigió con fuentes (carozo y caqui a fines de la dormancia, sensibles a helada a septiembre). data_plants.py corregido en el mismo pase.",
+      "notified_by": [
+        "2026-06-11-b"
+      ],
       "result_notes": null
     }
   ]
