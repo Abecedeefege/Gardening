@@ -2719,8 +2719,10 @@ h2.subbrand {
 .pwa-st-wait { color: #92400e; font-weight: 700; margin-right: 4px; }
 
 /* PWA install banner — aparece SI Chrome dispara beforeinstallprompt.
-   Su sola aparición confirma que el sitio cumple criterio installable. */
-#pwa-install-banner {
+   Su sola aparición confirma que el sitio cumple criterio installable.
+   #push-resub-banner (reactivar notificaciones) comparte el mismo look. */
+#pwa-install-banner,
+#push-resub-banner {
   position: fixed;
   bottom: 16px; left: 50%;
   transform: translateX(-50%);
@@ -2742,8 +2744,10 @@ h2.subbrand {
   from { transform: translate(-50%, 30px); opacity: 0; }
   to { transform: translate(-50%, 0); opacity: 1; }
 }
-#pwa-install-banner .pwa-install-icon { font-size: 1.2rem; }
-#pwa-install-banner .pwa-install-btn {
+#pwa-install-banner .pwa-install-icon,
+#push-resub-banner .pwa-install-icon { font-size: 1.2rem; }
+#pwa-install-banner .pwa-install-btn,
+#push-resub-banner .pwa-install-btn {
   background: white;
   color: #2d5016;
   border: none;
@@ -2753,8 +2757,10 @@ h2.subbrand {
   font-size: 0.82rem;
   cursor: pointer;
 }
-#pwa-install-banner .pwa-install-btn:hover { background: rgba(255, 255, 255, 0.85); }
-#pwa-install-banner .pwa-install-dismiss {
+#pwa-install-banner .pwa-install-btn:hover,
+#push-resub-banner .pwa-install-btn:hover { background: rgba(255, 255, 255, 0.85); }
+#pwa-install-banner .pwa-install-dismiss,
+#push-resub-banner .pwa-install-dismiss {
   background: transparent;
   color: rgba(255, 255, 255, 0.7);
   border: none;
@@ -2764,7 +2770,8 @@ h2.subbrand {
   font-size: 0.95rem;
   display: flex; align-items: center; justify-content: center;
 }
-#pwa-install-banner .pwa-install-dismiss:hover {
+#pwa-install-banner .pwa-install-dismiss:hover,
+#push-resub-banner .pwa-install-dismiss:hover {
   background: rgba(255, 255, 255, 0.15);
   color: white;
 }

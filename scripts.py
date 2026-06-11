@@ -1348,6 +1348,237 @@ window.addEventListener('appinstalled', () => {
 });
 
 // ============================================================
+// PUSH NOTIFICATIONS — suscripción VAPID + engagement tracking
+// La suscripción se guarda en docs/sync/push_subscription.json (vía
+// GitHub API con el PAT). El dispatcher (GitHub Actions) la lee para
+// mandar los pushes que el agente diario encola en
+// docs/notifications/queue.json.
+// ============================================================
+const PUSH_SUB_PATH = 'docs/sync/push_subscription.json';
+const ENGAGEMENT_PATH = 'docs/sync/engagement.json';
+const PUSH_CHECK_KEY = 'jardineando_push_check_v1';
+const SEEN_NIDS_KEY = 'jardineando_seen_nids_v1';
+
+function urlBase64ToUint8Array(base64String) {
+  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+  const raw = atob(base64);
+  const arr = new Uint8Array(raw.length);
+  for (let i = 0; i < raw.length; i++) arr[i] = raw.charCodeAt(i);
+  return arr;
+}
+
+async function fetchVapidPublicKey() {
+  const r = await fetch('notifications/vapid_public.txt', { cache: 'no-store' });
+  if (!r.ok) throw new Error('No se pudo leer la clave VAPID pública (HTTP ' + r.status + ')');
+  return (await r.text()).trim();
+}
+
+async function getLocalPushSubscription() {
+  if (!('serviceWorker' in navigator) || !('PushManager' in window)) return null;
+  const reg = await navigator.serviceWorker.ready;
+  return await reg.pushManager.getSubscription();
+}
+
+async function uploadPushSubscription(sub) {
+  await ghWriteJsonFile(PUSH_SUB_PATH, {
+    device: loadDeviceName() || 'sin-nombre',
+    subscription: sub.toJSON(),
+    status: 'active',
+    updated_at: new Date().toISOString(),
+    invalidated_at: null,
+    invalid_reason: null,
+  }, `push: registrar suscripción desde ${loadDeviceName() || 'device'}`);
+}
+
+async function enablePushNotifications() {
+  const fb = document.getElementById('settings-push-feedback');
+  const setFb = (msg, cls) => { if (fb) { fb.textContent = msg; fb.className = 'settings-feedback' + (cls ? ' ' + cls : ''); } };
+  if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
+    setFb('❌ Este navegador no soporta Web Push.', 'err');
+    return;
+  }
+  if (!loadGitHubToken()) {
+    setFb('⚠️ Configurá el GitHub PAT primero (arriba) — la suscripción se guarda en el repo.', 'warn');
+    return;
+  }
+  try {
+    setFb('⏳ Pidiendo permiso…');
+    const perm = await Notification.requestPermission();
+    if (perm !== 'granted') {
+      setFb('❌ Permiso denegado. Para reactivarlo: Chrome → ⋮ → Configuración del sitio → Notificaciones → Permitir.', 'err');
+      updatePushStatusPanel();
+      return;
+    }
+    setFb('⏳ Suscribiendo…');
+    const reg = await navigator.serviceWorker.ready;
+    const vapidKey = await fetchVapidPublicKey();
+    let sub = await reg.pushManager.getSubscription();
+    if (!sub) {
+      sub = await reg.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(vapidKey),
+      });
+    }
+    setFb('⏳ Guardando suscripción en el repo…');
+    await uploadPushSubscription(sub);
+    setFb('✅ Notificaciones activadas en este dispositivo.', 'ok');
+  } catch (err) {
+    setFb('❌ ' + (err.message || err), 'err');
+  }
+  updatePushStatusPanel();
+}
+
+async function disablePushNotifications() {
+  const fb = document.getElementById('settings-push-feedback');
+  const setFb = (msg, cls) => { if (fb) { fb.textContent = msg; fb.className = 'settings-feedback' + (cls ? ' ' + cls : ''); } };
+  try {
+    const sub = await getLocalPushSubscription();
+    if (sub) await sub.unsubscribe();
+    if (loadGitHubToken()) {
+      await ghWriteJsonFile(PUSH_SUB_PATH, {
+        device: loadDeviceName() || 'sin-nombre',
+        subscription: null,
+        status: 'disabled',
+        updated_at: new Date().toISOString(),
+        invalidated_at: null,
+        invalid_reason: 'desactivado por el usuario',
+      }, `push: desactivar notificaciones desde ${loadDeviceName() || 'device'}`);
+    }
+    setFb('🔕 Notificaciones desactivadas.', 'ok');
+  } catch (err) {
+    setFb('❌ ' + (err.message || err), 'err');
+  }
+  updatePushStatusPanel();
+}
+
+async function updatePushStatusPanel() {
+  const panel = document.getElementById('push-status-panel');
+  const btnOn = document.getElementById('btn-enable-push');
+  const btnOff = document.getElementById('btn-disable-push');
+  if (!panel) return;
+  const yes = '<span class="pwa-st-ok">✓</span>';
+  const no = '<span class="pwa-st-err">✗</span>';
+  let html = '';
+  const supported = ('serviceWorker' in navigator) && ('PushManager' in window);
+  html += `<div class="pwa-st-row">${supported ? yes : no} Web Push soportado en este browser</div>`;
+  const perm = (typeof Notification !== 'undefined') ? Notification.permission : 'unsupported';
+  html += `<div class="pwa-st-row">${perm === 'granted' ? yes : no} Permiso de notificaciones: <code>${perm}</code></div>`;
+  let sub = null;
+  try { sub = await getLocalPushSubscription(); } catch (e) {}
+  html += `<div class="pwa-st-row">${sub ? yes : no} Suscripción local ${sub ? 'activa' : 'inexistente'}</div>`;
+  panel.innerHTML = html;
+  if (btnOn) btnOn.hidden = !!sub && perm === 'granted';
+  if (btnOff) btnOff.hidden = !sub;
+}
+
+// Chequeo diario al cargar: si la suscripción remota está marcada como
+// inválida (el dispatcher recibió 404/410) o difiere de la local,
+// re-suscribir silenciosamente (con PAT) o mostrar banner.
+async function checkPushSubscriptionOnLoad() {
+  if (!('serviceWorker' in navigator) || !('PushManager' in window)) return;
+  if (typeof Notification === 'undefined' || Notification.permission !== 'granted') return;
+  const last = parseInt(localStorage.getItem(PUSH_CHECK_KEY) || '0', 10);
+  if (Date.now() - last < 24 * 60 * 60 * 1000) return;
+  localStorage.setItem(PUSH_CHECK_KEY, String(Date.now()));
+  try {
+    const local = await getLocalPushSubscription();
+    // Leer el estado remoto same-origin (sin PAT — el archivo es público).
+    const r = await fetch('sync/push_subscription.json', { cache: 'no-store' });
+    const remote = r.ok ? await r.json() : null;
+    const remoteEndpoint = remote?.subscription?.endpoint || null;
+    const needsRepair = !local || (remote && remote.status === 'invalid') ||
+      (local && remoteEndpoint && local.endpoint !== remoteEndpoint);
+    if (!needsRepair) return;
+    if (loadGitHubToken()) {
+      const reg = await navigator.serviceWorker.ready;
+      const vapidKey = await fetchVapidPublicKey();
+      const sub = local || await reg.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(vapidKey),
+      });
+      await uploadPushSubscription(sub);
+      console.log('[push] suscripción reparada automáticamente');
+    } else {
+      showPushResubscribeBanner();
+    }
+  } catch (e) {
+    console.warn('[push] check de suscripción falló:', e);
+  }
+}
+
+function showPushResubscribeBanner() {
+  if (document.getElementById('push-resub-banner')) return;
+  const banner = document.createElement('div');
+  banner.id = 'push-resub-banner';
+  banner.innerHTML = `
+    <span class="pwa-install-icon">🔔</span>
+    <span class="pwa-install-text">Las notificaciones se desactivaron — tocá para reactivar</span>
+    <button class="pwa-install-btn">Reactivar</button>
+    <button class="pwa-install-dismiss" aria-label="Cerrar">✕</button>
+  `;
+  document.body.appendChild(banner);
+  banner.querySelector('.pwa-install-btn').addEventListener('click', async () => {
+    banner.remove();
+    openSettingsModal();
+    await enablePushNotifications();
+  });
+  banner.querySelector('.pwa-install-dismiss').addEventListener('click', () => banner.remove());
+}
+
+// ------------------------------------------------------------
+// ENGAGEMENT TRACKING — clicks de notificaciones y visitas.
+// Solo escribe si hay PAT (el device principal lo tiene). El agente
+// diario lee docs/sync/engagement.json para decidir el contenido
+// del día siguiente.
+// ------------------------------------------------------------
+async function logEngagementEvents(events) {
+  if (!loadGitHubToken() || !events.length) return;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const { data } = await ghReadJsonFile(ENGAGEMENT_PATH);
+      const doc = data || { _updated_at: null, events: [], daily_summary: {} };
+      doc.events = (doc.events || []).concat(events);
+      doc._updated_at = new Date().toISOString();
+      await ghWriteJsonFile(ENGAGEMENT_PATH, doc, `engage: ${events.map(e => e.type).join(', ')} desde ${loadDeviceName() || 'device'}`);
+      return;
+    } catch (e) {
+      if (attempt === 1) console.warn('[engage] no se pudo loguear:', e);
+    }
+  }
+}
+
+function trackNotificationLanding() {
+  let params;
+  try { params = new URLSearchParams(window.location.search); } catch (e) { return; }
+  const nid = params.get('nid');
+  if (!nid) return;
+  const page = window.location.pathname.split('/').pop() || 'index.html';
+  const seen = JSON.parse(localStorage.getItem(SEEN_NIDS_KEY) || '[]');
+  const events = [];
+  const now = new Date().toISOString();
+  if (!seen.includes(nid)) {
+    seen.push(nid);
+    localStorage.setItem(SEEN_NIDS_KEY, JSON.stringify(seen.slice(-50)));
+    events.push({ type: 'notification_clicked', nid, page, ts: now, device: loadDeviceName() || 'sin-nombre' });
+    events.push({ type: 'page_visit', page, nid, src: params.get('src') || 'push', ts: now, device: loadDeviceName() || 'sin-nombre' });
+  }
+  // Limpiar la URL para que reload/share no re-loguee ni arrastre params.
+  params.delete('nid');
+  params.delete('src');
+  const clean = window.location.pathname + (params.toString() ? '?' + params.toString() : '') + window.location.hash;
+  history.replaceState(null, '', clean);
+  logEngagementEvents(events);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('btn-enable-push')?.addEventListener('click', enablePushNotifications);
+  document.getElementById('btn-disable-push')?.addEventListener('click', disablePushNotifications);
+  trackNotificationLanding();
+});
+window.addEventListener('load', () => { checkPushSubscriptionOnLoad(); });
+
+// ============================================================
 // SETTINGS — GitHub PAT + device name (localStorage only)
 // ============================================================
 const GITHUB_TOKEN_KEY = 'jardineando_github_token_v1';
@@ -1442,6 +1673,7 @@ function openSettingsModal() {
   document.getElementById('settings-modal').classList.add('active');
   // Refrescar el panel de PWA status al abrir.
   if (typeof updatePwaStatusPanel === 'function') updatePwaStatusPanel();
+  if (typeof updatePushStatusPanel === 'function') updatePushStatusPanel();
 }
 
 document.getElementById('btn-open-settings')?.addEventListener('click', openSettingsModal);

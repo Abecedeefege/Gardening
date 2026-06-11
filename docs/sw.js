@@ -14,7 +14,7 @@
 // (especialmente en standalone PWA mode), y los nuevos features no se
 // veían hasta hard-refresh manual.
 
-const SW_VERSION = 'v1.2.0';
+const SW_VERSION = 'v1.3.0';
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
@@ -38,4 +38,36 @@ self.addEventListener('fetch', (event) => {
   } else {
     event.respondWith(fetch(event.request));
   }
+});
+
+// ============================================================
+// Web Push — el dispatcher (GitHub Actions) manda payloads JSON:
+//   { nid, title, body, url }
+// El click NO se loguea acá (el SW no tiene acceso al PAT en
+// localStorage) — se loguea al cargar la página vía ?nid=.
+// ============================================================
+self.addEventListener('push', (event) => {
+  let data = {};
+  try { data = event.data ? event.data.json() : {}; } catch (e) {}
+  event.waitUntil(self.registration.showNotification(data.title || 'Jardineando', {
+    body: data.body || '',
+    icon: 'icon-192.png',
+    badge: 'icon-96.png',
+    // tag = nid → si el dispatcher reintenta un envío, Chrome colapsa
+    // las notificaciones duplicadas en una sola.
+    tag: data.nid || 'jardineando',
+    data: { url: data.url || './', nid: data.nid || '' },
+  }));
+});
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  const d = event.notification.data || {};
+  let url;
+  try { url = new URL(d.url || './', self.location.origin); } catch (e) { url = new URL('./', self.location.origin); }
+  if (d.nid) {
+    url.searchParams.set('nid', d.nid);
+    url.searchParams.set('src', 'push');
+  }
+  event.waitUntil(clients.openWindow(url.href));
 });
