@@ -1,4 +1,41 @@
 {
-  "_updated_at": null,
-  "notifications": []
+  "_updated_at": "2026-06-11T21:19:33-03:00",
+  "notifications": [
+    {
+      "id": "2026-06-11-a",
+      "title": "🌳 Junio: el mes de la tijera",
+      "body": "8 podas altas piden mano en plena dormancia: durazno, ciruelo, crespón, althea, caqui. Mirá cuáles.",
+      "url": "https://gardening-chi.vercel.app/tareas.html",
+      "send_at": "2026-06-11T19:30:00-03:00",
+      "expires_at": "2026-06-11T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-06-11"
+    },
+    {
+      "id": "2026-06-11-b",
+      "title": "Te armé el plan de poda 2026",
+      "body": "Junté las 19 podas de este mes en una sola pantalla, por zona y prioridad. Decime si te sirve.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-11-poda-invernal.html",
+      "send_at": "2026-06-11T20:00:00-03:00",
+      "expires_at": "2026-06-11T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-06-11"
+    },
+    {
+      "id": "2026-06-11-c",
+      "title": "❄️ Ojo con la helada al amanecer",
+      "body": "En junio la helada pega más fuerte al sur y al este al alba. Protegé los pies tiernos de esa franja.",
+      "url": "https://gardening-chi.vercel.app/index.html",
+      "send_at": "2026-06-11T20:30:00-03:00",
+      "expires_at": "2026-06-11T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-06-11"
+    }
+  ]
 }

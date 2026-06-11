@@ -1,3 +1,14 @@
 {
-  "proposals": []
+  "proposals": [
+    {
+      "id": "2026-06-11-poda-invernal",
+      "title": "Plan de poda invernal 2026",
+      "page": "engage/2026-06-11-poda-invernal.html",
+      "created": "2026-06-11",
+      "status": "pending",
+      "hypothesis": "Junio concentra 19 podas de invierno repartidas por todo el Timeline. Una pantalla estacional única que las agrupa por zona y prioridad hace tangible la ventana corta de dormancia y empuja a actuar mejor que la lista dispersa. Si engancha, se vuelve una vista de temporada permanente.",
+      "notified_by": ["2026-06-11-b"],
+      "result_notes": null
+    }
+  ]
 }

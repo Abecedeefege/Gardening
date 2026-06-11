@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan de poda invernal 2026 · Jardineando</title>
+<style>
+  :root { --verde: #2d5016; --verde2: #4a7c2a; --fondo: #f5faf0; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--fondo); color: #233018; line-height: 1.5;
+    padding: 0 16px 48px;
+  }
+  .back {
+    display: inline-block; margin: 14px 0 4px; color: var(--verde2);
+    text-decoration: none; font-weight: 600; font-size: 0.95rem;
+  }
+  .back:active { opacity: 0.6; }
+  header { max-width: 640px; margin: 0 auto; }
+  h1 { color: var(--verde); font-size: 1.5rem; margin: 10px 0 4px; }
+  .sub { color: #5a6b4a; font-size: 0.95rem; margin: 0 0 6px; }
+  .counts {
+    display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 4px;
+  }
+  .chip {
+    background: #fff; border: 1px solid #d8e6c8; border-radius: 999px;
+    padding: 6px 12px; font-size: 0.85rem; font-weight: 600; color: var(--verde);
+  }
+  .chip b { font-size: 1.05rem; }
+  main { max-width: 640px; margin: 0 auto; }
+  h2 {
+    color: var(--verde); font-size: 1.1rem; margin: 26px 0 10px;
+    border-bottom: 2px solid #d8e6c8; padding-bottom: 6px;
+  }
+  .card {
+    background: #fff; border: 1px solid #e3eed6; border-radius: 12px;
+    padding: 12px 14px; margin: 10px 0; box-shadow: 0 1px 3px rgba(45,80,22,0.06);
+  }
+  .card.alta { border-left: 5px solid #c0392b; }
+  .card.media { border-left: 5px solid #e08e0b; }
+  .card.baja { border-left: 5px solid #7f8c8d; }
+  .card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .card h3 { font-size: 1rem; margin: 0; color: #233018; }
+  .badge {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.03em; padding: 3px 8px; border-radius: 6px; white-space: nowrap;
+  }
+  .badge.alta { background: #fcebea; color: #c0392b; }
+  .badge.media { background: #fdf3e3; color: #b9770a; }
+  .badge.baja { background: #eef1f1; color: #5a6b4a; }
+  .codes { color: var(--verde2); font-size: 0.82rem; font-weight: 600; margin: 2px 0 6px; }
+  .short { font-size: 0.9rem; margin: 0; color: #3c4a30; }
+  .why {
+    max-width: 640px; margin: 22px auto 0; background: #eaf3e0;
+    border-radius: 12px; padding: 14px 16px; font-size: 0.9rem; color: #3c4a30;
+  }
+  .why b { color: var(--verde); }
+  .engage-actions {
+    max-width: 640px; margin: 26px auto 0; display: flex; gap: 10px; flex-wrap: wrap;
+  }
+  .engage-actions button {
+    flex: 1 1 160px; padding: 14px 12px; border: none; border-radius: 12px;
+    font-size: 1rem; font-weight: 700; cursor: pointer;
+  }
+  .engage-actions button:first-child { background: var(--verde); color: #fff; }
+  .engage-actions button:last-child { background: #fff; color: #5a6b4a; border: 1px solid #cdd9be; }
+  .engage-feedback {
+    max-width: 640px; margin: 26px auto 0; text-align: center;
+    font-size: 1rem; font-weight: 600; color: var(--verde);
+  }
+  footer { max-width: 640px; margin: 28px auto 0; text-align: center; font-size: 0.8rem; color: #8a9a78; }
+  footer a { color: var(--verde2); }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<header>
+  <h1>🌳 Plan de poda invernal 2026</h1>
+  <p class="sub">Junio es <b>la</b> ventana del año: los caducos están en plena dormancia y las heridas cierran limpias. Todo lo que dejes pasar este mes espera hasta el invierno que viene.</p>
+  <div class="counts" id="counts"></div>
+</header>
+<main id="list"></main>
+
+<div class="why">
+  <b>¿Por qué una pantalla aparte?</b> Estas tareas hoy están repartidas por todo el Timeline. Acá las junté en una sola vista del mes para que veas de un vistazo qué falta antes de que arranque el brote de primavera. Tachá mentalmente lo que vayas haciendo — si esto te sirve, lo dejo fijo en el sitio.
+</div>
+
+<div class="engage-actions">
+  <button onclick="engageApprove('2026-06-11-poda-invernal')">✅ Aprobar esta mejora</button>
+  <button onclick="engageRejected('2026-06-11-poda-invernal')">✕ No me interesa</button>
+</div>
+
+<footer>
+  Jardineando · Montevideo · datos de tu catálogo al 11/06/2026 ·
+  <a href="https://gardening-chi.vercel.app/tareas.html">Abrir el Timeline completo →</a>
+</footer>
+
+<script>
+  // Datos inlineados desde data_plants.py (urgencias due_month=6, due_year=2026).
+  var TASKS = [
+    {codes:["F-4"],common:"Ciruelo de jardín",zone:"frente",priority:"alta",title:"Poda invernal de formación",short:"Sacar ramas cruzadas, chupones verticales y abrir el centro en V — junio-julio en plena dormancia."},
+    {codes:["B-1"],common:"Santa Rita / Buganvilia",zone:"fondo",priority:"alta",title:"Poda invernal severa de guías",short:"Acortar guías largas 30-50% en plena dormancia — sin esto en verano florece poco y se descontrola."},
+    {codes:["B-5a","B-5b"],common:"Hortensia",zone:"fondo",priority:"alta",title:"Trasplantar a maceta grande o cantero",short:"Los 2 ejemplares en macetas chicas: pasarlos a maceta de 40+ cm o a tierra antes del rebrote."},
+    {codes:["B-9"],common:"Crespón / Mirto de crepe",zone:"fondo",priority:"alta",title:"Poda invernal severa de formación",short:"Reducir 50-70% en plena dormancia — el crespón florece en madera nueva y tolera el corte fuerte."},
+    {codes:["B-18"],common:"Rosa de Siria / Althea",zone:"fondo",priority:"alta",title:"Poda invernal severa de la althea",short:"Reducir 40-50% en plena dormancia, dejando ramas con 2-3 yemas — florece en madera nueva del año."},
+    {codes:["B-30","B-35"],common:"Durazno",zone:"fondo",priority:"alta",title:"Poda invernal en vaso abierto",short:"Sacar 40-50% del follaje, formar 3-4 ramas principales abiertas tipo copa de vaso — sin podar fructifica mal."},
+    {codes:["B-37"],common:"Liquidámbar",zone:"fondo",priority:"alta",title:"Limpieza de copa en dormancia",short:"Sacar solo ramas secas, cruzadas o mal orientadas — el liquidámbar NO se poda fuerte, define su forma sola."},
+    {codes:["B-41"],common:"Caqui / Persimón",zone:"fondo",priority:"alta",title:"Poda invernal en copa abierta",short:"Sacar 25-35% del follaje, formar copa abierta y cuidar la zona del injerto al pie del tronco."},
+    {codes:["F-2"],common:"Bignonia rosada / Podranea",zone:"frente",priority:"media",title:"Poda fuerte de invierno",short:"Acortar ramas largas y viejas un 40-60% para que florezca compacta el verano que viene."},
+    {codes:["F-10"],common:"Fresno (americano)",zone:"frente",priority:"media",title:"Evaluar liberar copa — recibe poca luz",short:"Queda atrás de las Fotinias y casi no recibe sol directo. Decidir si moverlo, abrirle un corredor de luz, o aceptarlo como árbol de tercera línea."},
+    {codes:["B-7","B-11","B-31","B-33"],common:"Azarero / Pitósporo",zone:"fondo",priority:"media",title:"Recorte parejo de cerco (4 ejemplares)",short:"Cortar los 4 azareros a la misma altura y ancho — cerco vivo prolijo antes de la primavera."},
+    {codes:["B-13"],common:"Clivia / Lirio del Cabo",zone:"fondo",priority:"media",title:"Trasplantar o rellenar tierra",short:"El bulbo está saliendo de la maceta — pasarla a maceta apenas más grande o sumarle tierra arriba."},
+    {codes:["B-22"],common:"Palta uruguaya",zone:"fondo",priority:"media",title:"Poda ligera + inspección de plagas",short:"Sacar chupones y ramas cruzadas, mantener altura cosechable. De paso revisar envés de hojas con linterna."},
+    {codes:["B-23"],common:"Limonero",zone:"fondo",priority:"media",title:"Poda de formación + sacar chupones",short:"Abrir el centro del limonero, sacar ramas verticales agresivas y madera seca tras la cosecha mayor."},
+    {codes:["B-24"],common:"Mandarina criolla",zone:"fondo",priority:"media",title:"Poda de formación + abrir centro",short:"Sacar ramas internas, cruzadas y madera seca para que entre luz al corazón de la copa."},
+    {codes:["B-29"],common:"Lantana / Camará",zone:"fondo",priority:"media",title:"Poda severa de rejuvenecimiento",short:"Cortar la lantana a 30 cm del suelo — florece todo el verano sobre madera nueva."},
+    {codes:["B-36"],common:"Palta Haas",zone:"fondo",priority:"media",title:"Poda ligera + inspección visual",short:"Sacar chupones del injerto, ramas cruzadas y secas. De paso revisar envés de hojas con linterna."},
+    {codes:["F-1"],common:"Guayabo del país",zone:"frente",priority:"baja",title:"Limpieza invernal de ramas secas",short:"Sacar solo ramas muertas, rotas o podridas — el guayabo soporta MUY poca poda."},
+    {codes:["B-8","B-21","B-28"],common:"Palmera pindó",zone:"fondo",priority:"baja",title:"Limpieza de hojas secas en las 3 pindó",short:"Cortar a ras del tronco solo las hojas amarillas/secas. NO tocar las verdes ni el cogollo central."}
+  ];
+  var PR_ORDER = { alta: 0, media: 1, baja: 2 };
+  var PR_LABEL = { alta: "Alta", media: "Media", baja: "Baja" };
+
+  function byPriority(a, b) { return PR_ORDER[a.priority] - PR_ORDER[b.priority]; }
+
+  // Contadores
+  var n = { alta: 0, media: 0, baja: 0 };
+  TASKS.forEach(function (t) { n[t.priority]++; });
+  document.getElementById("counts").innerHTML =
+    '<span class="chip"><b>' + TASKS.length + '</b> podas este mes</span>' +
+    '<span class="chip" style="color:#c0392b"><b>' + n.alta + '</b> altas</span>' +
+    '<span class="chip" style="color:#b9770a"><b>' + n.media + '</b> medias</span>' +
+    '<span class="chip" style="color:#5a6b4a"><b>' + n.baja + '</b> bajas</span>';
+
+  // Render por zona
+  function renderZone(zone, label) {
+    var items = TASKS.filter(function (t) { return t.zone === zone; }).sort(byPriority);
+    if (!items.length) return "";
+    var html = '<h2>' + label + ' (' + items.length + ')</h2>';
+    items.forEach(function (t) {
+      html += '<div class="card ' + t.priority + '">' +
+        '<div class="card-top"><h3>' + t.title + '</h3>' +
+        '<span class="badge ' + t.priority + '">' + PR_LABEL[t.priority] + '</span></div>' +
+        '<div class="codes">' + t.common + ' · ' + t.codes.join(", ") + '</div>' +
+        '<p class="short">' + t.short + '</p></div>';
+    });
+    return html;
+  }
+  document.getElementById("list").innerHTML =
+    renderZone("fondo", "🌅 Fondo (este — sol matinal)") +
+    renderZone("frente", "🌇 Frente (oeste — sol vespertino)");
+</script>
+<script src="engage.js"></script>
+</body>
+</html>
