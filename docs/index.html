@@ -6752,6 +6752,23 @@ function openTaskFromHash() {
   }, 200);
 }
 openTaskFromHash();
+
+// Si la URL trae #especie=CODE (viene de una landing de engagement), abrir la
+// ficha de esa especie. Si la página no tiene el catálogo, redirige a index.
+function openSpeciesFromHash() {
+  const m = (window.location.hash || '').match(/^#especie=(.+)$/);
+  if (!m) return;
+  const code = decodeURIComponent(m[1]);
+  if (typeof findPlantByCode === 'function' && findPlantByCode(code)) {
+    if (typeof openSpeciesDetailModal === 'function') {
+      setTimeout(() => openSpeciesDetailModal(code), 180);
+    }
+  } else if (!/index\.html$|\/$/.test(window.location.pathname)) {
+    window.location.replace('index.html' + window.location.hash);
+  }
+}
+openSpeciesFromHash();
+window.addEventListener('hashchange', openSpeciesFromHash);
 window.addEventListener('hashchange', openTaskFromHash);
 
 // ============================================================
