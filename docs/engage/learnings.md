@@ -35,6 +35,30 @@ necesita recordar para decidir el contenido de mañana.
   equivocado quema la confianza del canal entero. El usuario: "cuando me
   recomendás o mandás algo pretendo que lo tengas todo investigado".
 
+## QUÉ ENGANCHÓ (12/06 ~16:50) — primera señal positiva real
+
+- El usuario respondió **"MUY buena la notificación y la landing"** a la de
+  **curiosidades** (push e1, 14:30). Reaccionó 😍 a la carta de la **Palta Hass**
+  ("todas las Hass descienden de un árbol") y siguió la conversación pidiendo
+  más datos (preguntó si pasa lo mismo con la palta criolla). → **El formato
+  curiosidades-verificadas-de-SUS-plantas FUNCIONA.** Es la dirección a seguir.
+  Las cartas tipo "historia con nombre propio + dato contraintuitivo" son las
+  que mejor caen. La buganvilia (Jeanne Baret) la marcó "meh" — menos gancho.
+- Acción: fin de la cadencia acelerada, vuelta a 3/día. Las curiosidades pasan
+  a ser una sección candidata fija. Se agregó carta "Palta uruguaya" (criolla =
+  lo opuesto a Hass: de semilla, cada árbol único) respondiendo su pregunta.
+
+## BUG de feedback (12/06) — engagement.json quedó en 0 pese a la reacción
+
+- El usuario reaccionó 😍 pero `engagement.json` tenía 0 eventos. Causa probable:
+  `engage.js` mostraba "Anotado" optimista y mandaba el evento con un PUT
+  (GET+PUT a GitHub) sin await/persistencia — en mobile, al minimizar la app el
+  write no alcanza a completar y se pierde. Fix aplicado: **outbox en
+  localStorage** — cada evento se guarda sincrónico ANTES de mandarlo, con flush
+  reintentable y dedup por `_id`, y se re-vacía al cargar/volver a foco. El
+  monitor automático del loop dependía de engagement.json, así que esto también
+  explica por qué no detectó la señal (vino por chat).
+
 ## PIVOT DE ESTRATEGIA (12/06 tarde) — engagement, no tareas fabricadas
 
 El usuario fue tajante: cada vez que entra encuentra claims errados o tareas

@@ -17,6 +17,7 @@
   const TOKEN_KEY = 'jardineando_github_token_v1';
   const DEVICE_KEY = 'jardineando_device_name_v1';
   const SEEN_NIDS_KEY = 'jardineando_seen_nids_v1';
+  const OUTBOX_KEY = 'jardineando_engage_outbox_v1';
 
   function token() { return localStorage.getItem(TOKEN_KEY) || ''; }
   function device() { return localStorage.getItem(DEVICE_KEY) || 'sin-nombre'; }
@@ -50,23 +51,54 @@
     return r.json();
   }
 
-  async function logEvents(events) {
-    if (!token() || !events.length) return false;
-    for (let attempt = 0; attempt < 2; attempt++) {
-      try {
-        const cur = await ghReadJson(ENGAGEMENT_PATH);
-        const doc = cur.data || { _updated_at: null, events: [], daily_summary: {} };
-        doc.events = (doc.events || []).concat(events);
-        doc._updated_at = new Date().toISOString();
-        await ghWriteJson(ENGAGEMENT_PATH, doc,
-          'engage: ' + events.map(function (e) { return e.type; }).join(', ') + ' desde ' + device(),
-          cur.sha);
-        return true;
-      } catch (e) {
-        if (attempt === 1) { console.warn('[engage] no se pudo loguear:', e); return false; }
+  // Outbox en localStorage: cada evento se guarda SINCRÓNICO antes de
+  // intentar mandarlo. Así un click + minimizar la app no pierde el
+  // feedback (la escritura a GitHub es GET+PUT y en mobile a veces no
+  // alcanza a completar). El flush reintenta y deduplica por _id.
+  function outboxGet() { try { return JSON.parse(localStorage.getItem(OUTBOX_KEY) || '[]'); } catch (e) { return []; } }
+  function outboxSet(a) { try { localStorage.setItem(OUTBOX_KEY, JSON.stringify(a.slice(-200))); } catch (e) {} }
+
+  let _flushing = false;
+  async function flushOutbox() {
+    if (_flushing || !token()) return false; // sin PAT queda guardado local hasta que haya
+    const pending = outboxGet();
+    if (!pending.length) return true;
+    _flushing = true;
+    try {
+      for (let attempt = 0; attempt < 3; attempt++) {
+        try {
+          const cur = await ghReadJson(ENGAGEMENT_PATH);
+          const doc = cur.data || { _updated_at: null, events: [], daily_summary: {} };
+          const have = {};
+          (doc.events || []).forEach(function (e) { if (e._id) have[e._id] = 1; });
+          const toAdd = pending.filter(function (e) { return !e._id || !have[e._id]; });
+          if (toAdd.length) {
+            doc.events = (doc.events || []).concat(toAdd);
+            doc._updated_at = new Date().toISOString();
+            await ghWriteJson(ENGAGEMENT_PATH, doc,
+              'engage: ' + toAdd.map(function (e) { return e.type; }).join(', ') + ' desde ' + device(),
+              cur.sha);
+          }
+          outboxSet([]); // éxito → limpiar
+          return true;
+        } catch (e) {
+          if (attempt === 2) { console.warn('[engage] flush falló, queda en outbox:', e); return false; }
+        }
       }
-    }
+    } finally { _flushing = false; }
     return false;
+  }
+
+  // Encola (durable) y dispara el flush en background. Devuelve true apenas
+  // quedó guardado localmente — el sync a GitHub es best-effort con reintento.
+  function logEvents(events) {
+    if (!events || !events.length) return Promise.resolve(false);
+    const stamped = events.map(function (e) {
+      return Object.assign({ _id: Date.now().toString(36) + Math.random().toString(36).slice(2, 8) }, e);
+    });
+    outboxSet(outboxGet().concat(stamped));
+    flushOutbox();
+    return Promise.resolve(true);
   }
 
   function pageName() {
@@ -76,6 +108,7 @@
 
   // --- Tracking de llegada vía notificación (?nid=) + visita ---
   function trackLanding() {
+    flushOutbox(); // mandar lo que haya quedado pendiente de sesiones anteriores
     let params;
     try { params = new URLSearchParams(window.location.search); } catch (e) { return; }
     const nid = params.get('nid');
@@ -190,6 +223,7 @@
   }
   document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === 'hidden') flushDwell();
+    else flushOutbox(); // al volver a foco, reintentar lo pendiente
   });
   window.addEventListener('pagehide', flushDwell);
 
