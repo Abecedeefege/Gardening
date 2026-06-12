@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Más historias de tu jardín · Ronda 2 · Jardineando</title>
+<style>
+  :root { --verde: #2d5016; --verde2: #4a7c2a; --fondo: #f5faf0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--fondo); color: #233018; line-height: 1.55; padding: 0 16px 56px; }
+  .back { display: inline-block; margin: 14px 0 4px; color: var(--verde2);
+    text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+  header, main { max-width: 620px; margin: 0 auto; }
+  h1 { color: var(--verde); font-size: 1.5rem; margin: 10px 0 4px; }
+  .sub { color: #5a6b4a; font-size: 0.95rem; margin: 0 0 6px; }
+  .card { background: #fff; border: 1px solid #e3eed6; border-radius: 16px;
+    padding: 18px 16px; margin: 16px 0; box-shadow: 0 1px 4px rgba(45,80,22,0.07); scroll-margin-top: 12px; }
+  .plant { display: inline-block; background: #eef5e5; color: var(--verde); border-radius: 6px;
+    font-size: 0.78rem; font-weight: 700; padding: 3px 9px; margin-bottom: 8px; }
+  .card h2 { font-size: 1.15rem; color: var(--verde); margin: 4px 0 8px; }
+  .card p { font-size: 0.96rem; margin: 0 0 4px; }
+  .react-bar { display: flex; gap: 8px; margin-top: 14px; align-items: center; flex-wrap: wrap; }
+  .react-bar button { font-size: 1.3rem; line-height: 1; background: #f4f9ee; border: 1px solid #d8e6c8;
+    border-radius: 12px; padding: 8px 12px; cursor: pointer; transition: transform .08s; }
+  .react-bar button:active { transform: scale(0.9); }
+  .react-bar button.sel { background: var(--verde); border-color: var(--verde); }
+  .react-bar .react-hint { font-size: 0.82rem; color: #5a6b4a; margin-left: 4px; }
+  .closing { background: #eaf3e0; border-radius: 14px; padding: 16px; margin-top: 22px; }
+  .closing h3 { color: var(--verde); margin: 0 0 8px; font-size: 1.05rem; }
+  .engage-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .engage-actions button { flex: 1 1 150px; padding: 13px 12px; border: none; border-radius: 12px;
+    font-size: 0.98rem; font-weight: 700; cursor: pointer; }
+  .engage-actions button:first-child { background: var(--verde); color: #fff; }
+  .engage-actions button:last-child { background: #fff; color: #5a6b4a; border: 1px solid #cdd9be; }
+  .engage-feedback { text-align: center; font-size: 1rem; font-weight: 600; color: var(--verde); }
+  footer { max-width: 620px; margin: 26px auto 0; text-align: center; font-size: 0.8rem; color: #8a9a78; }
+  footer a { color: var(--verde2); }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<header>
+  <h1>🌿 Más historias de tu jardín</h1>
+  <p class="sub">Ronda 2 — ocho datos nuevos y verificados. Tocá la carita en cada uno; con eso aprendo qué te gusta.</p>
+</header>
+<main>
+
+  <div class="card" id="guayabo">
+    <span class="plant">Guayabo del país · F-1</span>
+    <h2>Sus flores son un caramelo (literal)</h2>
+    <p>Los pétalos carnosos de tu guayabo (feijoa) son <b>comestibles y dulces</b> — saben a algodón de azúcar o malvavisco, con un dejo a canela. En Uruguay y el sur de Brasil los chicos los comían como golosina directo de la planta. Y al picotearlos, las aves polinizan la flor sin querer.</p>
+    <div class="react-bar">
+      <button onclick="engageReact('r2-guayabo','love', this)">😍</button>
+      <button onclick="engageReact('r2-guayabo','meh', this)">😐</button>
+      <button onclick="engageReact('r2-guayabo','no', this)">🙅</button>
+      <span class="react-hint">¿Te copó?</span>
+    </div>
+  </div>
+
+  <div class="card" id="durazno">
+    <span class="plant">Durazno · B-30</span>
+    <h2>Su nombre miente sobre de dónde es</h2>
+    <p>El nombre científico del durazno es <i>Prunus <b>persica</b></i> — "de Persia". Pero no es de Persia: es de <b>China</b>, donde hay carozos arqueológicos de hace ~8000 años. Los romanos lo conocieron llegando desde Persia por la ruta de la seda y le quedó ese apellido equivocado para siempre.</p>
+    <div class="react-bar">
+      <button onclick="engageReact('r2-durazno','love', this)">😍</button>
+      <button onclick="engageReact('r2-durazno','meh', this)">😐</button>
+      <button onclick="engageReact('r2-durazno','no', this)">🙅</button>
+      <span class="react-hint">¿Te copó?</span>
+    </div>
+  </div>
+
+  <div class="card" id="aguaribay">
+    <span class="plant">Aguaribay / Molle · F-8</span>
+    <h2>Tenés la "pimienta rosa" del delicatessen</h2>
+    <p>Esos granitos rosados de tu aguaribay son la <b>pimienta rosa</b> que se vende carísima en tiendas gourmet. Pero es <b>falsa pimienta</b>: no tiene nada que ver con la pimienta negra (otra familia). Es pariente del marañón y el mango — su nombre <i>molle</i> viene del quechua <i>mulli</i>. Ojo: a algunas personas les irrita la piel.</p>
+    <div class="react-bar">
+      <button onclick="engageReact('r2-aguaribay','love', this)">😍</button>
+      <button onclick="engageReact('r2-aguaribay','meh', this)">😐</button>
+      <button onclick="engageReact('r2-aguaribay','no', this)">🙅</button>
+      <span class="react-hint">¿Te copó?</span>
+    </div>
+  </div>
+
+  <div class="card" id="caqui">
+    <span class="plant">Caqui / Persimón · B-41</span>
+    <h2>Los griegos lo llamaron "fruta de los dioses"</h2>
+    <p>El género del caqui es <i>Diospyros</i>, del griego — se traduce popularmente como <b>"fruta de los dioses"</b> (más literal: "trigo de Zeus"). En Japón es símbolo de longevidad: hay caquis de 600 años todavía dando fruta.</p>
+    <div class="react-bar">
+      <button onclick="engageReact('r2-caqui','love', this)">😍</button>
+      <button onclick="engageReact('r2-caqui','meh', this)">😐</button>
+      <button onclick="engageReact('r2-caqui','no', this)">🙅</button>
+      <span class="react-hint">¿Te copó?</span>
+    </div>
+  </div>
+
+  <div class="card" id="hibisco">
+    <span class="plant">Hibisco / Rosa china · B-4</span>
+    <h2>Es la flor nacional de Malasia</h2>
+    <p>Tu hibisco (<i>Hibiscus rosa-sinensis</i>) es la <b>flor nacional de Malasia</b> desde 1960 — la llaman <i>Bunga Raya</i>, "flor grande". Sus cinco pétalos representan los cinco principios nacionales y el rojo, el coraje del pueblo. Cada flor dura un solo día.</p>
+    <div class="react-bar">
+      <button onclick="engageReact('r2-hibisco','love', this)">😍</button>
+      <button onclick="engageReact('r2-hibisco','meh', this)">😐</button>
+      <button onclick="engageReact('r2-hibisco','no', this)">🙅</button>
+      <span class="react-hint">¿Te copó?</span>
+    </div>
+  </div>
+
+  <div class="card" id="althea">
+    <span class="plant">Rosa de Siria / Althea · B-18</span>
+    <h2>Y su prima es la flor de Corea del Sur</h2>
+    <p>La althea (<i>Hibiscus syriacus</i>) es la <b>flor nacional de Corea del Sur</b>: la <i>mugunghwa</i>, que significa <b>"la flor que nunca se marchita"</b> — porque la planta abre flores nuevas sin parar todo el verano, aunque cada una dure un día. Aparece en el himno y los símbolos del país.</p>
+    <div class="react-bar">
+      <button onclick="engageReact('r2-althea','love', this)">😍</button>
+      <button onclick="engageReact('r2-althea','meh', this)">😐</button>
+      <button onclick="engageReact('r2-althea','no', this)">🙅</button>
+      <span class="react-hint">¿Te copó?</span>
+    </div>
+  </div>
+
+  <div class="card" id="romero">
+    <span class="plant">Romero · B-26</span>
+    <h2>"Rocío del mar" — y te ayuda a recordar</h2>
+    <p>Romero viene del latín <i>ros marinus</i>, <b>"rocío del mar"</b> (crece en acantilados con la humedad del aire salino). Y no es solo poesía: un estudio de la Universidad de Northumbria encontró que <b>oler romero mejora la memoria prospectiva</b> — acordarse de hacer cosas a futuro. Pasá la mano por la planta y olé.</p>
+    <div class="react-bar">
+      <button onclick="engageReact('r2-romero','love', this)">😍</button>
+      <button onclick="engageReact('r2-romero','meh', this)">😐</button>
+      <button onclick="engageReact('r2-romero','no', this)">🙅</button>
+      <span class="react-hint">¿Te copó?</span>
+    </div>
+  </div>
+
+  <div class="card" id="cinta">
+    <span class="plant">Cinta / Lazo de amor · B-12</span>
+    <h2>Hace 40 hijos colgantes ella sola</h2>
+    <p>La cinta es de las plantas más fáciles de multiplicar del mundo: una mata adulta lanza varas largas con <b>"hijos" (plantines) colgando — 40 o más por temporada</b>, ya con raicitas antes de que los cortes. Es un móvil vivo: cortás un hijo, lo ponés en agua o tierra, y arranca solo.</p>
+    <div class="react-bar">
+      <button onclick="engageReact('r2-cinta','love', this)">😍</button>
+      <button onclick="engageReact('r2-cinta','meh', this)">😐</button>
+      <button onclick="engageReact('r2-cinta','no', this)">🙅</button>
+      <span class="react-hint">¿Te copó?</span>
+    </div>
+  </div>
+
+  <div class="closing">
+    <h3>¿Las querés como sección fija?</h3>
+    <p style="margin:0 0 4px;font-size:0.92rem;">Si esto te gusta, dejo "Historias de tu jardín" como sección permanente del sitio, con las 52 plantas.</p>
+    <div class="engage-actions">
+      <button onclick="engageApprove('2026-06-12-curiosidades')">✅ Sí, quiero la sección</button>
+      <button onclick="engageRejected('2026-06-12-curiosidades')">✕ No es para mí</button>
+    </div>
+  </div>
+
+</main>
+<footer>
+  Jardineando · Montevideo · datos verificados · 12/06/2026 ·
+  <a href="https://gardening-chi.vercel.app/engage/2026-06-12-curiosidades.html">Ver la ronda 1 →</a>
+</footer>
+<script src="engage.js"></script>
+</body>
+</html>
