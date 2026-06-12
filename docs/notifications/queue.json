@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-12T09:10:00-03:00",
+  "_updated_at": "2026-06-12T12:55:34.319Z",
   "notifications": [
     {
       "id": "2026-06-12-a",
@@ -8,8 +8,8 @@
       "url": "https://gardening-chi.vercel.app/tareas.html",
       "send_at": "2026-06-12T08:30:00-03:00",
       "expires_at": "2026-06-12T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-12T12:55:34.318Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-06-12"
     },
