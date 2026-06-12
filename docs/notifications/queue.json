@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-12T12:55:34.319Z",
+  "_updated_at": "2026-06-12T16:21:22.273Z",
   "notifications": [
     {
       "id": "2026-06-12-a",
@@ -20,8 +20,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-06-12-poda-invernal.html",
       "send_at": "2026-06-12T13:00:00-03:00",
       "expires_at": "2026-06-12T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-12T16:21:22.271Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-06-12"
     },
