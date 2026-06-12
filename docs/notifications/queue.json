@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-12T15:01:44-03:00",
+  "_updated_at": "2026-06-12T18:02:05.953Z",
   "notifications": [
     {
       "id": "2026-06-12-e1",
@@ -8,8 +8,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-06-12-curiosidades.html",
       "send_at": "2026-06-12T14:30:00-03:00",
       "expires_at": "2026-06-12T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-12T18:02:05.952Z",
       "fail_reason": null,
       "created_by": "claude 12/06 — pivot a engagement"
     },
