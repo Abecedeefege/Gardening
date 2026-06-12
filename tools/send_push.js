@@ -77,7 +77,11 @@ async function main() {
     for (const n of due) {
       const payload = JSON.stringify({ nid: n.id, title: n.title, body: n.body, url: n.url });
       try {
-        const res = await webpush.sendNotification(subscription, payload, { TTL: 3600 });
+        // urgency:'high' → el push service entrega ya, sin esperar a que el
+        // teléfono salga de Doze (normal/low quedan batcheadas y a veces se
+        // descartan aunque el POST devuelva 201). TTL 4h: si el device está
+        // apagado, se entrega al prender, pero no llega trasnochada mañana.
+        const res = await webpush.sendNotification(subscription, payload, { TTL: 14400, urgency: 'high' });
         n.status = 'sent';
         n.sent_at = new Date().toISOString();
         queueChanged = true;
