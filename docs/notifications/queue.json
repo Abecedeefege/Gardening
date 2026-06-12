@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-11T18:57:16-03:00",
+  "_updated_at": "2026-06-12T00:03:00.993Z",
   "notifications": [
     {
       "id": "2026-06-11-d",
@@ -8,8 +8,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-06-11-poda-invernal.html",
       "send_at": "2026-06-11T20:00:00-03:00",
       "expires_at": "2026-06-11T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-12T00:03:00.992Z",
       "fail_reason": null,
       "created_by": "claude session 11/06 — corrección post-feedback del usuario"
     }
