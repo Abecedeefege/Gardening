@@ -1,17 +1,41 @@
 {
-  "_updated_at": "2026-06-12T00:03:00.993Z",
+  "_updated_at": "2026-06-12T09:10:00-03:00",
   "notifications": [
     {
-      "id": "2026-06-11-d",
-      "title": "✂️ Corregí el calendario de poda",
-      "body": "Revisé las fuentes: la mayoría de las podas van a fines de invierno, no en junio. Mirá qué va cuándo.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-06-11-poda-invernal.html",
-      "send_at": "2026-06-11T20:00:00-03:00",
-      "expires_at": "2026-06-11T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-12T00:03:00.992Z",
+      "id": "2026-06-12-a",
+      "title": "🌳 La dormancia es tu ventana",
+      "body": "Sin hojas, el liquidámbar deja leer su estructura y la hortensia tolera el trasplante casi sin estrés. Mirá qué va hoy.",
+      "url": "https://gardening-chi.vercel.app/tareas.html",
+      "send_at": "2026-06-12T08:30:00-03:00",
+      "expires_at": "2026-06-12T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "claude session 11/06 — corrección post-feedback del usuario"
+      "created_by": "engagement-agent 2026-06-12"
+    },
+    {
+      "id": "2026-06-12-b",
+      "title": "✂️ ¿Qué podar y cuándo?",
+      "body": "Armé una vista que separa lo de HOY de lo que recién va a fines de julio y lo que espera a después de las heladas. Echale un ojo.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-12-poda-invernal.html",
+      "send_at": "2026-06-12T13:00:00-03:00",
+      "expires_at": "2026-06-12T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-06-12"
+    },
+    {
+      "id": "2026-06-12-c",
+      "title": "❄️ Las heladas pegan al amanecer",
+      "body": "En tu jardín el sur y el este (la pera, el fondo) son los que más se enfrían al alba. Cuidá ahí los pies tiernos estas semanas.",
+      "url": "https://gardening-chi.vercel.app/index.html",
+      "send_at": "2026-06-12T19:30:00-03:00",
+      "expires_at": "2026-06-12T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-06-12"
     }
   ]
 }

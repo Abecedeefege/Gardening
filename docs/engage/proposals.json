@@ -3,12 +3,25 @@
     {
       "id": "2026-06-11-poda-invernal",
       "title": "Calendario de poda — invierno 2026 (corregido)",
-      "page": "engage/2026-06-11-poda-invernal.html",
+      "page": null,
       "created": "2026-06-11",
-      "status": "pending",
-      "hypothesis": "Una vista estacional única con las podas agrupadas por ventana (junio limpiezas / fines jul-ago carozo y madera nueva / septiembre post-helada sensibles al frío) planifica la temporada mejor que la lista dispersa del Timeline. REVISADA 11/06: la v1 mandaba todo a junio sin verificar; el usuario lo señaló y se corrigió con fuentes (carozo y caqui a fines de la dormancia, sensibles a helada a septiembre). data_plants.py corregido en el mismo pase.",
+      "status": "dropped",
+      "hypothesis": "Una vista estacional única con las podas agrupadas por ventana planifica la temporada mejor que la lista dispersa del Timeline.",
       "notified_by": [
-        "2026-06-11-b"
+        "2026-06-11-b",
+        "2026-06-11-d"
+      ],
+      "result_notes": "Descartada el 12/06 por la regla de no-supervivencia sin aprobación explícita. PERO el test fue confounded: el push que la promocionaba (2026-06-11-d) recién salió a las 20:00 del 11/06 (la corrida fue vespertina y las 3 originales se frenaron por contenido), con ventana de solo 2 h en la primera noche que el device tuvo push activo. engagement.json quedó vacío: 0 clicks, 0 visitas. La hipótesis NO quedó testeada. Re-lanzada hoy como 2026-06-12-poda-invernal con un push de mediodía para darle un turno diurno real."
+    },
+    {
+      "id": "2026-06-12-poda-invernal",
+      "title": "Calendario de poda — invierno y salida del invierno 2026",
+      "page": "engage/2026-06-12-poda-invernal.html",
+      "created": "2026-06-12",
+      "status": "pending",
+      "hypothesis": "Re-test de la vista estacional consolidada, ahora con timing justo: el push promotor sale 13:00 (slot diurno) en vez de 20:00. Si una pantalla que separa las 4 ventanas reales de poda (hoy / fines jul-ago / post-heladas sept / primavera) hace tangible la ventana corta de dormancia, debería juntar su primer click o aprobación. Si otra vez 0 señal con timing bueno, la hipótesis de 'vista de temporada' no le sirve a este usuario y hay que pivotar de ángulo.",
+      "notified_by": [
+        "2026-06-12-b"
       ],
       "result_notes": null
     }
