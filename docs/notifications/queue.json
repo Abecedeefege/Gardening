@@ -1,41 +1,41 @@
 {
-  "_updated_at": "2026-06-12T13:24:20-03:00",
+  "_updated_at": "2026-06-12T13:57:10-03:00",
   "notifications": [
     {
-      "id": "2026-06-12-a",
-      "title": "🌳 La dormancia es tu ventana",
-      "body": "Sin hojas, el liquidámbar deja leer su estructura y la hortensia tolera el trasplante casi sin estrés. Mirá qué va hoy.",
-      "url": "https://gardening-chi.vercel.app/tareas.html",
-      "send_at": "2026-06-12T08:30:00-03:00",
+      "id": "2026-06-12-e1",
+      "title": "🌿 Una historia que no sabías de tu jardín",
+      "body": "La buganvilia la descubrió la primera mujer en dar la vuelta al mundo, disfrazada de hombre. 4 historias más adentro.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-12-curiosidades.html",
+      "send_at": "2026-06-12T14:30:00-03:00",
       "expires_at": "2026-06-12T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-12T12:55:34.318Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-12"
-    },
-    {
-      "id": "2026-06-12-b",
-      "title": "✂️ ¿Qué podar y cuándo?",
-      "body": "Armé una vista que separa lo de HOY de lo que recién va a fines de julio y lo que espera a después de las heladas. Echale un ojo.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-06-12-poda-invernal.html",
-      "send_at": "2026-06-12T13:00:00-03:00",
-      "expires_at": "2026-06-12T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-12T16:21:22.271Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-12"
-    },
-    {
-      "id": "2026-06-12-c",
-      "title": "❄️ Las heladas pegan al amanecer",
-      "body": "En tu jardín el sur y el este (la pera, el fondo) son los que más se enfrían al alba. Cuidá ahí los pies tiernos estas semanas.",
-      "url": "https://gardening-chi.vercel.app/index.html",
-      "send_at": "2026-06-12T19:30:00-03:00",
-      "expires_at": "2026-06-12T22:00:00-03:00",
-      "status": "cancelled",
+      "status": "pending",
       "sent_at": null,
-      "fail_reason": "Cancelada por el usuario (12/06): pausa tras detectar contenido hortícola sin verificar y mismatch copy↔destino. Mejor no mandar más hoy.",
-      "created_by": "engagement-agent 2026-06-12"
+      "fail_reason": null,
+      "created_by": "claude 12/06 — pivot a engagement"
+    },
+    {
+      "id": "2026-06-12-e2",
+      "title": "👀 Ayudame a no inventar",
+      "body": "Esta semana adiviné mal el estado de tus plantas. Mejor te pregunto: 5 toques, 10 segundos.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-12-estado-jardin.html",
+      "send_at": "2026-06-12T15:00:00-03:00",
+      "expires_at": "2026-06-12T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "claude 12/06 — feedback real"
+    },
+    {
+      "id": "2026-06-12-e3",
+      "title": "📊 Tu jardín en números",
+      "body": "52 plantas, 11 frutales, 10 nativas. Una foto rápida de todo lo que tenés plantado.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-12-en-numeros.html",
+      "send_at": "2026-06-12T15:30:00-03:00",
+      "expires_at": "2026-06-12T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "claude 12/06 — stats"
     }
   ]
 }

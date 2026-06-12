@@ -130,13 +130,68 @@
 
   window.engageApprove = function (proposalId) {
     decide(proposalId, 'proposal_approved', (typeof event !== 'undefined' && event) ? event.target : null,
-      '✅ ¡Listo! Mañana el agente integra esta mejora al sitio.');
+      '✅ ¡Listo! El agente integra esta mejora al sitio.');
   };
 
   window.engageRejected = function (proposalId) {
     decide(proposalId, 'proposal_rejected', (typeof event !== 'undefined' && event) ? event.target : null,
-      '👍 Anotado — mañana el agente la descarta y prueba otra cosa.');
+      '👍 Anotado — el agente la descarta y prueba otra cosa.');
   };
+
+  // --- Reacciones granulares (😍/🙂/😐/🙅) ---
+  // Uso en la página: <button onclick="engageReact('<page_id>','love', this)">😍</button>
+  function markSelected(btn) {
+    if (!btn || !btn.parentElement) return;
+    Array.prototype.forEach.call(btn.parentElement.querySelectorAll('button'), function (b) {
+      b.classList.remove('sel'); b.disabled = true;
+    });
+    btn.classList.add('sel');
+  }
+  window.engageReact = function (targetId, value, btn) {
+    btn = btn || ((typeof event !== 'undefined' && event) ? event.target : null);
+    markSelected(btn);
+    var hint = btn && btn.parentElement ? btn.parentElement.querySelector('.react-hint') : null;
+    if (hint) hint.textContent = '¡Gracias! Anotado: ' + value + ' 🌱';
+    logEvents([{ type: 'reaction', target: targetId, value: value,
+      page: pageName(), ts: new Date().toISOString(), device: device() }]);
+  };
+
+  // --- Preguntas sí/no/no-sé (ej. estado observable del jardín) ---
+  // Uso: <button onclick="engageAnswer('liquidambar_pelado','no', this)">No</button>
+  window.engageAnswer = function (qid, value, btn) {
+    btn = btn || ((typeof event !== 'undefined' && event) ? event.target : null);
+    markSelected(btn);
+    var hint = btn && btn.parentElement ? btn.parentElement.querySelector('.q-hint') : null;
+    if (hint) hint.textContent = '✓ Anotado';
+    logEvents([{ type: 'answer', qid: qid, value: value,
+      page: pageName(), ts: new Date().toISOString(), device: device() }]);
+  };
+
+  // --- Tracking pasivo: tiempo en página + profundidad de scroll ---
+  var _t0 = Date.now();
+  var _maxScroll = 0;
+  function _scrollPct() {
+    var h = document.documentElement;
+    var denom = (h.scrollHeight - h.clientHeight);
+    if (denom <= 0) return 100;
+    return Math.min(100, Math.round((h.scrollTop || window.pageYOffset || 0) / denom * 100));
+  }
+  window.addEventListener('scroll', function () {
+    var p = _scrollPct(); if (p > _maxScroll) _maxScroll = p;
+  }, { passive: true });
+  var _dwellSent = false;
+  function flushDwell() {
+    if (_dwellSent) return;
+    var secs = Math.round((Date.now() - _t0) / 1000);
+    if (secs < 2) return; // ignorar rebotes instantáneos
+    _dwellSent = true;
+    logEvents([{ type: 'dwell', seconds: secs, scroll_pct: Math.max(_maxScroll, _scrollPct()),
+      page: pageName(), ts: new Date().toISOString(), device: device() }]);
+  }
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') flushDwell();
+  });
+  window.addEventListener('pagehide', flushDwell);
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', trackLanding);

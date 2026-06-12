@@ -24,6 +24,18 @@
         "2026-06-12-b"
       ],
       "result_notes": null
+    },
+    {
+      "id": "2026-06-12-curiosidades",
+      "title": "Historias de tu jardín (curiosidades verificadas)",
+      "page": "engage/2026-06-12-curiosidades.html",
+      "created": "2026-06-12",
+      "status": "pending",
+      "hypothesis": "El usuario rechazó las tareas fabricadas y pidió contenido que enganche. Hipótesis: curiosidades reales y verificadas de SUS plantas (con reacción por carta) generan el primer click/reacción positiva. Si funciona, sección fija 'Historias'.",
+      "notified_by": [
+        "2026-06-12-e1"
+      ],
+      "result_notes": null
     }
   ]
 }

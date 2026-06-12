@@ -35,6 +35,42 @@ necesita recordar para decidir el contenido de mañana.
   equivocado quema la confianza del canal entero. El usuario: "cuando me
   recomendás o mandás algo pretendo que lo tengas todo investigado".
 
+## PIVOT DE ESTRATEGIA (12/06 tarde) — engagement, no tareas fabricadas
+
+El usuario fue tajante: cada vez que entra encuentra claims errados o tareas
+fabricadas que NO son necesarias hoy (liquidámbar y hortensia con hojas
+todavía). El objetivo NO es generar tareas — es que **interactúe / encuentre
+interesante lo que ve / le guste un módulo nuevo**. Cambios de rumbo:
+
+1. **Contenido que engancha > tareas.** Prioridad: curiosidades verificadas de
+   SUS plantas, vistas lindas (jardín en números), módulos nuevos, mini-quizzes.
+   Las tareas solo cuando son reales y oportunas, nunca como excusa de push.
+2. **No afirmar estado no observable. Preguntarlo.** La landing
+   `estado-jardin.html` pregunta (liquidámbar pelado?, hortensia?, helada?,
+   cítricos con fruta?, qué preferís recibir). Esas respuestas (`answer` events)
+   son ground-truth: leerlas antes de armar contenido. Si dice "liquidámbar con
+   hojas" → NO hablar de podarlo hasta que esté pelado.
+3. **Feedback granular.** `engage.js` ahora loguea `reaction` (love/meh/no por
+   carta), `answer` (preguntas), y `dwell` (segundos + scroll_pct) pasivo.
+   Antes solo había approve/reject → engagement.json quedaba vacío. Ahora hay
+   señal fina de QUÉ carta/tema gustó.
+4. **Cadencia acelerada hasta buen feedback (pedido explícito).** Mientras no
+   haya señal positiva, mandar 1 push nuevo cada ~30 min (slots del dispatcher,
+   hasta 20:30 UY), cada uno a una **landing específica** (no homepage). Apenas
+   aparezca feedback bueno (reaction=love, proposal_approved, o respuestas
+   útiles), **volver a 3/día**. Un loop de 30 min gestiona esto hoy.
+5. **El push lleva SIEMPRE a una landing específica** que cumple lo que promete
+   el copy. Nunca a index.html "a ver qué hay".
+
+### Landings vivas (12/06)
+- `2026-06-12-curiosidades.html` — 5 historias verificadas (Baret/buganvilia,
+  árbol madre Hass, semáforo lantana, limón híbrido, NASA cinta). Reacción por
+  carta + approve sección. Push e1 @14:30.
+- `2026-06-12-estado-jardin.html` — 5 preguntas observables (data + engagement).
+  Push e2 @15:00.
+- `2026-06-12-en-numeros.html` — infografía (52 plantas, zonas, nativas/exóticas,
+  frutales). Reacción. Push e3 @15:30.
+
 ## Lección CRÍTICA (12/06) — no afirmar lo que no podés observar + copy↔destino
 
 - El push `2026-06-12-a` dijo "Sin hojas, el liquidámbar deja leer su
