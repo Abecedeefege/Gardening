@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-12T20:19:59-03:00",
+  "_updated_at": "2026-06-12T23:20:16.938Z",
   "notifications": [
     {
       "id": "2026-06-12-f01",
@@ -20,8 +20,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-06-12-curiosidades-2.html#durazno",
       "send_at": "2026-06-12T20:15:00-03:00",
       "expires_at": "2026-06-12T23:30:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-12T23:20:16.937Z",
       "fail_reason": null,
       "created_by": "claude 12/06 — ronda 15min"
     },
