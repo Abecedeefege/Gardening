@@ -61,6 +61,12 @@ interesante lo que ve / le guste un módulo nuevo**. Cambios de rumbo:
    útiles), **volver a 3/día**. Un loop de 30 min gestiona esto hoy.
 5. **El push lleva SIEMPRE a una landing específica** que cumple lo que promete
    el copy. Nunca a index.html "a ver qué hay".
+6. **Precisión de ventanas (pedido explícito 12/06): ±1 semana o condición
+   observable.** Nunca "junio-julio" ni rangos de 2 meses. Formato: o una
+   condición concreta ("cuando pierda TODAS las hojas", "cuando las yemas se
+   hinchen, sin abrir", "pasada la última helada") con semana estimada entre
+   paréntesis, o directamente una semana ("última semana de julio"). El campo
+   `when` de las urgencias en `data_plants.py` ya quedó migrado a este formato.
 
 ### Landings vivas (12/06)
 - `2026-06-12-curiosidades.html` — 5 historias verificadas (Baret/buganvilia,
