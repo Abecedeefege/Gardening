@@ -35,6 +35,28 @@ necesita recordar para decidir el contenido de mañana.
   equivocado quema la confianza del canal entero. El usuario: "cuando me
   recomendás o mandás algo pretendo que lo tengas todo investigado".
 
+## Lección CRÍTICA (12/06) — no afirmar lo que no podés observar + copy↔destino
+
+- El push `2026-06-12-a` dijo "Sin hojas, el liquidámbar deja leer su
+  estructura". El usuario miró el árbol: **todavía tenía casi todas las
+  hojas** (el liquidámbar es de los ÚLTIMOS caducos en pelarse, aguanta hoja
+  hasta bien entrado junio/julio). Yo afirmé un HECHO OBSERVABLE que no podía
+  ver. Regla nueva: **nunca afirmar el estado físico de una planta que no
+  puedo observar** ("sin hojas", "está floreciendo", "tiene plaga"). Si el
+  contenido depende de un estado, frasearlo condicional ("si ya perdió las
+  hojas…", "cuando esté pelado") o anclarlo en algo verificable. El catálogo
+  fue corregido: liquidámbar B-37 ahora es "cuando esté pelado (≈julio)" y la
+  hortensia lleva "confirmá que esté sin hojas".
+- Mismo push: el copy prometía "mirá qué va hoy" (vista curada) pero
+  linkeaba a `tareas.html`, que cayó en el Timeline genérico con "Tratar
+  fumagina" arriba — nada que ver con el mensaje. Regla nueva: **el destino
+  tiene que cumplir lo que promete el copy.** Si hablo de la vista curada de
+  poda, linkeo a la página proposal; si hablo de tareas vencidas en general,
+  linkeo a `tareas.html`. No prometer curado y entregar el timeline crudo.
+- Un push que linkea a `index.html` o `tareas.html` "para ver X" casi siempre
+  decepciona: el home no tiene nada específico que ver. Preferir deep links a
+  una página/sección que muestre exactamente lo que anuncia el push.
+
 ## Lección de timing (12/06)
 
 - Un push promotor de proposal a las 20:00 con ventana de 2 h NO le da un

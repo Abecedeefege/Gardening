@@ -62,68 +62,38 @@
 </style>
 </head>
 <body>
-<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">&larr; Volver al sitio estable</a>
 <header>
-  <h1>✂️ Calendario de poda — invierno y salida del invierno 2026</h1>
-  <p class="sub">Cuatro ventanas bien distintas: lo que va <b>hoy</b>, lo que espera a <b>fines de julio-agosto</b>, lo que recién va <b>pasadas las heladas</b> y lo que es de <b>primavera</b>. Cada tarea con su porqué y el link a la guía paso a paso.</p>
+  <h1>&#9986;&#65039; Calendario de poda &mdash; invierno y salida del invierno 2026</h1>
+  <p class="sub">Ordenado por <b>cuando de verdad conviene cortar cada planta</b>, no por mes de calendario. Cada tarea con su porqu&eacute; y el link a la gu&iacute;a paso a paso.</p>
   <div class="counts" id="counts"></div>
 </header>
 
 <div class="fix-note">
-  ✓ <b>Fechas verificadas</b> contra fuentes de fruticultura (INIA y manuales), no copiadas del catálogo sin chequear. Las ventanas son reales: una herida de poda hecha hoy queda abierta casi dos meses, expuesta a heladas y hongos; la misma herida a fines de la dormancia cicatriza en días. Por eso cada tarea va a su ventana —no todas a junio.
+  &#9888;&#65039; <b>Versi&oacute;n corregida (12/06).</b> Las versiones anteriores agrupaban "junio-julio" como un bloque y daban por hecho que los caducos ya estaban sin hojas. No es as&iacute;: el liquid&aacute;mbar, por ejemplo, es de los &uacute;ltimos en pelarse y a esta altura suele tener hojas todav&iacute;a. La regla real no es el mes &mdash; es <b>el estado de la planta</b>. Por eso cada ventana ac&aacute; depende de una se&ntilde;al observable (hoja ca&iacute;da, yema hinch&aacute;ndose, &uacute;ltima helada pasada), no del almanaque. <b>Mir&aacute; la planta antes de cortar.</b>
 </div>
 
 <main id="list"></main>
 
 <div class="why">
-  <b>¿Por qué una pantalla aparte?</b> Estas tareas están repartidas por todo el Timeline. Acá quedan juntas y ordenadas por ventana real de ejecución, para planificar la temporada de un vistazo y coordinar con el jardinero una sola vez por ventana. Si te sirve, la dejo fija en el sitio como vista de temporada.
+  <b>&iquest;Por qu&eacute; una pantalla aparte?</b> Estas tareas est&aacute;n repartidas por todo el Timeline. Ac&aacute; quedan juntas y ordenadas por ventana real de ejecuci&oacute;n, para planificar la temporada de un vistazo y coordinar con el jardinero una sola vez por ventana. Si te sirve, la dejo fija en el sitio como vista de temporada.
 </div>
 
 <div class="engage-actions">
-  <button onclick="engageApprove('2026-06-12-poda-invernal')">✅ Aprobar esta mejora</button>
-  <button onclick="engageRejected('2026-06-12-poda-invernal')">✕ No me interesa</button>
+  <button onclick="engageApprove('2026-06-12-poda-invernal')">&#9989; Aprobar esta mejora</button>
+  <button onclick="engageRejected('2026-06-12-poda-invernal')">&#10005; No me interesa</button>
 </div>
 
 <footer>
-  Jardineando · Montevideo · datos del catálogo al 12/06/2026 ·
-  <a href="https://gardening-chi.vercel.app/tareas.html">Abrir el Timeline completo →</a>
+  Jardineando &middot; Montevideo &middot; datos del cat&aacute;logo al 12/06/2026 &middot;
+  <a href="https://gardening-chi.vercel.app/tareas.html">Abrir el Timeline completo &rarr;</a>
 </footer>
 
 <script>
-  // Generado desde data_plants.py via build.generate_tasks_from_plants (fechas verificadas, base 12/06).
   var TASKS = [
   {
-    "id": "plant-B-37",
-    "win": "hoy",
-    "codes": [
-      "B-37"
-    ],
-    "common": "Liquidámbar",
-    "priority": "alta",
-    "title": "Limpieza de copa en dormancia",
-    "when": "Junio-julio 2026",
-    "short": "Sacar solo ramas secas, cruzadas o mal orientadas — el liquidámbar NO se poda fuerte, define su forma sola.",
-    "why": "Sacar solo madera muerta o mal puesta no hiere tejido activo ni dispara rebrote — no hay nada que la helada pueda quemar. Y sin hojas, la estructura de la copa se lee perfecto.",
-    "como": "Cortes al ras del collar (el engrosamiento en la base de la rama), solo lo seco/cruzado. El liquidámbar NO se poda fuerte: define su forma solo."
-  },
-  {
-    "id": "plant-B-5a",
-    "win": "hoy",
-    "codes": [
-      "B-5a",
-      "B-5b"
-    ],
-    "common": "Hortensia",
-    "priority": "alta",
-    "title": "Trasplantar a maceta grande o cantero",
-    "when": "Junio-julio 2026",
-    "short": "Los 2 ejemplares en macetas chicas: pasarlos a maceta de 40+ cm o a tierra antes del rebrote.",
-    "why": "Sin hojas la planta casi no transpira, así que el shock de raíz es mínimo, y le quedan ~10 semanas para enraizar antes del rebrote. Lo peor sería moverla cuando está brotando (sept-oct).",
-    "como": "Rootball generoso, maceta de 40+ cm o cantero, regar al asentar. Sin fertilizante hasta que brote."
-  },
-  {
     "id": "plant-F-1",
-    "win": "hoy",
+    "win": "ya",
     "codes": [
       "F-1"
     ],
@@ -132,12 +102,12 @@
     "title": "Limpieza invernal de ramas secas",
     "when": "Junio-julio 2026",
     "short": "Sacar solo ramas muertas, rotas o podridas — el guayabo soporta MUY poca poda.",
-    "why": "Las ramas muertas o podridas son puerta de entrada de hongos; sacarlas no toca madera viva. La floración (madera del año anterior) no se pierde porque esa madera no se toca.",
+    "why": "Las ramas muertas o podridas son puerta de entrada de hongos; sacarlas no toca madera viva, así que no depende de la estación ni del estado de hoja. El guayabo es perenne y soporta MUY poca poda.",
     "como": "Solo lo gris, quebradizo o esponjoso, al ras del collar. Máximo 10% del follaje."
   },
   {
     "id": "plant-B-8",
-    "win": "hoy",
+    "win": "ya",
     "codes": [
       "B-8",
       "B-21",
@@ -148,12 +118,12 @@
     "title": "Limpieza de hojas secas en las 3 pindó",
     "when": "Junio-julio 2026",
     "short": "Cortar a ras del tronco solo las hojas amarillas/secas. NO tocar las verdes ni el cogollo central.",
-    "why": "Las hojas amarillas/secas ya no fotosintetizan — cortarlas no le cuesta nada a la palmera, en cualquier época.",
+    "why": "Las hojas amarillas/secas ya no fotosintetizan — cortarlas no le cuesta nada a la palmera, en cualquier momento del año.",
     "como": "A ras del tronco, solo las secas. JAMÁS tocar las verdes ni el cogollo central."
   },
   {
     "id": "plant-F-10",
-    "win": "hoy",
+    "win": "ya",
     "codes": [
       "F-10"
     ],
@@ -162,12 +132,12 @@
     "title": "Evaluar liberar copa — recibe poca luz",
     "when": "Junio-julio 2026",
     "short": "Queda atrás de Fotinias I y II y casi no recibe sol directo. Decidir si vale moverlo, podar las Fotinias para abrirle un corredor de luz, o aceptar que va a quedar como árbol pequeño de tercera línea.",
-    "why": "Es una decisión, no una poda. Con el sol de invierno (el más bajo del año) ves el peor escenario de luz del fresno — el mejor momento para medir y decidir. Si lo movés, julio en dormancia.",
-    "como": "Anotar horas de sol directo (mañana/mediodía/tarde) durante una semana y elegir: trasplante en julio, corredor de luz en las Fotinias en agosto, o aceptarlo de tercera línea."
+    "why": "Es una decisión, no una poda. Con el sol de invierno (el más bajo del año) ves el peor escenario de luz del fresno — el mejor momento para medir y decidir. Si resolvés moverlo, el trasplante va en julio, en dormancia.",
+    "como": "Anotá horas de sol directo (mañana/mediodía/tarde) una semana y elegí: trasplante en julio, corredor de luz en las Fotinias en agosto, o aceptarlo de tercera línea."
   },
   {
     "id": "plant-B-44",
-    "win": "hoy",
+    "win": "ya",
     "codes": [
       "B-44"
     ],
@@ -176,8 +146,37 @@
     "title": "Decidir si se queda o se trasplanta",
     "when": "Junio 2026 (cuando esté la planta en reposo)",
     "short": "Definir en invierno si queda al pie del B-27 o se mueve a otro lugar — la planta está en reposo y tolera el cambio.",
-    "why": "Otra decisión. Si se muda, el trasplante en dormancia es el de menor estrés para un perenne rústico.",
+    "why": "Es una decisión. El evónimo es perenne y rústico; si resolvés moverlo, el trasplante en dormancia (julio) es el de menor estrés.",
     "como": "Decidir destino; si va trasplante, julio con rootball amplio."
+  },
+  {
+    "id": "plant-B-5a",
+    "win": "ya",
+    "codes": [
+      "B-5a",
+      "B-5b"
+    ],
+    "common": "Hortensia",
+    "priority": "alta",
+    "title": "Trasplantar a maceta grande o cantero",
+    "when": "Junio-julio 2026",
+    "short": "Los 2 ejemplares en macetas chicas: pasarlos a maceta de 40+ cm o a tierra antes del rebrote.",
+    "why": "La hortensia es de las primeras caducas en pelarse, así que a esta altura del invierno suele estar ya sin hojas — confirmá mirándola. Sin hojas casi no transpira: el shock de raíz es mínimo y le quedan ~10 semanas para enraizar antes del brote. Si todavía tiene hojas verdes, esperá a que caigan. Lo peor sería moverla brotando (sept-oct).",
+    "como": "Rootball generoso, maceta de 40+ cm o cantero, regar al asentar. Sin fertilizante hasta que brote."
+  },
+  {
+    "id": "plant-B-37",
+    "win": "pelado",
+    "codes": [
+      "B-37"
+    ],
+    "common": "Liquidámbar",
+    "priority": "alta",
+    "title": "Limpieza de copa en dormancia",
+    "when": "Cuando esté pelado (julio 2026 aprox.)",
+    "short": "Sacar solo ramas secas, cruzadas o mal orientadas — el liquidámbar NO se poda fuerte, define su forma sola. Esperar a que termine de perder las hojas (es de los últimos en pelarse).",
+    "why": "El liquidámbar es de los ÚLTIMOS caducos en perder la hoja: en Montevideo suele aguantar hojas (muchas veces ya coloradas) hasta bien entrado junio y a veces julio. Mientras tenga hojas, NO es el momento — la limpieza se hace recién cuando está pelado del todo, ahí se leen las ramas secas y la herida no exuda savia. Es solo limpieza ligera (5-10%), no hay ninguna urgencia: esperar a que caiga la hoja no tiene costo.",
+    "como": "Cuando esté pelado: cortes al ras del collar, solo lo seco/cruzado/mal orientado. NO se poda fuerte — define su forma solo."
   },
   {
     "id": "plant-B-30",
@@ -513,20 +512,23 @@
   var SITE = "https://gardening-chi.vercel.app";
 
   var WINDOWS = [
-    { key: "hoy", label: "🟢 HOY — se puede hacer ya, en junio",
-      note: "<b>Por qué estas sí van ahora:</b> o no cortan tejido vivo (limpiezas de madera muerta y hojas secas — no generan herida nueva ni estimulan rebrote, así que las heladas que vienen no tienen nada que quemar), o aprovechan la dormancia profunda (trasplantes — sin hojas casi no hay demanda de agua, y las raíces tienen ~10 semanas para agarrarse antes del brote), o son decisiones que conviene tomar mirando el sol de invierno. Cada tarjeta tiene su fundamento." },
+    { key: "ya", label: "🟢 Se puede hacer ya — junio",
+      note: "<b>Por qué estas sí van ahora:</b> o no cortan tejido vivo (limpieza de madera muerta y hojas secas en perennes — no depende de la estación), o son decisiones que conviene tomar mirando el sol de invierno. La hortensia entra acá porque es de las primeras en perder la hoja: a esta altura suele estar pelada — confirmá antes de moverla." },
+    { key: "pelado", label: "🍂 En cuanto el árbol esté pelado (≈ julio)",
+      note: "<b>Depende del árbol, no del mes:</b> el liquidámbar es de los últimos caducos en perder la hoja. Mientras tenga hojas no es el momento. Es solo limpieza ligera, sin urgencia: esperar a que caiga la hoja no cuesta nada." },
     { key: "fines", label: "✂️ Fines de julio — agosto: el grueso de la temporada",
-      note: "<b>Por qué acá y no antes:</b> una herida de poda hecha en junio queda abierta 8+ semanas, expuesta a heladas, humedad y esporas de hongos — en los Prunus (durazno, ciruelos) eso es invitación a la gomosis. La misma herida hecha tarde en la dormancia cicatriza en días, porque el árbol reactiva el crecimiento enseguida. Y el corte tardío no dispara brotes anticipados que después quema una helada. <b>La señal para agarrar la tijera:</b> las yemas se empiezan a hinchar pero todavía no abren." },
+      note: "<b>Por qué acá y no antes:</b> una herida de poda hecha en junio queda abierta 8+ semanas, expuesta a heladas, humedad y esporas — en los Prunus (durazno, ciruelos) eso invita la gomosis. La misma herida hecha tarde en la dormancia cicatriza en días, porque el árbol reactiva el crecimiento enseguida, y no dispara brotes que después quema una helada. <b>La señal para agarrar la tijera:</b> las yemas se hinchan pero todavía no abren." },
     { key: "post", label: "☀️ Septiembre — recién pasada la última helada",
-      note: "<b>Por qué esperan:</b> estas especies son sensibles al frío. La poda les fuerza un rebrote tierno que una sola helada quema (buganvilia, lantana), y en cítricos y paltas una helada sobre cortes frescos daña la madera. En Montevideo la última helada puede caer hasta fines de agosto o principios de septiembre — se espera a que pase y recién entonces se corta." },
+      note: "<b>Por qué esperan:</b> son sensibles al frío. La poda fuerza un rebrote tierno que una helada quema (buganvilia, lantana), y en cítricos y paltas una helada sobre cortes frescos daña la madera. En Montevideo la última helada puede caer hasta principios de septiembre — se espera a que pase." },
     { key: "prima", label: "🌸 Primavera — octubre",
-      note: "<b>Por qué en primavera:</b> la clivia se mueve después de florecer, para no interferir con la vara floral que arma durante el invierno. Las divisiones de mata (esparraguera) cicatrizan y rebrotan rápido con la planta en crecimiento activo, en vez de quedar semanas con heridas abiertas en frío y humedad." }
+      note: "<b>Por qué en primavera:</b> la clivia se mueve después de florecer, para no cortar la vara floral que arma en invierno. Las divisiones de mata (esparraguera) cicatrizan y rebrotan rápido con la planta en crecimiento activo." }
   ];
 
   var counts = {};
   TASKS.forEach(function (t) { counts[t.win] = (counts[t.win] || 0) + 1; });
   document.getElementById("counts").innerHTML =
-    '<span class="chip">🟢 <b>' + (counts.hoy || 0) + '</b> hoy</span>' +
+    '<span class="chip">🟢 <b>' + (counts.ya || 0) + '</b> ya</span>' +
+    '<span class="chip">🍂 <b>' + (counts.pelado || 0) + '</b> al pelarse</span>' +
     '<span class="chip">✂️ <b>' + (counts.fines || 0) + '</b> fines jul-ago</span>' +
     '<span class="chip">☀️ <b>' + (counts.post || 0) + '</b> post-heladas</span>' +
     '<span class="chip">🌸 <b>' + (counts.prima || 0) + '</b> primavera</span>';
@@ -545,7 +547,7 @@
         '<div class="codes">' + t.common + ' · ' + t.codes.join(", ") +
         '<span class="when-tag">' + t.when + '</span></div>' +
         '<p class="short">' + t.short + '</p>' +
-        (t.why ? '<p class="why-line"><b>Por qué ahora:</b> ' + t.why + '</p>' : '') +
+        (t.why ? '<p class="why-line"><b>Por qué:</b> ' + t.why + '</p>' : '') +
         (t.como ? '<p class="why-line"><b>Cómo:</b> ' + t.como + '</p>' : '') +
         '<a class="guide-link" href="' + SITE + '/tasks/' + t.id + '.html">Guía paso a paso →</a>' +
         '</div>';

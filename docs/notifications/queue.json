@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-12T16:21:22.273Z",
+  "_updated_at": "2026-06-12T13:24:20-03:00",
   "notifications": [
     {
       "id": "2026-06-12-a",
@@ -32,9 +32,9 @@
       "url": "https://gardening-chi.vercel.app/index.html",
       "send_at": "2026-06-12T19:30:00-03:00",
       "expires_at": "2026-06-12T22:00:00-03:00",
-      "status": "pending",
+      "status": "cancelled",
       "sent_at": null,
-      "fail_reason": null,
+      "fail_reason": "Cancelada por el usuario (12/06): pausa tras detectar contenido hortícola sin verificar y mismatch copy↔destino. Mejor no mandar más hoy.",
       "created_by": "engagement-agent 2026-06-12"
     }
   ]
