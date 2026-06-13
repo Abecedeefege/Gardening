@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-13T18:48:07-03:00",
+  "_updated_at": "2026-06-13T21:48:24.845Z",
   "notifications": [
     {
       "id": "2026-06-13-s01",
@@ -272,8 +272,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-06-13-sol-jardin.html",
       "send_at": "2026-06-13T18:45:00-03:00",
       "expires_at": "2026-06-13T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-13T21:48:24.773Z",
       "fail_reason": null,
       "created_by": "claude 13/06 cadencia-15min ricas"
     },
