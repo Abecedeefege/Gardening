@@ -58,20 +58,61 @@
   function outboxGet() { try { return JSON.parse(localStorage.getItem(OUTBOX_KEY) || '[]'); } catch (e) { return []; } }
   function outboxSet(a) { try { localStorage.setItem(OUTBOX_KEY, JSON.stringify(a.slice(-200))); } catch (e) {} }
 
-  let _flushing = false;
+  // Estado de sync VISIBLE en la propia landing (diagnóstico honesto: nada de
+  // "Anotado" mentiroso). El badge muestra: sin PAT / sincronizando / error / ok.
+  var _flushing = false;
+  var _lastSync = null; // { ok:bool, error:string|null }
+
+  function renderSyncBadge() {
+    if (!document.body) return;
+    var el = document.getElementById('engage-sync-badge');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'engage-sync-badge';
+      el.style.cssText = 'position:fixed;left:10px;bottom:10px;z-index:99999;' +
+        'font:600 11.5px/1.35 -apple-system,BlinkMacSystemFont,sans-serif;padding:6px 11px;' +
+        'border-radius:999px;max-width:86vw;box-shadow:0 2px 8px rgba(0,0,0,.18);cursor:pointer;';
+      el.title = 'Tocar para reintentar';
+      el.addEventListener('click', function () { flushOutbox(); });
+      document.body.appendChild(el);
+    }
+    var pending = outboxGet().length;
+    function show(bg, fg, txt, html) {
+      el.style.background = bg; el.style.color = fg;
+      if (html != null) el.innerHTML = html; else el.textContent = txt;
+      el.style.display = 'block';
+      if (el._t) { clearTimeout(el._t); el._t = null; }
+    }
+    if (!token()) {
+      show('#fde2e2', '#9a2020', null,
+        '⚠️ Sin PAT en este dispositivo: tus reacciones no se guardan. Configuralo en ⚙️ del sitio.');
+    } else if (_lastSync && _lastSync.error) {
+      show('#fde2e2', '#9a2020', '⚠️ No se pudo sincronizar: ' + String(_lastSync.error).slice(0, 48) + '. Tocá para reintentar.');
+    } else if (pending > 0) {
+      show('#fdf3e3', '#8a5a12', '⏳ Sincronizando ' + pending + '…');
+    } else if (_lastSync && _lastSync.ok) {
+      show('#e6f3da', '#2d5016', '✓ Feedback sincronizado');
+      el._t = setTimeout(function () { el.style.display = 'none'; }, 3000);
+    } else {
+      el.style.display = 'none';
+    }
+  }
+
   async function flushOutbox() {
-    if (_flushing || !token()) return false; // sin PAT queda guardado local hasta que haya
-    const pending = outboxGet();
-    if (!pending.length) return true;
+    if (_flushing) return false;
+    if (!token()) { renderSyncBadge(); return false; } // sin PAT: queda en outbox
+    var pending = outboxGet();
+    if (!pending.length) { renderSyncBadge(); return true; }
     _flushing = true;
+    var ok = false, lastErr = null;
     try {
-      for (let attempt = 0; attempt < 3; attempt++) {
+      for (var attempt = 0; attempt < 3; attempt++) {
         try {
-          const cur = await ghReadJson(ENGAGEMENT_PATH);
-          const doc = cur.data || { _updated_at: null, events: [], daily_summary: {} };
-          const have = {};
+          var cur = await ghReadJson(ENGAGEMENT_PATH);
+          var doc = cur.data || { _updated_at: null, events: [], daily_summary: {} };
+          var have = {};
           (doc.events || []).forEach(function (e) { if (e._id) have[e._id] = 1; });
-          const toAdd = pending.filter(function (e) { return !e._id || !have[e._id]; });
+          var toAdd = pending.filter(function (e) { return !e._id || !have[e._id]; });
           if (toAdd.length) {
             doc.events = (doc.events || []).concat(toAdd);
             doc._updated_at = new Date().toISOString();
@@ -79,14 +120,15 @@
               'engage: ' + toAdd.map(function (e) { return e.type; }).join(', ') + ' desde ' + device(),
               cur.sha);
           }
-          outboxSet([]); // éxito → limpiar
-          return true;
+          outboxSet([]); ok = true; break;       // éxito → limpiar
         } catch (e) {
-          if (attempt === 2) { console.warn('[engage] flush falló, queda en outbox:', e); return false; }
+          lastErr = (e && e.message) ? e.message : String(e);
         }
       }
     } finally { _flushing = false; }
-    return false;
+    _lastSync = { ok: ok, error: ok ? null : (lastErr || 'desconocido') };
+    renderSyncBadge();
+    return ok;
   }
 
   // Encola (durable) y dispara el flush en background. Devuelve true apenas
@@ -97,8 +139,8 @@
       return Object.assign({ _id: Date.now().toString(36) + Math.random().toString(36).slice(2, 8) }, e);
     });
     outboxSet(outboxGet().concat(stamped));
-    flushOutbox();
-    return Promise.resolve(true);
+    renderSyncBadge();
+    return flushOutbox();   // resuelve true SOLO si sincronizó de verdad a GitHub
   }
 
   function pageName() {
@@ -184,9 +226,11 @@
     btn = btn || ((typeof event !== 'undefined' && event) ? event.target : null);
     markSelected(btn);
     var hint = btn && btn.parentElement ? btn.parentElement.querySelector('.react-hint') : null;
-    if (hint) hint.textContent = '¡Gracias! Anotado: ' + value + ' 🌱';
+    if (hint) hint.textContent = 'Guardando…';
     logEvents([{ type: 'reaction', target: targetId, value: value,
-      page: pageName(), ts: new Date().toISOString(), device: device() }]);
+      page: pageName(), ts: new Date().toISOString(), device: device() }]).then(function (ok) {
+      if (hint) hint.textContent = ok ? '✓ ¡Gracias!' : (token() ? 'Guardado, sincronizando…' : '⚠️ Falta el PAT (ver abajo)');
+    });
   };
 
   // --- Preguntas sí/no/no-sé (ej. estado observable del jardín) ---
@@ -195,9 +239,11 @@
     btn = btn || ((typeof event !== 'undefined' && event) ? event.target : null);
     markSelected(btn);
     var hint = btn && btn.parentElement ? btn.parentElement.querySelector('.q-hint') : null;
-    if (hint) hint.textContent = '✓ Anotado';
+    if (hint) hint.textContent = 'Guardando…';
     logEvents([{ type: 'answer', qid: qid, value: value,
-      page: pageName(), ts: new Date().toISOString(), device: device() }]);
+      page: pageName(), ts: new Date().toISOString(), device: device() }]).then(function (ok) {
+      if (hint) hint.textContent = ok ? '✓' : (token() ? '⏳' : '⚠️ sin PAT');
+    });
   };
 
   // --- Tracking pasivo: tiempo en página + profundidad de scroll ---

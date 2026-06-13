@@ -5123,6 +5123,32 @@ async function logEngagementEvents(events) {
   }
 }
 
+// Drena el outbox que dejan las landings de engagement (engage.js). Si el PAT
+// no estaba disponible en el contexto de la landing (PWA standalone abierta
+// desde la notificación), los eventos quedan en localStorage; acá, en el sitio
+// principal donde el PAT sí funciona, los subimos a engagement.json. Mismo
+// origin → mismo localStorage, así que esto rescata el feedback "atascado".
+async function drainEngageOutbox() {
+  if (!loadGitHubToken()) return;
+  let raw;
+  try { raw = JSON.parse(localStorage.getItem('jardineando_engage_outbox_v1') || '[]'); } catch (e) { return; }
+  if (!Array.isArray(raw) || !raw.length) return;
+  try {
+    const { data } = await ghReadJsonFile(ENGAGEMENT_PATH);
+    const doc = data || { _updated_at: null, events: [], daily_summary: {} };
+    const have = {};
+    (doc.events || []).forEach(e => { if (e._id) have[e._id] = 1; });
+    const toAdd = raw.filter(e => !e._id || !have[e._id]);
+    if (toAdd.length) {
+      doc.events = (doc.events || []).concat(toAdd);
+      doc._updated_at = new Date().toISOString();
+      await ghWriteJsonFile(ENGAGEMENT_PATH, doc, `engage: drenar outbox (${toAdd.length}) desde ${loadDeviceName() || 'device'}`);
+    }
+    localStorage.removeItem('jardineando_engage_outbox_v1');
+    console.log(`[engage] outbox drenado: ${toAdd.length} eventos`);
+  } catch (e) { console.warn('[engage] drain de outbox falló:', e); }
+}
+
 function trackNotificationLanding() {
   let params;
   try { params = new URLSearchParams(window.location.search); } catch (e) { return; }
@@ -5150,6 +5176,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-enable-push')?.addEventListener('click', enablePushNotifications);
   document.getElementById('btn-disable-push')?.addEventListener('click', disablePushNotifications);
   trackNotificationLanding();
+  drainEngageOutbox();
 });
 window.addEventListener('load', () => { checkPushSubscriptionOnLoad(); });
 
