@@ -137,6 +137,18 @@
       "nid": "2026-06-13-s07",
       "ts": "2026-06-13T16:36:18.881Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-13-s08",
+      "ts": "2026-06-13T17:40:17.730Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-13-s09",
+      "ts": "2026-06-13T17:40:17.860Z",
+      "status_code": 201
     }
   ]
 }
