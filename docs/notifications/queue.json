@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-13T19:16:16-03:00",
+  "_updated_at": "2026-06-13T22:16:31.419Z",
   "notifications": [
     {
       "id": "2026-06-13-s01",
@@ -296,8 +296,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "send_at": "2026-06-13T19:15:00-03:00",
       "expires_at": "2026-06-13T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-13T22:16:31.417Z",
       "fail_reason": null,
       "created_by": "claude 13/06 cadencia-15min ricas"
     },
