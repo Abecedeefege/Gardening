@@ -80,9 +80,15 @@ Ideas de proposals (variá — el objetivo es descubrir qué le sirve a ESTE usu
   }
   ```
 
-### 5. Escribir la cola del día — exactamente 3 notificaciones
+### 5. Escribir la cola del día — según la CADENCIA VIGENTE
 
-Reescribí `docs/notifications/queue.json` con exactamente 3 entries `pending`:
+**Primero mirá si `docs/engage/learnings.md` tiene una sección "CADENCIA VIGENTE".**
+Si la hay, seguila (ej. "cada 30 min, 10:30–20:00, hasta que el usuario pida menos"
+→ ~20 entries). Si no la hay, el default son **3 entries**. En cualquier caso, cada
+notificación va a una experiencia/destino DISTINTO (principio §"Una experiencia
+distinta por push").
+
+Reescribí `docs/notifications/queue.json` con las entries `pending` que corresponda:
 
 ```json
 {
@@ -128,7 +134,7 @@ Política de contenido:
 
 ## Reglas duras
 
-- **Máximo 3 notificaciones por día. Máximo 1 proposal nueva por día.**
+- **Cantidad de notificaciones: la que indique la CADENCIA VIGENTE de learnings.md (default 3/día). Máximo 1 proposal nueva por día.** Cada notificación, a una experiencia distinta.
 - **Toda proposal lleva el link "← Volver al sitio estable" como primer elemento visible y los botones Aprobar / No me interesa al pie.** Sin excepciones.
 - **Proposals sin aprobación explícita de un día anterior se eliminan hoy.** La aprobación es el único pase a permanencia.
 - `docs/sync/task_states.json`, `docs/sync/user_tasks.json`, `docs/uploads.json`, `docs/sync/contacts.json` y `docs/images/uploads/` son del usuario: **solo lectura** para este comando (la única excepción es la compactación documentada de `engagement.json`).
