@@ -163,7 +163,7 @@ document.querySelectorAll('.search').forEach(input => {
     const pane = input.closest('.subtab-pane');
     if (!pane) return;
     const q = input.value.toLowerCase().trim();
-    pane.querySelectorAll('.plant-card, .care-card, .idea-card, .huerta-card, .improvement-card').forEach(card => {
+    pane.querySelectorAll('.plant-card, .curio-card, .care-card, .idea-card, .huerta-card, .improvement-card').forEach(card => {
       const name = card.dataset.name || '';
       const tags = card.dataset.tags || '';
       const visible = !q || name.includes(q) || tags.includes(q);
@@ -1118,8 +1118,35 @@ function openSpeciesFromHash() {
   }
 }
 openSpeciesFromHash();
+
+// Si la URL trae #curiosidades (viene de un push que promociona la sección
+// nueva de Curiosidades), abrir esa sub-tab en la zona visible y scrollear.
+function openCuriosidadesFromHash() {
+  if (!/^#curiosidades$/.test(window.location.hash || '')) return;
+  if (!document.querySelector('.subtab-btn[data-sub="curiosidades"]')) {
+    window.location.replace('index.html' + window.location.hash);
+    return;
+  }
+  document.querySelectorAll('.zone-content').forEach(zoneEl => {
+    const btn = zoneEl.querySelector('.subtab-btn[data-sub="curiosidades"]');
+    if (!btn) return;
+    zoneEl.querySelectorAll('.subtab-btn').forEach(b => b.classList.remove('active'));
+    zoneEl.querySelectorAll('.subtab-pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    const pane = zoneEl.querySelector('.subtab-pane[data-sub="curiosidades"]');
+    if (pane) pane.classList.add('active');
+  });
+  setTimeout(() => {
+    const pane = document.querySelector('.zone-content:not([hidden]) .subtab-pane[data-sub="curiosidades"]')
+      || document.querySelector('.subtab-pane[data-sub="curiosidades"]');
+    if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 200);
+}
+openCuriosidadesFromHash();
+
 window.addEventListener('hashchange', openSpeciesFromHash);
 window.addEventListener('hashchange', openTaskFromHash);
+window.addEventListener('hashchange', openCuriosidadesFromHash);
 
 // ============================================================
 // CLIMA EN MONTEVIDEO (Open-Meteo, sin API key)

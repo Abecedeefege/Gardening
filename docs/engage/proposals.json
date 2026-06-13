@@ -11,31 +11,31 @@
         "2026-06-11-b",
         "2026-06-11-d"
       ],
-      "result_notes": "Descartada el 12/06 por la regla de no-supervivencia sin aprobación explícita. PERO el test fue confounded: el push que la promocionaba (2026-06-11-d) recién salió a las 20:00 del 11/06 (la corrida fue vespertina y las 3 originales se frenaron por contenido), con ventana de solo 2 h en la primera noche que el device tuvo push activo. engagement.json quedó vacío: 0 clicks, 0 visitas. La hipótesis NO quedó testeada. Re-lanzada hoy como 2026-06-12-poda-invernal con un push de mediodía para darle un turno diurno real."
+      "result_notes": "Descartada el 12/06 por la regla de no-supervivencia sin aprobación explícita. Test confounded (push 20:00, ventana 2h, primera noche con push activo). Re-lanzada como 2026-06-12-poda-invernal."
     },
     {
       "id": "2026-06-12-poda-invernal",
       "title": "Calendario de poda — invierno y salida del invierno 2026",
-      "page": "engage/2026-06-12-poda-invernal.html",
+      "page": null,
       "created": "2026-06-12",
-      "status": "pending",
-      "hypothesis": "Re-test de la vista estacional consolidada, ahora con timing justo: el push promotor sale 13:00 (slot diurno) en vez de 20:00. Si una pantalla que separa las 4 ventanas reales de poda (hoy / fines jul-ago / post-heladas sept / primavera) hace tangible la ventana corta de dormancia, debería juntar su primer click o aprobación. Si otra vez 0 señal con timing bueno, la hipótesis de 'vista de temporada' no le sirve a este usuario y hay que pivotar de ángulo.",
+      "status": "dropped",
+      "hypothesis": "Re-test de la vista estacional consolidada con timing diurno (push 13:00). Si una pantalla que separa las 4 ventanas reales de poda hace tangible la dormancia, debería juntar su primer click/aprobación.",
       "notified_by": [
         "2026-06-12-b"
       ],
-      "result_notes": null
+      "result_notes": "Descartada el 13/06. Pending de día anterior sin aprobación explícita (engagement.json vacío: 0 eventos). El test de timing diurno otra vez NO dio señal positiva — pero el dato sigue confounded porque el logging de eventos estaba roto (write PAT-dependiente que fallaba en mobile; recién parchado 12-13/06 con outbox + endpoint serverless /api/feedback). Decisión: la 'vista de temporada de poda' ya tuvo 2 turnos sin tracción y compite con lo que SÍ enganchó (contenido por-planta). Se deja de invertir en este ángulo. Si vuelve a pedirse, re-medir con el logging ya arreglado. Página eliminada (efímera)."
     },
     {
       "id": "2026-06-12-curiosidades",
       "title": "Historias de tu jardín (curiosidades verificadas)",
-      "page": "engage/2026-06-12-curiosidades.html",
+      "page": null,
       "created": "2026-06-12",
-      "status": "pending",
-      "hypothesis": "El usuario rechazó las tareas fabricadas y pidió contenido que enganche. Hipótesis: curiosidades reales y verificadas de SUS plantas (con reacción por carta) generan el primer click/reacción positiva. Si funciona, sección fija 'Historias'.",
+      "status": "promoted",
+      "hypothesis": "El usuario rechazó las tareas fabricadas y pidió contenido que enganche. Hipótesis: curiosidades reales y verificadas de SUS plantas generan el primer click/reacción positiva. Si funciona, sección fija 'Historias'.",
       "notified_by": [
         "2026-06-12-e1"
       ],
-      "result_notes": null
+      "result_notes": "PROMOVIDA el 13/06. Feedback explícito del usuario por chat el 12/06: 'MUY buena la notificación y la landing' + reacción 😍 a la carta de la Palta Hass, y siguió la conversación pidiendo más datos. Es la señal positiva más fuerte que tuvo el canal. El evento formal proposal_approved no llegó porque el logging estaba roto (engagement.json vacío), así que se toma el feedback de chat como la aprobación real. Promoción = integración permanente: nueva sub-tab '💡 Curiosidades' en el Home (todas las zonas) que rinde los fun_facts verificados de data_plants.py como un feed de cards clickeables a la ficha de cada especie (build.py render_curiosidades_section + styles.py .curio-* + scripts.py search/hash #curiosidades). La página efímera se eliminó; el contenido ahora vive en el sitio estable."
     },
     {
       "id": "2026-06-13-ano-jardin",
@@ -43,8 +43,10 @@
       "page": "engage/2026-06-13-ano-jardin.html",
       "created": "2026-06-13",
       "status": "pending",
-      "hypothesis": "Experiencia nueva tipo dashboard interactivo: el ritmo anual de floración/fructificación de las 52 plantas, mes a mes, con cada planta clickeable a su ficha. Hipótesis: una vista que revela el pulso del jardín (nov = 32 en flor) engancha más que una lista. Primera de la nueva tanda de 'una experiencia distinta por notificación'.",
-      "notified_by": [],
+      "hypothesis": "Experiencia nueva tipo dashboard interactivo: el ritmo anual de floración/fructificación de las 52 plantas, mes a mes, con cada planta clickeable a su ficha. Hipótesis: una vista que revela el pulso del jardín (nov = pico de floración) engancha más que una lista. Primera de la tanda 'una experiencia distinta por notificación'. Recién hoy recibe su primer push promotor (13:00, slot diurno), así que arranca su turno real de medición.",
+      "notified_by": [
+        "2026-06-13-b"
+      ],
       "result_notes": null
     }
   ]

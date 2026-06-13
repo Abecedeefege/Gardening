@@ -1860,6 +1860,73 @@ h2.subbrand {
   color: var(--text-2);
   margin: 8px 0;
 }
+
+/* CURIOSIDADES — feed de fun_facts (sub-tab promovida desde proposal 12/06) */
+.curio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 16px;
+  min-width: 0;
+}
+.curio-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 16px 16px;
+  box-shadow: 0 1px 2px rgba(9, 9, 11, 0.04), 0 1px 3px rgba(9, 9, 11, 0.05);
+  transition:
+    border-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.curio-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(9, 9, 11, 0.06), 0 16px 36px rgba(9, 9, 11, 0.08);
+}
+.curio-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+.curio-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: var(--bg-soft);
+  flex: none;
+}
+.curio-thumb-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+.curio-titles { min-width: 0; }
+.curio-name {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.2;
+  color: var(--text-1);
+}
+.curio-sci {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--text-2);
+  margin-top: 2px;
+}
+.curio-fact {
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.curio-empty {
+  color: var(--text-2);
+  padding: 12px 4px;
+}
 .species-care {
   display: grid; gap: 6px;
   padding-top: 12px;
@@ -2984,6 +3051,7 @@ h2.subbrand {
 <section class="zone-content active" data-zone="todo">
   <nav class="subtab-nav">
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
+    <button class="subtab-btn" data-sub="curiosidades">💡 Curiosidades</button>
     <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
@@ -3737,6 +3805,511 @@ h2.subbrand {
 </article></div>
   </div>
 
+  <div class="subtab-pane" data-sub="curiosidades">
+    <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar curiosidad..."></div>
+    <div class="ideas-intro"><h3>💡 Curiosidades de tus plantas</h3><p>Historias verificadas de cada especie del jardín. Tocá una para ver su ficha completa.</p></div><div class="curio-grid">
+<article class="curio-card" data-name="guayabo del país" data-tags="nativa frutal polinizadores aves ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-1">
+    <img class="curio-thumb" data-img="PXL_20260428_131301030_MP.webp" data-action="open-species" data-plant-code="F-1" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Guayabo del país</h3>
+      <div class="curio-sci">Acca sellowiana</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Sus pétalos son comestibles y dulces — en Uruguay y Brasil se comían como golosina por niños. El fruto es uno de los pocos cítricos-aromáticos nativos del Río de la Plata.</p>
+</article>
+<article class="curio-card" data-name="bignonia rosada / podranea" data-tags="exotica trepadora ornamental polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-2">
+    <img class="curio-thumb" data-img="PXL_20260428_131311714_MP.webp" data-action="open-species" data-plant-code="F-2" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Bignonia rosada / Podranea</h3>
+      <div class="curio-sci">Podranea ricasoliana</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Aunque la llamamos &#x27;bignonia&#x27;, no pertenece al género Bignonia sino a Podranea — fue separada en 1980 por su tubo floral curvo y semillas distintas.</p>
+</article>
+<article class="curio-card" data-name="fotinia" data-tags="exotica ornamental cerco-vivo">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-3">
+    <img class="curio-thumb" data-img="PXL_20260428_131345511_MP.webp" data-action="open-species" data-plant-code="F-3" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Fotinia</h3>
+      <div class="curio-sci">Photinia × fraseri</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Es un híbrido entre Photinia glabra y Photinia serrulata creado en Alabama en 1940 por Robert Fraser. El color rojo de los brotes es defensa contra herbívoros.</p>
+</article>
+<article class="curio-card" data-name="ciruelo de jardín" data-tags="exotica frutal ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-4">
+    <img class="curio-thumb" data-img="F-4_ciruelo_purpura_otonal.jpg" data-action="open-species" data-plant-code="F-4" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Ciruelo de jardín</h3>
+      <div class="curio-sci">Prunus cerasifera &#x27;Pissardii&#x27;</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Lo trajo desde Persia el horticultor francés Pissard en 1880 — todos los ciruelos púrpura del mundo descienden de ese único ejemplar original.</p>
+</article>
+<article class="curio-card" data-name="coronita de novia (?)" data-tags="exotica ornamental pendiente">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-5">
+    <img class="curio-thumb" data-img="PXL_20260428_131336459_MP.webp" data-action="open-species" data-plant-code="F-5" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Coronita de novia (?)</h3>
+      <div class="curio-sci">Spiraea cantoniensis (a confirmar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Si se confirma como Spiraea, su nombre &#x27;coronita de novia&#x27; viene del uso popular de las ramas floridas para tocados nupciales en Europa del siglo XIX.</p>
+</article>
+<article class="curio-card" data-name="abelia" data-tags="exotica ornamental polinizadores mariposas">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-7">
+    <img class="curio-thumb" data-img="PXL_20260428_131358749_MP.webp" data-action="open-species" data-plant-code="F-7" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Abelia</h3>
+      <div class="curio-sci">Abelia × grandiflora</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su nombre honra al cirujano-botánico inglés Clarke Abel, que la encontró en China en 1817 durante una expedición diplomática. Su barco naufragó al volver — la planta sobrevivió pero las semillas se perdieron.</p>
+</article>
+<article class="curio-card" data-name="aguaribay / molle" data-tags="nativa polinizadores aves aromatica ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-8">
+    <img class="curio-thumb" data-img="PXL_20260428_131445630_MP.webp" data-action="open-species" data-plant-code="F-8" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Aguaribay / Molle</h3>
+      <div class="curio-sci">Schinus molle</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Los Incas y guaraníes lo consideraban sagrado. Los frutos rosados son la verdadera &#x27;pimienta rosa&#x27; que se vende en delicatessen — no son de pimentero verdadero. Sus hojas repelen mosquitos.</p>
+</article>
+<article class="curio-card" data-name="ligustro" data-tags="exotica ornamental aves invasora">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-9">
+    <img class="curio-thumb" data-img="F-9_ligustro_frutos.jpg" data-action="open-species" data-plant-code="F-9" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Ligustro</h3>
+      <div class="curio-sci">Ligustrum lucidum</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El ligustro está considerado especie invasora en muchas zonas de Sudamérica porque las aves esparcen sus semillas y se naturaliza en bordes de monte. Sus frutos NO son comestibles para humanos (ligeramente tóxicos), pero los zorzales y mirlos los devoran sin problema.</p>
+</article>
+<article class="curio-card" data-name="fresno (americano)" data-tags="arbol caducifolio ornamental post-poda">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-10">
+    <img class="curio-thumb" data-img="F-10_mora_hojas.jpg" data-action="open-species" data-plant-code="F-10" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Fresno (americano)</h3>
+      <div class="curio-sci">Fraxinus pennsylvanica</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El fresno americano es uno de los árboles ornamentales más usados en el arbolado urbano del Río de la Plata por su tolerancia a podas drásticas y su rebrote rápido. Es dioico: los pies macho no producen samaras, los hembra sí (las clásicas &#x27;helicópteros&#x27; alados que caen en otoño y germinan a discreción).</p>
+</article>
+<article class="curio-card" data-name="santa rita / buganvilia" data-tags="exotica trepadora ornamental polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-1">
+    <img class="curio-thumb" data-img="PXL_20260428_130048026_MP.webp" data-action="open-species" data-plant-code="B-1" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Santa Rita / Buganvilia</h3>
+      <div class="curio-sci">Bougainvillea spectabilis</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 La descubrió Jeanne Baret en 1768 — la primera mujer en circunnavegar el mundo, viajaba disfrazada de hombre en la expedición del almirante francés Bougainville. Le pusieron el nombre del capitán, no de ella. Recién en 2012 le dedicaron una variedad: &#x27;Jeanne&#x27;.</p>
+</article>
+<article class="curio-card" data-name="jazmín (a confirmar variedad)" data-tags="exotica ornamental trepadora pendiente">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-2">
+    <img class="curio-thumb" data-img="PXL_20260428_130056467_MP.webp" data-action="open-species" data-plant-code="B-2" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Jazmín (a confirmar variedad)</h3>
+      <div class="curio-sci">Jasminum sp. (a determinar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Los jazmines suelen propagarse muy fácil por estacas y acodos — los &#x27;hijos&#x27; que aparecen al pie son típicos de Jasminum mesnyi (jazmín amarillo) o Jasminum azoricum, que se acodan solos cuando una rama toca tierra húmeda.</p>
+</article>
+<article class="curio-card" data-name="jazmín de leche / estrellado" data-tags="exotica trepadora ornamental perfume polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-3">
+    <img class="curio-thumb" data-img="PXL_20260428_130124805_MP.webp" data-action="open-species" data-plant-code="B-3" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Jazmín de leche / estrellado</h3>
+      <div class="curio-sci">Trachelospermum jasminoides</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 No es un verdadero jazmín (Jasminum) sino una apocinácea — pariente lejano de la adelfa. Su látex blanco al cortar la rama es tóxico, pero la flor seca se usa en infusiones en China.</p>
+</article>
+<article class="curio-card" data-name="hibisco / rosa china" data-tags="exotica ornamental polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-4">
+    <img class="curio-thumb" data-img="PXL_20260428_130004297_MP.webp" data-action="open-species" data-plant-code="B-4" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Hibisco / Rosa china</h3>
+      <div class="curio-sci">Hibiscus rosa-sinensis</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Es la flor nacional de Malasia, Corea del Sur y Hawái. En Asia las mujeres las usan en el pelo: izquierda = soltera, derecha = casada. En Jamaica preparan té con sus pétalos secos (agua de Jamaica).</p>
+</article>
+<article class="curio-card" data-name="hortensia" data-tags="exotica ornamental maceta">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-5a">
+    <img class="curio-thumb" data-img="PXL_20260428_130026865_MP.webp" data-action="open-species" data-plant-code="B-5a" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Hortensia</h3>
+      <div class="curio-sci">Hydrangea macrophylla</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Para que las flores salgan azules: enterrar 3-5 clavos oxidados o enterrar borra de café. Para rosa: agregar cal. Es la única planta que cambia de color según lo que coma del suelo.</p>
+</article>
+<article class="curio-card" data-name="esparraguera cola de zorro" data-tags="exotica maceta ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-6">
+    <img class="curio-thumb" data-img="PXL_20260428_130020953_MP.webp" data-action="open-species" data-plant-code="B-6" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Esparraguera cola de zorro</h3>
+      <div class="curio-sci">Asparagus densiflorus &#x27;Myers&#x27;</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Aunque parece helecho NO LO ES: tiene flores blancas pequeñas y bayas rojas (que son tóxicas). Las &#x27;hojas&#x27; son en realidad cladodios — tallos modificados.</p>
+</article>
+<article class="curio-card" data-name="azarero / pitósporo" data-tags="exotica perfume cerco-vivo polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-7">
+    <img class="curio-thumb" data-img="PXL_20260428_130248394_MP.webp" data-action="open-species" data-plant-code="B-7" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Azarero / Pitósporo</h3>
+      <div class="curio-sci">Pittosporum tobira</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su perfume tiene compuestos parecidos al azahar — los romanos hacían perfumes con plantas similares. En Japón se usa en bonsái porque tolera podas extremas.</p>
+</article>
+<article class="curio-card" data-name="palmera pindó" data-tags="nativa ornamental aves frutal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-8">
+    <img class="curio-thumb" data-img="PXL_20260426_194320163_MP.webp" data-action="open-species" data-plant-code="B-8" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Palmera pindó</h3>
+      <div class="curio-sci">Syagrus romanzoffiana</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su nombre &#x27;romanzoffiana&#x27; es por el conde ruso Romanzoff que financió la expedición de Chamisso a América (1815-18). El fruto se chupaba como golosina natural por niños guaraníes — sabor a coco-banana.</p>
+</article>
+<article class="curio-card" data-name="crespón / mirto de crepe" data-tags="exotica ornamental polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-9">
+    <img class="curio-thumb" data-img="b9.jpg" data-action="open-species" data-plant-code="B-9" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Crespón / Mirto de crepe</h3>
+      <div class="curio-sci">Lagerstroemia indica (a confirmar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su nombre conmemora a Magnus von Lagerström, comerciante sueco amigo de Linneo que le mandaba plantas exóticas desde sus viajes. Las flores &#x27;arrugadas&#x27; parecen hechas de papel crepé — de ahí &#x27;crespón&#x27;.</p>
+</article>
+<article class="curio-card" data-name="lavanda" data-tags="exotica aromatica polinizadores abejas mariposas">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-10">
+    <img class="curio-thumb" data-img="PXL_20260428_130145017_MP.webp" data-action="open-species" data-plant-code="B-10" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Lavanda</h3>
+      <div class="curio-sci">Lavandula dentata</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Romanos la echaban al baño público — de ahí su nombre (lat. &#x27;lavare&#x27; = lavar). Su aceite esencial relaja por aromaterapia comprobada. Una bolsita de lavanda seca en el cajón ahuyenta polillas.</p>
+</article>
+<article class="curio-card" data-name="cinta / lazo de amor" data-tags="exotica maceta interior purificadora">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-12">
+    <img class="curio-thumb" data-img="PXL_20260428_130332242_MP.webp" data-action="open-species" data-plant-code="B-12" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Cinta / Lazo de amor</h3>
+      <div class="curio-sci">Chlorophytum comosum</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 La NASA la incluyó en su lista de plantas que purifican el aire interior — absorbe formaldehído, xileno y monóxido de carbono. Una planta limpia ~10m². Es de las más fáciles de cultivar.</p>
+</article>
+<article class="curio-card" data-name="clivia / lirio del cabo" data-tags="exotica ornamental sombra maceta">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-13">
+    <img class="curio-thumb" data-img="b13.jpg" data-action="open-species" data-plant-code="B-13" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Clivia / Lirio del Cabo</h3>
+      <div class="curio-sci">Clivia miniata (a confirmar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su nombre honra a Charlotte Clive, duquesa de Northumberland (siglo XIX), primera en florecerla en cultivo en Inglaterra. Una clivia bien cuidada puede vivir 100 años — hay ejemplares en jardines reales que datan de 1830.</p>
+</article>
+<article class="curio-card" data-name="lapachillo" data-tags="nativa ornamental polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-14">
+    <img class="curio-thumb" data-img="PXL_20260428_130305782_MP.webp" data-action="open-species" data-plant-code="B-14" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Lapachillo</h3>
+      <div class="curio-sci">Poecilanthe parviflora</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El &#x27;lapacho&#x27; verdadero (Handroanthus) tiene flores trompeta amarillas o rosas grandes y espectaculares. El lapachillo es su prima menor — mismas hojas pinnadas pero flores discretas. Madera durísima usada por charrúas y guaraníes para mangos de herramientas.</p>
+</article>
+<article class="curio-card" data-name="hiedra común" data-tags="exotica trepadora cobertura sombra">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-15">
+    <img class="curio-thumb" data-img="PXL_20260428_130401399_MP.webp" data-action="open-species" data-plant-code="B-15" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Hiedra común</h3>
+      <div class="curio-sci">Hedera helix</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 La hiedra puede vivir +400 años. Tiene 2 fases vegetativas: &#x27;juvenil&#x27; (hojas lobuladas, raíces aéreas, trepa) y &#x27;adulta&#x27; (hojas enteras ovaladas, sin raíces, no trepa, FLORECE y fructifica) — es la misma especie pero parece otra. Las flores adultas son melíferas otoñales valiosas para abejas.</p>
+</article>
+<article class="curio-card" data-name="anacahuita" data-tags="nativa polinizadores aves ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-16">
+    <img class="curio-thumb" data-img="PXL_20260428_130510131_MP.webp" data-action="open-species" data-plant-code="B-16" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Anacahuita</h3>
+      <div class="curio-sci">Schinus longifolius</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Es uno de los árboles más simbólicos del Uruguay — protegido por ley nacional desde 1986. Su madera dura era usada por los charrúas para hacer arcos y rejas. Florece en racimos blanco-amarillentos discretos pero muy melíferos.</p>
+</article>
+<article class="curio-card" data-name="rosa de siria / althea" data-tags="exotica ornamental polinizadores rusticidad">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-18">
+    <img class="curio-thumb" data-img="b18.jpg" data-action="open-species" data-plant-code="B-18" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Rosa de Siria / Althea</h3>
+      <div class="curio-sci">Hibiscus syriacus</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Es la flor nacional de Corea del Sur — aparece en su escudo y su himno. Cada flor dura un solo día pero la planta produce cientos en sucesión. La biblia hebrea menciona la &#x27;rose of Sharon&#x27; (Rosa de Saron).</p>
+</article>
+<article class="curio-card" data-name="palta uruguaya" data-tags="exotica frutal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-22">
+    <img class="curio-thumb" data-img="PXL_20260428_130522139_MP.webp" data-action="open-species" data-plant-code="B-22" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Palta uruguaya</h3>
+      <div class="curio-sci">Persea americana</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 La palta es un fruto evolutivamente solitario: su semilla gigante estaba diseñada para ser tragada por gigantosloth (perezosos gigantes) que se extinguieron hace 13,000 años. Sobrevivió gracias al cultivo humano.</p>
+</article>
+<article class="curio-card" data-name="limonero" data-tags="exotica frutal perfume">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-23">
+    <img class="curio-thumb" data-img="PXL_20260428_130529587_MP.webp" data-action="open-species" data-plant-code="B-23" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Limonero</h3>
+      <div class="curio-sci">Citrus × limon</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El limonero NO existe en estado silvestre — es híbrido de cidro × naranja amarga. Se originó en India hace ~2500 años. Cada limón viene de una flor única, no de racimos. La cáscara tiene 4× más vitamina C que el jugo.</p>
+</article>
+<article class="curio-card" data-name="mandarina criolla" data-tags="exotica frutal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-24">
+    <img class="curio-thumb" data-img="PXL_20260428_130827515_MP.webp" data-action="open-species" data-plant-code="B-24" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Mandarina criolla</h3>
+      <div class="curio-sci">Citrus reticulata</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su nombre viene de los &#x27;mandarines&#x27; — funcionarios de la China imperial que vestían túnicas anaranjadas. Es el cítrico más antiguo conocido (3000 a.C.) — el padre de naranjas y limones modernos.</p>
+</article>
+<article class="curio-card" data-name="gardenia / jazmín del cabo" data-tags="exotica perfume ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-25">
+    <img class="curio-thumb" data-img="b25.jpg" data-action="open-species" data-plant-code="B-25" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Gardenia / Jazmín del Cabo</h3>
+      <div class="curio-sci">Gardenia jasminoides</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su perfume es uno de los más caros para extraer — hace falta 600 kg de flores para 1L de aceite esencial. Coco Chanel obsesionada con la gardenia, la incorporó al Chanel Nº 22. Las flores se ponen amarillas si el suelo es alcalino — necesita pH ácido.</p>
+</article>
+<article class="curio-card" data-name="romero" data-tags="exotica aromatica comestible polinizadores abejas">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-26">
+    <img class="curio-thumb" data-img="PXL_20260428_130842254_MP.webp" data-action="open-species" data-plant-code="B-26" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Romero</h3>
+      <div class="curio-sci">Salvia rosmarinus</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su nombre latino &#x27;rosmarinus&#x27; = &#x27;rocío del mar&#x27; (crece en acantilados mediterráneos). Estudios universitarios mostraron que oler romero antes de un examen mejora la memoria 15%. Antiguo símbolo de la fidelidad — los novios llevaban una rama el día de la boda.</p>
+</article>
+<article class="curio-card" data-name="mirto común" data-tags="aromatica perenne ornamental comestible">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-27">
+    <img class="curio-thumb" data-img="PXL_20260428_130857270_MP.webp" data-action="open-species" data-plant-code="B-27" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Mirto común</h3>
+      <div class="curio-sci">Myrtus communis</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El mirto era sagrado para Venus/Afrodita en mitología romana — símbolo del amor y la fertilidad. Las novias romanas llevaban coronas de mirto. Sus bayas y hojas se usan en la cocina sarda e italiana para hacer el licor &#x27;mirto&#x27;. Y las hojas son un buen condimento para carne (similar al laurel).</p>
+</article>
+<article class="curio-card" data-name="lantana / camará" data-tags="nativa polinizadores mariposas picaflor ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-29">
+    <img class="curio-thumb" data-img="PXL_20260428_130908091_MP.webp" data-action="open-species" data-plant-code="B-29" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Lantana / Camará</h3>
+      <div class="curio-sci">Lantana camara</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Las flores cambian de color a medida que envejecen — recién abiertas amarillo, luego naranja, finalmente rojo. Esto le indica a los polinizadores cuáles son las flores &#x27;frescas&#x27;. Los charrúas la usaban como repelente: encendían sus hojas para ahuyentar mosquitos.</p>
+</article>
+<article class="curio-card" data-name="durazno" data-tags="exotica frutal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-30">
+    <img class="curio-thumb" data-img="b30.jpg" data-action="open-species" data-plant-code="B-30" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Durazno</h3>
+      <div class="curio-sci">Prunus persica</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Aunque &#x27;persica&#x27; = de Persia, el durazno es originario de China — 8000 años de cultivo. Llegó a Europa por la ruta de la seda y pareció persa a los romanos. La piel aterciopelada es defensa contra hongos.</p>
+</article>
+<article class="curio-card" data-name="viraró" data-tags="nativa caduco ornamental polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-32">
+    <img class="curio-thumb" data-img="PXL_20260428_130952009_MP.webp" data-action="open-species" data-plant-code="B-32" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Viraró</h3>
+      <div class="curio-sci">Ruprechtia laxiflora</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Los &#x27;frutos&#x27; rosados llamativos no son flores: son sépalos persistentes que se agrandan después de la polinización y rodean al verdadero fruto (una nuez pequeña). Es la estrategia de dispersión por viento — los sépalos funcionan como helicóptero. Su madera es durísima, históricamente usada para estacas y postes que duran décadas a la intemperie.</p>
+</article>
+<article class="curio-card" data-name="mandioca brava (tentativa)" data-tags="nativa ornamental perenne">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-34">
+    <img class="curio-thumb" data-img="PXL_20260428_131001512_MP.jpg" data-action="open-species" data-plant-code="B-34" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Mandioca brava (tentativa)</h3>
+      <div class="curio-sci">Manihot grahamii (a confirmar con flor)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El látex blanco del tallo (sale al cortar una rama) tiene compuestos cianogénicos — típicos del género. Por eso &#x27;brava&#x27;: no comer hojas ni raíz. La especie comestible (M. esculenta, mandioca de mesa) es pariente cercana pero detoxificada por selección humana milenaria.</p>
+</article>
+<article class="curio-card" data-name="palta haas" data-tags="exotica frutal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-36">
+    <img class="curio-thumb" data-img="FondoCasa_VecinoFondo.jpg" data-action="open-species" data-plant-code="B-36" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Palta Haas</h3>
+      <div class="curio-sci">Persea americana &#x27;Hass&#x27;</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 TODAS las paltas Hass del mundo descienden de UN único árbol plantado por Rudolph Hass en 1926 en California. Se reproduce solo por injerto — no funciona por semilla. ~80% de la palta exportada mundialmente es Hass.</p>
+</article>
+<article class="curio-card" data-name="liquidámbar" data-tags="exotica ornamental sombra">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-37">
+    <img class="curio-thumb" data-img="B-37_liquidambar_otonal.jpg" data-action="open-species" data-plant-code="B-37" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Liquidámbar</h3>
+      <div class="curio-sci">Liquidambar styraciflua</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su tronco produce un bálsamo aromático (&#x27;storax&#x27;) usado durante 3000 años en perfumería e incienso — los mayas lo masticaban como goma de mascar y los aztecas lo ofrecían a sus dioses. Su nombre = &#x27;ámbar líquido&#x27; por la resina.</p>
+</article>
+<article class="curio-card" data-name="ciruela amarilla" data-tags="exotica frutal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-38">
+    <img class="curio-thumb" data-img="PXL_20260428_130808343_MP.webp" data-action="open-species" data-plant-code="B-38" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Ciruela amarilla</h3>
+      <div class="curio-sci">Prunus salicina</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Aunque se llama &#x27;japonés&#x27;, es de origen chino. Llegó a Japón en el siglo VIII y de ahí a EEUU/Europa. Las ciruelas amarillas tienen menos azúcar pero más vitamina C que las moradas.</p>
+</article>
+<article class="curio-card" data-name="pera williams" data-tags="exotica frutal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-39">
+    <img class="curio-thumb" data-img="PXL_20260428_130757603_MP.webp" data-action="open-species" data-plant-code="B-39" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Pera Williams</h3>
+      <div class="curio-sci">Pyrus communis &#x27;Williams&#x27;</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 La cultivó por primera vez Stair en Inglaterra en 1765, comprada por Williams (de ahí el nombre). En EEUU se llama Bartlett porque Enoch Bartlett la introdujo allá sin saber que ya tenía nombre. La &#x27;pera Williams&#x27; es la base de la mayoría de las peras industriales mundiales.</p>
+</article>
+<article class="curio-card" data-name="madreselva china siempreverde" data-tags="exotica cerco-vivo aves">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-40">
+    <img class="curio-thumb" data-img="PXL_20260428_130913516_MP.webp" data-action="open-species" data-plant-code="B-40" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Madreselva china siempreverde</h3>
+      <div class="curio-sci">Lonicera nitida (a confirmar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 A pesar del nombre &#x27;honeysuckle/madreselva&#x27;, sus flores son insignificantes — se cultiva por el follaje. Los pájaros adoran sus bayas violáceas. Tolera podas extremas y se modela en topiaria.</p>
+</article>
+<article class="curio-card" data-name="caqui / persimón" data-tags="exotica frutal ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-41">
+    <img class="curio-thumb" data-img="B-41_caqui_pre_invierno.jpg" data-action="open-species" data-plant-code="B-41" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Caqui / Persimón</h3>
+      <div class="curio-sci">Diospyros kaki (a confirmar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su nombre genérico &#x27;Diospyros&#x27; = &#x27;fruto de los dioses&#x27; en griego. En Japón es símbolo de longevidad — hay caquis de 600 años aún produciendo. El fruto inmaduro es astringente (alta cantidad de taninos) — hay que esperar hasta que se ponga blando.</p>
+</article>
+<article class="curio-card" data-name="pata de vaca" data-tags="nativa ornamental florífera medicinal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-42">
+    <img class="curio-thumb" data-img="B-42-43_entre_romero_b27.jpg" data-action="open-species" data-plant-code="B-42" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Pata de vaca</h3>
+      <div class="curio-sci">Bauhinia forficata</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El nombre Bauhinia honra a los hermanos botánicos suizos Bauhin del siglo XVI. La hoja partida en forma de pezuña le valió el apodo &#x27;pata de vaca&#x27; en todo el continente. En medicina tradicional se usan sus hojas en infusión para diabetes (efecto hipoglucemiante moderado validado por estudios). Florece en primavera-verano con flores blancas de pétalos largos como mariposas, polinizadas por colibríes.</p>
+</article>
+<article class="curio-card" data-name="pitósporo" data-tags="exotica ornamental perfume tolerante">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-43">
+    <img class="curio-thumb" data-img="B-42-43_entre_romero_b27.jpg" data-action="open-species" data-plant-code="B-43" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Pitósporo</h3>
+      <div class="curio-sci">Pittosporum tobira</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El pitósporo es nativo de Asia oriental (China, Japón, Corea) y fue introducido a Europa en el s. XVIII como ornamental por su perfume floral. El nombre &#x27;tobira&#x27; viene del japonés &#x27;puerta&#x27; por la forma de los frutos secos que se abren en cápsulas tipo bisagra. Sus semillas tienen una resina pegajosa que se adhiere a las patas de aves para dispersión zoocora. Tolera muy bien podas drásticas, sequía y aire salino — por eso es popular en jardinería costera.</p>
+</article>
+<article class="curio-card" data-name="evónimo japonés variegado" data-tags="exotica ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-44">
+    <img class="curio-thumb" data-img="B-44_evonimo_closeup.jpg" data-action="open-species" data-plant-code="B-44" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Evónimo japonés variegado</h3>
+      <div class="curio-sci">Euonymus japonicus &#x27;Argenteovariegatus&#x27;</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El Euonymus japonicus es famoso por sus innumerables cultivares variegados — los romanos lo asociaban a los velos nupciales por sus tonos cremosos. Es de los pocos arbustos que ofrecen color invernal cuando casi todo está apagado.</p>
+</article>
+<article class="curio-card" data-name="vivero / plantines" data-tags="vivero propagacion pendiente">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-46">
+    <img class="curio-thumb" data-img="FondoCasa_VecinoFondo.jpg" data-action="open-species" data-plant-code="B-46" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Vivero / Plantines</h3>
+      <div class="curio-sci">(varias especies — a identificar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Tener un vivero propio es la forma más económica de poblar el jardín y de hacer regalos verdes. Cada plantín de palmera de vivero, por ejemplo, vale 200-500 pesos uruguayos en comercio — multiplicado por 15 son varios miles ahorrados. Y emocional: regalar una planta que vos propagaste tiene otro peso.</p>
+</article>
+<article class="curio-card" data-name="plantín de roble joven (quercus sp.)" data-tags="caducifolio ornamental vivero">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-48">
+    <div class="curio-thumb curio-thumb-empty">🌿</div>
+    <div class="curio-titles">
+      <h3 class="curio-name">Plantín de roble joven (Quercus sp.)</h3>
+      <div class="curio-sci">Quercus sp. (a confirmar especie)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Los robles tardan décadas en madurar y pueden vivir 300+ años. La frase &#x27;mighty oak from little acorn grows&#x27; (de pequeña bellota crece el roble poderoso) viene de la cultura inglesa medieval. En el Río de la Plata el roble no es nativo pero se planta como ornamental por su porte majestuoso. Si efectivamente es Quercus, vale la pena conservarlo — un roble bien ubicado da sombra para 200 años.</p>
+</article>
+<article class="curio-card" data-name="plantín trifoliado (posible glicinia o leguminosa)" data-tags="pendiente vivero">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-49">
+    <div class="curio-thumb curio-thumb-empty">🌿</div>
+    <div class="curio-titles">
+      <h3 class="curio-name">Plantín trifoliado (posible glicinia o leguminosa)</h3>
+      <div class="curio-sci">(a confirmar — posible Wisteria sinensis o leguminosa)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Si resulta ser glicinia (Wisteria), es una de las trepadoras ornamentales más espectaculares — flores violetas en racimos colgantes en primavera, llega a 10 m. Pero también es invasora agresiva: las raíces destruyen mampostería. Si es así, plantarla LEJOS de muros y con tutor robusto.</p>
+</article>
+<article class="curio-card" data-name="plantines de palmera (lote separado)" data-tags="nativa palmera vivero rioplatense">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-47">
+    <img class="curio-thumb" data-img="FondoCasa_VecinoFondo.jpg" data-action="open-species" data-plant-code="B-47" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Plantines de palmera (lote separado)</h3>
+      <div class="curio-sci">Butia odorata o Syagrus romanzoffiana (a confirmar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Las palmeras nativas del Río de la Plata fueron cosecha tradicional de los pueblos charrúa y guaraní — el butiá se comía fresco o se hacía aguardiente (&#x27;caña de butiá&#x27;), y la fibra del pindó servía para tejidos. Hoy ambas especies son símbolos del paisaje uruguayo (los palmares de Castillos están protegidos como reserva natural). De semilla tardan 3-5 años en alcanzar 50 cm; de allí en más crecen ~30 cm/año.</p>
+</article>
+<article class="curio-card" data-name="singonio / pata de gallo" data-tags="exotica ornamental interior">
+  <div class="curio-head" data-action="open-species" data-plant-code="I-1">
+    <img class="curio-thumb" data-img="I-1_singonio.jpg" data-action="open-species" data-plant-code="I-1" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Singonio / Pata de gallo</h3>
+      <div class="curio-sci">Syngonium podophyllum</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Es nativa de selvas de México hasta Bolivia, donde sube por troncos hasta 10m con raíces aéreas. Adentro raramente florece — su valor está en el follaje. Si pellizcás las puntas regularmente, te queda una mata densa en lugar de guías largas.</p>
+</article>
+<article class="curio-card" data-name="difenbaquia / caña muda" data-tags="exotica ornamental interior toxica">
+  <div class="curio-head" data-action="open-species" data-plant-code="I-2">
+    <img class="curio-thumb" data-img="I-2_difenbaquia.jpg" data-action="open-species" data-plant-code="I-2" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Difenbaquia / Caña muda</h3>
+      <div class="curio-sci">Dieffenbachia seguine</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su savia contiene cristales de oxalato de calcio que paralizan temporariamente la garganta y las cuerdas vocales si se mastica — de ahí el nombre &#x27;caña muda&#x27;. Mantenerla LEJOS de niños y mascotas. En el Caribe colonial fue usada como castigo cruel a esclavos, lo cual le dio el nombre vulgar &#x27;dumb cane&#x27; en inglés.</p>
+</article></div>
+  </div>
+
   <div class="subtab-pane" data-sub="improvements">
     <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar mejora..."></div>
     <div class="ideas-section">
@@ -3995,6 +4568,7 @@ h2.subbrand {
 <section class="zone-content" data-zone="frente">
   <nav class="subtab-nav">
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
+    <button class="subtab-btn" data-sub="curiosidades">💡 Curiosidades</button>
     <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
@@ -4143,6 +4717,101 @@ h2.subbrand {
       </div>
     </div>
   </div>
+</article></div>
+  </div>
+
+  <div class="subtab-pane" data-sub="curiosidades">
+    <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar curiosidad..."></div>
+    <div class="ideas-intro"><h3>💡 Curiosidades de tus plantas</h3><p>Historias verificadas de cada especie del jardín. Tocá una para ver su ficha completa.</p></div><div class="curio-grid">
+<article class="curio-card" data-name="guayabo del país" data-tags="nativa frutal polinizadores aves ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-1">
+    <img class="curio-thumb" data-img="PXL_20260428_131301030_MP.webp" data-action="open-species" data-plant-code="F-1" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Guayabo del país</h3>
+      <div class="curio-sci">Acca sellowiana</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Sus pétalos son comestibles y dulces — en Uruguay y Brasil se comían como golosina por niños. El fruto es uno de los pocos cítricos-aromáticos nativos del Río de la Plata.</p>
+</article>
+<article class="curio-card" data-name="bignonia rosada / podranea" data-tags="exotica trepadora ornamental polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-2">
+    <img class="curio-thumb" data-img="PXL_20260428_131311714_MP.webp" data-action="open-species" data-plant-code="F-2" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Bignonia rosada / Podranea</h3>
+      <div class="curio-sci">Podranea ricasoliana</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Aunque la llamamos &#x27;bignonia&#x27;, no pertenece al género Bignonia sino a Podranea — fue separada en 1980 por su tubo floral curvo y semillas distintas.</p>
+</article>
+<article class="curio-card" data-name="fotinia" data-tags="exotica ornamental cerco-vivo">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-3">
+    <img class="curio-thumb" data-img="PXL_20260428_131345511_MP.webp" data-action="open-species" data-plant-code="F-3" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Fotinia</h3>
+      <div class="curio-sci">Photinia × fraseri</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Es un híbrido entre Photinia glabra y Photinia serrulata creado en Alabama en 1940 por Robert Fraser. El color rojo de los brotes es defensa contra herbívoros.</p>
+</article>
+<article class="curio-card" data-name="ciruelo de jardín" data-tags="exotica frutal ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-4">
+    <img class="curio-thumb" data-img="F-4_ciruelo_purpura_otonal.jpg" data-action="open-species" data-plant-code="F-4" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Ciruelo de jardín</h3>
+      <div class="curio-sci">Prunus cerasifera &#x27;Pissardii&#x27;</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Lo trajo desde Persia el horticultor francés Pissard en 1880 — todos los ciruelos púrpura del mundo descienden de ese único ejemplar original.</p>
+</article>
+<article class="curio-card" data-name="coronita de novia (?)" data-tags="exotica ornamental pendiente">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-5">
+    <img class="curio-thumb" data-img="PXL_20260428_131336459_MP.webp" data-action="open-species" data-plant-code="F-5" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Coronita de novia (?)</h3>
+      <div class="curio-sci">Spiraea cantoniensis (a confirmar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Si se confirma como Spiraea, su nombre &#x27;coronita de novia&#x27; viene del uso popular de las ramas floridas para tocados nupciales en Europa del siglo XIX.</p>
+</article>
+<article class="curio-card" data-name="abelia" data-tags="exotica ornamental polinizadores mariposas">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-7">
+    <img class="curio-thumb" data-img="PXL_20260428_131358749_MP.webp" data-action="open-species" data-plant-code="F-7" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Abelia</h3>
+      <div class="curio-sci">Abelia × grandiflora</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su nombre honra al cirujano-botánico inglés Clarke Abel, que la encontró en China en 1817 durante una expedición diplomática. Su barco naufragó al volver — la planta sobrevivió pero las semillas se perdieron.</p>
+</article>
+<article class="curio-card" data-name="aguaribay / molle" data-tags="nativa polinizadores aves aromatica ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-8">
+    <img class="curio-thumb" data-img="PXL_20260428_131445630_MP.webp" data-action="open-species" data-plant-code="F-8" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Aguaribay / Molle</h3>
+      <div class="curio-sci">Schinus molle</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Los Incas y guaraníes lo consideraban sagrado. Los frutos rosados son la verdadera &#x27;pimienta rosa&#x27; que se vende en delicatessen — no son de pimentero verdadero. Sus hojas repelen mosquitos.</p>
+</article>
+<article class="curio-card" data-name="ligustro" data-tags="exotica ornamental aves invasora">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-9">
+    <img class="curio-thumb" data-img="F-9_ligustro_frutos.jpg" data-action="open-species" data-plant-code="F-9" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Ligustro</h3>
+      <div class="curio-sci">Ligustrum lucidum</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El ligustro está considerado especie invasora en muchas zonas de Sudamérica porque las aves esparcen sus semillas y se naturaliza en bordes de monte. Sus frutos NO son comestibles para humanos (ligeramente tóxicos), pero los zorzales y mirlos los devoran sin problema.</p>
+</article>
+<article class="curio-card" data-name="fresno (americano)" data-tags="arbol caducifolio ornamental post-poda">
+  <div class="curio-head" data-action="open-species" data-plant-code="F-10">
+    <img class="curio-thumb" data-img="F-10_mora_hojas.jpg" data-action="open-species" data-plant-code="F-10" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Fresno (americano)</h3>
+      <div class="curio-sci">Fraxinus pennsylvanica</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El fresno americano es uno de los árboles ornamentales más usados en el arbolado urbano del Río de la Plata por su tolerancia a podas drásticas y su rebrote rápido. Es dioico: los pies macho no producen samaras, los hembra sí (las clásicas &#x27;helicópteros&#x27; alados que caen en otoño y germinan a discreción).</p>
 </article></div>
   </div>
 
@@ -4306,6 +4975,7 @@ h2.subbrand {
 <section class="zone-content" data-zone="fondo">
   <nav class="subtab-nav">
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
+    <button class="subtab-btn" data-sub="curiosidades">💡 Curiosidades</button>
     <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
@@ -4905,6 +5575,401 @@ h2.subbrand {
 </article></div>
   </div>
 
+  <div class="subtab-pane" data-sub="curiosidades">
+    <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar curiosidad..."></div>
+    <div class="ideas-intro"><h3>💡 Curiosidades de tus plantas</h3><p>Historias verificadas de cada especie del jardín. Tocá una para ver su ficha completa.</p></div><div class="curio-grid">
+<article class="curio-card" data-name="santa rita / buganvilia" data-tags="exotica trepadora ornamental polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-1">
+    <img class="curio-thumb" data-img="PXL_20260428_130048026_MP.webp" data-action="open-species" data-plant-code="B-1" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Santa Rita / Buganvilia</h3>
+      <div class="curio-sci">Bougainvillea spectabilis</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 La descubrió Jeanne Baret en 1768 — la primera mujer en circunnavegar el mundo, viajaba disfrazada de hombre en la expedición del almirante francés Bougainville. Le pusieron el nombre del capitán, no de ella. Recién en 2012 le dedicaron una variedad: &#x27;Jeanne&#x27;.</p>
+</article>
+<article class="curio-card" data-name="jazmín (a confirmar variedad)" data-tags="exotica ornamental trepadora pendiente">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-2">
+    <img class="curio-thumb" data-img="PXL_20260428_130056467_MP.webp" data-action="open-species" data-plant-code="B-2" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Jazmín (a confirmar variedad)</h3>
+      <div class="curio-sci">Jasminum sp. (a determinar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Los jazmines suelen propagarse muy fácil por estacas y acodos — los &#x27;hijos&#x27; que aparecen al pie son típicos de Jasminum mesnyi (jazmín amarillo) o Jasminum azoricum, que se acodan solos cuando una rama toca tierra húmeda.</p>
+</article>
+<article class="curio-card" data-name="jazmín de leche / estrellado" data-tags="exotica trepadora ornamental perfume polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-3">
+    <img class="curio-thumb" data-img="PXL_20260428_130124805_MP.webp" data-action="open-species" data-plant-code="B-3" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Jazmín de leche / estrellado</h3>
+      <div class="curio-sci">Trachelospermum jasminoides</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 No es un verdadero jazmín (Jasminum) sino una apocinácea — pariente lejano de la adelfa. Su látex blanco al cortar la rama es tóxico, pero la flor seca se usa en infusiones en China.</p>
+</article>
+<article class="curio-card" data-name="hibisco / rosa china" data-tags="exotica ornamental polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-4">
+    <img class="curio-thumb" data-img="PXL_20260428_130004297_MP.webp" data-action="open-species" data-plant-code="B-4" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Hibisco / Rosa china</h3>
+      <div class="curio-sci">Hibiscus rosa-sinensis</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Es la flor nacional de Malasia, Corea del Sur y Hawái. En Asia las mujeres las usan en el pelo: izquierda = soltera, derecha = casada. En Jamaica preparan té con sus pétalos secos (agua de Jamaica).</p>
+</article>
+<article class="curio-card" data-name="hortensia" data-tags="exotica ornamental maceta">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-5a">
+    <img class="curio-thumb" data-img="PXL_20260428_130026865_MP.webp" data-action="open-species" data-plant-code="B-5a" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Hortensia</h3>
+      <div class="curio-sci">Hydrangea macrophylla</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Para que las flores salgan azules: enterrar 3-5 clavos oxidados o enterrar borra de café. Para rosa: agregar cal. Es la única planta que cambia de color según lo que coma del suelo.</p>
+</article>
+<article class="curio-card" data-name="esparraguera cola de zorro" data-tags="exotica maceta ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-6">
+    <img class="curio-thumb" data-img="PXL_20260428_130020953_MP.webp" data-action="open-species" data-plant-code="B-6" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Esparraguera cola de zorro</h3>
+      <div class="curio-sci">Asparagus densiflorus &#x27;Myers&#x27;</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Aunque parece helecho NO LO ES: tiene flores blancas pequeñas y bayas rojas (que son tóxicas). Las &#x27;hojas&#x27; son en realidad cladodios — tallos modificados.</p>
+</article>
+<article class="curio-card" data-name="azarero / pitósporo" data-tags="exotica perfume cerco-vivo polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-7">
+    <img class="curio-thumb" data-img="PXL_20260428_130248394_MP.webp" data-action="open-species" data-plant-code="B-7" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Azarero / Pitósporo</h3>
+      <div class="curio-sci">Pittosporum tobira</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su perfume tiene compuestos parecidos al azahar — los romanos hacían perfumes con plantas similares. En Japón se usa en bonsái porque tolera podas extremas.</p>
+</article>
+<article class="curio-card" data-name="palmera pindó" data-tags="nativa ornamental aves frutal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-8">
+    <img class="curio-thumb" data-img="PXL_20260426_194320163_MP.webp" data-action="open-species" data-plant-code="B-8" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Palmera pindó</h3>
+      <div class="curio-sci">Syagrus romanzoffiana</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su nombre &#x27;romanzoffiana&#x27; es por el conde ruso Romanzoff que financió la expedición de Chamisso a América (1815-18). El fruto se chupaba como golosina natural por niños guaraníes — sabor a coco-banana.</p>
+</article>
+<article class="curio-card" data-name="crespón / mirto de crepe" data-tags="exotica ornamental polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-9">
+    <img class="curio-thumb" data-img="b9.jpg" data-action="open-species" data-plant-code="B-9" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Crespón / Mirto de crepe</h3>
+      <div class="curio-sci">Lagerstroemia indica (a confirmar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su nombre conmemora a Magnus von Lagerström, comerciante sueco amigo de Linneo que le mandaba plantas exóticas desde sus viajes. Las flores &#x27;arrugadas&#x27; parecen hechas de papel crepé — de ahí &#x27;crespón&#x27;.</p>
+</article>
+<article class="curio-card" data-name="lavanda" data-tags="exotica aromatica polinizadores abejas mariposas">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-10">
+    <img class="curio-thumb" data-img="PXL_20260428_130145017_MP.webp" data-action="open-species" data-plant-code="B-10" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Lavanda</h3>
+      <div class="curio-sci">Lavandula dentata</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Romanos la echaban al baño público — de ahí su nombre (lat. &#x27;lavare&#x27; = lavar). Su aceite esencial relaja por aromaterapia comprobada. Una bolsita de lavanda seca en el cajón ahuyenta polillas.</p>
+</article>
+<article class="curio-card" data-name="cinta / lazo de amor" data-tags="exotica maceta interior purificadora">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-12">
+    <img class="curio-thumb" data-img="PXL_20260428_130332242_MP.webp" data-action="open-species" data-plant-code="B-12" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Cinta / Lazo de amor</h3>
+      <div class="curio-sci">Chlorophytum comosum</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 La NASA la incluyó en su lista de plantas que purifican el aire interior — absorbe formaldehído, xileno y monóxido de carbono. Una planta limpia ~10m². Es de las más fáciles de cultivar.</p>
+</article>
+<article class="curio-card" data-name="clivia / lirio del cabo" data-tags="exotica ornamental sombra maceta">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-13">
+    <img class="curio-thumb" data-img="b13.jpg" data-action="open-species" data-plant-code="B-13" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Clivia / Lirio del Cabo</h3>
+      <div class="curio-sci">Clivia miniata (a confirmar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su nombre honra a Charlotte Clive, duquesa de Northumberland (siglo XIX), primera en florecerla en cultivo en Inglaterra. Una clivia bien cuidada puede vivir 100 años — hay ejemplares en jardines reales que datan de 1830.</p>
+</article>
+<article class="curio-card" data-name="lapachillo" data-tags="nativa ornamental polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-14">
+    <img class="curio-thumb" data-img="PXL_20260428_130305782_MP.webp" data-action="open-species" data-plant-code="B-14" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Lapachillo</h3>
+      <div class="curio-sci">Poecilanthe parviflora</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El &#x27;lapacho&#x27; verdadero (Handroanthus) tiene flores trompeta amarillas o rosas grandes y espectaculares. El lapachillo es su prima menor — mismas hojas pinnadas pero flores discretas. Madera durísima usada por charrúas y guaraníes para mangos de herramientas.</p>
+</article>
+<article class="curio-card" data-name="hiedra común" data-tags="exotica trepadora cobertura sombra">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-15">
+    <img class="curio-thumb" data-img="PXL_20260428_130401399_MP.webp" data-action="open-species" data-plant-code="B-15" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Hiedra común</h3>
+      <div class="curio-sci">Hedera helix</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 La hiedra puede vivir +400 años. Tiene 2 fases vegetativas: &#x27;juvenil&#x27; (hojas lobuladas, raíces aéreas, trepa) y &#x27;adulta&#x27; (hojas enteras ovaladas, sin raíces, no trepa, FLORECE y fructifica) — es la misma especie pero parece otra. Las flores adultas son melíferas otoñales valiosas para abejas.</p>
+</article>
+<article class="curio-card" data-name="anacahuita" data-tags="nativa polinizadores aves ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-16">
+    <img class="curio-thumb" data-img="PXL_20260428_130510131_MP.webp" data-action="open-species" data-plant-code="B-16" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Anacahuita</h3>
+      <div class="curio-sci">Schinus longifolius</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Es uno de los árboles más simbólicos del Uruguay — protegido por ley nacional desde 1986. Su madera dura era usada por los charrúas para hacer arcos y rejas. Florece en racimos blanco-amarillentos discretos pero muy melíferos.</p>
+</article>
+<article class="curio-card" data-name="rosa de siria / althea" data-tags="exotica ornamental polinizadores rusticidad">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-18">
+    <img class="curio-thumb" data-img="b18.jpg" data-action="open-species" data-plant-code="B-18" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Rosa de Siria / Althea</h3>
+      <div class="curio-sci">Hibiscus syriacus</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Es la flor nacional de Corea del Sur — aparece en su escudo y su himno. Cada flor dura un solo día pero la planta produce cientos en sucesión. La biblia hebrea menciona la &#x27;rose of Sharon&#x27; (Rosa de Saron).</p>
+</article>
+<article class="curio-card" data-name="palta uruguaya" data-tags="exotica frutal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-22">
+    <img class="curio-thumb" data-img="PXL_20260428_130522139_MP.webp" data-action="open-species" data-plant-code="B-22" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Palta uruguaya</h3>
+      <div class="curio-sci">Persea americana</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 La palta es un fruto evolutivamente solitario: su semilla gigante estaba diseñada para ser tragada por gigantosloth (perezosos gigantes) que se extinguieron hace 13,000 años. Sobrevivió gracias al cultivo humano.</p>
+</article>
+<article class="curio-card" data-name="limonero" data-tags="exotica frutal perfume">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-23">
+    <img class="curio-thumb" data-img="PXL_20260428_130529587_MP.webp" data-action="open-species" data-plant-code="B-23" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Limonero</h3>
+      <div class="curio-sci">Citrus × limon</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El limonero NO existe en estado silvestre — es híbrido de cidro × naranja amarga. Se originó en India hace ~2500 años. Cada limón viene de una flor única, no de racimos. La cáscara tiene 4× más vitamina C que el jugo.</p>
+</article>
+<article class="curio-card" data-name="mandarina criolla" data-tags="exotica frutal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-24">
+    <img class="curio-thumb" data-img="PXL_20260428_130827515_MP.webp" data-action="open-species" data-plant-code="B-24" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Mandarina criolla</h3>
+      <div class="curio-sci">Citrus reticulata</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su nombre viene de los &#x27;mandarines&#x27; — funcionarios de la China imperial que vestían túnicas anaranjadas. Es el cítrico más antiguo conocido (3000 a.C.) — el padre de naranjas y limones modernos.</p>
+</article>
+<article class="curio-card" data-name="gardenia / jazmín del cabo" data-tags="exotica perfume ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-25">
+    <img class="curio-thumb" data-img="b25.jpg" data-action="open-species" data-plant-code="B-25" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Gardenia / Jazmín del Cabo</h3>
+      <div class="curio-sci">Gardenia jasminoides</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su perfume es uno de los más caros para extraer — hace falta 600 kg de flores para 1L de aceite esencial. Coco Chanel obsesionada con la gardenia, la incorporó al Chanel Nº 22. Las flores se ponen amarillas si el suelo es alcalino — necesita pH ácido.</p>
+</article>
+<article class="curio-card" data-name="romero" data-tags="exotica aromatica comestible polinizadores abejas">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-26">
+    <img class="curio-thumb" data-img="PXL_20260428_130842254_MP.webp" data-action="open-species" data-plant-code="B-26" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Romero</h3>
+      <div class="curio-sci">Salvia rosmarinus</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su nombre latino &#x27;rosmarinus&#x27; = &#x27;rocío del mar&#x27; (crece en acantilados mediterráneos). Estudios universitarios mostraron que oler romero antes de un examen mejora la memoria 15%. Antiguo símbolo de la fidelidad — los novios llevaban una rama el día de la boda.</p>
+</article>
+<article class="curio-card" data-name="mirto común" data-tags="aromatica perenne ornamental comestible">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-27">
+    <img class="curio-thumb" data-img="PXL_20260428_130857270_MP.webp" data-action="open-species" data-plant-code="B-27" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Mirto común</h3>
+      <div class="curio-sci">Myrtus communis</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El mirto era sagrado para Venus/Afrodita en mitología romana — símbolo del amor y la fertilidad. Las novias romanas llevaban coronas de mirto. Sus bayas y hojas se usan en la cocina sarda e italiana para hacer el licor &#x27;mirto&#x27;. Y las hojas son un buen condimento para carne (similar al laurel).</p>
+</article>
+<article class="curio-card" data-name="lantana / camará" data-tags="nativa polinizadores mariposas picaflor ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-29">
+    <img class="curio-thumb" data-img="PXL_20260428_130908091_MP.webp" data-action="open-species" data-plant-code="B-29" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Lantana / Camará</h3>
+      <div class="curio-sci">Lantana camara</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Las flores cambian de color a medida que envejecen — recién abiertas amarillo, luego naranja, finalmente rojo. Esto le indica a los polinizadores cuáles son las flores &#x27;frescas&#x27;. Los charrúas la usaban como repelente: encendían sus hojas para ahuyentar mosquitos.</p>
+</article>
+<article class="curio-card" data-name="durazno" data-tags="exotica frutal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-30">
+    <img class="curio-thumb" data-img="b30.jpg" data-action="open-species" data-plant-code="B-30" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Durazno</h3>
+      <div class="curio-sci">Prunus persica</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Aunque &#x27;persica&#x27; = de Persia, el durazno es originario de China — 8000 años de cultivo. Llegó a Europa por la ruta de la seda y pareció persa a los romanos. La piel aterciopelada es defensa contra hongos.</p>
+</article>
+<article class="curio-card" data-name="viraró" data-tags="nativa caduco ornamental polinizadores">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-32">
+    <img class="curio-thumb" data-img="PXL_20260428_130952009_MP.webp" data-action="open-species" data-plant-code="B-32" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Viraró</h3>
+      <div class="curio-sci">Ruprechtia laxiflora</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Los &#x27;frutos&#x27; rosados llamativos no son flores: son sépalos persistentes que se agrandan después de la polinización y rodean al verdadero fruto (una nuez pequeña). Es la estrategia de dispersión por viento — los sépalos funcionan como helicóptero. Su madera es durísima, históricamente usada para estacas y postes que duran décadas a la intemperie.</p>
+</article>
+<article class="curio-card" data-name="mandioca brava (tentativa)" data-tags="nativa ornamental perenne">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-34">
+    <img class="curio-thumb" data-img="PXL_20260428_131001512_MP.jpg" data-action="open-species" data-plant-code="B-34" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Mandioca brava (tentativa)</h3>
+      <div class="curio-sci">Manihot grahamii (a confirmar con flor)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El látex blanco del tallo (sale al cortar una rama) tiene compuestos cianogénicos — típicos del género. Por eso &#x27;brava&#x27;: no comer hojas ni raíz. La especie comestible (M. esculenta, mandioca de mesa) es pariente cercana pero detoxificada por selección humana milenaria.</p>
+</article>
+<article class="curio-card" data-name="palta haas" data-tags="exotica frutal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-36">
+    <img class="curio-thumb" data-img="FondoCasa_VecinoFondo.jpg" data-action="open-species" data-plant-code="B-36" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Palta Haas</h3>
+      <div class="curio-sci">Persea americana &#x27;Hass&#x27;</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 TODAS las paltas Hass del mundo descienden de UN único árbol plantado por Rudolph Hass en 1926 en California. Se reproduce solo por injerto — no funciona por semilla. ~80% de la palta exportada mundialmente es Hass.</p>
+</article>
+<article class="curio-card" data-name="liquidámbar" data-tags="exotica ornamental sombra">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-37">
+    <img class="curio-thumb" data-img="B-37_liquidambar_otonal.jpg" data-action="open-species" data-plant-code="B-37" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Liquidámbar</h3>
+      <div class="curio-sci">Liquidambar styraciflua</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su tronco produce un bálsamo aromático (&#x27;storax&#x27;) usado durante 3000 años en perfumería e incienso — los mayas lo masticaban como goma de mascar y los aztecas lo ofrecían a sus dioses. Su nombre = &#x27;ámbar líquido&#x27; por la resina.</p>
+</article>
+<article class="curio-card" data-name="ciruela amarilla" data-tags="exotica frutal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-38">
+    <img class="curio-thumb" data-img="PXL_20260428_130808343_MP.webp" data-action="open-species" data-plant-code="B-38" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Ciruela amarilla</h3>
+      <div class="curio-sci">Prunus salicina</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Aunque se llama &#x27;japonés&#x27;, es de origen chino. Llegó a Japón en el siglo VIII y de ahí a EEUU/Europa. Las ciruelas amarillas tienen menos azúcar pero más vitamina C que las moradas.</p>
+</article>
+<article class="curio-card" data-name="pera williams" data-tags="exotica frutal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-39">
+    <img class="curio-thumb" data-img="PXL_20260428_130757603_MP.webp" data-action="open-species" data-plant-code="B-39" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Pera Williams</h3>
+      <div class="curio-sci">Pyrus communis &#x27;Williams&#x27;</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 La cultivó por primera vez Stair en Inglaterra en 1765, comprada por Williams (de ahí el nombre). En EEUU se llama Bartlett porque Enoch Bartlett la introdujo allá sin saber que ya tenía nombre. La &#x27;pera Williams&#x27; es la base de la mayoría de las peras industriales mundiales.</p>
+</article>
+<article class="curio-card" data-name="madreselva china siempreverde" data-tags="exotica cerco-vivo aves">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-40">
+    <img class="curio-thumb" data-img="PXL_20260428_130913516_MP.webp" data-action="open-species" data-plant-code="B-40" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Madreselva china siempreverde</h3>
+      <div class="curio-sci">Lonicera nitida (a confirmar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 A pesar del nombre &#x27;honeysuckle/madreselva&#x27;, sus flores son insignificantes — se cultiva por el follaje. Los pájaros adoran sus bayas violáceas. Tolera podas extremas y se modela en topiaria.</p>
+</article>
+<article class="curio-card" data-name="caqui / persimón" data-tags="exotica frutal ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-41">
+    <img class="curio-thumb" data-img="B-41_caqui_pre_invierno.jpg" data-action="open-species" data-plant-code="B-41" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Caqui / Persimón</h3>
+      <div class="curio-sci">Diospyros kaki (a confirmar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su nombre genérico &#x27;Diospyros&#x27; = &#x27;fruto de los dioses&#x27; en griego. En Japón es símbolo de longevidad — hay caquis de 600 años aún produciendo. El fruto inmaduro es astringente (alta cantidad de taninos) — hay que esperar hasta que se ponga blando.</p>
+</article>
+<article class="curio-card" data-name="pata de vaca" data-tags="nativa ornamental florífera medicinal">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-42">
+    <img class="curio-thumb" data-img="B-42-43_entre_romero_b27.jpg" data-action="open-species" data-plant-code="B-42" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Pata de vaca</h3>
+      <div class="curio-sci">Bauhinia forficata</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El nombre Bauhinia honra a los hermanos botánicos suizos Bauhin del siglo XVI. La hoja partida en forma de pezuña le valió el apodo &#x27;pata de vaca&#x27; en todo el continente. En medicina tradicional se usan sus hojas en infusión para diabetes (efecto hipoglucemiante moderado validado por estudios). Florece en primavera-verano con flores blancas de pétalos largos como mariposas, polinizadas por colibríes.</p>
+</article>
+<article class="curio-card" data-name="pitósporo" data-tags="exotica ornamental perfume tolerante">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-43">
+    <img class="curio-thumb" data-img="B-42-43_entre_romero_b27.jpg" data-action="open-species" data-plant-code="B-43" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Pitósporo</h3>
+      <div class="curio-sci">Pittosporum tobira</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El pitósporo es nativo de Asia oriental (China, Japón, Corea) y fue introducido a Europa en el s. XVIII como ornamental por su perfume floral. El nombre &#x27;tobira&#x27; viene del japonés &#x27;puerta&#x27; por la forma de los frutos secos que se abren en cápsulas tipo bisagra. Sus semillas tienen una resina pegajosa que se adhiere a las patas de aves para dispersión zoocora. Tolera muy bien podas drásticas, sequía y aire salino — por eso es popular en jardinería costera.</p>
+</article>
+<article class="curio-card" data-name="evónimo japonés variegado" data-tags="exotica ornamental">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-44">
+    <img class="curio-thumb" data-img="B-44_evonimo_closeup.jpg" data-action="open-species" data-plant-code="B-44" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Evónimo japonés variegado</h3>
+      <div class="curio-sci">Euonymus japonicus &#x27;Argenteovariegatus&#x27;</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 El Euonymus japonicus es famoso por sus innumerables cultivares variegados — los romanos lo asociaban a los velos nupciales por sus tonos cremosos. Es de los pocos arbustos que ofrecen color invernal cuando casi todo está apagado.</p>
+</article>
+<article class="curio-card" data-name="vivero / plantines" data-tags="vivero propagacion pendiente">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-46">
+    <img class="curio-thumb" data-img="FondoCasa_VecinoFondo.jpg" data-action="open-species" data-plant-code="B-46" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Vivero / Plantines</h3>
+      <div class="curio-sci">(varias especies — a identificar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Tener un vivero propio es la forma más económica de poblar el jardín y de hacer regalos verdes. Cada plantín de palmera de vivero, por ejemplo, vale 200-500 pesos uruguayos en comercio — multiplicado por 15 son varios miles ahorrados. Y emocional: regalar una planta que vos propagaste tiene otro peso.</p>
+</article>
+<article class="curio-card" data-name="plantín de roble joven (quercus sp.)" data-tags="caducifolio ornamental vivero">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-48">
+    <div class="curio-thumb curio-thumb-empty">🌿</div>
+    <div class="curio-titles">
+      <h3 class="curio-name">Plantín de roble joven (Quercus sp.)</h3>
+      <div class="curio-sci">Quercus sp. (a confirmar especie)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Los robles tardan décadas en madurar y pueden vivir 300+ años. La frase &#x27;mighty oak from little acorn grows&#x27; (de pequeña bellota crece el roble poderoso) viene de la cultura inglesa medieval. En el Río de la Plata el roble no es nativo pero se planta como ornamental por su porte majestuoso. Si efectivamente es Quercus, vale la pena conservarlo — un roble bien ubicado da sombra para 200 años.</p>
+</article>
+<article class="curio-card" data-name="plantín trifoliado (posible glicinia o leguminosa)" data-tags="pendiente vivero">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-49">
+    <div class="curio-thumb curio-thumb-empty">🌿</div>
+    <div class="curio-titles">
+      <h3 class="curio-name">Plantín trifoliado (posible glicinia o leguminosa)</h3>
+      <div class="curio-sci">(a confirmar — posible Wisteria sinensis o leguminosa)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Si resulta ser glicinia (Wisteria), es una de las trepadoras ornamentales más espectaculares — flores violetas en racimos colgantes en primavera, llega a 10 m. Pero también es invasora agresiva: las raíces destruyen mampostería. Si es así, plantarla LEJOS de muros y con tutor robusto.</p>
+</article>
+<article class="curio-card" data-name="plantines de palmera (lote separado)" data-tags="nativa palmera vivero rioplatense">
+  <div class="curio-head" data-action="open-species" data-plant-code="B-47">
+    <img class="curio-thumb" data-img="FondoCasa_VecinoFondo.jpg" data-action="open-species" data-plant-code="B-47" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Plantines de palmera (lote separado)</h3>
+      <div class="curio-sci">Butia odorata o Syagrus romanzoffiana (a confirmar)</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Las palmeras nativas del Río de la Plata fueron cosecha tradicional de los pueblos charrúa y guaraní — el butiá se comía fresco o se hacía aguardiente (&#x27;caña de butiá&#x27;), y la fibra del pindó servía para tejidos. Hoy ambas especies son símbolos del paisaje uruguayo (los palmares de Castillos están protegidos como reserva natural). De semilla tardan 3-5 años en alcanzar 50 cm; de allí en más crecen ~30 cm/año.</p>
+</article></div>
+  </div>
+
   <div class="subtab-pane" data-sub="improvements">
     <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar mejora..."></div>
     <div class="ideas-section">
@@ -5063,6 +6128,7 @@ h2.subbrand {
 <section class="zone-content" data-zone="interior">
   <nav class="subtab-nav">
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
+    <button class="subtab-btn" data-sub="curiosidades">💡 Curiosidades</button>
     <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
@@ -5113,6 +6179,31 @@ h2.subbrand {
       </div>
     </div>
   </div>
+</article></div>
+  </div>
+
+  <div class="subtab-pane" data-sub="curiosidades">
+    <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar curiosidad..."></div>
+    <div class="ideas-intro"><h3>💡 Curiosidades de tus plantas</h3><p>Historias verificadas de cada especie del jardín. Tocá una para ver su ficha completa.</p></div><div class="curio-grid">
+<article class="curio-card" data-name="singonio / pata de gallo" data-tags="exotica ornamental interior">
+  <div class="curio-head" data-action="open-species" data-plant-code="I-1">
+    <img class="curio-thumb" data-img="I-1_singonio.jpg" data-action="open-species" data-plant-code="I-1" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Singonio / Pata de gallo</h3>
+      <div class="curio-sci">Syngonium podophyllum</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Es nativa de selvas de México hasta Bolivia, donde sube por troncos hasta 10m con raíces aéreas. Adentro raramente florece — su valor está en el follaje. Si pellizcás las puntas regularmente, te queda una mata densa en lugar de guías largas.</p>
+</article>
+<article class="curio-card" data-name="difenbaquia / caña muda" data-tags="exotica ornamental interior toxica">
+  <div class="curio-head" data-action="open-species" data-plant-code="I-2">
+    <img class="curio-thumb" data-img="I-2_difenbaquia.jpg" data-action="open-species" data-plant-code="I-2" alt="">
+    <div class="curio-titles">
+      <h3 class="curio-name">Difenbaquia / Caña muda</h3>
+      <div class="curio-sci">Dieffenbachia seguine</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 Su savia contiene cristales de oxalato de calcio que paralizan temporariamente la garganta y las cuerdas vocales si se mastica — de ahí el nombre &#x27;caña muda&#x27;. Mantenerla LEJOS de niños y mascotas. En el Caribe colonial fue usada como castigo cruel a esclavos, lo cual le dio el nombre vulgar &#x27;dumb cane&#x27; en inglés.</p>
 </article></div>
   </div>
 
@@ -5813,7 +6904,7 @@ document.querySelectorAll('.search').forEach(input => {
     const pane = input.closest('.subtab-pane');
     if (!pane) return;
     const q = input.value.toLowerCase().trim();
-    pane.querySelectorAll('.plant-card, .care-card, .idea-card, .huerta-card, .improvement-card').forEach(card => {
+    pane.querySelectorAll('.plant-card, .curio-card, .care-card, .idea-card, .huerta-card, .improvement-card').forEach(card => {
       const name = card.dataset.name || '';
       const tags = card.dataset.tags || '';
       const visible = !q || name.includes(q) || tags.includes(q);
@@ -6768,8 +7859,35 @@ function openSpeciesFromHash() {
   }
 }
 openSpeciesFromHash();
+
+// Si la URL trae #curiosidades (viene de un push que promociona la sección
+// nueva de Curiosidades), abrir esa sub-tab en la zona visible y scrollear.
+function openCuriosidadesFromHash() {
+  if (!/^#curiosidades$/.test(window.location.hash || '')) return;
+  if (!document.querySelector('.subtab-btn[data-sub="curiosidades"]')) {
+    window.location.replace('index.html' + window.location.hash);
+    return;
+  }
+  document.querySelectorAll('.zone-content').forEach(zoneEl => {
+    const btn = zoneEl.querySelector('.subtab-btn[data-sub="curiosidades"]');
+    if (!btn) return;
+    zoneEl.querySelectorAll('.subtab-btn').forEach(b => b.classList.remove('active'));
+    zoneEl.querySelectorAll('.subtab-pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    const pane = zoneEl.querySelector('.subtab-pane[data-sub="curiosidades"]');
+    if (pane) pane.classList.add('active');
+  });
+  setTimeout(() => {
+    const pane = document.querySelector('.zone-content:not([hidden]) .subtab-pane[data-sub="curiosidades"]')
+      || document.querySelector('.subtab-pane[data-sub="curiosidades"]');
+    if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 200);
+}
+openCuriosidadesFromHash();
+
 window.addEventListener('hashchange', openSpeciesFromHash);
 window.addEventListener('hashchange', openTaskFromHash);
+window.addEventListener('hashchange', openCuriosidadesFromHash);
 
 // ============================================================
 // CLIMA EN MONTEVIDEO (Open-Meteo, sin API key)

@@ -388,6 +388,46 @@ def render_plant_info_card(p, img_data):
 </article>"""
 
 
+def render_curiosidades_section(plants_in_view, img_data):
+    """Feed de curiosidades verificadas (campo fun_fact de cada planta).
+    Promovido desde la proposal 2026-06-12-curiosidades — el formato
+    'historia con nombre propio + dato contraintuitivo' fue el que más
+    enganchó. Cada card linkea al modal de especie (data-action=open-species),
+    que también muestra el fun_fact en su ficha completa."""
+    cards = []
+    for p in plants_in_view:
+        ff = p.get("fun_fact", "")
+        if not ff or ff == "—":
+            continue
+        primary_code = p["id_codes"][0]
+        has_main = bool(p.get("main_photo") and img_data.get(p.get("main_photo")))
+        thumb = (
+            f'<img class="curio-thumb" data-img="{esc(p["main_photo"])}" '
+            f'data-action="open-species" data-plant-code="{esc(primary_code)}" alt="">'
+            if has_main else '<div class="curio-thumb curio-thumb-empty">🌿</div>'
+        )
+        cards.append(f"""
+<article class="curio-card" data-name="{esc(p['common'].lower())}" data-tags="{esc(' '.join(p['tags']))}">
+  <div class="curio-head" data-action="open-species" data-plant-code="{esc(primary_code)}">
+    {thumb}
+    <div class="curio-titles">
+      <h3 class="curio-name">{esc(p['common'])}</h3>
+      <div class="curio-sci">{esc(p['sci'])}</div>
+    </div>
+  </div>
+  <p class="curio-fact">💡 {esc(ff)}</p>
+</article>""")
+    if not cards:
+        return '<p class="curio-empty">Todavía no hay curiosidades cargadas para esta zona.</p>'
+    intro = (
+        '<div class="ideas-intro">'
+        '<h3>💡 Curiosidades de tus plantas</h3>'
+        '<p>Historias verificadas de cada especie del jardín. Tocá una para ver su ficha completa.</p>'
+        '</div>'
+    )
+    return intro + f'<div class="curio-grid">{"".join(cards)}</div>'
+
+
 def render_idea_card(idea):
     season = f'<div class="idea-season">📅 <strong>Plantar:</strong> {esc(idea["season_plant"])}</div>' if "season_plant" in idea else ''
     where = f'<div class="idea-where">📍 <strong>Dónde:</strong> {esc(idea["where"])}</div>' if "where" in idea else ''
@@ -612,11 +652,13 @@ def build_zone(zone_name, zone_label, plants_in_view, img_data):
     info_cards = "\n".join(render_plant_info_card(p, img_data) for p in plants_in_view)
     cal_grid = render_calendar_grid(plants_in_view)
     improvements_html = render_improvements_section(zone_name)
+    curiosidades_html = render_curiosidades_section(plants_in_view, img_data)
 
     return f"""
 <section class="zone-content" data-zone="{zone_name}">
   <nav class="subtab-nav">
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
+    <button class="subtab-btn" data-sub="curiosidades">💡 Curiosidades</button>
     <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
@@ -641,6 +683,11 @@ def build_zone(zone_name, zone_label, plants_in_view, img_data):
       <button class="ftag" data-filter="pendiente">⏳ Pendientes</button>
     </div>
     <div class="cards-grid">{info_cards}</div>
+  </div>
+
+  <div class="subtab-pane" data-sub="curiosidades">
+    <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar curiosidad..."></div>
+    {curiosidades_html}
   </div>
 
   <div class="subtab-pane" data-sub="improvements">

@@ -1860,6 +1860,73 @@ h2.subbrand {
   color: var(--text-2);
   margin: 8px 0;
 }
+
+/* CURIOSIDADES — feed de fun_facts (sub-tab promovida desde proposal 12/06) */
+.curio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 16px;
+  min-width: 0;
+}
+.curio-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 16px 16px;
+  box-shadow: 0 1px 2px rgba(9, 9, 11, 0.04), 0 1px 3px rgba(9, 9, 11, 0.05);
+  transition:
+    border-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.curio-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(9, 9, 11, 0.06), 0 16px 36px rgba(9, 9, 11, 0.08);
+}
+.curio-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+.curio-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: var(--bg-soft);
+  flex: none;
+}
+.curio-thumb-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+.curio-titles { min-width: 0; }
+.curio-name {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.2;
+  color: var(--text-1);
+}
+.curio-sci {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--text-2);
+  margin-top: 2px;
+}
+.curio-fact {
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.curio-empty {
+  color: var(--text-2);
+  padding: 12px 4px;
+}
 .species-care {
   display: grid; gap: 6px;
   padding-top: 12px;
@@ -3563,7 +3630,7 @@ document.querySelectorAll('.search').forEach(input => {
     const pane = input.closest('.subtab-pane');
     if (!pane) return;
     const q = input.value.toLowerCase().trim();
-    pane.querySelectorAll('.plant-card, .care-card, .idea-card, .huerta-card, .improvement-card').forEach(card => {
+    pane.querySelectorAll('.plant-card, .curio-card, .care-card, .idea-card, .huerta-card, .improvement-card').forEach(card => {
       const name = card.dataset.name || '';
       const tags = card.dataset.tags || '';
       const visible = !q || name.includes(q) || tags.includes(q);
@@ -4518,8 +4585,35 @@ function openSpeciesFromHash() {
   }
 }
 openSpeciesFromHash();
+
+// Si la URL trae #curiosidades (viene de un push que promociona la sección
+// nueva de Curiosidades), abrir esa sub-tab en la zona visible y scrollear.
+function openCuriosidadesFromHash() {
+  if (!/^#curiosidades$/.test(window.location.hash || '')) return;
+  if (!document.querySelector('.subtab-btn[data-sub="curiosidades"]')) {
+    window.location.replace('index.html' + window.location.hash);
+    return;
+  }
+  document.querySelectorAll('.zone-content').forEach(zoneEl => {
+    const btn = zoneEl.querySelector('.subtab-btn[data-sub="curiosidades"]');
+    if (!btn) return;
+    zoneEl.querySelectorAll('.subtab-btn').forEach(b => b.classList.remove('active'));
+    zoneEl.querySelectorAll('.subtab-pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    const pane = zoneEl.querySelector('.subtab-pane[data-sub="curiosidades"]');
+    if (pane) pane.classList.add('active');
+  });
+  setTimeout(() => {
+    const pane = document.querySelector('.zone-content:not([hidden]) .subtab-pane[data-sub="curiosidades"]')
+      || document.querySelector('.subtab-pane[data-sub="curiosidades"]');
+    if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 200);
+}
+openCuriosidadesFromHash();
+
 window.addEventListener('hashchange', openSpeciesFromHash);
 window.addEventListener('hashchange', openTaskFromHash);
+window.addEventListener('hashchange', openCuriosidadesFromHash);
 
 // ============================================================
 // CLIMA EN MONTEVIDEO (Open-Meteo, sin API key)
