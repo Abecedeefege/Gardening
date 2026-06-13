@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-13T21:39:27.739Z",
+  "_updated_at": "2026-06-13T21:39:30.482Z",
   "events": [
     {
       "type": "_probe",
@@ -256,6 +256,13 @@
       "scroll_pct": 0,
       "page": "engage/2026-06-13-ano-jardin.html",
       "ts": "2026-06-13T21:39:27.752Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqcvot0a7wy94d",
+      "type": "proposal_rejected",
+      "proposal_id": "2026-06-13-ano-jardin",
+      "ts": "2026-06-13T21:39:30.394Z",
       "device": "sin-nombre"
     }
   ],
