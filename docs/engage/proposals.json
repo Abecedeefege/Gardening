@@ -42,12 +42,24 @@
       "title": "El año de tu jardín (flor y fruta mes a mes)",
       "page": "engage/2026-06-13-ano-jardin.html",
       "created": "2026-06-13",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Experiencia nueva tipo dashboard interactivo: el ritmo anual de floración/fructificación de las 52 plantas, mes a mes, con cada planta clickeable a su ficha. Hipótesis: una vista que revela el pulso del jardín (nov = pico de floración) engancha más que una lista. Primera de la tanda 'una experiencia distinta por notificación'. Recién hoy recibe su primer push promotor (13:00, slot diurno), así que arranca su turno real de medición.",
       "notified_by": [
         "2026-06-13-b"
       ],
-      "result_notes": null
+      "result_notes": "RECHAZADA + reacción \"no\". Vista de calendario no engancha tanto como las curiosidades/animaciones. No pushear."
+    },
+    {
+      "id": "2026-06-13-rueda-ano",
+      "title": "La rueda del año (animada)",
+      "page": "engage/2026-06-13-rueda-ano.html",
+      "created": "2026-06-13",
+      "status": "approved",
+      "hypothesis": "experiencia animada interactiva",
+      "notified_by": [
+        "2026-06-13-r01"
+      ],
+      "result_notes": "APROBADA + 87s dwell"
     }
   ]
 }

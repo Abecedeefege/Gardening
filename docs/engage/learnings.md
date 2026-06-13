@@ -113,3 +113,19 @@ UY), HASTA QUE PIDA MENOS.** NO 3/día mientras esté vigente esto. Reglas:
 - **Verificar que el logging entra.** Apenas aparezca el 1er evento real en
   `engagement.json` (vía outbox o `/api/feedback`), confirmar que reaction/answer/dwell
   se guardan, y recién ahí volver a confiar en la métrica de clicks por slot/ángulo.
+
+## 🎯 SEÑAL REAL (13/06 noche) — primer feedback medido de verdad
+
+El logging YA funciona (36 eventos). Lectura inequívoca:
+- **GANADOR #1 — Curiosidades:** TODAS las cartas reaccionadas con 😍 (guayabo x2,
+  durazno x2, aguaribay, caqui, hibisco) y **104 s de dwell** en curiosidades-2.
+  → seguir alimentando el feed de curiosidades verificadas. Es lo que más engancha.
+- **GANADOR #2 — La rueda del año (animada): APROBADA + 87 s dwell.** La apuesta
+  "volvete loco" (animación + interacción) funcionó. → construir MÁS experiencias
+  así (animadas, interactivas) y PROMOVER la rueda al sitio permanente.
+- **RECHAZADAS — sol-jardin (x3 "no") y ano-jardin ("no").** Las vistas utilitarias
+  (mapa de luz, calendario de listas) NO enganchan. **Dejar de pushearlas.** El
+  usuario quiere deleite (curiosidad + animación), no herramientas.
+
+Acción para próximas rondas: rotación = curiosidades (fichas #especie + feed) +
+experiencias animadas tipo rueda + nuevas inmersivas. Retirar sol/ano de la rotación.
