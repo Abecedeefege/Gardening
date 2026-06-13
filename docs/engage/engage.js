@@ -83,11 +83,8 @@
       el.style.display = 'block';
       if (el._t) { clearTimeout(el._t); el._t = null; }
     }
-    if (!token()) {
-      show('#fde2e2', '#9a2020', null,
-        '⚠️ Sin PAT en este dispositivo: tus reacciones no se guardan. Configuralo en ⚙️ del sitio.');
-    } else if (_lastSync && _lastSync.error) {
-      show('#fde2e2', '#9a2020', '⚠️ No se pudo sincronizar: ' + String(_lastSync.error).slice(0, 48) + '. Tocá para reintentar.');
+    if (_lastSync && _lastSync.error) {
+      show('#fde2e2', '#9a2020', '⚠️ No se pudo guardar: ' + String(_lastSync.error).slice(0, 52) + '. Tocá para reintentar.');
     } else if (pending > 0) {
       show('#fdf3e3', '#8a5a12', '⏳ Sincronizando ' + pending + '…');
     } else if (_lastSync && _lastSync.ok) {
@@ -98,33 +95,27 @@
     }
   }
 
+  // Manda el outbox a la función serverless /api/feedback, que escribe al repo
+  // con un token del lado del SERVIDOR. El browser NO necesita ningún PAT.
   async function flushOutbox() {
     if (_flushing) return false;
-    if (!token()) { renderSyncBadge(); return false; } // sin PAT: queda en outbox
     var pending = outboxGet();
     if (!pending.length) { renderSyncBadge(); return true; }
     _flushing = true;
     var ok = false, lastErr = null;
     try {
-      for (var attempt = 0; attempt < 3; attempt++) {
-        try {
-          var cur = await ghReadJson(ENGAGEMENT_PATH);
-          var doc = cur.data || { _updated_at: null, events: [], daily_summary: {} };
-          var have = {};
-          (doc.events || []).forEach(function (e) { if (e._id) have[e._id] = 1; });
-          var toAdd = pending.filter(function (e) { return !e._id || !have[e._id]; });
-          if (toAdd.length) {
-            doc.events = (doc.events || []).concat(toAdd);
-            doc._updated_at = new Date().toISOString();
-            await ghWriteJson(ENGAGEMENT_PATH, doc,
-              'engage: ' + toAdd.map(function (e) { return e.type; }).join(', ') + ' desde ' + device(),
-              cur.sha);
-          }
-          outboxSet([]); ok = true; break;       // éxito → limpiar
-        } catch (e) {
-          lastErr = (e && e.message) ? e.message : String(e);
-        }
+      var r = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ events: pending, device: device() }),
+      });
+      if (r.ok) { outboxSet([]); ok = true; }
+      else {
+        var t = ''; try { t = await r.text(); } catch (e) {}
+        lastErr = 'HTTP ' + r.status + (t ? ' ' + t.slice(0, 60) : '');
       }
+    } catch (e) {
+      lastErr = (e && e.message) ? e.message : String(e);
     } finally { _flushing = false; }
     _lastSync = { ok: ok, error: ok ? null : (lastErr || 'desconocido') };
     renderSyncBadge();
@@ -190,16 +181,12 @@
 
   async function decide(proposalId, type, btn, okMsg) {
     const wrap = feedbackArea(btn);
-    if (!token()) {
-      if (wrap) wrap.innerHTML = '<p class="engage-feedback">⚠️ Abrí esta página desde tu teléfono con el GitHub PAT configurado para poder votar.</p>';
-      return;
-    }
     if (wrap) wrap.innerHTML = '<p class="engage-feedback">⏳ Guardando…</p>';
     const ok = await logEvents([{ type: type, proposal_id: proposalId, ts: new Date().toISOString(), device: device() }]);
     if (wrap) {
       wrap.innerHTML = ok
         ? '<p class="engage-feedback">' + okMsg + '</p>'
-        : '<p class="engage-feedback">❌ No se pudo guardar — probá de nuevo en un rato.</p>';
+        : '<p class="engage-feedback">Guardado en este equipo — se sube en cuanto haya conexión. (Tocá el cartel de abajo para reintentar.)</p>';
     }
   }
 
@@ -229,7 +216,7 @@
     if (hint) hint.textContent = 'Guardando…';
     logEvents([{ type: 'reaction', target: targetId, value: value,
       page: pageName(), ts: new Date().toISOString(), device: device() }]).then(function (ok) {
-      if (hint) hint.textContent = ok ? '✓ ¡Gracias!' : (token() ? 'Guardado, sincronizando…' : '⚠️ Falta el PAT (ver abajo)');
+      if (hint) hint.textContent = ok ? '✓ ¡Gracias!' : 'Guardado, sincronizando…';
     });
   };
 
@@ -242,7 +229,7 @@
     if (hint) hint.textContent = 'Guardando…';
     logEvents([{ type: 'answer', qid: qid, value: value,
       page: pageName(), ts: new Date().toISOString(), device: device() }]).then(function (ok) {
-      if (hint) hint.textContent = ok ? '✓' : (token() ? '⏳' : '⚠️ sin PAT');
+      if (hint) hint.textContent = ok ? '✓' : '⏳';
     });
   };
 
