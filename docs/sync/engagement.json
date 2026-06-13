@@ -1,5 +1,10 @@
 {
-  "_updated_at": "2026-06-13T12:58:59.970Z",
-  "events": [],
+  "_updated_at": "2026-06-13T13:05:39.552Z",
+  "events": [
+    {
+      "type": "_probe",
+      "_id": "probe-verify-2"
+    }
+  ],
   "daily_summary": {}
 }
