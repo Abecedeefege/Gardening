@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-13T22:38:25.369Z",
+  "_updated_at": "2026-06-13T22:38:28.005Z",
   "events": [
     {
       "type": "_probe",
@@ -304,6 +304,15 @@
       "type": "proposal_rejected",
       "proposal_id": "2026-06-13-sol-jardin",
       "ts": "2026-06-13T22:38:25.355Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqcxsmqe5e9jyh",
+      "type": "dwell",
+      "seconds": 10,
+      "scroll_pct": 100,
+      "page": "engage/2026-06-13-sol-jardin.html",
+      "ts": "2026-06-13T22:38:28.118Z",
       "device": "sin-nombre"
     }
   ],
