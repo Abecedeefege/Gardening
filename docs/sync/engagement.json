@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-13T18:55:20.107Z",
+  "_updated_at": "2026-06-13T18:55:37.811Z",
   "events": [
     {
       "type": "_probe",
@@ -189,6 +189,15 @@
       "scroll_pct": 0,
       "page": "engage/2026-06-13-ano-jardin.html",
       "ts": "2026-06-13T18:55:19.980Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqcpu1kpmxlv8o",
+      "type": "dwell",
+      "seconds": 17,
+      "scroll_pct": 100,
+      "page": "engage/2026-06-13-sol-jardin.html",
+      "ts": "2026-06-13T18:55:37.081Z",
       "device": "sin-nombre"
     }
   ],
