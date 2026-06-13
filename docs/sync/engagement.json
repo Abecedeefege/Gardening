@@ -1,9 +1,186 @@
 {
-  "_updated_at": "2026-06-13T13:05:39.552Z",
+  "_updated_at": "2026-06-13T18:55:13.567Z",
   "events": [
     {
       "type": "_probe",
       "_id": "probe-verify-2"
+    },
+    {
+      "_id": "mqbj9xdfoggdd8",
+      "type": "notification_clicked",
+      "nid": "2026-06-12-f01",
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "ts": "2026-06-12T23:04:14.639Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqbj9xdf9c6dlu",
+      "type": "page_visit",
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "nid": "2026-06-12-f01",
+      "src": "push",
+      "ts": "2026-06-12T23:04:14.639Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqbja6yqj2avto",
+      "type": "dwell",
+      "seconds": 12,
+      "scroll_pct": 6,
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "ts": "2026-06-12T23:04:27.074Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqbjc1770i7n2k",
+      "type": "reaction",
+      "target": "r2-guayabo",
+      "value": "love",
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "ts": "2026-06-12T23:05:52.915Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqbjc4xzgvcfyy",
+      "type": "reaction",
+      "target": "r2-durazno",
+      "value": "love",
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "ts": "2026-06-12T23:05:57.767Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqblxwiscffubv",
+      "type": "notification_clicked",
+      "nid": "2026-06-12-f03",
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "ts": "2026-06-13T00:18:52.512Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqblxwis32omhu",
+      "type": "page_visit",
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "nid": "2026-06-12-f03",
+      "src": "push",
+      "ts": "2026-06-13T00:18:52.512Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqbly9w2lbyitf",
+      "type": "reaction",
+      "target": "r2-guayabo",
+      "value": "love",
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "ts": "2026-06-13T00:19:09.842Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqblyb3xvd34zv",
+      "type": "reaction",
+      "target": "r2-durazno",
+      "value": "love",
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "ts": "2026-06-13T00:19:11.421Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqblycrx10nyqt",
+      "type": "reaction",
+      "target": "r2-aguaribay",
+      "value": "love",
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "ts": "2026-06-13T00:19:13.581Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqblygdrbeod1v",
+      "type": "reaction",
+      "target": "r2-caqui",
+      "value": "love",
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "ts": "2026-06-13T00:19:18.255Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqbm04y55frzw9",
+      "type": "dwell",
+      "seconds": 104,
+      "scroll_pct": 100,
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "ts": "2026-06-13T00:20:36.749Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqbm19tforxtsq",
+      "type": "notification_clicked",
+      "nid": "2026-06-12-f05",
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "ts": "2026-06-13T00:21:29.713Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqbm19tfo1ykdh",
+      "type": "page_visit",
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "nid": "2026-06-12-f05",
+      "src": "push",
+      "ts": "2026-06-13T00:21:29.713Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqbm1x474wq5a5",
+      "type": "dwell",
+      "seconds": 30,
+      "scroll_pct": 100,
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "ts": "2026-06-13T00:21:59.911Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqbm2s29te6trn",
+      "type": "reaction",
+      "target": "r2-hibisco",
+      "value": "love",
+      "page": "engage/2026-06-12-curiosidades-2.html",
+      "ts": "2026-06-13T00:22:40.017Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqbqef8pz4o8ql",
+      "type": "page_visit",
+      "page": "engage/2026-06-13-ano-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-06-13T02:23:41.734Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqbqf33rd434g5",
+      "type": "dwell",
+      "seconds": 31,
+      "scroll_pct": 98,
+      "page": "engage/2026-06-13-ano-jardin.html",
+      "ts": "2026-06-13T02:24:12.663Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqbqpsc7y015hg",
+      "type": "reaction",
+      "target": "ano-jardin",
+      "value": "no",
+      "page": "engage/2026-06-13-ano-jardin.html",
+      "ts": "2026-06-13T02:32:31.927Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqbqq23mmpw9ds",
+      "type": "dwell",
+      "seconds": 30,
+      "scroll_pct": 100,
+      "page": "engage/2026-06-13-ano-jardin.html",
+      "ts": "2026-06-13T02:32:44.578Z",
+      "device": "sin-nombre"
     }
   ],
   "daily_summary": {}
