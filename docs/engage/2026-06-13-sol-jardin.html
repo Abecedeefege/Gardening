@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1a0a"><title>El sol en tu jardín · Jardineando</title>
+<style>
+  :root{ --verde:#2d5016; --verde2:#5a9e35; --crema:#f6f4ea; --tinta:#1a2410; --sol:#e8a317; --pad:max(18px,env(safe-area-inset-left)); }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; } body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    background:var(--crema); color:var(--tinta); -webkit-font-smoothing:antialiased; padding:0 var(--pad) calc(48px + env(safe-area-inset-bottom)); }
+  .top{ padding:calc(14px + env(safe-area-inset-top)) 0 6px; } .top a{ color:var(--verde); text-decoration:none; font-size:14px; font-weight:700; }
+  h1{ font-size:clamp(24px,6.6vw,30px); letter-spacing:-0.02em; color:var(--verde); margin:8px 0 2px; }
+  .sub{ color:#5a6b4a; font-size:14px; margin:0 0 12px; }
+  .diagram{ background:#fff; border:1px solid #e3eed6; border-radius:18px; padding:14px; margin:8px 0 6px; box-shadow:0 1px 4px rgba(45,80,22,.06); }
+  .axis{ display:flex; justify-content:space-between; font-size:12px; font-weight:800; color:var(--verde2); margin-top:4px; }
+  .axis .n{ color:#b9770a; } .axis .s{ color:#5577aa; }
+  .legend{ font-size:13px; color:#44543a; margin:10px 0 0; line-height:1.5; }
+  .legend b{ color:var(--verde); }
+  .group{ margin-top:20px; } .group h2{ font-size:15px; margin:0 0 4px; display:flex; align-items:center; gap:8px; }
+  .gh-note{ font-size:12.5px; color:#7a8a68; margin:0 0 10px; }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{ display:inline-flex; align-items:center; gap:6px; text-decoration:none; background:#fff; border:1px solid #e0e7d4;
+    color:var(--tinta); font-size:13px; font-weight:600; padding:8px 11px; border-radius:12px; box-shadow:0 1px 2px rgba(45,80,22,.05); }
+  .chip:active{ transform:scale(.96); background:#f0f5e8; } .chip small{ color:#8a9a78; font-weight:700; } .chip .z{ color:var(--sol); font-weight:700; font-size:11px; }
+  .foot{ margin-top:30px; padding-top:18px; border-top:1px solid #e6ecdb; }
+  .reacts{ display:flex; gap:10px; align-items:center; } .reacts button{ width:50px;height:50px;border-radius:50%;border:1px solid #e0e7d4;background:#fff;font-size:23px;cursor:pointer;transition:transform .12s;}
+  .reacts button:active{ transform:scale(.86);} .reacts button.sel{ background:var(--verde);border-color:var(--verde);transform:scale(1.08);} .reacts span{ font-size:13px;color:#6f7d61;margin-left:4px;}
+  .cta{ margin-top:16px; display:flex; flex-direction:column; gap:9px; max-width:380px; } .cta button{ padding:14px;border:none;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer; }
+  .cta .yes{ background:var(--verde);color:#fff; } .cta .no{ background:#fff;color:#6f7d61;border:1px solid #d7e0c9; } .cta-note{ font-size:12.5px;color:#6f7d61;margin:8px 0 0; }
+  .engage-feedback{ font-size:15px;font-weight:700;color:var(--verde); }
+</style></head><body>
+<div class="top"><a href="https://gardening-chi.vercel.app/index.html">← Inicio</a>
+  <h1>☀️ El sol en tu jardín</h1>
+  <p class="sub">Tu casa está alineada este-oeste. Eso define qué planta recibe cuánto sol — y dónde conviene cada una. Tocá una planta para su ficha.</p>
+</div>
+<div class="diagram">
+  <svg viewBox="0 0 320 120" width="100%" height="120" role="img" aria-label="Trayectoria del sol de este a oeste">
+    <path d="M20 110 A 140 140 0 0 1 300 110" fill="none" stroke="#f0d9a0" stroke-width="3" stroke-dasharray="5 6"/>
+    <circle cx="160" cy="14" r="11" fill="#e8a317"/>
+    <g stroke="#e8a317" stroke-width="2"><line x1="160" y1="-2" x2="160" y2="-7"/><line x1="143" y1="14" x2="138" y2="14"/><line x1="177" y1="14" x2="182" y2="14"/></g>
+    <rect x="120" y="78" width="80" height="32" rx="4" fill="#cfe0bb" stroke="#9bb37e"/>
+    <text x="160" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#3c4a30">casa</text>
+    <text x="20" y="104" font-size="11" font-weight="800" fill="#5a9e35">🌅 ESTE</text>
+    <text x="300" y="104" text-anchor="end" font-size="11" font-weight="800" fill="#5a9e35">OESTE 🌇</text>
+  </svg>
+  <div class="legend">
+    <b>🌅 Este = fondo</b>: sol de mañana (pileta, palto, liquidámbar). &nbsp; <b>🌇 Oeste = frente</b>: sol de tarde (Fotinias, fresno).<br>
+    <b>🧭 Norte</b> (muro del hibisco): el lado más cálido y luminoso en invierno — ahí van las heliófilas. <b>Sur</b> (la pera): más sombra y humedad.
+  </div>
+</div>
+
+<div class="group"><h2>🔆 Pleno sol — heliófilas</h2>
+  <p class="gh-note">Quieren sol directo. Mejor al norte o al frente. Si están en sombra, rinden poco.</p>
+  <div class="chips" id="g-pleno"></div></div>
+<div class="group"><h2>⛅ Sol o sombra parcial</h2>
+  <p class="gh-note">Flexibles: toleran media sombra, sol de mañana ideal.</p>
+  <div class="chips" id="g-media"></div></div>
+<div class="group"><h2>🌥️ Sombra / luz suave</h2>
+  <p class="gh-note">Prefieren luz indirecta. Fondo (este) o sur les sienta bien.</p>
+  <div class="chips" id="g-sombra"></div></div>
+
+<div class="foot">
+  <div class="reacts" data-id="sol-jardin">
+    <button onclick="engageReact('sol-jardin','love', this)">😍</button>
+    <button onclick="engageReact('sol-jardin','meh', this)">😐</button>
+    <button onclick="engageReact('sol-jardin','no', this)">🙅</button>
+    <span>¿Te sirve esta vista?</span>
+  </div>
+  <div class="cta">
+    <button class="yes" onclick="engageApprove('2026-06-13-sol-jardin')">✅ Aprobar e integrar al sitio</button>
+    <button class="no" onclick="engageRejected('2026-06-13-sol-jardin')">✕ No es para mí</button>
+  </div>
+  <p class="cta-note">Si la aprobás, la integro como sección fija. Nada queda fijo sin tu OK.</p>
+</div>
+<script src="engage.js"></script>
+<script>
+  var B = {"pleno": [{"code": "F-1", "name": "Guayabo del país", "zone": "frente"}, {"code": "F-2", "name": "Bignonia rosada / Podranea", "zone": "frente"}, {"code": "F-4", "name": "Ciruelo de jardín", "zone": "frente"}, {"code": "F-5", "name": "Coronita de novia (?)", "zone": "frente"}, {"code": "F-8", "name": "Aguaribay / Molle", "zone": "frente"}, {"code": "F-10", "name": "Fresno (americano)", "zone": "frente"}, {"code": "B-1", "name": "Santa Rita / Buganvilia", "zone": "fondo"}, {"code": "B-8", "name": "Palmera pindó", "zone": "fondo"}, {"code": "B-9", "name": "Crespón / Mirto de crepe", "zone": "fondo"}, {"code": "B-10", "name": "Lavanda", "zone": "fondo"}, {"code": "B-14", "name": "Lapachillo", "zone": "fondo"}, {"code": "B-16", "name": "Anacahuita", "zone": "fondo"}, {"code": "B-18", "name": "Rosa de Siria / Althea", "zone": "fondo"}, {"code": "B-20", "name": "Arbusto caduco a identificar", "zone": "fondo"}, {"code": "B-22", "name": "Palta uruguaya", "zone": "fondo"}, {"code": "B-23", "name": "Limonero", "zone": "fondo"}, {"code": "B-24", "name": "Mandarina criolla", "zone": "fondo"}, {"code": "B-26", "name": "Romero", "zone": "fondo"}, {"code": "B-29", "name": "Lantana / Camará", "zone": "fondo"}, {"code": "B-30", "name": "Durazno", "zone": "fondo"}, {"code": "B-36", "name": "Palta Haas", "zone": "fondo"}, {"code": "B-37", "name": "Liquidámbar", "zone": "fondo"}, {"code": "B-38", "name": "Ciruela amarilla", "zone": "fondo"}, {"code": "B-39", "name": "Pera Williams", "zone": "fondo"}, {"code": "B-41", "name": "Caqui / Persimón", "zone": "fondo"}], "media": [{"code": "F-3", "name": "Fotinia", "zone": "frente"}, {"code": "F-7", "name": "Abelia", "zone": "frente"}, {"code": "F-9", "name": "Ligustro", "zone": "frente"}, {"code": "B-2", "name": "Jazmín (a confirmar variedad)", "zone": "fondo"}, {"code": "B-3", "name": "Jazmín de leche / estrellado", "zone": "fondo"}, {"code": "B-4", "name": "Hibisco / Rosa china", "zone": "fondo"}, {"code": "B-5a", "name": "Hortensia", "zone": "fondo"}, {"code": "B-6", "name": "Esparraguera cola de zorro", "zone": "fondo"}, {"code": "B-7", "name": "Azarero / Pitósporo", "zone": "fondo"}, {"code": "B-12", "name": "Cinta / Lazo de amor", "zone": "fondo"}, {"code": "B-13", "name": "Clivia / Lirio del Cabo", "zone": "fondo"}, {"code": "B-15", "name": "Hiedra común", "zone": "fondo"}, {"code": "B-25", "name": "Gardenia / Jazmín del Cabo", "zone": "fondo"}, {"code": "B-27", "name": "Mirto común", "zone": "fondo"}, {"code": "B-32", "name": "Viraró", "zone": "fondo"}, {"code": "B-34", "name": "Mandioca brava (tentativa)", "zone": "fondo"}, {"code": "B-40", "name": "Madreselva china siempreverde", "zone": "fondo"}, {"code": "B-42", "name": "Pata de vaca", "zone": "fondo"}, {"code": "B-43", "name": "Pitósporo", "zone": "fondo"}, {"code": "B-44", "name": "Evónimo japonés variegado", "zone": "fondo"}, {"code": "B-45", "name": "Sin identificar (al lado de la pared, atrás de B-35)", "zone": "fondo"}, {"code": "B-46", "name": "Vivero / Plantines", "zone": "fondo"}, {"code": "B-48", "name": "Plantín de roble joven (Quercus sp.)", "zone": "fondo"}, {"code": "B-49", "name": "Plantín trifoliado (posible glicinia o leguminosa)", "zone": "fondo"}, {"code": "B-47", "name": "Plantines de palmera (lote separado)", "zone": "fondo"}, {"code": "I-1", "name": "Singonio / Pata de gallo", "zone": "interior"}], "sombra": [{"code": "I-2", "name": "Difenbaquia / Caña muda", "zone": "interior"}], "otro": []}; var SITE='https://gardening-chi.vercel.app/index.html#especie=';
+  var ZL = {'fondo':'este','frente':'oeste','interior':'interior'};
+  function chip(p){ var z = ZL[p.zone] ? ' <span class="z">'+ZL[p.zone]+'</span>' : '';
+    return '<a class="chip" href="'+SITE+encodeURIComponent(p.code)+'">'+p.name+' <small>'+p.code+'</small>'+z+'</a>'; }
+  function fill(id, list){ var el=document.getElementById(id); el.innerHTML = (list&&list.length)? list.map(chip).join('') : '<span style="color:#9aa88a;font-style:italic">—</span>'; }
+  fill('g-pleno', (B.pleno||[]).concat(B.otro||[])); fill('g-media', B.media||[]); fill('g-sombra', B.sombra||[]);
+</script>
+</body></html>

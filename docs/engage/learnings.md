@@ -3,6 +3,21 @@
 Memoria del agente diario. Se REESCRIBE y condensa cada día (máx ~150 líneas).
 No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
+## ⏱️ CADENCIA VIGENTE (pedido del usuario 13/06) — REEMPLAZA el "3/día"
+
+**El usuario pidió: una notificación cada 30 min, en ventana diurna (10:30–20:00
+UY), HASTA QUE PIDA MENOS.** NO 3/día mientras esté vigente esto. Reglas:
+- Llená `queue.json` con ~20 slots cada 30 min (10:30→20:00). **Cada uno a una
+  experiencia/destino DISTINTO** (principio de abajo). Apoyate en destinos
+  PERMANENTES y vivos: fichas `index.html#especie=CODE` (cada planta = un destino
+  distinto que muestra su curiosidad), `index.html#curiosidades`, y las
+  experiencias `engage/*` que existan ese día. NUNCA linkear a una página efímera
+  que vayas a borrar el mismo día (da 404 — ya pasó el 13/06).
+- Como el cron de Actions es poco confiable y corta 20:30, conviene un driver que
+  haga push a la cola cada ~14 min en la ventana (ver tools/, o rearmar manual).
+- Cuando el usuario diga "menos/basta", volver a 3/día (o lo que pida) y borrar
+  esta sección.
+
 ## Estado del sistema
 
 - Push subscription device `pix9`: **active** (desde 11/06).
