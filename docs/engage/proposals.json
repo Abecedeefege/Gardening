@@ -36,6 +36,16 @@
         "2026-06-12-e1"
       ],
       "result_notes": null
+    },
+    {
+      "id": "2026-06-13-ano-jardin",
+      "title": "El año de tu jardín (flor y fruta mes a mes)",
+      "page": "engage/2026-06-13-ano-jardin.html",
+      "created": "2026-06-13",
+      "status": "pending",
+      "hypothesis": "Experiencia nueva tipo dashboard interactivo: el ritmo anual de floración/fructificación de las 52 plantas, mes a mes, con cada planta clickeable a su ficha. Hipótesis: una vista que revela el pulso del jardín (nov = 32 en flor) engancha más que una lista. Primera de la nueva tanda de 'una experiencia distinta por notificación'.",
+      "notified_by": [],
+      "result_notes": null
     }
   ]
 }

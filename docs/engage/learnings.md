@@ -178,3 +178,32 @@ interesante lo que ve / le guste un módulo nuevo**. Cambios de rumbo:
 - Slots default mañana: 08:30 / 13:00 / 19:30 (UTC-3). Primer `send_at`
   siempre ≥ 60 min después de la corrida (margen de deploy de Vercel).
 </content>
+
+## PRINCIPIO (13/06) — cada notificación = su propia mega-experiencia distinta
+
+El usuario marcó que mandar N notificaciones a la MISMA experiencia mata la
+novedad. Regla nueva: **cada push lleva a una experiencia distinta**, diseñada
+para traerlo de vuelta. Mezcla deliberada de tres tipos:
+- (a) MÁS de lo que enganchó (curiosidades verificadas, formato stories).
+- (b) VARIACIONES de lo que enganchó (duelos, quiz de los mismos datos).
+- (c) sobre todo, EXPERIENCIAS NUEVAS innovadoras ("volar la cabeza").
+Una ronda de N notificaciones = N experiencias diferentes, no N→1.
+
+Catálogo de datos REALES disponibles para experiencias (no inventar):
+- flowering/fruiting (arrays de meses) por planta → vistas de ritmo anual.
+- zonas + orientación cardinal (CLAUDE.md: este=fondo, oeste=frente, norte=muro
+  cálido, sur=pera) → mapa de sol/sombra.
+- fun_facts → curiosidades. tags (nativa/frutal/polinizadores) → quizzes/filtros.
+- uploads.json (fotos por planta) → antes/después.
+
+Primera nueva: **2026-06-13-ano-jardin.html** (flor+fruta mes a mes, interactivo,
+especies clickeables a ficha).
+
+## TODO pendiente — reconciliar arrays `pruning` con el timing corregido
+
+Los campos `pruning:[6,7,8]` de data_plants.py siguen marcando junio para muchas
+plantas, lo que CONTRADICE la corrección de timing (la poda va a fines de
+invierno: "cuando las yemas se hinchen", "pasada la última helada"). Por eso la
+experiencia "El año de tu jardín" muestra SOLO flor+fruta (exactos), sin poda.
+Antes de hacer una vista de poda anual hay que migrar los arrays `pruning` para
+que coincidan con los `when`/`due_month` ya corregidos. No mostrar poda en junio.
