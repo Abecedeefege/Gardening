@@ -5,9 +5,9 @@ No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
 ## ⏱️ CADENCIA VIGENTE (pedido del usuario 13/06) — REEMPLAZA el "3/día"
 
-**El usuario pidió: una notificación cada 30 min, en ventana diurna (10:30–20:00
+**El usuario pidió: una notificación cada 15 min (subida desde 30 el 13/06 tarde — "volvete loco"), ventana diurna (10:30–20:00
 UY), HASTA QUE PIDA MENOS.** NO 3/día mientras esté vigente esto. Reglas:
-- Llená `queue.json` con ~20 slots cada 30 min (10:30→20:00). **Cada uno a una
+- Llená `queue.json` con ~40 slots cada 15 min (10:30→20:00). **Cada uno a una
   experiencia/destino DISTINTO** (principio de abajo). Apoyate en destinos
   PERMANENTES y vivos: fichas `index.html#especie=CODE` (cada planta = un destino
   distinto que muestra su curiosidad), `index.html#curiosidades`, y las
@@ -15,6 +15,9 @@ UY), HASTA QUE PIDA MENOS.** NO 3/día mientras esté vigente esto. Reglas:
   que vayas a borrar el mismo día (da 404 — ya pasó el 13/06).
 - Como el cron de Actions es poco confiable y corta 20:30, conviene un driver que
   haga push a la cola cada ~14 min en la ventana (ver tools/, o rearmar manual).
+- El usuario pidió experiencias MÁS extensas/animadas/interactivas ("volvete loco"). Priorizar
+  las experiencias ricas (rueda-ano animada, sol-jardin, ano-jardin) sobre fichas sueltas.
+  Construir nuevas experiencias inmersivas seguido. Vivas hoy: rueda-ano, sol-jardin, ano-jardin.
 - Cuando el usuario diga "menos/basta", volver a 3/día (o lo que pida) y borrar
   esta sección.
 

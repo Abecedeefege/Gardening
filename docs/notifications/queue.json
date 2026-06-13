@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-13T19:39:13.624Z",
+  "_updated_at": "2026-06-13T17:58:30-03:00",
   "notifications": [
     {
       "id": "2026-06-13-s01",
@@ -164,9 +164,9 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-06-13-ano-jardin.html",
       "send_at": "2026-06-13T17:00:00-03:00",
       "expires_at": "2026-06-13T22:00:00-03:00",
-      "status": "pending",
+      "status": "cancelled",
       "sent_at": null,
-      "fail_reason": null,
+      "fail_reason": "superseded por cadencia 15min + experiencias ricas",
       "created_by": "claude 13/06 cadencia-30min"
     },
     {
@@ -176,9 +176,9 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-29",
       "send_at": "2026-06-13T17:30:00-03:00",
       "expires_at": "2026-06-13T22:00:00-03:00",
-      "status": "pending",
+      "status": "cancelled",
       "sent_at": null,
-      "fail_reason": null,
+      "fail_reason": "superseded por cadencia 15min + experiencias ricas",
       "created_by": "claude 13/06 cadencia-30min"
     },
     {
@@ -188,9 +188,9 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-18",
       "send_at": "2026-06-13T18:00:00-03:00",
       "expires_at": "2026-06-13T22:00:00-03:00",
-      "status": "pending",
+      "status": "cancelled",
       "sent_at": null,
-      "fail_reason": null,
+      "fail_reason": "superseded por cadencia 15min + experiencias ricas",
       "created_by": "claude 13/06 cadencia-30min"
     },
     {
@@ -200,9 +200,9 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-23",
       "send_at": "2026-06-13T18:30:00-03:00",
       "expires_at": "2026-06-13T22:00:00-03:00",
-      "status": "pending",
+      "status": "cancelled",
       "sent_at": null,
-      "fail_reason": null,
+      "fail_reason": "superseded por cadencia 15min + experiencias ricas",
       "created_by": "claude 13/06 cadencia-30min"
     },
     {
@@ -212,9 +212,9 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-30",
       "send_at": "2026-06-13T19:00:00-03:00",
       "expires_at": "2026-06-13T22:00:00-03:00",
-      "status": "pending",
+      "status": "cancelled",
       "sent_at": null,
-      "fail_reason": null,
+      "fail_reason": "superseded por cadencia 15min + experiencias ricas",
       "created_by": "claude 13/06 cadencia-30min"
     },
     {
@@ -224,9 +224,9 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-12",
       "send_at": "2026-06-13T19:30:00-03:00",
       "expires_at": "2026-06-13T22:00:00-03:00",
-      "status": "pending",
+      "status": "cancelled",
       "sent_at": null,
-      "fail_reason": null,
+      "fail_reason": "superseded por cadencia 15min + experiencias ricas",
       "created_by": "claude 13/06 cadencia-30min"
     },
     {
@@ -236,10 +236,106 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-06-13-ano-jardin.html",
       "send_at": "2026-06-13T20:00:00-03:00",
       "expires_at": "2026-06-13T22:00:00-03:00",
+      "status": "cancelled",
+      "sent_at": null,
+      "fail_reason": "superseded por cadencia 15min + experiencias ricas",
+      "created_by": "claude 13/06 cadencia-30min"
+    },
+    {
+      "id": "2026-06-13-r01",
+      "title": "🌀 Tu jardín mes a mes, ANIMADO",
+      "body": "Nueva experiencia: la rueda del año. Tocá un mes y mirá florecer tu jardín. Volá.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-13-rueda-ano.html",
+      "send_at": "2026-06-13T18:15:00-03:00",
+      "expires_at": "2026-06-13T22:00:00-03:00",
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "created_by": "claude 13/06 cadencia-30min"
+      "created_by": "claude 13/06 cadencia-15min ricas"
+    },
+    {
+      "id": "2026-06-13-r02",
+      "title": "🍒 Marzo: tu mes de cosecha",
+      "body": "14 plantas con fruta. Recorré el calendario interactivo del año.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-13-ano-jardin.html",
+      "send_at": "2026-06-13T18:30:00-03:00",
+      "expires_at": "2026-06-13T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "claude 13/06 cadencia-15min ricas"
+    },
+    {
+      "id": "2026-06-13-r03",
+      "title": "☀️ El mapa solar de tu jardín",
+      "body": "Tu casa mira este-oeste. Mirá qué planta va al sol y cuál a la sombra.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-13-sol-jardin.html",
+      "send_at": "2026-06-13T18:45:00-03:00",
+      "expires_at": "2026-06-13T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "claude 13/06 cadencia-15min ricas"
+    },
+    {
+      "id": "2026-06-13-r04",
+      "title": "🌸 Noviembre: 32 plantas en flor a la vez",
+      "body": "Tocá noviembre en la rueda del año y mirá la explosión de primavera.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-13-rueda-ano.html",
+      "send_at": "2026-06-13T19:00:00-03:00",
+      "expires_at": "2026-06-13T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "claude 13/06 cadencia-15min ricas"
+    },
+    {
+      "id": "2026-06-13-r05",
+      "title": "💡 Curiosidades de tus plantas",
+      "body": "Historias verificadas de tus 52 plantas, en un solo feed. Entrá y picá.",
+      "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
+      "send_at": "2026-06-13T19:15:00-03:00",
+      "expires_at": "2026-06-13T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "claude 13/06 cadencia-15min ricas"
+    },
+    {
+      "id": "2026-06-13-r06",
+      "title": "🧭 ¿Tenés plantas mal ubicadas?",
+      "body": "Las heliófilas quieren norte/frente. Revisá cuáles están en sombra en el mapa solar.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-13-sol-jardin.html",
+      "send_at": "2026-06-13T19:30:00-03:00",
+      "expires_at": "2026-06-13T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "claude 13/06 cadencia-15min ricas"
+    },
+    {
+      "id": "2026-06-13-r07",
+      "title": "🥑 Todas las Hass del mundo: 1 árbol",
+      "body": "Tu palto desciende de un único árbol de 1926. Abrí su ficha.",
+      "url": "https://gardening-chi.vercel.app/index.html#especie=B-36",
+      "send_at": "2026-06-13T19:45:00-03:00",
+      "expires_at": "2026-06-13T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "claude 13/06 cadencia-15min ricas"
+    },
+    {
+      "id": "2026-06-13-r08",
+      "title": "🌼 El año entero de tu jardín",
+      "body": "De la explosión de primavera a la cosecha de otoño, en una rueda animada.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-13-rueda-ano.html",
+      "send_at": "2026-06-13T20:00:00-03:00",
+      "expires_at": "2026-06-13T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "claude 13/06 cadencia-15min ricas"
     }
   ]
 }

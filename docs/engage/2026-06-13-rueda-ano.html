@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1a0a"><title>La rueda del año · Jardineando</title>
+<style>
+  :root{ --verde:#2d5016; --verde2:#5a9e35; --crema:#f6f4ea; --tinta:#1a2410;
+    --fl:#e0639b; --fr:#e89020; --pad:max(16px,env(safe-area-inset-left)); }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; } body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    background:radial-gradient(120% 90% at 50% 0%, #fbfaf3, #eef0e2); color:var(--tinta);
+    -webkit-font-smoothing:antialiased; padding:0 var(--pad) calc(48px + env(safe-area-inset-bottom)); min-height:100dvh; }
+  .top{ padding:calc(14px + env(safe-area-inset-top)) 0 2px; } .top a{ color:var(--verde); text-decoration:none; font-size:14px; font-weight:700; }
+  h1{ font-size:clamp(23px,6.4vw,30px); letter-spacing:-0.02em; color:var(--verde); margin:8px 0 2px;
+      opacity:0; transform:translateY(8px); animation:rise .6s .05s forwards; }
+  .sub{ color:#5a6b4a; font-size:13.5px; margin:0 0 4px; opacity:0; animation:fade .6s .25s forwards; }
+  @keyframes rise{ to{ opacity:1; transform:none; } } @keyframes fade{ to{ opacity:1; } }
+  .wheelwrap{ display:flex; justify-content:center; margin:6px 0 0; }
+  svg.wheel{ width:min(94vw,420px); height:auto; touch-action:manipulation; }
+  .ray{ stroke:var(--fl); stroke-linecap:round; transition:stroke-dashoffset 1s cubic-bezier(.2,.85,.25,1), stroke-width .25s, opacity .25s; cursor:pointer; }
+  .ray.dim{ opacity:.32; } .ray.active{ filter:drop-shadow(0 0 6px rgba(224,99,155,.6)); }
+  .mlabel{ font-size:13px; font-weight:800; fill:#8a9a78; cursor:pointer; transition:fill .2s; }
+  .mlabel.active{ fill:var(--verde); } .mlabel.now{ fill:var(--fr); }
+  .hub{ fill:#fff; stroke:#e6ddc8; }
+  .hub-m{ font-size:20px; font-weight:800; fill:var(--verde); } .hub-n{ font-size:12px; fill:#7a8a68; font-weight:700; }
+  .pulse{ animation:pulse 1.8s ease-in-out infinite; transform-origin:center; }
+  @keyframes pulse{ 0%,100%{ opacity:1 } 50%{ opacity:.55 } }
+  .counts{ text-align:center; margin:6px 0 2px; font-size:15px; color:#33402a; min-height:1.4em; }
+  .counts b.fl{ color:var(--fl); } .counts b.fr{ color:var(--fr); }
+  .panel{ max-width:620px; margin:6px auto 0; }
+  .grp{ margin-top:14px; } .grp h2{ font-size:14px; margin:0 0 9px; display:flex; align-items:center; gap:7px; }
+  .dot{ width:10px;height:10px;border-radius:50%;display:inline-block; } .d-fl{ background:var(--fl);} .d-fr{ background:var(--fr);}
+  .chips{ display:flex; flex-wrap:wrap; gap:7px; }
+  .chip{ display:inline-flex; align-items:center; gap:5px; text-decoration:none; background:#fff; border:1px solid #e6ddc8;
+    color:var(--tinta); font-size:13px; font-weight:600; padding:7px 10px; border-radius:11px; box-shadow:0 1px 2px rgba(45,80,22,.05);
+    opacity:0; transform:translateY(6px); animation:chipin .4s forwards; }
+  @keyframes chipin{ to{ opacity:1; transform:none; } } .chip:active{ transform:scale(.95); }
+  .chip small{ color:#9aa888; font-weight:700; } .empty{ color:#9aa888; font-style:italic; font-size:13px; }
+  .hint{ text-align:center; font-size:12.5px; color:#8a9a78; margin:10px 0 0; }
+  .foot{ margin-top:26px; padding-top:18px; border-top:1px solid #e6ecdb; }
+  .reacts{ display:flex; gap:10px; align-items:center; justify-content:center; } .reacts button{ width:50px;height:50px;border-radius:50%;border:1px solid #e0e7d4;background:#fff;font-size:23px;cursor:pointer;transition:transform .12s;}
+  .reacts button:active{ transform:scale(.86);} .reacts button.sel{ background:var(--verde);border-color:var(--verde);transform:scale(1.1);} .reacts span{ font-size:13px;color:#6f7d61; width:100%; text-align:center; }
+  .cta{ margin:16px auto 0; display:flex; flex-direction:column; gap:9px; max-width:380px; } .cta button{ padding:14px;border:none;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer; }
+  .cta .yes{ background:var(--verde);color:#fff; } .cta .no{ background:#fff;color:#6f7d61;border:1px solid #d7e0c9; } .cta-note{ font-size:12px;color:#6f7d61;margin:8px auto 0; text-align:center; }
+  .engage-feedback{ font-size:15px;font-weight:700;color:var(--verde); text-align:center; }
+  @media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; } .ray{ stroke-dashoffset:0 !important; } }
+</style></head><body>
+<div class="top"><a href="https://gardening-chi.vercel.app/index.html">← Inicio</a>
+  <h1>🌀 La rueda del año</h1>
+  <p class="sub">El pulso de floración de tu jardín, mes a mes. Tocá un mes y mirá quién despierta.</p>
+</div>
+<div class="wheelwrap"><svg class="wheel" viewBox="0 0 340 340" id="wheel" aria-label="Rueda de floración del año"></svg></div>
+<p class="counts" id="counts"></p>
+<div class="panel">
+  <div class="grp"><h2><span class="dot d-fl"></span> En flor 🌸</h2><div class="chips" id="g-fl"></div></div>
+  <div class="grp"><h2><span class="dot d-fr"></span> Con fruta 🍒</h2><div class="chips" id="g-fr"></div></div>
+  <p class="hint">Tocá los meses para recorrer el año. Los rayos largos = más plantas en flor.</p>
+</div>
+<div class="foot">
+  <div class="reacts" data-id="rueda-ano">
+    <button onclick="engageReact('rueda-ano','love', this)">😍</button>
+    <button onclick="engageReact('rueda-ano','meh', this)">😐</button>
+    <button onclick="engageReact('rueda-ano','no', this)">🙅</button>
+    <span>¿Te voló la cabeza?</span>
+  </div>
+  <div class="cta">
+    <button class="yes" onclick="engageApprove('2026-06-13-rueda-ano')">✅ Aprobar e integrar al sitio</button>
+    <button class="no" onclick="engageRejected('2026-06-13-rueda-ano')">✕ No es para mí</button>
+  </div>
+  <p class="cta-note">Si la aprobás, la integro como sección fija. Nada queda fijo sin tu OK.</p>
+</div>
+<script src="engage.js"></script>
+<script>
+  var M = {"1": {"fl": [{"code": "F-2", "name": "Bignonia rosada / Podranea"}, {"code": "F-7", "name": "Abelia"}, {"code": "F-8", "name": "Aguaribay / Molle"}, {"code": "B-1", "name": "Santa Rita / Buganvilia"}, {"code": "B-3", "name": "Jazmín de leche / estrellado"}, {"code": "B-4", "name": "Hibisco / Rosa china"}, {"code": "B-5a", "name": "Hortensia"}, {"code": "B-8", "name": "Palmera pindó"}, {"code": "B-9", "name": "Crespón / Mirto de crepe"}, {"code": "B-10", "name": "Lavanda"}, {"code": "B-12", "name": "Cinta / Lazo de amor"}, {"code": "B-14", "name": "Lapachillo"}, {"code": "B-18", "name": "Rosa de Siria / Althea"}, {"code": "B-25", "name": "Gardenia / Jazmín del Cabo"}, {"code": "B-29", "name": "Lantana / Camará"}, {"code": "B-42", "name": "Pata de vaca"}], "fr": [{"code": "F-4", "name": "Ciruelo de jardín"}, {"code": "B-23", "name": "Limonero"}, {"code": "B-30", "name": "Durazno"}, {"code": "B-34", "name": "Mandioca brava (tentativa)"}, {"code": "B-38", "name": "Ciruela amarilla"}]}, "2": {"fl": [{"code": "F-2", "name": "Bignonia rosada / Podranea"}, {"code": "F-7", "name": "Abelia"}, {"code": "B-1", "name": "Santa Rita / Buganvilia"}, {"code": "B-4", "name": "Hibisco / Rosa china"}, {"code": "B-5a", "name": "Hortensia"}, {"code": "B-9", "name": "Crespón / Mirto de crepe"}, {"code": "B-10", "name": "Lavanda"}, {"code": "B-18", "name": "Rosa de Siria / Althea"}, {"code": "B-25", "name": "Gardenia / Jazmín del Cabo"}, {"code": "B-29", "name": "Lantana / Camará"}, {"code": "B-42", "name": "Pata de vaca"}], "fr": [{"code": "B-14", "name": "Lapachillo"}, {"code": "B-23", "name": "Limonero"}, {"code": "B-30", "name": "Durazno"}, {"code": "B-34", "name": "Mandioca brava (tentativa)"}, {"code": "B-38", "name": "Ciruela amarilla"}, {"code": "B-39", "name": "Pera Williams"}]}, "3": {"fl": [{"code": "F-2", "name": "Bignonia rosada / Podranea"}, {"code": "F-7", "name": "Abelia"}, {"code": "B-1", "name": "Santa Rita / Buganvilia"}, {"code": "B-4", "name": "Hibisco / Rosa china"}, {"code": "B-9", "name": "Crespón / Mirto de crepe"}, {"code": "B-10", "name": "Lavanda"}, {"code": "B-18", "name": "Rosa de Siria / Althea"}, {"code": "B-23", "name": "Limonero"}, {"code": "B-29", "name": "Lantana / Camará"}], "fr": [{"code": "F-1", "name": "Guayabo del país"}, {"code": "F-8", "name": "Aguaribay / Molle"}, {"code": "F-9", "name": "Ligustro"}, {"code": "B-7", "name": "Azarero / Pitósporo"}, {"code": "B-8", "name": "Palmera pindó"}, {"code": "B-14", "name": "Lapachillo"}, {"code": "B-15", "name": "Hiedra común"}, {"code": "B-16", "name": "Anacahuita"}, {"code": "B-23", "name": "Limonero"}, {"code": "B-37", "name": "Liquidámbar"}, {"code": "B-39", "name": "Pera Williams"}, {"code": "B-40", "name": "Madreselva china siempreverde"}, {"code": "B-42", "name": "Pata de vaca"}, {"code": "B-43", "name": "Pitósporo"}]}, "4": {"fl": [{"code": "F-2", "name": "Bignonia rosada / Podranea"}, {"code": "F-7", "name": "Abelia"}, {"code": "B-4", "name": "Hibisco / Rosa china"}, {"code": "B-10", "name": "Lavanda"}, {"code": "B-23", "name": "Limonero"}, {"code": "B-29", "name": "Lantana / Camará"}], "fr": [{"code": "F-1", "name": "Guayabo del país"}, {"code": "F-8", "name": "Aguaribay / Molle"}, {"code": "F-9", "name": "Ligustro"}, {"code": "B-7", "name": "Azarero / Pitósporo"}, {"code": "B-8", "name": "Palmera pindó"}, {"code": "B-14", "name": "Lapachillo"}, {"code": "B-15", "name": "Hiedra común"}, {"code": "B-16", "name": "Anacahuita"}, {"code": "B-22", "name": "Palta uruguaya"}, {"code": "B-23", "name": "Limonero"}, {"code": "B-24", "name": "Mandarina criolla"}, {"code": "B-37", "name": "Liquidámbar"}, {"code": "B-40", "name": "Madreselva china siempreverde"}, {"code": "B-42", "name": "Pata de vaca"}, {"code": "B-43", "name": "Pitósporo"}]}, "5": {"fl": [{"code": "F-7", "name": "Abelia"}, {"code": "B-10", "name": "Lavanda"}, {"code": "B-29", "name": "Lantana / Camará"}], "fr": [{"code": "F-1", "name": "Guayabo del país"}, {"code": "F-8", "name": "Aguaribay / Molle"}, {"code": "F-9", "name": "Ligustro"}, {"code": "B-7", "name": "Azarero / Pitósporo"}, {"code": "B-8", "name": "Palmera pindó"}, {"code": "B-15", "name": "Hiedra común"}, {"code": "B-16", "name": "Anacahuita"}, {"code": "B-22", "name": "Palta uruguaya"}, {"code": "B-23", "name": "Limonero"}, {"code": "B-24", "name": "Mandarina criolla"}, {"code": "B-36", "name": "Palta Haas"}, {"code": "B-37", "name": "Liquidámbar"}, {"code": "B-41", "name": "Caqui / Persimón"}, {"code": "B-43", "name": "Pitósporo"}]}, "6": {"fl": [{"code": "B-26", "name": "Romero"}], "fr": [{"code": "F-8", "name": "Aguaribay / Molle"}, {"code": "F-9", "name": "Ligustro"}, {"code": "B-8", "name": "Palmera pindó"}, {"code": "B-22", "name": "Palta uruguaya"}, {"code": "B-23", "name": "Limonero"}, {"code": "B-24", "name": "Mandarina criolla"}, {"code": "B-36", "name": "Palta Haas"}, {"code": "B-41", "name": "Caqui / Persimón"}]}, "7": {"fl": [{"code": "B-26", "name": "Romero"}], "fr": [{"code": "B-8", "name": "Palmera pindó"}, {"code": "B-22", "name": "Palta uruguaya"}, {"code": "B-23", "name": "Limonero"}, {"code": "B-24", "name": "Mandarina criolla"}, {"code": "B-36", "name": "Palta Haas"}, {"code": "B-41", "name": "Caqui / Persimón"}]}, "8": {"fl": [{"code": "F-4", "name": "Ciruelo de jardín"}, {"code": "B-26", "name": "Romero"}, {"code": "B-30", "name": "Durazno"}, {"code": "B-32", "name": "Viraró"}, {"code": "B-38", "name": "Ciruela amarilla"}, {"code": "B-39", "name": "Pera Williams"}], "fr": [{"code": "B-23", "name": "Limonero"}, {"code": "B-24", "name": "Mandarina criolla"}, {"code": "B-36", "name": "Palta Haas"}]}, "9": {"fl": [{"code": "F-4", "name": "Ciruelo de jardín"}, {"code": "B-10", "name": "Lavanda"}, {"code": "B-13", "name": "Clivia / Lirio del Cabo"}, {"code": "B-15", "name": "Hiedra común"}, {"code": "B-22", "name": "Palta uruguaya"}, {"code": "B-23", "name": "Limonero"}, {"code": "B-24", "name": "Mandarina criolla"}, {"code": "B-26", "name": "Romero"}, {"code": "B-30", "name": "Durazno"}, {"code": "B-32", "name": "Viraró"}, {"code": "B-36", "name": "Palta Haas"}, {"code": "B-38", "name": "Ciruela amarilla"}, {"code": "B-39", "name": "Pera Williams"}], "fr": [{"code": "B-23", "name": "Limonero"}, {"code": "B-36", "name": "Palta Haas"}]}, "10": {"fl": [{"code": "F-1", "name": "Guayabo del país"}, {"code": "F-3", "name": "Fotinia"}, {"code": "F-5", "name": "Coronita de novia (?)"}, {"code": "B-3", "name": "Jazmín de leche / estrellado"}, {"code": "B-4", "name": "Hibisco / Rosa china"}, {"code": "B-5a", "name": "Hortensia"}, {"code": "B-6", "name": "Esparraguera cola de zorro"}, {"code": "B-7", "name": "Azarero / Pitósporo"}, {"code": "B-10", "name": "Lavanda"}, {"code": "B-12", "name": "Cinta / Lazo de amor"}, {"code": "B-13", "name": "Clivia / Lirio del Cabo"}, {"code": "B-14", "name": "Lapachillo"}, {"code": "B-15", "name": "Hiedra común"}, {"code": "B-16", "name": "Anacahuita"}, {"code": "B-22", "name": "Palta uruguaya"}, {"code": "B-23", "name": "Limonero"}, {"code": "B-24", "name": "Mandarina criolla"}, {"code": "B-25", "name": "Gardenia / Jazmín del Cabo"}, {"code": "B-26", "name": "Romero"}, {"code": "B-29", "name": "Lantana / Camará"}, {"code": "B-34", "name": "Mandioca brava (tentativa)"}, {"code": "B-36", "name": "Palta Haas"}, {"code": "B-37", "name": "Liquidámbar"}, {"code": "B-41", "name": "Caqui / Persimón"}, {"code": "B-42", "name": "Pata de vaca"}, {"code": "B-43", "name": "Pitósporo"}], "fr": [{"code": "B-23", "name": "Limonero"}, {"code": "B-32", "name": "Viraró"}, {"code": "B-36", "name": "Palta Haas"}]}, "11": {"fl": [{"code": "F-1", "name": "Guayabo del país"}, {"code": "F-2", "name": "Bignonia rosada / Podranea"}, {"code": "F-3", "name": "Fotinia"}, {"code": "F-5", "name": "Coronita de novia (?)"}, {"code": "F-7", "name": "Abelia"}, {"code": "F-8", "name": "Aguaribay / Molle"}, {"code": "F-9", "name": "Ligustro"}, {"code": "B-1", "name": "Santa Rita / Buganvilia"}, {"code": "B-3", "name": "Jazmín de leche / estrellado"}, {"code": "B-4", "name": "Hibisco / Rosa china"}, {"code": "B-5a", "name": "Hortensia"}, {"code": "B-6", "name": "Esparraguera cola de zorro"}, {"code": "B-7", "name": "Azarero / Pitósporo"}, {"code": "B-8", "name": "Palmera pindó"}, {"code": "B-10", "name": "Lavanda"}, {"code": "B-12", "name": "Cinta / Lazo de amor"}, {"code": "B-13", "name": "Clivia / Lirio del Cabo"}, {"code": "B-14", "name": "Lapachillo"}, {"code": "B-15", "name": "Hiedra común"}, {"code": "B-16", "name": "Anacahuita"}, {"code": "B-22", "name": "Palta uruguaya"}, {"code": "B-23", "name": "Limonero"}, {"code": "B-24", "name": "Mandarina criolla"}, {"code": "B-25", "name": "Gardenia / Jazmín del Cabo"}, {"code": "B-29", "name": "Lantana / Camará"}, {"code": "B-34", "name": "Mandioca brava (tentativa)"}, {"code": "B-37", "name": "Liquidámbar"}, {"code": "B-40", "name": "Madreselva china siempreverde"}, {"code": "B-41", "name": "Caqui / Persimón"}, {"code": "B-42", "name": "Pata de vaca"}, {"code": "B-43", "name": "Pitósporo"}, {"code": "B-44", "name": "Evónimo japonés variegado"}], "fr": [{"code": "B-23", "name": "Limonero"}, {"code": "B-32", "name": "Viraró"}]}, "12": {"fl": [{"code": "F-1", "name": "Guayabo del país"}, {"code": "F-2", "name": "Bignonia rosada / Podranea"}, {"code": "F-7", "name": "Abelia"}, {"code": "F-8", "name": "Aguaribay / Molle"}, {"code": "F-9", "name": "Ligustro"}, {"code": "B-1", "name": "Santa Rita / Buganvilia"}, {"code": "B-3", "name": "Jazmín de leche / estrellado"}, {"code": "B-4", "name": "Hibisco / Rosa china"}, {"code": "B-5a", "name": "Hortensia"}, {"code": "B-6", "name": "Esparraguera cola de zorro"}, {"code": "B-8", "name": "Palmera pindó"}, {"code": "B-9", "name": "Crespón / Mirto de crepe"}, {"code": "B-10", "name": "Lavanda"}, {"code": "B-12", "name": "Cinta / Lazo de amor"}, {"code": "B-14", "name": "Lapachillo"}, {"code": "B-16", "name": "Anacahuita"}, {"code": "B-18", "name": "Rosa de Siria / Althea"}, {"code": "B-25", "name": "Gardenia / Jazmín del Cabo"}, {"code": "B-29", "name": "Lantana / Camará"}, {"code": "B-34", "name": "Mandioca brava (tentativa)"}, {"code": "B-40", "name": "Madreselva china siempreverde"}, {"code": "B-42", "name": "Pata de vaca"}, {"code": "B-43", "name": "Pitósporo"}, {"code": "B-44", "name": "Evónimo japonés variegado"}], "fr": [{"code": "F-4", "name": "Ciruelo de jardín"}, {"code": "B-23", "name": "Limonero"}, {"code": "B-30", "name": "Durazno"}, {"code": "B-32", "name": "Viraró"}, {"code": "B-34", "name": "Mandioca brava (tentativa)"}, {"code": "B-38", "name": "Ciruela amarilla"}]}}; var MAXFL = 32;
+  var AB=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  var LONG=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  var SITE='https://gardening-chi.vercel.app/index.html#especie=';
+  var CX=170, CY=170, RI=54, LMAX=92;
+  var nowM=(new Date()).getMonth()+1, sel=nowM;
+  var svg=document.getElementById('wheel'), NS='http://www.w3.org/2000/svg';
+  function el(t,a){ var e=document.createElementNS(NS,t); for(var k in a) e.setAttribute(k,a[k]); return e; }
+  function pos(m,r){ var a=(m-1)*30-90; a=a*Math.PI/180; return [CX+r*Math.cos(a), CY+r*Math.sin(a)]; }
+
+  var rays={}, labels={};
+  // anillo decorativo
+  svg.appendChild(el('circle',{cx:CX,cy:CY,r:RI+LMAX+2,fill:'none',stroke:'#efe7d3','stroke-width':1}));
+  for(var m=1;m<=12;m++){ (function(m){
+    var fl=M[m].fl.length, len=RI + (fl/MAXFL)*LMAX - RI + Math.max(0,(fl?6:2)); // longitud del rayo
+    var rlen = (fl/MAXFL)*LMAX; if(fl===0) rlen=4;
+    var s=pos(m,RI), e=pos(m,RI+rlen);
+    var line=el('line',{x1:s[0],y1:s[1],x2:e[0],y2:e[1],class:'ray','stroke-width':13});
+    var L=Math.sqrt(Math.pow(e[0]-s[0],2)+Math.pow(e[1]-s[1],2));
+    line.style.strokeDasharray=L; line.style.strokeDashoffset=L; line.style.transitionDelay=(m*0.05)+'s';
+    line.addEventListener('click',function(){ select(m); });
+    svg.appendChild(line); rays[m]=line;
+    var lp=pos(m,RI+LMAX+16); var t=el('text',{x:lp[0],y:lp[1]+4,'text-anchor':'middle',class:'mlabel'+(m===nowM?' now':'')});
+    t.textContent=AB[m-1]; t.addEventListener('click',function(){ select(m); }); svg.appendChild(t); labels[m]=t;
+  })(m); }
+  // hub
+  svg.appendChild(el('circle',{cx:CX,cy:CY,r:RI-4,class:'hub','stroke-width':1.5}));
+  var hubM=el('text',{x:CX,y:CY-2,'text-anchor':'middle',class:'hub-m'}); 
+  var hubN=el('text',{x:CX,y:CY+16,'text-anchor':'middle',class:'hub-n'});
+  svg.appendChild(hubM); svg.appendChild(hubN);
+
+  function countUp(node, to){ var from=0, t0=null, dur=550;
+    function step(ts){ if(!t0)t0=ts; var p=Math.min(1,(ts-t0)/dur); node.textContent=Math.round(from+(to-from)*p);
+      if(p<1) requestAnimationFrame(step); } requestAnimationFrame(step); }
+  function chip(p,cls){ return '<a class="chip" style="animation-delay:'+(Math.random()*0.25).toFixed(2)+'s" href="'+SITE+encodeURIComponent(p.code)+'">'+p.name+' <small>'+p.code+'</small></a>'; }
+  function fillc(id,list){ var b=document.getElementById(id); b.innerHTML=list.length?list.map(function(p){return chip(p);}).join(''):'<span class="empty">Nada este mes.</span>'; }
+
+  function select(m){
+    sel=m;
+    for(var k=1;k<=12;k++){ rays[k].classList.toggle('active',k===m); rays[k].classList.toggle('dim',k!==m);
+      rays[k].classList.toggle('pulse', false); labels[k].classList.toggle('active',k===m);
+      rays[k].setAttribute('stroke-width', k===m?16:13); }
+    var fl=M[m].fl, fr=M[m].fr;
+    hubM.textContent=AB[m-1];
+    hubN.innerHTML=''; countUp(hubN, fl.length); // muestra # en flor en el hub
+    document.getElementById('counts').innerHTML='En <b>'+LONG[m-1]+'</b>'+(m===nowM?' (este mes)':'')+': <b class="fl">'+fl.length+'</b> en flor · <b class="fr">'+fr.length+'</b> con fruta.';
+    fillc('g-fl',fl); fillc('g-fr',fr);
+  }
+  // animación de entrada: crecer los rayos
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){
+    for(var k=1;k<=12;k++) rays[k].style.strokeDashoffset=0;
+  }); });
+  select(nowM);
+  setTimeout(function(){ if(rays[nowM]) rays[nowM].classList.add('pulse'); }, 1300);
+</script>
+</body></html>
