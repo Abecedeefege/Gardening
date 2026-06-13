@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-13T06:15:00-03:00",
+  "_updated_at": "2026-06-13T11:55:04.277Z",
   "notifications": [
     {
       "id": "2026-06-13-a",
@@ -8,8 +8,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-25",
       "send_at": "2026-06-13T08:30:00-03:00",
       "expires_at": "2026-06-13T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-13T11:55:04.275Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-06-13"
     },
