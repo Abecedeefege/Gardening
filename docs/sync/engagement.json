@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-13T22:06:51.537Z",
+  "_updated_at": "2026-06-13T22:38:18.258Z",
   "events": [
     {
       "type": "_probe",
@@ -288,6 +288,15 @@
       "value": "no",
       "page": "engage/2026-06-13-sol-jardin.html",
       "ts": "2026-06-13T22:06:51.697Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqcwo38vg517l1",
+      "type": "dwell",
+      "seconds": 13,
+      "scroll_pct": 100,
+      "page": "engage/2026-06-13-sol-jardin.html",
+      "ts": "2026-06-13T22:06:56.623Z",
       "device": "sin-nombre"
     }
   ],
