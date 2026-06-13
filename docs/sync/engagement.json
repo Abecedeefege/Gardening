@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-13T21:38:41.236Z",
+  "_updated_at": "2026-06-13T21:39:21.302Z",
   "events": [
     {
       "type": "_probe",
@@ -230,6 +230,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-06-13-rueda-ano.html",
       "ts": "2026-06-13T21:38:40.860Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqcvolv128qhty",
+      "type": "notification_clicked",
+      "nid": "2026-06-13-r02",
+      "page": "engage/2026-06-13-ano-jardin.html",
+      "ts": "2026-06-13T21:39:21.132Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqcvolv1ugpr8m",
+      "type": "page_visit",
+      "page": "engage/2026-06-13-ano-jardin.html",
+      "nid": "2026-06-13-r02",
+      "src": "push",
+      "ts": "2026-06-13T21:39:21.132Z",
       "device": "sin-nombre"
     }
   ],
