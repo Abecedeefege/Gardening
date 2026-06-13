@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-13T11:01:37-03:00",
+  "_updated_at": "2026-06-13T14:01:57.952Z",
   "notifications": [
     {
       "id": "2026-06-13-s01",
@@ -20,8 +20,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=F-8",
       "send_at": "2026-06-13T11:00:00-03:00",
       "expires_at": "2026-06-13T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-13T14:01:57.951Z",
       "fail_reason": null,
       "created_by": "claude 13/06 cadencia-30min"
     },
