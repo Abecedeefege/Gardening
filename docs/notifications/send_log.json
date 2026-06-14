@@ -239,6 +239,48 @@
       "nid": "2026-06-14-u03",
       "ts": "2026-06-14T14:08:22.897Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u04",
+      "ts": "2026-06-14T15:58:16.351Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u05",
+      "ts": "2026-06-14T15:58:16.410Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u06",
+      "ts": "2026-06-14T15:58:16.586Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u07",
+      "ts": "2026-06-14T15:58:16.636Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u08",
+      "ts": "2026-06-14T15:58:16.813Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u09",
+      "ts": "2026-06-14T15:58:16.869Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u10",
+      "ts": "2026-06-14T15:58:17.097Z",
+      "status_code": 201
     }
   ]
 }
