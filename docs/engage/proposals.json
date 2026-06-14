@@ -47,19 +47,41 @@
       "notified_by": [
         "2026-06-13-b"
       ],
-      "result_notes": "RECHAZADA + reacción \"no\". Vista de calendario no engancha tanto como las curiosidades/animaciones. No pushear."
+      "result_notes": "RECHAZADA + reacción \"no\". Vista de calendario no engancha tanto como las curiosidades/animaciones. No pushear. Archivo HTML eliminado del repo el 14/06 (quedó la versión animada del mismo concepto: rueda-ano, que sí enganchó y fue promovida)."
+    },
+    {
+      "id": "2026-06-13-sol-jardin",
+      "title": "Mapa de luz del jardín (sol mes a mes)",
+      "page": null,
+      "created": "2026-06-13",
+      "status": "dropped",
+      "hypothesis": "Vista utilitaria del recorrido solar por zona (este/oeste/norte/sur) — qué planta recibe cuánto sol según la orientación de la casa.",
+      "notified_by": [],
+      "result_notes": "RECHAZADA 14/06. El usuario reaccionó \"no\" y disparó proposal_rejected 3 veces (13/06 19:12, 22:06, 22:38). Confirma el patrón: las vistas utilitarias (mapa de luz, calendario de listas) NO enganchan — el usuario quiere deleite (curiosidad + animación), no herramientas. Página efímera eliminada. No estaba registrada en proposals.json en su momento; se agrega ahora el registro de cierre. No volver a pushear vistas de tipo mapa/lista."
     },
     {
       "id": "2026-06-13-rueda-ano",
       "title": "La rueda del año (animada)",
       "page": "engage/2026-06-13-rueda-ano.html",
       "created": "2026-06-13",
-      "status": "approved",
+      "status": "promoted",
       "hypothesis": "experiencia animada interactiva",
       "notified_by": [
         "2026-06-13-r01"
       ],
-      "result_notes": "APROBADA + 87s dwell"
+      "result_notes": "PROMOVIDA 14/06. APROBADA explícitamente (proposal_approved 13/06 21:37) + 87s dwell con scroll 100% — la señal más fuerte de la tanda \"volvete loco\" (animación + interacción). Promoción = página permanente + link fijo «🌀 Rueda del año» en la nav del inicio (todo-strip en build.py). Se mantiene en su path engage/2026-06-13-rueda-ano.html porque la cola ya deep-linkea ahí con variaciones #m=N; mover rompería esos links. Footer de la página actualizado: se quitó el CTA aprobar/rechazar (ya no aplica) y quedó link a inicio + nota de integración. Sus reacciones siguen logueando. TODO futuro: regenerar el dataset M de floración desde data_plants.py en build-time para que no quede como snapshot estático."
+    },
+    {
+      "id": "2026-06-14-mazo-jardin",
+      "title": "El mazo de tu jardín (flip-cards animadas de curiosidades)",
+      "page": "engage/2026-06-14-mazo-jardin.html",
+      "created": "2026-06-14",
+      "status": "pending",
+      "hypothesis": "Fusión de los DOS ganadores medidos: el contenido #1 (curiosidades verificadas, todas 😍 + 104s dwell) servido con el formato #1 (animación + interacción, como la rueda aprobada + 87s dwell). Hipótesis: un mazo de cartas que se dan vuelta con animación 3D, una curiosidad verificada por planta, engancha MÁS que el feed plano de curiosidades o la rueda por separado, porque suma el gesto de descubrir. 13 cartas, todas con dato verificado del dict VERIF. Si junta aprobación, se integra como sección/experiencia fija.",
+      "notified_by": [
+        "2026-06-14-u11"
+      ],
+      "result_notes": null
     }
   ]
 }

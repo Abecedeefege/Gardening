@@ -5,129 +5,100 @@ No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
 ## ⏱️ CADENCIA VIGENTE (pedido del usuario 13/06) — REEMPLAZA el "3/día"
 
-**El usuario pidió: una notificación cada 15 min (subida desde 30 el 13/06 tarde — "volvete loco"), ventana diurna (10:30–20:00
-UY), HASTA QUE PIDA MENOS.** NO 3/día mientras esté vigente esto. Reglas:
+**El usuario pidió: una notificación cada 15 min, ventana diurna (10:30–20:00 UY),
+HASTA QUE PIDA MENOS ("volvete loco").** NO 3/día mientras esté vigente esto. Reglas:
 - **GENERÁ LA COLA CON EL SCRIPT, NO A MANO:** `python tools/gen_queue.py <YYYY-MM-DD> 15`.
-  Garantiza por construcción que **cada slot va a un destino ÚNICO** (assert anti-duplicados).
-  Backbone = las 52 fichas `#especie=CODE` (rotación distinta por día) + variaciones de
-  experiencias APROBADAS (rueda con `#m=N` distinto, feed `#curiosidades`). Escribir la
-  cola a mano fue lo que metió repeticiones — el usuario se quejó 2 veces. NO lo hagas.
-- Si verificás más `fun_fact`, agregá su code al dict `VERIF` de `gen_queue.py` para que
-  ese push lleve el dato fuerte en vez del hook neutral.
+  Garantiza por construcción que cada slot va a un destino ÚNICO (assert anti-duplicados).
+  Backbone = las 52 fichas `#especie=CODE` (rotación por día, seed=fecha) + variaciones de
+  experiencias APROBADAS (rueda `#m=N`, feed `#curiosidades`), 1 de cada 5 slots.
+  Escribir la cola a mano metió repeticiones — el usuario se quejó 2 veces. NO lo hagas.
+- **Promotor de proposal nueva:** el script no conoce la proposal del día. Insertá UN solo
+  push promotor a mano (swap quirúrgico de 1 slot diurno a una URL nueva/única — no rompe el
+  assert). Hoy hice eso con u11 (13:00 → mazo). Documentalo. NO toques más de 1 slot.
+- Si verificás más `fun_fact`, agregá su code al dict `VERIF` de `gen_queue.py`.
 - NUNCA linkear a una página efímera que vayas a borrar el mismo día (da 404 — pasó el 13/06).
-- Como el cron de Actions es poco confiable y corta 20:30, conviene un driver que
-  haga push a la cola cada ~14 min en la ventana (ver tools/, o rearmar manual).
-- El usuario pidió experiencias MÁS extensas/animadas/interactivas ("volvete loco"). Priorizar
-  las experiencias ricas (rueda-ano animada, sol-jardin, ano-jardin) sobre fichas sueltas.
-  Construir nuevas experiencias inmersivas seguido. Vivas hoy: rueda-ano, sol-jardin, ano-jardin.
-- Cuando el usuario diga "menos/basta", volver a 3/día (o lo que pida) y borrar
-  esta sección.
+- El cron de Actions es poco confiable y corta 20:30; conviene un driver que pushee la cola
+  cada ~14 min en la ventana (ver tools/).
+- Cuando el usuario diga "menos/basta", volver a 3/día (o lo que pida) y borrar esta sección.
 
 ## Estado del sistema
 
 - Push subscription device `pix9`: **active** (desde 11/06).
-- **Logging de feedback estuvo ROTO** hasta 12-13/06: el write a `engagement.json`
-  era PAT-dependiente y fallaba al minimizar la app en mobile → el archivo
-  quedaba en 0 eventos. Parchado con (1) outbox en localStorage (escribe sincrónico
-  antes de mandar, reintenta al volver a foco) y (2) endpoint serverless
-  `/api/feedback` que escribe al repo SIN PAT. **Por eso `engagement.json` sigue
-  vacío al 13/06**: los datos previos a la fix no se guardaron. Regla: hasta ver
-  el primer evento real entrar, NO leer "0 eventos" como "no enganchó" — el canal
-  de medición recién se está estabilizando. El feedback fuerte vino por chat.
+- **Logging YA funciona** (parchado 12-13/06 con outbox en localStorage + endpoint serverless
+  `/api/feedback` sin PAT). Al 14/06 `engagement.json` tiene 36 eventos reales medidos. Confiar
+  en la métrica de clicks/reacciones/dwell por slot y por ángulo.
+
+## 🎯 SEÑAL REAL MEDIDA (datos del 13/06) — la base de toda decisión
+
+Dos ganadores claros y dos perdedores claros:
+- **GANADOR #1 — Curiosidades (contenido):** TODAS las cartas reaccionadas 😍 (guayabo x2,
+  durazno x2, aguaribay, caqui, hibisco) + **104 s de dwell**. Las curiosidades verificadas de
+  SUS plantas son lo que más engancha. → seguir alimentando el feed. Ya es sección fija.
+- **GANADOR #2 — Rueda del año (formato):** **APROBADA** (proposal_approved 21:37) + **87 s
+  dwell** scroll 100%. La apuesta "volvete loco" (animación 3D + interacción) funcionó.
+- **PERDEDOR — sol-jardin (mapa de luz):** rechazada con reacción "no" + **proposal_rejected x3**.
+- **PERDEDOR — ano-jardin (calendario de listas):** rechazada + reacción "no".
+
+**Lectura inequívoca:** el usuario quiere **deleite (curiosidad + animación)**, NO herramientas
+utilitarias (mapas, calendarios de listas). Regla: construir experiencias animadas/inmersivas y
+servir contenido de curiosidad; NO volver a pushear vistas tipo mapa/lista/dashboard estático.
 
 ## Conclusiones de los pushes enviados hasta ahora (por feedback real)
 
-- **11/06 — 1 push** (calendario de poda corregido), 20:00, ventana 2h. Salió 201
-  pero casi seguro no se vio (primera noche, deshora). Señal: inconcluyente.
-- **12/06 día — push e1 curiosidades @14:30 → GANADOR.** El usuario respondió por
-  chat "MUY buena la notificación y la landing", 😍 a la carta de la Palta Hass y
-  siguió pidiendo más datos. La señal positiva más fuerte que tuvo el canal. →
-  formato **curiosidad verificada de SUS plantas (historia + dato contraintuitivo)**
-  es la dirección. Cartas con nombre propio caen mejor; la buganvilia (Baret) = "meh".
-- **12/06 noche — barrida f01-f08 (8 pushes, 20:00-22:00 UY, todas 201).** Sin
-  feedback (chat ni log) y todas linkeaban a la MISMA página (curiosidades-2).
-  **Conclusión: sobre-saturación.** El usuario marcó después que "N notifs a la
-  MISMA experiencia mata la novedad". → de acá sale el principio del 13/06.
-  No repetir barridas; los envíos nocturnos (post-20:00) con ventana corta rinden poco.
+- **11/06 — 1 push** (poda corregida), 20:00, ventana 2h: inconcluyente (deshora, 1ª noche).
+- **12/06 día — curiosidades @14:30 → GANADOR.** "MUY buena la notificación y la landing" (chat)
+  + 😍 a la Palta Hass. Origen de la sección Curiosidades. Cartas con nombre propio caen mejor.
+- **12/06 noche — barrida f01-f08 (8 pushes a la MISMA página) → SOBRE-SATURACIÓN.** "N notifs
+  al mismo destino mata la novedad". De acá sale el principio "1 destino único por push".
+- **13/06 — cadencia 15min (a + s01-s13 + r01-r08, todas 201).** Con la cadencia alta el usuario
+  estuvo ACTIVO: aprobó, rechazó y reaccionó (no fatiga). La cadencia 15min funciona MIENTRAS el
+  contenido rote a destinos distintos y haya deleite. Los slots utilitarios (sol-jardin) cobraron
+  los "no"; los de curiosidad/animación cobraron los 😍/aprobación.
 
 ## Principios vigentes (no romper)
 
-1. **Una experiencia/destino DISTINTO por push.** N notifs → N destinos diferentes,
-   nunca N→1. **Única excepción: variaciones de experiencias APROBADAS** (ej. la rueda
-   con un mes distinto). Esto lo garantiza `tools/gen_queue.py` — usalo siempre.
-2. **Contenido que engancha > tareas.** Curiosidades verificadas, vistas lindas,
-   módulos nuevos. Tareas solo si son reales y oportunas, nunca como excusa de push.
-3. **Verificar la horticultura antes de publicar.** Los datos del catálogo NO son
-   verdad revelada. Jamás agregar urgencia que el dato no tiene. Un push errado quema
-   la confianza del canal entero.
-4. **No afirmar estado físico no observable** ("sin hojas", "floreciendo", "con plaga").
-   Frasear condicional o preguntarlo. (El liquidámbar aguanta hoja hasta jul — me equivoqué
-   afirmando que estaba pelado en junio.)
-5. **El destino cumple lo que promete el copy.** Deep link preciso, nunca index.html
-   "a ver qué hay". Hash routing disponible: `#especie=CODE` (abre ficha),
-   `#curiosidades` (abre la sub-tab nueva), `#task=ID` (abre tarea en tareas.html).
-6. **Precisión de ventanas: ±1 semana o condición observable.** Nunca rangos de 2 meses.
-7. **Pushes que promocionan una proposal van en slot diurno** (mediodía), no de noche.
-   Primer `send_at` siempre ≥ 60 min después de la corrida (deploy de Vercel).
+1. **Una experiencia/destino DISTINTO por push.** Única excepción: variaciones de experiencias
+   APROBADAS (rueda con mes distinto). Lo garantiza `tools/gen_queue.py` — usalo siempre.
+2. **Deleite > herramientas.** Curiosidades verificadas + experiencias animadas/interactivas.
+   NO mapas, NO calendarios de listas, NO dashboards utilitarios (los rechazó explícitamente).
+3. **Verificar la horticultura antes de publicar.** El catálogo NO es verdad revelada. Jamás
+   inventar urgencia ni afirmar estado físico no observable. Un push errado quema el canal entero.
+4. **El destino cumple lo que promete el copy.** Deep link preciso. Hashes: `#especie=CODE`,
+   `#curiosidades`, `rueda-ano.html#m=N`, `#task=ID` (tareas.html).
+5. **Promotores de proposal → slot diurno (mediodía).** Primer `send_at` siempre ≥60 min después
+   de la corrida (deploy de Vercel).
+6. **Proposals sin aprobación explícita de un día anterior se borran hoy** (`git rm`).
 
-## Decisiones de hoy (13/06)
+## Decisiones de hoy (14/06)
 
-- **PROMOVÍ curiosidades** → sub-tab permanente **💡 Curiosidades** en el Home (todas
-  las zonas). Rinde los `fun_fact` verificados de `data_plants.py` como feed de cards
-  clickeables a la ficha. Código: `render_curiosidades_section` (build.py), `.curio-*`
-  (styles.py), `.curio-card` en search + `#curiosidades` hash (scripts.py). Base: el
-  feedback de chat (😍) fue la aprobación real (el evento formal no llegó por el bug de
-  logging). La página efímera se borró; el contenido vive en el sitio estable.
-- **DROP 2026-06-12-poda-invernal** (2º turno sin tracción, ahora con timing diurno).
-  Dejo de invertir en la "vista de temporada de poda" — compite con lo que SÍ engancha
-  (contenido por-planta). Si vuelve a pedirse, re-medir con el logging ya arreglado.
-- **ano-jardin** queda pending: recién hoy recibe su 1er push promotor (13:00) → su
-  turno real de medición arranca ahora. No creo proposal nueva (hay una fresca sin testear).
-- Borré las páginas efímeras del 12/06 (curiosidades, curiosidades-2, en-numeros,
-  estado-jardin, poda-invernal) — ninguna aprobada; las efímeras no sobreviven el día.
-
-## Notificaciones de hoy (13/06) — 3 experiencias distintas
-
-- **08:30 `-a`** — curiosidad gardenia (perfume más caro del mundo) → ficha de especie
-  `index.html#especie=B-25`. (más de lo que enganchó; experiencia: ficha completa)
-- **13:00 `-b`** — teaser ano-jardin (flor/fruta mes a mes) → `engage/2026-06-13-ano-jardin.html`.
-  (experiencia: dashboard interactivo; turno diurno de la proposal)
-- **19:30 `-c`** — anuncio sección nueva Curiosidades → `index.html#curiosidades`.
-  (experiencia: el feed nuevo de historias; honesto: la sección ES nueva hoy)
+- **PROMOVÍ la rueda del año** (status `approved`→`promoted`). Página queda permanente en su path
+  (la cola la deep-linkea con `#m=N`); agregué link fijo «🌀 Rueda del año» en la nav del inicio
+  (todo-strip, build.py). Footer de la página: saqué el CTA aprobar/rechazar, dejé link a inicio.
+- **DROP sol-jardin** (rechazada x3, no estaba registrada → agregué su record de cierre) y borré
+  su HTML. **DROP ano-jardin** ya estaba dropped → borré el HTML que seguía en el repo.
+- **PROPOSAL NUEVA: 🃏 El mazo de tu jardín** (`2026-06-14-mazo-jardin.html`). Hipótesis: fusionar
+  los dos ganadores medidos — contenido de curiosidad (#1) + formato animado/interactivo (#2) —
+  en un mazo de flip-cards 3D, 1 curiosidad verificada por planta (13 cartas del dict VERIF).
+  Debería batir al feed plano y a la rueda por separado porque suma el gesto de descubrir.
+  Promocionada por u11 (13:00). Si no junta aprobación explícita, se borra mañana.
+- **Cola de hoy:** `gen_queue.py 2026-06-14 15` → 39 slots únicos 10:30–20:00, + swap de u11 al
+  mazo. Mezcla: fichas con dato verificado (caqui, palta criolla, limón, althea, romero, cinta),
+  fichas neutrales, variaciones de la rueda (#m=11/10/3/9/4/12), feed de curiosidades, y el mazo.
 
 ## Contexto del jardín (junio 2026 = invierno, lat -34.9°S)
 
-- Poda CORREGIDA: jun-jul **solo limpiezas** + trasplantes en dormancia (hortensia B-5,
-  pera B-39, pitósporo B-43; jul-ago). **Fines jul-ago**: durazno B-30/35, ciruelos
-  F-4/B-38, caqui B-41, crespón B-9, althea B-18, podranea F-2, hibisco B-4, azareros.
-  **Sept post-helada** (sensibles al frío): buganvilia B-1, lantana B-29, cítricos
-  B-23/24, paltas B-22/36. **Oct/primavera**: clivia B-13, esparraguera B-6. NO inventar urgencias.
-- Heladas tardías (jun-ago) pegan más al **sur y al este al amanecer** (pera al sur,
-  fondo al este). Buen ángulo de tip estacional.
-- Tareas de usuario / uploads pendientes → las procesa `/actualizar-tareas`, no este agente.
+- Poda: jun-jul **solo limpiezas** + trasplantes en dormancia (hortensia B-5, pera B-39, pitósporo
+  B-43). **Fines jul-ago**: durazno B-30/35, ciruelos F-4/B-38, caqui B-41, crespón B-9, althea
+  B-18, podranea F-2, hibisco B-4, azareros. **Sept post-helada** (sensibles): buganvilia B-1,
+  lantana B-29, cítricos B-23/24, paltas B-22/36. **Oct**: clivia B-13, esparraguera B-6. NO inventar.
+- Heladas tardías (jun-ago) pegan más al **sur y al este al amanecer** (pera al sur, fondo al este).
+- Tareas de usuario / uploads → las procesa `/actualizar-tareas`, no este agente.
 
 ## TODO pendiente
 
-- **Reconciliar arrays `pruning` con el timing corregido.** Los `pruning:[6,7,8]`
-  todavía marcan junio para muchas plantas, lo que contradice los `when` corregidos
-  ("cuando las yemas se hinchen", "pasada la última helada"). Por eso "El año de tu
-  jardín" muestra SOLO flor+fruta (exactos), sin poda. Migrar antes de hacer vista de poda anual.
-- **Verificar que el logging entra.** Apenas aparezca el 1er evento real en
-  `engagement.json` (vía outbox o `/api/feedback`), confirmar que reaction/answer/dwell
-  se guardan, y recién ahí volver a confiar en la métrica de clicks por slot/ángulo.
-
-## 🎯 SEÑAL REAL (13/06 noche) — primer feedback medido de verdad
-
-El logging YA funciona (36 eventos). Lectura inequívoca:
-- **GANADOR #1 — Curiosidades:** TODAS las cartas reaccionadas con 😍 (guayabo x2,
-  durazno x2, aguaribay, caqui, hibisco) y **104 s de dwell** en curiosidades-2.
-  → seguir alimentando el feed de curiosidades verificadas. Es lo que más engancha.
-- **GANADOR #2 — La rueda del año (animada): APROBADA + 87 s dwell.** La apuesta
-  "volvete loco" (animación + interacción) funcionó. → construir MÁS experiencias
-  así (animadas, interactivas) y PROMOVER la rueda al sitio permanente.
-- **RECHAZADAS — sol-jardin (x3 "no") y ano-jardin ("no").** Las vistas utilitarias
-  (mapa de luz, calendario de listas) NO enganchan. **Dejar de pushearlas.** El
-  usuario quiere deleite (curiosidad + animación), no herramientas.
-
-Acción para próximas rondas: rotación = curiosidades (fichas #especie + feed) +
-experiencias animadas tipo rueda + nuevas inmersivas. Retirar sol/ano de la rotación.
+- **Regenerar el dataset `M` de la rueda desde data_plants.py en build-time.** Hoy es un snapshot
+  estático inlineado; al estar promovida conviene que no se desincronice del catálogo.
+- **Reconciliar arrays `pruning` con el timing corregido** (varios marcan junio y contradicen los
+  `when`). Por eso la rueda muestra solo flor+fruta, sin poda. Migrar antes de hacer vista de poda.
+- **Si el mazo engancha**, integrarlo como experiencia fija (sección o entrada en Curiosidades) y
+  considerar generar sus cartas desde los `fun_fact` verificados de data_plants.py.
