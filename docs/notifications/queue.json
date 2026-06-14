@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-14T18:50:54.218Z",
+  "_updated_at": "2026-06-14T20:16:45.680Z",
   "notifications": [
     {
       "id": "2026-06-14-u01",
@@ -272,8 +272,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-37",
       "send_at": "2026-06-14T16:00:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T20:16:45.270Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
@@ -284,8 +284,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-23",
       "send_at": "2026-06-14T16:15:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T20:16:45.370Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
@@ -296,8 +296,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-06-13-rueda-ano.html#m=4",
       "send_at": "2026-06-14T16:30:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T20:16:45.446Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
@@ -308,8 +308,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=I-1",
       "send_at": "2026-06-14T16:45:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T20:16:45.524Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
@@ -320,8 +320,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-24",
       "send_at": "2026-06-14T17:00:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T20:16:45.601Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
@@ -332,8 +332,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-12",
       "send_at": "2026-06-14T17:15:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T20:16:45.679Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
