@@ -317,6 +317,42 @@
       "nid": "2026-06-14-u16",
       "ts": "2026-06-14T17:26:06.222Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u17",
+      "ts": "2026-06-14T18:50:53.837Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u18",
+      "ts": "2026-06-14T18:50:53.913Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u19",
+      "ts": "2026-06-14T18:50:53.988Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u20",
+      "ts": "2026-06-14T18:50:54.065Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u21",
+      "ts": "2026-06-14T18:50:54.142Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u22",
+      "ts": "2026-06-14T18:50:54.218Z",
+      "status_code": 201
     }
   ]
 }
