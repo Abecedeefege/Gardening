@@ -221,6 +221,24 @@
       "nid": "2026-06-13-r08",
       "ts": "2026-06-14T00:09:09.786Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u01",
+      "ts": "2026-06-14T14:08:22.612Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u02",
+      "ts": "2026-06-14T14:08:22.819Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u03",
+      "ts": "2026-06-14T14:08:22.897Z",
+      "status_code": 201
     }
   ]
 }
