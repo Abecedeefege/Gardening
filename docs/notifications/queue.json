@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-14T21:51:40.824Z",
+  "_updated_at": "2026-06-14T23:08:39.385Z",
   "notifications": [
     {
       "id": "2026-06-14-u01",
@@ -416,8 +416,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "send_at": "2026-06-14T19:00:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T23:08:38.959Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
@@ -428,8 +428,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-9",
       "send_at": "2026-06-14T19:15:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T23:08:39.033Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
@@ -440,8 +440,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-18",
       "send_at": "2026-06-14T19:30:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T23:08:39.189Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
@@ -452,8 +452,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-15",
       "send_at": "2026-06-14T19:45:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T23:08:39.292Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
@@ -464,8 +464,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-26",
       "send_at": "2026-06-14T20:00:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T23:08:39.385Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     }

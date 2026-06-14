@@ -425,6 +425,36 @@
       "nid": "2026-06-14-u34",
       "ts": "2026-06-14T21:51:40.823Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u35",
+      "ts": "2026-06-14T23:08:38.959Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u36",
+      "ts": "2026-06-14T23:08:39.033Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u37",
+      "ts": "2026-06-14T23:08:39.189Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u38",
+      "ts": "2026-06-14T23:08:39.292Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-14-u39",
+      "ts": "2026-06-14T23:08:39.385Z",
+      "status_code": 201
     }
   ]
 }
