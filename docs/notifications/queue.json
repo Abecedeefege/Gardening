@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-13T19:58:28-03:00",
+  "_updated_at": "2026-06-14T00:09:09.787Z",
   "notifications": [
     {
       "id": "2026-06-13-s01",
@@ -332,8 +332,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-06-13-rueda-ano.html",
       "send_at": "2026-06-13T20:00:00-03:00",
       "expires_at": "2026-06-13T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T00:09:09.786Z",
       "fail_reason": null,
       "created_by": "claude 13/06 cadencia-15min ricas"
     }
