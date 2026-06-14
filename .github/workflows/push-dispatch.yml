@@ -9,7 +9,7 @@ name: push-dispatch
 
 on:
   schedule:
-    - cron: '*/30 10-23 * * *'
+    - cron: '*/15 10-23 * * *'
   workflow_dispatch: {}
   # El cron de GitHub deriva/saltea corridas (12/06: 100 min sin tick).
   # Trigger por push a la cola: cuando el agente encola, se despacha al
