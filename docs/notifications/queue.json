@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-14T15:58:17.097Z",
+  "_updated_at": "2026-06-14T17:26:06.223Z",
   "notifications": [
     {
       "id": "2026-06-14-u01",
@@ -128,8 +128,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-06-14-mazo-jardin.html",
       "send_at": "2026-06-14T13:00:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T17:26:05.805Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-06-14 (promotor proposal)"
     },
@@ -140,8 +140,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-48",
       "send_at": "2026-06-14T13:15:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T17:26:05.860Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
@@ -152,8 +152,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-44",
       "send_at": "2026-06-14T13:30:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T17:26:05.981Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
@@ -164,8 +164,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=B-20",
       "send_at": "2026-06-14T13:45:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T17:26:06.040Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
@@ -176,8 +176,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-06-13-rueda-ano.html#m=3",
       "send_at": "2026-06-14T14:00:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T17:26:06.171Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
@@ -188,8 +188,8 @@
       "url": "https://gardening-chi.vercel.app/index.html#especie=F-3",
       "send_at": "2026-06-14T14:15:00-03:00",
       "expires_at": "2026-06-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-14T17:26:06.222Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-14"
     },
