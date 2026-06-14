@@ -122,7 +122,10 @@
   requestAnimationFrame(function(){ requestAnimationFrame(function(){
     for(var k=1;k<=12;k++) rays[k].style.strokeDashoffset=0;
   }); });
-  select(nowM);
-  setTimeout(function(){ if(rays[nowM]) rays[nowM].classList.add('pulse'); }, 1300);
+  // deep-link a un mes: #m=11 abre la rueda en noviembre (variaciones del push)
+  var _hm = (location.hash.match(/m=(\d+)/) || [])[1];
+  var startM = (_hm && +_hm >= 1 && +_hm <= 12) ? +_hm : nowM;
+  select(startM);
+  setTimeout(function(){ if(rays[startM]) rays[startM].classList.add('pulse'); }, 1300);
 </script>
 </body></html>

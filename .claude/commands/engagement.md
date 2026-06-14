@@ -82,13 +82,20 @@ Ideas de proposals (variá — el objetivo es descubrir qué le sirve a ESTE usu
 
 ### 5. Escribir la cola del día — según la CADENCIA VIGENTE
 
-**Primero mirá si `docs/engage/learnings.md` tiene una sección "CADENCIA VIGENTE".**
-Si la hay, seguila (ej. "cada 30 min, 10:30–20:00, hasta que el usuario pida menos"
-→ ~20 entries). Si no la hay, el default son **3 entries**. En cualquier caso, cada
-notificación va a una experiencia/destino DISTINTO (principio §"Una experiencia
-distinta por push").
+**Mirá la sección "CADENCIA VIGENTE" de `docs/engage/learnings.md`.** Si pide alta
+frecuencia (ej. cada 15 min), **NO escribas la cola a mano**: corré
 
-Reescribí `docs/notifications/queue.json` con las entries `pending` que corresponda:
+```
+python tools/gen_queue.py <YYYY-MM-DD> 15
+```
+
+que genera `queue.json` con **un destino ÚNICO por slot** (assert anti-duplicados),
+mezclando fichas `#especie` + variaciones de experiencias aprobadas. Escribir la cola
+a mano fue lo que metió repeticiones (el usuario se quejó 2 veces). Si la cadencia es
+el default (3/día) y querés curar a mano, igual: **cada notificación a un destino
+distinto**, salvo variación de una aprobada.
+
+Formato de cada entry `pending` (lo que produce el generador):
 
 ```json
 {

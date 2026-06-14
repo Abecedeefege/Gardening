@@ -7,12 +7,14 @@ No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
 **El usuario pidió: una notificación cada 15 min (subida desde 30 el 13/06 tarde — "volvete loco"), ventana diurna (10:30–20:00
 UY), HASTA QUE PIDA MENOS.** NO 3/día mientras esté vigente esto. Reglas:
-- Llená `queue.json` con ~40 slots cada 15 min (10:30→20:00). **Cada uno a una
-  experiencia/destino DISTINTO** (principio de abajo). Apoyate en destinos
-  PERMANENTES y vivos: fichas `index.html#especie=CODE` (cada planta = un destino
-  distinto que muestra su curiosidad), `index.html#curiosidades`, y las
-  experiencias `engage/*` que existan ese día. NUNCA linkear a una página efímera
-  que vayas a borrar el mismo día (da 404 — ya pasó el 13/06).
+- **GENERÁ LA COLA CON EL SCRIPT, NO A MANO:** `python tools/gen_queue.py <YYYY-MM-DD> 15`.
+  Garantiza por construcción que **cada slot va a un destino ÚNICO** (assert anti-duplicados).
+  Backbone = las 52 fichas `#especie=CODE` (rotación distinta por día) + variaciones de
+  experiencias APROBADAS (rueda con `#m=N` distinto, feed `#curiosidades`). Escribir la
+  cola a mano fue lo que metió repeticiones — el usuario se quejó 2 veces. NO lo hagas.
+- Si verificás más `fun_fact`, agregá su code al dict `VERIF` de `gen_queue.py` para que
+  ese push lleve el dato fuerte en vez del hook neutral.
+- NUNCA linkear a una página efímera que vayas a borrar el mismo día (da 404 — pasó el 13/06).
 - Como el cron de Actions es poco confiable y corta 20:30, conviene un driver que
   haga push a la cola cada ~14 min en la ventana (ver tools/, o rearmar manual).
 - El usuario pidió experiencias MÁS extensas/animadas/interactivas ("volvete loco"). Priorizar
@@ -50,9 +52,9 @@ UY), HASTA QUE PIDA MENOS.** NO 3/día mientras esté vigente esto. Reglas:
 
 ## Principios vigentes (no romper)
 
-1. **Una experiencia DISTINTA por push.** N notifs → N experiencias diferentes,
-   nunca N→1. Mezclar: (a) más de lo que enganchó, (b) variaciones, (c) experiencias
-   nuevas.
+1. **Una experiencia/destino DISTINTO por push.** N notifs → N destinos diferentes,
+   nunca N→1. **Única excepción: variaciones de experiencias APROBADAS** (ej. la rueda
+   con un mes distinto). Esto lo garantiza `tools/gen_queue.py` — usalo siempre.
 2. **Contenido que engancha > tareas.** Curiosidades verificadas, vistas lindas,
    módulos nuevos. Tareas solo si son reales y oportunas, nunca como excusa de push.
 3. **Verificar la horticultura antes de publicar.** Los datos del catálogo NO son
