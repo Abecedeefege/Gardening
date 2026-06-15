@@ -74,12 +74,24 @@
     {
       "id": "2026-06-14-mazo-jardin",
       "title": "El mazo de tu jardín (flip-cards animadas de curiosidades)",
-      "page": "engage/2026-06-14-mazo-jardin.html",
+      "page": null,
       "created": "2026-06-14",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Fusión de los DOS ganadores medidos: el contenido #1 (curiosidades verificadas, todas 😍 + 104s dwell) servido con el formato #1 (animación + interacción, como la rueda aprobada + 87s dwell). Hipótesis: un mazo de cartas que se dan vuelta con animación 3D, una curiosidad verificada por planta, engancha MÁS que el feed plano de curiosidades o la rueda por separado, porque suma el gesto de descubrir. 13 cartas, todas con dato verificado del dict VERIF. Si junta aprobación, se integra como sección/experiencia fija.",
       "notified_by": [
         "2026-06-14-u11"
+      ],
+      "result_notes": "DROPPED 15/06 por la regla de no-supervivencia sin aprobación explícita. PERO test confounded: su único promotor (u11) quedó sepultado en la avalancha de 39 pushes del 14/06 que el usuario tuneó por completo (0 eventos en engagement.json después de las 01:11 del 14/06). Nunca tuvo un test limpio. Re-lanzada hoy como 2026-06-15-mazo-jardin para medirla en un día de cadencia baja (3/día). Página renombrada al nuevo path."
+    },
+    {
+      "id": "2026-06-15-mazo-jardin",
+      "title": "El mazo de tu jardín (flip-cards animadas de curiosidades)",
+      "page": "engage/2026-06-15-mazo-jardin.html",
+      "created": "2026-06-15",
+      "status": "pending",
+      "hypothesis": "Re-test LIMPIO del mazo (fusión de los dos ganadores medidos: curiosidades verificadas + animación 3D interactiva). La v1 del 14/06 nunca tuvo un test justo: su único promotor cayó en el flood de 39 pushes que el usuario ignoró. Hoy se prueba en cadencia baja (3/día), con un slot diurno dedicado (12:00) y sin ruido. Hipótesis: con atención limpia, el gesto de dar vuelta cartas con dato verificado engancha más que el feed plano o la rueda por separado. Es además la respuesta directa al pedido 'no quiero más de lo mismo': formato genuinamente nuevo. Si junta aprobación, se integra como experiencia/sección fija.",
+      "notified_by": [
+        "2026-06-15-a"
       ],
       "result_notes": null
     }
