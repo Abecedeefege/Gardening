@@ -20,7 +20,8 @@ URL única NO es una experiencia única. Reglas:
   (rota formatos, assert anti-duplicados). Acepta cantidad como 2º arg.
 - NUNCA linkear a una página efímera que vayas a borrar el mismo día (da 404 — pasó el 13/06).
 - Formatos vivos: 🌀 rueda-ano (aprobada), 💡 feed curiosidades (promovido), 🧠 quiz-jardin,
-  🃏 mazo-jardin (en re-test 15/06).
+  🃏 mazo-jardin (re-test 15/06), ⚔️ duelo-jardin (NUEVO 15/06), 🔍 adivina-jardin (NUEVO 15/06).
+  Juegos con contenido aleatorio cada vez → un repetido nunca es 'lo mismo'.
 
 ## Estado del sistema
 

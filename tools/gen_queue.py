@@ -60,7 +60,7 @@ def build_formats():
         "\U0001F4A1 Curiosidades de tus plantas", "El feed de historias verificadas de tus 52 plantas.")]
     return F
 
-def build(date_str, cadence_min=30):
+def build(date_str, cadence_min=30, max_slots=None):
     F = build_formats()
     rnd = random.Random(date_str)
     for t in F:
@@ -78,7 +78,8 @@ def build(date_str, cadence_min=30):
     # cicla por todos antes de repetir un tipo
     picks, cursors, ti, used = [], {k: 0 for k in F}, 0, set()
     guard = 0
-    while len(picks) < len(times) and guard < 2000:
+    cap = min(len(times), max_slots) if max_slots else len(times)
+    while len(picks) < cap and guard < 2000:
         guard += 1
         ty = types[ti % len(types)]; ti += 1
         c = cursors[ty]
@@ -90,6 +91,7 @@ def build(date_str, cadence_min=30):
             break  # agotamos todas las instancias únicas
 
     notifs = []
+    times = times[:len(picks)] if max_slots else times
     for i, ((ty, inst), hhmm) in enumerate(zip(picks, times)):
         url, title, body = inst
         notifs.append({
@@ -104,7 +106,8 @@ def build(date_str, cadence_min=30):
 
 if __name__ == "__main__":
     date = sys.argv[1] if len(sys.argv) > 1 else datetime.date.today().isoformat()
-    q = build(date)
+    n = int(sys.argv[2]) if len(sys.argv) > 2 else None
+    q = build(date, max_slots=n)
     out = os.path.join(os.path.dirname(__file__), '..', 'docs', 'notifications', 'queue.json')
     with open(out, 'w', encoding='utf-8') as f:
         json.dump(q, f, ensure_ascii=False, indent=2)
