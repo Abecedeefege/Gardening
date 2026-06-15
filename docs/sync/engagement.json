@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-15T12:01:19.945Z",
+  "_updated_at": "2026-06-15T15:48:27.410Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -318,6 +318,23 @@
       "scroll_pct": 0,
       "page": "engage/2026-06-13-rueda-ano.html",
       "ts": "2026-06-14T01:11:44.257Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqfe125cohy7s7",
+      "type": "notification_clicked",
+      "nid": "2026-06-15-x01",
+      "page": "engage/2026-06-13-rueda-ano.html",
+      "ts": "2026-06-15T15:48:27.547Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqfe125cvysg7y",
+      "type": "page_visit",
+      "page": "engage/2026-06-13-rueda-ano.html",
+      "nid": "2026-06-15-x01",
+      "src": "push",
+      "ts": "2026-06-15T15:48:27.547Z",
       "device": "sin-nombre"
     }
   ],
