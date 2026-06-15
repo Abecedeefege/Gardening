@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-15T15:48:37.614Z",
+  "_updated_at": "2026-06-15T15:48:44.835Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -344,6 +344,15 @@
       "value": "meh",
       "page": "engage/2026-06-13-rueda-ano.html",
       "ts": "2026-06-15T15:48:38.047Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqfe1fj11r7frr",
+      "type": "dwell",
+      "seconds": 17,
+      "scroll_pct": 100,
+      "page": "engage/2026-06-13-rueda-ano.html",
+      "ts": "2026-06-15T15:48:44.893Z",
       "device": "sin-nombre"
     }
   ],
