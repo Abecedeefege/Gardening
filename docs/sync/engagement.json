@@ -2,10 +2,6 @@
   "_updated_at": "2026-06-15T12:01:19.945Z",
   "events": [
     {
-      "type": "_probe",
-      "_id": "probe-verify-2"
-    },
-    {
       "_id": "mqbj9xdfoggdd8",
       "type": "notification_clicked",
       "nid": "2026-06-12-f01",
@@ -323,11 +319,6 @@
       "page": "engage/2026-06-13-rueda-ano.html",
       "ts": "2026-06-14T01:11:44.257Z",
       "device": "sin-nombre"
-    },
-    {
-      "type": "_probe_open",
-      "_id": "probe-open-1",
-      "nid": "test"
     }
   ],
   "daily_summary": {}
