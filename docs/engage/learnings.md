@@ -3,23 +3,24 @@
 Memoria del agente diario. Se REESCRIBE y condensa cada día (máx ~150 líneas).
 No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
-## ⏱️ CADENCIA VIGENTE (pedido del usuario 13/06) — REEMPLAZA el "3/día"
+## ⏱️ CADENCIA + BIBLIOTECA DE FORMATOS (pedido del usuario 14/06)
 
-**El usuario pidió: una notificación cada 15 min, ventana diurna (10:30–20:00 UY),
-HASTA QUE PIDA MENOS ("volvete loco").** NO 3/día mientras esté vigente esto. Reglas:
-- **GENERÁ LA COLA CON EL SCRIPT, NO A MANO:** `python tools/gen_queue.py <YYYY-MM-DD> 15`.
-  Garantiza por construcción que cada slot va a un destino ÚNICO (assert anti-duplicados).
-  Backbone = las 52 fichas `#especie=CODE` (rotación por día, seed=fecha) + variaciones de
-  experiencias APROBADAS (rueda `#m=N`, feed `#curiosidades`), 1 de cada 5 slots.
-  Escribir la cola a mano metió repeticiones — el usuario se quejó 2 veces. NO lo hagas.
-- **Promotor de proposal nueva:** el script no conoce la proposal del día. Insertá UN solo
-  push promotor a mano (swap quirúrgico de 1 slot diurno a una URL nueva/única — no rompe el
-  assert). Hoy hice eso con u11 (13:00 → mazo). Documentalo. NO toques más de 1 slot.
-- Si verificás más `fun_fact`, agregá su code al dict `VERIF` de `gen_queue.py`.
+**Cada notificación tiene que SENTIRSE única — otro FORMATO/interacción, no el
+mismo molde con otro dato.** El usuario fue tajante (14/06): "no quiero más
+notificaciones que lleven a una especie en su formato actual"; "siento que mandás
+mucho de lo mismo". Una URL única NO es una experiencia única. Reglas:
+- **GENERÁ LA COLA CON EL SCRIPT:** `python tools/gen_queue.py <YYYY-MM-DD>` (default 9/día).
+  Rota una **biblioteca de FORMATOS** distintos (rueda animada, quiz interactivo, feed
+  de curiosidades…), nunca dos del mismo formato seguidos. **PROHIBIDO fichas `#especie`
+  sueltas** — son "más de lo mismo".
+- **Subí la frecuencia SOLO cuando crezca la biblioteca de formatos** (más formatos =
+  más frecuencia sin repetir). Con pocos formatos: pocas y únicas > muchas repetidas.
+- **Construir formatos nuevos seguido** (es la prioridad). Roadmap: duelo (this/that),
+  antes-después con fotos subidas, mapa navegable, scrollytelling, "número del día"
+  animado, adiviná-la-planta, cuenta-regresiva de floración, memoria/pares.
+  Formatos vivos hoy: 🌀 rueda-ano (aprobada), 🧠 quiz-jardin (nuevo), 💡 feed curiosidades.
 - NUNCA linkear a una página efímera que vayas a borrar el mismo día (da 404 — pasó el 13/06).
-- El cron de Actions es poco confiable y corta 20:30; conviene un driver que pushee la cola
-  cada ~14 min en la ventana (ver tools/).
-- Cuando el usuario diga "menos/basta", volver a 3/día (o lo que pida) y borrar esta sección.
+- Cuando el usuario diga "menos/basta", bajá la cantidad (o a 3/día) y anotalo acá.
 
 ## Estado del sistema
 

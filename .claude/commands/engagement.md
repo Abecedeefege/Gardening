@@ -86,7 +86,7 @@ Ideas de proposals (variá — el objetivo es descubrir qué le sirve a ESTE usu
 frecuencia (ej. cada 15 min), **NO escribas la cola a mano**: corré
 
 ```
-python tools/gen_queue.py <YYYY-MM-DD> 15
+python tools/gen_queue.py <YYYY-MM-DD>
 ```
 
 que genera `queue.json` con **un destino ÚNICO por slot** (assert anti-duplicados),
