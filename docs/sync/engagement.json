@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-14T01:11:43.944Z",
+  "_updated_at": "2026-06-15T12:01:19.945Z",
   "events": [
     {
       "type": "_probe",
@@ -323,6 +323,11 @@
       "page": "engage/2026-06-13-rueda-ano.html",
       "ts": "2026-06-14T01:11:44.257Z",
       "device": "sin-nombre"
+    },
+    {
+      "type": "_probe_open",
+      "_id": "probe-open-1",
+      "nid": "test"
     }
   ],
   "daily_summary": {}
