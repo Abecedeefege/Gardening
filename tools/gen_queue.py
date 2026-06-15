@@ -1,93 +1,100 @@
 #!/usr/bin/env python3
 """Genera docs/notifications/queue.json rotando FORMATOS de experiencia distintos.
 
-Regla del usuario (14/06): cada notificación tiene que SENTIRSE única — no
-alcanza con cambiar el dato dentro del mismo molde. Una URL única ≠ una
-experiencia única. POR ESO: **prohibido mandar a fichas `#especie` sueltas**
-(es siempre el mismo formato). En su lugar rotamos una BIBLIOTECA de formatos,
-cada uno una interacción distinta, y dentro de cada formato variamos el
-contenido (rueda en otro mes, quiz con otras preguntas, etc.).
+Regla del usuario (14/06): **cada push debe explorar un FORMATO nuevo.** Los que
+el usuario marca que le gustan se pueden repetir, pero SIEMPRE con contenido
+original. Una URL única ≠ una experiencia única → **prohibido fichas `#especie`
+sueltas** (es siempre el mismo molde).
 
-Para que se sienta variado:
-  - Interleave por TIPO: dos pushes seguidos nunca son el mismo formato.
-  - Cantidad moderada (default 9/día ≈ cada ~70 min). Subir SOLO cuando la
-    biblioteca de formatos crezca (más formatos = más frecuencia sin repetir).
+Cómo lo logra:
+  - BIBLIOTECA de formatos, cada uno una interacción distinta. Se interleavea por
+    TIPO: nunca dos del mismo formato seguidos, y se cicla por todos antes de
+    repetir un tipo.
+  - Los formatos jugables (quiz, duelo, adiviná) y la rueda tienen contenido
+    fresco en cada instancia (preguntas/duelos/rondas/mes distintos) → un repetido
+    NUNCA es "lo mismo".
+  - Cadencia 30 min (pedido del usuario 14/06): ventana 10:30–20:00 = ~20 slots.
 
-Uso:  python tools/gen_queue.py [YYYY-MM-DD] [cantidad]
+Cuantos más formatos haya en build_formats(), más se acerca a "cada push, un
+formato nuevo". Construir formatos nuevos es la prioridad permanente.
 
-Para agregar un formato nuevo: sumá instancias a build_formats() abajo.
+Uso:  python tools/gen_queue.py [YYYY-MM-DD]
 """
 import json, sys, os, random, datetime
 
 SITE = "https://gardening-chi.vercel.app/"
-RUEDA = SITE + "engage/2026-06-13-rueda-ano.html"
-QUIZ = SITE + "engage/quiz-jardin.html"
-CUR = SITE + "index.html#curiosidades"
-
-MESES = {1:"enero",2:"febrero",3:"marzo",4:"abril",5:"mayo",6:"junio",7:"julio",
-         8:"agosto",9:"septiembre",10:"octubre",11:"noviembre",12:"diciembre"}
+def E(slug): return SITE + "engage/" + slug
 
 def build_formats():
-    """Devuelve dict tipo -> lista de instancias (url, title, body), cada una distinta."""
+    """tipo -> [(url, title, body)], cada instancia con contenido distinto."""
     F = {}
-    # FORMATO: rueda del año (APROBADA) — variación por mes destacado
-    F["rueda"] = [
-        (RUEDA + "#m=11", "\U0001F300 Tu jardín en noviembre", "Tocá la rueda del año: noviembre es tu mes pico, 32 plantas en flor a la vez."),
-        (RUEDA + "#m=3",  "\U0001F300 Marzo: tu cosecha", "La rueda del año abre en marzo — mirá qué tenés con fruta para cosechar."),
-        (RUEDA + "#m=10", "\U0001F300 Octubre arranca la fiesta", "La rueda del año en octubre: empieza la explosión de flores. Tocá y mirá."),
-        (RUEDA + "#m=6",  "\U0001F300 Tu jardín ahora (junio)", "La rueda del año en este mes. ¿Cuánto duerme tu jardín en pleno invierno?"),
-    ]
-    # FORMATO: quiz interactivo (NUEVO) — variación por set de preguntas
-    F["quiz"] = [
-        (QUIZ + "#set=1", "\U0001F9E0 ¿Cuánto conocés tu jardín?", "5 preguntas sobre tus plantas. ¿Llegás a maestro jardinero?"),
-        (QUIZ + "#set=2", "\U0001F9E0 Ronda nueva: tu jardín", "Otras 5 preguntas. La última vez, ¿cuántas acertaste?"),
-        (QUIZ + "#set=3", "\U0001F9E0 Desafío jardinero", "5 preguntas nuevas sobre las plantas que tenés en casa."),
-        (QUIZ + "#set=4", "\U0001F9E0 ¿Sos crack de tu jardín?", "Última ronda de preguntas. A ver ese puntaje."),
-    ]
-    # FORMATO: feed de curiosidades (PERMANENTE, lo que más enganchó)
-    F["curio"] = [
-        (CUR, "\U0001F4A1 Curiosidades de tus plantas", "El feed de historias verificadas de tus 52 plantas. Entrá y picá las que te copen."),
-    ]
+    # 🌀 Rueda del año (APROBADA por el usuario) — variación por mes
+    F["rueda"] = [(E("2026-06-13-rueda-ano.html") + "#m=" + str(m), t, b) for (m, t, b) in [
+        (11, "\U0001F300 Tu jardín en noviembre", "La rueda del año: noviembre, 32 plantas en flor a la vez. Tocá y mirá."),
+        (3,  "\U0001F300 Marzo: tu cosecha", "La rueda del año en marzo — qué tenés con fruta para cosechar."),
+        (10, "\U0001F300 Octubre arranca la fiesta", "La rueda del año: octubre, empieza la explosión de flores."),
+        (6,  "\U0001F300 Tu jardín ahora", "La rueda del año en este mes. ¿Cuánto duerme tu jardín en invierno?"),
+        (9,  "\U0001F300 Septiembre despierta", "La rueda del año en septiembre: el jardín sale del invierno."),
+    ]]
+    # 🧠 Quiz (NUEVO) — variación por set de preguntas
+    F["quiz"] = [(E("quiz-jardin.html") + "#set=" + str(s), t, b) for (s, t, b) in [
+        (1, "\U0001F9E0 ¿Cuánto conocés tu jardín?", "5 preguntas sobre tus plantas. ¿Llegás a maestro jardinero?"),
+        (2, "\U0001F9E0 Ronda nueva de trivia", "Otras 5 preguntas. ¿Mejorás tu puntaje?"),
+        (3, "\U0001F9E0 Desafío jardinero", "5 preguntas nuevas sobre lo que tenés plantado."),
+        (4, "\U0001F9E0 ¿Sos crack de tu jardín?", "Última ronda. A ver ese puntaje."),
+    ]]
+    # ⚔️ Duelo "¿esta o esta?" (NUEVO) — matchups aleatorios cada vez
+    F["duelo"] = [(E("duelo-jardin.html") + "#set=" + str(s), t, b) for (s, t, b) in [
+        (1, "⚔️ Duelo: ¿esta o esta?", "Dos de tus plantas se enfrentan. ¿Adiviná cuál gana?"),
+        (2, "⚔️ Nuevo duelo de plantas", "6 enfrentamientos entre tus plantas. ¿Cuántos ganás?"),
+        (3, "⚔️ Cara a cara en tu jardín", "Nativa vs exótica, frutal vs ornamental… elegí bien."),
+    ]]
+    # 🔍 Adiviná la planta (NUEVO) — rondas aleatorias cada vez
+    F["adivina"] = [(E("adivina-jardin.html") + "#set=" + str(s), t, b) for (s, t, b) in [
+        (1, "\U0001F50D Adiviná la planta", "Te doy pistas de una de tus plantas. ¿Sabés cuál es?"),
+        (2, "\U0001F50D ¿Qué planta es?", "5 rondas de pistas sobre tu jardín. Adiviná."),
+        (3, "\U0001F50D Detective del jardín", "Pistas y opciones: identificá tus plantas."),
+    ]]
+    # 💡 Feed de curiosidades (sección fija, lo que más enganchó)
+    F["curio"] = [(SITE + "index.html#curiosidades",
+        "\U0001F4A1 Curiosidades de tus plantas", "El feed de historias verificadas de tus 52 plantas.")]
     return F
 
-def build(date_str, count=9):
+def build(date_str, cadence_min=30):
     F = build_formats()
     rnd = random.Random(date_str)
     for t in F:
         rnd.shuffle(F[t])
-    # orden de tipos para el interleave (rotado por día)
     types = list(F.keys()); rnd.shuffle(types)
-    # weave: round-robin por tipo → dos seguidos nunca del mismo formato
-    picks, ti, used = [], 0, set()
-    cursors = {t: 0 for t in F}
-    guard = 0
-    while len(picks) < count and guard < 500:
-        guard += 1
-        t = types[ti % len(types)]; ti += 1
-        if cursors[t] < len(F[t]):
-            inst = F[t][cursors[t]]; cursors[t] += 1
-            if inst[0] not in used:
-                used.add(inst[0]); picks.append((t, inst))
-        # si ya agotamos todos los tipos, cortar
-        if all(cursors[t] >= len(F[t]) for t in F):
-            break
 
-    # horarios: repartir 'count' parejo entre 10:30 y 20:00
+    # horarios cada 30 min en la ventana diurna
     start = datetime.datetime.strptime(date_str + " 10:30", "%Y-%m-%d %H:%M")
     end = datetime.datetime.strptime(date_str + " 20:00", "%Y-%m-%d %H:%M")
-    span = int((end - start).total_seconds() // 60)
-    n = len(picks)
-    times = []
-    for i in range(n):
-        mins = 0 if n == 1 else round(span * i / (n - 1))
-        times.append((start + datetime.timedelta(minutes=mins)).strftime("%H:%M"))
+    times, t = [], start
+    while t <= end:
+        times.append(t.strftime("%H:%M")); t += datetime.timedelta(minutes=cadence_min)
+
+    # interleave por tipo (round-robin) → nunca dos del mismo formato seguidos,
+    # cicla por todos antes de repetir un tipo
+    picks, cursors, ti, used = [], {k: 0 for k in F}, 0, set()
+    guard = 0
+    while len(picks) < len(times) and guard < 2000:
+        guard += 1
+        ty = types[ti % len(types)]; ti += 1
+        c = cursors[ty]
+        if c < len(F[ty]):
+            inst = F[ty][c]; cursors[ty] += 1
+            if inst[0] not in used:
+                used.add(inst[0]); picks.append((ty, inst))
+        if all(cursors[k] >= len(F[k]) for k in F):
+            break  # agotamos todas las instancias únicas
 
     notifs = []
-    for i, ((t, inst), hhmm) in enumerate(zip(picks, times)):
+    for i, ((ty, inst), hhmm) in enumerate(zip(picks, times)):
         url, title, body = inst
         notifs.append({
             "id": date_str + "-x" + str(i + 1).zfill(2),
-            "title": title, "body": body, "url": url, "format": t,
+            "title": title, "body": body, "url": url, "format": ty,
             "send_at": date_str + "T" + hhmm + ":00-03:00",
             "expires_at": date_str + "T22:00:00-03:00",
             "status": "pending", "sent_at": None, "fail_reason": None,
@@ -97,16 +104,15 @@ def build(date_str, count=9):
 
 if __name__ == "__main__":
     date = sys.argv[1] if len(sys.argv) > 1 else datetime.date.today().isoformat()
-    cnt = int(sys.argv[2]) if len(sys.argv) > 2 else 9
-    q = build(date, cnt)
+    q = build(date)
     out = os.path.join(os.path.dirname(__file__), '..', 'docs', 'notifications', 'queue.json')
     with open(out, 'w', encoding='utf-8') as f:
         json.dump(q, f, ensure_ascii=False, indent=2)
     urls = [n['url'] for n in q['notifications']]
-    assert len(urls) == len(set(urls)), "HAY URLs DUPLICADAS"
-    # chequear que no haya dos formatos iguales seguidos
     fmts = [n['format'] for n in q['notifications']]
-    adj = [i for i in range(1, len(fmts)) if fmts[i] == fmts[i-1]]
-    print("queue " + date + ": " + str(len(q['notifications'])) + " slots")
-    print("  formatos en orden: " + " · ".join(fmts))
-    print("  ✓ URLs únicas; " + ("✓ sin formatos adyacentes repetidos" if not adj else "⚠️ adyacentes: " + str(adj)))
+    adj = [i for i in range(1, len(fmts)) if fmts[i] == fmts[i - 1]]
+    assert len(urls) == len(set(urls)), "HAY URLs DUPLICADAS"
+    from collections import Counter
+    print("queue " + date + ": " + str(len(q['notifications'])) + " slots (cada 30 min)")
+    print("  mezcla de formatos: " + str(dict(Counter(fmts))))
+    print("  ✓ URLs únicas; " + ("✓ sin formato adyacente repetido" if not adj else "⚠️ adyacentes:" + str(adj)))

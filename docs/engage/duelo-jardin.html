@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1a0a"><title>Duelo de tu jardín · Jardineando</title>
+<style>
+  :root{ --verde:#2d5016; --verde2:#5a9e35; --crema:#f6f4ea; --tinta:#1a2410; --ok:#3f9142; --mal:#c0392b; --pad:max(18px,env(safe-area-inset-left)); }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; min-height:100%; }
+  body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    background:radial-gradient(130% 90% at 50% 0%, #fbfaf3, #eaecdd); color:var(--tinta);
+    -webkit-font-smoothing:antialiased; padding:0 var(--pad) calc(40px + env(safe-area-inset-bottom)); }
+  .top{ padding:calc(14px + env(safe-area-inset-top)) 0 6px; } .top a{ color:var(--verde); text-decoration:none; font-size:14px; font-weight:700; }
+  h1{ font-size:clamp(22px,6vw,28px); letter-spacing:-0.02em; color:var(--verde); margin:8px 0 2px; }
+  .meta{ display:flex; justify-content:space-between; font-size:12.5px; color:#7a8a68; font-weight:700; margin-top:10px; }
+  .q{ font-size:clamp(18px,4.8vw,22px); font-weight:800; text-align:center; margin:18px auto 4px; max-width:520px; line-height:1.25; }
+  .expl{ max-width:540px; margin:12px auto 0; background:#eef3e5; border-radius:12px; padding:13px 15px; font-size:14px; color:#3c4a30; line-height:1.5; opacity:0; transform:translateY(8px); }
+  .expl.show{ opacity:1; transform:none; transition:.35s; } .expl b{ color:var(--verde); }
+  .next{ display:block; width:100%; max-width:540px; margin:16px auto 0; padding:15px; border:none; border-radius:14px; background:var(--verde); color:#fff; font-size:16px; font-weight:800; cursor:pointer; opacity:0; pointer-events:none; transition:.3s; }
+  .next.show{ opacity:1; pointer-events:auto; }
+  .final{ max-width:540px; margin:34px auto 0; text-align:center; } .scorebig{ font-size:60px; font-weight:800; color:var(--verde); line-height:1; }
+  .scoresub{ font-size:16px; color:#5a6b4a; } .badge{ font-size:20px; font-weight:800; color:var(--verde); margin:10px 0; }
+  .replay{ margin-top:14px; display:flex; flex-direction:column; gap:10px; } .replay button{ padding:14px; border:none; border-radius:14px; font-size:15px; font-weight:800; cursor:pointer; }
+  .replay .again{ background:var(--verde); color:#fff; } .replay .home{ background:#fff; color:#5a6b4a; border:1px solid #d7e0c9; } .hidden{ display:none; }
+  @media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; } }
+
+  .cards{ display:flex; gap:12px; max-width:540px; margin:14px auto 0; }
+  .pcard{ flex:1; background:#fff; border:2px solid #e2e7d6; border-radius:18px; padding:22px 12px; text-align:center; cursor:pointer; transition:transform .12s, border-color .2s, background .2s; box-shadow:0 2px 6px rgba(45,80,22,.06); }
+  .pcard:active{ transform:scale(.97); } .pcard:disabled{ cursor:default; }
+  .pcard .em{ font-size:46px; line-height:1; } .pcard .nm{ font-size:15px; font-weight:800; margin-top:10px; color:var(--tinta); } .pcard .cd{ font-size:11px; color:#9aa888; font-weight:700; margin-top:2px; }
+  .pcard.ok{ border-color:var(--ok); background:#eef7ee; animation:pop .35s; } .pcard.bad{ border-color:var(--mal); background:#fbecea; animation:shake .4s; }
+  @keyframes pop{ 0%{transform:scale(1)} 40%{transform:scale(1.05)} 100%{transform:scale(1)} }
+  @keyframes shake{ 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+  .vs{ display:flex; align-items:center; font-weight:900; color:var(--verde2); font-size:18px; }
+</style></head><body>
+<div class="top"><a href="https://gardening-chi.vercel.app/index.html">← Inicio</a><h1>⚔️ Duelo de tu jardín</h1></div>
+<div class="meta"><span id="rmeta">Duelo 1</span><span id="smeta">0 ✓</span></div>
+<div id="game"><div class="q" id="q"></div>
+  <div class="cards"><button class="pcard" id="cA"></button><div class="vs">VS</div><button class="pcard" id="cB"></button></div>
+  <div class="expl" id="expl"></div><button class="next" id="next">Siguiente →</button></div>
+<div id="end" class="final hidden"><div class="scorebig" id="sb">0</div><div class="scoresub" id="ss"></div><div class="badge" id="bd"></div>
+  <div class="replay"><button class="again" onclick="location.reload()">🔄 Otro duelo</button>
+  <button class="home" onclick="location.href='https://gardening-chi.vercel.app/index.html#curiosidades'">Ver curiosidades →</button></div></div>
+<script src="engage.js"></script>
+<script>
+var P = [{"code": "F-1", "name": "Guayabo del país", "zone": "frente", "nat": true, "fru": true, "perf": false, "trep": false}, {"code": "F-2", "name": "Bignonia rosada / Podranea", "zone": "frente", "nat": false, "fru": false, "perf": false, "trep": true}, {"code": "F-3", "name": "Fotinia", "zone": "frente", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "F-4", "name": "Ciruelo de jardín", "zone": "frente", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "F-5", "name": "Coronita de novia (?)", "zone": "frente", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "F-7", "name": "Abelia", "zone": "frente", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "F-8", "name": "Aguaribay / Molle", "zone": "frente", "nat": true, "fru": false, "perf": true, "trep": false}, {"code": "F-9", "name": "Ligustro", "zone": "frente", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "F-10", "name": "Fresno (americano)", "zone": "frente", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-1", "name": "Santa Rita / Buganvilia", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": true}, {"code": "B-2", "name": "Jazmín (a confirmar variedad)", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": true}, {"code": "B-3", "name": "Jazmín de leche / estrellado", "zone": "fondo", "nat": false, "fru": false, "perf": true, "trep": true}, {"code": "B-4", "name": "Hibisco / Rosa china", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-5a", "name": "Hortensia", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-6", "name": "Esparraguera cola de zorro", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-7", "name": "Azarero / Pitósporo", "zone": "fondo", "nat": false, "fru": false, "perf": true, "trep": false}, {"code": "B-8", "name": "Palmera pindó", "zone": "fondo", "nat": true, "fru": true, "perf": false, "trep": false}, {"code": "B-9", "name": "Crespón / Mirto de crepe", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-10", "name": "Lavanda", "zone": "fondo", "nat": false, "fru": false, "perf": true, "trep": false}, {"code": "B-12", "name": "Cinta / Lazo de amor", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-13", "name": "Clivia / Lirio del Cabo", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-14", "name": "Lapachillo", "zone": "fondo", "nat": true, "fru": false, "perf": false, "trep": false}, {"code": "B-15", "name": "Hiedra común", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": true}, {"code": "B-16", "name": "Anacahuita", "zone": "fondo", "nat": true, "fru": false, "perf": false, "trep": false}, {"code": "B-18", "name": "Rosa de Siria / Althea", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-20", "name": "Arbusto caduco a identificar", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-22", "name": "Palta uruguaya", "zone": "fondo", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "B-23", "name": "Limonero", "zone": "fondo", "nat": false, "fru": true, "perf": true, "trep": false}, {"code": "B-24", "name": "Mandarina criolla", "zone": "fondo", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "B-25", "name": "Gardenia / Jazmín del Cabo", "zone": "fondo", "nat": false, "fru": false, "perf": true, "trep": false}, {"code": "B-26", "name": "Romero", "zone": "fondo", "nat": false, "fru": false, "perf": true, "trep": false}, {"code": "B-27", "name": "Mirto común", "zone": "fondo", "nat": false, "fru": false, "perf": true, "trep": false}, {"code": "B-29", "name": "Lantana / Camará", "zone": "fondo", "nat": true, "fru": false, "perf": false, "trep": false}, {"code": "B-30", "name": "Durazno", "zone": "fondo", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "B-32", "name": "Viraró", "zone": "fondo", "nat": true, "fru": false, "perf": false, "trep": false}, {"code": "B-34", "name": "Mandioca brava (tentativa)", "zone": "fondo", "nat": true, "fru": false, "perf": false, "trep": false}, {"code": "B-36", "name": "Palta Haas", "zone": "fondo", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "B-37", "name": "Liquidámbar", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-38", "name": "Ciruela amarilla", "zone": "fondo", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "B-39", "name": "Pera Williams", "zone": "fondo", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "B-40", "name": "Madreselva china siempreverde", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-41", "name": "Caqui / Persimón", "zone": "fondo", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "B-42", "name": "Pata de vaca", "zone": "fondo", "nat": true, "fru": false, "perf": false, "trep": false}, {"code": "B-43", "name": "Pitósporo", "zone": "fondo", "nat": false, "fru": false, "perf": true, "trep": false}, {"code": "B-44", "name": "Evónimo japonés variegado", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-45", "name": "Sin identificar (al lado de la pared, atrás de B-35)", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": true}, {"code": "B-46", "name": "Vivero / Plantines", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-48", "name": "Plantín de roble joven (Quercus sp.)", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-49", "name": "Plantín trifoliado (posible glicinia o leguminosa)", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-47", "name": "Plantines de palmera (lote separado)", "zone": "fondo", "nat": true, "fru": false, "perf": false, "trep": false}, {"code": "I-1", "name": "Singonio / Pata de gallo", "zone": "interior", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "I-2", "name": "Difenbaquia / Caña muda", "zone": "interior", "nat": false, "fru": false, "perf": false, "trep": false}];
+var EM={fru:'🍑',perf:'🌸',trep:'🌿',nat:'🇺🇾',def:'🌱'};
+function emoji(p){ return p.fru?'🍑':p.perf?'🌸':p.trep?'🌿':p.nat?'🌳':'🌱'; }
+var DIMS=[
+ {key:'nat', q:'¿Cuál es NATIVA del Uruguay?', e:function(w){return w.name+' es nativa del Uruguay/región. La otra es exótica (introducida).';}},
+ {key:'fru', q:'¿Cuál te da FRUTA para comer?', e:function(w){return w.name+' es frutal. La otra es ornamental.';}},
+ {key:'perf', q:'¿Cuál es AROMÁTICA / perfumada?', e:function(w){return w.name+' destaca por su perfume o aroma.';}},
+ {key:'trep', q:'¿Cuál es TREPADORA?', e:function(w){return w.name+' es trepadora: necesita soporte para crecer.';}},
+];
+function rnd(a){ return a[Math.floor(Math.random()*a.length)]; }
+function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+// armar duelos válidos: 1 con la prop, 1 sin
+function makeRounds(n){
+  var out=[], tries=0;
+  while(out.length<n && tries<400){ tries++;
+    var d=rnd(DIMS); var yes=P.filter(function(p){return p[d.key];}); var no=P.filter(function(p){return !p[d.key];});
+    if(!yes.length||!no.length) continue;
+    var a=rnd(yes), b=rnd(no); if(a.code===b.code) continue;
+    var pair=[a,b]; if(Math.random()<.5) pair=[b,a];
+    out.push({dim:d, win:a, cards:pair});
+  }
+  return out;
+}
+var R=makeRounds(6), idx=0, score=0, answered=false;
+var q=document.getElementById('q'),cA=document.getElementById('cA'),cB=document.getElementById('cB'),
+    expl=document.getElementById('expl'),nextb=document.getElementById('next'),rmeta=document.getElementById('rmeta'),smeta=document.getElementById('smeta');
+function paint(btn,p){ btn.innerHTML='<div class="em">'+emoji(p)+'</div><div class="nm">'+p.name+'</div><div class="cd">'+p.code+'</div>'; btn.className='pcard'; btn.disabled=false; }
+function render(){ answered=false; var r=R[idx]; q.textContent=r.dim.q; paint(cA,r.cards[0]); paint(cB,r.cards[1]);
+  rmeta.textContent='Duelo '+(idx+1)+' de '+R.length; smeta.textContent=score+' ✓'; expl.className='expl'; nextb.className='next';
+  nextb.textContent= idx===R.length-1?'Ver resultado →':'Siguiente →'; }
+function pick(btn,p){ if(answered)return; answered=true; var r=R[idx]; var ok=p.code===r.win.code;
+  [cA,cB].forEach(function(b){ b.disabled=true; }); var winBtn=(r.cards[0].code===r.win.code)?cA:cB;
+  if(ok){ btn.classList.add('ok'); score++; } else { btn.classList.add('bad'); winBtn.classList.add('ok'); }
+  smeta.textContent=score+' ✓'; expl.innerHTML=(ok?'✅ ¡Bien! ':'❌ ')+r.dim.e(r.win); expl.classList.add('show'); nextb.classList.add('show');
+  engageReact('duelo-r'+(idx+1), ok?'correct':'wrong'); }
+cA.addEventListener('click',function(){pick(cA,R[idx].cards[0]);}); cB.addEventListener('click',function(){pick(cB,R[idx].cards[1]);});
+nextb.addEventListener('click',function(){ if(!answered)return; if(idx<R.length-1){idx++;render();window.scrollTo({top:0,behavior:'smooth'});} else finish(); });
+function finish(){ document.getElementById('game').classList.add('hidden'); document.getElementById('end').classList.remove('hidden');
+  var sb=document.getElementById('sb'),n=0; var iv=setInterval(function(){n++;sb.textContent=n;if(n>=score)clearInterval(iv);},170); if(score===0)sb.textContent='0';
+  document.getElementById('ss').textContent='de '+R.length+' duelos ganados';
+  var p=score/R.length; document.getElementById('bd').textContent= p===1?'🏆 ¡Imbatible!':p>=.6?'🌿 Buen ojo':p>=.3?'🌱 Vas aprendiendo':'😅 A repasar el jardín';
+  engageReact('duelo-score', score+'/'+R.length); }
+render();
+</script></body></html>
