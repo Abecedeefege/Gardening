@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-15T19:46:45.477Z",
+  "_updated_at": "2026-06-15T22:18:02.680Z",
   "notifications": [
     {
       "id": "2026-06-15-x01",
@@ -178,8 +178,8 @@
       "format": "adivina",
       "send_at": "2026-06-15T17:00:00-03:00",
       "expires_at": "2026-06-15T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-15T22:18:02.281Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-15"
     },
@@ -191,8 +191,8 @@
       "format": "rueda",
       "send_at": "2026-06-15T17:30:00-03:00",
       "expires_at": "2026-06-15T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-15T22:18:02.379Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-15"
     },
@@ -204,8 +204,8 @@
       "format": "quiz",
       "send_at": "2026-06-15T18:00:00-03:00",
       "expires_at": "2026-06-15T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-15T22:18:02.491Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-15"
     },
@@ -217,8 +217,8 @@
       "format": "duelo",
       "send_at": "2026-06-15T18:30:00-03:00",
       "expires_at": "2026-06-15T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-15T22:18:02.592Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-15"
     },
@@ -230,8 +230,8 @@
       "format": "adivina",
       "send_at": "2026-06-15T19:00:00-03:00",
       "expires_at": "2026-06-15T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-15T22:18:02.679Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-15"
     },
