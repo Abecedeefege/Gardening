@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-15T21:25:00.753Z",
+  "_updated_at": "2026-06-15T21:25:02.039Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -577,6 +577,15 @@
       "value": "wrong",
       "page": "engage/adivina-jardin.html",
       "ts": "2026-06-15T21:25:01.354Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqfq1x4ynywrfb",
+      "type": "reaction",
+      "target": "adivina-r3",
+      "value": "wrong",
+      "page": "engage/adivina-jardin.html",
+      "ts": "2026-06-15T21:25:03.105Z",
       "device": "sin-nombre"
     }
   ],
