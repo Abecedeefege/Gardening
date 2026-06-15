@@ -5201,46 +5201,37 @@ function showPushResubscribeBanner() {
 // diario lee docs/sync/engagement.json para decidir el contenido
 // del día siguiente.
 // ------------------------------------------------------------
+// Loguea eventos de engagement del sitio principal (clicks de notificación,
+// visitas) vía la función serverless /api/feedback — SIN PAT. Antes esto
+// dependía del PAT (loadGitHubToken) y en la PWA el PAT no está disponible,
+// así que las aperturas de notificación a index.html NO se medían (bug que
+// hizo ver "0 engagement" el 14/06). Ahora se encolan en el outbox (igual que
+// engage.js) y se postean; el abrir una notificación SIEMPRE cuenta.
 async function logEngagementEvents(events) {
-  if (!loadGitHubToken() || !events.length) return;
-  for (let attempt = 0; attempt < 2; attempt++) {
-    try {
-      const { data } = await ghReadJsonFile(ENGAGEMENT_PATH);
-      const doc = data || { _updated_at: null, events: [], daily_summary: {} };
-      doc.events = (doc.events || []).concat(events);
-      doc._updated_at = new Date().toISOString();
-      await ghWriteJsonFile(ENGAGEMENT_PATH, doc, `engage: ${events.map(e => e.type).join(', ')} desde ${loadDeviceName() || 'device'}`);
-      return;
-    } catch (e) {
-      if (attempt === 1) console.warn('[engage] no se pudo loguear:', e);
-    }
-  }
+  if (!events || !events.length) return;
+  const KEY = 'jardineando_engage_outbox_v1';
+  const stamped = events.map(e => Object.assign({ _id: Date.now().toString(36) + Math.random().toString(36).slice(2, 8) }, e));
+  try {
+    const cur = JSON.parse(localStorage.getItem(KEY) || '[]');
+    localStorage.setItem(KEY, JSON.stringify(cur.concat(stamped).slice(-200)));
+  } catch (e) {}
+  drainEngageOutbox();
 }
 
-// Drena el outbox que dejan las landings de engagement (engage.js). Si el PAT
-// no estaba disponible en el contexto de la landing (PWA standalone abierta
-// desde la notificación), los eventos quedan en localStorage; acá, en el sitio
-// principal donde el PAT sí funciona, los subimos a engagement.json. Mismo
-// origin → mismo localStorage, así que esto rescata el feedback "atascado".
+// Postea el outbox (de este sitio y de las landings engage/*) a /api/feedback.
+// Sin PAT. Dedup por _id lo hace el endpoint. Se llama al cargar y tras cada log.
 async function drainEngageOutbox() {
-  if (!loadGitHubToken()) return;
+  const KEY = 'jardineando_engage_outbox_v1';
   let raw;
-  try { raw = JSON.parse(localStorage.getItem('jardineando_engage_outbox_v1') || '[]'); } catch (e) { return; }
+  try { raw = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return; }
   if (!Array.isArray(raw) || !raw.length) return;
   try {
-    const { data } = await ghReadJsonFile(ENGAGEMENT_PATH);
-    const doc = data || { _updated_at: null, events: [], daily_summary: {} };
-    const have = {};
-    (doc.events || []).forEach(e => { if (e._id) have[e._id] = 1; });
-    const toAdd = raw.filter(e => !e._id || !have[e._id]);
-    if (toAdd.length) {
-      doc.events = (doc.events || []).concat(toAdd);
-      doc._updated_at = new Date().toISOString();
-      await ghWriteJsonFile(ENGAGEMENT_PATH, doc, `engage: drenar outbox (${toAdd.length}) desde ${loadDeviceName() || 'device'}`);
-    }
-    localStorage.removeItem('jardineando_engage_outbox_v1');
-    console.log(`[engage] outbox drenado: ${toAdd.length} eventos`);
-  } catch (e) { console.warn('[engage] drain de outbox falló:', e); }
+    const r = await fetch('/api/feedback', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ events: raw, device: loadDeviceName() || 'device' }),
+    });
+    if (r.ok) { localStorage.removeItem(KEY); console.log(`[engage] ${raw.length} eventos posteados a /api/feedback`); }
+  } catch (e) { console.warn('[engage] /api/feedback falló (quedan en outbox):', e); }
 }
 
 function trackNotificationLanding() {

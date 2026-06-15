@@ -3,41 +3,46 @@
 Memoria del agente diario. Se REESCRIBE y condensa cada día (máx ~150 líneas).
 No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
-## ⏱️ CADENCIA VIGENTE: 3/día (bajada el 15/06 por fatiga)
+## ⏱️ CADENCIA VIGENTE: cada 30 min (~19/día) — fijada por el usuario el 15/06
 
-**Cadencia hoy = 3 notificaciones/día, curadas a mano.** Se bajó desde la cadencia
-alta (9–39/día) el 15/06 por una señal de fatiga inequívoca (ver abajo). El usuario
-pidió explícitamente 3 el 15/06. Cuando la biblioteca de formatos crezca y haya señal
-de hambre (clicks consistentes), se puede volver a subir — NO antes.
+**Cadencia = 1 push cada 30 min, ventana 10:30–20:00 (~19/día).** Generá con
+`python tools/gen_queue.py <YYYY-MM-DD>` (rota la biblioteca de formatos, sin
+formato adyacente repetido, assert anti-duplicados, CERO fichas).
 
-**Cada notificación tiene que SENTIRSE única — otro FORMATO/interacción, no el mismo
-molde con otro dato.** El usuario fue tajante (14/06): "no quiero más notificaciones que
-lleven a una especie en su formato actual"; "siento que mandás mucho de lo mismo". Una
-URL única NO es una experiencia única. Reglas:
-- Con 3/día curo a mano: **cada push a un FORMATO distinto** (rueda / quiz / curio / mazo).
-  Nunca dos del mismo formato el mismo día. **PROHIBIDO fichas `#especie` sueltas.**
-- Si vuelve la cadencia alta, generar con `python tools/gen_queue.py <fecha> <cant>`
-  (rota formatos, assert anti-duplicados). Acepta cantidad como 2º arg.
-- NUNCA linkear a una página efímera que vayas a borrar el mismo día (da 404 — pasó el 13/06).
-- Formatos vivos: 🌀 rueda-ano (aprobada), 💡 feed curiosidades (promovido), 🧠 quiz-jardin,
-  🃏 mazo-jardin (re-test 15/06), ⚔️ duelo-jardin (NUEVO 15/06), 🔍 adivina-jardin (NUEVO 15/06).
-  Juegos con contenido aleatorio cada vez → un repetido nunca es 'lo mismo'.
+**OJO — la "fatiga del 14/06" fue un BUG DE MEDICIÓN, no fatiga real** (ver sección
+corregida abajo). El usuario confirmó (15/06): "hubo engagement, claramente no lo
+mediste bien". NO bajar la cadencia por ese dato.
+
+**Reglas duras (15/06):**
+- **Cada push explora un FORMATO nuevo**; los formatos que el usuario marca 👍 pueden
+  repetir pero SIEMPRE con contenido original (los juegos randomizan, la rueda cambia
+  de mes). Lo garantiza `gen_queue.py`.
+- **PROHIBIDO el módulo original de especie** (`index.html#especie=CODE`). El usuario:
+  "las que llevan al módulo original de una especie no quiero verlas más". Las
+  experiencias deben ser NUEVAS o módulos marcados como buenos (rueda, curiosidades).
+- **El ABRIR la notificación cuenta como engagement** (`notification_clicked`). Se loguea
+  vía `/api/feedback` en TODAS las páginas (engage/* y index.html) — ya no depende del PAT.
+- Formatos vivos: 🌀 rueda-ano (aprobada), 💡 feed curiosidades (promovido), 🧠 quiz,
+  ⚔️ duelo, 🔍 adiviná (nuevos 15/06), 🃏 mazo (proposal del agente). Roadmap: antes/después
+  con fotos, scrollytelling, número del día, cuenta-regresiva, memoria/pares.
+- NUNCA linkear a una página efímera que vayas a borrar el mismo día (404 — pasó el 13/06).
 
 ## Estado del sistema
 
 - Push subscription device `pix9`: **active** (desde 11/06).
 - Logging parchado 12-13/06 (outbox localStorage + endpoint serverless `/api/feedback` sin PAT).
 
-## 🚨 SEÑAL DE FATIGA (14/06) — base de la bajada a 3/día
+## ✅ CORRECCIÓN (15/06): la "fatiga del 14/06" fue BUG DE MEDICIÓN, no fatiga
 
-- El 14/06 se mandaron **39 pushes** (u01–u39, todos 201 en send_log).
-- `engagement.json` NO registró **ni un solo evento** después de 2026-06-14T01:11 → 0 clicks,
-  0 reacciones, 0 aprobaciones, 0 rechazos de esos 39 pushes.
-- Lectura: 39/día es sobre-saturación total — el usuario tuneó el canal por completo. Confirma
-  la regla "N notifs al mismo destino/exceso mata la novedad" llevada al extremo. → cadencia 3/día,
-  curada, y nada de floods. La credibilidad del canal es el activo; recuperarla > volumen.
-- ⚠️ El mazo v1 (proposal 14/06) quedó confounded por este flood: su único promotor (u11) cayó
-  en la avalancha ignorada. Por eso se RE-LANZA hoy con test limpio (ver abajo).
+- El 14/06 se mandaron 39 pushes, casi todos a **fichas `index.html#especie`**.
+- `engagement.json` mostró 0 eventos → se interpretó MAL como fatiga. **Causa real:** las
+  fichas viven en `index.html`, que logueaba el engagement por el **PAT (loadGitHubToken)**,
+  y en la PWA el PAT no está → las aperturas NO se registraban. Los `engage/*` (que usan
+  `/api/feedback`) sí registraban; las fichas no. El usuario confirmó: "hubo engagement".
+- **FIX (15/06):** `scripts.py` (logEngagementEvents + drainEngageOutbox) ahora postea a
+  `/api/feedback` SIN PAT, con outbox. Ahora el abrir cualquier notificación (también a
+  index.html) cuenta. → No volver a leer "0 eventos" como fatiga sin antes verificar la vía
+  de logging. Y no usar fichas igual (el usuario las prohibió por formato repetido).
 
 ## 🎯 SEÑAL REAL MEDIDA (datos del 12-13/06) — sigue siendo la base
 

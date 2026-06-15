@@ -35,6 +35,7 @@ def build_formats():
         (10, "\U0001F300 Octubre arranca la fiesta", "La rueda del año: octubre, empieza la explosión de flores."),
         (6,  "\U0001F300 Tu jardín ahora", "La rueda del año en este mes. ¿Cuánto duerme tu jardín en invierno?"),
         (9,  "\U0001F300 Septiembre despierta", "La rueda del año en septiembre: el jardín sale del invierno."),
+        (4,  "\U0001F300 Abril: el cierre del verano", "La rueda del año en abril — todavía quedan flores y fruta."),
     ]]
     # 🧠 Quiz (NUEVO) — variación por set de preguntas
     F["quiz"] = [(E("quiz-jardin.html") + "#set=" + str(s), t, b) for (s, t, b) in [
@@ -48,12 +49,14 @@ def build_formats():
         (1, "⚔️ Duelo: ¿esta o esta?", "Dos de tus plantas se enfrentan. ¿Adiviná cuál gana?"),
         (2, "⚔️ Nuevo duelo de plantas", "6 enfrentamientos entre tus plantas. ¿Cuántos ganás?"),
         (3, "⚔️ Cara a cara en tu jardín", "Nativa vs exótica, frutal vs ornamental… elegí bien."),
+        (4, "⚔️ Duelo relámpago", "Rondas nuevas entre tus plantas. ¿Cuánto sabés de las tuyas?"),
     ]]
     # 🔍 Adiviná la planta (NUEVO) — rondas aleatorias cada vez
     F["adivina"] = [(E("adivina-jardin.html") + "#set=" + str(s), t, b) for (s, t, b) in [
         (1, "\U0001F50D Adiviná la planta", "Te doy pistas de una de tus plantas. ¿Sabés cuál es?"),
         (2, "\U0001F50D ¿Qué planta es?", "5 rondas de pistas sobre tu jardín. Adiviná."),
         (3, "\U0001F50D Detective del jardín", "Pistas y opciones: identificá tus plantas."),
+        (4, "\U0001F50D ¿Reconocés esta planta?", "Otra ronda de pistas. ¿Cuántas adivinás de tu propio jardín?"),
     ]]
     # 💡 Feed de curiosidades (sección fija, lo que más enganchó)
     F["curio"] = [(SITE + "index.html#curiosidades",
@@ -74,21 +77,20 @@ def build(date_str, cadence_min=30, max_slots=None):
     while t <= end:
         times.append(t.strftime("%H:%M")); t += datetime.timedelta(minutes=cadence_min)
 
-    # interleave por tipo (round-robin) → nunca dos del mismo formato seguidos,
-    # cicla por todos antes de repetir un tipo
-    picks, cursors, ti, used = [], {k: 0 for k in F}, 0, set()
-    guard = 0
+    # interleave: en cada paso, elegir el tipo con MÁS instancias restantes que
+    # sea distinto al anterior → nunca dos del mismo formato seguidos (mientras
+    # exista un arreglo posible), y se reparten parejo.
+    picks, cursors, used, last_ty = [], {k: 0 for k in F}, set(), None
     cap = min(len(times), max_slots) if max_slots else len(times)
-    while len(picks) < cap and guard < 2000:
-        guard += 1
-        ty = types[ti % len(types)]; ti += 1
-        c = cursors[ty]
-        if c < len(F[ty]):
-            inst = F[ty][c]; cursors[ty] += 1
-            if inst[0] not in used:
-                used.add(inst[0]); picks.append((ty, inst))
-        if all(cursors[k] >= len(F[k]) for k in F):
+    while len(picks) < cap:
+        avail = [k for k in F if cursors[k] < len(F[k])]
+        if not avail:
             break  # agotamos todas las instancias únicas
+        cand = [k for k in avail if k != last_ty] or avail
+        cand.sort(key=lambda k: len(F[k]) - cursors[k], reverse=True)
+        ty = cand[0]
+        inst = F[ty][cursors[ty]]; cursors[ty] += 1
+        used.add(inst[0]); picks.append((ty, inst)); last_ty = ty
 
     notifs = []
     times = times[:len(picks)] if max_slots else times
