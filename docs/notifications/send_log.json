@@ -671,6 +671,24 @@
       "nid": "2026-06-16-x17",
       "ts": "2026-06-16T21:44:11.372Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-16-x18",
+      "ts": "2026-06-16T23:12:02.792Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-16-x19",
+      "ts": "2026-06-16T23:12:02.918Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-16-x20",
+      "ts": "2026-06-16T23:12:03.152Z",
+      "status_code": 201
     }
   ]
 }

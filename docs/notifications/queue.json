@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-16T21:44:11.373Z",
+  "_updated_at": "2026-06-16T23:12:03.152Z",
   "notifications": [
     {
       "id": "2026-06-16-x01",
@@ -230,8 +230,8 @@
       "format": "adivina",
       "send_at": "2026-06-16T19:00:00-03:00",
       "expires_at": "2026-06-16T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-16T23:12:02.792Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-16"
     },
@@ -243,8 +243,8 @@
       "format": "vof",
       "send_at": "2026-06-16T19:30:00-03:00",
       "expires_at": "2026-06-16T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-16T23:12:02.918Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-16"
     },
@@ -256,8 +256,8 @@
       "format": "curio",
       "send_at": "2026-06-16T20:00:00-03:00",
       "expires_at": "2026-06-16T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-16T23:12:03.152Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-16"
     }
