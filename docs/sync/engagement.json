@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-16T11:20:25.023Z",
+  "_updated_at": "2026-06-16T11:20:27.701Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -711,6 +711,15 @@
       "value": "correct",
       "page": "engage/quiz-jardin.html",
       "ts": "2026-06-16T11:20:26.772Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqgjwb3ga9nn8k",
+      "type": "reaction",
+      "target": "quiz-set4-q2",
+      "value": "wrong",
+      "page": "engage/quiz-jardin.html",
+      "ts": "2026-06-16T11:20:29.740Z",
       "device": "sin-nombre"
     }
   ],
