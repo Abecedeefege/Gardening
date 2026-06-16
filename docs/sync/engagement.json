@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-16T11:19:49.914Z",
+  "_updated_at": "2026-06-16T11:19:53.411Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -666,6 +666,15 @@
       "value": "correct",
       "page": "engage/duelo-jardin.html",
       "ts": "2026-06-16T11:19:52.108Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqgjvkrwh83n98",
+      "type": "dwell",
+      "seconds": 6,
+      "scroll_pct": 100,
+      "page": "engage/duelo-jardin.html",
+      "ts": "2026-06-16T11:19:55.628Z",
       "device": "sin-nombre"
     }
   ],
