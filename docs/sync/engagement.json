@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-16T11:19:58.796Z",
+  "_updated_at": "2026-06-16T11:20:01.643Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -684,6 +684,15 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-06-16T11:19:58.271Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqgjvr3hg5wnc6",
+      "type": "reaction",
+      "target": "rueda-ano",
+      "value": "no",
+      "page": "engage/2026-06-13-rueda-ano.html",
+      "ts": "2026-06-16T11:20:03.821Z",
       "device": "sin-nombre"
     }
   ],
