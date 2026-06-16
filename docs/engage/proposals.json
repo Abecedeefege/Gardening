@@ -86,12 +86,27 @@
     {
       "id": "2026-06-15-mazo-jardin",
       "title": "El mazo de tu jardín (flip-cards animadas de curiosidades)",
-      "page": "engage/2026-06-15-mazo-jardin.html",
+      "page": null,
       "created": "2026-06-15",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Re-test LIMPIO del mazo (fusión de los dos ganadores medidos: curiosidades verificadas + animación 3D interactiva). La v1 del 14/06 nunca tuvo un test justo: su único promotor cayó en el flood de 39 pushes que el usuario ignoró. Hoy se prueba en cadencia baja (3/día), con un slot diurno dedicado (12:00) y sin ruido. Hipótesis: con atención limpia, el gesto de dar vuelta cartas con dato verificado engancha más que el feed plano o la rueda por separado. Es además la respuesta directa al pedido 'no quiero más de lo mismo': formato genuinamente nuevo. Si junta aprobación, se integra como experiencia/sección fija.",
       "notified_by": [
         "2026-06-15-a"
+      ],
+      "result_notes": "DROPPED 16/06 por la regla de no-supervivencia sin aprobación explícita (pending de día anterior). 3er intento fallido y NUNCA tuvo un test limpio: el 15/06 la cadencia cambió a mitad de día al modelo gen_queue (~19-20/día), que NO incluye el mazo, así que su promotor planeado (2026-06-15-a) jamás se mandó — la cola real fue la serie x01-x19, sin el mazo. Lectura: el formato flip-card (lento, gesto de dar vuelta) no se logró validar en 3 intentos; en cambio los juegos RÁPIDOS (duelo 6/6 ×2, adiviná) sí enganchan. Se deja de invertir en el flip-card y se prueba el mismo concepto (datos verificados + juego) en formato rápido: ⚡ Verdadero o Falso (2026-06-16-vof-jardin). Página efímera eliminada."
+    },
+    {
+      "id": "2026-06-16-vof-jardin",
+      "title": "Verdadero o Falso de tu jardín (juego rápido binario)",
+      "page": "engage/2026-06-16-vof-jardin.html",
+      "created": "2026-06-16",
+      "status": "pending",
+      "hypothesis": "Fusión de los DOS ganadores medidos (datos verificados de SUS plantas + interacción de juego) pero en formato RÁPIDO y binario, a diferencia del mazo flip-card (lento) que fracasó 3 veces. El 15/06 los juegos rápidos arrasaron: duelo jugado completo 2 veces 6/6 con 42+24s dwell, adiviná jugado con 32s dwell; la rueda en cambio cayó a meh/meh/no por sobre-exposición. Hipótesis: un V/F de 7 afirmaciones verificables (nativa, frutal, aromática, trepadora, zona) sobre plantas propias, con feedback inmediato, mantiene el ritmo de juego que engancha y suma un formato nuevo a la rotación. Afirmaciones derivadas SOLO de datos estructurales verificados (mismos booleanos que usa el duelo aprobado), cero horticultura inventada. Si junta aprobación, se integra como experiencia/sección fija y se suma estable a gen_queue.",
+      "notified_by": [
+        "2026-06-16-x04",
+        "2026-06-16-x09",
+        "2026-06-16-x14",
+        "2026-06-16-x19"
       ],
       "result_notes": null
     }

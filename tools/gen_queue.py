@@ -29,13 +29,12 @@ def build_formats():
     """tipo -> [(url, title, body)], cada instancia con contenido distinto."""
     F = {}
     # 🌀 Rueda del año (APROBADA por el usuario) — variación por mes
+    # Recortada a 3 variantes el 16/06: el 15/06 con 6 slots/día se sobre-expuso y
+    # el usuario reaccionó meh/meh/no. Sigue rotando, pero sin dominar la cola.
     F["rueda"] = [(E("2026-06-13-rueda-ano.html") + "#m=" + str(m), t, b) for (m, t, b) in [
-        (11, "\U0001F300 Tu jardín en noviembre", "La rueda del año: noviembre, 32 plantas en flor a la vez. Tocá y mirá."),
-        (3,  "\U0001F300 Marzo: tu cosecha", "La rueda del año en marzo — qué tenés con fruta para cosechar."),
-        (10, "\U0001F300 Octubre arranca la fiesta", "La rueda del año: octubre, empieza la explosión de flores."),
         (6,  "\U0001F300 Tu jardín ahora", "La rueda del año en este mes. ¿Cuánto duerme tu jardín en invierno?"),
+        (11, "\U0001F300 Tu jardín en noviembre", "La rueda del año: noviembre, 32 plantas en flor a la vez. Tocá y mirá."),
         (9,  "\U0001F300 Septiembre despierta", "La rueda del año en septiembre: el jardín sale del invierno."),
-        (4,  "\U0001F300 Abril: el cierre del verano", "La rueda del año en abril — todavía quedan flores y fruta."),
     ]]
     # 🧠 Quiz (NUEVO) — variación por set de preguntas
     F["quiz"] = [(E("quiz-jardin.html") + "#set=" + str(s), t, b) for (s, t, b) in [
@@ -57,6 +56,14 @@ def build_formats():
         (2, "\U0001F50D ¿Qué planta es?", "5 rondas de pistas sobre tu jardín. Adiviná."),
         (3, "\U0001F50D Detective del jardín", "Pistas y opciones: identificá tus plantas."),
         (4, "\U0001F50D ¿Reconocés esta planta?", "Otra ronda de pistas. ¿Cuántas adivinás de tu propio jardín?"),
+    ]]
+    # ⚡ Verdadero o Falso (PROPOSAL 16/06) — fusión rápida de los dos ganadores
+    # (datos verificados + juego). En prueba: si el usuario la aprueba, queda fija.
+    F["vof"] = [(E("2026-06-16-vof-jardin.html") + "#set=" + str(s), t, b) for (s, t, b) in [
+        (1, "⚡ Verdadero o Falso", "7 afirmaciones sobre tus plantas. Rápido: ¿verdadero o falso?"),
+        (2, "⚡ ¿Verdad o mito de tu jardín?", "Ronda nueva. ¿Distinguís lo cierto de lo falso de tus plantas?"),
+        (3, "⚡ V o F: edición jardín", "7 afirmaciones más. ¿Cuántas acertás de tu propio jardín?"),
+        (4, "⚡ Reto Verdadero/Falso", "Última ronda. A ver si conocés bien lo que tenés plantado."),
     ]]
     # 💡 Feed de curiosidades (sección fija, lo que más enganchó)
     F["curio"] = [(SITE + "index.html#curiosidades",

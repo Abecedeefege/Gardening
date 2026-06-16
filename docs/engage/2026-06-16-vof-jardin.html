@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1a0a"><title>Verdadero o Falso de tu jardín · Jardineando</title>
+<style>
+  :root{ --verde:#2d5016; --verde2:#5a9e35; --crema:#f6f4ea; --tinta:#1a2410; --ok:#3f9142; --mal:#c0392b; --pad:max(18px,env(safe-area-inset-left)); }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; min-height:100%; }
+  body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    background:radial-gradient(130% 90% at 50% 0%, #fbfaf3, #eaecdd); color:var(--tinta);
+    -webkit-font-smoothing:antialiased; padding:0 var(--pad) calc(40px + env(safe-area-inset-bottom)); }
+  .top{ padding:calc(14px + env(safe-area-inset-top)) 0 6px; } .top a{ color:var(--verde); text-decoration:none; font-size:14px; font-weight:700; }
+  h1{ font-size:clamp(22px,6vw,28px); letter-spacing:-0.02em; color:var(--verde); margin:8px 0 2px; }
+  .sub{ font-size:13.5px; color:#5a6b4a; margin:0 0 4px; }
+  .meta{ display:flex; justify-content:space-between; font-size:12.5px; color:#7a8a68; font-weight:700; margin-top:10px; }
+  .card{ max-width:540px; margin:18px auto 0; background:#fff; border:2px solid #e2e7d6; border-radius:20px; padding:26px 20px; text-align:center; box-shadow:0 3px 10px rgba(45,80,22,.07); }
+  .card .em{ font-size:52px; line-height:1; } .card .cd{ font-size:11px; color:#9aa888; font-weight:700; margin-top:4px; }
+  .stmt{ font-size:clamp(18px,4.8vw,22px); font-weight:800; margin:14px auto 0; line-height:1.3; }
+  .ans{ display:flex; gap:12px; max-width:540px; margin:16px auto 0; }
+  .ans button{ flex:1; padding:18px 12px; border:2px solid #e2e7d6; border-radius:16px; background:#fff; font-size:17px; font-weight:800; cursor:pointer; transition:transform .12s, border-color .2s, background .2s; box-shadow:0 2px 6px rgba(45,80,22,.06); }
+  .ans button:active{ transform:scale(.97); } .ans button:disabled{ cursor:default; }
+  .ans button.ok{ border-color:var(--ok); background:#eef7ee; animation:pop .35s; } .ans button.bad{ border-color:var(--mal); background:#fbecea; animation:shake .4s; }
+  @keyframes pop{ 0%{transform:scale(1)} 40%{transform:scale(1.05)} 100%{transform:scale(1)} }
+  @keyframes shake{ 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+  .expl{ max-width:540px; margin:14px auto 0; background:#eef3e5; border-radius:12px; padding:13px 15px; font-size:14px; color:#3c4a30; line-height:1.5; opacity:0; transform:translateY(8px); }
+  .expl.show{ opacity:1; transform:none; transition:.35s; } .expl b{ color:var(--verde); }
+  .next{ display:block; width:100%; max-width:540px; margin:16px auto 0; padding:15px; border:none; border-radius:14px; background:var(--verde); color:#fff; font-size:16px; font-weight:800; cursor:pointer; opacity:0; pointer-events:none; transition:.3s; }
+  .next.show{ opacity:1; pointer-events:auto; }
+  .final{ max-width:540px; margin:34px auto 0; text-align:center; } .scorebig{ font-size:60px; font-weight:800; color:var(--verde); line-height:1; }
+  .scoresub{ font-size:16px; color:#5a6b4a; } .badge{ font-size:20px; font-weight:800; color:var(--verde); margin:10px 0; }
+  .replay{ margin-top:14px; display:flex; flex-direction:column; gap:10px; } .replay button{ padding:14px; border:none; border-radius:14px; font-size:15px; font-weight:800; cursor:pointer; }
+  .replay .again{ background:var(--verde); color:#fff; } .replay .home{ background:#fff; color:#5a6b4a; border:1px solid #d7e0c9; } .hidden{ display:none; }
+  .engage-actions{ max-width:540px; margin:30px auto 0; display:flex; flex-direction:column; gap:10px; }
+  .engage-actions button{ padding:15px; border:none; border-radius:14px; font-size:15px; font-weight:800; cursor:pointer; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; } .engage-actions button:last-child{ background:#fff; color:#7a8a68; border:1px solid #d7e0c9; }
+  .pnote{ max-width:540px; margin:14px auto 0; text-align:center; font-size:12px; color:#9aa888; }
+  @media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; } }
+</style></head><body>
+<div class="top"><a href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+  <h1>⚡ Verdadero o Falso</h1><p class="sub">7 afirmaciones sobre tus propias plantas. Rápido: ¿verdadero o falso?</p></div>
+<div class="meta"><span id="rmeta">Ronda 1</span><span id="smeta">0 ✓</span></div>
+<div id="game">
+  <div class="card"><div class="em" id="em"></div><div class="cd" id="cd"></div><div class="stmt" id="stmt"></div></div>
+  <div class="ans"><button id="bT">✅ Verdadero</button><button id="bF">❌ Falso</button></div>
+  <div class="expl" id="expl"></div><button class="next" id="next">Siguiente →</button>
+</div>
+<div id="end" class="final hidden"><div class="scorebig" id="sb">0</div><div class="scoresub" id="ss"></div><div class="badge" id="bd"></div>
+  <div class="replay"><button class="again" onclick="location.reload()">🔄 Otra ronda</button>
+  <button class="home" onclick="location.href='https://gardening-chi.vercel.app/index.html#curiosidades'">Ver curiosidades →</button></div></div>
+
+<div class="engage-actions">
+  <button onclick="engageApprove('2026-06-16-vof-jardin')">✅ Aprobar esta mejora</button>
+  <button onclick="engageRejected('2026-06-16-vof-jardin')">✕ No me interesa</button>
+</div>
+<p class="pnote">Es una idea en prueba. Si te gusta, aprobala y la sumo al sitio fijo.</p>
+<script src="engage.js"></script>
+<script>
+var P = [{"code": "F-1", "name": "Guayabo del país", "zone": "frente", "nat": true, "fru": true, "perf": false, "trep": false}, {"code": "F-2", "name": "Bignonia rosada / Podranea", "zone": "frente", "nat": false, "fru": false, "perf": false, "trep": true}, {"code": "F-3", "name": "Fotinia", "zone": "frente", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "F-4", "name": "Ciruelo de jardín", "zone": "frente", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "F-7", "name": "Abelia", "zone": "frente", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "F-8", "name": "Aguaribay / Molle", "zone": "frente", "nat": true, "fru": false, "perf": true, "trep": false}, {"code": "F-9", "name": "Ligustro", "zone": "frente", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "F-10", "name": "Fresno (americano)", "zone": "frente", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-1", "name": "Santa Rita / Buganvilia", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": true}, {"code": "B-3", "name": "Jazmín de leche / estrellado", "zone": "fondo", "nat": false, "fru": false, "perf": true, "trep": true}, {"code": "B-4", "name": "Hibisco / Rosa china", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-5a", "name": "Hortensia", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-7", "name": "Azarero / Pitósporo", "zone": "fondo", "nat": false, "fru": false, "perf": true, "trep": false}, {"code": "B-8", "name": "Palmera pindó", "zone": "fondo", "nat": true, "fru": true, "perf": false, "trep": false}, {"code": "B-9", "name": "Crespón / Mirto de crepe", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-10", "name": "Lavanda", "zone": "fondo", "nat": false, "fru": false, "perf": true, "trep": false}, {"code": "B-13", "name": "Clivia / Lirio del Cabo", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-14", "name": "Lapachillo", "zone": "fondo", "nat": true, "fru": false, "perf": false, "trep": false}, {"code": "B-15", "name": "Hiedra común", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": true}, {"code": "B-16", "name": "Anacahuita", "zone": "fondo", "nat": true, "fru": false, "perf": false, "trep": false}, {"code": "B-18", "name": "Rosa de Siria / Althea", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-22", "name": "Palta uruguaya", "zone": "fondo", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "B-23", "name": "Limonero", "zone": "fondo", "nat": false, "fru": true, "perf": true, "trep": false}, {"code": "B-24", "name": "Mandarina criolla", "zone": "fondo", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "B-25", "name": "Gardenia / Jazmín del Cabo", "zone": "fondo", "nat": false, "fru": false, "perf": true, "trep": false}, {"code": "B-26", "name": "Romero", "zone": "fondo", "nat": false, "fru": false, "perf": true, "trep": false}, {"code": "B-27", "name": "Mirto común", "zone": "fondo", "nat": false, "fru": false, "perf": true, "trep": false}, {"code": "B-29", "name": "Lantana / Camará", "zone": "fondo", "nat": true, "fru": false, "perf": false, "trep": false}, {"code": "B-30", "name": "Durazno", "zone": "fondo", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "B-32", "name": "Viraró", "zone": "fondo", "nat": true, "fru": false, "perf": false, "trep": false}, {"code": "B-36", "name": "Palta Haas", "zone": "fondo", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "B-37", "name": "Liquidámbar", "zone": "fondo", "nat": false, "fru": false, "perf": false, "trep": false}, {"code": "B-38", "name": "Ciruela amarilla", "zone": "fondo", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "B-39", "name": "Pera Williams", "zone": "fondo", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "B-41", "name": "Caqui / Persimón", "zone": "fondo", "nat": false, "fru": true, "perf": false, "trep": false}, {"code": "B-42", "name": "Pata de vaca", "zone": "fondo", "nat": true, "fru": false, "perf": false, "trep": false}, {"code": "B-43", "name": "Pitósporo", "zone": "fondo", "nat": false, "fru": false, "perf": true, "trep": false}];
+function emoji(p){ return p.fru?'🍑':p.perf?'🌸':p.trep?'🌿':p.nat?'🌳':'🌱'; }
+var DIMS=[
+ {key:'nat', t:function(p){return p.name+' es una planta NATIVA del Uruguay.';}, e:function(p){return p.nat? '<b>Verdadero.</b> '+p.name+' es nativa del Uruguay/la región.' : '<b>Falso.</b> '+p.name+' es exótica (introducida), no nativa.';}},
+ {key:'fru', t:function(p){return p.name+' te da FRUTA comestible.';}, e:function(p){return p.fru? '<b>Verdadero.</b> '+p.name+' es frutal: da fruta para comer.' : '<b>Falso.</b> '+p.name+' es ornamental, no da fruta comestible.';}},
+ {key:'perf', t:function(p){return p.name+' es AROMÁTICA o perfumada.';}, e:function(p){return p.perf? '<b>Verdadero.</b> '+p.name+' destaca por su aroma o perfume.' : '<b>Falso.</b> '+p.name+' no se caracteriza por su perfume.';}},
+ {key:'trep', t:function(p){return p.name+' es una planta TREPADORA.';}, e:function(p){return p.trep? '<b>Verdadero.</b> '+p.name+' es trepadora: necesita soporte.' : '<b>Falso.</b> '+p.name+' no es trepadora.';}},
+ {key:'zone', t:function(p){return p.name+' está plantada en el FONDO (lado este) del jardín.';}, e:function(p){return p.zone==='fondo'? '<b>Verdadero.</b> '+p.name+' está en el fondo (lado este, sol de mañana).' : '<b>Falso.</b> '+p.name+' está en el frente (lado oeste, sol de tarde).';}, val:function(p){return p.zone==='fondo';}},
+];
+function rnd(a){ return a[Math.floor(Math.random()*a.length)]; }
+function val(d,p){ return d.val? d.val(p) : !!p[d.key]; }
+function makeRounds(n){
+  var out=[], tries=0, wantTrue=true, usedCode={};
+  while(out.length<n && tries<600){ tries++;
+    var d=rnd(DIMS);
+    var pool=P.filter(function(p){ return val(d,p)===wantTrue && !usedCode[d.key+p.code]; });
+    if(!pool.length){ wantTrue=!wantTrue; continue; }
+    var p=rnd(pool); usedCode[d.key+p.code]=1;
+    out.push({dim:d, plant:p, truth:wantTrue});
+    wantTrue=!wantTrue; // alternar verdadero/falso para equilibrar
+  }
+  return out;
+}
+var R=makeRounds(7), idx=0, score=0, answered=false;
+var em=document.getElementById('em'),cd=document.getElementById('cd'),stmt=document.getElementById('stmt'),
+    bT=document.getElementById('bT'),bF=document.getElementById('bF'),expl=document.getElementById('expl'),
+    nextb=document.getElementById('next'),rmeta=document.getElementById('rmeta'),smeta=document.getElementById('smeta');
+function render(){ answered=false; var r=R[idx]; em.textContent=emoji(r.plant); cd.textContent=r.plant.code;
+  stmt.textContent=r.dim.t(r.plant); rmeta.textContent='Ronda '+(idx+1)+' de '+R.length; smeta.textContent=score+' ✓';
+  bT.className=''; bF.className=''; bT.disabled=false; bF.disabled=false; expl.className='expl'; nextb.className='next';
+  nextb.textContent= idx===R.length-1?'Ver resultado →':'Siguiente →'; }
+function pick(said){ if(answered)return; answered=true; var r=R[idx]; var ok=(said===r.truth);
+  bT.disabled=true; bF.disabled=true; var saidBtn=said?bT:bF, trueBtn=r.truth?bT:bF;
+  if(ok){ saidBtn.classList.add('ok'); score++; } else { saidBtn.classList.add('bad'); trueBtn.classList.add('ok'); }
+  smeta.textContent=score+' ✓'; expl.innerHTML=(ok?'✅ ¡Bien! ':'❌ ')+r.dim.e(r.plant); expl.classList.add('show'); nextb.classList.add('show');
+  engageReact('vof-r'+(idx+1), ok?'correct':'wrong'); }
+bT.addEventListener('click',function(){pick(true);}); bF.addEventListener('click',function(){pick(false);});
+nextb.addEventListener('click',function(){ if(!answered)return; if(idx<R.length-1){idx++;render();window.scrollTo({top:0,behavior:'smooth'});} else finish(); });
+function finish(){ document.getElementById('game').classList.add('hidden'); document.getElementById('end').classList.remove('hidden');
+  var sb=document.getElementById('sb'),n=0; var iv=setInterval(function(){n++;sb.textContent=n;if(n>=score)clearInterval(iv);},150); if(score===0)sb.textContent='0';
+  document.getElementById('ss').textContent='de '+R.length+' acertadas';
+  var pc=score/R.length; document.getElementById('bd').textContent= pc===1?'🏆 ¡Lo sabés todo!':pc>=.7?'🌿 Muy bien':pc>=.4?'🌱 Vas aprendiendo':'😅 A repasar el jardín';
+  engageReact('vof-score', score+'/'+R.length); }
+render();
+</script></body></html>
