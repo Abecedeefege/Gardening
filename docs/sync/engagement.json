@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-15T21:25:23.913Z",
+  "_updated_at": "2026-06-16T11:19:32.897Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -622,6 +622,23 @@
       "scroll_pct": 100,
       "page": "engage/duelo-jardin.html",
       "ts": "2026-06-15T21:25:24.966Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqgjv4a9kovk9f",
+      "type": "notification_clicked",
+      "nid": "2026-06-15-x10",
+      "page": "engage/adivina-jardin.html",
+      "ts": "2026-06-16T11:19:34.252Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqgjv4a9whcao9",
+      "type": "page_visit",
+      "page": "engage/adivina-jardin.html",
+      "nid": "2026-06-15-x10",
+      "src": "push",
+      "ts": "2026-06-16T11:19:34.252Z",
       "device": "sin-nombre"
     }
   ],
