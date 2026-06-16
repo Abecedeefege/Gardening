@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-16T11:20:42.325Z",
+  "_updated_at": "2026-06-16T11:20:45.024Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -747,6 +747,15 @@
       "scroll_pct": 100,
       "page": "engage/quiz-jardin.html",
       "ts": "2026-06-16T11:20:44.188Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqgjwmcabhuvjj",
+      "type": "page_visit",
+      "page": "engage/quiz-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-06-16T11:20:44.311Z",
       "device": "sin-nombre"
     }
   ],
