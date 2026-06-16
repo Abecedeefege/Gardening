@@ -569,6 +569,30 @@
       "nid": "2026-06-15-x19",
       "ts": "2026-06-16T00:10:46.217Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-16-x01",
+      "ts": "2026-06-16T15:08:48.564Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-16-x02",
+      "ts": "2026-06-16T15:08:48.678Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-16-x03",
+      "ts": "2026-06-16T15:08:48.772Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-16-x04",
+      "ts": "2026-06-16T15:08:48.873Z",
+      "status_code": 201
     }
   ]
 }
