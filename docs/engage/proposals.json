@@ -108,7 +108,7 @@
         "2026-06-16-x14",
         "2026-06-16-x19"
       ],
-      "result_notes": null
+      "result_notes": "DROPPED 17/06 por la regla de no-supervivencia sin aprobación explícita (pending de día anterior). CERO engagement: ninguno de sus 4 promotores (x04/x09/x14/x19) se abrió, sin page_visit ni reacción al V/F en todo el 16/06. Modo de falla idéntico al mazo: con 20 pushes/día el usuario abre 2-3, y la proposal nueva quedó sepultada — nunca tuvo un test limpio del FORMATO. De hecho los juegos rápidos YA probados (duelo/adivina) sí se jugaron el 16/06, así que el problema no es 'V/F vs juego' sino dilución por volumen. Lectura: dejar de lanzar más variantes-juego que canibalizan los mismos 2-3 opens; los 3 juegos existentes (quiz/duelo/adivina) ya cubren la categoría ganadora. Página eliminada del repo y quitada de gen_queue."
     }
   ]
 }

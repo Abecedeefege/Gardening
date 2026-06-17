@@ -28,14 +28,11 @@ def E(slug): return SITE + "engage/" + slug
 def build_formats():
     """tipo -> [(url, title, body)], cada instancia con contenido distinto."""
     F = {}
-    # 🌀 Rueda del año (APROBADA por el usuario) — variación por mes
-    # Recortada a 3 variantes el 16/06: el 15/06 con 6 slots/día se sobre-expuso y
-    # el usuario reaccionó meh/meh/no. Sigue rotando, pero sin dominar la cola.
-    F["rueda"] = [(E("2026-06-13-rueda-ano.html") + "#m=" + str(m), t, b) for (m, t, b) in [
-        (6,  "\U0001F300 Tu jardín ahora", "La rueda del año en este mes. ¿Cuánto duerme tu jardín en invierno?"),
-        (11, "\U0001F300 Tu jardín en noviembre", "La rueda del año: noviembre, 32 plantas en flor a la vez. Tocá y mirá."),
-        (9,  "\U0001F300 Septiembre despierta", "La rueda del año en septiembre: el jardín sale del invierno."),
-    ]]
+    # 🌀 Rueda del año: APROBADA por el usuario (proposal_approved 13/06, 87s dwell) y
+    # promovida como página permanente + link en la nav del inicio. PERO sacada de la
+    # rotación de push el 17/06: tras recortarla 6→3 slots el 16/06 igual juntó otro "no"
+    # (van meh/meh/no el 15/06 + no el 16/06 = 4 rechazos por sobre-exposición). El feature
+    # sigue vivo y accesible desde la nav; simplemente dejamos de empujarlo por push.
     # 🧠 Quiz (NUEVO) — variación por set de preguntas
     F["quiz"] = [(E("quiz-jardin.html") + "#set=" + str(s), t, b) for (s, t, b) in [
         (1, "\U0001F9E0 ¿Cuánto conocés tu jardín?", "5 preguntas sobre tus plantas. ¿Llegás a maestro jardinero?"),
@@ -57,14 +54,10 @@ def build_formats():
         (3, "\U0001F50D Detective del jardín", "Pistas y opciones: identificá tus plantas."),
         (4, "\U0001F50D ¿Reconocés esta planta?", "Otra ronda de pistas. ¿Cuántas adivinás de tu propio jardín?"),
     ]]
-    # ⚡ Verdadero o Falso (PROPOSAL 16/06) — fusión rápida de los dos ganadores
-    # (datos verificados + juego). En prueba: si el usuario la aprueba, queda fija.
-    F["vof"] = [(E("2026-06-16-vof-jardin.html") + "#set=" + str(s), t, b) for (s, t, b) in [
-        (1, "⚡ Verdadero o Falso", "7 afirmaciones sobre tus plantas. Rápido: ¿verdadero o falso?"),
-        (2, "⚡ ¿Verdad o mito de tu jardín?", "Ronda nueva. ¿Distinguís lo cierto de lo falso de tus plantas?"),
-        (3, "⚡ V o F: edición jardín", "7 afirmaciones más. ¿Cuántas acertás de tu propio jardín?"),
-        (4, "⚡ Reto Verdadero/Falso", "Última ronda. A ver si conocés bien lo que tenés plantado."),
-    ]]
+    # ⚡ Verdadero o Falso: DROPPED 17/06. Proposal del 16/06 sin aprobación explícita
+    # (regla de no-supervivencia) y con CERO engagement — sus 4 promotores (x04/x09/x14/x19)
+    # nunca se abrieron, sepultados en el volumen de 20 pushes/día. Mismo modo de falla que
+    # el mazo: nunca tuvo un test limpio. Página eliminada del repo.
     # 💡 Feed de curiosidades (sección fija, lo que más enganchó)
     F["curio"] = [(SITE + "index.html#curiosidades",
         "\U0001F4A1 Curiosidades de tus plantas", "El feed de historias verificadas de tus 52 plantas.")]
