@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-17T13:41:09.658Z",
+  "_updated_at": "2026-06-17T16:48:10.371Z",
   "notifications": [
     {
       "id": "2026-06-17-x01",
@@ -22,8 +22,8 @@
       "format": "duelo",
       "send_at": "2026-06-17T11:00:00-03:00",
       "expires_at": "2026-06-17T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-17T16:48:10.118Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-17"
     },
@@ -35,8 +35,8 @@
       "format": "adivina",
       "send_at": "2026-06-17T11:30:00-03:00",
       "expires_at": "2026-06-17T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-17T16:48:10.167Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-17"
     },
@@ -48,8 +48,8 @@
       "format": "quiz",
       "send_at": "2026-06-17T12:00:00-03:00",
       "expires_at": "2026-06-17T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-17T16:48:10.218Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-17"
     },
@@ -61,8 +61,8 @@
       "format": "duelo",
       "send_at": "2026-06-17T12:30:00-03:00",
       "expires_at": "2026-06-17T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-17T16:48:10.276Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-17"
     },
@@ -74,8 +74,8 @@
       "format": "adivina",
       "send_at": "2026-06-17T13:00:00-03:00",
       "expires_at": "2026-06-17T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-17T16:48:10.319Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-17"
     },
@@ -87,8 +87,8 @@
       "format": "quiz",
       "send_at": "2026-06-17T13:30:00-03:00",
       "expires_at": "2026-06-17T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-17T16:48:10.371Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-17"
     },

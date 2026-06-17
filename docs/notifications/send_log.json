@@ -695,6 +695,42 @@
       "nid": "2026-06-17-x01",
       "ts": "2026-06-17T13:41:09.656Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-17-x02",
+      "ts": "2026-06-17T16:48:10.118Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-17-x03",
+      "ts": "2026-06-17T16:48:10.167Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-17-x04",
+      "ts": "2026-06-17T16:48:10.218Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-17-x05",
+      "ts": "2026-06-17T16:48:10.276Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-17-x06",
+      "ts": "2026-06-17T16:48:10.319Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-17-x07",
+      "ts": "2026-06-17T16:48:10.371Z",
+      "status_code": 201
     }
   ]
 }
