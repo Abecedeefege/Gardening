@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-16T11:20:53.798Z",
+  "_updated_at": "2026-06-17T00:00:56.142Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -774,6 +774,15 @@
       "scroll_pct": 100,
       "page": "engage/adivina-jardin.html",
       "ts": "2026-06-16T11:20:56.005Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqhb28muk620on",
+      "type": "dwell",
+      "seconds": 7,
+      "scroll_pct": 100,
+      "page": "engage/duelo-jardin.html",
+      "ts": "2026-06-17T00:00:56.118Z",
       "device": "sin-nombre"
     }
   ],
