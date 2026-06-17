@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-17T16:48:10.371Z",
+  "_updated_at": "2026-06-17T19:24:45.043Z",
   "notifications": [
     {
       "id": "2026-06-17-x01",
@@ -100,8 +100,8 @@
       "format": "duelo",
       "send_at": "2026-06-17T14:00:00-03:00",
       "expires_at": "2026-06-17T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-17T19:24:44.739Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-17"
     },
@@ -113,8 +113,8 @@
       "format": "adivina",
       "send_at": "2026-06-17T14:30:00-03:00",
       "expires_at": "2026-06-17T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-17T19:24:44.813Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-17"
     },
@@ -126,8 +126,8 @@
       "format": "quiz",
       "send_at": "2026-06-17T15:00:00-03:00",
       "expires_at": "2026-06-17T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-17T19:24:44.889Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-17"
     },
@@ -139,8 +139,8 @@
       "format": "duelo",
       "send_at": "2026-06-17T15:30:00-03:00",
       "expires_at": "2026-06-17T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-17T19:24:44.966Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-17"
     },
@@ -152,8 +152,8 @@
       "format": "adivina",
       "send_at": "2026-06-17T16:00:00-03:00",
       "expires_at": "2026-06-17T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-17T19:24:45.042Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-17"
     },
