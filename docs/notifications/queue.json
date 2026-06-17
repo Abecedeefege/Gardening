@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-17T09:08:22.994415",
+  "_updated_at": "2026-06-17T13:41:09.658Z",
   "notifications": [
     {
       "id": "2026-06-17-x01",
@@ -9,8 +9,8 @@
       "format": "quiz",
       "send_at": "2026-06-17T10:30:00-03:00",
       "expires_at": "2026-06-17T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-17T13:41:09.656Z",
       "fail_reason": null,
       "created_by": "gen_queue 2026-06-17"
     },
