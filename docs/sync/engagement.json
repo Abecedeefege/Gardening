@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-17T21:48:29.060Z",
+  "_updated_at": "2026-06-18T14:40:53.831Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -890,6 +890,23 @@
       "nid": "2026-06-17-x13",
       "src": "push",
       "ts": "2026-06-17T21:48:29.986Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqjlxpvtmo4jvu",
+      "type": "notification_clicked",
+      "nid": "2026-06-18-a",
+      "page": "index.html",
+      "ts": "2026-06-18T14:40:53.315Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqjlxpvtkwa4wm",
+      "type": "page_visit",
+      "page": "index.html",
+      "nid": "2026-06-18-a",
+      "src": "push",
+      "ts": "2026-06-18T14:40:53.315Z",
       "device": "sin-nombre"
     }
   ],
