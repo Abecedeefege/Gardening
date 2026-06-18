@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-18T21:34:23.338Z",
+  "_updated_at": "2026-06-18T21:34:25.987Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -942,6 +942,13 @@
       "value": "correct",
       "page": "engage/2026-06-18-cual-sobra.html",
       "ts": "2026-06-18T21:34:23.811Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqk0pk7a6qxzbz",
+      "type": "proposal_approved",
+      "proposal_id": "2026-06-18-cual-sobra",
+      "ts": "2026-06-18T21:34:26.950Z",
       "device": "sin-nombre"
     }
   ],
