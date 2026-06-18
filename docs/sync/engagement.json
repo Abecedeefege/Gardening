@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-18T21:34:36.156Z",
+  "_updated_at": "2026-06-18T21:34:40.355Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -976,6 +976,15 @@
       "value": "wrong",
       "page": "engage/2026-06-18-cual-sobra.html",
       "ts": "2026-06-18T21:34:37.125Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqk0puz8o05i27",
+      "type": "dwell",
+      "seconds": 29,
+      "scroll_pct": 100,
+      "page": "engage/2026-06-18-cual-sobra.html",
+      "ts": "2026-06-18T21:34:40.916Z",
       "device": "sin-nombre"
     }
   ],
