@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-18T14:40:53.831Z",
+  "_updated_at": "2026-06-18T21:34:12.299Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -907,6 +907,23 @@
       "nid": "2026-06-18-a",
       "src": "push",
       "ts": "2026-06-18T14:40:53.315Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqk0p8uzvv58qq",
+      "type": "notification_clicked",
+      "nid": "2026-06-18-b",
+      "page": "engage/2026-06-18-cual-sobra.html",
+      "ts": "2026-06-18T21:34:12.249Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqk0p8uzha0k6q",
+      "type": "page_visit",
+      "page": "engage/2026-06-18-cual-sobra.html",
+      "nid": "2026-06-18-b",
+      "src": "push",
+      "ts": "2026-06-18T21:34:12.249Z",
       "device": "sin-nombre"
     }
   ],
