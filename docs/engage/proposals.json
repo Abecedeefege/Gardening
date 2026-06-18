@@ -98,9 +98,9 @@
     {
       "id": "2026-06-16-vof-jardin",
       "title": "Verdadero o Falso de tu jardín (juego rápido binario)",
-      "page": "engage/2026-06-16-vof-jardin.html",
+      "page": null,
       "created": "2026-06-16",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Fusión de los DOS ganadores medidos (datos verificados de SUS plantas + interacción de juego) pero en formato RÁPIDO y binario, a diferencia del mazo flip-card (lento) que fracasó 3 veces. El 15/06 los juegos rápidos arrasaron: duelo jugado completo 2 veces 6/6 con 42+24s dwell, adiviná jugado con 32s dwell; la rueda en cambio cayó a meh/meh/no por sobre-exposición. Hipótesis: un V/F de 7 afirmaciones verificables (nativa, frutal, aromática, trepadora, zona) sobre plantas propias, con feedback inmediato, mantiene el ritmo de juego que engancha y suma un formato nuevo a la rotación. Afirmaciones derivadas SOLO de datos estructurales verificados (mismos booleanos que usa el duelo aprobado), cero horticultura inventada. Si junta aprobación, se integra como experiencia/sección fija y se suma estable a gen_queue.",
       "notified_by": [
         "2026-06-16-x04",
@@ -108,7 +108,19 @@
         "2026-06-16-x14",
         "2026-06-16-x19"
       ],
-      "result_notes": "DROPPED 17/06 por la regla de no-supervivencia sin aprobación explícita (pending de día anterior). CERO engagement: ninguno de sus 4 promotores (x04/x09/x14/x19) se abrió, sin page_visit ni reacción al V/F en todo el 16/06. Modo de falla idéntico al mazo: con 20 pushes/día el usuario abre 2-3, y la proposal nueva quedó sepultada — nunca tuvo un test limpio del FORMATO. De hecho los juegos rápidos YA probados (duelo/adivina) sí se jugaron el 16/06, así que el problema no es 'V/F vs juego' sino dilución por volumen. Lectura: dejar de lanzar más variantes-juego que canibalizan los mismos 2-3 opens; los 3 juegos existentes (quiz/duelo/adivina) ya cubren la categoría ganadora. Página eliminada del repo y quitada de gen_queue."
+      "result_notes": "DROPPED 17/06 por la regla de no-supervivencia sin aprobación explícita (pending de día anterior). CERO engagement: ninguno de sus 4 promotores (x04/x09/x14/x19) se abrió, sin page_visit ni reacción al V/F en todo el 16/06. Modo de falla idéntico al mazo: con 20 pushes/día el usuario abre 2-3, y la proposal nueva quedó sepultada — nunca tuvo un test limpio del FORMATO. De hecho los juegos rápidos YA probados (duelo/adivina) sí se jugaron el 16/06, así que el problema no es 'V/F vs juego' sino dilución por volumen. Lectura: dejar de lanzar más variantes-juego que canibalizan los mismos 2-3 opens; los 3 juegos existentes (quiz/duelo/adivina) ya cubren la categoría ganadora. Página eliminada del repo y quitada de gen_queue. (NOTA 18/06: la corrida del 17 dejó este registro con status 'pending' por error — el archivo y la entrada de gen_queue ya estaban removidos; status corregido a 'dropped' hoy.)"
+    },
+    {
+      "id": "2026-06-18-cual-sobra",
+      "title": "¿Cuál es la intrusa? (odd-one-out de rasgos verificados)",
+      "page": "engage/2026-06-18-cual-sobra.html",
+      "created": "2026-06-18",
+      "status": "pending",
+      "hypothesis": "Mecánica de juego GENUINAMENTE nueva (no es quiz/duelo/adivina): se muestran 4 plantas del jardín, 3 comparten un rasgo estructural verificado (fruta comestible / nativa / aromática / trepadora) y hay que cazar la intrusa. Responde al pedido del usuario de variedad sin caer en 'más de lo mismo', y reusa SOLO los booleanos verificados que ya alimentan el duelo aprobado (cero horticultura inventada). Clave del experimento: hoy es un día de VOLUMEN BAJO (3 pushes, no ~20), justo la ventana de test limpio que las 3 proposals anteriores (mazo, V/F) nunca tuvieron — fallaron por dilución/sepultamiento, no por formato. Se le da un slot diurno dedicado (13:00) sin competencia. Hipótesis: con atención limpia + mecánica nueva de deducción rápida, junta su primer click/aprobación. Si engancha, se integra como experiencia/juego fijo.",
+      "notified_by": [
+        "2026-06-18-b"
+      ],
+      "result_notes": null
     }
   ]
 }

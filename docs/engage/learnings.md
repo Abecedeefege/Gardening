@@ -3,91 +3,80 @@
 Memoria del agente diario. Se REESCRIBE y condensa cada día (máx ~150 líneas).
 No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
-## ⏱️ CADENCIA VIGENTE: cada 30 min (~13-20/día) — fijada por el usuario el 15/06
+## ⏱️ CADENCIA VIGENTE: 3 pushes/día — fijada por el usuario el 18/06
 
-**Cadencia = 1 push cada 30 min, ventana 10:30–20:00.** Generá con
-`python tools/gen_queue.py <YYYY-MM-DD>`. El generador CAPEA en la cantidad de
-instancias ÚNICAS disponibles (un destino distinto por slot, assert anti-duplicados).
-Hoy 17/06 dieron 13 slots (no 20) porque saqué vof y rueda de la rotación → quedaron
-quiz×4, duelo×4, adivina×4, curio×1. **13 únicos > 20 con repeticiones**: el usuario se
-quejó 2 veces de repetidos, así que NO inflar con repeticiones; agregar instancias frescas
-o formatos nuevos a `build_formats()` para subir el techo.
+**18/06 el usuario instruyó explícitamente "la cola del día con sus 3 notificaciones
+pending".** Eso reemplaza la cadencia de "1 cada 30 min" del 15/06. La cola se escribe
+A MANO (3 entries pending en queue.json), NO con `tools/gen_queue.py`. Slots base:
+08:30 / 13:00 / 19:30 (-03:00). Primer send_at ≥60 min después de la corrida (margen
+de deploy de Vercel para páginas linkeadas). expires_at = mismo día 22:00 -03:00.
 
-**NO bajar la cadencia por "fatiga" sin datos duros.** La "fatiga del 14/06" fue BUG DE
-MEDICIÓN (fichas logueaban por PAT inexistente en PWA → 0 eventos falsos). Parchado: hoy
-abrir cualquier notificación cuenta vía `/api/feedback` (sin PAT), confiable desde 15/06.
-
-**Reglas duras:**
-- **Cada push = un FORMATO/instancia distinto.** Garantizado por gen_queue.
-- **PROHIBIDO el módulo original de especie** (`index.html#especie=CODE`): el usuario lo
-  vetó. Solo experiencias NUEVAS o módulos marcados buenos (#curiosidades).
-- ABRIR la notificación cuenta como engagement (`notification_clicked`), vía `/api/feedback`.
-- NUNCA linkear a una página efímera que vayas a borrar el mismo día (404 — pasó el 13/06).
-  Si dropeás una proposal que estaba en gen_queue, SACALA de gen_queue en la misma corrida.
-- Formatos vivos en gen_queue: 🧠 quiz, ⚔️ duelo, 🔍 adiviná, 💡 curiosidades (#curiosidades).
+**Por qué 3 y no 20 tiene respaldo en datos, no solo en la instrucción:** el volumen
+alto se mostró CONTRAPRODUCENTE. 15/06 (~20 pushes) hubo juego profundo, pero
+16/06 y 17/06 (13-20 pushes) el engagement CAYÓ a 2-3 aperturas y los pushes propios
+casi no juntaron clicks directos — el usuario abre 2-3/día sin importar cuántos mandes,
+así que más pushes solo diluye y sepulta lo nuevo. 3 pushes curados ganan a 20.
 
 ## Estado del sistema
 
 - Push subscription device `pix9`: **active** (desde 11/06).
 - Logging por `/api/feedback` (outbox localStorage, sin PAT). Confiable desde 15/06.
+- Abrir una notificación cuenta como `notification_clicked` vía /api/feedback (sin PAT).
 
-## 🎯 SEÑAL REAL MEDIDA — los juegos RÁPIDOS son el ganador claro
+## 🎯 SEÑAL REAL MEDIDA — qué engancha
 
-- **Juegos rápidos sobre SUS plantas (duelo / adiviná / quiz) = ganador.** 15/06: duelo
-  jugado COMPLETO 2× seguidas 6/6, dwell 42+24s; adiviná jugado, 32s. 16/06: el usuario
-  volvió a duelo/adiviná/quiz (quiz set4 1/4, 34s) en 2 sesiones cortas.
-- **Curiosidades verificadas = contenido #1** (12-13/06: todas 😍 + 104s dwell). Sección fija.
-- **Rueda del año:** APROBADA 13/06 (87s dwell) y promovida (página + link en nav), PERO
-  **sobre-expuesta → fatiga**: meh/meh/no el 15/06 (apareció 6×) + otro "no" el 16/06 (a 3×).
-  El 17/06 la SAQUÉ de la rotación de push (4 rechazos acumulados). El feature sigue vivo
-  y accesible desde la nav; solo dejamos de empujarlo. NO volver a meterla a gen_queue salvo
-  pedido explícito.
-- **Perdedores confirmados:** (a) herramientas utilitarias (mapas, calendarios, dashboards:
-  sol-jardin rechazada ×3, ano-jardin rechazada); (b) formatos LENTOS (mazo flip-card,
-  fracasó 3×, nunca test limpio). El usuario quiere **deleite + juego**, NO herramientas.
+- **Curiosidades verificadas (#curiosidades) = contenido #1 y el MÁS resiliente.** 12-13/06
+  todas 😍 + 104s dwell. Y el 17/06, de 13 pushes, el ÚNICO click directo fue el de
+  curiosidades (x13, 21:48). Sección fija promovida. Sigue siendo el caballo ganador.
+- **Juegos rápidos sobre SUS plantas (duelo / adiviná / quiz) = enganchan.** 15/06 fue el
+  pico: duelo completo 2× 6/6 (42+24s), adiviná 32s. PERO se enfrían con sobre-exposición:
+  16/06 más liviano, 17/06 muy liviano (visita directa a duelo + r1, después rebotes de 2s).
+  adiviná tiene el mejor récord de APERTURA-por-push (clicks 15/06 x06 y 16/06 x10).
+- **Rueda del año:** aprobada 13/06 (87s) y promovida (nav), pero sobre-expuesta → fatiga
+  (meh/meh/no). FUERA del push desde 17/06. Feature sigue en nav, no se empuja. NO re-meter.
+- **Perdedores confirmados:** (a) herramientas utilitarias (mapas/calendarios/dashboards:
+  sol-jardin ✗×3, ano-jardin ✗); (b) formatos LENTOS (mazo flip-card, ✗×3, nunca test limpio).
+  El usuario quiere **deleite + juego**, NO herramientas.
 
-## ⚠️ APRENDIZAJE NUEVO (16-17/06) — el cuello de botella es VOLUMEN, no falta de formatos
+## ⚠️ APRENDIZAJE CLAVE (16-17/06) — el cuello de botella era VOLUMEN, no formatos
 
-- El 16/06 mandé 20 pushes y **ninguno de los 20 propios juntó un click directo**: el
-  engagement vino de un push VIEJO del 15/06 (adiviná) abierto a la mañana + visitas directas.
-- La proposal nueva (⚡ V/F) tuvo **CERO engagement**: sus 4 promotores nunca se abrieron,
-  sepultados en el volumen. Mismo modo de falla que el mazo. NO fue el formato (los juegos
-  rápidos ya probados SÍ se jugaron ese día) — fue dilución.
-- **Conclusión:** con ~20 pushes/día el usuario abre 2-3. Lanzar MÁS variantes-juego nuevas
-  las canibaliza contra las 2-3 aperturas. Los 3 juegos existentes ya cubren la categoría
-  ganadora. → **No crear proposals-juego nuevas solo por crear.** Si lanzo una proposal,
-  promocionarla en los slots que de verdad se abren y/o probarla un día de volumen bajo,
-  para darle un test LIMPIO en vez de enterrarla.
+- 16/06: 20 pushes, NINGUNO de los 20 propios juntó click directo; el engagement vino de un
+  push viejo + visitas directas. La proposal ⚡V/F (4 promotores) tuvo CERO engagement: nunca
+  se abrió, sepultada. Mismo modo de falla que el mazo. NO fue el formato — fue dilución.
+- **Por eso 3 proposals seguidas (mazo ×2, V/F) fallaron: NUNCA tuvieron un test limpio.**
+  Siempre quedaron enterradas entre 18-39 pushes. La lección no es "no crear proposals",
+  es "darles un test limpio en día de bajo volumen / slot que se abre".
 
 ## Conclusiones de los pushN enviados hasta ahora (por feedback real)
 
 - **11/06** — 1 push poda @20:00: inconcluyente (deshora, 1ª noche).
-- **12/06** — curiosidades @14:30 → GANADOR ("MUY buena" + 😍). Origen de la sección. Noche:
-  barrida de 8 pushes a la MISMA página → sobre-saturación. De acá: "1 destino por push".
-- **13/06** — cadencia 15min rotada → usuario ACTIVO: aprobó la rueda, rechazó vistas
-  utilitarias, 😍 a curiosidades. La rotación importa.
-- **14/06** — 39 pushes casi todos a fichas `#especie` → "0 eventos" por BUG de medición (PAT).
-- **15/06** — ~20/día con formatos rotados → engagement real y profundo en los JUEGOS
-  (duelo 6/6 ×2). Volumen alto OK si cada push es un formato/contenido distinto. Rueda repetida
-  6× cansó.
-- **16/06** — 20 pushes, formatos rotados (quiz/duelo/adivina/vof/rueda/curio). Los pushes
-  propios NO juntaron clicks directos; engagement vía push viejo + directo. V/F = 0. Rueda otro
-  "no". → señal de dilución por volumen + fatiga de rueda.
+- **12/06** — curiosidades @14:30 → GANADOR ("MUY buena" + 😍). Origen de la sección.
+- **13/06** — cadencia rotada → usuario ACTIVO: aprobó la rueda, rechazó vistas utilitarias.
+- **14/06** — 39 pushes a fichas #especie → "0 eventos" por BUG de medición (PAT). Inservible.
+- **15/06** — ~20/día rotados → juego profundo (duelo 6/6 ×2). Pico de engagement.
+- **16/06** — 20 pushes → pushes propios NO juntaron clicks; V/F=0; rueda otro "no". Dilución.
+- **17/06** — 13 pushes (quiz/duelo/adivina ×4 + curio). Engagement LIVIANO: 1 solo click
+  directo y fue curiosidades (x13); juegos con visita directa + rebotes de 2s. Confirma:
+  más volumen ≠ más engagement, y curiosidades es lo más robusto.
 
-## Decisiones de hoy (17/06)
+## Decisiones de hoy (18/06)
 
-- **DROP ⚡ V/F (2026-06-16-vof-jardin)** — sin aprobación + 0 engagement (nunca se abrió).
-  Página eliminada y sacada de gen_queue. Detalle en proposals.json.
-- **RUEDA fuera del push** — 4 rechazos por sobre-exposición. Feature queda (nav), no se empuja.
-- **SIN proposal nueva hoy** — 2 proposals seguidas (mazo, V/F) fallaron por NUNCA abrirse, no
-  por formato. Crear una 3ª para enterrarla igual es churn. Dejo correr la rotación probada
-  limpia y junto datos. Próxima proposal: test limpio (slots que se abren / día de bajo volumen).
-- **Cola 17/06:** 13 slots únicos — quiz×4, duelo×4, adivina×4, curio×1. Sin adyacentes.
+- **Cola de 3** (instrucción explícita del usuario): (a) 08:30 curiosidades #curiosidades
+  (proven, único click de ayer); (b) 13:00 teaser de la proposal nueva; (c) 19:30 adiviná
+  (mejor récord de apertura-por-push). 3 ángulos distintos, todos anclados en algo real.
+- **Proposal NUEVA: "¿Cuál es la intrusa?" (2026-06-18-cual-sobra)** — odd-one-out: 4 plantas,
+  3 comparten un rasgo VERIFICADO (fruta/nativa/aromática/trepadora), cazar la intrusa.
+  Mecánica genuinamente nueva (no quiz/duelo/adivina). Reusa solo booleanos verificados (cero
+  invención). **Se lanza HOY porque es la 1ª ventana de bajo volumen (3 pushes) = test LIMPIO**
+  que las proposals anteriores nunca tuvieron, con slot diurno dedicado (13:00) sin competencia.
+- **FIX:** la corrida del 17/06 dejó `2026-06-16-vof-jardin` con status "pending" (archivo y
+  entrada de gen_queue ya removidos); status corregido a "dropped" hoy.
+- Sin compactación: ningún evento supera 14 días (todo es de 06-12 en adelante).
 
 ## Contexto del jardín (junio 2026 = invierno, lat -34.9°S)
 
-- Jardín en dormancia: poco que hacer. Tareas reales casi todas `done`; las `active` son IDs
-  scheduleadas para floración primavera. NO inventar urgencia de invierno.
+- Jardín en DORMANCIA: poco real que hacer. Tareas casi todas `done`; las `active` son IDs
+  scheduleadas para floración/ID de primavera. **NO inventar urgencia de invierno.**
 - Poda: jun-jul **solo limpiezas** + trasplantes en dormancia. **Fines jul-ago**: durazno
   B-30/35, ciruelos F-4/B-38, caqui B-41, crespón B-9, althea B-18, hibisco B-4. **Sept
   post-helada**: buganvilia B-1, lantana B-29, cítricos, paltas. NO inventar.
@@ -96,10 +85,8 @@ abrir cualquier notificación cuenta vía `/api/feedback` (sin PAT), confiable d
 
 ## TODO pendiente
 
-- **Subir el techo de gen_queue con instancias frescas** de los juegos ganadores (quiz/duelo/
-  adivina set5+, si las páginas soportan más sets) antes que inventar formatos nuevos.
-- Próxima proposal-experimento: probar en día de bajo volumen o en slots que se abren, NO
-  sepultada entre 20 pushes. Idea viva: "¿Cuál sobra?" (odd-one-out de booleanos verificados),
-  mecánica de juego genuinamente nueva.
-- Regenerar el dataset `M` de la rueda desde data_plants.py en build-time (hoy snapshot estático).
+- **Medir el test limpio de "¿Cuál sobra?"** mañana: ¿con 3 pushes y slot dedicado SÍ junta
+  click/aprobación? Si sí → confirma que el problema siempre fue volumen, e integrar como
+  juego fijo. Si no → el formato odd-one-out no engancha aun con atención limpia.
+- Regenerar el dataset M de la rueda desde data_plants.py en build-time (hoy snapshot estático).
 - Reconciliar arrays `pruning` con el timing corregido antes de cualquier vista de poda.
