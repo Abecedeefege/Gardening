@@ -1,44 +1,44 @@
 {
-  "_updated_at": "2026-06-18T23:20:09.983Z",
+  "_updated_at": "2026-06-19T09:04:43-03:00",
   "notifications": [
     {
-      "id": "2026-06-18-a",
-      "title": "🌿 Tu jardín en pleno invierno",
-      "body": "Los caducos están pelados a propósito: así zafan de la helada. Mirá las historias de tus plantas.",
+      "id": "2026-06-19-a",
+      "title": "🌿 El nativo que huele a pimienta",
+      "body": "El aguaribay (F-8) es nativo y aromático: estrujá una hoja y largás olor a pimienta. Más historias así en tu jardín.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-18T08:30:00-03:00",
-      "expires_at": "2026-06-18T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-18T12:51:03.528Z",
+      "send_at": "2026-06-19T08:30:00-03:00",
+      "expires_at": "2026-06-19T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-18"
+      "created_by": "engagement-agent 2026-06-19"
     },
     {
-      "id": "2026-06-18-b",
-      "title": "🎯 ¿Cuál es la intrusa?",
-      "body": "Te muestro 4 plantas tuyas: 3 comparten algo, una sola no. ¿Cazás la que sobra?",
+      "id": "2026-06-19-b",
+      "title": "🎯 ¿Cuál sobra? ya es fijo",
+      "body": "Aprobaste el juego de la intrusa: quedó en el inicio. ¿Otra ronda? 4 plantas tuyas, 1 que no pega.",
       "url": "https://gardening-chi.vercel.app/engage/2026-06-18-cual-sobra.html",
-      "format": "proposal",
-      "send_at": "2026-06-18T13:00:00-03:00",
-      "expires_at": "2026-06-18T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-18T16:30:13.248Z",
+      "format": "game",
+      "send_at": "2026-06-19T13:00:00-03:00",
+      "expires_at": "2026-06-19T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-18"
+      "created_by": "engagement-agent 2026-06-19"
     },
     {
-      "id": "2026-06-18-c",
+      "id": "2026-06-19-c",
       "title": "🔍 ¿Reconocés tus plantas?",
-      "body": "Pistas de una planta de tu jardín: ¿adivinás cuál es? 5 rondas rápidas.",
+      "body": "5 pistas, 5 plantas tuyas. ¿Las cazás todas? Un repaso rápido del jardín antes de dormir.",
       "url": "https://gardening-chi.vercel.app/engage/adivina-jardin.html",
       "format": "adivina",
-      "send_at": "2026-06-18T19:30:00-03:00",
-      "expires_at": "2026-06-18T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-18T23:20:09.982Z",
+      "send_at": "2026-06-19T19:30:00-03:00",
+      "expires_at": "2026-06-19T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-18"
+      "created_by": "engagement-agent 2026-06-19"
     }
   ]
 }

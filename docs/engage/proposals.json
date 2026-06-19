@@ -115,12 +115,12 @@
       "title": "¿Cuál es la intrusa? (odd-one-out de rasgos verificados)",
       "page": "engage/2026-06-18-cual-sobra.html",
       "created": "2026-06-18",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Mecánica de juego GENUINAMENTE nueva (no es quiz/duelo/adivina): se muestran 4 plantas del jardín, 3 comparten un rasgo estructural verificado (fruta comestible / nativa / aromática / trepadora) y hay que cazar la intrusa. Responde al pedido del usuario de variedad sin caer en 'más de lo mismo', y reusa SOLO los booleanos verificados que ya alimentan el duelo aprobado (cero horticultura inventada). Clave del experimento: hoy es un día de VOLUMEN BAJO (3 pushes, no ~20), justo la ventana de test limpio que las 3 proposals anteriores (mazo, V/F) nunca tuvieron — fallaron por dilución/sepultamiento, no por formato. Se le da un slot diurno dedicado (13:00) sin competencia. Hipótesis: con atención limpia + mecánica nueva de deducción rápida, junta su primer click/aprobación. Si engancha, se integra como experiencia/juego fijo.",
       "notified_by": [
         "2026-06-18-b"
       ],
-      "result_notes": null
+      "result_notes": "PROMOVIDA 19/06. APROBADA explícitamente (proposal_approved 18/06 21:34) + jugada (r1 ✓, r2 ✓, r3 ✗, r5 ✗) + 29s dwell con scroll 100%, todo en la misma sesión que abrió el push 2026-06-18-b. CONFIRMA la hipótesis central de los learnings: el cuello de botella SIEMPRE fue VOLUMEN, no el formato. Las 3 proposals previas (mazo ×2, V/F) fracasaron sepultadas entre 13-39 pushes; esta, en su PRIMER día de cadencia baja (3 pushes) con slot diurno dedicado y sin competencia, juntó click + juego + aprobación en su primer turno. Promoción = página permanente (se quitó el CTA aprobar/rechazar, quedó link a inicio + nota de integración; las reacciones siguen logueando vía engage.js) + link fijo «🎯 ¿Cuál sobra?» en la todo-strip del inicio (build.py), mismo patrón que la rueda aprobada. Se mantiene en su path engage/2026-06-18-cual-sobra.html para no romper deep-links de la cola."
     }
   ]
 }
