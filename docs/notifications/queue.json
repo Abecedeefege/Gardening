@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-19T16:21:03.426Z",
+  "_updated_at": "2026-06-19T22:38:02.689Z",
   "notifications": [
     {
       "id": "2026-06-19-a",
@@ -35,8 +35,8 @@
       "format": "adivina",
       "send_at": "2026-06-19T19:30:00-03:00",
       "expires_at": "2026-06-19T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-19T22:38:02.687Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-06-19"
     }
