@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-19T13:34:30.542Z",
+  "_updated_at": "2026-06-19T16:21:03.426Z",
   "notifications": [
     {
       "id": "2026-06-19-a",
@@ -22,8 +22,8 @@
       "format": "game",
       "send_at": "2026-06-19T13:00:00-03:00",
       "expires_at": "2026-06-19T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-19T16:21:03.425Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-06-19"
     },
