@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-18T21:34:40.355Z",
+  "_updated_at": "2026-06-19T13:36:43.362Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -985,6 +985,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-06-18-cual-sobra.html",
       "ts": "2026-06-18T21:34:40.916Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqkz33agzgzbsh",
+      "type": "notification_clicked",
+      "nid": "2026-06-19-a",
+      "page": "index.html",
+      "ts": "2026-06-19T13:36:45.154Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqkz33ag9gjx2t",
+      "type": "page_visit",
+      "page": "index.html",
+      "nid": "2026-06-19-a",
+      "src": "push",
+      "ts": "2026-06-19T13:36:45.154Z",
       "device": "sin-nombre"
     }
   ],
