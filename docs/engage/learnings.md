@@ -25,9 +25,11 @@ de cadencia 3) la señal fue limpia y FUERTE (ver abajo).
 - **Curiosidades verificadas (#curiosidades) = contenido #1 y el MÁS resiliente.** Loved ×varias
   + 104s dwell (12-13/06); único click directo del 17/06 (de 13 pushes); y el 18/06 su push (08:30)
   juntó click directo. Sección fija promovida. Caballo ganador, abre casi siempre.
-- **Juegos rápidos sobre SUS plantas (duelo / adiviná / cual-sobra / quiz) = enganchan.** Duelo
-  6/6 ×2 (42+24s, 15/06). adiviná: mejor récord de APERTURA-por-push (clicks 15/06 x06, 16/06 x10).
-  cual-sobra: click+juego+aprobación en su 1er turno limpio (18/06). Se enfrían con sobre-exposición.
+- **Juegos rápidos sobre SUS plantas (duelo / adiviná / cual-sobra / quiz) = enganchan PERO ya fatigan.**
+  Duelo 6/6 ×2 (42+24s, 15/06). adiviná: mejor récord de APERTURA-por-push (15/06, 16/06). cual-sobra:
+  click+juego+aprobación en su 1er turno limpio (18/06). **Señal de fatiga 19/06:** cual-sobra (ya fija)
+  0 opens; adiviná abierta pero BOUNCE a los 2s. 4 experiencias-juego ya cubren la categoría → dejar
+  respirar los juegos unos días y rotar a contenido-deleite. NO apilar más variantes-juego.
 - **Rueda del año:** aprobada 13/06 (87s) y promovida (nav), pero sobre-expuesta → fatiga. FUERA
   del push desde 17/06. Feature sigue en nav, no se empuja. NO re-meter en la cola.
 - **Perdedores confirmados:** (a) herramientas utilitarias (mapas/calendarios/dashboards: sol-jardin
@@ -55,21 +57,29 @@ de cadencia 3) la señal fue limpia y FUERTE (ver abajo).
 - **18/06** — **3 pushes (cadencia nueva). GANADOR.** A(curio 08:30)→click directo; B(cual-sobra 13:00)
   →click+juego+APROBADA+29s; C(adiviná) se mandó TARDE (20:20, fuera de un slot útil) y se perdió.
   → Lección C: respetar el slot de 19:30 y que el dispatcher no lo atrase tanto; igual el día fue un éxito.
+- **19/06** — 3 pushes. **Curiosidades RE-confirmada, juegos fatigando.** A(curio aguaribay 08:30)→CLICK
+  DIRECTO (abrió #curiosidades en <2min de enviado). B(cual-sobra ya-fija 13:00, ángulo "celebrá tu
+  aprobación")→0 opens. C(adiviná 19:30)→abierta pero BOUNCE a los 2s (dwell 2). Lectura: el contenido
+  curiosidades sigue siendo el caballo; los juegos (cual-sobra fija + adiviná) empezaron a no traccionar
+  → toca descansarlos. El ángulo "celebrá tu aprobación" no da motivo de apertura: no repetir.
 
-## Decisiones de hoy (19/06)
+## Decisiones de hoy (20/06)
 
-- **Promovida cual-sobra** (aprobada ayer): página permanente (CTA aprobar/rechazar reemplazado por
-  link a inicio + nota; reacciones siguen logueando) + link fijo «🎯 ¿Cuál sobra?» en la todo-strip
-  del inicio (build.py), mismo patrón que la rueda.
-- **NO se crea proposal nueva hoy** (decisión deliberada). Razón: (1) acabo de promover un juego y
-  conviene medirlo como feature fija antes de sumar otra cosa; (2) el learning explícito es no lanzar
-  más variantes-juego que canibalizan los 2-3 opens diarios; (3) ya hay 4 experiencias-juego cubriendo
-  la categoría ganadora (cual-sobra, duelo, adiviná, quiz) + rueda + curiosidades. Mejor invertir los
-  3 slots en contenido probado y dejar respirar.
-- **Cola de 3:** (a) 08:30 curiosidades #curiosidades (aguaribay nativo+aromático, proven, abre casi
-  siempre); (b) 13:00 cual-sobra YA fija (celebra la aprobación + invita a otra ronda); (c) 19:30
-  adiviná en su slot nocturno PROPIO (ayer se perdió por mandarse tarde; mejor récord apertura-por-push).
-- Sin compactación: ningún evento supera 14 días (corte 05/06; todo es 12/06+).
+- **Proposal NUEVA: «❄️ Postales de invierno»** (`2026-06-20-postales-invierno`). Primera proposal NO-juego
+  desde hace días, justificada por la fatiga de juegos del 19/06 + la resiliencia de curiosidades.
+  Hipótesis: una EDICIÓN ESTACIONAL del formato ganador (curiosidades) — 3 postales verificadas sobre lo
+  que las plantas del usuario hacen AHORA en invierno (corteza canela del crespón B-9; los caducos
+  desnudos por supervivencia a la helada B-30/35; los nativos perennes que siguen verdes F-8/F-1) — da
+  razón fresca de apertura sin ser otro juego ni una herramienta utilitaria. Si engancha → sección fija
+  que rota con la estación. Slot diurno dedicado 13:00 (patrón que validó cual-sobra).
+- **Estrategia del día: descansar los juegos.** Cola = 2 curiosidades + 1 proposal (que es curio-temática).
+  NINGÚN juego en la cola hoy, a propósito (señal de fatiga 19/06). Es un "día de curiosidades" + el
+  experimento estacional.
+- **Cola de 3:** (a) 08:30 curio Buganvilia B-1 (Jeanne Baret, 1ª mujer en circunnavegar) → #curiosidades,
+  destino proven que abrió ayer; (b) 13:00 proposal Postales de invierno (slot diurno propio); (c) 19:30
+  curio Hibisco B-4 (flores en el pelo / agua de Jamaica) → #curiosidades, ángulo nocturno liviano.
+  Dos pushes a #curiosidades = variación de una feature aprobada (permitido), con hooks distintos.
+- Sin compactación: ningún evento supera 14 días (corte 06/06; todo es 12/06+). send_log y queue limpios.
 
 ## Contexto del jardín (junio 2026 = invierno, lat -34.9°S)
 
@@ -83,9 +93,11 @@ de cadencia 3) la señal fue limpia y FUERTE (ver abajo).
 
 ## TODO pendiente
 
-- **Medir cual-sobra como feature fija** (ya no proposal): ¿se sigue jugando ahora que está en la nav?
-  Si mantiene tracción → confirma que los juegos rápidos + variedad de mecánica retienen.
-- Si en 2-3 días la señal vuelve a aplanarse, considerar UNA proposal nueva NO-juego (ej. antes/después
-  con fotos subidas, resumen semanal) en día de bajo volumen + slot diurno dedicado.
+- **Medir «Postales de invierno»** (proposal de hoy, NO-juego): ¿el formato curiosidades-estacional
+  abre + junta reacción/aprobación? Si sí → sección fija que rota con la estación; valida que el
+  contenido-deleite estacional retiene mejor que apilar juegos.
+- **Juegos en descanso desde 20/06** por fatiga (cual-sobra 0, adiviná bounce 19/06). Re-introducir
+  UN juego recién cuando haya pasado ≥2-3 días sin pushearlos, para que vuelva a sentirse fresco.
+  cual-sobra sigue fija en la nav; si nadie la juega orgánicamente, no forzarla con push.
 - Regenerar el dataset M de la rueda desde data_plants.py en build-time (hoy snapshot estático).
 - Reconciliar arrays `pruning` con el timing corregido antes de cualquier vista de poda.

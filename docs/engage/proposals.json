@@ -121,6 +121,18 @@
         "2026-06-18-b"
       ],
       "result_notes": "PROMOVIDA 19/06. APROBADA explícitamente (proposal_approved 18/06 21:34) + jugada (r1 ✓, r2 ✓, r3 ✗, r5 ✗) + 29s dwell con scroll 100%, todo en la misma sesión que abrió el push 2026-06-18-b. CONFIRMA la hipótesis central de los learnings: el cuello de botella SIEMPRE fue VOLUMEN, no el formato. Las 3 proposals previas (mazo ×2, V/F) fracasaron sepultadas entre 13-39 pushes; esta, en su PRIMER día de cadencia baja (3 pushes) con slot diurno dedicado y sin competencia, juntó click + juego + aprobación en su primer turno. Promoción = página permanente (se quitó el CTA aprobar/rechazar, quedó link a inicio + nota de integración; las reacciones siguen logueando vía engage.js) + link fijo «🎯 ¿Cuál sobra?» en la todo-strip del inicio (build.py), mismo patrón que la rueda aprobada. Se mantiene en su path engage/2026-06-18-cual-sobra.html para no romper deep-links de la cola."
+    },
+    {
+      "id": "2026-06-20-postales-invierno",
+      "title": "Postales de invierno (edición estacional de curiosidades)",
+      "page": "engage/2026-06-20-postales-invierno.html",
+      "created": "2026-06-20",
+      "status": "pending",
+      "hypothesis": "Los juegos rápidos empezaron a fatigar (19/06: cual-sobra 0 opens, adiviná abierta pero bounce a los 2s), mientras que las curiosidades verificadas siguen siendo el contenido más resiliente (19/06: click directo a #curiosidades). Hipótesis: una edición ESTACIONAL del formato ganador — 3 postales verificadas sobre lo que las plantas del usuario están haciendo AHORA en invierno (corteza de canela del crespón B-9, los caducos desnudos para sobrevivir la helada B-30/35, los nativos perennes que siguen verdes F-8/F-1) — da una razón fresca para abrir SIN ser un juego más ni una herramienta utilitaria (que el usuario rechaza). Es NO-juego, contenido-deleite puro, anclado en la estación real. Si engancha (click + reacción/aprobación), se vuelve sección fija que rota con la estación.",
+      "notified_by": [
+        "2026-06-20-b"
+      ],
+      "result_notes": null
     }
   ]
 }

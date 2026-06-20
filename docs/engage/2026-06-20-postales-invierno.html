@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1a0a"><title>Postales de invierno · Jardineando</title>
+<style>
+  :root{ --verde:#2d5016; --verde2:#5a9e35; --crema:#f5faf0; --tinta:#1a2410; --pad:max(18px,env(safe-area-inset-left)); }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; min-height:100%; }
+  body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    background:radial-gradient(130% 90% at 50% 0%, #f3f6ec, #dfe6d4); color:var(--tinta);
+    -webkit-font-smoothing:antialiased; padding:0 var(--pad) calc(48px + env(safe-area-inset-bottom)); }
+  .top{ padding:calc(14px + env(safe-area-inset-top)) 0 4px; } .top a{ color:var(--verde); text-decoration:none; font-size:14px; font-weight:700; }
+  h1{ font-size:clamp(23px,6.4vw,30px); letter-spacing:-0.02em; color:var(--verde); margin:10px 0 2px; }
+  .lead{ max-width:560px; margin:8px auto 0; font-size:14.5px; color:#5a6b4a; line-height:1.5; }
+  .stamp{ display:inline-block; font-size:11.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:#7a8a68; border:1.5px dashed #b9c6a3; border-radius:8px; padding:3px 9px; margin-top:12px; }
+  .card{ max-width:560px; margin:18px auto 0; background:#fff; border:1px solid #e2e7d6; border-radius:18px; padding:18px 18px 16px; box-shadow:0 2px 10px rgba(45,80,22,.06); position:relative; overflow:hidden; }
+  .card::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:linear-gradient(180deg,var(--verde2),var(--verde)); }
+  .card .kicker{ font-size:12px; font-weight:800; letter-spacing:.03em; text-transform:uppercase; color:var(--verde2); }
+  .card h2{ font-size:clamp(19px,5vw,23px); color:var(--verde); margin:4px 0 2px; letter-spacing:-0.01em; }
+  .card .codes{ font-size:12.5px; color:#8a9a78; font-weight:700; }
+  .card p{ font-size:15.5px; line-height:1.55; color:#33402a; margin:11px 0 0; }
+  .card p b{ color:var(--verde); }
+  .react{ display:flex; gap:8px; align-items:center; margin-top:15px; flex-wrap:wrap; }
+  .react button{ border:1.5px solid #d7e0c9; background:#f7faf2; border-radius:999px; padding:8px 13px; font-size:14px; font-weight:700; color:#3c4a30; cursor:pointer; transition:transform .12s, background .2s, border-color .2s; }
+  .react button:active{ transform:scale(.94); }
+  .react button.on{ background:#eef7ee; border-color:var(--verde2); color:var(--verde); }
+  .react a{ margin-left:auto; font-size:13.5px; font-weight:800; color:var(--verde); text-decoration:none; white-space:nowrap; }
+  .engage-actions{ max-width:560px; margin:32px auto 0; display:flex; flex-direction:column; gap:10px; border-top:1px solid #e2e7d6; padding-top:24px; }
+  .engage-actions button{ padding:15px; border:none; border-radius:14px; font-size:15px; font-weight:800; cursor:pointer; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; } .engage-actions button:last-child{ background:#fff; color:#5a6b4a; border:1px solid #d7e0c9; }
+  .engage-feedback{ max-width:560px; margin:16px auto 0; text-align:center; font-size:15px; font-weight:700; color:var(--verde); }
+  .foot{ max-width:560px; margin:14px auto 0; font-size:12.5px; color:#8a9a78; text-align:center; line-height:1.5; }
+  @media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; } }
+</style></head><body>
+<div class="top"><a href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a></div>
+<h1>❄️ Postales de invierno</h1>
+<p class="lead">En pleno julio que se viene, el jardín parece dormido. Pero tres de tus plantas están justo ahora en su mejor momento secreto. Tres postales reales, de tus propias especies.</p>
+<span class="stamp">Edición invierno · junio 2026</span>
+
+<article class="card">
+  <div class="kicker">El que brilla pelado</div>
+  <h2>El crespón muestra su corteza de canela</h2>
+  <div class="codes">B-9 · Crespón / Mirto de crepe · fondo (este)</div>
+  <p>Sin una sola hoja, el crespón deja de ser un arbusto más y se vuelve escultura: su <b>corteza se descascara en tonos canela y crema</b>, lisa al tacto. Es el único momento del año en que se la ve entera. En verano, esas mismas ramas peladas se llenan de flores arrugadas como papel crepé — de ahí el nombre.</p>
+  <div class="react">
+    <button onclick="engageReact('postal-crespon','love',this)">😍 Qué lindo</button>
+    <button onclick="engageReact('postal-crespon','wow',this)">🤯 No sabía</button>
+    <a href="https://gardening-chi.vercel.app/index.html#especie=B-9">Ver ficha →</a>
+  </div>
+</article>
+
+<article class="card">
+  <div class="kicker">Los que se desnudan a propósito</div>
+  <h2>El durazno tiró todas sus hojas para sobrevivir la helada</h2>
+  <div class="codes">B-30 · B-35 · Durazno · fondo (este)</div>
+  <p>No está enfermo: está caduco. Soltar las hojas es su <b>estrategia para pasar el frío</b> sin gastar agua ni exponer tejido tierno. Y te deja ver su esqueleto justo cuando importa — <b>fines de julio es la ventana para podarlo</b>. Ojo: en el fondo (este) la helada pega más fuerte al amanecer, así que protegé los pies tiernos esa franja.</p>
+  <div class="react">
+    <button onclick="engageReact('postal-durazno','love',this)">😍 Qué lindo</button>
+    <button onclick="engageReact('postal-durazno','wow',this)">🤯 No sabía</button>
+    <a href="https://gardening-chi.vercel.app/index.html#especie=B-30">Ver ficha →</a>
+  </div>
+</article>
+
+<article class="card">
+  <div class="kicker">Los que no se duermen</div>
+  <h2>El aguaribay sigue verde y perfumado en pleno invierno</h2>
+  <div class="codes">F-8 · Aguaribay / Molle · frente (oeste)</div>
+  <p>Mientras los caducos descansan, los nativos perennes aguantan el invierno con la hoja puesta. El aguaribay <b>sigue oliendo a pimienta</b> si le estrujás una hoja, hasta en julio — sus frutos rosados son la verdadera «pimienta rosa» de delicatessen. Los incas y guaraníes lo tenían por sagrado. Su vecino el guayabo del país (F-1) también se queda verde, plateado por debajo.</p>
+  <div class="react">
+    <button onclick="engageReact('postal-aguaribay','love',this)">😍 Qué lindo</button>
+    <button onclick="engageReact('postal-aguaribay','wow',this)">🤯 No sabía</button>
+    <a href="https://gardening-chi.vercel.app/index.html#especie=F-8">Ver ficha →</a>
+  </div>
+</article>
+
+<p class="foot">¿Te gustó esta edición de invierno? Si la aprobás, la vuelvo una sección fija que cambia con la estación.</p>
+<div class="engage-actions">
+  <button onclick="engageApprove('2026-06-20-postales-invierno')">✅ Aprobar esta mejora</button>
+  <button onclick="engageRejected('2026-06-20-postales-invierno')">✕ No me interesa</button>
+</div>
+<script src="engage.js"></script>
+</body></html>

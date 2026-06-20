@@ -1,44 +1,44 @@
 {
-  "_updated_at": "2026-06-19T22:38:02.689Z",
+  "_updated_at": "2026-06-20T09:08:56.000Z",
   "notifications": [
     {
-      "id": "2026-06-19-a",
-      "title": "🌿 El nativo que huele a pimienta",
-      "body": "El aguaribay (F-8) es nativo y aromático: estrujá una hoja y largás olor a pimienta. Más historias así en tu jardín.",
+      "id": "2026-06-20-a",
+      "title": "🌸 La planta de una exploradora",
+      "body": "Tu Santa Rita (B-1) la descubrió la primera mujer que dio la vuelta al mundo — disfrazada de hombre, en 1768.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-19T08:30:00-03:00",
-      "expires_at": "2026-06-19T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-19T13:34:30.541Z",
+      "send_at": "2026-06-20T08:30:00-03:00",
+      "expires_at": "2026-06-20T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-19"
+      "created_by": "engagement-agent 2026-06-20"
     },
     {
-      "id": "2026-06-19-b",
-      "title": "🎯 ¿Cuál sobra? ya es fijo",
-      "body": "Aprobaste el juego de la intrusa: quedó en el inicio. ¿Otra ronda? 4 plantas tuyas, 1 que no pega.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-06-18-cual-sobra.html",
-      "format": "game",
-      "send_at": "2026-06-19T13:00:00-03:00",
-      "expires_at": "2026-06-19T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-19T16:21:03.425Z",
+      "id": "2026-06-20-b",
+      "title": "❄️ Postales de invierno",
+      "body": "3 de tus plantas están en su mejor momento secreto ahora mismo: la corteza de canela del crespón y dos más.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-20-postales-invierno.html",
+      "format": "proposal",
+      "send_at": "2026-06-20T13:00:00-03:00",
+      "expires_at": "2026-06-20T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-19"
+      "created_by": "engagement-agent 2026-06-20"
     },
     {
-      "id": "2026-06-19-c",
-      "title": "🔍 ¿Reconocés tus plantas?",
-      "body": "5 pistas, 5 plantas tuyas. ¿Las cazás todas? Un repaso rápido del jardín antes de dormir.",
-      "url": "https://gardening-chi.vercel.app/engage/adivina-jardin.html",
-      "format": "adivina",
-      "send_at": "2026-06-19T19:30:00-03:00",
-      "expires_at": "2026-06-19T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-19T22:38:02.687Z",
+      "id": "2026-06-20-c",
+      "title": "🌺 El hibisco habla por el pelo",
+      "body": "En Asia, el hibisco en el pelo: izquierda = soltera, derecha = casada. Tu B-4 es flor nacional de 3 países.",
+      "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
+      "format": "curio",
+      "send_at": "2026-06-20T19:30:00-03:00",
+      "expires_at": "2026-06-20T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-19"
+      "created_by": "engagement-agent 2026-06-20"
     }
   ]
 }
