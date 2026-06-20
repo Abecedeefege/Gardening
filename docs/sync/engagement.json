@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-20T17:25:53.959Z",
+  "_updated_at": "2026-06-20T17:26:04.426Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -1071,6 +1071,15 @@
       "value": "wow",
       "page": "engage/2026-06-20-postales-invierno.html",
       "ts": "2026-06-20T17:25:54.992Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqmmpvl7ijvu2u",
+      "type": "reaction",
+      "target": "postal-durazno",
+      "value": "love",
+      "page": "engage/2026-06-20-postales-invierno.html",
+      "ts": "2026-06-20T17:26:05.611Z",
       "device": "sin-nombre"
     }
   ],
