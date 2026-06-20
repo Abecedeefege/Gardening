@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-20T17:25:21.431Z",
+  "_updated_at": "2026-06-20T22:49:41.812Z",
   "notifications": [
     {
       "id": "2026-06-20-a",
@@ -35,8 +35,8 @@
       "format": "curio",
       "send_at": "2026-06-20T19:30:00-03:00",
       "expires_at": "2026-06-20T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-20T22:49:41.811Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-06-20"
     }
