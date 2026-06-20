@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-20T11:55:25.330Z",
+  "_updated_at": "2026-06-20T17:25:21.431Z",
   "notifications": [
     {
       "id": "2026-06-20-a",
@@ -22,8 +22,8 @@
       "format": "proposal",
       "send_at": "2026-06-20T13:00:00-03:00",
       "expires_at": "2026-06-20T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-20T17:25:21.430Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-06-20"
     },
