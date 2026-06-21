@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-21T20:04:15.989Z",
+  "_updated_at": "2026-06-21T23:06:10.549Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -1149,6 +1149,32 @@
       "nid": "2026-06-21-b",
       "src": "push",
       "ts": "2026-06-21T20:04:15.829Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqo7t8yq6ot867",
+      "type": "dwell",
+      "seconds": 5,
+      "scroll_pct": 10,
+      "page": "engage/2026-06-21-postales-invierno-2.html",
+      "ts": "2026-06-21T20:04:21.026Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqoeb2z4zzbhd2",
+      "type": "notification_clicked",
+      "nid": "2026-06-21-c",
+      "page": "index.html",
+      "ts": "2026-06-21T23:06:10.761Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqoeb2z49jwgkq",
+      "type": "page_visit",
+      "page": "index.html",
+      "nid": "2026-06-21-c",
+      "src": "push",
+      "ts": "2026-06-21T23:06:10.761Z",
       "device": "sin-nombre"
     }
   ],
