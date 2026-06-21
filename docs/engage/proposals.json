@@ -125,12 +125,24 @@
     {
       "id": "2026-06-20-postales-invierno",
       "title": "Postales de invierno (edición estacional de curiosidades)",
-      "page": "engage/2026-06-20-postales-invierno.html",
+      "page": null,
       "created": "2026-06-20",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Los juegos rápidos empezaron a fatigar (19/06: cual-sobra 0 opens, adiviná abierta pero bounce a los 2s), mientras que las curiosidades verificadas siguen siendo el contenido más resiliente (19/06: click directo a #curiosidades). Hipótesis: una edición ESTACIONAL del formato ganador — 3 postales verificadas sobre lo que las plantas del usuario están haciendo AHORA en invierno (corteza de canela del crespón B-9, los caducos desnudos para sobrevivir la helada B-30/35, los nativos perennes que siguen verdes F-8/F-1) — da una razón fresca para abrir SIN ser un juego más ni una herramienta utilitaria (que el usuario rechaza). Es NO-juego, contenido-deleite puro, anclado en la estación real. Si engancha (click + reacción/aprobación), se vuelve sección fija que rota con la estación.",
       "notified_by": [
         "2026-06-20-b"
+      ],
+      "result_notes": "DROPPED 21/06 por la regla de no-supervivencia sin aprobación explícita (pending de día anterior, sin proposal_approved). PERO el FORMATO se validó con la señal implícita MÁS FUERTE que tuvo un no-juego: el push promotor (b, 13:00) juntó CLICK + 3 reacciones (postal-crespon 🤯wow, postal-durazno 😍love, postal-aguaribay 😍love) + 60s dwell con scroll 100%. El usuario claramente AMÓ el contenido, pero no tocó el botón Aprobar — la conversión reacción→aprobación fue el único gap. Confirma la dirección de los learnings: las curiosidades-estacionales (NO-juego, contenido-deleite) son el camino, ahora que los juegos fatigan. Re-lanzada hoy como 2026-06-21-postales-invierno-2 con contenido fresco (mandarina/romero/liquidámbar) + un CTA de aprobación más claro y explícito, para medir si una invitación directa convierte ese amor en el tap que la vuelve permanente. Página efímera eliminada del repo."
+    },
+    {
+      "id": "2026-06-21-postales-invierno-2",
+      "title": "Postales de invierno II (edición estacional de curiosidades)",
+      "page": "engage/2026-06-21-postales-invierno-2.html",
+      "created": "2026-06-21",
+      "status": "pending",
+      "hypothesis": "Ayer las «Postales de invierno» (v1) lograron la señal implícita más fuerte de cualquier no-juego — click + 3 reacciones (1 wow + 2 love) + 60s dwell 100% — pero NO el tap en Aprobar, así que la regla las dropeó. El formato curiosidad-estacional está validado; el gap es puramente de CONVERSIÓN reacción→aprobación. Hipótesis: con contenido fresco (3 postales NUEVAS y verificadas: la mandarina B-24 cargada de fruta en invierno, el romero B-26 floreciendo en pleno frío, el liquidámbar B-37 vuelto silueta con su storax) + un CTA de aprobación más claro y concreto ('tocá ✅ y queda fija rotando con la estación; sin aprobación, mañana desaparece'), el usuario convierte el amor que ya mostró en el tap explícito que la hace permanente. Si aprueba → sección fija 'Postales' que rota con la estación. Mismo patrón ganador que validó cual-sobra: slot diurno dedicado (13:00) sin competencia, día sin juegos.",
+      "notified_by": [
+        "2026-06-21-b"
       ],
       "result_notes": null
     }

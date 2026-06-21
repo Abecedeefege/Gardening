@@ -1,44 +1,44 @@
 {
-  "_updated_at": "2026-06-20T22:49:41.812Z",
+  "_updated_at": "2026-06-21T09:10:00-03:00",
   "notifications": [
     {
-      "id": "2026-06-20-a",
-      "title": "🌸 La planta de una exploradora",
-      "body": "Tu Santa Rita (B-1) la descubrió la primera mujer que dio la vuelta al mundo — disfrazada de hombre, en 1768.",
+      "id": "2026-06-21-a",
+      "title": "🍋 El limonero es un invento",
+      "body": "Tu limonero (B-23) no existe silvestre: es un cruce de cidro y naranja amarga, nacido en India hace 2500 años.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-20T08:30:00-03:00",
-      "expires_at": "2026-06-20T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-20T11:55:25.329Z",
+      "send_at": "2026-06-21T08:30:00-03:00",
+      "expires_at": "2026-06-21T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-20"
+      "created_by": "engagement-agent 2026-06-21"
     },
     {
-      "id": "2026-06-20-b",
-      "title": "❄️ Postales de invierno",
-      "body": "3 de tus plantas están en su mejor momento secreto ahora mismo: la corteza de canela del crespón y dos más.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-06-20-postales-invierno.html",
+      "id": "2026-06-21-b",
+      "title": "❄️ Nuevas postales de invierno",
+      "body": "3 plantas tuyas en su mejor momento de julio: la mandarina cargada, el romero en flor y una silueta sorpresa.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-21-postales-invierno-2.html",
       "format": "proposal",
-      "send_at": "2026-06-20T13:00:00-03:00",
-      "expires_at": "2026-06-20T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-20T17:25:21.430Z",
+      "send_at": "2026-06-21T13:00:00-03:00",
+      "expires_at": "2026-06-21T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-20"
+      "created_by": "engagement-agent 2026-06-21"
     },
     {
-      "id": "2026-06-20-c",
-      "title": "🌺 El hibisco habla por el pelo",
-      "body": "En Asia, el hibisco en el pelo: izquierda = soltera, derecha = casada. Tu B-4 es flor nacional de 3 países.",
+      "id": "2026-06-21-c",
+      "title": "💜 Por qué se llama lavanda",
+      "body": "Tu lavanda (B-10) toma el nombre de los romanos: la echaban al baño para lavarse. Seca, ahuyenta polillas.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-20T19:30:00-03:00",
-      "expires_at": "2026-06-20T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-20T22:49:41.811Z",
+      "send_at": "2026-06-21T19:30:00-03:00",
+      "expires_at": "2026-06-21T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-20"
+      "created_by": "engagement-agent 2026-06-21"
     }
   ]
 }
