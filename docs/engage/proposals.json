@@ -144,7 +144,7 @@
       "notified_by": [
         "2026-06-21-b"
       ],
-      "result_notes": null
+      "result_notes": "DROPPED 22/06 por la regla de no-supervivencia sin aprobación explícita (pending de día anterior). DATO DECISIVO: el push promotor (b) SÍ se abrió (notification_clicked 21/06 20:04) pero el usuario rebotó en 5s con scroll 10%, CERO reacciones y sin tap Aprobar — lo opuesto de v1 (60s + 3 reacciones). El CTA más claro no movió la aguja. Lectura definitiva: el amor de v1 era NOVEDAD, no formato; una segunda edición de 'postales de invierno', aun con contenido fresco, no retiene. Se cierra la línea postales/curiosidad-estacional como experiencia separada — el contenido-curiosidad ya vive y convierte en la sección fija #curiosidades. No relanzar postales. Página efímera eliminada."
     }
   ]
 }
