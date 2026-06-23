@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-23T17:41:04.253Z",
+  "_updated_at": "2026-06-23T17:41:06.580Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -1307,6 +1307,15 @@
       "nid": "2026-06-23-b",
       "src": "push",
       "ts": "2026-06-23T17:41:05.898Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqqxkqdfb4qagj",
+      "type": "page_visit",
+      "page": "engage/mundo-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-06-23T17:41:06.048Z",
       "device": "sin-nombre"
     }
   ],
