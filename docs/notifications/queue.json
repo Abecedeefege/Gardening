@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-23T00:58:56.332Z",
+  "_updated_at": "2026-06-22T21:59:18-03:00",
   "notifications": [
     {
       "id": "2026-06-22-a",
@@ -49,6 +49,18 @@
       "expires_at": "2026-06-23T00:58:40-03:00",
       "status": "sent",
       "sent_at": "2026-06-23T00:58:56.330Z",
+      "fail_reason": null,
+      "created_by": "sorpresa manual (pedido del usuario)"
+    },
+    {
+      "id": "surprise-memoria-2159",
+      "title": "🧩 Sorpresa 2: memoria del jardín",
+      "body": "Un juego de pares con tus plantas y sus datos. ¿En cuántas movidas lo resolvés?",
+      "url": "https://gardening-chi.vercel.app/engage/memoria-jardin.html",
+      "send_at": "2026-06-22T21:59:18-03:00",
+      "expires_at": "2026-06-23T00:59:18-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
       "created_by": "sorpresa manual (pedido del usuario)"
     }
