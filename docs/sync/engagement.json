@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-23T17:41:02.244Z",
+  "_updated_at": "2026-06-23T17:41:04.253Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -1290,6 +1290,23 @@
       "nid": "2026-06-23-a",
       "src": "push",
       "ts": "2026-06-23T17:41:02.880Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqqxkq97olb737",
+      "type": "notification_clicked",
+      "nid": "2026-06-23-b",
+      "page": "engage/mundo-jardin.html",
+      "ts": "2026-06-23T17:41:05.898Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqqxkq97wdi80d",
+      "type": "page_visit",
+      "page": "engage/mundo-jardin.html",
+      "nid": "2026-06-23-b",
+      "src": "push",
+      "ts": "2026-06-23T17:41:05.898Z",
       "device": "sin-nombre"
     }
   ],
