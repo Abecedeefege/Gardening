@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-22T21:58:40-03:00",
+  "_updated_at": "2026-06-23T00:58:56.332Z",
   "notifications": [
     {
       "id": "2026-06-22-a",
@@ -47,8 +47,8 @@
       "url": "https://gardening-chi.vercel.app/engage/mundo-jardin.html",
       "send_at": "2026-06-22T21:58:40-03:00",
       "expires_at": "2026-06-23T00:58:40-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-23T00:58:56.330Z",
       "fail_reason": null,
       "created_by": "sorpresa manual (pedido del usuario)"
     }
