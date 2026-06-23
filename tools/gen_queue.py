@@ -61,6 +61,14 @@ def build_formats():
     # 💡 Feed de curiosidades (sección fija, lo que más enganchó)
     F["curio"] = [(SITE + "index.html#curiosidades",
         "\U0001F4A1 Curiosidades de tus plantas", "El feed de historias verificadas de tus 52 plantas.")]
+    # 🌍 La vuelta al mundo (NUEVO 15/06) — scrollytelling del origen de tus plantas
+    F["mundo"] = [(E("mundo-jardin.html"),
+        "\U0001F30D Tu jardín es un mapa del mundo", "Plantas de 5 continentes sin moverte de Montevideo. Hacé el viaje.")]
+    # 🧩 Memoria del jardín (NUEVO 15/06) — juego de pares planta↔dato
+    F["memoria"] = [(E("memoria-jardin.html") + "#set=" + str(s), t, b) for (s, t, b) in [
+        (1, "\U0001F9E9 Memoria del jardín", "Encontrá los pares: cada planta con su dato. ¿En cuántas movidas?"),
+        (2, "\U0001F9E9 ¿Tenés buena memoria?", "Juego de pares con tus plantas. Mejorá tu marca."),
+    ]]
     return F
 
 def build(date_str, cadence_min=30, max_slots=None):

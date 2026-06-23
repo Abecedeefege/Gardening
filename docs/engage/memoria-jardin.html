@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1a0a"><title>Memoria del jardín · Jardineando</title>
+<style>
+  :root{ --verde:#2d5016; --verde2:#5a9e35; --crema:#f6f4ea; --tinta:#1a2410; --pad:max(16px,env(safe-area-inset-left)); }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; margin:0; }
+  body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif; color:var(--tinta);
+    background:radial-gradient(130% 90% at 50% 0%, #fbfaf3, #eaecdd); -webkit-font-smoothing:antialiased; padding:0 var(--pad) calc(40px + env(safe-area-inset-bottom)); }
+  .top{ padding:calc(14px + env(safe-area-inset-top)) 0 4px; } .top a{ color:var(--verde); text-decoration:none; font-size:14px; font-weight:700; }
+  h1{ font-size:clamp(22px,6vw,28px); color:var(--verde); margin:8px 0 2px; } .sub{ color:#5a6b4a; font-size:13.5px; }
+  .meta{ display:flex; justify-content:space-between; font-size:13px; color:#7a8a68; font-weight:700; margin:12px 0 8px; max-width:540px; margin-left:auto; margin-right:auto; }
+  .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; max-width:540px; margin:0 auto; }
+  .card{ aspect-ratio:3/4; perspective:800px; cursor:pointer; }
+  .inner{ position:relative; width:100%; height:100%; transition:transform .45s cubic-bezier(.2,.8,.25,1); transform-style:preserve-3d; }
+  .card.flip .inner, .card.done .inner{ transform:rotateY(180deg); }
+  .face{ position:absolute; inset:0; backface-visibility:hidden; border-radius:14px; display:flex; align-items:center; justify-content:center; text-align:center; padding:8px; box-shadow:0 2px 6px rgba(45,80,22,.1); }
+  .front{ background:linear-gradient(150deg,var(--verde2),var(--verde)); color:#fff; font-size:30px; }
+  .back{ background:#fff; border:1.5px solid #e2e7d6; transform:rotateY(180deg); font-weight:700; color:var(--tinta); flex-direction:column; gap:4px; }
+  .back .em{ font-size:30px; } .back .tx{ font-size:11.5px; line-height:1.2; color:#3c4a30; }
+  .card.done .back{ border-color:var(--verde2); background:#eef7ee; animation:pop .4s; }
+  @keyframes pop{ 0%{transform:rotateY(180deg) scale(1)} 40%{transform:rotateY(180deg) scale(1.06)} 100%{transform:rotateY(180deg) scale(1)} }
+  .win{ max-width:540px; margin:24px auto 0; text-align:center; } .win .big{ font-size:54px; }
+  .win h2{ color:var(--verde); margin:6px 0; } .win p{ color:#5a6b4a; font-size:15px; }
+  .reacts{ display:flex; gap:10px; justify-content:center; margin:16px 0; } .reacts button{ width:50px;height:50px;border-radius:50%;border:1px solid #e0e7d4;background:#fff;font-size:23px;cursor:pointer; } .reacts button.sel{ background:var(--verde);border-color:var(--verde); }
+  .again{ padding:13px 18px; border:none; border-radius:14px; background:var(--verde); color:#fff; font-weight:800; font-size:15px; cursor:pointer; }
+  .hidden{ display:none; } @media (prefers-reduced-motion:reduce){ .inner{ transition:none; } }
+</style></head><body>
+<div class="top"><a href="https://gardening-chi.vercel.app/index.html">← Inicio</a><h1>🧩 Memoria del jardín</h1>
+  <p class="sub">Encontrá los pares: cada planta con su dato. Tocá dos cartas.</p></div>
+<div class="meta"><span id="moves">0 movidas</span><span id="pairs">0 / 6 pares</span></div>
+<div class="grid" id="grid"></div>
+<div class="win hidden" id="win"><div class="big">🏆</div><h2 id="wt"></h2><p id="wp"></p>
+  <div class="reacts" data-id="memoria"><button onclick="engageReact('memoria','love', this)">😍</button><button onclick="engageReact('memoria','meh', this)">😐</button><button onclick="engageReact('memoria','no', this)">🙅</button></div>
+  <button class="again" onclick="location.reload()">🔄 Jugar de nuevo</button></div>
+<script src="engage.js"></script>
+<script>
+  // 6 pares: cada par = una carta planta (emoji) + una carta dato. Hacen match por id.
+  var PAIRS=[
+    {id:'palta', em:'🥑', name:'Palta Hass', tx:'Todas vienen de UN árbol'},
+    {id:'lantana', em:'🚦', name:'Lantana', tx:'Cambia de color como semáforo'},
+    {id:'limon', em:'🍋', name:'Limón', tx:'No existe en estado silvestre'},
+    {id:'romero', em:'🌿', name:'Romero', tx:'"Rocío del mar" / ayuda a la memoria'},
+    {id:'caqui', em:'🟠', name:'Caqui', tx:'"Fruta de los dioses" en griego'},
+    {id:'guayabo', em:'🍬', name:'Guayabo', tx:'Sus pétalos se comen, dulces'}
+  ];
+  function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+  var deck=[]; PAIRS.forEach(function(p){ deck.push({id:p.id,kind:'em',html:'<div class="em">'+p.em+'</div>',face:'front-em'});
+    deck.push({id:p.id,kind:'tx',html:'<div class="em">'+p.em+'</div><div class="tx">'+p.tx+'</div>',face:'back'}); });
+  deck=shuffle(deck);
+  var grid=document.getElementById('grid'), moves=0, pairs=0, first=null, lock=false;
+  deck.forEach(function(c,i){ var el=document.createElement('div'); el.className='card'; el.dataset.i=i;
+    el.innerHTML='<div class="inner"><div class="face front">🌿</div><div class="face back">'+c.html+'</div></div>';
+    el.addEventListener('click',function(){ flip(el,c); }); grid.appendChild(el); });
+  function flip(el,c){ if(lock||el.classList.contains('flip')||el.classList.contains('done')) return;
+    el.classList.add('flip');
+    if(!first){ first={el:el,c:c}; return; }
+    moves++; document.getElementById('moves').textContent=moves+' movidas'; lock=true;
+    if(first.c.id===c.id && first.el!==el){ // match
+      setTimeout(function(){ first.el.classList.add('done'); el.classList.add('done'); first=null; lock=false;
+        pairs++; document.getElementById('pairs').textContent=pairs+' / 6 pares'; if(pairs===6) win(); },420);
+    } else { setTimeout(function(){ first.el.classList.remove('flip'); el.classList.remove('flip'); first=null; lock=false; },800); }
+  }
+  function win(){ engageReact('memoria-win', moves+' movidas');
+    setTimeout(function(){ document.getElementById('win').classList.remove('hidden');
+      var s = moves<=8?'¡Memoria de elefante! 🐘':moves<=12?'¡Muy bien! 🌿':'¡Completado! 🌱';
+      document.getElementById('wt').textContent=s; document.getElementById('wp').textContent='Encontraste los 6 pares en '+moves+' movidas.';
+      window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'}); },500);
+  }
+</script></body></html>

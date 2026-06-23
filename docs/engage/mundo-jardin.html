@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1f33"><title>La vuelta al mundo de tu jardín · Jardineando</title>
+<style>
+  :root{ --tinta:#eaf2ea; --pad:max(20px,env(safe-area-inset-left)); }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; margin:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif; color:var(--tinta);
+    background:#0b1f33; -webkit-font-smoothing:antialiased; }
+  .back{ position:fixed; top:calc(12px + env(safe-area-inset-top)); left:var(--pad); z-index:30; color:#cfe0d0;
+    text-decoration:none; font-size:13px; font-weight:700; background:rgba(0,0,0,.35); backdrop-filter:blur(6px); padding:6px 11px; border-radius:99px; }
+  .prog{ position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,#7fd1a3,#e0c45a); z-index:30; width:0; transition:width .2s; }
+  section{ min-height:100svh; display:flex; flex-direction:column; justify-content:center; padding:80px var(--pad);
+    position:relative; overflow:hidden; }
+  .reveal{ opacity:0; transform:translateY(30px); transition:opacity .8s, transform .8s; }
+  .reveal.in{ opacity:1; transform:none; }
+  .kicker{ font-size:13px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; opacity:.7; }
+  h1{ font-size:clamp(30px,9vw,46px); line-height:1.08; letter-spacing:-0.02em; font-weight:800; margin:10px 0; }
+  h2{ font-size:clamp(26px,7vw,38px); line-height:1.1; font-weight:800; margin:6px 0 4px; }
+  .flag{ font-size:58px; line-height:1; }
+  p.lead{ font-size:clamp(16px,4.4vw,19px); line-height:1.5; max-width:30ch; opacity:.92; margin-top:10px; }
+  .plants{ display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; max-width:34ch; }
+  .pl{ background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:7px 13px; font-size:14px; font-weight:600; }
+  .hint{ position:absolute; bottom:26px; left:0; right:0; text-align:center; font-size:13px; opacity:.6; animation:bob 1.6s ease-in-out infinite; }
+  @keyframes bob{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(6px) } }
+  /* fondos por escena */
+  .s0{ background:radial-gradient(120% 80% at 50% 20%, #14324f, #0b1f33); }
+  .s-asia{ background:linear-gradient(160deg,#7a1f2b,#3a1230); } .s-med{ background:linear-gradient(160deg,#1d4e6b,#10324a); }
+  .s-andes{ background:linear-gradient(160deg,#8a5a1f,#3a2410); } .s-mex{ background:linear-gradient(160deg,#1f6b4a,#0f3a2a); }
+  .s-bra{ background:linear-gradient(160deg,#1f6b6b,#0f3a3a); } .s-uy{ background:linear-gradient(160deg,#2d5016,#16280b); }
+  .s-end{ background:radial-gradient(120% 90% at 50% 0%, #14324f, #0b1f33); text-align:center; align-items:center; }
+  .big{ font-size:clamp(64px,22vw,120px); font-weight:800; color:#e0c45a; line-height:1; }
+  .reacts{ display:flex; gap:12px; justify-content:center; margin-top:26px; } .reacts button{ width:56px;height:56px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);font-size:26px;cursor:pointer;color:#fff; }
+  .reacts button:active{ transform:scale(.88); } .reacts button.sel{ background:#7fd1a3; border-color:#7fd1a3; }
+  .home{ display:inline-block; margin-top:22px; color:#cfe0d0; font-weight:700; text-decoration:none; border:1px solid rgba(255,255,255,.25); padding:12px 18px; border-radius:14px; }
+  @media (prefers-reduced-motion:reduce){ .reveal{ opacity:1; transform:none; } .hint{ animation:none; } html{ scroll-behavior:auto; } }
+</style></head><body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Inicio</a><div class="prog" id="prog"></div>
+
+<section class="s0"><div class="reveal"><div class="kicker">Una historia de tu jardín</div>
+  <h1>Tu jardín parece de Montevideo.</h1>
+  <p class="lead">Pero si seguís sus raíces, es un mapa del mundo entero. Deslizá y hacé el viaje.</p></div>
+  <div class="hint">deslizá ↓</div></section>
+
+<section class="s-asia"><div class="reveal"><div class="flag">🏯</div><div class="kicker">Primera parada</div>
+  <h2>Asia oriental</h2><p class="lead">La mitad de tu jardín cruzó medio planeta. El durazno es chino (aunque se llame "de Persia"); el caqui, "fruta de los dioses"; el hibisco es la flor nacional de Malasia y la althea, la de Corea del Sur.</p>
+  <div class="plants"><span class="pl">🍑 Durazno</span><span class="pl">🟠 Caqui</span><span class="pl">🌺 Hibisco</span><span class="pl">🌸 Althea</span><span class="pl">🍋 Limonero</span></div></div>
+  <div class="hint">seguí ↓</div></section>
+
+<section class="s-med"><div class="reveal"><div class="flag">🌊</div><div class="kicker">Segunda parada</div>
+  <h2>El Mediterráneo</h2><p class="lead">El romero crece en acantilados con la sal del aire — su nombre, "ros marinus", significa rocío del mar. De ahí saltó a tu cantero.</p>
+  <div class="plants"><span class="pl">🌿 Romero</span></div></div><div class="hint">seguí ↓</div></section>
+
+<section class="s-andes"><div class="reveal"><div class="flag">🏔️</div><div class="kicker">Tercera parada</div>
+  <h2>Los Andes</h2><p class="lead">El aguaribay (molle) baja de las alturas del Perú. Sus granitos rosados son la "pimienta rosa" que se vende carísima en delicatessen.</p>
+  <div class="plants"><span class="pl">🌶️ Aguaribay</span></div></div><div class="hint">seguí ↓</div></section>
+
+<section class="s-mex"><div class="reveal"><div class="flag">🥑</div><div class="kicker">Cuarta parada</div>
+  <h2>México</h2><p class="lead">Las paltas vienen de Mesoamérica — su semilla gigante evolucionó para que la tragaran perezosos gigantes ya extintos. Tu Hass desciende de un solo árbol de 1926.</p>
+  <div class="plants"><span class="pl">🥑 Palta Hass</span><span class="pl">🥑 Palta criolla</span></div></div><div class="hint">seguí ↓</div></section>
+
+<section class="s-bra"><div class="reveal"><div class="flag">🇧🇷</div><div class="kicker">Quinta parada</div>
+  <h2>Brasil</h2><p class="lead">Tu buganvilia fue recolectada en Río de Janeiro en 1767 por Jeanne Baret — la primera mujer en dar la vuelta al mundo, viajando disfrazada de hombre.</p>
+  <div class="plants"><span class="pl">🌸 Santa Rita</span></div></div><div class="hint">seguí ↓</div></section>
+
+<section class="s-uy"><div class="reveal"><div class="flag">🧉</div><div class="kicker">Última parada</div>
+  <h2>Acá nomás</h2><p class="lead">Y algunas nunca se fueron de casa: el guayabo, la lantana, el pindó y la anacahuita son nativas de esta tierra. El resto del mundo vino a visitarlas.</p>
+  <div class="plants"><span class="pl">🍬 Guayabo</span><span class="pl">🚦 Lantana</span><span class="pl">🌴 Pindó</span><span class="pl">🌳 Anacahuita</span></div></div><div class="hint">una más ↓</div></section>
+
+<section class="s-end reveal"><div class="kicker">Tu jardín, en números</div>
+  <div class="big" id="big">5</div><h2>continentes</h2>
+  <p class="lead">Sin moverte de Montevideo, tenés un pedacito de Asia, el Mediterráneo, los Andes, México y Brasil — además de lo nuestro. Sos coleccionista del mundo sin saberlo. 🌍</p>
+  <div class="reacts" data-id="mundo"><button onclick="engageReact('mundo','love', this)">😍</button><button onclick="engageReact('mundo','meh', this)">😐</button><button onclick="engageReact('mundo','no', this)">🙅</button></div>
+  <a class="home" href="https://gardening-chi.vercel.app/index.html">🏡 Volver al inicio</a></section>
+
+<script src="engage.js"></script>
+<script>
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('in'); }); },{threshold:.18});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  var prog=document.getElementById('prog');
+  addEventListener('scroll',function(){ var h=document.documentElement; var p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100; prog.style.width=Math.min(100,p)+'%'; },{passive:true});
+  // count-up del número final
+  var big=document.getElementById('big'), seen=false;
+  new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting&&!seen){ seen=true; var n=0; var iv=setInterval(function(){n++;big.textContent=n;if(n>=5)clearInterval(iv);},160); } }); },{threshold:.5}).observe(big);
+</script></body></html>
