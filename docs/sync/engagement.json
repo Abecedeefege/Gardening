@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-23T17:44:26.875Z",
+  "_updated_at": "2026-06-23T17:44:35.126Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -1352,6 +1352,15 @@
       "scroll_pct": 0,
       "page": "engage/2026-06-13-rueda-ano.html",
       "ts": "2026-06-23T17:44:28.480Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "mqqxp8x3p8jia8",
+      "type": "dwell",
+      "seconds": 6,
+      "scroll_pct": 0,
+      "page": "engage/2026-06-18-cual-sobra.html",
+      "ts": "2026-06-23T17:44:36.711Z",
       "device": "pix9"
     }
   ],
