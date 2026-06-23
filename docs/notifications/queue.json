@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-22T21:59:18-03:00",
+  "_updated_at": "2026-06-23T00:59:35.224Z",
   "notifications": [
     {
       "id": "2026-06-22-a",
@@ -59,8 +59,8 @@
       "url": "https://gardening-chi.vercel.app/engage/memoria-jardin.html",
       "send_at": "2026-06-22T21:59:18-03:00",
       "expires_at": "2026-06-23T00:59:18-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-23T00:59:35.223Z",
       "fail_reason": null,
       "created_by": "sorpresa manual (pedido del usuario)"
     }

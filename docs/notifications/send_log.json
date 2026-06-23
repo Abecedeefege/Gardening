@@ -863,6 +863,12 @@
       "nid": "surprise-mundo-2158",
       "ts": "2026-06-23T00:58:56.330Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "surprise-memoria-2159",
+      "ts": "2026-06-23T00:59:35.223Z",
+      "status_code": 201
     }
   ]
 }
