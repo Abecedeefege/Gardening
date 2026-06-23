@@ -869,6 +869,12 @@
       "nid": "surprise-memoria-2159",
       "ts": "2026-06-23T00:59:35.223Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-23-a",
+      "ts": "2026-06-23T12:31:46.412Z",
+      "status_code": 201
     }
   ]
 }
