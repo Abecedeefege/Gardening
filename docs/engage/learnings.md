@@ -27,6 +27,9 @@ El usuario abre 2-3/día sin importar cuántos mandes; más pushes solo diluye y
   descanso:** dejar ≥2-3 días sin pushear un juego para que vuelva a sentirse fresco. NO apilar variantes
   nuevas (canibalizan los mismos 2-3 opens — ver "cuello de botella = volumen" abajo). Duelo es el más
   fuerte (6/6 ×2); cual-sobra está aprobado y fijo en nav.
+- **ROTACIÓN-CON-DESCANSO CONFIRMADA (22/06).** Duelo, descansado 3 días (último push 19/06), volvió a
+  enganchar SOLO: 6/6 ✓ + replay, 37s + 17s dwell, scroll 100%. Es la 2ª vez que duelo da 6/6. Fórmula
+  validada: un juego ganador se "recarga" con 2-3 días de descanso. NO quemar el mismo juego días seguidos.
 - **Postales / curiosidad-ESTACIONAL como experiencia separada = LÍNEA CERRADA (22/06).** v1 (20/06)
   juntó la señal implícita más fuerte de un no-juego (click + 3 reacciones + 60s 100%), pero NO aprobó.
   v2 (21/06) con contenido fresco + CTA más claro: se abrió y **rebotó en 5s, scroll 10%, 0 reacciones,
@@ -57,21 +60,27 @@ El usuario abre 2-3/día sin importar cuántos mandes; más pushes solo diluye y
 - **21/06** — **3 pushes. 3/3 CLICKS pero proposal MUERTA.** A(curio limonero)→click; C(curio lavanda)→click;
   B(Postales v2)→click pero REBOTE 5s/10%/0 reacc/0 aprob. La 2ª postal no retuvo → cierra la línea postales.
   Lectura: los 2 curios son el sostén fiable; el slot del medio (proposal) es el débil cuando repito formato.
+- **22/06** — **3 pushes + 2 sorpresas manuales del usuario.** A(curio Palta B-22)→CLICK. B(Duelo, descansado
+  3 días)→**6/6 ✓ + replay, 37s+17s dwell, scroll 100%**: el re-test del juego descansado FUNCIONÓ. C(curio
+  Gardenia)→sin click logueado. A medianoche el usuario se auto-mandó 2 sorpresas (🌍 mundo-jardin + 🧩
+  memoria-jardin, formatos NUEVOS que él mismo creó) — sin engagement aún (mandadas ~00:58, dormido). Señal
+  clave: usuario MUY activo y buscando JUEGOS por iniciativa propia → los juegos NO están fatigados ahora,
+  están en demanda. mundo/memoria son assets nuevos sin test diurno todavía.
 
-## Decisiones de hoy (22/06)
+## Decisiones de hoy (23/06)
 
-- **Postales-invierno-2 DROPEADA** (pending sin aprobación + dato de rebote). Línea postales CERRADA: el
-  contenido-curiosidad sigue vivo en #curiosidades, que es donde convierte.
-- **NO se crea proposal nueva hoy.** Tras una racha de drops, doy un día limpio de assets validados para no
-  quemar credibilidad y dejar respirar. La proposal vuelve cuando tenga una hipótesis genuinamente nueva
-  (no otra variante de algo ya medido).
-- **Re-introducir UN juego (DUELO) tras 2 días de descanso (último push de juego: 19/06).** Slot diurno 13:00.
-  Experimento del día: ¿un juego ganador descansado vuelve a enganchar orgánicamente? Es el más fuerte (6/6 ×2).
-- **Estructura del día:** 2 curiosidades (sostén fiable) + 1 juego descansado. Sin proposal, sin postales.
-- **Cola de 3:** (a) 08:30 curio Palta B-22 (evolucionó para perezosos gigantes extintos) → #curiosidades;
-  (b) 13:00 juego Duelo (engage/duelo-jardin.html); (c) 19:30 curio Gardenia B-25 (perfume más caro, Chanel Nº22),
-  ángulo nocturno sensorial → #curiosidades. Plantas de los curios sin solape con días recientes.
-- Sin compactación: ningún evento supera 14 días (corte 08/06; todo es 12/06+). send_log y queue limpios.
+- **Proposals:** postales-invierno-2 quedó con status "pending" por bug de la corrida del 22 (el HTML ya estaba
+  borrado y las notas decían DROPPED) → corregido a "dropped" hoy. NO hay proposals pendientes vivas.
+- **NO se crea proposal nueva hoy.** El usuario está auto-explorando juegos (creó mundo + memoria anoche); no
+  tengo una hipótesis genuinamente nueva que esos assets no cubran ya. Próxima proposal sólo con mecánica nueva.
+- **Experimento del día:** dar a 🌍 mundo-jardin (nuevo, scrollytelling "5 continentes", creado por el usuario
+  anoche) su PRIMER test diurno limpio. La sorpresa de medianoche probablemente no se vio (dormido). Slot 13:00.
+- **Estructura:** 2 curiosidades (sostén fiable) + 1 experiencia nueva (mundo-jardin). Sin postales, sin proposal.
+  Duelo NO se re-pushea hoy (se jugó anoche → descanso para no quemarlo, fórmula rotación-con-descanso).
+- **Cola de 3:** (a) 08:30 curio Hortensia B-13 (cambia de color según suelo) → #curiosidades; (b) 13:00
+  experiencia 🌍 mundo-jardin; (c) 19:30 curio Aguaribay B-7 (pimienta rosa real, sagrado incas/guaraníes) →
+  #curiosidades. Curios de plantas sin solape con días recientes (palta/gardenia/limonero/lavanda ya usadas).
+- Sin compactación: el evento más viejo es 12/06 (11 días) < 14. send_log y engagement quedan completos.
 
 ## Contexto del jardín (junio 2026 = invierno, lat -34.9°S)
 
@@ -87,9 +96,11 @@ El usuario abre 2-3/día sin importar cuántos mandes; más pushes solo diluye y
 
 ## TODO pendiente
 
-- **Medir el re-test de Duelo (22/06):** ¿un juego ganador, descansado 2-3 días, vuelve a enganchar? Si juega →
-  confirma que la rotación-con-descanso es la fórmula para los juegos. Si lo ignora → la fatiga de juegos es más
-  profunda y conviene apoyarse aún más en curiosidades.
+- ✅ RESUELTO 22/06: re-test de Duelo descansado → enganchó 6/6 + replay. Rotación-con-descanso CONFIRMADA.
+- **Medir el test diurno de 🌍 mundo-jardin (23/06):** la sorpresa de medianoche probablemente no se vio. Si en su
+  slot diurno (13:00) junta click + dwell/reacciones → es un asset ganador estable para la rotación. Si rebota →
+  el formato scrollytelling no retiene de día y conviene priorizar juegos rápidos + curiosidades. Idem 🧩 memoria
+  cuando le toque turno diurno.
 - **Proposals:** próxima sólo con hipótesis GENUINAMENTE nueva (no variante de algo medido). Postales, mazo, V/F,
   mapas y calendarios ya están descartados. Pensar mecánicas nuevas de deleite, no más de lo mismo.
 - Regenerar el dataset M de la rueda desde data_plants.py en build-time (hoy snapshot estático).

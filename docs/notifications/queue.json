@@ -1,68 +1,44 @@
 {
-  "_updated_at": "2026-06-23T00:59:35.224Z",
+  "_updated_at": "2026-06-23T09:10:00-03:00",
   "notifications": [
     {
-      "id": "2026-06-22-a",
-      "title": "🥑 La palta esperó a un gigante",
-      "body": "Tu palta (B-22) evolucionó para que la tragara un perezoso gigante, extinto hace 13.000 años. Sobrevivió gracias al cultivo humano.",
+      "id": "2026-06-23-a",
+      "title": "🌺 La planta camaleón de tu jardín",
+      "body": "Tu hortensia (B-13) cambia de color según el suelo: clavos oxidados → azul; cal → rosa. Es la única que lo hace.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-22T08:30:00-03:00",
-      "expires_at": "2026-06-22T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-22T15:23:30.962Z",
+      "send_at": "2026-06-23T08:30:00-03:00",
+      "expires_at": "2026-06-23T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-22"
+      "created_by": "engagement-agent 2026-06-23"
     },
     {
-      "id": "2026-06-22-b",
-      "title": "🌿 Duelo de plantas: ¿cuánto sabés?",
-      "body": "6 duelos relámpago entre plantas tuyas: ¿cuál es nativa, cuál da fruta, cuál trepa? La última vez hiciste 6/6.",
-      "url": "https://gardening-chi.vercel.app/engage/duelo-jardin.html",
-      "format": "juego",
-      "send_at": "2026-06-22T13:00:00-03:00",
-      "expires_at": "2026-06-22T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-22T18:56:07.071Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-22"
-    },
-    {
-      "id": "2026-06-22-c",
-      "title": "🤍 El perfume más caro del jardín",
-      "body": "Tu gardenia (B-25): hacen falta 600 kg de flores para 1 litro de esencia. Coco Chanel la volvió perfume (Nº 22).",
-      "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
-      "format": "curio",
-      "send_at": "2026-06-22T19:30:00-03:00",
-      "expires_at": "2026-06-22T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-22T23:06:06.076Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-22"
-    },
-    {
-      "id": "surprise-mundo-2158",
-      "title": "🌍 Sorpresa: tu jardín es un mapa del mundo",
-      "body": "Sin moverte de Montevideo tenés plantas de 5 continentes. Deslizá y hacé el viaje.",
+      "id": "2026-06-23-b",
+      "title": "🌍 Tu jardín, vuelta al mundo",
+      "body": "Sin salir de Montevideo tenés plantas de 5 continentes. Deslizá y hacé el viaje por el origen de cada una.",
       "url": "https://gardening-chi.vercel.app/engage/mundo-jardin.html",
-      "send_at": "2026-06-22T21:58:40-03:00",
-      "expires_at": "2026-06-23T00:58:40-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-23T00:58:56.330Z",
+      "format": "experiencia",
+      "send_at": "2026-06-23T13:00:00-03:00",
+      "expires_at": "2026-06-23T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "sorpresa manual (pedido del usuario)"
+      "created_by": "engagement-agent 2026-06-23"
     },
     {
-      "id": "surprise-memoria-2159",
-      "title": "🧩 Sorpresa 2: memoria del jardín",
-      "body": "Un juego de pares con tus plantas y sus datos. ¿En cuántas movidas lo resolvés?",
-      "url": "https://gardening-chi.vercel.app/engage/memoria-jardin.html",
-      "send_at": "2026-06-22T21:59:18-03:00",
-      "expires_at": "2026-06-23T00:59:18-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-23T00:59:35.223Z",
+      "id": "2026-06-23-c",
+      "title": "🌶️ Tu árbol da pimienta rosa real",
+      "body": "La 'pimienta rosa' gourmet sale de tu aguaribay (B-7), no de un pimentero. Incas y guaraníes lo creían sagrado.",
+      "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
+      "format": "curio",
+      "send_at": "2026-06-23T19:30:00-03:00",
+      "expires_at": "2026-06-23T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "sorpresa manual (pedido del usuario)"
+      "created_by": "engagement-agent 2026-06-23"
     }
   ]
 }
