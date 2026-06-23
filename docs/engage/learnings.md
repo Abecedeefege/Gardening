@@ -26,7 +26,7 @@ El usuario abre 2-3/día sin importar cuántos mandes; más pushes solo diluye y
   con uso seguido.** Pico 15/06 (duelo 6/6 ×2). Fatiga clara 19/06. **Funcionan en ROTACIÓN con
   descanso:** dejar ≥2-3 días sin pushear un juego para que vuelva a sentirse fresco. NO apilar variantes
   nuevas (canibalizan los mismos 2-3 opens — ver "cuello de botella = volumen" abajo). Duelo es el más
-  fuerte (6/6 ×2); cual-sobra está aprobado y fijo en nav.
+  fuerte (6/6 ×2); **cual-sobra: REMOVIDO de la nav + página borrada por pedido del usuario (22/06) — NO re-promover.**
 - **ROTACIÓN-CON-DESCANSO CONFIRMADA (22/06).** Duelo, descansado 3 días (último push 19/06), volvió a
   enganchar SOLO: 6/6 ✓ + replay, 37s + 17s dwell, scroll 100%. Es la 2ª vez que duelo da 6/6. Fórmula
   validada: un juego ganador se "recarga" con 2-3 días de descanso. NO quemar el mismo juego días seguidos.

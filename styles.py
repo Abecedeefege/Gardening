@@ -391,6 +391,7 @@ h2.subbrand {
 /* TO-DO'S STRIP — botón pequeño + label "X tareas pendientes" */
 .todo-strip {
   display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap;
   margin: 0 0 var(--strip-gap);
   padding: 2px 4px;
 }
