@@ -1,44 +1,44 @@
 {
-  "_updated_at": "2026-06-23T22:46:05.977Z",
+  "_updated_at": "2026-06-24T09:05:00-03:00",
   "notifications": [
     {
-      "id": "2026-06-23-a",
-      "title": "🌺 La planta camaleón de tu jardín",
-      "body": "Tu hortensia (B-13) cambia de color según el suelo: clavos oxidados → azul; cal → rosa. Es la única que lo hace.",
+      "id": "2026-06-24-a",
+      "title": "🌎 La descubrió una polizona",
+      "body": "Tu Santa Rita (B-1) la halló Jeanne Baret, 1ª mujer en dar la vuelta al mundo — viajaba disfrazada de hombre.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-23T08:30:00-03:00",
-      "expires_at": "2026-06-23T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-23T12:31:46.412Z",
+      "send_at": "2026-06-24T08:30:00-03:00",
+      "expires_at": "2026-06-24T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-23"
+      "created_by": "engagement-agent 2026-06-24"
     },
     {
-      "id": "2026-06-23-b",
-      "title": "🌍 Tu jardín, vuelta al mundo",
-      "body": "Sin salir de Montevideo tenés plantas de 5 continentes. Deslizá y hacé el viaje por el origen de cada una.",
-      "url": "https://gardening-chi.vercel.app/engage/mundo-jardin.html",
+      "id": "2026-06-24-b",
+      "title": "🧩 ¿Tenés memoria de jardinero?",
+      "body": "6 pares: cada planta con su dato curioso. Dale vuelta a las cartas y encontralos. ¿En cuántas movidas?",
+      "url": "https://gardening-chi.vercel.app/engage/memoria-jardin.html",
       "format": "experiencia",
-      "send_at": "2026-06-23T13:00:00-03:00",
-      "expires_at": "2026-06-23T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-23T17:29:56.115Z",
+      "send_at": "2026-06-24T13:00:00-03:00",
+      "expires_at": "2026-06-24T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-23"
+      "created_by": "engagement-agent 2026-06-24"
     },
     {
-      "id": "2026-06-23-c",
-      "title": "🌶️ Tu árbol da pimienta rosa real",
-      "body": "La 'pimienta rosa' gourmet sale de tu aguaribay (B-7), no de un pimentero. Incas y guaraníes lo creían sagrado.",
+      "id": "2026-06-24-c",
+      "title": "🌺 La flor que dice si estás soltero",
+      "body": "Tu hibisco (B-4): en Asia la flor en el pelo izq = soltera, der = casada. Flor nacional de Malasia, Corea y Hawái.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-23T19:30:00-03:00",
-      "expires_at": "2026-06-23T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-23T22:46:05.976Z",
+      "send_at": "2026-06-24T19:30:00-03:00",
+      "expires_at": "2026-06-24T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-23"
+      "created_by": "engagement-agent 2026-06-24"
     }
   ]
 }
