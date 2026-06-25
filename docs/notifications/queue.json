@@ -1,44 +1,44 @@
 {
-  "_updated_at": "2026-06-24T23:42:03.335Z",
+  "_updated_at": "2026-06-25T09:05:12.000Z",
   "notifications": [
     {
-      "id": "2026-06-24-a",
-      "title": "🌎 La descubrió una polizona",
-      "body": "Tu Santa Rita (B-1) la halló Jeanne Baret, 1ª mujer en dar la vuelta al mundo — viajaba disfrazada de hombre.",
+      "id": "2026-06-25-a",
+      "title": "🍊 El cítrico más viejo del mundo",
+      "body": "Tu mandarina B-24, cargada de fruta en pleno invierno, es el ancestro de todas las naranjas y limones del mundo.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-24T08:30:00-03:00",
-      "expires_at": "2026-06-24T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-24T12:17:59.028Z",
+      "send_at": "2026-06-25T08:30:00-03:00",
+      "expires_at": "2026-06-25T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-24"
+      "created_by": "engagement-agent 2026-06-25"
     },
     {
-      "id": "2026-06-24-b",
-      "title": "🧩 ¿Tenés memoria de jardinero?",
-      "body": "6 pares: cada planta con su dato curioso. Dale vuelta a las cartas y encontralos. ¿En cuántas movidas?",
-      "url": "https://gardening-chi.vercel.app/engage/memoria-jardin.html",
+      "id": "2026-06-25-b",
+      "title": "🌍 Tu jardín dio la vuelta al mundo",
+      "body": "Tus plantas viajaron de Persia, Asia y el Mediterráneo hasta tu patio. Mirá el mapa de dónde viene cada una.",
+      "url": "https://gardening-chi.vercel.app/engage/mundo-jardin.html",
       "format": "experiencia",
-      "send_at": "2026-06-24T13:00:00-03:00",
-      "expires_at": "2026-06-24T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-24T17:26:56.396Z",
+      "send_at": "2026-06-25T13:00:00-03:00",
+      "expires_at": "2026-06-25T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-24"
+      "created_by": "engagement-agent 2026-06-25"
     },
     {
-      "id": "2026-06-24-c",
-      "title": "🌺 La flor que dice si estás soltero",
-      "body": "Tu hibisco (B-4): en Asia la flor en el pelo izq = soltera, der = casada. Flor nacional de Malasia, Corea y Hawái.",
+      "id": "2026-06-25-c",
+      "title": "🌿 Oler romero mejora la memoria",
+      "body": "Tu romero B-26 florece en pleno frío. Olerlo antes de un examen mejora la memoria un 15%, según estudios.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-24T19:30:00-03:00",
-      "expires_at": "2026-06-24T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-24T23:42:03.334Z",
+      "send_at": "2026-06-25T19:30:00-03:00",
+      "expires_at": "2026-06-25T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-24"
+      "created_by": "engagement-agent 2026-06-25"
     }
   ]
 }
