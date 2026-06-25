@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-25T12:18:17.614Z",
+  "_updated_at": "2026-06-25T17:29:27.974Z",
   "notifications": [
     {
       "id": "2026-06-25-a",
@@ -22,8 +22,8 @@
       "format": "experiencia",
       "send_at": "2026-06-25T13:00:00-03:00",
       "expires_at": "2026-06-25T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-25T17:29:27.972Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-06-25"
     },
