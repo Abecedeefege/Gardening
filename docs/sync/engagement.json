@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-25T00:25:40.955Z",
+  "_updated_at": "2026-06-25T13:54:06.343Z",
   "events": [
     {
       "_id": "mqbj9xdfoggdd8",
@@ -1395,6 +1395,23 @@
       "nid": "2026-06-24-c",
       "src": "push",
       "ts": "2026-06-25T00:25:41.120Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqtkcjpf5j9h8n",
+      "type": "notification_clicked",
+      "nid": "2026-06-25-a",
+      "page": "index.html",
+      "ts": "2026-06-25T13:54:07.681Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqtkcjpg1k9keb",
+      "type": "page_visit",
+      "page": "index.html",
+      "nid": "2026-06-25-a",
+      "src": "push",
+      "ts": "2026-06-25T13:54:07.681Z",
       "device": "sin-nombre"
     }
   ],
