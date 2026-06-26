@@ -2,50 +2,6 @@
   "_updated_at": "2026-06-25T17:47:43.940Z",
   "events": [
     {
-      "_id": "mqbj9xdfoggdd8",
-      "type": "notification_clicked",
-      "nid": "2026-06-12-f01",
-      "page": "engage/2026-06-12-curiosidades-2.html",
-      "ts": "2026-06-12T23:04:14.639Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqbj9xdf9c6dlu",
-      "type": "page_visit",
-      "page": "engage/2026-06-12-curiosidades-2.html",
-      "nid": "2026-06-12-f01",
-      "src": "push",
-      "ts": "2026-06-12T23:04:14.639Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqbja6yqj2avto",
-      "type": "dwell",
-      "seconds": 12,
-      "scroll_pct": 6,
-      "page": "engage/2026-06-12-curiosidades-2.html",
-      "ts": "2026-06-12T23:04:27.074Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqbjc1770i7n2k",
-      "type": "reaction",
-      "target": "r2-guayabo",
-      "value": "love",
-      "page": "engage/2026-06-12-curiosidades-2.html",
-      "ts": "2026-06-12T23:05:52.915Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqbjc4xzgvcfyy",
-      "type": "reaction",
-      "target": "r2-durazno",
-      "value": "love",
-      "page": "engage/2026-06-12-curiosidades-2.html",
-      "ts": "2026-06-12T23:05:57.767Z",
-      "device": "sin-nombre"
-    },
-    {
       "_id": "mqblxwiscffubv",
       "type": "notification_clicked",
       "nid": "2026-06-12-f03",
@@ -1441,5 +1397,12 @@
       "device": "sin-nombre"
     }
   ],
-  "daily_summary": {}
+  "daily_summary": {
+    "2026-06-12": {
+      "sent": 14,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    }
+  }
 }

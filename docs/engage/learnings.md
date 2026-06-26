@@ -13,9 +13,11 @@ El usuario abre 2-3/día sin importar cuántos mandes; más pushes solo diluye y
 
 ## Estado del sistema
 
-- Push subscription device `pix9`: **active** (desde 11/06). Verificado 25/06: sigue active.
+- Push subscription device `pix9`: **active** (desde 11/06). Verificado 26/06: sigue active.
 - Logging por `/api/feedback` (outbox localStorage, sin PAT). Confiable desde 15/06.
 - Abrir una notificación cuenta como `notification_clicked` vía /api/feedback.
+- Compactación al día (26/06): engagement.json y send_log.json trimados de eventos ≤12/06
+  → daily_summary {12/06: sent14/click1/visit1}. Ventana viva ahora 13–25/06 (rolling 14d).
 
 ## 🎯 SEÑAL REAL MEDIDA — qué engancha
 
@@ -24,9 +26,11 @@ El usuario abre 2-3/día sin importar cuántos mandes; más pushes solo diluye y
   carta por carta:** el 24/06 el curio de cierre (Hibisco) abrió por click directo pero el de
   apertura (Buganvilia/Santa Rita, 08:30) NO se abrió. Lectura: la SECCIÓN es el caballo ganador
   y el sostén fiable; el hit por-notificación depende del gancho y del slot. Sigue siendo el núcleo.
-- **🌍 mundo-jardin (creado por el usuario): asset GANADOR estable.** Ganó su test diurno limpio
-  23/06 (click + 😍love + 95s dwell scroll 100%). Rota CON descanso, igual que los juegos. NO es
-  proposal (lo creó el usuario), ya vive en engage/. Descansó el 24/06 → vuelve hoy 25/06 (slot 13:00).
+- **🌍 mundo-jardin (creado por el usuario): asset GANADOR estable — VALIDADO 2 veces.** Ganó su
+  test diurno limpio 23/06 (click + 😍love + 95s dwell scroll 100%) y RE-confirmó 25/06 (click +
+  😍love). Es el asset-experiencia más fiable que tenemos. Rota CON descanso (no 2 días seguidos):
+  pushado 23 y 25 → DESCANSA hoy 26/06 para no sobre-exponerlo. NO es proposal (lo creó el usuario),
+  ya vive en engage/.
 - **Juegos rápidos sobre SUS plantas (duelo/adiviná/quiz) = enganchan PERO se FATIGAN con uso
   seguido.** Funcionan en ROTACIÓN con descanso ≥2-3 días. Duelo es el más fuerte (6/6 ×2: 15/06 y
   re-test 22/06 con 37s+17s, scroll 100% tras 3 días → rotación-con-descanso CONFIRMADA).
@@ -65,21 +69,31 @@ El usuario abre 2-3/día sin importar cuántos mandes; más pushes solo diluye y
 - **24/06** — **1/3 CLICKS.** A(curio Buganvilia 08:30)→sin click; **B(🧩 memoria, test diurno limpio)→
   CERO engagement = FALLÓ**; C(curio Hibisco 19:30)→click directo. Lectura: memoria se benchea; el curio
   matinal no enganchó (¿gancho/horario?), el vespertino sí. Volver al core probado.
+- **25/06** — **2/3 CLICKS, día sólido.** A(curio Mandarina B-24, 08:30)→**CLICK** (13:54, el matinal
+  SÍ enganchó esta vez, a diferencia del 24); **B(🌍 mundo-jardin, 13:00)→CLICK + 😍love** (re-validación
+  limpia, 2da vez que ama mundo); C(curio Romero B-26, 19:30)→sin click. Lectura: el core probado
+  (curio + mundo) sigue rindiendo; el slot matinal es variable (engancha según gancho, no garantizado);
+  un curio por día sin click es ruido normal, no señal. mundo CONFIRMADO ×2 → rotar con descanso.
 
-## Decisiones de hoy (25/06)
+## Decisiones de hoy (26/06)
 
 - **Proposals:** NO hay pendientes vivas (todas dropped/promoted/removed). Nada que gestionar. NO se crea
-  proposal nueva: no tengo hipótesis genuinamente nueva (postales/mazo/V/F/mapas/calendarios/memory-match
-  ya descartados). Próxima proposal SOLO con mecánica realmente nueva de deleite o juego rápido.
-- **Estrategia: volver al CORE PROBADO** tras el fallo de memoria. Sin experimentos hoy. Estructura =
-  2 curiosidades frescas (sostén #1) + 1 experiencia GANADORA descansada (mundo-jardin, descansó ayer).
-- **Cola de 3:** (a) 08:30 curio **Mandarina B-24** (cargada de fruta en invierno = ancla estacional real;
-  ancestro de naranjas/limones, nombre de los mandarines chinos) → #curiosidades; (b) 13:00 **🌍 mundo-jardin**
-  (validado 23/06, descansó 24/06); (c) 19:30 curio **Romero B-26** (florece en pleno frío = ancla estacional;
-  oler romero mejora la memoria 15%, 'rocío del mar'). Curios sin solape con palta/gardenia/limonero/lavanda/
-  hortensia/aguaribay/buganvilia/hibisco (usadas días recientes). Ambos curios anclados en señal REAL de invierno.
-- **Compactación:** evento más viejo en engagement.json = 12/06 (13 días) < 14; send_log más viejo = 11/06
-  (≈14 días, borde) — se deja hoy, se trimea mañana cuando supere 14 días limpio. queue.json reescrita (solo hoy).
+  proposal nueva: sigue sin haber hipótesis genuinamente nueva (postales/mazo/V/F/mapas/calendarios/
+  memory-match ya descartados). Próxima proposal SOLO con mecánica realmente nueva de deleite o juego rápido.
+- **Estrategia: CORE PROBADO + rotación de ganadores con descanso.** mundo-jardin se pushó ayer (25) →
+  hoy DESCANSA para no sobre-exponerlo. Se trae de vuelta el **Duelo** (el juego más fuerte: 6/6 ×2,
+  último push 22/06 = 4 días de descanso ≥ umbral). Estructura = 2 curios frescos + 1 experiencia-juego rotada.
+- **Cola de 3:** (a) 08:30 curio **Liquidámbar B-37** (hoy silueta pelada de invierno = ancla estacional real;
+  storax/bálsamo que los mayas masticaban como chicle, 'ámbar líquido') → #curiosidades; (b) 13:00 **🌿 Duelo
+  de plantas** (descansó 4 días; gancho personal 'hiciste 6/6, ¿lo repetís?') → engage/duelo-jardin.html;
+  (c) 19:30 curio **Crespón B-9** (hoy caduco pelado = ancla invernal; nombre por Magnus von Lagerström,
+  flores de papel crepé) → #curiosidades. Curios sin solape con mandarina/romero (25) ni palta/gardenia/
+  limonero/lavanda/hortensia/aguaribay/buganvilia/hibisco (días recientes). Ambos anclados en señal REAL de invierno.
+- **Watch:** si el Duelo no engancha hoy (4 días de descanso, su mejor ventana), es señal de que los juegos
+  rápidos también se están agotando como categoría → el próximo turno priorizar mundo + curios y dejar
+  descansar TODOS los juegos ≥1 semana. Si SÍ engancha, confirma rotación-con-descanso para duelo igual que mundo.
+- **Compactación:** engagement.json y send_log.json trimados de eventos ≤12/06 → daily_summary
+  (12/06: sent14/click1/visit1). queue.json reescrita con los 3 de hoy.
 
 ## Contexto del jardín (junio 2026 = invierno, lat -34.9°S)
 

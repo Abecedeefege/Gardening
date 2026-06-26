@@ -1,44 +1,44 @@
 {
-  "_updated_at": "2026-06-25T22:47:19.492Z",
+  "_updated_at": "2026-06-26T09:10:00-03:00",
   "notifications": [
     {
-      "id": "2026-06-25-a",
-      "title": "🍊 El cítrico más viejo del mundo",
-      "body": "Tu mandarina B-24, cargada de fruta en pleno invierno, es el ancestro de todas las naranjas y limones del mundo.",
+      "id": "2026-06-26-a",
+      "title": "🍬 Los mayas masticaban tu liquidámbar",
+      "body": "Tu liquidámbar B-37, hoy silueta pelada de invierno, da un bálsamo ('storax') que los mayas masticaban como chicle hace 3000 años.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-25T08:30:00-03:00",
-      "expires_at": "2026-06-25T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-25T12:18:17.612Z",
+      "send_at": "2026-06-26T08:30:00-03:00",
+      "expires_at": "2026-06-26T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-25"
+      "created_by": "engagement-agent 2026-06-26"
     },
     {
-      "id": "2026-06-25-b",
-      "title": "🌍 Tu jardín dio la vuelta al mundo",
-      "body": "Tus plantas viajaron de Persia, Asia y el Mediterráneo hasta tu patio. Mirá el mapa de dónde viene cada una.",
-      "url": "https://gardening-chi.vercel.app/engage/mundo-jardin.html",
+      "id": "2026-06-26-b",
+      "title": "🌿 Duelo de plantas: ¿cuál gana?",
+      "body": "6 duelos relámpago entre tus plantas. La última vez hiciste 6/6 — ¿lo repetís sin fallar ninguno?",
+      "url": "https://gardening-chi.vercel.app/engage/duelo-jardin.html",
       "format": "experiencia",
-      "send_at": "2026-06-25T13:00:00-03:00",
-      "expires_at": "2026-06-25T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-25T17:29:27.972Z",
+      "send_at": "2026-06-26T13:00:00-03:00",
+      "expires_at": "2026-06-26T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-25"
+      "created_by": "engagement-agent 2026-06-26"
     },
     {
-      "id": "2026-06-25-c",
-      "title": "🌿 Oler romero mejora la memoria",
-      "body": "Tu romero B-26 florece en pleno frío. Olerlo antes de un examen mejora la memoria un 15%, según estudios.",
+      "id": "2026-06-26-c",
+      "title": "🌸 Flores de papel en tu jardín",
+      "body": "Tu crespón B-9, hoy caduco y pelado, debe su nombre a unas flores de verano que parecen de papel crepé arrugado.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-25T19:30:00-03:00",
-      "expires_at": "2026-06-25T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-25T22:47:19.491Z",
+      "send_at": "2026-06-26T19:30:00-03:00",
+      "expires_at": "2026-06-26T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-25"
+      "created_by": "engagement-agent 2026-06-26"
     }
   ]
 }
