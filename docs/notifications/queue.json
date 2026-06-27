@@ -1,44 +1,44 @@
 {
-  "_updated_at": "2026-06-26T23:35:10.435Z",
+  "_updated_at": "2026-06-27T09:05:00.000Z",
   "notifications": [
     {
-      "id": "2026-06-26-a",
-      "title": "🍬 Los mayas masticaban tu liquidámbar",
-      "body": "Tu liquidámbar B-37, hoy silueta pelada de invierno, da un bálsamo ('storax') que los mayas masticaban como chicle hace 3000 años.",
+      "id": "2026-06-27-a",
+      "title": "🌳 Tu ciruelo viene de un solo árbol",
+      "body": "Todos los ciruelos púrpura del mundo, tu F-4 incluido, descienden de un único árbol traído de Persia en 1880.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-26T08:30:00-03:00",
-      "expires_at": "2026-06-26T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-26T12:10:12.440Z",
+      "send_at": "2026-06-27T08:30:00-03:00",
+      "expires_at": "2026-06-27T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-26"
+      "created_by": "engagement-agent 2026-06-27"
     },
     {
-      "id": "2026-06-26-b",
-      "title": "🌿 Duelo de plantas: ¿cuál gana?",
-      "body": "6 duelos relámpago entre tus plantas. La última vez hiciste 6/6 — ¿lo repetís sin fallar ninguno?",
-      "url": "https://gardening-chi.vercel.app/engage/duelo-jardin.html",
+      "id": "2026-06-27-b",
+      "title": "🌍 ¿De dónde viene cada planta tuya?",
+      "body": "Tu jardín es un mapa del mundo: Asia, los Andes, el Mediterráneo. Mirá de dónde viajó cada planta hasta acá.",
+      "url": "https://gardening-chi.vercel.app/engage/mundo-jardin.html",
       "format": "experiencia",
-      "send_at": "2026-06-26T13:00:00-03:00",
-      "expires_at": "2026-06-26T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-26T16:59:54.219Z",
+      "send_at": "2026-06-27T13:00:00-03:00",
+      "expires_at": "2026-06-27T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-26"
+      "created_by": "engagement-agent 2026-06-27"
     },
     {
-      "id": "2026-06-26-c",
-      "title": "🌸 Flores de papel en tu jardín",
-      "body": "Tu crespón B-9, hoy caduco y pelado, debe su nombre a unas flores de verano que parecen de papel crepé arrugado.",
+      "id": "2026-06-27-c",
+      "title": "🌺 Las flores que se comen de tu jardín",
+      "body": "Tu guayabo F-1, nativo y verde todo el invierno: sus pétalos son dulces y se comían como golosina acá en Uruguay.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-26T19:30:00-03:00",
-      "expires_at": "2026-06-26T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-26T23:35:10.434Z",
+      "send_at": "2026-06-27T19:30:00-03:00",
+      "expires_at": "2026-06-27T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-26"
+      "created_by": "engagement-agent 2026-06-27"
     }
   ]
 }

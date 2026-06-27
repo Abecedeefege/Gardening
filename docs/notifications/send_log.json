@@ -2,132 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-06-13-a",
-      "ts": "2026-06-13T11:55:04.275Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-s01",
-      "ts": "2026-06-13T13:33:49.824Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-s02",
-      "ts": "2026-06-13T14:01:57.951Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-s03",
-      "ts": "2026-06-13T14:44:04.347Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-s04",
-      "ts": "2026-06-13T15:12:08.565Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-s05",
-      "ts": "2026-06-13T15:40:08.720Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-s06",
-      "ts": "2026-06-13T16:08:19.238Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-s07",
-      "ts": "2026-06-13T16:36:18.881Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-s08",
-      "ts": "2026-06-13T17:40:17.730Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-s09",
-      "ts": "2026-06-13T17:40:17.860Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-s10",
-      "ts": "2026-06-13T19:39:13.448Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-s11",
-      "ts": "2026-06-13T19:39:13.515Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-s12",
-      "ts": "2026-06-13T19:39:13.571Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-s13",
-      "ts": "2026-06-13T19:39:13.623Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-r01",
-      "ts": "2026-06-13T21:18:42.061Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-r02",
-      "ts": "2026-06-13T21:34:20.469Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-r03",
-      "ts": "2026-06-13T21:48:24.773Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-r04",
-      "ts": "2026-06-13T22:02:36.635Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-r05",
-      "ts": "2026-06-13T22:16:31.417Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-r06",
-      "ts": "2026-06-13T22:30:36.028Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-13-r07",
-      "ts": "2026-06-13T22:51:47.471Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-06-13-r08",
       "ts": "2026-06-14T00:09:09.786Z",
       "status_code": 201
@@ -859,6 +733,9 @@
     },
     "2026-06-12": {
       "sent": 14
+    },
+    "2026-06-13": {
+      "sent": 21
     }
   }
 }
