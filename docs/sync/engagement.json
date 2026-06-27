@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-27T21:02:14.083Z",
+  "_updated_at": "2026-06-27T21:02:19.571Z",
   "events": [
     {
       "_id": "mqd39qiqlb6m9m",
@@ -1252,6 +1252,15 @@
       "value": "love",
       "page": "engage/mundo-jardin.html",
       "ts": "2026-06-27T21:02:14.404Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqwuixld1icuzx",
+      "type": "dwell",
+      "seconds": 97,
+      "scroll_pct": 100,
+      "page": "engage/mundo-jardin.html",
+      "ts": "2026-06-27T21:02:20.305Z",
       "device": "sin-nombre"
     }
   ],
