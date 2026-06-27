@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-27T09:05:00.000Z",
+  "_updated_at": "2026-06-27T12:54:26.309Z",
   "events": [
     {
       "_id": "mqd39qiqlb6m9m",
@@ -1200,6 +1200,32 @@
       "value": "6/6",
       "page": "engage/duelo-jardin.html",
       "ts": "2026-06-26T17:06:11.576Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqv6np9dnojnkd",
+      "type": "dwell",
+      "seconds": 93,
+      "scroll_pct": 100,
+      "page": "engage/duelo-jardin.html",
+      "ts": "2026-06-26T17:06:25.825Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqwd3hibnayprg",
+      "type": "notification_clicked",
+      "nid": "2026-06-27-a",
+      "page": "index.html",
+      "ts": "2026-06-27T12:54:26.142Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqwd3hib6wqkp8",
+      "type": "page_visit",
+      "page": "index.html",
+      "nid": "2026-06-27-a",
+      "src": "push",
+      "ts": "2026-06-27T12:54:26.142Z",
       "device": "sin-nombre"
     }
   ],
