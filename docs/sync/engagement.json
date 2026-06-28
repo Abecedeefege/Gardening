@@ -1,15 +1,6 @@
 {
-  "_updated_at": "2026-06-27T21:02:19.571Z",
+  "_updated_at": "2026-06-28T09:04:00.000Z",
   "events": [
-    {
-      "_id": "mqd39qiqlb6m9m",
-      "type": "dwell",
-      "seconds": 3,
-      "scroll_pct": 0,
-      "page": "engage/2026-06-13-rueda-ano.html",
-      "ts": "2026-06-14T01:11:44.257Z",
-      "device": "sin-nombre"
-    },
     {
       "_id": "mqfe125cohy7s7",
       "type": "notification_clicked",
@@ -1276,6 +1267,12 @@
       "clicked": 3,
       "visits": 4,
       "approvals": 1
+    },
+    "2026-06-14": {
+      "sent": 39,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
     }
   }
 }

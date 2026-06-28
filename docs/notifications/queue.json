@@ -1,44 +1,44 @@
 {
-  "_updated_at": "2026-06-27T23:34:00.432Z",
+  "_updated_at": "2026-06-28T09:04:00-03:00",
   "notifications": [
     {
-      "id": "2026-06-27-a",
-      "title": "🌳 Tu ciruelo viene de un solo árbol",
-      "body": "Todos los ciruelos púrpura del mundo, tu F-4 incluido, descienden de un único árbol traído de Persia en 1880.",
+      "id": "2026-06-28-a",
+      "title": "🧡 Tu caqui da 'fruta de los dioses'",
+      "body": "Diospyros, su nombre griego, significa 'fruto de los dioses'. En Japón hay caquis de 600 años dando fruta. Tu B-41 carga naranja ahora.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-27T08:30:00-03:00",
-      "expires_at": "2026-06-27T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-27T12:52:01.511Z",
+      "send_at": "2026-06-28T08:30:00-03:00",
+      "expires_at": "2026-06-28T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-27"
+      "created_by": "engagement-agent 2026-06-28"
     },
     {
-      "id": "2026-06-27-b",
-      "title": "🌍 ¿De dónde viene cada planta tuya?",
-      "body": "Tu jardín es un mapa del mundo: Asia, los Andes, el Mediterráneo. Mirá de dónde viajó cada planta hasta acá.",
-      "url": "https://gardening-chi.vercel.app/engage/mundo-jardin.html",
+      "id": "2026-06-28-b",
+      "title": "🌿 Duelo de plantas: ¿repetís el 6/6?",
+      "body": "6 rounds rápidos enfrentando plantas tuyas. La última vez hiciste pleno, 6/6. ¿Lo bordás de nuevo hoy?",
+      "url": "https://gardening-chi.vercel.app/engage/duelo-jardin.html",
       "format": "experiencia",
-      "send_at": "2026-06-27T13:00:00-03:00",
-      "expires_at": "2026-06-27T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-27T17:07:46.425Z",
+      "send_at": "2026-06-28T13:00:00-03:00",
+      "expires_at": "2026-06-28T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-27"
+      "created_by": "engagement-agent 2026-06-28"
     },
     {
-      "id": "2026-06-27-c",
-      "title": "🌺 Las flores que se comen de tu jardín",
-      "body": "Tu guayabo F-1, nativo y verde todo el invierno: sus pétalos son dulces y se comían como golosina acá en Uruguay.",
+      "id": "2026-06-28-c",
+      "title": "💗 El mirto, la planta de Venus",
+      "body": "Sagrado para Venus: las novias romanas se coronaban de mirto. De sus bayas sale el licor sardo. Tu B-27 sigue verde en invierno.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-27T19:30:00-03:00",
-      "expires_at": "2026-06-27T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-27T23:34:00.430Z",
+      "send_at": "2026-06-28T19:30:00-03:00",
+      "expires_at": "2026-06-28T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-27"
+      "created_by": "engagement-agent 2026-06-28"
     }
   ]
 }

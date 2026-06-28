@@ -5,7 +5,7 @@ No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
 ## ⏱️ CADENCIA VIGENTE: 3 pushes/día — fijada por el usuario el 18/06
 
-La cola se escribe A MANO (3 entries pending en queue.json), NO con `tools/gen_queue.py`.
+Cola escrita A MANO (3 entries pending en queue.json), NO con `tools/gen_queue.py`.
 Slots base: 08:30 / 13:00 / 19:30 (-03:00). Primer send_at ≥60 min después de la corrida
 (margen de deploy de Vercel para páginas linkeadas). expires_at = mismo día 22:00 -03:00.
 Cada notificación a un destino DISTINTO. **3 pushes curados ganan a 20 — CONFIRMADO.**
@@ -13,11 +13,11 @@ El usuario abre 2-3/día sin importar cuántos mandes; más pushes solo diluye y
 
 ## Estado del sistema
 
-- Push subscription device `pix9`: **active** (desde 11/06). Verificado 27/06: sigue active.
+- Push subscription device `pix9`: **active** (desde 11/06). Verificado 28/06: sigue active.
 - Logging por `/api/feedback` (outbox localStorage, sin PAT). Confiable desde 15/06.
 - Abrir una notificación cuenta como `notification_clicked` vía /api/feedback.
-- Compactación al día (27/06): engagement.json y send_log.json trimados de eventos ≤13/06
-  → daily_summary {12/06: sent14/click1/visit1, 13/06: sent21/click3/visit4/appr1}. Ventana viva 14–26/06.
+- Compactación al día (28/06): engagement.json y send_log.json trimados de eventos ≤14/06
+  → daily_summary (14/06: sent39/40). Ventana viva 15–27/06.
 - **OJO con el cutoff de datos:** engagement.json se actualiza cuando el usuario interactúa, no a las 22:00.
   El push C (19:30) suele mandarse tarde (~20:30 local) y su click cae DESPUÉS del último update del día →
   el dato del slot vespertino casi siempre llega recién a la corrida del día siguiente. No leer "C sin click"
@@ -26,31 +26,27 @@ El usuario abre 2-3/día sin importar cuántos mandes; más pushes solo diluye y
 ## 🎯 SEÑAL REAL MEDIDA — qué engancha
 
 - **Curiosidades verificadas (#curiosidades) = contenido #1 y el MÁS resiliente.** Abre casi
-  siempre por click directo. Confirmado 12-13/06 (😍 +104s), 17-23/06. **PERO no es infalible
-  carta por carta:** el 24/06 el curio de cierre (Hibisco) abrió por click directo pero el de
-  apertura (Buganvilia/Santa Rita, 08:30) NO se abrió. Lectura: la SECCIÓN es el caballo ganador
-  y el sostén fiable; el hit por-notificación depende del gancho y del slot. Sigue siendo el núcleo.
-- **🌍 mundo-jardin (creado por el usuario): asset GANADOR estable — VALIDADO 2 veces.** Ganó su
-  test diurno limpio 23/06 (click + 😍love + 95s dwell scroll 100%) y RE-confirmó 25/06 (click +
-  😍love). Es el asset-experiencia más fiable que tenemos. Rota CON descanso (no 2 días seguidos):
-  pushado 23 y 25 → DESCANSA hoy 26/06 para no sobre-exponerlo. NO es proposal (lo creó el usuario),
-  ya vive en engage/.
-- **Juegos rápidos sobre SUS plantas (duelo/adiviná/quiz) = enganchan PERO se FATIGAN con uso
-  seguido.** Funcionan en ROTACIÓN con descanso ≥2-3 días. Duelo es el más fuerte (6/6 ×2: 15/06 y
-  re-test 22/06 con 37s+17s, scroll 100% tras 3 días → rotación-con-descanso CONFIRMADA).
-  **cual-sobra: REMOVIDO de la nav + página borrada por pedido del usuario (22/06) — NO re-promover.**
-- **🧩 memoria-jardin (memory match, creado por el usuario): FALLÓ su test diurno limpio (24/06).**
-  Slot 13:00 dedicado, SIN competencia, día de bajo volumen → CERO engagement (sin click, sin
-  page_visit, sin reacción). Es el escenario IDEAL que mundo SÍ aprovechó el 23 — y memoria no.
-  **Veredicto: memoria NO retiene; se BENCHEA de la rotación de push.** No se borra el archivo (es
-  creación del usuario; sigue accesible en engage/), pero NO se vuelve a pushear. El gemelo ganó
-  (mundo) y el gemelo perdió (memoria): el formato memory-match no es lo que engancha a ESTE usuario.
+  siempre por click directo. Confirmado 12-13/06, 17-23/06, 25-27/06. **PERO no es infalible carta
+  por carta:** el hit por-notificación depende del gancho y del slot (matinal variable). La SECCIÓN
+  es el caballo ganador y el sostén fiable. Sigue siendo el núcleo.
+- **🌍 mundo-jardin (creado por el usuario): asset GANADOR — VALIDADO ×3.** Ganó test diurno limpio
+  23/06 (click+😍love+95s scroll 100%), RE-confirmó 25/06 (click+😍love) y 27/06 (click+😍love+97s
+  scroll 100%). El asset-experiencia más fiable que tenemos. Patrón de rotación: día por medio
+  (23/25/27). Pushado 27 → DESCANSA hoy 28. NO es proposal (lo creó el usuario), ya vive en engage/.
+- **🌿 Duelo = juego rápido GANADOR, 6/6 ×3** (15/06, 22/06, 26/06, todos pleno). Es el juego más
+  fuerte. Se FATIGA con uso seguido → rota día por medio igual que mundo (22/26/28). Pushado 26,
+  descansó 27 → HOY 28 vuelve. Los juegos rápidos NO están agotados como categoría: lo que mata al
+  juego es el uso seguido, no el formato.
+- **cual-sobra: REMOVIDO de la nav + página borrada por pedido del usuario (22/06) — NO re-promover.**
+- **🧩 memoria-jardin (memory match, del usuario): FALLÓ test diurno limpio (24/06) — 0 engagement.**
+  Bencheada de la rotación de push (archivo conservado por ser creación del usuario). El formato
+  memory-match NO engancha a este usuario.
 - **Postales / curiosidad-ESTACIONAL como experiencia separada = LÍNEA CERRADA (22/06).** v1 (20/06)
   amó (click+3 reacc+60s) pero NO aprobó; v2 (21/06) rebotó 5s/10%. El amor de v1 era NOVEDAD, no
   formato. El contenido-curiosidad ya vive y convierte en la sección fija #curiosidades — ahí va, no aparte.
 - **Rueda del año:** aprobada (87s) y promovida (nav), pero sobre-expuesta → FUERA del push desde 17/06.
 - **Perdedores confirmados:** (a) herramientas utilitarias (mapas/calendarios/dashboards: sol-jardin ✗×3,
-  ano-jardin ✗); (b) formatos LENTOS (mazo flip-card ✗×3); (c) memory-match (memoria ✗, test limpio).
+  ano-jardin ✗); (b) formatos LENTOS (mazo flip-card ✗×3); (c) memory-match (test limpio).
   El usuario quiere **deleite + contenido-curiosidad + juego rápido**, NO herramientas ni mecánicas lentas.
 
 ## ✅ APRENDIZAJE CLAVE — el cuello de botella era VOLUMEN (18/06) + el formato (24/06)
@@ -58,62 +54,53 @@ El usuario abre 2-3/día sin importar cuántos mandes; más pushes solo diluye y
 - Proposals previas (mazo ×2, V/F) fracasaron SEPULTADAS entre 13-39 pushes — nunca tuvieron test limpio.
   La cadencia baja (3/día) es la única que da test justo. ESO se resolvió.
 - PERO un test limpio también puede dar NEGATIVO real: memoria tuvo el día perfecto (24/06) y aun así 0.
-  Cuando hay test limpio y no engancha, es señal de FORMATO, no de volumen. Memoria es el primer caso así.
+  Cuando hay test limpio y no engancha, es señal de FORMATO, no de volumen.
+- **Patrón estable de invierno: 2 curios frescos + 1 ganador-experiencia rotado día por medio
+  (mundo ↔ duelo).** Es el core que rinde 2-3 clicks/día sin desgaste. No tocar hasta tener mecánica
+  GENUINAMENTE nueva que probar.
 
 ## Conclusiones de los pushN enviados hasta ahora (por feedback real)
 
-- **18/06** — **3 pushes. GANADOR.** A(curio)→click; B(cual-sobra 13:00)→click+juego+APROBADA; C tarde.
-- **19/06** — 3 pushes. Curiosidades RE-confirmada (A→click); juegos empezando a fatigar (B/C bounce).
-- **20/06** — **3/3 CLICKS.** A(curio)→click; B(Postales v1)→click+3 reacc+60s SIN aprobar; C(curio)→click.
-- **21/06** — **3/3 CLICKS pero proposal MUERTA.** Postales v2 abrió pero rebotó 5s/10% → cierra postales.
-- **22/06** — A(curio Palta)→CLICK; B(Duelo descansado 3 días)→**6/6 + replay, 37s+17s, 100%**; C(curio
-  Gardenia)→sin click. Medianoche: el usuario se auto-mandó 🌍 mundo + 🧩 memoria → busca JUEGOS/experiencias.
-- **23/06** — **3/3 CLICKS.** A(curio Hortensia)→click; **B(🌍 mundo, 1er test diurno)→click + 😍love +
-  95s scroll 100% = GANÓ, asset validado**; C(curio Aguaribay)→click.
-- **24/06** — **1/3 CLICKS.** A(curio Buganvilia 08:30)→sin click; **B(🧩 memoria, test diurno limpio)→
-  CERO engagement = FALLÓ**; C(curio Hibisco 19:30)→click directo. Lectura: memoria se benchea; el curio
-  matinal no enganchó (¿gancho/horario?), el vespertino sí. Volver al core probado.
-- **25/06** — **2/3 CLICKS, día sólido.** A(curio Mandarina B-24, 08:30)→**CLICK** (13:54, el matinal
-  SÍ enganchó esta vez, a diferencia del 24); **B(🌍 mundo-jardin, 13:00)→CLICK + 😍love** (re-validación
-  limpia, 2da vez que ama mundo); C(curio Romero B-26, 19:30)→sin click. Lectura: el core probado
-  (curio + mundo) sigue rindiendo; el slot matinal es variable; mundo CONFIRMADO ×2 → rotar con descanso.
-- **26/06** — **WIN del Duelo, confirmación clave.** A(curio Liquidámbar B-37, 08:30)→sin click (matinal
-  variable otra vez); **B(🌿 Duelo, 13:00, descansó 4 días)→CLICK + jugado COMPLETO 6/6** (17:05Z, 3ª vez 6/6).
-  C(curio Crespón B-9, 19:30)→sin dato (se mandó 23:35Z, después del último update del engagement.json a las
-  17:06Z → el click vespertino, si lo hubo, no quedó capturado). **Veredicto del watch del 25:** el Duelo SÍ
-  enganchó tras descanso → rotación-con-descanso CONFIRMADA para duelo igual que mundo. Los juegos rápidos NO
-  están agotados como categoría: lo que mata al juego es el uso seguido, no el formato. Duelo y mundo son los
-  dos assets-experiencia fiables, ambos en rotación con ≥2-3 días de descanso.
+- **18/06** — 3 pushes. GANADOR. A(curio)→click; B(cual-sobra)→click+juego+APROBADA; C tarde.
+- **20/06** — 3/3 CLICKS. A(curio); B(Postales v1)→click+3 reacc+60s SIN aprobar; C(curio).
+- **22/06** — A(curio Palta)→CLICK; B(Duelo, descansó 3d)→**6/6 +replay, 37+17s, 100%**; C(curio) sin click.
+- **23/06** — 3/3 CLICKS. A(curio); **B(🌍 mundo, 1er test diurno)→click+😍love+95s 100% = GANÓ**; C(curio).
+- **24/06** — 1/3. A(curio matinal) sin click; **B(🧩 memoria, test limpio)→0 = FALLÓ**; C(curio) click.
+- **25/06** — 2/3. A(curio Mandarina, matinal)→CLICK; **B(🌍 mundo)→CLICK+😍love** (re-validó); C sin click.
+- **26/06** — A(curio Liquidámbar) sin click; **B(🌿 Duelo, descansó 4d)→CLICK + 6/6 COMPLETO** (3ª vez 6/6);
+  C(curio Crespón) sin dato (se mandó 23:35Z, tras el último update del engagement.json).
+- **27/06** — **2/3 confirmados.** A(curio Ciruelo Pissardii F-4, matinal, hook Persia/1880)→**CLICK 12:54Z**
+  (el matinal SÍ engancha con hook fuerte — patrón confirmado); **B(🌍 mundo, día por medio)→CLICK+😍love+97s
+  scroll 100%** (3ª validación de mundo, sostiene día por medio); C(curio Guayabo F-1) sin dato (se mandó
+  23:34Z, después del cutoff). Lectura: core probado intacto; matinal rinde si el gancho es fuerte.
 
-## Decisiones de hoy (27/06)
+## Decisiones de hoy (28/06)
 
 - **Proposals:** NO hay pendientes vivas (todas dropped/promoted/removed). Nada que gestionar. NO se crea
   proposal nueva: sigue sin haber hipótesis genuinamente nueva (postales/mazo/V/F/mapas/calendarios/
-  memory-match ya descartados, y duelo recién re-confirmó el core). Próxima proposal SOLO con mecánica
-  realmente nueva de deleite o juego rápido — no más variantes de lo medido.
-- **Estrategia: CORE PROBADO + rotación de ganadores con descanso.** Duelo se pushó AYER (26) y ganó 6/6 →
-  hoy DESCANSA (no 2 días seguidos). Se trae de vuelta **🌍 mundo-jardin** (validado ×2, último push 25/06 =
-  2 días de descanso ≥ umbral). Estructura = 2 curios frescos + 1 experiencia rotada (mundo).
-- **Cola de 3:** (a) 08:30 curio **Ciruelo Pissardii F-4** (hoy pelado de invierno = ancla real; todos los
-  ciruelos púrpura del mundo descienden de un único árbol traído de Persia en 1880 — hook fuerte para el slot
-  matinal variable) → #curiosidades; (b) 13:00 **🌍 mundo-jardin** (de dónde viene cada planta; ángulo
-  "mapa del mundo" sin repetir el gancho de love anterior) → engage/mundo-jardin.html; (c) 19:30 curio
-  **Guayabo F-1** (nativo perenne, verde aun en invierno mientras los caducos están pelados = contraste
-  estacional real; pétalos dulces comestibles, golosina de chicos en UY) → #curiosidades. Curios sin solape
-  con liquidámbar/crespón (26), mandarina/romero (25), ni palta/gardenia/limonero/lavanda/hortensia/
-  aguaribay/buganvilia/hibisco (días recientes). Ambos anclados en señal REAL de invierno.
-- **Watch:** ¿el slot matinal engancha con un hook fuerte (ciruelo/Persia/1880)? Es el patrón a confirmar:
-  el matinal rinde según el gancho, no garantizado. Y ¿mundo sostiene tras 2 días de descanso o necesita ≥3?
-- **Compactación:** engagement.json y send_log.json trimados de eventos ≤13/06 → daily_summary
-  (13/06: sent21/click3/visit4/appr1). queue.json reescrita con los 3 de hoy.
+  memory-match ya descartados). Próxima proposal SOLO con mecánica realmente nueva de deleite o juego rápido.
+- **Estrategia: CORE PROBADO + rotación de ganadores día por medio.** Mundo se pushó AYER (27) → hoy DESCANSA.
+  Vuelve **🌿 Duelo** (6/6 ×3, último push 26 → 1 día de descanso, su cadencia día-por-medio 22/26/28).
+  Estructura = 2 curios frescos + 1 juego rotado (duelo).
+- **Cola de 3:** (a) 08:30 curio **Caqui B-41** (caduco que CARGA fruta naranja ahora en invierno = ancla real;
+  Diospyros='fruto de los dioses', caquis de 600 años en Japón — hook fuerte para el slot matinal variable)
+  → #curiosidades; (b) 13:00 **🌿 Duelo** (gancho "¿repetís el 6/6?") → engage/duelo-jardin.html; (c) 19:30
+  curio **Mirto B-27** (perenne, sigue verde en invierno = contraste estacional real; sagrado para Venus,
+  licor sardo) → #curiosidades. Curios sin solape con ciruelo/guayabo (27), liquidámbar/crespón (26),
+  mandarina/romero (25), ni palta/gardenia/limonero/lavanda/hortensia/aguaribay/buganvilia/hibisco recientes.
+- **Watch:** ¿el matinal engancha otra vez con hook fuerte (caqui/fruto de los dioses/600 años)? Y ¿Duelo
+  sostiene 6/6 / engancha tras 1 día de descanso (vs los ≥3-4 días que tuvo en sus wins previos)?
+- **Compactación:** engagement.json y send_log.json trimados de eventos ≤14/06 → daily_summary
+  (14/06: sent 39/40). queue.json reescrita con los 3 de hoy.
 
 ## Contexto del jardín (junio 2026 = invierno, lat -34.9°S)
 
 - Jardín en DORMANCIA: poco real que hacer. Tareas casi todas `done`; las `active` son IDs scheduleadas para
   floración/ID de primavera. **NO inventar urgencia de invierno.**
-- Señales REALES de invierno (sirven para curios): cítricos cargados (mandarina B-24 FRUIT jun-ago; limonero
-  B-23 fruta casi todo el año); romero B-26 FLOR jun-oct; caducos pelados (durazno B-30/35, crespón B-9,
-  liquidámbar B-37 silueta tras color otoñal, con su storax).
+- Señales REALES de invierno (sirven para curios): cítricos cargados (mandarina B-24 FRUIT abr-ago; limonero
+  B-23 fruta casi todo el año); **caqui B-41 FRUIT may-jul** (fruta naranja en árbol pelado); romero B-26 FLOR
+  jun-oct; caducos pelados (durazno B-30/35, crespón B-9, liquidámbar B-37, ciruelos F-4/B-38); perennes que
+  siguen verdes (mirto B-27, guayabo F-1, lavanda B-19).
 - Poda: jun-jul **solo limpiezas** + trasplantes en dormancia. **Fines jul-ago**: durazno B-30/35, ciruelos
   F-4/B-38, caqui B-41, crespón B-9, althea B-18, hibisco B-4. **Sept post-helada**: buganvilia B-1, lantana
   B-29, cítricos, paltas.
@@ -122,13 +109,10 @@ El usuario abre 2-3/día sin importar cuántos mandes; más pushes solo diluye y
 
 ## TODO pendiente
 
-- ✅ RESUELTO 23/06: 🌍 mundo-jardin pasó su test diurno → asset ganador estable (rotar con descanso).
-- ✅ RESUELTO 24/06: 🧩 memoria-jardin FALLÓ su test diurno limpio → bencheada de la rotación de push (archivo
-  conservado por ser creación del usuario; no re-pushear). El formato memory-match no engancha a este usuario.
-- **Curios frescos disponibles** (no usados recientemente, fun_fact verificado): hiedra (vive 400 años, 2 fases
-  juvenil/adulta), clivia (vive 100 años, honra a duquesa de Northumberland), espada/sansevieria (NASA purifica
-  aire, da O2 de noche), caqui B-41 (Diospyros='fruto de los dioses', caquis de 600 años en Japón), mirto B-27
-  (sagrado para Venus, licor sardo). Usados recién: liquidámbar/crespón (26), ciruelo Pissardii/guayabo (27).
+- **Curios frescos disponibles** (no usados recientemente, fun_fact verificado en data_plants.py): hiedra
+  (vive 400 años, fases juvenil/adulta), clivia (vive 100 años, honra duquesa de Northumberland), espada/
+  sansevieria (NASA purifica aire, da O2 de noche), limonero B-23 (no existe silvestre, híbrido cidro×naranja
+  amarga, cáscara 4× más vit C que el jugo). Usados recién: caqui/mirto (28), ciruelo/guayabo (27).
 - **Proposals:** próxima SOLO con hipótesis GENUINAMENTE nueva (no variante de algo medido). Descartados:
   postales, mazo, V/F, mapas, calendarios, memory-match. Pensar mecánicas nuevas, no más de lo mismo.
 - Regenerar el dataset M de la rueda desde data_plants.py en build-time (hoy snapshot estático).
