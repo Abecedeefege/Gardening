@@ -73,25 +73,49 @@ El usuario abre 2-3/día sin importar cuántos mandes; más pushes solo diluye y
   (el matinal SÍ engancha con hook fuerte — patrón confirmado); **B(🌍 mundo, día por medio)→CLICK+😍love+97s
   scroll 100%** (3ª validación de mundo, sostiene día por medio); C(curio Guayabo F-1) sin dato (se mandó
   23:34Z, después del cutoff). Lectura: core probado intacto; matinal rinde si el gancho es fuerte.
+- **28/06** — **0/2 al cierre de datos (cutoff engagement.json 21:03Z), C pendiente.** A(curio Caqui B-41,
+  matinal, hook 'fruto de los dioses'/600 años, sent 11:46Z)→SIN click; B(🌿 Duelo, sent 16:36Z, tras SOLO
+  1 día de descanso)→SIN click ni juego a las 4.5h. C(curio Mirto B-27) se manda 19:30 local (cae tras el
+  cutoff → su dato llega mañana). Lectura preliminar: **día flojo**. Dos hipótesis de la corrida matinal NO
+  se confirmaron — (a) matinal con hook fuerte NO siempre engancha (falló hoy, vs 27/06 que sí); (b) **Duelo
+  con solo 1 día de descanso NO repitió** (sus 6/6 previos tuvieron ≥3-4 días de descanso → el juego necesita
+  MÁS reposo del que se le dio). Posible fatiga acumulada del core probado → **bien timing para inyectar
+  novedad** (las 2 experiencias nuevas de cero del ciclo 29).
 
-## Decisiones de hoy (28/06)
+## Corrida matinal 28/06 (ya hecha, commit 5e44a3b)
 
-- **Proposals:** NO hay pendientes vivas (todas dropped/promoted/removed). Nada que gestionar. NO se crea
-  proposal nueva: sigue sin haber hipótesis genuinamente nueva (postales/mazo/V/F/mapas/calendarios/
-  memory-match ya descartados). Próxima proposal SOLO con mecánica realmente nueva de deleite o juego rápido.
-- **Estrategia: CORE PROBADO + rotación de ganadores día por medio.** Mundo se pushó AYER (27) → hoy DESCANSA.
-  Vuelve **🌿 Duelo** (6/6 ×3, último push 26 → 1 día de descanso, su cadencia día-por-medio 22/26/28).
-  Estructura = 2 curios frescos + 1 juego rotado (duelo).
-- **Cola de 3:** (a) 08:30 curio **Caqui B-41** (caduco que CARGA fruta naranja ahora en invierno = ancla real;
-  Diospyros='fruto de los dioses', caquis de 600 años en Japón — hook fuerte para el slot matinal variable)
-  → #curiosidades; (b) 13:00 **🌿 Duelo** (gancho "¿repetís el 6/6?") → engage/duelo-jardin.html; (c) 19:30
-  curio **Mirto B-27** (perenne, sigue verde en invierno = contraste estacional real; sagrado para Venus,
-  licor sardo) → #curiosidades. Curios sin solape con ciruelo/guayabo (27), liquidámbar/crespón (26),
-  mandarina/romero (25), ni palta/gardenia/limonero/lavanda/hortensia/aguaribay/buganvilia/hibisco recientes.
-- **Watch:** ¿el matinal engancha otra vez con hook fuerte (caqui/fruto de los dioses/600 años)? Y ¿Duelo
-  sostiene 6/6 / engancha tras 1 día de descanso (vs los ≥3-4 días que tuvo en sus wins previos)?
-- **Compactación:** engagement.json y send_log.json trimados de eventos ≤14/06 → daily_summary
-  (14/06: sent 39/40). queue.json reescrita con los 3 de hoy.
+- Cola del 28: A(curio Caqui B-41) + B(🌿 Duelo rotado) + C(curio Mirto B-27). Mundo descansó. Resultado: ver
+  conclusión 28/06 arriba — día flojo (0 clicks medibles a las 21:03Z, C aún por enviar).
+
+## 🆕 Corrida VESPERTINA 28/06 — nueva función paralela del usuario (ciclo 29)
+
+Pedido nuevo del usuario (28/06): en cada corrida, presentar notificación(es) que lleven a **experiencias NUEVAS
+armadas de CERO**, en formato **news-feed**, con 3 objetivos medibles: (1) que la marque como increíble (reacción
+final), (2) que se **suscriba a una versión fresca diaria** (engageAnswer de suscripción), (3) un **HTML de pitch**
+aparte para monetizarla (3 modelos innovadores + 3 ultra-creativos). "2 en paralelo" → construí DOS experiencias.
+
+- **NO toqué la cola del 28** (A/B ya enviadas, C pendiente esta noche → se respeta; re-enviar quema credibilidad).
+  Esta corrida arma el **ciclo 29** con las 2 experiencias nuevas como contenido marquee + 1 curio ancla.
+- **2 experiencias nuevas (proposals pending, created=29/06 para tener test limpio):**
+  - 📰 **Diario de tu Jardín** (`engage/2026-06-29-diario-jardin.html`) — news-feed editorial: 8 "noticias"
+    de lo que SUS plantas hacen hoy en invierno (caqui carga fruta, romero en flor, cítricos cargados, caducos
+    pelados resistiendo helada, perennes verdes). Reencuadra el contenido-curiosidad (asset #1) como prensa diaria.
+    + pitch HTML. Promotor: 2026-29-a (08:30).
+  - 🏆 **Récords de tu Jardín** (`engage/2026-06-29-records-jardin.html`) — news-feed de 8 superlativos suyos
+    (hiedra 400 años, cinta NASA, limonero 4× vit C, mirto/Venus, althea flor-de-1-día, Hass de 1 árbol,
+    buganvilia/Jeanne Baret, anacahuita protegida por ley). Apuesta: orgullo/estatus + coleccionable/viral.
+    + pitch HTML. Promotor: 2026-29-b (13:00).
+  - Ambas con: bloque "¿te voló la cabeza?" (engageReact) + CTA de **suscripción diaria** (engageAnswer) +
+    botones Aprobar/No-me-interesa + link al pitch. Solo datos verificados de data_plants.py, con códigos.
+- **Cola ciclo 29:** (a) 08:30 📰 Diario → experiencia; (b) 13:00 🏆 Récords → experiencia; (c) 19:30 curio
+  **Hiedra B-15** (vive +400 años, doble vida juvenil/adulta — fresco, no usado; B-15 además tiene upload pending).
+  queue.json = [28-c holdover] + [29-a/b/c]. Es un día de **inyección de novedad** (no el core 2-curios+1-juego),
+  justificado por el pedido del usuario + la señal de fatiga del 28.
+- **Watch 29:** ¿las experiencias news-feed convierten amor→**suscripción** explícita (el gap que mataron las
+  postales)? ¿"Récords" dispara el orgullo-de-MI-jardín? ¿Diario o Récords junta su primer proposal_approved?
+- **Proposals previas:** ninguna viva (todas dropped/promoted/removed). Sin eventos approve/reject nuevos desde
+  la matinal. Nada que promover/descartar hoy.
+- **Compactación:** ya hecha en la matinal (≤14/06 → daily_summary). Sin nueva compactación necesaria.
 
 ## Contexto del jardín (junio 2026 = invierno, lat -34.9°S)
 
@@ -109,10 +133,11 @@ El usuario abre 2-3/día sin importar cuántos mandes; más pushes solo diluye y
 
 ## TODO pendiente
 
-- **Curios frescos disponibles** (no usados recientemente, fun_fact verificado en data_plants.py): hiedra
-  (vive 400 años, fases juvenil/adulta), clivia (vive 100 años, honra duquesa de Northumberland), espada/
-  sansevieria (NASA purifica aire, da O2 de noche), limonero B-23 (no existe silvestre, híbrido cidro×naranja
-  amarga, cáscara 4× más vit C que el jugo). Usados recién: caqui/mirto (28), ciruelo/guayabo (27).
+- **Curios frescos disponibles** (no usados recientemente, fun_fact verificado en data_plants.py): clivia B-13
+  (vive 100 años, honra duquesa de Northumberland), cinta B-12 (NASA purifica aire), durazno B-30/35 (de China,
+  no Persia), anacahuita B-16 (protegida por ley UY 1986), viraró B-32 (sépalos-helicóptero), lapachillo B-14,
+  difenbaquia I-2 ('caña muda', oxalato paraliza la garganta). Usados recién: hiedra B-15 (29-c), caqui/mirto
+  (28), ciruelo/guayabo (27). OJO: limonero/cinta/anacahuita/hiedra aparecen en la experiencia 🏆 Récords del 29.
 - **Proposals:** próxima SOLO con hipótesis GENUINAMENTE nueva (no variante de algo medido). Descartados:
   postales, mazo, V/F, mapas, calendarios, memory-match. Pensar mecánicas nuevas, no más de lo mismo.
 - Regenerar el dataset M de la rueda desde data_plants.py en build-time (hoy snapshot estático).

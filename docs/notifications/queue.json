@@ -1,32 +1,6 @@
 {
-  "_updated_at": "2026-06-28T16:36:37.018Z",
+  "_updated_at": "2026-06-28T21:33:35.000Z",
   "notifications": [
-    {
-      "id": "2026-06-28-a",
-      "title": "🧡 Tu caqui da 'fruta de los dioses'",
-      "body": "Diospyros, su nombre griego, significa 'fruto de los dioses'. En Japón hay caquis de 600 años dando fruta. Tu B-41 carga naranja ahora.",
-      "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
-      "format": "curio",
-      "send_at": "2026-06-28T08:30:00-03:00",
-      "expires_at": "2026-06-28T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-28T11:46:18.978Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-28"
-    },
-    {
-      "id": "2026-06-28-b",
-      "title": "🌿 Duelo de plantas: ¿repetís el 6/6?",
-      "body": "6 rounds rápidos enfrentando plantas tuyas. La última vez hiciste pleno, 6/6. ¿Lo bordás de nuevo hoy?",
-      "url": "https://gardening-chi.vercel.app/engage/duelo-jardin.html",
-      "format": "experiencia",
-      "send_at": "2026-06-28T13:00:00-03:00",
-      "expires_at": "2026-06-28T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-28T16:36:37.016Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-28"
-    },
     {
       "id": "2026-06-28-c",
       "title": "💗 El mirto, la planta de Venus",
@@ -39,6 +13,45 @@
       "sent_at": null,
       "fail_reason": null,
       "created_by": "engagement-agent 2026-06-28"
+    },
+    {
+      "id": "2026-06-29-a",
+      "title": "📰 Tu jardín tiene noticias de hoy",
+      "body": "Salió la edición de invierno del Diario de tu Jardín: qué pasa hoy entre tus plantas, en titulares.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-29-diario-jardin.html",
+      "format": "experiencia",
+      "send_at": "2026-06-29T08:30:00-03:00",
+      "expires_at": "2026-06-29T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-06-28 (ciclo 29)"
+    },
+    {
+      "id": "2026-06-29-b",
+      "title": "🏆 Récords mundiales en tu fondo",
+      "body": "Sin saberlo tenés récords creciendo en casa: la más longeva, la que limpia el aire, la de Venus…",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-29-records-jardin.html",
+      "format": "experiencia",
+      "send_at": "2026-06-29T13:00:00-03:00",
+      "expires_at": "2026-06-29T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-06-28 (ciclo 29)"
+    },
+    {
+      "id": "2026-06-29-c",
+      "title": "🌿 Tu hiedra puede vivir 400 años",
+      "body": "Doble vida: una fase trepa y otra florece, como si fueran dos. Tu B-15, un clásico inmortal del fondo.",
+      "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
+      "format": "curio",
+      "send_at": "2026-06-29T19:30:00-03:00",
+      "expires_at": "2026-06-29T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-06-28 (ciclo 29)"
     }
   ]
 }

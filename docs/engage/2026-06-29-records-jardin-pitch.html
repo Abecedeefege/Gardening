@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1a0a">
+<title>💼 Récords de tu Jardín · Pitch de venta</title>
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#5a9e35; --oro:#d4a017; --oro2:#f0c34a;
+    --podio:#bb8b1e; --tinta:#1a2410; --crema:#f5faf0; --musgo:#7a8a68;
+    --pad:max(18px,env(safe-area-inset-left));
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; min-height:100%; }
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    background:radial-gradient(120% 80% at 50% -10%, #fffdf2 0%, var(--crema) 45%, #e7efdd 100%);
+    color:var(--tinta); -webkit-font-smoothing:antialiased;
+    padding:0 var(--pad) calc(56px + env(safe-area-inset-bottom)); line-height:1.5;
+  }
+  .top{ padding:calc(16px + env(safe-area-inset-top)) 0 4px; }
+  .back{ color:var(--verde); text-decoration:none; font-size:14px; font-weight:800; display:inline-block; }
+  .back:active{ opacity:.6; }
+
+  .wrap{ max-width:620px; margin:0 auto; }
+  header.hero{ text-align:center; padding:18px 0 8px; }
+  .crest{ font-size:48px; line-height:1; filter:drop-shadow(0 4px 10px rgba(187,139,30,.35)); }
+  .kicker{ font-size:12.5px; font-weight:800; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--podio); margin:6px 0 2px; }
+  h1{ font-size:clamp(24px,7vw,34px); letter-spacing:-0.025em; color:var(--verde); margin:6px 0 6px; }
+  .deck{ font-size:16px; color:#46563a; max-width:520px; margin:8px auto 0; }
+  .deck b{ color:var(--verde); }
+
+  section{ margin-top:34px; }
+  h2.sec{ font-size:20px; color:var(--verde); letter-spacing:-0.015em; margin:0 0 4px;
+    display:flex; align-items:baseline; gap:8px; }
+  h2.sec .n{ font-size:12px; font-weight:900; letter-spacing:.1em; color:var(--podio);
+    background:#fdf0cf; border:1px solid #f0dca0; border-radius:999px; padding:3px 9px; }
+  .lead{ font-size:14.5px; color:#5a6b4a; margin:6px 0 16px; }
+
+  .why{ background:#fff; border-radius:20px; padding:20px; border:1px solid #ecf1e2;
+    box-shadow:0 6px 18px rgba(45,80,22,.07); }
+  .why ul{ margin:10px 0 0; padding-left:20px; }
+  .why li{ margin:8px 0; font-size:14.5px; color:#3c4a30; }
+  .why li b{ color:var(--verde); }
+
+  .cards{ display:flex; flex-direction:column; gap:14px; }
+  .model{ background:#fff; border-radius:20px; padding:20px; border:1px solid #ecf1e2;
+    box-shadow:0 6px 18px rgba(45,80,22,.07); position:relative; overflow:hidden; }
+  .model.bold{ background:linear-gradient(165deg,#fff9e9,#fdf1d2); border-color:#f0dca0; }
+  .model::before{ content:""; position:absolute; inset:0 auto 0 0; width:5px;
+    background:linear-gradient(180deg,var(--oro2),var(--oro)); }
+  .model h3{ margin:0 0 2px; font-size:17px; color:var(--verde); letter-spacing:-0.01em; }
+  .model .ico{ font-size:24px; }
+  .model .price{ display:inline-block; margin:8px 0; font-size:20px; font-weight:900;
+    color:var(--podio); letter-spacing:-0.02em; }
+  .model p{ margin:6px 0; font-size:14px; color:#3c4a30; }
+  .model .row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  .chip{ font-size:12px; font-weight:800; color:var(--verde); background:#f2f6ea;
+    border-radius:999px; padding:5px 10px; }
+  .model .why-works{ margin-top:10px; font-size:13.5px; color:#5a6b4a; }
+  .model .why-works b{ color:var(--verde); }
+
+  .close{ margin-top:36px; background:linear-gradient(160deg,#1f3810,#2d5016); color:#fff;
+    border-radius:24px; padding:28px 22px; box-shadow:0 14px 34px rgba(31,56,16,.35); }
+  .close h2{ color:var(--oro2); margin:0 0 8px; font-size:21px; }
+  .close p{ font-size:14.5px; color:#e7f1dc; margin:8px 0; }
+  .close .tam{ display:flex; gap:12px; flex-wrap:wrap; margin:16px 0; }
+  .close .tam div{ flex:1; min-width:120px; background:rgba(255,255,255,.08); border-radius:16px;
+    padding:14px; text-align:center; }
+  .close .tam .big{ font-size:26px; font-weight:900; color:var(--oro2); line-height:1; }
+  .close .tam .cap{ font-size:12px; color:#cfe0bc; margin-top:5px; font-weight:700; }
+  .close .cta{ margin-top:12px; font-size:16px; font-weight:800; color:#fff;
+    background:linear-gradient(180deg,#f7c948,#e0a91a); color:#3a2c02;
+    border-radius:16px; padding:15px; text-align:center; }
+
+  footer{ text-align:center; margin-top:30px; }
+  .footlink{ color:var(--musgo); text-decoration:none; font-size:13.5px; font-weight:800;
+    border-bottom:1px dashed #c3cdb2; }
+  .creditline{ font-size:12px; color:#9aa888; margin-top:14px; }
+
+  @media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; } }
+</style></head><body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="crest">💼</span>
+    <p class="kicker">Pitch interno · solo para el dueño</p>
+    <h1>Cómo se vende “Récords de tu Jardín”</h1>
+    <p class="deck">Un feed que convierte un jardín casero en un <b>libro de récords personal</b>. La gente no paga por “info de plantas” — paga por <b>orgullo, estatus y cosas para contar</b>. Este producto fabrica las tres en 30 segundos por día.</p>
+  </header>
+
+  <!-- POR QUÉ RETIENE -->
+  <section>
+    <h2 class="sec">Por qué retiene</h2>
+    <p class="lead">La mecánica psicológica detrás del feed, en limpio.</p>
+    <div class="why">
+      <ul>
+        <li><b>Orgullo y estatus de propietario.</b> Cada card dice “esto es TUYO y es asombroso”. No es trivia genérica: es el efecto dotación (endowment effect) — valoramos más lo que poseemos. El superlativo (“la más longeva”, “80% del mundo”) lo amplifica.</li>
+        <li><b>Coleccionable y serializado.</b> Un récord por día genera el mismo loop de las apps de racha: variable reward + cierre incompleto. “Tu jardín tiene cuerda para meses” es promesa de novedad recurrente, no un one-shot.</li>
+        <li><b>Altamente compartible.</b> “Tenés el árbol del que descienden TODAS las paltas Hass del mundo” es una frase que se reenvía sola por WhatsApp. Cada card es un fragmento viral con número grande — formato nativo para captura de pantalla.</li>
+        <li><b>Baja fricción, alta dopamina.</b> Reveal-on-scroll + count-up = micro-recompensas táctiles. Cero esfuerzo cognitivo, máximo asombro. Es lectura deleitable, no una tarea.</li>
+        <li><b>Datos verificados = confianza.</b> Cada récord cita el código de la planta y un hecho real. Eso convierte el asombro en credibilidad, y la credibilidad es lo que se monetiza.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3 MODELOS INNOVADORES -->
+  <section>
+    <h2 class="sec"><span class="n">A</span> 3 modelos de monetización innovadores</h2>
+    <p class="lead">Sólidos, replicables, con demanda probada en adyacencias.</p>
+    <div class="cards">
+
+      <div class="model">
+        <span class="ico">📬</span>
+        <h3>1 · Suscripción “Récord del Día”</h3>
+        <span class="price">USD 3,99 / mes · USD 29 / año</span>
+        <p><b>A quién:</b> dueños de jardín y plantófilos (el segmento que ya compra macetas de diseño y apps de identificación).</p>
+        <p><b>Qué:</b> push diario con un superlativo nuevo de SU jardín, generado a partir del catálogo cargado. Freemium: 1 récord gratis a la semana, diario tras pagar.</p>
+        <div class="row"><span class="chip">Recurrente</span><span class="chip">Bajo churn</span><span class="chip">Margen ~95%</span></div>
+        <p class="why-works"><b>Por qué funciona:</b> el contenido es generativo y barato; el valor percibido es alto porque es personalizado. A 1.000 suscriptores año = <b>USD 29k</b> con costo marginal cercano a cero.</p>
+      </div>
+
+      <div class="model">
+        <span class="ico">🖼️</span>
+        <h3>2 · Pósters y láminas “Récords de mi Jardín”</h3>
+        <span class="price">USD 24–39 c/u · print-on-demand</span>
+        <p><b>A quién:</b> el mismo usuario orgulloso + regalo (cumpleaños, casa nueva, Día de la Madre).</p>
+        <p><b>Qué:</b> el feed se exporta como una lámina premium tipo “certificado de récords” con las plantas del usuario, lista para enmarcar. Cero inventario (Printful/Prodigi).</p>
+        <div class="row"><span class="chip">Ticket alto</span><span class="chip">Regalo</span><span class="chip">Sin stock</span></div>
+        <p class="why-works"><b>Por qué funciona:</b> monetiza el orgullo en un objeto físico. El regalo duplica el TAM: lo compra quien no tiene jardín pero conoce a alguien que sí.</p>
+      </div>
+
+      <div class="model">
+        <span class="ico">🌱</span>
+        <h3>3 · Afiliación de vivero contextual</h3>
+        <span class="price">8–15% por venta referida</span>
+        <p><b>A quién:</b> el lector en el momento exacto de máximo deseo (“querés un récord NUEVO en tu jardín”).</p>
+        <p><b>Qué:</b> al pie de cada récord, una sugerencia de planta-trofeo comprable en viveros locales aliados, con link rastreable. La intención de compra ya está caliente.</p>
+        <div class="row"><span class="chip">Cero costo</span><span class="chip">Intención alta</span><span class="chip">Local-first</span></div>
+        <p class="why-works"><b>Por qué funciona:</b> el contenido crea el deseo y la oferta lo resuelve en el mismo scroll. Es nativo, no interrumpe. Ticket medio vivero ~USD 25 → comisión ~USD 3 por conversión sin inventario.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3 MODELOS ULTRA CREATIVOS -->
+  <section>
+    <h2 class="sec"><span class="n">B</span> 3 modelos ultra creativos</h2>
+    <p class="lead">Más audaces. Mayor upside, narrativa más fuerte.</p>
+    <div class="cards">
+
+      <div class="model bold">
+        <span class="ico">🏅</span>
+        <h3>4 · “Certifica tu Récord” — NFT-free, físico</h3>
+        <span class="price">USD 49 · placa + diploma sellado</span>
+        <p><b>Qué:</b> por una planta excepcional (el roble de 300 años, la anacahuita protegida), emitís un <b>certificado oficial numerado</b> + placa de jardín tipo botánico, con QR a la ficha del récord. El usuario clava el cartel al lado de la planta.</p>
+        <div class="row"><span class="chip">Estatus físico</span><span class="chip">Premium</span><span class="chip">Foto-genico</span></div>
+        <p class="why-works"><b>Por qué funciona:</b> convierte una planta en patrimonio “oficial”. La gente paga fortunas por bautizar estrellas — esto es lo mismo, pero crece en su fondo y se puede mostrar a las visitas.</p>
+      </div>
+
+      <div class="model bold">
+        <span class="ico">🤝</span>
+        <h3>5 · Marca blanca para viveros e inmobiliarias</h3>
+        <span class="price">USD 99–299 / mes por cuenta B2B</span>
+        <p><b>Qué:</b> licenciás el motor de récords a viveros (“tu compra trae récords”) y a inmobiliarias premium, que generan un “Dossier de Récords del Jardín” como argumento de venta de una propiedad con parque.</p>
+        <div class="row"><span class="chip">B2B</span><span class="chip">Contratos</span><span class="chip">LTV alto</span></div>
+        <p class="why-works"><b>Por qué funciona:</b> una casa con “8 récords mundiales en el jardín” se vende mejor y más cara. El comprador del producto no es el plantófilo: es el negocio que necesita diferenciarse. 50 cuentas a USD 199 = <b>USD ~120k/año</b>.</p>
+      </div>
+
+      <div class="model bold">
+        <span class="ico">⚔️</span>
+        <h3>6 · Liga de Récords entre vecinos</h3>
+        <span class="price">Freemium + USD 1,99 boosts · sponsoreable</span>
+        <p><b>Qué:</b> un ranking social por barrio/ciudad: “El jardín con más récords de Pocitos”. Los usuarios compiten, comparten su tabla, y suman puntos al registrar plantas. Sponsors locales (viveros, ferias) auspician la liga.</p>
+        <div class="row"><span class="chip">Viral</span><span class="chip">Comunidad</span><span class="chip">Sponsorable</span></div>
+        <p class="why-works"><b>Por qué funciona:</b> suma competencia social y pertenencia a un producto ya orgulloso. El loop de comparación con el vecino es el motor de crecimiento más barato que existe; el sponsor paga por estar en la tabla.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="close">
+    <h2>El cierre</h2>
+    <p><b>Visión:</b> todo jardín del mundo es un libro de récords sin abrir. Construimos el motor que lo revela, lo serializa en un ritual diario y lo convierte en orgullo monetizable. Empezamos en Montevideo, escalamos a toda Latinoamérica con un catálogo botánico que ya tenemos.</p>
+    <div class="tam">
+      <div><div class="big">~1,3M</div><div class="cap">hogares con jardín en Uruguay</div></div>
+      <div><div class="big">~90M</div><div class="cap">en LatAm (mercado regional)</div></div>
+      <div><div class="big">95%</div><div class="cap">margen del modelo core</div></div>
+    </div>
+    <p>Con solo el <b>1% del mercado uruguayo</b> en suscripción anual (USD 29) son <b>~USD 380k/año</b> recurrentes, antes de pósters, B2B y afiliación. El contenido es generativo: el costo marginal de un récord más es casi cero.</p>
+    <div class="cta">▶ Próximo paso: prender la suscripción diaria y medir conversión en 30 días.</div>
+  </section>
+
+  <footer>
+    <a class="footlink" href="2026-06-29-records-jardin.html">← Volver a la experiencia</a>
+    <p class="creditline">Pitch interno · Récords de tu Jardín · invierno 2026</p>
+  </footer>
+</div>
+</body></html>

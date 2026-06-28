@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#22331a"><title>💼 Pitch · El Diario de tu Jardín</title>
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#3f6e22; --papel:#f5faf0; --papel2:#eaf2e0;
+    --tinta:#24301a; --tinta2:#566049; --linea:#d4e0c6; --oro:#c79a2e; --rojo:#9a2b1e;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    --serif:Georgia,"Times New Roman",serif;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; margin:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); color:var(--tinta); background:#22331a; line-height:1.55;
+    -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:760px; margin:0 auto; background:var(--papel); box-shadow:0 18px 60px rgba(0,0,0,.4); }
+  .back{ display:block; color:#dfe9d2; text-decoration:none; font-size:13px; font-weight:700;
+    padding:11px var(--pad); background:#22331a; }
+  .back:active{ opacity:.8; }
+
+  .hero{ background:linear-gradient(155deg,#2d5016,#1a3010); color:#eef3e6; padding:40px var(--pad) 34px; }
+  .hero .eyebrow{ font-size:11px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:#c2dca0; }
+  .hero h1{ font-family:var(--serif); font-size:clamp(30px,8.5vw,46px); line-height:1.04; font-weight:900; margin:10px 0 12px; }
+  .hero p{ font-size:clamp(15px,4.2vw,18px); max-width:46ch; opacity:.94; }
+  .hero .stat-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; }
+  .stat{ background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:12px;
+    padding:12px 14px; flex:1 1 130px; }
+  .stat b{ display:block; font-family:var(--serif); font-size:26px; color:#e0c45a; line-height:1; }
+  .stat span{ font-size:12px; opacity:.85; }
+
+  .sec{ padding:34px var(--pad); border-bottom:1px solid var(--linea); }
+  .sec h2{ font-family:var(--serif); font-size:clamp(23px,6vw,32px); font-weight:900; line-height:1.1; margin-bottom:6px; }
+  .sec .lead{ color:var(--tinta2); font-size:15.5px; max-width:54ch; margin-bottom:18px; }
+  .label{ font-size:11px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:var(--verde2); margin-bottom:8px; }
+  .label.alt{ color:var(--oro); }
+
+  p.body{ font-size:15.5px; margin-bottom:12px; max-width:60ch; }
+  .why{ background:var(--papel2); border-radius:12px; padding:16px 16px; margin-top:14px; }
+  .why h4{ font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--verde); margin-bottom:8px; }
+  .why ul{ margin:0; padding-left:18px; } .why li{ font-size:14.5px; margin-bottom:6px; }
+  .why li b{ color:var(--verde); }
+
+  /* Tarjetas de modelo */
+  .grid{ display:grid; gap:16px; }
+  .card{ border:1px solid var(--linea); border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 6px 20px rgba(40,60,20,.07); }
+  .card .top{ padding:16px 17px 12px; background:linear-gradient(160deg,#f0f6e8,#e3eed6); border-bottom:1px solid var(--linea); }
+  .card.alt .top{ background:linear-gradient(160deg,#fbf2dc,#f4e6c3); }
+  .card .num{ font-family:var(--serif); font-size:13px; font-weight:800; color:var(--verde2); letter-spacing:.05em; }
+  .card.alt .num{ color:var(--oro); }
+  .card h3{ font-family:var(--serif); font-size:21px; font-weight:900; line-height:1.12; margin:3px 0 2px; }
+  .card .tagline{ font-size:13.5px; color:var(--tinta2); font-style:italic; }
+  .card .body-in{ padding:15px 17px 18px; }
+  .card .row{ display:flex; gap:8px; font-size:13.5px; padding:7px 0; border-bottom:1px dashed var(--linea); }
+  .card .row:last-child{ border-bottom:none; }
+  .card .row .k{ font-weight:800; min-width:96px; color:var(--verde); }
+  .card.alt .row .k{ color:var(--oro); }
+  .card .row .v{ color:#33402a; }
+  .price{ display:inline-block; font-family:var(--serif); font-weight:900; font-size:19px; color:var(--verde); margin-top:4px; }
+  .card.alt .price{ color:#9a6a0e; }
+
+  .close{ background:#22331a; color:#eef3e6; padding:40px var(--pad); text-align:center; }
+  .close .k{ font-size:11px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:#a9c98a; }
+  .close h2{ font-family:var(--serif); font-size:clamp(26px,7vw,38px); font-weight:900; margin:10px 0 14px; line-height:1.08; }
+  .close p{ max-width:50ch; margin:0 auto 12px; opacity:.92; font-size:15.5px; }
+  .close .tam{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:22px 0; }
+  .close .tam div{ background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); border-radius:12px; padding:14px 16px; }
+  .close .tam b{ display:block; font-family:var(--serif); font-size:24px; color:#e0c45a; }
+  .close .cta{ display:inline-block; margin-top:8px; background:#e0c45a; color:#3a2c08; font-weight:800;
+    text-decoration:none; padding:14px 26px; border-radius:14px; font-size:16px; }
+  .close .cta:active{ transform:scale(.97); }
+
+  footer{ text-align:center; padding:18px var(--pad) 30px; font-size:12.5px; color:var(--tinta2); }
+  footer a{ color:var(--verde); font-weight:700; text-decoration:none; }
+</style></head><body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">Deck interno · Producto & Monetización</div>
+    <h1>El Diario de tu Jardín</h1>
+    <p>Un periódico personalizado que convierte cada planta del jardín en una noticia diaria. El producto que transforma “tengo una app de tareas” en “tengo un ritual que el usuario no quiere perderse”.</p>
+    <div class="stat-row">
+      <div class="stat"><b>1×/día</b><span>hábito de apertura recurrente</span></div>
+      <div class="stat"><b>40</b><span>plantas = inventario editorial infinito</span></div>
+      <div class="stat"><b>$0</b><span>costo marginal por edición (texto)</span></div>
+    </div>
+  </div>
+
+  <!-- Producto + por qué retiene -->
+  <div class="sec">
+    <div class="label">El producto, en una línea</div>
+    <h2>Tu jardín te manda el diario cada mañana.</h2>
+    <p class="lead">No es una lista de tareas. Es contenido editorial fresco, generado sobre datos reales de las plantas del usuario (qué florece, qué fructifica, qué resiste la helada hoy), entregado vía push a las ~06:00 y leído con el café.</p>
+
+    <p class="body">El catálogo de 40 plantas, cruzado con el calendario estacional y la orientación solar de la casa, da material para escribir una portada distinta cada día del año sin repetirse. Cada planta es a la vez un personaje recurrente y una fuente de novedad.</p>
+
+    <div class="why">
+      <h4>Por qué retiene (el fundamento psicológico)</h4>
+      <ul>
+        <li><b>Hook diario (Eyal):</b> disparador externo (push del café) → acción mínima (abrir) → <b>recompensa variable</b> (nunca sabés qué noticia trae hoy) → inversión (reaccionar / suscribirse). El loop completo, cada día.</li>
+        <li><b>Recompensa variable:</b> la novedad es real, no simulada — la estación cambia, las plantas cambian. El cerebro trata lo impredecible-pero-relevante como adictivo.</li>
+        <li><b>Efecto IKEA + dotación:</b> es <i>tu</i> jardín. El contenido es sobre algo que el usuario cuidó con sus manos. Imposible de comoditizar.</li>
+        <li><b>Rituales y rachas:</b> “una edición cada mañana” crea una serie. Perderse un día se siente como romper una racha — el costo de abandono sube solo.</li>
+        <li><b>Micro-dosis, no doomscroll:</b> 3 minutos y se acaba. Deja con ganas, no saturado. Eso protege la apertura del día siguiente.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3 modelos innovadores -->
+  <div class="sec">
+    <div class="label">Monetización · Núcleo</div>
+    <h2>3 modelos innovadores</h2>
+    <p class="lead">Sólidos, defendibles, con camino claro a ingreso. La base del negocio.</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="top">
+          <div class="num">MODELO 01</div>
+          <h3>El Diario Premium</h3>
+          <div class="tagline">Suscripción al ritual diario, con ediciones especiales</div>
+        </div>
+        <div class="body-in">
+          <div class="row"><span class="k">Qué es</span><span class="v">El feed básico es gratis; el plan pago suma edición diaria personalizada, alertas de helada hiperlocales, “contratapa” con efemérides y un archivo histórico navegable del jardín.</span></div>
+          <div class="row"><span class="k">A quién</span><span class="v">El jardinero hogareño enganchado: ya abre todos los días, quiere más.</span></div>
+          <div class="row"><span class="k">Cuánto</span><span class="v"><span class="price">UYU $290/mes</span> (~USD 7) · o $2.490/año.</span></div>
+          <div class="row"><span class="k">Por qué funciona</span><span class="v">Vendés un hábito ya formado, no una promesa. El costo marginal de una edición de texto es casi cero; el margen es altísimo. La conversión free→premium se apoya en la suscripción que el usuario ya pidió en el feed.</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div class="num">MODELO 02</div>
+          <h3>El Vivero de al lado</h3>
+          <div class="tagline">Recomendación contextual con afiliación</div>
+        </div>
+        <div class="body-in">
+          <div class="row"><span class="k">Qué es</span><span class="v">Cuando el diario dice “tu romero florece, es momento de podar”, una tarjeta nativa ofrece la herramienta/insumo justo (tijera, sustrato, antihelada) de viveros locales aliados. Comisión por venta referida.</span></div>
+          <div class="row"><span class="k">A quién</span><span class="v">Viveros, garden centers y marcas de jardinería de Montevideo.</span></div>
+          <div class="row"><span class="k">Cuánto</span><span class="v"><span class="price">8–15% por venta</span> + fee fijo de listado por vivero ($1.500/mes).</span></div>
+          <div class="row"><span class="k">Por qué funciona</span><span class="v">Intención perfecta: la recomendación llega en el momento exacto de necesidad estacional, no como aviso interruptivo. Conversión muy por encima del display tradicional. No es un banner: es consejo editorial monetizado.</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div class="num">MODELO 03</div>
+          <h3>Diario White-Label</h3>
+          <div class="tagline">El motor editorial, licenciado a terceros</div>
+        </div>
+        <div class="body-in">
+          <div class="row"><span class="k">Qué es</span><span class="v">Licenciás el motor que convierte un inventario de plantas + calendario en un diario personalizado. Lo usan viveros (fidelización de clientes), countries/edificios con áreas verdes, o apps de jardinería sin contenido propio.</span></div>
+          <div class="row"><span class="k">A quién</span><span class="v">B2B: viveros con base de clientes, administradoras de espacios verdes, apps verticales.</span></div>
+          <div class="row"><span class="k">Cuánto</span><span class="v"><span class="price">USD 200–800/mes</span> por instancia + setup. SaaS recurrente.</span></div>
+          <div class="row"><span class="k">Por qué funciona</span><span class="v">El activo no es el jardín de una persona: es el <b>motor de generación editorial</b>. Reutilizable en infinitas instancias con costo marginal mínimo. Ingreso recurrente B2B, mucho más estable que el B2C suelto.</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3 modelos ultra creativos -->
+  <div class="sec">
+    <div class="label alt">Monetización · Apuestas audaces</div>
+    <h2>3 modelos ultra creativos</h2>
+    <p class="lead">Más originales, más riesgo, más techo. Diferenciadores que nadie más puede copiar fácil.</p>
+
+    <div class="grid">
+
+      <div class="card alt">
+        <div class="top">
+          <div class="num">APUESTA 04</div>
+          <h3>La Hemeroteca del Jardín</h3>
+          <div class="tagline">El año entero, encuadernado en papel real</div>
+        </div>
+        <div class="body-in">
+          <div class="row"><span class="k">Qué es</span><span class="v">A fin de año, las 365 ediciones se compilan en un libro impreso premium: el “anuario” del jardín del usuario, con fotos subidas, hitos de floración y crónicas. Un objeto físico de regalo.</span></div>
+          <div class="row"><span class="k">A quién</span><span class="v">El usuario nostálgico + regalo emocional (Día de la Madre, cumpleaños).</span></div>
+          <div class="row"><span class="k">Cuánto</span><span class="v"><span class="price">UYU $1.800–3.500</span> por ejemplar impreso bajo demanda.</span></div>
+          <div class="row"><span class="k">Por qué funciona</span><span class="v">Convierte contenido efímero (push) en patrimonio. Margen alto sobre print-on-demand y, sobre todo, un anclaje emocional brutal: nadie cancela una suscripción que se vuelve un libro de su propia vida.</span></div>
+        </div>
+      </div>
+
+      <div class="card alt">
+        <div class="top">
+          <div class="num">APUESTA 05</div>
+          <h3>Apadriná una planta</h3>
+          <div class="tagline">Mecenazgo editorial cruzado</div>
+        </div>
+        <div class="body-in">
+          <div class="row"><span class="k">Qué es</span><span class="v">Familiares y amigos “apadrinan” una planta del jardín: reciben las noticias de ESA planta (la floración del durazno del abuelo, el primer limón del año) como una mini-suscripción de regalo. El jardín se vuelve un canal compartido.</span></div>
+          <div class="row"><span class="k">A quién</span><span class="v">El círculo afectivo del jardinero — hijos lejos, nietos, amigos.</span></div>
+          <div class="row"><span class="k">Cuánto</span><span class="v"><span class="price">UYU $150/mes</span> por padrino, o pase anual de regalo.</span></div>
+          <div class="row"><span class="k">Por qué funciona</span><span class="v">Crecimiento viral integrado al producto: cada usuario trae a su familia. Vende vínculo, no jardinería. Un jardín se convierte en muchos suscriptores; el CAC tiende a cero porque el invitador hace el marketing.</span></div>
+        </div>
+      </div>
+
+      <div class="card alt">
+        <div class="top">
+          <div class="num">APUESTA 06</div>
+          <h3>Bonos de Carbono Doméstico</h3>
+          <div class="tagline">Datos del jardín como activo verde</div>
+        </div>
+        <div class="body-in">
+          <div class="row"><span class="k">Qué es</span><span class="v">El diario ya registra qué crece, cuándo florece y fructifica. Esa serie de datos verificable de microflora urbana se agrega (anónima) y se vende a marcas/municipios para programas de ciudad-jardín, biodiversidad y reportes ESG. El usuario recibe parte del ingreso o créditos premium.</span></div>
+          <div class="row"><span class="k">A quién</span><span class="v">Marcas con metas ambientales, intendencias, plataformas ESG.</span></div>
+          <div class="row"><span class="k">Cuánto</span><span class="v"><span class="price">USD 10k–50k</span> por dataset/programa patrocinado.</span></div>
+          <div class="row"><span class="k">Por qué funciona</span><span class="v">El subproducto del contenido (los datos fenológicos) tiene valor propio en un mercado en alza. Monetizás dos veces el mismo esfuerzo y le das al usuario una razón “con propósito” para seguir registrando su jardín.</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Cierre / visión -->
+  <div class="close">
+    <div class="k">La gran visión</div>
+    <h2>No vendemos una app de jardín. Construimos el medio del jardín.</h2>
+    <p>Todo el mundo con un balcón, un cantero o un fondo tiene un jardín que “no hace nada” en invierno. Nosotros probamos que sí hace, y lo contamos como noticia. Un periódico cuyo número de lectores potenciales es, literalmente, todo el que tiene una planta.</p>
+    <div class="tam">
+      <div><b>~1,1 M</b>hogares en Uruguay</div>
+      <div><b>60%+</b>con plantas en casa</div>
+      <div><b>Global</b>el motor escala a cualquier idioma y clima</div>
+    </div>
+    <p>Arrancamos con un jardín en Montevideo. El producto ya retiene. El siguiente paso es encender el Diario Premium y cerrar el primer vivero aliado este invierno — la temporada en que el jardín, contra todo pronóstico, tiene más para contar.</p>
+    <a class="cta" href="2026-06-29-diario-jardin.html">📰 Ver la edición de hoy</a>
+  </div>
+
+  <footer>
+    Deck interno · El Diario de tu Jardín · 2026 · <a href="2026-06-29-diario-jardin.html">Volver a la experiencia</a>
+  </footer>
+
+</div>
+</body></html>

@@ -145,6 +145,30 @@
         "2026-06-21-b"
       ],
       "result_notes": "DROPPED 22/06 por la regla de no-supervivencia sin aprobación explícita (pending de día anterior). DATO DECISIVO: el push promotor (b) SÍ se abrió (notification_clicked 21/06 20:04) pero el usuario rebotó en 5s con scroll 10%, CERO reacciones y sin tap Aprobar — lo opuesto de v1 (60s + 3 reacciones). El CTA más claro no movió la aguja. Lectura definitiva: el amor de v1 era NOVEDAD, no formato; una segunda edición de 'postales de invierno', aun con contenido fresco, no retiene. Se cierra la línea postales/curiosidad-estacional como experiencia separada — el contenido-curiosidad ya vive y convierte en la sección fija #curiosidades. No relanzar postales. Página efímera eliminada."
+    },
+    {
+      "id": "2026-06-29-diario-jardin",
+      "title": "📰 El Diario de tu Jardín (news-feed editorial, edición diaria)",
+      "page": "engage/2026-06-29-diario-jardin.html",
+      "created": "2026-06-29",
+      "status": "pending",
+      "hypothesis": "NUEVA línea pedida por el usuario (28/06, función paralela): experiencias en formato NEWS-FEED armadas de cero, optimizadas para 3 metas — (1) que marque la experiencia como increíble, (2) que se suscriba a una versión FRESCA diaria, (3) monetizable (pitch HTML aparte). El Diario reencuadra el contenido-curiosidad (el activo #1 medido) como titulares de prensa con 'edición del día' — apuesta: el framing editorial + el gancho de novedad-diaria convierte el amor que las curiosidades ya generan en una SUSCRIPCIÓN explícita (lo que las postales no lograron). Construida en la corrida vespertina del 28 para el ciclo 29; created=29/06 para que tenga su día de test limpio antes de la regla de no-supervivencia.",
+      "notified_by": [
+        "2026-06-29-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-06-29-records-jardin",
+      "title": "🏆 Récords de tu Jardín (news-feed de superlativos)",
+      "page": "engage/2026-06-29-records-jardin.html",
+      "created": "2026-06-29",
+      "status": "pending",
+      "hypothesis": "Segunda experiencia de la función paralela nueva (28/06). News-feed de récords/superlativos que ostentan SUS propias plantas (la más longeva 400 años, la que limpia el aire NASA, la de Venus, etc.), con número grande por card. Apuesta: la psicología de orgullo/estatus + lo coleccionable-compartible del superlativo dispara el 'me voló la cabeza MI jardín' y motiva suscripción diaria (un récord nuevo por día). Mecánica de lectura, no juego (los juegos fatigan). Construida en la corrida vespertina del 28 para el ciclo 29; created=29/06 para test limpio.",
+      "notified_by": [
+        "2026-06-29-b"
+      ],
+      "result_notes": null
     }
   ]
 }

@@ -1,0 +1,314 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#22331a"><title>📰 El Diario de tu Jardín · Edición Invierno</title>
+<style>
+  :root{
+    --tinta:#26201a; --tinta2:#5a4f44; --papel:#f4ecdc; --papel2:#ece1cb;
+    --verde:#2d5016; --verde2:#3f6e22; --sepia:#8a6a3a; --rojo:#9a2b1e;
+    --linea:#d8cbb0; --pad:max(18px,env(safe-area-inset-left));
+    --serif:Georgia,"Times New Roman","Iowan Old Style",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; margin:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--serif); color:var(--tinta);
+    background:#22331a;
+    background-image:
+      radial-gradient(120% 60% at 50% -10%, rgba(255,255,255,.05), transparent),
+      repeating-linear-gradient(0deg, rgba(0,0,0,.015) 0 2px, transparent 2px 4px);
+    -webkit-font-smoothing:antialiased; line-height:1.5; }
+  .wrap{ max-width:680px; margin:0 auto; background:var(--papel);
+    box-shadow:0 0 0 1px rgba(0,0,0,.06), 0 18px 60px rgba(0,0,0,.4);
+    background-image:
+      radial-gradient(100% 40% at 50% 0%, rgba(255,255,255,.4), transparent),
+      repeating-linear-gradient(90deg, rgba(120,90,40,.018) 0 3px, transparent 3px 6px); }
+
+  .back{ display:inline-block; margin:0; color:#dfe9d2; text-decoration:none; font-family:var(--sans);
+    font-size:13px; font-weight:700; padding:11px var(--pad) 11px; background:#22331a; width:100%; }
+  .back:active{ opacity:.8; }
+  .prog{ position:fixed; top:0; left:0; height:4px; z-index:50; width:0;
+    background:linear-gradient(90deg,var(--verde2),var(--sepia),var(--rojo)); transition:width .15s; }
+
+  /* Cabecera del diario */
+  header.mast{ padding:26px var(--pad) 0; text-align:center; border-bottom:3px double var(--tinta); }
+  .mast .over{ font-family:var(--sans); font-size:11px; font-weight:800; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--rojo); }
+  .mast h1{ font-size:clamp(38px,12vw,64px); line-height:.92; letter-spacing:-.02em; font-weight:900;
+    margin:6px 0 2px; font-variant:small-caps; }
+  .mast .sub{ font-style:italic; color:var(--tinta2); font-size:clamp(14px,4vw,17px); margin-bottom:14px; }
+  .dateline{ display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;
+    font-family:var(--sans); font-size:10.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--tinta2); border-top:1px solid var(--linea); padding:9px 0 11px; }
+  .dateline b{ color:var(--tinta); }
+
+  /* Bajada / lede principal */
+  .lede{ padding:22px var(--pad) 6px; }
+  .lede .drop{ float:left; font-size:64px; line-height:.7; font-weight:900; color:var(--verde);
+    margin:6px 10px -2px 0; font-family:var(--serif); }
+  .lede p{ font-size:clamp(16px,4.6vw,19px); }
+
+  .rule{ height:1px; background:var(--linea); margin:8px var(--pad) 0; }
+
+  /* Noticias */
+  .feed{ padding:6px var(--pad) 0; }
+  article{ padding:26px 0 24px; border-bottom:1px solid var(--linea); }
+  article:last-of-type{ border-bottom:none; }
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+  .kicker{ font-family:var(--sans); font-size:11px; font-weight:800; letter-spacing:.16em;
+    text-transform:uppercase; display:inline-block; color:#fff; background:var(--verde);
+    padding:3px 9px; border-radius:3px; }
+  .kicker.urg{ background:var(--rojo); } .kicker.efe{ background:var(--sepia); }
+  .kicker.cro{ background:#3a5a8a; } .kicker.per{ background:#2d5016; }
+  .emoji{ font-size:46px; line-height:1; float:right; margin:-6px 0 4px 12px; filter:drop-shadow(0 3px 4px rgba(0,0,0,.18)); }
+  h2.hd{ font-size:clamp(24px,6.6vw,33px); line-height:1.06; letter-spacing:-.01em; font-weight:900;
+    margin:11px 0 8px; }
+  .byline{ font-family:var(--sans); font-size:11px; font-weight:700; color:var(--tinta2);
+    letter-spacing:.04em; text-transform:uppercase; margin-bottom:10px; }
+  article p{ font-size:16.5px; margin-bottom:11px; color:#322a20; }
+  article p .lead-in{ font-weight:700; }
+  .pull{ font-style:italic; font-size:clamp(18px,5vw,22px); line-height:1.3; color:var(--verde);
+    border-left:4px solid var(--sepia); padding:4px 0 4px 14px; margin:14px 0; }
+  .tag{ display:inline-block; font-family:var(--sans); font-size:12px; font-weight:700;
+    background:var(--papel2); border:1px solid var(--linea); border-radius:999px;
+    padding:5px 11px; margin:4px 6px 0 0; color:var(--tinta2); }
+  .tags{ margin-top:8px; }
+  .dato{ font-family:var(--sans); font-size:13.5px; background:var(--papel2);
+    border:1px solid var(--linea); border-left:4px solid var(--verde2); border-radius:6px;
+    padding:11px 13px; margin-top:10px; color:#3a3024; }
+  .dato b{ color:var(--verde); }
+
+  /* Cierre editorial */
+  .closing{ background:#22331a; color:#eef3e6; padding:34px var(--pad); text-align:center;
+    font-family:var(--sans); }
+  .closing .k{ font-size:11px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:#a9c98a; }
+  .closing h2{ font-family:var(--serif); font-size:clamp(26px,7vw,36px); font-weight:900; margin:8px 0 10px; line-height:1.08; }
+  .closing p{ opacity:.9; max-width:42ch; margin:0 auto 4px; font-size:15.5px; }
+
+  /* Bloques de feedback */
+  .block{ background:var(--papel2); border:1px solid var(--linea); border-radius:14px;
+    padding:22px 18px; margin:18px var(--pad); text-align:center; font-family:var(--sans); }
+  .block .q{ font-family:var(--serif); font-size:clamp(20px,5.4vw,26px); font-weight:900; margin-bottom:4px; }
+  .block .qsub{ color:var(--tinta2); font-size:14.5px; margin-bottom:14px; }
+  .reacts{ display:flex; gap:12px; justify-content:center; }
+  .reacts button{ width:60px; height:60px; border-radius:50%; border:1px solid var(--linea);
+    background:#fff; font-size:28px; cursor:pointer; transition:transform .12s, background .2s; }
+  .reacts button:active{ transform:scale(.86); }
+  .reacts button.sel{ background:var(--verde); border-color:var(--verde); transform:scale(1.06); }
+  .react-hint,.q-hint{ display:block; min-height:18px; margin-top:12px; font-size:13.5px;
+    font-weight:700; color:var(--verde); }
+
+  .sub-cta{ background:linear-gradient(155deg,#2d5016,#1c3410); color:#eef3e6;
+    border:none; box-shadow:0 10px 30px rgba(22,40,12,.35); }
+  .sub-cta .q{ color:#fff; } .sub-cta .qsub{ color:#cfe0bf; }
+  .sub-cta .coffee{ font-size:40px; margin-bottom:6px; }
+  .yn{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .yn button{ font-family:var(--sans); font-weight:800; font-size:15px; cursor:pointer;
+    border-radius:12px; padding:13px 22px; border:1px solid transparent; transition:transform .12s, filter .2s; }
+  .yn button:active{ transform:scale(.95); }
+  .yn .si{ background:#e0c45a; color:#3a2c08; }
+  .yn .no{ background:rgba(255,255,255,.12); color:#eef3e6; border-color:rgba(255,255,255,.25); }
+  .yn button.sel{ filter:brightness(1.12); box-shadow:0 0 0 3px rgba(224,196,90,.4); }
+
+  /* Decisión del sistema */
+  .engage-actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+    padding:8px var(--pad) 4px; font-family:var(--sans); }
+  .engage-actions button{ font-weight:800; font-size:15px; cursor:pointer; border-radius:12px;
+    padding:13px 20px; border:1px solid var(--linea); background:#fff; color:var(--tinta); transition:transform .12s; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; border-color:var(--verde); }
+  .engage-actions button:active{ transform:scale(.95); }
+
+  footer.foot{ text-align:center; padding:18px var(--pad) 30px; font-family:var(--sans);
+    font-size:12.5px; color:var(--tinta2); }
+  footer.foot a{ color:var(--verde); font-weight:700; text-decoration:none; }
+  footer.foot .pitch{ display:inline-block; margin-top:10px; opacity:.85; }
+
+  @media (prefers-reduced-motion:reduce){
+    .reveal{ opacity:1; transform:none; } html{ scroll-behavior:auto; }
+    .prog{ transition:none; }
+  }
+</style></head><body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="prog" id="prog"></div>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="over">★ Edición especial de invierno · 100% local ★</div>
+    <h1>El Diario de tu Jardín</h1>
+    <div class="sub">Las noticias que ninguna planta te iba a contar sola</div>
+    <div class="dateline">
+      <span>Montevideo, Uruguay 🇺🇾</span>
+      <span><b>Martes 29 de junio de 2026</b></span>
+      <span>Año I · Nº 1 · ☁️ 9°C</span>
+    </div>
+  </header>
+
+  <div class="lede reveal">
+    <p><span class="drop">A</span>fuera hace frío y el cielo está bajo, pero tu jardín no se tomó vacaciones. Mientras dormías, un árbol pelado cargó fruta de oro, un arbusto se animó a florecer contra el calendario, y media docena de plantas siguieron su trabajo en silencio. Esto es lo que pasó esta semana en tus 4 metros cuadrados de mundo.</p>
+  </div>
+  <div class="rule"></div>
+
+  <main class="feed">
+
+    <!-- 1 -->
+    <article class="reveal">
+      <span class="emoji">🟠</span>
+      <span class="kicker urg">Último momento</span>
+      <h2 class="hd">Un árbol completamente pelado amanece cargado de oro</h2>
+      <div class="byline">Sección Fondo · Caqui B-41</div>
+      <p><span class="lead-in">Es la imagen del invierno.</span> El caqui (Diospyros kaki) perdió hasta la última hoja, pero sus ramas desnudas sostienen frutos naranja brillante. No es un error del calendario: fructifica de mayo a julio, así que ahora mismo está en su pico.</p>
+      <p class="pull">“Diospyros” significa, literalmente, fruto de los dioses.</p>
+      <p>Un detalle para los impacientes: si lo mordés antes de tiempo, frunce la boca. Esa astringencia son taninos del fruto inmaduro avisándote que todavía no es la hora.</p>
+      <div class="dato">📜 <b>Dato de archivo:</b> en Japón el caqui simboliza la longevidad. Se conservan ejemplares de más de 600 años que todavía dan fruta. Lo tuyo recién empieza.</div>
+      <div class="tags"><span class="tag">🌳 Caduco</span><span class="tag">🍊 Fructifica may–jul</span><span class="tag">Zona fondo (este)</span></div>
+    </article>
+
+    <!-- 2 -->
+    <article class="reveal">
+      <span class="emoji">🌿</span>
+      <span class="kicker">Contra el pronóstico</span>
+      <h2 class="hd">El romero desafía el invierno y abre sus flores</h2>
+      <div class="byline">Sección Cantero · Romero B-26</div>
+      <p><span class="lead-in">Mientras casi todo se repliega,</span> el romero (Salvia rosmarinus) hace lo contrario: florece de junio a octubre, así que en pleno invierno está cubierto de flores diminutas y celestes. Es de las pocas que te regala color en la temporada más gris.</p>
+      <p>Su nombre lo explica todo. <span class="lead-in">Rosmarinus</span> es “rocío del mar”: crece en los acantilados del Mediterráneo, salpicado por la espuma, acostumbrado a la intemperie. El frío de Montevideo le queda corto.</p>
+      <div class="dato">🧠 <b>Dato útil:</b> en estudios, oler romero antes de un examen mejoró la memoria un 15%. Pasá la mano por la mata cuando tengas que recordar algo.</div>
+      <div class="tags"><span class="tag">🌸 Florece jun–oct</span><span class="tag">☀️ Heliófila</span><span class="tag">Mediterránea</span></div>
+    </article>
+
+    <!-- 3 -->
+    <article class="reveal">
+      <span class="emoji">🍊</span>
+      <span class="kicker cro">Crónica cítrica</span>
+      <h2 class="hd">La mandarina criolla está en su mejor momento del año</h2>
+      <div class="byline">Sección Fondo · Mandarina B-24</div>
+      <p><span class="lead-in">El invierno es la temporada de los cítricos,</span> y la mandarina criolla (Citrus reticulata) lo sabe: fructifica de abril a agosto, o sea que está cargada ahora. Cosechá tranquilo, el árbol no para.</p>
+      <p class="pull">Su nombre viene de los “mandarines”, los funcionarios de la China imperial, por el naranja de sus túnicas.</p>
+      <p>Y hay más linaje del que parece: es el cítrico más antiguo que se conoce, cultivado desde el 3000 a.C. Naranjas y limones descienden de ella. Tenés a la madre de todos los cítricos en el fondo.</p>
+      <div class="tags"><span class="tag">🍊 Fructifica abr–ago</span><span class="tag">Origen China</span><span class="tag">Zona fondo</span></div>
+    </article>
+
+    <!-- 4 -->
+    <article class="reveal">
+      <span class="emoji">🍋</span>
+      <span class="kicker cro">El obrero del año</span>
+      <h2 class="hd">El limonero no descansa: da fruta los doce meses</h2>
+      <div class="byline">Sección Fondo · Limonero B-23</div>
+      <p><span class="lead-in">Si hay un trabajador incansable</span> en tu jardín, es el limonero (Citrus × limon). Da fruta casi todo el año, invierno incluido. Pero su historia es la más rara de todas: <span class="lead-in">no existe en estado silvestre.</span> Es un híbrido de cidro × naranja amarga, nacido en India hace unos 2500 años. Toda la especie es, en el fondo, un invento humano que salió perfecto.</p>
+      <div class="dato">🍋 <b>Para tu cocina:</b> la cáscara tiene 4 veces más vitamina C que el jugo. La próxima vez que exprimas uno, rallá la cáscara antes de tirarla.</div>
+      <div class="tags"><span class="tag">🍋 Fruta todo el año</span><span class="tag">Híbrido</span><span class="tag">No existe silvestre</span></div>
+    </article>
+
+    <!-- 5 -->
+    <article class="reveal">
+      <span class="emoji">🌶️</span>
+      <span class="kicker efe">Delicatessen</span>
+      <h2 class="hd">Tenés pimienta rosa de gourmet creciendo gratis</h2>
+      <div class="byline">Sección Frente · Aguaribay / Molle F-8</div>
+      <p><span class="lead-in">Lo que en la góndola cuesta una fortuna,</span> a vos te crece en una rama. El aguaribay o molle (Schinus molle) fructifica de marzo a junio: esos granitos rosados que tiene encima son, literalmente, la “pimienta rosa” que venden las delicatessen.</p>
+      <p>Fue un árbol sagrado para incas y guaraníes. Y guarda otro talento: sus hojas repelen mosquitos, un repelente natural que tenés a metros de la puerta.</p>
+      <div class="tags"><span class="tag">🌶️ Fructifica mar–jun</span><span class="tag">Nativa de los Andes</span><span class="tag">Zona frente (oeste)</span></div>
+    </article>
+
+    <!-- 6 -->
+    <article class="reveal">
+      <span class="emoji">🌳</span>
+      <span class="kicker per">Resistencia</span>
+      <h2 class="hd">Los caducos están pelados, pero no rendidos</h2>
+      <div class="byline">Brigada de invierno · Durazno, Liquidámbar, Crespón, Ciruelo</div>
+      <p><span class="lead-in">Parecen muertos. No lo están.</span> Tus árboles caducos soltaron las hojas y aguantan las heladas a pura estructura. Y cada uno carga una historia:</p>
+      <p>El <span class="lead-in">durazno (B-30/B-35)</span>: pese a llamarse Prunus <i>persica</i>, es de China, con 8000 años de cultivo. Su piel aterciopelada es defensa antihongos. El <span class="lead-in">liquidámbar (B-37)</span>: su tronco da el bálsamo “storax”, usado 3000 años en perfumería; los mayas lo masticaban como chicle. El <span class="lead-in">crespón (B-9)</span>: sus flores parecen papel crepé. Y el <span class="lead-in">ciruelo Pissardii (F-4)</span> guarda el récord:</p>
+      <p class="pull">Todos los ciruelos púrpura del mundo descienden de un único ejemplar que el francés Pissard trajo de Persia en 1880.</p>
+      <div class="dato">❄️ <b>Recordá:</b> las heladas tardías de jun–ago pegan más fuerte al sur y al este al amanecer. Es buen momento para proteger los pies más tiernos en esa franja.</div>
+      <div class="tags"><span class="tag">🍑 Durazno B-30/B-35</span><span class="tag">🍂 Liquidámbar B-37</span><span class="tag">🌸 Crespón B-9</span><span class="tag">🟣 Ciruelo F-4</span></div>
+    </article>
+
+    <!-- 7 -->
+    <article class="reveal">
+      <span class="emoji">🌿</span>
+      <span class="kicker">Los que nunca aflojan</span>
+      <h2 class="hd">Mientras el invierno arrasa, ellos siguen verdes</h2>
+      <div class="byline">Sección Perennes · Mirto, Guayabo, Lavanda</div>
+      <p><span class="lead-in">No todo se desnuda.</span> Un grupo de perennes mantiene el follaje verde aun en lo más crudo del invierno y le da estructura al jardín cuando el resto descansa.</p>
+      <p>El <span class="lead-in">mirto (B-27)</span> era la planta sagrada de Venus, diosa del amor. El <span class="lead-in">guayabo del país (F-1)</span>, nativo de esta tierra, esconde un secreto dulce: sus pétalos son comestibles y saben a golosina. Y la <span class="lead-in">lavanda (B-10/B-19)</span> lleva el baño en el nombre: los romanos la echaban al agua, de <i>lavare</i>, lavar.</p>
+      <div class="tags"><span class="tag">🌿 Mirto B-27</span><span class="tag">🍬 Guayabo F-1</span><span class="tag">💜 Lavanda B-10/B-19</span><span class="tag">Siempreverdes</span></div>
+    </article>
+
+    <!-- 8 -->
+    <article class="reveal">
+      <span class="emoji">🧭</span>
+      <span class="kicker efe">Efeméride del barrio</span>
+      <h2 class="hd">Tu casa es un reloj solar, y el invierno lo demuestra</h2>
+      <div class="byline">Sección Editorial · Orientación este–oeste</div>
+      <p><span class="lead-in">Pocos jardines tienen esta suerte:</span> tu casa está alineada casi perfectamente este–oeste (latitud −34,9° S). En invierno, con el sol bajo y pasando por el norte, eso define quién recibe luz y quién pasa frío.</p>
+      <p>El sol nace por el <span class="lead-in">fondo (este)</span> y se acuesta por el <span class="lead-in">frente (oeste)</span>. Por eso los cítricos y los frutales de sol pleno prosperan donde más luz hay, y por eso las heladas del amanecer muerden primero el sur y el este. Tu jardín no es un cuadro fijo: es una máquina que gira con el sol todos los días.</p>
+      <div class="tags"><span class="tag">🌅 Este = fondo</span><span class="tag">🌇 Oeste = frente</span><span class="tag">−34,9° S</span></div>
+    </article>
+
+  </main>
+
+  <!-- Cierre editorial -->
+  <section class="closing reveal">
+    <div class="k">Editorial</div>
+    <h2>El invierno no es una pausa. Es otro capítulo.</h2>
+    <p>Mientras la ciudad piensa que el jardín “no hace nada”, el tuyo cargó fruta, floreció, dio especias y resistió heladas. Solo había que mirarlo con ojos de cronista.</p>
+  </section>
+
+  <!-- Feedback "increíble" -->
+  <div class="block reveal">
+    <div class="q">¿Esta edición te voló la cabeza?</div>
+    <div class="qsub">Tu reacción nos dice qué tan buena salió la portada de hoy.</div>
+    <div class="reacts" data-id="diario">
+      <button onclick="engageReact('diario','love', this)">😍</button>
+      <button onclick="engageReact('diario','meh', this)">😐</button>
+      <button onclick="engageReact('diario','no', this)">🙅</button>
+      <span class="react-hint"></span>
+    </div>
+  </div>
+
+  <!-- Suscripción diaria -->
+  <div class="block sub-cta reveal">
+    <div class="coffee">☕</div>
+    <div class="q">Tu jardín tiene una noticia nueva cada día.</div>
+    <div class="qsub">¿Te la mando con el café, cada mañana? Una edición fresca de El Diario de tu Jardín, escrita solo para tus plantas. Tres minutos de lectura, cero spam.</div>
+    <div class="yn">
+      <button class="si" onclick="engageAnswer('diario-suscripcion-diaria','si', this)">📰 Sí, quiero mi diario diario</button>
+      <button class="no" onclick="engageAnswer('diario-suscripcion-diaria','no', this)">Hoy no</button>
+      <span class="q-hint"></span>
+    </div>
+  </div>
+
+  <!-- Decisión del sistema -->
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-06-29-diario-jardin')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-06-29-diario-jardin')">✕ No me interesa</button>
+  </div>
+
+  <footer class="foot">
+    El Diario de tu Jardín · Edición Invierno · Montevideo<br>
+    <a class="pitch" href="2026-06-29-diario-jardin-pitch.html">💼 Cómo se vende esto</a>
+  </footer>
+
+</div>
+
+<script src="engage.js"></script>
+<script>
+  (function(){
+    var prog=document.getElementById('prog');
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+    function onScroll(){
+      var h=document.documentElement;
+      var max=(h.scrollHeight - h.clientHeight)||1;
+      var pct=Math.min(100, Math.max(0, (h.scrollTop || document.body.scrollTop)/max*100));
+      if(prog) prog.style.width=pct.toFixed(1)+'%';
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
+    onScroll();
+  })();
+</script>
+</body></html>
