@@ -503,6 +503,12 @@
       "nid": "2026-06-27-c",
       "ts": "2026-06-27T23:34:00.430Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-28-a",
+      "ts": "2026-06-28T11:46:18.978Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
