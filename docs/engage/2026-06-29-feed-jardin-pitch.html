@@ -1,0 +1,211 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1f0a"><title>💼 Pitch · El Feed de tu Jardín</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  :root{
+    --verde:#2d5016; --verde2:#3f6e22; --verde3:#5a9134; --verde4:#9fe06a;
+    --bg:#0f1f0a; --card:#ffffff; --ink:#16210f; --ink2:#5d6b50; --line:#e6efdc;
+    --azul:#1d9bf0; --fucsia:#c026a8; --oro:#d9a312;
+    --pad:max(16px,env(safe-area-inset-left));
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; margin:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); color:var(--ink); line-height:1.55; background:#eef4e7;
+    background-image:radial-gradient(120% 50% at 50% 0%, rgba(90,145,52,.12), transparent);
+    -webkit-font-smoothing:antialiased; }
+  .back{ display:block; color:#dfe9d2; text-decoration:none; font-size:13px; font-weight:700;
+    padding:11px var(--pad); background:#0a1606; width:100%; }
+  .back:active{ opacity:.75; }
+  .wrap{ max-width:720px; margin:0 auto; padding:0 var(--pad) 60px; }
+
+  .hero{ background:linear-gradient(160deg,#1c3a10,#0f240a); color:#eaf3df;
+    margin:0 calc(-1*var(--pad)) 24px; padding:34px var(--pad) 30px; }
+  .hero .tag{ display:inline-block; font-size:11px; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--verde4); background:rgba(90,145,52,.2); border:1px solid rgba(90,145,52,.4);
+    border-radius:999px; padding:5px 12px; margin-bottom:14px; }
+  .hero h1{ font-size:clamp(28px,8vw,42px); font-weight:900; line-height:1.04; letter-spacing:-.02em; color:#fff; }
+  .hero h1 em{ font-style:normal; color:var(--verde4); }
+  .hero .lede{ margin-top:12px; font-size:15.5px; color:#c4d8b1; max-width:50ch; }
+  .hero .links{ margin-top:18px; display:flex; flex-wrap:wrap; gap:10px; }
+  .hero .links a{ text-decoration:none; font-weight:700; font-size:13.5px; border-radius:999px; padding:10px 16px; }
+  .hero .links a.exp{ background:var(--verde4); color:#0f240a; }
+  .hero .links a.site{ background:rgba(255,255,255,.1); color:#dfe9d2; border:1px solid rgba(255,255,255,.18); }
+
+  h2{ font-size:13px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--verde2);
+    margin:30px 0 12px; display:flex; align-items:center; gap:9px; }
+  h2::before{ content:""; width:26px; height:3px; background:var(--verde3); border-radius:2px; }
+
+  p.body{ font-size:15.5px; color:#2a3622; margin-bottom:12px; }
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px 18px;
+    margin-bottom:14px; box-shadow:0 4px 16px rgba(45,80,22,.06); }
+
+  .kpis{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:6px 0 4px; }
+  .kpi{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px 10px; text-align:center; }
+  .kpi b{ display:block; font-size:24px; font-weight:900; color:var(--verde); line-height:1; }
+  .kpi span{ display:block; font-size:11px; color:var(--ink2); font-weight:600; margin-top:6px; }
+
+  .who-grid{ display:grid; gap:10px; }
+  .who-row{ display:flex; gap:11px; align-items:flex-start; background:#fff; border:1px solid var(--line);
+    border-radius:12px; padding:13px 14px; }
+  .who-row .e{ font-size:24px; flex:0 0 auto; }
+  .who-row b{ font-size:14.5px; } .who-row p{ font-size:13.5px; color:var(--ink2); margin-top:2px; }
+
+  /* Modelos de monetización */
+  .mon{ background:#fff; border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:14px;
+    overflow:hidden; box-shadow:0 6px 22px rgba(45,80,22,.07); }
+  .mon-hd{ padding:16px 18px 14px; display:flex; align-items:flex-start; gap:12px;
+    border-bottom:1px solid var(--line); }
+  .mon-hd .n{ flex:0 0 auto; width:34px; height:34px; border-radius:10px; display:grid; place-items:center;
+    font-weight:900; font-size:16px; color:#fff; background:var(--verde2); }
+  .mon.ultra .mon-hd .n{ background:linear-gradient(135deg,var(--fucsia),#7d1b6b); }
+  .mon-hd .t{ flex:1; }
+  .mon-hd .badge{ font-size:9.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--verde2); background:#eef6e4; border:1px solid var(--line); border-radius:999px; padding:3px 8px;
+    display:inline-block; margin-bottom:5px; }
+  .mon.ultra .mon-hd .badge{ color:var(--fucsia); background:#fbe9f6; border-color:#f3cfe9; }
+  .mon-hd h3{ font-size:18px; font-weight:900; letter-spacing:-.01em; line-height:1.15; }
+  .mon-body{ padding:14px 18px 16px; }
+  .mon-body .row{ margin-bottom:11px; }
+  .mon-body .row:last-child{ margin-bottom:0; }
+  .mon-body .lab{ font-size:11px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--ink2); }
+  .mon-body .row p{ font-size:14px; color:#2a3622; margin-top:2px; }
+  .mon-body .num{ background:#f3f9ec; border-left:4px solid var(--verde2); border-radius:8px;
+    padding:9px 12px; font-size:13.5px; color:#33421f; }
+  .mon.ultra .mon-body .num{ background:#fbe9f6; border-left-color:var(--fucsia); color:#5a1a4d; }
+  .mon-body .num b{ color:var(--verde); } .mon.ultra .mon-body .num b{ color:var(--fucsia); }
+
+  .cta{ background:linear-gradient(160deg,#1c3a10,#0f240a); color:#eaf3df; border-radius:20px;
+    padding:30px 22px; text-align:center; margin-top:26px; }
+  .cta h2{ color:#fff; justify-content:center; font-size:22px; letter-spacing:-.01em; text-transform:none; margin:0 0 10px; }
+  .cta h2::before{ display:none; }
+  .cta p{ color:#c4d8b1; font-size:15px; max-width:46ch; margin:0 auto 16px; }
+  .cta .big{ display:inline-block; background:var(--verde4); color:#0f240a; font-weight:900; font-size:16px;
+    border-radius:13px; padding:14px 24px; text-decoration:none; }
+  .cta .fine{ display:block; margin-top:14px; font-size:12px; color:#8aa673; }
+
+  footer{ text-align:center; padding:24px 0 0; color:var(--ink2); font-size:12px; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="wrap">
+
+  <div class="hero">
+    <span class="tag">💼 Pitch comercial · confidencial</span>
+    <h1>El Feed de tu Jardín:<br>convertir <em>plantas</em> en <em>audiencia</em>.</h1>
+    <p class="lede">Una experiencia de lectura tipo red social donde cada planta tiene perfil, voz y datos reales. Cero juego, puro micro-deleite. Lo que sigue es por qué engancha y seis maneras de monetizarlo — tres innovadoras y tres ultra-creativas.</p>
+    <div class="links">
+      <a class="exp" href="2026-06-29-feed-jardin.html">👀 Ver la experiencia</a>
+      <a class="site" href="https://gardening-chi.vercel.app/index.html">Sitio estable</a>
+    </div>
+  </div>
+
+  <!-- Resumen ejecutivo -->
+  <h2>Resumen ejecutivo</h2>
+  <div class="card">
+    <p class="body"><b>"El Feed de tu Jardín"</b> toma el contenido más fuerte que ya existe en el catálogo — el <code>fun_fact</code> verificado de cada especie — y lo reempaqueta en el formato más adictivo que conoce el ser humano moderno: el scroll de una red social. Cada planta "postea" en primera persona un dato real y sorprendente (la palta diseñada para perezosos gigantes extintos, la NASA eligiendo a la cinta, la Hass que es un clon mundial de un solo árbol de 1926).</p>
+    <p class="body">El activo no es el código: es la <b>voz + el dato verificado + el formato familiar</b>. Es contenido evergreen reciclable infinitamente, de costo marginal cercano a cero, y profundamente compartible. La credibilidad (todo es real, citado por código de catálogo) es lo que lo separa del contenido genérico de internet.</p>
+    <div class="kpis">
+      <div class="kpi"><b>52</b><span>plantas con perfil</span></div>
+      <div class="kpi"><b>~30s</b><span>de lectura/sesión</span></div>
+      <div class="kpi"><b>$0</b><span>costo marginal/edición</span></div>
+    </div>
+  </div>
+
+  <!-- Por qué engancha -->
+  <h2>Por qué engancha (fundamento de retención)</h2>
+  <div class="card">
+    <p class="body"><b>1. Formato pre-instalado en el cerebro.</b> No hay curva de aprendizaje: todos saben scrollear un feed. La fricción de entrada es cero, y el gesto del scroll ya está asociado neurológicamente a recompensa variable (dopamina). Aprovechamos un hábito existente en vez de crear uno nuevo.</p>
+    <p class="body"><b>2. Recompensa variable real, no falsa.</b> Cada card entrega un dato genuinamente sorprendente. La sorpresa es el combustible de la retención — y como es verdad, no se quema la confianza (a diferencia del clickbait).</p>
+    <p class="body"><b>3. Antropomorfismo = vínculo emocional.</b> Darle voz, handle y "seguidores" a una planta crea una relación parasocial micro. El usuario empieza a "conocer" a sus plantas como personajes. Esto convierte un catálogo frío en un elenco de personajes con los que uno se encariña — y uno vuelve por los personajes.</p>
+    <p class="body"><b>4. Lectura, no juego.</b> Este usuario se fatiga con mecánicas de juego. El feed es consumo pasivo de bajo esfuerzo: el deleite viene del contenido, no del desafío. Sostenible para el largo plazo.</p>
+    <p class="body"><b>5. Frescura diaria con costo cero.</b> Con 52 plantas y múltiples datos por especie, hay munición para meses de ediciones distintas sin repetir. La suscripción diaria crea el loop de hábito (gatillo → rutina → recompensa).</p>
+    <p class="body"><b>6. Compartibilidad nativa.</b> "Mirá lo que posteó mi palta" es un mensaje que se reenvía solo. Cada card es una unidad de contenido viral autónoma.</p>
+  </div>
+
+  <!-- Público objetivo -->
+  <h2>Público objetivo</h2>
+  <div class="who-grid">
+    <div class="who-row"><span class="e">🪴</span><div><b>El jardinero hogareño curioso</b><p>Tiene plantas, las quiere, pero no es experto. Ama "saber cosas" de lo que cultiva. Núcleo duro y el dueño del jardín mismo.</p></div></div>
+    <div class="who-row"><span class="e">📱</span><div><b>El consumidor de contenido liviano</b><p>Scrollea en la cola del súper. Le encanta el dato curioso compartible. No tiene plantas pero comparte igual.</p></div></div>
+    <div class="who-row"><span class="e">🏫</span><div><b>Educación y divulgación</b><p>Maestras, museos de ciencia, jardines botánicos: necesitan contenido botánico atractivo y veraz, y no lo tienen.</p></div></div>
+    <div class="who-row"><span class="e">🌎</span><div><b>Orgullo nativo / regional</b><p>Sensible al "team nativas" (guayabo, anacahuita protegida por ley). Hay identidad uruguaya monetizable.</p></div></div>
+  </div>
+
+  <!-- MONETIZACIÓN -->
+  <h2>6 modelos de monetización</h2>
+  <p class="body" style="margin-top:-4px">Tres innovadores (ejecutables ya, riesgo bajo) y tres ultra-creativos (apuestas de techo alto).</p>
+
+  <!-- INNOVADOR 1 -->
+  <div class="mon">
+    <div class="mon-hd"><div class="n">1</div><div class="t"><span class="badge">Innovador</span><h3>"Feed Premium" — suscripción de contenido fresco</h3></div></div>
+    <div class="mon-body">
+      <div class="row"><span class="lab">Cómo funciona</span><p>El feed gratis muestra una edición; los suscriptores reciben una edición nueva cada día (deep links por push), perfiles desbloqueados de las 52 plantas, y "temporadas temáticas" (edición nativas, edición frutales, edición de invierno). Pago mensual chico tipo newsletter.</p></div>
+      <div class="row"><span class="lab">Por qué pagarían</span><p>El loop de hábito ya construido + FOMO de "el posteo de hoy". Es el modelo Substack/Blendle aplicado a botánica: pagás por la curaduría y la frescura, no por el dato suelto.</p></div>
+      <div class="row"><div class="num">📈 <b>USD 3/mes</b>. Con apenas 1.000 suscriptores (alcanzable en nicho jardinería LATAM) = <b>USD 36.000/año</b> de margen casi puro (costo de contenido ≈ 0).</div></div>
+    </div>
+  </div>
+
+  <!-- INNOVADOR 2 -->
+  <div class="mon">
+    <div class="mon-hd"><div class="n">2</div><div class="t"><span class="badge">Innovador</span><h3>Viveros patrocinados — "perfil verificado por la marca"</h3></div></div>
+    <div class="mon-body">
+      <div class="row"><span class="lab">Cómo funciona</span><p>Un vivero o marca de insumos patrocina un perfil de planta: el card lleva un sutil "presentado por [vivero]" + un CTA "conseguí la tuya". No es banner: es product placement nativo dentro de la voz de la planta. La hortensia te cuenta cómo cambia de color… y abajo está el sustrato ácido que lo logra.</p></div>
+      <div class="row"><span class="lab">Por qué pagarían</span><p>Audiencia hiper-cualificada (gente que YA cultiva) con intención de compra altísima y contexto perfecto. CPM de jardinería de nicho vale mucho más que display genérico.</p></div>
+      <div class="row"><div class="num">📈 <b>USD 80–150 por perfil/mes</b> patrocinado. 6 perfiles activos = <b>~USD 7.200/año</b>, escalable con el tráfico.</div></div>
+    </div>
+  </div>
+
+  <!-- INNOVADOR 3 -->
+  <div class="mon">
+    <div class="mon-hd"><div class="n">3</div><div class="t"><span class="badge">Innovador</span><h3>Licencia white-label del motor de feed</h3></div></div>
+    <div class="mon-body">
+      <div class="row"><span class="lab">Cómo funciona</span><p>El formato es replicable a cualquier catálogo: jardines botánicos, viveros, municipios con arbolado urbano, apps de identificación de plantas. Licenciamos el motor ("dame tu base de datos de especies, te devuelvo un feed adictivo de marca"). SaaS B2B.</p></div>
+      <div class="row"><span class="lab">Por qué pagarían</span><p>Las instituciones tienen los datos pero no saben hacerlos atractivos. Les vendemos engagement llave en mano, sin que contraten un equipo de producto.</p></div>
+      <div class="row"><div class="num">📈 <b>USD 200–500/mes</b> por institución. 10 clientes B2B = <b>USD 24.000–60.000/año</b> recurrente.</div></div>
+    </div>
+  </div>
+
+  <!-- ULTRA 1 -->
+  <div class="mon ultra">
+    <div class="mon-hd"><div class="n">4</div><div class="t"><span class="badge">Ultra-creativo</span><h3>"Adoptá un perfil" — apadrinamiento de una planta real</h3></div></div>
+    <div class="mon-body">
+      <div class="row"><span class="lab">Cómo funciona</span><p>Pagás una vez para "adoptar" oficialmente una planta del jardín: tu nombre aparece como su #1 follower, recibís sus posteos como notificaciones personales ("tu durazno está floreciendo 🌸"), y un certificado digital de adopción. Souvenir emocional + regalo.</p></div>
+      <div class="row"><span class="lab">Por qué pagarían</span><p>Vende emoción, no función. Funciona como regalo ("te adopté la lavanda B-19, es tuya"). La gente paga fortunas por apadrinar animales del zoológico o estrellas — una planta con voz propia es igual de potente y más íntimo.</p></div>
+      <div class="row"><div class="num">📈 <b>USD 15 único + USD 2/mes</b> opcional. Como regalo de cumpleaños/aniversario es un mercado enorme: 500 adopciones/año = <b>USD 7.500 + recurrente.</b></div></div>
+    </div>
+  </div>
+
+  <!-- ULTRA 2 -->
+  <div class="mon ultra">
+    <div class="mon-hd"><div class="n">5</div><div class="t"><span class="badge">Ultra-creativo</span><h3>Coleccionables de "datos raros" — láminas y mazo físico</h3></div></div>
+    <div class="mon-body">
+      <div class="row"><span class="lab">Cómo funciona</span><p>Cada dato verificado es una "carta" coleccionable. Vendemos un mazo físico premium (estilo cartas Top Trumps botánicas: stats reales — longevidad, nativa sí/no, años de cultivo) y láminas imprimibles de los mejores posteos. Print-on-demand, cero inventario.</p></div>
+      <div class="row"><span class="lab">Por qué pagarían</span><p>El contenido digital efímero se vuelve objeto tangible coleccionable y regalable. El público de jardinería ama lo físico-decorativo. Conecta lo digital con un producto de margen alto.</p></div>
+      <div class="row"><div class="num">📈 <b>USD 18 el mazo</b> (costo POD ~6). Margen <b>USD 12/unidad</b>. 1.000 unidades/año = <b>USD 12.000</b>, más láminas a USD 8.</div></div>
+    </div>
+  </div>
+
+  <!-- ULTRA 3 -->
+  <div class="mon ultra">
+    <div class="mon-hd"><div class="n">6</div><div class="t"><span class="badge">Ultra-creativo</span><h3>"Influencer botánico" — el feed como cuenta social autónoma</h3></div></div>
+    <div class="mon-body">
+      <div class="row"><span class="lab">Cómo funciona</span><p>Llevamos los posteos a Instagram/TikTok como cuenta propia (@JardinGram): cada card es un reel de 15s con la voz de la planta y su dato. El sitio es el "home base"; las redes son el motor de crecimiento. Una vez con audiencia, se monetiza con canjes de marca, afiliados de productos de jardín y fondo de creadores.</p></div>
+      <div class="row"><span class="lab">Por qué pagarían</span><p>El contenido "planta con personalidad + dato real" tiene ADN viral comprobado (cuentas de animales antropomorfizados explotan). Construye un activo de marca cuyo valor crece solo con cada seguidor.</p></div>
+      <div class="row"><div class="num">📈 Una cuenta de nicho con <b>50k seguidores</b> factura <b>USD 500–2.000 por post patrocinado.</b> Techo altísimo, costo de producción marginal cero.</div></div>
+    </div>
+  </div>
+
+  <!-- CTA de ventas -->
+  <div class="cta">
+    <h2>El pitch en una frase</h2>
+    <p>Ya tenemos el contenido (52 plantas, datos verificados), ya tenemos el formato más adictivo del mundo, y ya tenemos el costo marginal en cero. Lo único que falta es decidir <b>cuál de estas seis palancas</b> tiramos primero.</p>
+    <a class="big" href="2026-06-29-feed-jardin.html">👉 Volvé a ver la experiencia funcionando</a>
+    <span class="fine">Recomendación: arrancar con #1 (Premium) + #6 (redes) — mismo contenido, dos canales, cero costo extra.</span>
+  </div>
+
+  <footer>JardínGram · material de venta · Pacha Mama, Montevideo · Invierno 2026</footer>
+</div>
+</body></html>

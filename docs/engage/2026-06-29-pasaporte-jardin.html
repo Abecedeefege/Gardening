@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🗺️ Pasaporte Botánico — de dónde viajó tu jardín</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --verde:#2d5016;
+  --verde-2:#3f6d22;
+  --fondo:#f5faf0;
+  --papel:#f3ead6;
+  --papel-2:#e7d9ba;
+  --tinta:#2a2118;
+  --sello:#9a2b1f;
+  --sello-azul:#1f4e6e;
+  --oro:#b5862b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--tinta);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(154,43,31,.04), transparent 32%),
+    radial-gradient(circle at 88% 22%, rgba(31,78,110,.05), transparent 35%),
+    var(--fondo);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* barra de progreso de viaje */
+#progress{
+  position:fixed;top:0;left:0;height:4px;width:0;z-index:9999;
+  background:linear-gradient(90deg,var(--verde),var(--oro),var(--sello));
+  transition:width .12s linear;
+}
+
+.back{
+  display:inline-block;margin:14px 16px 0;
+  font-size:13px;font-weight:600;color:var(--verde);
+  text-decoration:none;border-bottom:1px dashed var(--verde-2);padding-bottom:1px;
+}
+.back:hover{color:var(--sello)}
+
+.wrap{max-width:680px;margin:0 auto;padding:0 16px 60px}
+
+/* ====== PORTADA TIPO PASAPORTE ====== */
+.cover{
+  margin:18px 0 30px;
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,.03) 0 8px, transparent 8px 16px),
+    linear-gradient(160deg,#1f3a0f,#2d5016 55%,#3f6d22);
+  color:#f5faf0;
+  border-radius:18px;
+  padding:30px 24px 26px;
+  box-shadow:0 18px 40px rgba(31,58,15,.32);
+  position:relative;overflow:hidden;
+  border:1px solid rgba(181,134,43,.4);
+}
+.cover::after{
+  content:"";position:absolute;inset:9px;border:1.5px solid rgba(181,134,43,.45);
+  border-radius:12px;pointer-events:none;
+}
+.cover .crest{font-size:38px;line-height:1}
+.cover .kicker{
+  font-family:'Special Elite',monospace;letter-spacing:3px;text-transform:uppercase;
+  font-size:11px;color:var(--oro);margin:14px 0 6px;
+}
+.cover h1{
+  font-family:'Fraunces',serif;font-weight:900;font-size:clamp(28px,8vw,42px);
+  line-height:1.02;letter-spacing:-.5px;
+}
+.cover .sub{
+  margin-top:12px;font-size:15px;color:rgba(245,250,240,.92);max-width:46ch;
+}
+.cover .meta{
+  margin-top:18px;display:flex;flex-wrap:wrap;gap:8px;
+  font-family:'Special Elite',monospace;font-size:11px;letter-spacing:1px;
+}
+.cover .meta span{
+  background:rgba(245,250,240,.1);border:1px solid rgba(181,134,43,.4);
+  padding:4px 9px;border-radius:6px;
+}
+
+.intro{
+  font-size:16px;margin:0 4px 26px;color:#3a3326;
+}
+.intro b{color:var(--verde)}
+
+.section-label{
+  font-family:'Special Elite',monospace;text-transform:uppercase;letter-spacing:2px;
+  font-size:12px;color:var(--sello);margin:34px 4px 14px;
+  display:flex;align-items:center;gap:10px;
+}
+.section-label::before,.section-label::after{
+  content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--papel-2),transparent);
+}
+
+/* ====== CARD = PÁGINA DE PASAPORTE ====== */
+.dispatch{
+  position:relative;
+  background:
+    repeating-linear-gradient(0deg, rgba(0,0,0,.012) 0 26px, transparent 26px 27px),
+    linear-gradient(180deg,#f7efdd,var(--papel));
+  border:1px solid var(--papel-2);
+  border-radius:14px;
+  padding:22px 20px 20px;
+  margin:0 0 22px;
+  box-shadow:0 6px 18px rgba(80,60,20,.1);
+  opacity:0;transform:translateY(26px) rotate(-.3deg);
+  transition:opacity .6s ease, transform .6s cubic-bezier(.2,.7,.3,1);
+}
+.dispatch.in{opacity:1;transform:none}
+.dispatch:nth-child(even){transform:translateY(26px) rotate(.4deg)}
+.dispatch:nth-child(even).in{transform:none}
+
+/* sello redondo arriba a la derecha */
+.stamp{
+  position:absolute;top:14px;right:14px;
+  width:78px;height:78px;border-radius:50%;
+  border:2.5px solid var(--sello);color:var(--sello);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;transform:rotate(-13deg);
+  font-family:'Special Elite',monospace;opacity:.82;
+  box-shadow:inset 0 0 0 3px rgba(154,43,31,.12);
+}
+.stamp.blue{border-color:var(--sello-azul);color:var(--sello-azul);box-shadow:inset 0 0 0 3px rgba(31,78,110,.12)}
+.stamp .flag{font-size:20px;line-height:1}
+.stamp .stxt{font-size:8px;letter-spacing:.5px;margin-top:2px;line-height:1.1;text-transform:uppercase}
+
+.tag-line{
+  display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+  font-family:'Special Elite',monospace;font-size:10.5px;letter-spacing:1px;
+  color:#8a6d2e;text-transform:uppercase;margin-bottom:4px;
+}
+.codes{
+  background:var(--verde);color:#f5faf0;padding:2px 7px;border-radius:4px;
+  font-size:10px;letter-spacing:.5px;
+}
+.badge-nat{background:#e7f0d8;color:var(--verde);border:1px solid #c5d9a4;padding:2px 7px;border-radius:4px}
+.badge-exo{background:#e2edf3;color:var(--sello-azul);border:1px solid #b8d2e0;padding:2px 7px;border-radius:4px}
+
+.dispatch h2{
+  font-family:'Fraunces',serif;font-weight:900;font-size:23px;line-height:1.08;
+  color:var(--verde);margin:6px 60px 2px 0;letter-spacing:-.3px;
+}
+.sci{font-style:italic;font-size:14px;color:#6b5a3c;margin-bottom:10px}
+
+/* mini-mapa de ruta textual */
+.route{
+  font-family:'Special Elite',monospace;font-size:12px;
+  background:rgba(255,255,255,.55);border:1px dashed var(--papel-2);
+  border-radius:8px;padding:8px 11px;margin:10px 0;
+  color:#5a4a2c;letter-spacing:.3px;
+}
+.route .arrow{color:var(--sello);font-weight:700}
+
+.crand{
+  background:linear-gradient(180deg,#fffaf0,#f1e7cf);
+  border-left:4px solid var(--oro);
+  border-radius:0 8px 8px 0;
+  padding:9px 12px;margin:11px 0;
+}
+.crand .lab{
+  font-family:'Special Elite',monospace;font-size:9.5px;letter-spacing:1.5px;
+  text-transform:uppercase;color:#9a7a2a;display:block;margin-bottom:2px;
+}
+.crand .name{font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:var(--tinta)}
+
+.body{font-size:14.5px;color:#3a3326;margin-top:8px}
+.body p{margin:7px 0}
+.fact{
+  margin-top:11px;font-size:13.5px;color:#52442c;
+  border-top:1px dotted var(--papel-2);padding-top:9px;
+}
+.fact b{color:var(--sello)}
+
+/* ====== CIERRE ====== */
+.closing{
+  margin:40px 0 0;text-align:center;
+  background:linear-gradient(160deg,#fffdf8,var(--papel));
+  border:1px solid var(--papel-2);border-radius:16px;padding:28px 22px;
+  box-shadow:0 8px 22px rgba(80,60,20,.1);
+}
+.closing h2{font-family:'Fraunces',serif;font-weight:900;font-size:25px;color:var(--verde);line-height:1.1}
+.closing .big{font-size:42px;margin:6px 0}
+.closing p{font-size:15px;color:#3a3326;margin:10px auto;max-width:42ch}
+
+.react-row,.q-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px 0 4px}
+.react-row button,.q-row button{
+  font-family:'Inter',sans-serif;font-weight:600;font-size:15px;
+  background:#fff;border:2px solid var(--papel-2);border-radius:12px;
+  padding:12px 16px;cursor:pointer;transition:all .15s;color:var(--tinta);
+}
+.react-row button:hover,.q-row button:hover{border-color:var(--verde);transform:translateY(-2px)}
+.react-row button.sel,.q-row button.sel{background:var(--verde);color:#fff;border-color:var(--verde)}
+.react-row button:disabled,.q-row button:disabled{opacity:.55;cursor:default;transform:none}
+.react-hint,.q-hint{display:block;min-height:18px;margin-top:6px;font-size:13px;color:var(--verde-2);font-weight:600}
+
+.sub-cta{
+  margin-top:26px;background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 7px, transparent 7px 14px),
+    linear-gradient(160deg,#234011,#2d5016);
+  color:#f5faf0;border-radius:16px;padding:24px 20px;text-align:center;
+  border:1px solid rgba(181,134,43,.4);
+}
+.sub-cta .stamp-ico{font-size:34px}
+.sub-cta h3{font-family:'Fraunces',serif;font-weight:900;font-size:21px;margin:6px 0 4px}
+.sub-cta p{font-size:14px;color:rgba(245,250,240,.9);max-width:40ch;margin:0 auto 4px}
+.sub-cta .q-row button{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(181,134,43,.5)}
+.sub-cta .q-row button.sel{background:var(--oro);border-color:var(--oro);color:#26200f}
+.sub-cta .q-hint{color:#f0e3bf}
+
+.engage-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:28px 0 0}
+.engage-actions button{
+  font-family:'Inter',sans-serif;font-weight:700;font-size:14px;cursor:pointer;
+  border-radius:12px;padding:13px 18px;border:0;transition:transform .12s,filter .12s;
+}
+.engage-actions button:first-child{background:var(--verde);color:#fff}
+.engage-actions button:last-child{background:#efe7d4;color:#6b5a3c;border:1px solid var(--papel-2)}
+.engage-actions button:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.engage-feedback{font-size:15px;font-weight:600;color:var(--verde);text-align:center;padding:10px}
+
+footer{margin-top:34px;text-align:center;font-size:13px;color:#7a6a4c}
+footer .pitch{
+  display:inline-block;margin-top:6px;color:var(--sello);font-weight:700;text-decoration:none;
+  border-bottom:1px dashed var(--sello);padding-bottom:1px;
+}
+footer .credit{margin-top:14px;font-family:'Special Elite',monospace;font-size:11px;letter-spacing:1px;color:#9a8a6a}
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div id="progress"></div>
+
+<div class="wrap">
+
+  <header class="cover">
+    <div class="crest">🗺️</div>
+    <div class="kicker">Pasaporte Botánico · Jardín Pacha Mama</div>
+    <h1>Tu jardín es un<br>mapa del mundo.</h1>
+    <p class="sub">Cada planta que plantaste cargó un pasaporte. Algunas son de acá, del Río de la Plata, y tienen nombres charrúas y guaraníes que casi nadie recuerda. Otras cruzaron océanos, persas, chinas, indias, para terminar enraizando en Montevideo. Estos son sus despachos de viaje.</p>
+    <div class="meta">
+      <span>📍 Montevideo · 34.9° S</span>
+      <span>❄️ Invierno 2026</span>
+      <span>10 sellos</span>
+    </div>
+  </header>
+
+  <p class="intro">Caminás todos los días entre ellas sin saber de dónde vinieron. Hoy te las presento con su <b>origen verificado</b>, su nombre científico y, cuando sobrevive, el nombre que les pusieron los pueblos originarios. Deslizá: cada página es un sello en el pasaporte de tu jardín.</p>
+
+  <!-- ============ NATIVAS ============ -->
+  <div class="section-label">Sellos de origen · Nacidas acá 🇺🇾</div>
+
+  <!-- F-1 Guayabo -->
+  <article class="dispatch">
+    <div class="stamp"><span class="flag">🇺🇾</span><span class="stxt">Río de<br>la Plata</span></div>
+    <div class="tag-line"><span class="codes">F-1</span> <span class="badge-nat">Nativa</span> · Acca sellowiana</div>
+    <h2>Guayabo del país</h2>
+    <div class="sci">Acca sellowiana</div>
+    <div class="route">🌿 Sierras del Río de la Plata <span class="arrow">→</span> tu frente, F-1</div>
+    <div class="crand">
+      <span class="lab">Nombre originario</span>
+      <span class="name">Ñunde (charrúa) · Arasá-pé (guaraní)</span>
+    </div>
+    <div class="body">
+      <p>No viajó: ya estaba. Es uno de los poquísimos frutales-aromáticos <b>nativos del Río de la Plata</b>. Cuando lo plantaste, plantaste paisaje uruguayo de verdad: hoja verde-grisácea plateada por debajo, flores blancas y rojas que se comen, y ese fruto verde ovalado que perfuma a fin de verano.</p>
+      <div class="fact"><b>Despacho:</b> sus pétalos son dulces — en Uruguay y Brasil los niños los comían como golosina directo de la planta. Pocos saben que tienen en el frente un nativo con nombre charrúa: <i>Ñunde</i>.</div>
+    </div>
+  </article>
+
+  <!-- B-16 Anacahuita -->
+  <article class="dispatch">
+    <div class="stamp"><span class="flag">🇺🇾</span><span class="stxt">Uruguay<br>protegida</span></div>
+    <div class="tag-line"><span class="codes">B-16</span> <span class="badge-nat">Nativa</span> · Schinus longifolius</div>
+    <h2>Anacahuita</h2>
+    <div class="sci">Schinus longifolius</div>
+    <div class="route">🌳 Monte nativo uruguayo <span class="arrow">→</span> tu fondo, B-16</div>
+    <div class="crand">
+      <span class="lab">Nombre originario</span>
+      <span class="name">Anacahuita (charrúa) · Aratiku-pitá</span>
+    </div>
+    <div class="body">
+      <p>Si hay un árbol que es Uruguay, es este. Copa redonda, hoja perenne larga, frutitos rosados — pariente del aguaribay pero más fino. Es de los árboles más simbólicos del país.</p>
+      <div class="fact"><b>Despacho:</b> está <b>protegido por ley nacional desde 1986</b>. Su madera dura la usaban los charrúas para hacer arcos. Tenés un pedazo de historia precolombina creciendo al fondo.</div>
+    </div>
+  </article>
+
+  <!-- F-8 Aguaribay -->
+  <article class="dispatch">
+    <div class="stamp"><span class="flag">🇺🇾</span><span class="stxt">Sagrado<br>guaraní</span></div>
+    <div class="tag-line"><span class="codes">F-8</span> <span class="badge-nat">Nativa</span> · Schinus molle</div>
+    <h2>Aguaribay / Molle</h2>
+    <div class="sci">Schinus molle</div>
+    <div class="route">⛰️ Andes y Cono Sur <span class="arrow">→</span> tu frente, F-8</div>
+    <div class="crand">
+      <span class="lab">Nombre originario</span>
+      <span class="name">Aguaraibá (guaraní) · Molle (charrúa)</span>
+    </div>
+    <div class="body">
+      <p>Copa amplia, ramas péndulas, hoja aromática que repele mosquitos. Los racimos rosa-rojizos que cuelgan son la famosa <b>“pimienta rosa”</b> que se vende en delicatessen — no viene de un pimentero de verdad, viene de este árbol.</p>
+      <div class="fact"><b>Despacho:</b> <b>los Incas y los guaraníes lo consideraban sagrado.</b> Tenés un árbol ceremonial precolombino dando sombra en la vereda.</div>
+    </div>
+  </article>
+
+  <!-- Pindó -->
+  <article class="dispatch">
+    <div class="stamp"><span class="flag">🌴</span><span class="stxt">Palmar<br>rioplatense</span></div>
+    <div class="tag-line"><span class="codes">B-8 · B-21 · B-28</span> <span class="badge-nat">Nativa</span></div>
+    <h2>Palmera pindó</h2>
+    <div class="sci">Syagrus romanzoffiana</div>
+    <div class="route">🌴 Palmares del Río de la Plata <span class="arrow">→</span> tu fondo (×3)</div>
+    <div class="crand">
+      <span class="lab">Nombre originario</span>
+      <span class="name">Pindó (guaraní) · Mbocayá</span>
+    </div>
+    <div class="body">
+      <p>Tres ejemplares de la palmera nativa que define el horizonte uruguayo. Hojas pinadas de hasta 4 m, racimos de frutos amarillo-anaranjados que las aves persiguen.</p>
+      <div class="fact"><b>Despacho:</b> los niños guaraníes chupaban su fruto como golosina natural — <b>sabor a coco-banana.</b> Su epíteto <i>romanzoffiana</i> homenajea a un conde ruso que financió una expedición a América en 1815.</div>
+    </div>
+  </article>
+
+  <!-- Lantana -->
+  <article class="dispatch">
+    <div class="stamp"><span class="flag">🦋</span><span class="stxt">Sudamérica<br>nativa</span></div>
+    <div class="tag-line"><span class="codes">B-29</span> <span class="badge-nat">Nativa</span> · Lantana camara</div>
+    <h2>Lantana / Camará</h2>
+    <div class="sci">Lantana camara</div>
+    <div class="route">🌎 Trópicos de Sudamérica <span class="arrow">→</span> tu fondo, B-29</div>
+    <div class="crand">
+      <span class="lab">Nombre originario</span>
+      <span class="name">Camará · Ka'a-pondá (guaraní)</span>
+    </div>
+    <div class="body">
+      <p>Inflorescencias que son siete colores a la vez. Las flores cambian de tono al envejecer (amarillo → naranja → rojo) para avisarle a mariposas y picaflores cuáles son las frescas. Un semáforo botánico.</p>
+      <div class="fact"><b>Despacho:</b> <b>los charrúas la usaban como repelente</b> — quemaban sus hojas para ahuyentar mosquitos. Cuidado: las bayas son tóxicas.</div>
+    </div>
+  </article>
+
+  <!-- ============ EXÓTICAS ============ -->
+  <div class="section-label">Sellos de aduana · Cruzaron el océano 🌊</div>
+
+  <!-- B-22 Palta -->
+  <article class="dispatch">
+    <div class="stamp blue"><span class="flag">🌎</span><span class="stxt">América<br>tropical</span></div>
+    <div class="tag-line"><span class="codes">B-22</span> <span class="badge-exo">Exótica</span> · Persea americana</div>
+    <h2>Palta uruguaya</h2>
+    <div class="sci">Persea americana</div>
+    <div class="route">🌴 América tropical <span class="arrow">→</span> tu fondo, B-22</div>
+    <div class="body">
+      <p>La palta criolla de piel fina y pulpa cremosa. Pero su historia es de las más alucinantes del jardín.</p>
+      <div class="fact"><b>Despacho:</b> su semilla gigante <b>estaba diseñada para que la tragaran perezosos gigantes</b> que se extinguieron hace 13.000 años. La planta tendría que haber desaparecido con ellos — sobrevivió solo porque los humanos la empezaron a cultivar. Comés un fruto que perdió a su animal dispersor en la Edad de Hielo.</div>
+    </div>
+  </article>
+
+  <!-- B-23 Limonero -->
+  <article class="dispatch">
+    <div class="stamp blue"><span class="flag">🇮🇳</span><span class="stxt">India<br>2500 años</span></div>
+    <div class="tag-line"><span class="codes">B-23</span> <span class="badge-exo">Exótica</span> · Citrus × limon</div>
+    <h2>Limonero</h2>
+    <div class="sci">Citrus × limon</div>
+    <div class="route">🇮🇳 India <span class="arrow">→</span> Mediterráneo <span class="arrow">→</span> América <span class="arrow">→</span> tu fondo, B-23</div>
+    <div class="body">
+      <p>Te da limones casi todo el año y azahar perfumado varias veces. Pero el limonero esconde un secreto de identidad.</p>
+      <div class="fact"><b>Despacho:</b> el limonero <b>no existe en estado silvestre</b> — es un híbrido de cidro × naranja amarga que nació en la <b>India hace ~2500 años.</b> Cada limón que cortás desciende de ese cruce ancestral que viajó por toda la ruta de las especias.</div>
+    </div>
+  </article>
+
+  <!-- B-25 Mandarina -->
+  <article class="dispatch">
+    <div class="stamp blue"><span class="flag">🇨🇳</span><span class="stxt">China<br>3000 a.C.</span></div>
+    <div class="tag-line"><span class="codes">B-25</span> <span class="badge-exo">Exótica</span> · Citrus reticulata</div>
+    <h2>Mandarina criolla</h2>
+    <div class="sci">Citrus reticulata</div>
+    <div class="route">🇨🇳 China imperial <span class="arrow">→</span> el mundo <span class="arrow">→</span> tu fondo, B-25</div>
+    <div class="body">
+      <p>Fruto pequeño y dulce, cáscara que se separa sola. Es, literalmente, un cítrico de la realeza.</p>
+      <div class="fact"><b>Despacho:</b> su nombre viene de los <b>“mandarines”, los funcionarios de la China imperial</b> que vestían túnicas anaranjadas. Y es el cítrico más antiguo conocido — <b>3000 a.C.</b> —: el padre genético de naranjas y limones modernos. En tu fondo crece el abuelo de todos los cítricos.</div>
+    </div>
+  </article>
+
+  <!-- F-4 Ciruelo púrpura -->
+  <article class="dispatch">
+    <div class="stamp blue"><span class="flag">🇮🇷</span><span class="stxt">Persia<br>1880</span></div>
+    <div class="tag-line"><span class="codes">F-4</span> <span class="badge-exo">Exótica</span> · Prunus cerasifera</div>
+    <h2>Ciruelo púrpura</h2>
+    <div class="sci">Prunus cerasifera 'Pissardii'</div>
+    <div class="route">🇮🇷 Persia <span class="arrow">→</span> Francia (1880) <span class="arrow">→</span> el mundo <span class="arrow">→</span> tu frente, F-4</div>
+    <div class="body">
+      <p>Hojas púrpura intensas, flores rosadas suaves antes que las hojas en agosto. Tiene un linaje casi imposible.</p>
+      <div class="fact"><b>Despacho:</b> lo trajo de Persia el horticultor francés Pissard en 1880. <b>Todos los ciruelos púrpura del mundo descienden de ese único ejemplar original</b> — incluido el tuyo. Es un clon vivo de un árbol traído hace 145 años.</div>
+    </div>
+  </article>
+
+  <!-- B-15 Hiedra -->
+  <article class="dispatch">
+    <div class="stamp blue"><span class="flag">🇪🇺</span><span class="stxt">Europa<br>+400 años</span></div>
+    <div class="tag-line"><span class="codes">B-15</span> <span class="badge-exo">Exótica</span> · Hedera helix</div>
+    <h2>Hiedra común</h2>
+    <div class="sci">Hedera helix</div>
+    <div class="route">🇪🇺 Bosques de Europa <span class="arrow">→</span> jardines del mundo <span class="arrow">→</span> tu fondo, B-15</div>
+    <div class="body">
+      <p>La trepadora de hoja lobulada brillante que cubre el galpón. Tan común que ni la mirás — y vive más que cualquiera de nosotros.</p>
+      <div class="fact"><b>Despacho:</b> una hiedra puede vivir <b>más de 400 años.</b> Y tiene doble vida: de joven trepa con hojas lobuladas; de adulta cambia a hojas enteras, deja de trepar y recién ahí florece y fructifica. Parece otra planta, pero es la misma — la europea que llegó a casi todos los jardines del mundo.</div>
+    </div>
+  </article>
+
+  <!-- ============ CIERRE ============ -->
+  <section class="closing">
+    <div class="big">🗺️</div>
+    <h2>Recorriste 4 continentes<br>sin salir de casa.</h2>
+    <p>De Persia a China, de la India a los palmares charrúas: tu jardín es un mapa vivo de las migraciones del planeta. Y rescataste nombres que casi nadie recuerda.</p>
+
+    <div class="react-row" aria-label="reacción">
+      <button onclick="engageReact('pasaporte','love', this)">😍 Me voló la cabeza</button>
+      <button onclick="engageReact('pasaporte','meh', this)">🙂 Está bueno</button>
+      <button onclick="engageReact('pasaporte','no', this)">😐 No tanto</button>
+      <span class="react-hint"></span>
+    </div>
+  </section>
+
+  <!-- SUSCRIPCIÓN -->
+  <section class="sub-cta">
+    <div class="stamp-ico">📬</div>
+    <h3>Un sello nuevo cada día</h3>
+    <p>Te quedan plantas con pasaporte por descubrir: el durazno que viene de China disfrazado de persa, el caqui “fruto de los dioses”, el lapachillo de madera durísima… ¿Te mando un despacho de viaje nuevo cada mañana?</p>
+    <div class="q-row" aria-label="suscripción">
+      <button onclick="engageAnswer('pasaporte-suscripcion-diaria','si', this)">✅ Sí, un sello por día</button>
+      <button onclick="engageAnswer('pasaporte-suscripcion-diaria','no', this)">No, gracias</button>
+      <span class="q-hint"></span>
+    </div>
+  </section>
+
+  <!-- DECISIÓN DEL SISTEMA -->
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-06-29-pasaporte-jardin')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-06-29-pasaporte-jardin')">✕ No me interesa</button>
+  </div>
+
+  <footer>
+    <div>Datos verificados de tu catálogo · Pacha Mama, Montevideo</div>
+    <a class="pitch" href="2026-06-29-pasaporte-jardin-pitch.html">💼 Cómo se vende esto</a>
+    <div class="credit">— PASAPORTE BOTÁNICO · 2026 —</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var bar=document.getElementById('progress');
+  function onScroll(){
+    var h=document.documentElement;
+    var d=h.scrollHeight-h.clientHeight;
+    bar.style.width=(d<=0?100:Math.min(100,(h.scrollTop||window.pageYOffset||0)/d*100))+'%';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // reveal-on-scroll de cada despacho/sello
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.14});
+  Array.prototype.forEach.call(document.querySelectorAll('.dispatch'),function(el){io.observe(el);});
+})();
+</script>
+<script src="engage.js"></script>
+</body>
+</html>

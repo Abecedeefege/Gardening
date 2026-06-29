@@ -169,6 +169,30 @@
         "2026-06-29-b"
       ],
       "result_notes": "PROMOVIDA 29/06. Misma sesión nocturna que el Diario (00:38Z 29/06, navegación directa): 😍love + answer 'records-suscripcion-diaria'=SÍ (2ª suscripción explícita del día) + proposal_approved + 141s dwell / scroll 100% (el dwell MÁS LARGO medido en el canal). El ángulo orgullo/estatus + número grande funciona y retiene aún más que el editorial. Promoción = página permanente + link fijo «🏆 Récords» en la nav del inicio (todo-strip de build.py). Footer: botones aprobar/rechazar reemplazados por nota de integración + link al inicio; reacciones/suscripción siguen logueando. El push promotor 2026-06-29-b se retira (ya aprobada; hoy entran 2 experiencias NUEVAS del ciclo 30)."
+    },
+    {
+      "id": "2026-06-29-feed-jardin",
+      "title": "📱 El Feed de tu Jardín (news-feed estilo red social)",
+      "page": "engage/2026-06-29-feed-jardin.html",
+      "created": "2026-06-29",
+      "status": "pending",
+      "hypothesis": "Ciclo 30 (función paralela del usuario): experiencia news-feed NUEVA de cero. 'JardínGram' — cada planta es una cuenta de red social que postea EN PRIMERA PERSONA un dato real verificado (avatar/handle/seguidores/likes derivados de atributos reales: longevidad, ser nativa). Tras validar el 29/06 que el formato news-feed convierte amor→suscripción (Diario+Récords aprobados+suscriptos), esta apuesta sube el componente VIRAL/compartible y la personalidad. Hipótesis: la voz en primera persona + el gesto familiar de 'seguir' una cuenta dispara más reacción 'increíble' y suscripción que el framing editorial/superlativo. 10 posteos (B-22, B-1, F-1, B-12, B-5, B-16, B-27, B-36, B-30, B-13), todos fun_fact verificado. + pitch HTML (6 modelos de monetización). Promotor: 2026-06-29-feed (08:30).",
+      "notified_by": [
+        "2026-06-29-feed"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-06-29-pasaporte-jardin",
+      "title": "🗺️ Pasaporte Botánico (news-feed de orígenes/viajes)",
+      "page": "engage/2026-06-29-pasaporte-jardin.html",
+      "created": "2026-06-29",
+      "status": "pending",
+      "hypothesis": "Ciclo 30 (función paralela del usuario): experiencia news-feed NUEVA de cero. Despachos de viaje / sellos de pasaporte — el ORIGEN real de cada planta (región nativa, nombre científico y especialmente los nombres indígenas charrúa/guaraní del campo `charrua`) framado como crónica de migración. Mezcla orgullo nativo (guayabo, anacahuita, aguaribay, pindó, lantana) con asombro exótico (palta, limonero, mandarina, ciruelo, hiedra). Apuesta: 'tu jardín es un mapa del mundo' + el rescate del patrimonio indígena dispara orgullo/identidad y motiva la suscripción a un sello diario. 10 despachos, origen citado SOLO de desc/fun_fact/sci/charrua (cero geografía inventada). + pitch HTML (6 modelos). Promotor: 2026-06-29-pasaporte (13:00).",
+      "notified_by": [
+        "2026-06-29-pasaporte"
+      ],
+      "result_notes": null
     }
   ]
 }

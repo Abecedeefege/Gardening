@@ -1,49 +1,36 @@
 {
-  "_updated_at": "2026-06-28T23:00:53.061Z",
+  "_updated_at": "2026-06-29T09:14:22.629964Z",
   "notifications": [
     {
-      "id": "2026-06-28-c",
-      "title": "💗 El mirto, la planta de Venus",
-      "body": "Sagrado para Venus: las novias romanas se coronaban de mirto. De sus bayas sale el licor sardo. Tu B-27 sigue verde en invierno.",
-      "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
-      "format": "curio",
-      "send_at": "2026-06-28T19:30:00-03:00",
-      "expires_at": "2026-06-28T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-28T23:00:53.060Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-28"
-    },
-    {
-      "id": "2026-06-29-a",
-      "title": "📰 Tu jardín tiene noticias de hoy",
-      "body": "Salió la edición de invierno del Diario de tu Jardín: qué pasa hoy entre tus plantas, en titulares.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-06-29-diario-jardin.html",
+      "id": "2026-06-29-feed",
+      "title": "📱 Tus plantas abrieron cuenta",
+      "body": "Llegó JardínGram: cada planta postea su secreto. La palta criolla arranca con 13.000 años de historia. ¿Las seguís?",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-29-feed-jardin.html",
       "format": "experiencia",
       "send_at": "2026-06-29T08:30:00-03:00",
       "expires_at": "2026-06-29T22:00:00-03:00",
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-28 (ciclo 29)"
+      "created_by": "engagement-agent 2026-06-29 (ciclo 30)"
     },
     {
-      "id": "2026-06-29-b",
-      "title": "🏆 Récords mundiales en tu fondo",
-      "body": "Sin saberlo tenés récords creciendo en casa: la más longeva, la que limpia el aire, la de Venus…",
-      "url": "https://gardening-chi.vercel.app/engage/2026-06-29-records-jardin.html",
+      "id": "2026-06-29-pasaporte",
+      "title": "🗺️ Tu jardín es un mapa mundi",
+      "body": "Sellá el pasaporte de tus plantas: de qué rincón del mundo viajó cada una, con su nombre charrúa olvidado.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-29-pasaporte-jardin.html",
       "format": "experiencia",
       "send_at": "2026-06-29T13:00:00-03:00",
       "expires_at": "2026-06-29T22:00:00-03:00",
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-28 (ciclo 29)"
+      "created_by": "engagement-agent 2026-06-29 (ciclo 30)"
     },
     {
-      "id": "2026-06-29-c",
-      "title": "🌿 Tu hiedra puede vivir 400 años",
-      "body": "Doble vida: una fase trepa y otra florece, como si fueran dos. Tu B-15, un clásico inmortal del fondo.",
+      "id": "2026-06-29-curio-lavanda",
+      "title": "💜 Por qué se llama lavanda",
+      "body": "De 'lavare' (lavar): los romanos la echaban al baño. Tu lavanda B-19 perfuma el frente y espanta polillas.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
       "send_at": "2026-06-29T19:30:00-03:00",
@@ -51,7 +38,7 @@
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-28 (ciclo 29)"
+      "created_by": "engagement-agent 2026-06-29 (ciclo 30)"
     }
   ]
 }

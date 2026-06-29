@@ -1,0 +1,518 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1f0a"><title>🌱 El Feed de tu Jardín</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  :root{
+    --verde:#2d5016; --verde2:#3f6e22; --verde3:#5a9134;
+    --bg:#0f1f0a; --bg2:#16290e;
+    --card:#ffffff; --ink:#16210f; --ink2:#5d6b50; --line:#e6efdc;
+    --azul:#1d9bf0; --fucsia:#c026a8; --oro:#d9a312;
+    --pad:max(14px,env(safe-area-inset-left));
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; margin:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); color:var(--ink); line-height:1.45;
+    background:var(--bg);
+    background-image:
+      radial-gradient(130% 55% at 50% -5%, rgba(90,145,52,.28), transparent),
+      radial-gradient(80% 40% at 100% 100%, rgba(63,110,34,.18), transparent);
+    -webkit-font-smoothing:antialiased; }
+
+  /* Regla del usuario: PRIMER elemento del body */
+  .back{ display:block; color:#dfe9d2; text-decoration:none; font-size:13px; font-weight:700;
+    padding:11px var(--pad); background:#0a1606; width:100%; letter-spacing:.01em; }
+  .back:active{ opacity:.75; }
+
+  .prog{ position:fixed; top:0; left:0; height:3px; z-index:80; width:0;
+    background:linear-gradient(90deg,var(--verde3),var(--azul),var(--fucsia)); transition:width .12s; }
+
+  .wrap{ max-width:560px; margin:0 auto; }
+
+  /* Header tipo app de red social */
+  header.app{ position:sticky; top:0; z-index:60; backdrop-filter:saturate(1.4) blur(10px);
+    background:rgba(15,31,10,.86); padding:12px var(--pad) 11px;
+    border-bottom:1px solid rgba(255,255,255,.08); display:flex; align-items:center; gap:11px; }
+  header.app .logo{ font-size:24px; line-height:1; filter:drop-shadow(0 2px 4px rgba(0,0,0,.4)); }
+  header.app .ttl{ color:#fff; font-weight:900; font-size:18px; letter-spacing:-.01em; }
+  header.app .ttl span{ color:var(--verde3); }
+  header.app .live{ margin-left:auto; font-size:10.5px; font-weight:800; color:#9fe06a;
+    background:rgba(90,145,52,.22); border:1px solid rgba(90,145,52,.45); border-radius:999px;
+    padding:4px 9px; letter-spacing:.06em; text-transform:uppercase; display:flex; align-items:center; gap:5px; }
+  header.app .live i{ width:7px; height:7px; border-radius:50%; background:#7ed957; display:inline-block;
+    box-shadow:0 0 0 0 rgba(126,217,87,.7); animation:pulse 1.8s infinite; }
+  @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(126,217,87,.6)} 70%{box-shadow:0 0 0 7px rgba(126,217,87,0)} 100%{box-shadow:0 0 0 0 rgba(126,217,87,0)} }
+
+  /* Intro / historia destacada */
+  .intro{ padding:22px var(--pad) 16px; color:#eaf3df; text-align:center; }
+  .intro h1{ font-size:clamp(26px,8vw,36px); font-weight:900; line-height:1.05; letter-spacing:-.02em;
+    color:#fff; margin-bottom:9px; }
+  .intro h1 em{ font-style:normal; background:linear-gradient(90deg,#9fe06a,#5a9134); -webkit-background-clip:text;
+    background-clip:text; -webkit-text-fill-color:transparent; }
+  .intro p{ font-size:14.5px; color:#bcd0a8; max-width:40ch; margin:0 auto; }
+  .intro .meta{ margin-top:12px; font-size:11.5px; color:#8aa673; font-weight:600; letter-spacing:.03em; }
+
+  /* Stories row */
+  .stories{ display:flex; gap:11px; overflow-x:auto; padding:6px var(--pad) 16px;
+    scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+  .stories::-webkit-scrollbar{ display:none; }
+  .story{ flex:0 0 auto; text-align:center; width:62px; }
+  .story .ring{ width:60px; height:60px; border-radius:50%; display:grid; place-items:center; font-size:28px;
+    background:var(--bg2); padding:3px;
+    box-shadow:0 0 0 2.5px #0f1f0a, 0 0 0 4.5px var(--verde3); }
+  .story.alt .ring{ box-shadow:0 0 0 2.5px #0f1f0a, 0 0 0 4.5px var(--fucsia); }
+  .story.alt2 .ring{ box-shadow:0 0 0 2.5px #0f1f0a, 0 0 0 4.5px var(--azul); }
+  .story span{ display:block; font-size:10px; color:#bcd0a8; margin-top:5px; font-weight:600;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+  /* Feed */
+  .feed{ padding:0 var(--pad) 8px; display:flex; flex-direction:column; gap:14px; }
+  .post{ background:var(--card); border-radius:18px; overflow:hidden;
+    box-shadow:0 8px 30px rgba(0,0,0,.28); }
+  .reveal{ opacity:0; transform:translateY(20px) scale(.99); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .post-hd{ display:flex; align-items:center; gap:11px; padding:13px 14px 11px; }
+  .av{ width:46px; height:46px; border-radius:50%; display:grid; place-items:center; font-size:25px; flex:0 0 auto;
+    background:linear-gradient(145deg,#eaf3df,#d4e8c2); box-shadow:inset 0 0 0 1px rgba(45,80,22,.12); }
+  .who{ min-width:0; flex:1; }
+  .who .nm{ font-weight:800; font-size:15px; display:flex; align-items:center; gap:5px; }
+  .who .vf{ color:var(--azul); font-size:14px; }
+  .who .vf.nat{ color:var(--verde3); }
+  .who .hd{ font-size:12.5px; color:var(--ink2); font-weight:500; }
+  .code{ margin-left:auto; flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--verde);
+    background:#eef6e4; border:1px solid var(--line); border-radius:999px; padding:4px 9px; letter-spacing:.02em; }
+
+  .post-body{ padding:1px 15px 13px; font-size:15.5px; line-height:1.5; color:#23311a; }
+  .post-body .big{ font-size:17px; font-weight:700; color:var(--ink); display:block; margin-bottom:6px; }
+
+  .hero{ font-size:64px; text-align:center; padding:14px 0 18px;
+    background:radial-gradient(80% 90% at 50% 0%, #f1f8ea, #e3f0d6); }
+
+  .dato{ margin:0 15px 13px; font-size:13px; background:#f3f9ec; border:1px solid var(--line);
+    border-left:4px solid var(--verde2); border-radius:10px; padding:10px 12px; color:#3a4a2c; }
+  .dato b{ color:var(--verde); }
+
+  .post-ft{ display:flex; align-items:center; gap:18px; padding:11px 15px 14px; border-top:1px solid var(--line); }
+  .act{ display:flex; align-items:center; gap:6px; font-size:13px; font-weight:700; color:var(--ink2); }
+  .act .ic{ font-size:17px; }
+  .act.like .ic{ color:var(--fucsia); }
+  .act b{ color:var(--ink); }
+  .followers{ margin-left:auto; text-align:right; }
+  .followers b{ display:block; font-size:15px; color:var(--verde); font-weight:900; line-height:1; }
+  .followers span{ font-size:10px; color:var(--ink2); font-weight:600; text-transform:uppercase; letter-spacing:.04em; }
+
+  .comments{ padding:0 15px 13px; }
+  .cmt{ font-size:13px; color:#3a4a2c; margin-top:7px; }
+  .cmt b{ color:var(--ink); font-weight:700; }
+  .cmt .ch{ color:var(--ink2); font-weight:500; }
+  .cmt-add{ margin-top:10px; font-size:12.5px; color:var(--ink2); display:flex; align-items:center; gap:8px;
+    border-top:1px dashed var(--line); padding-top:10px; }
+  .cmt-add .dot{ width:24px; height:24px; border-radius:50%; background:#eef6e4; display:grid; place-items:center; font-size:13px; }
+
+  /* Bloques de cierre */
+  .block{ background:#fff; border-radius:18px; padding:22px 18px; margin:14px var(--pad);
+    text-align:center; box-shadow:0 8px 30px rgba(0,0,0,.28); }
+  .block h3{ font-size:21px; font-weight:900; letter-spacing:-.01em; color:var(--ink); margin-bottom:6px; }
+  .block p{ font-size:14px; color:var(--ink2); max-width:36ch; margin:0 auto 14px; }
+  .btns{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+  .btns button{ font-family:inherit; font-size:15px; font-weight:800; cursor:pointer;
+    border:1.5px solid var(--line); background:#f6faf1; color:var(--ink); border-radius:13px;
+    padding:13px 16px; transition:transform .12s, background .12s, border-color .12s; }
+  .btns button:active{ transform:scale(.95); }
+  .btns button:hover{ background:#eef6e4; }
+  .btns button.sel{ background:var(--verde); color:#fff; border-color:var(--verde); }
+  .btns button:disabled{ cursor:default; opacity:.55; }
+  .btns button.sel:disabled{ opacity:1; }
+  .react .btns button{ font-size:26px; padding:11px 15px; }
+  .react-hint, .q-hint{ display:block; min-height:18px; margin-top:12px; font-size:13px;
+    font-weight:700; color:var(--verde2); }
+
+  .sub{ background:linear-gradient(160deg,#1c3a10,#0f240a); color:#eaf3df; }
+  .sub h3{ color:#fff; }
+  .sub p{ color:#bcd0a8; }
+  .sub .pill{ display:inline-block; font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+    color:#9fe06a; background:rgba(90,145,52,.2); border:1px solid rgba(90,145,52,.4);
+    border-radius:999px; padding:5px 12px; margin-bottom:12px; }
+  .sub .btns button{ background:rgba(255,255,255,.08); color:#eaf3df; border-color:rgba(255,255,255,.18); }
+  .sub .btns button:hover{ background:rgba(255,255,255,.16); }
+  .sub .btns button.sel{ background:#7ed957; color:#0f240a; border-color:#7ed957; }
+  .sub .q-hint{ color:#9fe06a; }
+
+  .engage-actions{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:14px var(--pad); }
+  .engage-actions button{ font-family:inherit; font-size:14.5px; font-weight:800; cursor:pointer;
+    border:none; border-radius:13px; padding:14px 18px; transition:transform .12s, opacity .12s; }
+  .engage-actions button:first-child{ background:var(--verde3); color:#0f240a; }
+  .engage-actions button:last-child{ background:rgba(255,255,255,.1); color:#cdddbb; border:1px solid rgba(255,255,255,.16); }
+  .engage-actions button:active{ transform:scale(.95); }
+  .engage-feedback{ text-align:center; color:#dfe9d2; font-weight:700; font-size:14px; padding:6px var(--pad); margin:0 auto; }
+
+  footer{ text-align:center; padding:18px var(--pad) 60px; }
+  footer .pitch{ display:inline-block; color:#bcd0a8; text-decoration:none; font-weight:700; font-size:13.5px;
+    border:1px solid rgba(255,255,255,.16); border-radius:999px; padding:10px 18px; }
+  footer .pitch:active{ opacity:.8; }
+  footer .fine{ display:block; margin-top:14px; color:#6f8a59; font-size:11px; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="prog" id="prog"></div>
+
+<div class="wrap">
+  <header class="app">
+    <span class="logo">🌱</span>
+    <span class="ttl">Jardín<span>Gram</span></span>
+    <span class="live"><i></i> En vivo</span>
+  </header>
+
+  <section class="intro">
+    <h1>Tus plantas tienen <em>cuentas</em>.<br>Y están posteando.</h1>
+    <p>Cada planta del jardín de Pacha Mama abrió perfil. Esto es lo que subieron hoy — todo dato real, verificado, con su código de catálogo.</p>
+    <div class="meta">📍 Montevideo · Invierno 2026 · 10 posteos nuevos</div>
+  </section>
+
+  <div class="stories">
+    <div class="story"><div class="ring">🥑</div><span>@palta_uy</span></div>
+    <div class="story alt"><div class="ring">🌺</div><span>@santarita</span></div>
+    <div class="story alt2"><div class="ring">🫐</div><span>@guayabo</span></div>
+    <div class="story"><div class="ring">🪴</div><span>@la_cinta</span></div>
+    <div class="story alt"><div class="ring">💙</div><span>@hortensia</span></div>
+    <div class="story alt2"><div class="ring">🌳</div><span>@anacahuita</span></div>
+    <div class="story"><div class="ring">🍑</div><span>@durazno</span></div>
+    <div class="story alt"><div class="ring">🥑</div><span>@hass</span></div>
+  </div>
+
+  <main class="feed">
+
+    <!-- 1 · B-22 Palta uruguaya -->
+    <article class="post reveal">
+      <div class="post-hd">
+        <div class="av">🥑</div>
+        <div class="who">
+          <div class="nm">Palta criolla <span class="vf" title="cuenta verificada">✔</span></div>
+          <div class="hd">@palta_uruguaya · Persea americana</div>
+        </div>
+        <div class="code">B-22</div>
+      </div>
+      <div class="hero">🦥</div>
+      <div class="post-body">
+        <span class="big">Confesión: mi semilla está rota desde hace 13.000 años.</span>
+        Es así de grande porque la diseñó la evolución para que se la tragara entero un perezoso gigante (megafauna). Ellos me esparcían por todo el continente… hasta que se extinguieron. Sigo viva solo porque ustedes los humanos me empezaron a plantar. Literalmente les debo la existencia. 🙏
+      </div>
+      <div class="dato">🧠 <b>Dato verificado:</b> la palta es un fruto "anacrónico": su dispersor natural desapareció hace milenios y solo el cultivo humano la salvó de la extinción.</div>
+      <div class="post-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>13.0 K</b></span>
+        <span class="act"><span class="ic">💬</span> 204</span>
+        <span class="followers"><b>Sobreviviente</b><span>de la Edad de Hielo</span></span>
+      </div>
+      <div class="comments">
+        <div class="cmt"><b>@hass_california</b> <span class="ch">primo lejano acá, banco la historia 👊</span></div>
+        <div class="cmt"><b>@durazno_china</b> <span class="ch">y yo que me quejaba de mi carozo 💀</span></div>
+        <div class="cmt-add"><span class="dot">🪴</span> Comentá como otra planta del jardín…</div>
+      </div>
+    </article>
+
+    <!-- 2 · B-1 Santa Rita -->
+    <article class="post reveal">
+      <div class="post-hd">
+        <div class="av">🌺</div>
+        <div class="who">
+          <div class="nm">Santa Rita <span class="vf" title="cuenta verificada">✔</span></div>
+          <div class="hd">@bougainvillea · Bougainvillea spectabilis</div>
+        </div>
+        <div class="code">B-1</div>
+      </div>
+      <div class="hero">🚢</div>
+      <div class="post-body">
+        <span class="big">Me bautizaron mal. Y tardaron 244 años en arreglarlo.</span>
+        Me "descubrió" en 1768 Jeanne Baret, la primera mujer en darle la vuelta al mundo — viajaba <em>disfrazada de hombre</em> en una expedición francesa donde las mujeres tenían prohibido subir. ¿A quién le pusieron mi nombre? Al capitán del barco, Bougainville. Recién en 2012 le dedicaron a ella una variedad: 'Jeanne'. Mejor tarde. 💅
+      </div>
+      <div class="dato">🌸 <b>Dato verificado:</b> lo fucsia no son pétalos sino <b>brácteas</b> (hojas modificadas). La flor real es blanca y minúscula, escondida en el medio.</div>
+      <div class="post-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>17.6 K</b></span>
+        <span class="act"><span class="ic">💬</span> 412</span>
+        <span class="followers"><b>Ícono</b><span>de historia oculta</span></span>
+      </div>
+      <div class="comments">
+        <div class="cmt"><b>@clivia</b> <span class="ch">otra que le robaron el crédito, te entiendo hermana</span></div>
+        <div class="cmt-add"><span class="dot">🪴</span> Comentá como otra planta del jardín…</div>
+      </div>
+    </article>
+
+    <!-- 3 · F-1 Guayabo del país -->
+    <article class="post reveal">
+      <div class="post-hd">
+        <div class="av">🫐</div>
+        <div class="who">
+          <div class="nm">Guayabo del país <span class="vf nat" title="planta nativa">✔</span></div>
+          <div class="hd">@nunde_arasa · Acca sellowiana</div>
+        </div>
+        <div class="code">F-1</div>
+      </div>
+      <div class="hero">🌼</div>
+      <div class="post-body">
+        <span class="big">Soy de acá. Y mis flores son golosina.</span>
+        Nativo del Río de la Plata — los charrúas me decían <em>Ñunde</em>, los guaraníes <em>Arasá-pé</em>. Mis pétalos blancos y rojos son comestibles y dulces: los gurises uruguayos y brasileños los comían como caramelo directo de la planta. Soy uno de los poquísimos frutales aromáticos originarios de esta tierra. Local de toda la vida. 🇺🇾
+      </div>
+      <div class="dato">🍃 <b>Dato verificado:</b> en invierno mis hojas se ven plateadas por debajo. No estoy enferma — es mi color natural cuando el viento las da vuelta.</div>
+      <div class="post-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>9.8 K</b></span>
+        <span class="act"><span class="ic">💬</span> 167</span>
+        <span class="followers"><b>NATIVA ✓</b><span>orgullo del RdlP</span></span>
+      </div>
+      <div class="comments">
+        <div class="cmt"><b>@anacahuita</b> <span class="ch">team nativas, salimos a defender el barrio 🌳</span></div>
+        <div class="cmt-add"><span class="dot">🪴</span> Comentá como otra planta del jardín…</div>
+      </div>
+    </article>
+
+    <!-- 4 · B-12 Cinta -->
+    <article class="post reveal">
+      <div class="post-hd">
+        <div class="av">🪴</div>
+        <div class="who">
+          <div class="nm">La Cinta <span class="vf" title="cuenta verificada">✔</span></div>
+          <div class="hd">@lazo_de_amor · Chlorophytum comosum</div>
+        </div>
+        <div class="code">B-12</div>
+      </div>
+      <div class="hero">🚀</div>
+      <div class="post-body">
+        <span class="big">La NASA me puso en una lista oficial. Sí, esa NASA.</span>
+        Me eligieron como planta que <em>purifica el aire interior</em>: absorbo formaldehído, xileno y monóxido de carbono. Una sola planta mía limpia unos 10 m². Y encima soy de las más fáciles del mundo: echo "hijos" colgantes que enraízan en agua en una semana. Soy científicamente útil Y me multiplico gratis. 🛰️
+      </div>
+      <div class="dato">👶 <b>Dato verificado:</b> me dicen "mala madre" porque cuelgo a mis hijos lejos del tronco, como echándolos de casa. Drama familiar incluido.</div>
+      <div class="post-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>10.0 K</b></span>
+        <span class="act"><span class="ic">💬</span> 233</span>
+        <span class="followers"><b>Aprobada</b><span>por la NASA</span></span>
+      </div>
+      <div class="comments">
+        <div class="cmt"><b>@hortensia</b> <span class="ch">flexeando con la NASA un martes cualquiera</span></div>
+        <div class="cmt-add"><span class="dot">🪴</span> Comentá como otra planta del jardín…</div>
+      </div>
+    </article>
+
+    <!-- 5 · B-5a Hortensia -->
+    <article class="post reveal">
+      <div class="post-hd">
+        <div class="av">💙</div>
+        <div class="who">
+          <div class="nm">Hortensia <span class="vf" title="cuenta verificada">✔</span></div>
+          <div class="hd">@hydrangea · Hydrangea macrophylla</div>
+        </div>
+        <div class="code">B-5a</div>
+      </div>
+      <div class="hero">🎨</div>
+      <div class="post-body">
+        <span class="big">Cambio de color según lo que como. Camaleona total.</span>
+        ¿Me querés azul? Enterrame clavos oxidados o borra de café (suelo ácido). ¿Me querés rosa? Tirame cal. Soy de las pocas plantas que literalmente cambia el color de sus flores según el pH de su tierra. Mi nombre, <em>Hydrangea</em>, significa "sed de agua" — y no miento, soy de las más sedientas del jardín. 💧
+      </div>
+      <div class="dato">💙 <b>Dato verificado:</b> ÁCIDO = azul · NEUTRO/ALCALINO = rosa. Cambiar mi color lleva 1 o 2 temporadas, así que pensalo bien.</div>
+      <div class="post-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>11.4 K</b></span>
+        <span class="act"><span class="ic">💬</span> 188</span>
+        <span class="followers"><b>Multicolor</b><span>según dieta</span></span>
+      </div>
+      <div class="comments">
+        <div class="cmt"><b>@la_cinta</b> <span class="ch">vos comés clavos, yo limpio el aire, somos un equipo</span></div>
+        <div class="cmt-add"><span class="dot">🪴</span> Comentá como otra planta del jardín…</div>
+      </div>
+    </article>
+
+    <!-- 6 · B-16 Anacahuita -->
+    <article class="post reveal">
+      <div class="post-hd">
+        <div class="av">🌳</div>
+        <div class="who">
+          <div class="nm">Anacahuita <span class="vf nat" title="planta nativa protegida">✔</span></div>
+          <div class="hd">@molle_blanco · Schinus longifolius</div>
+        </div>
+        <div class="code">B-16</div>
+      </div>
+      <div class="hero">⚖️</div>
+      <div class="post-body">
+        <span class="big">Tengo protección legal. Soy patrimonio del Uruguay.</span>
+        Estoy protegida por <em>ley nacional desde 1986</em> — soy uno de los árboles más simbólicos del país. Los charrúas usaban mi madera dura para hacer arcos y rejas. Mis flores blanco-amarillentas son discretas pero re melíferas: las abejas me aman. Nativa, legal y querida. No todos pueden decir lo mismo. 🇺🇾🐝
+      </div>
+      <div class="dato">🐝 <b>Dato verificado:</b> soy prima del aguaribay (la "pimienta rosa"), pero con hojas más finas y largas. Aire de familia.</div>
+      <div class="post-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>8.6 K</b></span>
+        <span class="act"><span class="ic">💬</span> 142</span>
+        <span class="followers"><b>NATIVA ✓</b><span>protegida por ley</span></span>
+      </div>
+      <div class="comments">
+        <div class="cmt"><b>@nunde_arasa</b> <span class="ch">orgullo charrúa, las nativas mandamos 💪</span></div>
+        <div class="cmt-add"><span class="dot">🪴</span> Comentá como otra planta del jardín…</div>
+      </div>
+    </article>
+
+    <!-- 7 · B-27 Mirto común -->
+    <article class="post reveal">
+      <div class="post-hd">
+        <div class="av">🌿</div>
+        <div class="who">
+          <div class="nm">Mirto <span class="vf" title="cuenta verificada">✔</span></div>
+          <div class="hd">@mirtus · Myrtus communis</div>
+        </div>
+        <div class="code">B-27</div>
+      </div>
+      <div class="hero">💘</div>
+      <div class="post-body">
+        <span class="big">Fui la planta sagrada del amor. Literal, de la diosa.</span>
+        En la mitología romana yo era sagrada para <em>Venus / Afrodita</em> — símbolo del amor y la fertilidad. Las novias romanas se hacían coronas con mis ramas. Y no solo soy romántica: en Cerdeña e Italia hacen con mis bayas el licor "mirto", y mis hojas condimentan la carne como el laurel. Bella, perfumada y comestible. 🍷
+      </div>
+      <div class="dato">🌿 <b>Dato verificado:</b> aguanto podas extremas y mantengo una forma redondeada natural — por eso me usan tanto en jardines y setos prolijos.</div>
+      <div class="post-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>7.9 K</b></span>
+        <span class="act"><span class="ic">💬</span> 121</span>
+        <span class="followers"><b>Sagrada</b><span>para Afrodita</span></span>
+      </div>
+      <div class="comments">
+        <div class="cmt"><b>@santarita</b> <span class="ch">vos con Afrodita, yo con una exploradora rebelde, qué linaje 👑</span></div>
+        <div class="cmt-add"><span class="dot">🪴</span> Comentá como otra planta del jardín…</div>
+      </div>
+    </article>
+
+    <!-- 8 · B-36 Palta Hass -->
+    <article class="post reveal">
+      <div class="post-hd">
+        <div class="av">🥑</div>
+        <div class="who">
+          <div class="nm">Palta Hass <span class="vf" title="cuenta verificada">✔</span></div>
+          <div class="hd">@hass_original · Persea americana 'Hass'</div>
+        </div>
+        <div class="code">B-36</div>
+      </div>
+      <div class="hero">🧬</div>
+      <div class="post-body">
+        <span class="big">Somos millones. Pero todos venimos de UN solo árbol.</span>
+        Cada palta Hass del planeta — el 80% de la palta que se exporta en el mundo — es un <em>clon</em> de un único árbol que plantó Rudolph Hass en 1926 en California. No me reproduzco por semilla: solo por injerto. O sea: todas las Hass del mundo son, técnicamente, la misma planta. Familia numerosa, ADN idéntico. 🤯
+      </div>
+      <div class="dato">❄️ <b>Dato verificado:</b> soy más resistente al frío que la palta criolla (mi vecina B-22). Por eso aguanto bien el invierno de Montevideo.</div>
+      <div class="post-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>12.6 K</b></span>
+        <span class="act"><span class="ic">💬</span> 309</span>
+        <span class="followers"><b>1 árbol</b><span>= millones de clones</span></span>
+      </div>
+      <div class="comments">
+        <div class="cmt"><b>@palta_uruguaya</b> <span class="ch">yo tengo 13.000 años de historia, vos tenés 1926 jajaja igual te quiero primo</span></div>
+        <div class="cmt-add"><span class="dot">🪴</span> Comentá como otra planta del jardín…</div>
+      </div>
+    </article>
+
+    <!-- 9 · B-30 Durazno -->
+    <article class="post reveal">
+      <div class="post-hd">
+        <div class="av">🍑</div>
+        <div class="who">
+          <div class="nm">Durazno <span class="vf" title="cuenta verificada">✔</span></div>
+          <div class="hd">@prunus_persica · Prunus persica</div>
+        </div>
+        <div class="code">B-30</div>
+      </div>
+      <div class="hero">🐉</div>
+      <div class="post-body">
+        <span class="big">Mi apellido es "persica" pero les mintieron: soy chino.</span>
+        Los romanos creyeron que venía de Persia y me pusieron <em>persica</em> para siempre. Pero soy originario de China, donde me cultivan desde hace <em>8.000 años</em>. Llegué a Europa por la Ruta de la Seda. ¿Esa pelusa aterciopelada que tengo? No es estética: es mi defensa natural contra los hongos. Antiguo, viajado y mal documentado. 🍑
+      </div>
+      <div class="dato">✂️ <b>Dato verificado:</b> ahora en invierno es mi momento clave: sin poda en dormancia fructifico mal. Es la poda más crítica del jardín.</div>
+      <div class="post-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>8.0 K</b></span>
+        <span class="act"><span class="ic">💬</span> 156</span>
+        <span class="followers"><b>8.000 años</b><span>de cultivo</span></span>
+      </div>
+      <div class="comments">
+        <div class="cmt"><b>@palta_uruguaya</b> <span class="ch">otro con crisis de identidad por el nombre, bienvenido al club</span></div>
+        <div class="cmt-add"><span class="dot">🪴</span> Comentá como otra planta del jardín…</div>
+      </div>
+    </article>
+
+    <!-- 10 · B-13 Clivia -->
+    <article class="post reveal">
+      <div class="post-hd">
+        <div class="av">🧡</div>
+        <div class="who">
+          <div class="nm">Clivia <span class="vf" title="cuenta verificada">✔</span></div>
+          <div class="hd">@lirio_del_cabo · Clivia miniata</div>
+        </div>
+        <div class="code">B-13</div>
+      </div>
+      <div class="hero">👑</div>
+      <div class="post-body">
+        <span class="big">Puedo vivir 100 años. Soy más vieja que tu casa.</span>
+        Una clivia bien cuidada llega al siglo de vida — hay ejemplares en jardines reales que datan de <em>1830</em> y siguen floreciendo. Me bautizaron por Charlotte Clive, duquesa de Northumberland, la primera en florecerme en Inglaterra. Dato raro: para florecer bien me gusta estar <em>apretada</em> en la maceta. Cómoda no, pero feliz. 🧡
+      </div>
+      <div class="dato">🌑 <b>Dato verificado:</b> soy de las pocas que florece espectacular en la SOMBRA. El fondo (este) del jardín es perfecto para mí.</div>
+      <div class="post-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>10.0 K</b></span>
+        <span class="act"><span class="ic">💬</span> 178</span>
+        <span class="followers"><b>100 años</b><span>de vida útil</span></span>
+      </div>
+      <div class="comments">
+        <div class="cmt"><b>@bougainvillea</b> <span class="ch">centenaria y elegante, te admiro reina 👑</span></div>
+        <div class="cmt-add"><span class="dot">🪴</span> Comentá como otra planta del jardín…</div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- 1 · Reacción -->
+  <div class="block react">
+    <h3>¿Te voló la cabeza? 🤯</h3>
+    <p>Decinos qué tan bueno estuvo el feed de hoy. Tu reacción decide si esto sigue creciendo.</p>
+    <div class="btns">
+      <button onclick="engageReact('feed','love', this)" title="¡Increíble!">😍</button>
+      <button onclick="engageReact('feed','meh', this)" title="Más o menos">😐</button>
+      <button onclick="engageReact('feed','no', this)" title="No me gustó">🙅</button>
+      <span class="react-hint"></span>
+    </div>
+  </div>
+
+  <!-- 2 · Suscripción diaria -->
+  <div class="block sub">
+    <span class="pill">📲 Edición diaria</span>
+    <h3>El feed de tus plantas, fresco cada mañana</h3>
+    <p>Todos los días, posteos nuevos de otras plantas del jardín — con datos reales que no sabías. 30 segundos de lectura, cero esfuerzo. ¿Te lo mandamos?</p>
+    <div class="btns">
+      <button onclick="engageAnswer('feed-suscripcion-diaria','si', this)">✅ Sí, quiero el feed diario</button>
+      <button onclick="engageAnswer('feed-suscripcion-diaria','no', this)">Ahora no</button>
+      <span class="q-hint"></span>
+    </div>
+  </div>
+
+  <!-- 3 · Decisión del sistema -->
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-06-29-feed-jardin')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-06-29-feed-jardin')">✕ No me interesa</button>
+  </div>
+
+  <!-- 4 · Footer pitch -->
+  <footer>
+    <a class="pitch" href="2026-06-29-feed-jardin-pitch.html">💼 Cómo se vende esto</a>
+    <span class="fine">JardínGram · datos verificados del catálogo · Pacha Mama, Montevideo</span>
+  </footer>
+</div>
+
+<script>
+  // Barra de progreso de lectura
+  var prog = document.getElementById('prog');
+  function onScroll(){
+    var h = document.documentElement;
+    var d = h.scrollHeight - h.clientHeight;
+    prog.style.width = (d > 0 ? (h.scrollTop / d * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  // Reveal de cada posteo al entrar en viewport
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold:.12, rootMargin:'0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+<script src="engage.js"></script>
+</body></html>

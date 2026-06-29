@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💼 Pasaporte Botánico — Pitch de monetización</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap');
+:root{
+  --verde:#2d5016;--verde-2:#3f6d22;--fondo:#f5faf0;--papel:#f3ead6;--papel-2:#e7d9ba;
+  --tinta:#2a2118;--sello:#9a2b1f;--azul:#1f4e6e;--oro:#b5862b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',-apple-system,sans-serif;color:var(--tinta);background:var(--fondo);line-height:1.62}
+.back{display:inline-block;margin:14px 16px 0 16px;font-size:13px;font-weight:600;color:var(--verde);text-decoration:none;border-bottom:1px dashed var(--verde-2)}
+.back:hover{color:var(--sello)}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px 70px}
+
+.hero{
+  margin:18px 0 28px;padding:32px 26px;border-radius:18px;color:#f5faf0;
+  background:repeating-linear-gradient(135deg,rgba(255,255,255,.03) 0 8px,transparent 8px 16px),linear-gradient(160deg,#1f3a0f,#2d5016 55%,#3f6d22);
+  border:1px solid rgba(181,134,43,.4);box-shadow:0 16px 38px rgba(31,58,15,.3);position:relative;overflow:hidden;
+}
+.hero::after{content:"";position:absolute;inset:9px;border:1.5px solid rgba(181,134,43,.45);border-radius:12px;pointer-events:none}
+.hero .k{font-family:'Special Elite',monospace;letter-spacing:3px;text-transform:uppercase;font-size:11px;color:var(--oro);margin-bottom:10px}
+.hero h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(26px,7vw,40px);line-height:1.04;letter-spacing:-.5px}
+.hero p{margin-top:12px;font-size:15.5px;color:rgba(245,250,240,.92);max-width:54ch}
+
+.navlinks{display:flex;gap:12px;flex-wrap:wrap;margin:0 2px 26px}
+.navlinks a{font-size:13px;font-weight:700;text-decoration:none;padding:8px 13px;border-radius:9px}
+.navlinks a.exp{background:#e7f0d8;color:var(--verde);border:1px solid #c5d9a4}
+.navlinks a.site{background:#fff;color:var(--azul);border:1px solid #cfe0ea}
+
+h2.sec{font-family:'Fraunces',serif;font-weight:900;font-size:24px;color:var(--verde);margin:36px 2px 6px;letter-spacing:-.3px}
+.lead{font-size:16px;color:#3a3326;margin:0 2px 8px}
+.lead b{color:var(--verde)}
+
+.panel{background:#fffdf8;border:1px solid var(--papel-2);border-radius:14px;padding:20px 20px;margin:14px 0;box-shadow:0 5px 16px rgba(80,60,20,.07)}
+.panel ul{margin:8px 0 0 18px}
+.panel li{margin:6px 0;font-size:15px}
+
+.kpis{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.kpi{flex:1;min-width:150px;background:linear-gradient(160deg,#fffdf8,var(--papel));border:1px solid var(--papel-2);border-radius:12px;padding:14px 16px}
+.kpi .n{font-family:'Fraunces',serif;font-weight:900;font-size:28px;color:var(--sello);line-height:1}
+.kpi .l{font-size:12.5px;color:#6b5a3c;margin-top:4px}
+
+.divider{display:flex;align-items:center;gap:12px;margin:40px 2px 8px;font-family:'Special Elite',monospace;text-transform:uppercase;letter-spacing:2px;font-size:12px}
+.divider.inno{color:var(--azul)}
+.divider.ultra{color:var(--sello)}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--papel-2)}
+
+.model{background:#fff;border:1px solid var(--papel-2);border-left:5px solid var(--azul);border-radius:0 14px 14px 0;padding:18px 20px;margin:14px 0;box-shadow:0 5px 16px rgba(80,60,20,.07)}
+.model.ultra{border-left-color:var(--sello)}
+.model .num{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9a7a2a}
+.model h3{font-family:'Fraunces',serif;font-weight:900;font-size:20px;color:var(--verde);margin:3px 0 8px;line-height:1.12}
+.model .row{margin:7px 0;font-size:14.5px}
+.model .row b{color:var(--azul)}
+.model.ultra .row b{color:var(--sello)}
+.model .pill{display:inline-block;background:#eef4e3;color:var(--verde);font-weight:700;font-size:12.5px;padding:5px 11px;border-radius:999px;margin-top:9px;border:1px solid #cfe0b6}
+
+.cta{margin-top:42px;text-align:center;background:repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 7px,transparent 7px 14px),linear-gradient(160deg,#234011,#2d5016);color:#f5faf0;border-radius:16px;padding:30px 24px;border:1px solid rgba(181,134,43,.4)}
+.cta h2{font-family:'Fraunces',serif;font-weight:900;font-size:25px;line-height:1.1}
+.cta p{font-size:15px;color:rgba(245,250,240,.92);max-width:48ch;margin:12px auto}
+.cta .big{font-size:40px}
+footer{margin-top:30px;text-align:center;font-family:'Special Elite',monospace;font-size:11px;letter-spacing:1px;color:#9a8a6a}
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="k">Pitch de monetización · Producto</div>
+    <h1>Pasaporte Botánico</h1>
+    <p>Una experiencia de lectura que convierte cualquier jardín en un mapa del mundo: el origen real, el viaje y los nombres indígenas de cada planta. Acá está por qué engancha y cómo se transforma en ingresos.</p>
+  </header>
+
+  <div class="navlinks">
+    <a class="exp" href="2026-06-29-pasaporte-jardin.html">↩ Ver la experiencia</a>
+    <a class="site" href="https://gardening-chi.vercel.app/index.html">🌐 Sitio estable</a>
+  </div>
+
+  <h2 class="sec">Resumen ejecutivo</h2>
+  <p class="lead">El <b>Pasaporte Botánico</b> toma el dato más subestimado de cualquier catálogo de plantas —de dónde vino cada una— y lo convierte en una crónica de migración con micro-deleite: sellos, banderas, rutas y nombres charrúas/guaraníes rescatados. No es un juego ni una ficha técnica: es <b>storytelling de patrimonio</b>. Vende dos emociones de altísimo valor: <b>orgullo</b> (lo nativo uruguayo) y <b>asombro</b> (lo que cruzó océanos). Y lo hace con un activo escaso: <b>credibilidad</b> — cada despacho cita el origen verificado y el código de catálogo.</p>
+
+  <div class="kpis">
+    <div class="kpi"><div class="n">90%+</div><div class="l">datos ya existentes en el catálogo — costo marginal de contenido casi nulo</div></div>
+    <div class="kpi"><div class="n">2 emociones</div><div class="l">orgullo identitario + asombro: las dos que más se comparten</div></div>
+    <div class="kpi"><div class="n">∞ jardines</div><div class="l">todo jardín del mundo tiene plantas con origen → escala universal</div></div>
+  </div>
+
+  <h2 class="sec">Por qué engancha (fundamento de producto)</h2>
+  <div class="panel">
+    <ul>
+      <li><b>Identidad y orgullo:</b> descubrir que tu guayabo se llama <i>Ñunde</i> en charrúa o que tu anacahuita está protegida por ley desde 1986 dispara apego. El usuario no aprende sobre plantas: aprende sobre <i>su</i> país y <i>su</i> casa.</li>
+      <li><b>Asombro compartible:</b> “tu palta perdió a su animal dispersor en la Edad de Hielo” o “todos los ciruelos púrpura del mundo vienen de un solo árbol de 1880” son hechos que se reenvían por WhatsApp. Cada usuario es un canal de distribución.</li>
+      <li><b>Retención por novedad serializada:</b> el modelo “un sello nuevo por día” crea hábito sin agotar el contenido. 52 plantas = meses de despachos diarios sin repetir.</li>
+      <li><b>Confianza:</b> citar el código (F-1, B-22) y el origen verificado posiciona el producto como riguroso, no como contenido inflado por IA. La credibilidad es el moat.</li>
+      <li><b>Rescate cultural:</b> los nombres indígenas son contenido emocionalmente cargado, escaso y diferenciador. Nadie más lo está poniendo en la app de tu jardín.</li>
+    </ul>
+  </div>
+
+  <h2 class="sec">Público objetivo</h2>
+  <div class="panel">
+    <ul>
+      <li><b>Jardineros aficionados con sentido de identidad</b> (35-70) que ya invirtieron emocionalmente en su jardín.</li>
+      <li><b>Viveros y garden centers</b> que necesitan diferenciar y agregar valor percibido a cada planta vendida.</li>
+      <li><b>Turismo de naturaleza y jardines botánicos</b> (Jardín Botánico de MVD, Prado, estancias turísticas) que buscan experiencias de visitante.</li>
+      <li><b>Instituciones educativas y culturales</b> interesadas en patrimonio indígena y biodiversidad rioplatense.</li>
+    </ul>
+  </div>
+
+  <!-- ========== INNOVADORES ========== -->
+  <div class="divider inno">3 modelos de monetización innovadores</div>
+
+  <div class="model">
+    <div class="num">Modelo 01 · Innovador</div>
+    <h3>Suscripción “Sello del día” premium</h3>
+    <div class="row"><b>Cómo funciona:</b> el feed gratis muestra los nativos; por una suscripción baja (USD 2-3/mes) se desbloquea el despacho diario completo de las 52 plantas, audio narrado en es-UY, y la historia extendida de cada origen.</div>
+    <div class="row"><b>Por qué pagarían:</b> ya pidieron “un sello por día” en la propia experiencia — la intención de suscripción está medida antes de cobrar. Es contenido emocional, no funcional: la gente paga por sentir, no por features.</div>
+    <div class="pill">≈ 500 suscriptores × USD 2,5 = USD 1.250/mes recurrente</div>
+  </div>
+
+  <div class="model">
+    <div class="num">Modelo 02 · Innovador</div>
+    <h3>Licencia white-label para viveros</h3>
+    <div class="row"><b>Cómo funciona:</b> el vivero pega un QR en cada planta que vende → abre el Pasaporte Botánico de esa especie con su marca. Pago por SaaS anual + setup del catálogo.</div>
+    <div class="row"><b>Por qué pagarían:</b> sube el ticket percibido (“no comprás una planta, comprás una historia de 2500 años”), reduce devoluciones por mal cuidado y los diferencia de la competencia que vende plantas mudas.</div>
+    <div class="pill">≈ 40 viveros × USD 300/año = USD 12.000/año</div>
+  </div>
+
+  <div class="model">
+    <div class="num">Modelo 03 · Innovador</div>
+    <h3>Patrocinio cultural / institucional</h3>
+    <div class="row"><b>Cómo funciona:</b> el módulo de nombres indígenas se ofrece como pieza patrocinable a bancos, intendencias o el Ministerio de Cultura bajo storytelling de patrimonio (“rescatamos los nombres charrúas de la flora uruguaya”).</div>
+    <div class="row"><b>Por qué pagarían:</b> es ESG/branding de altísimo retorno reputacional: asociar la marca al rescate de identidad indígena y biodiversidad nativa. Barato para ellos, prestigioso, y mediático.</div>
+    <div class="pill">≈ 1 sponsor ancla USD 8.000-15.000/campaña anual</div>
+  </div>
+
+  <!-- ========== ULTRA-CREATIVOS ========== -->
+  <div class="divider ultra">3 modelos ULTRA-creativos</div>
+
+  <div class="model ultra">
+    <div class="num">Modelo 04 · Ultra-creativo</div>
+    <h3>Sellos físicos coleccionables + álbum</h3>
+    <div class="row"><b>Cómo funciona:</b> cada despacho digital tiene su sello físico real (stickers troquelados estilo pasaporte). El usuario compra el “Pasaporte Botánico” impreso y va pegando el sello de cada planta que tiene o visita. Coleccionismo tipo filatelia botánica.</div>
+    <div class="row"><b>Por qué pagarían:</b> lo táctil y coleccionable activa el impulso de completar la serie (mecánica de álbum de figuritas). Regalo perfecto para el jardinero que “ya tiene todo”. Margen físico alto.</div>
+    <div class="pill">≈ Kit USD 18 · 800 kits/año = USD 14.400 brutos</div>
+  </div>
+
+  <div class="model ultra">
+    <div class="num">Modelo 05 · Ultra-creativo</div>
+    <h3>“Visado” por geolocalización + turismo de jardines</h3>
+    <div class="row"><b>Cómo funciona:</b> jardines botánicos, estancias y parques compran “estampar visados”: el visitante escanea plantas in situ y suma sellos georreferenciados a su pasaporte. Un pasaporte que se llena recorriendo lugares reales. Revenue share con cada sitio.</div>
+    <div class="row"><b>Por qué pagarían:</b> los sitios turísticos buscan razones para que la gente recorra más, vuelva y comparta. Gamifica la visita sin pantallas chillonas — pura curaduría. Genera fotos compartibles = marketing gratis para el sitio.</div>
+    <div class="pill">≈ 10 sitios × USD 500/año + USD 4 por pasaporte premium del visitante</div>
+  </div>
+
+  <div class="model ultra">
+    <div class="num">Modelo 06 · Ultra-creativo</div>
+    <h3>“Adoptá un nombre indígena” — apadrinamiento botánico</h3>
+    <div class="row"><b>Cómo funciona:</b> el usuario apadrina simbólicamente una planta nativa con su nombre charrúa/guaraní (ej. <i>Ñunde</i>, el guayabo). Recibe un certificado de pasaporte numerado y una parte del aporte financia plantación real de nativas en escuelas o espacios públicos.</div>
+    <div class="row"><b>Por qué pagarían:</b> combina causa (reforestación nativa + rescate cultural) con identidad personal y un objeto digital con estatus. La gente paga por pertenecer y por dejar huella, no por la planta.</div>
+    <div class="pill">≈ 300 apadrinamientos × USD 12 = USD 3.600 + impacto social medible</div>
+  </div>
+
+  <div class="cta">
+    <div class="big">🗺️</div>
+    <h2>El dato ya lo tenés. La historia es el negocio.</h2>
+    <p>El catálogo del jardín ya guarda el origen y los nombres indígenas de cada planta. El Pasaporte Botánico solo los convierte en una experiencia que la gente quiere leer, compartir y pagar. Seis caminos a ingreso, un solo activo: la historia verificada de cada planta.</p>
+    <p><b>Próximo paso:</b> arrancar con la suscripción “Sello del día” (Modelo 01) — ya hay intención de suscripción medida en la propia experiencia — y prototipar un piloto white-label con un vivero local.</p>
+  </div>
+
+  <footer>— PASAPORTE BOTÁNICO · PITCH DE VENTAS · 2026 —</footer>
+</div>
+</body>
+</html>
