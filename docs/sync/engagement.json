@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-29T00:34:54.255Z",
+  "_updated_at": "2026-06-29T00:36:10.446Z",
   "events": [
     {
       "_id": "mqfe125cohy7s7",
@@ -1296,6 +1296,15 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-06-29T00:34:53.756Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqyhlrqta71m8y",
+      "type": "answer",
+      "qid": "diario-suscripcion-diaria",
+      "value": "si",
+      "page": "engage/2026-06-29-diario-jardin.html",
+      "ts": "2026-06-29T00:36:10.037Z",
       "device": "sin-nombre"
     }
   ],
