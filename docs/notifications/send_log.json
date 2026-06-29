@@ -533,6 +533,12 @@
       "nid": "2026-06-29-pasaporte",
       "ts": "2026-06-29T17:12:22.123Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-29-curio-lavanda",
+      "ts": "2026-06-29T23:33:50.110Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
