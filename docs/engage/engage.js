@@ -200,6 +200,63 @@
       '👍 Anotado — el agente la descarta y prueba otra cosa.');
   };
 
+  // --- Desuscribirse de las notificaciones push DESDE la experiencia ---
+  // (1) desuscribe el endpoint del browser; (2) si hay PAT, marca
+  // docs/sync/push_subscription.json como "disabled" para que el dispatcher
+  // deje de mandar. Mismo efecto que el botón "Desactivar" de Ajustes en el
+  // inicio, pero accesible desde cualquier página de experiencia.
+  var PUSH_SUB_PATH = 'docs/sync/push_subscription.json';
+  window.engageUnsubscribe = async function (btn) {
+    btn = btn || ((typeof event !== 'undefined' && event) ? event.target : null);
+    var wrap = btn && btn.parentElement ? btn.parentElement : null;
+    var hint = wrap ? wrap.querySelector('.unsub-hint') : null;
+    function say(m) { if (hint) hint.textContent = m; }
+    if (btn) btn.disabled = true;
+    say('Desactivando…');
+    var didLocal = false, didRepo = false;
+    try {
+      if ('serviceWorker' in navigator && 'PushManager' in window) {
+        var reg = await navigator.serviceWorker.ready;
+        var sub = await reg.pushManager.getSubscription();
+        if (sub) { await sub.unsubscribe(); didLocal = true; }
+      }
+    } catch (e) { /* seguimos al paso del repo igual */ }
+    try {
+      if (token()) {
+        var cur = await ghReadJson(PUSH_SUB_PATH);
+        await ghWriteJson(PUSH_SUB_PATH, {
+          device: (cur.data && cur.data.device) || device(),
+          subscription: null,
+          status: 'disabled',
+          updated_at: new Date().toISOString(),
+          invalidated_at: null,
+          invalid_reason: 'desactivado por el usuario desde una experiencia',
+        }, 'push: desactivar notificaciones (desde experiencia)', cur.sha);
+        didRepo = true;
+      }
+    } catch (e) { /* el rebote del endpoint lo invalida igual */ }
+    logEvents([{ type: 'push_unsubscribe', page: pageName(), local: didLocal, repo: didRepo,
+      ts: new Date().toISOString(), device: device() }]);
+    if (didRepo) say('🔕 Listo: no te llegan más notificaciones. Podés reactivarlas desde Ajustes en el inicio.');
+    else if (didLocal) say('🔕 Desactivadas en este equipo. (Sin PAT no se avisó al repo, pero el envío se corta solo cuando rebote.)');
+    else say('No había una suscripción activa en este equipo — ya estás sin notificaciones.');
+  };
+
+  // Inyecta un control discreto de "desuscribirme" al pie de cada experiencia.
+  function injectUnsubControl() {
+    if (!document.body || document.getElementById('engage-unsub')) return;
+    var box = document.createElement('div');
+    box.id = 'engage-unsub';
+    box.style.cssText = 'max-width:560px;margin:14px auto 30px;text-align:center;' +
+      'font:500 12.5px/1.45 -apple-system,BlinkMacSystemFont,sans-serif;';
+    box.innerHTML =
+      '<button type="button" onclick="engageUnsubscribe(this)" ' +
+      'style="background:none;border:none;color:#9a7b12;text-decoration:underline;' +
+      'cursor:pointer;font:inherit;padding:8px;">🔕 Desuscribirme de las notificaciones</button>' +
+      '<div class="unsub-hint" style="color:#5a6b3c;margin-top:2px;"></div>';
+    document.body.appendChild(box);
+  }
+
   // --- Reacciones granulares (😍/🙂/😐/🙅) ---
   // Uso en la página: <button onclick="engageReact('<page_id>','love', this)">😍</button>
   function markSelected(btn) {
@@ -260,9 +317,10 @@
   });
   window.addEventListener('pagehide', flushDwell);
 
+  function init() { trackLanding(); injectUnsubControl(); }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', trackLanding);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    trackLanding();
+    init();
   }
 })();

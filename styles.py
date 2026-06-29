@@ -325,6 +325,25 @@ h2.subbrand {
 }
 .ideas-section-now .ideas-intro h3 { color: #166534; }
 
+/* Experiencias aprobadas (subtab ✨ Experiencias de la página Ideas) */
+.exp-grid { display: flex; flex-direction: column; gap: 12px; }
+.exp-card {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 18px; border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #f5faf0 100%);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 1px 3px rgba(45, 80, 22, 0.06);
+  text-decoration: none; color: inherit;
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.exp-card:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(45, 80, 22, 0.12); border-color: var(--accent); }
+.exp-card:active { transform: scale(.99); }
+.exp-icon { font-size: 1.9rem; line-height: 1; flex: 0 0 auto; }
+.exp-text { display: flex; flex-direction: column; gap: 3px; flex: 1 1 auto; min-width: 0; }
+.exp-title { font-weight: 700; color: var(--accent); font-size: 1.02rem; }
+.exp-desc { color: var(--text-3); font-size: 0.86rem; line-height: 1.45; }
+.exp-go { font-size: 1.3rem; color: var(--accent); flex: 0 0 auto; opacity: .55; }
+
 /* Badge "óptimo plantar AHORA" en idea-card y huerta-card */
 .now-badge {
   display: inline-block;

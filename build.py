@@ -1326,9 +1326,6 @@ def _render_top_nav(active_page: str, ticker_html_inner: str = "", ticker_aria: 
   <div class="todo-strip">
     <a class="todo-btn" href="tareas.html"><span aria-hidden="true">📋</span> Tareas <span class="todo-label" id="todo-count">…</span></a>
     <a class="todo-btn" href="ideas.html"><span aria-hidden="true">💡</span> Ideas</a>
-    <a class="todo-btn" href="engage/2026-06-13-rueda-ano.html"><span aria-hidden="true">🌀</span> Rueda del año</a>
-    <a class="todo-btn" href="engage/2026-06-29-diario-jardin.html"><span aria-hidden="true">📰</span> El Diario</a>
-    <a class="todo-btn" href="engage/2026-06-29-records-jardin.html"><span aria-hidden="true">🏆</span> Récords</a>
   </div>"""
     else:
         tareas_active = " active" if active_page == "tareas" else ""
@@ -1398,6 +1395,29 @@ def build_ideas_html(ticker_html_inner: str = "", ticker_aria: str = "",
     )
     locations_html = render_huerta_locations()
 
+    # Experiencias APROBADAS — viven en docs/engage/ como páginas permanentes.
+    # Regla del usuario: cada experiencia que se aprueba se suma acá (no en la
+    # nav del inicio). El agente de /engagement agrega una entrada al promover.
+    approved_experiences = [
+        {"icon": "🏆", "title": "Récords de tu Jardín",
+         "desc": "Los superlativos de tus plantas: la más longeva, la que limpia el aire, la de Venus…",
+         "page": "engage/2026-06-29-records-jardin.html"},
+        {"icon": "📰", "title": "El Diario de tu Jardín",
+         "desc": "Las noticias de hoy entre tus plantas, en titulares de prensa.",
+         "page": "engage/2026-06-29-diario-jardin.html"},
+        {"icon": "🌀", "title": "La rueda del año",
+         "desc": "El pulso anual de floración y fructificación de tus 52 plantas, animado.",
+         "page": "engage/2026-06-13-rueda-ano.html"},
+    ]
+    experiences_html = '<div class="exp-grid">' + "".join(
+        f"""<a class="exp-card" href="{esc(e['page'])}">
+        <span class="exp-icon" aria-hidden="true">{e['icon']}</span>
+        <span class="exp-text"><span class="exp-title">{esc(e['title'])}</span>
+        <span class="exp-desc">{esc(e['desc'])}</span></span>
+        <span class="exp-go" aria-hidden="true">→</span>
+      </a>""" for e in approved_experiences
+    ) + "</div>"
+
     # Highlights del subtab Ornamentales: ornamentales con ventana óptima ahora.
     # (Las hortalizas óptimas aparecen primero en el pane Huerta vía huerta_sorted.)
     optimal_ideas = [i for i in all_ideas if idea_is_optimal_now(i)]
@@ -1424,6 +1444,7 @@ def build_ideas_html(ticker_html_inner: str = "", ticker_aria: str = "",
       <button class="subtab-btn active" data-sub="ornament">🌸 Ornamentales</button>
       <button class="subtab-btn" data-sub="huerta">🥬 Huerta</button>
       <button class="subtab-btn" data-sub="espacios">🏡 Espacios verdes</button>
+      <button class="subtab-btn" data-sub="experiencias">✨ Experiencias</button>
     </nav>
 
     <div class="subtab-pane active" data-sub="ornament">
@@ -1456,6 +1477,16 @@ def build_ideas_html(ticker_html_inner: str = "", ticker_aria: str = "",
           <p>Opciones estructurales para sumar canteros, camas elevadas, macetones o aromáticas integradas. Ordenadas de mejor a más simple.</p>
         </div>
         {locations_html}
+      </div>
+    </div>
+
+    <div class="subtab-pane" data-sub="experiencias">
+      <div class="ideas-section">
+        <div class="ideas-intro">
+          <h3>✨ Experiencias de tu jardín</h3>
+          <p>Las experiencias que aprobaste quedan acá, siempre a mano. Cada vez que aprobás una nueva, se suma a esta lista.</p>
+        </div>
+        {experiences_html}
       </div>
     </div>
   </section>
