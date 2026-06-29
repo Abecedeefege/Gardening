@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-29T00:38:46.972Z",
+  "_updated_at": "2026-06-29T00:38:50.089Z",
   "events": [
     {
       "_id": "mqfe125cohy7s7",
@@ -1355,6 +1355,15 @@
       "type": "proposal_approved",
       "proposal_id": "2026-06-29-records-jardin",
       "ts": "2026-06-29T00:38:47.035Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqyhp7fswncasm",
+      "type": "dwell",
+      "seconds": 141,
+      "scroll_pct": 100,
+      "page": "engage/2026-06-29-records-jardin.html",
+      "ts": "2026-06-29T00:38:50.344Z",
       "device": "sin-nombre"
     }
   ],
