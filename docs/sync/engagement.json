@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-29T00:38:44.029Z",
+  "_updated_at": "2026-06-29T00:38:46.972Z",
   "events": [
     {
       "_id": "mqfe125cohy7s7",
@@ -1348,6 +1348,13 @@
       "value": "si",
       "page": "engage/2026-06-29-records-jardin.html",
       "ts": "2026-06-29T00:38:44.107Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqyhp4vvwowofz",
+      "type": "proposal_approved",
+      "proposal_id": "2026-06-29-records-jardin",
+      "ts": "2026-06-29T00:38:47.035Z",
       "device": "sin-nombre"
     }
   ],
