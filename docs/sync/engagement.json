@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-29T00:36:10.446Z",
+  "_updated_at": "2026-06-29T00:36:12.764Z",
   "events": [
     {
       "_id": "mqfe125cohy7s7",
@@ -1305,6 +1305,15 @@
       "value": "si",
       "page": "engage/2026-06-29-diario-jardin.html",
       "ts": "2026-06-29T00:36:10.037Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqyhltuthpd5hs",
+      "type": "reaction",
+      "target": "diario",
+      "value": "love",
+      "page": "engage/2026-06-29-diario-jardin.html",
+      "ts": "2026-06-29T00:36:12.773Z",
       "device": "sin-nombre"
     }
   ],
