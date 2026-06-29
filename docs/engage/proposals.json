@@ -151,24 +151,24 @@
       "title": "📰 El Diario de tu Jardín (news-feed editorial, edición diaria)",
       "page": "engage/2026-06-29-diario-jardin.html",
       "created": "2026-06-29",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "NUEVA línea pedida por el usuario (28/06, función paralela): experiencias en formato NEWS-FEED armadas de cero, optimizadas para 3 metas — (1) que marque la experiencia como increíble, (2) que se suscriba a una versión FRESCA diaria, (3) monetizable (pitch HTML aparte). El Diario reencuadra el contenido-curiosidad (el activo #1 medido) como titulares de prensa con 'edición del día' — apuesta: el framing editorial + el gancho de novedad-diaria convierte el amor que las curiosidades ya generan en una SUSCRIPCIÓN explícita (lo que las postales no lograron). Construida en la corrida vespertina del 28 para el ciclo 29; created=29/06 para que tenga su día de test limpio antes de la regla de no-supervivencia.",
       "notified_by": [
         "2026-06-29-a"
       ],
-      "result_notes": null
+      "result_notes": "PROMOVIDA 29/06. El usuario la descubrió por navegación DIRECTA la noche del 28 (00:34Z 29/06, sin esperar el push) y disparó la señal más completa del canal: 😍love + answer 'diario-suscripcion-diaria'=SÍ (¡SUSCRIPCIÓN explícita — el gap exacto que las postales nunca cerraron!) + proposal_approved + 92s dwell / scroll 100%. Hipótesis del framing news-feed VALIDADA: convierte amor→suscripción. Promoción = página permanente + link fijo «📰 El Diario» en la nav del inicio (todo-strip de build.py). Footer: se quitaron los botones aprobar/rechazar y quedó nota de integración + link al inicio; reacciones/suscripción siguen logueando. El push promotor 2026-06-29-a se retira (ya aprobada; hoy entran 2 experiencias NUEVAS del ciclo 30)."
     },
     {
       "id": "2026-06-29-records-jardin",
       "title": "🏆 Récords de tu Jardín (news-feed de superlativos)",
       "page": "engage/2026-06-29-records-jardin.html",
       "created": "2026-06-29",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Segunda experiencia de la función paralela nueva (28/06). News-feed de récords/superlativos que ostentan SUS propias plantas (la más longeva 400 años, la que limpia el aire NASA, la de Venus, etc.), con número grande por card. Apuesta: la psicología de orgullo/estatus + lo coleccionable-compartible del superlativo dispara el 'me voló la cabeza MI jardín' y motiva suscripción diaria (un récord nuevo por día). Mecánica de lectura, no juego (los juegos fatigan). Construida en la corrida vespertina del 28 para el ciclo 29; created=29/06 para test limpio.",
       "notified_by": [
         "2026-06-29-b"
       ],
-      "result_notes": null
+      "result_notes": "PROMOVIDA 29/06. Misma sesión nocturna que el Diario (00:38Z 29/06, navegación directa): 😍love + answer 'records-suscripcion-diaria'=SÍ (2ª suscripción explícita del día) + proposal_approved + 141s dwell / scroll 100% (el dwell MÁS LARGO medido en el canal). El ángulo orgullo/estatus + número grande funciona y retiene aún más que el editorial. Promoción = página permanente + link fijo «🏆 Récords» en la nav del inicio (todo-strip de build.py). Footer: botones aprobar/rechazar reemplazados por nota de integración + link al inicio; reacciones/suscripción siguen logueando. El push promotor 2026-06-29-b se retira (ya aprobada; hoy entran 2 experiencias NUEVAS del ciclo 30)."
     }
   ]
 }

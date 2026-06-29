@@ -1327,6 +1327,8 @@ def _render_top_nav(active_page: str, ticker_html_inner: str = "", ticker_aria: 
     <a class="todo-btn" href="tareas.html"><span aria-hidden="true">📋</span> Tareas <span class="todo-label" id="todo-count">…</span></a>
     <a class="todo-btn" href="ideas.html"><span aria-hidden="true">💡</span> Ideas</a>
     <a class="todo-btn" href="engage/2026-06-13-rueda-ano.html"><span aria-hidden="true">🌀</span> Rueda del año</a>
+    <a class="todo-btn" href="engage/2026-06-29-diario-jardin.html"><span aria-hidden="true">📰</span> El Diario</a>
+    <a class="todo-btn" href="engage/2026-06-29-records-jardin.html"><span aria-hidden="true">🏆</span> Récords</a>
   </div>"""
     else:
         tareas_active = " active" if active_page == "tareas" else ""
