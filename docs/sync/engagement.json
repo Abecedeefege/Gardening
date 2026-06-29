@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-29T00:43:51.049Z",
+  "_updated_at": "2026-06-29T13:10:18.722Z",
   "events": [
     {
       "_id": "mqfe125cohy7s7",
@@ -1392,6 +1392,15 @@
       "page": "engage/2026-06-29-diario-jardin.html",
       "ts": "2026-06-29T00:43:51.227Z",
       "device": "sin-nombre"
+    },
+    {
+      "_id": "mqz8jm5tnxze4b",
+      "type": "page_visit",
+      "page": "engage/2026-06-29-diario-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-06-29T13:10:19.117Z",
+      "device": "pix9"
     }
   ],
   "daily_summary": {
