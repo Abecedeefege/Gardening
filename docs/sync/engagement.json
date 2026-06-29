@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-29T00:33:38.210Z",
+  "_updated_at": "2026-06-29T00:34:54.255Z",
   "events": [
     {
       "_id": "mqfe125cohy7s7",
@@ -1287,6 +1287,15 @@
       "nid": "2026-06-28-c",
       "src": "push",
       "ts": "2026-06-29T00:33:37.484Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqyhk4vxyxtvty",
+      "type": "page_visit",
+      "page": "engage/2026-06-29-diario-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-06-29T00:34:53.756Z",
       "device": "sin-nombre"
     }
   ],
