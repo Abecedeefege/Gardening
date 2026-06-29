@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-29T13:15:59.526Z",
+  "_updated_at": "2026-06-29T17:12:22.124Z",
   "notifications": [
     {
       "id": "2026-06-29-feed",
@@ -22,8 +22,8 @@
       "format": "experiencia",
       "send_at": "2026-06-29T13:00:00-03:00",
       "expires_at": "2026-06-29T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-06-29T17:12:22.123Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-06-29 (ciclo 30)"
     },
