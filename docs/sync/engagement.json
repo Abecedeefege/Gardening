@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-30T16:04:08.698Z",
+  "_updated_at": "2026-06-30T18:25:17.973Z",
   "events": [
     {
       "_id": "mqgjv4a9kovk9f",
@@ -1301,6 +1301,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-06-30-chusmerio-jardin.html",
       "ts": "2026-06-30T16:04:08.673Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0z8iyviyqjvn",
+      "type": "notification_clicked",
+      "nid": "2026-06-30-b",
+      "page": "engage/2026-06-30-superpoderes-jardin.html",
+      "ts": "2026-06-30T18:25:17.571Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0z8iyvah3zdh",
+      "type": "page_visit",
+      "page": "engage/2026-06-30-superpoderes-jardin.html",
+      "nid": "2026-06-30-b",
+      "src": "push",
+      "ts": "2026-06-30T18:25:17.571Z",
       "device": "sin-nombre"
     }
   ],
