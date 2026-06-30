@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-30T16:02:22.660Z",
+  "_updated_at": "2026-06-30T16:02:28.126Z",
   "events": [
     {
       "_id": "mqgjv4a9kovk9f",
@@ -1224,6 +1224,15 @@
       "type": "proposal_rejected",
       "proposal_id": "2026-06-29-pasaporte-jardin",
       "ts": "2026-06-30T16:02:22.352Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0u4uxic4b1bx",
+      "type": "answer",
+      "qid": "pasaporte-suscripcion-diaria",
+      "value": "no",
+      "page": "engage/2026-06-29-pasaporte-jardin.html",
+      "ts": "2026-06-30T16:02:28.374Z",
       "device": "sin-nombre"
     }
   ],
