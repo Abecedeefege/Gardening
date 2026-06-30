@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-30T16:02:36.160Z",
+  "_updated_at": "2026-06-30T16:02:37.208Z",
   "events": [
     {
       "_id": "mqgjv4a9kovk9f",
@@ -1242,6 +1242,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-06-29-pasaporte-jardin.html",
       "ts": "2026-06-30T16:02:36.484Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0u51jp9phl8s",
+      "type": "notification_clicked",
+      "nid": "2026-06-29-curio-lavanda",
+      "page": "index.html",
+      "ts": "2026-06-30T16:02:36.948Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0u51jp079lp1",
+      "type": "page_visit",
+      "page": "index.html",
+      "nid": "2026-06-29-curio-lavanda",
+      "src": "push",
+      "ts": "2026-06-30T16:02:36.948Z",
       "device": "sin-nombre"
     }
   ],
