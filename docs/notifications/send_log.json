@@ -431,6 +431,12 @@
       "nid": "2026-06-30-a",
       "ts": "2026-06-30T12:07:15.903Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-06-30-b",
+      "ts": "2026-06-30T16:55:08.504Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
