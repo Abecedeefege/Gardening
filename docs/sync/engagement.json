@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-30T16:01:42.887Z",
+  "_updated_at": "2026-06-30T16:02:22.660Z",
   "events": [
     {
       "_id": "mqgjv4a9kovk9f",
@@ -1217,6 +1217,13 @@
       "nid": "2026-06-29-pasaporte",
       "src": "push",
       "ts": "2026-06-30T16:01:42.599Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0u4qa9zvmzwr",
+      "type": "proposal_rejected",
+      "proposal_id": "2026-06-29-pasaporte-jardin",
+      "ts": "2026-06-30T16:02:22.352Z",
       "device": "sin-nombre"
     }
   ],
