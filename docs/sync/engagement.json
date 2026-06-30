@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-30T12:29:06.747Z",
+  "_updated_at": "2026-06-30T12:29:08.431Z",
   "events": [
     {
       "_id": "mqgjv4a9kovk9f",
@@ -1132,6 +1132,15 @@
       "value": "love",
       "page": "engage/2026-06-29-feed-jardin.html",
       "ts": "2026-06-30T12:29:05.690Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0miigsl54uaz",
+      "type": "answer",
+      "qid": "feed-suscripcion-diaria",
+      "value": "si",
+      "page": "engage/2026-06-29-feed-jardin.html",
+      "ts": "2026-06-30T12:29:08.476Z",
       "device": "sin-nombre"
     }
   ],
