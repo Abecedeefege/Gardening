@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-30T16:02:37.208Z",
+  "_updated_at": "2026-06-30T16:02:41.979Z",
   "events": [
     {
       "_id": "mqgjv4a9kovk9f",
@@ -1259,6 +1259,23 @@
       "nid": "2026-06-29-curio-lavanda",
       "src": "push",
       "ts": "2026-06-30T16:02:36.948Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0u55vimnb0ds",
+      "type": "notification_clicked",
+      "nid": "2026-06-30-a",
+      "page": "engage/2026-06-30-chusmerio-jardin.html",
+      "ts": "2026-06-30T16:02:42.557Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0u55vifodpj9",
+      "type": "page_visit",
+      "page": "engage/2026-06-30-chusmerio-jardin.html",
+      "nid": "2026-06-30-a",
+      "src": "push",
+      "ts": "2026-06-30T16:02:42.557Z",
       "device": "sin-nombre"
     }
   ],
