@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-30T12:29:10.597Z",
+  "_updated_at": "2026-06-30T12:43:10.549Z",
   "events": [
     {
       "_id": "mqgjv4a9kovk9f",
@@ -1148,6 +1148,15 @@
       "type": "proposal_approved",
       "proposal_id": "2026-06-29-feed-jardin",
       "ts": "2026-06-30T12:29:10.797Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0n0jp9g258iq",
+      "type": "page_visit",
+      "page": "engage/2026-06-29-feed-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-06-30T12:43:09.883Z",
       "device": "sin-nombre"
     }
   ],
