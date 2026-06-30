@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-30T18:25:17.973Z",
+  "_updated_at": "2026-06-30T18:25:40.732Z",
   "events": [
     {
       "_id": "mqgjv4a9kovk9f",
@@ -1318,6 +1318,15 @@
       "nid": "2026-06-30-b",
       "src": "push",
       "ts": "2026-06-30T18:25:17.571Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0z90rx49rxne",
+      "type": "dwell",
+      "seconds": 23,
+      "scroll_pct": 10,
+      "page": "engage/2026-06-30-superpoderes-jardin.html",
+      "ts": "2026-06-30T18:25:40.653Z",
       "device": "sin-nombre"
     }
   ],
