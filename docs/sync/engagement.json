@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-30T16:04:04.361Z",
+  "_updated_at": "2026-06-30T16:04:08.698Z",
   "events": [
     {
       "_id": "mqgjv4a9kovk9f",
@@ -1292,6 +1292,15 @@
       "type": "proposal_approved",
       "proposal_id": "2026-06-30-chusmerio-jardin",
       "ts": "2026-06-30T16:04:04.894Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0u70bl6uks33",
+      "type": "dwell",
+      "seconds": 86,
+      "scroll_pct": 100,
+      "page": "engage/2026-06-30-chusmerio-jardin.html",
+      "ts": "2026-06-30T16:04:08.673Z",
       "device": "sin-nombre"
     }
   ],
