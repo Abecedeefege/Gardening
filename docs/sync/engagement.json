@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-29T13:11:01.955Z",
+  "_updated_at": "2026-06-30T12:12:44.049Z",
   "events": [
     {
       "_id": "mqgjv4a9kovk9f",
@@ -1115,6 +1115,15 @@
       "page": "engage/2026-06-29-records-jardin.html",
       "ts": "2026-06-29T13:11:02.729Z",
       "device": "pix9"
+    },
+    {
+      "_id": "mr0lxevniz9e83",
+      "type": "dwell",
+      "seconds": 142,
+      "scroll_pct": 81,
+      "page": "engage/2026-06-29-feed-jardin.html",
+      "ts": "2026-06-30T12:12:44.049Z",
+      "device": "sin-nombre"
     }
   ],
   "daily_summary": {
