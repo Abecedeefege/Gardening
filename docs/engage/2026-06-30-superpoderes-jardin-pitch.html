@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1a0a">
+<title>💼 Los Superpoderes de tu Jardín · Pitch de venta</title>
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#5a9e35; --crema:#f5faf0; --tinta:#1a2410; --musgo:#7a8a68;
+    --azul:#1f6f8b; --magenta:#9c2a6e; --naranja:#d4730a; --violeta:#6a3fa0;
+    --oro:#d4a017; --oro2:#f0c34a;
+    --pad:max(18px,env(safe-area-inset-left));
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; min-height:100%; }
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    background:radial-gradient(120% 80% at 50% -10%, #fffdf2 0%, var(--crema) 45%, #e7efdd 100%);
+    color:var(--tinta); -webkit-font-smoothing:antialiased;
+    padding:0 var(--pad) calc(56px + env(safe-area-inset-bottom)); line-height:1.5;
+  }
+  .back{ color:var(--verde); text-decoration:none; font-size:14px; font-weight:800;
+    display:inline-block; padding-top:calc(16px + env(safe-area-inset-top)); }
+  .back:active{ opacity:.6; }
+
+  .wrap{ max-width:620px; margin:0 auto; }
+  header.hero{ text-align:center; padding:18px 0 8px; }
+  .crest{ font-size:48px; line-height:1; filter:drop-shadow(0 4px 10px rgba(31,111,139,.32)); }
+  .kicker{ font-size:12.5px; font-weight:900; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--magenta); margin:6px 0 2px; }
+  h1{ font-size:clamp(24px,7vw,34px); letter-spacing:-0.025em; color:var(--verde); margin:6px 0 6px; }
+  h1 .pow{ background:linear-gradient(90deg,var(--azul),var(--magenta));
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .deck{ font-size:16px; color:#46563a; max-width:520px; margin:8px auto 0; }
+  .deck b{ color:var(--verde); }
+
+  section{ margin-top:34px; }
+  h2.sec{ font-size:20px; color:var(--verde); letter-spacing:-0.015em; margin:0 0 4px;
+    display:flex; align-items:baseline; gap:8px; }
+  h2.sec .n{ font-size:12px; font-weight:900; letter-spacing:.1em; color:#fff;
+    background:var(--magenta); border-radius:999px; padding:3px 9px; }
+  .lead{ font-size:14.5px; color:#5a6b4a; margin:6px 0 16px; }
+
+  .why{ background:#fff; border-radius:20px; padding:20px; border:1px solid #ecf1e2;
+    box-shadow:0 6px 18px rgba(45,80,22,.07); }
+  .why ul{ margin:10px 0 0; padding-left:20px; }
+  .why li{ margin:8px 0; font-size:14.5px; color:#3c4a30; }
+  .why li b{ color:var(--verde); }
+
+  .cards{ display:flex; flex-direction:column; gap:14px; }
+  .model{ background:#fff; border-radius:20px; padding:20px; border:1px solid #ecf1e2;
+    box-shadow:0 6px 18px rgba(45,80,22,.07); position:relative; overflow:hidden; }
+  .model.bold{ background:linear-gradient(165deg,#f6f1fb,#efe9fb); border-color:#ddd0ee; }
+  .model::before{ content:""; position:absolute; inset:0 auto 0 0; width:5px;
+    background:var(--azul); }
+  .model.bold::before{ background:linear-gradient(180deg,var(--violeta),var(--magenta)); }
+  .model h3{ margin:0 0 2px; font-size:17px; color:var(--verde); letter-spacing:-0.01em; }
+  .model .ico{ font-size:24px; }
+  .model .price{ display:inline-block; margin:8px 0; font-size:20px; font-weight:900;
+    color:var(--magenta); letter-spacing:-0.02em; }
+  .model p{ margin:6px 0; font-size:14px; color:#3c4a30; }
+  .model .row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  .chip{ font-size:12px; font-weight:800; color:var(--verde); background:#f2f6ea;
+    border-radius:999px; padding:5px 10px; }
+  .model .why-works{ margin-top:10px; font-size:13.5px; color:#5a6b4a; }
+  .model .why-works b{ color:var(--verde); }
+
+  .close{ margin-top:36px; background:linear-gradient(160deg,#1f3810,#2d5016); color:#fff;
+    border-radius:24px; padding:28px 22px; box-shadow:0 14px 34px rgba(31,56,16,.35); }
+  .close h2{ color:var(--oro2); margin:0 0 8px; font-size:21px; }
+  .close p{ font-size:14.5px; color:#e7f1dc; margin:8px 0; }
+  .close .tam{ display:flex; gap:12px; flex-wrap:wrap; margin:16px 0; }
+  .close .tam div{ flex:1; min-width:120px; background:rgba(255,255,255,.08); border-radius:16px;
+    padding:14px; text-align:center; }
+  .close .tam .big{ font-size:26px; font-weight:900; color:var(--oro2); line-height:1; }
+  .close .tam .cap{ font-size:12px; color:#cfe0bc; margin-top:5px; font-weight:700; }
+  .close .cta{ margin-top:12px; font-size:16px; font-weight:800;
+    background:linear-gradient(180deg,#f7c948,#e0a91a); color:#3a2c02;
+    border-radius:16px; padding:15px; text-align:center; }
+
+  footer{ text-align:center; margin-top:30px; }
+  .footlink{ color:var(--musgo); text-decoration:none; font-size:13.5px; font-weight:800;
+    border-bottom:1px dashed #c3cdb2; }
+  .creditline{ font-size:12px; color:#9aa888; margin-top:14px; }
+
+  @media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; } }
+</style></head><body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="crest">💼</span>
+    <p class="kicker">Pitch interno · solo para el dueño</p>
+    <h1>Cómo se vende “Los <span class="pow">Superpoderes</span> de tu Jardín”</h1>
+    <p class="deck">Un feed que convierte un jardín casero en una <b>farmacia, perfumería y despensa</b> con superpoderes. La gente no paga por “info de plantas” — paga por <b>utilidad práctica, asombro y cosas para contar</b>. Este producto fabrica las tres en 30 segundos por día… y cada poder abre una venta natural de producto.</p>
+  </header>
+
+  <!-- POR QUÉ RETIENE -->
+  <section>
+    <h2 class="sec">Por qué retiene</h2>
+    <p class="lead">La mecánica psicológica detrás del feed, en limpio.</p>
+    <div class="why">
+      <ul>
+        <li><b>Utilidad accionable + asombro.</b> No es trivia: cada card dice “tu planta HACE algo por vos” (limpia el aire, es especia, repele mosquitos). El asombro engancha; la utilidad da una razón concreta para volver y para actuar (cosechar, oler, cocinar). Asombro sin utilidad se olvida; este lo ancla a la vida real.</li>
+        <li><b>Valor percibido altísimo.</b> Es el efecto dotación: valoramos más lo que poseemos. “Tenés pimienta rosa de delicatessen en TU fondo” transforma una planta ignorada en un activo. El usuario siente que descubrió plata enterrada en su propia casa.</li>
+        <li><b>Novedad serializada diaria.</b> Un superpoder por día es el loop de las apps de racha: recompensa variable + cierre incompleto. “Tu jardín tiene poderes para meses” promete novedad recurrente, no un one-shot. La suscripción es el producto, no un extra.</li>
+        <li><b>Compartibilidad nativa.</b> “No sabías que tenías esto en tu fondo” es una frase que se reenvía sola por WhatsApp. Cada card es un fragmento viral, formato screenshot, con gancho de descubrimiento (“mirá lo que hace mi jardín”). Crecimiento orgánico gratis.</li>
+        <li><b>Datos verificados = confianza = ventas.</b> Cada poder cita el código de la planta y un hecho real (lista NASA, estudios de memoria, uso charrúa). El asombro se vuelve credibilidad, y la credibilidad es lo que permite vender el té, las sales y el especiero después.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3 MODELOS INNOVADORES -->
+  <section>
+    <h2 class="sec"><span class="n">A</span> 3 modelos de monetización innovadores</h2>
+    <p class="lead">Sólidos, replicables, con demanda probada en adyacencias.</p>
+    <div class="cards">
+
+      <div class="model">
+        <span class="ico">🦸</span>
+        <h3>1 · Suscripción “Poder del Día”</h3>
+        <span class="price">USD 3,99 / mes · USD 29 / año</span>
+        <p><b>A quién:</b> dueños de jardín y plantófilos (el segmento que ya compra macetas de diseño, apps de identificación y libros de plantas).</p>
+        <p><b>Qué:</b> push diario con un superpoder nuevo de SU jardín, generado desde el catálogo cargado. Freemium: 1 poder gratis por semana, diario tras pagar. Cada poder cierra con un mini-tip accionable (“cosechá los frutos rosados en otoño”).</p>
+        <div class="row"><span class="chip">Recurrente</span><span class="chip">Bajo churn</span><span class="chip">Margen ~95%</span></div>
+        <p class="why-works"><b>Por qué funciona:</b> el contenido es generativo y barato; el valor percibido es alto porque es personalizado y útil. 1.000 suscriptores/año = <b>USD 29k</b> con costo marginal cercano a cero. La utilidad reduce el churn vs. un feed de pura curiosidad.</p>
+      </div>
+
+      <div class="model">
+        <span class="ico">📦</span>
+        <h3>2 · Kits “Activá el Poder” (productos físicos)</h3>
+        <span class="price">USD 18–34 por kit · margen 55–70%</span>
+        <p><b>A quién:</b> el lector en el pico exacto de deseo, justo cuando descubre que su planta SIRVE para algo.</p>
+        <p><b>Qué:</b> cada superpoder tiene su kit que lo vuelve real: <b>set de té de hibisco</b> (filtros + frasco + receta del “agua de Jamaica”), <b>sales de baño y aceite de romero/lavanda</b>, <b>especiero de pimienta rosa</b> con molinillo, kit de cosecha + secado. Empezás con dropship/maquila local, marca propia.</p>
+        <div class="row"><span class="chip">Ticket medio</span><span class="chip">Margen físico</span><span class="chip">Recompra</span></div>
+        <p class="why-works"><b>Por qué funciona:</b> el contenido CREA la necesidad (“tu hibisco hace este té”) y el kit la resuelve en un toque. Es venta contextual, no interrupción. Convierte un poder leído en un ritual repetido en la cocina o el baño → recompra mensual.</p>
+      </div>
+
+      <div class="model">
+        <span class="ico">🛒</span>
+        <h3>3 · Afiliación + e-commerce de insumos contextual</h3>
+        <span class="price">8–15% por venta referida</span>
+        <p><b>A quién:</b> el usuario que quiere SUMAR un superpoder que todavía no tiene (“querés una planta que repela mosquitos en tu fondo”).</p>
+        <p><b>Qué:</b> al pie de cada poder, sugerencia comprable: la planta-poder en viveros aliados, o el insumo para activarlo (tierra, maceta, semillas, deshidratador). Link rastreable. La intención de compra ya está caliente por el contenido.</p>
+        <div class="row"><span class="chip">Cero stock</span><span class="chip">Intención alta</span><span class="chip">Local-first</span></div>
+        <p class="why-works"><b>Por qué funciona:</b> el feed genera deseo de poderes específicos; la oferta lo resuelve en el mismo scroll. Nativo, no molesta. Ticket vivero ~USD 25 → comisión ~USD 3 por conversión sin inventario, escalable a todo el catálogo.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3 MODELOS ULTRA CREATIVOS -->
+  <section>
+    <h2 class="sec"><span class="n">B</span> 3 modelos ultra creativos</h2>
+    <p class="lead">Más audaces. Mayor upside, narrativa más fuerte.</p>
+    <div class="cards">
+
+      <div class="model bold">
+        <span class="ico">🃏</span>
+        <h3>4 · “Liga de Superpoderes” — cartas coleccionables físicas + AR</h3>
+        <span class="price">USD 39 el mazo inicial · packs USD 6</span>
+        <p><b>Qué:</b> cada planta del usuario se imprime como una <b>carta de superhéroe</b> (glyph, categoría, poder, código, “stats” reales) tipo TCG. Mazo del jardín propio + packs sorpresa de plantas que NO tenés (gancho de colección). QR en cada carta abre la ficha animada. Los chicos coleccionan, los grandes regalan.</p>
+        <div class="row"><span class="chip">Coleccionable</span><span class="chip">Regalo</span><span class="chip">Familiar</span></div>
+        <p class="why-works"><b>Por qué funciona:</b> convierte botánica en una mecánica de colección probada (Pokémon/álbum Panini) con FOMO incorporado. El “me falta esa carta” empuja a sumar plantas reales → realimenta los modelos 2 y 3. Producto fotogénico y profundamente compartible.</p>
+      </div>
+
+      <div class="model bold">
+        <span class="ico">🏨</span>
+        <h3>5 · Marca blanca para hoteles, spas y inmobiliarias premium</h3>
+        <span class="price">USD 149–399 / mes por cuenta B2B</span>
+        <p><b>Qué:</b> licenciás el motor de superpoderes. Un <b>hotel boutique</b> pone en cada habitación una tarjeta “los superpoderes de NUESTRO jardín” (el romero que tenés en el desayuno, el liquidámbar que perfuma el lobby). Un <b>spa</b> arma su carta de tratamientos según los poderes de su parque. Una <b>inmobiliaria</b> vende una casa con “8 superpoderes en el jardín”.</p>
+        <div class="row"><span class="chip">B2B</span><span class="chip">Contratos</span><span class="chip">LTV alto</span></div>
+        <p class="why-works"><b>Por qué funciona:</b> el storytelling botánico es premium y nadie lo ofrece sistematizado. El comprador no es el plantófilo: es el negocio que necesita diferenciar una experiencia. 50 cuentas a USD 249 = <b>~USD 150k/año</b> recurrente, con el mismo motor de contenido.</p>
+      </div>
+
+      <div class="model bold">
+        <span class="ico">🧬</span>
+        <h3>6 · “Botica del Jardín” — suscripción de consumibles auto-renovables</h3>
+        <span class="price">USD 14,90 / mes · caja mensual</span>
+        <p><b>Qué:</b> el salto de “poder leído” a “poder consumido”, recurrente. Caja mensual temática según lo que florece en tu jardín y la estación: el mes del hibisco mandás té; el del romero, aceites y sales; el del aguaribay, especiero. El feed diario es el catálogo vivo que vende la caja del mes siguiente.</p>
+        <div class="row"><span class="chip">Subscription-box</span><span class="chip">Recurrente</span><span class="chip">Estacional</span></div>
+        <p class="why-works"><b>Por qué funciona:</b> el modelo subscription-box (Birchbox/Degustabox) tiene LTV altísimo y churn manejable cuando hay narrativa. Acá la narrativa es imbatible: cada caja es “tu jardín, pero servido en tu casa”. Une contenido (gratis, viral) + producto físico (margen) + recurrencia (predecible) en un solo loop.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="close">
+    <h2>El cierre</h2>
+    <p><b>Visión:</b> todo jardín del mundo es una farmacia, una perfumería y una despensa sin estrenar. Construimos el motor que revela sus superpoderes, los serializa en un ritual diario y los convierte en utilidad monetizable —contenido gratis y viral arriba, productos físicos con margen abajo. Empezamos en Montevideo y escalamos a toda Latinoamérica con un catálogo botánico que ya tenemos.</p>
+    <div class="tam">
+      <div><div class="big">~1,3M</div><div class="cap">hogares con jardín en Uruguay</div></div>
+      <div><div class="big">~90M</div><div class="cap">en LatAm (mercado regional)</div></div>
+      <div><div class="big">95%</div><div class="cap">margen del modelo core</div></div>
+    </div>
+    <p>Con solo el <b>1% del mercado uruguayo</b> en suscripción anual (USD 29) son <b>~USD 380k/año</b> recurrentes, antes de kits, cajas, cartas y B2B. Y lo mejor: el feed que regalás es el motor de ventas de todo lo físico. El costo marginal de un superpoder más es casi cero.</p>
+    <div class="cta">▶ Próximo paso: prender la suscripción “Poder del Día” y testear 1 kit (té de hibisco) en 30 días.</div>
+  </section>
+
+  <footer>
+    <a class="footlink" href="2026-06-30-superpoderes-jardin.html">← Volver a la experiencia</a>
+    <p class="creditline">Pitch interno · Los Superpoderes de tu Jardín · invierno 2026</p>
+  </footer>
+</div>
+</body></html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1a0a">
+<title>🍵 El Chusmerío del Cantero · Jardineando</title>
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#5a9e35; --crema:#f5faf0; --tinta:#1a2410;
+    --musgo:#7a8a68; --rosa:#c2185b; --rosa2:#e84a86; --vino:#7a1238;
+    --papel:#fffdf7; --crudo:#fdf6ea;
+    --pad:max(18px,env(safe-area-inset-left));
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; min-height:100%; }
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #fffdf2 0%, var(--crema) 42%, #e7efdd 100%);
+    color:var(--tinta); -webkit-font-smoothing:antialiased;
+    padding:0 var(--pad) calc(48px + env(safe-area-inset-bottom));
+    line-height:1.45;
+  }
+
+  /* Barra de progreso fija arriba — en clave farándula (fucsia) */
+  .progress{ position:fixed; top:0; left:0; right:0; height:4px; z-index:9999;
+    background:rgba(122,18,56,.08); }
+  .progress > i{ display:block; height:100%; width:0;
+    background:linear-gradient(90deg,var(--rosa),var(--rosa2)); transition:width .25s ease; }
+
+  .back{ color:var(--verde); text-decoration:none; font-size:14px; font-weight:800;
+    display:inline-block; padding:calc(16px + env(safe-area-inset-top)) 0 4px; }
+  .back:active{ opacity:.6; }
+
+  /* Cabecera estilo masthead de revista */
+  header.hero{ text-align:center; padding:14px 0 6px; }
+  .crest{ font-size:54px; line-height:1; filter:drop-shadow(0 4px 10px rgba(122,18,56,.30)); }
+  .masthead{ font-size:clamp(26px,8vw,38px); letter-spacing:-0.03em; color:var(--verde);
+    margin:8px 0 2px; font-weight:900; }
+  .masthead .em{ color:var(--rosa); }
+  .kicker{ font-size:12px; font-weight:900; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--rosa); margin:0 0 6px; }
+  .price-strip{ display:inline-flex; gap:8px; align-items:center; font-size:11px; font-weight:800;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--musgo);
+    border-top:1px solid #e4ddcd; border-bottom:1px solid #e4ddcd; padding:6px 14px; margin:4px 0; }
+  .price-strip .sep{ color:#cfc6b2; }
+  .sub{ font-size:15px; color:#46563a; max-width:480px; margin:10px auto 0; }
+  .sub b{ color:var(--verde); }
+
+  .feed{ max-width:560px; margin:24px auto 0; display:flex; flex-direction:column; gap:20px; }
+
+  /* Tarjeta de chisme = recorte de revista del corazón */
+  .gos{ position:relative; background:var(--papel); border-radius:20px; padding:0 0 22px;
+    box-shadow:0 12px 30px rgba(122,18,56,.10), 0 2px 6px rgba(45,80,22,.06);
+    border:1px solid #efe7d6; overflow:hidden;
+    opacity:0; transform:translateY(26px) scale(.985); }
+  .gos.show{ opacity:1; transform:none;
+    transition:opacity .55s ease, transform .55s cubic-bezier(.2,.8,.2,1); }
+
+  /* Banda superior de "portada" con etiqueta de género */
+  .strap{ display:flex; align-items:center; justify-content:space-between; gap:8px;
+    padding:12px 18px 10px; background:linear-gradient(100deg,#fff2f6,#fde9ef);
+    border-bottom:1px solid #f4d9e3; }
+  .badge{ font-size:11px; font-weight:900; letter-spacing:.1em; text-transform:uppercase;
+    color:#fff; background:linear-gradient(180deg,var(--rosa2),var(--rosa));
+    padding:5px 11px; border-radius:999px; box-shadow:0 2px 6px rgba(194,24,91,.30);
+    white-space:nowrap; }
+  .badge.dark{ background:linear-gradient(180deg,#4a3550,var(--vino)); }
+  .badge.green{ background:linear-gradient(180deg,var(--verde2),var(--verde)); }
+  .issue{ font-size:10.5px; font-weight:900; letter-spacing:.08em; color:#b58aa0; white-space:nowrap; }
+
+  .gos .pad{ padding:16px 18px 0; }
+  .face{ font-size:42px; line-height:1; display:block; margin:2px 0 8px;
+    filter:drop-shadow(0 3px 6px rgba(0,0,0,.10)); }
+  .headline{ font-size:clamp(21px,6.2vw,27px); font-weight:900; letter-spacing:-0.02em;
+    line-height:1.12; color:var(--vino); margin:2px 0 4px; }
+  .headline .hot{ color:var(--rosa); }
+  .deck{ font-size:13px; font-weight:800; letter-spacing:.02em; color:var(--musgo);
+    text-transform:uppercase; margin:6px 0 12px; }
+  .story{ font-size:15px; color:#3c4a30; margin:6px 0 0; }
+  .story b{ color:var(--vino); }
+  .story i{ color:var(--rosa); font-style:normal; font-weight:700; }
+
+  /* Caja "LA VERDAD" — el ancla del hecho real */
+  .truth{ margin:16px 0 0; background:#f2f6ea; border-left:4px solid var(--verde2);
+    border-radius:0 12px 12px 0; padding:12px 14px; }
+  .truth .lab{ font-size:11px; font-weight:900; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--verde); display:inline-flex; align-items:center; gap:6px; }
+  .truth .lab::before{ content:"🌿"; font-size:13px; }
+  .truth p{ margin:6px 0 0; font-size:13.5px; color:#3c4a30; line-height:1.5; }
+  .truth p b{ color:var(--verde); }
+
+  .tag{ display:inline-flex; align-items:center; gap:6px; margin:14px 18px 0;
+    background:#fff; border:1px solid #efd9e2; color:var(--vino); font-size:12.5px; font-weight:800;
+    padding:6px 12px; border-radius:999px; }
+  .tag .dot{ width:6px; height:6px; border-radius:50%; background:var(--rosa); }
+
+  /* Cierre del feed: "edición de mañana" */
+  .nextup{ max-width:560px; margin:28px auto 0; text-align:center;
+    background:linear-gradient(160deg,#5a1030,var(--vino)); color:#fff;
+    border-radius:24px; padding:30px 22px;
+    box-shadow:0 14px 34px rgba(122,18,56,.32);
+    opacity:0; transform:translateY(20px); }
+  .nextup.show{ opacity:1; transform:none; transition:.6s; }
+  .nextup .num{ font-size:60px; font-weight:900; color:#ffd6e4; line-height:1;
+    letter-spacing:-0.03em; }
+  .nextup .lbl{ font-size:16px; font-weight:800; margin-top:6px; }
+  .nextup .fine{ font-size:13.5px; color:#f4cdda; margin-top:10px; max-width:380px;
+    margin-left:auto; margin-right:auto; }
+
+  /* Bloques de feedback / suscripción */
+  .panel{ max-width:560px; margin:18px auto 0; background:#fff; border-radius:22px;
+    padding:22px 20px; border:1px solid #efe7d6; box-shadow:0 6px 18px rgba(122,18,56,.07); }
+  .panel.pink{ background:linear-gradient(165deg,#fff2f6,#fde2ec); border-color:#f4c9d8; }
+  .panel h3{ margin:0 0 4px; font-size:18px; color:var(--vino); letter-spacing:-0.01em; }
+  .panel p{ margin:6px 0 0; font-size:14.5px; color:#46563a; }
+  .panel p.sell{ font-size:14.5px; color:#6a2440; }
+  .panel p.sell b{ color:var(--vino); }
+  .btnrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .btnrow button{ flex:1; min-width:92px; padding:14px 10px; border:2px solid #ecd9e1;
+    border-radius:16px; background:#fff; font-size:15px; font-weight:800; cursor:pointer;
+    color:var(--tinta); transition:transform .12s, border-color .2s, background .2s; }
+  .btnrow button:active{ transform:scale(.96); }
+  .btnrow button.sel{ border-color:var(--rosa); background:#fdeaf1; color:var(--vino); }
+  .btnrow button:disabled{ cursor:default; opacity:.85; }
+  .react .em{ font-size:22px; }
+  .react-hint,.q-hint{ display:block; min-height:18px; margin-top:12px; font-size:13.5px;
+    font-weight:800; color:var(--rosa); text-align:center; }
+  .sub-cta button.yes{ border-color:var(--rosa); background:linear-gradient(180deg,var(--rosa2),var(--rosa));
+    color:#fff; }
+  .sub-cta button.yes.sel{ background:linear-gradient(180deg,#2d5016,#244011); color:#fff; border-color:#2d5016; }
+
+  /* Decisión del sistema */
+  .engage-actions{ max-width:560px; margin:26px auto 0; display:flex; gap:10px; flex-wrap:wrap; }
+  .engage-actions button{ flex:1; min-width:140px; padding:15px; border:none; border-radius:16px;
+    font-size:15px; font-weight:800; cursor:pointer; transition:transform .12s, opacity .2s; }
+  .engage-actions button:active{ transform:scale(.97); }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:#fff; color:#7a8a68; border:1px solid #d7e0c9; }
+  .engage-feedback{ max-width:560px; margin:0 auto; text-align:center; font-size:15px;
+    font-weight:800; color:var(--verde); background:#eef7e8; border-radius:16px; padding:16px; }
+
+  footer{ max-width:560px; margin:26px auto 0; text-align:center; }
+  .pitchlink{ color:var(--musgo); text-decoration:none; font-size:13.5px; font-weight:800;
+    border-bottom:1px dashed #c3cdb2; padding-bottom:1px; }
+  .pitchlink:active{ opacity:.6; }
+  .creditline{ font-size:12px; color:#9aa888; margin-top:14px; }
+
+  @media (prefers-reduced-motion:reduce){
+    *{ animation:none !important; transition:none !important; }
+    .gos,.nextup{ opacity:1 !important; transform:none !important; }
+  }
+</style></head><body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="progress"><i id="bar"></i></div>
+
+<header class="hero">
+  <span class="crest">🍵</span>
+  <p class="kicker">Edición especial · tu propio cantero</p>
+  <h1 class="masthead">El <span class="em">Chusmerío</span> del Cantero</h1>
+  <div class="price-strip">
+    <span>Solo para vos</span><span class="sep">·</span>
+    <span>Tirada de 1 ejemplar</span><span class="sep">·</span>
+    <span>Invierno 2026</span>
+  </div>
+  <p class="sub">Pensabas que regabas plantas. En realidad tenés un <b>elenco de impostores, ladrones de fama y secretos peligrosos</b> creciendo en silencio. Bajá despacio: cada escándalo es <b>real</b> y tiene su código.</p>
+</header>
+
+<main class="feed" id="feed"><!-- chismes inyectados por JS --></main>
+
+<section class="nextup" id="nextup">
+  <div class="num" id="nextNum">0</div>
+  <div class="lbl">escándalos destapados en tu jardín</div>
+  <p class="fine">Y son los que pudimos confirmar hoy. Tu cantero esconde más trapos sucios de los que entran en un scroll. Mañana seguimos.</p>
+</section>
+
+<!-- BLOQUE: reacción "¿te voló la cabeza?" -->
+<section class="panel pink react" id="reactBlock">
+  <h3>¿Te voló la cabeza tu propio cantero?</h3>
+  <p>Un toque sincero. Me dice si vale la pena seguir destapando ollas.</p>
+  <div class="btnrow">
+    <button onclick="engageReact('chusmerio','love', this)"><span class="em">😱</span><br>¡No lo puedo creer!</button>
+    <button onclick="engageReact('chusmerio','meh', this)"><span class="em">😐</span><br>Más o menos</button>
+    <button onclick="engageReact('chusmerio','no', this)"><span class="em">🙄</span><br>No tanto</button>
+  </div>
+  <span class="react-hint"></span>
+</section>
+
+<!-- BLOQUE: suscripción diaria -->
+<section class="panel pink sub-cta" id="subBlock">
+  <h3>📰 Un chisme nuevo de tu jardín, cada mañana</h3>
+  <p class="sell">Imaginá abrir el teléfono con el café y enterarte de <b>otro</b> secreto que esconde tu fondo: el que envenena en silencio, la que se robó la fama, el linaje prohibido que viene de un solo árbol. <b>Un chimento fresco por día, 30 segundos de "no puede ser".</b> Listo para reenviar al grupo de WhatsApp. Tu jardín tiene tela para meses.</p>
+  <div class="btnrow">
+    <button class="yes" onclick="engageAnswer('chusmerio-suscripcion-diaria','si', this)">🔔 Sí, quiero el chisme del día</button>
+    <button onclick="engageAnswer('chusmerio-suscripcion-diaria','no', this)">Hoy no</button>
+  </div>
+  <span class="q-hint"></span>
+</section>
+
+<!-- BLOQUE de decisión del sistema (proposal PENDING) -->
+<div class="engage-actions">
+  <button onclick="engageApprove('2026-06-30-chusmerio-jardin')">✅ Aprobar esta mejora</button>
+  <button onclick="engageRejected('2026-06-30-chusmerio-jardin')">✕ No me interesa</button>
+</div>
+
+<footer>
+  <a class="pitchlink" href="2026-06-30-chusmerio-jardin-pitch.html">💼 Cómo se vende esto</a>
+  <p class="creditline">Chismes verificados (en serio) · El Chusmerío del Cantero · invierno 2026</p>
+</footer>
+
+<script src="engage.js"></script>
+<script>
+(function(){
+  // 10 chismes — cada uno ancla un HECHO REAL VERIFICADO con su código.
+  // El framing es tabloide; el dato sigue siendo reconocible y veraz.
+  var GOSSIP = [
+    { face:"🤫", badge:"SECRETO OSCURO", badgeClass:"dark", deck:"La callada del barrio",
+      headline:'La de la sala te <span class="hot">deja sin voz</span> (literal)',
+      story:'Parece la planta más inocente del living, pero la <b>Caña muda I-2</b> guarda un arma química. Probá masticarle una hoja y vas a entender el apodo: <i>te calla de prendazo</i>. No es chamuyo de vecina — es un mecanismo de defensa que tu plantita tiene cargado las 24 horas.',
+      truth:'La savia de la <b>Difenbaquia "Caña muda" (I-2)</b> tiene cristales de oxalato de calcio que paralizan temporariamente la garganta y las cuerdas vocales si se mastica — de ahí el nombre. En el Caribe colonial se la usó como castigo cruel ("dumb cane").',
+      tag:"Caña muda · I-2" },
+
+    { face:"🎭", badge:"IMPOSTOR", badgeClass:"dark", deck:"Vive con nombre falso",
+      headline:'El "jazmín" que <span class="hot">no es jazmín</span>',
+      story:'Anda hace años haciéndose pasar por jazmín, perfumando el fondo con cara de santo. Pero el <b>Jazmín de leche B-3</b> tiene <i>doble identidad</i>: ni es de la familia, y para colmo es pariente lejano de una planta venenosa. Cortale un tallo y mira lo que larga.',
+      truth:'El <b>Jazmín de leche / estrellado (B-3)</b> NO es un jazmín verdadero (Jasminum): es una apocinácea, pariente lejano de la adelfa. Su látex blanco al cortar es tóxico.',
+      tag:"Jazmín de leche · B-3" },
+
+    { face:"🦊", badge:"IMPOSTORA", badgeClass:"dark", deck:"No es lo que dice ser",
+      headline:'Se viste de helecho pero <span class="hot">esconde veneno</span>',
+      story:'Plumas suaves, aire de helecho tierno, total inocencia. Mentira. La <b>Esparraguera cola de zorro B-6</b> <i>no es helecho</i>, sus "hojas" son un truco, y le brotan bayas rojas que mejor no comer. Otra que vive del disfraz en tu cantero.',
+      truth:'La <b>Esparraguera cola de zorro (B-6)</b> parece helecho pero NO lo es: da florcitas blancas y bayas rojas tóxicas. Sus "hojas" son en realidad cladodios — tallos modificados.',
+      tag:"Cola de zorro · B-6" },
+
+    { face:"👒", badge:"ROBO DE CRÉDITO", badgeClass:"pink", deck:"Le robaron la gloria",
+      headline:'La heroína que <span class="hot">borraron de la historia</span>',
+      story:'Escándalo de época: la <b>Santa Rita B-1</b> la descubrió una mujer que dio la vuelta al mundo <i>disfrazada de hombre</i> para poder embarcar… y le pusieron el nombre del capitán. Recién dos siglos y medio después alguien se acordó de ella. Tenés un trofeo de injusticia trepando la pared.',
+      truth:'La <b>Buganvilia / Santa Rita (B-1)</b> la recolectó Jeanne Baret en 1768, la primera mujer en circunnavegar el mundo (viajaba disfrazada de hombre). El nombre quedó para el capitán Bougainville; recién en 2012 le dedicaron una variedad \'Jeanne\'.',
+      tag:"Santa Rita · B-1" },
+
+    { face:"🍐", badge:"DOBLE VIDA", badgeClass:"pink", deck:"Le cambiaron el nombre dos veces",
+      headline:'La pera con <span class="hot">dos nombres robados</span>',
+      story:'Tremenda novela de identidades. La <b>Pera Williams B-39</b> la crió uno, se la <i>compró otro</i> y le puso su apellido, y cuando cruzó el océano un tercero la rebautizó de nuevo sin saber que ya tenía nombre. La misma fruta vive con dos identidades según el continente.',
+      truth:'La <b>Pera Williams (B-39)</b> la cultivó Stair en Inglaterra (1765); la compró Williams y le dio su nombre. En EEUU se llama "Bartlett" porque Enoch Bartlett la introdujo allá sin saber que ya tenía nombre.',
+      tag:"Pera Williams · B-39" },
+
+    { face:"🚢", badge:"DRAMA", badgeClass:"pink", deck:"Sobreviviente de naufragio",
+      headline:'Sobrevivió al <span class="hot">naufragio</span> que la traía',
+      story:'Peliculón. La <b>Abelia F-7</b> lleva el nombre de un médico-botánico que la encontró del otro lado del mundo… y el barco que la traía a casa <i>se hundió</i>. La planta llegó, las semillas no. Cada flor en tu jardín es un final feliz arrancado a una tragedia.',
+      truth:'La <b>Abelia (F-7)</b> honra al cirujano-botánico Clarke Abel, que la encontró en China en 1817. Su barco naufragó al volver: la planta sobrevivió, pero las semillas se perdieron.',
+      tag:"Abelia · F-7" },
+
+    { face:"☠️", badge:"PELIGROSA", badgeClass:"dark", deck:"La prima de cuidado",
+      headline:'La que tiene <span class="hot">cianuro</span> en las venas',
+      story:'Atención con esta familia. La <b>Mandioca brava B-34</b> es la prima peligrosa: el jugo de su tallo trae <i>cianuro</i> de verdad, nada de comer hojas ni raíz. Su prima famosa, la mandioca de mesa, recién se volvió comestible después de que la humanidad pasara milenios desactivándole el veneno.',
+      truth:'El látex blanco del tallo de la <b>Mandioca brava (B-34)</b> tiene compuestos cianogénicos (cianuro): no comer hojas ni raíz. Su prima comestible (M. esculenta) fue detoxificada por selección humana milenaria.',
+      tag:"Mandioca brava · B-34" },
+
+    { face:"🕊️", badge:"LA FORAJIDA", badgeClass:"dark", deck:"Buscada por invasora",
+      headline:'La <span class="hot">forajida</span> que recluta pájaros',
+      story:'Prontuario pesado. El <b>Ligustro F-9</b> es especie invasora buscada en medio continente: <i>recluta zorzales y mirlos</i> que le esparcen las semillas por todos lados. Sus frutos son medio tóxicos para nosotros, pero la banda de pájaros se los come sin drama. Una fugitiva con cómplices alados.',
+      truth:'El <b>Ligustro (F-9)</b> es especie invasora en Sudamérica: las aves dispersan sus semillas. Sus frutos son ligeramente tóxicos para humanos, pero zorzales y mirlos los devoran sin problema.',
+      tag:"Ligustro · F-9" },
+
+    { face:"🚁", badge:"EL DISFRAZ", badgeClass:"green", deck:"Te mintió en la cara",
+      headline:'Esas "flores" rosadas son <span class="hot">puro verso</span>',
+      story:'Te tuvo engañado todo este tiempo. Lo que mirás como flores rosadas llamativas en el <b>Viraró B-32</b>… <i>no son flores</i>. Son un disfraz: piezas que se agrandan después de la polinización y salen volando como helicóptero para tirar la semilla lejos. Marketing puro, hermano.',
+      truth:'En el <b>Viraró (B-32)</b>, lo que parecen flores rosadas son sépalos persistentes que se agrandan tras la polinización y vuelan como helicóptero para dispersar la semilla.',
+      tag:"Viraró · B-32" },
+
+    { face:"👑", badge:"LINAJE SECRETO", badgeClass:"pink", deck:"Descendiente de uno solo",
+      headline:'Desciende de <span class="hot">un único ejemplar</span> del mundo',
+      story:'Sangre azul con secreto. El <b>Ciruelo \'Pissardii\' F-4</b> lo trajo un horticultor francés desde Persia… y <i>TODOS</i> los ciruelos de hoja púrpura del planeta descienden de ese único árbol original. Tu cantero tiene un heredero directo de una sola dinastía. Realeza vegetal, sin que lo supieras.',
+      truth:'El <b>Ciruelo de jardín \'Pissardii\' (F-4)</b> lo trajo desde Persia el horticultor francés Pissard en 1880. Todos los ciruelos púrpura del mundo descienden de ese único ejemplar original.',
+      tag:"Ciruelo Pissardii · F-4" }
+  ];
+
+  var feed = document.getElementById('feed');
+  var total = GOSSIP.length;
+
+  GOSSIP.forEach(function(g, i){
+    var el = document.createElement('article');
+    el.className = 'gos reveal';
+    el.innerHTML =
+      '<div class="strap">' +
+        '<span class="badge ' + (g.badgeClass||'pink') + '">' + g.badge + '</span>' +
+        '<span class="issue">CHISME ' + (i+1) + ' / ' + total + '</span>' +
+      '</div>' +
+      '<div class="pad">' +
+        '<span class="face">' + g.face + '</span>' +
+        '<h2 class="headline">' + g.headline + '</h2>' +
+        '<p class="deck">' + g.deck + '</p>' +
+        '<p class="story">' + g.story + '</p>' +
+        '<div class="truth"><span class="lab">La verdad</span><p>' + g.truth + '</p></div>' +
+      '</div>' +
+      '<span class="tag"><span class="dot"></span>' + g.tag + '</span>';
+    feed.appendChild(el);
+  });
+
+  var bar = document.getElementById('bar');
+  var nextup = document.getElementById('nextup');
+  var nextNum = document.getElementById('nextNum');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // Barra de progreso por scroll
+  function updateBar(){
+    var h = document.documentElement;
+    var denom = h.scrollHeight - h.clientHeight;
+    var pct = denom <= 0 ? 100 : Math.min(100, (h.scrollTop || window.pageYOffset || 0) / denom * 100);
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateBar, { passive:true });
+  window.addEventListener('resize', updateBar);
+  updateBar();
+
+  // Contador final (cuenta los escándalos destapados)
+  function runCount(){
+    if (nextNum._done) return; nextNum._done = true;
+    if (reduce){ nextNum.textContent = total; return; }
+    var n = 0;
+    var iv = setInterval(function(){ n++; nextNum.textContent = n; if (n >= total) clearInterval(iv); }, 120);
+  }
+
+  // Reveal-on-scroll
+  if ('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        e.target.classList.add('show');
+        if (e.target === nextup) runCount();
+        io.unobserve(e.target);
+      });
+    }, { threshold:0.22, rootMargin:'0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function(n){ io.observe(n); });
+    io.observe(nextup);
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(n){ n.classList.add('show'); });
+    nextup.classList.add('show'); runCount();
+  }
+})();
+</script>
+</body></html>

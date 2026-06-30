@@ -180,7 +180,7 @@
       "notified_by": [
         "2026-06-29-feed"
       ],
-      "result_notes": null
+      "result_notes": "PENDING tras corrida 30/06 (ciclo 31). MOTIVO: el test window se abrió DESPUÉS del cutoff de datos. engagement.json quedó sincronizado por última vez 2026-06-29T13:11Z, ANTES de que se mandara su push promotor (2026-06-29-feed @13:15Z 29/06). 0 eventos sobre esta página en engagement.json todavía — el dato no puede existir aún. NO se dropea por no-supervivencia porque nunca tuvo un test medible (confounded por cutoff, igual que mazo/V-F en su momento). Se mantiene UNA corrida más para que su feedback del 29 sincronice; se re-evalúa el 01/07: si junta proposal_approved → promover; si tiene ventana de datos limpia que cubra su push y sin aprobación → dropear."
     },
     {
       "id": "2026-06-29-pasaporte-jardin",
@@ -191,6 +191,30 @@
       "hypothesis": "Ciclo 30 (función paralela del usuario): experiencia news-feed NUEVA de cero. Despachos de viaje / sellos de pasaporte — el ORIGEN real de cada planta (región nativa, nombre científico y especialmente los nombres indígenas charrúa/guaraní del campo `charrua`) framado como crónica de migración. Mezcla orgullo nativo (guayabo, anacahuita, aguaribay, pindó, lantana) con asombro exótico (palta, limonero, mandarina, ciruelo, hiedra). Apuesta: 'tu jardín es un mapa del mundo' + el rescate del patrimonio indígena dispara orgullo/identidad y motiva la suscripción a un sello diario. 10 despachos, origen citado SOLO de desc/fun_fact/sci/charrua (cero geografía inventada). + pitch HTML (6 modelos). Promotor: 2026-06-29-pasaporte (13:00).",
       "notified_by": [
         "2026-06-29-pasaporte"
+      ],
+      "result_notes": "PENDING tras corrida 30/06 (ciclo 31). MOTIVO: el test window se abrió DESPUÉS del cutoff de datos. engagement.json quedó sincronizado por última vez 2026-06-29T13:11Z, ANTES de que se mandara su push promotor (2026-06-29-pasaporte @17:12Z 29/06). 0 eventos sobre esta página en engagement.json todavía — el dato no puede existir aún. NO se dropea por no-supervivencia porque nunca tuvo un test medible (confounded por cutoff, igual que mazo/V-F en su momento). Se mantiene UNA corrida más para que su feedback del 29 sincronice; se re-evalúa el 01/07: si junta proposal_approved → promover; si tiene ventana de datos limpia que cubra su push y sin aprobación → dropear."
+    },
+    {
+      "id": "2026-06-30-chusmerio-jardin",
+      "title": "🍵 El Chusmerío del Cantero (news-feed tabloide/chimentos)",
+      "page": "engage/2026-06-30-chusmerio-jardin.html",
+      "created": "2026-06-30",
+      "status": "pending",
+      "hypothesis": "Ciclo 31 (función paralela): experiencia news-feed NUEVA de cero, ángulo TABLOIDE/CHISME. Cada planta esconde un escándalo/romance/impostura/robo-de-crédito REAL (Buganvilia B-1 robada de crédito a Jeanne Baret, Pera Williams B-39 doble robo de nombre, caña muda I-2, jazmín de leche B-3 impostor, viraró B-32 'flores' falsas, ciruelo F-4 linaje de uno solo, etc.). Tras validar 29/06 que el news-feed convierte amor→suscripción, esta apuesta MAXIMIZA la compartibilidad viral por WhatsApp (el chisme se reenvía solo) y la novedad serializada ('un chisme nuevo por día'). Hipótesis: el framing farándula/tabloide dispara el 'no podés creer lo que esconde tu jardín' y motiva la suscripción al chisme diario. 8-10 chismes, todos hecho verificado con código. + pitch HTML (6 modelos de monetización). Promotor: 2026-06-30-a (08:30).",
+      "notified_by": [
+        "2026-06-30-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-06-30-superpoderes-jardin",
+      "title": "🧪 Los Superpoderes de tu Jardín (news-feed utilidad/asombro)",
+      "page": "engage/2026-06-30-superpoderes-jardin.html",
+      "created": "2026-06-30",
+      "status": "pending",
+      "hypothesis": "Ciclo 31 (función paralela): experiencia news-feed NUEVA de cero, ángulo SUPERPODERES/UTILIDAD con giro comic. El jardín es en secreto una farmacia+perfumería+despensa: cada card un poder REAL (cinta B-12 purifica aire nivel NASA, romero B-26 +15% memoria, aguaribay F-8 pimienta rosa+repelente, hibisco B-4 agua de Jamaica, pata de vaca B-42 infusión hipoglucemiante, liquidámbar B-37 storax, guayabo F-1 pétalos golosina, etc.). Apuesta: contenido ACCIONABLE+asombro da razón concreta para volver a diario y es el ángulo MÁS naturalmente monetizable (kits de producto: té, sales de baño, especiero). Framing PODER (deleite), no herramienta/calendario, para esquivar el patrón de rechazo a lo utilitario. Hipótesis: 'lo útil que no sabías que tenías' iguala o supera la conversión amor→suscripción del editorial/superlativo. 8-10 poderes verificados con código. + pitch HTML (6 modelos). Promotor: 2026-06-30-b (13:00).",
+      "notified_by": [
+        "2026-06-30-b"
       ],
       "result_notes": null
     }

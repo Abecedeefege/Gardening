@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1a0a">
+<title>🧪 Los Superpoderes de tu Jardín · Jardineando</title>
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#5a9e35; --crema:#f5faf0; --tinta:#1a2410;
+    --musgo:#7a8a68;
+    /* paleta "comic / ficha de poderes" sobre el verde del sitio */
+    --azul:#1f6f8b; --magenta:#9c2a6e; --naranja:#d4730a; --violeta:#6a3fa0;
+    --oro:#d4a017; --oro2:#f0c34a;
+    --pad:max(18px,env(safe-area-inset-left));
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; min-height:100%; }
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #fffdf2 0%, var(--crema) 42%, #e7efdd 100%);
+    color:var(--tinta); -webkit-font-smoothing:antialiased;
+    padding:0 var(--pad) calc(48px + env(safe-area-inset-bottom));
+    line-height:1.45;
+  }
+
+  /* Barra de progreso fija arriba */
+  .progress{ position:fixed; top:0; left:0; right:0; height:4px; z-index:9999;
+    background:rgba(45,80,22,.08); }
+  .progress > i{ display:block; height:100%; width:0;
+    background:linear-gradient(90deg,var(--verde2),var(--oro2)); transition:width .25s ease; }
+
+  .back{ color:var(--verde); text-decoration:none; font-size:14px; font-weight:800;
+    display:inline-block; padding-top:calc(16px + env(safe-area-inset-top)); }
+  .back:active{ opacity:.6; }
+
+  header.hero{ text-align:center; padding:16px 0 6px; }
+  .crest{ font-size:56px; line-height:1; filter:drop-shadow(0 4px 12px rgba(31,111,139,.32)); }
+  .kicker{ font-size:13px; font-weight:900; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--magenta); margin:6px 0 4px; }
+  h1{ font-size:clamp(25px,7.4vw,36px); letter-spacing:-0.03em; color:var(--verde);
+    margin:6px 0 4px; line-height:1.05; }
+  h1 .pow{ background:linear-gradient(90deg,var(--azul),var(--magenta));
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .sub{ font-size:15px; color:#46563a; max-width:480px; margin:8px auto 0; }
+  .sub b{ color:var(--verde); }
+
+  .feed{ max-width:560px; margin:26px auto 0; display:flex; flex-direction:column; gap:18px; }
+
+  /* Tarjeta = ficha de superhéroe / carta de poderes */
+  .pwr{ position:relative; background:#fff; border-radius:22px; padding:22px 20px 20px;
+    box-shadow:0 12px 30px rgba(45,80,22,.12), 0 2px 6px rgba(45,80,22,.06);
+    border:1px solid #ecf1e2; overflow:hidden;
+    opacity:0; transform:translateY(28px) scale(.975); }
+  .pwr.show{ opacity:1; transform:none;
+    transition:opacity .55s ease, transform .55s cubic-bezier(.2,.85,.2,1); }
+  /* franja lateral de color (color por categoría, set por JS) */
+  .pwr::before{ content:""; position:absolute; inset:0 auto 0 0; width:7px;
+    background:var(--accent,#5a9e35); }
+  /* trama de puntos tipo comic, sutil, esquina superior derecha */
+  .pwr::after{ content:""; position:absolute; top:-30px; right:-30px; width:130px; height:130px;
+    background-image:radial-gradient(currentColor 1.6px, transparent 1.7px);
+    background-size:11px 11px; color:var(--accent,#5a9e35); opacity:.10;
+    border-radius:50%; pointer-events:none; }
+
+  .pwr .head{ display:flex; align-items:flex-start; gap:14px; }
+  .glyph{ flex:0 0 auto; width:62px; height:62px; border-radius:18px;
+    display:grid; place-items:center; font-size:34px; line-height:1;
+    background:var(--accent-soft,#eef7e8);
+    box-shadow:inset 0 0 0 2px var(--accent,#5a9e35);
+    filter:drop-shadow(0 3px 5px rgba(0,0,0,.10)); }
+  .htext{ min-width:0; }
+  .cat{ display:inline-block; font-size:11px; font-weight:900; letter-spacing:.12em;
+    text-transform:uppercase; color:#fff; background:var(--accent,#5a9e35);
+    padding:4px 10px; border-radius:999px; }
+  .pwr h2{ font-size:19px; margin:8px 0 0; color:var(--tinta); letter-spacing:-0.015em;
+    line-height:1.18; }
+  .who{ display:block; font-size:13px; font-weight:800; color:var(--accent,#5a9e35);
+    margin-top:6px; }
+  .pwrbody{ font-size:14.5px; color:#3c4a30; margin:14px 0 0; }
+  .pwrbody b{ color:var(--verde); }
+  .tag{ display:inline-flex; align-items:center; gap:6px; margin-top:14px;
+    background:#f2f6ea; color:var(--verde); font-size:12.5px; font-weight:800;
+    padding:6px 11px; border-radius:999px; }
+  .tag .spark{ font-size:12px; }
+  .idx{ position:absolute; bottom:14px; right:18px; font-size:11px; font-weight:900;
+    color:#cdd4c0; letter-spacing:.08em; }
+
+  /* Tarjeta-cierre estilo "expediente sellado" */
+  .seal{ max-width:560px; margin:28px auto 0; text-align:center;
+    background:linear-gradient(160deg,#1f3810,#2d5016); color:#fff;
+    border-radius:24px; padding:30px 22px;
+    box-shadow:0 14px 34px rgba(31,56,16,.35);
+    opacity:0; transform:translateY(20px); }
+  .seal.show{ opacity:1; transform:none; transition:.6s; }
+  .seal .num{ font-size:64px; font-weight:900; color:var(--oro2); line-height:1;
+    letter-spacing:-0.03em; }
+  .seal .lbl{ font-size:16px; font-weight:800; margin-top:4px; }
+  .seal .fine{ font-size:13.5px; color:#cfe0bc; margin-top:10px; max-width:400px;
+    margin-left:auto; margin-right:auto; }
+
+  /* Bloques de feedback / suscripción (mecánica de records-jardin) */
+  .panel{ max-width:560px; margin:18px auto 0; background:#fff; border-radius:22px;
+    padding:22px 20px; border:1px solid #ecf1e2; box-shadow:0 6px 18px rgba(45,80,22,.07); }
+  .panel.gold{ background:linear-gradient(165deg,#fff9e9,#fdf0cf); border-color:#f0dca0; }
+  .panel h3{ margin:0 0 4px; font-size:18px; color:var(--verde); letter-spacing:-0.01em; }
+  .panel p{ margin:6px 0 0; font-size:14.5px; color:#46563a; }
+  .panel p.sell{ font-size:14.5px; color:#5a4a12; }
+  .btnrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .btnrow button{ flex:1; min-width:92px; padding:14px 10px; border:2px solid #e2e7d6;
+    border-radius:16px; background:#fff; font-size:15px; font-weight:800; cursor:pointer;
+    color:var(--tinta); transition:transform .12s, border-color .2s, background .2s; }
+  .btnrow button:active{ transform:scale(.96); }
+  .btnrow button.sel{ border-color:var(--verde); background:#eef7e8; color:var(--verde); }
+  .btnrow button:disabled{ cursor:default; opacity:.85; }
+  .react .em{ font-size:22px; }
+  .react-hint,.q-hint{ display:block; min-height:18px; margin-top:12px; font-size:13.5px;
+    font-weight:800; color:var(--verde2); text-align:center; }
+  .sub-cta button.yes{ border-color:var(--oro); background:linear-gradient(180deg,#f7c948,#e0a91a);
+    color:#3a2c02; }
+  .sub-cta button.yes.sel{ background:linear-gradient(180deg,#2d5016,#244011); color:#fff; border-color:#2d5016; }
+
+  /* Decisión del sistema */
+  .engage-actions{ max-width:560px; margin:26px auto 0; display:flex; gap:10px; flex-wrap:wrap; }
+  .engage-actions button{ flex:1; min-width:140px; padding:15px; border:none; border-radius:16px;
+    font-size:15px; font-weight:800; cursor:pointer; transition:transform .12s, opacity .2s; }
+  .engage-actions button:active{ transform:scale(.97); }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:#fff; color:#7a8a68; border:1px solid #d7e0c9; }
+  .engage-feedback{ max-width:560px; margin:0 auto; text-align:center; font-size:15px;
+    font-weight:800; color:var(--verde); background:#eef7e8; border-radius:16px; padding:16px; }
+
+  footer{ max-width:560px; margin:26px auto 0; text-align:center; }
+  .pitchlink{ color:var(--musgo); text-decoration:none; font-size:13.5px; font-weight:800;
+    border-bottom:1px dashed #c3cdb2; padding-bottom:1px; }
+  .pitchlink:active{ opacity:.6; }
+  .creditline{ font-size:12px; color:#9aa888; margin-top:14px; }
+
+  @media (prefers-reduced-motion:reduce){
+    *{ animation:none !important; transition:none !important; }
+    .pwr,.seal{ opacity:1 !important; transform:none !important; }
+  }
+</style></head><body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="progress"><i id="bar"></i></div>
+
+<header class="hero">
+  <span class="crest">🧪</span>
+  <p class="kicker">Expediente clasificado · tu fondo</p>
+  <h1>Los <span class="pow">Superpoderes</span><br>de tu Jardín</h1>
+  <p class="sub">Sin que lo sepas, tu jardín es una <b>farmacia, una perfumería y una despensa</b> al mismo tiempo. Bajá despacio: abrimos el expediente de cada planta, con su código y su poder REAL.</p>
+</header>
+
+<main class="feed" id="feed"><!-- superpoderes inyectados por JS --></main>
+
+<section class="seal" id="seal">
+  <div class="num" id="sealNum">0</div>
+  <div class="lbl">superpoderes activos en tu jardín</div>
+  <p class="fine">Y esto es solo el primer expediente. Cada planta esconde más habilidades de las que entran en un scroll: tu fondo es un laboratorio vivo trabajando para vos.</p>
+</section>
+
+<!-- BLOQUE: reacción "¿te voló la cabeza?" -->
+<section class="panel react" id="reactBlock">
+  <h3>¿Te voló la cabeza tu propio jardín?</h3>
+  <p>Un solo toque, sincero. Me dice si vale la pena seguir destapando los poderes ocultos de tus plantas.</p>
+  <div class="btnrow">
+    <button onclick="engageReact('superpoderes','love', this)"><span class="em">🤯</span><br>¡Increíble!</button>
+    <button onclick="engageReact('superpoderes','meh', this)"><span class="em">😐</span><br>Está ok</button>
+    <button onclick="engageReact('superpoderes','no', this)"><span class="em">🙅</span><br>No tanto</button>
+  </div>
+  <span class="react-hint"></span>
+</section>
+
+<!-- BLOQUE: suscripción diaria -->
+<section class="panel gold sub-cta" id="subBlock">
+  <h3>🦸 Un superpoder nuevo de tu jardín, cada mañana</h3>
+  <p class="sell">Imaginá abrir el teléfono con el café y descubrir <b>otra</b> habilidad secreta de tu propio fondo: la planta que limpia el aire, la que es especia gourmet, la que ahuyenta mosquitos como hacían los charrúas. Un superpoder fresco por día, 30 segundos de asombro útil. Tu jardín tiene poderes para meses.</p>
+  <div class="btnrow">
+    <button class="yes" onclick="engageAnswer('superpoderes-suscripcion-diaria','si', this)">🔔 Sí, quiero el poder del día</button>
+    <button onclick="engageAnswer('superpoderes-suscripcion-diaria','no', this)">Hoy no</button>
+  </div>
+  <span class="q-hint"></span>
+</section>
+
+<!-- Decisión del sistema (proposal PENDING) -->
+<div class="engage-actions">
+  <button onclick="engageApprove('2026-06-30-superpoderes-jardin')">✅ Aprobar esta mejora</button>
+  <button onclick="engageRejected('2026-06-30-superpoderes-jardin')">✕ No me interesa</button>
+</div>
+
+<footer>
+  <a class="pitchlink" href="2026-06-30-superpoderes-jardin-pitch.html">💼 Cómo se vende esto</a>
+  <p class="creditline">Datos verificados · Los Superpoderes de tu Jardín · invierno 2026</p>
+</footer>
+
+<script src="engage.js"></script>
+<script>
+(function(){
+  // Categorías de poder → identidad de color tipo "ficha".
+  var CAT = {
+    BOTIQUIN:   { color:"#9c2a6e", soft:"#fbeaf3" },  // medicinal / salud
+    PERFUMERIA: { color:"#6a3fa0", soft:"#f0ebf9" },  // aroma
+    DESPENSA:   { color:"#d4730a", soft:"#fdeede" },  // comestible / especia
+    DEFENSA:    { color:"#1f6f8b", soft:"#e6f2f6" },  // repelente / protección
+    LABORATORIO:{ color:"#3a7d2c", soft:"#eaf6e4" }   // aire / ciencia / rareza
+  };
+
+  // 10 superpoderes — SOLO hechos verificados provistos, framing libre.
+  var POWERS = [
+    { glyph:"🌬️", cat:"LABORATORIO", color:CAT.LABORATORIO,
+      power:"Purificadora de aire nivel NASA",
+      who:"Cinta / Lazo de amor · B-12",
+      body:"Tu <b>Cinta B-12</b> está en la lista oficial de la NASA de plantas que limpian el aire interior: absorbe <b>formaldehído, xileno y monóxido de carbono</b>. Una sola maceta filtra el aire de unos <b>10 m²</b>. Tenés un purificador silencioso que además es verde.",
+      tag:"Aire limpio sin enchufe" },
+
+    { glyph:"🧠", cat:"BOTIQUIN", color:CAT.BOTIQUIN,
+      power:"Potenciadora de memoria",
+      who:"Romero · B-26",
+      body:"Estudios universitarios encontraron que <b>oler romero antes de un examen mejora la memoria ~15%</b>. Su nombre, <i>rosmarinus</i>, significa “rocío del mar”, y desde la antigüedad fue símbolo de la fidelidad. Tu <b>Romero B-26</b> es un truco de estudio que crece en una maceta.",
+      tag:"+15% de memoria al olerlo" },
+
+    { glyph:"🌶️", cat:"DESPENSA", color:CAT.DESPENSA,
+      power:"Especia gourmet + repelente, dos en uno",
+      who:"Aguaribay / Molle · F-8",
+      body:"Esos frutos rosados de tu <b>Aguaribay F-8</b> son la verdadera <b>pimienta rosa</b> que se vende carísima en delicatessen (no viene del pimentero). Y de yapa: sus hojas <b>repelen mosquitos</b>. Era un árbol sagrado para incas y guaraníes. Especiero y escudo en el mismo árbol.",
+      tag:"Pimienta rosa de delicatessen" },
+
+    { glyph:"🍵", cat:"DESPENSA", color:CAT.DESPENSA,
+      power:"Maestra del té carmesí",
+      who:"Hibisco / Rosa china · B-4",
+      body:"En Jamaica preparan con sus pétalos secos el famoso <b>“agua de Jamaica”</b>, una infusión de un rojo intenso. Tu <b>Hibisco B-4</b> es además <b>flor nacional de Malasia, Corea del Sur y Hawái</b>. Cada flor es un sobre de té de colección esperando ser cosechado.",
+      tag:"Té rojo casero" },
+
+    { glyph:"🩺", cat:"BOTIQUIN", color:CAT.BOTIQUIN,
+      power:"Aliada de la medicina tradicional",
+      who:"Pata de vaca · B-42",
+      body:"Tu <b>Pata de vaca B-42</b> (nativa, <i>Bauhinia forficata</i>) tiene un uso en <b>medicina tradicional</b> contra la diabetes: su infusión muestra un efecto hipoglucemiante moderado validado por estudios. Sus flores parecen mariposas y las polinizan colibríes. Patrimonio botánico del Río de la Plata en tu cantero.",
+      tag:"Uso tradicional · no es receta médica" },
+
+    { glyph:"🏺", cat:"PERFUMERIA", color:CAT.PERFUMERIA,
+      power:"Perfumista de 3000 años",
+      who:"Liquidámbar · B-37",
+      body:"El tronco de tu <b>Liquidámbar B-37</b> produce <b>storax</b>, un bálsamo aromático usado durante <b>3000 años</b> en perfumería e incienso. Los mayas lo masticaban como goma de mascar. Su nombre significa literalmente <b>“ámbar líquido”</b>. Una casa de perfumes ancestral creciendo en el este del fondo.",
+      tag:"Bálsamo de perfumería" },
+
+    { glyph:"🍬", cat:"DESPENSA", color:CAT.DESPENSA,
+      power:"Golosina natural escondida",
+      who:"Guayabo del país · F-1",
+      body:"Tu <b>Guayabo del país F-1</b> es nativo del Río de la Plata y guarda un secreto dulce: sus <b>pétalos son comestibles</b> y dulces — antes se comían como golosina natural directo de la planta. Un caramelo silvestre que florece en tu frente.",
+      tag:"Pétalos que se comen" },
+
+    { glyph:"👑", cat:"DESPENSA", color:CAT.DESPENSA,
+      power:"El ancestro de todos los cítricos",
+      who:"Mandarina criolla · B-24",
+      body:"Tu <b>Mandarina B-24</b> es el <b>cítrico más antiguo conocido</b> (~3000 a.C.): es el “padre” genético de naranjas y limones. Su nombre viene de los <b>mandarines</b>, los funcionarios imperiales chinos de túnicas anaranjadas. Tenés realeza cítrica milenaria dando fruta en el fondo.",
+      tag:"Linaje cítrico ancestral" },
+
+    { glyph:"🌟", cat:"DESPENSA", color:CAT.DESPENSA,
+      power:"El fruto de los dioses",
+      who:"Caqui / Persimón · B-41",
+      body:"Su género, <i>Diospyros</i>, significa <b>“fruto de los dioses”</b> en griego. En Japón es símbolo de longevidad: hay caquis de <b>600 años aún produciendo</b>. Ojo con comerlo verde: el fruto inmaduro es astringente por sus taninos. Tu <b>Caqui B-41</b> es paciencia recompensada con dulzura divina.",
+      tag:"Dulzura con paciencia" },
+
+    { glyph:"🛡️", cat:"DEFENSA", color:CAT.DEFENSA,
+      power:"Guardiana anti-mosquitos charrúa",
+      who:"Lantana / Camará · B-29",
+      body:"Tu <b>Lantana B-29</b> es nativa, y los <b>charrúas encendían sus hojas para ahuyentar mosquitos</b>. Bonus de diseñadora: sus flores <b>cambian de color con la edad</b> (amarillo → naranja → rojo) para guiarle el camino a los polinizadores. Un escudo natural con paleta propia.",
+      tag:"Repelente ancestral" }
+  ];
+
+  var feed = document.getElementById('feed');
+  var total = POWERS.length;
+
+  POWERS.forEach(function(p, i){
+    var c = p.color || { color:"#5a9e35", soft:"#eef7e8" };
+    var el = document.createElement('article');
+    el.className = 'pwr reveal';
+    el.style.setProperty('--accent', c.color);
+    el.style.setProperty('--accent-soft', c.soft);
+    el.innerHTML =
+      '<div class="head">' +
+        '<span class="glyph">' + p.glyph + '</span>' +
+        '<div class="htext">' +
+          '<span class="cat">' + p.cat + '</span>' +
+          '<h2>' + p.power + '</h2>' +
+          '<span class="who">' + p.who + '</span>' +
+        '</div>' +
+      '</div>' +
+      '<p class="pwrbody">' + p.body + '</p>' +
+      '<span class="tag"><span class="spark">✨</span>' + p.tag + '</span>' +
+      '<span class="idx">PODER ' + (i+1) + '/' + total + '</span>';
+    feed.appendChild(el);
+  });
+
+  var bar = document.getElementById('bar');
+  var seal = document.getElementById('seal');
+  var sealNum = document.getElementById('sealNum');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // Barra de progreso por scroll
+  function updateBar(){
+    var h = document.documentElement;
+    var denom = h.scrollHeight - h.clientHeight;
+    var pct = denom <= 0 ? 100 : Math.min(100, (h.scrollTop || window.pageYOffset || 0) / denom * 100);
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateBar, { passive:true });
+  window.addEventListener('resize', updateBar);
+  updateBar();
+
+  // Contador del sello final
+  function runSeal(){
+    if (sealNum._done) return; sealNum._done = true;
+    if (reduce){ sealNum.textContent = total; return; }
+    var n = 0;
+    var iv = setInterval(function(){ n++; sealNum.textContent = n; if (n >= total) clearInterval(iv); }, 110);
+  }
+
+  // Reveal-on-scroll
+  if ('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        e.target.classList.add('show');
+        if (e.target === seal) runSeal();
+        io.unobserve(e.target);
+      });
+    }, { threshold:0.22, rootMargin:'0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function(n){ io.observe(n); });
+    io.observe(seal);
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(n){ n.classList.add('show'); });
+    seal.classList.add('show'); runSeal();
+  }
+})();
+</script>
+</body></html>

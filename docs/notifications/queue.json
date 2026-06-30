@@ -1,44 +1,44 @@
 {
-  "_updated_at": "2026-06-29T23:33:50.111Z",
+  "_updated_at": "2026-06-30T09:05:00-03:00",
   "notifications": [
     {
-      "id": "2026-06-29-feed",
-      "title": "📱 Tus plantas abrieron cuenta",
-      "body": "Llegó JardínGram: cada planta postea su secreto. La palta criolla arranca con 13.000 años de historia. ¿Las seguís?",
-      "url": "https://gardening-chi.vercel.app/engage/2026-06-29-feed-jardin.html",
+      "id": "2026-06-30-a",
+      "title": "🍵 El chisme del cantero",
+      "body": "Tu jardín esconde escándalos: la Santa Rita B-1 fue robada de crédito a la 1ª mujer que dio la vuelta al mundo. ¿Quién más?",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-30-chusmerio-jardin.html",
       "format": "experiencia",
-      "send_at": "2026-06-29T08:30:00-03:00",
-      "expires_at": "2026-06-29T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-29T13:15:59.524Z",
+      "send_at": "2026-06-30T08:30:00-03:00",
+      "expires_at": "2026-06-30T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-29 (ciclo 30)"
+      "created_by": "engagement-agent 2026-06-30 (ciclo 31)"
     },
     {
-      "id": "2026-06-29-pasaporte",
-      "title": "🗺️ Tu jardín es un mapa mundi",
-      "body": "Sellá el pasaporte de tus plantas: de qué rincón del mundo viajó cada una, con su nombre charrúa olvidado.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-06-29-pasaporte-jardin.html",
+      "id": "2026-06-30-b",
+      "title": "🧪 Tu jardín tiene superpoderes",
+      "body": "Una farmacia y una perfumería secretas en tu fondo: la cinta B-12 purifica el aire nivel NASA, el romero B-26 te sube la memoria.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-30-superpoderes-jardin.html",
       "format": "experiencia",
-      "send_at": "2026-06-29T13:00:00-03:00",
-      "expires_at": "2026-06-29T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-29T17:12:22.123Z",
+      "send_at": "2026-06-30T13:00:00-03:00",
+      "expires_at": "2026-06-30T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-29 (ciclo 30)"
+      "created_by": "engagement-agent 2026-06-30 (ciclo 31)"
     },
     {
-      "id": "2026-06-29-curio-lavanda",
-      "title": "💜 Por qué se llama lavanda",
-      "body": "De 'lavare' (lavar): los romanos la echaban al baño. Tu lavanda B-19 perfuma el frente y espanta polillas.",
+      "id": "2026-06-30-curio-lapachillo",
+      "title": "🪵 El lapacho que no parece lapacho",
+      "body": "Tu lapachillo B-14 es la prima discreta del lapacho: flores chicas, pero madera durísima que charrúas y guaraníes usaban para herramientas.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-29T19:30:00-03:00",
-      "expires_at": "2026-06-29T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-29T23:33:50.110Z",
+      "send_at": "2026-06-30T19:30:00-03:00",
+      "expires_at": "2026-06-30T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-29 (ciclo 30)"
+      "created_by": "engagement-agent 2026-06-30 (ciclo 31)"
     }
   ]
 }
