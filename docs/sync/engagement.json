@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-30T12:47:10.530Z",
+  "_updated_at": "2026-06-30T16:01:42.887Z",
   "events": [
     {
       "_id": "mqgjv4a9kovk9f",
@@ -1200,6 +1200,23 @@
       "scroll_pct": 0,
       "page": "engage/2026-06-29-feed-jardin.html",
       "ts": "2026-06-30T12:47:10.797Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0u3vm19ycb1g",
+      "type": "notification_clicked",
+      "nid": "2026-06-29-pasaporte",
+      "page": "engage/2026-06-29-pasaporte-jardin.html",
+      "ts": "2026-06-30T16:01:42.599Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0u3vm1tkeu0k",
+      "type": "page_visit",
+      "page": "engage/2026-06-29-pasaporte-jardin.html",
+      "nid": "2026-06-29-pasaporte",
+      "src": "push",
+      "ts": "2026-06-30T16:01:42.599Z",
       "device": "sin-nombre"
     }
   ],
