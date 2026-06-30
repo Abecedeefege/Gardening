@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-30T18:27:23.098Z",
+  "_updated_at": "2026-06-30T23:50:37.045Z",
   "events": [
     {
       "_id": "mqgjv4a9kovk9f",
@@ -1343,6 +1343,23 @@
       "type": "proposal_approved",
       "proposal_id": "2026-06-30-superpoderes-jardin",
       "ts": "2026-06-30T18:27:23.598Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr1auwr767p2zv",
+      "type": "notification_clicked",
+      "nid": "2026-06-30-curio-lapachillo",
+      "page": "index.html",
+      "ts": "2026-06-30T23:50:37.650Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr1auwr7kmn6te",
+      "type": "page_visit",
+      "page": "index.html",
+      "nid": "2026-06-30-curio-lapachillo",
+      "src": "push",
+      "ts": "2026-06-30T23:50:37.650Z",
       "device": "sin-nombre"
     }
   ],
