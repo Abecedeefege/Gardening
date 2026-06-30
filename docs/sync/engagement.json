@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-06-30T12:46:32.041Z",
+  "_updated_at": "2026-06-30T12:46:34.457Z",
   "events": [
     {
       "_id": "mqgjv4a9kovk9f",
@@ -1175,6 +1175,13 @@
       "value": "si",
       "page": "engage/2026-06-29-feed-jardin.html",
       "ts": "2026-06-30T12:46:32.145Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr0n4xhtez8wol",
+      "type": "proposal_approved",
+      "proposal_id": "2026-06-29-feed-jardin",
+      "ts": "2026-06-30T12:46:34.385Z",
       "device": "sin-nombre"
     }
   ],
