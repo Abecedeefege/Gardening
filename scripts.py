@@ -145,7 +145,7 @@ function setupLightbox(scope) {
   });
 }
 setupLightbox(document);
-document.getElementById('lightbox').addEventListener('click', function() {
+document.getElementById('lightbox')?.addEventListener('click', function() {
   this.classList.remove('active');
 });
 document.addEventListener('keydown', e => {
@@ -887,7 +887,7 @@ document.querySelectorAll('.snooze-opt').forEach(btn => {
   });
 });
 
-document.getElementById('btn-snooze-custom').addEventListener('click', () => {
+document.getElementById('btn-snooze-custom')?.addEventListener('click', () => {
   if (!pendingSnoozeTask) return;
   const dateStr = document.getElementById('snooze-custom-date').value;
   if (!dateStr) return;
@@ -970,7 +970,7 @@ function fillWhatsAppMessage(contactId, task) {
   document.getElementById('btn-send-whatsapp').disabled = !c.phone || c.phone.trim() === '';
 }
 
-document.getElementById('btn-send-whatsapp').addEventListener('click', () => {
+document.getElementById('btn-send-whatsapp')?.addEventListener('click', () => {
   if (!pendingWaTask || !pendingWaContactId) return;
   const contacts = loadContacts();
   const c = contacts.find(x => x.id === pendingWaContactId);
@@ -1012,7 +1012,7 @@ function renderContactsForm() {
 
 document.getElementById('btn-edit-contacts')?.addEventListener('click', openContactsModal);
 
-document.getElementById('btn-save-contacts').addEventListener('click', () => {
+document.getElementById('btn-save-contacts')?.addEventListener('click', () => {
   const contacts = loadContacts();
   document.querySelectorAll('#contacts-list .contact-row').forEach(row => {
     const cid = row.dataset.cid;
@@ -1027,7 +1027,7 @@ document.getElementById('btn-save-contacts').addEventListener('click', () => {
   if (pendingWaTask) renderWhatsAppContacts();
 });
 
-document.getElementById('btn-reset-contacts').addEventListener('click', () => {
+document.getElementById('btn-reset-contacts')?.addEventListener('click', () => {
   if (!confirm('¿Restaurar los contactos por defecto? Perderás los teléfonos guardados.')) return;
   saveContacts(JSON.parse(JSON.stringify(DEFAULT_CONTACTS)));
   renderContactsForm();
@@ -1104,7 +1104,8 @@ function openTaskFromHash() {
 openTaskFromHash();
 
 // Si la URL trae #especie=CODE (viene de una landing de engagement), abrir la
-// ficha de esa especie. Si la página no tiene el catálogo, redirige a index.
+// ficha de esa especie. Si la página no tiene el catálogo (home, ideas,
+// tareas — o links viejos a index.html), redirige a biblioteca.html.
 function openSpeciesFromHash() {
   const m = (window.location.hash || '').match(/^#especie=(.+)$/);
   if (!m) return;
@@ -1113,18 +1114,20 @@ function openSpeciesFromHash() {
     if (typeof openSpeciesDetailModal === 'function') {
       setTimeout(() => openSpeciesDetailModal(code), 180);
     }
-  } else if (!/index\.html$|\/$/.test(window.location.pathname)) {
-    window.location.replace('index.html' + window.location.hash);
+  } else if (!/biblioteca\.html$/.test(window.location.pathname)) {
+    window.location.replace('biblioteca.html' + window.location.hash);
   }
 }
 openSpeciesFromHash();
 
 // Si la URL trae #curiosidades (viene de un push que promociona la sección
 // nueva de Curiosidades), abrir esa sub-tab en la zona visible y scrollear.
+// Si la página no tiene el catálogo, redirige a biblioteca.html.
 function openCuriosidadesFromHash() {
   if (!/^#curiosidades$/.test(window.location.hash || '')) return;
   if (!document.querySelector('.subtab-btn[data-sub="curiosidades"]')) {
-    window.location.replace('index.html' + window.location.hash);
+    if (/biblioteca\.html$/.test(window.location.pathname)) return;
+    window.location.replace('biblioteca.html' + window.location.hash);
     return;
   }
   document.querySelectorAll('.zone-content').forEach(zoneEl => {
@@ -1740,7 +1743,7 @@ function openSettingsModal() {
 
 document.getElementById('btn-open-settings')?.addEventListener('click', openSettingsModal);
 
-document.getElementById('btn-test-github-token').addEventListener('click', async () => {
+document.getElementById('btn-test-github-token')?.addEventListener('click', async () => {
   const token = document.getElementById('settings-github-token').value.trim();
   const fb = document.getElementById('settings-github-feedback');
   if (!token) {
@@ -1760,7 +1763,7 @@ document.getElementById('btn-test-github-token').addEventListener('click', async
   }
 });
 
-document.getElementById('btn-clear-github-token').addEventListener('click', () => {
+document.getElementById('btn-clear-github-token')?.addEventListener('click', () => {
   if (!confirm('¿Borrar el token de este dispositivo? Sin token no podrás subir fotos ni sincronizar.')) return;
   saveGitHubToken('');
   document.getElementById('settings-github-token').value = '';
@@ -1769,7 +1772,7 @@ document.getElementById('btn-clear-github-token').addEventListener('click', () =
   fb.className = 'settings-feedback';
 });
 
-document.getElementById('btn-save-settings').addEventListener('click', () => {
+document.getElementById('btn-save-settings')?.addEventListener('click', () => {
   const token = document.getElementById('settings-github-token').value.trim();
   const deviceName = document.getElementById('settings-device-name').value.trim();
   const canonical = document.getElementById('settings-canonical-url').value.trim();
@@ -1799,7 +1802,7 @@ function generateTransferLink() {
   return `${baseUrl}${sep}import_token=${b64}`;
 }
 
-document.getElementById('btn-gen-transfer-link').addEventListener('click', () => {
+document.getElementById('btn-gen-transfer-link')?.addEventListener('click', () => {
   const token = loadGitHubToken();
   if (!token) {
     alert('No hay token configurado todavía. Pegá uno arriba y guardá primero.');
@@ -1829,7 +1832,7 @@ document.getElementById('btn-gen-transfer-link').addEventListener('click', () =>
   document.getElementById('transfer-link-output').hidden = false;
 });
 
-document.getElementById('btn-copy-transfer-link').addEventListener('click', async () => {
+document.getElementById('btn-copy-transfer-link')?.addEventListener('click', async () => {
   const ta = document.getElementById('transfer-link-text');
   const text = ta.value;
   const btn = document.getElementById('btn-copy-transfer-link');
@@ -2422,13 +2425,13 @@ function setTaskPhotoStage(stage) {
   });
 }
 
-document.getElementById('btn-photo-go-settings').addEventListener('click', () => {
+document.getElementById('btn-photo-go-settings')?.addEventListener('click', () => {
   closeModal('task-photo');
   openSettingsModal();
 });
 
 ['task-photo-camera-input', 'task-photo-gallery-input'].forEach(id => {
-  document.getElementById(id).addEventListener('change', async (e) => {
+  document.getElementById(id)?.addEventListener('change', async (e) => {
     const file = e.target.files && e.target.files[0];
     if (!file) return;
     e.target.value = '';  // permitir reseleccionar el mismo archivo después
@@ -2436,12 +2439,12 @@ document.getElementById('btn-photo-go-settings').addEventListener('click', () =>
   });
 });
 
-document.getElementById('btn-photo-change').addEventListener('click', () => {
+document.getElementById('btn-photo-change')?.addEventListener('click', () => {
   pendingPhotoBlob = null;
   setTaskPhotoStage('pick');
 });
 
-document.getElementById('btn-photo-upload').addEventListener('click', uploadPendingPhoto);
+document.getElementById('btn-photo-upload')?.addEventListener('click', uploadPendingPhoto);
 
 async function loadAndPreviewPhoto(file) {
   if (!pendingPhotoTask) return;
@@ -2808,13 +2811,13 @@ function setSpeciesPhotoStage(stage) {
   });
 }
 
-document.getElementById('btn-species-photo-go-settings').addEventListener('click', () => {
+document.getElementById('btn-species-photo-go-settings')?.addEventListener('click', () => {
   closeModal('species-photo');
   openSettingsModal();
 });
 
 ['species-photo-camera-input', 'species-photo-gallery-input'].forEach(id => {
-  document.getElementById(id).addEventListener('change', async (e) => {
+  document.getElementById(id)?.addEventListener('change', async (e) => {
     const file = e.target.files && e.target.files[0];
     if (!file) return;
     e.target.value = '';
@@ -2822,12 +2825,12 @@ document.getElementById('btn-species-photo-go-settings').addEventListener('click
   });
 });
 
-document.getElementById('btn-species-photo-change').addEventListener('click', () => {
+document.getElementById('btn-species-photo-change')?.addEventListener('click', () => {
   pendingSpeciesPhotoBlob = null;
   setSpeciesPhotoStage('pick');
 });
 
-document.getElementById('btn-species-photo-upload').addEventListener('click', uploadPendingSpeciesPhoto);
+document.getElementById('btn-species-photo-upload')?.addEventListener('click', uploadPendingSpeciesPhoto);
 
 async function loadAndPreviewSpeciesPhoto(file) {
   if (!pendingSpeciesPhotoPlant) return;

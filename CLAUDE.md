@@ -2,12 +2,10 @@
 
 ## Qué es esto
 
-Sitio estático de un jardín casero en Montevideo, Uruguay. Catálogo de 40 plantas (frente + fondo) con:
-- Información detallada por especie
-- Calendario anual (floración / fructificación / poda)
-- Ideas para sumar plantas nuevas
-- Catálogo de huerta
-- **Timeline de tareas** estilo Tinder con WhatsApp pre-armado por contacto
+Sitio estático de un jardín casero en Montevideo, Uruguay. La **Home** (`docs/index.html`) es una pantalla mínima con dos acciones: **Biblioteca** e **Ideas**. Páginas:
+- **Biblioteca** (`docs/biblioteca.html`) — el catálogo de especies, filtrable por Todo / Frente / Fondo / Interior, con subtabs Info / Curiosidades / Mejoras / Calendario anual
+- **Ideas** (`docs/ideas.html`) — plantas nuevas, huerta, espacios verdes, experiencias
+- **Tareas** (`docs/tareas.html`) — **Timeline de tareas** estilo Tinder con WhatsApp pre-armado por contacto. NO se linkea desde la Home: las tareas se comunican por **notificación push** (recordatorio diario / resumen semanal, ver `tools/gen_task_reminders.py`) y se llega por deep link
 
 ## Orientación del jardín (datos físicos clave)
 
@@ -45,7 +43,10 @@ data_plants.py + data_ideas.py
           genera HTML con CSS de styles.py y JS de scripts.py,
           inyecta TASKS y DEFAULT_CONTACTS como JSON globales)
        ↓
-docs/index.html  ← un único archivo monolítico de ~13MB
+docs/index.html      ← Home mínima (Biblioteca / Ideas)
+docs/biblioteca.html ← catálogo de especies (zonas + subtabs)
+docs/tareas.html     ← Timeline de tareas (se llega por push deep link)
+docs/ideas.html      ← ideas + huerta + experiencias
 ```
 
 ### Archivos clave
@@ -58,7 +59,8 @@ docs/index.html  ← un único archivo monolítico de ~13MB
 | `styles.py` | Todo el CSS como string raw | Cambios visuales |
 | `scripts.py` | Todo el JS como string raw | Lógica del Timeline, modales, swipe |
 | `images/` | Fotos del jardín (62 archivos) | Agregar fotos nuevas |
-| `docs/index.html` | Output del build — **NO editar a mano** | Generado siempre por `python build.py` |
+| `tools/gen_task_reminders.py` | Recordatorios push de tareas (diario + semanal, todas las especies) | Cambiar política de recordatorios de tareas |
+| `docs/index.html`, `docs/biblioteca.html`, `docs/tareas.html`, `docs/ideas.html` | Output del build — **NO editar a mano** | Generado siempre por `python build.py` |
 
 ### Modelo de datos — Tarea
 
@@ -191,6 +193,7 @@ docs/
 ├── notifications/
 │   ├── vapid_public.txt           ← Clave VAPID pública (la privada es secret VAPID_PRIVATE_KEY en GitHub Actions — NUNCA al repo)
 │   ├── queue.json                 ← Cola del día (el agente escribe, el dispatcher manda y actualiza status)
+│   ├── task_reminders_plan.json   ← Plan de recordatorios de tareas (generado por tools/gen_task_reminders.py --plan)
 │   └── send_log.json              ← Log de envíos del dispatcher
 ├── engage/
 │   ├── engage.js                  ← Tracking + aprobación para páginas proposal (standalone)
@@ -201,6 +204,8 @@ docs/
     ├── push_subscription.json     ← Suscripción Web Push del device (status active/disabled/invalid)
     └── engagement.json            ← Eventos: notification_clicked / page_visit / proposal_approved / proposal_rejected
 ```
+
+**Recordatorios de tareas por push:** las tareas NO tienen sección en la Home — se comunican por push. `tools/gen_task_reminders.py <fecha> --merge` genera y mergea en la queue el recordatorio del día (martes-domingo 08:00: "tarea del día" rotando entre las tareas activas de todas las especies, deep link a `tareas.html#task=<id>`; lunes 08:00: resumen semanal → `tareas.html`). Respeta `task_states.json` (done/snoozed). El agente de `/engagement` lo corre como paso obligatorio de su corrida diaria; sus entries (`format: "tarea"`) son adicionales a la cadencia de experiencias.
 
 Flujo: el agente encola 3 notificaciones con `send_at` (-03:00) → Vercel deploya → el dispatcher manda lo vencido → el SW (`docs/sw.js`) muestra la notificación y al click abre el deep link con `?nid=&src=push` → el cliente loguea el click/visita en `engagement.json` → el agente lee los datos a la mañana siguiente y adapta. Las proposals necesitan aprobación explícita (botón en la página) para sobrevivir; aprobadas se promueven al sitio principal.
 
