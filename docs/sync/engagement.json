@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-01T22:10:31.776Z",
+  "_updated_at": "2026-07-01T22:10:42.380Z",
   "events": [
     {
       "_id": "mqhb28muk620on",
@@ -1330,6 +1330,13 @@
       "value": "meh",
       "page": "engage/2026-07-01-consultorio-jardin.html",
       "ts": "2026-07-01T22:10:31.142Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr2mq9dnc7iv7j",
+      "type": "proposal_approved",
+      "proposal_id": "2026-07-01-consultorio-jardin",
+      "ts": "2026-07-01T22:10:42.299Z",
       "device": "sin-nombre"
     }
   ],
