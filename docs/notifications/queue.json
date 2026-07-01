@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-01T12:32:39.466Z",
+  "_updated_at": "2026-07-01T17:30:49.716Z",
   "notifications": [
     {
       "id": "2026-07-01-a",
@@ -22,8 +22,8 @@
       "format": "experiencia",
       "send_at": "2026-07-01T13:00:00-03:00",
       "expires_at": "2026-07-01T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-01T17:30:49.715Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-01 (ciclo 32)"
     },
