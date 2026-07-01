@@ -1,158 +1,6 @@
 {
-  "_updated_at": "2026-06-30T23:50:37.045Z",
+  "_updated_at": "2026-07-01T10:30:00.000Z",
   "events": [
-    {
-      "_id": "mqgjv4a9kovk9f",
-      "type": "notification_clicked",
-      "nid": "2026-06-15-x10",
-      "page": "engage/adivina-jardin.html",
-      "ts": "2026-06-16T11:19:34.252Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjv4a9whcao9",
-      "type": "page_visit",
-      "page": "engage/adivina-jardin.html",
-      "nid": "2026-06-15-x10",
-      "src": "push",
-      "ts": "2026-06-16T11:19:34.252Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjvblfol8wmh",
-      "type": "reaction",
-      "target": "adivina-r1",
-      "value": "wrong",
-      "page": "engage/adivina-jardin.html",
-      "ts": "2026-06-16T11:19:43.731Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjve78koizbw",
-      "type": "dwell",
-      "seconds": 13,
-      "scroll_pct": 100,
-      "page": "engage/adivina-jardin.html",
-      "ts": "2026-06-16T11:19:47.108Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjvi250tuwg6",
-      "type": "reaction",
-      "target": "duelo-r1",
-      "value": "correct",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-16T11:19:52.108Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjvkrwh83n98",
-      "type": "dwell",
-      "seconds": 6,
-      "scroll_pct": 100,
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-16T11:19:55.628Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjvmtet0d1fe",
-      "type": "page_visit",
-      "page": "engage/2026-06-13-rueda-ano.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-06-16T11:19:58.271Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjvr3hg5wnc6",
-      "type": "reaction",
-      "target": "rueda-ano",
-      "value": "no",
-      "page": "engage/2026-06-13-rueda-ano.html",
-      "ts": "2026-06-16T11:20:03.821Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjvt9cgraeg8",
-      "type": "dwell",
-      "seconds": 8,
-      "scroll_pct": 100,
-      "page": "engage/2026-06-13-rueda-ano.html",
-      "ts": "2026-06-16T11:20:06.624Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjw8t1xr3ks1",
-      "type": "reaction",
-      "target": "quiz-set4-q1",
-      "value": "correct",
-      "page": "engage/quiz-jardin.html",
-      "ts": "2026-06-16T11:20:26.772Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjwb3ga9nn8k",
-      "type": "reaction",
-      "target": "quiz-set4-q2",
-      "value": "wrong",
-      "page": "engage/quiz-jardin.html",
-      "ts": "2026-06-16T11:20:29.740Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjwfqnkw3jur",
-      "type": "reaction",
-      "target": "quiz-set4-q3",
-      "value": "wrong",
-      "page": "engage/quiz-jardin.html",
-      "ts": "2026-06-16T11:20:35.759Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjwiehigxe8n",
-      "type": "reaction",
-      "target": "quiz-set4-q5",
-      "value": "wrong",
-      "page": "engage/quiz-jardin.html",
-      "ts": "2026-06-16T11:20:39.209Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjwm8s28k0rn",
-      "type": "dwell",
-      "seconds": 34,
-      "scroll_pct": 100,
-      "page": "engage/quiz-jardin.html",
-      "ts": "2026-06-16T11:20:44.188Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjwmcabhuvjj",
-      "type": "page_visit",
-      "page": "engage/quiz-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-06-16T11:20:44.311Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjwp7m58k1dh",
-      "type": "dwell",
-      "seconds": 3,
-      "scroll_pct": 100,
-      "page": "engage/quiz-jardin.html",
-      "ts": "2026-06-16T11:20:48.034Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqgjwvd1ckymbv",
-      "type": "dwell",
-      "seconds": 5,
-      "scroll_pct": 100,
-      "page": "engage/adivina-jardin.html",
-      "ts": "2026-06-16T11:20:56.005Z",
-      "device": "sin-nombre"
-    },
     {
       "_id": "mqhb28muk620on",
       "type": "dwell",
@@ -1386,6 +1234,12 @@
       "sent": 19,
       "clicked": 2,
       "visits": 4,
+      "approvals": 0
+    },
+    "2026-06-16": {
+      "sent": 20,
+      "clicked": 1,
+      "visits": 3,
       "approvals": 0
     }
   }

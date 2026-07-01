@@ -2,126 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-06-16-x01",
-      "ts": "2026-06-16T15:08:48.564Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x02",
-      "ts": "2026-06-16T15:08:48.678Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x03",
-      "ts": "2026-06-16T15:08:48.772Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x04",
-      "ts": "2026-06-16T15:08:48.873Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x05",
-      "ts": "2026-06-16T18:58:25.170Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x06",
-      "ts": "2026-06-16T18:58:25.272Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x07",
-      "ts": "2026-06-16T18:58:25.371Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x08",
-      "ts": "2026-06-16T18:58:25.476Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x09",
-      "ts": "2026-06-16T18:58:25.577Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x10",
-      "ts": "2026-06-16T18:58:25.704Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x11",
-      "ts": "2026-06-16T18:58:25.806Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x12",
-      "ts": "2026-06-16T21:44:10.995Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x13",
-      "ts": "2026-06-16T21:44:11.068Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x14",
-      "ts": "2026-06-16T21:44:11.145Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x15",
-      "ts": "2026-06-16T21:44:11.221Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x16",
-      "ts": "2026-06-16T21:44:11.297Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x17",
-      "ts": "2026-06-16T21:44:11.372Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x18",
-      "ts": "2026-06-16T23:12:02.792Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x19",
-      "ts": "2026-06-16T23:12:02.918Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-16-x20",
-      "ts": "2026-06-16T23:12:03.152Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-06-17-x01",
       "ts": "2026-06-17T13:41:09.656Z",
       "status_code": 201
@@ -460,6 +340,9 @@
     },
     "2026-06-15": {
       "sent": 19
+    },
+    "2026-06-16": {
+      "sent": 20
     }
   }
 }

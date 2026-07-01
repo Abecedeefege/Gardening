@@ -1,44 +1,44 @@
 {
-  "_updated_at": "2026-06-30T23:44:13.826Z",
+  "_updated_at": "2026-07-01T09:15:00-03:00",
   "notifications": [
     {
-      "id": "2026-06-30-a",
-      "title": "🍵 El chisme del cantero",
-      "body": "Tu jardín esconde escándalos: la Santa Rita B-1 fue robada de crédito a la 1ª mujer que dio la vuelta al mundo. ¿Quién más?",
-      "url": "https://gardening-chi.vercel.app/engage/2026-06-30-chusmerio-jardin.html",
+      "id": "2026-07-01-a",
+      "title": "🔮 El horóscopo de tus plantas",
+      "body": "Cada planta del jardín tiene su signo y su lectura de hoy. ¿Cuál sos vos? Entrá a leerte.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-01-horoscopo-jardin.html",
       "format": "experiencia",
-      "send_at": "2026-06-30T08:30:00-03:00",
-      "expires_at": "2026-06-30T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-30T12:07:15.903Z",
+      "send_at": "2026-07-01T08:30:00-03:00",
+      "expires_at": "2026-07-01T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-30 (ciclo 31)"
+      "created_by": "engagement-agent 2026-07-01 (ciclo 32)"
     },
     {
-      "id": "2026-06-30-b",
-      "title": "🧪 Tu jardín tiene superpoderes",
-      "body": "Una farmacia y una perfumería secretas en tu fondo: la cinta B-12 purifica el aire nivel NASA, el romero B-26 te sube la memoria.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-06-30-superpoderes-jardin.html",
+      "id": "2026-07-01-b",
+      "title": "💌 Tu jardín abrió consultorio",
+      "body": "11 plantas te dan un consejo de vida, cada uno con un dato real detrás. Pasá por la columna del día.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-01-consultorio-jardin.html",
       "format": "experiencia",
-      "send_at": "2026-06-30T13:00:00-03:00",
-      "expires_at": "2026-06-30T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-30T16:55:08.504Z",
+      "send_at": "2026-07-01T13:00:00-03:00",
+      "expires_at": "2026-07-01T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-30 (ciclo 31)"
+      "created_by": "engagement-agent 2026-07-01 (ciclo 32)"
     },
     {
-      "id": "2026-06-30-curio-lapachillo",
-      "title": "🪵 El lapacho que no parece lapacho",
-      "body": "Tu lapachillo B-14 es la prima discreta del lapacho: flores chicas, pero madera durísima que charrúas y guaraníes usaban para herramientas.",
+      "id": "2026-07-01-c",
+      "title": "💚 Color en pleno invierno",
+      "body": "El evónimo B-44 da color cuando casi todo está apagado. Los romanos lo ataban a los velos de novia.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-06-30T19:30:00-03:00",
-      "expires_at": "2026-06-30T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-06-30T23:44:13.825Z",
+      "send_at": "2026-07-01T19:30:00-03:00",
+      "expires_at": "2026-07-01T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-06-30 (ciclo 31)"
+      "created_by": "engagement-agent 2026-07-01 (ciclo 32)"
     }
   ]
 }

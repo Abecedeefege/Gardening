@@ -1,0 +1,428 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0"><title>💌 El Consultorio del Jardín</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap');
+  :root{
+    --verde:#2d5016; --verde2:#3f6e22; --verde3:#5a9134;
+    --papel:#f5faf0; --papel2:#fbfdf7;
+    --tinta:#33351f; --tinta2:#6a6f4c; --linea:#e2e0c9;
+    --sello:#a53a24; --sello-bg:#f7efe9; --oro:#b8892b;
+    --sepia:#efe7d0;
+    --pad:max(16px,env(safe-area-inset-left));
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; margin:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--serif); color:var(--tinta); line-height:1.55;
+    background:var(--papel);
+    background-image:
+      radial-gradient(120% 60% at 50% -10%, rgba(90,145,52,.10), transparent),
+      radial-gradient(60% 45% at 0% 100%, rgba(184,137,43,.07), transparent),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 39.5H40' stroke='%23e6e4cf' stroke-width='.5'/%3E%3C/svg%3E");
+    -webkit-font-smoothing:antialiased; }
+
+  /* Regla del usuario: PRIMER elemento del body */
+  .back{ display:block; color:#eef4e4; text-decoration:none; font-family:var(--sans); font-size:12.5px;
+    font-weight:700; padding:11px var(--pad); background:var(--verde); width:100%; letter-spacing:.01em; }
+  .back:active{ opacity:.78; }
+
+  .prog{ position:fixed; top:0; left:0; height:3px; z-index:80; width:0;
+    background:linear-gradient(90deg,var(--sello),var(--oro),var(--verde3)); transition:width .12s; }
+
+  .wrap{ max-width:600px; margin:0 auto; padding-bottom:10px; }
+
+  /* Cabezal de revista / consultorio */
+  .masthead{ text-align:center; padding:26px var(--pad) 8px; }
+  .masthead .kicker{ font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.28em;
+    text-transform:uppercase; color:var(--sello); }
+  .masthead h1{ font-size:clamp(30px,10vw,46px); font-weight:600; line-height:1; letter-spacing:-.01em;
+    color:var(--verde); margin:9px 0 4px; }
+  .masthead h1 em{ font-style:italic; color:var(--sello); }
+  .masthead .sub{ font-family:var(--sans); font-size:12.5px; color:var(--tinta2); font-weight:500;
+    letter-spacing:.02em; }
+  .rule{ display:flex; align-items:center; gap:12px; max-width:340px; margin:16px auto 4px; }
+  .rule::before,.rule::after{ content:""; flex:1; height:1px;
+    background:linear-gradient(90deg,transparent,var(--linea),transparent); }
+  .rule span{ font-size:16px; }
+
+  .lead{ font-family:var(--serif); font-size:16px; color:#4b4d30; text-align:center;
+    max-width:46ch; margin:12px auto 4px; padding:0 var(--pad); }
+  .lead .drop{ font-style:italic; color:var(--verde2); }
+
+  .season{ font-family:var(--sans); text-align:center; font-size:11px; font-weight:600; letter-spacing:.06em;
+    color:var(--tinta2); margin:14px auto 22px; }
+  .season b{ color:var(--verde); }
+
+  /* Columnas / cartas */
+  .col{ display:flex; flex-direction:column; gap:20px; padding:0 var(--pad); }
+
+  .card{ background:var(--papel2); border:1px solid var(--linea); border-radius:4px;
+    padding:22px 20px 20px; position:relative;
+    box-shadow:0 1px 0 rgba(255,255,255,.7) inset, 0 10px 26px rgba(60,66,30,.09);
+    background-image:linear-gradient(180deg, rgba(239,231,208,.35), transparent 120px); }
+  .card::before{ content:""; position:absolute; left:0; top:14px; bottom:14px; width:3px;
+    background:linear-gradient(180deg,var(--verde3),var(--oro)); border-radius:3px; opacity:.55; }
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .card .num{ font-family:var(--sans); font-size:10.5px; font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--tinta2); display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+  .card .num .code{ margin-left:auto; color:var(--verde); background:#eef6e4; border:1px solid var(--linea);
+    border-radius:999px; padding:3px 9px; letter-spacing:.04em; font-weight:700; }
+  .card .num .code.nat{ color:#8a5a12; background:#f7efd9; border-color:#e9dcb4; }
+
+  .who{ display:flex; align-items:center; gap:13px; margin-bottom:14px; }
+  .who .face{ width:52px; height:52px; border-radius:50%; flex:0 0 auto; display:grid; place-items:center;
+    font-size:27px; background:radial-gradient(120% 120% at 30% 25%, #f4f9ec, var(--sepia));
+    box-shadow:inset 0 0 0 1px rgba(45,80,22,.13), 0 2px 6px rgba(60,66,30,.1); }
+  .who .id{ min-width:0; }
+  .who .id .name{ font-size:19px; font-weight:600; color:var(--verde); line-height:1.1; letter-spacing:-.01em; }
+  .who .id .role{ font-family:var(--sans); font-size:12px; color:var(--tinta2); font-style:normal; margin-top:2px; }
+  .who .id .role i{ font-style:italic; }
+
+  .advice{ font-size:19.5px; line-height:1.42; color:#2e301c; font-weight:500; letter-spacing:-.005em;
+    margin:2px 0 12px; }
+  .advice .q{ color:var(--sello); font-style:italic; }
+
+  .letter{ font-size:15px; line-height:1.62; color:#474930; }
+  .letter em{ font-style:italic; color:var(--verde2); }
+  .sign{ font-family:var(--serif); font-style:italic; font-size:14.5px; color:var(--verde2);
+    text-align:right; margin-top:12px; }
+
+  .fact{ font-family:var(--sans); font-size:12.5px; line-height:1.5; margin-top:15px;
+    background:#f2f7ea; border:1px solid var(--linea); border-left:3px solid var(--verde2);
+    border-radius:4px; padding:11px 13px; color:#3d4a2b; }
+  .fact b{ color:var(--verde); }
+  .fact .tag{ display:inline-block; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    font-size:9.5px; color:var(--sello); margin-right:6px; }
+
+  .share{ font-family:var(--sans); font-size:11px; color:var(--tinta2); margin-top:13px;
+    padding-top:11px; border-top:1px dashed var(--linea); display:flex; align-items:center; gap:7px; }
+  .share b{ color:var(--verde2); font-weight:700; }
+
+  /* Bloques de cierre */
+  .block{ background:var(--papel2); border:1px solid var(--linea); border-radius:6px;
+    padding:26px 20px; margin:22px var(--pad) 0; text-align:center;
+    box-shadow:0 10px 26px rgba(60,66,30,.09); }
+  .block .pill{ display:inline-block; font-family:var(--sans); font-size:10.5px; font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--sello);
+    background:#f7efe9; border:1px solid #ecd9cf; border-radius:999px; padding:5px 13px; margin-bottom:12px; }
+  .block h3{ font-size:25px; font-weight:600; letter-spacing:-.01em; color:var(--verde); margin-bottom:7px; }
+  .block h3 em{ font-style:italic; color:var(--sello); }
+  .block p{ font-family:var(--sans); font-size:13.5px; color:var(--tinta2); max-width:40ch; margin:0 auto 16px; line-height:1.5; }
+  .btns{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+  .btns button{ font-family:var(--sans); font-size:15px; font-weight:600; cursor:pointer;
+    border:1.5px solid var(--linea); background:#f6faf1; color:var(--tinta); border-radius:12px;
+    padding:13px 17px; transition:transform .12s, background .12s, border-color .12s; }
+  .btns button:active{ transform:scale(.95); }
+  .btns button:hover{ background:#eef6e4; }
+  .btns button.sel{ background:var(--verde); color:#fff; border-color:var(--verde); }
+  .btns button:disabled{ cursor:default; opacity:.5; }
+  .btns button.sel:disabled{ opacity:1; }
+  .react .btns button{ font-size:27px; padding:11px 16px; }
+  .react-hint, .q-hint{ display:block; min-height:18px; margin-top:13px; font-family:var(--sans);
+    font-size:13px; font-weight:600; color:var(--verde2); }
+
+  .sub{ background:linear-gradient(165deg,#31531c,#223b12); border-color:#2c4a17; color:#eef4e4; }
+  .sub .pill{ color:#cfe6a6; background:rgba(90,145,52,.22); border-color:rgba(90,145,52,.4); }
+  .sub h3{ color:#fff; } .sub h3 em{ color:#cfe6a6; }
+  .sub p{ color:#c3d6ac; }
+  .sub .btns button{ background:rgba(255,255,255,.08); color:#eef4e4; border-color:rgba(255,255,255,.2); }
+  .sub .btns button:hover{ background:rgba(255,255,255,.15); }
+  .sub .btns button.sel{ background:#a8d06a; color:#223b12; border-color:#a8d06a; }
+  .sub .q-hint{ color:#cfe6a6; }
+
+  .engage-actions{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:22px var(--pad) 0; }
+  .engage-actions button{ font-family:var(--sans); font-size:14.5px; font-weight:700; cursor:pointer;
+    border:none; border-radius:12px; padding:14px 18px; transition:transform .12s, opacity .12s; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:#eee7d5; color:#6a6f4c; border:1px solid var(--linea); }
+  .engage-actions button:active{ transform:scale(.95); }
+  .engage-feedback{ text-align:center; font-family:var(--sans); color:var(--verde); font-weight:700;
+    font-size:14px; padding:14px; margin:22px var(--pad) 0; background:#eef6e4;
+    border:1px solid var(--linea); border-radius:12px; }
+
+  .verdict{ text-align:center; font-family:var(--sans); font-size:12px; color:var(--tinta2);
+    max-width:42ch; margin:12px auto 0; line-height:1.5; }
+
+  footer{ text-align:center; padding:26px var(--pad) 64px; }
+  footer .pitch{ display:inline-block; font-family:var(--sans); color:var(--verde); text-decoration:none;
+    font-weight:700; font-size:13.5px; background:var(--papel2);
+    border:1px solid var(--linea); border-radius:999px; padding:11px 20px;
+    box-shadow:0 4px 14px rgba(60,66,30,.08); }
+  footer .pitch:active{ opacity:.8; }
+  footer .fine{ display:block; margin-top:16px; font-family:var(--serif); font-style:italic;
+    color:var(--tinta2); font-size:12px; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="prog" id="prog"></div>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">Correo del jardín · edición del día</div>
+    <h1>El <em>Consultorio</em><br>del Jardín</h1>
+    <div class="sub">Once plantas de Pacha Mama contestan con lo poco que saben de la vida</div>
+    <div class="rule"><span>🌿</span></div>
+  </header>
+
+  <p class="lead">Cada planta de esta casa aprendió algo por vivir donde vive. Hoy dejan la tijera y la maceta un rato y te dan <span class="drop">un consejo</span>. El envoltorio es de tía sabia; el dato que lo sostiene es <em>real, verificado y con su código de catálogo</em>. Leelo despacio, como quien abre una carta.</p>
+
+  <div class="season">📍 Montevideo · <b>pleno invierno</b> · julio 2026 · once columnas nuevas</div>
+
+  <main class="col">
+
+    <!-- 1 · B-14 Lapachillo (nativa) -->
+    <article class="card reveal">
+      <div class="num">Columna 01 · Sobre no compararse <span class="code nat">B-14 · nativa</span></div>
+      <div class="who">
+        <div class="face">🌳</div>
+        <div class="id">
+          <div class="name">La Lapachillo</div>
+          <div class="role"><i>Poecilanthe parviflora</i> · nativa del Río de la Plata · fondo</div>
+        </div>
+      </div>
+      <p class="advice">“Toda la vida me dijeron <span class="q">la prima menor del lapacho</span>. Un día entendí: no vine a ser el otro. Vine a ser dura donde no se ve.”</p>
+      <p class="letter">Querido/a: el lapacho verdadero se lleva las fotos con sus flores trompeta enormes. Yo hago florcitas blancas discretas y nadie me aplaude. Pero mi madera es tan dura que los charrúas y guaraníes la elegían para los mangos de las herramientas — las que tenían que aguantar de verdad. Si te pasás la vida midiéndote contra el que brilla más, te perdés lo que <em>a vos</em> te hace irrompible. La firmeza no siempre se ve de lejos.</p>
+      <p class="sign">— con cariño áspero, la Lapachillo</p>
+      <div class="fact"><span class="tag">Dato real</span>El lapachillo (<b>B-14</b>) tiene las mismas hojas pinnadas que el lapacho pero flores mucho más discretas. Su madera durísima fue usada por charrúas y guaraníes para mangos de herramientas.</div>
+      <div class="share">🔖 <b>Para guardar:</b> lo firme no se mide contra lo vistoso.</div>
+    </article>
+
+    <!-- 2 · I-2 Difenbaquia (interior, tóxica) -->
+    <article class="card reveal">
+      <div class="num">Columna 02 · Sobre poner límites <span class="code">I-2 · interior</span></div>
+      <div class="who">
+        <div class="face">🌱</div>
+        <div class="id">
+          <div class="name">La Caña Muda</div>
+          <div class="role"><i>Dieffenbachia seguine</i> · interior, luz suave · la más discreta de casa</div>
+        </div>
+      </div>
+      <p class="advice">“Soy hermosa y estoy adentro, cerquita de todos. Pero hay una parte mía que <span class="q">no se toca</span>. Y saberlo no me hace fría: me hace clara.”</p>
+      <p class="letter">Me dicen “caña muda” porque si alguien me mastica, mi savia le deja la garganta trabada un rato — de ahí el apodo. No lo hago por maldad; es mi manera de decir <em>hasta acá</em>. Vos también tenés partes que no están para que cualquiera las manosee, y está bien. Poné el límite antes, tranquilo, sin gritar. Los que te quieren de verdad se acercan igual — solo que con respeto. Un “no” a tiempo es la forma más elegante de cuidarse.</p>
+      <p class="sign">— con voz baja pero firme, la Caña Muda</p>
+      <div class="fact"><span class="tag">Dato real · ojo</span>La savia de la difenbaquia (<b>I-2</b>) tiene cristales de oxalato de calcio que paralizan la garganta si se mastica. Mantenela lejos de niños y mascotas — el límite no es metáfora, acá es literal.</div>
+      <div class="share">🔖 <b>Para guardar:</b> un “no” a tiempo también es cariño.</div>
+    </article>
+
+    <!-- 3 · F-10 Fresno (frente) -->
+    <article class="card reveal">
+      <div class="num">Columna 03 · Sobre volver a empezar <span class="code">F-10 · frente</span></div>
+      <div class="who">
+        <div class="face">🍃</div>
+        <div class="id">
+          <div class="name">El Fresno</div>
+          <div class="role"><i>Fraxinus pennsylvanica</i> · frente (oeste) · le dieron una poda brava</div>
+        </div>
+      </div>
+      <p class="advice">“Me cortaron casi entero. Pensé que era el final. Resultó ser <span class="q">el lugar por donde volví a crecer.</span>”</p>
+      <p class="letter">A mí me hicieron una poda fuerte y quedé pelado, feo, de tercera fila atrás de las fotinias. Pero mirá: rebroto rápido, tiro ramas nuevas desde abajo, aguanto que me corten y sigo. Y cuando doy semillas, las suelto en forma de helicóptero para que se vayan lejos y arranquen su propia vida donde caigan. Si te podaron este año — un laburo, una relación, una certeza — no confundas el corte con la muerte. A veces te sacan lo de arriba justo para obligarte a empujar desde la raíz.</p>
+      <p class="sign">— rebrotando de nuevo, el Fresno</p>
+      <div class="fact"><span class="tag">Dato real</span>El fresno americano (<b>F-10</b>) es de los árboles urbanos más usados en el Río de la Plata por lo bien que tolera podas drásticas y rebrota. Es dioico: los pies hembra tiran las clásicas samaras “helicóptero” que vuelan a germinar lejos.</div>
+      <div class="share">🔖 <b>Para guardar:</b> el corte no siempre es el final; a veces es la raíz.</div>
+    </article>
+
+    <!-- 4 · B-32 Viraró (nativa) -->
+    <article class="card reveal">
+      <div class="num">Columna 04 · Sobre las apariencias <span class="code nat">B-32 · nativa</span></div>
+      <div class="who">
+        <div class="face">🌸</div>
+        <div class="id">
+          <div class="name">El Viraró</div>
+          <div class="role"><i>Ruprechtia laxiflora</i> · nativa · fondo · el del truco rosado</div>
+        </div>
+      </div>
+      <p class="advice">“La gente se enamora de mis <span class="q">flores rosadas</span>. Y no son flores. Aprendé a mirar dos veces — sobre todo lo que te encanta a primera vista.”</p>
+      <p class="letter">En primavera me lleno de un rosa precioso y todos suspiran. Secreto: eso no son pétalos, son mis sépalos, que se agrandan y se pintan <em>después</em> de la flor de verdad — chiquita y blanca — para armar un helicóptero que reparte mis semillas al viento. Puro marketing con función. La lección no es desconfiar de todo, es esta: lo llamativo suele estar al servicio de algo más profundo. Y lo que de verdad me sostiene no es el color: es mi madera, tan dura que aguanta décadas de intemperie como poste. Mirá lo vistoso, sí. Pero preguntate siempre qué lo sostiene.</p>
+      <p class="sign">— con elegancia tramposa, el Viraró</p>
+      <div class="fact"><span class="tag">Dato real</span>Los “frutos” rosados del viraró (<b>B-32</b>) son sépalos persistentes que se agrandan tras la polinización para dispersar la semilla por viento. Su madera es durísima: históricamente, postes que duran décadas.</div>
+      <div class="share">🔖 <b>Para guardar:</b> mirá lo lindo, pero preguntá qué lo sostiene.</div>
+    </article>
+
+    <!-- 5 · B-10 Lavanda (fondo) -->
+    <article class="card reveal">
+      <div class="num">Columna 05 · Sobre soltar lo muerto <span class="code">B-10 · fondo</span></div>
+      <div class="who">
+        <div class="face">💜</div>
+        <div class="id">
+          <div class="name">La Lavanda</div>
+          <div class="role"><i>Lavandula dentata</i> · fondo · perfuma cajones y ahuyenta polillas</div>
+        </div>
+      </div>
+      <p class="advice">“No sé volver a la madera vieja. Si me cortan ahí, ese tallo queda muerto para siempre. Así que <span class="q">crezco siempre hacia adelante.</span>”</p>
+      <p class="letter">Tengo una regla de vida escrita en el cuerpo: yo no rebroto desde lo seco y leñoso de abajo. Solo empujo verde nuevo desde donde todavía hay hojas. Al que me cuida le enseño lo mismo: no gastes energía cortando en lo que ya está muerto esperando que vuelva a florecer — no vuelve. Podá tu parte viva, la de arriba, la que todavía tiene savia, y hacia ahí andá. Mi nombre viene del latín <em>lavare</em>, lavar: los romanos me echaban al agua. Soltá lo que ya no perfuma. Limpiá. Y seguí para el lado del sol.</p>
+      <p class="sign">— fresca y hacia adelante, la Lavanda</p>
+      <div class="fact"><span class="tag">Dato real</span>La lavanda (<b>B-10</b>) no rebrota desde la madera vieja sin hojas: se poda solo la zona verde. Su nombre viene del latín <i>lavare</i> (lavar) — los romanos la usaban en el baño.</div>
+      <div class="share">🔖 <b>Para guardar:</b> no riegues lo que ya está seco; podá tu parte viva.</div>
+    </article>
+
+    <!-- 6 · F-7 Abelia (frente) -->
+    <article class="card reveal">
+      <div class="num">Columna 06 · Sobre sobrevivir al naufragio <span class="code">F-7 · frente</span></div>
+      <div class="who">
+        <div class="face">🤍</div>
+        <div class="id">
+          <div class="name">La Abelia</div>
+          <div class="role"><i>Abelia × grandiflora</i> · frente · florece siete meses seguidos</div>
+        </div>
+      </div>
+      <p class="advice">“El barco que me traía se hundió. Yo sobreviví. Desde entonces sé algo: <span class="q">después del naufragio, se sigue floreciendo</span>.”</p>
+      <p class="letter">Me encontró en China, en 1817, un médico y botánico llamado Clarke Abel — por eso llevo su apellido. Pero al volver, su barco naufragó y muchas de sus semillas se perdieron en el mar. Yo llegué igual. Y ahora, mirá: florezco de noviembre a mayo, casi medio año sin parar, y las mariposas y abejas hacen fila. Si vos también venís de un naufragio — de algo que se hundió y creíste perdido — quedate con esto: no todo se perdió. Lo que llegó a la orilla sos vos. Y a vos todavía te queda una temporada larga de flores.</p>
+      <p class="sign">— del otro lado del mar, la Abelia</p>
+      <div class="fact"><span class="tag">Dato real</span>La abelia (<b>F-7</b>) honra a Clarke Abel, que la encontró en China en 1817; su barco naufragó al volver y se perdieron semillas, pero la planta sobrevivió. Florece de noviembre a mayo — larguísimo.</div>
+      <div class="share">🔖 <b>Para guardar:</b> lo que llegó a la orilla sos vos.</div>
+    </article>
+
+    <!-- 7 · B-39 Pera Williams (fondo, sur) -->
+    <article class="card reveal">
+      <div class="num">Columna 07 · Sobre dejarse ayudar <span class="code">B-39 · fondo</span></div>
+      <div class="who">
+        <div class="face">🍐</div>
+        <div class="id">
+          <div class="name">La Pera Williams</div>
+          <div class="role"><i>Pyrus communis</i> ‘Williams’ · fondo, lado sur (más sombra)</div>
+        </div>
+      </div>
+      <p class="advice">“Puedo florecer solita, sí. Pero para dar fruta de verdad, <span class="q">necesito a otro cerca.</span> Y hace mucho dejé de ver eso como una debilidad.”</p>
+      <p class="letter">Tengo dos nombres: acá me dicen Williams, en Estados Unidos me dicen Bartlett — porque un tipo me introdujo allá sin saber que ya tenía nombre. O sea que ni mi identidad la construí sola. Y cuajo mejor cuando hay otra variedad de pera polinizándome cerca. Podés hacer muchas cosas por tu cuenta, y está bien el orgullo. Pero pedir ayuda no te resta: hay frutos que simplemente no llegan sin alguien al lado. Rodearse no es fallar. Es cómo se llega a la cosecha.</p>
+      <p class="sign">— dulce y acompañada, la Pera</p>
+      <div class="fact"><span class="tag">Dato real</span>La pera Williams (<b>B-39</b>) suele necesitar otra variedad de pera cerca para cuajar bien. Se llama Bartlett en EE.UU. porque Enoch Bartlett la introdujo sin saber que ya tenía nombre inglés.</div>
+      <div class="share">🔖 <b>Para guardar:</b> pedir ayuda no resta; es cómo se llega a la cosecha.</div>
+    </article>
+
+    <!-- 8 · B-9 Crespón (fondo) -->
+    <article class="card reveal">
+      <div class="num">Columna 08 · Sobre los cortes que curan <span class="code">B-9 · fondo</span></div>
+      <div class="who">
+        <div class="face">🌺</div>
+        <div class="id">
+          <div class="name">El Crespón</div>
+          <div class="role"><i>Lagerstroemia indica</i> · fondo · flores como papel crepé</div>
+        </div>
+      </div>
+      <p class="advice">“Le tienen tanto miedo a podarme fuerte que le pusieron nombre: le dicen <span class="q">‘crepe murder’</span>. Conmigo es al revés: cuanto más me cortan bien, más floté.”</p>
+      <p class="letter">Hay un mito de que la poda severa mata. En mí es puro cuento: yo floto sobre la madera nueva del año, así que un corte fuerte en invierno me rejuvenece y me llena de flores más grandes en verano. Ojo, no cualquier corte: el que se hace en el momento justo, con criterio. Vos también, a veces, tenés que animarte a sacar de raíz algo que ocupaba lugar — un hábito, un “sí” que era “no”, una rama vieja. No es destruirte. Es hacerte espacio para florecer más grande. El invierno no vino a castigarte; vino a prepararte.</p>
+      <p class="sign">— sin miedo a la tijera, el Crespón</p>
+      <div class="fact"><span class="tag">Dato real</span>El crespón (<b>B-9</b>) florece en madera nueva: la poda severa de invierno lo rejuvenece y da flores más grandes. El “crepe murder” es un mito — cortar fuerte, bien hecho, lo mejora.</div>
+      <div class="share">🔖 <b>Para guardar:</b> el corte bien hecho no destruye; hace espacio.</div>
+    </article>
+
+    <!-- 9 · B-26 Romero (fondo) -->
+    <article class="card reveal">
+      <div class="num">Columna 09 · Sobre hacerse notar sin gritar <span class="code">B-26 · fondo</span></div>
+      <div class="who">
+        <div class="face">🌿</div>
+        <div class="id">
+          <div class="name">El Romero</div>
+          <div class="role"><i>Salvia rosmarinus</i> · fondo · florece en pleno invierno para las abejas</div>
+        </div>
+      </div>
+      <p class="advice">“No tengo flor gigante ni fruta jugosa. Lo mío es el <span class="q">aroma</span>. Y resulta que a la gente el aroma no se le olvida.”</p>
+      <p class="letter">Mi nombre latino significa “rocío del mar” — crecí en acantilados barridos por el viento, aprendí a resistir con poca agua y a jugarme al perfume, no al tamaño. Y mirá el poder de una cosa sutil: hay estudios de universidad que muestran que olerme antes de un examen mejora la memoria como un 15%. No hace falta que grites para dejar huella. Elegí bien tu marca — un gesto, una forma de tratar a la gente, tu manera — y sé constante en eso. A la larga te van a recordar por el aroma, no por el ruido.</p>
+      <p class="sign">— discreto pero inolvidable, el Romero</p>
+      <div class="fact"><span class="tag">Dato real</span>El romero (<b>B-26</b>): su nombre latino <i>rosmarinus</i> significa “rocío del mar”. Estudios universitarios mostraron que olerlo antes de un examen mejora la memoria ~15%.</div>
+      <div class="share">🔖 <b>Para guardar:</b> no hace falta gritar para dejar huella.</div>
+    </article>
+
+    <!-- 10 · B-13 Clivia (fondo, sombra) -->
+    <article class="card reveal">
+      <div class="num">Columna 10 · Sobre la paciencia <span class="code">B-13 · fondo</span></div>
+      <div class="who">
+        <div class="face">🧡</div>
+        <div class="id">
+          <div class="name">La Clivia</div>
+          <div class="role"><i>Clivia miniata</i> · fondo, a la sombra · puede vivir cien años</div>
+        </div>
+      </div>
+      <p class="advice">“Vivo hasta cien años y florezco justo cuando estoy <span class="q">un poco apretada</span> e incómoda. Aprendí a no confundir comodidad con estar bien.”</p>
+      <p class="letter">Hay clivias en jardines reales que datan de 1830 y todavía florecen. O sea que tengo perspectiva: lo urgente casi nunca era tan urgente. Y acá va lo raro de mí — florezco mejor cuando la maceta me queda chica, apretada. Si me pasan a una enorme y cómoda, me pongo toda hoja y no doy una flor. La incomodidad justa me obliga a dar lo mejor. No huyas de todo apretón: a veces es exactamente la presión que necesitabas para florecer. Y encima, brillo en la sombra, donde otras no se animan. Tomate tu tiempo. Tenés más del que creés.</p>
+      <p class="sign">— sin apuro, con un siglo por delante, la Clivia</p>
+      <div class="fact"><span class="tag">Dato real</span>La clivia (<b>B-13</b>) puede vivir 100 años — hay ejemplares reales de 1830 aún floreciendo. Y florece mejor <b>apretada</b> en la maceta: la comodidad excesiva le da puro follaje, cero flor.</div>
+      <div class="share">🔖 <b>Para guardar:</b> no confundas comodidad con estar bien.</div>
+    </article>
+
+    <!-- 11 · B-34 Mandioca brava (nativa) -->
+    <article class="card reveal">
+      <div class="num">Columna 11 · Sobre de dónde venís <span class="code nat">B-34 · nativa</span></div>
+      <div class="who">
+        <div class="face">🍀</div>
+        <div class="id">
+          <div class="name">La Mandioca Brava</div>
+          <div class="role"><i>Manihot grahamii</i> · nativa del Cono Sur · fondo · la prima indomable</div>
+        </div>
+      </div>
+      <p class="advice">“Mi prima es la mandioca que comés todos los días. Yo soy la que se quedó <span class="q">brava, sin domesticar.</span> Y ninguna de las dos reniega de la otra.”</p>
+      <p class="letter">La mandioca de mesa y yo somos parientes cercanas, misma raíz de familia. A ella el ser humano la fue detoxificando durante miles de años hasta hacerla comestible; yo me quedé silvestre, con mi látex bravo, ornamental y nativa de esta tierra. Dos caminos, un mismo origen. Vos podés cambiar todo lo que quieras — tu ciudad, tu oficio, tu forma de hablar — pero no reniegues de dónde venís. La raíz no te ata: te explica. Y elegir tu propio camino no traiciona el origen, lo honra.</p>
+      <p class="sign">— indomable y con memoria, la Mandioca Brava</p>
+      <div class="fact"><span class="tag">Dato real</span>La mandioca brava (<b>B-34</b>) es nativa del Cono Sur y pariente cercana de la mandioca de mesa (<i>M. esculenta</i>), detoxificada por selección humana milenaria. La brava conserva su látex cianogénico: se mira, no se come.</div>
+      <div class="share">🔖 <b>Para guardar:</b> la raíz no te ata, te explica.</div>
+    </article>
+
+  </main>
+
+  <!-- 1 · Reacción -->
+  <div class="block react">
+    <span class="pill">Tu turno</span>
+    <h3>¿Te voló la cabeza? 🤯</h3>
+    <p>Contanos qué tan bueno estuvo el consultorio de hoy. Tu reacción decide si sigue saliendo.</p>
+    <div class="btns">
+      <button onclick="engageReact('consultorio','love', this)" title="¡Me encantó!">😍</button>
+      <button onclick="engageReact('consultorio','meh', this)" title="Más o menos">😐</button>
+      <button onclick="engageReact('consultorio','no', this)" title="No me gustó">🙅</button>
+      <span class="react-hint"></span>
+    </div>
+  </div>
+
+  <!-- 2 · Suscripción diaria (CTA de conversión) -->
+  <div class="block sub">
+    <span class="pill">💌 La carta de cada mañana</span>
+    <h3>Un <em>consejo</em> de tus plantas, cada día al despertar</h3>
+    <p>Cada mañana, una columna nueva de otra planta del jardín: sabiduría cálida apoyada en un dato real que no sabías. 40 segundos de lectura, cero esfuerzo, y una frase para guardar o compartir. ¿Te lo mandamos?</p>
+    <div class="btns">
+      <button onclick="engageAnswer('consultorio-suscripcion-diaria','si', this)">✅ Sí, quiero el consejo diario</button>
+      <button onclick="engageAnswer('consultorio-suscripcion-diaria','no', this)">Hoy no</button>
+      <span class="q-hint"></span>
+    </div>
+  </div>
+
+  <!-- 3 · Decisión del sistema (proposal PENDING) -->
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-07-01-consultorio-jardin')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-07-01-consultorio-jardin')">✕ No me interesa</button>
+  </div>
+  <p class="verdict">Si la aprobás, «💌 El Consultorio» se suma al sitio estable, dentro de Ideas → ✨ Experiencias, con una columna fresca por día.</p>
+
+  <!-- Footer con link al pitch -->
+  <footer>
+    <a class="pitch" href="2026-07-01-consultorio-jardin-pitch.html">💼 Cómo se vende esto</a>
+    <span class="fine">El Consultorio del Jardín · columnas de plantas reales, datos verificados · Pacha Mama, Montevideo</span>
+  </footer>
+
+</div>
+
+<script>
+  // Barra de progreso de lectura
+  var prog = document.getElementById('prog');
+  function onScroll(){
+    var h = document.documentElement;
+    var d = h.scrollHeight - h.clientHeight;
+    prog.style.width = (d > 0 ? (h.scrollTop / d * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  // Reveal de cada columna al entrar en viewport
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold:.12, rootMargin:'0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+<script src="engage.js"></script>
+</body></html>

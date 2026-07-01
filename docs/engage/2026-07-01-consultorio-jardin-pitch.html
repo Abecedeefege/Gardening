@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0"><title>💼 El Consultorio del Jardín · Pitch de monetización</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap');
+  :root{
+    --verde:#2d5016; --verde2:#3f6e22; --verde3:#5a9134;
+    --papel:#f5faf0; --papel2:#fbfdf7;
+    --tinta:#33351f; --tinta2:#6a6f4c; --linea:#e2e0c9;
+    --sello:#a53a24; --oro:#b8892b; --sepia:#efe7d0;
+    --pad:max(16px,env(safe-area-inset-left));
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; margin:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); color:var(--tinta); line-height:1.6;
+    background:var(--papel);
+    background-image:
+      radial-gradient(120% 55% at 50% -10%, rgba(90,145,52,.10), transparent),
+      radial-gradient(60% 45% at 100% 100%, rgba(184,137,43,.07), transparent);
+    -webkit-font-smoothing:antialiased; }
+
+  .back{ display:block; color:#eef4e4; text-decoration:none; font-size:12.5px; font-weight:700;
+    padding:11px var(--pad); background:var(--verde); letter-spacing:.01em; }
+  .back:active{ opacity:.78; }
+  .back.alt{ background:#3f6e22; }
+
+  .wrap{ max-width:640px; margin:0 auto; padding:0 var(--pad) 70px; }
+
+  header.hero{ text-align:center; padding:30px 0 10px; }
+  header.hero .pill{ display:inline-block; font-size:10.5px; font-weight:800; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--sello); background:#f7efe9; border:1px solid #ecd9cf;
+    border-radius:999px; padding:5px 13px; }
+  header.hero h1{ font-family:var(--serif); font-weight:600; font-size:clamp(28px,8.5vw,42px);
+    line-height:1.05; letter-spacing:-.01em; color:var(--verde); margin:14px 0 8px; }
+  header.hero h1 em{ font-style:italic; color:var(--sello); }
+  header.hero .dek{ font-family:var(--serif); font-size:16px; color:#4b4d30; max-width:44ch; margin:0 auto; }
+
+  section{ margin-top:26px; }
+  .eyebrow{ font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--verde3); margin-bottom:8px; }
+  h2{ font-family:var(--serif); font-weight:600; font-size:24px; color:var(--verde); line-height:1.12;
+    letter-spacing:-.01em; margin-bottom:10px; }
+  p{ font-size:14.5px; color:#454832; margin-bottom:12px; }
+  p b{ color:var(--verde); } p em{ font-style:italic; }
+
+  .panel{ background:var(--papel2); border:1px solid var(--linea); border-radius:8px; padding:20px 18px;
+    box-shadow:0 8px 22px rgba(60,66,30,.08); }
+
+  .stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:6px 0 4px; }
+  .stat{ background:var(--papel2); border:1px solid var(--linea); border-radius:8px; padding:14px 12px; text-align:center; }
+  .stat .n{ font-family:var(--serif); font-weight:600; font-size:24px; color:var(--sello); line-height:1; }
+  .stat .l{ font-size:11px; color:var(--tinta2); margin-top:6px; font-weight:600; line-height:1.35; }
+
+  .insight{ background:linear-gradient(165deg,#31531c,#223b12); color:#eef4e4; border-radius:10px;
+    padding:22px 18px; border:1px solid #2c4a17; }
+  .insight .eyebrow{ color:#cfe6a6; }
+  .insight h2{ color:#fff; } .insight h2 em{ color:#cfe6a6; font-style:italic; }
+  .insight p{ color:#cdddb6; }
+  .insight .kick{ font-family:var(--serif); font-style:italic; font-size:18px; color:#fff; margin-top:6px; }
+
+  .why{ list-style:none; margin:8px 0 0; }
+  .why li{ position:relative; padding:9px 0 9px 30px; font-size:14px; color:#454832;
+    border-bottom:1px dashed var(--linea); }
+  .why li:last-child{ border-bottom:none; }
+  .why li::before{ content:"🌿"; position:absolute; left:0; top:8px; font-size:15px; }
+  .why li b{ color:var(--verde); }
+
+  .modelhead{ display:flex; align-items:baseline; gap:10px; margin:30px 0 12px; }
+  .modelhead .tag{ font-size:10.5px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+    padding:4px 10px; border-radius:999px; white-space:nowrap; }
+  .tag.inn{ color:#2d5016; background:#e6f0d7; border:1px solid #cfe0b4; }
+  .tag.cre{ color:var(--sello); background:#f7efe9; border:1px solid #ecd9cf; }
+  .modelhead h2{ margin:0; font-size:20px; }
+
+  .model{ background:var(--papel2); border:1px solid var(--linea); border-radius:9px; padding:18px 17px;
+    margin-bottom:14px; box-shadow:0 6px 18px rgba(60,66,30,.07); position:relative; }
+  .model::before{ content:""; position:absolute; left:0; top:16px; bottom:16px; width:3px; border-radius:3px; }
+  .model.inn::before{ background:linear-gradient(180deg,var(--verde3),var(--verde2)); }
+  .model.cre::before{ background:linear-gradient(180deg,var(--oro),var(--sello)); }
+  .model .no{ font-family:var(--serif); font-size:13px; font-weight:600; color:var(--tinta2); }
+  .model .name{ font-family:var(--serif); font-weight:600; font-size:21px; color:var(--verde); line-height:1.12;
+    margin:2px 0 10px; letter-spacing:-.01em; }
+  .model .name em{ font-style:italic; color:var(--sello); }
+  .model .row{ font-size:13.5px; color:#474a34; margin-bottom:8px; }
+  .model .row .k{ display:inline-block; min-width:96px; font-weight:800; color:var(--verde2);
+    font-size:11px; letter-spacing:.06em; text-transform:uppercase; vertical-align:top; }
+  .model .row .v{ display:inline; }
+  .model .price{ margin-top:10px; padding:10px 12px; background:#f2f7ea; border:1px solid var(--linea);
+    border-left:3px solid var(--oro); border-radius:6px; font-size:13px; color:#3d4a2b; }
+  .model .price b{ color:var(--sello); }
+
+  .close{ margin-top:30px; background:linear-gradient(165deg,#fbfdf7,#f1f6e9); border:1px solid var(--linea);
+    border-radius:12px; padding:26px 20px; text-align:center; box-shadow:0 10px 26px rgba(60,66,30,.1); }
+  .close .eyebrow{ color:var(--sello); }
+  .close h2{ font-size:26px; margin-bottom:12px; }
+  .close p{ font-size:15px; max-width:48ch; margin:0 auto 12px; }
+  .close .mic{ font-family:var(--serif); font-style:italic; font-size:19px; color:var(--verde); margin-top:8px; }
+
+  .links{ margin-top:26px; display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+  .links a{ font-size:13px; font-weight:700; text-decoration:none; padding:11px 18px; border-radius:999px;
+    border:1px solid var(--linea); background:var(--papel2); color:var(--verde); }
+  .links a:active{ opacity:.8; }
+  .fine{ text-align:center; font-family:var(--serif); font-style:italic; color:var(--tinta2);
+    font-size:12px; margin-top:18px; }
+</style>
+</head>
+<body>
+<a class="back" href="2026-07-01-consultorio-jardin.html">← Volver a la experiencia</a>
+<a class="back alt" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="pill">Pitch de monetización</span>
+    <h1>Cómo se vende <em>El Consultorio del Jardín</em></h1>
+    <p class="dek">Una planta que te da un consejo cálido, apoyado en un dato real, no es un juego: es un ritual diario. Y los rituales diarios son el negocio más rentable del wellness digital. Acá está el plan completo.</p>
+  </header>
+
+  <!-- PROBLEMA / MERCADO -->
+  <section>
+    <div class="eyebrow">El mercado</div>
+    <h2>El mundo ya paga fortunas por “una frase linda cada mañana”</h2>
+    <div class="panel">
+      <p>La categoría de <b>daily affirmations / mindfulness</b> es una de las más probadas del app store. No es un nicho: es un hábito masivo. Apps de una sola frase por día facturan cientos de millones al año con el modelo más simple que existe — mandar un texto corto y cobrar una suscripción.</p>
+      <div class="stats">
+        <div class="stat"><div class="n">US$2,2B</div><div class="l">mercado global de apps de meditación / bienestar mental (2024)</div></div>
+        <div class="stat"><div class="n">65M+</div><div class="l">descargas acumuladas de la app líder de afirmaciones diarias</div></div>
+        <div class="stat"><div class="n">~US$60</div><div class="l">precio anual típico de una suscripción de “frase del día”</div></div>
+      </div>
+      <p style="margin-top:14px;">El problema del rubro: casi todo suena igual. Frases genéricas, fondos de atardecer con tipografía cursiva, cero identidad. El usuario se satura en semanas y cancela. <b>La retención es el talón de Aquiles de toda la categoría.</b> Ahí es donde el Consultorio gana.</p>
+    </div>
+  </section>
+
+  <!-- INSIGHT -->
+  <section>
+    <div class="insight">
+      <div class="eyebrow">El insight</div>
+      <h2>El consejo no viene de un gurú. Viene de <em>tu</em> planta, con su código.</h2>
+      <p>La afirmación genérica se olvida. Pero cuando la lavanda B-10 te dice “no rieges lo que ya está seco” — y abajo hay un dato botánico real que lo sostiene — pasan tres cosas que ninguna app de frases logra: <b>credibilidad</b> (es un hecho verificado, no un cliché), <b>identidad</b> (es tu jardín, tu planta, no un stock de internet) y <b>compartibilidad</b> (una carta de una planta sabia es screenshot-eable, la frase de un coach no).</p>
+      <p class="kick">Vendemos el ritual de wellness más barato de producir del mundo: sabiduría que ya estaba escrita en la biología de una planta real.</p>
+    </div>
+  </section>
+
+  <!-- POR QUÉ CONVIERTE -->
+  <section>
+    <div class="eyebrow">Por qué convierte</div>
+    <h2>Cuatro palancas que la competencia no tiene</h2>
+    <ul class="why panel">
+      <li><b>Verdad como diferenciador:</b> cada consejo está anclado a un hecho real citado con código de catálogo. Nadie más en “afirmaciones” puede decir eso — es contenido que educa mientras emociona.</li>
+      <li><b>Personaje recurrente:</b> las plantas son columnistas con voz propia. Volvés a leer “a la Clivia” como quien sigue a un personaje. Eso es lo que retiene — cariño por un elenco, no por un feed anónimo.</li>
+      <li><b>Formato de carta:</b> cálido, íntimo, coleccionable. Se lee en 40 segundos y se guarda. La estética de papel de revista vintage ya diferencia visualmente a la primera mirada.</li>
+      <li><b>Motor de contenido infinito y barato:</b> cada planta tiene varios datos reales; cada dato da varios consejos. El catálogo se expande solo. Costo marginal de producción: casi cero.</li>
+    </ul>
+  </section>
+
+  <!-- 6 MODELOS -->
+  <section>
+    <div class="eyebrow">Los seis modelos</div>
+    <h2>Cómo se convierte esto en ingresos</h2>
+    <p>Tres modelos <b>innovadores</b> (probados en categorías afines, listos para ejecutar) y tres <b>ultra-creativos</b> (donde el producto se vuelve difícil de copiar). Todos con precio tentativo y encaje explícito.</p>
+
+    <!-- INNOVADORES -->
+    <div class="modelhead"><span class="tag inn">Innovador 01</span></div>
+    <div class="model inn">
+      <div class="no">Modelo 01</div>
+      <div class="name">El Correo del Consultorio <em>(suscripción diaria)</em></div>
+      <div class="row"><span class="k">Cómo funciona</span><span class="v">Freemium clásico. La columna del día es gratis; la suscripción desbloquea el archivo completo, columnas temáticas (duelo, ansiedad, mudanza), la carta a medida según la estación y el envío push cada mañana. Es exactamente el motor de las apps de afirmaciones, pero con personajes y datos reales.</span></div>
+      <div class="row"><span class="k">Encaje</span><span class="v">El CTA de suscripción diaria ya está en la experiencia. Es la conversión #2 del producto y la más natural: el ritual matutino ES la promesa.</span></div>
+      <div class="price"><b>Pricing:</b> gratis con 1 columna/día · <b>US$3,99/mes</b> o <b>US$29/año</b> Premium (archivo + push + colecciones). Guiño local: plan “Mate + Consultorio” a $99 UYU/mes.</div>
+    </div>
+
+    <div class="modelhead"><span class="tag inn">Innovador 02</span></div>
+    <div class="model inn">
+      <div class="no">Modelo 02</div>
+      <div class="name">La Tienda de la Frase <em>(print-on-demand + merch)</em></div>
+      <div class="row"><span class="k">Cómo funciona</span><span class="v">Cada “frase para guardar” del pie de columna es un producto físico bajo demanda: láminas, tazas, tote bags, señaladores, un mazo de “cartas del jardín”. Botón “Imprimir esta carta” que lleva a checkout POD (sin stock, sin riesgo). La estética vintage ya está diseñada para verse hermosa impresa.</span></div>
+      <div class="row"><span class="k">Encaje</span><span class="v">El contenido es literalmente screenshot-eable y decorativo. Convertir el screenshot gratuito en un objeto que se cuelga en la cocina es el paso obvio — y margen alto.</span></div>
+      <div class="price"><b>Pricing:</b> lámina A4 <b>US$18-25</b> · taza <b>US$15</b> · mazo “52 Cartas del Jardín” (una por planta) <b>US$29</b>. Margen POD ~40-55%.</div>
+    </div>
+
+    <div class="modelhead"><span class="tag inn">Innovador 03</span></div>
+    <div class="model inn">
+      <div class="no">Modelo 03</div>
+      <div class="name">Consultorio de Marca <em>(sponsorship botánico)</em></div>
+      <div class="row"><span class="k">Cómo funciona</span><span class="v">Viveros, marcas de té, aromaterapia, jardinería y bienestar patrocinan una columna o una “semana temática”. No es un banner: es una planta real que la marca comercializa, dando un consejo con su dato verdadero. Nativo, elegante, no intrusivo. Newsletter y push como inventario.</span></div>
+      <div class="row"><span class="k">Encaje</span><span class="v">El formato editorial hace que el sponsor se sienta contenido, no publicidad. La confianza que da el “dato verificado” se transfiere a la marca.</span></div>
+      <div class="price"><b>Pricing:</b> columna patrocinada <b>US$150-400</b> · “semana de una planta” <b>US$800-1.500</b> · programa mensual recurrente para un vivero <b>US$500/mes</b>.</div>
+    </div>
+
+    <!-- ULTRA-CREATIVOS -->
+    <div class="modelhead"><span class="tag cre">Ultra-creativo 04</span></div>
+    <div class="model cre">
+      <div class="no">Modelo 04</div>
+      <div class="name">Apadriná una Columnista <em>(consejo + planta real que crece)</em></div>
+      <div class="row"><span class="k">Cómo funciona</span><span class="v">Suscripción híbrida digital-físico: apadrinás una planta específica del jardín (tu “columnista de cabecera”). Cada mes recibís SU carta personal, ves fotos reales de cómo va — florece, la podan, fructifica — y en tu cumpleaños te mandan un esqueje o plantín propagado de ella. El consejo digital y una planta viva que de verdad crece, unidos.</span></div>
+      <div class="row"><span class="k">Encaje</span><span class="v">El jardín ya propaga plantines (vivero B-46) y ya documenta cada especie con fotos y estados. La infraestructura existe; esto le pone un lazo emocional imposible de clonar por una app genérica.</span></div>
+      <div class="price"><b>Pricing:</b> <b>US$6,99/mes</b> apadrinamiento (cartas + seguimiento fotográfico) · <b>+US$25</b> el envío del esqueje/plantín anual con su código y su frase grabada.</div>
+    </div>
+
+    <div class="modelhead"><span class="tag cre">Ultra-creativo 05</span></div>
+    <div class="model cre">
+      <div class="no">Modelo 05</div>
+      <div class="name">Consejo a Pedido <em>(la planta que responde a tu situación)</em></div>
+      <div class="row"><span class="k">Cómo funciona</span><span class="v">Escribís tu situación (“me mudo”, “corté con alguien”, “no arranco un proyecto”) y el sistema te devuelve la columnista cuyo dato real encaja: te vas de casa → el Fresno y sus semillas-helicóptero; empezás de cero tras un corte → el Crespón y su poda que rejuvenece. Regalo digital: una carta personalizada de la planta indicada, con nombre de destinatario y ocasión.</span></div>
+      <div class="row"><span class="k">Encaje</span><span class="v">Convierte el catálogo de datos en un motor de matching emocional. Cada hecho botánico ya mapea a un tema de vida — el trabajo curatorial ya está hecho en las columnas.</span></div>
+      <div class="price"><b>Pricing:</b> carta personalizada de regalo <b>US$4,99</b> (digital, con opción de imprimirla, sube a Modelo 02) · pack “5 cartas para regalar” <b>US$19</b>.</div>
+    </div>
+
+    <div class="modelhead"><span class="tag cre">Ultra-creativo 06</span></div>
+    <div class="model cre">
+      <div class="no">Modelo 06</div>
+      <div class="name">Franquicia del Consultorio <em>(motor white-label para otros jardines)</em></div>
+      <div class="row"><span class="k">Cómo funciona</span><span class="v">El verdadero activo no es este jardín: es el <em>método</em> — convertir el catálogo real de cualquier jardín botánico, hotel, vivero o municipio en un consultorio de plantas con voz. Se licencia el motor: ellos cargan sus especies verificadas, el sistema genera las columnas con su identidad. Un jardín botánico vende membresías; un hotel de campo lo pone como amenity en las habitaciones.</span></div>
+      <div class="row"><span class="k">Encaje</span><span class="v">La arquitectura ya separa datos (data_plants) de la presentación. Volverla multi-jardín es el salto natural de “un producto lindo” a “una plataforma”. Es lo que hace el negocio defendible y escalable.</span></div>
+      <div class="price"><b>Pricing:</b> licencia SaaS <b>US$99-299/mes</b> por institución según tamaño de catálogo · setup del catálogo verificado <b>US$500-2.000</b> one-time · rev-share opcional sobre su merch.</div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="close">
+    <div class="eyebrow">El cierre</div>
+    <h2>Por qué esto gana donde el resto se satura</h2>
+    <p>Toda la categoría de afirmaciones muere por la misma razón: <b>no hay a quién extrañar</b>. Frases sin cara, sin verdad, sin lugar. El Consultorio invierte eso. Tenés un elenco de plantas reales con nombre y código, cada consejo es un hecho verificado que además te enseña algo, y detrás hay un jardín que de verdad florece, se poda y da fruto.</p>
+    <p>Empezás mañana con el <b>Modelo 01</b> (la suscripción ya tiene su botón en la experiencia). El <b>02</b> monetiza el screenshot que la gente ya quiere sacar. El <b>03</b> trae caja de sponsors sin romper el tono. Y los tres creativos — apadrinar, consejo a pedido y la franquicia white-label — son el foso: convierten un lindo feed en un producto que <em>nadie puede copiar sin tener un jardín real detrás</em>.</p>
+    <p class="mic">Las afirmaciones se olvidan. Un consejo de tu planta, con su dato verdadero, se guarda, se comparte y se paga.</p>
+  </section>
+
+  <div class="links">
+    <a href="2026-07-01-consultorio-jardin.html">← Volver a la experiencia</a>
+    <a href="https://gardening-chi.vercel.app/index.html">Ir al sitio estable</a>
+  </div>
+  <p class="fine">El Consultorio del Jardín · pitch de monetización · Pacha Mama, Montevideo · invierno 2026</p>
+
+</div>
+</body></html>

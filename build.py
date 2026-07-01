@@ -1399,6 +1399,15 @@ def build_ideas_html(ticker_html_inner: str = "", ticker_aria: str = "",
     # Regla del usuario: cada experiencia que se aprueba se suma acá (no en la
     # nav del inicio). El agente de /engagement agrega una entrada al promover.
     approved_experiences = [
+        {"icon": "📱", "title": "El Feed de tu Jardín",
+         "desc": "Cada planta tiene su cuenta y postea en primera persona un dato real que no sabías.",
+         "page": "engage/2026-06-29-feed-jardin.html"},
+        {"icon": "🍵", "title": "El Chusmerío del Cantero",
+         "desc": "El tabloide del jardín: el escándalo, el robo de crédito y el secreto que esconde cada planta.",
+         "page": "engage/2026-06-30-chusmerio-jardin.html"},
+        {"icon": "🧪", "title": "Los Superpoderes de tu Jardín",
+         "desc": "El poder secreto de cada planta: la que limpia el aire, la que es especia, la que repele mosquitos.",
+         "page": "engage/2026-06-30-superpoderes-jardin.html"},
         {"icon": "🏆", "title": "Récords de tu Jardín",
          "desc": "Los superlativos de tus plantas: la más longeva, la que limpia el aire, la de Venus…",
          "page": "engage/2026-06-29-records-jardin.html"},

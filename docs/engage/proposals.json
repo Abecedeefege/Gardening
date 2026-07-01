@@ -175,46 +175,70 @@
       "title": "📱 El Feed de tu Jardín (news-feed estilo red social)",
       "page": "engage/2026-06-29-feed-jardin.html",
       "created": "2026-06-29",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Ciclo 30 (función paralela del usuario): experiencia news-feed NUEVA de cero. 'JardínGram' — cada planta es una cuenta de red social que postea EN PRIMERA PERSONA un dato real verificado (avatar/handle/seguidores/likes derivados de atributos reales: longevidad, ser nativa). Tras validar el 29/06 que el formato news-feed convierte amor→suscripción (Diario+Récords aprobados+suscriptos), esta apuesta sube el componente VIRAL/compartible y la personalidad. Hipótesis: la voz en primera persona + el gesto familiar de 'seguir' una cuenta dispara más reacción 'increíble' y suscripción que el framing editorial/superlativo. 10 posteos (B-22, B-1, F-1, B-12, B-5, B-16, B-27, B-36, B-30, B-13), todos fun_fact verificado. + pitch HTML (6 modelos de monetización). Promotor: 2026-06-29-feed (08:30).",
       "notified_by": [
         "2026-06-29-feed"
       ],
-      "result_notes": "PENDING tras corrida 30/06 (ciclo 31). MOTIVO: el test window se abrió DESPUÉS del cutoff de datos. engagement.json quedó sincronizado por última vez 2026-06-29T13:11Z, ANTES de que se mandara su push promotor (2026-06-29-feed @13:15Z 29/06). 0 eventos sobre esta página en engagement.json todavía — el dato no puede existir aún. NO se dropea por no-supervivencia porque nunca tuvo un test medible (confounded por cutoff, igual que mazo/V-F en su momento). Se mantiene UNA corrida más para que su feedback del 29 sincronice; se re-evalúa el 01/07: si junta proposal_approved → promover; si tiene ventana de datos limpia que cubra su push y sin aprobación → dropear."
+      "result_notes": "PROMOVIDA 01/07. Cuando el dato del 30/06 sincronizó, el Feed dio la señal MÁS FUERTE jamás medida en el canal: 2 sesiones el 30/06 (12:12 y 12:43Z) con 😍love ×2 + answer 'feed-suscripcion-diaria'=SÍ ×2 (doble suscripción explícita) + proposal_approved ×2 + dwell 142s Y 208s / scroll 100%. El 208s es el DWELL RÉCORD ABSOLUTO del canal (supera los 141s de Récords). Hipótesis viral/primera-persona VALIDADA y la más contundente: la voz en 1ª persona + el gesto 'seguir' + el formato red-social retiene y convierte más que editorial/superlativo. Promoción = página permanente + tarjeta en Ideas → ✨ Experiencias («📱 El Feed»). Footer: botones aprobar/rechazar reemplazados por nota de integración + link al inicio; reacciones/suscripción siguen logueando. El push promotor 2026-06-29-feed se retira."
     },
     {
       "id": "2026-06-29-pasaporte-jardin",
       "title": "🗺️ Pasaporte Botánico (news-feed de orígenes/viajes)",
-      "page": "engage/2026-06-29-pasaporte-jardin.html",
+      "page": null,
       "created": "2026-06-29",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 30 (función paralela del usuario): experiencia news-feed NUEVA de cero. Despachos de viaje / sellos de pasaporte — el ORIGEN real de cada planta (región nativa, nombre científico y especialmente los nombres indígenas charrúa/guaraní del campo `charrua`) framado como crónica de migración. Mezcla orgullo nativo (guayabo, anacahuita, aguaribay, pindó, lantana) con asombro exótico (palta, limonero, mandarina, ciruelo, hiedra). Apuesta: 'tu jardín es un mapa del mundo' + el rescate del patrimonio indígena dispara orgullo/identidad y motiva la suscripción a un sello diario. 10 despachos, origen citado SOLO de desc/fun_fact/sci/charrua (cero geografía inventada). + pitch HTML (6 modelos). Promotor: 2026-06-29-pasaporte (13:00).",
       "notified_by": [
         "2026-06-29-pasaporte"
       ],
-      "result_notes": "PENDING tras corrida 30/06 (ciclo 31). MOTIVO: el test window se abrió DESPUÉS del cutoff de datos. engagement.json quedó sincronizado por última vez 2026-06-29T13:11Z, ANTES de que se mandara su push promotor (2026-06-29-pasaporte @17:12Z 29/06). 0 eventos sobre esta página en engagement.json todavía — el dato no puede existir aún. NO se dropea por no-supervivencia porque nunca tuvo un test medible (confounded por cutoff, igual que mazo/V-F en su momento). Se mantiene UNA corrida más para que su feedback del 29 sincronice; se re-evalúa el 01/07: si junta proposal_approved → promover; si tiene ventana de datos limpia que cubra su push y sin aprobación → dropear."
+      "result_notes": "DROPPED 01/07. Cuando el dato del 30/06 sincronizó, el Pasaporte fue la ÚNICA de las 4 experiencias del ciclo 30/31 RECHAZADA: el 30/06 16:01Z el usuario abrió el push promotor → proposal_REJECTED + answer 'suscripcion-diaria'=NO + dwell 54s/scroll 100%. Leyó todo (54s, scroll completo) y aun así dijo que no a la suscripción y rechazó explícitamente. Lectura: el ángulo orígenes/viajes/migración NO enganchó pese a leerse entero — el patrimonio indígena/geografía no dispara el 'increíble' que sí disparan lo social (Feed 208s), el orgullo-número (Récords) o el chisme (Chusmerío). Es el 1er news-feed que el usuario rechaza: confirma que dentro del formato ganador el ÁNGULO importa, y que viajes/geografía es un ángulo perdedor. No relanzar Pasaporte. Página + pitch eliminados del repo (git rm)."
     },
     {
       "id": "2026-06-30-chusmerio-jardin",
       "title": "🍵 El Chusmerío del Cantero (news-feed tabloide/chimentos)",
       "page": "engage/2026-06-30-chusmerio-jardin.html",
       "created": "2026-06-30",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Ciclo 31 (función paralela): experiencia news-feed NUEVA de cero, ángulo TABLOIDE/CHISME. Cada planta esconde un escándalo/romance/impostura/robo-de-crédito REAL (Buganvilia B-1 robada de crédito a Jeanne Baret, Pera Williams B-39 doble robo de nombre, caña muda I-2, jazmín de leche B-3 impostor, viraró B-32 'flores' falsas, ciruelo F-4 linaje de uno solo, etc.). Tras validar 29/06 que el news-feed convierte amor→suscripción, esta apuesta MAXIMIZA la compartibilidad viral por WhatsApp (el chisme se reenvía solo) y la novedad serializada ('un chisme nuevo por día'). Hipótesis: el framing farándula/tabloide dispara el 'no podés creer lo que esconde tu jardín' y motiva la suscripción al chisme diario. 8-10 chismes, todos hecho verificado con código. + pitch HTML (6 modelos de monetización). Promotor: 2026-06-30-a (08:30).",
       "notified_by": [
         "2026-06-30-a"
       ],
-      "result_notes": null
+      "result_notes": "PROMOVIDA 01/07. El 30/06 16:02Z el usuario abrió el push promotor (2026-06-30-a) → answer 'chusmerio-suscripcion-diaria'=SÍ (suscripción explícita) + proposal_approved + dwell 86s / scroll 100%. Señal clara y limpia: leyó todo, se suscribió y aprobó. El ángulo tabloide/chisme convierte amor→suscripción — 2ª mejor del ciclo tras el Feed. Promoción = página permanente + tarjeta en Ideas → ✨ Experiencias («🍵 El Chusmerío»). Footer: botones aprobar/rechazar reemplazados por nota de integración + link al inicio; reacciones/suscripción siguen logueando. El push promotor 2026-06-30-a se retira."
     },
     {
       "id": "2026-06-30-superpoderes-jardin",
       "title": "🧪 Los Superpoderes de tu Jardín (news-feed utilidad/asombro)",
       "page": "engage/2026-06-30-superpoderes-jardin.html",
       "created": "2026-06-30",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Ciclo 31 (función paralela): experiencia news-feed NUEVA de cero, ángulo SUPERPODERES/UTILIDAD con giro comic. El jardín es en secreto una farmacia+perfumería+despensa: cada card un poder REAL (cinta B-12 purifica aire nivel NASA, romero B-26 +15% memoria, aguaribay F-8 pimienta rosa+repelente, hibisco B-4 agua de Jamaica, pata de vaca B-42 infusión hipoglucemiante, liquidámbar B-37 storax, guayabo F-1 pétalos golosina, etc.). Apuesta: contenido ACCIONABLE+asombro da razón concreta para volver a diario y es el ángulo MÁS naturalmente monetizable (kits de producto: té, sales de baño, especiero). Framing PODER (deleite), no herramienta/calendario, para esquivar el patrón de rechazo a lo utilitario. Hipótesis: 'lo útil que no sabías que tenías' iguala o supera la conversión amor→suscripción del editorial/superlativo. 8-10 poderes verificados con código. + pitch HTML (6 modelos). Promotor: 2026-06-30-b (13:00).",
       "notified_by": [
         "2026-06-30-b"
+      ],
+      "result_notes": "PROMOVIDA 01/07 (con matiz). El 30/06 18:25Z el usuario abrió el push promotor (2026-06-30-b) → proposal_approved + tap Aprobar, PERO la señal fue tibia: reaction 'meh' (😐) + dwell 23s con scroll 10% Y SIN answer de suscripción (no tocó el CTA de suscripción diaria). Se promueve porque la aprobación explícita es el único pase a permanencia (regla del usuario) y el usuario tocó ✅ Aprobar, pero es LA MÁS DÉBIL de las 3 promovidas del ciclo: aprobó pero no amó ni se suscribió. Lectura de contenido: el ángulo utilidad/superpoderes gana la aprobación pero NO la suscripción — la utilidad accionable no dispara el 'increíble' emocional que sí logran lo social/orgullo/chisme. Candidata #1 a revisión si no retiene. Promoción = página permanente + tarjeta en Ideas → ✨ Experiencias («🧪 Superpoderes»). Footer: botones aprobar/rechazar reemplazados por nota de integración + link al inicio. El push promotor 2026-06-30-b se retira."
+    },
+    {
+      "id": "2026-07-01-horoscopo-jardin",
+      "title": "🔮 El Horóscopo del Jardín (news-feed de identidad/predicción)",
+      "page": "engage/2026-07-01-horoscopo-jardin.html",
+      "created": "2026-07-01",
+      "status": "pending",
+      "hypothesis": "Ciclo 32 (función paralela): experiencia news-feed NUEVA de cero, ángulo IDENTIDAD/HORÓSCOPO. Cada planta es un 'signo' con su lectura del día: personalidad + predicción, todo envuelto sobre un rasgo REAL verificado (longeva→paciencia, nativa→raíces, trepadora→ambición, caduco pelado→renacimiento). Tras validar que dentro del news-feed el ÁNGULO decide (Feed social 208s ganó, Pasaporte viajes rechazado), esta apuesta a la psicología de identidad/personalidad ('¿cuál sos vos?') que retiene (orgullo Récords 141s, personalidad Feed 208s) y es ultra-compartible/screenshot-eable. El horóscopo es una categoría de monetización probada. Hipótesis: identidad + predicción lúdica sobre dato real iguala o supera la conversión amor→suscripción del social/chisme. Lectura, no juego. + pitch HTML (6 modelos). Promotor: 2026-07-01-a (08:30).",
+      "notified_by": [
+        "2026-07-01-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-01-consultorio-jardin",
+      "title": "💌 El Consultorio del Jardín (news-feed de consejos/sabiduría)",
+      "page": "engage/2026-07-01-consultorio-jardin.html",
+      "created": "2026-07-01",
+      "status": "pending",
+      "hypothesis": "Ciclo 32 (función paralela): experiencia news-feed NUEVA de cero, ángulo CALIDEZ/CONSEJO. Cada planta es una columnista de consultorio sentimental que da UN consejo de vida derivado de un rasgo REAL verificado (la longeva aconseja perspectiva, la que purifica el aire 'limpiá tu espacio', la que sobrevive heladas resiliencia, la nativa no olvidar de dónde venís). Complementa al horóscopo (identidad lúdica) con un registro cálido/emotivo y frase-del-día screenshot-eable — el enorme mercado wellness/daily-affirmation. Hipótesis: la calidez + sabiduría compartible convierte amor→suscripción tan bien como lo social/chisme, y ataca un segmento emocional distinto (afecto vs. asombro/humor). Lectura cálida, no juego. + pitch HTML (6 modelos). Promotor: 2026-07-01-b (13:00).",
+      "notified_by": [
+        "2026-07-01-b"
       ],
       "result_notes": null
     }
