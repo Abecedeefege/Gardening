@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-01T22:03:29.288Z",
+  "_updated_at": "2026-07-01T22:03:33.481Z",
   "events": [
     {
       "_id": "mqhb28muk620on",
@@ -1270,6 +1270,13 @@
       "value": "si",
       "page": "engage/2026-07-01-horoscopo-jardin.html",
       "ts": "2026-07-01T22:03:28.827Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr2mh2befn4lv0",
+      "type": "proposal_approved",
+      "proposal_id": "2026-07-01-horoscopo-jardin",
+      "ts": "2026-07-01T22:03:33.242Z",
       "device": "sin-nombre"
     }
   ],
