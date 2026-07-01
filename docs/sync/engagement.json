@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-01T22:01:49.414Z",
+  "_updated_at": "2026-07-01T22:03:29.288Z",
   "events": [
     {
       "_id": "mqhb28muk620on",
@@ -1261,6 +1261,15 @@
       "nid": "2026-07-01-a",
       "src": "push",
       "ts": "2026-07-01T22:01:48.609Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr2mgywr518cuu",
+      "type": "answer",
+      "qid": "horoscopo-suscripcion-diaria",
+      "value": "si",
+      "page": "engage/2026-07-01-horoscopo-jardin.html",
+      "ts": "2026-07-01T22:03:28.827Z",
       "device": "sin-nombre"
     }
   ],
