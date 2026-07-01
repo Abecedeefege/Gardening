@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-01T22:03:43.792Z",
+  "_updated_at": "2026-07-01T22:04:47.055Z",
   "events": [
     {
       "_id": "mqhb28muk620on",
@@ -1286,6 +1286,15 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-01-horoscopo-jardin.html",
       "ts": "2026-07-01T22:03:43.680Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr2mimz1linfgs",
+      "type": "reaction",
+      "target": "horoscopo",
+      "value": "love",
+      "page": "engage/2026-07-01-horoscopo-jardin.html",
+      "ts": "2026-07-01T22:04:46.669Z",
       "device": "sin-nombre"
     }
   ],
