@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-01T22:10:42.380Z",
+  "_updated_at": "2026-07-01T23:53:38.778Z",
   "events": [
     {
       "_id": "mqhb28muk620on",
@@ -1337,6 +1337,23 @@
       "type": "proposal_approved",
       "proposal_id": "2026-07-01-consultorio-jardin",
       "ts": "2026-07-01T22:10:42.299Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr2qemu4efpwcz",
+      "type": "notification_clicked",
+      "nid": "2026-07-01-c",
+      "page": "index.html",
+      "ts": "2026-07-01T23:53:38.326Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr2qemu4i5m4ie",
+      "type": "page_visit",
+      "page": "index.html",
+      "nid": "2026-07-01-c",
+      "src": "push",
+      "ts": "2026-07-01T23:53:38.326Z",
       "device": "sin-nombre"
     }
   ],
