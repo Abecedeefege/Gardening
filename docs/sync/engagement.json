@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-01T22:04:47.055Z",
+  "_updated_at": "2026-07-01T22:05:21.040Z",
   "events": [
     {
       "_id": "mqhb28muk620on",
@@ -1295,6 +1295,23 @@
       "value": "love",
       "page": "engage/2026-07-01-horoscopo-jardin.html",
       "ts": "2026-07-01T22:04:46.669Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr2mjdfblk5cj5",
+      "type": "notification_clicked",
+      "nid": "2026-07-01-b",
+      "page": "engage/2026-07-01-consultorio-jardin.html",
+      "ts": "2026-07-01T22:05:20.950Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr2mjdfby9e4ld",
+      "type": "page_visit",
+      "page": "engage/2026-07-01-consultorio-jardin.html",
+      "nid": "2026-07-01-b",
+      "src": "push",
+      "ts": "2026-07-01T22:05:20.950Z",
       "device": "sin-nombre"
     }
   ],
