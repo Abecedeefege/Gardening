@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-01T12:32:47.139Z",
+  "_updated_at": "2026-07-01T12:33:02.164Z",
   "events": [
     {
       "_id": "mqhb28muk620on",
@@ -1217,6 +1217,15 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-07-01T12:32:49.276Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "mr223ewqja7ufm",
+      "type": "dwell",
+      "seconds": 15,
+      "scroll_pct": 0,
+      "page": "engage/2026-06-29-feed-jardin.html",
+      "ts": "2026-07-01T12:33:04.058Z",
       "device": "pix9"
     }
   ],
