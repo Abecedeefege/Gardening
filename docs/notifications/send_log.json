@@ -323,6 +323,12 @@
       "nid": "2026-06-30-curio-lapachillo",
       "ts": "2026-06-30T23:44:13.825Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-01-a",
+      "ts": "2026-07-01T12:32:39.464Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
