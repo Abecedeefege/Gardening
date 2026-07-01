@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-01T22:05:21.040Z",
+  "_updated_at": "2026-07-01T22:05:57.356Z",
   "events": [
     {
       "_id": "mqhb28muk620on",
@@ -1312,6 +1312,15 @@
       "nid": "2026-07-01-b",
       "src": "push",
       "ts": "2026-07-01T22:05:20.950Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr2mk56c2fdj6d",
+      "type": "dwell",
+      "seconds": 36,
+      "scroll_pct": 5,
+      "page": "engage/2026-07-01-consultorio-jardin.html",
+      "ts": "2026-07-01T22:05:56.916Z",
       "device": "sin-nombre"
     }
   ],
