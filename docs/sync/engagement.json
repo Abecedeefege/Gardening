@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-02T13:37:05.901Z",
+  "_updated_at": "2026-07-02T13:37:17.251Z",
   "events": [
     {
       "_id": "mqjlxpvtmo4jvu",
@@ -1271,6 +1271,15 @@
       "type": "proposal_approved",
       "proposal_id": "2026-07-02-confesiones-jardin",
       "ts": "2026-07-02T13:37:06.988Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr3jtvhueld1xf",
+      "type": "dwell",
+      "seconds": 133,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-02-confesiones-jardin.html",
+      "ts": "2026-07-02T13:37:18.258Z",
       "device": "sin-nombre"
     }
   ],
