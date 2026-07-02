@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-01T23:53:38.778Z",
+  "_updated_at": "2026-07-02T13:35:04.779Z",
   "events": [
     {
       "_id": "mqjlxpvtmo4jvu",
@@ -1238,6 +1238,23 @@
       "nid": "2026-07-01-c",
       "src": "push",
       "ts": "2026-07-01T23:53:38.326Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr3jr0ykprxoof",
+      "type": "notification_clicked",
+      "nid": "2026-07-02-a",
+      "page": "engage/2026-07-02-confesiones-jardin.html",
+      "ts": "2026-07-02T13:35:05.369Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr3jr0ykzc0blw",
+      "type": "page_visit",
+      "page": "engage/2026-07-02-confesiones-jardin.html",
+      "nid": "2026-07-02-a",
+      "src": "push",
+      "ts": "2026-07-02T13:35:05.369Z",
       "device": "sin-nombre"
     }
   ],
