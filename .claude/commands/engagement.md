@@ -82,6 +82,21 @@ Ideas de proposals (variá — el objetivo es descubrir qué le sirve a ESTE usu
 
 ### 5. Escribir la cola del día — según la CADENCIA VIGENTE
 
+**PASO OBLIGATORIO — recordatorios de tareas.** Las tareas ya no son una sección
+accesible desde la Home: se comunican SOLO por push. Después de escribir la cola
+del día, corré SIEMPRE:
+
+```
+python tools/gen_task_reminders.py <YYYY-MM-DD> --merge
+```
+
+Eso mergea en `queue.json` el recordatorio de tareas del día (1 "tarea del día"
+a las 08:00, o el resumen semanal los lunes), rotando entre las tareas activas de
+todas las especies y respetando `task_states.json`. Estas entries (`format: "tarea"`,
+ids `-task-dia`/`-task-semana`) son ADICIONALES a la cadencia de experiencias:
+no las cuentes contra el cupo, no las edites ni las borres. Si tus propias
+notificaciones también van a las 08:00, corré las tuyas a otro slot.
+
 **Mirá la sección "CADENCIA VIGENTE" de `docs/engage/learnings.md`.** Si pide alta
 frecuencia (ej. cada 15 min), **NO escribas la cola a mano**: corré
 

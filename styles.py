@@ -447,6 +447,58 @@ h2.subbrand {
   font-feature-settings: 'tnum';
 }
 
+/* HOME HERO — las dos acciones principales de la home (Biblioteca / Ideas) */
+.home-hero {
+  display: grid;
+  gap: 14px;
+  margin: 22px 0 34px;
+  padding: 2px 4px;
+}
+.home-hero-card {
+  display: flex; align-items: center; gap: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-lg, 18px);
+  padding: 22px 20px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: 0 2px 10px rgba(45, 80, 22, 0.08);
+  transition: background var(--t), border-color var(--t), transform 150ms, box-shadow var(--t);
+}
+.home-hero-card:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: var(--text-3);
+  box-shadow: 0 4px 18px rgba(45, 80, 22, 0.14);
+}
+.home-hero-card:active { transform: scale(0.985); }
+.home-hero-emoji {
+  font-size: 2.2rem;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.home-hero-text {
+  display: flex; flex-direction: column; gap: 4px;
+  min-width: 0; flex: 1 1 auto;
+}
+.home-hero-title {
+  font-size: 1.25rem; font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.home-hero-desc {
+  font-size: 0.88rem;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+.home-hero-go {
+  font-size: 1.4rem;
+  color: var(--text-3);
+  flex: 0 0 auto;
+}
+@media (min-width: 700px) {
+  .home-hero { gap: 18px; margin-top: 30px; }
+  .home-hero-card { padding: 28px 26px; }
+}
+
 /* container que envuelve las zonas — sticky main-tabs + subtab-nav siguen pegados */
 .container-zones {
   padding-top: 0;
