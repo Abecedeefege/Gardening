@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-02T16:21:16.047Z",
+  "_updated_at": "2026-07-02T23:36:19.549Z",
   "notifications": [
     {
       "id": "2026-07-02-a",
@@ -35,8 +35,8 @@
       "format": "curio",
       "send_at": "2026-07-02T19:30:00-03:00",
       "expires_at": "2026-07-02T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-02T23:36:19.547Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-02 (ciclo 33)"
     }
