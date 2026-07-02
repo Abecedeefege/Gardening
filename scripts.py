@@ -1104,8 +1104,8 @@ function openTaskFromHash() {
 openTaskFromHash();
 
 // Si la URL trae #especie=CODE (viene de una landing de engagement), abrir la
-// ficha de esa especie. Si la página no tiene el catálogo (home, ideas,
-// tareas — o links viejos a index.html), redirige a biblioteca.html.
+// ficha de esa especie. Si la página no tiene el catálogo, redirige a la home
+// (index.html = la Biblioteca).
 function openSpeciesFromHash() {
   const m = (window.location.hash || '').match(/^#especie=(.+)$/);
   if (!m) return;
@@ -1114,36 +1114,33 @@ function openSpeciesFromHash() {
     if (typeof openSpeciesDetailModal === 'function') {
       setTimeout(() => openSpeciesDetailModal(code), 180);
     }
-  } else if (!/biblioteca\.html$/.test(window.location.pathname)) {
-    window.location.replace('biblioteca.html' + window.location.hash);
+  } else if (!/index\.html$|\/$/.test(window.location.pathname)) {
+    window.location.replace('index.html' + window.location.hash);
   }
 }
 openSpeciesFromHash();
 
-// Si la URL trae #curiosidades (viene de un push que promociona la sección
-// nueva de Curiosidades), abrir esa sub-tab en la zona visible y scrollear.
-// Si la página no tiene el catálogo, redirige a biblioteca.html.
+// Si la URL trae #curiosidades (viene de un push que promociona la sección),
+// abrir el feed de curiosidades, que vive en Ideas → Experiencias. Si la
+// página no lo tiene, redirige a ideas.html.
 function openCuriosidadesFromHash() {
   if (!/^#curiosidades$/.test(window.location.hash || '')) return;
-  if (!document.querySelector('.subtab-btn[data-sub="curiosidades"]')) {
-    if (/biblioteca\.html$/.test(window.location.pathname)) return;
-    window.location.replace('biblioteca.html' + window.location.hash);
+  const section = document.getElementById('curiosidades-section');
+  if (!section) {
+    if (/ideas\.html$/.test(window.location.pathname)) return;
+    window.location.replace('ideas.html' + window.location.hash);
     return;
   }
-  document.querySelectorAll('.zone-content').forEach(zoneEl => {
-    const btn = zoneEl.querySelector('.subtab-btn[data-sub="curiosidades"]');
-    if (!btn) return;
+  const zoneEl = section.closest('.zone-content');
+  const pane = section.closest('.subtab-pane');
+  if (zoneEl && pane) {
+    const btn = zoneEl.querySelector(`.subtab-btn[data-sub="${pane.dataset.sub}"]`);
     zoneEl.querySelectorAll('.subtab-btn').forEach(b => b.classList.remove('active'));
     zoneEl.querySelectorAll('.subtab-pane').forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    const pane = zoneEl.querySelector('.subtab-pane[data-sub="curiosidades"]');
-    if (pane) pane.classList.add('active');
-  });
-  setTimeout(() => {
-    const pane = document.querySelector('.zone-content:not([hidden]) .subtab-pane[data-sub="curiosidades"]')
-      || document.querySelector('.subtab-pane[data-sub="curiosidades"]');
-    if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 200);
+    if (btn) btn.classList.add('active');
+    pane.classList.add('active');
+  }
+  setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 200);
 }
 openCuriosidadesFromHash();
 

@@ -565,9 +565,10 @@ def render_improvements_section(zone_name):
   {grid}
 </div>""")
 
-    intro = """
+    title = "💰 Mejoras para el jardín" if zone_name == "todo" else "💰 Mejoras para esta zona"
+    intro = f"""
 <div class="ideas-intro">
-  <h3>💰 Mejoras para esta zona</h3>
+  <h3>{title}</h3>
   <p>Inversiones (o trabajo gratis) para subir un escalón el jardín — agrupado por presupuesto. Empezá por lo gratis y subí si tiene sentido.</p>
 </div>"""
     return f'<div class="ideas-section">{intro}{"".join(blocks)}</div>'
@@ -647,19 +648,16 @@ def render_collapsible_grid(card_htmls, grid_class, visible_count=2, label="ver 
 # Build de cada zona (Todo / Frente / Fondo)
 # ============================================================
 def build_zone(zone_name, zone_label, plants_in_view, img_data):
-    """plants_in_view: lista de plantas a mostrar (frente, fondo, todas o interior).
-    Las "Ideas" viven en docs/ideas.html (página separada)."""
+    """plants_in_view: lista de plantas a mostrar (frente, fondo o interior).
+    Subtabs: Info + Calendario. Curiosidades vive en Ideas → Experiencias y
+    Mejoras en Ideas → Mejoras (páginas separadas)."""
     info_cards = "\n".join(render_plant_info_card(p, img_data) for p in plants_in_view)
     cal_grid = render_calendar_grid(plants_in_view)
-    improvements_html = render_improvements_section(zone_name)
-    curiosidades_html = render_curiosidades_section(plants_in_view, img_data)
 
     return f"""
 <section class="zone-content" data-zone="{zone_name}">
   <nav class="subtab-nav">
     <button class="subtab-btn active" data-sub="info">🪴 Info</button>
-    <button class="subtab-btn" data-sub="curiosidades">💡 Curiosidades</button>
-    <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
     <button class="subtab-btn" data-sub="cal">📅 Calendario</button>
   </nav>
 
@@ -683,16 +681,6 @@ def build_zone(zone_name, zone_label, plants_in_view, img_data):
       <button class="ftag" data-filter="pendiente">⏳ Pendientes</button>
     </div>
     <div class="cards-grid">{info_cards}</div>
-  </div>
-
-  <div class="subtab-pane" data-sub="curiosidades">
-    <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar curiosidad..."></div>
-    {curiosidades_html}
-  </div>
-
-  <div class="subtab-pane" data-sub="improvements">
-    <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar mejora..."></div>
-    {improvements_html}
   </div>
 
   <div class="subtab-pane" data-sub="cal">
@@ -1295,12 +1283,12 @@ HEAD_META = """<meta charset="UTF-8">
 
 def _render_top_nav(active_page: str, ticker_html_inner: str = "", ticker_aria: str = "") -> str:
     """Renderiza el header + weather line + ticker + nav cross-page.
-    active_page ∈ {"home","biblioteca","tareas","ideas"}.
-    - "home": pantalla mínima — hero con dos acciones grandes (Biblioteca / Ideas).
-    - "biblioteca": strip cross-page + las 4 tabs de zona (Todo/Frente/Fondo/Interior).
-    - "tareas"/"ideas": strip cross-page simple. Tareas no se linkea desde ninguna
-      otra página (se llega por notificación push); sólo aparece como indicador
-      activo estando en tareas.html.
+    active_page ∈ {"home","tareas","ideas"}.
+    - "home": la Biblioteca de especies ES la home — strip cross-page + las
+      tabs de zona (Frente/Fondo/Interior; cada planta se ve según ubicación).
+    - "tareas"/"ideas": strip cross-page simple. Tareas no se linkea desde
+      ninguna otra página (se llega por notificación push); sólo aparece como
+      indicador activo estando en tareas.html.
     """
     header = """<header class="main-header">
     <h1 class="brand"><img class="brand-logo" src="icon-96.png" alt="" width="40" height="40"> Jardineando</h1>
@@ -1318,44 +1306,21 @@ def _render_top_nav(active_page: str, ticker_html_inner: str = "", ticker_aria: 
     <div class="ticker-track">{ticker_html_inner}{ticker_html_inner}</div>
   </div>""" if ticker_html_inner else ""
 
-    if active_page == "home":
-        n_species = len(PLANTS)
-        nav_block = f"""<nav class="home-hero">
-    <a class="home-hero-card" href="biblioteca.html">
-      <span class="home-hero-emoji" aria-hidden="true">📚</span>
-      <span class="home-hero-text">
-        <span class="home-hero-title">Biblioteca</span>
-        <span class="home-hero-desc">Las {n_species} especies del jardín — fichas, curiosidades, mejoras y calendario.</span>
-      </span>
-      <span class="home-hero-go" aria-hidden="true">→</span>
-    </a>
-    <a class="home-hero-card" href="ideas.html">
-      <span class="home-hero-emoji" aria-hidden="true">💡</span>
-      <span class="home-hero-text">
-        <span class="home-hero-title">Ideas</span>
-        <span class="home-hero-desc">Plantas para sumar, huerta, espacios verdes y experiencias.</span>
-      </span>
-      <span class="home-hero-go" aria-hidden="true">→</span>
-    </a>
-  </nav>"""
-    else:
-        biblio_active = " active" if active_page == "biblioteca" else ""
-        ideas_active = " active" if active_page == "ideas" else ""
-        tareas_link = (
-            '\n    <a class="todo-btn active" href="tareas.html"><span aria-hidden="true">📋</span> Tareas '
-            '<span class="todo-label" id="todo-count">…</span></a>'
-            if active_page == "tareas" else ""
-        )
-        zone_tabs = """
+    home_active = " active" if active_page == "home" else ""
+    ideas_active = " active" if active_page == "ideas" else ""
+    tareas_link = (
+        '\n    <a class="todo-btn active" href="tareas.html"><span aria-hidden="true">📋</span> Tareas '
+        '<span class="todo-label" id="todo-count">…</span></a>'
+        if active_page == "tareas" else ""
+    )
+    zone_tabs = """
   <nav class="main-tabs">
-    <button class="tab-btn active" data-zone="todo"><span class="tab-emoji">🏡</span><span class="tab-label">Todo</span></button>
-    <button class="tab-btn" data-zone="frente"><span class="tab-emoji">🌳</span><span class="tab-label">Frente</span></button>
+    <button class="tab-btn active" data-zone="frente"><span class="tab-emoji">🌳</span><span class="tab-label">Frente</span></button>
     <button class="tab-btn" data-zone="fondo"><span class="tab-emoji">🏊</span><span class="tab-label">Fondo</span></button>
     <button class="tab-btn" data-zone="interior"><span class="tab-emoji">🪴</span><span class="tab-label">Interior</span></button>
-  </nav>""" if active_page == "biblioteca" else ""
-        nav_block = f"""<div class="todo-strip cross-page-strip">
-    <a class="todo-btn" href="index.html"><span aria-hidden="true">🏡</span> Home</a>
-    <a class="todo-btn{biblio_active}" href="biblioteca.html"><span aria-hidden="true">📚</span> Biblioteca</a>
+  </nav>""" if active_page == "home" else ""
+    nav_block = f"""<div class="todo-strip cross-page-strip">
+    <a class="todo-btn{home_active}" href="index.html"><span aria-hidden="true">🏡</span> Home</a>
     <a class="todo-btn{ideas_active}" href="ideas.html"><span aria-hidden="true">💡</span> Ideas</a>{tareas_link}
   </div>{zone_tabs}"""
 
@@ -1397,10 +1362,16 @@ def _page_shell(*, title: str, description: str, og_image: str = "og-image.png",
 </html>"""
 
 
-def build_ideas_html(ticker_html_inner: str = "", ticker_aria: str = "",
+def build_ideas_html(img_data, timeline_modals: str = "",
+                     ticker_html_inner: str = "", ticker_aria: str = "",
+                     tasks_js: str = "", plants_info_js: str = "",
+                     contacts_js: str = "", templates_js: str = "",
                      ticker_js: str = "", site_url_js: str = "") -> str:
-    """Página standalone con todas las ideas y la huerta. Subtabs internos:
-    Ornamentales / Huerta / Espacios verdes."""
+    """Página standalone con todas las ideas y la huerta. Subtabs internos
+    (en 2 filas): Ornamentales / Huerta / Espacios verdes / Experiencias /
+    Mejoras. Las Curiosidades del catálogo viven dentro de Experiencias, y
+    como sus cards abren el modal de especie, la página necesita los modales
+    (timeline_modals) + los globals reales (TASKS/PLANTS_INFO/etc.)."""
     top_nav = _render_top_nav("ideas", ticker_html_inner, ticker_aria)
 
     # Combinar ornamentales de las dos zonas (frente + fondo)
@@ -1474,15 +1445,21 @@ def build_ideas_html(ticker_html_inner: str = "", ticker_aria: str = "",
   {highlights_grid}
 </div>"""
 
+    # Curiosidades — feed de fun facts de todas las especies del catálogo.
+    # Vive dentro del subtab Experiencias (es una experiencia más).
+    curiosidades_html = render_curiosidades_section(PLANTS, img_data)
+    improvements_html = render_improvements_section("todo")
+
     body = f"""{top_nav}
 
 <div class="container container-zones">
   <section class="zone-content active" data-zone="ideas">
-    <nav class="subtab-nav">
+    <nav class="subtab-nav subtab-nav-2rows">
       <button class="subtab-btn active" data-sub="ornament">🌸 Ornamentales</button>
       <button class="subtab-btn" data-sub="huerta">🥬 Huerta</button>
-      <button class="subtab-btn" data-sub="espacios">🏡 Espacios verdes</button>
+      <button class="subtab-btn" data-sub="espacios">🏡 Espacios</button>
       <button class="subtab-btn" data-sub="experiencias">✨ Experiencias</button>
+      <button class="subtab-btn" data-sub="improvements">💰 Mejoras</button>
     </nav>
 
     <div class="subtab-pane active" data-sub="ornament">
@@ -1526,20 +1503,30 @@ def build_ideas_html(ticker_html_inner: str = "", ticker_aria: str = "",
         </div>
         {experiences_html}
       </div>
+      <div class="ideas-section" id="curiosidades-section">
+        <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar curiosidad..."></div>
+        {curiosidades_html}
+      </div>
+    </div>
+
+    <div class="subtab-pane" data-sub="improvements">
+      <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar mejora..."></div>
+      {improvements_html}
     </div>
   </section>
 </div>
 
 <div class="lightbox" id="lightbox">
   <img id="lightbox-img" alt="">
-</div>"""
+</div>
 
-    # Stubs para evitar ReferenceError en handlers que esperan TASKS/PLANTS_INFO/etc.
+{timeline_modals}"""
+
     page_globals = "\n".join([
-        "const TASKS = [];",
-        "const PLANTS_INFO = [];",
-        "const DEFAULT_CONTACTS = [];",
-        "const WHATSAPP_TEMPLATES = {};",
+        tasks_js or "const TASKS = [];",
+        plants_info_js or "const PLANTS_INFO = [];",
+        contacts_js or "const DEFAULT_CONTACTS = [];",
+        templates_js or "const WHATSAPP_TEMPLATES = {};",
         ticker_js or "const STATS_TICKER = [];",
         site_url_js or 'const SITE_URL = "";',
     ])
@@ -1601,49 +1588,23 @@ def build_tareas_html(tasks, img_data, ticker_html_inner: str = "", ticker_aria:
     )
 
 
-def build_biblioteca_html(zone_htmls: dict, timeline_modals: str,
-                          ticker_html_inner: str = "", ticker_aria: str = "",
-                          tasks_js: str = "", plants_info_js: str = "",
-                          contacts_js: str = "", templates_js: str = "",
-                          ticker_js: str = "", site_url_js: str = "") -> str:
-    """Página Biblioteca de especies — el catálogo completo que antes vivía en
-    la home: tabs de zona (Todo/Frente/Fondo/Interior) + subtabs Info /
-    Curiosidades / Mejoras / Calendario. Necesita los modales de especie
-    (detalle, subir foto, settings) que vienen en timeline_modals."""
-    top_nav = _render_top_nav("biblioteca", ticker_html_inner, ticker_aria)
-
-    body = f"""{top_nav}
-
-<div class="container container-zones">
-  {zone_htmls["todo"].replace('class="zone-content"', 'class="zone-content active"', 1)}
-  {zone_htmls["frente"]}
-  {zone_htmls["fondo"]}
-  {zone_htmls["interior"]}
-</div>
-
-<div class="lightbox" id="lightbox">
-  <img id="lightbox-img" alt="">
-</div>
-
-{timeline_modals}"""
-
-    page_globals = "\n".join([
-        tasks_js or "const TASKS = [];",
-        plants_info_js or "const PLANTS_INFO = [];",
-        contacts_js or "const DEFAULT_CONTACTS = [];",
-        templates_js or "const WHATSAPP_TEMPLATES = {};",
-        ticker_js or "const STATS_TICKER = [];",
-        site_url_js or 'const SITE_URL = "";',
-    ])
-
-    return _page_shell(
-        title="Biblioteca · Jardineando",
-        description="Biblioteca de especies del jardín Pacha Mama (Montevideo): fichas, curiosidades, mejoras y calendario anual.",
-        og_image="og-image.png",
-        body_class="zone-todo",
-        body_html=body,
-        page_globals_js=page_globals,
-    )
+def build_biblioteca_redirect() -> str:
+    """Stub de redirect: la Biblioteca ES la home (index.html). Este archivo
+    existe sólo para que no se rompan links viejos a biblioteca.html (JS
+    cacheado, notificaciones ya enviadas). Preserva el hash."""
+    return """<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Biblioteca · Jardineando</title>
+<meta http-equiv="refresh" content="0; url=index.html">
+<link rel="canonical" href="index.html">
+</head>
+<body>
+<p>La Biblioteca ahora es la página principal. <a href="index.html">Ir a la Biblioteca</a></p>
+<script>window.location.replace('index.html' + window.location.hash);</script>
+</body>
+</html>"""
 
 
 # ============================================================
@@ -1738,12 +1699,11 @@ def main():
         for (e, c, l) in ticker_raw if c > 0
     ]
 
-    # 4. Build zonas
+    # 4. Build zonas — cada planta se ve según su ubicación (sin vista "Todo")
     frente_plants = [p for p in PLANTS if p["zone"] == "frente"]
     fondo_plants = [p for p in PLANTS if p["zone"] == "fondo"]
     interior_plants = [p for p in PLANTS if p["zone"] == "interior"]
 
-    todo_html = build_zone("todo", "Todo el jardín", PLANTS, img_data=img_data)
     frente_html = build_zone("frente", "Frente", frente_plants, img_data=img_data)
     fondo_html = build_zone("fondo", "Fondo", fondo_plants, img_data=img_data)
     interior_html = build_zone("interior", "Interior", interior_plants, img_data=img_data)
@@ -1801,33 +1761,37 @@ def main():
     )
     site_url_js = "const SITE_URL = " + json.dumps(SITE_URL if SITE_URL and "YOUR-USERNAME" not in SITE_URL else "") + ";"
 
-    # 6. HTML final — home minimalista: header + clima + dos acciones
-    # principales (Biblioteca / Ideas). El catálogo vive en biblioteca.html,
-    # las tareas se comunican por push (tareas.html se llega por deep link).
-    # Sin ticker acá — vive en biblioteca (son stats del catálogo).
-    top_nav = _render_top_nav("home")
+    # 6. HTML final — la home ES la Biblioteca de especies: tabs de zona
+    # (Frente/Fondo/Interior) + subtabs Info/Calendario. Las tareas se
+    # comunican por push (tareas.html se llega por deep link). Necesita los
+    # modales que vienen como cola de build_timeline_view (species-detail,
+    # species-photo, settings, etc.) para el modal de planta. Extraemos sólo eso.
+    full_timeline_html = build_timeline_view(tasks, img_data)
+    timeline_modals = full_timeline_html.split('</section>', 1)[1]
+    top_nav = _render_top_nav("home", ticker_html_inner, ticker_aria)
     home_body = f"""{top_nav}
+
+<div class="container container-zones">
+  {frente_html.replace('class="zone-content"', 'class="zone-content active"', 1)}
+  {fondo_html}
+  {interior_html}
+</div>
 
 <div class="lightbox" id="lightbox">
   <img id="lightbox-img" alt="">
-</div>"""
+</div>
 
-    home_globals = "\n".join([
-        "const TASKS = [];",
-        "const PLANTS_INFO = [];",
-        "const DEFAULT_CONTACTS = [];",
-        "const WHATSAPP_TEMPLATES = {};",
-        "const STATS_TICKER = [];",
-        site_url_js,
-    ])
+{timeline_modals}"""
+
+    page_globals = "\n".join([tasks_js, plants_info_js, contacts_js, templates_js, ticker_js, site_url_js])
 
     html_doc = _page_shell(
         title="Jardineando · Pacha Mama",
-        description=f"El jardín Pacha Mama (Montevideo): biblioteca de {total_plants} especies e ideas para seguir sumando verde.",
+        description=f"Biblioteca de especies del jardín Pacha Mama (Montevideo): {total_plants} plantas por ubicación, fichas y calendario anual.",
         og_image="og-image.png",
-        body_class="zone-home",
+        body_class="zone-frente",
         body_html=home_body,
-        page_globals_js=home_globals,
+        page_globals_js=page_globals,
     )
 
     OUTPUT.write_text(html_doc, encoding="utf-8")
@@ -1835,33 +1799,21 @@ def main():
     print(f"\n✅ Generado: {OUTPUT}")
     print(f"   {size_mb:.1f} MB · {total_plants} plantas · {len(tasks)} tareas")
 
-    # 6.5 Generar docs/biblioteca.html — el catálogo completo de especies.
-    # Necesita los modales que vienen como cola de build_timeline_view
-    # (species-detail, species-photo, settings, etc.) para que el modal de
-    # planta se abra al clickear cards. Extraemos sólo eso.
-    full_timeline_html = build_timeline_view(tasks, img_data)
-    timeline_modals = full_timeline_html.split('</section>', 1)[1]
-    biblioteca_html_doc = build_biblioteca_html(
-        {"todo": todo_html, "frente": frente_html, "fondo": fondo_html, "interior": interior_html},
-        timeline_modals,
+    # 6.5 biblioteca.html — redirect stub a index.html (links viejos)
+    biblioteca_out = ROOT / "docs" / "biblioteca.html"
+    biblioteca_out.write_text(build_biblioteca_redirect(), encoding="utf-8")
+    print(f"✅ Generado: {biblioteca_out} (redirect a index.html)")
+
+    # 7. Generar docs/ideas.html
+    ideas_html_doc = build_ideas_html(
+        img_data,
+        timeline_modals=timeline_modals,
         ticker_html_inner=ticker_html_inner,
         ticker_aria=ticker_aria,
         tasks_js=tasks_js,
         plants_info_js=plants_info_js,
         contacts_js=contacts_js,
         templates_js=templates_js,
-        ticker_js=ticker_js,
-        site_url_js=site_url_js,
-    )
-    biblioteca_out = ROOT / "docs" / "biblioteca.html"
-    biblioteca_out.write_text(biblioteca_html_doc, encoding="utf-8")
-    print(f"✅ Generado: {biblioteca_out}")
-    print(f"   {biblioteca_out.stat().st_size/1024:.0f} KB")
-
-    # 7. Generar docs/ideas.html
-    ideas_html_doc = build_ideas_html(
-        ticker_html_inner=ticker_html_inner,
-        ticker_aria=ticker_aria,
         ticker_js=ticker_js,
         site_url_js=site_url_js,
     )

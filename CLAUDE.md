@@ -2,9 +2,9 @@
 
 ## Qué es esto
 
-Sitio estático de un jardín casero en Montevideo, Uruguay. La **Home** (`docs/index.html`) es una pantalla mínima con dos acciones: **Biblioteca** e **Ideas**. Páginas:
-- **Biblioteca** (`docs/biblioteca.html`) — el catálogo de especies, filtrable por Todo / Frente / Fondo / Interior, con subtabs Info / Curiosidades / Mejoras / Calendario anual
-- **Ideas** (`docs/ideas.html`) — plantas nuevas, huerta, espacios verdes, experiencias
+Sitio estático de un jardín casero en Montevideo, Uruguay. Páginas:
+- **Home = Biblioteca** (`docs/index.html`) — la Biblioteca de especies ES la pantalla de inicio: tabs por ubicación Frente / Fondo / Interior (sin vista "Todo"), subtabs Info / Calendario anual. `docs/biblioteca.html` es solo un stub de redirect a index.html para links viejos
+- **Ideas** (`docs/ideas.html`) — subtabs en 2 filas: Ornamentales / Huerta / Espacios / Experiencias / Mejoras. Las **Curiosidades** del catálogo viven dentro de Experiencias (`#curiosidades-section`, deep link `ideas.html#curiosidades`) y las **Mejoras** son un subtab propio
 - **Tareas** (`docs/tareas.html`) — **Timeline de tareas** estilo Tinder con WhatsApp pre-armado por contacto. NO se linkea desde la Home: las tareas se comunican por **notificación push** (recordatorio diario / resumen semanal, ver `tools/gen_task_reminders.py`) y se llega por deep link
 
 ## Orientación del jardín (datos físicos clave)
@@ -43,10 +43,10 @@ data_plants.py + data_ideas.py
           genera HTML con CSS de styles.py y JS de scripts.py,
           inyecta TASKS y DEFAULT_CONTACTS como JSON globales)
        ↓
-docs/index.html      ← Home mínima (Biblioteca / Ideas)
-docs/biblioteca.html ← catálogo de especies (zonas + subtabs)
+docs/index.html      ← Home = Biblioteca de especies (Frente/Fondo/Interior + Info/Calendario)
+docs/biblioteca.html ← stub de redirect a index.html (links viejos)
 docs/tareas.html     ← Timeline de tareas (se llega por push deep link)
-docs/ideas.html      ← ideas + huerta + experiencias
+docs/ideas.html      ← ideas + huerta + espacios + experiencias (con curiosidades) + mejoras
 ```
 
 ### Archivos clave

@@ -488,57 +488,6 @@ h2.subbrand {
   font-feature-settings: 'tnum';
 }
 
-/* HOME HERO — las dos acciones principales de la home (Biblioteca / Ideas) */
-.home-hero {
-  display: grid;
-  gap: 14px;
-  margin: 22px 0 34px;
-  padding: 2px 4px;
-}
-.home-hero-card {
-  display: flex; align-items: center; gap: 16px;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--r-lg, 18px);
-  padding: 22px 20px;
-  text-decoration: none;
-  color: var(--text);
-  box-shadow: 0 2px 10px rgba(45, 80, 22, 0.08);
-  transition: background var(--t), border-color var(--t), transform 150ms, box-shadow var(--t);
-}
-.home-hero-card:hover {
-  background: rgba(255, 255, 255, 0.98);
-  border-color: var(--text-3);
-  box-shadow: 0 4px 18px rgba(45, 80, 22, 0.14);
-}
-.home-hero-card:active { transform: scale(0.985); }
-.home-hero-emoji {
-  font-size: 2.2rem;
-  line-height: 1;
-  flex: 0 0 auto;
-}
-.home-hero-text {
-  display: flex; flex-direction: column; gap: 4px;
-  min-width: 0; flex: 1 1 auto;
-}
-.home-hero-title {
-  font-size: 1.25rem; font-weight: 800;
-  letter-spacing: -0.01em;
-}
-.home-hero-desc {
-  font-size: 0.88rem;
-  color: var(--text-2);
-  line-height: 1.4;
-}
-.home-hero-go {
-  font-size: 1.4rem;
-  color: var(--text-3);
-  flex: 0 0 auto;
-}
-@media (min-width: 700px) {
-  .home-hero { gap: 18px; margin-top: 30px; }
-  .home-hero-card { padding: 28px 26px; }
-}
 
 /* container que envuelve las zonas — sticky main-tabs + subtab-nav siguen pegados */
 .container-zones {
@@ -575,6 +524,17 @@ h2.subbrand {
     0 1px 2px rgba(0, 0, 0, 0.06),
     0 2px 4px rgba(0, 0, 0, 0.06);
 }
+
+/* SUBTAB NAV en 2 filas (Ideas: 5 subtabs) — 3 arriba, 2 abajo, ambas
+   filas a todo el ancho (grid de 6 columnas: 2+2+2 / 3+3). */
+.subtab-nav-2rows {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+}
+.subtab-nav-2rows .subtab-btn { grid-column: span 2; padding: 9px 4px; }
+.subtab-nav-2rows .subtab-btn:nth-child(4),
+.subtab-nav-2rows .subtab-btn:nth-child(5) { grid-column: span 3; }
 
 /* PANES */
 .zone-content { display: none; }
@@ -3107,7 +3067,6 @@ h2.subbrand {
 
   <div class="todo-strip cross-page-strip">
     <a class="todo-btn" href="index.html"><span aria-hidden="true">🏡</span> Home</a>
-    <a class="todo-btn" href="biblioteca.html"><span aria-hidden="true">📚</span> Biblioteca</a>
     <a class="todo-btn" href="ideas.html"><span aria-hidden="true">💡</span> Ideas</a>
     <a class="todo-btn active" href="tareas.html"><span aria-hidden="true">📋</span> Tareas <span class="todo-label" id="todo-count">…</span></a>
   </div>
@@ -4644,8 +4603,8 @@ function openTaskFromHash() {
 openTaskFromHash();
 
 // Si la URL trae #especie=CODE (viene de una landing de engagement), abrir la
-// ficha de esa especie. Si la página no tiene el catálogo (home, ideas,
-// tareas — o links viejos a index.html), redirige a biblioteca.html.
+// ficha de esa especie. Si la página no tiene el catálogo, redirige a la home
+// (index.html = la Biblioteca).
 function openSpeciesFromHash() {
   const m = (window.location.hash || '').match(/^#especie=(.+)$/);
   if (!m) return;
@@ -4654,36 +4613,33 @@ function openSpeciesFromHash() {
     if (typeof openSpeciesDetailModal === 'function') {
       setTimeout(() => openSpeciesDetailModal(code), 180);
     }
-  } else if (!/biblioteca\.html$/.test(window.location.pathname)) {
-    window.location.replace('biblioteca.html' + window.location.hash);
+  } else if (!/index\.html$|\/$/.test(window.location.pathname)) {
+    window.location.replace('index.html' + window.location.hash);
   }
 }
 openSpeciesFromHash();
 
-// Si la URL trae #curiosidades (viene de un push que promociona la sección
-// nueva de Curiosidades), abrir esa sub-tab en la zona visible y scrollear.
-// Si la página no tiene el catálogo, redirige a biblioteca.html.
+// Si la URL trae #curiosidades (viene de un push que promociona la sección),
+// abrir el feed de curiosidades, que vive en Ideas → Experiencias. Si la
+// página no lo tiene, redirige a ideas.html.
 function openCuriosidadesFromHash() {
   if (!/^#curiosidades$/.test(window.location.hash || '')) return;
-  if (!document.querySelector('.subtab-btn[data-sub="curiosidades"]')) {
-    if (/biblioteca\.html$/.test(window.location.pathname)) return;
-    window.location.replace('biblioteca.html' + window.location.hash);
+  const section = document.getElementById('curiosidades-section');
+  if (!section) {
+    if (/ideas\.html$/.test(window.location.pathname)) return;
+    window.location.replace('ideas.html' + window.location.hash);
     return;
   }
-  document.querySelectorAll('.zone-content').forEach(zoneEl => {
-    const btn = zoneEl.querySelector('.subtab-btn[data-sub="curiosidades"]');
-    if (!btn) return;
+  const zoneEl = section.closest('.zone-content');
+  const pane = section.closest('.subtab-pane');
+  if (zoneEl && pane) {
+    const btn = zoneEl.querySelector(`.subtab-btn[data-sub="${pane.dataset.sub}"]`);
     zoneEl.querySelectorAll('.subtab-btn').forEach(b => b.classList.remove('active'));
     zoneEl.querySelectorAll('.subtab-pane').forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    const pane = zoneEl.querySelector('.subtab-pane[data-sub="curiosidades"]');
-    if (pane) pane.classList.add('active');
-  });
-  setTimeout(() => {
-    const pane = document.querySelector('.zone-content:not([hidden]) .subtab-pane[data-sub="curiosidades"]')
-      || document.querySelector('.subtab-pane[data-sub="curiosidades"]');
-    if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 200);
+    if (btn) btn.classList.add('active');
+    pane.classList.add('active');
+  }
+  setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 200);
 }
 openCuriosidadesFromHash();
 
