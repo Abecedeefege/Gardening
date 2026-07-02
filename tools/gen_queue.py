@@ -58,8 +58,8 @@ def build_formats():
     # (regla de no-supervivencia) y con CERO engagement — sus 4 promotores (x04/x09/x14/x19)
     # nunca se abrieron, sepultados en el volumen de 20 pushes/día. Mismo modo de falla que
     # el mazo: nunca tuvo un test limpio. Página eliminada del repo.
-    # 💡 Feed de curiosidades (sección fija, lo que más enganchó)
-    F["curio"] = [(SITE + "index.html#curiosidades",
+    # 💡 Feed de curiosidades (sección fija, lo que más enganchó) — vive en Ideas → Experiencias
+    F["curio"] = [(SITE + "ideas.html#curiosidades",
         "\U0001F4A1 Curiosidades de tus plantas", "El feed de historias verificadas de tus 52 plantas.")]
     # 🌍 La vuelta al mundo (NUEVO 15/06) — scrollytelling del origen de tus plantas
     F["mundo"] = [(E("mundo-jardin.html"),
