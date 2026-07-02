@@ -1,44 +1,44 @@
 {
-  "_updated_at": "2026-07-01T22:39:42.851Z",
+  "_updated_at": "2026-07-02T09:10:00-03:00",
   "notifications": [
     {
-      "id": "2026-07-01-a",
-      "title": "🔮 El horóscopo de tus plantas",
-      "body": "Cada planta del jardín tiene su signo y su lectura de hoy. ¿Cuál sos vos? Entrá a leerte.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-01-horoscopo-jardin.html",
+      "id": "2026-07-02-a",
+      "title": "🎤 Tus plantas tienen algo que confesar",
+      "body": "Once confesiones en primera persona: la que es un clon, la que puede dejarte sin voz, la impostora. Pasá.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-02-confesiones-jardin.html",
       "format": "experiencia",
-      "send_at": "2026-07-01T08:30:00-03:00",
-      "expires_at": "2026-07-01T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-01T12:32:39.464Z",
+      "send_at": "2026-07-02T08:30:00-03:00",
+      "expires_at": "2026-07-02T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-01 (ciclo 32)"
+      "created_by": "engagement-agent 2026-07-02 (ciclo 33)"
     },
     {
-      "id": "2026-07-01-b",
-      "title": "💌 Tu jardín abrió consultorio",
-      "body": "11 plantas te dan un consejo de vida, cada uno con un dato real detrás. Pasá por la columna del día.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-01-consultorio-jardin.html",
+      "id": "2026-07-02-b",
+      "title": "💘 ¿Quién ama a quién en tu cantero?",
+      "body": "El tabloide rosa del jardín: el romero fiel, la gardenia femme fatale, el fresno que busca pareja. Entrá.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-02-amores-cantero.html",
       "format": "experiencia",
-      "send_at": "2026-07-01T13:00:00-03:00",
-      "expires_at": "2026-07-01T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-01T17:30:49.715Z",
+      "send_at": "2026-07-02T13:00:00-03:00",
+      "expires_at": "2026-07-02T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-01 (ciclo 32)"
+      "created_by": "engagement-agent 2026-07-02 (ciclo 33)"
     },
     {
-      "id": "2026-07-01-c",
-      "title": "💚 Color en pleno invierno",
-      "body": "El evónimo B-44 da color cuando casi todo está apagado. Los romanos lo ataban a los velos de novia.",
+      "id": "2026-07-02-c",
+      "title": "🍊 Fruta de dioses en pleno invierno",
+      "body": "El caqui B-41 da fruta ahora, en julio. Diospyros = 'fruto de los dioses'; en Japón hay caquis de 600 años.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-07-01T19:30:00-03:00",
-      "expires_at": "2026-07-01T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-01T22:39:42.850Z",
+      "send_at": "2026-07-02T19:30:00-03:00",
+      "expires_at": "2026-07-02T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-01 (ciclo 32)"
+      "created_by": "engagement-agent 2026-07-02 (ciclo 33)"
     }
   ]
 }

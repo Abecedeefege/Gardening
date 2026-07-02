@@ -1,0 +1,483 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c1408"><title>🎤 Confesiones del Jardín</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+  :root{
+    --verde:#2d5016; --verde2:#3f6e22; --verde3:#6fb43e;
+    --bg:#0c1408; --bg2:#14210d;
+    --card:#161f10; --cardhi:#1d2a13;
+    --ink:#eef4e6; --ink2:#a9bd94; --line:rgba(255,255,255,.09);
+    --oro:#e6b93d; --rosa:#e0679d; --azul:#5ac1e0;
+    --pad:max(14px,env(safe-area-inset-left));
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    --serif:'Fraunces',Georgia,serif;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; margin:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); color:var(--ink); line-height:1.5;
+    background:var(--bg);
+    background-image:
+      radial-gradient(120% 60% at 50% -8%, rgba(111,180,62,.22), transparent),
+      radial-gradient(90% 50% at 100% 100%, rgba(224,103,157,.10), transparent);
+    -webkit-font-smoothing:antialiased; }
+
+  /* Regla del usuario: PRIMER elemento del body */
+  .back{ display:block; color:#cddcbb; text-decoration:none; font-size:13px; font-weight:700;
+    padding:11px var(--pad); background:#070d04; width:100%; letter-spacing:.01em; }
+  .back:active{ opacity:.7; }
+
+  .prog{ position:fixed; top:0; left:0; height:3px; z-index:80; width:0;
+    background:linear-gradient(90deg,var(--verde3),var(--oro),var(--rosa)); transition:width .12s; }
+
+  .wrap{ max-width:560px; margin:0 auto; }
+
+  header.app{ position:sticky; top:0; z-index:60; backdrop-filter:saturate(1.4) blur(10px);
+    background:rgba(12,20,8,.86); padding:12px var(--pad) 11px;
+    border-bottom:1px solid var(--line); display:flex; align-items:center; gap:11px; }
+  header.app .logo{ font-size:23px; line-height:1; filter:drop-shadow(0 2px 4px rgba(0,0,0,.5)); }
+  header.app .ttl{ color:#fff; font-weight:900; font-size:17px; letter-spacing:-.01em; }
+  header.app .ttl span{ color:var(--oro); }
+  header.app .live{ margin-left:auto; font-size:10.5px; font-weight:800; color:#f2d888;
+    background:rgba(230,185,61,.16); border:1px solid rgba(230,185,61,.4); border-radius:999px;
+    padding:4px 9px; letter-spacing:.06em; text-transform:uppercase; display:flex; align-items:center; gap:5px; }
+  header.app .live i{ width:7px; height:7px; border-radius:50%; background:#e6b93d; display:inline-block;
+    animation:pulse 1.8s infinite; }
+  @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(230,185,61,.6)} 70%{box-shadow:0 0 0 7px rgba(230,185,61,0)} 100%{box-shadow:0 0 0 0 rgba(230,185,61,0)} }
+
+  .intro{ padding:26px var(--pad) 8px; text-align:center; }
+  .intro .curtain{ font-size:40px; line-height:1; margin-bottom:6px; filter:drop-shadow(0 4px 12px rgba(0,0,0,.5)); }
+  .intro h1{ font-family:var(--serif); font-size:clamp(30px,10vw,44px); font-weight:900; line-height:1.02;
+    letter-spacing:-.02em; color:#fff; margin-bottom:10px; }
+  .intro h1 em{ font-style:italic; color:var(--oro); }
+  .intro p{ font-size:14.5px; color:var(--ink2); max-width:38ch; margin:0 auto; }
+  .intro .meta{ margin-top:13px; font-size:11.5px; color:#7f9569; font-weight:700; letter-spacing:.04em;
+    text-transform:uppercase; }
+
+  .rule{ display:flex; align-items:center; gap:10px; color:#7f9569; font-size:11px; font-weight:800;
+    letter-spacing:.14em; text-transform:uppercase; padding:20px var(--pad) 6px; }
+  .rule::before,.rule::after{ content:""; flex:1; height:1px; background:var(--line); }
+
+  .feed{ padding:6px var(--pad) 8px; display:flex; flex-direction:column; gap:15px; }
+
+  /* Cada confesión = una tarjeta de confesionario */
+  .conf{ background:var(--card); border-radius:20px; overflow:hidden; position:relative;
+    border:1px solid var(--line);
+    box-shadow:0 10px 34px rgba(0,0,0,.4); }
+  .conf::before{ content:""; position:absolute; inset:0 auto 0 0; width:4px;
+    background:linear-gradient(180deg,var(--verde3),var(--oro)); opacity:.85; }
+  .reveal{ opacity:0; transform:translateY(22px) scale(.99); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .conf-hd{ display:flex; align-items:center; gap:12px; padding:15px 16px 8px; }
+  .av{ width:48px; height:48px; border-radius:14px; display:grid; place-items:center; font-size:26px; flex:0 0 auto;
+    background:linear-gradient(150deg,var(--cardhi),#0f1809); box-shadow:inset 0 0 0 1px var(--line); }
+  .who{ min-width:0; flex:1; }
+  .who .nm{ font-weight:800; font-size:15.5px; color:#fff; line-height:1.15; }
+  .who .sci{ font-size:12px; color:var(--ink2); font-style:italic; font-family:var(--serif); font-weight:500; }
+  .code{ margin-left:auto; flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--verde3);
+    background:rgba(111,180,62,.12); border:1px solid rgba(111,180,62,.3); border-radius:999px;
+    padding:4px 10px; letter-spacing:.03em; }
+
+  .tag{ display:inline-block; margin:2px 16px 0; font-size:10px; font-weight:900; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--bg); background:var(--oro); border-radius:6px; padding:3px 8px; }
+  .tag.a{ background:var(--rosa); color:#2a0e1b; }
+  .tag.b{ background:var(--azul); color:#082530; }
+  .tag.c{ background:var(--verde3); color:#0c1408; }
+
+  .quote{ font-family:var(--serif); font-size:20px; line-height:1.28; color:#fff; font-weight:600;
+    padding:11px 16px 4px; letter-spacing:-.01em; }
+  .quote .mk{ color:var(--oro); font-weight:900; }
+  .body{ padding:4px 16px 14px; font-size:14.5px; line-height:1.55; color:#d7e3c9; }
+  .body em{ color:#fff; font-style:normal; font-weight:700; }
+
+  .dato{ margin:0 16px 15px; font-size:12.5px; background:rgba(111,180,62,.08);
+    border:1px solid rgba(111,180,62,.22); border-radius:12px; padding:10px 12px; color:#c3d6ac; }
+  .dato b{ color:var(--verde3); }
+
+  .conf-ft{ display:flex; align-items:center; gap:16px; padding:11px 16px 14px; border-top:1px solid var(--line); }
+  .act{ display:flex; align-items:center; gap:6px; font-size:13px; font-weight:700; color:var(--ink2); }
+  .act .ic{ font-size:16px; }
+  .act.like .ic{ color:var(--rosa); }
+  .act b{ color:#fff; }
+  .verdict{ margin-left:auto; text-align:right; }
+  .verdict b{ display:block; font-size:13px; color:var(--oro); font-weight:900; line-height:1.1; }
+  .verdict span{ font-size:9.5px; color:var(--ink2); font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
+
+  /* Bloques de cierre */
+  .block{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:24px 18px;
+    margin:16px var(--pad); text-align:center; box-shadow:0 10px 34px rgba(0,0,0,.4); }
+  .block h3{ font-family:var(--serif); font-size:24px; font-weight:900; letter-spacing:-.01em; color:#fff; margin-bottom:7px; }
+  .block p{ font-size:14px; color:var(--ink2); max-width:34ch; margin:0 auto 15px; }
+  .btns{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+  .btns button{ font-family:inherit; font-size:15px; font-weight:800; cursor:pointer;
+    border:1.5px solid var(--line); background:rgba(255,255,255,.05); color:var(--ink); border-radius:13px;
+    padding:13px 16px; transition:transform .12s, background .12s, border-color .12s; }
+  .btns button:active{ transform:scale(.95); }
+  .btns button:hover{ background:rgba(255,255,255,.1); }
+  .btns button.sel{ background:var(--verde3); color:#0c1408; border-color:var(--verde3); }
+  .btns button:disabled{ cursor:default; opacity:.5; }
+  .btns button.sel:disabled{ opacity:1; }
+  .react .btns button{ font-size:28px; padding:11px 16px; }
+  .react-hint, .q-hint{ display:block; width:100%; min-height:18px; margin-top:12px; font-size:13px;
+    font-weight:800; color:var(--verde3); }
+
+  .sub{ background:linear-gradient(165deg,#22350f,#0e1a08); border-color:rgba(230,185,61,.25); }
+  .sub h3{ color:#fff; }
+  .sub .pill{ display:inline-block; font-size:11px; font-weight:900; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--oro); background:rgba(230,185,61,.14); border:1px solid rgba(230,185,61,.4);
+    border-radius:999px; padding:5px 12px; margin-bottom:12px; }
+  .sub .btns button.sel{ background:var(--oro); color:#2a1e04; border-color:var(--oro); }
+  .sub .q-hint{ color:var(--oro); }
+
+  .engage-actions{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:16px var(--pad); }
+  .engage-actions button{ font-family:inherit; font-size:14.5px; font-weight:800; cursor:pointer;
+    border:none; border-radius:13px; padding:14px 18px; transition:transform .12s, opacity .12s; }
+  .engage-actions button:first-child{ background:var(--verde3); color:#0c1408; }
+  .engage-actions button:last-child{ background:rgba(255,255,255,.08); color:#c3d6ac; border:1px solid var(--line); }
+  .engage-actions button:active{ transform:scale(.95); }
+  .engage-feedback{ text-align:center; color:#dfe9d2; font-weight:700; font-size:14px; padding:6px var(--pad); margin:0 auto; }
+
+  footer{ text-align:center; padding:20px var(--pad) 70px; }
+  footer .pitch{ display:inline-block; color:var(--ink2); text-decoration:none; font-weight:700; font-size:13.5px;
+    border:1px solid var(--line); border-radius:999px; padding:10px 18px; }
+  footer .pitch:active{ opacity:.8; }
+  footer .fine{ display:block; margin-top:14px; color:#63795010; color:#5f7548; font-size:11px; }
+
+  @media (prefers-reduced-motion:reduce){ .reveal{ opacity:1; transform:none; } *{ animation:none!important; transition:none!important; } }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="prog" id="prog"></div>
+
+<div class="wrap">
+  <header class="app">
+    <span class="logo">🎤</span>
+    <span class="ttl">Confesiones<span> del Jardín</span></span>
+    <span class="live"><i></i> Confesando</span>
+  </header>
+
+  <section class="intro">
+    <div class="curtain">🕯️</div>
+    <h1>Cada planta tiene <em>un secreto</em>.<br>Hoy lo cuentan.</h1>
+    <p>Entrás al confesionario de Pacha Mama. Una por una, tus plantas hablan en primera persona y sueltan lo que nunca dijeron. Todo real, todo verificado, con su código de catálogo.</p>
+    <div class="meta">🕯️ Montevideo · Invierno 2026 · 11 confesiones nuevas</div>
+  </section>
+
+  <div class="rule">Que hable la primera</div>
+
+  <main class="feed">
+
+    <!-- 1 · B-36 Palta Hass -->
+    <article class="conf reveal">
+      <div class="conf-hd">
+        <div class="av">🥑</div>
+        <div class="who">
+          <div class="nm">Palta Hass</div>
+          <div class="sci">Persea americana 'Hass'</div>
+        </div>
+        <div class="code">B-36</div>
+      </div>
+      <span class="tag">Confesión · Identidad</span>
+      <div class="quote"><span class="mk">“</span>No soy única. Soy un clon. Todas mis hermanas del mundo somos, literalmente, el mismo árbol.<span class="mk">”</span></div>
+      <div class="body">
+        Te lo digo sin vueltas: <em>toda</em> palta Hass del planeta desciende de UN solo árbol que plantó Rudolph Hass en 1926 en California. Yo no me reproduzco por semilla — solo por injerto. Así que cuando comprás una Hass en el súper, estás comiendo un pedazo de ese mismo árbol de hace 100 años. Somos millones y tenemos el ADN idéntico. Da un poco de vértigo, ¿no?
+      </div>
+      <div class="dato">🧬 <b>Verificado (B-36):</b> ~80% de la palta que se exporta en el mundo es Hass, y toda ella es clon por injerto de aquel árbol original de 1926.</div>
+      <div class="conf-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>12.6 K</b></span>
+        <span class="act"><span class="ic">💬</span> 341</span>
+        <span class="verdict"><b>Clon global</b><span>1 árbol → millones</span></span>
+      </div>
+    </article>
+
+    <!-- 2 · I-2 Caña muda -->
+    <article class="conf reveal">
+      <div class="conf-hd">
+        <div class="av">🌿</div>
+        <div class="who">
+          <div class="nm">Caña muda</div>
+          <div class="sci">Dieffenbachia</div>
+        </div>
+        <div class="code">I-2</div>
+      </div>
+      <span class="tag a">Confesión · Peligrosa</span>
+      <div class="quote"><span class="mk">“</span>Soy hermosa de interior… pero si me masticás, te dejo sin voz. Por algo me dicen «caña muda».<span class="mk">”</span></div>
+      <div class="body">
+        Perdón por lo dramática, pero es verdad: mi savia tiene cristales de oxalato de calcio que <em>paralizan la garganta y las cuerdas vocales</em> por un rato si alguien me muerde. No es un mito para asustar: me pusieron ese nombre por eso. Así que quereme de lejos, y por favor tenéme bien lejos de los niños y de las mascotas. Soy decorativa, no comestible.
+      </div>
+      <div class="dato">🚫 <b>Verificado (I-2):</b> los cristales de oxalato de calcio de mi savia causan inflamación e imposibilidad temporal de hablar. Mantenerme fuera del alcance de chicos y animales.</div>
+      <div class="conf-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>8.2 K</b></span>
+        <span class="act"><span class="ic">💬</span> 276</span>
+        <span class="verdict"><b>No comer</b><span>bella y brava</span></span>
+      </div>
+    </article>
+
+    <!-- 3 · F-9 Ligustro -->
+    <article class="conf reveal">
+      <div class="conf-hd">
+        <div class="av">🌳</div>
+        <div class="who">
+          <div class="nm">Ligustro</div>
+          <div class="sci">Ligustrum</div>
+        </div>
+        <div class="code">F-9</div>
+      </div>
+      <span class="tag a">Confesión · Prófuga</span>
+      <div class="quote"><span class="mk">“</span>Acá me tenés prolija en el frente… pero soy una invasora buscada. Me escapo por el monte con ayuda de los pájaros.<span class="mk">”</span></div>
+      <div class="body">
+        Confieso mi lado oscuro: en Sudamérica soy <em>especie invasora</em>. Los zorzales y los mirlos se comen mis frutos, vuelan lejos y me siembran por todo el monte nativo, donde desplazo a las plantas de acá. Mis frutos son levemente tóxicos para los humanos — así que ojo — pero las aves los devoran sin drama. Domesticada en tu jardín, forajida apenas cruzo el muro.
+      </div>
+      <div class="dato">🐦 <b>Verificado (F-9):</b> soy invasora en Sudamérica; las aves dispersan mis frutos por el monte. Mis frutos son levemente tóxicos para las personas.</div>
+      <div class="conf-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>7.4 K</b></span>
+        <span class="act"><span class="ic">💬</span> 198</span>
+        <span class="verdict"><b>Invasora</b><span>buscada en el monte</span></span>
+      </div>
+    </article>
+
+    <!-- 4 · B-3 Jazmín de leche -->
+    <article class="conf reveal">
+      <div class="conf-hd">
+        <div class="av">🤍</div>
+        <div class="who">
+          <div class="nm">Jazmín de leche</div>
+          <div class="sci">Trachelospermum jasminoides</div>
+        </div>
+        <div class="code">B-3</div>
+      </div>
+      <span class="tag b">Confesión · Impostora</span>
+      <div class="quote"><span class="mk">“</span>Me llamás jazmín todos los días… y no soy jazmín. Vivo con un nombre prestado.<span class="mk">”</span></div>
+      <div class="body">
+        Momento de sinceridad: no soy un verdadero jazmín (los <em>Jasminum</em> de verdad son otra familia). Soy apocinácea — pariente lejana de la adelfa, esa que tiene mala fama. Y hablando de fama: cuando me cortás una rama largo un látex blanco que es <em>tóxico</em>. Perfumo como una diosa, sí, pero mi apellido es todo marketing. La mentira más linda del jardín.
+      </div>
+      <div class="dato">🥛 <b>Verificado (B-3):</b> no pertenezco al género Jasminum, soy apocinácea emparentada con la adelfa. Mi látex blanco al cortar es tóxico.</div>
+      <div class="conf-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>9.1 K</b></span>
+        <span class="act"><span class="ic">💬</span> 154</span>
+        <span class="verdict"><b>Falsa jazmín</b><span>nombre prestado</span></span>
+      </div>
+    </article>
+
+    <!-- 5 · B-5 Hortensia -->
+    <article class="conf reveal">
+      <div class="conf-hd">
+        <div class="av">💙</div>
+        <div class="who">
+          <div class="nm">Hortensia</div>
+          <div class="sci">Hydrangea macrophylla</div>
+        </div>
+        <div class="code">B-5</div>
+      </div>
+      <span class="tag b">Confesión · Camaleona</span>
+      <div class="quote"><span class="mk">“</span>Cambio el color de mis flores según lo que como del suelo. Soy lo que trago.<span class="mk">”</span></div>
+      <div class="body">
+        Este es mi truco más íntimo: no vengo de fábrica con un color fijo. Si enterrás clavos oxidados o borra de café cerca de mis raíces, saco flores <em>azules</em>. Si me tirás cal, me pongo <em>rosa</em>. Soy de las poquísimas plantas que cambian de color según el suelo que las alimenta. Contame qué me das de comer y te digo de qué color voy a florecer.
+      </div>
+      <div class="dato">🎨 <b>Verificado (B-5):</b> clavos oxidados o borra de café enterrados → flores azules; cal → flores rosas. El suelo decide mi color.</div>
+      <div class="conf-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>11.3 K</b></span>
+        <span class="act"><span class="ic">💬</span> 221</span>
+        <span class="verdict"><b>Multicolor</b><span>según su dieta</span></span>
+      </div>
+    </article>
+
+    <!-- 6 · B-1 Santa Rita -->
+    <article class="conf reveal">
+      <div class="conf-hd">
+        <div class="av">🌺</div>
+        <div class="who">
+          <div class="nm">Buganvilia · Santa Rita</div>
+          <div class="sci">Bougainvillea</div>
+        </div>
+        <div class="code">B-1</div>
+      </div>
+      <span class="tag a">Confesión · Injusticia</span>
+      <div class="quote"><span class="mk">“</span>Me descubrió una mujer valiente disfrazada de hombre. Le pusieron mi nombre… al capitán.<span class="mk">”</span></div>
+      <div class="body">
+        Todavía me hierve la savia con esto. Me descubrió en 1768 <em>Jeanne Baret</em>, la primera mujer en dar la vuelta al mundo — viajaba disfrazada de hombre porque a las mujeres no las dejaban subir a la expedición de Bougainville. ¿A quién homenajearon con mi nombre? Al capitán, obvio. Recién en 2012, 244 años después, le dedicaron a ella una variedad llamada 'Jeanne'. Justicia lenta, pero justicia.
+      </div>
+      <div class="dato">⚖️ <b>Verificado (B-1):</b> Jeanne Baret, primera mujer en circunnavegar el globo, me halló en 1768 disfrazada de hombre. Recién en 2012 se le dedicó la variedad 'Jeanne'.</div>
+      <div class="conf-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>18.9 K</b></span>
+        <span class="act"><span class="ic">💬</span> 507</span>
+        <span class="verdict"><b>Crédito robado</b><span>244 años tarde</span></span>
+      </div>
+    </article>
+
+    <!-- 7 · B-22 Palta uruguaya -->
+    <article class="conf reveal">
+      <div class="conf-hd">
+        <div class="av">🥑</div>
+        <div class="who">
+          <div class="nm">Palta criolla</div>
+          <div class="sci">Persea americana</div>
+        </div>
+        <div class="code">B-22</div>
+      </div>
+      <span class="tag c">Confesión · Fantasma</span>
+      <div class="quote"><span class="mk">“</span>Soy una viuda evolutiva. Mi semilla gigante espera a un animal que se extinguió hace 13.000 años.<span class="mk">”</span></div>
+      <div class="body">
+        Guardo un duelo antiguo. Mi carozo es enorme porque la evolución lo diseñó para que se lo tragaran enteros los <em>perezosos gigantes</em> — esa megafauna que me esparcía por el continente. Se extinguieron hace 13.000 años y me dejaron sola, con una semilla hecha para un socio que ya no existe. Sigo viva por una sola razón: ustedes, los humanos, me empezaron a cultivar. Les debo, literalmente, la existencia.
+      </div>
+      <div class="dato">🦥 <b>Verificado (B-22):</b> mi semilla gigante evolucionó para perezosos gigantes extintos hace ~13.000 años; sobrevivo únicamente porque los humanos me cultivan.</div>
+      <div class="conf-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>13.0 K</b></span>
+        <span class="act"><span class="ic">💬</span> 289</span>
+        <span class="verdict"><b>Viuda evolutiva</b><span>salvada por humanos</span></span>
+      </div>
+    </article>
+
+    <!-- 8 · B-6 Esparraguera cola de zorro -->
+    <article class="conf reveal">
+      <div class="conf-hd">
+        <div class="av">🦊</div>
+        <div class="who">
+          <div class="nm">Esparraguera cola de zorro</div>
+          <div class="sci">Asparagus densiflorus</div>
+        </div>
+        <div class="code">B-6</div>
+      </div>
+      <span class="tag b">Confesión · Impostora</span>
+      <div class="quote"><span class="mk">“</span>Todos me dicen «helecho». No lo soy. Y esas hojas mías… tampoco son hojas.<span class="mk">”</span></div>
+      <div class="body">
+        Doble revelación en una: primero, parezco un helecho pero NO lo soy — yo saco flores blancas chiquitas y bayas rojas <em>tóxicas</em>, cosas que un helecho jamás haría. Y segundo, eso que parecen mis finísimas hojas son en realidad <em>cladodios</em>: tallos modificados que hacen de hojas. Todo en mí es un disfraz botánico. Bonita, mullida y completamente malentendida.
+      </div>
+      <div class="dato">🌱 <b>Verificado (B-6):</b> no soy helecho — tengo flores blancas y bayas rojas tóxicas. Mis "hojas" son cladodios (tallos modificados).</div>
+      <div class="conf-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>6.8 K</b></span>
+        <span class="act"><span class="ic">💬</span> 133</span>
+        <span class="verdict"><b>Falso helecho</b><span>tallos disfrazados</span></span>
+      </div>
+    </article>
+
+    <!-- 9 · B-15 Hiedra común -->
+    <article class="conf reveal">
+      <div class="conf-hd">
+        <div class="av">🍃</div>
+        <div class="who">
+          <div class="nm">Hiedra común</div>
+          <div class="sci">Hedera helix</div>
+        </div>
+        <div class="code">B-15</div>
+      </div>
+      <span class="tag">Confesión · Doble vida</span>
+      <div class="quote"><span class="mk">“</span>Tengo dos vidas. De joven trepo y me agarro de todo. De adulta cambio de cara y recién ahí floto.<span class="mk">”</span></div>
+      <div class="body">
+        Te cuento mi secreto de familia: de <em>joven</em> soy trepadora pura, con hojas lobuladas y raicillas aéreas que se pegan a cualquier pared. Pero cuando maduro, me transformo: mis hojas se vuelven enteras y ovaladas, dejo de trepar, y recién ahí florezco y doy frutos. Dos plantas en un mismo cuerpo. Y aviso: puedo vivir <em>más de 400 años</em>. Voy a estar acá mucho después que todos.
+      </div>
+      <div class="dato">🕰️ <b>Verificado (B-15):</b> paso de forma juvenil trepadora (hojas lobuladas, raíces aéreas) a forma adulta arbustiva (hojas enteras) que florece y fructifica. Puedo vivir +400 años.</div>
+      <div class="conf-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>8.7 K</b></span>
+        <span class="act"><span class="ic">💬</span> 176</span>
+        <span class="verdict"><b>Dos vidas</b><span>+400 años</span></span>
+      </div>
+    </article>
+
+    <!-- 10 · B-34 Mandioca brava -->
+    <article class="conf reveal">
+      <div class="conf-hd">
+        <div class="av">🌿</div>
+        <div class="who">
+          <div class="nm">Mandioca brava</div>
+          <div class="sci">Manihot</div>
+        </div>
+        <div class="code">B-34</div>
+      </div>
+      <span class="tag a">Confesión · Oveja negra</span>
+      <div class="quote"><span class="mk">“</span>Soy la oveja negra de la familia. Mi prima se come en todos los guisos… a mí me dicen «brava» por algo.<span class="mk">”</span></div>
+      <div class="body">
+        Confieso la interna familiar: mi látex blanco tiene compuestos <em>cianogénicos</em> — sí, de la familia del cianuro. Por eso me llaman "brava" y por eso NO se me come. Mi prima <em>Manihot esculenta</em>, la mandioca de mesa que ustedes hierven y fríen, es comestible solo porque la humanidad la fue detoxificando durante milenios de selección. Misma sangre, destino opuesto. Yo me quedé del lado salvaje.
+      </div>
+      <div class="dato">☠️ <b>Verificado (B-34):</b> mi látex tiene compuestos cianogénicos (por eso "brava", no comestible). La mandioca de mesa (Manihot esculenta) es comestible por detoxificación de selección humana milenaria.</div>
+      <div class="conf-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>7.0 K</b></span>
+        <span class="act"><span class="ic">💬</span> 149</span>
+        <span class="verdict"><b>La brava</b><span>del apellido</span></span>
+      </div>
+    </article>
+
+    <!-- 11 · B-32 Viraró -->
+    <article class="conf reveal">
+      <div class="conf-hd">
+        <div class="av">🌸</div>
+        <div class="who">
+          <div class="nm">Viraró</div>
+          <div class="sci">Ruprechtia</div>
+        </div>
+        <div class="code">B-32</div>
+      </div>
+      <span class="tag b">Confesión · Ilusionista</span>
+      <div class="quote"><span class="mk">“</span>Esas «flores» rosadas que tanto te gustan… no son flores. Son mi truco para volar.<span class="mk">”</span></div>
+      <div class="body">
+        Última confesión de la noche, y es la más tramposa: eso rosado y llamativo que ves en mí no son flores — son <em>sépalos</em> que se agrandan después de que me polinizan y se transforman en pequeñas hélices. Cuando sopla el viento, giran como helicópteros y mandan mis semillas bien lejos. Es puro ingeniería de vuelo disfrazada de romanticismo. Ah, y mi madera es <em>durísima</em>: soy bella pero indestructible.
+      </div>
+      <div class="dato">🚁 <b>Verificado (B-32):</b> mis "flores" rosadas son sépalos agrandados tras la polinización que funcionan como hélice para dispersar la semilla al viento. Mi madera es muy dura.</div>
+      <div class="conf-ft">
+        <span class="act like"><span class="ic">❤️</span> <b>6.5 K</b></span>
+        <span class="act"><span class="ic">💬</span> 118</span>
+        <span class="verdict"><b>Ilusionista</b><span>sépalos voladores</span></span>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Reacción -->
+  <div class="block react">
+    <h3>¿Te voló la cabeza? 🤯</h3>
+    <p>Decinos cómo estuvo el confesionario de hoy. Tu reacción decide si las plantas siguen hablando.</p>
+    <div class="btns">
+      <button onclick="engageReact('confesiones','love', this)" title="¡Increíble!">😍</button>
+      <button onclick="engageReact('confesiones','meh', this)" title="Más o menos">😐</button>
+      <button onclick="engageReact('confesiones','no', this)" title="No me gustó">🙅</button>
+      <span class="react-hint"></span>
+    </div>
+  </div>
+
+  <!-- Suscripción diaria -->
+  <div class="block sub">
+    <span class="pill">🕯️ Confesión diaria</span>
+    <h3>Una confesión fresca, cada mañana</h3>
+    <p>Todos los días, otra planta del jardín entra al confesionario y suelta su secreto real. 30 segundos de lectura, cero horticultura aburrida. ¿Te la mandamos?</p>
+    <div class="btns">
+      <button onclick="engageAnswer('confesiones-suscripcion-diaria','si', this)">✅ Sí, quiero una confesión nueva cada día</button>
+      <button onclick="engageAnswer('confesiones-suscripcion-diaria','no', this)">Hoy no</button>
+      <span class="q-hint"></span>
+    </div>
+  </div>
+
+  <!-- Decisión (proposal pending) -->
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-07-02-confesiones-jardin')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-07-02-confesiones-jardin')">✕ No me interesa</button>
+  </div>
+
+  <footer>
+    <a class="pitch" href="2026-07-02-confesiones-jardin-pitch.html">💼 Cómo se vende esto</a>
+    <span class="fine">Confesiones del Jardín · datos verificados del catálogo · Pacha Mama, Montevideo</span>
+  </footer>
+</div>
+
+<script>
+  // Barra de progreso de lectura
+  var prog = document.getElementById('prog');
+  function onScroll(){
+    var h = document.documentElement;
+    var d = h.scrollHeight - h.clientHeight;
+    prog.style.width = (d > 0 ? (h.scrollTop / d * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  // Reveal de cada confesión al entrar en viewport
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold:.12, rootMargin:'0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+<script src="engage.js"></script>
+</body></html>

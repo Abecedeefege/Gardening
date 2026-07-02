@@ -1422,6 +1422,12 @@ def build_ideas_html(ticker_html_inner: str = "", ticker_aria: str = "",
     # Regla del usuario: cada experiencia que se aprueba se suma acá (no en la
     # nav del inicio). El agente de /engagement agrega una entrada al promover.
     approved_experiences = [
+        {"icon": "🔮", "title": "El Horóscopo del Jardín",
+         "desc": "El signo de cada planta y su lectura del día: personalidad y predicción sobre un rasgo real.",
+         "page": "engage/2026-07-01-horoscopo-jardin.html"},
+        {"icon": "💌", "title": "El Consultorio del Jardín",
+         "desc": "Cada planta es una columnista que te deja un consejo de vida anclado en un dato verdadero.",
+         "page": "engage/2026-07-01-consultorio-jardin.html"},
         {"icon": "📱", "title": "El Feed de tu Jardín",
          "desc": "Cada planta tiene su cuenta y postea en primera persona un dato real que no sabías.",
          "page": "engage/2026-06-29-feed-jardin.html"},

@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2d5016">
+<title>💼 Amores del Cantero · Pitch de venta</title>
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#5a9e35; --crema:#f5faf0; --tinta:#1a2410;
+    --musgo:#7a8a68; --rosa:#d81b60; --rosa2:#f0568e; --vino:#7a1238; --oro:#c79a2e;
+    --pad:max(18px,env(safe-area-inset-left));
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; min-height:100%; }
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    background:radial-gradient(120% 80% at 50% -10%, #fff5fa 0%, var(--crema) 46%, #e7efdd 100%);
+    color:var(--tinta); -webkit-font-smoothing:antialiased;
+    padding:0 var(--pad) calc(56px + env(safe-area-inset-bottom)); line-height:1.5;
+  }
+  .back{ color:var(--verde); text-decoration:none; font-size:14px; font-weight:800;
+    display:inline-block; padding:calc(16px + env(safe-area-inset-top)) 0 4px; }
+  .back:active{ opacity:.6; }
+  .backrow{ display:flex; gap:16px; flex-wrap:wrap; }
+
+  .wrap{ max-width:620px; margin:0 auto; }
+  header.hero{ text-align:center; padding:18px 0 8px; }
+  .crest{ font-size:50px; line-height:1; filter:drop-shadow(0 4px 12px rgba(216,27,96,.32)); }
+  .kicker{ font-size:12.5px; font-weight:900; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--rosa); margin:6px 0 2px; }
+  h1{ font-size:clamp(24px,7vw,34px); letter-spacing:-0.025em; color:var(--verde); margin:6px 0 6px; }
+  h1 .em{ color:var(--rosa); }
+  .deck{ font-size:16px; color:#46563a; max-width:520px; margin:8px auto 0; }
+  .deck b{ color:var(--rosa); }
+
+  section{ margin-top:34px; }
+  h2.sec{ font-size:20px; color:var(--verde); letter-spacing:-0.015em; margin:0 0 4px;
+    display:flex; align-items:baseline; gap:8px; }
+  h2.sec .n{ font-size:12px; font-weight:900; letter-spacing:.1em; color:#fff;
+    background:linear-gradient(180deg,var(--rosa2),var(--rosa)); border:none; border-radius:999px;
+    padding:3px 10px; }
+  h2.sec.g .n{ background:linear-gradient(180deg,#e0b544,var(--oro)); color:#3a2c06; }
+  .lead{ font-size:14.5px; color:#5a6b4a; margin:6px 0 16px; }
+
+  .why{ background:#fff; border-radius:20px; padding:20px; border:1px solid #f2dce6;
+    box-shadow:0 6px 18px rgba(216,27,96,.07); }
+  .why ul{ margin:10px 0 0; padding-left:20px; }
+  .why li{ margin:8px 0; font-size:14.5px; color:#3c4a30; }
+  .why li b{ color:var(--vino); }
+
+  .aud{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+  .aud div{ flex:1; min-width:150px; background:#fff; border:1px solid #f2dce6; border-radius:16px;
+    padding:14px 16px; box-shadow:0 4px 12px rgba(216,27,96,.06); }
+  .aud .t{ font-weight:900; color:var(--vino); font-size:14.5px; }
+  .aud .d{ font-size:13px; color:#5a6b4a; margin-top:3px; }
+
+  .cards{ display:flex; flex-direction:column; gap:14px; }
+  .model{ background:#fff; border-radius:20px; padding:20px; border:1px solid #f2dce6;
+    box-shadow:0 6px 18px rgba(216,27,96,.07); position:relative; overflow:hidden; }
+  .model.bold{ background:linear-gradient(165deg,#fff2f7,#fde2ec); border-color:#f6cbdb; }
+  .model::before{ content:""; position:absolute; inset:0 auto 0 0; width:5px;
+    background:linear-gradient(180deg,var(--rosa2),var(--rosa)); }
+  .model.bold::before{ background:linear-gradient(180deg,#e0b544,var(--oro)); }
+  .model h3{ margin:0 0 2px; font-size:17px; color:var(--vino); letter-spacing:-0.01em; }
+  .model .ico{ font-size:24px; }
+  .model .price{ display:inline-block; margin:8px 0; font-size:19px; font-weight:900;
+    color:var(--rosa); letter-spacing:-0.02em; }
+  .model p{ margin:6px 0; font-size:14px; color:#3c4a30; }
+  .model p b{ color:var(--vino); }
+  .model .row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  .chip{ font-size:12px; font-weight:800; color:var(--vino); background:#fdeaf1;
+    border-radius:999px; padding:5px 10px; }
+  .model .why-works{ margin-top:10px; font-size:13.5px; color:#5a6b4a; }
+  .model .why-works b{ color:var(--verde); }
+
+  .close{ margin-top:36px; background:linear-gradient(160deg,#5a1030,var(--vino)); color:#fff;
+    border-radius:24px; padding:28px 22px; box-shadow:0 14px 34px rgba(122,18,56,.32); }
+  .close h2{ color:#ffd6e4; margin:0 0 8px; font-size:21px; }
+  .close p{ font-size:14.5px; color:#f6e3ea; margin:8px 0; }
+  .close p b{ color:#ffd6e4; }
+  .close .tam{ display:flex; gap:12px; flex-wrap:wrap; margin:16px 0; }
+  .close .tam div{ flex:1; min-width:120px; background:rgba(255,255,255,.10); border-radius:16px;
+    padding:14px; text-align:center; }
+  .close .tam .big{ font-size:26px; font-weight:900; color:#ffd6e4; line-height:1; }
+  .close .tam .cap{ font-size:12px; color:#f4cdda; margin-top:5px; font-weight:700; }
+  .close .cta{ margin-top:12px; font-size:16px; font-weight:800;
+    background:linear-gradient(180deg,var(--rosa2),var(--rosa)); color:#fff;
+    border-radius:16px; padding:15px; text-align:center; }
+
+  footer{ text-align:center; margin-top:30px; }
+  .footlink{ color:var(--musgo); text-decoration:none; font-size:13.5px; font-weight:800;
+    border-bottom:1px dashed #d8afc0; }
+  .creditline{ font-size:12px; color:#b79aa8; margin-top:14px; }
+</style></head><body>
+<div class="wrap">
+<div class="backrow">
+  <a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+  <a class="back" href="2026-07-02-amores-cantero.html">← Volver a la experiencia</a>
+</div>
+
+<header class="hero">
+  <span class="crest">💼💘</span>
+  <p class="kicker">Pitch de venta · confidencial</p>
+  <h1><span class="em">Amores</span> del Cantero</h1>
+  <p class="deck">Cómo se transforma un tabloide de romances de plantas en un producto que <b>retiene, se reenvía solo y factura</b>. Seis modelos: tres viables ya, tres audaces para volar cabezas.</p>
+</header>
+
+<section>
+  <h2 class="sec">La tesis</h2>
+  <p class="lead">Por qué el chisme romántico compartible es la mejor máquina de retención que puede tener un jardín.</p>
+  <div class="why">
+    <ul>
+      <li><b>El amor es el único chisme universal.</b> Nadie reenvía "cómo podar un durazno". Todos reenvían "no vas a creer quién ama a quién". El romance activa el reflejo social: <b>se comparte para pertenecer</b>, no para informar.</li>
+      <li><b>Se reenvía solo por WhatsApp.</b> Los datos del canal ya lo probaron: gana el tabloide, la 1ª persona, el orgullo y el humor; pierde la utilidad accionable y el consejo tibio. El romance junta las cuatro que ganan en una sola card.</li>
+      <li><b>Cada dato es real.</b> El gancho es rosa pero el ancla es botánica verificada, con código de planta. Eso da <b>credibilidad + capital de conversación</b>: quien lo reenvía queda como el que sabe cosas fascinantes, no como el que reenvía cadenas.</li>
+      <li><b>El folletín crea hábito.</b> Un romance nuevo por día es una telenovela sin final: "¿qué pasó hoy en el cantero?" instala el reflejo de <b>volver cada mañana</b> — exactamente la métrica que buscamos.</li>
+      <li><b>Escala infinito.</b> Cada planta tiene historia; cada par de plantas, un romance posible. El inventario narrativo no se agota.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec">Público objetivo</h2>
+  <p class="lead">Quién paga, quién comparte, quién se engancha.</p>
+  <div class="aud">
+    <div><div class="t">🌿 El jardinero orgulloso</div><div class="d">Quiere presumir su jardín. Le das munición para el grupo familiar: su cantero es "famoso".</div></div>
+    <div><div class="t">💬 El reenviador serial</div><div class="d">Vive del "mirá esto". Le das contenido que lo hace quedar interesante sin esfuerzo.</div></div>
+    <div><div class="t">🏡 Viveros y garden centers</div><div class="d">Necesitan diferenciar plantas commodity. Una historia de amor vende más que una etiqueta de riego.</div></div>
+    <div><div class="t">💐 Bodas y regalería</div><div class="d">El mirto de Venus, la coronita de novia, el que huele a azahar: contenido nupcial listo para usar.</div></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec">Los 6 modelos de monetización</h2>
+  <p class="lead">Tres innovadores (viables hoy) y tres ultra-creativos (audaces y memorables).</p>
+
+  <div class="cards">
+
+    <div class="model">
+      <span class="ico">💌</span>
+      <h3>1 · Suscripción "El Romance del Día"</h3>
+      <span class="price">USD 2,50 / mes · o USD 19 / año</span>
+      <p><b>Cómo funciona:</b> micro-suscripción push. Un romance verificado por mañana, con la card lista para reenviar. Free: 3 por semana. Premium: los 7 + archivo completo + "romances de tu especie" filtrados por lo que tenés plantado.</p>
+      <p class="why-works why-works"><b>Por qué encaja:</b> el hábito diario ya está probado como el driver de retención del canal. El precio de un café al mes por una telenovela que nunca termina — y que ya suscribiste al aprobar la experiencia.</p>
+      <div class="row"><span class="chip">recurrente</span><span class="chip">bajo roce</span><span class="chip">retención diaria</span></div>
+    </div>
+
+    <div class="model">
+      <span class="ico">🏷️</span>
+      <h3>2 · Licencia de fichas para viveros</h3>
+      <span class="price">USD 90 / mes por local · o USD 0,40 por etiqueta QR</span>
+      <p><b>Cómo funciona:</b> los viveros licencian las "fichas de amor" para pegar un QR en la maceta. El cliente escanea y en vez de una tabla de riego lee el romance de esa planta (mirto de Venus, gardenia de Coco Chanel). Etiqueta co-branded.</p>
+      <p class="why-works"><b>Por qué encaja:</b> convierte una planta commodity en una con historia — y la historia sube el ticket. Un mirto "sagrado de Venus" se vende mejor que un "arbusto perenne". 3 viveros = el hosting pago 20 veces.</p>
+      <div class="row"><span class="chip">B2B</span><span class="chip">margen alto</span><span class="chip">punto de venta</span></div>
+    </div>
+
+    <div class="model">
+      <span class="ico">💐</span>
+      <h3>3 · Contenido nupcial de marca (bodas)</h3>
+      <span class="price">USD 300–600 por pack · patrocinio por edición</span>
+      <p><b>Cómo funciona:</b> ediciones especiales "Amores del Cantero · Bodas" patrocinadas por floristerías, wedding planners o marcas de perfume. El mirto de las novias romanas, la coronita de novia, el azarero que huele a azahar: contenido que ya es nupcial de nacimiento, con el logo del sponsor.</p>
+      <p class="why-works"><b>Por qué encaja:</b> la data del jardín <i>ya</i> es sobre bodas (B-27, F-5, B-7). El sponsor no interrumpe: acompaña un contenido que la novia quiere leer y compartir. CPM de nicho premium.</p>
+      <div class="row"><span class="chip">patrocinio</span><span class="chip">nicho premium</span><span class="chip">nativo</span></div>
+    </div>
+
+    <div class="model bold">
+      <span class="ico">💒</span>
+      <h3>4 · "Casá tus plantas" — bodas coleccionables NFT-free</h3>
+      <span class="price">USD 5 el certificado de boda · edición limitada</span>
+      <p><b>Cómo funciona:</b> el usuario "casa" dos plantas de su jardín (el fresno macho con la hembra F-10, el romero fiel con la coronita de novia) y recibe un <b>certificado de boda ilustrado</b> descargable, con los datos reales de ambas y su código. Coleccionable, imprimible, regalable. Serie limitada de "parejas del mes".</p>
+      <p class="why-works"><b>Por qué encaja:</b> convierte al lector pasivo en <b>casamentero activo</b> — máxima implicación emocional. El certificado es un objeto que se comparte con orgullo (foto en el grupo). Gamifica el reenvío. 200 certificados/mes = USD 1.000 sin costo marginal.</p>
+      <div class="row"><span class="chip">viral</span><span class="chip">coleccionable</span><span class="chip">UGC</span></div>
+    </div>
+
+    <div class="model bold">
+      <span class="ico">🔮</span>
+      <h3>5 · Horóscopo botánico del amor (personalizado)</h3>
+      <span class="price">USD 4,90 el "mapa de compatibilidad" de tu jardín</span>
+      <p><b>Cómo funciona:</b> subís tu jardín y el sistema arma tu <b>horóscopo de amores</b>: qué plantas son compatibles, cuál es tu "femme fatale" (la gardenia), tu "fiel" (el romero), tu "coqueta con código de color" (la lantana), qué romance a distancia tenés en marcha (el fresno dioico). Formato revista: "los astros del cantero esta semana".</p>
+      <p class="why-works"><b>Por qué encaja:</b> el horóscopo es el contenido más reenviado de la historia y el más adictivo diariamente. Fusionado con datos reales de <i>tu</i> jardín, es único e imposible de encontrar en otro lado. Retención altísima + upsell natural a la suscripción.</p>
+      <div class="row"><span class="chip">personalizado</span><span class="chip">adictivo</span><span class="chip">único</span></div>
+    </div>
+
+    <div class="model bold">
+      <span class="ico">📻</span>
+      <h3>6 · "Radio Novela del Cantero" — audio-folletín patrocinado</h3>
+      <span class="price">USD 1.200 / temporada de sponsor · 12 capítulos</span>
+      <p><b>Cómo funciona:</b> cada romance se produce como <b>micro-radionovela</b> de 60 segundos (voz dramática, música rosa) que llega por push como nota de voz. El triángulo del romero fiel, la gardenia fatal y el mirto diosa se vuelve serial de audio. Sponsor lee el "corte comercial" de 5 segundos entre capítulos.</p>
+      <p class="why-works"><b>Por qué encaja:</b> el audio es el formato más íntimo y el que mejor se reenvía por WhatsApp (nota de voz = 0 fricción). Convierte la lectura en <b>ritual sonoro matinal</b>. Una radionovela de plantas enamoradas es tan absurda que es imposible no mandársela a alguien. Memorabilidad máxima.</p>
+      <div class="row"><span class="chip">audio</span><span class="chip">ritual</span><span class="chip">memorable</span></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="close">
+  <h2>El cierre 💘</h2>
+  <p>El jardín ya te dio la materia prima: <b>trece plantas con historia de amor real, verificada, con código</b>. Solo falta prender la imprenta rosa. El romance no se agota, no envejece y —a diferencia del consejo útil— <b>se comparte solo</b>.</p>
+  <div class="tam">
+    <div><div class="big">30s</div><div class="cap">de lectura por romance: el largo perfecto para reenviar</div></div>
+    <div><div class="big">∞</div><div class="cap">inventario: cada par de plantas es un romance nuevo</div></div>
+    <div><div class="big">6</div><div class="cap">vías de ingreso, de la suscripción de un café al patrocinio de temporada</div></div>
+  </div>
+  <p>Empezá por lo barato y probado: <b>suscripción diaria (modelo 1)</b> para instalar el hábito, y <b>certificados de boda (modelo 4)</b> para prender el motor viral. Con eso corriendo, los sponsors nupciales (modelo 3) y la radionovela (modelo 6) llegan solos.</p>
+  <div class="cta">👉 Aprobá "Amores del Cantero" y arrancamos con la edición diaria mañana mismo.</div>
+</div>
+
+<footer>
+  <a class="footlink" href="2026-07-02-amores-cantero.html">← Volver a la experiencia</a>
+  <p class="creditline">Pitch confidencial · Amores del Cantero · Pacha Mama, Montevideo · invierno 2026</p>
+</footer>
+</div>
+</body></html>

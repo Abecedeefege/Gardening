@@ -223,22 +223,46 @@
       "title": "🔮 El Horóscopo del Jardín (news-feed de identidad/predicción)",
       "page": "engage/2026-07-01-horoscopo-jardin.html",
       "created": "2026-07-01",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Ciclo 32 (función paralela): experiencia news-feed NUEVA de cero, ángulo IDENTIDAD/HORÓSCOPO. Cada planta es un 'signo' con su lectura del día: personalidad + predicción, todo envuelto sobre un rasgo REAL verificado (longeva→paciencia, nativa→raíces, trepadora→ambición, caduco pelado→renacimiento). Tras validar que dentro del news-feed el ÁNGULO decide (Feed social 208s ganó, Pasaporte viajes rechazado), esta apuesta a la psicología de identidad/personalidad ('¿cuál sos vos?') que retiene (orgullo Récords 141s, personalidad Feed 208s) y es ultra-compartible/screenshot-eable. El horóscopo es una categoría de monetización probada. Hipótesis: identidad + predicción lúdica sobre dato real iguala o supera la conversión amor→suscripción del social/chisme. Lectura, no juego. + pitch HTML (6 modelos). Promotor: 2026-07-01-a (08:30).",
       "notified_by": [
         "2026-07-01-a"
       ],
-      "result_notes": null
+      "result_notes": "PROMOVIDA 02/07. El 01/07 22:01Z (19:01 UY) el usuario abrió el push promotor (2026-07-01-a) y disparó la señal fuerte del eje identidad: answer 'horoscopo-suscripcion-diaria'=SÍ (suscripción explícita) + proposal_approved + dwell 115s / scroll 100% + reaction 'love' (😍). Leyó todo, se suscribió, aprobó y amó. El ángulo IDENTIDAD/HORÓSCOPO ('¿cuál sos vos?') CONVIERTE amor→suscripción, confirmando que el eje emocional/identitario es el que convierte (junto a social/Feed, chisme/Chusmerío, orgullo/Récords). Promoción = página permanente + tarjeta en Ideas → ✨ Experiencias («🔮 El Horóscopo del Jardín»). Footer: botones aprobar/rechazar reemplazados por nota de integración + link al inicio; reacciones/suscripción siguen logueando. El push promotor 2026-07-01-a se retira."
     },
     {
       "id": "2026-07-01-consultorio-jardin",
       "title": "💌 El Consultorio del Jardín (news-feed de consejos/sabiduría)",
       "page": "engage/2026-07-01-consultorio-jardin.html",
       "created": "2026-07-01",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Ciclo 32 (función paralela): experiencia news-feed NUEVA de cero, ángulo CALIDEZ/CONSEJO. Cada planta es una columnista de consultorio sentimental que da UN consejo de vida derivado de un rasgo REAL verificado (la longeva aconseja perspectiva, la que purifica el aire 'limpiá tu espacio', la que sobrevive heladas resiliencia, la nativa no olvidar de dónde venís). Complementa al horóscopo (identidad lúdica) con un registro cálido/emotivo y frase-del-día screenshot-eable — el enorme mercado wellness/daily-affirmation. Hipótesis: la calidez + sabiduría compartible convierte amor→suscripción tan bien como lo social/chisme, y ataca un segmento emocional distinto (afecto vs. asombro/humor). Lectura cálida, no juego. + pitch HTML (6 modelos). Promotor: 2026-07-01-b (13:00).",
       "notified_by": [
         "2026-07-01-b"
+      ],
+      "result_notes": "PROMOVIDA 02/07 (con matiz TIBIO). El 01/07 22:05Z el usuario abrió el push promotor (2026-07-01-b) → proposal_approved + tap Aprobar, PERO señal débil: reaction 'meh' (😐) + dwell 36s / scroll 5% Y SIN answer de suscripción (no tocó el CTA diario). Se promueve porque la aprobación explícita es el único pase a permanencia (regla del usuario), pero es LA MÁS DÉBIL del ciclo 32: aprobó pero no amó ni se suscribió — MISMO patrón que Superpoderes (utilidad). Lectura de contenido: el ángulo CONSEJO SINCERO/CALIDEZ gana la aprobación pero NO la suscripción; la sabiduría-columna emociona menos que lo social/chisme/identidad/orgullo. La calidez sincera rinde como la utilidad: útil-lindo pero sin gancho de 'increíble'. Candidata a revisión si no retiene. Promoción = página permanente + tarjeta en Ideas → ✨ Experiencias («💌 El Consultorio del Jardín»). Footer: bloque de decisión reemplazado por nota de integración + link al inicio. El push promotor 2026-07-01-b se retira."
+    },
+    {
+      "id": "2026-07-02-confesiones-jardin",
+      "title": "🎤 Confesiones del Jardín (news-feed de confesiones en 1ª persona)",
+      "page": "engage/2026-07-02-confesiones-jardin.html",
+      "created": "2026-07-02",
+      "status": "pending",
+      "hypothesis": "Ciclo 33 (función paralela): experiencia news-feed NUEVA de cero, ángulo CONFESIÓN/VULNERABILIDAD en PRIMERA PERSONA con humor. Cada planta confiesa un secreto real (Palta Hass B-36 'soy un clon de 1926', caña muda I-2 'puedo dejarte sin voz', ligustro F-9 'soy invasora', jazmín de leche B-3 'soy impostora', hortensia B-5 'cambio de color según lo que como', buganvilia B-1 'me robaron el crédito', palta B-22 'soy viuda evolutiva'...). Tras confirmar que dentro del news-feed el ÁNGULO decide y que la voz en 1ª persona estilo red social dio el dwell récord (Feed 208s) mientras el consejo sincero salió tibio (Consultorio), esta apuesta MAXIMIZA el eje ganador: 1ª persona + humor + intimidad/vulnerabilidad, ultra-compartible. Hipótesis: la confesión íntima con gracia convierte amor→suscripción tan bien como lo social/chisme. Lectura, no juego. + pitch HTML (6 modelos). Promotor: 2026-07-02-a (08:30).",
+      "notified_by": [
+        "2026-07-02-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-02-amores-cantero",
+      "title": "💘 Amores del Cantero (news-feed tabloide de romances)",
+      "page": "engage/2026-07-02-amores-cantero.html",
+      "created": "2026-07-02",
+      "status": "pending",
+      "hypothesis": "Ciclo 33 (función paralela): experiencia news-feed NUEVA de cero, ángulo ROMANCE/CHISME DEL CORAZÓN (revista del corazón, tono farándula juguetón — NO consejo sincero). Quién ama a quién en el cantero, anclado en hechos reales: mirto B-27 sagrado para Venus, romero B-26 símbolo de fidelidad nupcial, coronita de novia F-5, evónimo B-44 de velos nupciales, gardenia B-25 femme fatale (Chanel Nº22), hibisco B-4 código soltera/casada, fresno F-10 dioico (romance macho-hembra a distancia), abelia F-7 romance de naufragio, buganvilia B-1 Jeanne Baret. Tras validar que el tabloide/chisme (Chusmerío) convierte y se reenvía solo, esta apuesta lleva el mismo motor viral al terreno del ROMANCE (súper compartible). Distinto del Consultorio tibio: acá es chisme juguetón, no consejo sincero. Hipótesis: el chisme romántico compartible convierte amor→suscripción como el tabloide. Lectura, no juego. + pitch HTML (6 modelos). Promotor: 2026-07-02-b (13:00).",
+      "notified_by": [
+        "2026-07-02-b"
       ],
       "result_notes": null
     }

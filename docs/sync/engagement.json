@@ -2,122 +2,6 @@
   "_updated_at": "2026-07-01T23:53:38.778Z",
   "events": [
     {
-      "_id": "mqhb28muk620on",
-      "type": "dwell",
-      "seconds": 7,
-      "scroll_pct": 100,
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-17T00:00:56.118Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqhb2b81ir4a49",
-      "type": "page_visit",
-      "page": "engage/adivina-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-06-17T00:00:59.470Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqhb2gwxhc5b68",
-      "type": "dwell",
-      "seconds": 9,
-      "scroll_pct": 100,
-      "page": "engage/adivina-jardin.html",
-      "ts": "2026-06-17T00:01:06.849Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqiby5b9ygkg44",
-      "type": "page_visit",
-      "page": "engage/duelo-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-06-17T17:13:30.978Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqibyapohdk5hh",
-      "type": "reaction",
-      "target": "duelo-r1",
-      "value": "correct",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-17T17:13:37.980Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqibycxmso0a1q",
-      "type": "dwell",
-      "seconds": 11,
-      "scroll_pct": 100,
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-17T17:13:40.858Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqiihoesjkon05",
-      "type": "dwell",
-      "seconds": 2,
-      "scroll_pct": 100,
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-17T20:16:39.892Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqiihnckquz0j4",
-      "type": "page_visit",
-      "page": "engage/duelo-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-06-17T20:16:38.513Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqiiht3gue8zqr",
-      "type": "dwell",
-      "seconds": 2,
-      "scroll_pct": 100,
-      "page": "engage/quiz-jardin.html",
-      "ts": "2026-06-17T20:16:45.964Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqiihw9sby3vnj",
-      "type": "dwell",
-      "seconds": 2,
-      "scroll_pct": 100,
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-17T20:16:50.080Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqiihz7bryfpyx",
-      "type": "dwell",
-      "seconds": 2,
-      "scroll_pct": 100,
-      "page": "engage/adivina-jardin.html",
-      "ts": "2026-06-17T20:16:53.879Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqilrs13linuhq",
-      "type": "notification_clicked",
-      "nid": "2026-06-17-x13",
-      "page": "index.html",
-      "ts": "2026-06-17T21:48:29.986Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqilrs13gtd8vt",
-      "type": "page_visit",
-      "page": "index.html",
-      "nid": "2026-06-17-x13",
-      "src": "push",
-      "ts": "2026-06-17T21:48:29.986Z",
-      "device": "sin-nombre"
-    },
-    {
       "_id": "mqjlxpvtmo4jvu",
       "type": "notification_clicked",
       "nid": "2026-06-18-a",
@@ -1386,6 +1270,12 @@
       "sent": 20,
       "clicked": 1,
       "visits": 3,
+      "approvals": 0
+    },
+    "2026-06-17": {
+      "sent": 13,
+      "clicked": 1,
+      "visits": 4,
       "approvals": 0
     }
   }

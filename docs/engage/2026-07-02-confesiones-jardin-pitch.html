@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c1408">
+<title>💼 Confesiones del Jardín · Pitch de venta</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+  :root{
+    --verde:#2d5016; --verde2:#4f8a2b; --verde3:#6fb43e;
+    --crema:#f5faf0; --tinta:#1a2410;
+    --musgo:#7a8a68; --oro:#c9971e; --oro2:#e6b93d; --vino:#7a3a12; --miel:#8a5a12;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    --serif:'Fraunces',Georgia,serif;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; min-height:100%; }
+  body{
+    font-family:var(--sans);
+    background:radial-gradient(120% 80% at 50% -10%, #fffdf2 0%, var(--crema) 45%, #e7efdd 100%);
+    color:var(--tinta); -webkit-font-smoothing:antialiased;
+    padding:0 var(--pad) calc(56px + env(safe-area-inset-bottom)); line-height:1.5;
+  }
+  .back{ color:var(--verde); text-decoration:none; font-size:14px; font-weight:800;
+    display:inline-block; padding:calc(16px + env(safe-area-inset-top)) 0 4px; }
+  .back:active{ opacity:.6; }
+  .navlinks{ display:flex; gap:16px; flex-wrap:wrap; }
+
+  .wrap{ max-width:620px; margin:0 auto; }
+  header.hero{ text-align:center; padding:16px 0 8px; }
+  .crest{ font-size:46px; line-height:1; filter:drop-shadow(0 4px 10px rgba(122,58,18,.28)); }
+  .kicker{ font-size:12.5px; font-weight:900; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--miel); margin:8px 0 2px; }
+  h1{ font-family:var(--serif); font-size:clamp(26px,7.5vw,38px); letter-spacing:-0.025em;
+    color:var(--verde); margin:6px 0 6px; line-height:1.04; }
+  h1 .em{ color:var(--oro); font-style:italic; }
+  .deck{ font-size:16px; color:#46563a; max-width:520px; margin:8px auto 0; }
+  .deck b{ color:var(--verde); }
+
+  section{ margin-top:34px; }
+  h2.sec{ font-family:var(--serif); font-size:22px; color:var(--verde); letter-spacing:-0.015em; margin:0 0 4px;
+    display:flex; align-items:baseline; gap:8px; }
+  h2.sec .n{ font-family:var(--sans); font-size:12px; font-weight:900; letter-spacing:.1em; color:#fff;
+    background:linear-gradient(180deg,var(--oro2),var(--oro)); border:none; border-radius:999px;
+    padding:3px 10px; }
+  .lead{ font-size:14.5px; color:#5a6b4a; margin:6px 0 16px; }
+
+  .why{ background:#fff; border-radius:20px; padding:20px; border:1px solid #eae2cf;
+    box-shadow:0 6px 18px rgba(122,58,18,.07); }
+  .why ul{ margin:10px 0 0; padding-left:20px; }
+  .why li{ margin:9px 0; font-size:14.5px; color:#3c4a30; }
+  .why li b{ color:var(--vino); }
+
+  .aud{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+  .aud .who{ flex:1; min-width:150px; background:#fff; border:1px solid #eae2cf; border-radius:16px;
+    padding:14px; box-shadow:0 4px 12px rgba(122,58,18,.06); }
+  .aud .who .ic{ font-size:22px; }
+  .aud .who h4{ margin:6px 0 3px; font-size:14.5px; color:var(--verde); }
+  .aud .who p{ margin:0; font-size:12.5px; color:#5a6b4a; }
+
+  .cards{ display:flex; flex-direction:column; gap:14px; }
+  .model{ background:#fff; border-radius:20px; padding:20px; border:1px solid #eae2cf;
+    box-shadow:0 6px 18px rgba(122,58,18,.07); position:relative; overflow:hidden; }
+  .model.bold{ background:linear-gradient(165deg,#fff8ea,#fdefd0); border-color:#f0dcae; }
+  .model::before{ content:""; position:absolute; inset:0 auto 0 0; width:5px;
+    background:linear-gradient(180deg,var(--oro2),var(--oro)); }
+  .model h3{ font-family:var(--serif); margin:0 0 2px; font-size:18px; color:var(--vino); letter-spacing:-0.01em; }
+  .model .ico{ font-size:24px; }
+  .model .price{ display:inline-block; margin:8px 0; font-size:19px; font-weight:900;
+    color:var(--miel); letter-spacing:-0.02em; }
+  .model p{ margin:6px 0; font-size:14px; color:#3c4a30; }
+  .model p b{ color:var(--vino); }
+  .model .row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  .chip{ font-size:12px; font-weight:800; color:var(--miel); background:#fbeecf;
+    border-radius:999px; padding:5px 10px; }
+  .model .why-works{ margin-top:10px; font-size:13.5px; color:#5a6b4a; }
+  .model .why-works b{ color:var(--verde); }
+
+  .close{ margin-top:36px; background:linear-gradient(160deg,#20360f,#0e1a08); color:#eef4e6;
+    border-radius:24px; padding:28px 22px; box-shadow:0 14px 34px rgba(20,40,10,.4); }
+  .close h2{ font-family:var(--serif); color:var(--oro2); margin:0 0 8px; font-size:23px; }
+  .close p{ font-size:14.5px; color:#d7e3c9; margin:8px 0; }
+  .close p b{ color:var(--oro2); }
+  .close .tam{ display:flex; gap:12px; flex-wrap:wrap; margin:16px 0; }
+  .close .tam div{ flex:1; min-width:120px; background:rgba(255,255,255,.08); border-radius:16px;
+    padding:14px; text-align:center; }
+  .close .tam .big{ font-size:26px; font-weight:900; color:var(--oro2); line-height:1; }
+  .close .tam .cap{ font-size:12px; color:#c3d6ac; margin-top:5px; font-weight:700; }
+  .close .cta{ margin-top:12px; font-size:16px; font-weight:800;
+    background:linear-gradient(180deg,var(--oro2),var(--oro)); color:#2a1e04;
+    border-radius:16px; padding:15px; text-align:center; }
+
+  footer{ text-align:center; margin-top:30px; }
+  .footlink{ color:var(--musgo); text-decoration:none; font-size:13.5px; font-weight:800;
+    border-bottom:1px dashed #c3cdb2; }
+  .creditline{ font-size:12px; color:#9aa888; margin-top:14px; }
+
+  @media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; } }
+</style></head><body>
+<div class="navlinks">
+  <a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+  <a class="back" href="2026-07-02-confesiones-jardin.html">← Volver a la experiencia</a>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="crest">💼</span>
+    <p class="kicker">Pitch interno · solo para el dueño</p>
+    <h1>Cómo se vende “<span class="em">Confesiones</span> del Jardín”</h1>
+    <p class="deck">Una experiencia que convierte cada cantero en un <b>confesionario íntimo</b>. La gente no comparte “datos de plantas” — comparte <b>secretos, vulnerabilidad y voz humana</b>. En primera persona, con humor y una verdad real al pie, cada planta se vuelve un personaje que la gente quiere escuchar mañana otra vez. La intimidad es el gancho; el dato verificado es lo que se cobra.</p>
+  </header>
+
+  <!-- POR QUÉ RETIENE -->
+  <section>
+    <h2 class="sec">Por qué retienen y se comparten las confesiones en 1ª persona</h2>
+    <p class="lead">La tesis, en limpio, sobre datos reales medidos del canal.</p>
+    <div class="why">
+      <ul>
+        <li><b>La 1ª persona es el formato de mayor dwell del canal (récord 208s).</b> Una planta que dice “yo” deja de ser objeto y pasa a ser personaje. El cerebro procesa una confesión como una relación, no como información — y a una relación se vuelve.</li>
+        <li><b>La vulnerabilidad genera intimidad, y la intimidad genera hábito.</b> “Soy un clon”, “me robaron el crédito”, “soy la oveja negra” son aperturas emocionales. Compartir un secreto crea vínculo — el mismo mecanismo por el que volvemos a quien se nos sincera.</li>
+        <li><b>El secreto es hiper-compartible.</b> “¿Sabías que TODAS las paltas Hass del mundo son clones de un solo árbol?” se reenvía solo al grupo familiar. Cada confesión es una cápsula con final de asombro: nativa para screenshot y para WhatsApp.</li>
+        <li><b>Serialización = racha emocional.</b> Una confesión nueva por día reproduce el loop de la novela: cada planta guarda su secreto, y siempre queda otra por confesar. “Tu jardín tiene secretos para meses” es promesa de próximo capítulo, no un one-shot.</li>
+        <li><b>Orgullo e identidad.</b> No son secretos ajenos: son de <b>TUS</b> plantas. El efecto dotación (valoramos más lo nuestro) más el morbo del secreto = engagement emocional y estatus. “Mi jardín esconde una viuda evolutiva de 13.000 años” se cuenta con orgullo.</li>
+        <li><b>Humor + verdad = asombro creíble.</b> El tono es íntimo y gracioso arriba; abajo cierra “Verificado” con el código de catálogo. Esa pirueta — confesión emotiva y hecho real — produce el “me voló la cabeza” Y la credibilidad. La credibilidad es lo único que después se puede monetizar.</li>
+      </ul>
+    </div>
+
+    <h2 class="sec" style="margin-top:26px;">Público objetivo</h2>
+    <div class="aud">
+      <div class="who"><div class="ic">🪴</div><h4>Plantófilos con jardín</h4><p>Dueños que ya compran macetas de diseño y apps de identificación. Aman a sus plantas y quieren conocerlas “por dentro”.</p></div>
+      <div class="who"><div class="ic">💬</div><h4>Reenviadores natos</h4><p>Los que mandan el dato curioso al grupo familiar. No necesitan jardín: consumen y comparten el asombro.</p></div>
+      <div class="who"><div class="ic">🌱</div><h4>Nuevos en plantas</h4><p>Gente que arranca su primera maceta y busca una entrada emocional, no un manual técnico que la intimide.</p></div>
+    </div>
+  </section>
+
+  <!-- 3 MODELOS INNOVADORES -->
+  <section>
+    <h2 class="sec"><span class="n">A</span> 3 modelos de monetización innovadores</h2>
+    <p class="lead">Sólidos, realistas, con demanda probada en adyacencias.</p>
+    <div class="cards">
+
+      <div class="model">
+        <span class="ico">🕯️</span>
+        <h3>1 · Suscripción “Confesión del Día”</h3>
+        <span class="price">USD 3,99 / mes · USD 29 / año</span>
+        <p><b>A quién:</b> el fan del jardín que quiere volver cada mañana, y todo el que disfruta un buen secreto.</p>
+        <p><b>Qué:</b> push diario con la confesión fresca de UNA planta de SU jardín, generada desde el catálogo cargado. Freemium: 1 confesión gratis por semana, diaria al pagar. Botón “contásela a alguien” en cada una.</p>
+        <div class="row"><span class="chip">Recurrente</span><span class="chip">Bajo churn</span><span class="chip">Margen ~95%</span></div>
+        <p class="why-works"><b>Por qué encaja:</b> el contenido es generativo y casi gratis; el valor percibido es alto porque es personalizado, íntimo y divertido. 1.000 suscriptores/año = <b>USD 29k</b> con costo marginal casi cero, y cada confesión reenviada es adquisición gratis.</p>
+      </div>
+
+      <div class="model">
+        <span class="ico">🤝</span>
+        <h3>2 · Confesiones patrocinadas (native + WhatsApp-first)</h3>
+        <span class="price">USD 200–600 por confesión de marca</span>
+        <p><b>A quién:</b> viveros, marcas de sustrato/fertilizante y ferias botánicas que quieren contenido que la gente comparta sola.</p>
+        <p><b>Qué:</b> una confesión auspiciada por edición — mismo formato íntimo + verdad real — con un cierre de marca sutil (“esta confesión te la trae Vivero X”). Diseñada para reenviarse, no para interrumpir.</p>
+        <div class="row"><span class="chip">Native ad</span><span class="chip">Shareable</span><span class="chip">CPM alto</span></div>
+        <p class="why-works"><b>Por qué encaja:</b> el branded content que se reenvía vale 10× el banner que se ignora. La marca compra alcance orgánico real. 2 confesiones patrocinadas/semana = <b>~USD 40k/año</b>.</p>
+      </div>
+
+      <div class="model">
+        <span class="ico">🌿</span>
+        <h3>3 · Afiliación de vivero “adoptá este personaje”</h3>
+        <span class="price">8–15% por venta referida</span>
+        <p><b>A quién:</b> el lector en el pico de deseo (“quiero una viuda evolutiva / una impostora así en mi jardín”).</p>
+        <p><b>Qué:</b> al pie de la confesión, la planta comprable en viveros aliados — “sumá este secreto a tu cantero” — con link rastreable. La intención ya está caliente por la historia.</p>
+        <div class="row"><span class="chip">Cero costo</span><span class="chip">Intención alta</span><span class="chip">Local-first</span></div>
+        <p class="why-works"><b>Por qué encaja:</b> la confesión crea el deseo de poseer “ese personaje” y la oferta lo resuelve en el mismo scroll. Ticket medio vivero ~USD 25 → comisión ~USD 3 por conversión, sin inventario.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3 MODELOS ULTRA CREATIVOS -->
+  <section>
+    <h2 class="sec"><span class="n">B</span> 3 modelos ultra creativos</h2>
+    <p class="lead">Más audaces, más memorables, mayor upside y narrativa.</p>
+    <div class="cards">
+
+      <div class="model bold">
+        <span class="ico">🎧</span>
+        <h3>4 · “El Confesionario” — audio íntimo diario</h3>
+        <span class="price">Freemium + sponsors + USD 4,99 premium</span>
+        <p><b>Qué:</b> la confesión del día narrada en 60 segundos por una voz susurrada de confesionario, estilo nota de voz para WhatsApp. Un personaje-voz con tono y catchphrase propios (“acercate, que te cuento un secreto…”). Auspiciable por segmento.</p>
+        <div class="row"><span class="chip">Audio</span><span class="chip">IP propia</span><span class="chip">Sponsorable</span></div>
+        <p class="why-works"><b>Por qué encaja:</b> el audio corto reenviable es el formato que más crece y el más íntimo — y la intimidad ES el ángulo ganador acá. Crear la voz del confesionario genera fandom: dejás de vender datos y pasás a vender una <b>marca de entretenimiento</b> con merch y lives.</p>
+      </div>
+
+      <div class="model bold">
+        <span class="ico">🃏</span>
+        <h3>5 · Mazo físico “Secretos del Jardín”</h3>
+        <span class="price">USD 19–29 / mazo · print-on-demand</span>
+        <p><b>Qué:</b> cartas coleccionables, cada una un personaje del jardín (El Clon, La Viuda Evolutiva, La Impostora) con su confesión al frente y la verdad + QR al dorso. Se juega tipo “¿verdad o mentira?” en la mesa familiar. Cero inventario (Prodigi).</p>
+        <div class="row"><span class="chip">Físico</span><span class="chip">Regalo</span><span class="chip">Viral en mesa</span></div>
+        <p class="why-works"><b>Por qué encaja:</b> convierte el feed en objeto y ritual social offline. El regalo duplica el TAM: lo compra quien no tiene jardín pero ama el secreto y el humor. Cada carta manda al confesionario digital vía QR.</p>
+      </div>
+
+      <div class="model bold">
+        <span class="ico">💌</span>
+        <h3>6 · “Cartas del confesionario” — coleccionable emocional premium</h3>
+        <span class="price">USD 9 / mes · edición mensual ilustrada</span>
+        <p><b>Qué:</b> una vez al mes, una confesión larga y ricamente ilustrada de una planta emblemática del suscriptor, escrita como una carta personal (“querido dueño, hay algo que nunca te dije…”). Entregable digital coleccionable + versión imprimible enmarcable.</p>
+        <div class="row"><span class="chip">Premium</span><span class="chip">Coleccionable</span><span class="chip">Alto ticket</span></div>
+        <p class="why-works"><b>Por qué encaja:</b> lleva la intimidad al extremo — de secreto rápido a carta atesorable. Convierte el vínculo emocional en un objeto que se guarda y se regala. 300 suscriptores premium = <b>~USD 32k/año</b> con altísimo valor percibido y casi cero costo de producción.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="close">
+    <h2>El cierre</h2>
+    <p><b>Visión:</b> todo jardín del mundo es un confesionario esperando que alguien escuche. Construimos el motor que le da voz en primera persona a cada planta, serializa sus secretos en un ritual diario y los empaqueta para que se reenvíen y se atesoren. La intimidad es el motor de retención más profundo que existe — la 1ª persona ya marcó el dwell récord del canal — y el dato verificado es lo que sostiene la marca. Empezamos en Montevideo y escalamos a toda Latinoamérica con un catálogo botánico que ya tenemos.</p>
+    <div class="tam">
+      <div><div class="big">208s</div><div class="cap">dwell récord del formato 1ª persona</div></div>
+      <div><div class="big">~1,3M</div><div class="cap">hogares con jardín en Uruguay</div></div>
+      <div><div class="big">~95%</div><div class="cap">margen del modelo core</div></div>
+    </div>
+    <p>Con solo el <b>1% del mercado uruguayo</b> en suscripción anual (USD 29) son <b>~USD 380k/año</b> recurrentes, antes de confesiones patrocinadas, audio premium y mazo físico. El contenido es generativo: cada confesión nueva cuesta casi cero, y cada secreto compartido trae lectores gratis.</p>
+    <div class="cta">▶ Próximo paso: prender la suscripción “Confesión del Día” y medir reenvíos + conversión en 30 días.</div>
+  </section>
+
+  <footer>
+    <a class="footlink" href="2026-07-02-confesiones-jardin.html">← Volver a la experiencia</a>
+    <p class="creditline">Pitch interno · Confesiones del Jardín · invierno 2026</p>
+  </footer>
+</div>
+</body></html>

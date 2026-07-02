@@ -19,89 +19,94 @@ news-feed de cero, cada una con: (1) reacción final "¿te voló la cabeza?" (en
 6 modelos de monetización (3 innovadores + 3 ultra-creativos). Contrato de página proposal igual que
 siempre (link "← Volver al sitio estable" primero, botones Aprobar/No-me-interesa, `engage.js`, solo
 datos verificados de data_plants.py con códigos). Dos de los 3 pushes del día llevan a estas
-experiencias; el 3º es el curio ancla.
+experiencias; el 3º es el curio ancla. engageReact target = slug corto; qid = `<slug>-suscripcion-diaria`.
 
-## 🚀 EL NEWS-FEED CONVIERTE — y dentro del formato, el ÁNGULO decide (dato 30/06, sincronizado 01/07)
+## 🚀 EL NEWS-FEED CONVIERTE — y dentro del formato, el ÁNGULO decide (síntesis ACTUALIZADA 02/07)
 
-El news-feed es el formato ganador (Diario+Récords 29/06). El dato del ciclo 30/31, que recién
-sincronizó el 01/07, prueba que **dentro del news-feed el ÁNGULO manda**. Resultados medidos:
+El news-feed es el formato ganador. Dentro de él el ÁNGULO manda. **El eje que convierte amor→SUSCRIPCIÓN
+es EMOCIONAL/IDENTITARIO/HUMOR, no utilitario ni sincero-tibio.** Evidencia medida acumulada:
 
-- **📱 Feed (red-social, 1ª persona) → GANADOR ABSOLUTO.** 30/06: 😍love ×2 + suscripción SÍ ×2 +
-  aprobado ×2 + dwell **142s Y 208s**/100%. El **208s es el DWELL RÉCORD del canal** (batió 141s de Récords).
-  El gesto "seguir una cuenta" + voz en 1ª persona + formato IG retiene y convierte más que nada. PROMOVIDO.
-- **🍵 Chusmerío (tabloide/chisme) → GANADOR.** 30/06: suscripción SÍ + aprobado + 86s/100%. El chisme
-  con hecho verificado convierte. 2º mejor del ciclo. PROMOVIDO.
-- **🧪 Superpoderes (utilidad/asombro) → APROBADO PERO TIBIO.** 30/06: tocó Aprobar (→promovido, la
-  aprobación es el único pase a permanencia) PERO reaction 'meh' + 23s/scroll 10% + **NO tocó suscripción**.
-  Aprobó sin amar ni suscribirse. **La utilidad accionable gana la aprobación pero NO la suscripción.** Es
-  la más débil de las promovidas; candidata #1 a revisión si no retiene.
-- **🗺️ Pasaporte (viajes/orígenes/geografía) → RECHAZADO.** 30/06: proposal_rejected + suscripción NO,
-  y eso que leyó 54s/scroll 100%. **Primer news-feed que el usuario rechaza.** Leerlo entero no bastó:
-  el ángulo viajes/geografía/patrimonio NO dispara el "increíble". Ángulo perdedor. No relanzar.
+**CONVIERTEN (love + suscripción SÍ + aprobado, dwell alto):**
+- **📱 Feed (red-social, 1ª persona)** — dwell RÉCORD 208s (+142s), 😍×2, sub×2, aprob×2. El ganador absoluto.
+  Voz en 1ª persona + gesto "seguir una cuenta" retiene y convierte más que nada. PROMOVIDO.
+- **🔮 Horóscopo (IDENTIDAD, ciclo 32)** — 01/07: 😍love + sub SÍ + aprobado + 115s/100%. '¿cuál sos vos?'
+  convierte. Confirma el eje identidad. PROMOVIDO 02/07.
+- **🍵 Chusmerío (tabloide/chisme)** — sub SÍ + aprob + 86s/100%. El chisme con hecho real se reenvía. PROMOVIDO.
+- **🏆 Récords (orgullo/superlativo)** — 😍 + sub SÍ + aprob + 141s/100%. Orgullo-número + número grande. PROMOVIDO.
+- **📰 Diario (editorial/novedad)** — 😍 + sub SÍ + aprob + 92s/100%. Framing prensa "edición del día". PROMOVIDO.
 
-**Síntesis de ángulos (la lección central hoy):**
-- CONVIERTEN a suscripción: **social/1ª-persona (Feed), chisme/humor (Chusmerío), orgullo-número (Récords),
-  editorial-novedad (Diario).** Todos tocan EMOCIÓN/IDENTIDAD/ESTATUS.
-- NO convierten: **utilidad/accionable (Superpoderes: aprueba, no se suscribe), viajes/geografía
-  (Pasaporte: rechaza).** Lo informativo-útil o lo geográfico no genera el gancho emocional.
-- **Hipótesis operativa:** el eje que convierte amor→SUSCRIPCIÓN es emocional/identitario, no utilitario.
-  Los próximos ángulos deben apuntar a IDENTIDAD, PERTENENCIA, HUMOR, ORGULLO, AFECTO.
+**APRUEBAN TIBIO (tap Aprobar pero 'meh', dwell bajo, SIN suscripción) — útil-lindo, sin gancho:**
+- **🧪 Superpoderes (utilidad/accionable)** — aprob pero 'meh' + 23s/10% + sin sub. La utilidad no dispara "increíble".
+- **💌 Consultorio (consejo sincero/calidez, ciclo 32)** — 01/07: aprob pero 'meh' + 36s/5% + sin sub. **MISMO patrón
+  que la utilidad: el consejo SINCERO/columna-sabiduría gana la aprobación pero NO la suscripción.** PROMOVIDO 02/07 (débil).
+  Lección: la calidez sincera rinde como lo utilitario. Para convertir hay que ENVOLVER el afecto en humor/chisme/identidad,
+  no entregarlo como consejo directo. Candidata #1 a revisión si no retiene.
+
+**RECHAZAN (proposal_rejected + sub NO, aun leyéndolo entero):**
+- **🗺️ Pasaporte (viajes/orígenes/geografía)** — RECHAZADO + sub NO pese a 54s/100%. Geografía/patrimonio no engancha. No relanzar.
+
+**Regla operativa para elegir ángulos nuevos:** apuntar a IDENTIDAD, PERTENENCIA, HUMOR, ORGULLO, 1ª PERSONA, CHISME.
+Evitar: utilidad accionable, geografía/viajes, y consejo/sabiduría entregado en tono sincero (envolverlo en humor si se usa).
 
 ## 🎯 SEÑAL REAL MEDIDA — qué engancha (histórico)
 
-- **NEWS-FEED de contenido verificado = el formato #1.** Curiosidad servida como feed scrolleable +
-  reacción + CTA de suscripción. 5 promovidas ya (Feed, Chusmerío, Superpoderes, Récords, Diario) + Rueda.
+- **NEWS-FEED de contenido verificado = el formato #1.** Feed scrolleable + reacción + CTA suscripción.
+  7 promovidas: Feed, Horóscopo, Chusmerío, Récords, Diario, Superpoderes(tibio), Consultorio(tibio) + Rueda.
 - **Curiosidades verificadas (#curiosidades) = contenido #1 histórico y el MÁS resiliente.** Abre casi
   siempre por click directo. Sección fija; sigue siendo el sostén del slot curio (3er push ancla).
-- **🌍 mundo-jardin (del usuario): asset GANADOR ×3** (23/25/27, click+😍love+95-97s). Rota día por medio.
-  NO es proposal (lo creó el usuario). Descansó desde 28/06 → disponible para rotar en un slot curio futuro.
+- **🌍 mundo-jardin (del usuario): asset GANADOR ×3** (23/25/27, click+😍love+95-97s). NO es proposal. Descansa
+  desde 28/06 → disponible para rotar en un slot curio futuro.
 - **🌿 Duelo = juego GANADOR 6/6 ×3** (15/22/26) PERO necesita ≥3-4 días de descanso; el uso seguido lo mata.
 - **Perdedores confirmados:** herramientas utilitarias (mapas/calendarios/dashboards ✗); formatos LENTOS
   (mazo flip-card ✗×3); memory-match (0); postales como experiencia SEPARADA (el amor era novedad, no
-  formato); cual-sobra (removido por el usuario); Rueda del año sobre-expuesta (fuera del push desde 17/06);
-  y ahora **Pasaporte/viajes (rechazado 30/06)** dentro del news-feed.
-- El usuario quiere **deleite + curiosidad verificada + news-feed emocional/identitario**, NO herramientas
-  ni mecánicas lentas ni ángulos meramente informativos.
+  formato); cual-sobra (removido por el usuario); Rueda sobre-expuesta (fuera del push desde 17/06);
+  Pasaporte/viajes (rechazado 30/06); y ahora el eje consejo-sincero/utilidad aprueba-sin-suscribir.
+- El usuario quiere **deleite + curiosidad verificada + news-feed emocional/identitario/humor**, NO
+  herramientas, NO mecánicas lentas, NO ángulos informativos-útiles ni consejo sincero.
 
 ## Estado del sistema
 
-- Push subscription device `pix9`: **active** (desde 11/06). Verificado 01/07.
+- Push subscription device `pix9`: **active** (desde 11/06). Verificado 02/07.
 - Logging por `/api/feedback` (outbox localStorage, sin PAT). Confiable desde 15/06.
-- **Cutoff de datos:** engagement.json se actualiza cuando el usuario interactúa. Su último sync fue
-  **2026-06-30T23:50Z** — cubre TODO el ciclo 30 y 31 (Feed/Pasaporte/Chusmerío/Superpoderes ya medidos).
-- Compactación 01/07: 16/06 cruzó el umbral >14 días → movido a daily_summary (engagement 16/06:
-  sent20/click1/visits3/appr0; send_log 16/06: sent20). Ventana viva ahora **17–30/06**.
+- **Cutoff de datos:** engagement.json se actualiza cuando el usuario interactúa. Último sync
+  **2026-07-01T23:53Z** — cubre TODO el ciclo 32 (Horóscopo/Consultorio/curio-Evónimo ya medidos).
+- Compactación 02/07: 17/06 cruzó el umbral >14 días → movido a daily_summary (engagement 17/06:
+  sent13/click1/visits4/appr0; send_log 17/06: sent13). Ventana viva ahora **18/06–01/07**.
 
 ## Conclusiones de los pushN enviados (por feedback real)
 
-- **27/06** — 2/3. A(curio Ciruelo F-4)→CLICK; B(🌍 mundo)→CLICK+😍love+97s; C tras cutoff.
-- **28/06** — B(🌿 Duelo, solo 1d descanso)→sin juego; C(curio Mirto B-27)→CLICK al día sgte.
-- **29/06 (noche del 28)** — Diario + Récords descubiertos directo → ambos 😍love + SUSCRIPCIÓN SÍ + aprobados + 92s/141s. PROMOVIDOS.
-- **29/06 ciclo 30 (Feed 08:30 / Pasaporte 13:00 / Lavanda 19:30)** — medido el 30/06 al sincronizar:
+- **28/06** — B(🌿 Duelo, 1d descanso)→sin juego; C(curio Mirto B-27)→CLICK al día sgte.
+- **29/06** — Diario + Récords descubiertos directo → ambos 😍love + SUSCRIPCIÓN SÍ + aprobados + 92s/141s. PROMOVIDOS.
+- **29/06 ciclo 30 (Feed 08:30 / Pasaporte 13:00 / Lavanda 19:30)** — medido 30/06:
   **Feed → 😍×2 + sub×2 + aprob×2 + 208s (RÉCORD)**; **Pasaporte → RECHAZADO + sub NO (leyó 54s)**.
 - **30/06 ciclo 31 (Chusmerío 08:30 / Superpoderes 13:00 / Lapachillo 19:30)** — **Chusmerío → sub SÍ +
-  aprob + 86s (GANÓ)**; **Superpoderes → aprob pero 'meh' + 23s/10% + sin sub (tibio)**; **Lapachillo B-14
-  → CLICK 23:50Z** (curio ancla funcionó, abrió directo a index).
+  aprob + 86s (GANÓ)**; **Superpoderes → aprob pero 'meh' + 23s/10% + sin sub (tibio)**; **Lapachillo B-14 → CLICK**.
+- **01/07 ciclo 32 (🔮 Horóscopo 08:30 / 💌 Consultorio 13:00 / curio Evónimo B-44 19:30)** — medido 01/07 noche:
+  **Horóscopo → 😍love + sub SÍ + aprob + 115s/100% (GANÓ — identidad convierte)**; **Consultorio → aprob pero
+  'meh' + 36s/5% + sin sub (TIBIO — consejo sincero aprueba, no suscribe)**; **curio Evónimo B-44 → CLICK a index 23:53Z**.
 
-## 🔭 Corrida 01/07 — ciclo 32 (esta corrida)
+## 🔭 Corrida 02/07 — ciclo 33 (esta corrida)
 
-- **Proposals resueltas con dato ya sincronizado:** Feed→PROMOVIDO, Chusmerío→PROMOVIDO,
-  Superpoderes→PROMOVIDO (tibio), Pasaporte→DROPPED (rechazado; página+pitch git rm). Las 3 promovidas
-  se sumaron a Ideas → ✨ Experiencias con su tarjeta; footers pasados a "ya integrada".
-- **2 experiencias NUEVAS de cero (proposals pending, created=01/07, test limpio), vía agentes persona —
-  ambas apuntan al eje EMOCIONAL/IDENTITARIO que la síntesis de ángulos marcó como el que convierte:**
-  - 🔮 **El Horóscopo del Jardín** (`engage/2026-07-01-horoscopo-jardin.html`) — news-feed IDENTIDAD:
-    cada planta un 'signo' con lectura del día (personalidad+predicción) sobre rasgo real verificado.
-    Apuesta: '¿cuál sos vos?' + compartibilidad + categoría de monetización probada. Promotor a (08:30).
-  - 💌 **El Consultorio del Jardín** (`engage/2026-07-01-consultorio-jardin.html`) — news-feed CALIDEZ:
-    cada planta una columnista que da un consejo de vida anclado en un dato real. Apuesta: afecto +
-    frase-del-día screenshot-eable + mercado wellness/daily-affirmation. Promotor b (13:00).
-- **Cola ciclo 32:** (a) 08:30 🔮 Horóscopo; (b) 13:00 💌 Consultorio; (c) 19:30 curio **Abelia F-7**
-  (naufragio de Clarke Abel: el barco se hundió al volver, la planta sobrevivió, las semillas se perdieron;
-  fresca, seasonless, NO usada en ninguna experiencia). → index #curiosidades.
-- **Watch 32:** ¿el ángulo IDENTIDAD (Horóscopo) o AFECTO (Consultorio) convierte amor→suscripción como
-  el social/chisme? Confirma o refuta la hipótesis "lo emocional/identitario convierte, lo utilitario no".
-  Si una NO junta aprobación con ventana limpia, se dropea el 02/07.
+- **Proposals resueltas con dato sincronizado:** Horóscopo→PROMOVIDO (fuerte, identidad convierte),
+  Consultorio→PROMOVIDO (TIBIO, aprobó sin suscribir; consejo sincero = techo aprobación). Ambas sumadas a
+  Ideas → ✨ Experiencias (build.py approved_experiences); footers pasados a "ya integrada".
+- **2 experiencias NUEVAS de cero (proposals pending, created=02/07, test limpio), vía agentes persona —
+  ambas DUPLICAN los ejes ganadores (1ª persona/humor + chisme), evitando el tono sincero que salió tibio:**
+  - 🎤 **Confesiones del Jardín** (`engage/2026-07-02-confesiones-jardin.html`) — news-feed 1ª persona +
+    HUMOR + VULNERABILIDAD: cada planta confiesa un secreto real (clon Hass B-36, caña muda I-2, impostora B-3,
+    invasora F-9, camaleónica B-5, robo-crédito B-1...). Apuesta: la voz que dio el récord (Feed 208s) + intimidad
+    confesional + compartibilidad. Promotor a (08:30).
+  - 💘 **Amores del Cantero** (`engage/2026-07-02-amores-cantero.html`) — news-feed tabloide de ROMANCES
+    (revista del corazón, tono chisme juguetón, NO consejo sincero): mirto B-27 de Venus, romero B-26 fiel,
+    fresno F-10 dioico, gardenia B-25 femme fatale, abelia F-7 naufragio, buganvilia B-1 Jeanne Baret. Apuesta:
+    el motor viral del Chusmerío llevado al romance (se reenvía solo). Promotor b (13:00).
+- **Cola ciclo 33:** (a) 08:30 🎤 Confesiones; (b) 13:00 💘 Amores; (c) 19:30 curio **Caqui B-41**
+  ("fruto de los dioses" — Diospyros; en Japón símbolo de longevidad, caquis de 600 años aún produciendo;
+  fruta AHORA en pleno invierno may-jul; astringente hasta ablandar). Fresca, estacional REAL, no usada en experiencias.
+  → index #curiosidades.
+- **Watch 33:** ¿Confesiones (1ª persona/humor) y Amores (chisme romántico) convierten amor→suscripción como
+  Feed/Chusmerío? Confirma la regla "envolver afecto en humor/chisme convierte; entregarlo sincero no".
+  Si una NO junta aprobación con ventana limpia, se dropea el 03/07.
 
 ## Contexto del jardín (julio 2026 = pleno invierno, lat -34.9°S)
 
@@ -110,17 +115,15 @@ sincronizó el 01/07, prueba que **dentro del news-feed el ÁNGULO manda**. Resu
   may-jul; romero B-26 flor jun-oct; caducos pelados (durazno B-30/35, crespón B-9, liquidámbar B-37,
   ciruelos F-4/B-38); perennes verdes (mirto B-27, guayabo F-1, lavanda B-19, evónimo B-44).
 - Heladas tardías (jun-ago) pegan más al **sur y al este al amanecer**.
-- Hay 1 upload pending (B-15) → lo procesa `/actualizar-tareas`, no este agente.
 
 ## TODO pendiente
 
 - **Ángulos NEWS-FEED usados:** editorial=Diario, superlativos=Récords, red-social=Feed, viajes=Pasaporte(✗),
-  tabloide=Chusmerío, utilidad=Superpoderes(tibio), identidad=Horóscopo(hoy), afecto/consejo=Consultorio(hoy).
-  **Sin usar (apuntar a lo emocional):** efemérides "un día como hoy", before/after con fotos del usuario,
-  entrevista/Q&A a una planta, "confesiones", cartas de amor entre plantas.
-- **Curios frescos NO usados** (fun_fact verificado): fresno F-10 (dioico, samaras helicóptero), pera
-  Williams B-39 (doble robo de nombre), difenbaquia I-2 (caña muda, tóxica). Plantas MUY usadas a descansar:
-  B-1/B-12/B-16/B-23/B-25/B-15/B-36/F-1/F-8/B-29.
+  tabloide=Chusmerío, utilidad=Superpoderes(tibio), identidad=Horóscopo(✓), consejo/calidez=Consultorio(tibio),
+  confesión/1ª-persona=Confesiones(hoy), romance/chisme=Amores(hoy).
+  **Sin usar (apuntar a lo emocional/humor):** efemérides "un día como hoy", before/after con fotos del usuario,
+  entrevista/Q&A a una planta, "rankings de personalidad", memes/humor absurdo verificado.
+- **Curios frescos NO usados** (fun_fact verificado): pera Williams B-39 (doble robo de nombre), caqui B-41 (hoy curio).
+  Plantas MUY usadas a descansar: B-1/B-12/B-16/B-23/B-25/B-36/F-1/F-8/B-29.
 - Regenerar el dataset M de la rueda desde data_plants.py en build-time (hoy snapshot estático).
 - Reconciliar arrays `pruning` con el timing corregido antes de cualquier vista de poda.
-</content>
