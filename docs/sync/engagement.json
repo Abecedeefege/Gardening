@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-02T13:35:04.779Z",
+  "_updated_at": "2026-07-02T13:37:02.418Z",
   "events": [
     {
       "_id": "mqjlxpvtmo4jvu",
@@ -1255,6 +1255,15 @@
       "nid": "2026-07-02-a",
       "src": "push",
       "ts": "2026-07-02T13:35:05.369Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr3jtjtsdpjot3",
+      "type": "reaction",
+      "target": "confesiones",
+      "value": "meh",
+      "page": "engage/2026-07-02-confesiones-jardin.html",
+      "ts": "2026-07-02T13:37:03.135Z",
       "device": "sin-nombre"
     }
   ],
