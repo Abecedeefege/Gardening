@@ -10,8 +10,9 @@ siguiente. Todo sin backend propio: el estado vive como JSON en el repo.
 Este documento cubre la capa de **orquestación y contenido**. La capa de
 **push** (VAPID, service worker, dispatcher, cola) está documentada aparte en
 [`WEB_PUSH_PLAYBOOK.md`](WEB_PUSH_PLAYBOOK.md) — implementala primero, es el
-prerequisito. Al final hay **dos prompts listos para pegar** que bootstrapean
-el sistema completo en findmetea.com y en la Biblioteca.
+prerequisito. Al final hay **cuatro prompts listos para pegar** que
+bootstrapean el sistema completo en findmetea.com, la Biblioteca,
+Psicologeando y LunesDeUNO.
 
 ---
 
@@ -599,7 +600,192 @@ REGLAS DURAS
 
 ---
 
-## 12. Errores que ya pagamos (no los repitas)
+## 12. Prompt específico — Psicologeando
+
+Este prompt asume que lo pegás en una sesión de Claude Code **sobre el repo
+de Psicologeando**. Como la app no está publicada en una URL que el agente
+pueda inspeccionar de antemano, arranca con una fase de auto-descubrimiento
+— y como el dominio es psicología, lleva reglas de privacidad reforzadas:
+**todo lo que entra a `queue.json` o a una página de experiencia queda
+público en el repo**, así que nada personal ni clínico puede tocar el canal.
+
+```
+Quiero implementar en este repo (Psicologeando) el sistema de "experiencias
+diarias con Routine" documentado en EXPERIENCIAS_DIARIAS_PLAYBOOK.md y
+WEB_PUSH_PLAYBOOK.md (copiados a este repo). Objetivo: que un agente diario
+me sorprenda con contenido de psicología anclado en MI app — que la abra,
+aprenda algo que no sabía y quiera volver mañana.
+
+FASE 0 — DESCUBRIMIENTO (antes de tocar NADA)
+Auditá el repo y reportame en el primer commit (docs/AUDIT.md o similar):
+- Qué es la app exactamente: qué pantallas tiene, qué datos modela
+  (¿conceptos/sesgos/autores? ¿notas o registros personales? ¿tests?
+  ¿diario emocional?), dónde viven los datos (JSON/JS/HTML hardcodeado),
+  y si hay estado de usuario en localStorage.
+- Hosting y estructura publicada (GitHub Pages con path /Psicologeando/,
+  Vercel, otro) — de esto depende cómo adaptar la capa push: scope del
+  sw.js, dónde va notifications/, URLs absolutas de los deep links, y si
+  el feedback puede ser serverless o va con PAT en localStorage.
+- CLASIFICÁ los datos en dos pilas: (a) contenido de conocimiento público
+  (conceptos, autores, experimentos, sesgos) — utilizable en pushes y
+  experiencias; (b) datos personales/sensibles (estados de ánimo, notas,
+  registros propios) — PROHIBIDOS en el canal push y en páginas del repo;
+  como mucho, referenciables de forma abstracta ("tenés registros sin
+  completar esta semana") y solo si yo lo apruebo explícitamente.
+
+FASES (en orden, commiteando por fase)
+1. AUDITORÍA DE ASSETS: inventario según §8.3 del playbook sobre la pila
+   (a): entidades con nombre propio, datos verificables, dimensión
+   temporal (efemérides de la psicología, "un experimento como hoy"),
+   qué es posesivo (mi progreso, mis conceptos vistos), y qué preguntas
+   engageAnswer tienen sentido. Guardalo en el learnings.md inicial.
+2. CAPA PUSH: checklist §10 de WEB_PUSH_PLAYBOOK.md adaptado al hosting
+   detectado en la fase 0. Probar de punta a punta antes de seguir.
+3. TRACKING: engage.js con prefijo psicologeando_ en las claves de
+   localStorage, outbox + badge de sync honesto, y el endpoint de
+   feedback según el hosting (serverless si hay; si no, PAT).
+4. AGENTE: .claude/commands/engagement.md según §3 del playbook:
+   - Objetivo: aprendizaje con deleite — que cada push me enseñe algo
+     real de psicología conectado con lo que la app ya contiene.
+   - Cadencia inicial: 2 pushes/día (08:30 y 19:30 -03:00, hora
+     America/Montevideo), expires_at mismo día 22:00. Empezar más suave
+     que el jardín: el contenido de aprendizaje satura más rápido.
+   - Contenido en español rioplatense.
+   - Ángulos iniciales (§8.1 — identidad/humor/chisme/orgullo/1ª persona;
+     evitar el tono manual-de-autoayuda y el consejo sincero, que miden
+     tibio): "🔮 Horóscopo cognitivo" (qué sesgo sos hoy — identidad),
+     "🍷 Chusmerío de la psicología" (feudos reales: Freud vs. Jung,
+     los escándalos de los experimentos famosos, Milgram, Zimbardo),
+     "🏆 Récords de la mente" (superlativos verificados de la cognición),
+     "📱 Feed" (los sesgos y conceptos postean en 1ª persona: "soy el
+     sesgo de confirmación y hoy te acompañé 14 veces"), "🎤 Confesiones
+     de un experimento", "🕯️ Un día como hoy en la psicología".
+   - Política de contenido: TODO dato afirmado verificado contra una
+     fuente; los experimentos citados con año y autor reales; prohibido
+     diagnosticar, patologizar o dar consejo clínico — esto es
+     divulgación con humor, no terapia. Y la regla de la fase 0: nada
+     personal/sensible sale al canal.
+   - Experiencias efímeras en engage/ con el contrato completo del §5
+     (back-link primero, reacción, CTA suscripción diaria,
+     Aprobar/No me interesa).
+5. ROUTINE: instrucciones exactas para crear la Routine diaria (~06:00
+   UY, sesión nueva, "/engagement"); no la crees vos.
+6. PRIMER CICLO MANUAL: primera experiencia (prior más fuerte: "Horóscopo
+   cognitivo" — identidad es el eje que mejor convierte) + cola de mañana
+   + learnings.md inicial con cadencia, inventario e hipótesis.
+
+REGLAS DURAS
+- Privacidad primero: datos personales/clínicos/emocionales míos JAMÁS en
+  queue.json, en páginas de engage/ ni en learnings.md — todo eso es
+  público en el repo.
+- HTML standalone con CSS inline por experiencia, paleta de la app,
+  mobile-first, sin frameworks nuevos.
+- Secretos jamás al repo (VAPID privada = secret de Actions).
+- Todo aditivo: la app actual queda intacta.
+- Sin afirmaciones psicológicas inventadas: si no está verificado con
+  fuente, no se publica.
+```
+
+---
+
+## 13. Prompt específico — LunesDeUNO (abecedeefege.github.io/LunesDeUNO)
+
+Acá el sistema cambia de forma: LunesDeUNO no es un catálogo para
+redescubrir sino un **ritual semanal con personas reales** (partidas de UNO
+de los lunes, tabla a 500, castigos tipo "debe postre/picada"). La cadencia
+correcta no es N pushes/día — es una **semana editorial anclada al lunes**.
+Los ángulos ganadores (chisme, orgullo, identidad, 1ª persona) acá tienen
+esteroides porque el chisme es sobre gente real de tu mesa.
+
+```
+Quiero implementar en este repo (LunesDeUNO — tracker de nuestras partidas
+de UNO de los lunes: tabla acumulada a 500, historial de partidas,
+castigos/deudas tipo "Tano debe postre por perder el 23 de junio", fotos)
+el sistema de "experiencias con Routine" documentado en
+EXPERIENCIAS_DIARIAS_PLAYBOOK.md y WEB_PUSH_PLAYBOOK.md (copiados a este
+repo), ADAPTADO a cadencia semanal. Objetivo: que la semana gire alrededor
+del lunes — anticipación antes, épica después — y que las deudas no se
+olviden jamás.
+
+CONTEXTO DE LA APP
+- Sitio estático en GitHub Pages bajo el path /LunesDeUNO/ — mismo
+  cuidado que con cualquier Pages: sw.js con scope relativo al path,
+  notifications/ dentro del directorio publicado, deep links absolutos
+  bajo https://abecedeefege.github.io/LunesDeUNO/. Auditá primero cómo
+  están modelados los datos (¿scores y historial en JSON/JS? ¿en
+  localStorage? ¿fotos dónde?): el agente necesita leer la tabla, el
+  historial de partidas y las deudas para generar contenido real.
+- Los jugadores son personas reales y el sitio es público: usar SOLO los
+  apodos que ya aparecen en la app, jamás apellidos/teléfonos/datos
+  personales. El tono del chisme es interno-cariñoso, nunca hiriente:
+  celebrar y picantear, no humillar.
+
+FASES (en orden, commiteando por fase)
+1. AUDITORÍA: inventario según §8.3 — jugadores, tabla acumulada, rachas,
+   historial con fechas, deudas activas y saldadas, fotos. Derivá stats
+   que hoy no se muestran: quién ganó más lunes seguidos, la remontada
+   más grande, la deuda más vieja impaga, el "rival histórico" de cada
+   uno. Eso es el combustible de todo el contenido.
+2. CAPA PUSH: checklist §10 de WEB_PUSH_PLAYBOOK.md sobre GitHub Pages
+   (dispatcher de Actions en este repo). Feedback: PAT en localStorage o
+   proyecto Vercel mínimo para /api/feedback — proponeme una y justificá.
+   NOTA multi-dispositivo: el playbook guarda UNA suscripción; si más
+   adelante los demás jugadores quieren recibir pushes, extendé
+   subscription.json a un array de suscripciones y que el dispatcher
+   itere (invalidando individualmente los endpoints muertos). Arrancá
+   solo conmigo.
+3. TRACKING: engage.js con prefijo lunesdeuno_ en las claves, outbox +
+   badge de sync honesto.
+4. AGENTE + CADENCIA SEMANAL: .claude/commands/engagement.md según §3
+   del playbook, pero con SEMANA EDITORIAL en vez de N/día:
+   - LUNES 10:00 — previa de la partida: "🔥 Hoy se juega. Tano defiende
+     la punta / la deuda de X cumple N días" → experiencia "La Previa"
+     (tabla actual + qué se juega hoy + pronóstico en broma).
+   - MARTES 09:00 — crónica del lunes: recap épico de la partida de
+     anoche escrito como periodismo deportivo (si hay datos nuevos en el
+     historial; si nadie cargó la partida, el push es "¿anoche se jugó?
+     Cargá el resultado" con deep link al form de la app).
+   - JUEVES 19:30 — contenido de mitad de semana rotando ángulos:
+     "🍿 Chusmerío de la mesa" (rachas, deudas impagas con días
+     contados, rivalidades históricas — TODO con datos reales de la
+     tabla), "🏆 Récords del grupo", "🔮 Horóscopo unístico" (qué carta
+     sos esta semana), "📱 Feed" (las cartas o los jugadores postean en
+     1ª persona), "🎤 Confesiones del mazo".
+   - DOMINGO 20:00 — teaser de la previa: "Mañana es lunes. La tabla
+     dice X. ¿Va postre o picada?"
+   - Timestamps -03:00, expires_at el mismo día ~23:00. Fuera de esos 4
+     slots, silencio: acá el exceso mata el ritual.
+   - Si el historial muestra que un lunes NO se jugó, la crónica del
+     martes no se inventa: el agente lo registra y adapta ("semana de
+     descanso — la tabla queda congelada").
+   - Experiencias efímeras en engage/ con el contrato del §5. Las deudas
+     son el mejor CTA engageAnswer del sistema: "¿Tano ya pagó el
+     postre? Sí / Todavía no" — la respuesta actualiza el contenido de
+     la semana siguiente.
+5. ROUTINE: instrucciones para crear la Routine — acá conviene DIARIA
+   igual (~06:00 UY, sesión nueva, "/engagement"): el agente corre cada
+   día, lee qué día de la semana es y solo encola lo que toca según la
+   semana editorial (la mayoría de los días no encola nada o compacta
+   datos). No la crees vos.
+6. PRIMER CICLO MANUAL: generá la experiencia de la próxima previa de
+   lunes + el chusmerío del jueves con los datos reales de la tabla, y
+   encolá la semana. learnings.md inicial con la semana editorial como
+   CADENCIA VIGENTE.
+
+REGLAS DURAS
+- GitHub Pages manda: todo estático, nada que rompa la app actual.
+- Solo apodos ya públicos en la app; cero datos personales; tono
+  picante-cariñoso, jamás cruel — son mis amigos.
+- Datos SIEMPRE reales de la tabla/historial: un chisme inventado sobre
+  una persona real quema el canal para siempre.
+- HTML standalone con CSS inline, estética de la app (o de revista
+  deportiva/tabloide para las crónicas), mobile-first.
+- Secretos jamás al repo.
+```
+
+---
+
+## 14. Errores que ya pagamos (no los repitas)
 
 1. **Escribir la cola a mano sin assert anti-duplicados** → dos pushes al
    mismo destino el mismo día → queja del usuario. Un destino por slot.
