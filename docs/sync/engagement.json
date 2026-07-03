@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-03T20:21:41.245Z",
+  "_updated_at": "2026-07-03T23:14:24.970Z",
   "events": [
     {
       "_id": "mqkz33agzgzbsh",
@@ -1270,6 +1270,15 @@
       "type": "proposal_approved",
       "proposal_id": "2026-07-03-reality-jardin",
       "ts": "2026-07-03T20:21:42.082Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr5dputm8t26qg",
+      "type": "dwell",
+      "seconds": 62,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-03-reality-jardin.html",
+      "ts": "2026-07-03T20:21:45.418Z",
       "device": "sin-nombre"
     }
   ],
