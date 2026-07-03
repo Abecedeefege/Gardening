@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-03T13:48:52.639Z",
+  "_updated_at": "2026-07-03T13:48:55.855Z",
   "events": [
     {
       "_id": "mqkz33agzgzbsh",
@@ -1238,6 +1238,13 @@
       "value": "no",
       "page": "engage/2026-07-03-mundial-jardin.html",
       "ts": "2026-07-03T13:48:52.713Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr4zool6esuoof",
+      "type": "proposal_rejected",
+      "proposal_id": "2026-07-03-mundial-jardin",
+      "ts": "2026-07-03T13:48:56.058Z",
       "device": "sin-nombre"
     }
   ],
