@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-03T20:21:34.189Z",
+  "_updated_at": "2026-07-03T20:21:41.245Z",
   "events": [
     {
       "_id": "mqkz33agzgzbsh",
@@ -1263,6 +1263,13 @@
       "value": "meh",
       "page": "engage/2026-07-03-reality-jardin.html",
       "ts": "2026-07-03T20:21:34.726Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr5dps8yd8tphb",
+      "type": "proposal_approved",
+      "proposal_id": "2026-07-03-reality-jardin",
+      "ts": "2026-07-03T20:21:42.082Z",
       "device": "sin-nombre"
     }
   ],
