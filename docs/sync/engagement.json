@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-03T13:48:50.737Z",
+  "_updated_at": "2026-07-03T13:48:52.639Z",
   "events": [
     {
       "_id": "mqkz33agzgzbsh",
@@ -1229,6 +1229,15 @@
       "value": "meh",
       "page": "engage/2026-07-03-mundial-jardin.html",
       "ts": "2026-07-03T13:48:50.539Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr4zom09d3uuln",
+      "type": "answer",
+      "qid": "mundial-suscripcion-diaria",
+      "value": "no",
+      "page": "engage/2026-07-03-mundial-jardin.html",
+      "ts": "2026-07-03T13:48:52.713Z",
       "device": "sin-nombre"
     }
   ],
