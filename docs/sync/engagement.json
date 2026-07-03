@@ -2,101 +2,6 @@
   "_updated_at": "2026-07-02T18:22:58.003Z",
   "events": [
     {
-      "_id": "mqjlxpvtmo4jvu",
-      "type": "notification_clicked",
-      "nid": "2026-06-18-a",
-      "page": "index.html",
-      "ts": "2026-06-18T14:40:53.315Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqjlxpvtkwa4wm",
-      "type": "page_visit",
-      "page": "index.html",
-      "nid": "2026-06-18-a",
-      "src": "push",
-      "ts": "2026-06-18T14:40:53.315Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqk0p8uzvv58qq",
-      "type": "notification_clicked",
-      "nid": "2026-06-18-b",
-      "page": "engage/2026-06-18-cual-sobra.html",
-      "ts": "2026-06-18T21:34:12.249Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqk0p8uzha0k6q",
-      "type": "page_visit",
-      "page": "engage/2026-06-18-cual-sobra.html",
-      "nid": "2026-06-18-b",
-      "src": "push",
-      "ts": "2026-06-18T21:34:12.249Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqk0p9u8cxwskc",
-      "type": "page_visit",
-      "page": "engage/2026-06-18-cual-sobra.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-06-18T21:34:13.517Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqk0phs3qnfl0c",
-      "type": "reaction",
-      "target": "cual-sobra-r1",
-      "value": "correct",
-      "page": "engage/2026-06-18-cual-sobra.html",
-      "ts": "2026-06-18T21:34:23.811Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqk0pk7a6qxzbz",
-      "type": "proposal_approved",
-      "proposal_id": "2026-06-18-cual-sobra",
-      "ts": "2026-06-18T21:34:26.950Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqk0po8on9g3r7",
-      "type": "reaction",
-      "target": "cual-sobra-r2",
-      "value": "correct",
-      "page": "engage/2026-06-18-cual-sobra.html",
-      "ts": "2026-06-18T21:34:32.184Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqk0pqdgrnhjkh",
-      "type": "reaction",
-      "target": "cual-sobra-r3",
-      "value": "wrong",
-      "page": "engage/2026-06-18-cual-sobra.html",
-      "ts": "2026-06-18T21:34:34.948Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqk0ps1xytybhv",
-      "type": "reaction",
-      "target": "cual-sobra-r5",
-      "value": "wrong",
-      "page": "engage/2026-06-18-cual-sobra.html",
-      "ts": "2026-06-18T21:34:37.125Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqk0puz8o05i27",
-      "type": "dwell",
-      "seconds": 29,
-      "scroll_pct": 100,
-      "page": "engage/2026-06-18-cual-sobra.html",
-      "ts": "2026-06-18T21:34:40.916Z",
-      "device": "sin-nombre"
-    },
-    {
       "_id": "mqkz33agzgzbsh",
       "type": "notification_clicked",
       "nid": "2026-06-19-a",
@@ -1337,6 +1242,12 @@
       "clicked": 1,
       "visits": 4,
       "approvals": 0
+    },
+    "2026-06-18": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 3,
+      "approvals": 1
     }
   }
 }

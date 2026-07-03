@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c1408">
+<title>💼 El Mundial del Jardín · Pitch de venta</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+  :root{
+    --verde:#2d5016; --verde2:#4f8a2b; --verde3:#6fb43e;
+    --crema:#f5faf0; --tinta:#1a2410;
+    --musgo:#7a8a68; --oro:#c9971e; --oro2:#e6b93d; --vino:#7a3a12; --miel:#8a5a12;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    --serif:'Fraunces',Georgia,serif;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; min-height:100%; }
+  body{
+    font-family:var(--sans);
+    background:radial-gradient(120% 80% at 50% -10%, #fffdf2 0%, var(--crema) 45%, #e7efdd 100%);
+    color:var(--tinta); -webkit-font-smoothing:antialiased;
+    padding:0 var(--pad) calc(56px + env(safe-area-inset-bottom)); line-height:1.5;
+  }
+  .back{ color:var(--verde); text-decoration:none; font-size:14px; font-weight:800;
+    display:inline-block; padding:calc(16px + env(safe-area-inset-top)) 0 4px; }
+  .back:active{ opacity:.6; }
+  .navlinks{ display:flex; gap:16px; flex-wrap:wrap; }
+
+  .wrap{ max-width:620px; margin:0 auto; }
+  header.hero{ text-align:center; padding:16px 0 8px; }
+  .crest{ font-size:46px; line-height:1; filter:drop-shadow(0 4px 10px rgba(122,58,18,.28)); }
+  .kicker{ font-size:12.5px; font-weight:900; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--miel); margin:8px 0 2px; }
+  h1{ font-family:var(--serif); font-size:clamp(26px,7.5vw,38px); letter-spacing:-0.025em;
+    color:var(--verde); margin:6px 0 6px; line-height:1.04; }
+  h1 .em{ color:var(--oro); font-style:italic; }
+  .deck{ font-size:16px; color:#46563a; max-width:520px; margin:8px auto 0; }
+  .deck b{ color:var(--verde); }
+
+  section{ margin-top:34px; }
+  h2.sec{ font-family:var(--serif); font-size:22px; color:var(--verde); letter-spacing:-0.015em; margin:0 0 4px;
+    display:flex; align-items:baseline; gap:8px; }
+  h2.sec .n{ font-family:var(--sans); font-size:12px; font-weight:900; letter-spacing:.1em; color:#fff;
+    background:linear-gradient(180deg,var(--oro2),var(--oro)); border:none; border-radius:999px;
+    padding:3px 10px; }
+  .lead{ font-size:14.5px; color:#5a6b4a; margin:6px 0 16px; }
+
+  .why{ background:#fff; border-radius:20px; padding:20px; border:1px solid #eae2cf;
+    box-shadow:0 6px 18px rgba(122,58,18,.07); }
+  .why ul{ margin:10px 0 0; padding-left:20px; }
+  .why li{ margin:9px 0; font-size:14.5px; color:#3c4a30; }
+  .why li b{ color:var(--vino); }
+
+  .aud{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+  .aud .who{ flex:1; min-width:150px; background:#fff; border:1px solid #eae2cf; border-radius:16px;
+    padding:14px; box-shadow:0 4px 12px rgba(122,58,18,.06); }
+  .aud .who .ic{ font-size:22px; }
+  .aud .who h4{ margin:6px 0 3px; font-size:14.5px; color:var(--verde); }
+  .aud .who p{ margin:0; font-size:12.5px; color:#5a6b4a; }
+
+  .cards{ display:flex; flex-direction:column; gap:14px; }
+  .model{ background:#fff; border-radius:20px; padding:20px; border:1px solid #eae2cf;
+    box-shadow:0 6px 18px rgba(122,58,18,.07); position:relative; overflow:hidden; }
+  .model.bold{ background:linear-gradient(165deg,#fff8ea,#fdefd0); border-color:#f0dcae; }
+  .model::before{ content:""; position:absolute; inset:0 auto 0 0; width:5px;
+    background:linear-gradient(180deg,var(--oro2),var(--oro)); }
+  .model h3{ font-family:var(--serif); margin:0 0 2px; font-size:18px; color:var(--vino); letter-spacing:-0.01em; }
+  .model .ico{ font-size:24px; }
+  .model .price{ display:inline-block; margin:8px 0; font-size:19px; font-weight:900;
+    color:var(--miel); letter-spacing:-0.02em; }
+  .model p{ margin:6px 0; font-size:14px; color:#3c4a30; }
+  .model p b{ color:var(--vino); }
+  .model .row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+  .chip{ font-size:12px; font-weight:800; color:var(--miel); background:#fbeecf;
+    border-radius:999px; padding:5px 10px; }
+  .model .why-works{ margin-top:10px; font-size:13.5px; color:#5a6b4a; }
+  .model .why-works b{ color:var(--verde); }
+
+  .close{ margin-top:36px; background:linear-gradient(160deg,#20360f,#0e1a08); color:#eef4e6;
+    border-radius:24px; padding:28px 22px; box-shadow:0 14px 34px rgba(20,40,10,.4); }
+  .close h2{ font-family:var(--serif); color:var(--oro2); margin:0 0 8px; font-size:23px; }
+  .close p{ font-size:14.5px; color:#d7e3c9; margin:8px 0; }
+  .close p b{ color:var(--oro2); }
+  .close .tam{ display:flex; gap:12px; flex-wrap:wrap; margin:16px 0; }
+  .close .tam div{ flex:1; min-width:120px; background:rgba(255,255,255,.08); border-radius:16px;
+    padding:14px; text-align:center; }
+  .close .tam .big{ font-size:26px; font-weight:900; color:var(--oro2); line-height:1; }
+  .close .tam .cap{ font-size:12px; color:#c3d6ac; margin-top:5px; font-weight:700; }
+  .close .cta{ margin-top:12px; font-size:16px; font-weight:800;
+    background:linear-gradient(180deg,var(--oro2),var(--oro)); color:#2a1e04;
+    border-radius:16px; padding:15px; text-align:center; }
+
+  footer{ text-align:center; margin-top:30px; }
+  .footlink{ color:var(--musgo); text-decoration:none; font-size:13.5px; font-weight:800;
+    border-bottom:1px dashed #c3cdb2; }
+  .creditline{ font-size:12px; color:#9aa888; margin-top:14px; }
+
+  @media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; } }
+</style></head><body>
+<div class="navlinks">
+  <a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+  <a class="back" href="2026-07-03-mundial-jardin.html">← Volver a la experiencia</a>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="crest">💼</span>
+    <p class="kicker">Pitch interno · solo para el dueño</p>
+    <h1>Cómo se vende «El <span class="em">Mundial</span> del Jardín»</h1>
+    <p class="deck">Una experiencia que convierte tu cantero en un <b>torneo con hinchada</b>. La gente no comparte “datos de plantas” — comparte <b>competencia, orgullo local y drama deportivo</b>. Ocho especies son selecciones, cada cruce lo gana un récord real, y la campeona es una <b>nativa uruguaya</b>. En pleno Mundial de fútbol de verdad, el jardín tiene su propia copa. El envoltorio es lúdico; el dato verificado es lo que se cobra.</p>
+  </header>
+
+  <!-- POR QUÉ RETIENE -->
+  <section>
+    <h2 class="sec">Por qué retiene y se comparte «El Mundial del Jardín»</h2>
+    <p class="lead">La tesis, en limpio, sobre los resortes que ya sabemos que convierten amor en suscripción.</p>
+    <div class="why">
+      <ul>
+        <li><b>La competencia genera bando, y el bando genera vuelta.</b> Un torneo no se lee: se hincha. En el momento en que hay un cruce, el cerebro toma partido — “que gane la mía” — y volver al día siguiente a ver el resultado deja de ser opcional. Es el mismo loop que hace insustituible al fixture del fin de semana.</li>
+        <li><b>Timing cultural imbatible.</b> El Mundial real 2026 se juega AHORA. Uruguay es país futbolero hasta la médula. Montar el Mundial del jardín encima de esa fiebre le da un gancho gratis que ningún otro mes del año regala. Es surfear una ola que ya está rompiendo.</li>
+        <li><b>Orgullo local = compartir con la camiseta puesta.</b> La final la gana una <b>nativa protegida por ley nacional</b>. “Mi jardín tiene una campeona uruguaya que le ganó a la planta más antigua del mundo” se reenvía como se reenvía un gol de la Celeste. Es identidad, no información.</li>
+        <li><b>El superlativo real es la munición viral.</b> “¿Sabías que la mandarina es el cítrico más antiguo del mundo y perdió la final contra una nativa de acá?” es una cápsula con final de asombro: screenshot y grupo de WhatsApp asegurados.</li>
+        <li><b>Serialización deportiva = «¿quién juega mañana?».</b> Un cruce nuevo por día reproduce el calendario de un campeonato: siempre hay próximo partido, siempre hay bracket por completar. “El fixture de tu jardín para toda la temporada” es promesa de continuidad, no un one-shot.</li>
+        <li><b>Drama + verdad = asombro creíble.</b> Arriba, declaraciones picantes en primera persona y relato deportivo; abajo, “Verificado (CÓDIGO)” con el dato real. Esa pirueta — épica de cancha y hecho comprobable — produce el “me voló la cabeza” Y la credibilidad. La credibilidad es lo único monetizable a largo plazo.</li>
+      </ul>
+    </div>
+
+    <h2 class="sec" style="margin-top:26px;">Público objetivo</h2>
+    <div class="aud">
+      <div class="who"><div class="ic">🪴</div><h4>Plantófilos hinchas</h4><p>Dueños que aman a sus plantas y ahora tienen a quién alentar. Coleccionan macetas; van a coleccionar campeonas.</p></div>
+      <div class="who"><div class="ic">🇺🇾</div><h4>Orgullosos de lo nuestro</h4><p>El uruguayo que se emociona con lo nativo y con la Celeste. La nativa campeona le toca la fibra de la identidad.</p></div>
+      <div class="who"><div class="ic">📣</div><h4>Reenviadores de asombro</h4><p>Los que mandan el dato al grupo. No necesitan jardín: comparten el resultado y el superlativo increíble.</p></div>
+    </div>
+  </section>
+
+  <!-- 3 MODELOS INNOVADORES -->
+  <section>
+    <h2 class="sec"><span class="n">A</span> 3 modelos de monetización innovadores</h2>
+    <p class="lead">Sólidos, realistas, con demanda probada en adyacencias deportivas y de coleccionismo.</p>
+    <div class="cards">
+
+      <div class="model">
+        <span class="ico">⚽</span>
+        <h3>1 · Suscripción “Fixture del Jardín”</h3>
+        <span class="price">USD 3,99 / mes · USD 29 / año</span>
+        <p><b>A quién:</b> el hincha del jardín que quiere ver el cruce de cada mañana, y todo el que disfruta un buen torneo.</p>
+        <p><b>Qué:</b> push diario con el partido del día entre DOS plantas de SU jardín, generado desde el catálogo cargado, con su ganador por récord real. Freemium: 1 cruce gratis por semana, fixture completo al pagar. Botón “contá quién ganó” en cada uno.</p>
+        <div class="row"><span class="chip">Recurrente</span><span class="chip">Bajo churn</span><span class="chip">Margen ~95%</span></div>
+        <p class="why-works"><b>Por qué encaja:</b> el contenido es generativo y casi gratis; el valor percibido es alto porque es personalizado, competitivo y adictivo como un calendario deportivo. 1.000 suscriptores/año = <b>USD 29k</b> con costo marginal casi cero, y cada resultado reenviado es adquisición gratis.</p>
+      </div>
+
+      <div class="model">
+        <span class="ico">🤝</span>
+        <h3>2 · Selección patrocinada (sponsor de camiseta)</h3>
+        <span class="price">USD 200–600 por cruce de marca</span>
+        <p><b>A quién:</b> viveros, marcas de sustrato/fertilizante y ferias botánicas que quieren aparecer donde la gente comparte sola.</p>
+        <p><b>Qué:</b> un cruce auspiciado — mismo formato épico + dato real — con la marca como “sponsor de la fecha” (“esta jornada te la trae Vivero X”), tal cual el sponsor de camiseta de un equipo. Diseñado para reenviarse, no para interrumpir.</p>
+        <div class="row"><span class="chip">Native ad</span><span class="chip">Shareable</span><span class="chip">CPM alto</span></div>
+        <p class="why-works"><b>Por qué encaja:</b> el patrocinio deportivo es el formato publicitario más aceptado que existe — nadie odia al sponsor de su equipo. 2 cruces patrocinados/semana = <b>~USD 40k/año</b>.</p>
+      </div>
+
+      <div class="model">
+        <span class="ico">🌿</span>
+        <h3>3 · Afiliación de vivero “fichá a esta jugadora”</h3>
+        <span class="price">8–15% por venta referida</span>
+        <p><b>A quién:</b> el lector en el pico de deseo (“quiero a la campeona / a esa nativa en mi jardín”).</p>
+        <p><b>Qué:</b> al pie del cruce, la planta comprable en viveros aliados — “sumá esta selección a tu plantel” — con link rastreable. La intención ya está caliente por la épica del partido.</p>
+        <div class="row"><span class="chip">Cero costo</span><span class="chip">Intención alta</span><span class="chip">Local-first</span></div>
+        <p class="why-works"><b>Por qué encaja:</b> el torneo crea el deseo de fichar “a esa jugadora” y la oferta lo resuelve en el mismo scroll. Ticket medio vivero ~USD 25 → comisión ~USD 3 por conversión, sin inventario.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3 MODELOS ULTRA CREATIVOS -->
+  <section>
+    <h2 class="sec"><span class="n">B</span> 3 modelos ultra creativos</h2>
+    <p class="lead">Más audaces, más memorables, mayor upside y narrativa deportiva.</p>
+    <div class="cards">
+
+      <div class="model bold">
+        <span class="ico">📕</span>
+        <h3>4 · Álbum de figuritas “Selección del Jardín” (estilo Panini)</h3>
+        <span class="price">USD 19–29 / álbum · sobres USD 1–2 · print-on-demand</span>
+        <p><b>Qué:</b> el álbum coleccionable de tu jardín. Cada figurita es una planta-selección con su código, su récord real y su “posición”. Sobres físicos o digitales, figuritas difíciles (la nativa campeona = la brillante), y el ritual sagrado del “la tengo, la tengo, me falta”. QR de cada figurita al cruce digital.</p>
+        <div class="row"><span class="chip">Coleccionable</span><span class="chip">Ritual social</span><span class="chip">Regalo</span></div>
+        <p class="why-works"><b>Por qué encaja:</b> el álbum de figuritas es una <b>máquina de compra recurrente y de FOMO</b> con décadas de prueba en Uruguay — y explota justo en Mundial. Convierte el feed en objeto y en obsesión de completar. El regalo duplica el TAM: lo compra hasta quien no tiene jardín.</p>
+      </div>
+
+      <div class="model bold">
+        <span class="ico">🎽</span>
+        <h3>5 · Fantasy / Liga del Jardín + quiniela de cruces</h3>
+        <span class="price">Freemium + pase de temporada USD 6,99</span>
+        <p><b>Qué:</b> el usuario arma su “equipo” con plantas de su jardín y suma puntos según los récords reales que se juegan cada fecha; ranking entre amigos y barrios. Sumale la quiniela lúdica: “¿quién gana el cruce de mañana?” con pronósticos y tabla de aciertos (sin dinero real, puro estatus).</p>
+        <div class="row"><span class="chip">Competencia social</span><span class="chip">Viral entre amigos</span><span class="chip">Retención alta</span></div>
+        <p class="why-works"><b>Por qué encaja:</b> el fantasy es el formato que más engancha del deporte digital porque suma <b>competencia entre personas</b> arriba de la competencia entre plantas. El pronóstico obliga a volver a ver el resultado: retención garantizada, y cada liga trae a los amigos gratis.</p>
+      </div>
+
+      <div class="model bold">
+        <span class="ico">👕</span>
+        <h3>6 · Merch “La camiseta de tu jardín”</h3>
+        <span class="price">USD 25–39 / camiseta · print-on-demand</span>
+        <p><b>Qué:</b> la camiseta de la selección de TU jardín: nombre y código de tu campeona al dorso (Anacahuita 16), escudo con tus especies, colores de tu cantero. También tazas, banderines y el “diploma de campeón” enmarcable de la nativa ganadora. Cero inventario (Prodigi/Printful).</p>
+        <div class="row"><span class="chip">Identidad</span><span class="chip">Alto ticket</span><span class="chip">Cero stock</span></div>
+        <p class="why-works"><b>Por qué encaja:</b> vender una camiseta con orgullo local es vender <b>pertenencia</b>, el margen emocional más alto que hay. El uruguayo ya paga por la camiseta de su cuadro y de la Celeste; ponerle la de su jardín campeón nativo es un souvenir que se usa y se fotografía. Dejás de vender datos y vendés una marca de identidad.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="close">
+    <h2>El cierre</h2>
+    <p><b>Visión:</b> todo jardín del mundo es un torneo esperando que alguien pite el inicio. Construimos el motor que convierte cada especie en una selección, cada récord real en un resultado y cada campeona en orgullo compartible. La competencia es el resorte de retención más antiguo que existe — hinchamos por lo nuestro sin que nadie nos pague por hacerlo — y el dato verificado es lo que sostiene la marca. Arrancamos en Montevideo, en pleno Mundial, con la campeona más uruguaya posible, y escalamos a toda Latinoamérica sobre un catálogo botánico que ya tenemos.</p>
+    <div class="tam">
+      <div><div class="big">🏆</div><div class="cap">final ganada por una nativa protegida por ley</div></div>
+      <div><div class="big">~1,3M</div><div class="cap">hogares con jardín en Uruguay</div></div>
+      <div><div class="big">~95%</div><div class="cap">margen del modelo core</div></div>
+    </div>
+    <p>Con solo el <b>1% del mercado uruguayo</b> en suscripción anual (USD 29) son <b>~USD 380k/año</b> recurrentes, antes del álbum de figuritas, el fantasy y la camiseta. El contenido es generativo: cada cruce nuevo cuesta casi cero, y cada resultado compartido trae hinchas gratis.</p>
+    <div class="cta">▶ Próximo paso: prender la suscripción “Fixture del Jardín” durante el Mundial real y medir reenvíos + conversión en 30 días.</div>
+  </section>
+
+  <footer>
+    <a class="footlink" href="2026-07-03-mundial-jardin.html">← Volver a la experiencia</a>
+    <p class="creditline">Pitch interno · El Mundial del Jardín · invierno 2026</p>
+  </footer>
+</div>
+</body></html>

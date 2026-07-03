@@ -247,22 +247,46 @@
       "title": "🎤 Confesiones del Jardín (news-feed de confesiones en 1ª persona)",
       "page": "engage/2026-07-02-confesiones-jardin.html",
       "created": "2026-07-02",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Ciclo 33 (función paralela): experiencia news-feed NUEVA de cero, ángulo CONFESIÓN/VULNERABILIDAD en PRIMERA PERSONA con humor. Cada planta confiesa un secreto real (Palta Hass B-36 'soy un clon de 1926', caña muda I-2 'puedo dejarte sin voz', ligustro F-9 'soy invasora', jazmín de leche B-3 'soy impostora', hortensia B-5 'cambio de color según lo que como', buganvilia B-1 'me robaron el crédito', palta B-22 'soy viuda evolutiva'...). Tras confirmar que dentro del news-feed el ÁNGULO decide y que la voz en 1ª persona estilo red social dio el dwell récord (Feed 208s) mientras el consejo sincero salió tibio (Consultorio), esta apuesta MAXIMIZA el eje ganador: 1ª persona + humor + intimidad/vulnerabilidad, ultra-compartible. Hipótesis: la confesión íntima con gracia convierte amor→suscripción tan bien como lo social/chisme. Lectura, no juego. + pitch HTML (6 modelos). Promotor: 2026-07-02-a (08:30).",
       "notified_by": [
         "2026-07-02-a"
       ],
-      "result_notes": null
+      "result_notes": "PROMOVIDA 03/07. El 02/07 13:35Z el usuario abrió el push promotor (2026-07-02-a) → proposal_approved + dwell 133s / scroll 100%, PERO con matiz: reaction 'meh' (😐) y SIN answer de suscripción diaria. Se promueve porque la aprobación explícita es el único pase a permanencia (regla del usuario) y el dwell fue alto (133s, leyó todo el confesionario). Matiz TIBIO: aprobó y leyó largo pero no amó ni se suscribió — el eje 1ª persona/humor/confesión gana aprobación y atención pero en esta edición no disparó el 'increíble' ni la suscripción (mismo techo que Superpoderes/Consultorio). Lectura: la vulnerabilidad confesional RETIENE (133s) pero convertir a suscripción necesita más gancho de asombro/compartibilidad; el 1ª-persona puro rinde mejor cuando además hay número/estatus (Feed) o chisme (Chusmerío). Promoción = página permanente + tarjeta en Ideas → ✨ Experiencias («🎤 Confesiones del Jardín»). Footer: bloque de decisión reemplazado por nota de integración + link al inicio; reacciones/suscripción siguen logueando. El push promotor 2026-07-02-a se retira."
     },
     {
       "id": "2026-07-02-amores-cantero",
       "title": "💘 Amores del Cantero (news-feed tabloide de romances)",
       "page": "engage/2026-07-02-amores-cantero.html",
       "created": "2026-07-02",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 33 (función paralela): experiencia news-feed NUEVA de cero, ángulo ROMANCE/CHISME DEL CORAZÓN (revista del corazón, tono farándula juguetón — NO consejo sincero). Quién ama a quién en el cantero, anclado en hechos reales: mirto B-27 sagrado para Venus, romero B-26 símbolo de fidelidad nupcial, coronita de novia F-5, evónimo B-44 de velos nupciales, gardenia B-25 femme fatale (Chanel Nº22), hibisco B-4 código soltera/casada, fresno F-10 dioico (romance macho-hembra a distancia), abelia F-7 romance de naufragio, buganvilia B-1 Jeanne Baret. Tras validar que el tabloide/chisme (Chusmerío) convierte y se reenvía solo, esta apuesta lleva el mismo motor viral al terreno del ROMANCE (súper compartible). Distinto del Consultorio tibio: acá es chisme juguetón, no consejo sincero. Hipótesis: el chisme romántico compartible convierte amor→suscripción como el tabloide. Lectura, no juego. + pitch HTML (6 modelos). Promotor: 2026-07-02-b (13:00).",
       "notified_by": [
         "2026-07-02-b"
+      ],
+      "result_notes": "DROPPED 03/07 por la regla de no-supervivencia sin aprobación explícita (pending de día anterior). El push promotor (2026-07-02-b) se despachó 16:21Z pero NO se registró apertura, reacción ni suscripción de la página de Amores en los datos sincronizados (cutoff engagement.json 18:22Z). Matiz de honestidad: la ventana quedó PARCIALMENTE incompleta (el sync cortó ~2h después del despacho y antes del curio caqui de la noche), así que el test no fue 100% limpio — PERO el usuario SÍ estuvo activo a las 18:22Z (visita directa al Feed en pix9) y aun así no abrió Amores, lo que lo vuelve un soft-negative, no solo falta de datos. Lectura: el ángulo romance/chisme del corazón no traccionó esta vez; el motor chisme ya está validado y vivo en el Chusmerío (promovido), así que NO se relanza Amores como experiencia separada. Página + pitch eliminados del repo (git rm)."
+    },
+    {
+      "id": "2026-07-03-mundial-jardin",
+      "title": "⚽ El Mundial del Jardín (news-feed de competencia/torneo)",
+      "page": "engage/2026-07-03-mundial-jardin.html",
+      "created": "2026-07-03",
+      "status": "pending",
+      "hypothesis": "Ciclo 34 (función paralela): experiencia news-feed NUEVA de cero, ángulo COMPETENCIA/ORGULLO/PERTENENCIA con timing del Mundial de fútbol REAL 2026 (se juega jun-jul 2026, ahora mismo). 8 plantas son 'selecciones' en un torneo; cada cruce lo gana el superlativo REAL más fuerte (longevidad +400 años hiedra B-15 / 600 años caqui B-41, nativismo, utilidad NASA cinta B-12, antigüedad mandarina B-24) y la final la gana una NATIVA URUGUAYA (Anacahuita B-16 protegida por ley / Guayabo F-1) como pay-off de orgullo local, como si Uruguay ganara el Mundial. Tras confirmar que orgullo/número grande (Récords 141s) e identidad (Horóscopo) convierten, esta apuesta suma DRAMA deportivo + gancho cultural del Mundial en curso + orgullo nativo, todo serializable ('el fixture de mañana'). Hipótesis: competencia+orgullo+timing convierte amor→suscripción como Récords/Feed. Lectura, no juego. + pitch HTML (6 modelos). Promotor: 2026-07-03-a (08:30).",
+      "notified_by": [
+        "2026-07-03-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-03-reality-jardin",
+      "title": "📺 El Reality del Jardín (news-feed reality show / Gran Hermano)",
+      "page": "engage/2026-07-03-reality-jardin.html",
+      "created": "2026-07-03",
+      "status": "pending",
+      "hypothesis": "Ciclo 34 (función paralela): experiencia news-feed NUEVA de cero, ángulo REALITY SHOW estilo Gran Hermano (fenómeno cultural enorme en el Río de la Plata) — CHISME + HUMOR + DRAMA + PERTENENCIA a 'la casa'. Las plantas son participantes con confesionario en 1ª persona, alianzas, placa de nominados y 'el más votado', cada una escondiendo un secreto/escándalo REAL (lantana B-29 miente su edad cambiando de color, crespón B-9 se desnuda en invierno, ciruela B-38 pasaporte falso china/japonesa, rosa de Siria B-18 belleza de 1 día, madreselva B-40 nombre exagerado, jazmín B-2 hijos sin permiso, liquidámbar B-37 sangra perfume/chicle maya, podranea F-2 se cambió el apellido). Tras validar que el tabloide/chisme (Chusmerío) convierte y se reenvía solo, esta apuesta lleva el motor viral del chisme al frame de reality serializado ('la gala de mañana'), con voz en 1ª persona (Feed dio el dwell récord) y votación/participación del público. Distinto del Amores tibio: acá es chisme+drama de convivencia, no romance. Hipótesis: el reality/chisme serializado convierte amor→suscripción como el Chusmerío. Lectura, no juego. + pitch HTML (6 modelos). Promotor: 2026-07-03-b (13:00).",
+      "notified_by": [
+        "2026-07-03-b"
       ],
       "result_notes": null
     }

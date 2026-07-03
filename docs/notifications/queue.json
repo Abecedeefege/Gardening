@@ -1,44 +1,44 @@
 {
-  "_updated_at": "2026-07-02T23:36:19.549Z",
+  "_updated_at": "2026-07-03T09:00:00-03:00",
   "notifications": [
     {
-      "id": "2026-07-02-a",
-      "title": "🎤 Tus plantas tienen algo que confesar",
-      "body": "Once confesiones en primera persona: la que es un clon, la que puede dejarte sin voz, la impostora. Pasá.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-02-confesiones-jardin.html",
+      "id": "2026-07-03-a",
+      "title": "⚽ Empezó el Mundial del Jardín",
+      "body": "8 plantas tuyas van por la copa: la hiedra de 400 años, el caqui de 600… y una nativa uruguaya en la final.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-03-mundial-jardin.html",
       "format": "experiencia",
-      "send_at": "2026-07-02T08:30:00-03:00",
-      "expires_at": "2026-07-02T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-02T12:07:58.711Z",
+      "send_at": "2026-07-03T08:30:00-03:00",
+      "expires_at": "2026-07-03T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-02 (ciclo 33)"
+      "created_by": "engagement-agent 2026-07-03 (ciclo 34)"
     },
     {
-      "id": "2026-07-02-b",
-      "title": "💘 ¿Quién ama a quién en tu cantero?",
-      "body": "El tabloide rosa del jardín: el romero fiel, la gardenia femme fatale, el fresno que busca pareja. Entrá.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-02-amores-cantero.html",
+      "id": "2026-07-03-b",
+      "title": "📺 Entrá a la casa del jardín",
+      "body": "8 plantas conviven, se nominan y confiesan sus secretos reales. ¿Quién es el más votado de la casa?",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-03-reality-jardin.html",
       "format": "experiencia",
-      "send_at": "2026-07-02T13:00:00-03:00",
-      "expires_at": "2026-07-02T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-02T16:21:16.046Z",
+      "send_at": "2026-07-03T13:00:00-03:00",
+      "expires_at": "2026-07-03T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-02 (ciclo 33)"
+      "created_by": "engagement-agent 2026-07-03 (ciclo 34)"
     },
     {
-      "id": "2026-07-02-c",
-      "title": "🍊 Fruta de dioses en pleno invierno",
-      "body": "El caqui B-41 da fruta ahora, en julio. Diospyros = 'fruto de los dioses'; en Japón hay caquis de 600 años.",
+      "id": "2026-07-03-c",
+      "title": "🍐 La pera del doble robo de nombre",
+      "body": "Tu pera Williams B-39 arrastra dos nombres robados: en EE.UU. la llaman Bartlett. La historia, en Curiosidades.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-07-02T19:30:00-03:00",
-      "expires_at": "2026-07-02T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-02T23:36:19.547Z",
+      "send_at": "2026-07-03T19:30:00-03:00",
+      "expires_at": "2026-07-03T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-02 (ciclo 33)"
+      "created_by": "engagement-agent 2026-07-03 (ciclo 34)"
     }
   ]
 }
