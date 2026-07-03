@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-02T18:22:58.003Z",
+  "_updated_at": "2026-07-03T13:47:34.693Z",
   "events": [
     {
       "_id": "mqkz33agzgzbsh",
@@ -1204,6 +1204,23 @@
       "page": "engage/2026-06-29-feed-jardin.html",
       "ts": "2026-07-02T18:22:59.612Z",
       "device": "pix9"
+    },
+    {
+      "_id": "mr4zmxgp57qf0c",
+      "type": "notification_clicked",
+      "nid": "2026-07-03-a",
+      "page": "engage/2026-07-03-mundial-jardin.html",
+      "ts": "2026-07-03T13:47:34.245Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr4zmxgp0ctqzx",
+      "type": "page_visit",
+      "page": "engage/2026-07-03-mundial-jardin.html",
+      "nid": "2026-07-03-a",
+      "src": "push",
+      "ts": "2026-07-03T13:47:34.245Z",
+      "device": "sin-nombre"
     }
   ],
   "daily_summary": {
