@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-03T13:47:34.693Z",
+  "_updated_at": "2026-07-03T13:48:50.737Z",
   "events": [
     {
       "_id": "mqkz33agzgzbsh",
@@ -1220,6 +1220,15 @@
       "nid": "2026-07-03-a",
       "src": "push",
       "ts": "2026-07-03T13:47:34.245Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr4zokbvs96y2p",
+      "type": "reaction",
+      "target": "mundial",
+      "value": "meh",
+      "page": "engage/2026-07-03-mundial-jardin.html",
+      "ts": "2026-07-03T13:48:50.539Z",
       "device": "sin-nombre"
     }
   ],
