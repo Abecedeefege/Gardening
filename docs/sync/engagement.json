@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-03T20:20:43.037Z",
+  "_updated_at": "2026-07-03T20:21:34.189Z",
   "events": [
     {
       "_id": "mqkz33agzgzbsh",
@@ -1254,6 +1254,15 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-03-mundial-jardin.html",
       "ts": "2026-07-03T13:49:01.291Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr5dpmkmgqctdf",
+      "type": "reaction",
+      "target": "reality",
+      "value": "meh",
+      "page": "engage/2026-07-03-reality-jardin.html",
+      "ts": "2026-07-03T20:21:34.726Z",
       "device": "sin-nombre"
     }
   ],
