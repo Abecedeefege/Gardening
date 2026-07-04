@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-04T16:56:30.211Z",
+  "_updated_at": "2026-07-04T16:57:34.711Z",
   "events": [
     {
       "_id": "mqmaxre7lddntv",
@@ -1270,6 +1270,13 @@
       "nid": "2026-07-04-b",
       "src": "push",
       "ts": "2026-07-04T16:56:32.223Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr6lv6gh3uwexu",
+      "type": "proposal_approved",
+      "proposal_id": "2026-07-04-memes-jardin",
+      "ts": "2026-07-04T16:57:36.881Z",
       "device": "sin-nombre"
     }
   ],
