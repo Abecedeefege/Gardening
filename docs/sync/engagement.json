@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-03T23:14:24.970Z",
+  "_updated_at": "2026-07-04T12:02:05.033Z",
   "events": [
     {
       "_id": "mqmaxre7lddntv",
@@ -1236,6 +1236,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-03-reality-jardin.html",
       "ts": "2026-07-03T20:21:45.418Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr6bb5o4uttfx9",
+      "type": "notification_clicked",
+      "nid": "2026-07-04-task-dia",
+      "page": "tareas.html",
+      "ts": "2026-07-04T12:02:06.579Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr6bb5o42w96k6",
+      "type": "page_visit",
+      "page": "tareas.html",
+      "nid": "2026-07-04-task-dia",
+      "src": "push",
+      "ts": "2026-07-04T12:02:06.579Z",
       "device": "sin-nombre"
     }
   ],
