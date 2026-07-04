@@ -3021,107 +3021,94 @@ h2.subbrand {
 # Va inline en un <style> propio al inicio del <body> para pintar
 # al instante mientras el resto del documento (~13MB) parsea.
 # ============================================================
+# SPLASH «Hora dorada — amanecer» — CSS scopeado bajo #splash (solo Home).
+# Elegido por el usuario el 04/07/2026 (propuesta fotográfica C + arco
+# noche→amanecer de la A). La foto real del fondo (images/splash-otono.jpg,
+# otoño compuesto sobre la copa del liquidámbar) arranca gradada a noche
+# cerrada con estrellas y va amaneciendo con la carga: hora azul → dorada →
+# color natural. Bloom óptico, barrido de luz sobre la pileta, lens flare y
+# hojas cayendo en 2 planos. Va inline en un <style> propio al inicio del
+# <body>; mientras la foto llega de la red, la fase nocturna la tapa.
+# ============================================================
 SPLASH_CSS = r"""
 #splash{
-  --verde:#2d5016; --verde2:#4a7c2a; --crema:#f5faf0;
+  --verde:#2d5016; --crema:#f5faf0;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --serif:'Anton',Georgia,"Times New Roman",serif;
-  /* SIN fade-in (a diferencia del demo): atrás está el sitio real, no un fondo
-     oscuro — el splash tiene que cubrir opaco desde el primer frame pintado */
-  position:fixed;inset:0;overflow:hidden;background:#050816;user-select:none;-webkit-user-select:none;
+  position:fixed;inset:0;overflow:hidden;background:#0b0918;user-select:none;-webkit-user-select:none;
   font-family:var(--sans);-webkit-tap-highlight-color:transparent;
   z-index:9999;cursor:pointer
 }
 #splash,#splash *{margin:0;padding:0;box-sizing:border-box}
 #splash.bye{opacity:0;pointer-events:none;transition:opacity .6s ease}
 
-/* cielo: 6 capas de gradiente precalculadas, crossfade de opacity (compositor-only) */
-#splash #sky{position:absolute;inset:0;z-index:1}
-#splash .skyg{position:absolute;inset:0;will-change:opacity}
-#splash .skyg+.skyg{opacity:0}
-#splash .skyg:nth-child(1){background:linear-gradient(180deg,#050816 0%,#0a1030 36%,#101a44 62%,#182252 100%)}
-#splash .skyg:nth-child(2){background:linear-gradient(180deg,#070a20 0%,#12143c 36%,#241e54 62%,#3a2a5e 100%)}
-#splash .skyg:nth-child(3){background:linear-gradient(180deg,#0c1030 0%,#231b4e 36%,#4a2c62 62%,#7c4160 100%)}
-#splash .skyg:nth-child(4){background:linear-gradient(180deg,#1b2148 0%,#463366 36%,#8a4a6e 62%,#c96952 100%)}
-#splash .skyg:nth-child(5){background:linear-gradient(180deg,#3d4a7e 0%,#7e5f8e 36%,#c97a6a 62%,#f0994e 100%)}
-#splash .skyg:nth-child(6){background:linear-gradient(180deg,#7e97b8 0%,#c2a9a2 36%,#f0bc80 62%,#ffd98f 100%)}
+/* foto real + Ken Burns lateral (transform-only). Mientras la foto baja de la
+   red, la fase nocturna (grades + fondo oscuro) cubre el hueco sin flash. */
+#splash #jj-ph,#splash #jj-bloom{position:absolute;inset:-5%;width:110%;height:110%;pointer-events:none}
+#splash #jj-ph img,#splash #jj-bloom img{width:100%;height:100%;object-fit:cover;object-position:52% 55%;display:block;
+  transform:scale(1.15);transform-origin:55% 45%;will-change:transform}
+#splash #jj-bloom{mix-blend-mode:screen;opacity:0;will-change:opacity}
+#splash #jj-bloom img{filter:blur(12px) saturate(1.3) brightness(1.1)}
 
-#splash #stars{position:absolute;inset:0;z-index:2;pointer-events:none}
-#splash .st{position:absolute;will-change:opacity}
-#splash .stc{display:block;border-radius:50%;background:#fff;box-shadow:0 0 6px 1px rgba(255,255,255,.45);animation:jj-tw ease-in-out infinite alternate}
-#splash .lucero .stc{box-shadow:0 0 12px 3px rgba(255,236,200,.75);background:#fff6e2}
-@keyframes jj-tw{from{opacity:.35}to{opacity:1}}
+.jj-gr{position:absolute;inset:0;pointer-events:none;will-change:opacity}
+#splash #jj-flat{background:#3a3226;mix-blend-mode:saturation;opacity:.75}
+#splash #jj-night{background:linear-gradient(180deg,#10164a 0%,#171e58 55%,#221d54 100%);mix-blend-mode:multiply;opacity:1}
+#splash #jj-night2{background:#0e1230;mix-blend-mode:color;opacity:.55}
+#splash #jj-blue{background:linear-gradient(180deg,rgba(80,110,190,.28),rgba(50,70,140,.14) 60%,rgba(30,40,90,.2));mix-blend-mode:screen;opacity:0}
+#splash #jj-gold{background:radial-gradient(ellipse 130% 90% at 24% 6%,rgba(255,178,84,.62),rgba(255,140,70,.22) 48%,transparent 74%);mix-blend-mode:screen;opacity:0}
+#splash #jj-rose{background:linear-gradient(160deg,rgba(255,150,110,.16),transparent 50%,rgba(120,60,150,.10));mix-blend-mode:soft-light;opacity:0}
 
-/* glow de horizonte: luz rasante de invierno, sostenida hasta p=1 */
-#splash #glowH{position:absolute;left:0;right:0;bottom:8vh;height:44vh;z-index:3;background:radial-gradient(ellipse 155% 100% at 50% 100%,rgba(255,148,72,.55),rgba(255,120,90,.2) 45%,transparent 70%);opacity:0;will-change:opacity;pointer-events:none}
-#splash #sunW{position:absolute;left:0;top:0;z-index:4;will-change:transform;pointer-events:none}
-#splash #halo{position:absolute;left:0;top:0;width:240px;height:240px;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,190,110,.5),rgba(255,150,80,.18) 45%,transparent 70%)}
-#splash #sun{position:absolute;left:0;top:0;width:clamp(56px,17vw,84px);height:clamp(56px,17vw,84px);transform:translate(-50%,-50%);border-radius:50%}
+#splash #jj-stars{position:absolute;inset:0 0 52% 0;pointer-events:none}
+#splash .jj-st{position:absolute;border-radius:50%;background:#fff;box-shadow:0 0 6px 1px rgba(255,255,255,.5);animation:jj-tw ease-in-out infinite alternate;will-change:opacity}
+@keyframes jj-tw{from{opacity:.3}to{opacity:1}}
 
-/* remate: wash de primera luz — origen en la posición final del sol (53% / 60vh) */
-#splash #wash{position:absolute;inset:0;z-index:6;background:radial-gradient(circle at 53% 60%,#fff6dc 0%,#f8f9ec 34%,var(--crema) 62%);clip-path:circle(0% at 53% 60%);transition:clip-path 1.05s cubic-bezier(.66,0,.22,1);pointer-events:none}
-#splash.washing #wash{clip-path:circle(142% at 53% 60%)}
+/* primera luz barriendo el agua de la pileta */
+#splash #jj-sweep{position:absolute;left:-40%;top:56%;width:46%;height:28%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,224,170,.5) 45%,rgba(255,244,214,.7) 52%,rgba(255,224,170,.45) 60%,transparent);
+  mix-blend-mode:screen;filter:blur(7px);opacity:0;transform:skewX(-14deg);will-change:transform,opacity}
 
-/* pájaros: por encima del wash (z7) para que completen el cruce mientras la luz abre */
-#splash #birds{position:absolute;left:0;top:22vh;width:100%;height:20vh;z-index:7;pointer-events:none}
-#splash .bird{position:absolute;left:0;top:0;opacity:0;color:#362a4e}
-#splash .bird svg{width:22px;height:10px;display:block}
-#splash .b1{--s:1;top:2vh}
-#splash .b2{--s:.68;top:7.5vh}
-#splash .b3{--s:.85;top:0}
-#splash #birds.go .b1{animation:jj-cross 2.35s cubic-bezier(.33,.12,.55,.9) 0s forwards}
-#splash #birds.go .b2{animation:jj-cross 2.5s cubic-bezier(.33,.12,.55,.9) .28s forwards}
-#splash #birds.go .b3{animation:jj-cross 2.42s cubic-bezier(.33,.12,.55,.9) .5s forwards}
-#splash #birds.go svg{animation:jj-flap .48s ease-in-out infinite;transform-origin:50% 40%}
-@keyframes jj-cross{0%{opacity:0;transform:translate(-9vw,3vh) scale(var(--s))}8%{opacity:.9}90%{opacity:.9}100%{opacity:0;transform:translate(106vw,-3.5vh) scale(var(--s))}}
-@keyframes jj-flap{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.5)}}
+#splash #jj-flare{position:absolute;inset:0;pointer-events:none;opacity:0;will-change:opacity}
+#splash #jj-flare i{position:absolute;border-radius:50%;mix-blend-mode:screen}
+#splash #jj-flare .f1{left:20%;top:9%;width:36px;height:36px;background:radial-gradient(circle,rgba(255,226,170,.8),transparent 70%)}
+#splash #jj-flare .f2{left:33%;top:24%;width:14px;height:14px;background:radial-gradient(circle,rgba(255,190,140,.55),transparent 70%)}
+#splash #jj-flare .f3{left:45%;top:40%;width:26px;height:26px;background:radial-gradient(circle,rgba(190,255,190,.3),transparent 70%)}
+#splash #jj-flare .f4{left:58%;top:56%;width:10px;height:10px;background:radial-gradient(circle,rgba(255,220,180,.5),transparent 70%)}
 
-/* jardín en capas */
-#splash .layer{position:absolute;inset:0;will-change:transform;pointer-events:none}
-#splash #lfar{z-index:8}#splash #lmid{z-index:10}#splash #lnear{z-index:11}
-#splash .band{position:absolute;left:0;bottom:-40px;width:100%}
-#splash #lfar .band{height:calc(21vh + 40px)}
-#splash #lmid .band{height:calc(14vh + 40px)}
-#splash #lnear .band{height:calc(8.5vh + 40px)}
-#splash .tr{position:absolute;display:block}
-#splash .dt{display:none}
-#splash #fog{position:absolute;left:-10%;width:120%;height:13vh;bottom:14vh;z-index:9;background:linear-gradient(180deg,transparent,rgba(216,226,242,.55) 45%,rgba(216,226,242,.12) 82%,transparent);filter:blur(7px);opacity:0;animation:jj-drift 8s ease-in-out infinite alternate;pointer-events:none}
-@keyframes jj-drift{from{transform:translateX(-2.5%)}to{transform:translateX(2.5%)}}
-#splash #vig{position:absolute;inset:0;z-index:12;background:radial-gradient(ellipse 120% 90% at 50% 48%,transparent 55%,rgba(3,5,16,.55) 100%);will-change:opacity;pointer-events:none}
+/* hojas de otoño — 2 planos de profundidad, entran con la primera luz */
+#splash #jj-leaves,#splash #jj-leaves2{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 1.2s ease;will-change:opacity}
+#splash #jj-leaves2{filter:blur(1.4px)}
+#splash.leafy #jj-leaves,#splash.leafy #jj-leaves2{opacity:1}
+#splash .jj-lf{position:absolute;top:-6%;will-change:transform;animation:jj-fall linear infinite}
+#splash .jj-lf svg{display:block;animation:jj-sway ease-in-out infinite alternate}
+@keyframes jj-fall{from{transform:translateY(-8vh) rotate(0deg)}to{transform:translateY(112vh) rotate(340deg)}}
+@keyframes jj-sway{from{transform:translateX(-2.6vw) rotate(-38deg)}to{transform:translateX(2.6vw) rotate(42deg)}}
+
+#splash #jj-vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 125% 95% at 50% 45%,transparent 54%,rgba(10,6,18,.62) 100%);will-change:opacity}
 
 /* HUD: % en pill siempre legible */
-#splash #pctW{position:absolute;left:0;top:0;z-index:13;opacity:0;pointer-events:none;will-change:transform,opacity}
-#splash #pctW .in{position:absolute;left:46px;top:0;transform:translateY(-50%);font:500 12px/1 var(--sans);letter-spacing:.14em;font-variant-numeric:tabular-nums;color:#faf4e8;background:rgba(5,8,22,.62);padding:6px 9px 6px 12px;border-radius:999px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);white-space:nowrap}
-#splash #copy{position:absolute;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 64px);z-index:13;text-align:center;padding:0 28px;font:400 14.5px/1.45 var(--sans);letter-spacing:.01em;color:rgba(247,242,231,.9);text-shadow:0 1px 6px rgba(5,8,20,.5);transition:opacity .24s ease}
+#splash #pctW{position:absolute;right:16px;top:calc(env(safe-area-inset-top,0px) + 16px);z-index:13;opacity:0;transition:opacity .5s;pointer-events:none}
+#splash #pctW .in{font:500 12px/1 var(--sans);letter-spacing:.14em;font-variant-numeric:tabular-nums;color:#fff3e0;background:rgba(16,10,26,.6);padding:6px 11px;border-radius:999px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+#splash #copy{position:absolute;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 64px);z-index:13;text-align:center;padding:0 28px;font:400 14.5px/1.45 var(--sans);letter-spacing:.01em;color:rgba(255,248,236,.95);text-shadow:0 1px 8px rgba(12,6,20,.8);transition:opacity .24s ease}
 #splash.washing #pctW,#splash.washing #copy{opacity:0!important;transition:opacity .4s ease}
 
-/* pantalla final: dotsun ancla en la posición final del sol y se encoge */
-#splash #final{position:absolute;inset:0;z-index:14;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:calc(60vh + 18px) 24px 0;text-align:center;visibility:hidden}
+/* remate: wash de luz a crema + settle del título */
+#splash #wash{position:absolute;inset:0;z-index:14;background:radial-gradient(circle at 52% 40%,#fff6dc 0%,#f8f9ec 34%,var(--crema) 62%);clip-path:circle(0% at 52% 40%);transition:clip-path 1.05s cubic-bezier(.66,0,.22,1);pointer-events:none}
+#splash.washing #wash{clip-path:circle(142% at 52% 40%)}
+#splash #final{position:absolute;inset:0;z-index:15;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;visibility:hidden}
 #splash.reveal #final{visibility:visible}
-#splash .dotsun{--k:6.6;position:absolute;left:53%;top:60%;width:10px;height:10px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#ffe9b8,#e8a13c);box-shadow:0 0 18px 5px rgba(240,170,80,.35);opacity:0;transform:translate(-50%,-50%) scale(var(--k));transition:opacity .5s ease,transform 1.05s cubic-bezier(.34,1.56,.64,1)}
-#splash .title{margin-top:0;font:400 clamp(34px,9.5vw,46px)/1.1 var(--serif);color:var(--verde);letter-spacing:.13em;opacity:0;transform:translateY(14px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.16,.8,.24,1),letter-spacing 1.15s cubic-bezier(.2,.7,.2,1)}
-#splash .sub{margin-top:10px;font:600 11px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:#4a5f3d;opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .8s cubic-bezier(.16,.8,.24,1)}
-#splash.reveal .dotsun{opacity:1;transform:translate(-50%,-50%) scale(1)}
-#splash.reveal .title{opacity:1;transform:none;letter-spacing:.02em;transition-delay:.35s}
-#splash.reveal .sub{opacity:1;transform:none;transition-delay:.52s}
+#splash .title{font:400 clamp(34px,9.5vw,46px)/1.1 var(--serif);color:var(--verde);letter-spacing:.13em;opacity:0;transform:translateY(14px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.16,.8,.24,1),letter-spacing 1.15s cubic-bezier(.2,.7,.2,1)}
+#splash .sub{margin-top:10px;font:600 11px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:#4a5f3d;opacity:0;transform:translateY(10px);transition:opacity .7s ease .15s,transform .8s cubic-bezier(.16,.8,.24,1) .15s}
+#splash.reveal .title{opacity:1;transform:none;letter-spacing:.02em}
+#splash.reveal .sub{opacity:1;transform:none}
 
-@media (min-width:500px){
-  #splash .dotsun{--k:8.4}
-}
-@media (min-width:760px){
-  #splash .dt{display:block}
-  #splash #pctW .in{left:58px}
-}
-
-/* reduced motion: crossfades suaves, sol fijo en su posición final, % fuera del halo */
 @media (prefers-reduced-motion: reduce){
-  #splash .stc,#splash #birds.go svg,#splash #fog{animation:none!important}
-  #splash .bird{animation:none!important;opacity:0!important}
+  #splash #jj-ph img,#splash #jj-bloom img{transform:none!important}
+  #splash .jj-st{animation:none!important}
+  #splash .jj-lf,#splash .jj-lf svg{animation:none!important}
+  #splash #jj-leaves,#splash #jj-leaves2,#splash #jj-sweep{display:none}
   #splash #wash{clip-path:none!important;opacity:0;transition:opacity .95s ease}
   #splash.washing #wash{opacity:1}
-  #splash .dotsun{transform:translate(-50%,-50%)!important;transition:opacity .8s ease!important}
   #splash .title,#splash .sub{transform:none!important;transition:opacity .8s ease!important}
   #splash .title{letter-spacing:.02em!important}
-  #splash #pctW .in{left:0;top:48px;transform:translateX(-50%)}
 }
 """

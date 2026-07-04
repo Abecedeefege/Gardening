@@ -22,12 +22,12 @@ expires_at = mismo día 22:00 -03:00. Cada notificación a un destino DISTINTO. 
 3. **Dato clave**: B-41 "caqui" quedó con **identidad EN DUDA** en `data_plants.py` — el usuario confirmó que NUNCA
    mostró flor ni fruto. No usar más el caqui como curio de "fruta de invierno" hasta confirmar identidad.
 4. Timeline: las tareas hechas/cerradas ahora van colapsadas en "🗂️ Pasadas / hechas" (vista Todas).
-5. **Splash screens** (04/07 tarde): el usuario ELIGIÓ la propuesta A «Primera luz» y está INTEGRADA en el
-   Home (inline en index.html vía build.py; 1 vez por sesión, atada a la carga real). Los 3 demos de pitch
-   (`engage/splash-primera-luz.html`, `splash-herbario.html`, `splash-latido.html`) quedan como referencia,
-   más 3 variantes FOTOGRÁFICAS pedidas después (`splash-foto-amanecer/gigante/dorada.html`, con fotos reales
-   del jardín gradadas estilo cine — day-for-night / tilt-up / hora dorada): NO son proposals del ciclo —
-   no dropear, no borrar, no pushear.
+5. **Splash screens** (04/07): elección FINAL del usuario = «Hora dorada — amanecer» (foto real del fondo
+   en otoño que arranca de noche y amanece; propuesta C + arco de la A), INTEGRADA en el Home (inline en
+   index.html vía build.py; foto en docs/images/splash-otono.jpg; 1 vez por sesión, atada a la carga real).
+   Los 6 demos de pitch (`engage/splash-primera-luz/herbario/latido.html` vectoriales y
+   `splash-foto-amanecer/gigante/dorada.html` fotográficos) quedan como referencia: NO son proposals del
+   ciclo — no dropear, no borrar, no pushear.
 
 ## 🆕 FUNCIÓN PARALELA (pedido del usuario 28/06): 2 experiencias NUEVAS de cero por corrida
 
