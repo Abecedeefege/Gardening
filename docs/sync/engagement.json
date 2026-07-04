@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-04T12:02:05.033Z",
+  "_updated_at": "2026-07-04T16:56:30.211Z",
   "events": [
     {
       "_id": "mqmaxre7lddntv",
@@ -1253,6 +1253,23 @@
       "nid": "2026-07-04-task-dia",
       "src": "push",
       "ts": "2026-07-04T12:02:06.579Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr6ltskhu8azip",
+      "type": "notification_clicked",
+      "nid": "2026-07-04-b",
+      "page": "engage/2026-07-04-memes-jardin.html",
+      "ts": "2026-07-04T16:56:32.223Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr6ltskhe8zizv",
+      "type": "page_visit",
+      "page": "engage/2026-07-04-memes-jardin.html",
+      "nid": "2026-07-04-b",
+      "src": "push",
+      "ts": "2026-07-04T16:56:32.223Z",
       "device": "sin-nombre"
     }
   ],
