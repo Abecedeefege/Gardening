@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-04T11:25:03.794Z",
+  "_updated_at": "2026-07-04T12:43:45.754Z",
   "notifications": [
     {
       "id": "2026-07-04-task-dia",
@@ -22,8 +22,8 @@
       "format": "experiencia",
       "send_at": "2026-07-04T08:30:00-03:00",
       "expires_at": "2026-07-04T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-04T12:43:45.752Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-04 (ciclo 35)"
     },
