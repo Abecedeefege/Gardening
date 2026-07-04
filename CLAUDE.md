@@ -44,6 +44,10 @@ data_plants.py + data_ideas.py
           inyecta TASKS y DEFAULT_CONTACTS como JSON globales)
        ↓
 docs/index.html      ← Home = Biblioteca de especies (Frente/Fondo/Interior + Info/Calendario)
+                       Incluye el splash «Primera luz» inline al inicio del <body> (SPLASH_CSS en
+                       styles.py + SPLASH_JS en scripts.py + render_splash() en build.py): amanecer
+                       atado a la carga real, 1 vez por sesión (sessionStorage jardineando_splash_v1),
+                       tap = saltar. Demo/pitch original: docs/engage/splash-primera-luz.html
 docs/biblioteca.html ← stub de redirect a index.html (links viejos)
 docs/tareas.html     ← Timeline de tareas (se llega por push deep link)
 docs/ideas.html      ← ideas + huerta + espacios + experiencias (con curiosidades) + mejoras

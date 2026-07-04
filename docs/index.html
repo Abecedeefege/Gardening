@@ -3055,6 +3055,373 @@ h2.subbrand {
 </style>
 </head>
 <body class="zone-frente">
+<style>
+#splash{
+  --verde:#2d5016; --verde2:#4a7c2a; --crema:#f5faf0;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --serif:'Anton',Georgia,"Times New Roman",serif;
+  /* SIN fade-in (a diferencia del demo): atrás está el sitio real, no un fondo
+     oscuro — el splash tiene que cubrir opaco desde el primer frame pintado */
+  position:fixed;inset:0;overflow:hidden;background:#050816;user-select:none;-webkit-user-select:none;
+  font-family:var(--sans);-webkit-tap-highlight-color:transparent;
+  z-index:9999;cursor:pointer
+}
+#splash,#splash *{margin:0;padding:0;box-sizing:border-box}
+#splash.bye{opacity:0;pointer-events:none;transition:opacity .6s ease}
+
+/* cielo: 6 capas de gradiente precalculadas, crossfade de opacity (compositor-only) */
+#splash #sky{position:absolute;inset:0;z-index:1}
+#splash .skyg{position:absolute;inset:0;will-change:opacity}
+#splash .skyg+.skyg{opacity:0}
+#splash .skyg:nth-child(1){background:linear-gradient(180deg,#050816 0%,#0a1030 36%,#101a44 62%,#182252 100%)}
+#splash .skyg:nth-child(2){background:linear-gradient(180deg,#070a20 0%,#12143c 36%,#241e54 62%,#3a2a5e 100%)}
+#splash .skyg:nth-child(3){background:linear-gradient(180deg,#0c1030 0%,#231b4e 36%,#4a2c62 62%,#7c4160 100%)}
+#splash .skyg:nth-child(4){background:linear-gradient(180deg,#1b2148 0%,#463366 36%,#8a4a6e 62%,#c96952 100%)}
+#splash .skyg:nth-child(5){background:linear-gradient(180deg,#3d4a7e 0%,#7e5f8e 36%,#c97a6a 62%,#f0994e 100%)}
+#splash .skyg:nth-child(6){background:linear-gradient(180deg,#7e97b8 0%,#c2a9a2 36%,#f0bc80 62%,#ffd98f 100%)}
+
+#splash #stars{position:absolute;inset:0;z-index:2;pointer-events:none}
+#splash .st{position:absolute;will-change:opacity}
+#splash .stc{display:block;border-radius:50%;background:#fff;box-shadow:0 0 6px 1px rgba(255,255,255,.45);animation:jj-tw ease-in-out infinite alternate}
+#splash .lucero .stc{box-shadow:0 0 12px 3px rgba(255,236,200,.75);background:#fff6e2}
+@keyframes jj-tw{from{opacity:.35}to{opacity:1}}
+
+/* glow de horizonte: luz rasante de invierno, sostenida hasta p=1 */
+#splash #glowH{position:absolute;left:0;right:0;bottom:8vh;height:44vh;z-index:3;background:radial-gradient(ellipse 155% 100% at 50% 100%,rgba(255,148,72,.55),rgba(255,120,90,.2) 45%,transparent 70%);opacity:0;will-change:opacity;pointer-events:none}
+#splash #sunW{position:absolute;left:0;top:0;z-index:4;will-change:transform;pointer-events:none}
+#splash #halo{position:absolute;left:0;top:0;width:240px;height:240px;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,190,110,.5),rgba(255,150,80,.18) 45%,transparent 70%)}
+#splash #sun{position:absolute;left:0;top:0;width:clamp(56px,17vw,84px);height:clamp(56px,17vw,84px);transform:translate(-50%,-50%);border-radius:50%}
+
+/* remate: wash de primera luz — origen en la posición final del sol (53% / 60vh) */
+#splash #wash{position:absolute;inset:0;z-index:6;background:radial-gradient(circle at 53% 60%,#fff6dc 0%,#f8f9ec 34%,var(--crema) 62%);clip-path:circle(0% at 53% 60%);transition:clip-path 1.05s cubic-bezier(.66,0,.22,1);pointer-events:none}
+#splash.washing #wash{clip-path:circle(142% at 53% 60%)}
+
+/* pájaros: por encima del wash (z7) para que completen el cruce mientras la luz abre */
+#splash #birds{position:absolute;left:0;top:22vh;width:100%;height:20vh;z-index:7;pointer-events:none}
+#splash .bird{position:absolute;left:0;top:0;opacity:0;color:#362a4e}
+#splash .bird svg{width:22px;height:10px;display:block}
+#splash .b1{--s:1;top:2vh}
+#splash .b2{--s:.68;top:7.5vh}
+#splash .b3{--s:.85;top:0}
+#splash #birds.go .b1{animation:jj-cross 2.35s cubic-bezier(.33,.12,.55,.9) 0s forwards}
+#splash #birds.go .b2{animation:jj-cross 2.5s cubic-bezier(.33,.12,.55,.9) .28s forwards}
+#splash #birds.go .b3{animation:jj-cross 2.42s cubic-bezier(.33,.12,.55,.9) .5s forwards}
+#splash #birds.go svg{animation:jj-flap .48s ease-in-out infinite;transform-origin:50% 40%}
+@keyframes jj-cross{0%{opacity:0;transform:translate(-9vw,3vh) scale(var(--s))}8%{opacity:.9}90%{opacity:.9}100%{opacity:0;transform:translate(106vw,-3.5vh) scale(var(--s))}}
+@keyframes jj-flap{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.5)}}
+
+/* jardín en capas */
+#splash .layer{position:absolute;inset:0;will-change:transform;pointer-events:none}
+#splash #lfar{z-index:8}#splash #lmid{z-index:10}#splash #lnear{z-index:11}
+#splash .band{position:absolute;left:0;bottom:-40px;width:100%}
+#splash #lfar .band{height:calc(21vh + 40px)}
+#splash #lmid .band{height:calc(14vh + 40px)}
+#splash #lnear .band{height:calc(8.5vh + 40px)}
+#splash .tr{position:absolute;display:block}
+#splash .dt{display:none}
+#splash #fog{position:absolute;left:-10%;width:120%;height:13vh;bottom:14vh;z-index:9;background:linear-gradient(180deg,transparent,rgba(216,226,242,.55) 45%,rgba(216,226,242,.12) 82%,transparent);filter:blur(7px);opacity:0;animation:jj-drift 8s ease-in-out infinite alternate;pointer-events:none}
+@keyframes jj-drift{from{transform:translateX(-2.5%)}to{transform:translateX(2.5%)}}
+#splash #vig{position:absolute;inset:0;z-index:12;background:radial-gradient(ellipse 120% 90% at 50% 48%,transparent 55%,rgba(3,5,16,.55) 100%);will-change:opacity;pointer-events:none}
+
+/* HUD: % en pill siempre legible */
+#splash #pctW{position:absolute;left:0;top:0;z-index:13;opacity:0;pointer-events:none;will-change:transform,opacity}
+#splash #pctW .in{position:absolute;left:46px;top:0;transform:translateY(-50%);font:500 12px/1 var(--sans);letter-spacing:.14em;font-variant-numeric:tabular-nums;color:#faf4e8;background:rgba(5,8,22,.62);padding:6px 9px 6px 12px;border-radius:999px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);white-space:nowrap}
+#splash #copy{position:absolute;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 64px);z-index:13;text-align:center;padding:0 28px;font:400 14.5px/1.45 var(--sans);letter-spacing:.01em;color:rgba(247,242,231,.9);text-shadow:0 1px 6px rgba(5,8,20,.5);transition:opacity .24s ease}
+#splash.washing #pctW,#splash.washing #copy{opacity:0!important;transition:opacity .4s ease}
+
+/* pantalla final: dotsun ancla en la posición final del sol y se encoge */
+#splash #final{position:absolute;inset:0;z-index:14;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:calc(60vh + 18px) 24px 0;text-align:center;visibility:hidden}
+#splash.reveal #final{visibility:visible}
+#splash .dotsun{--k:6.6;position:absolute;left:53%;top:60%;width:10px;height:10px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#ffe9b8,#e8a13c);box-shadow:0 0 18px 5px rgba(240,170,80,.35);opacity:0;transform:translate(-50%,-50%) scale(var(--k));transition:opacity .5s ease,transform 1.05s cubic-bezier(.34,1.56,.64,1)}
+#splash .title{margin-top:0;font:400 clamp(34px,9.5vw,46px)/1.1 var(--serif);color:var(--verde);letter-spacing:.13em;opacity:0;transform:translateY(14px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.16,.8,.24,1),letter-spacing 1.15s cubic-bezier(.2,.7,.2,1)}
+#splash .sub{margin-top:10px;font:600 11px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:#4a5f3d;opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .8s cubic-bezier(.16,.8,.24,1)}
+#splash.reveal .dotsun{opacity:1;transform:translate(-50%,-50%) scale(1)}
+#splash.reveal .title{opacity:1;transform:none;letter-spacing:.02em;transition-delay:.35s}
+#splash.reveal .sub{opacity:1;transform:none;transition-delay:.52s}
+
+@media (min-width:500px){
+  #splash .dotsun{--k:8.4}
+}
+@media (min-width:760px){
+  #splash .dt{display:block}
+  #splash #pctW .in{left:58px}
+}
+
+/* reduced motion: crossfades suaves, sol fijo en su posición final, % fuera del halo */
+@media (prefers-reduced-motion: reduce){
+  #splash .stc,#splash #birds.go svg,#splash #fog{animation:none!important}
+  #splash .bird{animation:none!important;opacity:0!important}
+  #splash #wash{clip-path:none!important;opacity:0;transition:opacity .95s ease}
+  #splash.washing #wash{opacity:1}
+  #splash .dotsun{transform:translate(-50%,-50%)!important;transition:opacity .8s ease!important}
+  #splash .title,#splash .sub{transform:none!important;transition:opacity .8s ease!important}
+  #splash .title{letter-spacing:.02em!important}
+  #splash #pctW .in{left:0;top:48px;transform:translateX(-50%)}
+}
+</style>
+<div id="splash">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="liqui" fill="none" stroke="currentColor" stroke-linecap="round">
+        <path d="M60 180 C59 150 59 128 57 108" stroke-width="7"/>
+        <path d="M57 108 C55 88 50 74 42 62" stroke-width="4.6"/>
+        <path d="M57 108 C60 88 66 76 74 66" stroke-width="4.6"/>
+        <path d="M58 116 C48 104 40 98 30 94" stroke-width="3.4"/>
+        <path d="M59 120 C70 108 78 102 88 100" stroke-width="3.4"/>
+        <path d="M42 62 C36 50 34 40 34 30 M42 62 C34 56 26 52 18 52" stroke-width="2.4"/>
+        <path d="M74 66 C80 54 82 44 82 32 M74 66 C82 60 90 58 98 58" stroke-width="2.4"/>
+        <path d="M57 96 C56 78 58 64 60 52 M60 52 C58 40 58 30 60 20" stroke-width="2.6"/>
+        <path d="M30 94 C24 88 18 86 10 86 M30 94 C28 86 26 80 22 74 M88 100 C96 96 102 96 110 98 M88 100 C92 92 96 88 100 82" stroke-width="1.8"/>
+        <path d="M34 30 C32 22 32 16 34 8 M34 30 C28 26 24 24 18 24 M82 32 C84 24 84 16 82 10 M82 32 C88 28 94 26 100 28 M60 20 C58 14 58 8 60 2 M60 20 C64 14 68 10 72 8 M18 52 C12 48 8 48 2 50 M98 58 C104 54 110 54 116 56" stroke-width="1.4"/>
+      </g>
+      <g id="pindo" fill="none" stroke="currentColor" stroke-linecap="round">
+        <path d="M74 180 C70 150 70 120 76 88" stroke-width="8"/>
+        <path d="M76 88 C54 84 36 92 24 108" stroke-width="3.6"/>
+        <path d="M76 88 C52 70 34 66 16 76" stroke-width="3.6"/>
+        <path d="M76 88 C58 60 44 50 30 50" stroke-width="3.6"/>
+        <path d="M76 88 C72 56 68 40 58 30" stroke-width="3.6"/>
+        <path d="M76 88 C84 56 92 42 104 36" stroke-width="3.6"/>
+        <path d="M76 88 C96 62 112 56 126 62" stroke-width="3.6"/>
+        <path d="M76 88 C98 76 118 76 134 90" stroke-width="3.6"/>
+        <path d="M76 88 C94 90 108 100 118 114" stroke-width="3.6"/>
+      </g>
+      <g id="shrub"><path fill="currentColor" d="M0 60 Q4 40 20 36 Q24 20 42 20 Q52 6 68 14 Q86 10 94 26 Q112 28 116 44 Q120 52 118 60 Z"/></g>
+      <g id="tuft" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+        <path d="M35 44 C34 30 30 18 20 8"/><path d="M36 44 C36 28 38 16 46 6"/>
+        <path d="M33 44 C30 34 22 26 10 22"/><path d="M38 44 C42 34 50 28 62 26"/>
+        <path d="M35 44 C35 30 35 16 33 2"/>
+      </g>
+      <g id="bird"><path d="M1 8 Q6 1 12 7 Q18 1 23 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></g>
+    </defs>
+  </svg>
+
+  <div id="sky" aria-hidden="true"><div class="skyg"></div><div class="skyg"></div><div class="skyg"></div><div class="skyg"></div><div class="skyg"></div><div class="skyg"></div></div>
+  <div id="stars" aria-hidden="true"></div>
+  <div id="glowH" aria-hidden="true"></div>
+  <div id="sunW" aria-hidden="true"><div id="halo"></div><div id="sun"></div></div>
+
+  <div id="wash" aria-hidden="true"></div>
+
+  <div id="birds" aria-hidden="true">
+    <span class="bird b1"><svg viewBox="0 0 24 10"><use href="#bird"/></svg></span>
+    <span class="bird b2"><svg viewBox="0 0 24 10"><use href="#bird"/></svg></span>
+    <span class="bird b3"><svg viewBox="0 0 24 10"><use href="#bird"/></svg></span>
+  </div>
+
+  <div id="scene" aria-hidden="true">
+    <div class="layer" id="lfar">
+      <svg class="band" viewBox="0 0 100 34" preserveAspectRatio="none"><path fill="currentColor" d="M0 8 Q14 3 30 6 T62 6 Q80 2 100 7 L100 34 L0 34 Z"/></svg>
+      <svg class="tr" viewBox="0 0 150 180" style="left:10%;bottom:17.5vh;height:8vh"><use href="#pindo"/></svg>
+      <svg class="tr" viewBox="0 0 150 180" style="left:21%;bottom:17vh;height:5.5vh"><use href="#pindo"/></svg>
+      <svg class="tr dt" viewBox="0 0 120 60" style="left:78%;bottom:16.5vh;height:5vh"><use href="#shrub"/></svg>
+    </div>
+    <div id="fog" aria-hidden="true"></div>
+    <div class="layer" id="lmid">
+      <svg class="band" viewBox="0 0 100 34" preserveAspectRatio="none"><path fill="currentColor" d="M0 9 Q20 4 42 7 Q64 10 82 5 Q92 3 100 6 L100 34 L0 34 Z"/></svg>
+      <svg class="tr" viewBox="0 0 120 180" style="left:2%;bottom:10vh;height:30vh"><use href="#liqui"/></svg>
+      <svg class="tr" viewBox="0 0 150 180" style="left:60%;bottom:10.5vh;height:23vh"><use href="#pindo"/></svg>
+      <svg class="tr" viewBox="0 0 150 180" style="left:86%;bottom:11vh;height:13vh"><use href="#pindo"/></svg>
+      <svg class="tr" viewBox="0 0 120 60" style="left:38%;bottom:10.5vh;height:6.5vh"><use href="#shrub"/></svg>
+      <svg class="tr" viewBox="0 0 120 60" style="left:51%;bottom:10.2vh;height:5vh"><use href="#shrub"/></svg>
+      <svg class="tr dt" viewBox="0 0 150 180" style="left:30%;bottom:10.5vh;height:18vh"><use href="#pindo"/></svg>
+    </div>
+    <div class="layer" id="lnear">
+      <svg class="band" viewBox="0 0 100 34" preserveAspectRatio="none"><path fill="currentColor" d="M0 6 Q22 11 48 6 Q72 3 100 8 L100 34 L0 34 Z"/></svg>
+      <svg class="tr" viewBox="0 0 120 60" style="left:-6%;bottom:2vh;height:10vh"><use href="#shrub"/></svg>
+      <svg class="tr" viewBox="0 0 120 60" style="left:72%;bottom:2.5vh;height:8vh"><use href="#shrub"/></svg>
+      <svg class="tr" viewBox="0 0 70 44" style="left:14%;bottom:5.2vh;height:4.5vh"><use href="#tuft"/></svg>
+      <svg class="tr" viewBox="0 0 70 44" style="left:46%;bottom:5.8vh;height:4vh"><use href="#tuft"/></svg>
+      <svg class="tr" viewBox="0 0 70 44" style="left:62%;bottom:5.2vh;height:3.4vh"><use href="#tuft"/></svg>
+    </div>
+  </div>
+
+  <div id="vig" aria-hidden="true"></div>
+
+  <div id="pctW" role="progressbar" aria-label="Cargando Jardineando" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <span class="in"><span id="pct">0</span>%</span>
+  </div>
+  <p id="copy" aria-hidden="true">Abriendo el portón del fondo…</p>
+
+  <div id="final">
+    <div class="dotsun" aria-hidden="true"></div>
+    <h1 class="title">Jardineando</h1>
+    <p class="sub">Montevideo · 52 especies</p>
+  </div>
+</div>
+<script>
+(()=>{
+'use strict';
+const splash=document.getElementById('splash');
+if(!splash)return;
+let seen=false;
+try{seen=sessionStorage.getItem('jardineando_splash_v1')==='1'}catch(e){}
+if(seen){splash.remove();return}
+try{sessionStorage.setItem('jardineando_splash_v1','1')}catch(e){}
+const $=id=>document.getElementById(id);
+const sunW=$('sunW'),sun=$('sun'),halo=$('halo'),glowH=$('glowH'),
+      fog=$('fog'),vig=$('vig'),starBox=$('stars'),birds=$('birds'),
+      pctW=$('pctW'),pct=$('pct'),copy=$('copy'),
+      lfar=$('lfar'),lmid=$('lmid'),lnear=$('lnear');
+const skyg=Array.prototype.slice.call(splash.querySelectorAll('#sky .skyg'));
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const DUR=4200,WARP=2.6,GATE=.96;
+const clamp=(x,a,b)=>x<a?a:x>b?b:x;
+const ss=(a,b,x)=>{const k=clamp((x-a)/(b-a),0,1);return k*k*(3-2*k)};
+const lerp=(a,b,t)=>a+(b-a)*t;
+const hx=h=>[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];
+const mix=(a,b,t)=>[Math.round(a[0]+(b[0]-a[0])*t),Math.round(a[1]+(b[1]-a[1])*t),Math.round(a[2]+(b[2]-a[2])*t)];
+const rgb=c=>`rgb(${c[0]},${c[1]},${c[2]})`;
+
+/* Progreso no lineal: noche quieta, arranque decidido, vacilación al 76-79%, remate */
+const KEYS=[[0,0],[.14,.05],[.3,.38],[.48,.62],[.58,.72],[.66,.76],[.8,.79],[.88,.9],[1,1]];
+function curve(u){
+  if(u>=1)return 1;
+  for(let i=1;i<KEYS.length;i++){
+    if(u<=KEYS[i][0]){
+      const a=KEYS[i-1],b=KEYS[i],k=(u-a[0])/(b[0]-a[0]);
+      return a[1]+(b[1]-a[1])*(k*k*(3-2*k));
+    }
+  }
+  return 1;
+}
+const SKYK=[0,.22,.45,.65,.82,1];
+function skyRender(p){
+  let i=1;while(i<SKYK.length-1&&p>SKYK[i])i++;
+  const k=clamp((p-SKYK[i-1])/(SKYK[i]-SKYK[i-1]),0,1);
+  for(let j=1;j<skyg.length;j++)skyg[j].style.opacity=j<i?'1':j===i?k.toFixed(3):'0';
+}
+const LAY={
+  far:{el:lfar,n:hx('#0a0e22'),d:hx('#3b3355'),f:hx('#c1d3aa')},
+  mid:{el:lmid,n:hx('#070a19'),d:hx('#211f3a'),f:hx('#87a765')},
+  near:{el:lnear,n:hx('#04060f'),d:hx('#131320'),f:hx('#2d5016')}
+};
+const SUNA=hx('#ff7a3a'),SUNB=hx('#ffedc2');
+const COPY=['Abriendo el portón del fondo…',
+'Contando las 52 especies…',
+'Buscando fruta en el presunto caqui…',
+'El caqui sigue sin dar. Amanece igual.'];
+const CT=[0,.25,.5,.75].map(x=>x*DUR);
+
+let stars=[],raf=0,ci=0,fc=0,birdsGo=false,copyTimer=0,
+    vt=0,last=0,skipping=false,finaleOn=false,
+    loaded=document.readyState==='complete';
+if(!loaded)window.addEventListener('load',()=>{loaded=true},{once:true});
+
+function buildStars(){
+  starBox.textContent='';stars=[];
+  const frag=document.createDocumentFragment();
+  for(let i=0;i<46;i++){
+    const o=document.createElement('div');o.className='st';
+    const r=Math.random(),sz=r>.86?2.6:r>.5?1.8:1.2;
+    o.style.left=(Math.random()*100).toFixed(2)+'%';
+    o.style.top=(Math.random()*56).toFixed(2)+'%';
+    const c=document.createElement('i');c.className='stc';
+    c.style.width=c.style.height=sz+'px';
+    c.style.animationDuration=(2.2+Math.random()*2.8).toFixed(2)+'s';
+    c.style.animationDelay=(-Math.random()*4).toFixed(2)+'s';
+    o.appendChild(c);frag.appendChild(o);
+    stars.push({el:o,th:.16+Math.random()*.5});
+  }
+  const o=document.createElement('div');o.className='st lucero';
+  o.style.left='27%';o.style.top='15%';
+  const c=document.createElement('i');c.className='stc';
+  c.style.width=c.style.height='3.5px';c.style.animationDuration='3.8s';
+  o.appendChild(c);frag.appendChild(o);
+  stars.push({el:o,th:.8});
+  starBox.appendChild(frag);
+}
+
+function render(p,full){
+  skyRender(p);
+  const sx=reduced?53:lerp(46,53,p);
+  const sy=reduced?60:lerp(96,60,p);
+  sunW.style.transform=`translate3d(${sx.toFixed(3)}vw,${sy.toFixed(3)}vh,0)`;
+  pctW.style.transform=`translate3d(${sx.toFixed(3)}vw,${sy.toFixed(3)}vh,0)`;
+  pctW.style.opacity=reduced?'1':ss(.22,.36,p).toFixed(3);
+  const hs=.7+.9*p;
+  halo.style.opacity=(.3+.6*p).toFixed(3);
+  halo.style.transform=`translate(-50%,-50%) scale(${(hs*1.6).toFixed(3)},${hs.toFixed(3)})`;
+  glowH.style.opacity=(.95*ss(.05,.55,p)).toFixed(3);
+  fog.style.opacity=(.55*ss(.04,.3,p)*(1-ss(.5,.78,p))).toFixed(3);
+  vig.style.opacity=((1-p)*.65).toFixed(3);
+  if(!reduced){
+    lfar.style.transform=`translate3d(0,${((1-p)*9).toFixed(2)}px,0)`;
+    lmid.style.transform=`translate3d(0,${((1-p)*20).toFixed(2)}px,0)`;
+    lnear.style.transform=`translate3d(0,${((1-p)*34).toFixed(2)}px,0)`;
+  }
+  if(full){
+    const sc=mix(SUNA,SUNB,ss(.15,.9,p));
+    sun.style.background=`radial-gradient(circle at 38% 32%,#fff8e6,${rgb(sc)} 72%)`;
+    sun.style.boxShadow=`0 0 ${(24+70*p).toFixed(1)}px ${(10+16*p).toFixed(1)}px rgba(255,168,88,${(.26+.34*p).toFixed(3)})`;
+    for(const key in LAY){
+      const L=LAY[key];
+      L.el.style.color=rgb(mix(L.n,L.d,ss(.25,.95,p)));
+    }
+    for(const st of stars){
+      st.el.style.opacity=(1-ss(st.th-.06,st.th+.03,p)).toFixed(3);
+    }
+  }
+  const n=Math.round(p*100);
+  pct.textContent=n;
+  pctW.setAttribute('aria-valuenow',n);
+  if(!reduced&&!birdsGo&&p>=.6){birdsGo=true;birds.classList.add('go');}
+}
+
+function frame(now){
+  if(!last)last=now;
+  /* dt SIN tope: si el main thread se traba parseando el documento (o la tab
+     estuvo en background), el arco salta adelante lo que corresponde al tiempo
+     real — nunca se arrastra por jank */
+  const dt=Math.max(now-last,0);last=now;
+  vt+=dt*(skipping?9:loaded?WARP:1);
+  let u=Math.min(vt/DUR,1);
+  if(!loaded&&!skipping&&u>GATE)u=GATE;
+  const p=curve(u);
+  if(ci<COPY.length-1&&vt>=CT[ci+1]){
+    ci++;
+    const txt=COPY[ci];
+    clearTimeout(copyTimer);
+    copy.style.opacity=0;
+    copyTimer=setTimeout(()=>{copy.textContent=txt;copy.style.opacity=1},230);
+  }
+  render(p,fc%3===0||u>=1);fc++;
+  if(u<1)raf=requestAnimationFrame(frame);
+  else finale();
+}
+
+function finale(){
+  finaleOn=true;
+  setTimeout(()=>{
+    splash.classList.add('washing');
+    const f0=performance.now(),D=1150;
+    (function step(){
+      const k=Math.min(1,(performance.now()-f0)/D);
+      const e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+      for(const key in LAY){
+        const L=LAY[key];
+        L.el.style.color=rgb(mix(L.d,L.f,e));
+      }
+      if(k<1)requestAnimationFrame(step);
+    })();
+  },180);
+  setTimeout(()=>{splash.classList.add('reveal');},620);
+  setTimeout(dismiss,2350);
+}
+
+function dismiss(){
+  if(!splash.parentNode)return;
+  splash.classList.add('bye');
+  setTimeout(()=>{if(splash.parentNode)splash.remove()},650);
+}
+
+/* tap = apuro: durante el arco acelera 9×; en el remate, cierra ya */
+splash.addEventListener('pointerdown',()=>{finaleOn?dismiss():skipping=true},{passive:true});
+
+buildStars();
+render(0,true);
+raf=requestAnimationFrame(frame);
+})();
+</script>
 <div class="container container-top">
   <header class="main-header">
     <h1 class="brand"><img class="brand-logo" src="icon-96.png" alt="" width="40" height="40"> Jardineando</h1>
