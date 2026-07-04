@@ -27,8 +27,8 @@ from data_ideas import (
     WHATSAPP_TEMPLATES_BY_ACTION,
 )
 from data_improvements import IMPROVEMENTS
-from styles import CSS
-from scripts import JS
+from styles import CSS, SPLASH_CSS
+from scripts import JS, SPLASH_JS
 
 ROOT = Path(__file__).parent
 IMAGES_DIR = ROOT / "images"
@@ -1335,10 +1335,116 @@ def _render_top_nav(active_page: str, ticker_html_inner: str = "", ticker_aria: 
 </div>"""
 
 
+def render_splash(total_plants: int) -> str:
+    """Splash «Primera luz» (propuesta A elegida el 04/07/2026) — bloque
+    autocontenido <style> + <div id="splash"> + <script> que va como PRIMER
+    contenido del <body>: como el HTML pesa ~13MB (imágenes base64), el splash
+    pinta al instante mientras el resto del documento sigue llegando. El driver
+    (SPLASH_JS en scripts.py) ata el amanecer a la carga real, se muestra una
+    vez por sesión (sessionStorage) y se desmonta solo. CSS 100% scopeado bajo
+    #splash (SPLASH_CSS en styles.py). Demo original con el pitch completo:
+    docs/engage/splash-primera-luz.html."""
+    return f"""<style>{SPLASH_CSS}</style>
+<div id="splash">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="liqui" fill="none" stroke="currentColor" stroke-linecap="round">
+        <path d="M60 180 C59 150 59 128 57 108" stroke-width="7"/>
+        <path d="M57 108 C55 88 50 74 42 62" stroke-width="4.6"/>
+        <path d="M57 108 C60 88 66 76 74 66" stroke-width="4.6"/>
+        <path d="M58 116 C48 104 40 98 30 94" stroke-width="3.4"/>
+        <path d="M59 120 C70 108 78 102 88 100" stroke-width="3.4"/>
+        <path d="M42 62 C36 50 34 40 34 30 M42 62 C34 56 26 52 18 52" stroke-width="2.4"/>
+        <path d="M74 66 C80 54 82 44 82 32 M74 66 C82 60 90 58 98 58" stroke-width="2.4"/>
+        <path d="M57 96 C56 78 58 64 60 52 M60 52 C58 40 58 30 60 20" stroke-width="2.6"/>
+        <path d="M30 94 C24 88 18 86 10 86 M30 94 C28 86 26 80 22 74 M88 100 C96 96 102 96 110 98 M88 100 C92 92 96 88 100 82" stroke-width="1.8"/>
+        <path d="M34 30 C32 22 32 16 34 8 M34 30 C28 26 24 24 18 24 M82 32 C84 24 84 16 82 10 M82 32 C88 28 94 26 100 28 M60 20 C58 14 58 8 60 2 M60 20 C64 14 68 10 72 8 M18 52 C12 48 8 48 2 50 M98 58 C104 54 110 54 116 56" stroke-width="1.4"/>
+      </g>
+      <g id="pindo" fill="none" stroke="currentColor" stroke-linecap="round">
+        <path d="M74 180 C70 150 70 120 76 88" stroke-width="8"/>
+        <path d="M76 88 C54 84 36 92 24 108" stroke-width="3.6"/>
+        <path d="M76 88 C52 70 34 66 16 76" stroke-width="3.6"/>
+        <path d="M76 88 C58 60 44 50 30 50" stroke-width="3.6"/>
+        <path d="M76 88 C72 56 68 40 58 30" stroke-width="3.6"/>
+        <path d="M76 88 C84 56 92 42 104 36" stroke-width="3.6"/>
+        <path d="M76 88 C96 62 112 56 126 62" stroke-width="3.6"/>
+        <path d="M76 88 C98 76 118 76 134 90" stroke-width="3.6"/>
+        <path d="M76 88 C94 90 108 100 118 114" stroke-width="3.6"/>
+      </g>
+      <g id="shrub"><path fill="currentColor" d="M0 60 Q4 40 20 36 Q24 20 42 20 Q52 6 68 14 Q86 10 94 26 Q112 28 116 44 Q120 52 118 60 Z"/></g>
+      <g id="tuft" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+        <path d="M35 44 C34 30 30 18 20 8"/><path d="M36 44 C36 28 38 16 46 6"/>
+        <path d="M33 44 C30 34 22 26 10 22"/><path d="M38 44 C42 34 50 28 62 26"/>
+        <path d="M35 44 C35 30 35 16 33 2"/>
+      </g>
+      <g id="bird"><path d="M1 8 Q6 1 12 7 Q18 1 23 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></g>
+    </defs>
+  </svg>
+
+  <div id="sky" aria-hidden="true"><div class="skyg"></div><div class="skyg"></div><div class="skyg"></div><div class="skyg"></div><div class="skyg"></div><div class="skyg"></div></div>
+  <div id="stars" aria-hidden="true"></div>
+  <div id="glowH" aria-hidden="true"></div>
+  <div id="sunW" aria-hidden="true"><div id="halo"></div><div id="sun"></div></div>
+
+  <div id="wash" aria-hidden="true"></div>
+
+  <div id="birds" aria-hidden="true">
+    <span class="bird b1"><svg viewBox="0 0 24 10"><use href="#bird"/></svg></span>
+    <span class="bird b2"><svg viewBox="0 0 24 10"><use href="#bird"/></svg></span>
+    <span class="bird b3"><svg viewBox="0 0 24 10"><use href="#bird"/></svg></span>
+  </div>
+
+  <div id="scene" aria-hidden="true">
+    <div class="layer" id="lfar">
+      <svg class="band" viewBox="0 0 100 34" preserveAspectRatio="none"><path fill="currentColor" d="M0 8 Q14 3 30 6 T62 6 Q80 2 100 7 L100 34 L0 34 Z"/></svg>
+      <svg class="tr" viewBox="0 0 150 180" style="left:10%;bottom:17.5vh;height:8vh"><use href="#pindo"/></svg>
+      <svg class="tr" viewBox="0 0 150 180" style="left:21%;bottom:17vh;height:5.5vh"><use href="#pindo"/></svg>
+      <svg class="tr dt" viewBox="0 0 120 60" style="left:78%;bottom:16.5vh;height:5vh"><use href="#shrub"/></svg>
+    </div>
+    <div id="fog" aria-hidden="true"></div>
+    <div class="layer" id="lmid">
+      <svg class="band" viewBox="0 0 100 34" preserveAspectRatio="none"><path fill="currentColor" d="M0 9 Q20 4 42 7 Q64 10 82 5 Q92 3 100 6 L100 34 L0 34 Z"/></svg>
+      <svg class="tr" viewBox="0 0 120 180" style="left:2%;bottom:10vh;height:30vh"><use href="#liqui"/></svg>
+      <svg class="tr" viewBox="0 0 150 180" style="left:60%;bottom:10.5vh;height:23vh"><use href="#pindo"/></svg>
+      <svg class="tr" viewBox="0 0 150 180" style="left:86%;bottom:11vh;height:13vh"><use href="#pindo"/></svg>
+      <svg class="tr" viewBox="0 0 120 60" style="left:38%;bottom:10.5vh;height:6.5vh"><use href="#shrub"/></svg>
+      <svg class="tr" viewBox="0 0 120 60" style="left:51%;bottom:10.2vh;height:5vh"><use href="#shrub"/></svg>
+      <svg class="tr dt" viewBox="0 0 150 180" style="left:30%;bottom:10.5vh;height:18vh"><use href="#pindo"/></svg>
+    </div>
+    <div class="layer" id="lnear">
+      <svg class="band" viewBox="0 0 100 34" preserveAspectRatio="none"><path fill="currentColor" d="M0 6 Q22 11 48 6 Q72 3 100 8 L100 34 L0 34 Z"/></svg>
+      <svg class="tr" viewBox="0 0 120 60" style="left:-6%;bottom:2vh;height:10vh"><use href="#shrub"/></svg>
+      <svg class="tr" viewBox="0 0 120 60" style="left:72%;bottom:2.5vh;height:8vh"><use href="#shrub"/></svg>
+      <svg class="tr" viewBox="0 0 70 44" style="left:14%;bottom:5.2vh;height:4.5vh"><use href="#tuft"/></svg>
+      <svg class="tr" viewBox="0 0 70 44" style="left:46%;bottom:5.8vh;height:4vh"><use href="#tuft"/></svg>
+      <svg class="tr" viewBox="0 0 70 44" style="left:62%;bottom:5.2vh;height:3.4vh"><use href="#tuft"/></svg>
+    </div>
+  </div>
+
+  <div id="vig" aria-hidden="true"></div>
+
+  <div id="pctW" role="progressbar" aria-label="Cargando Jardineando" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <span class="in"><span id="pct">0</span>%</span>
+  </div>
+  <p id="copy" aria-hidden="true">Abriendo el portón del fondo…</p>
+
+  <div id="final">
+    <div class="dotsun" aria-hidden="true"></div>
+    <h1 class="title">Jardineando</h1>
+    <p class="sub">Montevideo · {total_plants} especies</p>
+  </div>
+</div>
+<script>{SPLASH_JS}</script>
+"""
+
+
 def _page_shell(*, title: str, description: str, og_image: str = "og-image.png",
-                body_class: str, body_html: str, page_globals_js: str) -> str:
+                body_class: str, body_html: str, page_globals_js: str,
+                splash_html: str = "") -> str:
     """Envuelve body_html en un documento HTML completo con HEAD_META + CSS +
-    JS inline. og_image puede sobrescribirse por página."""
+    JS inline. og_image puede sobrescribirse por página. splash_html (opcional)
+    se emite como PRIMER contenido del body — antes del resto del documento —
+    para que pinte al instante (ver render_splash)."""
     return f"""<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -1353,7 +1459,7 @@ def _page_shell(*, title: str, description: str, og_image: str = "og-image.png",
 <style>{CSS}</style>
 </head>
 <body class="{body_class}">
-{body_html}
+{splash_html}{body_html}
 <script>
 {page_globals_js}
 {JS}
@@ -1798,6 +1904,7 @@ def main():
         body_class="zone-frente",
         body_html=home_body,
         page_globals_js=page_globals,
+        splash_html=render_splash(total_plants),
     )
 
     OUTPUT.write_text(html_doc, encoding="utf-8")

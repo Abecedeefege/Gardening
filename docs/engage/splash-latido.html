@@ -1,0 +1,504 @@
+<!doctype html>
+<!--
+PLAN DE INTEGRACIÓN — Splash «Latido» para Jardineando
+1. Este demo es standalone; en producción el splash se inyecta como bloque
+   <style> + <div id="splash"> + <script> inline al INICIO del <body> de cada
+   página que genera build.py (nuevo helper render_splash() compartido).
+2. Como el HTML de GitHub Pages pesa ~13 MB (imágenes base64 inline), el bloque
+   splash queda parseado y pintado al instante, mientras el resto del documento
+   todavía está llegando y parseando — cero requests extra, apto offline.
+3. Reconciliación con la carga real — IMPLEMENTADA en esta pieza: el reloj es un
+   time-warp. La curva corre sobre un tiempo virtual `vt`; BEATS y COPY son
+   FRACCIONES del progreso (no ms absolutos), así latidos y microcopy se
+   comprimen junto con la curva. Mientras la carga real no terminó, `vt` se
+   clava en VGATE (el % nunca pasa de 96; la hoja queda latiendo en reposo).
+   Cuando llega window.load (en este demo se simula a los 3400 ms — mirá cómo
+   el warp ×2.4 comprime el remate), `vt` acelera hasta el 100. En producción:
+   DEMO=false y rige window.load + exhibición mínima MIN_SHOW=1400 ms.
+4. Desmontaje: al terminar el wipe (stopAt) se corta el rAF; en producción,
+   splash.remove() total para no dejar listeners ni canvas vivos.
+5. Gate de sesión — IMPLEMENTADO acá mismo: sessionStorage.jardineando_splash_v1.
+   Recargá esta página y va directo al finale (la navegación interna no repite
+   el splash); ↻ Repetir vuelve a correr la pieza completa.
+6. Tipografía del remate = pila real del home (h1.brand de styles.py: Inter 800,
+   tracking negativo). El demo no puede pedir Google Fonts (cero requests) y cae
+   a system-ui; en producción hereda la Inter que el sitio ya carga.
+7. prefers-reduced-motion contemplado en esta misma pieza (rama sin órbitas ni
+   anillos, crossfades solamente) — se hereda tal cual.
+-->
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Jardineando — Propuesta C · «Latido»</title>
+<style>
+  :root{
+    --ink:#ecf7e4; --dim:#b9d3ad; --faint:#86a07a;
+    --green:#2d5016; --green2:#4a7c2a; --cream:#f5faf0;
+    --sans:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    font-family:var(--sans);
+    background:radial-gradient(120% 90% at 50% 32%, #0d1607 0%, #0a120a 55%, #060c06 100%) #0a120a;
+    color:var(--ink);
+    overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+  #fx{position:fixed;inset:0;display:block}
+
+  /* marca mínima arriba */
+  #brand{
+    position:fixed;left:0;right:0;top:calc(18px + env(safe-area-inset-top));
+    text-align:center;font-size:11px;font-weight:500;
+    letter-spacing:.42em;text-indent:.42em;color:var(--dim);opacity:.85;
+    text-transform:uppercase;
+  }
+
+  /* ticker circular de especies — el wrapper posiciona (y el canvas lo sigue) */
+  #tkwrap{
+    position:fixed;left:50%;top:40%;
+    width:352px;height:352px;margin:-176px 0 0 -176px;
+    pointer-events:none;
+  }
+  #ticker{width:100%;height:100%;display:block;animation:spin 52s linear infinite}
+  #ticker text{
+    font-family:var(--sans);font-size:9.5px;font-weight:500;
+    letter-spacing:2.6px;fill:rgba(158,204,140,.42);
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* HUD: porcentaje + microcopy */
+  #hud{
+    position:fixed;left:0;right:0;top:calc(40% + 196px);
+    text-align:center;pointer-events:none;
+  }
+  #pctwrap{
+    display:inline-block;
+    font-size:clamp(64px,19vw,88px);
+    font-weight:200;line-height:1;
+    font-variant-numeric:tabular-nums;
+    letter-spacing:.01em;color:var(--ink);
+    text-shadow:0 0 12px rgba(140,230,120,.22);
+    will-change:transform;
+  }
+  #unit{font-size:.34em;font-weight:300;color:#93c07f;margin-left:.08em;vertical-align:.62em}
+  #pctwrap.end{transition:transform .34s cubic-bezier(.2,.9,.3,1.35);transform:scale(1.09)!important}
+  #msg{
+    margin-top:18px;min-height:1.4em;
+    font-size:13.5px;font-weight:400;color:var(--dim);
+    letter-spacing:.06em;
+    transition:opacity .24s ease,transform .24s ease;
+  }
+  #msg.out{opacity:0;transform:translateY(6px)}
+
+  #foot{
+    position:fixed;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom));
+    text-align:center;font-size:11px;letter-spacing:.08em;color:var(--faint);
+    z-index:30;transition:color .5s ease .45s;
+  }
+  body.done #foot{color:rgba(45,80,22,.78)}
+
+  #again{
+    position:fixed;top:calc(12px + env(safe-area-inset-top));right:calc(14px + env(safe-area-inset-right));
+    z-index:31;appearance:none;background:none;cursor:pointer;
+    font:500 11.5px/1 var(--sans);letter-spacing:.06em;
+    color:var(--dim);border:1px solid rgba(185,211,173,.28);
+    border-radius:999px;padding:7px 12px;
+    transition:color .4s ease,border-color .4s ease,background .2s ease;
+  }
+  #again:hover{background:rgba(185,211,173,.08)}
+  body.done #again{color:var(--green2);border-color:rgba(74,124,42,.4)}
+  body.done #again:hover{background:rgba(74,124,42,.08)}
+
+  /* ——— remate: wipe radial hacia el crema del home ———
+     origen del clip = centro real de la hoja (JS setea --wx/--wy) */
+  #finale{
+    position:fixed;inset:0;z-index:20;
+    background:radial-gradient(120% 90% at 50% 32%, #f9fdf5 0%, var(--cream) 58%, #ecf4e2 100%) var(--cream);
+    display:flex;align-items:center;justify-content:center;
+    visibility:hidden;
+    clip-path:circle(0px at var(--wx,50%) var(--wy,40%));
+    transition:clip-path .85s cubic-bezier(.65,0,.25,1),visibility 0s linear .85s;
+  }
+  #finale.open{
+    visibility:visible;
+    clip-path:circle(142% at var(--wx,50%) var(--wy,40%));
+    transition:clip-path .85s cubic-bezier(.65,0,.25,1),visibility 0s;
+  }
+  .fin-in{text-align:center;padding:0 28px}
+  .fin-in>*{
+    opacity:0;transform:translateY(16px);
+    transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .55s cubic-bezier(.2,.7,.2,1);
+  }
+  #finale.open .fin-in>*{opacity:1;transform:none}
+  #finale.open .fin-in>*:nth-child(1){transition-delay:.32s}
+  #finale.open .fin-in>*:nth-child(2){transition-delay:.42s}
+  #finale.open .fin-in>*:nth-child(3){transition-delay:.52s}
+  #finale.open .fin-in>*:nth-child(4){transition-delay:.62s}
+  #finale.open .fin-in>*:nth-child(5){transition-delay:.76s}
+  .fin-leaf{width:44px;height:44px;margin:0 auto 16px;display:block}
+  .fin-in h1{
+    /* pila del wordmark real del home (h1.brand): Inter 800, tracking negativo */
+    font-family:var(--sans);font-size:clamp(34px,9vw,44px);
+    font-weight:800;letter-spacing:-.02em;color:var(--green);
+  }
+  .fin-in .tag{
+    margin-top:10px;font-size:11.5px;font-weight:500;color:var(--green2);
+    letter-spacing:.22em;text-indent:.22em;text-transform:uppercase;
+  }
+  .cta-row{margin-top:30px}
+  .cta{
+    display:inline-block;
+    background:var(--green);color:var(--cream);text-decoration:none;
+    font:600 15px/1 var(--sans);letter-spacing:.02em;
+    padding:15px 30px;border-radius:999px;
+    box-shadow:0 8px 24px rgba(45,80,22,.28);
+    transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease;
+  }
+  .cta:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(45,80,22,.34)}
+  .cta .arr{display:inline-block;margin-left:6px;transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+  .cta:hover .arr{transform:translateX(4px)}
+  .fin-in .meta{margin-top:22px;font-size:12px;letter-spacing:.06em;color:#55703f}
+
+  @media (max-height:640px){
+    #tkwrap{width:300px;height:300px;margin:-150px 0 0 -150px}
+    #hud{top:calc(40% + 166px)}
+    #pctwrap{font-size:56px}
+  }
+
+  /* ——— landscape móvil: dos columnas (hoja | HUD), sin brand ——— */
+  @media (max-height:480px){
+    #brand{display:none}
+    #tkwrap{left:30%;top:50%;width:220px;height:220px;margin:-110px 0 0 -110px}
+    #hud{
+      left:calc(30% + 126px);right:14px;top:50%;
+      transform:translateY(-50%);
+    }
+    #pctwrap{font-size:44px}
+    #msg{margin-top:8px;font-size:12px}
+    .fin-leaf{width:34px;height:34px;margin-bottom:10px}
+    .cta-row{margin-top:18px}
+    .fin-in .meta{margin-top:14px}
+  }
+
+  /* ——— reduced motion: solo crossfades ——— */
+  @media (prefers-reduced-motion:reduce){
+    #ticker{animation:none}
+    #msg{transition:opacity .3s ease}
+    #msg.out{transform:none}
+    #pctwrap{will-change:auto}
+    #pctwrap.end{transition:none;transform:none!important}
+    #finale{clip-path:none;opacity:0;transition:opacity .6s ease,visibility 0s linear .6s}
+    #finale.open{clip-path:none;opacity:1;transition:opacity .6s ease,visibility 0s}
+    .fin-in>*{transform:none;transition:opacity .5s ease}
+    .cta,.cta .arr{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<div id="brand" aria-hidden="true">Jardineando</div>
+
+<div id="tkwrap" aria-hidden="true">
+  <svg id="ticker" viewBox="0 0 352 352">
+    <defs>
+      <path id="tkpath" d="M176 30 a146 146 0 1 1 -0.01 0"/>
+    </defs>
+    <text><textPath href="#tkpath" textLength="917" lengthAdjust="spacing">GUAYABO DEL PAÍS · LIQUIDÁMBAR · PINDÓ · GARDENIA · LIMONERO · ROMERO · LAVANDA · CLIVIA · ANACAHUITA · AGUARIBAY ·&#160;</textPath></text>
+  </svg>
+</div>
+
+<div id="hud" aria-hidden="true">
+  <div id="pctwrap"><span id="pct">0</span><span id="unit">%</span></div>
+  <p id="msg">Regando los datos…</p>
+</div>
+
+<p id="live" class="sr" role="status">Cargando el jardín</p>
+
+<button id="again" type="button" aria-label="Repetir la secuencia">↻ Repetir</button>
+
+<div id="finale" role="region" aria-label="Bienvenida">
+  <div class="fin-in">
+    <svg class="fin-leaf" viewBox="-70 -115 140 235" aria-hidden="true">
+      <path d="M0 96 C 74 38 62 -66 0 -104 C -62 -66 -74 38 0 96 Z" fill="none" stroke="#2d5016" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M0 88 L0 -92 M0 34 L34 6 M0 34 L-34 6 M0 -14 L27 -36 M0 -14 L-27 -36" fill="none" stroke="#4a7c2a" stroke-width="5.5" stroke-linecap="round"/>
+      <path d="M0 96 L0 118" fill="none" stroke="#2d5016" stroke-width="7" stroke-linecap="round"/>
+    </svg>
+    <h1>Jardineando</h1>
+    <p class="tag">El jardín de casa · Montevideo</p>
+    <div class="cta-row"><a class="cta" href="../index.html">Entrar al jardín <span class="arr">→</span></a></div>
+    <p class="meta">52 especies · Frente · Fondo · Interior</p>
+  </div>
+</div>
+
+<footer id="foot">Propuesta C · «Latido» — demo de splash</footer>
+
+<script>
+(() => {
+'use strict';
+const $ = s => document.querySelector(s);
+const cvs = $('#fx'), ctx = cvs.getContext('2d');
+const pctEl = $('#pct'), pctWrap = $('#pctwrap'), msgEl = $('#msg'), live = $('#live');
+const finale = $('#finale'), tkwrap = $('#tkwrap'), foot = $('#foot'), body = document.body;
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FOOT0 = foot.textContent;
+
+/* —— reconciliación con la carga real (punto 3 del plan) ——
+   DEMO=true simula window.load a los 3400 ms para que se VEA el time-warp;
+   en producción: DEMO=false → rige window.load + exhibición mínima. */
+const DEMO = true;
+const SIM_LOAD_MS = 3400;
+const MIN_SHOW = 1400;          // exhibición mínima en producción
+const WARP = 2.4;               // aceleración de vt cuando la carga ya terminó
+const VGATE = 4088;             // vt donde progAt=96 — techo mientras no hay load
+let winLoaded = document.readyState === 'complete';
+addEventListener('load', () => { winLoaded = true; }, { once: true });
+
+/* —— gate de sesión (punto 5 del plan) —— */
+const GATE = 'jardineando_splash_v1';
+let seen = false;
+try { seen = sessionStorage.getItem(GATE) === '1'; sessionStorage.setItem(GATE, '1'); } catch (e) {}
+
+let W, H, CX, CY, S = 1;
+function resize(){
+  const dpr = Math.min(devicePixelRatio || 1, 2);
+  W = innerWidth; H = innerHeight;
+  cvs.width = W * dpr; cvs.height = H * dpr;
+  cvs.style.width = W + 'px'; cvs.style.height = H + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  /* la hoja sigue al ticker: mismo centro y misma escala en todos los breakpoints */
+  const tw = tkwrap.offsetWidth || 352;
+  S = tw / 352;
+  CX = tkwrap.offsetLeft + tw / 2;
+  CY = tkwrap.offsetTop + (tkwrap.offsetHeight || tw) / 2;
+  finale.style.setProperty('--wx', CX + 'px');
+  finale.style.setProperty('--wy', CY + 'px');
+}
+addEventListener('resize', resize);
+resize();
+
+/* —— silueta de hoja: puntos objetivo —— */
+const cub = (a,b,c,d,t) => { const u = 1 - t; return u*u*u*a + 3*u*u*t*b + 3*u*t*t*c + t*t*t*d; };
+function buildTargets(){
+  const A = [], B = [], N = 22;
+  for (const s of [-1, 1])
+    for (let i = 1; i < N; i++){
+      const t = i / N;
+      A.push([cub(0, s*84, s*64, 0, t), cub(88, 30, -72, -102, t)]);
+    }
+  const veins = [[52, .30], [42, .52], [30, .74]];
+  for (const [len, vy] of veins){
+    const y0 = 88 - vy * 178;
+    for (const s of [-1, 1])
+      for (let i = 1; i <= 5; i++){ const q = i/5; A.push([s*len*q*.92, y0 - q*len*.6]); }
+  }
+  /* nervadura central + tallito: reservados para el tramo 81→100 —
+     la última partícula aterriza justo antes del bloom */
+  for (let i = 0; i <= 13; i++) B.push([0, 92 - i/13 * 186]);
+  for (let i = 1; i <= 4; i++)  B.push([0, 92 + i*7]);
+  return [A, B];                                   // 72 + 18 = 90 puntos
+}
+
+/* —— timeline sobre tiempo virtual vt ——
+   BEATS y COPY son fracciones del progreso (0–1): se comprimen con el warp. */
+const BEATS = [.369, .548, .571, .755, .784, .797, .803, .866, .997];
+const COPY = [
+  [0,    'Regando los datos…'],
+  [.545, 'Despertando al guayabo del país…'],
+  [.64,  'Contando las 52 especies…'],
+  [.781, 'Buscando fruta en el presunto caqui…'],
+  [.808, 'El caqui no afloja. Seguimos…'],
+  [.881, 'Acomodando las 56 palmeritas del vivero…'],
+  [.985, 'Listo. Bienvenido al jardín.'],
+];
+const eo = t => 1 - Math.pow(1 - t, 3);
+const io = t => t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+const sm = (a,b,x) => { x = Math.min(1, Math.max(0, (x - a) / (b - a))); return x*x*(3 - 2*x); };
+function progAt(ms){
+  const s = ms / 1e3;
+  if (s >= 4.5) return 100;
+  if (s < 1.1)  return 55 * eo(s / 1.1);                 // arranque rápido
+  if (s < 2.5)  return 55 + 23 * io((s - 1.1) / 1.4);    // crucero → 78
+  if (s < 3.4)  return 78 + 3 * ((s - 2.5) / .9);        // vacilación: 78 → 81
+  return 81 + 19 * io((s - 3.4) / 1.1);                  // remate → 100
+}
+
+/* —— estado —— */
+let parts = [], rings = [], blooms = [];
+let t0 = 0, last = 0, vt = 0, bi = 0, ci = 0, pulse = 0, raf = 0;
+let fin = false, opened = false, finAt = Infinity, stopAt = Infinity;
+let swapT = -1, pendTxt = '', lastBeat = 0, lastPct = -1, lastFx = -1;
+
+function initParts(){
+  const [A, B] = buildTargets();
+  const sh = a => { for (let i = a.length - 1; i > 0; i--){ const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const mk = ([tx, ty], th, w) => ({
+    tx, ty, th, w, x: CX, y: CY,
+    oa: Math.random() * Math.PI * 2,               // órbita: fase
+    or: 95 + Math.random() * 92,                   // órbita: radio
+    os: (.25 + Math.random() * .55) * (Math.random() < .5 ? -1 : 1),
+    ph: Math.random() * Math.PI * 2,
+    sz: 1 + Math.random() * 1.3,
+    vx: 0, vy: 0,
+  });
+  parts = [
+    ...sh(A).map((p, i) => mk(p, .04 + .58 * i / A.length, .16)),  // contorno + venas → ~78%
+    ...sh(B).map((p, i) => mk(p, .68 + .18 * i / B.length, .13)),  // nervadura + tallo → ~99%
+  ];
+}
+
+function spawnRing(ms, k){
+  rings.push({ born: ms, dur: k > 1 ? 1500 : 1100, r0: 104 * S,
+               max: k > 1 ? Math.max(W, H) * .55 : 168 * S, k: Math.min(k, 1.3) });
+}
+
+function start(){
+  cancelAnimationFrame(raf);
+  initParts(); rings = []; blooms = [];
+  vt = 0; bi = 0; pulse = 0; fin = false; opened = false;
+  finAt = Infinity; stopAt = Infinity; swapT = -1;
+  lastBeat = 0; lastPct = -1; lastFx = -1;
+  finale.classList.remove('open'); body.classList.remove('done');
+  pctWrap.classList.remove('end'); pctWrap.style.transform = ''; pctWrap.style.textShadow = '';
+  msgEl.classList.remove('out'); msgEl.textContent = COPY[0][1]; ci = 1;
+  live.textContent = 'Cargando el jardín';
+  foot.textContent = FOOT0;
+  pctEl.textContent = '0';
+  t0 = performance.now(); last = t0;
+  raf = requestAnimationFrame(frame);
+}
+
+/* gate de sesión ya visto → directo al finale (sin animación previa) */
+function skipToFinale(){
+  fin = true; opened = true;
+  pctEl.textContent = '100'; pctWrap.classList.add('end');
+  msgEl.textContent = 'Listo. Bienvenido al jardín.';
+  live.textContent = 'Listo. Entrá al jardín.';
+  finale.classList.add('open'); body.classList.add('done');
+  foot.textContent = FOOT0 + ' · sesión ya vista (↻ Repetir)';
+}
+
+function frame(now){
+  const ms = now - t0;
+  const dms = Math.min(100, now - last), dt = Math.min(.05, dms / 1e3); last = now;
+
+  /* time-warp: vt corre 1:1; con la carga lista acelera ×WARP;
+     sin carga, se clava en VGATE (el % nunca pasa de 96) */
+  const loadDone = DEMO ? ms >= SIM_LOAD_MS : (winLoaded && ms >= MIN_SHOW);
+  vt += dms * (loadDone ? WARP : 1);
+  if (!loadDone) vt = Math.min(vt, VGATE);
+
+  const prog = progAt(vt), asm = prog / 100, time = ms / 1e3;
+
+  while (bi < BEATS.length && asm >= BEATS[bi]){ pulse = 1; if (!RM) spawnRing(ms, 1); lastBeat = ms; bi++; }
+  /* latido en reposo mientras el gate retiene el 96 */
+  if (!loadDone && vt >= VGATE && ms - lastBeat > 950){ pulse = 1; if (!RM) spawnRing(ms, 1); lastBeat = ms; }
+  pulse *= Math.exp(-dt * 4.5); if (pulse < .02) pulse = 0;
+  const scale = RM ? 1 : 1 + .055 * pulse;
+
+  if (swapT < 0 && ci < COPY.length && asm >= COPY[ci][0]){
+    pendTxt = COPY[ci][1]; msgEl.classList.add('out'); swapT = ms; ci++;
+  }
+  if (swapT >= 0 && ms - swapT > 240){
+    msgEl.textContent = pendTxt; live.textContent = pendTxt;
+    msgEl.classList.remove('out'); swapT = -1;
+  }
+
+  if (!fin && prog >= 100){
+    fin = true; finAt = ms;
+    pctWrap.style.transform = ''; pctWrap.classList.add('end');
+    pctWrap.style.textShadow = '0 0 34px rgba(140,230,120,.65)';
+    live.textContent = 'Listo. Entrá al jardín.';
+    if (!RM){
+      blooms = [ms, ms + 130, ms + 290];
+      for (const p of parts){
+        const dx = p.x - CX, dy = p.y - CY, d = Math.hypot(dx, dy) || 1;
+        const sp = 90 + Math.random() * 230;
+        p.vx = dx / d * sp; p.vy = dy / d * sp;
+      }
+      stopAt = ms + 2400;
+    } else stopAt = ms + 800;
+  }
+  while (blooms.length && ms >= blooms[0]){ spawnRing(ms, 1.8); pulse = 1; blooms.shift(); }
+  /* el bloom respira un beat completo antes de que el wipe lo cubra */
+  if (fin && !opened && ms >= finAt + (RM ? 150 : 650)){
+    opened = true; finale.classList.add('open'); body.classList.add('done');
+  }
+
+  /* ——— render ——— */
+  ctx.clearRect(0, 0, W, H);
+
+  const g = ctx.createRadialGradient(CX, CY, 10 * S, CX, CY, 150 * S);
+  g.addColorStop(0, `rgba(80,170,64,${(.10 + .13 * pulse) * asm})`);
+  g.addColorStop(1, 'rgba(80,170,64,0)');
+  ctx.fillStyle = g; ctx.fillRect(CX - 160 * S, CY - 160 * S, 320 * S, 320 * S);
+
+  for (let i = rings.length - 1; i >= 0; i--){
+    const r = rings[i], a = (ms - r.born) / r.dur;
+    if (a >= 1){ rings.splice(i, 1); continue; }
+    ctx.beginPath(); ctx.arc(CX, CY, r.r0 + eo(a) * r.max, 0, 7);
+    ctx.strokeStyle = `rgba(122,205,105,${(1 - a) * (1 - a) * .5 * r.k})`;
+    ctx.lineWidth = Math.max(.4, 1.6 - a); ctx.stroke();
+  }
+
+  /* arco de progreso alrededor del ticker */
+  const AR = 172 * S;
+  const a1 = -Math.PI / 2 + asm * Math.PI * 2;
+  ctx.beginPath(); ctx.arc(CX, CY, AR, -Math.PI / 2, a1);
+  ctx.strokeStyle = 'rgba(150,225,130,.55)'; ctx.lineWidth = 1.25; ctx.stroke();
+  ctx.beginPath(); ctx.arc(CX + Math.cos(a1) * AR, CY + Math.sin(a1) * AR, 2.2, 0, 7);
+  ctx.fillStyle = 'rgba(198,242,178,.9)'; ctx.fill();
+
+  for (const p of parts){
+    let x, y, al;
+    if (fin && !RM){
+      p.vx *= 1 - 1.6 * dt; p.vy *= 1 - 1.6 * dt;
+      p.x += p.vx * dt; p.y += p.vy * dt;
+      al = Math.max(0, 1 - (ms - finAt) / 1400); x = p.x; y = p.y;
+    } else if (RM){
+      x = CX + p.tx * S; y = CY + p.ty * S; al = sm(p.th, p.th + p.w, asm);
+    } else {
+      const k = sm(p.th, p.th + p.w, asm);
+      const ox = CX + Math.cos(p.oa + time * p.os) * p.or * S;
+      const oy = CY + Math.sin(p.oa + time * p.os) * p.or * S * .8;
+      x = ox + (CX + p.tx * S * scale - ox) * k + Math.sin(time * 2.1 + p.ph) * .7 * k;
+      y = oy + (CY + p.ty * S * scale - oy) * k + Math.cos(time * 1.7 + p.ph) * .7 * k;
+      al = .35 + .65 * k;
+      p.x = x; p.y = y;
+    }
+    if (al <= 0) continue;
+    ctx.beginPath(); ctx.arc(x, y, p.sz * 2.6, 0, 7);
+    ctx.fillStyle = `rgba(96,190,84,${.10 * al})`; ctx.fill();
+    ctx.beginPath(); ctx.arc(x, y, p.sz, 0, 7);
+    ctx.fillStyle = `rgba(198,242,178,${.9 * al})`; ctx.fill();
+  }
+
+  const fl = Math.floor(prog);
+  if (fl !== lastPct){ pctEl.textContent = fl; lastPct = fl; }
+  if (!RM && !fin){
+    /* glow cuantizado: se escribe estilo solo cuando el paso (0.04) cambió */
+    const q = Math.round(pulse * 25) / 25;
+    if (q !== lastFx){
+      lastFx = q;
+      pctWrap.style.transform = q ? `scale(${(1 + .028 * q).toFixed(4)})` : '';
+      pctWrap.style.textShadow = q
+        ? `0 0 ${(10 + 26 * q).toFixed(1)}px rgba(140,230,120,${(.22 + .4 * q).toFixed(3)})`
+        : '';
+    }
+  }
+
+  if (ms < stopAt) raf = requestAnimationFrame(frame);
+}
+
+$('#again').addEventListener('click', start);
+if (seen) skipToFinale(); else start();
+})();
+</script>
+</body>
+</html>

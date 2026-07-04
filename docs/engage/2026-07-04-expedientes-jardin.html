@@ -1,0 +1,339 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14120c">
+<title>🕵️ Expedientes abiertos — Los Sin Nombre de tu jardín</title>
+<style>
+  :root{
+    --bg:#14120c; --bg2:#1b1810;
+    --manila:#e8d9ab; --manila2:#d9c68c; --kraft:#8a713d;
+    --ink:#efe8d2; --ink2:#b3a888; --ink3:#847b60;
+    --card:#201c12; --card2:#282216;
+    --rojo:#d8564e; --amarillo:#e0b64f; --verde:#8fc46a; --naranja:#e08a3c;
+    --line:rgba(232,217,171,.14);
+    --pad:max(16px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    --mono:"Courier New",Courier,monospace;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.55;
+    background-image:
+      radial-gradient(85% 40% at 50% -5%, rgba(224,182,79,.10), transparent 70%),
+      radial-gradient(60% 35% at 100% 60%, rgba(216,86,78,.05), transparent);
+    -webkit-font-smoothing:antialiased;
+  }
+  .back{ display:block; color:#c4b98f; text-decoration:none; font-size:13px; font-weight:700;
+    padding:11px var(--pad); background:#0c0a06; }
+  .back:active{ opacity:.65; }
+  .wrap{ max-width:580px; margin:0 auto; padding-bottom:40px; }
+
+  .hero{ text-align:center; padding:32px var(--pad) 18px; }
+  .hero .sello{ display:inline-block; font-family:var(--mono); font-weight:700; font-size:12px;
+    letter-spacing:.22em; color:var(--rojo); border:2.5px solid var(--rojo); border-radius:6px;
+    padding:5px 14px; transform:rotate(-3.5deg); text-transform:uppercase; margin-bottom:16px;
+    box-shadow:0 0 0 1px rgba(216,86,78,.2); }
+  .hero h1{ font-size:29px; line-height:1.15; letter-spacing:-.02em; color:#fff; margin-bottom:10px; }
+  .hero h1 b{ color:var(--amarillo); }
+  .hero p.lede{ color:var(--ink2); font-size:15.5px; max-width:460px; margin:0 auto; }
+  .hero p.lede b{ color:var(--ink); }
+
+  .contador{ display:flex; justify-content:center; gap:20px; padding:16px var(--pad) 6px; }
+  .contador .c{ text-align:center; }
+  .contador .n{ font-family:var(--mono); font-weight:700; font-size:30px; color:var(--amarillo); display:block; line-height:1; }
+  .contador .l{ font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--ink3); }
+
+  section{ padding:18px var(--pad) 0; }
+  .sec-t{ font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--kraft); border-bottom:1px dashed var(--line);
+    padding-bottom:7px; margin-bottom:14px; }
+
+  .folder{ background:linear-gradient(180deg,var(--card2),var(--card)); border:1px solid var(--line);
+    border-radius:14px; padding:16px 15px 14px; margin-bottom:14px; position:relative; overflow:hidden; }
+  .folder::before{ content:""; position:absolute; top:0; left:0; right:0; height:3px;
+    background:linear-gradient(90deg,var(--kraft),var(--manila2)); opacity:.5; }
+  .folder .tab{ display:flex; align-items:center; gap:8px; margin-bottom:8px; flex-wrap:wrap; }
+  .folder .code{ font-family:var(--mono); font-weight:700; font-size:11.5px; color:var(--bg);
+    background:var(--manila2); border-radius:4px; padding:2px 7px; }
+  .folder .nivel{ font-size:10.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+    border-radius:999px; padding:3px 9px; }
+  .nivel.total{ color:#ffb9b3; background:rgba(216,86,78,.16); border:1px solid rgba(216,86,78,.45); }
+  .nivel.genero{ color:#f4d9a0; background:rgba(224,182,79,.13); border:1px solid rgba(224,182,79,.4); }
+  .nivel.firma{ color:#c9e6b2; background:rgba(143,196,106,.13); border:1px solid rgba(143,196,106,.4); }
+  .folder h3{ font-size:18.5px; letter-spacing:-.01em; color:#fff; margin-bottom:2px; }
+  .folder .alias{ font-size:12.5px; color:var(--ink3); font-style:italic; margin-bottom:9px; }
+  .folder p{ font-size:14.5px; color:var(--ink2); margin-bottom:8px; }
+  .folder p b{ color:var(--ink); }
+  .folder .pista{ background:rgba(224,182,79,.07); border-left:3px solid var(--amarillo);
+    border-radius:0 8px 8px 0; padding:9px 11px; font-size:13.5px; color:var(--ink2); margin:10px 0 4px; }
+  .folder .pista b{ color:var(--amarillo); }
+
+  .portada{ border:1.5px solid rgba(224,138,60,.55); box-shadow:0 14px 44px rgba(0,0,0,.45), 0 0 30px rgba(224,138,60,.08); }
+  .portada::before{ background:linear-gradient(90deg,var(--naranja),var(--rojo)); opacity:.9; }
+  .portada .stamp{ position:absolute; top:14px; right:-2px; font-family:var(--mono); font-weight:700;
+    font-size:10px; letter-spacing:.16em; color:var(--naranja); border:2px solid var(--naranja);
+    border-radius:5px; padding:3px 9px; transform:rotate(6deg); opacity:.9; }
+  .portada .hechos{ margin:10px 0; padding:0; list-style:none; }
+  .portada .hechos li{ font-size:14px; color:var(--ink2); padding:7px 0 7px 26px; position:relative;
+    border-bottom:1px dashed var(--line); }
+  .portada .hechos li:last-child{ border-bottom:none; }
+  .portada .hechos li::before{ content:"▸"; position:absolute; left:8px; color:var(--naranja); }
+  .portada .hechos li b{ color:var(--ink); }
+
+  .q{ background:rgba(232,217,171,.05); border:1px solid var(--line); border-radius:10px;
+    padding:11px 12px; margin-top:10px; }
+  .q .qt{ font-size:13.5px; font-weight:700; color:var(--ink); margin-bottom:8px; }
+  .q .opts{ display:flex; gap:8px; flex-wrap:wrap; }
+  .q button{ font-family:var(--sans); font-size:13px; font-weight:700; color:var(--ink);
+    background:var(--card2); border:1px solid var(--line); border-radius:999px; padding:8px 14px;
+    cursor:pointer; }
+  .q button.sel{ background:var(--amarillo); color:var(--bg); border-color:var(--amarillo); }
+  .q button:disabled:not(.sel){ opacity:.4; }
+  .q .q-hint{ font-size:12px; color:var(--verde); margin-top:6px; min-height:14px; }
+
+  .como{ background:linear-gradient(180deg,rgba(143,196,106,.08),transparent);
+    border:1px solid rgba(143,196,106,.25); border-radius:14px; padding:16px 15px; margin:6px 0 14px; }
+  .como h3{ font-size:16.5px; color:var(--verde); margin-bottom:8px; }
+  .como ol{ padding-left:20px; }
+  .como li{ font-size:14px; color:var(--ink2); margin-bottom:7px; }
+  .como li b{ color:var(--ink); }
+  .como a{ color:var(--verde); font-weight:700; }
+
+  .react{ text-align:center; padding:26px var(--pad) 8px; }
+  .react .rt{ font-size:15px; font-weight:700; color:var(--ink); margin-bottom:12px; }
+  .react .btns{ display:flex; justify-content:center; gap:10px; }
+  .react button{ font-size:26px; background:var(--card2); border:1px solid var(--line);
+    border-radius:14px; width:56px; height:56px; cursor:pointer; }
+  .react button.sel{ background:var(--amarillo); border-color:var(--amarillo); transform:scale(1.08); }
+  .react button:disabled:not(.sel){ opacity:.4; }
+  .react .react-hint{ font-size:12.5px; color:var(--verde); margin-top:8px; min-height:15px; }
+
+  footer{ text-align:center; padding:18px var(--pad) 8px; color:var(--ink3); font-size:12.5px; }
+  footer a{ color:var(--manila2); font-weight:700; }
+</style>
+</head><body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="wrap">
+
+  <div class="hero">
+    <span class="sello">Confidencial · Expedientes abiertos</span>
+    <h1>Los <b>Sin Nombre</b><br>de tu jardín</h1>
+    <p class="lede">Tu jardín tiene <b>52 especies fichadas</b>… pero <b>13 viven con nombre prestado</b> (más 2 fantasmas sin ficha). Hoy abrimos los expedientes: la evidencia, los sospechosos y qué mirar para desenmascarar a cada una. <b>Varios casos se resuelven esta misma semana, sin esperar la primavera.</b></p>
+  </div>
+
+  <div class="contador">
+    <div class="c"><span class="n">13</span><span class="l">expedientes</span></div>
+    <div class="c"><span class="n">2</span><span class="l">fantasmas</span></div>
+    <div class="c"><span class="n">4</span><span class="l">se resuelven YA</span></div>
+  </div>
+
+  <!-- ================= CASO PORTADA ================= -->
+  <section>
+    <div class="sec-t">🚨 Caso portada</div>
+    <div class="folder portada">
+      <span class="stamp">Sospechoso Nº1</span>
+      <div class="tab"><span class="code">B-41</span><span class="nivel genero">identidad en duda</span></div>
+      <h3>El presunto caqui</h3>
+      <div class="alias">Figura como Diospyros kaki — «fruto de los dioses». Pero…</div>
+      <ul class="hechos">
+        <li>Desde que existe el catálogo, <b>nunca se le vio una flor ni una fruta</b>. Ni una.</li>
+        <li>Un caqui real es imposible de disimular: en <b>mayo-julio</b> (o sea, AHORA) queda pelado <b>con frutos naranjas colgados</b> de las ramas desnudas. La foto del 04/05 lo muestra pelado y <b>sin nada</b>.</li>
+        <li>Coartadas posibles: es un <b>caqui joven o de semilla</b> (tardan 5-7 años en dar fruta)… o es <b>otra especie caduca</b> usurpando el nombre.</li>
+      </ul>
+      <div class="pista"><b>Cómo se desenmascara YA, en invierno:</b> la corteza del caqui adulto está agrietada en placas cuadriculadas tipo <b>piel de cocodrilo</b>, las ramitas crecen en <b>zigzag</b>, y si alguna vez dio fruta, en el suelo al pie queda el <b>cáliz en estrella de 4 puntas</b> — huella digital inconfundible. En primavera, la firma definitiva: brotación tardía (octubre) y flores campanita color crema escondidas en las axilas de las hojas (oct-nov).</div>
+      <div class="q">
+        <div class="qt">Declaración testimonial: ¿alguna vez le viste una fruta naranja?</div>
+        <div class="opts">
+          <button onclick="engageAnswer('exp-b41-fruta','nunca', this)">Nunca jamás</button>
+          <button onclick="engageAnswer('exp-b41-fruta','alguna-vez', this)">Creo que alguna vez</button>
+          <button onclick="engageAnswer('exp-b41-fruta','no-mire', this)">Nunca miré bien</button>
+        </div>
+        <div class="q-hint"></div>
+      </div>
+      <div class="q">
+        <div class="qt">Peritaje exprés: ¿la corteza del tronco está agrietada en placas cuadraditas (piel de cocodrilo)?</div>
+        <div class="opts">
+          <button onclick="engageAnswer('exp-b41-corteza','si', this)">Sí, cuadriculada</button>
+          <button onclick="engageAnswer('exp-b41-corteza','no', this)">No, es lisa/otra</button>
+          <button onclick="engageAnswer('exp-b41-corteza','voy-a-mirar', this)">Voy a mirar 🔍</button>
+        </div>
+        <div class="q-hint"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SE RESUELVEN YA ================= -->
+  <section>
+    <div class="sec-t">⚡ Casos que se resuelven YA (sin esperar primavera)</div>
+
+    <div class="folder">
+      <div class="tab"><span class="code">B-40</span><span class="nivel genero">género probable</span></div>
+      <h3>La madreselva que quizás no lo es</h3>
+      <div class="alias">Figura como Lonicera nitida (a confirmar)</div>
+      <p>Las Loniceras de cerco son <b>maestras del disfraz</b> — hay 3 candidatas casi idénticas. Pero hay un dato que las delata sin flor de por medio: <b>el tamaño de la hoja</b>.</p>
+      <div class="pista"><b>Peritaje con regla:</b> hojas de menos de <b>2 cm</b>, ovaladas y brillantes = <b>L. nitida</b>, caso cerrado. Más de <b>2,5 cm</b> = probable <b>L. pileata</b> o un híbrido.</div>
+      <div class="q">
+        <div class="qt">¿Le medís una hoja? (una regla o una moneda al lado alcanza)</div>
+        <div class="opts">
+          <button onclick="engageAnswer('exp-b40-hoja','menos-2cm', this)">Menos de 2 cm</button>
+          <button onclick="engageAnswer('exp-b40-hoja','mas-2cm', this)">Más de 2,5 cm</button>
+          <button onclick="engageAnswer('exp-b40-hoja','voy-a-medir', this)">Voy a medir 📏</button>
+        </div>
+        <div class="q-hint"></div>
+      </div>
+    </div>
+
+    <div class="folder">
+      <div class="tab"><span class="code">B-34</span><span class="nivel genero">género probable</span></div>
+      <h3>La falsa mandioca (¿o verdadera?)</h3>
+      <div class="alias">Figura como Manihot grahamii (tentativa) — NO comestible</div>
+      <p>Identificada por sus hojas palmadas de 7-9 lóbulos profundos. Hay un test de laboratorio casero que confirma el género <b>en 10 segundos</b>:</p>
+      <div class="pista"><b>El test del látex:</b> cortá una hojita y mirá el corte — si aparece <b>látex blanco lechoso</b>, es género Manihot confirmado (y descarta imitadoras como Schefflera). Ojo: NO comestible — es la prima brava de la mandioca de mesa, con glucósidos cianogénicos.</div>
+      <div class="q">
+        <div class="qt">¿Sale látex blanco al cortar una hoja?</div>
+        <div class="opts">
+          <button onclick="engageAnswer('exp-b34-latex','si', this)">Sí, blanco lechoso</button>
+          <button onclick="engageAnswer('exp-b34-latex','no', this)">No sale nada</button>
+          <button onclick="engageAnswer('exp-b34-latex','voy-a-probar', this)">Voy a probar 🧪</button>
+        </div>
+        <div class="q-hint"></div>
+      </div>
+    </div>
+
+    <div class="folder">
+      <div class="tab"><span class="code">B-47</span><span class="nivel genero">género probable</span></div>
+      <h3>Las 56 palmeras de incógnito</h3>
+      <div class="alias">¿Butiá amarillo o pindó? — las dos nativas rioplatenses</div>
+      <p>Un ejército de <b>~56 plantines</b> esperando nombre. La pista está en el color y la curva de la hoja, y se puede espiar ya en los ejemplares más crecidos:</p>
+      <div class="pista"><b>Butiá:</b> hojas arqueadas con tinte <b>gris-azulado</b>. <b>Pindó:</b> hojas plumosas <b>verde brillante</b>. Dato extra: si germinaron de carozos de butiá comidos en verano (clásico de Montevideo), el misterio se corta solo.</div>
+      <div class="q">
+        <div class="qt">¿Para qué lado tiran las hojas?</div>
+        <div class="opts">
+          <button onclick="engageAnswer('exp-b47-color','gris-azulado', this)">Gris-azulado (butiá)</button>
+          <button onclick="engageAnswer('exp-b47-color','verde-brillante', this)">Verde brillante (pindó)</button>
+          <button onclick="engageAnswer('exp-b47-color','dificil-decir', this)">Difícil decir aún</button>
+        </div>
+        <div class="q-hint"></div>
+      </div>
+    </div>
+
+    <div class="folder">
+      <div class="tab"><span class="code">B-9</span><span class="nivel firma">falta la firma</span></div>
+      <h3>El crespón casi confeso</h3>
+      <div class="alias">Figura como Lagerstroemia indica (a confirmar)</div>
+      <p>Caso casi cerrado: la <b>corteza exfoliante color canela</b> — visible AHORA que está pelado — es uno de sus rasgos diagnósticos. Una foto del tronco limpio este invierno deja el expediente listo; la panícula de flores de diciembre-febrero pone la firma final.</p>
+    </div>
+  </section>
+
+  <!-- ================= ESPERAN LA PRIMAVERA ================= -->
+  <section>
+    <div class="sec-t">🌸 Casos que esperan su delator (la flor de primavera)</div>
+
+    <div class="folder">
+      <div class="tab"><span class="code">B-20</span><span class="nivel total">incógnita total</span></div>
+      <h3>El arbusto del tambor</h3>
+      <div class="alias">Ficha en blanco — ni un alias</div>
+      <p>El caso más frío del archivo: un arbusto caduco que en invierno es <b>puro palo</b>. Sin hojas, sin flores, sin testigos. En <b>septiembre-octubre</b> brota y confiesa: 4 fotos (yema, hoja, flor, planta entera) abren la investigación.</p>
+    </div>
+
+    <div class="folder">
+      <div class="tab"><span class="code">B-45</span><span class="nivel total">incógnita total</span></div>
+      <h3>La trepadora de la pared</h3>
+      <div class="alias">Detrás del durazno B-35, contra la pared verde</div>
+      <p>Cuatro sospechosos habituales: <b>jazmín solano, otro Jasminum, madreselva japonesa o plumbago</b>. Todos con el mismo modus operandi (hoja oval brillante, porte laxo). Solo la flor de primavera-verano los distingue: blanca estrellada, blanca perfumada, cremosa bilabiada o celeste.</p>
+    </div>
+
+    <div class="folder">
+      <div class="tab"><span class="code">B-49</span><span class="nivel genero">género probable</span></div>
+      <h3>El trifoliado misterioso</h3>
+      <div class="alias">¿Glicinia de incógnito? ¿Robinia? ¿Trébol arbustivo?</div>
+      <p>Sus hojas de <b>3 foliolos brillantes</b> son el disfraz juvenil clásico de la glicinia (de grande se vuelve pinnada y no la reconoce ni la madre). La flor de <b>octubre-noviembre</b> resuelve: racimo colgante violeta = glicinia, y el jardín se ganó una trepadora de las grandes.</p>
+      <div class="pista"><b>Pista sin flor:</b> foliolos lisos y redondeados + disposición alterna + porte trepador laxo = glicinia casi seguro. Punta aguda + disposición opuesta = Robinia o trébol arbustivo.</div>
+    </div>
+
+    <div class="folder">
+      <div class="tab"><span class="code">F-5</span><span class="nivel genero">género probable</span></div>
+      <h3>La coronita de novia (?)</h3>
+      <div class="alias">El único expediente con el signo de pregunta EN el nombre</div>
+      <p>Si es <b>Spiraea cantoniensis</b>, en <b>octubre-noviembre</b> se delata sola: ramas arqueadas cubiertas de <b>flores blancas en cascada</b>, imposibles de fingir. Si no florece así… reabrimos el caso.</p>
+    </div>
+
+    <div class="folder">
+      <div class="tab"><span class="code">B-2</span><span class="nivel genero">género probable</span></div>
+      <h3>El jazmín y sus dos hijos</h3>
+      <div class="alias">B-2, B-2B y B-2C — familia entera sin apellido</div>
+      <p>Jazmín confirmado de porte, pero ¿<b>cuál</b>? ¿Del país, azórico, amarillo? La flor de primavera-verano da el apellido. Dato del expediente: que los hijos hayan brotado solos al pie de la madre es <b>típico del jazmín amarillo y el azórico</b>, que se acodan solos donde una rama toca tierra.</p>
+    </div>
+
+    <div class="folder">
+      <div class="tab"><span class="code">B-13</span><span class="nivel firma">falta la firma</span></div>
+      <h3>La clivia de firma pendiente</h3>
+      <div class="alias">¿Clivia miniata, gardenii o robusta?</div>
+      <p>En <b>septiembre-octubre</b> levanta su vara floral y firma: trompetas <b>abiertas naranja-rojizas</b> = miniata (la clásica). Colgantes y tubulares = gardenii o robusta (las rarezas). Cualquiera de las tres puede vivir <b>100 años</b> — vale la pena saber cuál es.</p>
+    </div>
+
+    <div class="folder">
+      <div class="tab"><span class="code">B-48</span><span class="nivel genero">género probable</span></div>
+      <h3>El pequeño roble</h3>
+      <div class="alias">Quercus sp. — ¿europeo, americano o turco?</div>
+      <p>Género confirmado por sus hojas de lóbulos redondeados. La especie (robur, palustris o cerris) se define en <b>septiembre-octubre</b> con la hoja nueva: forma exacta del lóbulo + largo del pecíolo. De eso depende si va a tierra — un roble adulto no es broma de espacio.</p>
+    </div>
+
+    <div class="folder">
+      <div class="tab"><span class="code">B-46</span><span class="nivel total">incógnita total</span></div>
+      <h3>El vivero de los anónimos</h3>
+      <div class="alias">~30 plantines — varios sin nombre, sobre todo en el lote B</div>
+      <p>Quedan plantines de incógnito en las macetas blancas grandes (uno de <b>hoja lanceolada larga</b>, otro de <b>hoja serrada brillante</b>). Plan de bautismo: cinta de pintor + sharpie (X-1, X-2…), foto de hoja anverso y reverso de cada uno, y se identifican en tanda.</p>
+    </div>
+  </section>
+
+  <!-- ================= FANTASMAS ================= -->
+  <section>
+    <div class="sec-t">👻 Los 2 fantasmas (ni ficha tienen)</div>
+
+    <div class="folder">
+      <div class="tab"><span class="code">s/n</span><span class="nivel total">sin ficha</span></div>
+      <h3>La «palmera» que no es palmera</h3>
+      <div class="alias">Al lado de la lantana B-29</div>
+      <p>En el expediente de la lantana quedó registrada como «palmera»… pero el perito anotó: <b>«en realidad parece yuca o agave joven»</b>. Vive al lado de la lantana, sin ficha ni código. Una foto de la roseta de hojas la baja del limbo.</p>
+    </div>
+
+    <div class="folder">
+      <div class="tab"><span class="code">s/n</span><span class="nivel total">sin ficha</span></div>
+      <h3>La alta de hojas dentadas</h3>
+      <div class="alias">En el sector de la pata de vaca B-42</div>
+      <p>Una planta alta de <b>hojas alargadas dentadas</b> convive con la Bauhinia — y NO es la Bauhinia. Foto de una hoja sola en mano contra fondo claro + foto del porte, y se le abre ficha propia.</p>
+    </div>
+  </section>
+
+  <!-- ================= CÓMO BAUTIZAR ================= -->
+  <section>
+    <div class="como">
+      <h3>📋 Cómo cerrar un expediente (2 minutos)</h3>
+      <ol>
+        <li><b>Contestá acá arriba</b> lo que ya sepas — cada respuesta queda registrada y actualiza el catálogo.</li>
+        <li><b>Sacá la foto clave</b> (corteza, hoja con regla, látex, flor cuando salga) y subila desde la ficha de la planta con <b>«📷 Sumar foto»</b> en <a href="https://gardening-chi.vercel.app/index.html">la Biblioteca</a>.</li>
+        <li>El agente procesa las fotos, <b>confirma o corrige el nombre</b> en el catálogo, y el expediente pasa a cerrado.</li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="react">
+    <div class="rt">¿Está buena esta cacería de nombres?</div>
+    <div class="btns">
+      <button onclick="engageReact('expedientes','love', this)">😍</button>
+      <button onclick="engageReact('expedientes','like', this)">🙂</button>
+      <button onclick="engageReact('expedientes','meh', this)">😐</button>
+      <button onclick="engageReact('expedientes','no', this)">🙅</button>
+    </div>
+    <div class="react-hint"></div>
+  </div>
+
+  <footer>
+    Experiencia pedida por vos (04/07/2026) — queda fija hasta cerrar los 15 casos.<br>
+    Todos los datos salen de tu catálogo real. <a href="https://gardening-chi.vercel.app/index.html">← Volver al inicio</a>
+  </footer>
+</div>
+<script src="engage.js"></script>
+</body></html>

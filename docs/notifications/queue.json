@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-04T12:43:45.754Z",
+  "_updated_at": "2026-07-04T16:30:10.883097Z",
   "notifications": [
     {
       "id": "2026-07-04-task-dia",
@@ -52,6 +52,32 @@
       "sent_at": null,
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-04 (ciclo 35)"
+    },
+    {
+      "id": "2026-07-04-top3",
+      "title": "🎯 Las 3 del jardín (edición fresca)",
+      "body": "Tus 3 prioritarias de hoy: Gardenia / Jazmín del Cabo · Guayabo del país · Liquidámbar. Una pantalla, tres cosas, listo.",
+      "url": "https://gardening-chi.vercel.app/engage/top3-tareas.html?d=2026-07-04",
+      "format": "tarea",
+      "send_at": "2026-07-04T11:15:00-03:00",
+      "expires_at": "2026-07-04T21:30:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "gen_top3_tareas 2026-07-04"
+    },
+    {
+      "id": "2026-07-04-expedientes",
+      "title": "🕵️ 13 plantas viven con nombre falso",
+      "body": "Abrimos los expedientes: el presunto caqui nunca dio fruta. 4 casos se resuelven YA, sin esperar primavera.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-04-expedientes-jardin.html",
+      "format": "experiencia",
+      "send_at": "2026-07-04T10:45:00-03:00",
+      "expires_at": "2026-07-04T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "pedido directo del usuario 2026-07-04 (sesión Claude Code)"
     }
   ]
 }

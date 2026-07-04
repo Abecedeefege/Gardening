@@ -10,6 +10,23 @@ Primer send_at ≥60 min después de la corrida (margen de deploy de Vercel para
 expires_at = mismo día 22:00 -03:00. Cada notificación a un destino DISTINTO. Timestamps SIEMPRE con `-03:00`.
 **3 pushes curados ganan a 20 — CONFIRMADO.** El usuario abre 2-3/día sin importar cuántos mandes.
 
+## 📌 PEDIDOS DIRECTOS DEL USUARIO 04/07 (por chat, sesión Claude Code) — NO PISAR
+
+1. **🕵️ Expedientes** (`engage/2026-07-04-expedientes-jardin.html`) — experiencia COMISIONADA para identificar
+   las 13 fichas dudosas + 2 plantas sin ficha. Pre-aprobada, EXENTA de la regla de no-supervivencia. Vive hasta
+   cerrar los casos. Sus respuestas llegan como `answer` con qids `exp-*` (exp-b41-fruta, exp-b41-corteza,
+   exp-b40-hoja, exp-b34-latex, exp-b47-color): PROCESARLAS en cada corrida → actualizar `data_plants.py` y la página.
+2. **🎯 Top 3** (`engage/top3-tareas.html`) — recurrente CADA 2 DÍAS (ancla 04/07). Paso obligatorio nuevo de cada
+   corrida: `python tools/gen_top3_tareas.py <fecha> --merge` (self-gated por cadencia; regenera página + encola
+   push 09:00). Sus entries (id `*-top3`, format tarea) son ADICIONALES al cupo, como las de gen_task_reminders.
+3. **Dato clave**: B-41 "caqui" quedó con **identidad EN DUDA** en `data_plants.py` — el usuario confirmó que NUNCA
+   mostró flor ni fruto. No usar más el caqui como curio de "fruta de invierno" hasta confirmar identidad.
+4. Timeline: las tareas hechas/cerradas ahora van colapsadas en "🗂️ Pasadas / hechas" (vista Todas).
+5. **Splash screens** (04/07 tarde): el usuario ELIGIÓ la propuesta A «Primera luz» y está INTEGRADA en el
+   Home (inline en index.html vía build.py; 1 vez por sesión, atada a la carga real). Los 3 demos de pitch
+   (`engage/splash-primera-luz.html`, `splash-herbario.html`, `splash-latido.html`) quedan como referencia:
+   NO son proposals del ciclo — no dropear, no borrar, no pushear.
+
 ## 🆕 FUNCIÓN PARALELA (pedido del usuario 28/06): 2 experiencias NUEVAS de cero por corrida
 
 En cada corrida inicializo DOS agentes con persona product/UX/sales que construyen DOS experiencias

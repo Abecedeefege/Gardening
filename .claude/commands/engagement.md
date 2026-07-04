@@ -97,6 +97,20 @@ ids `-task-dia`/`-task-semana`) son ADICIONALES a la cadencia de experiencias:
 no las cuentes contra el cupo, no las edites ni las borres. Si tus propias
 notificaciones también van a las 08:00, corré las tuyas a otro slot.
 
+**PASO OBLIGATORIO — Top 3 cada 2 días (pedido directo del usuario 04/07/2026).**
+Corré SIEMPRE (el script decide solo si toca por cadencia — cada 2 días, ancla 04/07):
+
+```
+python tools/gen_top3_tareas.py <YYYY-MM-DD> --merge
+```
+
+Cuando toca, regenera `docs/engage/top3-tareas.html` (las 3 tareas prioritarias de
+todas las especies, respetando `task_states.json`) y encola su push (09:00). Igual
+que los recordatorios: sus entries (id `-top3`, `format: "tarea"`) son ADICIONALES
+a la cadencia — no las cuentes contra el cupo, no las edites ni las borres, y NO
+elimines la página `top3-tareas.html` ni la proposal `2026-07-04-top3-tareas`
+(experiencia comisionada permanente, no experimento).
+
 **Mirá la sección "CADENCIA VIGENTE" de `docs/engage/learnings.md`.** Si pide alta
 frecuencia (ej. cada 15 min), **NO escribas la cola a mano**: corré
 
