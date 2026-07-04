@@ -1,0 +1,605 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a10">
+<title>😂 Memes del Jardín — humor 100% verificado</title>
+<style>
+  :root{
+    --bg:#0a0a10; --bg2:#101018;
+    --card:#15151f; --card2:#1b1b28;
+    --ink:#f2f0ea; --ink2:#a3a1b0; --ink3:#6f6d80;
+    --line:rgba(255,255,255,.08);
+    --acid:#e8fb4e; --magenta:#ff5ca8; --cyan:#55d6f5; --verde:#7ddc5a; --oro:#ffc93d;
+    --pad:max(15px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5;
+    background-image:
+      radial-gradient(100% 44% at 50% -6%, rgba(232,251,78,.07), transparent),
+      radial-gradient(80% 40% at 100% 104%, rgba(255,92,168,.07), transparent);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ——— back link: PRIMER elemento del body ——— */
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#05050a;
+    color:#8f8da0; text-decoration:none; font-size:13px; font-weight:700; letter-spacing:.01em; }
+  .back:active{ opacity:.65; }
+
+  .prog{ position:fixed; top:0; left:0; height:3px; width:0; z-index:90;
+    background:linear-gradient(90deg,var(--acid),var(--magenta),var(--cyan)); transition:width .1s linear; }
+
+  .wrap{ max-width:540px; margin:0 auto; }
+
+  header.app{ position:sticky; top:0; z-index:70; display:flex; align-items:center; gap:10px;
+    padding:12px var(--pad); background:rgba(10,10,16,.88); backdrop-filter:blur(12px) saturate(1.4);
+    border-bottom:1px solid var(--line); }
+  header.app .logo{ font-size:24px; line-height:1; transform:rotate(-8deg); }
+  header.app .ttl{ font-weight:900; font-size:17px; letter-spacing:-.02em; color:#fff; }
+  header.app .ttl i{ font-style:normal; color:var(--acid); }
+  .badge-verif{ margin-left:auto; font-size:10px; font-weight:900; letter-spacing:.07em; text-transform:uppercase;
+    color:#0d1503; background:var(--verde); border-radius:999px; padding:5px 10px; white-space:nowrap; }
+
+  /* ——— hero ——— */
+  .hero{ padding:30px var(--pad) 10px; text-align:center; }
+  .hero .emo{ font-size:46px; line-height:1; display:inline-block; animation:bounce 2.6s ease-in-out infinite; }
+  @keyframes bounce{ 0%,100%{transform:translateY(0) rotate(-6deg)} 50%{transform:translateY(-7px) rotate(6deg)} }
+  .hero h1{ font-size:clamp(32px,10.5vw,46px); font-weight:900; letter-spacing:-.035em; line-height:1.0;
+    margin:8px 0 10px; color:#fff; }
+  .hero h1 span{ color:var(--acid); }
+  .hero p{ font-size:14.5px; color:var(--ink2); max-width:40ch; margin:0 auto; }
+  .hero p b{ color:#fff; }
+  .hero .meta{ margin-top:14px; font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--ink3); }
+
+  .feed{ display:flex; flex-direction:column; gap:16px; padding:16px var(--pad) 6px; }
+
+  /* ——— card base ——— */
+  .meme{ background:var(--card); border:1px solid var(--line); border-radius:20px; overflow:hidden;
+    box-shadow:0 12px 34px rgba(0,0,0,.42); }
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .55s ease, transform .55s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .m-hd{ display:flex; align-items:center; gap:10px; padding:13px 15px 10px; }
+  .m-hd .av{ width:42px; height:42px; flex:0 0 auto; border-radius:13px; display:grid; place-items:center;
+    font-size:23px; background:linear-gradient(150deg,var(--card2),#0e0e16); box-shadow:inset 0 0 0 1px var(--line); }
+  .m-hd .who{ min-width:0; flex:1; line-height:1.2; }
+  .m-hd .hnd{ font-weight:800; font-size:14px; color:#fff; }
+  .m-hd .sub{ font-size:11.5px; color:var(--ink3); }
+  .fmt{ flex:0 0 auto; font-size:9.5px; font-weight:900; letter-spacing:.09em; text-transform:uppercase;
+    border-radius:7px; padding:4px 8px; color:#0a0a10; background:var(--acid); }
+  .fmt.rosa{ background:var(--magenta); } .fmt.cel{ background:var(--cyan); }
+  .fmt.oro{ background:var(--oro); } .fmt.ver{ background:var(--verde); }
+
+  .m-body{ padding:4px 16px 14px; }
+
+  /* punchline gigante */
+  .punch{ font-weight:900; letter-spacing:-.02em; line-height:1.06; color:#fff;
+    font-size:clamp(24px,7.4vw,33px); text-transform:uppercase; margin:8px 0 4px;
+    opacity:0; transform:scale(.82) rotate(-1.5deg); }
+  .in .punch{ animation:punchIn .5s cubic-bezier(.2,1.6,.4,1) .35s forwards; }
+  @keyframes punchIn{ to{ opacity:1; transform:scale(1) rotate(0); } }
+  .punch.acid{ color:var(--acid); } .punch.rosa{ color:var(--magenta); } .punch.cel{ color:var(--cyan); }
+  .aside{ font-size:13px; color:var(--ink3); font-style:italic; }
+
+  /* formato "nadie:" */
+  .nadie p{ font-size:15.5px; color:var(--ink2); margin:2px 0; }
+
+  /* chat falso */
+  .chat{ display:flex; flex-direction:column; gap:7px; padding:6px 0 4px; }
+  .chat .bub{ max-width:82%; border-radius:16px; padding:8px 12px; font-size:14.5px; line-height:1.4;
+    background:var(--card2); border:1px solid var(--line); border-bottom-left-radius:5px; }
+  .chat .bub .nm{ display:block; font-size:10.5px; font-weight:900; letter-spacing:.04em; margin-bottom:1px; }
+  .chat .bub.a .nm{ color:var(--verde); }
+  .chat .bub.b{ align-self:flex-end; background:#22301c; border-color:rgba(125,220,90,.25);
+    border-bottom-left-radius:16px; border-bottom-right-radius:5px; }
+  .chat .bub.b .nm{ color:var(--acid); }
+  .chat .hora{ align-self:center; font-size:10px; color:var(--ink3); padding:2px 0; }
+
+  /* dos paneles */
+  .vs{ display:grid; grid-template-columns:1fr 1fr; gap:9px; margin:6px 0 4px; }
+  .vs .pan{ border-radius:14px; padding:13px 12px; background:var(--card2); border:1px solid var(--line);
+    display:flex; flex-direction:column; gap:6px; min-height:118px; }
+  .vs .pan .lbl{ font-size:10px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+  .vs .pan.exp .lbl{ color:var(--cyan); } .vs .pan.rea .lbl{ color:var(--magenta); }
+  .vs .pan .big{ font-size:34px; line-height:1; }
+  .vs .pan p{ font-size:12.8px; color:var(--ink2); line-height:1.4; }
+  .vs .pan p b{ color:#fff; }
+
+  /* red flags */
+  .flags{ display:flex; flex-direction:column; gap:8px; padding:4px 0; }
+  .flags .fl{ display:flex; gap:9px; align-items:flex-start; font-size:14.5px; color:var(--ink); background:var(--card2);
+    border:1px solid var(--line); border-radius:12px; padding:9px 12px; }
+  .flags .fl .ic{ flex:0 0 auto; font-size:16px; }
+  .flags .fl.green{ border-color:rgba(125,220,90,.3); }
+  .flags .fl small{ display:block; color:var(--ink3); font-size:12px; }
+
+  /* tier list */
+  .tiers{ display:flex; flex-direction:column; gap:7px; padding:4px 0; }
+  .tier{ display:flex; align-items:stretch; gap:0; border-radius:12px; overflow:hidden; border:1px solid var(--line); }
+  .tier .tl{ flex:0 0 84px; display:grid; place-items:center; font-weight:900; font-size:12px; letter-spacing:.02em;
+    text-transform:uppercase; padding:10px 6px; text-align:center; line-height:1.15; color:#0a0a10; }
+  .tier .tr{ flex:1; background:var(--card2); padding:9px 12px; font-size:13.5px; color:var(--ink2); line-height:1.45; }
+  .tier .tr b{ color:#fff; }
+  .t-s .tl{ background:var(--acid); } .t-a .tl{ background:var(--verde); }
+  .t-p .tl{ background:var(--ink3); color:#0a0a10; } .t-q .tl{ background:var(--magenta); }
+
+  /* starter pack */
+  .pack{ display:grid; grid-template-columns:1fr 1fr; gap:9px; padding:4px 0; }
+  .pack .it{ background:var(--card2); border:1px solid var(--line); border-radius:13px; padding:12px 11px; text-align:center; }
+  .pack .it .ic{ font-size:28px; line-height:1; display:block; margin-bottom:6px; }
+  .pack .it p{ font-size:12.3px; color:var(--ink2); line-height:1.35; }
+  .pack .it p b{ color:#fff; }
+
+  /* perfil de citas */
+  .dating{ background:var(--card2); border:1px solid var(--line); border-radius:16px; padding:15px 14px; margin:4px 0; }
+  .dating .top{ display:flex; align-items:center; gap:11px; margin-bottom:8px; }
+  .dating .foto{ width:56px; height:56px; border-radius:16px; display:grid; place-items:center; font-size:30px;
+    background:linear-gradient(150deg,#2a1a24,#161019); box-shadow:inset 0 0 0 1px rgba(255,92,168,.3); }
+  .dating .nm{ font-weight:900; font-size:17px; color:#fff; }
+  .dating .km{ font-size:11.5px; color:var(--ink3); }
+  .dating .bio{ font-size:14px; color:var(--ink2); font-style:italic; line-height:1.5; }
+  .dating .bio b{ color:var(--magenta); font-style:normal; }
+  .dating .swipes{ display:flex; justify-content:center; gap:26px; margin-top:12px; font-size:30px; }
+  .dating .swipes span{ width:56px; height:56px; border-radius:50%; display:grid; place-items:center;
+    background:#101018; box-shadow:inset 0 0 0 1px var(--line); }
+
+  /* dato verificado */
+  .dato{ margin:10px 16px 14px; border-radius:13px; padding:11px 13px 11px 12px;
+    background:rgba(125,220,90,.07); border:1px solid rgba(125,220,90,.22);
+    font-size:12.8px; line-height:1.5; color:#c9d8bd; }
+  .dato .vh{ display:flex; align-items:center; gap:6px; font-size:10px; font-weight:900; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--verde); margin-bottom:4px; }
+  .dato b{ color:#fff; }
+  .dato .cod{ color:var(--acid); font-weight:800; }
+
+  /* footer de card */
+  .m-ft{ display:flex; align-items:center; gap:16px; padding:10px 16px 13px; border-top:1px solid var(--line);
+    font-size:13px; color:var(--ink3); }
+  .m-ft .likebtn{ display:flex; align-items:center; gap:6px; background:none; border:none; color:var(--ink2);
+    font:inherit; font-weight:800; cursor:pointer; padding:4px 6px; border-radius:9px; }
+  .m-ft .likebtn:active{ transform:scale(1.15); }
+  .m-ft .likebtn.liked{ color:var(--magenta); }
+  .m-ft .likebtn .hh{ display:inline-block; transition:transform .18s; }
+  .m-ft .likebtn.liked .hh{ animation:pop .35s cubic-bezier(.2,1.8,.4,1); }
+  @keyframes pop{ 0%{transform:scale(.4)} 60%{transform:scale(1.5)} 100%{transform:scale(1)} }
+  .m-ft .cmt{ min-width:0; flex:1; font-size:12.3px; color:var(--ink3); font-style:italic;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .m-ft .cmt b{ color:var(--ink2); font-style:normal; }
+
+  /* cierre */
+  .cierre{ text-align:center; padding:26px var(--pad) 8px; }
+  .cierre .emo{ font-size:38px; }
+  .cierre h2{ font-size:24px; font-weight:900; letter-spacing:-.02em; color:#fff; margin:8px 0 5px; }
+  .cierre h2 span{ color:var(--acid); }
+  .cierre p{ font-size:14px; color:var(--ink2); max-width:38ch; margin:0 auto; }
+
+  /* ——— bloques de engagement ——— */
+  .blk{ margin:18px var(--pad); background:var(--card); border:1px solid var(--line); border-radius:20px;
+    padding:20px 16px; text-align:center; box-shadow:0 12px 34px rgba(0,0,0,.4); }
+  .blk h3{ font-size:18px; font-weight:900; letter-spacing:-.01em; color:#fff; margin-bottom:4px; }
+  .blk > p{ font-size:13.5px; color:var(--ink2); max-width:42ch; margin:0 auto 14px; }
+  .blk > p b{ color:var(--acid); }
+  .rowbtns{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+  .rowbtns button{ font:inherit; font-weight:800; font-size:14.5px; color:var(--ink); cursor:pointer;
+    background:var(--card2); border:1px solid var(--line); border-radius:14px; padding:11px 16px;
+    transition:transform .12s, border-color .12s; }
+  .rowbtns button:active{ transform:scale(.95); }
+  .rowbtns button.sel{ border-color:var(--acid); color:var(--acid); background:rgba(232,251,78,.08); }
+  .rowbtns button:disabled:not(.sel){ opacity:.4; }
+  .react-hint,.q-hint{ display:block; margin-top:9px; font-size:12px; color:var(--verde); min-height:1.2em; }
+
+  .sub-blk{ background:linear-gradient(165deg,#1c2410,#12160b); border-color:rgba(232,251,78,.25); }
+  .sub-blk .rowbtns button.si{ background:var(--acid); color:#0d1503; border-color:transparent; }
+  .sub-blk .rowbtns button.si.sel{ box-shadow:0 0 0 2px rgba(232,251,78,.5); color:#0d1503; }
+
+  .engage-actions{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:6px var(--pad) 4px;
+    padding:18px 16px; }
+  .engage-actions button{ font:inherit; font-weight:900; font-size:15px; cursor:pointer; border-radius:15px;
+    padding:13px 18px; border:1px solid var(--line); transition:transform .12s; }
+  .engage-actions button:active{ transform:scale(.95); }
+  .engage-actions button:first-child{ background:var(--verde); color:#0d1503; border-color:transparent; }
+  .engage-actions button:last-child{ background:var(--card2); color:var(--ink2); }
+  .engage-feedback{ text-align:center; font-size:14px; color:var(--verde); font-weight:700; padding:6px; }
+
+  footer.pie{ text-align:center; padding:8px var(--pad) 26px; font-size:12.5px; color:var(--ink3); }
+  footer.pie a{ color:var(--cyan); text-decoration:none; font-weight:800; }
+  footer.pie .cred{ margin-top:8px; font-size:11px; color:#55536a; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="prog" id="prog"></div>
+
+<header class="app">
+  <span class="logo">😂</span>
+  <span class="ttl">Memes del <i>Jardín</i></span>
+  <span class="badge-verif">✓ 100% verificado</span>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <span class="emo">🪴</span>
+    <h1>Tu jardín es<br><span>un meme</span></h1>
+    <p>Cada chiste sale de un <b>dato real</b> del catálogo Pacha Mama. El humor es inventado; la botánica, jamás.</p>
+    <div class="meta">Sábado 4 de julio · pleno invierno · Montevideo</div>
+  </section>
+
+  <main class="feed">
+
+    <!-- 1 · Esparraguera B-6 — crisis de identidad -->
+    <article class="meme reveal">
+      <div class="m-hd">
+        <span class="av">🦊</span>
+        <div class="who"><span class="hnd">@esparraguera.b6</span><span class="sub">cola de zorro · fondo · hace 2 h</span></div>
+        <span class="fmt">nadie:</span>
+      </div>
+      <div class="m-body nadie">
+        <p>Nadie:</p>
+        <p>Absolutamente nadie:</p>
+        <p>La esparraguera B-6, todos los días de su vida:</p>
+        <div class="punch acid">"SOY UN HELECHO" 🌿</div>
+        <p class="aside">(no lo es. nunca lo fue. no lo va a ser.)</p>
+      </div>
+      <div class="dato">
+        <span class="vh">✓ No es chiste — dato verificado</span>
+        Parece helecho pero es un <b>Asparagus</b> — pariente del espárrago de comer. Sus "hojas" son <b>cladodios</b>: tallos disfrazados. Y para rematarla tira flores blancas y bayas rojas, cosa que ningún helecho hace. <span class="cod">Esparraguera cola de zorro (B-6)</span>
+      </div>
+      <div class="m-ft">
+        <button class="likebtn" type="button"><span class="hh">🤍</span><span class="n">482</span></button>
+        <span class="cmt"><b>@helecho.real</b> bloqueame</span>
+      </div>
+    </article>
+
+    <!-- 2 · Chat: palta B-22 espera al perezoso -->
+    <article class="meme reveal">
+      <div class="m-hd">
+        <span class="av">🥑</span>
+        <div class="who"><span class="hnd">Grupo: El Fondo 🌳</span><span class="sub">42 integrantes · captura filtrada</span></div>
+        <span class="fmt cel">chat filtrado</span>
+      </div>
+      <div class="m-body">
+        <div class="chat">
+          <span class="hora">sáb 06:12</span>
+          <div class="bub a"><span class="nm">Palta B-22</span>¿alguien vio a mi perezoso gigante? 🥺</div>
+          <div class="bub a"><span class="nm">Palta B-22</span>tengo la semilla lista desde abril</div>
+          <div class="bub b"><span class="nm">Limonero B-23</span>amiga… se extinguió hace 13.000 años</div>
+          <div class="bub a"><span class="nm">Palta B-22</span>igual lo espero</div>
+          <div class="bub b"><span class="nm">Limonero B-23</span>yo laburo los 12 meses y vos drameando por un fósil</div>
+        </div>
+        <div class="punch rosa">13.000 años en visto</div>
+      </div>
+      <div class="dato">
+        <span class="vh">✓ No es chiste — dato verificado</span>
+        La semilla gigante de la palta evolucionó para ser tragada por <b>perezosos gigantes</b> que se extinguieron hace ~13.000 años. Sobrevivió gracias al cultivo humano. Y sí: está con fruta AHORA — da de abril a julio. <span class="cod">Palta uruguaya (B-22)</span>
+      </div>
+      <div class="m-ft">
+        <button class="likebtn" type="button"><span class="hh">🤍</span><span class="n">13k</span></button>
+        <span class="cmt"><b>@gigantosloth</b> perdón, me quedé sin batería</span>
+      </div>
+    </article>
+
+    <!-- 3 · POV limonero -->
+    <article class="meme reveal">
+      <div class="m-hd">
+        <span class="av">🍋</span>
+        <div class="who"><span class="hnd">@limonero.b23</span><span class="sub">empleado del mes (todos los meses)</span></div>
+        <span class="fmt oro">POV</span>
+      </div>
+      <div class="m-body">
+        <p class="nadie" style="font-size:15.5px;color:var(--ink2)">POV: es julio, hace un frío bárbaro, medio jardín está pelado o dormido…</p>
+        <div class="punch acid">y sos el único que vino a trabajar</div>
+        <p class="aside">el limonero fichando su mes 12 de 12, como siempre.</p>
+      </div>
+      <div class="dato">
+        <span class="vh">✓ No es chiste — dato verificado</span>
+        El limonero da fruta <b>los 12 meses del año</b> en Uruguay. Encima ni existe en estado silvestre: es un híbrido de cidro × naranja amarga nacido en India hace ~2.500 años. Y su cáscara tiene <b>4× más vitamina C que el jugo</b>. <span class="cod">Limonero (B-23)</span>
+      </div>
+      <div class="m-ft">
+        <button class="likebtn" type="button"><span class="hh">🤍</span><span class="n">1.204</span></button>
+        <span class="cmt"><b>@romero.b26</b> yo también vine, mirá mis flores</span>
+      </div>
+    </article>
+
+    <!-- 4 · Ciruelo F-4 expectativa vs realidad -->
+    <article class="meme reveal">
+      <div class="m-hd">
+        <span class="av">👑</span>
+        <div class="who"><span class="hnd">@ciruelo.f4</span><span class="sub">realeza persa venida a menos · frente</span></div>
+        <span class="fmt rosa">exp / realidad</span>
+      </div>
+      <div class="m-body">
+        <div class="vs">
+          <div class="pan exp">
+            <span class="lbl">Su linaje</span>
+            <span class="big">🏛️</span>
+            <p><b>TODOS</b> los ciruelos púrpura del planeta descienden de su familia. Un solo ejemplar, Persia, 1880.</p>
+          </div>
+          <div class="pan rea">
+            <span class="lbl">Él, hoy, julio</span>
+            <span class="big">🥢</span>
+            <p>Un <b>palo pelado</b> en el frente. Ni una hoja. Cero glamour.</p>
+          </div>
+        </div>
+        <div class="punch cel">la realeza también pasa frío</div>
+      </div>
+      <div class="dato">
+        <span class="vh">✓ No es chiste — dato verificado</span>
+        El horticultor francés <b>Pissard</b> lo trajo de Persia en 1880 y todos los ciruelos púrpura del mundo descienden de ese único árbol. Es caduco (por eso el palo pelado), pero aguantá: en agosto florece rosado <b>antes</b> de sacar las hojas. <span class="cod">Ciruelo de jardín (F-4)</span>
+      </div>
+      <div class="m-ft">
+        <button class="likebtn" type="button"><span class="hh">🤍</span><span class="n">1880</span></button>
+        <span class="cmt"><b>@fresno.f10</b> al menos vos tuviste época dorada</span>
+      </div>
+    </article>
+
+    <!-- 5 · Red flags lavanda -->
+    <article class="meme reveal">
+      <div class="m-hd">
+        <span class="av">💜</span>
+        <div class="who"><span class="hnd">@lavanda.b10</span><span class="sub">independiente · aromática · fondo</span></div>
+        <span class="fmt rosa">red flags</span>
+      </div>
+      <div class="m-body">
+        <p style="font-size:15.5px;color:var(--ink2);margin-bottom:6px">Red flags de salir con la lavanda:</p>
+        <div class="flags">
+          <div class="fl"><span class="ic">🚩</span><span>Si la regás mucho, <b>te deja</b>.<small>Literal: odia tener los pies mojados.</small></span></div>
+          <div class="fl"><span class="ic">🚩</span><span>Necesita su espacio y su sol pleno. <b>No negocia.</b></span></div>
+          <div class="fl"><span class="ic">🚩</span><span>Cuanto menos la buscás, <b>más florece</b>.<small>De setiembre a mayo, casi todo el año.</small></span></div>
+          <div class="fl green"><span class="ic">💚</span><span>Green flag: te cuida el ropero — una bolsita seca <b>espanta las polillas</b>.</span></div>
+        </div>
+        <div class="punch rosa">y aun así la amamos</div>
+      </div>
+      <div class="dato">
+        <span class="vh">✓ No es chiste — dato verificado</span>
+        <b>Lavandula dentata</b>: riego cada 10 días en verano y casi nada el resto — odia los pies mojados. Su nombre viene del latín <b>"lavare"</b>: los romanos la echaban a los baños públicos. <span class="cod">Lavanda (B-10, B-19)</span>
+      </div>
+      <div class="m-ft">
+        <button class="likebtn" type="button"><span class="hh">🤍</span><span class="n">794</span></button>
+        <span class="cmt"><b>@regadera</b> me siento usada</span>
+      </div>
+    </article>
+
+    <!-- 6 · Viraró: sépalos actuando -->
+    <article class="meme reveal">
+      <div class="m-hd">
+        <span class="av">🚁</span>
+        <div class="who"><span class="hnd">@viraró.b32</span><span class="sub">nativo · actor no reconocido · fondo</span></div>
+        <span class="fmt cel">plot twist</span>
+      </div>
+      <div class="m-body">
+        <p style="font-size:15.5px;color:var(--ink2)">Señora, tengo que decirle algo sobre el viraró…</p>
+        <div class="punch cel">sus "flores" rosadas no son flores</div>
+        <p class="aside">son sépalos. ACTUANDO. Un unipersonal botánico desde hace años.</p>
+      </div>
+      <div class="dato">
+        <span class="vh">✓ No es chiste — dato verificado</span>
+        Lo rosado llamativo son <b>sépalos persistentes</b> que se agrandan después de la polinización y giran como <b>helicóptero</b> para dispersar la verdadera fruta (una nuez chiquita) con el viento. Bonus: su madera es tan dura que los postes duran décadas a la intemperie. <span class="cod">Viraró (B-32)</span>
+      </div>
+      <div class="m-ft">
+        <button class="likebtn" type="button"><span class="hh">🤍</span><span class="n">347</span></button>
+        <span class="cmt"><b>@academia.de.cine</b> ni una nominación, injusto</span>
+      </div>
+    </article>
+
+    <!-- 7 · Tier list del invierno -->
+    <article class="meme reveal">
+      <div class="m-hd">
+        <span class="av">🏆</span>
+        <div class="who"><span class="hnd">@ranking.oficial</span><span class="sub">tier list de julio · sin apelación</span></div>
+        <span class="fmt">tier list</span>
+      </div>
+      <div class="m-body">
+        <p style="font-size:15.5px;color:var(--ink2);margin-bottom:6px">¿Quién está haciendo ALGO este invierno?</p>
+        <div class="tiers">
+          <div class="tier t-s"><span class="tl">Tier DIOS</span><span class="tr"><b>Limonero B-23</b> (fruta 12/12 meses) · <b>Romero B-26</b> (florece EN invierno, jun-oct)</span></div>
+          <div class="tier t-a"><span class="tl">Tier crack</span><span class="tr"><b>Palta B-22</b> (frutos hasta julio) · <b>Pindó B-8/B-21/B-28</b> (frutos hasta julio, sabor coco-banana)</span></div>
+          <div class="tier t-p"><span class="tl">Tier palo</span><span class="tr"><b>Ciruelo F-4</b> y <b>Pera Williams B-39</b>: caducos, cero hojas, despiertan en agosto</span></div>
+          <div class="tier t-q"><span class="tl">Tier ¿qué hacés?</span><span class="tr"><b>Fresno F-10</b>: rebrotando de una poda fuerte, a la sombra de las fotinias, replanteándose todo</span></div>
+        </div>
+      </div>
+      <div class="dato">
+        <span class="vh">✓ No es chiste — dato verificado</span>
+        Todo sale de los calendarios reales del catálogo: fructificación, floración y estado de cada especie en julio. El romero de verdad elige florecer <b>en pleno invierno</b> — flores azul-lila de junio a octubre. <span class="cod">B-23 · B-26 · B-22 · B-8 · F-4 · B-39 · F-10</span>
+      </div>
+      <div class="m-ft">
+        <button class="likebtn" type="button"><span class="hh">🤍</span><span class="n">925</span></button>
+        <span class="cmt"><b>@fresno.f10</b> pido revisión del VAR</span>
+      </div>
+    </article>
+
+    <!-- 8 · Starter pack: el vivero del fondo -->
+    <article class="meme reveal">
+      <div class="m-hd">
+        <span class="av">🌴</span>
+        <div class="who"><span class="hnd">@vivero.del.fondo</span><span class="sub">startup en fase semilla (literal)</span></div>
+        <span class="fmt ver">starter pack</span>
+      </div>
+      <div class="m-body">
+        <p style="font-size:15.5px;color:var(--ink2);margin-bottom:6px">"Tengo un vivero casero" starter pack:</p>
+        <div class="pack">
+          <div class="it"><span class="ic">🥤</span><p>Botellas cortadas <b>que ahora son macetas</b></p></div>
+          <div class="it"><span class="ic">🪣</span><p>Baldes recortados con dignidad intacta</p></div>
+          <div class="it"><span class="ic">🌴</span><p><b>56 plantines de palmera</b> en formación militar</p></div>
+          <div class="it"><span class="ic">🌳</span><p>Un roble bebé que planea vivir <b>300 años</b></p></div>
+        </div>
+        <div class="punch acid">hay una fortuna durmiendo contra la pared</div>
+      </div>
+      <div class="dato">
+        <span class="vh">✓ No es chiste — dato verificado</span>
+        Hay <b>~56 plantines de palmera</b> contra la pared del fondo, y un plantín de palmera de vivero vale <b>200-500 pesos</b> en comercio: son entre <b>$11.000 y $28.000</b> en macetas de botella. El plantín de roble (Quercus) puede vivir 300+ años. <span class="cod">Vivero (B-46, B-47) · Roble (B-48)</span>
+      </div>
+      <div class="m-ft">
+        <button class="likebtn" type="button"><span class="hh">🤍</span><span class="n">56</span></button>
+        <span class="cmt"><b>@inversor.angel</b> ¿aceptan rondas seed? 🌱</span>
+      </div>
+    </article>
+
+    <!-- 9 · Perfil de citas: mandioca brava -->
+    <article class="meme reveal">
+      <div class="m-hd">
+        <span class="av">🔥</span>
+        <div class="who"><span class="hnd">@matcheando.plantas</span><span class="sub">apareció en tu zona</span></div>
+        <span class="fmt rosa">perfil de citas</span>
+      </div>
+      <div class="m-body">
+        <div class="dating">
+          <div class="top">
+            <span class="foto">🍃</span>
+            <div><div class="nm">Mandioca Brava</div><div class="km">a 12 m de tu parrillero · fondo</div></div>
+          </div>
+          <p class="bio">"Linda pero letal 💅 Mi látex tiene <b>compuestos cianogénicos</b>. No soy tu mandioca frita y nunca lo voy a ser. Hojas de 7 a 9 lóbulos, drama de 24/7."</p>
+          <div class="swipes"><span>🙅</span><span>💚</span></div>
+        </div>
+        <div class="punch rosa">swipe left. por tu propia seguridad.</div>
+      </div>
+      <div class="dato">
+        <span class="vh">✓ No es chiste — dato verificado</span>
+        <b>Manihot grahamii</b> (a confirmar con flor): el látex del tallo tiene compuestos cianogénicos, por eso "brava" — no se come ni la hoja ni la raíz. La comestible es su pariente <b>M. esculenta</b>, detoxificada por milenios de selección humana. <span class="cod">Mandioca brava (B-34)</span>
+      </div>
+      <div class="m-ft">
+        <button class="likebtn" type="button"><span class="hh">🤍</span><span class="n">666</span></button>
+        <span class="cmt"><b>@mandioca.frita</b> no somos lo mismo, gracias</span>
+      </div>
+    </article>
+
+    <!-- 10 · Singonio interior -->
+    <article class="meme reveal">
+      <div class="m-hd">
+        <span class="av">🏹</span>
+        <div class="who"><span class="hnd">@singonio.i1</span><span class="sub">interior · ex aventurero selvático</span></div>
+        <span class="fmt cel">exp / realidad</span>
+      </div>
+      <div class="m-body">
+        <div class="vs">
+          <div class="pan exp">
+            <span class="lbl">En la selva</span>
+            <span class="big">🐒</span>
+            <p>Trepa <b>10 metros</b> por los troncos con raíces aéreas, de México a Bolivia. Leyenda.</p>
+          </div>
+          <div class="pan rea">
+            <span class="lbl">En casa, julio</span>
+            <span class="big">🪟</span>
+            <p>Maceta de cerámica <b>turquesa</b>, al lado de la ventana, mirando la lluvia.</p>
+          </div>
+        </div>
+        <div class="punch acid">en invierno todos somos plantas de interior</div>
+      </div>
+      <div class="dato">
+        <span class="vh">✓ No es chiste — dato verificado</span>
+        En su selva nativa el singonio sube hasta <b>10 m</b> con raíces aéreas. Y tiene glow-up documentado: las hojas jóvenes son <b>flechas</b> y al madurar se parten en 3-5 lóbulos. Adentro casi nunca florece — es puro carisma foliar. <span class="cod">Singonio / Pata de gallo (I-1)</span>
+      </div>
+      <div class="m-ft">
+        <button class="likebtn" type="button"><span class="hh">🤍</span><span class="n">210</span></button>
+        <span class="cmt"><b>@tarzan</b> conozco esa sensación</span>
+      </div>
+    </article>
+
+    <!-- 11 · Romero examen -->
+    <article class="meme reveal">
+      <div class="m-hd">
+        <span class="av">🧠</span>
+        <div class="who"><span class="hnd">@romero.b26</span><span class="sub">rocío del mar · florece a contramano</span></div>
+        <span class="fmt">nadie:</span>
+      </div>
+      <div class="m-body nadie">
+        <p>Nadie:</p>
+        <p>Absolutamente nadie:</p>
+        <p>Yo a las 3 AM antes del examen:</p>
+        <div class="punch acid">*sniffeando el romero del fondo* 👃🌿</div>
+        <p class="aside">ciencia, no desesperación. bueno, un poco de las dos.</p>
+      </div>
+      <div class="dato">
+        <span class="vh">✓ No es chiste — dato verificado</span>
+        Estudios universitarios mostraron que <b>oler romero mejora la memoria un 15%</b>. Su nombre latino significa "rocío del mar" y —dato de tier DIOS— está floreciendo <b>ahora</b>: tira flores azul-lila de junio a octubre, en pleno invierno. <span class="cod">Romero (B-26)</span>
+      </div>
+      <div class="m-ft">
+        <button class="likebtn" type="button"><span class="hh">🤍</span><span class="n">15%</span></button>
+        <span class="cmt"><b>@estudiante.cronico</b> voy para allá con el apunte</span>
+      </div>
+    </article>
+
+  </main>
+
+  <section class="cierre reveal">
+    <span class="emo">🌙</span>
+    <h2>Se terminó el scroll de hoy.<br><span>Mañana hay memes nuevos.</span></h2>
+    <p>Mismo jardín, mismos datos sagrados, chistes recién regados.</p>
+  </section>
+
+  <!-- a) reacción -->
+  <section class="blk reveal">
+    <h3>¿Te sacó una risa?</h3>
+    <p>Tu voto decide si el jardín sigue haciendo stand-up.</p>
+    <div class="rowbtns">
+      <button type="button" onclick="engageReact('memes','love', this)">😍 ¡Increíble!</button>
+      <button type="button" onclick="engageReact('memes','meh', this)">😐 Más o menos</button>
+      <button type="button" onclick="engageReact('memes','no', this)">🙅 No es lo mío</button>
+    </div>
+    <span class="react-hint"></span>
+  </section>
+
+  <!-- b) suscripción diaria -->
+  <section class="blk sub-blk reveal">
+    <h3>😂 El meme del día, todas las mañanas</h3>
+    <p>¿Querés arrancar el día con <b>humor verificado de TU jardín</b>? Un meme por mañana, con su dato real y su código de catálogo. Cero spam, puro asombro.</p>
+    <div class="rowbtns">
+      <button type="button" class="si" onclick="engageAnswer('memes-suscripcion-diaria','si', this)">😍 Sí, quiero reírme a diario</button>
+      <button type="button" onclick="engageAnswer('memes-suscripcion-diaria','no', this)">No, gracias</button>
+    </div>
+    <span class="q-hint"></span>
+  </section>
+
+  <!-- c) decisión -->
+  <div class="engage-actions"><button onclick="engageApprove('2026-07-04-memes-jardin')">✅ Aprobar esta mejora</button><button onclick="engageRejected('2026-07-04-memes-jardin')">✕ No me interesa</button></div>
+
+  <!-- d) footer -->
+  <footer class="pie">
+    <a href="2026-07-04-memes-jardin-pitch.html">💼 Cómo se vende esto</a>
+    <div class="cred">Hecho con datos reales del catálogo Pacha Mama · humor rioplatense sin conservantes · 04/07/2026</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  // barra de progreso de lectura
+  var prog = document.getElementById('prog');
+  function onScroll(){
+    var h = document.documentElement;
+    var d = h.scrollHeight - h.clientHeight;
+    prog.style.width = (d > 0 ? Math.min(100, (h.scrollTop / d) * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  // reveal on scroll
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+  // likes locales (juguete, sin backend): togglea y suma +1 visual
+  document.querySelectorAll('.likebtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var liked = btn.classList.toggle('liked');
+      var hh = btn.querySelector('.hh');
+      var n = btn.querySelector('.n');
+      if (hh) hh.textContent = liked ? '❤️' : '🤍';
+      if (n && !n.dataset.orig) n.dataset.orig = n.textContent;
+      if (n){
+        var base = n.dataset.orig;
+        var m = base.match(/^\d+$/);
+        if (m) n.textContent = liked ? String(parseInt(base,10) + 1) : base;
+        else n.textContent = liked ? base + ' +1' : base;
+      }
+    });
+  });
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>

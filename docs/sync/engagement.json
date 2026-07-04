@@ -2,49 +2,6 @@
   "_updated_at": "2026-07-03T23:14:24.970Z",
   "events": [
     {
-      "_id": "mqkz33agzgzbsh",
-      "type": "notification_clicked",
-      "nid": "2026-06-19-a",
-      "page": "index.html",
-      "ts": "2026-06-19T13:36:45.154Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqkz33ag9gjx2t",
-      "type": "page_visit",
-      "page": "index.html",
-      "nid": "2026-06-19-a",
-      "src": "push",
-      "ts": "2026-06-19T13:36:45.154Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqlj0nfcz9j8dg",
-      "type": "notification_clicked",
-      "nid": "2026-06-19-c",
-      "page": "engage/adivina-jardin.html",
-      "ts": "2026-06-19T22:54:43.604Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqlj0nfci174lu",
-      "type": "page_visit",
-      "page": "engage/adivina-jardin.html",
-      "nid": "2026-06-19-c",
-      "src": "push",
-      "ts": "2026-06-19T22:54:43.604Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqlj0pb7uwb181",
-      "type": "dwell",
-      "seconds": 2,
-      "scroll_pct": 100,
-      "page": "engage/adivina-jardin.html",
-      "ts": "2026-06-19T22:54:46.051Z",
-      "device": "sin-nombre"
-    },
-    {
       "_id": "mqmaxre7lddntv",
       "type": "notification_clicked",
       "nid": "2026-06-20-a",
@@ -1324,6 +1281,12 @@
       "clicked": 2,
       "visits": 3,
       "approvals": 1
+    },
+    "2026-06-19": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
     }
   }
 }

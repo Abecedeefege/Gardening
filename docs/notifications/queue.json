@@ -1,44 +1,57 @@
 {
-  "_updated_at": "2026-07-03T22:45:30.068Z",
+  "_updated_at": "2026-07-04T09:13:53.389964",
   "notifications": [
     {
-      "id": "2026-07-03-a",
-      "title": "⚽ Empezó el Mundial del Jardín",
-      "body": "8 plantas tuyas van por la copa: la hiedra de 400 años, el caqui de 600… y una nativa uruguaya en la final.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-03-mundial-jardin.html",
-      "format": "experiencia",
-      "send_at": "2026-07-03T08:30:00-03:00",
-      "expires_at": "2026-07-03T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-03T12:08:10.625Z",
+      "id": "2026-07-04-task-dia",
+      "title": "⏰ Pendiente: Guayabo del país",
+      "body": "🟢 Limpieza invernal de ramas secas · Cualquier momento — madera muerta, no depende de la estación. Abrila para marcarla o pedir…",
+      "url": "https://gardening-chi.vercel.app/tareas.html#task=plant-F-1",
+      "format": "tarea",
+      "send_at": "2026-07-04T08:00:00-03:00",
+      "expires_at": "2026-07-04T21:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-03 (ciclo 34)"
+      "created_by": "gen_task_reminders 2026-07-04"
     },
     {
-      "id": "2026-07-03-b",
-      "title": "📺 Entrá a la casa del jardín",
-      "body": "8 plantas conviven, se nominan y confiesan sus secretos reales. ¿Quién es el más votado de la casa?",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-03-reality-jardin.html",
+      "id": "2026-07-04-a",
+      "title": "🏆 Anoche hubo gala en tu jardín",
+      "body": "El romero ganó Mejor Actriz de Invierno y el limonero se tomó revancha. Sobres, discursos y escándalos.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-04-gala-jardin.html",
       "format": "experiencia",
-      "send_at": "2026-07-03T13:00:00-03:00",
-      "expires_at": "2026-07-03T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-03T16:13:39.908Z",
+      "send_at": "2026-07-04T08:30:00-03:00",
+      "expires_at": "2026-07-04T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-03 (ciclo 34)"
+      "created_by": "engagement-agent 2026-07-04 (ciclo 35)"
     },
     {
-      "id": "2026-07-03-c",
-      "title": "🍐 La pera del doble robo de nombre",
-      "body": "Tu pera Williams B-39 arrastra dos nombres robados: en EE.UU. la llaman Bartlett. La historia, en Curiosidades.",
+      "id": "2026-07-04-b",
+      "title": "😂 Tu jardín es un meme (posta)",
+      "body": "La esparraguera jura ser un helecho y la palta espera a alguien hace 13.000 años. Datos reales, risa gratis.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-04-memes-jardin.html",
+      "format": "experiencia",
+      "send_at": "2026-07-04T13:00:00-03:00",
+      "expires_at": "2026-07-04T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-07-04 (ciclo 35)"
+    },
+    {
+      "id": "2026-07-04-c",
+      "title": "🌺 Tenés una planta que vive 100 años",
+      "body": "Tu clivia B-13 es de las que llegan al siglo: hay ejemplares de 1830 todavía en flor. La historia, en Curiosidades.",
       "url": "https://gardening-chi.vercel.app/index.html#curiosidades",
       "format": "curio",
-      "send_at": "2026-07-03T19:30:00-03:00",
-      "expires_at": "2026-07-03T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-03T22:45:30.067Z",
+      "send_at": "2026-07-04T19:30:00-03:00",
+      "expires_at": "2026-07-04T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-03 (ciclo 34)"
+      "created_by": "engagement-agent 2026-07-04 (ciclo 35)"
     }
   ]
 }

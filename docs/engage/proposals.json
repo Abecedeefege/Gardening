@@ -271,22 +271,46 @@
       "title": "⚽ El Mundial del Jardín (news-feed de competencia/torneo)",
       "page": "engage/2026-07-03-mundial-jardin.html",
       "created": "2026-07-03",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 34 (función paralela): experiencia news-feed NUEVA de cero, ángulo COMPETENCIA/ORGULLO/PERTENENCIA con timing del Mundial de fútbol REAL 2026 (se juega jun-jul 2026, ahora mismo). 8 plantas son 'selecciones' en un torneo; cada cruce lo gana el superlativo REAL más fuerte (longevidad +400 años hiedra B-15 / 600 años caqui B-41, nativismo, utilidad NASA cinta B-12, antigüedad mandarina B-24) y la final la gana una NATIVA URUGUAYA (Anacahuita B-16 protegida por ley / Guayabo F-1) como pay-off de orgullo local, como si Uruguay ganara el Mundial. Tras confirmar que orgullo/número grande (Récords 141s) e identidad (Horóscopo) convierten, esta apuesta suma DRAMA deportivo + gancho cultural del Mundial en curso + orgullo nativo, todo serializable ('el fixture de mañana'). Hipótesis: competencia+orgullo+timing convierte amor→suscripción como Récords/Feed. Lectura, no juego. + pitch HTML (6 modelos). Promotor: 2026-07-03-a (08:30).",
       "notified_by": [
         "2026-07-03-a"
       ],
-      "result_notes": null
+      "result_notes": "Rechazado explícito 03/07 (click de push, 87s/100% dwell): reaction 'meh', suscripción NO, botón 'No me interesa'. El frame competencia/deporte no convirtió pese a lectura completa. Página y pitch eliminados 04/07."
     },
     {
       "id": "2026-07-03-reality-jardin",
       "title": "📺 El Reality del Jardín (news-feed reality show / Gran Hermano)",
       "page": "engage/2026-07-03-reality-jardin.html",
       "created": "2026-07-03",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Ciclo 34 (función paralela): experiencia news-feed NUEVA de cero, ángulo REALITY SHOW estilo Gran Hermano (fenómeno cultural enorme en el Río de la Plata) — CHISME + HUMOR + DRAMA + PERTENENCIA a 'la casa'. Las plantas son participantes con confesionario en 1ª persona, alianzas, placa de nominados y 'el más votado', cada una escondiendo un secreto/escándalo REAL (lantana B-29 miente su edad cambiando de color, crespón B-9 se desnuda en invierno, ciruela B-38 pasaporte falso china/japonesa, rosa de Siria B-18 belleza de 1 día, madreselva B-40 nombre exagerado, jazmín B-2 hijos sin permiso, liquidámbar B-37 sangra perfume/chicle maya, podranea F-2 se cambió el apellido). Tras validar que el tabloide/chisme (Chusmerío) convierte y se reenvía solo, esta apuesta lleva el motor viral del chisme al frame de reality serializado ('la gala de mañana'), con voz en 1ª persona (Feed dio el dwell récord) y votación/participación del público. Distinto del Amores tibio: acá es chisme+drama de convivencia, no romance. Hipótesis: el reality/chisme serializado convierte amor→suscripción como el Chusmerío. Lectura, no juego. + pitch HTML (6 modelos). Promotor: 2026-07-03-b (13:00).",
       "notified_by": [
         "2026-07-03-b"
+      ],
+      "result_notes": "Aprobado 03/07 (62s/100% dwell) pero TIBIO: reaction 'meh' y sin respuesta de suscripción. Promovido 04/07: entrada en Ideas → ✨ Experiencias (build.py), footer pasado a nota de integración."
+    },
+    {
+      "id": "2026-07-04-gala-jardin",
+      "title": "🏆 La Gala de Premios del Jardín (news-feed de premios/estatus)",
+      "page": "engage/2026-07-04-gala-jardin.html",
+      "created": "2026-07-04",
+      "status": "pending",
+      "hypothesis": "La gala de premios (ESTATUS/ORGULLO + NÚMERO + HUMOR, discursos en 1ª persona) convierte a suscripción donde la competencia pura falló (Mundial rechazado): el pay-off es orgullo por datos reales, el eje que más convirtió (Récords: 😍+sub+141s).",
+      "notified_by": [
+        "2026-07-04-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-04-memes-jardin",
+      "title": "😂 Memes del Jardín (news-feed de humor absurdo verificado)",
+      "page": "engage/2026-07-04-memes-jardin.html",
+      "created": "2026-07-04",
+      "status": "pending",
+      "hypothesis": "HUMOR es el único eje ganador sin probar: el meme con remate de dato real combina humor + asombro/número y es el formato más compartible del news-feed — debería disparar el 'increíble' y la suscripción que la intimidad pura no logró.",
+      "notified_by": [
+        "2026-07-04-b"
       ],
       "result_notes": null
     }

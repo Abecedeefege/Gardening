@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0a12">
+<title>💼 Los Verdes de Oro — Cómo se vende esto</title>
+<style>
+  :root{
+    --bg:#0b0a12; --card:#171426; --card2:#1e1a30;
+    --oro:#e8c458; --oro2:#f6e3a8; --oro3:#b8923a;
+    --ink:#f2eddc; --ink2:#a89f8f; --ink3:#7c745f;
+    --verde:#8fc46a; --carpet:#c03e52; --azul:#6db3d6;
+    --line:rgba(232,196,88,.14);
+    --pad:max(16px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    --serif:Georgia,'Times New Roman',serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.55;
+    background-image:
+      radial-gradient(85% 40% at 50% -5%, rgba(232,196,88,.13), transparent 70%),
+      radial-gradient(60% 35% at 100% 80%, rgba(109,179,214,.06), transparent);
+    -webkit-font-smoothing:antialiased; }
+  .back{ display:block; color:#b6ad93; text-decoration:none; font-size:13px; font-weight:700;
+    padding:11px var(--pad); background:#060510; }
+  .back:active{ opacity:.65; }
+  .wrap{ max-width:580px; margin:0 auto; padding:0 var(--pad) 40px; }
+
+  .hero{ text-align:center; padding:34px 0 8px; }
+  .hero .em{ font-size:42px; display:block; margin-bottom:6px; filter:drop-shadow(0 5px 15px rgba(232,196,88,.4)); }
+  .hero .kick{ font-size:10.5px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:var(--oro3); }
+  .hero h1{ font-family:var(--serif); font-weight:900; font-size:clamp(27px,8.5vw,38px); line-height:1.06;
+    letter-spacing:-.02em; margin:6px 0 10px;
+    background:linear-gradient(175deg,#fdf3cf 20%,var(--oro) 60%,var(--oro3) 95%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .hero p{ font-size:15px; color:var(--ink2); max-width:44ch; margin:0 auto; }
+  .hero p b{ color:var(--oro2); }
+
+  .rule{ display:flex; align-items:center; gap:10px; padding:30px 0 12px;
+    font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--oro3); }
+  .rule::before,.rule::after{ content:""; flex:1; height:1px;
+    background:linear-gradient(90deg,transparent,rgba(232,196,88,.35),transparent); }
+
+  .blurb{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:17px 16px;
+    font-size:14.5px; color:#ded7c2; box-shadow:0 10px 30px rgba(0,0,0,.35); }
+  .blurb + .blurb{ margin-top:12px; }
+  .blurb b{ color:#fff; }
+  .blurb .hl{ color:var(--oro2); font-weight:700; }
+  .blurb h3{ font-family:var(--serif); color:#fff; font-size:18px; margin-bottom:6px; }
+
+  .stats{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+  .stat{ background:var(--card2); border:1px solid var(--line); border-radius:14px; padding:13px 12px; text-align:center; }
+  .stat .n{ font-family:var(--serif); font-size:24px; font-weight:900; color:var(--oro); line-height:1.1; }
+  .stat .l{ font-size:11.5px; color:var(--ink2); margin-top:3px; }
+
+  .modelo{ background:linear-gradient(180deg,var(--card2),var(--card)); border:1px solid var(--line);
+    border-radius:20px; padding:18px 17px; margin-bottom:14px; position:relative; overflow:hidden;
+    box-shadow:0 12px 34px rgba(0,0,0,.4); }
+  .modelo::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--tint,var(--oro)); }
+  .modelo .num{ position:absolute; top:10px; right:14px; font-family:var(--serif); font-size:44px; font-weight:900;
+    color:rgba(232,196,88,.1); line-height:1; }
+  .modelo .tag{ display:inline-block; font-size:9.5px; font-weight:900; letter-spacing:.13em; text-transform:uppercase;
+    color:#100d04; background:var(--tint,var(--oro)); border-radius:6px; padding:3px 8px; margin-bottom:8px; }
+  .modelo h3{ font-family:var(--serif); font-size:20px; line-height:1.15; color:#fff; margin-bottom:8px; padding-right:40px; }
+  .modelo p{ font-size:14px; color:#d9d2bd; margin-bottom:9px; }
+  .modelo p b{ color:#fff; }
+  .modelo .row{ display:flex; gap:8px; align-items:flex-start; font-size:13.5px; color:#cfc8b2; margin-bottom:7px; }
+  .modelo .row .ic{ flex:0 0 auto; }
+  .modelo .row b{ color:var(--oro2); }
+  .modelo .precio{ margin-top:10px; display:inline-block; font-size:13px; font-weight:800; color:var(--verde);
+    background:rgba(143,196,106,.1); border:1px solid rgba(143,196,106,.3); border-radius:999px; padding:5px 13px; }
+
+  .cierre{ text-align:center; background:linear-gradient(180deg,var(--card2),var(--card));
+    border:1px solid rgba(232,196,88,.35); border-radius:20px; padding:24px 18px; margin-top:6px;
+    box-shadow:0 12px 34px rgba(0,0,0,.4); }
+  .cierre .em{ font-size:32px; display:block; margin-bottom:6px; }
+  .cierre h3{ font-family:var(--serif); font-size:21px; color:#fff; margin-bottom:8px; }
+  .cierre p{ font-size:14px; color:var(--ink2); max-width:44ch; margin:0 auto; }
+  .cierre p b{ color:var(--oro2); }
+  .cierre a{ display:inline-block; margin-top:15px; background:linear-gradient(180deg,var(--oro),var(--oro3));
+    color:#231a05; font-weight:800; font-size:14.5px; text-decoration:none; border-radius:14px; padding:13px 22px;
+    box-shadow:0 6px 18px rgba(232,196,88,.3); }
+  .cierre a:active{ transform:scale(.97); }
+
+  footer{ text-align:center; padding:24px 0 8px; font-size:11.5px; color:var(--ink3); }
+</style>
+</head>
+<body>
+<a class="back" href="2026-07-04-gala-jardin.html">← Volver a la gala</a>
+<div class="wrap">
+
+  <section class="hero">
+    <span class="em">💼🏆</span>
+    <div class="kick">Pitch confidencial · Los Verdes de Oro</div>
+    <h1>La gala de premios que convierte datos de plantas en un show por el que la gente paga</h1>
+    <p>Nadie abre una app "para revisar el estado de sus plantas". Pero <b>todo el mundo abre el sobre de un premio</b>. Esa es la diferencia entre una base de datos y un espectáculo.</p>
+  </section>
+
+  <div class="rule">La propuesta de valor</div>
+  <div class="blurb">
+    <h3>El insight</h3>
+    Un catálogo de jardín tiene los mismos ingredientes que una entrega de premios: <b>protagonistas con nombre</b>, <b>récords verificables</b> (la que florece 9 meses, el que fructifica los 12), <b>historias de superación</b> (el fresno que rebrota tras la poda) y <b>debutantes</b> (el plantín de roble). La gala no inventa nada: <span class="hl">toma datos reales y los cuenta con la gramática emocional del Martín Fierro</span>. Estatus + número + humor = la fórmula de retención más vieja de la TV, aplicada al lugar más querible de la casa.
+  </div>
+  <div class="blurb">
+    <h3>Por qué funciona (y se paga)</h3>
+    Tres motores probados: <b>orgullo de dueño</b> ("MI limonero ganó Trabajador del Año"), <b>serialidad</b> (mañana hay nueva gala, nuevos sobres — el cliffhanger está incorporado al formato) y <b>compartibilidad</b> (un premio con discurso en primera persona es contenido nato para el grupo familiar de WhatsApp). El costo marginal de cada gala es casi cero: <span class="hl">los datos ya existen; el motor los dramatiza</span>.
+    <div class="stats">
+      <div class="stat"><div class="n">40</div><div class="l">especies = elenco estable sin cachet</div></div>
+      <div class="stat"><div class="n">365</div><div class="l">galas posibles por año, una por día</div></div>
+      <div class="stat"><div class="n">~0</div><div class="l">costo marginal por ceremonia</div></div>
+      <div class="stat"><div class="n">∞</div><div class="l">categorías: cada dato es un premio en potencia</div></div>
+    </div>
+  </div>
+  <div class="blurb">
+    <h3>El mercado</h3>
+    La jardinería hogareña explotó post-pandemia y quedó: hogares con 10-50 plantas identificadas, apps de cuidado con millones de usuarios que hoy solo reciben recordatorios fríos ("regá el ficus"). Nadie está monetizando la <b>capa emocional</b>: el vínculo, el orgullo, el chisme botánico. A eso se suman viveros y garden centers buscando retención post-venta, y el mercado de regalos personalizados. <span class="hl">La gala es la primera "prensa del corazón" del reino vegetal.</span>
+  </div>
+
+  <div class="rule">💡 3 modelos innovadores</div>
+
+  <div class="modelo" style="--tint:#e8c458">
+    <span class="num">1</span>
+    <span class="tag">Innovador · B2C recurrente</span>
+    <h3>🎟️ Miembro de la Academia</h3>
+    <p><b>Cómo funciona:</b> la gala del día es gratis con UNA categoría abierta. La membresía desbloquea la ceremonia completa (6+ sobres), el archivo histórico de todas las ediciones, el palmarés por planta ("tu lavanda: 3 estatuillas") y el derecho a proponer categorías que la Academia premia al día siguiente.</p>
+    <div class="row"><span class="ic">💳</span><span><b>Por qué pagan:</b> el sobre sin abrir es el paywall perfecto — ya viste que hay ganador, solo falta saber quién. Y el palmarés convierte cada mes de suscripción en una colección que duele abandonar (sunk cost emocional).</span></div>
+    <span class="precio">USD 3,99/mes o USD 29/año · meta: 5-8% de conversión free→paid</span>
+  </div>
+
+  <div class="modelo" style="--tint:#8fc46a">
+    <span class="num">2</span>
+    <span class="tag">Innovador · B2B SaaS</span>
+    <h3>🏪 Gala White-Label para viveros</h3>
+    <p><b>Cómo funciona:</b> el vivero carga las especies que le vendió a cada cliente y el motor genera galas personalizadas con su marca ("Los Verdes de Oro, presentados por Vivero X"). El cliente recibe cada semana la ceremonia de SU compra — y cada nominado perdedor es una oportunidad de venta ("tu jardín no tiene candidata a Mejor Actriz de Invierno: te presentamos el romero").</p>
+    <div class="row"><span class="ic">📈</span><span><b>Por qué pagan:</b> el problema #1 del vivero es que el cliente compra una vez y desaparece. La gala es un CRM disfrazado de espectáculo: retención automática + cross-selling con guion emocional incorporado.</span></div>
+    <span class="precio">USD 149/mes por sucursal · setup USD 490 · piloto con 3 viveros de Montevideo</span>
+  </div>
+
+  <div class="modelo" style="--tint:#6db3d6">
+    <span class="num">3</span>
+    <span class="tag">Innovador · Publicidad nativa</span>
+    <h3>🤝 El Sobre Patrocinado</h3>
+    <p><b>Cómo funciona:</b> marcas de jardinería (fertilizantes, herramientas, sustratos) auspician categorías: "El Premio a la Trayectoria llega de la mano de Tierra Fértil". El auspicio se integra al guion — la marca entrega la estatuilla, no interrumpe el show — y cada categoría lleva un dato útil asociado al producto (el ganador del Maratón de Floración "agradece al fertilizante de floración prolongada").</p>
+    <div class="row"><span class="ic">🎯</span><span><b>Por qué pagan:</b> audiencia hiper-segmentada (100% jardineros activos, con datos de QUÉ plantas tienen) y un formato que la gente lee entera en vez de saltear. El CPM de un contexto así vale 10× el de un banner.</span></div>
+    <span class="precio">USD 300-800/mes por categoría patrocinada según audiencia · mín. 3 meses</span>
+  </div>
+
+  <div class="rule">🚀 3 modelos ultra-creativos</div>
+
+  <div class="modelo" style="--tint:#c03e52">
+    <span class="num">4</span>
+    <span class="tag">Ultra-creativo · Físico + digital</span>
+    <h3>🏆 La Estatuilla Real</h3>
+    <p><b>Cómo funciona:</b> al cierre de cada temporada (una por estación), el usuario puede encargar la estatuilla física del gran ganador: trofeo impreso/grabado con el nombre de la planta, la categoría, el año y el <b>dato verificado que la hizo ganar</b> ("Limonero B-23 — Trabajador del Año — fruta los 12 meses"). Va con certificado de la Academia y discurso impreso. Se clava en el cantero, al lado de la ganadora.</p>
+    <div class="row"><span class="ic">🎁</span><span><b>Por qué pagan:</b> es el regalo perfecto para jardineros — personal, gracioso y con data real. Día de la madre/padre, cumpleaños, Reyes. El trofeo en el cantero es además publicidad física permanente: toda visita pregunta "¿y eso?"</span></div>
+    <span class="precio">USD 29 estatuilla · USD 49 edición "alfombra roja" con placa metálica · margen ~60%</span>
+  </div>
+
+  <div class="modelo" style="--tint:#b8923a">
+    <span class="num">5</span>
+    <span class="tag">Ultra-creativo · Juego social</span>
+    <h3>🎰 La Porra de la Academia</h3>
+    <p><b>Cómo funciona:</b> como las apuestas de los Oscar, pero en familia: antes de cada gala se publican las categorías y nominados del día siguiente, y cada miembro del grupo (familia, amigos, el jardinero) predice los ganadores. Tabla de posiciones de temporada, rachas, y un "Pase de Temporada" que habilita ligas privadas con premios reales canjeables en el vivero asociado.</p>
+    <div class="row"><span class="ic">🔥</span><span><b>Por qué pagan:</b> convierte una experiencia individual en un rito grupal diario — el motor de retención más potente que existe. Y cierra el círculo con el modelo 2: el vivero pone los premios de la liga y gana tráfico calificado.</span></div>
+    <span class="precio">USD 9,99 por pase de temporada (3 meses) por grupo · gratis para el dueño del jardín</span>
+  </div>
+
+  <div class="modelo" style="--tint:#9d7bd8">
+    <span class="num">6</span>
+    <span class="tag">Ultra-creativo · Plataforma</span>
+    <h3>🎪 Galas a Pedido: el motor se alquila</h3>
+    <p><b>Cómo funciona:</b> el corazón del producto no son las plantas — es un <b>motor que transforma cualquier colección con datos en una ceremonia de premios</b>. Se licencia por evento: la empresa que premia a sus "plantas de oficina" en la fiesta de fin de año, el casamiento que entrega premios a los invitados, la escuela que celebra su huerta, la vinoteca que hace "Los Tintos de Oro" con su carta. Cargás los datos, elegís el tono, sale la gala.</p>
+    <div class="row"><span class="ic">🌍</span><span><b>Por qué pagan:</b> los eventos viven de momentos memorables y el formato premios-con-datos-reales es infinitamente adaptable. Un solo casamiento paga más que 10 meses de suscripción individual — y cada evento expone la marca a 50-200 personas nuevas.</span></div>
+    <span class="precio">USD 49 evento chico (autoservicio) · USD 199 con curaduría · USD 499 corporativo con MC virtual</span>
+  </div>
+
+  <div class="rule">El cierre</div>
+  <section class="cierre">
+    <span class="em">🌱→🏆</span>
+    <h3>Los datos ya estaban. Faltaba la alfombra roja.</h3>
+    <p>Empezamos con un jardín de Montevideo y 40 especies con datos verificados. El camino: gala diaria gratis → membresía de la Academia → viveros white-label → estatuillas y porras → motor de galas para todo lo coleccionable. <b>El primer sobre ya se abrió. Los que siguen se venden.</b></p>
+    <a href="2026-07-04-gala-jardin.html">🏆 Volver a la ceremonia</a>
+  </section>
+
+  <footer>Los Verdes de Oro · Pitch de monetización · Jardín Pacha Mama, Montevideo · Julio 2026</footer>
+
+</div>
+</body></html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e0c14">
+<title>💼 Memes del Jardín — el pitch</title>
+<style>
+  :root{
+    --bg:#0e0c14; --card:#171422; --card2:#1f1b2e;
+    --ink:#f3f1ee; --ink2:#a49fb5; --ink3:#736e85;
+    --line:rgba(255,255,255,.09);
+    --acid:#e8fb4e; --magenta:#ff5ca8; --cyan:#55d6f5; --verde:#7ddc5a; --oro:#ffc93d;
+    --pad:max(16px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.55;
+    background-image:
+      radial-gradient(90% 40% at 50% -5%, rgba(255,201,61,.09), transparent),
+      radial-gradient(70% 36% at 0% 100%, rgba(85,214,245,.07), transparent);
+    -webkit-font-smoothing:antialiased; }
+
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#080611;
+    color:#8f8aa2; text-decoration:none; font-size:13px; font-weight:700; }
+  .back:active{ opacity:.65; }
+
+  .wrap{ max-width:560px; margin:0 auto; padding:0 var(--pad) 40px; }
+
+  .hero{ text-align:center; padding:34px 0 6px; }
+  .hero .kicker{ display:inline-block; font-size:10.5px; font-weight:900; letter-spacing:.14em;
+    text-transform:uppercase; color:#0d1503; background:var(--acid); border-radius:999px; padding:5px 12px; }
+  .hero h1{ font-size:clamp(30px,9.5vw,42px); font-weight:900; letter-spacing:-.03em; line-height:1.04;
+    margin:14px 0 10px; color:#fff; }
+  .hero h1 em{ font-style:normal; color:var(--oro); }
+  .hero .sub{ font-size:15px; color:var(--ink2); max-width:42ch; margin:0 auto; }
+  .hero .sub b{ color:#fff; }
+
+  .stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:9px; margin:22px 0 6px; }
+  .stat{ background:var(--card); border:1px solid var(--line); border-radius:15px; padding:13px 8px; text-align:center; }
+  .stat .n{ font-size:21px; font-weight:900; color:var(--acid); letter-spacing:-.02em; }
+  .stat .l{ font-size:10.5px; color:var(--ink3); font-weight:700; text-transform:uppercase; letter-spacing:.05em; margin-top:2px; }
+
+  h2.sec{ display:flex; align-items:center; gap:10px; font-size:13px; font-weight:900; letter-spacing:.13em;
+    text-transform:uppercase; color:var(--ink3); margin:34px 0 14px; }
+  h2.sec::after{ content:""; flex:1; height:1px; background:var(--line); }
+
+  .prose{ font-size:15px; color:var(--ink2); }
+  .prose p{ margin-bottom:12px; }
+  .prose b{ color:#fff; }
+  .prose .hi{ color:var(--oro); font-weight:800; }
+
+  .quoteban{ margin:18px 0; background:linear-gradient(160deg,#221c33,#141021); border:1px solid var(--line);
+    border-radius:18px; padding:18px 17px; font-size:17px; font-weight:800; line-height:1.4; color:#fff; }
+  .quoteban span{ color:var(--acid); }
+  .quoteban small{ display:block; margin-top:8px; font-size:12px; font-weight:600; color:var(--ink3); }
+
+  /* modelos */
+  .modelo{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:19px 17px;
+    margin-bottom:14px; position:relative; overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.35); }
+  .modelo::before{ content:""; position:absolute; inset:0 auto 0 0; width:4px; background:var(--acid); }
+  .modelo.m2::before{ background:var(--cyan); } .modelo.m3::before{ background:var(--verde); }
+  .modelo.m4::before{ background:var(--magenta); } .modelo.m5::before{ background:var(--oro); }
+  .modelo.m6::before{ background:#b48cff; }
+  .modelo .tipo{ display:inline-block; font-size:9.5px; font-weight:900; letter-spacing:.11em; text-transform:uppercase;
+    color:var(--ink3); border:1px solid var(--line); border-radius:999px; padding:3px 9px; margin-bottom:9px; }
+  .modelo h3{ font-size:19px; font-weight:900; letter-spacing:-.015em; color:#fff; line-height:1.15; }
+  .modelo h3 .ic{ margin-right:6px; }
+  .modelo .como{ font-size:14px; color:var(--ink2); margin:8px 0 0; }
+  .modelo .como b{ color:#fff; }
+  .modelo .why{ margin-top:11px; font-size:13.5px; color:#cfe7c0; background:rgba(125,220,90,.07);
+    border:1px solid rgba(125,220,90,.2); border-radius:12px; padding:10px 12px; }
+  .modelo .why b{ color:var(--verde); }
+  .modelo .price{ display:flex; align-items:baseline; gap:8px; margin-top:11px; flex-wrap:wrap; }
+  .modelo .price .p{ font-size:19px; font-weight:900; color:var(--oro); letter-spacing:-.01em; }
+  .modelo .price .per{ font-size:12px; color:var(--ink3); font-weight:700; }
+
+  .cta{ margin-top:30px; text-align:center; background:linear-gradient(165deg,#26310f,#151d0a);
+    border:1px solid rgba(232,251,78,.3); border-radius:20px; padding:24px 18px; }
+  .cta h3{ font-size:21px; font-weight:900; color:#fff; letter-spacing:-.02em; margin-bottom:6px; }
+  .cta h3 span{ color:var(--acid); }
+  .cta p{ font-size:13.5px; color:#c8d3a8; max-width:40ch; margin:0 auto 14px; }
+  .cta a{ display:inline-block; background:var(--acid); color:#0d1503; font-weight:900; font-size:15px;
+    text-decoration:none; border-radius:14px; padding:13px 22px; }
+  .cta a:active{ transform:scale(.96); }
+
+  footer.pie{ text-align:center; margin-top:26px; font-size:11.5px; color:var(--ink3); }
+</style>
+</head>
+<body>
+<a class="back" href="2026-07-04-memes-jardin.html">← Volver a los memes</a>
+
+<div class="wrap">
+
+  <section class="hero">
+    <span class="kicker">💼 Pitch de monetización · confidencial (?)</span>
+    <h1>La risa es el <em>fertilizante</em> del engagement</h1>
+    <p class="sub"><b>Memes del Jardín</b> convierte datos botánicos verificados en humor diario que la gente <b>quiere</b> recibir. Nadie abre la app del banco sonriendo. Esta sí.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">40+</div><div class="l">especies con datos</div></div>
+      <div class="stat"><div class="n">1/día</div><div class="l">meme fresco</div></div>
+      <div class="stat"><div class="n">0</div><div class="l">datos inventados</div></div>
+    </div>
+  </section>
+
+  <h2 class="sec">La propuesta de valor</h2>
+  <div class="prose">
+    <p>El contenido de jardinería clásico tiene un problema: es <b>útil pero aburrido</b>. Calendarios de poda, pH del suelo, riegos. La gente lo consume por culpa, no por ganas.</p>
+    <p>Memes del Jardín da vuelta la ecuación: <span class="hi">primero te reís, después aprendés</span>. Cada meme remata con un dato real citado con código de catálogo ("no es chiste: Palta B-22"). El humor es el caballo; el conocimiento, el jinete. Y como los datos salen del catálogo de <b>TU</b> jardín, el chiste es personal: no es "una palta", es <b>tu</b> palta la que espera a un perezoso extinto hace 13.000 años.</p>
+    <p>Eso genera tres cosas que el contenido educativo solo no logra: <b>apertura diaria</b> (el meme es un caramelo, no una tarea), <b>compartibilidad</b> (nadie reenvía un calendario de poda; un meme sí) y <b>apego emocional</b> a las plantas — que es exactamente lo que hace que después SÍ hagas la tarea de poda.</p>
+  </div>
+
+  <div class="quoteban">"El mejor canal de retención del mundo es <span>una carcajada con nombre propio</span>."<small>— este pitch, recién</small></div>
+
+  <h2 class="sec">El mercado</h2>
+  <div class="prose">
+    <p>La jardinería doméstica explotó post-pandemia y no volvió a bajar: millones de jardineros urbanos nuevos, más jóvenes, criados en Instagram y TikTok, que <b>ya consumen memes de plantas</b> de cuentas genéricas con cientos de miles de seguidores. Lo que ninguna cuenta genérica puede ofrecer: humor sobre <b>tus</b> plantas, con <b>tus</b> datos, en <b>tu</b> estación. La personalización es el foso defensivo — y acá el pipeline (catálogo estructurado + generación diaria + push) ya existe y está probado en producción en un jardín real de Montevideo.</p>
+  </div>
+
+  <h2 class="sec">3 modelos innovadores</h2>
+
+  <article class="modelo">
+    <span class="tipo">Innovador · suscripción B2C</span>
+    <h3><span class="ic">🌅</span>El Meme del Amanecer</h3>
+    <p class="como">Suscripción freemium: gratis recibís <b>1 meme semanal</b> de tu jardín. Premium: el meme diario a las 8 AM por push, el archivo histórico completo, y el "modo estación" (memes coherentes con invierno/verano de tu hemisferio). Onboarding: cargás tus plantas (o sacás fotos y la IA arma el catálogo).</p>
+    <p class="why"><b>¿Por qué pagan?</b> Porque es el único contenido del teléfono que es SOBRE su casa. El meme diario se vuelve ritual de mate — y cancelarlo se siente como echar a un amigo gracioso.</p>
+    <div class="price"><span class="p">USD 3,99 /mes</span><span class="per">o USD 29 /año · el precio de un plantín, por 365 risas</span></div>
+  </article>
+
+  <article class="modelo m2">
+    <span class="tipo">Innovador · B2B white-label</span>
+    <h3><span class="ic">🏪</span>Viveros que Venden con Risa</h3>
+    <p class="como">Licencia mensual para viveros y garden centers: el motor genera <b>packs de memes verificados de las especies que tienen en stock</b>, listos para redes, con marca del vivero y CTA de compra ("la lavanda que odia que la riegues — llevátela, $390"). Incluye calendario editorial estacional automático.</p>
+    <p class="why"><b>¿Por qué pagan?</b> Porque un vivero chico no tiene community manager y su Instagram está muerto. Contenido que entretiene + educa + vende, a una fracción del costo de una agencia.</p>
+    <div class="price"><span class="p">USD 99-149 /mes</span><span class="per">por vivero · tier según cantidad de especies y posts</span></div>
+  </article>
+
+  <article class="modelo m3">
+    <span class="tipo">Innovador · API / plataforma</span>
+    <h3><span class="ic">🔌</span>Humor-as-a-Service (HaaS)</h3>
+    <p class="como">API para apps de jardinería, IoT de riego y marketplaces de plantas: mandan el catálogo del usuario, reciben memes verificados personalizados para sus notificaciones y feeds. La app de riego aburrida pasa a decir "tu lavanda pide que NO la riegues, ella es así" en vez de "recordatorio #47".</p>
+    <p class="why"><b>¿Por qué pagan?</b> Porque las apps de plantas tienen retención horrible (la planta crece lento, la app aburre rápido) y comprar humor personalizado por API es infinitamente más barato que construirlo.</p>
+    <div class="price"><span class="p">USD 0,002 /meme</span><span class="per">+ plan base USD 199 /mes · volumen descuenta</span></div>
+  </article>
+
+  <h2 class="sec">3 modelos ultra-creativos</h2>
+
+  <article class="modelo m4">
+    <span class="tipo">Ultra-creativo · pago único viral</span>
+    <h3><span class="ic">🔥</span>Roast My Garden</h3>
+    <p class="como">Mandás 10 fotos de tu jardín y recibís un <b>roast completo</b>: 10 memes despiadadamente cariñosos sobre TUS plantas + (plot twist) un diagnóstico real escondido en cada chiste ("tu fresno está en tier ¿QUÉ HACÉS? porque le falta luz — mové las fotinias"). El humor es el caballo de Troya del upsell de asesoría seria.</p>
+    <p class="why"><b>¿Por qué pagan?</b> Porque el roast es el formato más compartido de internet, y este viene con valor real adentro. Cada roast compartido en redes es marketing gratis con el logo quemado en la esquina.</p>
+    <div class="price"><span class="p">UYU 990</span><span class="per">por pack de 10 · upsell asesoría UYU 2.900</span></div>
+  </article>
+
+  <article class="modelo m5">
+    <span class="tipo">Ultra-creativo · merch generativo</span>
+    <h3><span class="ic">👕</span>Merch Botánico de Autor</h3>
+    <p class="como">Al final de cada mes, la app te muestra <b>tu meme más reído</b> (medido por reacciones) y te lo ofrece en remera, taza o lámina para enmarcar — con el dato verificado y el código de catálogo impresos como pie de obra. Print-on-demand: cero stock, cero riesgo.</p>
+    <p class="why"><b>¿Por qué pagan?</b> Porque no es una remera de plantas: es LA remera del chiste de TU palta. Objeto único, conversación asegurada en cada asado, regalo perfecto entre jardineros.</p>
+    <div class="price"><span class="p">UYU 1.290</span><span class="per">remera · taza UYU 690 · lámina A3 UYU 890 · margen ~45%</span></div>
+  </article>
+
+  <article class="modelo m6">
+    <span class="tipo">Ultra-creativo · patrocinio nativo</span>
+    <h3><span class="ic">🎬</span>Especie Sponsoreada</h3>
+    <p class="como">Marcas de jardinería (fertilizantes, sustratos, herramientas) <b>adoptan una especie</b> del universo de memes por temporada: "El drama del limonero llega gracias a Sustratos Río Negro". El sponsor no interrumpe el chiste — es parte del elenco, con reglas editoriales duras (el dato sigue sagrado, el humor sigue primero).</p>
+    <p class="why"><b>¿Por qué pagan?</b> Porque es publicidad con 100% de atención en un nicho ultra-segmentado: gente que demostradamente tiene jardín, abre el push todas las mañanas y le tiene cariño al personaje que la marca patrocina.</p>
+    <div class="price"><span class="p">USD 500-2.000</span><span class="per">por especie / temporada · según audiencia del feed</span></div>
+  </article>
+
+  <div class="cta">
+    <h3>El jardín ya hace reír.<br><span>Falta cobrar la entrada.</span></h3>
+    <p>Piloto propuesto: 30 días de meme diario en este jardín, medir apertura y reacciones, y con esos números salir a buscar el primer vivero.</p>
+    <a href="2026-07-04-memes-jardin.html">😂 Volver a reírse con los memes</a>
+  </div>
+
+  <footer class="pie">Memes del Jardín · pitch v1 · 04/07/2026 · datos del catálogo Pacha Mama, Montevideo</footer>
+
+</div>
+</body></html>
