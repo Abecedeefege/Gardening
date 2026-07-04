@@ -60,6 +60,7 @@ docs/ideas.html      ← ideas + huerta + espacios + experiencias (con curiosida
 | `scripts.py` | Todo el JS como string raw | Lógica del Timeline, modales, swipe |
 | `images/` | Fotos del jardín (62 archivos) | Agregar fotos nuevas |
 | `tools/gen_task_reminders.py` | Recordatorios push de tareas (diario + semanal, todas las especies) | Cambiar política de recordatorios de tareas |
+| `tools/gen_top3_tareas.py` | Top 3 de tareas prioritarias cada 2 días (regenera `docs/engage/top3-tareas.html` + encola push) | Cambiar ranking/cadencia del top 3 |
 | `docs/index.html`, `docs/biblioteca.html`, `docs/tareas.html`, `docs/ideas.html` | Output del build — **NO editar a mano** | Generado siempre por `python build.py` |
 
 ### Modelo de datos — Tarea
@@ -86,7 +87,7 @@ Las tareas viven en el JS como `const TASKS = [...]` (inyectado por build.py des
 
 ### Estado de tareas (localStorage)
 
-Clave: `jardineando_task_states_v1`. Valor: objeto `{taskId: {status, snoozed_until, completed_at}}`.
+Clave: `jardineando_task_states_v2`. Valor: objeto `{taskId: {status, snoozed_until, completed_at}}`.
 
 ```javascript
 {
@@ -139,7 +140,7 @@ docs/
 │       └── ...
 ├── uploads.json                   ← Índice de uploads (estado pending/processed/n_a)
 └── sync/
-    ├── task_states.json           ← Backup + sync de localStorage.jardineando_task_states_v1
+    ├── task_states.json           ← Backup + sync de localStorage.jardineando_task_states_v2
     └── contacts.json              ← Backup + sync de localStorage.jardineando_contacts_v1
 ```
 
@@ -205,7 +206,9 @@ docs/
     └── engagement.json            ← Eventos: notification_clicked / page_visit / proposal_approved / proposal_rejected
 ```
 
-**Recordatorios de tareas por push:** las tareas NO tienen sección en la Home — se comunican por push. `tools/gen_task_reminders.py <fecha> --merge` genera y mergea en la queue el recordatorio del día (martes-domingo 08:00: "tarea del día" rotando entre las tareas activas de todas las especies, deep link a `tareas.html#task=<id>`; lunes 08:00: resumen semanal → `tareas.html`). Respeta `task_states.json` (done/snoozed). El agente de `/engagement` lo corre como paso obligatorio de su corrida diaria; sus entries (`format: "tarea"`) son adicionales a la cadencia de experiencias.
+**Recordatorios de tareas por push:** las tareas NO tienen sección en la Home — se comunican por push. `tools/gen_task_reminders.py <fecha> --merge` genera y mergea en la queue el recordatorio del día (martes-domingo 08:00: "tarea del día" rotando entre las tareas activas de todas las especies, deep link a `tareas.html#task=<id>`; lunes 08:00: resumen semanal → `tareas.html`). Respeta `task_states.json` (done/snoozed). El agente de `/engagement` lo corre como paso obligatorio de su corrida diaria; sus entries (`format: "tarea"`) son adicionales a la cadencia de experiencias. Además, `tools/gen_top3_tareas.py <fecha> --merge` (también paso obligatorio de `/engagement`, self-gated a cada 2 días con ancla 2026-07-04) regenera `docs/engage/top3-tareas.html` con las 3 tareas prioritarias de todas las especies y encola su push (09:00) — pedido directo del usuario del 04/07/2026.
+
+**Timeline — tareas pasadas:** en la vista "Todas" de `tareas.html`, las tareas hechas/cerradas NO aparecen en el flujo principal: van en un módulo colapsado "🗂️ Pasadas / hechas" al final (mismo patrón que las tareas futuras), para dar foco a las pendientes. El deep link `#task=<id>` abre el módulo automáticamente si la tarea está adentro.
 
 Flujo: el agente encola 3 notificaciones con `send_at` (-03:00) → Vercel deploya → el dispatcher manda lo vencido → el SW (`docs/sw.js`) muestra la notificación y al click abre el deep link con `?nid=&src=push` → el cliente loguea el click/visita en `engagement.json` → el agente lee los datos a la mañana siguiente y adapta. Las proposals necesitan aprobación explícita (botón en la página) para sobrevivir; aprobadas se promueven al sitio principal.
 

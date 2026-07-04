@@ -313,6 +313,30 @@
         "2026-07-04-b"
       ],
       "result_notes": null
+    },
+    {
+      "id": "2026-07-04-expedientes-jardin",
+      "title": "🕵️ Expedientes abiertos — Los Sin Nombre de tu jardín (identificación de las 13 + 2 sin nombre confirmado)",
+      "page": "engage/2026-07-04-expedientes-jardin.html",
+      "created": "2026-07-04",
+      "status": "promoted",
+      "hypothesis": "NO es un experimento: PEDIDO DIRECTO del usuario por chat (04/07/2026): 'crea una experiencia para darle nombre a TODAS las plantas que aún no estén identificadas'. Formato expediente/detective (dato real protagonista + morbo, el eje que convierte). Incluye preguntas engageAnswer por planta (qids exp-*) cuyas respuestas hay que procesar en corridas futuras para actualizar data_plants.py.",
+      "notified_by": [
+        "2026-07-04-expedientes"
+      ],
+      "result_notes": "COMISIONADA por el usuario = pre-aprobada. EXENTA de la regla de no-supervivencia: NO dropear ni borrar sin señal explícita del usuario. Vive hasta cerrar los 15 casos (13 fichas dudosas + 2 plantas sin ficha). Al confirmar identidades via respuestas/fotos, actualizar data_plants.py y la página. Nota: B-41 'caqui' quedó con identidad EN DUDA en data_plants.py (el usuario confirmó 04/07 que nunca mostró flor ni fruto)."
+    },
+    {
+      "id": "2026-07-04-top3-tareas",
+      "title": "🎯 Las 3 del jardín (top 3 de tareas prioritarias, recurrente cada 2 días)",
+      "page": "engage/top3-tareas.html",
+      "created": "2026-07-04",
+      "status": "promoted",
+      "hypothesis": "NO es un experimento: PEDIDO DIRECTO del usuario por chat (04/07/2026): 'una experiencia que mire todas las especies y me liste las 3 tareas prioritarias; quiero recibir esto cada 2 días'. Excepción explícita al patrón 'lo utilitario no engancha': acá lo utilitario fue pedido.",
+      "notified_by": [
+        "2026-07-04-top3"
+      ],
+      "result_notes": "COMISIONADA y RECURRENTE: tools/gen_top3_tareas.py la regenera y encola cada 2 días (ancla 2026-07-04); el agente de /engagement la corre como paso obligatorio (self-gated por cadencia). Sus entries en queue (id *-top3, format tarea) son ADICIONALES a la cadencia de experiencias: no contarlas contra el cupo ni editarlas. NO dropear la página ni el tool sin pedido explícito del usuario."
     }
   ]
 }

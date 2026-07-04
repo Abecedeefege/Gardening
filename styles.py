@@ -2203,6 +2203,13 @@ h2.subbrand {
 }
 .future-tasks-body .month-header:first-child { padding-top: 12px; }
 
+/* ---- Pasadas / hechas (mismo módulo colapsable, tono "archivo") ---- */
+.past-tasks {
+  border-style: solid;
+  margin-top: 28px;
+}
+.past-tasks .future-tasks-body { padding-top: 12px; }
+
 .timeline-empty {
   text-align: center; padding: 80px 24px;
   background: var(--bg-card);

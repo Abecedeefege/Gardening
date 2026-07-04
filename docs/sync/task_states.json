@@ -122,10 +122,10 @@
       "status": "active",
       "snoozed_until": null,
       "completed_at": null,
-      "description_override": "Foto del 04/05 confirma que el caqui está en dormancia invernal — tronco desnudo sin hojas ni frutos. Imposible identificar variedad ahora. Tarea reschedulada en data_plants.py a mayo 2027 cuando haya cosecha. Volver a fotografiar cuando aparezcan los caquis maduros.",
-      "description_override_at": "2026-05-05T14:30:00.000Z",
-      "last_ai_summary": "Caqui sin follaje ni fruto — dormancia invernal. Imposible identificar variedad sin hoja/fruto.",
-      "last_modified_at": "2026-05-05T14:30:00.000Z"
+      "description_override": "Identidad EN DUDA (04/07/2026): nunca se le vieron flores ni frutos desde que existe el catálogo, y la foto del 04/05 lo muestra pelado SIN fruta colgando — un caqui real en mayo-julio tendría frutos naranjas a la vista. Verificación: AHORA foto de corteza (placas cuadriculadas tipo piel de cocodrilo) y ramitas en zigzag; en octubre-noviembre foto de brotación y flor. Detalle completo en la tarea.",
+      "description_override_at": "2026-07-04T12:20:00.000Z",
+      "last_ai_summary": "Duda de identidad elevada por el usuario: sin flor ni fruto jamás vistos. Chequear corteza en invierno y flor en primavera.",
+      "last_modified_at": "2026-07-04T12:20:00.000Z"
     },
     "plant-B-9-4": {
       "status": "done",

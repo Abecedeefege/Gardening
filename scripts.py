@@ -576,15 +576,19 @@ function renderTimeline() {
     <span class="summary-cell"><strong>${buckets.snoozed.length}</strong> 😴 pospuestas</span>
   `;
 
-  // Render filtered feed agrupado por mes (atrasadas → mes actual → futuros → sin fecha)
-  const tasks = buckets[currentFilter] || [];
+  // Render filtered feed agrupado por mes (atrasadas → mes actual → futuros → sin fecha).
+  // En la vista "Todas", las hechas/cerradas NO van al flujo principal: se agrupan
+  // en un módulo colapsado "Pasadas / hechas" al final para dar foco a las pendientes.
+  const isAllView = currentFilter === 'all';
+  const tasks = isAllView ? [...buckets.active, ...buckets.snoozed] : (buckets[currentFilter] || []);
+  const pastTasks = isAllView ? buckets.done : [];
 
-  if (tasks.length === 0) {
+  if (tasks.length === 0 && pastTasks.length === 0) {
     feed.innerHTML = '';
     empty.style.display = 'block';
   } else {
     empty.style.display = 'none';
-    feed.innerHTML = renderTasksGroupedByMonth(tasks);
+    feed.innerHTML = renderTasksGroupedByMonth(tasks) + renderPastTasksSection(pastTasks);
     // hidratar imágenes y bind swipe + lightbox
     feed.querySelectorAll('img[data-img]').forEach(loadImg);
     setupLightbox(feed);
@@ -678,6 +682,28 @@ function renderTasksGroupedByMonth(tasks) {
   }
 
   return html;
+}
+
+// Módulo colapsado con las tareas hechas/cerradas (solo vista "Todas").
+// Cerrado por defecto: las pasadas no compiten por atención con las pendientes.
+// Ordenadas por fecha de completado descendente (la más reciente arriba).
+function renderPastTasksSection(tasks) {
+  if (!tasks.length) return '';
+  const doneTime = (t) => {
+    const d = new Date(getTaskState(t.id).completed_at || 0);
+    return isNaN(d.getTime()) ? 0 : d.getTime();
+  };
+  const sorted = [...tasks].sort((a, b) => doneTime(b) - doneTime(a));
+  return (
+    `<details class="future-tasks past-tasks">` +
+      `<summary class="future-tasks-summary">` +
+        `<span class="future-tasks-label">🗂️ Pasadas / hechas</span>` +
+        `<span class="future-tasks-count">${sorted.length}</span>` +
+        `<span class="future-tasks-chevron" aria-hidden="true">▾</span>` +
+      `</summary>` +
+      `<div class="future-tasks-body">${sorted.map(renderTaskCard).join('')}</div>` +
+    `</details>`
+  );
 }
 
 // ============================================================
@@ -1092,6 +1118,9 @@ function openTaskFromHash() {
   setTimeout(() => {
     const card = document.querySelector(`.task-card[data-task-id="${taskId}"]`);
     if (card) {
+      // Si la tarea quedó dentro de un módulo colapsado (pasadas/futuras), abrirlo primero
+      const det = card.closest('details');
+      if (det) det.open = true;
       card.classList.add('expanded');
       card.scrollIntoView({ behavior: 'smooth', block: 'center' });
       // Highlight visual breve
