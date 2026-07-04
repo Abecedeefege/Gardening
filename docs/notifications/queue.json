@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-04T16:30:10.883097Z",
+  "_updated_at": "2026-07-04T16:30:51.725Z",
   "notifications": [
     {
       "id": "2026-07-04-task-dia",
@@ -35,8 +35,8 @@
       "format": "experiencia",
       "send_at": "2026-07-04T13:00:00-03:00",
       "expires_at": "2026-07-04T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-04T16:30:51.471Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-04 (ciclo 35)"
     },
@@ -61,8 +61,8 @@
       "format": "tarea",
       "send_at": "2026-07-04T11:15:00-03:00",
       "expires_at": "2026-07-04T21:30:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-04T16:30:51.597Z",
       "fail_reason": null,
       "created_by": "gen_top3_tareas 2026-07-04"
     },
@@ -74,8 +74,8 @@
       "format": "experiencia",
       "send_at": "2026-07-04T10:45:00-03:00",
       "expires_at": "2026-07-04T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-04T16:30:51.724Z",
       "fail_reason": null,
       "created_by": "pedido directo del usuario 2026-07-04 (sesión Claude Code)"
     }

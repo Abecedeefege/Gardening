@@ -275,6 +275,24 @@
       "nid": "2026-07-04-a",
       "ts": "2026-07-04T12:43:45.752Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-04-b",
+      "ts": "2026-07-04T16:30:51.471Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-04-top3",
+      "ts": "2026-07-04T16:30:51.597Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-04-expedientes",
+      "ts": "2026-07-04T16:30:51.724Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
