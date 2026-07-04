@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>Jardineando · Propuesta B «Herbario»</title>
+<!--
+PLAN DE INTEGRACIÓN — Propuesta B «Herbario» (rev. 2)
+1. build.py inyecta este bloque completo (<style> + <div id="splash"> + <script>) inline al INICIO del
+   <body> de cada página generada (index / ideas / tareas). TODO el CSS está scopeado al nodo #splash
+   (overlay position:fixed inset:0 z-index:9999): sin reset universal, sin estilos sobre html/body,
+   keyframes con prefijo spl- e ids de DOM spl-* para no chocar con la página host. Los ids de <defs>
+   del SVG (p-*) viven dentro del propio SVG y solo se referencian con href relativos.
+2. El JS corre inline, sin dependencias, y solo toca nodos dentro de #splash. Como el HTML host pesa
+   ~13 MB en base64, el splash pinta al instante mientras el parser mastica el resto del documento.
+3. Desmontaje / rol del CTA: integrado, el CTA «Entrar al jardín» NO navega — hace dismiss del overlay
+   (splash.remove() + sessionStorage). En esta demo standalone apunta a ../index.html (relativo, offline)
+   solo para poder probarlo. Además window.addEventListener('load', …) auto-desmonta el overlay con fade
+   de 400 ms respetando un mínimo de exhibición de 1.4 s.
+4. sessionStorage.setItem('jardineando_splash_v1','1') → se muestra solo en la primera apertura de la
+   sesión; las navegaciones internas (home ⇄ ideas ⇄ tareas) no lo repiten.
+5. Skip: tap/click en cualquier parte del pliego (o tecla Escape) salta al estado final — reutiliza el
+   mismo mecanismo del modo debug ?fin (.instant). Hint visible: «tocá para saltar» junto al progreso.
+6. Progreso: acá simulado con un perfil con easing; integrado puede mapearse a document.readyState +
+   decode de la primera imagen. El microcopy rota cada 2.4 s, máx. 3 líneas por corrida, y el punto de
+   partida rota entre sesiones (localStorage jardineando_splash_line) para que se vean todas.
+7. prefers-reduced-motion: crossfades sin movimiento y timeline comprimido a ⅓ (~1.6 s hasta el sello).
+8. Nota tipográfica: las «versalitas» del rótulo común son uppercase + tracking SIMULADAS — la font
+   stack del sistema (Georgia/Palatino) no trae small caps reales y no cargamos fonts externas.
+9. Cero fetch, cero fonts externas: apto offline como todo el sitio.
+-->
+<style>
+#splash{
+  position:fixed;inset:0;z-index:9999;
+  background:radial-gradient(140% 120% at 50% 28%,#f8fcf3 0%,#f5faf0 55%,#edf3e2 100%);
+  color:#2d5016;
+  font-family:Georgia,'Iowan Old Style',Palatino,'Times New Roman',serif;
+  -webkit-font-smoothing:antialiased;
+}
+#splash,#splash *{margin:0;padding:0;box-sizing:border-box}
+/* grano de papel: ruido SVG inline, sin requests */
+#splash::before{
+  content:"";position:absolute;inset:0;z-index:6;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px 180px;opacity:.055;mix-blend-mode:multiply;
+}
+#splash .stage{
+  position:relative;z-index:1;max-width:430px;margin:0 auto;
+  height:100%;overflow-y:auto;overscroll-behavior:contain;
+  display:flex;flex-direction:column;
+  padding:calc(env(safe-area-inset-top) + 16px) 24px calc(env(safe-area-inset-bottom) + 12px);
+}
+/* ——— cabecera de lámina ——— */
+#splash .meta{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:9.5px;letter-spacing:.30em;text-transform:uppercase;color:#4d5c3c;
+  padding-bottom:9px;border-bottom:1px solid rgba(45,80,22,.32);
+}
+/* ——— la lámina ——— */
+#splash .plate{position:relative;margin-top:14px;border:1px solid rgba(45,80,22,.45);padding:10px;min-height:0}
+#splash .plate::before{content:"";position:absolute;inset:4px;border:1px solid rgba(45,80,22,.20);pointer-events:none}
+#splash .plate svg{display:block;width:100%;height:auto;max-height:56vh;max-height:56dvh;margin:0 auto}
+#splash .inkg{stroke:#2d5016;fill:none;stroke-linecap:round;stroke-linejoin:round}
+#splash .mr{opacity:.55}
+#splash .ldr{stroke:#4d5c3c;stroke-width:.8;fill:none}
+#splash .drw{stroke-dasharray:1.05 1.1;stroke-dashoffset:1.075}
+#splash.play .drw{animation:spl-draw var(--t,.7s) cubic-bezier(.62,.05,.32,1) var(--d,0s) forwards}
+#splash .wsh{opacity:0}
+#splash.play .wsh{animation:spl-wfade 1.1s ease var(--d,2.5s) forwards,spl-wbreathe 6.5s ease-in-out calc(var(--d,2.5s) + 1.1s) infinite alternate}
+#splash .wA{fill:#4a7c2a;--o:.20}
+#splash .wB{fill:#6f9648;--o:.28}
+#splash .wP{fill:#dba7ae;--o:.35}
+#splash .wF{fill:#8fae5f;--o:.34}
+#splash .wS{stroke:#a8232e;fill:none;stroke-width:1.3;--o:.6}
+#splash .wSt{stroke:#7c6a45;fill:none;stroke-width:4.5;--o:.13}
+#splash .anth{opacity:0;transform-box:fill-box;transform-origin:50% 50%}
+#splash.play .anth{animation:spl-pop .45s cubic-bezier(.3,1.6,.4,1) var(--d,3.5s) both}
+/* ——— sello ——— */
+#splash .seal{
+  position:absolute;right:-8px;bottom:-14px;width:112px;height:112px;
+  opacity:0;transform:rotate(-15deg) scale(1.55);mix-blend-mode:multiply;pointer-events:none;
+}
+#splash.done .seal{animation:spl-stamp .55s cubic-bezier(.22,1.35,.36,1) .25s forwards}
+#splash.done .plate{animation:spl-knock .5s ease .43s}
+/* ——— rótulos ——— */
+#splash .cartouche{text-align:center;margin-top:22px}
+#splash.play .cartouche>*,#splash.play .meta{animation:spl-rise .9s cubic-bezier(.2,.9,.25,1) var(--d,.3s) both}
+#splash .latin{font-style:italic;font-weight:400;font-size:30px;letter-spacing:.01em}
+#splash .common{margin-top:7px;font-size:11.5px;letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;color:#4d5c3c}
+#splash .loc{margin-top:9px;font-size:10.5px;letter-spacing:.12em;color:#4d5c3c}
+/* ——— microcopy + CTA ——— */
+#splash .slot{position:relative;height:58px;margin-top:14px}
+#splash .micro{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-style:italic;font-size:14px;color:#4d5c3c;text-align:center;padding:0 8px;
+  transition:opacity .26s ease;
+}
+#splash .micro.fade{opacity:0}
+#splash.done .micro{opacity:0;transition:opacity .4s ease;pointer-events:none}
+#splash .cta{
+  position:absolute;left:50%;top:50%;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:13px 26px;border:1.5px solid #2d5016;border-radius:999px;
+  color:#2d5016;background:rgba(245,250,240,.7);text-decoration:none;
+  font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;
+  opacity:0;visibility:hidden;transform:translate(-50%,-50%) translateY(12px);pointer-events:none;
+  transition:opacity .25s ease,visibility 0s .25s,transform .25s ease;
+}
+#splash .cta span{transition:transform .25s ease}
+#splash.done .cta{
+  opacity:1;visibility:visible;transform:translate(-50%,-50%);pointer-events:auto;
+  transition:opacity .55s cubic-bezier(.2,.9,.2,1) .75s,transform .55s cubic-bezier(.2,.9,.2,1) .75s,visibility 0s .75s,background .25s ease,color .25s ease;
+}
+#splash .cta:hover,#splash .cta:focus-visible{background:#2d5016;color:#f5faf0;outline:none}
+#splash .cta:hover span{transform:translateX(3px)}
+/* ——— regla de tinta = progreso ——— */
+#splash .rule{margin-top:auto;padding-top:16px}
+#splash .rulehead{
+  display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;
+  font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:#4d5c3c;
+}
+#splash .skiphint{font-size:9px;font-style:italic;text-transform:none;letter-spacing:.08em;opacity:.7;transition:opacity .4s ease}
+#splash.done .skiphint{opacity:0}
+#splash .roman{font-variant-numeric:tabular-nums;letter-spacing:.14em;white-space:nowrap}
+#splash .roman b{font-weight:400;display:inline-block;min-width:64px;text-align:right}
+#splash .ink{position:relative;height:10px}
+#splash .ink::before{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(45,80,22,.35)}
+#splash .ink::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:5px;
+  background:repeating-linear-gradient(90deg,rgba(45,80,22,.4) 0 1px,transparent 1px 20%);
+  border-right:1px solid rgba(45,80,22,.4);
+}
+#splash #spl-fill{position:absolute;left:0;bottom:0;height:3px;width:0%;background:#2d5016;z-index:1}
+#splash #spl-fill::after{content:"";position:absolute;right:-1px;top:-3px;width:2px;height:9px;background:#2d5016}
+/* ——— pie + repetir ——— */
+#splash .foot{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  margin-top:12px;font-size:10px;letter-spacing:.08em;color:#4d5c3c;
+}
+#splash .again{
+  flex:none;background:rgba(245,250,240,.85);border:1px solid rgba(45,80,22,.4);color:#2d5016;
+  border-radius:999px;padding:6px 12px;cursor:pointer;
+  font-family:Georgia,serif;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+}
+#splash .again:hover{background:#2d5016;color:#f5faf0}
+/* ——— keyframes (prefijo spl- para no chocar con la página host) ——— */
+@keyframes spl-draw{to{stroke-dashoffset:0}}
+@keyframes spl-wfade{from{opacity:0}to{opacity:var(--o,.25)}}
+@keyframes spl-wbreathe{from{opacity:var(--o,.25)}to{opacity:calc(var(--o,.25)*.72)}}
+@keyframes spl-pop{from{opacity:0;transform:scale(.2)}60%{opacity:1;transform:scale(1.25)}to{opacity:1;transform:scale(1)}}
+@keyframes spl-rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes spl-rfade{from{opacity:0;stroke-dashoffset:0}to{opacity:1;stroke-dashoffset:0}}
+@keyframes spl-stamp{
+  0%{opacity:0;transform:rotate(-15deg) scale(1.55)}
+  55%{opacity:1;transform:rotate(-6.5deg) scale(.95)}
+  78%{transform:rotate(-8.6deg) scale(1.03)}
+  100%{opacity:.93;transform:rotate(-8deg) scale(1)}
+}
+@keyframes spl-knock{0%,100%{transform:none}35%{transform:translateY(1px) scale(.994)}}
+/* ——— reduced motion: crossfades sin movimiento, timeline a un tercio ——— */
+#splash.rm.play .drw{animation:spl-rfade .5s ease calc(var(--d,0s)/3) both}
+#splash.rm.play .wsh{animation:spl-wfade .6s ease calc(var(--d,2.5s)/3) forwards}
+#splash.rm.play .anth{animation:spl-wfade .4s ease calc(var(--d,3.5s)/3) both;--o:1}
+#splash.rm.play .cartouche>*,#splash.rm.play .meta{animation:spl-wfade .5s ease calc(var(--d,.3s)/3) both;--o:1}
+#splash.rm .seal{transform:rotate(-8deg) scale(1)}
+#splash.rm.done .seal{animation:none;opacity:.93;transition:opacity .7s ease .25s}
+#splash.rm.done .plate{animation:none}
+#splash.rm .cta{transform:translate(-50%,-50%)}
+/* skip por tap / modo debug ?fin: salta al estado final */
+#splash.instant *{animation-duration:1ms!important;animation-delay:0ms!important;transition-duration:1ms!important;transition-delay:0ms!important}
+/* ——— viewports cortos (iPhone SE, landscape): compactar; .stage además scrollea ——— */
+@media (max-height:720px){
+  #splash .latin{font-size:24px}
+  #splash .slot{height:48px}
+  #splash .cartouche{margin-top:12px}
+  #splash .common{margin-top:5px}
+  #splash .loc{margin-top:6px}
+  #splash .plate{margin-top:10px}
+  #splash .plate svg{max-height:46vh}
+}
+@media (max-height:580px){
+  #splash .latin{font-size:20px}
+  #splash .meta{font-size:8.5px}
+  #splash .plate svg{max-height:38vh}
+  #splash .micro{font-size:12.5px}
+}
+/* ——— anchos angostos: que la cabecera de la regla no se quiebre ——— */
+@media (max-width:359px){
+  #splash .rulehead{font-size:8.5px;letter-spacing:.16em}
+  #splash .skiphint{font-size:8.5px;letter-spacing:.04em}
+  #splash .roman b{min-width:48px}
+}
+/* ——— desktop: pliego sobre mesa ——— */
+@media (min-width:900px){
+  #splash{background:radial-gradient(120% 130% at 50% 18%,#e9eeda 0%,#dfe6cd 55%,#d2dbbf 100%)}
+  #splash .stage{
+    max-width:500px;height:min(880px,calc(100dvh - 56px));margin:28px auto;
+    padding:26px 34px 18px;
+    background:radial-gradient(130% 120% at 50% 24%,#f8fcf3 0%,#f5faf0 60%,#eef4e3 100%);
+    border:1px solid rgba(45,80,22,.4);
+    box-shadow:0 1px 0 rgba(255,255,255,.65) inset,0 30px 70px -30px rgba(44,58,26,.5),0 12px 28px -14px rgba(44,58,26,.32);
+  }
+  #splash .stage::after{content:"";position:absolute;inset:6px;border:1px solid rgba(45,80,22,.16);pointer-events:none}
+  #splash .plate svg{max-height:52vh}
+  #splash .latin{font-size:34px}
+}
+</style>
+</head>
+<body>
+<div id="splash">
+<div class="stage">
+
+  <header class="meta" style="--d:.15s">
+    <span>Herbario del jardín</span>
+    <span>Lámina I / LII</span>
+  </header>
+
+  <figure class="plate">
+    <svg viewBox="0 0 340 440" aria-hidden="true" focusable="false">
+      <defs>
+        <path id="p-stem" pathLength="1" d="M176 418 C170 389 163 361 162 332 C161 302 158 274 156 246 C154 218 151 192 150 166 C149 140 149 106 153 72"/>
+        <path id="p-bud" pathLength="1" d="M153 72 C151 66 152 60 156 55 C159 60 158 67 156 71"/>
+        <path id="p-lf1" pathLength="1" d="M162 352 C159.5 354 157.3 355.7 155.7 356.9 C127.3 357.8 99.8 383.9 91.1 407.4 C116.5 405.4 148.6 385.2 155.7 356.9"/>
+        <path id="p-mr1" pathLength="1" d="M155.7 356.9 C134 371.8 112.4 389.4 97.5 402.4"/>
+        <path id="p-lf2" pathLength="1" d="M163 352 C165.5 354.1 167.6 355.9 169.1 357.1 C176.3 385.1 208.3 407.1 233.5 411.1 C225.8 386.3 198.7 358.5 169.1 357.1"/>
+        <path id="p-mr2" pathLength="1" d="M169.1 357.1 C188.7 375.6 210.9 393.6 227 405.7"/>
+        <path id="p-lf3" pathLength="1" d="M157 282 C154.2 282.4 151.8 282.7 150.1 283 C127.5 271.3 94.2 279.2 76.8 293.3 C97.6 302.8 131.7 301.4 150.1 283"/>
+        <path id="p-mr3" pathLength="1" d="M150.1 283 C126.4 284.9 101.6 288.8 84.1 292.2"/>
+        <path id="p-lf3b" pathLength="1" d="M157 282 C159.8 281.6 162.2 281.2 163.9 280.9 C186 262 218 258 236 266 C217 280 184 285 163.9 280.9"/>
+        <path id="p-mr3b" pathLength="1" d="M163.9 280.9 C185 275.5 208 270.5 224 267.5"/>
+        <path id="p-lf4" pathLength="1" d="M151.5 224 C148.8 223.4 146.4 222.9 144.7 222.5 C128.4 204.6 96.3 200.9 76.2 208 C91.5 223.4 122.3 233.3 144.7 222.5"/>
+        <path id="p-mr4" pathLength="1" d="M144.7 222.5 C123 216.6 99.7 212 83 209.4"/>
+        <path id="p-lf5" pathLength="1" d="M151.5 224 C154.2 224.7 156.6 225.3 158.3 225.7 C173.5 243.5 204.5 248.2 224.3 242.1 C209.9 226.8 180.3 216.2 158.3 225.7"/>
+        <path id="p-mr5" pathLength="1" d="M158.3 225.7 C179.1 232.2 201.6 237.4 217.7 240.5"/>
+        <path id="p-lf6" pathLength="1" d="M150 166 C152.7 165.2 155 164.6 156.7 164.1 C177 171.9 203.7 161.3 216.3 147 C197.8 140.9 169.6 145.8 156.7 164.1"/>
+        <path id="p-mr6" pathLength="1" d="M156.7 164.1 C176.1 159.8 196.3 153.6 210.4 148.7"/>
+        <path id="p-lf6b" pathLength="1" d="M150 166 C147.3 165.2 145 164.6 143.3 164.1 C123 171.9 96.3 161.3 83.7 147 C102.2 140.9 130.4 145.8 143.3 164.1"/>
+        <path id="p-mr6b" pathLength="1" d="M143.3 164.1 C123.9 159.8 103.7 153.6 89.6 148.7"/>
+        <path id="p-lf7" pathLength="1" d="M149.5 104 C147.9 102.8 146.5 101.7 145.5 101 C143 88.6 129.4 80.6 118.4 80.5 C121.2 91.5 132.5 102.4 145.5 101"/>
+        <path id="p-lf8" pathLength="1" d="M149.5 104 C151.1 102.9 152.6 101.8 153.6 101.1 C167 102.7 179.4 91.6 183.1 80.5 C171.1 79.7 156.4 87.6 153.6 101.1"/>
+        <path id="p-ped1" pathLength="1" d="M150 168 C132 177 110 183 94 190 C82 194 70 200 64 208"/>
+        <path id="p-ped3" pathLength="1" d="M150 169 C158 176 163.5 182 166.5 190"/>
+        <path id="p-bud2" pathLength="1" d="M166.5 190 C162.6 193.6 161.6 199 164.6 202.8 C166 204.6 168.6 204.8 170 203 C172.8 199.4 171.6 193.4 166.5 190"/>
+        <path id="p-pet1" pathLength="1" d="M58.6 209.4 C53.1 196.1 44.7 193.9 33.4 202.6 C38.9 215.9 47.3 218.1 58.6 209.4"/>
+        <path id="p-pet2" pathLength="1" d="M53.3 216.5 C40.2 211 32.6 215.4 30.7 229.5 C43.9 235 51.5 230.6 53.3 216.5"/>
+        <path id="p-pet3" pathLength="1" d="M60.2 223.3 C47.6 229.9 46.2 238.3 55.8 248.7 C68.4 242.1 69.8 233.7 60.2 223.3"/>
+        <path id="p-pet4" pathLength="1" d="M66.9 217.8 C62.8 230.7 67.6 237.5 81.1 238.2 C85.2 225.3 80.4 218.5 66.9 217.8"/>
+        <path id="p-stm" pathLength="1" d="M58 212 Q40 206 24 206 M56.5 214.5 Q37 214 20 220 M56 217.5 Q38 223 23 234 M56.5 220.5 Q41 232 30 247 M58 223 Q47 240 41 257 M60 224.5 Q56 244 55 262 M62.5 225 Q66 244 70 261 M65 224.5 Q75 240 84 254 M67 223 Q83 234 95 243"/>
+        <path id="p-ped2" pathLength="1" d="M157 282 C173 281 193 282 208 287"/>
+        <path id="p-frt" pathLength="1" d="M209.8 286.2 C195.5 284.7 182.2 299.5 180.1 319.3 C178.1 339.1 188 356.3 202.2 357.8 C216.5 359.3 229.8 344.5 231.9 324.7 C233.9 304.9 224 287.7 209.8 286.2"/>
+        <path id="p-cal" pathLength="1" d="M194.5 355.5 C192 360.5 192.5 365.5 196.5 368.5 M202 357.5 C200.5 362.5 201 367 204.5 370 M209 355.5 C210.5 360.5 209.5 365.5 205.5 368.5"/>
+      </defs>
+
+      <!-- lavados de acuarela (debajo de la tinta, con registro corrido; cada wash entra después de que su tinta terminó) -->
+      <g transform="translate(2.6 -2) rotate(.6 170 220)" stroke="none">
+        <use href="#p-stem" class="wsh wSt" style="--d:2.4s"/>
+        <use href="#p-lf1" class="wsh wA" style="--d:2.55s"/>
+        <use href="#p-lf2" class="wsh wB" style="--d:2.65s"/>
+        <use href="#p-lf3" class="wsh wB" style="--d:2.75s"/>
+        <use href="#p-lf3b" class="wsh wA" style="--d:2.82s"/>
+        <use href="#p-lf4" class="wsh wA" style="--d:2.9s"/>
+        <use href="#p-lf5" class="wsh wB" style="--d:2.98s"/>
+        <use href="#p-lf6" class="wsh wA" style="--d:3.06s"/>
+        <use href="#p-lf6b" class="wsh wB" style="--d:3.14s"/>
+        <use href="#p-lf7" class="wsh wA" style="--d:3.2s"/>
+        <use href="#p-lf8" class="wsh wB" style="--d:3.26s"/>
+        <use href="#p-pet1" class="wsh wP" style="--d:3.5s"/>
+        <use href="#p-pet2" class="wsh wP" style="--d:3.57s"/>
+        <use href="#p-pet3" class="wsh wP" style="--d:3.64s"/>
+        <use href="#p-pet4" class="wsh wP" style="--d:3.71s"/>
+        <use href="#p-bud2" class="wsh wP" style="--d:3.6s"/>
+        <use href="#p-stm" class="wsh wS" style="--d:4.15s"/>
+        <use href="#p-frt" class="wsh wF" style="--d:4.55s"/>
+      </g>
+
+      <!-- tinta: se dibuja sola, tallo → hojas (pares opuestos, de abajo hacia arriba) → flor → fruto -->
+      <g class="inkg">
+        <use href="#p-stem" class="drw" stroke-width="2.2" style="--t:1.15s;--d:.05s"/>
+        <use href="#p-lf1" class="drw" stroke-width="1.6" style="--t:.6s;--d:.7s"/>
+        <use href="#p-mr1" class="drw mr" stroke-width="1" style="--t:.4s;--d:1.28s"/>
+        <use href="#p-lf2" class="drw" stroke-width="1.6" style="--t:.6s;--d:.88s"/>
+        <use href="#p-mr2" class="drw mr" stroke-width="1" style="--t:.4s;--d:1.46s"/>
+        <use href="#p-lf3" class="drw" stroke-width="1.6" style="--t:.6s;--d:1.1s"/>
+        <use href="#p-mr3" class="drw mr" stroke-width="1" style="--t:.4s;--d:1.62s"/>
+        <use href="#p-lf3b" class="drw" stroke-width="1.6" style="--t:.6s;--d:1.22s"/>
+        <use href="#p-mr3b" class="drw mr" stroke-width="1" style="--t:.4s;--d:1.74s"/>
+        <use href="#p-lf4" class="drw" stroke-width="1.6" style="--t:.6s;--d:1.4s"/>
+        <use href="#p-mr4" class="drw mr" stroke-width="1" style="--t:.4s;--d:1.9s"/>
+        <use href="#p-lf5" class="drw" stroke-width="1.6" style="--t:.6s;--d:1.58s"/>
+        <use href="#p-mr5" class="drw mr" stroke-width="1" style="--t:.4s;--d:2.06s"/>
+        <use href="#p-lf6" class="drw" stroke-width="1.6" style="--t:.6s;--d:1.76s"/>
+        <use href="#p-mr6" class="drw mr" stroke-width="1" style="--t:.4s;--d:2.22s"/>
+        <use href="#p-lf6b" class="drw" stroke-width="1.6" style="--t:.6s;--d:1.9s"/>
+        <use href="#p-mr6b" class="drw mr" stroke-width="1" style="--t:.4s;--d:2.34s"/>
+        <use href="#p-lf7" class="drw" stroke-width="1.5" style="--t:.4s;--d:2s"/>
+        <use href="#p-lf8" class="drw" stroke-width="1.5" style="--t:.4s;--d:2.1s"/>
+        <use href="#p-bud" class="drw" stroke-width="1.5" style="--t:.3s;--d:2.24s"/>
+        <use href="#p-ped1" class="drw" stroke-width="1.4" style="--t:.45s;--d:2.35s"/>
+        <use href="#p-ped3" class="drw" stroke-width="1.3" style="--t:.25s;--d:2.55s"/>
+        <use href="#p-bud2" class="drw" stroke-width="1.4" style="--t:.3s;--d:2.82s"/>
+        <use href="#p-pet1" class="drw" stroke-width="1.4" style="--t:.45s;--d:2.8s"/>
+        <use href="#p-pet2" class="drw" stroke-width="1.4" style="--t:.45s;--d:2.92s"/>
+        <use href="#p-pet3" class="drw" stroke-width="1.4" style="--t:.45s;--d:3.04s"/>
+        <use href="#p-pet4" class="drw" stroke-width="1.4" style="--t:.45s;--d:3.16s"/>
+        <use href="#p-stm" class="drw" stroke-width="1.1" style="--t:.8s;--d:3.3s"/>
+        <use href="#p-ped2" class="drw" stroke-width="1.6" style="--t:.3s;--d:3.65s"/>
+        <use href="#p-frt" class="drw" stroke-width="1.9" style="--t:.65s;--d:3.85s"/>
+        <use href="#p-cal" class="drw" stroke-width="1.3" style="--t:.25s;--d:4.55s"/>
+      </g>
+
+      <!-- anteras: pop escalonado siguiendo el orden en que la pluma llega a cada punta -->
+      <g fill="#a8232e" stroke="none">
+        <circle class="anth" cx="24" cy="206" r="2.1" style="--d:3.7s"/>
+        <circle class="anth" cx="20" cy="220" r="2.1" style="--d:3.78s"/>
+        <circle class="anth" cx="23" cy="234" r="2.1" style="--d:3.86s"/>
+        <circle class="anth" cx="30" cy="247" r="2.1" style="--d:3.94s"/>
+        <circle class="anth" cx="41" cy="257" r="2.1" style="--d:4.02s"/>
+        <circle class="anth" cx="55" cy="262" r="2.1" style="--d:4.1s"/>
+        <circle class="anth" cx="70" cy="261" r="2.1" style="--d:4.18s"/>
+        <circle class="anth" cx="84" cy="254" r="2.1" style="--d:4.26s"/>
+        <circle class="anth" cx="95" cy="243" r="2.1" style="--d:4.34s"/>
+      </g>
+
+      <!-- referencias de figura -->
+      <g font-family="Georgia,serif" font-style="italic" fill="#4d5c3c">
+        <path class="drw ldr" pathLength="1" d="M20 186 L33 197" style="--t:.3s;--d:3.7s"/>
+        <text class="wsh" x="14" y="182" font-size="12" style="--d:3.8s;--o:1">a.</text>
+        <path class="drw ldr" pathLength="1" d="M252 316 L238 320" style="--t:.25s;--d:4.5s"/>
+        <text class="wsh" x="256" y="320" font-size="12" style="--d:4.6s;--o:1">b.</text>
+        <text class="wsh" x="14" y="431" font-size="9.5" letter-spacing=".5" style="--d:1.6s;--o:1">a. flor · b. fruto — del natural, tinta y acuarela</text>
+      </g>
+    </svg>
+
+    <!-- sello -->
+    <div class="seal" aria-hidden="true">
+      <svg viewBox="0 0 116 116">
+        <defs>
+          <path id="spl-sctop" d="M17 58 A41 41 0 0 1 99 58"/>
+          <path id="spl-scbot" d="M14 58 A44 44 0 0 0 102 58"/>
+          <filter id="spl-rgh"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.7"/></filter>
+        </defs>
+        <g filter="url(#spl-rgh)" fill="#2d5016" stroke="#2d5016">
+          <circle cx="58" cy="58" r="54" fill="none" stroke-width="1.8"/>
+          <circle cx="58" cy="58" r="50" fill="none" stroke-width=".7"/>
+          <circle cx="58" cy="58" r="32" fill="none" stroke-width=".9"/>
+          <text font-size="11" letter-spacing="2.6" stroke="none" font-family="Georgia,serif"><textPath href="#spl-sctop" startOffset="50%" text-anchor="middle">JARDINEANDO</textPath></text>
+          <text font-size="9.5" letter-spacing="2" stroke="none" font-family="Georgia,serif"><textPath href="#spl-scbot" startOffset="50%" text-anchor="middle">MVD · 34,9° S</textPath></text>
+          <circle cx="12" cy="58" r="1.4" stroke="none"/>
+          <circle cx="104" cy="58" r="1.4" stroke="none"/>
+          <text x="58" y="55" font-size="9" letter-spacing="1.8" text-anchor="middle" stroke="none" font-family="Georgia,serif">EX HORTO</text>
+          <line x1="45" y1="60" x2="71" y2="60" stroke-width=".8"/>
+          <text x="58" y="72" font-size="9" letter-spacing="1.5" text-anchor="middle" stroke="none" font-family="Georgia,serif">MMXXVI</text>
+        </g>
+      </svg>
+    </div>
+  </figure>
+
+  <section class="cartouche">
+    <p class="latin" style="--d:.35s">Acca sellowiana</p>
+    <p class="common" style="--d:.5s">Guayabo del país</p>
+    <p class="loc" style="--d:.65s">Col. doméstica · Montevideo · Frente · Fondo · Interior</p>
+  </section>
+
+  <div class="slot">
+    <p class="micro" id="spl-micro">Entintando el guayabo del país…</p>
+    <a class="cta" id="spl-cta" href="../index.html">Entrar al jardín <span aria-hidden="true">→</span></a>
+  </div>
+
+  <div class="rule" id="spl-rule" role="progressbar" aria-label="Progreso de carga del pliego" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <div class="rulehead">
+      <span id="spl-stat" aria-live="polite">Cargando pliego</span>
+      <span class="skiphint" aria-hidden="true">tocá para saltar</span>
+      <span class="roman"><b id="spl-rom">—</b> / C</span>
+    </div>
+    <div class="ink"><i id="spl-fill"></i></div>
+  </div>
+
+  <footer class="foot">
+    <span>Propuesta B · «Herbario» — demo de splash</span>
+    <button class="again" id="spl-again" type="button" title="Repetir la secuencia">↻ Repetir</button>
+  </footer>
+</div>
+</div>
+
+<script>
+(function(){
+"use strict";
+var b=document.getElementById("splash");
+var $=function(id){return document.getElementById(id)};
+var micro=$("spl-micro"),fillEl=$("spl-fill"),rom=$("spl-rom"),stat=$("spl-stat"),rule=$("spl-rule"),again=$("spl-again");
+var fin=/[?&]fin\b/.test(location.search);
+var rm=!!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches);
+if(rm)b.classList.add("rm");
+if(fin)b.classList.add("rm","instant");
+var SPEED=rm?3:1; /* reduced motion: timeline JS también a un tercio */
+var LINES=[
+  "Entintando el guayabo del país…",
+  "Prensando hojas de liquidámbar…",
+  "Pasando en limpio las 52 especies…",
+  "Perfumando el pliego con romero y lavanda…",
+  "Buscando fruta en el presunto caqui… paciencia.",
+  "Acomodando las 56 palmeritas del vivero…"
+];
+/* punto de partida del microcopy: rota entre sesiones para que se vean todas las líneas */
+var wptr=0;
+try{wptr=(parseInt(localStorage.getItem("jardineando_splash_line")||"0",10)||0)%LINES.length;if(wptr<0)wptr=0}catch(e){}
+var PROF=[[0,0],[.5,16],[1.05,34],[1.9,54],[2.6,67],[3.05,74],[3.95,78],[4.35,90],[4.8,100]];
+var RN=[[100,"C"],[90,"XC"],[50,"L"],[40,"XL"],[10,"X"],[9,"IX"],[5,"V"],[4,"IV"],[1,"I"]];
+function roman(n){if(n<1)return "—";var s="",i;for(i=0;i<RN.length;i++){while(n>=RN[i][0]){s+=RN[i][1];n-=RN[i][0]}}return s}
+function sample(t){
+  if(t<=0)return 0;
+  for(var i=1;i<PROF.length;i++){
+    if(t<PROF[i][0]){
+      var a=PROF[i-1],c=PROF[i],u=(t-a[0])/(c[0]-a[0]);
+      u=u<.5?4*u*u*u:1-Math.pow(-2*u+2,3)/2;
+      return a[1]+(c[1]-a[1])*u;
+    }
+  }
+  return 100;
+}
+var t0=null,raf=0,rot=0,li=0,shown=1,over=false,skipped=false,lastR=-1,lastHalf=-1;
+function frame(ts){
+  if(t0===null)t0=ts-(fin?6000:0);
+  var p=skipped?100:sample((ts-t0)/1000*SPEED);
+  var half=Math.round(p*2);
+  if(half!==lastHalf){lastHalf=half;fillEl.style.width=(half/2)+"%"} /* solo escribe DOM cuando cambia */
+  var r=Math.round(p);
+  if(r!==lastR){lastR=r;rom.textContent=r<1?"—":roman(r);rule.setAttribute("aria-valuenow",String(r))}
+  if(p>=100){finish()}else{raf=requestAnimationFrame(frame)}
+}
+function finish(){
+  if(over)return;
+  over=true;clearInterval(rot);
+  fillEl.style.width="100%";rom.textContent="C";
+  rule.setAttribute("aria-valuenow","100");
+  stat.textContent="Pliego completo";
+  b.classList.add("done");
+}
+function rotate(){
+  rot=setInterval(function(){
+    if(over)return;
+    if(shown>=3){clearInterval(rot);return} /* máx. 3 líneas por corrida */
+    micro.classList.add("fade");
+    setTimeout(function(){
+      if(over)return;
+      li=(li+1)%LINES.length;shown++;
+      micro.textContent=LINES[li];
+      micro.classList.remove("fade");
+    },260);
+  },2400);
+}
+function start(){
+  over=false;skipped=false;t0=null;lastR=-1;lastHalf=-1;
+  li=wptr;shown=1;
+  wptr=(wptr+3)%LINES.length;
+  try{localStorage.setItem("jardineando_splash_line",String(wptr))}catch(e){}
+  micro.textContent=LINES[li];micro.classList.remove("fade");
+  stat.textContent="Cargando pliego";rom.textContent="—";
+  fillEl.style.width="0%";rule.setAttribute("aria-valuenow","0");
+  b.classList.add("play");
+  raf=requestAnimationFrame(frame);
+  rotate();
+}
+/* skip: tap/click en cualquier parte (o Escape) salta al estado final */
+function skip(){
+  if(over)return;
+  skipped=true;
+  b.classList.add("instant");
+}
+b.addEventListener("click",function(e){
+  if(over)return;
+  var t=e.target;
+  if(t&&t.closest&&t.closest("a,button"))return;
+  skip();
+});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")skip()});
+again.addEventListener("click",function(){
+  cancelAnimationFrame(raf);clearInterval(rot);
+  b.classList.remove("play","done");
+  if(!fin)b.classList.remove("instant");
+  void b.offsetWidth;
+  requestAnimationFrame(function(){requestAnimationFrame(start)});
+});
+start();
+})();
+</script>
+</body>
+</html>
