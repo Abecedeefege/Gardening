@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-05T14:29:07.390Z",
+  "_updated_at": "2026-07-05T14:29:09.225Z",
   "events": [
     {
       "_id": "mqnwmvsl8kvi3x",
@@ -1251,6 +1251,13 @@
       "value": "no",
       "page": "engage/2026-07-05-tasacion-jardin.html",
       "ts": "2026-07-05T14:29:08.556Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr7w04wjhie6d0",
+      "type": "proposal_rejected",
+      "proposal_id": "2026-07-05-tasacion-jardin",
+      "ts": "2026-07-05T14:29:10.483Z",
       "device": "sin-nombre"
     }
   ],
