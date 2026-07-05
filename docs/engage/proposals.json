@@ -295,24 +295,24 @@
       "title": "🏆 La Gala de Premios del Jardín (news-feed de premios/estatus)",
       "page": "engage/2026-07-04-gala-jardin.html",
       "created": "2026-07-04",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "La gala de premios (ESTATUS/ORGULLO + NÚMERO + HUMOR, discursos en 1ª persona) convierte a suscripción donde la competencia pura falló (Mundial rechazado): el pay-off es orgullo por datos reales, el eje que más convirtió (Récords: 😍+sub+141s).",
       "notified_by": [
         "2026-07-04-a"
       ],
-      "result_notes": null
+      "result_notes": "DROPPED 05/07 por la regla de no-supervivencia sin aprobación explícita. Soft-negative claro: su push promotor (2026-07-04-a) se despachó 12:43Z y el usuario estuvo ACTIVO ese día (abrió tareas 12:02Z y Memes 16:56Z) pero nunca abrió la Gala — cero click, visita o reacción hasta el cutoff 16:57Z. Lectura: mismo destino que el Mundial pese al giro de 'competencia' a 'premios' — el frame ceremonia/espectáculo (aunque el dato sea real) no genera curiosidad de apertura; el usuario ya tiene el eje orgullo-número cubierto por Récords (promovida). El envoltorio teatral parece SUMAR fricción, no gancho. No relanzar galas/ceremonias. Página + pitch eliminados del repo (git rm)."
     },
     {
       "id": "2026-07-04-memes-jardin",
       "title": "😂 Memes del Jardín (news-feed de humor absurdo verificado)",
       "page": "engage/2026-07-04-memes-jardin.html",
       "created": "2026-07-04",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "HUMOR es el único eje ganador sin probar: el meme con remate de dato real combina humor + asombro/número y es el formato más compartible del news-feed — debería disparar el 'increíble' y la suscripción que la intimidad pura no logró.",
       "notified_by": [
         "2026-07-04-b"
       ],
-      "result_notes": null
+      "result_notes": "PROMOVIDA 05/07. El 04/07 16:56Z (13:56 UY) el usuario abrió el push promotor (2026-07-04-b) → proposal_approved + dwell 71s / scroll 100%. Matiz: en la ventana sincronizada (cutoff 16:57Z, justo tras la aprobación) NO quedó registrada reacción 😍/😐 ni respuesta a la suscripción diaria — la señal de conversión quedó INCOMPLETA; puede aparecer en el sync de mañana. Por ahora cuenta como aprobación sólida (leyó todo, aprobó a los ~80s de abrir). El eje HUMOR con dato-remate al menos gana la aprobación; queda pendiente confirmar si convierte a suscripción. Promoción = página permanente + tarjeta en Ideas → ✨ Experiencias («😂 Memes del Jardín»). Footer: bloque de decisión reemplazado por nota de integración; reacciones/suscripción siguen logueando. El push promotor se retira."
     },
     {
       "id": "2026-07-04-expedientes-jardin",
@@ -337,6 +337,30 @@
         "2026-07-04-top3"
       ],
       "result_notes": "COMISIONADA y RECURRENTE: tools/gen_top3_tareas.py la regenera y encola cada 2 días (ancla 2026-07-04); el agente de /engagement la corre como paso obligatorio (self-gated por cadencia). Sus entries en queue (id *-top3, format tarea) son ADICIONALES a la cadencia de experiencias: no contarlas contra el cupo ni editarlas. NO dropear la página ni el tool sin pedido explícito del usuario."
+    },
+    {
+      "id": "2026-07-05-tasacion-jardin",
+      "title": "💰 La Gran Tasación del Jardín (news-feed catálogo de subasta/valor)",
+      "page": "engage/2026-07-05-tasacion-jardin.html",
+      "created": "2026-07-05",
+      "status": "pending",
+      "hypothesis": "Ciclo 36 (función paralela): ángulo TASACIÓN/SUBASTA — '¿cuánto vale tu jardín?'. Combina los 3 disparadores que más convirtieron: ESTATUS/ORGULLO (Récords), NÚMERO GRANDE protagonista y morbo directo (Chusmerío), con envoltorio liviano de catálogo de lujo. A diferencia de Gala/Mundial (ficción-protagonista, dropeadas), acá cada 'precio' se fundamenta en un dato real verificado y el pay-off es un número: el valor total del jardín. Hipótesis: saber cuánto vale LO TUYO dispara el 'increíble' + suscripción a la cotización diaria.",
+      "notified_by": [
+        "2026-07-05-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-05-efemerides-jardin",
+      "title": "🗞️ Un día como hoy — Efemérides de tu jardín (news-feed de historia/asombro)",
+      "page": "engage/2026-07-05-efemerides-jardin.html",
+      "created": "2026-07-05",
+      "status": "pending",
+      "hypothesis": "Ciclo 36 (función paralela): ángulo EFEMÉRIDES — el calendario histórico del jardín, con el número de años transcurridos como titular gigante (1880, 1926, 13.000 años). Es el ángulo 'un día como hoy' sin usar del TODO list: ASOMBRO+NÚMERO puro con hechos fechados reales, cero ficción. Hipótesis: la escala temporal ('eso histórico vive en TU cantero') dispara el mismo 'increíble' que Récords/Diario y motiva la suscripción a la efeméride diaria.",
+      "notified_by": [
+        "2026-07-05-b"
+      ],
+      "result_notes": null
     }
   ]
 }

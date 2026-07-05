@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un día como hoy — Efemérides de tu jardín</title>
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#3f6d20; --fondo:#f5faf0;
+    --sepia:#f3ead6; --sepia2:#eaddc0; --tinta:#3a2f22; --tinta2:#6b5a44;
+    --linea:#cdbb96; --rojo:#8a2f22;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--sepia);
+    color:var(--tinta);
+    font-family:Georgia,'Times New Roman',serif;
+    line-height:1.5;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:14px 16px 60px}
+  .volver{
+    display:inline-block;color:var(--tinta2);text-decoration:none;
+    font-size:.8rem;letter-spacing:.02em;margin-bottom:14px;
+    border-bottom:1px dotted var(--linea);
+  }
+  .volver:hover{color:var(--verde)}
+
+  /* Cabecera de diario */
+  .masthead{
+    border-top:3px double var(--tinta);
+    border-bottom:3px double var(--tinta);
+    padding:14px 0 12px;text-align:center;margin-bottom:6px;
+  }
+  .masthead .kicker{
+    font-size:.62rem;letter-spacing:.35em;text-transform:uppercase;
+    color:var(--tinta2);margin-bottom:6px;
+  }
+  .masthead h1{
+    font-size:2rem;line-height:1.05;margin:0;font-weight:700;
+    letter-spacing:-.01em;
+  }
+  .masthead .sub{
+    font-size:.72rem;letter-spacing:.06em;color:var(--tinta2);
+    margin-top:8px;font-style:italic;
+  }
+  .datebar{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--tinta2);border-bottom:1px solid var(--linea);
+    padding:6px 0;margin-bottom:20px;
+  }
+
+  .lede{
+    font-size:.95rem;font-style:italic;color:var(--tinta2);
+    text-align:center;margin:0 4px 26px;line-height:1.55;
+  }
+
+  /* Card efeméride */
+  .ef{
+    background:#fbf6ea;
+    border:1px solid var(--linea);
+    border-radius:3px;
+    box-shadow:0 1px 0 #d9c8a4, 0 6px 16px rgba(60,45,20,.07);
+    padding:18px 18px 20px;margin-bottom:22px;
+    position:relative;
+  }
+  .ef .tagline{
+    display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;
+    font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--rojo);border-bottom:1px solid var(--linea);
+    padding-bottom:8px;margin-bottom:12px;
+  }
+  .ef .tagline .zona{color:var(--tinta2);margin-left:auto}
+  .years{
+    font-family:Georgia,serif;font-weight:700;color:var(--verde);
+    line-height:.92;letter-spacing:-.02em;margin:2px 0 2px;
+  }
+  .years .big{display:block;font-size:3.4rem}
+  .years .unit{
+    display:block;font-size:.72rem;font-weight:400;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--tinta2);margin-top:6px;
+  }
+  .ef h2{
+    font-size:1.22rem;line-height:1.2;margin:12px 0 8px;color:var(--tinta);
+  }
+  .ef p.body{margin:0 0 12px;font-size:.98rem}
+  .ef p.body .strong{color:var(--rojo);font-weight:700}
+  .wherenow{
+    display:flex;align-items:center;gap:10px;
+    background:var(--fondo);border-left:4px solid var(--verde2);
+    padding:9px 12px;border-radius:2px;font-size:.86rem;
+  }
+  .wherenow .leaf{font-size:1.2rem;line-height:1}
+  .wherenow .txt{line-height:1.3}
+  .wherenow .txt b{color:var(--verde)}
+  .wherenow .code{
+    font-family:'Courier New',monospace;font-size:.72rem;
+    background:var(--verde);color:#f5faf0;padding:1px 6px;border-radius:3px;
+    letter-spacing:.04em;margin-left:2px;white-space:nowrap;
+  }
+  .ledgend{font-size:.66rem;color:var(--tinta2);font-style:italic;margin-top:10px}
+
+  .divisor{
+    text-align:center;color:var(--linea);letter-spacing:.5em;
+    margin:6px 0 22px;font-size:.8rem;
+  }
+
+  /* Bloques finales */
+  .block{
+    background:#fbf6ea;border:1px solid var(--linea);border-radius:3px;
+    padding:20px 18px;margin-bottom:20px;text-align:center;
+  }
+  .block h3{margin:0 0 6px;font-size:1.15rem;color:var(--verde)}
+  .block p{margin:0 auto 14px;font-size:.92rem;color:var(--tinta2);max-width:400px}
+  .btnrow{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  button{
+    font-family:inherit;font-size:.92rem;cursor:pointer;
+    padding:12px 16px;border-radius:8px;border:1px solid var(--linea);
+    background:#fff;color:var(--tinta);transition:transform .05s,background .15s;
+    min-height:44px;
+  }
+  button:active{transform:scale(.97)}
+  button.primary{background:var(--verde);color:#f5faf0;border-color:var(--verde)}
+  button.primary:hover{background:var(--verde2)}
+  button[aria-pressed="true"], button.selected{
+    background:var(--verde2);color:#fff;border-color:var(--verde2);
+  }
+  .react-hint,.q-hint{
+    display:block;min-height:1.1em;margin-top:12px;
+    font-size:.82rem;color:var(--verde);font-style:italic;
+  }
+  .engage-actions{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+    margin:26px 0 18px;
+  }
+  .engage-actions button{flex:1 1 200px;max-width:280px}
+  .engage-actions button:first-child{background:var(--verde);color:#f5faf0;border-color:var(--verde)}
+  .pitchlink{
+    display:block;text-align:center;font-size:.82rem;color:var(--tinta2);
+    text-decoration:none;border-bottom:1px dotted var(--linea);
+    width:max-content;margin:0 auto;padding-bottom:2px;
+  }
+  .pitchlink:hover{color:var(--verde)}
+  .foot{
+    text-align:center;font-size:.62rem;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--tinta2);margin-top:30px;
+    border-top:1px solid var(--linea);padding-top:12px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="volver" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+  <div class="masthead">
+    <div class="kicker">El archivo histórico de tu jardín</div>
+    <h1>Un día como hoy</h1>
+    <div class="sub">Efemérides — lo que pasó antes de que llegara a tu cantero</div>
+  </div>
+  <div class="datebar">
+    <span>Montevideo</span>
+    <span>Domingo 5 de julio, 2026</span>
+    <span>Edición invierno</span>
+  </div>
+
+  <p class="lede">
+    La historia no se guarda solo en los museos. Vive en tu jardín, echando raíces.
+    Estas diez plantas cargan siglos —a veces milenios— de viajes, naufragios,
+    híbridos y leyes. Y hoy están a unos pasos tuyo. Deslizá el archivo.
+  </p>
+
+  <!-- 1 -->
+  <article class="ef">
+    <div class="tagline"><span>Prehistoria · Frutal</span><span class="zona">Fondo · Este</span></div>
+    <div class="years"><span class="big">13.000</span><span class="unit">años atrás</span></div>
+    <h2>La palta que sobrevivió a los perezosos gigantes</h2>
+    <p class="body">Su semilla enorme estaba diseñada para que la tragara un <span class="strong">perezoso gigante</span>, un animal del tamaño de un auto que se extinguió hace 13.000 años. Cuando desaparecieron, la palta debió extinguirse con ellos. La salvó el cultivo humano.</p>
+    <div class="wherenow"><span class="leaf">🥑</span><div class="txt"><b>Vive hoy en tu jardín:</b> Palta uruguaya <span class="code">B-22</span></div></div>
+    <div class="ledgend">Un fantasma de la megafauna, sano y verde en el fondo.</div>
+  </article>
+
+  <!-- 2 -->
+  <article class="ef">
+    <div class="tagline"><span>~6000 a.C. · Frutal</span><span class="zona">Fondo · Este</span></div>
+    <div class="years"><span class="big">8000</span><span class="unit">años de cultivo</span></div>
+    <h2>El durazno no es persa: es un secreto chino de 8 milenios</h2>
+    <p class="body">Le dicen <span class="strong">Prunus persica</span> porque los romanos lo creyeron de Persia. Pero es de China, donde lo cultivan hace 8000 años. Solo estaba de paso por la ruta de la seda. Su piel aterciopelada es su armadura contra los hongos.</p>
+    <div class="wherenow"><span class="leaf">🍑</span><div class="txt"><b>Vive hoy en tu jardín:</b> Durazno <span class="code">B-30</span><span class="code">B-35</span></div></div>
+    <div class="ledgend">Ocho mil inviernos de mejora, floreciendo en tu fondo.</div>
+  </article>
+
+  <!-- 3 -->
+  <article class="ef">
+    <div class="tagline"><span>3000 a.C. · Cítrico</span><span class="zona">Fondo · Este</span></div>
+    <div class="years"><span class="big">~5000</span><span class="unit">años · el cítrico más antiguo</span></div>
+    <h2>La mandarina es la madre de todos los cítricos</h2>
+    <p class="body">Registrada desde el <span class="strong">3000 a.C.</span>, la mandarina es el cítrico más antiguo conocido: de ella descienden naranjas y limones modernos. Su nombre viene de los <em>mandarines</em>, los funcionarios imperiales chinos de túnica anaranjada.</p>
+    <div class="wherenow"><span class="leaf">🍊</span><div class="txt"><b>Vive hoy en tu jardín:</b> Mandarina criolla <span class="code">B-24</span></div></div>
+    <div class="ledgend">La abuela genética de medio supermercado, en tu cantero.</div>
+  </article>
+
+  <!-- 4 -->
+  <article class="ef">
+    <div class="tagline"><span>Antigüedad · Árbol resina</span><span class="zona">Fondo · Este</span></div>
+    <div class="years"><span class="big">3000</span><span class="unit">años perfumando dioses</span></div>
+    <h2>El árbol que masticaban los mayas y ofrecían los aztecas</h2>
+    <p class="body">Su tronco produce <span class="strong">storax</span>, un bálsamo aromático usado 3000 años en perfumería e incienso: los mayas lo masticaban como chicle y los aztecas lo quemaban para sus dioses. Su nombre lo dice todo: <em>ámbar líquido</em>.</p>
+    <div class="wherenow"><span class="leaf">🍁</span><div class="txt"><b>Vive hoy en tu jardín:</b> Liquidámbar <span class="code">B-37</span></div></div>
+    <div class="ledgend">El árbol junto a la pileta guarda incienso milenario en la savia.</div>
+  </article>
+
+  <!-- 5 -->
+  <article class="ef">
+    <div class="tagline"><span>~500 a.C. · Cítrico</span><span class="zona">Fondo · Este</span></div>
+    <div class="years"><span class="big">2500</span><span class="unit">años · e inventado por el hombre</span></div>
+    <h2>El limonero no existe en la naturaleza</h2>
+    <p class="body">No hay limoneros silvestres: es un <span class="strong">híbrido</span> de cidro y naranja amarga, nacido en India hace unos 2500 años. Cada limón viene de una flor única, y la cáscara tiene cuatro veces más vitamina C que el jugo.</p>
+    <div class="wherenow"><span class="leaf">🍋</span><div class="txt"><b>Vive hoy en tu jardín:</b> Limonero <span class="code">B-23</span></div></div>
+    <div class="ledgend">Una criatura que solo existe porque alguien la imaginó.</div>
+  </article>
+
+  <div class="divisor">· · ·</div>
+
+  <!-- 6 -->
+  <article class="ef">
+    <div class="tagline"><span>1768 · Trepadora</span><span class="zona">Fondo · Este</span></div>
+    <div class="years"><span class="big">258</span><span class="unit">años · casi tres siglos</span></div>
+    <h2>La descubrió la primera mujer en dar la vuelta al mundo</h2>
+    <p class="body">En 1768 la halló <span class="strong">Jeanne Baret</span>, la primera mujer en circunnavegar el planeta —viajaba disfrazada de hombre en la expedición de Bougainville—. Le pusieron el nombre del capitán, no el de ella. Recién en 2012 le dedicaron una variedad: <em>'Jeanne'</em>.</p>
+    <div class="wherenow"><span class="leaf">🌸</span><div class="txt"><b>Vive hoy en tu jardín:</b> Santa Rita / Buganvilia <span class="code">B-1</span></div></div>
+    <div class="ledgend">Doscientos cincuenta y ocho años después, sigue trepando el fondo.</div>
+  </article>
+
+  <!-- 7 -->
+  <article class="ef">
+    <div class="tagline"><span>1817 · Arbusto</span><span class="zona">Frente · Oeste</span></div>
+    <div class="years"><span class="big">209</span><span class="unit">años · sobrevivió a un naufragio</span></div>
+    <h2>La planta que se salvó cuando el barco se hundió</h2>
+    <p class="body">La encontró en China en 1817 el cirujano-botánico <span class="strong">Clarke Abel</span>, en una misión diplomática. Su barco naufragó al volver: se perdieron las semillas, pero la planta sobrevivió y hoy lleva su apellido.</p>
+    <div class="wherenow"><span class="leaf">🌿</span><div class="txt"><b>Vive hoy en tu jardín:</b> Abelia <span class="code">F-7</span></div></div>
+    <div class="ledgend">Dos siglos de suerte, floreciendo al sol vespertino del frente.</div>
+  </article>
+
+  <!-- 8 -->
+  <article class="ef">
+    <div class="tagline"><span>1830 · Bulbosa</span><span class="zona">Fondo · Este</span></div>
+    <div class="years"><span class="big">196</span><span class="unit">años · casi dos siglos vivos</span></div>
+    <h2>La flor de una duquesa que puede vivir 100 años</h2>
+    <p class="body">Lleva el nombre de <span class="strong">Charlotte Clive</span>, duquesa que fue la primera en florecerla en cultivo. Hay clivias en jardines reales ingleses que datan de 1830 y siguen vivas: una planta bien cuidada supera el siglo de vida.</p>
+    <div class="wherenow"><span class="leaf">🧡</span><div class="txt"><b>Vive hoy en tu jardín:</b> Clivia / Lirio del Cabo <span class="code">B-13</span></div></div>
+    <div class="ledgend">La tuya podría pasar de generación en generación.</div>
+  </article>
+
+  <!-- 9 -->
+  <article class="ef">
+    <div class="tagline"><span>1880 · Ornamental</span><span class="zona">Frente · Oeste</span></div>
+    <div class="years"><span class="big">146</span><span class="unit">años · un único ancestro</span></div>
+    <h2>Todos los ciruelos púrpura del mundo descienden de uno solo</h2>
+    <p class="body">En 1880 el horticultor francés <span class="strong">Pissard</span> trajo de Persia un único ejemplar de hojas moradas. Todos los ciruelos púrpura ornamentales del planeta —el tuyo incluido— son descendientes de ese árbol original.</p>
+    <div class="wherenow"><span class="leaf">🍇</span><div class="txt"><b>Vive hoy en tu jardín:</b> Ciruelo de jardín <span class="code">F-4</span></div></div>
+    <div class="ledgend">Un linaje de 146 años dándole color al frente.</div>
+  </article>
+
+  <!-- 10 -->
+  <article class="ef">
+    <div class="tagline"><span>1926 · Frutal</span><span class="zona">Fondo · Este</span></div>
+    <div class="years"><span class="big">100</span><span class="unit">años · exactamente un siglo</span></div>
+    <h2>Un árbol de 1926 alimenta al 80% del planeta</h2>
+    <p class="body">Todas las paltas Hass del mundo descienden de <span class="strong">un solo árbol</span> plantado por Rudolph Hass en California en 1926. No funciona por semilla: solo por injerto. Ese ejemplar cumple 100 años y es hoy el 80% de la palta exportada.</p>
+    <div class="wherenow"><span class="leaf">🥑</span><div class="txt"><b>Vive hoy en tu jardín:</b> Palta Hass <span class="code">B-36</span></div></div>
+    <div class="ledgend">Un clon centenario de aquel árbol único, en tu fondo.</div>
+  </article>
+
+  <!-- REACCIÓN -->
+  <div class="block">
+    <h3>¿Te voló la cabeza el archivo?</h3>
+    <p>Tu jardín acaba de contarte 13.000 años de historia. Decinos qué te pareció.</p>
+    <div class="btnrow">
+      <button type="button" onclick="engageReact('efemerides','love', this)">😍 ¡Increíble!</button>
+      <button type="button" onclick="engageReact('efemerides','meh', this)">😐 Más o menos</button>
+      <button type="button" onclick="engageReact('efemerides','no', this)">🙅 No es lo mío</button>
+    </div>
+    <span class="react-hint"></span>
+  </div>
+
+  <!-- SUSCRIPCIÓN -->
+  <div class="block">
+    <h3>Una efeméride fresca cada mañana</h3>
+    <p>¿Querés que cada día tu jardín te cuente una historia nueva? La historia no se repite, pero florece.</p>
+    <div class="btnrow">
+      <button type="button" class="primary" onclick="engageAnswer('efemerides-suscripcion-diaria','si', this)">🗞️ Sí, quiero mi efeméride diaria</button>
+      <button type="button" onclick="engageAnswer('efemerides-suscripcion-diaria','no', this)">No, gracias</button>
+    </div>
+    <span class="q-hint"></span>
+  </div>
+
+  <!-- DECISIÓN -->
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-07-05-efemerides-jardin')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-07-05-efemerides-jardin')">✕ No me interesa</button>
+  </div>
+
+  <a class="pitchlink" href="2026-07-05-efemerides-jardin-pitch.html">💼 Cómo se vende esto</a>
+
+  <div class="foot">Jardineando · El archivo histórico de tu jardín · Montevideo 2026</div>
+
+</div>
+<script src="engage.js"></script>
+</body>
+</html>

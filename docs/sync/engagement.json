@@ -2,93 +2,6 @@
   "_updated_at": "2026-07-04T16:57:40.855Z",
   "events": [
     {
-      "_id": "mqmaxre7lddntv",
-      "type": "notification_clicked",
-      "nid": "2026-06-20-a",
-      "page": "index.html",
-      "ts": "2026-06-20T11:56:18.026Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqmaxre8kdvw6z",
-      "type": "page_visit",
-      "page": "index.html",
-      "nid": "2026-06-20-a",
-      "src": "push",
-      "ts": "2026-06-20T11:56:18.026Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqmmp7czlmw3kq",
-      "type": "notification_clicked",
-      "nid": "2026-06-20-b",
-      "page": "engage/2026-06-20-postales-invierno.html",
-      "ts": "2026-06-20T17:25:34.210Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqmmp7czyxq494",
-      "type": "page_visit",
-      "page": "engage/2026-06-20-postales-invierno.html",
-      "nid": "2026-06-20-b",
-      "src": "push",
-      "ts": "2026-06-20T17:25:34.210Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqmmpne8fj766m",
-      "type": "reaction",
-      "target": "postal-crespon",
-      "value": "wow",
-      "page": "engage/2026-06-20-postales-invierno.html",
-      "ts": "2026-06-20T17:25:54.992Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqmmpvl7ijvu2u",
-      "type": "reaction",
-      "target": "postal-durazno",
-      "value": "love",
-      "page": "engage/2026-06-20-postales-invierno.html",
-      "ts": "2026-06-20T17:26:05.611Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqmmq3szq9n3qo",
-      "type": "reaction",
-      "target": "postal-aguaribay",
-      "value": "love",
-      "page": "engage/2026-06-20-postales-invierno.html",
-      "ts": "2026-06-20T17:26:16.259Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqmmqhhyiskkw1",
-      "type": "dwell",
-      "seconds": 60,
-      "scroll_pct": 100,
-      "page": "engage/2026-06-20-postales-invierno.html",
-      "ts": "2026-06-20T17:26:34.005Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqmyppg9btmrni",
-      "type": "notification_clicked",
-      "nid": "2026-06-20-c",
-      "page": "index.html",
-      "ts": "2026-06-20T23:01:53.046Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqmyppg91xrgrf",
-      "type": "page_visit",
-      "page": "index.html",
-      "nid": "2026-06-20-c",
-      "src": "push",
-      "ts": "2026-06-20T23:01:53.046Z",
-      "device": "sin-nombre"
-    },
-    {
       "_id": "mqnwmvsl8kvi3x",
       "type": "notification_clicked",
       "nid": "2026-06-21-a",
@@ -1336,6 +1249,12 @@
       "sent": 3,
       "clicked": 2,
       "visits": 2,
+      "approvals": 0
+    },
+    "2026-06-20": {
+      "sent": 3,
+      "clicked": 3,
+      "visits": 3,
       "approvals": 0
     }
   }
