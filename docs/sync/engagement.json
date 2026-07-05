@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-05T22:17:52.075Z",
+  "_updated_at": "2026-07-05T22:18:01.131Z",
   "events": [
     {
       "_id": "mqnwmvsl8kvi3x",
@@ -1276,6 +1276,15 @@
       "scroll_pct": 100,
       "page": "engage/mundo-jardin.html",
       "ts": "2026-07-05T22:17:53.173Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr8cr3y5jzx45e",
+      "type": "dwell",
+      "seconds": 9,
+      "scroll_pct": 100,
+      "page": "engage/mundo-jardin.html",
+      "ts": "2026-07-05T22:18:02.813Z",
       "device": "sin-nombre"
     }
   ],
