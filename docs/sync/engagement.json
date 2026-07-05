@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-04T16:57:40.855Z",
+  "_updated_at": "2026-07-05T11:58:51.923Z",
   "events": [
     {
       "_id": "mqnwmvsl8kvi3x",
@@ -1199,6 +1199,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-04-memes-jardin.html",
       "ts": "2026-07-04T16:57:43.197Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr7qmuijflgj7d",
+      "type": "notification_clicked",
+      "nid": "2026-07-05-task-dia",
+      "page": "tareas.html",
+      "ts": "2026-07-05T11:58:52.407Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr7qmuijktbsal",
+      "type": "page_visit",
+      "page": "tareas.html",
+      "nid": "2026-07-05-task-dia",
+      "src": "push",
+      "ts": "2026-07-05T11:58:52.407Z",
       "device": "sin-nombre"
     }
   ],
