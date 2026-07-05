@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-05T14:29:05.887Z",
+  "_updated_at": "2026-07-05T14:29:07.390Z",
   "events": [
     {
       "_id": "mqnwmvsl8kvi3x",
@@ -1242,6 +1242,15 @@
       "value": "no",
       "page": "engage/2026-07-05-tasacion-jardin.html",
       "ts": "2026-07-05T14:29:06.793Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr7w03f09ruy8t",
+      "type": "answer",
+      "qid": "tasacion-suscripcion-diaria",
+      "value": "no",
+      "page": "engage/2026-07-05-tasacion-jardin.html",
+      "ts": "2026-07-05T14:29:08.556Z",
       "device": "sin-nombre"
     }
   ],
