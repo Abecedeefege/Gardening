@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-05T22:17:27.352Z",
+  "_updated_at": "2026-07-05T22:17:52.075Z",
   "events": [
     {
       "_id": "mqnwmvsl8kvi3x",
@@ -1267,6 +1267,15 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-05-tasacion-jardin.html",
       "ts": "2026-07-05T14:29:16.882Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr8cqwidtkbmmu",
+      "type": "dwell",
+      "seconds": 25,
+      "scroll_pct": 100,
+      "page": "engage/mundo-jardin.html",
+      "ts": "2026-07-05T22:17:53.173Z",
       "device": "sin-nombre"
     }
   ],
