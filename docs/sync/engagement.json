@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-05T22:18:01.131Z",
+  "_updated_at": "2026-07-06T14:56:12.236Z",
   "events": [
     {
       "_id": "mqpkni36m41ry3",
@@ -1225,6 +1225,23 @@
       "scroll_pct": 100,
       "page": "engage/mundo-jardin.html",
       "ts": "2026-07-05T22:18:02.813Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr9ceqqfryq3p7",
+      "type": "notification_clicked",
+      "nid": "2026-07-06-task-semana",
+      "page": "tareas.html",
+      "ts": "2026-07-06T14:56:11.989Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr9ceqqfm655d0",
+      "type": "page_visit",
+      "page": "tareas.html",
+      "nid": "2026-07-06-task-semana",
+      "src": "push",
+      "ts": "2026-07-06T14:56:11.989Z",
       "device": "sin-nombre"
     }
   ],
