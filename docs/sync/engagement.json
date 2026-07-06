@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-06T17:53:39.932Z",
+  "_updated_at": "2026-07-06T17:53:49.148Z",
   "events": [
     {
       "_id": "mqpkni36m41ry3",
@@ -1259,6 +1259,15 @@
       "nid": "2026-07-06-b",
       "src": "push",
       "ts": "2026-07-06T17:53:39.476Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr9ir65xzzhmml",
+      "type": "reaction",
+      "target": "chat",
+      "value": "meh",
+      "page": "engage/2026-07-06-chat-jardin.html",
+      "ts": "2026-07-06T17:53:49.557Z",
       "device": "sin-nombre"
     }
   ],
