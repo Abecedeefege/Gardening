@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-06T14:56:12.236Z",
+  "_updated_at": "2026-07-06T17:53:39.932Z",
   "events": [
     {
       "_id": "mqpkni36m41ry3",
@@ -1242,6 +1242,23 @@
       "nid": "2026-07-06-task-semana",
       "src": "push",
       "ts": "2026-07-06T14:56:11.989Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr9iqydyk07q55",
+      "type": "notification_clicked",
+      "nid": "2026-07-06-b",
+      "page": "engage/2026-07-06-chat-jardin.html",
+      "ts": "2026-07-06T17:53:39.476Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr9iqydygd22jf",
+      "type": "page_visit",
+      "page": "engage/2026-07-06-chat-jardin.html",
+      "nid": "2026-07-06-b",
+      "src": "push",
+      "ts": "2026-07-06T17:53:39.476Z",
       "device": "sin-nombre"
     }
   ],
