@@ -2,24 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-06-21-a",
-      "ts": "2026-06-21T12:09:51.322Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-21-b",
-      "ts": "2026-06-21T16:20:56.474Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-21-c",
-      "ts": "2026-06-21T22:49:47.041Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-06-22-a",
       "ts": "2026-06-22T15:23:30.962Z",
       "status_code": 201

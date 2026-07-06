@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c0e0a">
+<title>💼 La Lista Negra del Jardín — pitch de monetización</title>
+<style>
+  :root{
+    --bg:#0c0e0a; --card:#15190f; --card2:#1c2115;
+    --ink:#f5faf0; --ink2:#a9b39c; --ink3:#6e7862;
+    --line:rgba(245,250,240,.09);
+    --rojo1:#e0483f; --rojo2:#ff6a5e;
+    --tape:#f2c53d; --verde:#7cc142; --verde2:#2d5016;
+    --pad:max(16px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.6;
+    background-image:radial-gradient(90% 40% at 50% -6%, rgba(242,197,61,.07), transparent);
+    -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#05060a;
+    color:#8b9280; text-decoration:none; font-size:13px; font-weight:700; }
+  .back:active{ opacity:.65; }
+  .wrap{ max-width:600px; margin:0 auto; padding:0 var(--pad) 40px; }
+
+  .tape-strip{ background:repeating-linear-gradient(-45deg,var(--tape) 0 22px,#111309 22px 44px);
+    color:#111309; font-family:var(--mono); font-weight:800; font-size:11px; letter-spacing:.16em;
+    text-transform:uppercase; padding:7px var(--pad); text-align:center; overflow:hidden; white-space:nowrap; }
+  .tape-strip span{ background:rgba(17,19,9,.82); color:var(--tape); padding:3px 10px; border-radius:3px; }
+
+  header{ padding:34px 0 8px; text-align:center; }
+  header .kick{ font-family:var(--mono); font-size:11px; font-weight:800; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--tape); }
+  header h1{ font-size:clamp(28px,8vw,40px); font-weight:900; letter-spacing:-.03em; color:#fff;
+    margin:8px 0 10px; line-height:1.02; text-transform:uppercase; }
+  header h1 span{ color:var(--rojo2); }
+  header p{ font-size:15px; color:var(--ink2); max-width:46ch; margin:0 auto; }
+
+  section{ margin-top:26px; }
+  h2{ font-size:12px; font-family:var(--mono); font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--tape); margin-bottom:14px; padding-bottom:9px; border-bottom:1px solid var(--line);
+    display:flex; align-items:center; gap:8px; }
+
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px 16px; margin-bottom:14px;
+    box-shadow:0 12px 30px rgba(0,0,0,.4); }
+  .card p{ font-size:14.5px; color:var(--ink2); }
+  .card p + p{ margin-top:10px; }
+  .card b{ color:#fff; } .card .hl{ color:var(--tape); font-weight:700; }
+
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  @media(max-width:460px){ .grid2{ grid-template-columns:1fr; } }
+  .stat{ background:var(--card2); border:1px solid var(--line); border-radius:13px; padding:14px 13px; }
+  .stat .n{ font-family:var(--mono); font-weight:900; font-size:26px; color:var(--rojo2); line-height:1; }
+  .stat .l{ font-size:12.5px; color:var(--ink2); margin-top:6px; line-height:1.4; }
+
+  /* modelo de monetización */
+  .model{ background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; margin-bottom:14px;
+    box-shadow:0 12px 30px rgba(0,0,0,.4); }
+  .model .mtop{ display:flex; align-items:center; gap:12px; padding:15px 16px 12px; }
+  .model .badge{ flex:0 0 auto; width:42px; height:42px; border-radius:11px; display:grid; place-items:center;
+    font-size:22px; background:linear-gradient(150deg,#20261a,#0e1109); box-shadow:inset 0 0 0 1px var(--line); }
+  .model .mt{ min-width:0; flex:1; }
+  .model .tag{ font-family:var(--mono); font-size:9.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+  .model.inno .tag{ color:var(--verde); } .model.crea .tag{ color:var(--tape); }
+  .model h3{ font-size:17px; font-weight:900; color:#fff; letter-spacing:-.01em; line-height:1.15; margin-top:2px; }
+  .model .mbody{ padding:0 16px 15px; }
+  .model .mbody p{ font-size:14px; color:var(--ink2); }
+  .model .mbody p + p{ margin-top:9px; }
+  .model .mbody b{ color:#fff; }
+  .model .fund{ margin-top:11px; padding:11px 12px; border-radius:11px;
+    background:rgba(124,193,66,.06); border:1px solid rgba(124,193,66,.22);
+    font-size:12.8px; color:#d3ddc7; line-height:1.5; }
+  .model .fund b{ color:var(--verde); }
+  .model .price{ display:inline-block; margin-top:10px; font-family:var(--mono); font-size:12px; font-weight:800;
+    color:var(--tape); background:rgba(242,197,61,.1); border:1px solid rgba(242,197,61,.3);
+    border-radius:6px; padding:3px 9px; }
+
+  .divider{ text-align:center; font-family:var(--mono); font-size:11px; font-weight:800; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--ink3); margin:28px 0 16px; position:relative; }
+
+  .close{ background:linear-gradient(165deg,#221a0e,#14100a); border:1px solid rgba(242,197,61,.28);
+    border-radius:16px; padding:20px 16px; text-align:center; margin-top:26px; }
+  .close h3{ font-size:20px; font-weight:900; color:#fff; margin-bottom:8px; }
+  .close p{ font-size:14px; color:var(--ink2); max-width:44ch; margin:0 auto; }
+  .close .big{ font-family:var(--mono); font-weight:900; font-size:34px; color:var(--tape); margin:12px 0 4px; }
+
+  footer{ text-align:center; margin-top:30px; font-size:12px; color:var(--ink3); font-family:var(--mono); }
+  footer a{ color:var(--tape); text-decoration:none; font-weight:800; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="tape-strip"><span>◆ Documento interno · pitch de ventas ◆</span></div>
+
+<div class="wrap">
+
+  <header>
+    <div class="kick">Unidad de Delitos Botánicos · Business Case</div>
+    <h1>La Lista Negra:<br>del <span>morbo</span> al modelo</h1>
+    <p>Cómo un dossier diario de "plantas peligrosas" se convierte en un producto con retención, viralidad y seis vías de ingreso — sin traicionar el dato real, que es lo que engancha.</p>
+  </header>
+
+  <!-- PROPUESTA DE VALOR -->
+  <section>
+    <h2>◆ 1 · La propuesta de valor</h2>
+    <div class="card">
+      <p><b>El insight:</b> lo que retiene no es el jardín "lindo" — es el jardín <b>peligroso, chismoso y sorprendente</b>. La gente frena el scroll ante "esta planta de tu living puede dejarte sin voz". Es el mismo motor del true-crime y los tabloides, aplicado a lo que ya tenés en tu casa.</p>
+      <p><b>El diferencial defendible:</b> cada afirmación sale de un <span class="hl">catálogo real y verificado</span> con código de ficha (I-2, B-34, F-9…). No es contenido genérico de internet: es <b>tu</b> jardín, personalizado y auditable. Eso genera confianza y hace el producto imposible de copiar sin los datos.</p>
+      <p><b>La promesa:</b> asombro diario en 90 segundos de lectura, con la seguridad de que todo es cierto. Morbo con rigor. Ese contraste — "parece clickbait pero es ciencia" — es la marca.</p>
+    </div>
+  </section>
+
+  <!-- MERCADO -->
+  <section>
+    <h2>◆ 2 · El mercado</h2>
+    <div class="grid2">
+      <div class="stat"><div class="n">+40</div><div class="l">especies catalogadas hoy — un pozo de contenido para meses de expedientes.</div></div>
+      <div class="stat"><div class="n">365</div><div class="l">expedientes/año potenciales combinando toxinas, impostoras, invasoras y defensas.</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">audiencias: dueños de jardín, familias con niños/mascotas, y curiosos de botánica.</div></div>
+      <div class="stat"><div class="n">$0</div><div class="l">costo marginal por lectura — es estático, sin backend, cero infraestructura.</div></div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <p><b>Segmentos de expansión:</b> el formato "expediente peligroso" es replicable a cualquier jardín, escuela, plaza o vivero del país. La toxicología de plantas domésticas es una <b>preocupación real de padres y dueños de mascotas</b> — hay demanda de saber qué de lo que tienen en casa es riesgoso. Ese ángulo de <span class="hl">seguridad + morbo</span> abre puertas que el jardín "decorativo" no abre.</p>
+    </div>
+  </section>
+
+  <!-- MODELOS INNOVADORES -->
+  <section>
+    <h2>◆ 3 · Tres modelos innovadores</h2>
+
+    <div class="model inno">
+      <div class="mtop">
+        <span class="badge">🔓</span>
+        <div class="mt"><div class="tag">Innovador · suscripción</div>
+          <h3>Expediente diario Premium</h3></div>
+      </div>
+      <div class="mbody">
+        <p>El caso del día es gratis; el <b>archivo completo</b> (buscar por toxina, filtrar "peligroso para gatos", el mapa de riesgo de tu jardín, alertas cuando fructifica algo tóxico) va detrás de una suscripción baja mensual.</p>
+        <div class="fund"><b>Por qué funciona:</b> la CTA de suscripción diaria ya está integrada y medís conversión real. Contenido perecedero (uno por día) crea el hábito; el archivo y las herramientas crean la razón de pagar.</div>
+        <span class="price">USD 2–4 / mes</span>
+      </div>
+    </div>
+
+    <div class="model inno">
+      <div class="mtop">
+        <span class="badge">🏷️</span>
+        <div class="mt"><div class="tag">Innovador · afiliación contextual</div>
+          <h3>Kit de seguridad afiliado</h3></div>
+      </div>
+      <div class="mbody">
+        <p>Cada expediente termina naturalmente en una necesidad: <b>guantes de cuero</b> para la Santa Rita espinosa, <b>cartelería "tóxica, lejos de mascotas"</b> para la caña muda, cercos o macetas altas. Links afiliados a viveros y ferreterías locales, contextualizados al caso.</p>
+        <div class="fund"><b>Por qué funciona:</b> la intención de compra nace del propio contenido — el lector acaba de enterarse del riesgo. Conversión altísima porque el producto resuelve el problema que le mostraste hace 3 segundos.</div>
+        <span class="price">8–15% por venta referida</span>
+      </div>
+    </div>
+
+    <div class="model inno">
+      <div class="mtop">
+        <span class="badge">🏢</span>
+        <div class="mt"><div class="tag">Innovador · B2B licenciable</div>
+          <h3>Motor de fichas para viveros y apps</h3></div>
+      </div>
+      <div class="mbody">
+        <p>El verdadero activo es el <b>catálogo verificado con toxicología y código de ficha</b>. Se licencia como API o widget a viveros, escuelas, apps de jardinería y aseguradoras de mascotas que necesitan datos de seguridad de plantas confiables y con fuente.</p>
+        <div class="fund"><b>Por qué funciona:</b> el contenido de cara al usuario es el escaparate; la base de datos es el producto real. Un dato "peligroso para perros / fuente verificada" tiene valor legal y comercial para terceros.</div>
+        <span class="price">Licencia B2B anual</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">— — — ahora, lo ultra-creativo — — —</div>
+
+  <!-- MODELOS ULTRA-CREATIVOS -->
+  <section>
+    <h2>◆ 4 · Tres modelos ultra-creativos</h2>
+
+    <div class="model crea">
+      <div class="mtop">
+        <span class="badge">🃏</span>
+        <div class="mt"><div class="tag">Ultra-creativo · físico coleccionable</div>
+          <h3>Cartas "Lista Negra" — mazo de amenazas</h3></div>
+      </div>
+      <div class="mbody">
+        <p>Un mazo tipo Top Trumps: cada carta es una planta con su <b>nivel de amenaza, toxina, "arma" y código de ficha</b>. Se juega comparando peligrosidad. Se vende impreso y como print-on-demand; ediciones "tu jardín" personalizadas por encargo.</p>
+        <div class="fund"><b>Por qué funciona:</b> convierte el formato de expediente (que ya tiene meter de amenaza y ficha) en un objeto físico regalable y viral. La botánica peligrosa es tema de sobremesa — el juego lo hace social.</div>
+        <span class="price">USD 12–20 / mazo</span>
+      </div>
+    </div>
+
+    <div class="model crea">
+      <div class="mtop">
+        <span class="badge">🎫</span>
+        <div class="mt"><div class="tag">Ultra-creativo · experiencia</div>
+          <h3>Tour "CSI del jardín" guiado</h3></div>
+      </div>
+      <div class="mbody">
+        <p>Recorrido presencial o en video: el dueño (o un guía) lleva a visitantes por el jardín mostrando <b>los 8 sospechosos en vivo</b> — la savia de la caña muda, las espinas de la buganvilia, los coquitos del ligustro prófugo. Formato "detrás de la escena del crimen botánico".</p>
+        <div class="fund"><b>Por qué funciona:</b> el morbo tiene mejor conversión que la belleza — la gente paga por tocar (con guante) lo peligroso. Escuelas y clubes de jardinería son clientes naturales; se filma y se vuelve contenido evergreen.</div>
+        <span class="price">Entrada + reproducciones</span>
+      </div>
+    </div>
+
+    <div class="model crea">
+      <div class="mtop">
+        <span class="badge">🕵️</span>
+        <div class="mt"><div class="tag">Ultra-creativo · gamificación patrocinada</div>
+          <h3>"¿Quién es el culpable?" — misterio semanal</h3></div>
+      </div>
+      <div class="mbody">
+        <p>Cada semana, un mini-caso: "una mascota del barrio se enfermó, ¿qué planta fue?". El lector investiga entre las fichas y adivina. La resolución la <b>patrocina una marca</b> (alimento de mascotas, veterinaria, seguro), que aparece como "unidad forense oficial".</p>
+        <div class="fund"><b>Por qué funciona:</b> el true-crime interactivo maximiza el retorno diario (venís a resolver, no solo a leer). El patrocinio se integra al relato sin romper la inmersión — el sponsor es parte del juego, no un banner.</div>
+        <span class="price">Sponsorship semanal / mensual</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <div class="close">
+    <h3>El pitch en una línea</h3>
+    <div class="big">Morbo verificado = retención</div>
+    <p>La belleza del jardín no frena el scroll; el peligro sí. La Lista Negra toma el activo que ya existe — un catálogo real y auditable — y lo empaqueta como el género más adictivo que hay: el true-crime. Seis vías de ingreso, cero infraestructura, un dato imposible de falsear como foso defensivo.</p>
+  </div>
+
+  <footer>
+    <a href="2026-07-06-lista-negra-jardin.html">← Volver al expediente</a>
+    <div style="margin-top:8px">Business case · La Lista Negra del Jardín · Pacha Mama · 06/07/2026</div>
+  </footer>
+
+</div>
+</body></html>

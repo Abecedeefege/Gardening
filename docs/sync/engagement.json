@@ -2,66 +2,6 @@
   "_updated_at": "2026-07-05T22:18:01.131Z",
   "events": [
     {
-      "_id": "mqnwmvsl8kvi3x",
-      "type": "notification_clicked",
-      "nid": "2026-06-21-a",
-      "page": "index.html",
-      "ts": "2026-06-21T14:51:28.241Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqnwmvslsm25ho",
-      "type": "page_visit",
-      "page": "index.html",
-      "nid": "2026-06-21-a",
-      "src": "push",
-      "ts": "2026-06-21T14:51:28.241Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqo7t4yeyrkkdd",
-      "type": "notification_clicked",
-      "nid": "2026-06-21-b",
-      "page": "engage/2026-06-21-postales-invierno-2.html",
-      "ts": "2026-06-21T20:04:15.829Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqo7t4yfzijhn2",
-      "type": "page_visit",
-      "page": "engage/2026-06-21-postales-invierno-2.html",
-      "nid": "2026-06-21-b",
-      "src": "push",
-      "ts": "2026-06-21T20:04:15.829Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqo7t8yq6ot867",
-      "type": "dwell",
-      "seconds": 5,
-      "scroll_pct": 10,
-      "page": "engage/2026-06-21-postales-invierno-2.html",
-      "ts": "2026-06-21T20:04:21.026Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqoeb2z4zzbhd2",
-      "type": "notification_clicked",
-      "nid": "2026-06-21-c",
-      "page": "index.html",
-      "ts": "2026-06-21T23:06:10.761Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqoeb2z49jwgkq",
-      "type": "page_visit",
-      "page": "index.html",
-      "nid": "2026-06-21-c",
-      "src": "push",
-      "ts": "2026-06-21T23:06:10.761Z",
-      "device": "sin-nombre"
-    },
-    {
       "_id": "mqpkni36m41ry3",
       "type": "notification_clicked",
       "nid": "2026-06-22-a",
@@ -1338,6 +1278,12 @@
       "approvals": 0
     },
     "2026-06-20": {
+      "sent": 3,
+      "clicked": 3,
+      "visits": 3,
+      "approvals": 0
+    },
+    "2026-06-21": {
       "sent": 3,
       "clicked": 3,
       "visits": 3,

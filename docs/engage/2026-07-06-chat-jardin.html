@@ -1,0 +1,401 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2d5016"><title>💬 El Grupo del Jardín</title>
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#3f6e22; --verde3:#5a9134;
+    --bg:#dcead0; --panel:#f5faf0;
+    --ink:#16210f; --ink2:#5d6b50; --line:#d7e5c6;
+    --burbuja:#ffffff; --sys:#fdf6dd;
+    --pad:max(14px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,'Helvetica Neue',system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); color:var(--ink); line-height:1.42; background:var(--bg);
+    background-image:
+      radial-gradient(circle at 18% 22%, rgba(90,145,52,.10) 0 42px, transparent 43px),
+      radial-gradient(circle at 78% 8%, rgba(45,80,22,.07) 0 34px, transparent 35px),
+      radial-gradient(circle at 62% 58%, rgba(90,145,52,.08) 0 48px, transparent 49px),
+      radial-gradient(circle at 12% 78%, rgba(45,80,22,.06) 0 38px, transparent 39px),
+      radial-gradient(circle at 88% 84%, rgba(90,145,52,.09) 0 30px, transparent 31px);
+    background-size:420px 420px;
+    -webkit-font-smoothing:antialiased; }
+
+  /* Regla: PRIMER elemento del body */
+  .back{ display:block; color:#eaf3df; text-decoration:none; font-size:13px; font-weight:700;
+    padding:11px var(--pad); background:#1c3510; width:100%; letter-spacing:.01em; }
+  .back:active{ opacity:.75; }
+
+  .wrap{ max-width:560px; margin:0 auto; min-height:100vh; }
+
+  /* Header de grupo, estilo app de mensajería */
+  header.chat{ position:sticky; top:0; z-index:50; background:var(--verde); color:#fff;
+    display:flex; align-items:center; gap:11px; padding:10px var(--pad);
+    box-shadow:0 2px 10px rgba(22,33,15,.25); }
+  header.chat .arrow{ font-size:20px; opacity:.85; }
+  header.chat .gav{ width:42px; height:42px; border-radius:50%; background:#eaf3df; flex:0 0 auto;
+    display:grid; place-items:center; font-size:22px; box-shadow:inset 0 0 0 2px rgba(45,80,22,.25); }
+  header.chat .gt{ min-width:0; flex:1; }
+  header.chat .gt h1{ font-size:16.5px; font-weight:800; letter-spacing:-.01em; line-height:1.15;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  header.chat .gt p{ font-size:11.5px; color:#cfe3ba; white-space:nowrap; overflow:hidden;
+    text-overflow:ellipsis; margin-top:2px; }
+  header.chat .icons{ font-size:17px; opacity:.8; letter-spacing:6px; flex:0 0 auto; }
+
+  .chatbox{ padding:14px 10px 6px; display:flex; flex-direction:column; gap:3px; }
+
+  .pill{ align-self:center; font-size:11px; font-weight:700; color:#6b5d2e; background:var(--sys);
+    border:1px solid #eadfae; border-radius:9px; padding:5px 11px; margin:9px 0;
+    box-shadow:0 1px 2px rgba(22,33,15,.08); text-align:center; }
+  .pill.gris{ color:var(--ink2); background:#eef4e6; border-color:var(--line); }
+
+  /* Mensajes */
+  .msg{ display:flex; gap:8px; align-items:flex-end; max-width:88%; margin-top:10px; }
+  .msg.sig{ margin-top:2px; }
+  .msg .av{ width:32px; height:32px; border-radius:50%; flex:0 0 auto; display:grid; place-items:center;
+    font-size:17px; background:#fff; box-shadow:0 1px 3px rgba(22,33,15,.18); }
+  .msg.sig .av{ visibility:hidden; height:0; }
+  .b{ background:var(--burbuja); border-radius:13px; border-top-left-radius:4px;
+    padding:7px 10px 6px; box-shadow:0 1px 2px rgba(22,33,15,.13); min-width:0; position:relative; }
+  .msg.sig .b{ border-top-left-radius:13px; }
+  .nm{ font-size:12.5px; font-weight:800; display:flex; align-items:center; gap:6px; margin-bottom:2px; }
+  .nm .code{ font-size:9.5px; font-weight:800; color:var(--verde); background:#eef6e4;
+    border:1px solid var(--line); border-radius:999px; padding:1px 7px; letter-spacing:.03em; }
+  .tx{ font-size:14.5px; color:#1f2b15; overflow-wrap:break-word; }
+  .tx b{ color:var(--verde); }
+  .hora{ display:block; text-align:right; font-size:10px; color:#9aa88b; margin-top:3px; }
+
+  /* Colores por planta */
+  .c-romero{color:#0d7a5f} .c-durazno{color:#c2451e} .c-liquid{color:#8a1f4f}
+  .c-manda{color:#d97706} .c-limon{color:#a08409} .c-hass{color:#456b1a}
+  .c-uru{color:#2f6d4f} .c-ligu{color:#5b21b6} .c-ana{color:#1d4ed8}
+  .c-hort{color:#be3f8f} .c-santa{color:#c026a8} .c-b41{color:#52525b}
+
+  /* Reacciones en burbuja */
+  .rx{ display:inline-flex; gap:4px; margin:2px 0 4px 42px; }
+  .msg + .rx{ margin-top:-4px; }
+  .rx span{ font-size:11px; background:#fff; border:1px solid var(--line); border-radius:999px;
+    padding:2px 8px; box-shadow:0 1px 2px rgba(22,33,15,.1); color:var(--ink2); font-weight:700; }
+
+  /* Escribiendo… */
+  .typing .b{ padding:11px 14px; }
+  .dots{ display:inline-flex; gap:4px; align-items:center; }
+  .dots i{ width:7px; height:7px; border-radius:50%; background:#9db38a; display:inline-block;
+    animation:tuc 1.2s infinite ease-in-out; }
+  .dots i:nth-child(2){ animation-delay:.18s; } .dots i:nth-child(3){ animation-delay:.36s; }
+  @keyframes tuc{ 0%,60%,100%{ transform:translateY(0); opacity:.5 } 30%{ transform:translateY(-4px); opacity:1 } }
+
+  /* Aparición de burbujas */
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .45s ease, transform .45s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* Bloques de cierre */
+  .block{ background:#fff; border-radius:18px; padding:22px 18px; margin:16px 12px;
+    text-align:center; box-shadow:0 6px 22px rgba(22,33,15,.15); }
+  .block h3{ font-size:20px; font-weight:900; letter-spacing:-.01em; color:var(--ink); margin-bottom:6px; }
+  .block p{ font-size:14px; color:var(--ink2); max-width:38ch; margin:0 auto 14px; }
+  .btns{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+  .block button{ font-family:inherit; font-size:15px; font-weight:800; cursor:pointer;
+    border:1.5px solid var(--line); background:#f6faf1; color:var(--ink); border-radius:13px;
+    padding:13px 16px; transition:transform .12s, background .12s; }
+  .block button:active{ transform:scale(.95); }
+  .block button.sel{ background:var(--verde); color:#fff; border-color:var(--verde); }
+  .block button:disabled{ cursor:default; opacity:.55; }
+  .block button.sel:disabled{ opacity:1; }
+  .block button.si{ background:var(--verde); color:#fff; border-color:var(--verde); }
+  .react-hint,.q-hint{ display:block; min-height:18px; margin-top:12px; font-size:13px;
+    font-weight:700; color:var(--verde2); }
+
+  .engage-actions{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+    padding:6px 12px 40px; }
+  .engage-actions button{ font-family:inherit; font-size:14.5px; font-weight:800; cursor:pointer;
+    border:none; border-radius:13px; padding:14px 18px; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:#eef4e6; color:var(--ink2); }
+  .engage-actions button:active{ transform:scale(.96); }
+
+  .nota{ text-align:center; font-size:11.5px; color:var(--ink2); padding:4px 20px 14px; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="wrap">
+
+<header class="chat">
+  <span class="arrow">‹</span>
+  <span class="gav">💬</span>
+  <div class="gt">
+    <h1>Los del Cantero 🌿</h1>
+    <p>13 integrantes: Romero, Mandarina, Limonero, Durazno, Liquidámbar, B-41…</p>
+  </div>
+  <span class="icons">📞 ⋮</span>
+</header>
+
+<div class="chatbox">
+
+  <div class="pill reveal">Lunes 6 de julio · pleno invierno en Montevideo 🥶</div>
+  <div class="pill gris reveal">🕵️ B-41 sigue sin completar la descripción de su perfil</div>
+
+  <!-- Apertura: romero flexea que está en flor -->
+  <div class="msg reveal"><span class="av">🌿</span><div class="b">
+    <div class="nm c-romero">Romero <span class="code">B-26</span></div>
+    <div class="tx">buen día grupo ☀️ hermosa mañana de julio para estar <b>EN FLOR</b> como yo</div>
+    <span class="hora">08:02</span></div></div>
+  <div class="msg sig reveal"><span class="av">🌿</span><div class="b">
+    <div class="tx">sí, leyeron bien: florezco de <b>junio a octubre, en pleno invierno</b>. porque puedo 💅</div>
+    <span class="hora">08:02</span></div></div>
+
+  <div class="msg reveal"><span class="av">🍑</span><div class="b">
+    <div class="nm c-durazno">Durazno <span class="code">B-30 · B-35</span></div>
+    <div class="tx">romero son las 8 de la mañana</div>
+    <span class="hora">08:03</span></div></div>
+  <div class="msg sig reveal"><span class="av">🍑</span><div class="b">
+    <div class="tx">estoy <b>sin una sola hoja</b>, durmiendo hasta agosto que me toca florecer, y vos me despertás para flexear</div>
+    <span class="hora">08:03</span></div></div>
+
+  <div class="msg reveal"><span class="av">🍁</span><div class="b">
+    <div class="nm c-liquid">Liquidámbar <span class="code">B-37</span></div>
+    <div class="tx">dejalo, los perennes son así. igual yo estoy pelado y sigo siendo el más interesante del grupo: mi tronco larga <b>storax</b>, un bálsamo que <b>los mayas masticaban como chicle</b> y los aztecas ofrendaban a sus dioses. 3000 años de vigencia 💁</div>
+    <span class="hora">08:04</span></div></div>
+  <div class="rx reveal"><span>🤯 4</span><span>😂 2</span></div>
+
+  <div class="msg reveal"><span class="av">🌿</span><div class="b">
+    <div class="nm c-romero">Romero <span class="code">B-26</span></div>
+    <div class="tx">chicle jaja. yo directamente te mejoro el cerebro: hay estudios universitarios de que olerme antes de un examen <b>mejora la memoria un 15%</b>. doping legal 🧠</div>
+    <span class="hora">08:05</span></div></div>
+
+  <div class="pill gris reveal">08:12 — se despertaron los cítricos</div>
+
+  <!-- Cítricos: madre e hijo -->
+  <div class="msg reveal"><span class="av">🍊</span><div class="b">
+    <div class="nm c-manda">Mandarina criolla <span class="code">B-24</span></div>
+    <div class="tx">buen día a todos menos a los pelados 🧡 acá abajo repartiendo fruta <b>en pleno invierno</b>, como corresponde</div>
+    <span class="hora">08:12</span></div></div>
+  <div class="msg sig reveal"><span class="av">🍊</span><div class="b">
+    <div class="tx">y un respeto que soy el <b>cítrico más antiguo conocido: 3000 a.C.</b> las naranjas y los limones modernos descienden de MÍ</div>
+    <span class="hora">08:12</span></div></div>
+
+  <div class="msg reveal"><span class="av">🍋</span><div class="b">
+    <div class="nm c-limon">Limonero <span class="code">B-23</span></div>
+    <div class="tx">mamá basta</div>
+    <span class="hora">08:13</span></div></div>
+
+  <div class="msg reveal"><span class="av">🍊</span><div class="b">
+    <div class="nm c-manda">Mandarina criolla <span class="code">B-24</span></div>
+    <div class="tx">respetá a tu madre 😌</div>
+    <span class="hora">08:13</span></div></div>
+
+  <div class="msg reveal"><span class="av">🍋</span><div class="b">
+    <div class="nm c-limon">Limonero <span class="code">B-23</span></div>
+    <div class="tx">el respeto me lo gano solo: doy limones <b>los 12 meses del año</b>. soy el único de este grupo que no conoce las vacaciones</div>
+    <span class="hora">08:14</span></div></div>
+  <div class="msg sig reveal"><span class="av">🍋</span><div class="b">
+    <div class="tx">eso sí, confesión: <b>no existo en estado silvestre</b>. soy un híbrido de cidro × naranja amarga inventado en India hace ~2500 años. un experimento que salió BIEN</div>
+    <span class="hora">08:14</span></div></div>
+  <div class="msg sig reveal"><span class="av">🍋</span><div class="b">
+    <div class="tx">PD: mi cáscara tiene <b>4× más vitamina C que mi jugo</b>. hace 2500 años que me exprimen la parte equivocada</div>
+    <span class="hora">08:15</span></div></div>
+  <div class="rx reveal"><span>😂 5</span><span>🍋 3</span></div>
+
+  <div class="pill gris reveal">08:31 — empieza el chisme</div>
+
+  <!-- Chisme: anacahuita vs ligustro -->
+  <div class="msg reveal"><span class="av">🇺🇾</span><div class="b">
+    <div class="nm c-ana">Anacahuita <span class="code">B-16</span></div>
+    <div class="tx">cambiando de tema… ¿alguien más vio a F-9 <b>tirándole coquitos a los zorzales</b> todo el otoño? 👀</div>
+    <span class="hora">08:31</span></div></div>
+
+  <div class="msg reveal"><span class="av">🫐</span><div class="b">
+    <div class="nm c-ligu">Ligustro <span class="code">F-9</span></div>
+    <div class="tx">se llama marketing</div>
+    <span class="hora">08:32</span></div></div>
+
+  <div class="msg reveal"><span class="av">🇺🇾</span><div class="b">
+    <div class="nm c-ana">Anacahuita <span class="code">B-16</span></div>
+    <div class="tx">se llama ser <b>ESPECIE INVASORA</b>. los pájaros te comen los frutos y te esparcen las semillas por los bordes de monte de media Sudamérica. estás fichado</div>
+    <span class="hora">08:32</span></div></div>
+
+  <div class="msg reveal"><span class="av">🫐</span><div class="b">
+    <div class="nm c-ligu">Ligustro <span class="code">F-9</span></div>
+    <div class="tx">envidia pura. mis coquitos son un éxito rotundo entre <b>zorzales y mirlos</b>, los devoran</div>
+    <span class="hora">08:33</span></div></div>
+
+  <div class="msg reveal"><span class="av">🇺🇾</span><div class="b">
+    <div class="nm c-ana">Anacahuita <span class="code">B-16</span></div>
+    <div class="tx">para los humanos son <b>tóxicos</b> 🙃</div>
+    <span class="hora">08:33</span></div></div>
+
+  <div class="msg reveal"><span class="av">🫐</span><div class="b">
+    <div class="nm c-ligu">Ligustro <span class="code">F-9</span></div>
+    <div class="tx"><b>LIGERAMENTE</b> tóxicos. no exageremos</div>
+    <span class="hora">08:34</span></div></div>
+
+  <div class="msg reveal"><span class="av">🇺🇾</span><div class="b">
+    <div class="nm c-ana">Anacahuita <span class="code">B-16</span></div>
+    <div class="tx">mirá F-9: yo soy nativa, <b>protegida por ley nacional desde 1986</b>, y con mi madera los charrúas hacían arcos. no somos iguales. NO somos iguales</div>
+    <span class="hora">08:35</span></div></div>
+  <div class="rx reveal"><span>🇺🇾 6</span><span>🔥 3</span><span>😬 2</span></div>
+
+  <div class="pill gris reveal">09:02 — drama de paltas</div>
+
+  <!-- Paltas -->
+  <div class="msg reveal"><span class="av">🥑</span><div class="b">
+    <div class="nm c-hass">Palta Hass <span class="code">B-36</span></div>
+    <div class="tx">gente, ¿vieron mi fruta de invierno? piel rugosa, pulpa cremosa y un linaje impecable: <b>todas las Hass del planeta descendemos de UN único árbol</b> que plantó Rudolph Hass en 1926 🥑👑</div>
+    <span class="hora">09:02</span></div></div>
+  <div class="msg sig reveal"><span class="av">🥑</span><div class="b">
+    <div class="tx">y ojo que no me reproduzco por semilla eh. <b>solo por injerto</b>. exclusividad total. el <b>~80% de la palta que se exporta en el mundo</b> es de mi familia</div>
+    <span class="hora">09:03</span></div></div>
+
+  <div class="msg reveal"><span class="av">🌳</span><div class="b">
+    <div class="nm c-uru">Palta uruguaya <span class="code">B-22</span></div>
+    <div class="tx">ay arrancó con el pedigrí de nuevo</div>
+    <span class="hora">09:04</span></div></div>
+  <div class="msg sig reveal"><span class="av">🌳</span><div class="b">
+    <div class="tx">yo evolucioné una semilla gigante para que me tragara un <b>perezoso gigante</b>. se extinguieron <b>hace 13.000 años</b>. ¿y yo? acá sigo, gracias a los humanos. superé un duelo evolutivo, no me hables de linaje</div>
+    <span class="hora">09:04</span></div></div>
+  <div class="rx reveal"><span>😭 6</span><span>❤️ 3</span></div>
+
+  <div class="msg reveal"><span class="av">🍑</span><div class="b">
+    <div class="nm c-durazno">Durazno <span class="code">B-30 · B-35</span></div>
+    <div class="tx">hablando de historias mal contadas: a mí me pusieron <i>Prunus persica</i>, "de Persia"… y soy <b>CHINO</b>. 8000 años de cultivo, llegué a Europa por la ruta de la seda, y todavía con el nombre mal puesto</div>
+    <span class="hora">09:05</span></div></div>
+  <div class="msg sig reveal"><span class="av">🍑</span><div class="b">
+    <div class="tx">y mi piel aterciopelada, que ustedes manosean en verano, no es estética: es <b>defensa contra hongos</b>. es armadura</div>
+    <span class="hora">09:06</span></div></div>
+
+  <div class="pill gris reveal">09:18 — las divas</div>
+
+  <!-- Hortensia + Santa Rita -->
+  <div class="msg reveal"><span class="av">💠</span><div class="b">
+    <div class="nm c-hort">Hortensia <span class="code">B-5a</span></div>
+    <div class="tx">chicas consulta seria: ¿a alguien le sobran <b>clavos oxidados</b>? quiero volver AZUL en primavera. soy la única acá que elige su color según lo que come: <b>suelo ácido = azul, alcalino = rosa</b> 💇‍♀️</div>
+    <span class="hora">09:18</span></div></div>
+
+  <div class="msg reveal"><span class="av">🌸</span><div class="b">
+    <div class="nm c-santa">Santa Rita <span class="code">B-1</span></div>
+    <div class="tx">te apoyo reina. ya que estamos, historia: a mí me descubrió <b>Jeanne Baret en 1768</b> — la primera mujer en dar la vuelta al mundo, embarcada <b>disfrazada de hombre</b> porque no la dejaban subir</div>
+    <span class="hora">09:19</span></div></div>
+  <div class="msg sig reveal"><span class="av">🌸</span><div class="b">
+    <div class="tx">¿y el nombre? se lo pusieron al capitán Bougainville. a ella le dedicaron una variedad <b>recién en 2012</b>. doscientos cuarenta y cuatro años después 🙄</div>
+    <span class="hora">09:20</span></div></div>
+  <div class="rx reveal"><span>💜 7</span><span>👏 4</span></div>
+  <div class="msg sig reveal"><span class="av">🌸</span><div class="b">
+    <div class="tx">ah, y esas "flores" fucsia que me ven en verano… son <b>brácteas</b>. mi flor de verdad es <b>blanca y minúscula</b>, va escondida adentro. siglos haciendo ilusionismo</div>
+    <span class="hora">09:20</span></div></div>
+
+  <div class="pill gris reveal">09:40 — el interrogatorio</div>
+
+  <!-- B-41 misterio -->
+  <div class="msg reveal"><span class="av">🌿</span><div class="b">
+    <div class="nm c-romero">Romero <span class="code">B-26</span></div>
+    <div class="tx">che, ya que estamos todos… <b>B-41</b>, ¿nos vas a decir de una vez QUÉ SOS?</div>
+    <span class="hora">09:40</span></div></div>
+
+  <div class="msg reveal"><span class="av">🍁</span><div class="b">
+    <div class="nm c-liquid">Liquidámbar <span class="code">B-37</span></div>
+    <div class="tx">en su ficha dice "caqui", <i>Diospyros kaki</i>. que en griego significa <b>"fruto de los dioses"</b>, nada menos</div>
+    <span class="hora">09:41</span></div></div>
+
+  <div class="msg reveal"><span class="av">🍊</span><div class="b">
+    <div class="nm c-manda">Mandarina criolla <span class="code">B-24</span></div>
+    <div class="tx">¿FRUTO? ¿qué fruto? <b>nadie le vio una flor ni un fruto desde que existe el catálogo</b> 💀</div>
+    <span class="hora">09:41</span></div></div>
+
+  <div class="msg reveal"><span class="av">🕵️</span><div class="b">
+    <div class="nm c-b41">B-41 <span class="code">B-41</span></div>
+    <div class="tx">soy reservado</div>
+    <span class="hora">09:42</span></div></div>
+
+  <div class="msg reveal"><span class="av">🇺🇾</span><div class="b">
+    <div class="nm c-ana">Anacahuita <span class="code">B-16</span></div>
+    <div class="tx">sos un expediente abierto, eso sos</div>
+    <span class="hora">09:42</span></div></div>
+
+  <div class="msg reveal"><span class="av">🕵️</span><div class="b">
+    <div class="nm c-b41">B-41 <span class="code">B-41</span></div>
+    <div class="tx">solo digo que un caqui de verdad tendría <b>fruta colgando en esta época</b>… saquen sus conclusiones. o no 🌫️</div>
+    <span class="hora">09:43</span></div></div>
+  <div class="rx reveal"><span>👀 8</span><span>🕵️ 3</span></div>
+
+  <div class="msg reveal"><span class="av">🌿</span><div class="b">
+    <div class="nm c-romero">Romero <span class="code">B-26</span></div>
+    <div class="tx">anotado en actas: <b>B-41 sigue en veremos</b>. el admin no olvida (memoria +15%, recuerden)</div>
+    <span class="hora">09:44</span></div></div>
+
+  <!-- Difenbaquia -->
+  <div class="pill reveal">🤫 Difenbaquia · I-2 fue agregada al grupo</div>
+
+  <div class="msg reveal"><span class="av">🍊</span><div class="b">
+    <div class="nm c-manda">Mandarina criolla <span class="code">B-24</span></div>
+    <div class="tx">¿y esta quién es?</div>
+    <span class="hora">09:55</span></div></div>
+
+  <div class="msg reveal"><span class="av">🌿</span><div class="b">
+    <div class="nm c-romero">Romero <span class="code">B-26</span></div>
+    <div class="tx">la de interior. no esperes que hable: le dicen <b>"caña muda"</b> porque su savia tiene cristales de oxalato de calcio que <b>te paralizan las cuerdas vocales</b> si la masticás</div>
+    <span class="hora">09:56</span></div></div>
+
+  <div class="msg reveal"><span class="av">🍊</span><div class="b">
+    <div class="nm c-manda">Mandarina criolla <span class="code">B-24</span></div>
+    <div class="tx">perfecta para este grupo, acá sobran los que hablan 😌</div>
+    <span class="hora">09:57</span></div></div>
+  <div class="rx reveal"><span>😂 9</span></div>
+
+  <div class="msg typing reveal"><span class="av">🤫</span><div class="b">
+    <div class="nm" style="color:#6b7280">Difenbaquia <span class="code">I-2</span></div>
+    <div class="dots"><i></i><i></i><i></i></div>
+  </div></div>
+  <div class="pill gris reveal">🤫 Difenbaquia está escribiendo… (desde que la plantaron)</div>
+
+  <div class="nota reveal">Los datos en <b style="color:var(--verde)">verde</b> son reales, verificados en el catálogo del jardín.<br>El chat… casi.</div>
+</div>
+
+<!-- Reacción -->
+<div class="block react reveal">
+  <h3>¿Qué te pareció el grupo?</h3>
+  <p>Tus plantas chatearon 2 horas y dejaron 15 datos reales. ¿Te voló la cabeza?</p>
+  <div class="btns">
+    <button type="button" onclick="engageReact('chat','love', this)">😍 ¡Increíble!</button>
+    <button type="button" onclick="engageReact('chat','meh', this)">😐 Más o menos</button>
+    <button type="button" onclick="engageReact('chat','no', this)">🙅 No es lo mío</button>
+  </div>
+  <span class="react-hint"></span>
+</div>
+
+<!-- Suscripción -->
+<div class="block reveal">
+  <h3>💬 El grupo sigue chateando mañana</h3>
+  <p>B-41 sigue sin confesar, el ligustro se la tiene jurada a la anacahuita y en agosto se despierta el durazno. Cada día, un hilo nuevo con datos reales de TUS plantas.</p>
+  <div class="btns">
+    <button type="button" class="si" onclick="engageAnswer('chat-suscripcion-diaria','si', this)">💬 Sí, quiero leer el grupo a diario</button>
+    <button type="button" onclick="engageAnswer('chat-suscripcion-diaria','no', this)">No, gracias</button>
+  </div>
+  <span class="q-hint"></span>
+</div>
+
+<div class="engage-actions">
+  <button onclick="engageApprove('2026-07-06-chat-jardin')">✅ Aprobar esta mejora</button>
+  <button onclick="engageRejected('2026-07-06-chat-jardin')">✕ No me interesa</button>
+</div>
+
+</div>
+<script src="engage.js"></script>
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach ? els.forEach(function(e){e.classList.add('in');}) : null;
+    for (var i=0;i<els.length;i++) els[i].classList.add('in');
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { rootMargin:'0px 0px -8% 0px' });
+  for (var j=0;j<els.length;j++) io.observe(els[j]);
+})();
+</script>
+</body></html>

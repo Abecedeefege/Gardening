@@ -343,22 +343,46 @@
       "title": "💰 La Gran Tasación del Jardín (news-feed catálogo de subasta/valor)",
       "page": "engage/2026-07-05-tasacion-jardin.html",
       "created": "2026-07-05",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 36 (función paralela): ángulo TASACIÓN/SUBASTA — '¿cuánto vale tu jardín?'. Combina los 3 disparadores que más convirtieron: ESTATUS/ORGULLO (Récords), NÚMERO GRANDE protagonista y morbo directo (Chusmerío), con envoltorio liviano de catálogo de lujo. A diferencia de Gala/Mundial (ficción-protagonista, dropeadas), acá cada 'precio' se fundamenta en un dato real verificado y el pay-off es un número: el valor total del jardín. Hipótesis: saber cuánto vale LO TUYO dispara el 'increíble' + suscripción a la cotización diaria.",
       "notified_by": [
         "2026-07-05-a"
       ],
-      "result_notes": null
+      "result_notes": "RECHAZADA EXPLÍCITAMENTE 05/07. El usuario abrió el push promotor (2026-07-05-a, 11:25 UY) y leyó TODO (dwell 198s / scroll 100% — 2º dwell más largo del canal) pero disparó la tripleta negativa completa: reaction 'no' + answer 'tasacion-suscripcion-diaria'=NO + proposal_rejected (14:29Z). Lectura: el ángulo DINERO/VALOR ('cuánto vale lo tuyo') retiene la atención pero genera rechazo activo — quizás poner precio a plantas con valor afectivo des-romantiza el jardín. El eje estatus/orgullo funciona con superlativos (Récords) pero NO monetizado. No relanzar tasaciones/precios. Página + pitch eliminados (git rm)."
     },
     {
       "id": "2026-07-05-efemerides-jardin",
       "title": "🗞️ Un día como hoy — Efemérides de tu jardín (news-feed de historia/asombro)",
       "page": "engage/2026-07-05-efemerides-jardin.html",
       "created": "2026-07-05",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 36 (función paralela): ángulo EFEMÉRIDES — el calendario histórico del jardín, con el número de años transcurridos como titular gigante (1880, 1926, 13.000 años). Es el ángulo 'un día como hoy' sin usar del TODO list: ASOMBRO+NÚMERO puro con hechos fechados reales, cero ficción. Hipótesis: la escala temporal ('eso histórico vive en TU cantero') dispara el mismo 'increíble' que Récords/Diario y motiva la suscripción a la efeméride diaria.",
       "notified_by": [
         "2026-07-05-b"
+      ],
+      "result_notes": "DROPPED 06/07 por la regla de no-supervivencia sin aprobación explícita. Soft-negative: su push promotor (2026-07-05-b) se despachó 14:07 UY y el usuario estuvo activo después (abrió Tasación 11:25 UY y mundo-jardin 19:17 UY) pero nunca abrió Efemérides — cero click/visita hasta el sync de 22:18Z. Junto al no-open de la Gala confirma: el gancho HISTÓRICO/temporal ('hace N años...') no genera curiosidad de apertura aunque el número sea gigante — el número convierte cuando habla del PRESENTE del jardín (Récords) y no del pasado. Página + pitch eliminados (git rm)."
+    },
+    {
+      "id": "2026-07-06-lista-negra-jardin",
+      "title": "⚠️ La Lista Negra del Jardín (news-feed de morbo/peligro verificado)",
+      "page": "engage/2026-07-06-lista-negra-jardin.html",
+      "created": "2026-07-06",
+      "status": "pending",
+      "hypothesis": "Ciclo 37 (función paralela): ángulo MORBO/PELIGRO puro — el dossier de las plantas 'peligrosas' que viven en SU casa (caña muda que deja sin voz, tóxicas, invasoras), cada una con dato real verificado. El morbo directo es el eje con mejor conversión (Chusmerío sub SÍ) y acá se maximiza: 'esto vive en tu living y puede lastimarte' es el titular con más gancho de apertura posible sin ficción. Hipótesis: peligro-real-en-casa dispara apertura + 'increíble' + suscripción al expediente diario.",
+      "notified_by": [
+        "2026-07-06-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-06-chat-jardin",
+      "title": "💬 El Grupo del Jardín (chat grupal de las plantas, 1ª persona + humor + chisme)",
+      "page": "engage/2026-07-06-chat-jardin.html",
+      "created": "2026-07-06",
+      "status": "pending",
+      "hypothesis": "Ciclo 37 (función paralela): fusión de los 3 ejes que MÁS convirtieron — voz social 1ª persona (Feed, dwell récord 208s), chisme (Chusmerío) y humor con remate de dato (Memes) — en el formato más familiar del Río de la Plata: el grupo de WhatsApp. Cada burbuja es una planta chateando con un dato real como remate, anclado en el invierno actual. Hipótesis: el envoltorio chat-grupal (liviano, no ceremonial) supera al feed en identificación y dispara 'increíble' + suscripción a 'el grupo sigue mañana'.",
+      "notified_by": [
+        "2026-07-06-b"
       ],
       "result_notes": null
     }
