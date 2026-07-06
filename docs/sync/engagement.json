@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-06T17:53:51.415Z",
+  "_updated_at": "2026-07-06T17:53:52.862Z",
   "events": [
     {
       "_id": "mqpkni36m41ry3",
@@ -1277,6 +1277,13 @@
       "value": "no",
       "page": "engage/2026-07-06-chat-jardin.html",
       "ts": "2026-07-06T17:53:51.860Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr9ir8zfg2c9q6",
+      "type": "proposal_rejected",
+      "proposal_id": "2026-07-06-chat-jardin",
+      "ts": "2026-07-06T17:53:53.211Z",
       "device": "sin-nombre"
     }
   ],
