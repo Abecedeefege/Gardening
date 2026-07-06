@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-06T17:53:49.148Z",
+  "_updated_at": "2026-07-06T17:53:51.415Z",
   "events": [
     {
       "_id": "mqpkni36m41ry3",
@@ -1268,6 +1268,15 @@
       "value": "meh",
       "page": "engage/2026-07-06-chat-jardin.html",
       "ts": "2026-07-06T17:53:49.557Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr9ir7xw6ze3jb",
+      "type": "answer",
+      "qid": "chat-suscripcion-diaria",
+      "value": "no",
+      "page": "engage/2026-07-06-chat-jardin.html",
+      "ts": "2026-07-06T17:53:51.860Z",
       "device": "sin-nombre"
     }
   ],
