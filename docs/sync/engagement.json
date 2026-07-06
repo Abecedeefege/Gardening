@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-06T17:53:52.862Z",
+  "_updated_at": "2026-07-06T22:20:55.522Z",
   "events": [
     {
       "_id": "mqpkni36m41ry3",
@@ -1284,6 +1284,15 @@
       "type": "proposal_rejected",
       "proposal_id": "2026-07-06-chat-jardin",
       "ts": "2026-07-06T17:53:53.211Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mr9irc2u9cbntd",
+      "type": "dwell",
+      "seconds": 18,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-06-chat-jardin.html",
+      "ts": "2026-07-06T17:53:57.221Z",
       "device": "sin-nombre"
     }
   ],
