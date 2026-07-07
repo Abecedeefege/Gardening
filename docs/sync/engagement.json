@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-07T02:49:05.155Z",
+  "_updated_at": "2026-07-07T02:49:07.504Z",
   "events": [
     {
       "_id": "mqpkni36m41ry3",
@@ -1411,6 +1411,15 @@
       "src": "direct",
       "ts": "2026-07-07T02:49:04.657Z",
       "device": "sin-nombre"
+    },
+    {
+      "_id": "mra1vl4wf94p47",
+      "type": "dwell",
+      "seconds": 4,
+      "scroll_pct": 8,
+      "page": "engage/2026-06-30-chusmerio-jardin.html",
+      "ts": "2026-07-07T02:49:08.288Z",
+      "device": "pix9"
     }
   ],
   "daily_summary": {
