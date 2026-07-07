@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-07T02:48:52.370Z",
+  "_updated_at": "2026-07-07T02:49:05.155Z",
   "events": [
     {
       "_id": "mqpkni36m41ry3",
@@ -1402,6 +1402,15 @@
       "page": "engage/2026-06-30-superpoderes-jardin.html",
       "ts": "2026-07-07T02:48:53.629Z",
       "device": "pix9"
+    },
+    {
+      "_id": "mra1vic4pxn7i9",
+      "type": "page_visit",
+      "page": "engage/2026-06-30-chusmerio-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-07T02:49:04.657Z",
+      "device": "sin-nombre"
     }
   ],
   "daily_summary": {
