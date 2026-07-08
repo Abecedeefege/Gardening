@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-08T18:00:07.900Z",
+  "_updated_at": "2026-07-08T18:00:09.591Z",
   "events": [
     {
       "_id": "mqsrgvt0xkysm0",
@@ -1309,6 +1309,15 @@
       "nid": "2026-07-08-top3",
       "src": "push",
       "ts": "2026-07-08T18:00:08.250Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrcdv003jxb5tc",
+      "type": "page_visit",
+      "page": "engage/top3-tareas.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-08T18:00:08.640Z",
       "device": "sin-nombre"
     }
   ],
