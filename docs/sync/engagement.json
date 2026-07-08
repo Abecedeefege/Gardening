@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-08T14:27:08.273Z",
+  "_updated_at": "2026-07-08T17:59:34.723Z",
   "events": [
     {
       "_id": "mqsrgvt0xkysm0",
@@ -1275,6 +1275,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-08-entrevista-jardin.html",
       "ts": "2026-07-08T14:27:09.036Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrcduab5z1o2ke",
+      "type": "notification_clicked",
+      "nid": "2026-07-08-b",
+      "page": "engage/2026-07-08-trending-jardin.html",
+      "ts": "2026-07-08T17:59:35.344Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrcduab5ob9h68",
+      "type": "page_visit",
+      "page": "engage/2026-07-08-trending-jardin.html",
+      "nid": "2026-07-08-b",
+      "src": "push",
+      "ts": "2026-07-08T17:59:35.344Z",
       "device": "sin-nombre"
     }
   ],
