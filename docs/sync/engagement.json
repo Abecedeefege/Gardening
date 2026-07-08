@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-08T17:59:34.723Z",
+  "_updated_at": "2026-07-08T18:00:07.900Z",
   "events": [
     {
       "_id": "mqsrgvt0xkysm0",
@@ -1292,6 +1292,23 @@
       "nid": "2026-07-08-b",
       "src": "push",
       "ts": "2026-07-08T17:59:35.344Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrcduzp76bvb3w",
+      "type": "notification_clicked",
+      "nid": "2026-07-08-top3",
+      "page": "engage/top3-tareas.html",
+      "ts": "2026-07-08T18:00:08.250Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrcduzp7xcy02m",
+      "type": "page_visit",
+      "page": "engage/top3-tareas.html",
+      "nid": "2026-07-08-top3",
+      "src": "push",
+      "ts": "2026-07-08T18:00:08.250Z",
       "device": "sin-nombre"
     }
   ],
