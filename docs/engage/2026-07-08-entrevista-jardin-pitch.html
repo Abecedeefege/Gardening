@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14261c">
+<title>💼 La Entrevista del Jardín — Pitch de negocio</title>
+<style>
+  :root{
+    --paper:#f4efe4; --paper2:#efe8d8; --ink:#1c1a15; --ink2:#524d40; --ink3:#8a8271;
+    --line:rgba(28,26,21,.13);
+    --verde:#1f4a34; --verde2:#2c6046; --oro:#b7852b; --oro2:#d9a83f;
+    --lila:#6b4a8a; --vino:#7a2f3a; --crema:#fbf8f0;
+    --pad:max(18px,env(safe-area-inset-left));
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:var(--serif); background:var(--paper); color:var(--ink); line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(120% 50% at 50% -8%, rgba(31,74,52,.06), transparent),
+      radial-gradient(90% 40% at 0% 100%, rgba(183,133,43,.07), transparent);
+  }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#14110c;
+    color:#c9bfa6; text-decoration:none; font-size:13px; font-weight:700; font-family:var(--sans); }
+  .back:active{ opacity:.65; }
+  .prog{ position:fixed; top:0; left:0; height:3px; width:0; z-index:90;
+    background:linear-gradient(90deg,var(--oro),var(--oro2),var(--verde2)); transition:width .1s linear; }
+  .wrap{ max-width:600px; margin:0 auto; padding:0 var(--pad) 40px; }
+
+  .hero{ margin:0 calc(-1 * var(--pad)) 8px; padding:38px var(--pad) 34px;
+    background:
+      radial-gradient(140% 90% at 80% 6%, rgba(107,74,138,.45), transparent 60%),
+      linear-gradient(165deg,#20402e 0%,#153021 62%,#122619 100%); color:#f4efe4; }
+  .hero .kick{ font-family:var(--sans); font-size:11px; font-weight:900; letter-spacing:.26em; text-transform:uppercase; color:var(--oro2); }
+  .hero h1{ font-size:clamp(32px,9.5vw,46px); font-weight:800; letter-spacing:-.03em; line-height:1.0; margin:12px 0 12px; }
+  .hero h1 em{ font-style:italic; color:var(--oro2); }
+  .hero p{ font-size:16.5px; line-height:1.55; color:#e7ddca; max-width:42ch; }
+  .hero p b{ color:#fff; }
+  .hero .tag{ margin-top:20px; display:flex; flex-wrap:wrap; gap:8px; }
+  .hero .tag span{ font-family:var(--sans); font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--oro2); border:1px solid rgba(217,168,63,.4); border-radius:999px; padding:6px 12px; }
+
+  .reveal{ opacity:0; transform:translateY(20px); transition:opacity .55s ease, transform .55s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  h2.sec{ font-size:13px; font-family:var(--sans); font-weight:900; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--oro); margin:38px 0 4px; display:flex; align-items:center; gap:9px; }
+  h2.sec::before{ content:""; width:26px; height:2px; background:var(--oro); flex:0 0 auto; }
+  h3.big{ font-size:26px; font-weight:800; letter-spacing:-.02em; color:var(--verde); line-height:1.12; margin:6px 0 12px; }
+  p.lead{ font-size:16.5px; line-height:1.6; color:var(--ink2); margin:0 0 12px; }
+  p.lead b{ color:var(--ink); }
+
+  .stats{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0; }
+  .stat{ background:var(--crema); border:1px solid var(--line); border-left:4px solid var(--verde); border-radius:5px; padding:14px 15px; }
+  .stat .num{ font-size:30px; font-weight:800; color:var(--verde); letter-spacing:-.02em; line-height:1; }
+  .stat .lbl{ font-family:var(--sans); font-size:11.5px; color:var(--ink2); margin-top:6px; line-height:1.4; }
+
+  .who{ background:var(--crema); border:1px solid var(--line); border-radius:6px; padding:16px 16px; margin:14px 0; }
+  .who .r{ display:flex; gap:11px; padding:9px 0; border-bottom:1px dashed var(--line); }
+  .who .r:last-child{ border-bottom:none; }
+  .who .r .ic{ flex:0 0 auto; font-size:22px; }
+  .who .r p{ font-size:14.5px; line-height:1.5; color:var(--ink2); }
+  .who .r p b{ color:var(--verde); }
+
+  /* modelos de monetización */
+  .model{ margin:16px 0; border:1px solid var(--line); border-radius:8px; overflow:hidden;
+    box-shadow:0 12px 30px rgba(28,26,21,.08); background:var(--crema); }
+  .model .top{ padding:15px 16px 12px; color:#f4efe4; }
+  .model.inn .top{ background:linear-gradient(100deg,var(--verde),var(--verde2)); }
+  .model.ult .top{ background:linear-gradient(100deg,var(--vino),#5c2029); }
+  .model .badge{ font-family:var(--sans); font-size:9.5px; font-weight:900; letter-spacing:.14em; text-transform:uppercase;
+    opacity:.85; }
+  .model .nm{ font-size:22px; font-weight:800; letter-spacing:-.02em; line-height:1.1; margin-top:5px; }
+  .model .nm .em{ font-size:22px; }
+  .model .bd{ padding:14px 16px 16px; }
+  .model .bd .lab{ font-family:var(--sans); font-size:10.5px; font-weight:900; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink3); margin-bottom:3px; }
+  .model .bd .how{ font-size:15px; line-height:1.55; color:var(--ink); margin-bottom:12px; }
+  .model .bd .how b{ color:var(--verde); }
+  .model .bd .why{ font-size:14px; line-height:1.55; color:var(--ink2); background:var(--paper2); border-radius:6px;
+    padding:11px 13px; border-left:3px solid var(--oro); }
+  .model .bd .why b{ color:var(--vino); }
+  .model .bd .why .t{ font-family:var(--sans); font-size:10px; font-weight:900; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--oro); display:block; margin-bottom:4px; }
+
+  .divider{ text-align:center; font-family:var(--sans); font-size:12px; font-weight:900; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--vino); margin:34px 0 6px; }
+  .divider span{ background:var(--paper); padding:0 12px; position:relative; z-index:1; }
+  .divider::before{ content:""; display:block; height:1px; background:var(--line); position:relative; top:9px; }
+
+  .why-now{ background:linear-gradient(165deg,#20402e,#153021); color:#f4efe4; border-radius:10px;
+    padding:24px 18px; margin:30px 0 10px; }
+  .why-now h3{ font-size:24px; font-weight:800; color:var(--oro2); letter-spacing:-.02em; margin-bottom:12px; }
+  .why-now p{ font-size:15.5px; line-height:1.6; color:#e7ddca; margin-bottom:12px; }
+  .why-now p b{ color:#fff; }
+  .why-now ul{ list-style:none; padding:0; margin:6px 0 0; }
+  .why-now li{ font-size:14.5px; line-height:1.5; color:#e2d8c4; padding:8px 0 8px 24px; position:relative; border-top:1px solid rgba(244,239,228,.14); }
+  .why-now li::before{ content:"◆"; position:absolute; left:2px; color:var(--oro2); font-size:12px; top:10px; }
+  .why-now li b{ color:#fff; }
+
+  .close{ text-align:center; padding:28px 6px 6px; }
+  .close .em{ font-size:38px; }
+  .close h3{ font-size:25px; font-weight:800; color:var(--verde); letter-spacing:-.02em; margin:8px 0 8px; line-height:1.15; }
+  .close h3 em{ font-style:italic; color:var(--oro); }
+  .close p{ font-size:15px; color:var(--ink2); max-width:40ch; margin:0 auto; }
+
+  footer.pie{ text-align:center; padding:22px var(--pad) 8px; font-family:var(--sans); font-size:12px; color:var(--ink3); line-height:1.6; }
+  footer.pie a{ color:var(--vino); text-decoration:none; font-weight:800; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="prog" id="prog"></div>
+
+<div class="hero">
+  <div class="wrap" style="padding-bottom:0">
+    <span class="kick">Pitch de negocio · Producto de contenido</span>
+    <h1>La <em>Entrevista</em><br>del Jardín</h1>
+    <p><b>Cada día, una planta es la tapa.</b> Una nota de revista de celebridad —estatus, primera persona, chisme— construida 100% sobre datos botánicos verificados. El formato que convierte lectores en suscriptores diarios.</p>
+    <div class="tag"><span>Retención diaria</span><span>Estatus + 1ª persona</span><span>Contenido infinito</span><span>Costo marginal cero</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- El problema / la oportunidad -->
+  <section class="reveal">
+    <h2 class="sec">La tesis</h2>
+    <h3 class="big">El contenido de jardín aburre. Nosotros lo volvimos revista de famosos.</h3>
+    <p class="lead">Las apps de plantas venden <b>utilidad</b>: cuándo regar, cuándo podar. Útil, sí — pero la utilidad no genera hábito, genera consultas puntuales. Lo que hace que alguien <b>vuelva cada día</b> es lo mismo que sostiene a una revista de espectáculos: estatus, identidad, primicia y voz en primera persona.</p>
+    <p class="lead">«La Entrevista» toma la planta que está haciendo algo <b>ahora mismo</b> —el romero que florece en pleno invierno, el limonero que da fruta los 12 meses— y la entrevista como a una estrella. El dato es real y verificable; la voz es una tapa de revista. <b>Resultado: el usuario no consulta un manual, sigue una novela.</b></p>
+  </section>
+
+  <!-- Por qué convierte -->
+  <section class="reveal">
+    <h2 class="sec">La mecánica de retención</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">1/día</div><div class="lbl">Un protagonista nuevo cada mañana — motivo recurrente para volver, entregado por push</div></div>
+      <div class="stat"><div class="num">40+</div><div class="lbl">Plantas en el catálogo = 40+ tapas garantizadas antes de repetir, y el catálogo crece</div></div>
+      <div class="stat"><div class="num">208s</div><div class="lbl">Dwell récord del canal en formatos de 1ª persona: la voz de personaje retiene</div></div>
+      <div class="stat"><div class="num">$0</div><div class="lbl">Costo marginal por edición: los datos ya existen, la voz se genera sobre ellos</div></div>
+    </div>
+    <p class="lead">La suscripción diaria es el corazón del negocio. No vendemos una lectura: vendemos <b>la promesa de que mañana hay una estrella nueva</b>. Ese loop —curiosidad por saber a quién le toca la tapa— es el mismo que sostiene un reality o una tira diaria. La retención no depende de que el usuario tenga una duda; depende de que quiera saber el próximo capítulo.</p>
+  </section>
+
+  <!-- Público -->
+  <section class="reveal">
+    <h2 class="sec">A quién le hablamos</h2>
+    <div class="who">
+      <div class="r"><span class="ic">🪴</span><p><b>El jardinero orgulloso:</b> quiere presumir su jardín. La entrevista le da munición de estatus — «¿sabías que mi romero mejora la memoria un 15%?»</p></div>
+      <div class="r"><span class="ic">📱</span><p><b>El scroller de sobremesa:</b> consume contenido de famosos y memes. Le damos la misma dopamina, con su propia planta de protagonista.</p></div>
+      <div class="r"><span class="ic">🎁</span><p><b>El que regala plantas:</b> compra la experiencia como valor agregado — la planta viene con su «entrevista» y su ficha de personaje.</p></div>
+      <div class="r"><span class="ic">🏢</span><p><b>Viveros y marcas verdes:</b> quieren fidelizar clientes con contenido que no es un folleto. Les licenciamos el formato.</p></div>
+    </div>
+  </section>
+
+  <!-- MODELOS INNOVADORES -->
+  <div class="divider reveal"><span>3 modelos innovadores</span></div>
+
+  <div class="model inn reveal">
+    <div class="top"><span class="badge">Modelo 01 · Innovador</span><div class="nm"><span class="em">🎟️</span> El Abono a la Tapa</div></div>
+    <div class="bd">
+      <div class="lab">Cómo funciona</div>
+      <p class="how">Suscripción diaria freemium. La entrevista del día es <b>gratis</b>; el suscriptor premium recibe la tapa por push <b>antes</b> que nadie, más el «archivo completo» (todas las entrevistas pasadas navegables) y las <b>ediciones especiales</b> (dobletes, cruces de dos plantas, especiales de temporada). Precio de café mensual.</p>
+      <div class="why"><span class="t">Por qué convierte</span>El acceso anticipado y el archivo transforman un contenido efímero en una <b>colección</b>. La gente paga por no perderse capítulos y por completar la serie — el mismo motor de un abono a una tira.</div>
+    </div>
+  </div>
+
+  <div class="model inn reveal">
+    <div class="top"><span class="badge">Modelo 02 · Innovador</span><div class="nm"><span class="em">🌱</span> Entrevista con la compra (vivero-as-a-media)</div></div>
+    <div class="bd">
+      <div class="lab">Cómo funciona</div>
+      <p class="how">Licencia B2B para viveros y garden centers. Cada planta que venden sale con un <b>QR que abre SU entrevista</b> personalizada de tapa. El cliente se lleva a casa no un macetín, sino a «una estrella con biografía». El vivero paga una licencia mensual por el catálogo de entrevistas de su stock.</p>
+      <div class="why"><span class="t">Por qué convierte</span>Convierte un commodity (una planta más) en un <b>producto con narrativa</b> y sube el ticket percibido. Para el vivero es diferenciación pura; para nosotros, ingreso recurrente B2B sobre contenido que ya producimos.</div>
+    </div>
+  </div>
+
+  <div class="model inn reveal">
+    <div class="top"><span class="badge">Modelo 03 · Innovador</span><div class="nm"><span class="em">🤝</span> Publinota verificada (branded cover)</div></div>
+    <div class="bd">
+      <div class="lab">Cómo funciona</div>
+      <p class="how">Una marca afín —abono orgánico, tijeras de poda, sustrato ácido para gardenias— <b>patrocina la entrevista del día</b>. La integración es honesta y contextual: el romero cuenta que odia el exceso de riego, y el sponsor es el medidor de humedad. Sin banners: la marca <b>es</b> parte de la nota, con el mismo sello «✓ dato verificado».</p>
+      <div class="why"><span class="t">Por qué convierte</span>El native advertising rinde 3-5× más que el display porque no interrumpe. Y el sello de veracidad del formato le presta <b>credibilidad</b> al sponsor — se compra confianza, no impresiones.</div>
+    </div>
+  </div>
+
+  <!-- MODELOS ULTRA-CREATIVOS -->
+  <div class="divider reveal"><span>3 modelos ultra-creativos</span></div>
+
+  <div class="model ult reveal">
+    <div class="top"><span class="badge">Modelo 04 · Ultra-creativo</span><div class="nm"><span class="em">🗳️</span> La Tapa la Elegís Vos</div></div>
+    <div class="bd">
+      <div class="lab">Cómo funciona</div>
+      <p class="how">Micropago / voto para <b>decidir quién es la estrella de mañana</b>. Los lectores votan (gratis 1 voto, o compran votos extra para «hacer campaña» por su planta favorita) y el jardín publica un <b>ranking de popularidad</b> semanal, con «rivalidades» narrativas: el Limonero vs. el Romero por la tapa del domingo. Convierte al lector en <b>fan-club militante</b>.</p>
+      <div class="why"><span class="t">Por qué convierte</span>Es fandom aplicado a botánica: la gente paga por que <b>gane su equipo</b>. Introduce competencia, identidad y un motivo social para volver a diario — el mismo mecanismo de los realities con televoto.</div>
+    </div>
+  </div>
+
+  <div class="model ult reveal">
+    <div class="top"><span class="badge">Modelo 05 · Ultra-creativo</span><div class="nm"><span class="em">📖</span> Autobiografías de Tapa Dura</div></div>
+    <div class="bd">
+      <div class="lab">Cómo funciona</div>
+      <p class="how">Print-on-demand. Al final de la temporada, las 40+ entrevistas se compilan en un <b>libro-revista físico</b>: «Las estrellas de mi jardín, edición 2026», con la ficha verificada de cada planta y su entrevista. Se vende como <b>objeto de regalo premium</b> y como recuerdo del propio jardín del usuario (versión personalizada con sus plantas).</p>
+      <div class="why"><span class="t">Por qué convierte</span>Monetiza la nostalgia y el estatus físico. Un contenido digital efímero se vuelve <b>regalo tangible con margen alto</b>. La versión personalizada («el libro de TU jardín») es emocional e irrepetible: nadie más lo tiene.</div>
+    </div>
+  </div>
+
+  <div class="model ult reveal">
+    <div class="top"><span class="badge">Modelo 06 · Ultra-creativo</span><div class="nm"><span class="em">🎭</span> El Agente de Prensa (coaching de plantas)</div></div>
+    <div class="bd">
+      <div class="lab">Cómo funciona</div>
+      <p class="how">Servicio premium con vuelta de tuerca: cada entrevista termina con un <b>«consejo de la estrella»</b> accionable —el romero te recuerda que odia el riego diario, y ofrece agendarte el recordatorio real de poda—. La utilidad viaja <b>dentro</b> del entretenimiento. Upsell a un plan «manager» que te cuida todas tus plantas-estrella con tareas y push personalizados.</p>
+      <div class="why"><span class="t">Por qué convierte</span>Resuelve la paradoja del canal: la utilidad sola no retiene, pero <b>escondida dentro del estatus sí se paga</b>. El usuario cree que sigue una novela y termina cuidando mejor su jardín — y pagando por el «manager». Entretenimiento que se autojustifica.</div>
+    </div>
+  </div>
+
+  <!-- Por qué ahora / tracción -->
+  <div class="why-now reveal">
+    <h3>Por qué ahora</h3>
+    <p>No es una apuesta a ciegas: es la lectura directa de <b>lo que ya funciona en este canal</b>. Medimos qué convierte amor en suscripción dentro del formato news-feed, y el patrón es inequívoco.</p>
+    <ul>
+      <li>Los formatos de <b>1ª persona</b> marcaron el <b>dwell récord del canal (208 s)</b> — la voz de personaje es la que retiene.</li>
+      <li>Los ejes que ganan son <b>estatus, orgullo, chisme e identidad</b>. «La Entrevista» los combina los cuatro en un solo formato.</li>
+      <li>Los que <b>pierden</b> —utilidad seca, consejo, efemérides, tasaciones— quedan afuera del núcleo del producto (y solo entran escondidos, como en el Modelo 06).</li>
+      <li>El <b>inventario es infinito y gratis</b>: 40+ plantas verificadas, calendario estacional real, cero costo marginal por edición.</li>
+      <li>Es <b>invierno ahora</b>, y ya hay protagonistas de tapa dando la nota: el romero en flor, el limonero cargado, la palta en cosecha. El contenido está vivo hoy.</li>
+    </ul>
+  </div>
+
+  <section class="close reveal">
+    <span class="em">🎙️</span>
+    <h3>Un jardín no necesita más consejos.<br><em>Necesita estrellas.</em></h3>
+    <p>La botánica ya está. La verificación ya está. Solo falta prender las luces de la tapa — y empezar a cobrar la entrada.</p>
+  </section>
+
+  <footer class="pie">
+    <a href="2026-07-08-entrevista-jardin.html">🎙️ Ver la experiencia en vivo</a>
+    <div style="margin-top:10px;">Pitch de «La Entrevista del Jardín» · datos del catálogo Pacha Mama · 08/07/2026</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var prog = document.getElementById('prog');
+  function onScroll(){
+    var h = document.documentElement;
+    var d = h.scrollHeight - h.clientHeight;
+    prog.style.width = (d > 0 ? Math.min(100, (h.scrollTop / d) * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+</body></html>

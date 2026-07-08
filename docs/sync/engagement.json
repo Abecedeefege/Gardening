@@ -2,209 +2,6 @@
   "_updated_at": "2026-07-07T02:49:07.504Z",
   "events": [
     {
-      "_id": "mqpkni36m41ry3",
-      "type": "notification_clicked",
-      "nid": "2026-06-22-a",
-      "page": "index.html",
-      "ts": "2026-06-22T18:51:34.093Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqpkni36nzdmv5",
-      "type": "page_visit",
-      "page": "index.html",
-      "nid": "2026-06-22-a",
-      "src": "push",
-      "ts": "2026-06-22T18:51:34.093Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqpxd7sn2hxw5g",
-      "type": "reaction",
-      "target": "duelo-r1",
-      "value": "correct",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-23T00:47:29.207Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqpxdb3muq4z1w",
-      "type": "reaction",
-      "target": "duelo-r2",
-      "value": "correct",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-23T00:47:33.490Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqpxdehs1u1yle",
-      "type": "reaction",
-      "target": "duelo-r3",
-      "value": "correct",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-23T00:47:37.888Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqpxdh24vi9cf2",
-      "type": "reaction",
-      "target": "duelo-r4",
-      "value": "correct",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-23T00:47:41.212Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqpxdjqxxo96td",
-      "type": "reaction",
-      "target": "duelo-r5",
-      "value": "correct",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-23T00:47:44.697Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqpxdmamkooofb",
-      "type": "reaction",
-      "target": "duelo-r6",
-      "value": "correct",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-23T00:47:47.998Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqpxdsu43irvlm",
-      "type": "dwell",
-      "seconds": 37,
-      "scroll_pct": 100,
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-23T00:47:56.476Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqpxdvbq6yza8g",
-      "type": "reaction",
-      "target": "duelo-r1",
-      "value": "correct",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-23T00:47:59.702Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqpxe6aeik40ki",
-      "type": "dwell",
-      "seconds": 17,
-      "scroll_pct": 100,
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-06-23T00:48:13.910Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqqxknxfu63wx1",
-      "type": "notification_clicked",
-      "nid": "2026-06-23-a",
-      "page": "index.html",
-      "ts": "2026-06-23T17:41:02.880Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqqxknxfg3br0f",
-      "type": "page_visit",
-      "page": "index.html",
-      "nid": "2026-06-23-a",
-      "src": "push",
-      "ts": "2026-06-23T17:41:02.880Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqqxkq97olb737",
-      "type": "notification_clicked",
-      "nid": "2026-06-23-b",
-      "page": "engage/mundo-jardin.html",
-      "ts": "2026-06-23T17:41:05.898Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqqxkq97wdi80d",
-      "type": "page_visit",
-      "page": "engage/mundo-jardin.html",
-      "nid": "2026-06-23-b",
-      "src": "push",
-      "ts": "2026-06-23T17:41:05.898Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqqxkqdfb4qagj",
-      "type": "page_visit",
-      "page": "engage/mundo-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-06-23T17:41:06.048Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqqxmoq1vzuygz",
-      "type": "reaction",
-      "target": "mundo",
-      "value": "love",
-      "page": "engage/mundo-jardin.html",
-      "ts": "2026-06-23T17:42:37.225Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqqxmrv277zq3w",
-      "type": "dwell",
-      "seconds": 95,
-      "scroll_pct": 100,
-      "page": "engage/mundo-jardin.html",
-      "ts": "2026-06-23T17:42:41.294Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqqxoz12i8x1ub",
-      "type": "page_visit",
-      "page": "engage/2026-06-13-rueda-ano.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-06-23T17:44:23.892Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "mqqxp2kg3376k3",
-      "type": "dwell",
-      "seconds": 5,
-      "scroll_pct": 0,
-      "page": "engage/2026-06-13-rueda-ano.html",
-      "ts": "2026-06-23T17:44:28.480Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "mqqxp8x3p8jia8",
-      "type": "dwell",
-      "seconds": 6,
-      "scroll_pct": 0,
-      "page": "engage/2026-06-18-cual-sobra.html",
-      "ts": "2026-06-23T17:44:36.711Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "mqr9khef4dbu80",
-      "type": "notification_clicked",
-      "nid": "2026-06-23-c",
-      "page": "index.html",
-      "ts": "2026-06-23T23:16:49.813Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqr9khefvc8v74",
-      "type": "page_visit",
-      "page": "index.html",
-      "nid": "2026-06-23-c",
-      "src": "push",
-      "ts": "2026-06-23T23:16:49.813Z",
-      "device": "sin-nombre"
-    },
-    {
       "_id": "mqsrgvt0xkysm0",
       "type": "notification_clicked",
       "nid": "2026-06-24-c",
@@ -1481,6 +1278,18 @@
       "sent": 3,
       "clicked": 3,
       "visits": 3,
+      "approvals": 0
+    },
+    "2026-06-22": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-06-23": {
+      "sent": 5,
+      "clicked": 3,
+      "visits": 5,
       "approvals": 0
     }
   }

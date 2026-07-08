@@ -365,24 +365,48 @@
     {
       "id": "2026-07-06-lista-negra-jardin",
       "title": "⚠️ La Lista Negra del Jardín (news-feed de morbo/peligro verificado)",
-      "page": "engage/2026-07-06-lista-negra-jardin.html",
+      "page": null,
       "created": "2026-07-06",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 37 (función paralela): ángulo MORBO/PELIGRO puro — el dossier de las plantas 'peligrosas' que viven en SU casa (caña muda que deja sin voz, tóxicas, invasoras), cada una con dato real verificado. El morbo directo es el eje con mejor conversión (Chusmerío sub SÍ) y acá se maximiza: 'esto vive en tu living y puede lastimarte' es el titular con más gancho de apertura posible sin ficción. Hipótesis: peligro-real-en-casa dispara apertura + 'increíble' + suscripción al expediente diario.",
       "notified_by": [
         "2026-07-06-a"
       ],
-      "result_notes": null
+      "result_notes": "DROPPED 08/07 (la corrida del 07/07 se saltó; se procesa hoy) por la regla de no-supervivencia sin aprobación explícita. NO-OPEN: su push promotor (2026-07-06-a) se despachó 13:43Z el 06/07 pero NO quedó registrado ni click ni page_visit de la Lista Negra en engagement.json (cutoff 07/07 02:49Z, que cubre todo el 06/07 y el usuario estuvo activo — abrió task-semana, el chat y jugó el Duelo). Lectura: el ángulo PELIGRO/MIEDO ('esto puede lastimarte') NO genera curiosidad de apertura, a diferencia del morbo-CHISME (Chusmerío, que convirtió). El miedo repele donde el chisme atrae: el titular amenazante ('vive en tu living y puede dejarte sin voz') parece leerse como algo que uno NO quiere abrir, no como algo jugoso. Junto al no-open de Gala/Efemérides confirma que la apertura la gana el chisme/estatus/1ª-persona, no la amenaza. No relanzar lista-negra/peligro. Página + pitch eliminados (git rm)."
     },
     {
       "id": "2026-07-06-chat-jardin",
       "title": "💬 El Grupo del Jardín (chat grupal de las plantas, 1ª persona + humor + chisme)",
-      "page": "engage/2026-07-06-chat-jardin.html",
+      "page": null,
       "created": "2026-07-06",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 37 (función paralela): fusión de los 3 ejes que MÁS convirtieron — voz social 1ª persona (Feed, dwell récord 208s), chisme (Chusmerío) y humor con remate de dato (Memes) — en el formato más familiar del Río de la Plata: el grupo de WhatsApp. Cada burbuja es una planta chateando con un dato real como remate, anclado en el invierno actual. Hipótesis: el envoltorio chat-grupal (liviano, no ceremonial) supera al feed en identificación y dispara 'increíble' + suscripción a 'el grupo sigue mañana'.",
       "notified_by": [
         "2026-07-06-b"
+      ],
+      "result_notes": "RECHAZADO EXPLÍCITAMENTE 06/07. El usuario abrió el push promotor (2026-07-06-b, 14:53 UY) y disparó la tripleta negativa a los ~10s: reaction 'meh' + answer 'chat-suscripcion-diaria'=NO + proposal_rejected, con dwell corto 18s/scroll 100%. Lectura: SORPRENDE porque fusionaba 3 ejes ganadores (Feed 1ª persona + Chusmerío chisme + Memes humor), pero el ENVOLTORIO chat-grupal no sumó — leyó rápido, no le pareció increíble y rechazó. Hipótesis del fracaso: el formato 'grupo de WhatsApp' se siente como MÁS mensajes (fatiga de notificación disfrazada de contenido), no como una experiencia-destino; y las burbujas fragmentan el dato en vez de darle peso. El 1ª-persona rinde cuando cada planta tiene su POST propio (Feed) o su nota, no diluido en un chat coral. No relanzar chat/grupo. Página + pitch eliminados (git rm)."
+    },
+    {
+      "id": "2026-07-08-entrevista-jardin",
+      "title": "🎙️ La Entrevista Exclusiva del Jardín (news-feed revista/celebridad, 1ª persona + estatus)",
+      "page": "engage/2026-07-08-entrevista-jardin.html",
+      "created": "2026-07-08",
+      "status": "pending",
+      "hypothesis": "Ciclo 38 (función paralela; corrida del 07/07 se saltó): experiencia news-feed NUEVA de cero, ángulo ESTATUS/CELEBRIDAD + 1ª persona + morbo. Nota de tapa de revista: UNA planta protagonista del PRESENTE (algo que hace AHORA en invierno) es entrevistada a fondo como estrella, con pull-quotes y recuadros de dato verificado. Combina los dos ejes que MÁS retienen y convierten: 1ª persona (Feed, dwell récord 208s) + estatus/orgullo (Récords, 141s), con el dato-presente como protagonista. Distinto de Confesiones (tibio, intimidad coral): acá es UNA estrella con foco total + framing prensa/celebridad (el usuario ama el editorial — Diario promovido). Hipótesis: el foco de tapa en una sola planta-celebridad del presente dispara 'increíble' + suscripción a la entrevista diaria. Promotor: 2026-07-08-a (08:30).",
+      "notified_by": [
+        "2026-07-08-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-08-trending-jardin",
+      "title": "🔥 Trending del Jardín (news-feed de tendencias/viral, número-presente + orgullo)",
+      "page": "engage/2026-07-08-trending-jardin.html",
+      "created": "2026-07-08",
+      "status": "pending",
+      "hypothesis": "Ciclo 38 (función paralela): experiencia news-feed NUEVA de cero, ángulo TENDENCIAS/VIRAL — panel 'trending' tipo X/Twitter con lo que EXPLOTA en el jardín ESTA semana, número grande de posición por ítem, todo anclado en el presente real del invierno (qué florece/fructifica/aguanta la helada AHORA). Combina los dos disparadores medidos que convierten: NÚMERO-GRANDE-DEL-PRESENTE (Récords) + orgullo + un toque de drama del ranking. Clave: habla del AHORA, no del pasado (Efemérides/historia NO abrió; el número convierte cuando es del presente). Distinto de Récords (superlativos all-time): acá es 'esta semana / ahora mismo', con formato ranking-feed y flechas de tendencia. Hipótesis: el ranking del presente con número protagonista dispara 'increíble' + suscripción al trending diario. Promotor: 2026-07-08-b (13:00).",
+      "notified_by": [
+        "2026-07-08-b"
       ],
       "result_notes": null
     }

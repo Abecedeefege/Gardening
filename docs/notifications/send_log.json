@@ -2,54 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-06-22-a",
-      "ts": "2026-06-22T15:23:30.962Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-22-b",
-      "ts": "2026-06-22T18:56:07.071Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-22-c",
-      "ts": "2026-06-22T23:06:06.076Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "surprise-mundo-2158",
-      "ts": "2026-06-23T00:58:56.330Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "surprise-memoria-2159",
-      "ts": "2026-06-23T00:59:35.223Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-23-a",
-      "ts": "2026-06-23T12:31:46.412Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-23-b",
-      "ts": "2026-06-23T17:29:56.115Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-23-c",
-      "ts": "2026-06-23T22:46:05.976Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-06-24-a",
       "ts": "2026-06-24T12:17:59.028Z",
       "status_code": 201
@@ -349,6 +301,12 @@
     },
     "2026-06-20": {
       "sent": 3
+    },
+    "2026-06-22": {
+      "sent": 3
+    },
+    "2026-06-23": {
+      "sent": 5
     }
   }
 }

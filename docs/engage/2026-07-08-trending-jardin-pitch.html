@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0906">
+<title>💼 Trending del Jardín — pitch de venta</title>
+<style>
+  :root{
+    --bg:#0b0906; --card:#17110b; --card2:#1f170e;
+    --ink:#f6efe4; --ink2:#b6a892; --ink3:#7c7060;
+    --line:rgba(255,255,255,.08);
+    --fire:#ff7a1a; --fire2:#ffb03a; --up:#37e08a; --down:#ff5470; --gold:#ffcf3d; --cool:#57c6ff;
+    --pad:max(16px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.58;
+    background-image:radial-gradient(110% 40% at 50% -6%, rgba(255,122,26,.1), transparent);
+    -webkit-font-smoothing:antialiased; }
+
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#050403;
+    color:#95897a; text-decoration:none; font-size:13px; font-weight:700; }
+  .back:active{ opacity:.65; }
+
+  .wrap{ max-width:640px; margin:0 auto; padding:0 var(--pad) 44px; }
+
+  .hero{ padding:34px 0 12px; text-align:center; }
+  .kick{ font-size:11px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--fire2); }
+  .hero h1{ font-size:clamp(30px,8.5vw,44px); font-weight:900; letter-spacing:-.035em; line-height:1.03;
+    margin:10px 0; color:#fff; }
+  .hero h1 span{ color:var(--fire); }
+  .hero .sub{ font-size:15.5px; color:var(--ink2); max-width:46ch; margin:0 auto; }
+  .hero .sub b{ color:#fff; }
+
+  section{ margin-top:26px; }
+  h2{ font-size:12px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:var(--fire2);
+    border-bottom:1px solid var(--line); padding-bottom:8px; margin-bottom:14px; }
+  h3{ font-size:18px; font-weight:900; letter-spacing:-.01em; color:#fff; }
+  p{ font-size:14.5px; color:var(--ink2); margin-bottom:11px; }
+  p b, li b{ color:#fff; }
+  .lead{ font-size:16px; color:var(--ink); }
+
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:11px; }
+  @media(max-width:460px){ .grid{ grid-template-columns:1fr; } }
+  .stat{ background:var(--card); border:1px solid var(--line); border-radius:15px; padding:15px 14px; }
+  .stat .big{ font-size:30px; font-weight:900; letter-spacing:-.03em; color:var(--fire); line-height:1; }
+  .stat .lbl{ font-size:12.5px; color:var(--ink2); margin-top:6px; }
+
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:17px; padding:17px 16px; margin-bottom:12px; }
+  .card .top{ display:flex; align-items:center; gap:11px; margin-bottom:9px; }
+  .card .ico{ width:44px; height:44px; flex:0 0 auto; border-radius:13px; display:grid; place-items:center;
+    font-size:23px; background:linear-gradient(150deg,var(--card2),#0f0b06); box-shadow:inset 0 0 0 1px var(--line); }
+  .card .nm{ font-size:17px; font-weight:900; color:#fff; line-height:1.15; }
+  .card .kd{ font-size:11px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; margin-top:2px; }
+  .kd.inn{ color:var(--cool); } .kd.ultra{ color:var(--fire2); }
+  .card p{ font-size:14px; margin-bottom:8px; }
+  .card .why{ font-size:13px; color:var(--up); background:rgba(55,224,138,.07);
+    border:1px solid rgba(55,224,138,.18); border-radius:11px; padding:9px 12px; }
+  .card .why b{ color:#dff7e6; }
+
+  ul{ margin:0 0 12px 2px; padding:0; list-style:none; }
+  li{ font-size:14.5px; color:var(--ink2); padding-left:22px; position:relative; margin-bottom:8px; }
+  li::before{ content:"🔥"; position:absolute; left:0; top:1px; font-size:12px; }
+
+  .quote{ border-left:3px solid var(--fire); padding:6px 0 6px 14px; margin:14px 0; color:var(--ink);
+    font-size:15px; font-style:italic; }
+  .quote b{ color:var(--fire2); font-style:normal; }
+
+  .trac{ background:linear-gradient(165deg,#241608,#150f08); border:1px solid rgba(255,176,58,.28);
+    border-radius:17px; padding:18px 16px; }
+  .trac ul li::before{ content:"📈"; }
+
+  .cta{ text-align:center; background:var(--card); border:1px solid var(--line); border-radius:17px;
+    padding:22px 16px; margin-top:22px; }
+  .cta h3{ margin-bottom:8px; }
+  .cta p{ max-width:44ch; margin:0 auto; }
+  .cta a{ display:inline-block; margin-top:14px; background:var(--fire); color:#160c04; text-decoration:none;
+    font-weight:900; font-size:15px; padding:13px 22px; border-radius:14px; }
+
+  footer{ text-align:center; margin-top:26px; font-size:12px; color:var(--ink3); }
+  footer a{ color:var(--cool); text-decoration:none; font-weight:800; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="kick">🔥 Pitch de producto · Trending del Jardín</div>
+    <h1>El jardín<br>tiene su propio<br><span>trending topic</span></h1>
+    <p class="sub">Un ranking-feed que se rehace cada día con lo que <b>está pasando AHORA</b> en el jardín. No es un almanaque ni una lista de tareas: es la pantalla de "lo que explota esta semana", con números grandes, hashtags y flechas ▲▼ — y cada puesto anclado en un <b>dato botánico real y verificado</b>.</p>
+  </section>
+
+  <section>
+    <h2>El insight que lo mueve todo</h2>
+    <p class="lead">Medimos qué formato retiene y convierte en este canal. El ganador no es la utilidad seca ni la efeméride: es el <b>dato real del PRESENTE presentado como estatus</b>. El Feed social marcó <b>208s de dwell</b> (récord), Récords 141s. La gente vuelve por asombro, orgullo y chisme — no por consejos de riego.</p>
+    <p>El "Trending" toma ese eje ganador y lo empaqueta en el formato más adictivo que existe: el <b>ranking en vivo</b>. Cada mañana hay un #1 nuevo, alguien que subió, alguien que cayó. Es la misma mecánica del panel de tendencias de X, del "top" de Spotify Wrapped, del ranking de una app de fitness: <b>números que se mueven = razón para volver a mirar</b>.</p>
+    <div class="grid">
+      <div class="stat"><div class="big">208s</div><div class="lbl">dwell récord del formato feed/social (la base sobre la que construye el trending)</div></div>
+      <div class="stat"><div class="big">1×/día</div><div class="lbl">frecuencia natural del hábito: el ranking cambia cada mañana</div></div>
+      <div class="stat"><div class="big">100%</div><div class="lbl">de los datos botánicos salen del catálogo real — cero invento hortícola</div></div>
+      <div class="stat"><div class="big">12+</div><div class="lbl">especies rankeables solo en invierno; el pool crece cada estación</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Por qué convierte (retención → suscripción)</h2>
+    <ul>
+      <li><b>Curiosidad forzada por el ranking.</b> "¿Quién es #1 hoy?" es una pregunta que solo se responde abriendo. El número crea el loop.</li>
+      <li><b>Drama incorporado.</b> Alguien SIEMPRE cae ("el durazno se desplomó al 9"). El conflicto retiene mejor que la armonía.</li>
+      <li><b>Orgullo + identidad.</b> "MI limonero es #1 doce meses seguidos" es un flex que el dueño quiere ver y compartir.</li>
+      <li><b>Frescura diaria = hábito.</b> El contenido caduca en 24h. Eso es exactamente lo que entrena el reflejo de volver cada mañana.</li>
+      <li><b>Fricción cero, asombro alto.</b> Se lee en 90 segundos, deja un dato que da ganas de contar. Ideal para la notificación push que trae de vuelta.</li>
+    </ul>
+    <div class="quote">El público no es "gente que jardinea". Es <b>el dueño de este jardín</b> y su círculo: familia, vecinos, el grupo de WhatsApp. Gente que ama presumir lo suyo cuando alguien se lo hace fácil y lindo. El trending se lo hace fácil y lindo.</div>
+  </section>
+
+  <section>
+    <h2>Modelos de monetización · 3 innovadores</h2>
+
+    <div class="card">
+      <div class="top">
+        <span class="ico">👑</span>
+        <div><div class="nm">Trending PRO — "Ranking Premium"</div><div class="kd inn">Suscripción freemium</div></div>
+      </div>
+      <p>El top 3 diario es gratis. La suscripción PRO (mensual) desbloquea el <b>ranking completo hasta el #20</b>, el histórico "cómo se movió tu jardín mes a mes", alertas push cuando una especie entra o sale del podio, y ranking por zona (Frente vs Fondo, con su rivalidad propia).</p>
+      <div class="why"><b>Por qué convierte:</b> el free ya engancha el hábito; el paywall corta justo donde pica la curiosidad ("¿y el resto del ranking?"). Es el modelo Strava/Duolingo: gratis para enganchar, pago para completar.</div>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <span class="ico">🏷️</span>
+        <div><div class="nm">Trending Sponsored — vivero como patrocinador</div><div class="kd inn">Product placement contextual</div></div>
+      </div>
+      <p>Cuando el durazno "cae pelado y arma su comeback de agosto", aparece un slot nativo: <b>"Impulsado por Vivero X — todo para tu poda de invierno"</b>. El trending sabe qué especie está en foco HOY y sirve el producto exacto del momento (fungicida para el durazno, quelato de hierro para la gardenia, mulch para la palta).</p>
+      <div class="why"><b>Por qué convierte:</b> es publicidad con timing botánico perfecto — se ofrece el producto justo cuando la planta lo necesita y el dueño está mirando. CTR muy superior al aviso genérico de jardinería.</div>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <span class="ico">🎁</span>
+        <div><div class="nm">Ranking Regalable — "El jardín de mamá, en trending"</div><div class="kd inn">Gifting / regalo digital</div></div>
+      </div>
+      <p>Se vende un <b>trending personalizado de OTRO jardín</b> como regalo: cargás las plantas del jardín de un familiar y recibís un ranking diario de ese jardín, hecho a medida. Perfecto para el que "no sabe qué regalarle a la madre/abuela jardinera". Pago único por el armado + suscripción opcional.</p>
+      <div class="why"><b>Por qué convierte:</b> monetiza el afecto, no la utilidad. El regalo emocional tiene disposición a pagar altísima y trae un usuario nuevo (el que regala) + un jardín nuevo al sistema.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Modelos de monetización · 3 ultra-creativos</h2>
+
+    <div class="card">
+      <div class="top">
+        <span class="ico">💸</span>
+        <div><div class="nm">La Bolsa del Jardín — "trading" de especies</div><div class="kd ultra">Gamificación fantasy/bursátil</div></div>
+      </div>
+      <p>El ranking se juega como un <b>mercado de valores</b>. Cada especie "cotiza" según su posición trending. Los usuarios arman una cartera fantasy ("aposté al romero antes de que floreciera y subió 9 puestos"), compiten en ligas y ganan estatus. Monetiza con <b>pase de temporada</b>, ligas premium y cosmética (skins de cartera, insignias de "inversor del mes").</p>
+      <div class="why"><b>Por qué convierte:</b> transforma mirar un ranking en jugarlo. El fantasy sports probó que la gente vuelve a diario y paga por competir. Acá la "acción" es 100% botánica real: el romero SÍ florece en invierno, así que "predecir" es aprender jardinería sin darse cuenta.</div>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <span class="ico">🏆</span>
+        <div><div class="nm">#1 Certificado — el trofeo físico del mes</div><div class="kd ultra">Merch on-demand con dato real</div></div>
+      </div>
+      <p>La especie que fue <b>#1 del mes</b> se convierte en objeto: cartelito de metal/madera para clavar al pie de la planta ("🥇 #1 de julio — Limonero, fruta 12/12 meses"), lámina imprimible del ranking del mes, o sticker pack de las especies del podio. Print-on-demand, cero inventario.</p>
+      <div class="why"><b>Por qué convierte:</b> materializa el orgullo. Ver el cartelito clavado en el jardín es un recordatorio físico permanente + prueba social para toda visita. El dato real verificado le da legitimidad de "trofeo", no de gadget.</div>
+    </div>
+
+    <div class="card">
+      <div class="top">
+        <span class="ico">🔮</span>
+        <div><div class="nm">Trending Predictor — apostá al podio de mañana</div><div class="kd ultra">Micro-engagement con recompensa</div></div>
+      </div>
+      <p>Antes de que cierre el día, el usuario <b>predice el #1 de mañana</b> con un tap. Si acierta, suma racha y "monedas del jardín" que canjea por experiencias premium (un horóscopo extra, desbloquear el ranking completo un día, un dato secreto). Genera una <b>segunda visita diaria</b> (predecir a la noche, verificar a la mañana).</p>
+      <div class="why"><b>Por qué convierte:</b> duplica el hábito con casi cero fricción y crea racha (el mecanismo de retención más potente que existe). La moneda virtual se monetiza vendiendo atajos, sin romper la gratuidad del core.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Por qué ahora · tracción</h2>
+    <div class="trac">
+      <p><b>La señal ya está medida en este mismo canal.</b> El news-feed convierte amor → suscripción cuando el protagonista es el <b>número del presente + orgullo</b>. Eso no es hipótesis: es el patrón ganador observado.</p>
+      <ul>
+        <li><b>Formato feed/social:</b> dwell récord de 208s. La gente se queda cuando el jardín se cuenta como red social.</li>
+        <li><b>Récords/superlativo:</b> 141s. El orgullo y el "el más/el mejor" retienen.</li>
+        <li><b>Trending combina las dos armas ganadoras</b> — ranking (superlativo) + feed (social) — en un solo formato con caducidad diaria, que es justo lo que fija el hábito.</li>
+        <li><b>Los perdedores están descartados:</b> nada de tasación seca, efemérides del pasado ni consejo. El trending habla SOLO del presente ("qué está pasando AHORA").</li>
+        <li><b>Costo marginal cero:</b> el ranking se genera del catálogo y los calendarios que ya existen. Cada nueva planta amplía el pool sin trabajo extra.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h3>El jardín ya es noticia.<br>Solo falta ponerlo en el podio.</h3>
+    <p>Un ranking fresco cada mañana, datos verificados, y seis caminos claros para monetizar el hábito. Empezamos gratis, medimos el love, y activamos el modelo que mejor rinda.</p>
+    <a href="2026-07-08-trending-jardin.html">Ver la experiencia en vivo →</a>
+  </div>
+
+  <footer>
+    <a href="2026-07-08-trending-jardin.html">← Volver al Trending del Jardín</a>
+    <div style="margin-top:8px;color:#5f5647">Pitch armado sobre datos reales del catálogo Pacha Mama · métricas de juego, botánica verificada · 08/07/2026</div>
+  </footer>
+
+</div>
+</body></html>
