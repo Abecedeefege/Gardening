@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-08T14:26:57.920Z",
+  "_updated_at": "2026-07-08T14:27:08.273Z",
   "events": [
     {
       "_id": "mqsrgvt0xkysm0",
@@ -1266,6 +1266,15 @@
       "type": "proposal_approved",
       "proposal_id": "2026-07-08-entrevista-jardin",
       "ts": "2026-07-08T14:26:58.926Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrc69372lr8bfn",
+      "type": "dwell",
+      "seconds": 206,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-08-entrevista-jardin.html",
+      "ts": "2026-07-08T14:27:09.036Z",
       "device": "sin-nombre"
     }
   ],
