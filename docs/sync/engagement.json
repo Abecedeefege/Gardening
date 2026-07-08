@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-07T02:49:07.504Z",
+  "_updated_at": "2026-07-08T14:22:31.481Z",
   "events": [
     {
       "_id": "mqsrgvt0xkysm0",
@@ -1217,6 +1217,23 @@
       "page": "engage/2026-06-30-chusmerio-jardin.html",
       "ts": "2026-07-07T02:49:08.288Z",
       "device": "pix9"
+    },
+    {
+      "_id": "mrc635gnrijqqv",
+      "type": "notification_clicked",
+      "nid": "2026-07-08-task-dia",
+      "page": "tareas.html",
+      "ts": "2026-07-08T14:22:32.036Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrc635gn9a5luo",
+      "type": "page_visit",
+      "page": "tareas.html",
+      "nid": "2026-07-08-task-dia",
+      "src": "push",
+      "ts": "2026-07-08T14:22:32.036Z",
+      "device": "sin-nombre"
     }
   ],
   "daily_summary": {
