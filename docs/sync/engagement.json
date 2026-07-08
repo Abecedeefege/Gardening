@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-08T14:22:31.481Z",
+  "_updated_at": "2026-07-08T14:23:42.399Z",
   "events": [
     {
       "_id": "mqsrgvt0xkysm0",
@@ -1233,6 +1233,23 @@
       "nid": "2026-07-08-task-dia",
       "src": "push",
       "ts": "2026-07-08T14:22:32.036Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrc64omlaj4i9d",
+      "type": "notification_clicked",
+      "nid": "2026-07-08-a",
+      "page": "engage/2026-07-08-entrevista-jardin.html",
+      "ts": "2026-07-08T14:23:43.532Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrc64omllsn2ze",
+      "type": "page_visit",
+      "page": "engage/2026-07-08-entrevista-jardin.html",
+      "nid": "2026-07-08-a",
+      "src": "push",
+      "ts": "2026-07-08T14:23:43.532Z",
       "device": "sin-nombre"
     }
   ],
