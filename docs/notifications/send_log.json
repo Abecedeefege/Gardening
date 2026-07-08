@@ -269,6 +269,18 @@
       "nid": "2026-07-06-c",
       "ts": "2026-07-06T22:12:57.878Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-08-task-dia",
+      "ts": "2026-07-08T11:45:48.541Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-08-a",
+      "ts": "2026-07-08T11:45:48.668Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
