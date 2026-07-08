@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-08T14:23:42.399Z",
+  "_updated_at": "2026-07-08T14:26:55.034Z",
   "events": [
     {
       "_id": "mqsrgvt0xkysm0",
@@ -1250,6 +1250,15 @@
       "nid": "2026-07-08-a",
       "src": "push",
       "ts": "2026-07-08T14:23:43.532Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrc68szr8nr92z",
+      "type": "answer",
+      "qid": "entrevista-suscripcion-diaria",
+      "value": "si",
+      "page": "engage/2026-07-08-entrevista-jardin.html",
+      "ts": "2026-07-08T14:26:55.815Z",
       "device": "sin-nombre"
     }
   ],
