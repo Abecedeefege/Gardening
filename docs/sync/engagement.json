@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-09T17:32:00.152Z",
+  "_updated_at": "2026-07-09T17:33:43.210Z",
   "events": [
     {
       "_id": "mqtkcjpf5j9h8n",
@@ -1345,6 +1345,15 @@
       "scroll_pct": 100,
       "page": "engage/2026-06-29-records-jardin.html",
       "ts": "2026-07-09T00:42:20.941Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrdscvdkt6c4q4",
+      "type": "dwell",
+      "seconds": 103,
+      "scroll_pct": 93,
+      "page": "engage/2026-07-09-quiz-planta.html",
+      "ts": "2026-07-09T17:33:43.255Z",
       "device": "sin-nombre"
     }
   ],
