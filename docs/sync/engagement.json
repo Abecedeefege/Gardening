@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-08T18:00:09.591Z",
+  "_updated_at": "2026-07-09T00:41:12.652Z",
   "events": [
     {
       "_id": "mqsrgvt0xkysm0",
@@ -1318,6 +1318,23 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-07-08T18:00:08.640Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrcs6t0w99u7n8",
+      "type": "notification_clicked",
+      "nid": "2026-07-08-c",
+      "page": "engage/2026-06-29-records-jardin.html",
+      "ts": "2026-07-09T00:41:14.093Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrcs6t0wf1a5gx",
+      "type": "page_visit",
+      "page": "engage/2026-06-29-records-jardin.html",
+      "nid": "2026-07-08-c",
+      "src": "push",
+      "ts": "2026-07-09T00:41:14.093Z",
       "device": "sin-nombre"
     }
   ],
