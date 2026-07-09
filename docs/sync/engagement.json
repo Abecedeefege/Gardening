@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-09T17:33:55.388Z",
+  "_updated_at": "2026-07-09T17:34:00.874Z",
   "events": [
     {
       "_id": "mqtkcjpf5j9h8n",
@@ -1363,6 +1363,13 @@
       "value": "love",
       "page": "engage/2026-07-09-quiz-planta.html",
       "ts": "2026-07-09T17:33:55.395Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrdsd92cp3frxs",
+      "type": "proposal_approved",
+      "proposal_id": "2026-07-09-quiz-planta",
+      "ts": "2026-07-09T17:34:00.996Z",
       "device": "sin-nombre"
     }
   ],
