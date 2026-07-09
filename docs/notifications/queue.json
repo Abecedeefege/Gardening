@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-09T09:11:52.214896",
+  "_updated_at": "2026-07-09T15:43:55.354Z",
   "notifications": [
     {
       "id": "2026-07-09-task-dia",
@@ -9,8 +9,8 @@
       "format": "tarea",
       "send_at": "2026-07-09T08:00:00-03:00",
       "expires_at": "2026-07-09T21:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-09T15:43:55.252Z",
       "fail_reason": null,
       "created_by": "gen_task_reminders 2026-07-09"
     },
@@ -22,8 +22,8 @@
       "format": "experiencia",
       "send_at": "2026-07-09T08:30:00-03:00",
       "expires_at": "2026-07-09T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-09T15:43:55.353Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-09 (ciclo 39)"
     },
