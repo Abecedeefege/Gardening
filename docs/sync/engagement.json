@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-09T00:41:12.652Z",
+  "_updated_at": "2026-07-09T00:42:11.907Z",
   "events": [
     {
       "_id": "mqsrgvt0xkysm0",
@@ -1335,6 +1335,15 @@
       "nid": "2026-07-08-c",
       "src": "push",
       "ts": "2026-07-09T00:41:14.093Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrcs82xzppeq8l",
+      "type": "answer",
+      "qid": "records-suscripcion-diaria",
+      "value": "si",
+      "page": "engage/2026-06-29-records-jardin.html",
+      "ts": "2026-07-09T00:42:13.607Z",
       "device": "sin-nombre"
     }
   ],
