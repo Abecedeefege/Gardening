@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-09T17:34:00.874Z",
+  "_updated_at": "2026-07-09T18:18:52.299Z",
   "events": [
     {
       "_id": "mqtkcjpf5j9h8n",
@@ -1370,6 +1370,23 @@
       "type": "proposal_approved",
       "proposal_id": "2026-07-09-quiz-planta",
       "ts": "2026-07-09T17:34:00.996Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrdtyvyq9rpkz8",
+      "type": "notification_clicked",
+      "nid": "2026-07-09-b",
+      "page": "engage/2026-07-09-wrapped-jardin.html",
+      "ts": "2026-07-09T18:18:50.064Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrdtyvyqcnai9e",
+      "type": "page_visit",
+      "page": "engage/2026-07-09-wrapped-jardin.html",
+      "nid": "2026-07-09-b",
+      "src": "push",
+      "ts": "2026-07-09T18:18:50.064Z",
       "device": "sin-nombre"
     }
   ],
