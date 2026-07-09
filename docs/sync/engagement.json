@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-09T00:42:14.363Z",
+  "_updated_at": "2026-07-09T17:32:00.152Z",
   "events": [
     {
       "_id": "mqtkcjpf5j9h8n",
@@ -1336,6 +1336,15 @@
       "value": "meh",
       "page": "engage/2026-06-29-records-jardin.html",
       "ts": "2026-07-09T00:42:15.998Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrcs88lpa9b2ue",
+      "type": "dwell",
+      "seconds": 67,
+      "scroll_pct": 100,
+      "page": "engage/2026-06-29-records-jardin.html",
+      "ts": "2026-07-09T00:42:20.941Z",
       "device": "sin-nombre"
     }
   ],
