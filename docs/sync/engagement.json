@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-09T23:11:18.763Z",
+  "_updated_at": "2026-07-09T23:11:22.769Z",
   "events": [
     {
       "_id": "mqtkcjpf5j9h8n",
@@ -1421,6 +1421,15 @@
       "value": "si",
       "page": "engage/2026-06-30-chusmerio-jardin.html",
       "ts": "2026-07-09T23:11:19.078Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mre4f4cxyp4z8l",
+      "type": "reaction",
+      "target": "chusmerio",
+      "value": "love",
+      "page": "engage/2026-06-30-chusmerio-jardin.html",
+      "ts": "2026-07-09T23:11:23.601Z",
       "device": "sin-nombre"
     }
   ],
