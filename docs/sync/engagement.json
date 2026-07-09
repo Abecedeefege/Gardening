@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-09T17:33:43.210Z",
+  "_updated_at": "2026-07-09T17:33:55.388Z",
   "events": [
     {
       "_id": "mqtkcjpf5j9h8n",
@@ -1354,6 +1354,15 @@
       "scroll_pct": 93,
       "page": "engage/2026-07-09-quiz-planta.html",
       "ts": "2026-07-09T17:33:43.255Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrdsd4qram8omh",
+      "type": "reaction",
+      "target": "quiz-planta",
+      "value": "love",
+      "page": "engage/2026-07-09-quiz-planta.html",
+      "ts": "2026-07-09T17:33:55.395Z",
       "device": "sin-nombre"
     }
   ],
