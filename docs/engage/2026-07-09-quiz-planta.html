@@ -1,0 +1,504 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2d5016">
+<title>🌱 ¿Qué planta de tu jardín sos? — El test</title>
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#3d6b1f; --verde3:#5a8a2c;
+    --oro:#c8922b; --oro2:#e0ad3d;
+    --crema:#faf6ec; --papel:#f2ead7; --papel2:#eadfc6;
+    --ink:#221f16; --ink2:#544d3a; --ink3:#8a8069;
+    --vino:#7a2f3a;
+    --line:rgba(34,31,22,.12);
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:var(--sans); background:var(--papel); color:var(--ink); line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(130% 55% at 50% -6%, rgba(45,80,22,.10), transparent),
+      radial-gradient(90% 40% at 100% 100%, rgba(200,146,43,.09), transparent);
+  }
+
+  /* back link: PRIMER elemento */
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#1c2810;
+    color:#cbd8b4; text-decoration:none; font-size:13px; font-weight:700; letter-spacing:.01em; }
+  .back:active{ opacity:.65; }
+
+  .prog{ position:fixed; top:0; left:0; height:4px; width:0; z-index:90;
+    background:linear-gradient(90deg,var(--oro2),var(--verde3),var(--verde)); transition:width .12s linear; }
+
+  .wrap{ max-width:560px; margin:0 auto; padding-bottom:20px; }
+
+  /* ——— HERO ——— */
+  .hero{ position:relative; overflow:hidden; padding:40px var(--pad) 34px; text-align:center; color:var(--crema);
+    background:
+      radial-gradient(150% 90% at 80% 0%, rgba(200,146,43,.34), transparent 55%),
+      linear-gradient(160deg,#376024 0%,#2d5016 55%,#20380f 100%); }
+  .hero .badge{ display:inline-block; font-size:11px; font-weight:900; letter-spacing:.2em; text-transform:uppercase;
+    color:#20380f; background:var(--oro2); border-radius:999px; padding:6px 13px; }
+  .hero .emos{ font-size:40px; letter-spacing:2px; margin:16px 0 4px; filter:drop-shadow(0 6px 14px rgba(0,0,0,.35)); }
+  .hero h1{ font-family:var(--serif); font-size:clamp(31px,9.4vw,46px); font-weight:800; letter-spacing:-.02em;
+    line-height:1.02; margin:6px 0 12px; }
+  .hero h1 em{ font-style:italic; color:var(--oro2); }
+  .hero p{ font-size:15.5px; line-height:1.5; color:#e7deca; max-width:36ch; margin:0 auto; }
+  .hero p b{ color:#fff; }
+  .hero .meta{ margin-top:18px; display:flex; justify-content:center; gap:8px 16px; flex-wrap:wrap;
+    font-size:10.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--oro2); }
+  .hero .meta span::before{ content:"◆ "; color:rgba(224,173,61,.65); }
+  .hero .scrollcue{ margin-top:22px; font-size:12.5px; font-weight:700; color:#cdd9b6; animation:bob 1.6s ease-in-out infinite; }
+  @keyframes bob{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(5px);} }
+
+  /* barra de avance del test */
+  .tracker{ position:sticky; top:0; z-index:60; display:flex; align-items:center; gap:10px;
+    padding:9px var(--pad); background:rgba(242,234,215,.93); backdrop-filter:blur(10px) saturate(1.2);
+    border-bottom:1px solid var(--line); font-size:12px; font-weight:800; color:var(--verde); }
+  .tracker .dots{ display:flex; gap:6px; }
+  .tracker .dot{ width:9px; height:9px; border-radius:50%; background:rgba(45,80,22,.22); transition:.2s; }
+  .tracker .dot.on{ background:var(--verde); transform:scale(1.15); }
+  .tracker .count{ margin-left:auto; color:var(--ink3); font-weight:700; }
+
+  /* reveal on scroll */
+  .reveal{ opacity:0; transform:translateY(20px); transition:opacity .55s ease, transform .55s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* ——— tarjetas de pregunta ——— */
+  .qcard{ margin:18px var(--pad); background:var(--crema); border:1px solid var(--line); border-radius:18px;
+    padding:20px 18px 16px; box-shadow:0 14px 34px rgba(34,31,22,.09); }
+  .qcard .qnum{ font-size:11px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:var(--oro);
+    display:flex; align-items:center; gap:8px; }
+  .qcard .qnum::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .qcard h2{ font-family:var(--serif); font-size:21px; font-weight:800; letter-spacing:-.01em; color:var(--verde);
+    margin:9px 0 15px; line-height:1.22; }
+  .opts{ display:flex; flex-direction:column; gap:9px; }
+  .opt{ display:flex; align-items:center; gap:12px; width:100%; text-align:left; cursor:pointer;
+    font-family:var(--sans); font-size:15px; font-weight:600; color:var(--ink); line-height:1.35;
+    background:var(--papel); border:1.5px solid var(--line); border-radius:13px; padding:13px 14px;
+    transition:transform .1s, border-color .15s, background .15s, box-shadow .15s; }
+  .opt:active{ transform:scale(.98); }
+  .opt .ico{ font-size:21px; flex:0 0 auto; line-height:1; }
+  .opt.sel{ border-color:var(--verde); background:rgba(45,80,22,.08); box-shadow:0 0 0 3px rgba(45,80,22,.12); color:var(--verde); }
+  .opt.sel .ico{ transform:scale(1.12); }
+  .opt.dim{ opacity:.5; }
+
+  /* botón revelar */
+  .revealbar{ margin:24px var(--pad) 8px; text-align:center; }
+  .revealbtn{ font-family:var(--sans); font-weight:900; font-size:17px; letter-spacing:.01em; cursor:pointer;
+    color:#20380f; background:linear-gradient(160deg,var(--oro2),var(--oro)); border:none; border-radius:16px;
+    padding:16px 26px; width:100%; max-width:360px; box-shadow:0 12px 28px rgba(200,146,43,.4);
+    transition:transform .12s, opacity .2s; }
+  .revealbtn:active{ transform:scale(.97); }
+  .revealbtn:disabled{ opacity:.4; cursor:default; box-shadow:none; filter:grayscale(.5); }
+  .revealbtn.ready{ animation:pulse 1.5s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{ box-shadow:0 12px 28px rgba(200,146,43,.4);} 50%{ box-shadow:0 12px 40px rgba(200,146,43,.75);} }
+  .revealhint{ margin-top:10px; font-size:12.5px; font-weight:700; color:var(--ink3); min-height:1.1em; }
+
+  /* ——— RESULTADO ——— */
+  #resultado{ display:none; }
+  .result-card{ margin:14px var(--pad); border-radius:22px; overflow:hidden;
+    border:2px solid var(--verde); box-shadow:0 20px 50px rgba(34,31,22,.18); }
+  .rc-top{ position:relative; padding:30px 20px 24px; text-align:center; color:var(--crema);
+    background:
+      radial-gradient(140% 100% at 50% 0%, rgba(200,146,43,.4), transparent 60%),
+      linear-gradient(160deg,#376024,#2d5016 60%,#20380f); }
+  .rc-top .youare{ font-size:12px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:var(--oro2); }
+  .rc-top .bigemo{ font-size:72px; line-height:1; margin:8px 0 2px; filter:drop-shadow(0 8px 18px rgba(0,0,0,.4)); }
+  .rc-top h2{ font-family:var(--serif); font-size:clamp(30px,9vw,42px); font-weight:800; letter-spacing:-.02em;
+    line-height:1.02; margin:4px 0 8px; }
+  .rc-top .tag{ font-size:15.5px; line-height:1.45; color:#eadfc6; max-width:30ch; margin:0 auto; font-style:italic; }
+  .rc-top .code{ display:inline-block; margin-top:14px; font-size:11px; font-weight:800; letter-spacing:.05em;
+    color:#20380f; background:var(--oro2); border-radius:999px; padding:5px 12px; }
+  .rc-body{ background:var(--crema); padding:20px 18px 22px; }
+  .rc-body .why{ font-size:16px; line-height:1.6; color:var(--ink); }
+  .rc-body .why b{ color:var(--vino); }
+  .rc-dato{ margin:16px 0 4px; border-radius:12px; padding:14px 15px; background:var(--papel);
+    border-left:5px solid var(--verde); }
+  .rc-dato .vh{ font-size:10px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:var(--verde);
+    margin-bottom:6px; }
+  .rc-dato p{ font-size:14.5px; line-height:1.58; color:var(--ink2); }
+  .rc-dato p b{ color:var(--ink); }
+  .rc-dato .src{ display:block; margin-top:8px; font-size:11px; font-weight:800; color:var(--oro); letter-spacing:.02em; }
+  .rc-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .rc-actions button{ flex:1 1 auto; font-family:var(--sans); font-weight:800; font-size:14.5px; cursor:pointer;
+    border-radius:13px; padding:13px 14px; border:1.5px solid var(--line); transition:transform .12s; }
+  .rc-actions button:active{ transform:scale(.96); }
+  .rc-share{ background:var(--verde); color:var(--crema); border-color:transparent; }
+  .rc-again{ background:var(--papel2); color:var(--ink2); }
+  .rc-sharehint{ margin-top:9px; font-size:12px; color:var(--verde2); font-weight:700; min-height:1em; text-align:center; }
+
+  /* ——— bloques engagement ——— */
+  .blk{ margin:20px var(--pad); background:var(--crema); border:1px solid var(--line); border-radius:16px;
+    padding:22px 18px; text-align:center; box-shadow:0 12px 30px rgba(34,31,22,.08); }
+  .blk h3{ font-family:var(--serif); font-size:21px; font-weight:800; letter-spacing:-.01em; color:var(--verde); margin-bottom:6px; }
+  .blk > p{ font-size:14px; color:var(--ink2); max-width:44ch; margin:0 auto 15px; line-height:1.55; }
+  .blk > p b{ color:var(--vino); }
+  .rowbtns{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+  .rowbtns button{ font-family:var(--sans); font-weight:800; font-size:14.5px; color:var(--ink); cursor:pointer;
+    background:var(--papel); border:1px solid var(--line); border-radius:12px; padding:11px 16px;
+    transition:transform .12s, border-color .12s, background .12s; }
+  .rowbtns button:active{ transform:scale(.95); }
+  .rowbtns button.sel{ border-color:var(--verde); color:var(--verde); background:rgba(45,80,22,.08); }
+  .rowbtns button:disabled:not(.sel){ opacity:.4; }
+  .react-hint,.q-hint{ display:block; width:100%; margin-top:10px; font-size:12.5px; color:var(--verde2); font-weight:700; min-height:1.2em; }
+
+  .sub-blk{ background:linear-gradient(165deg,#376024,#20380f); border-color:transparent; }
+  .sub-blk h3{ color:var(--oro2); }
+  .sub-blk > p{ color:#e7deca; }
+  .sub-blk > p b{ color:#fff; }
+  .sub-blk .rowbtns button{ background:rgba(250,246,236,.08); border-color:rgba(250,246,236,.22); color:#efe8d8; }
+  .sub-blk .rowbtns button.si{ background:var(--oro2); color:#20380f; border-color:transparent; }
+  .sub-blk .rowbtns button.si.sel{ box-shadow:0 0 0 2px rgba(224,173,61,.5); color:#20380f; }
+  .sub-blk .rowbtns button.sel{ color:var(--oro2); border-color:var(--oro2); background:rgba(224,173,61,.1); }
+  .sub-blk .q-hint{ color:var(--oro2); }
+
+  .engage-actions{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:8px var(--pad) 4px; padding:18px 16px; }
+  .engage-actions button{ font-family:var(--sans); font-weight:900; font-size:15px; cursor:pointer; border-radius:13px;
+    padding:13px 18px; border:1px solid var(--line); transition:transform .12s; }
+  .engage-actions button:active{ transform:scale(.95); }
+  .engage-actions button:first-child{ background:var(--verde); color:var(--crema); border-color:transparent; }
+  .engage-actions button:last-child{ background:var(--papel2); color:var(--ink2); }
+  .engage-feedback{ text-align:center; font-family:var(--sans); font-size:14px; color:var(--verde2); font-weight:700; padding:6px; }
+
+  footer.pie{ text-align:center; padding:12px var(--pad) 34px; font-size:12.5px; color:var(--ink3); }
+  footer.pie a{ color:var(--vino); text-decoration:none; font-weight:800; }
+  footer.pie .cred{ margin-top:10px; font-size:11px; color:var(--ink3); line-height:1.5; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="prog" id="prog"></div>
+
+<div class="wrap">
+
+  <!-- ——— HERO ——— -->
+  <section class="hero">
+    <span class="badge">Test de identidad · 6 preguntas</span>
+    <div class="emos">🌵 🌸 🌿 🌼 💜 🌳</div>
+    <h1>¿Qué <em>planta</em><br>de tu jardín sos?</h1>
+    <p>Es <b>pleno invierno</b> en Montevideo y el jardín descansa. Contanos cómo sos vos y te revelamos cuál de las <b>plantas reales</b> de tu jardín Pacha Mama sos… con un dato verdadero que lo prueba.</p>
+    <div class="meta"><span>1ª persona</span><span>100% real</span><span>Compartible</span></div>
+    <div class="scrollcue">↓ Deslizá y respondé</div>
+  </section>
+
+  <!-- tracker -->
+  <div class="tracker">
+    <span>Tu test</span>
+    <div class="dots" id="dots"></div>
+    <span class="count" id="count">0 / 6</span>
+  </div>
+
+  <!-- ——— PREGUNTAS ——— -->
+  <section class="qcard reveal" data-qi="0">
+    <div class="qnum">Pregunta 01</div>
+    <h2>Sábado sin NADA obligatorio. ¿Qué te nace hacer?</h2>
+    <div class="opts">
+      <button type="button" class="opt" onclick="pick('q1','bug',2,this)"><span class="ico">🚀</span><span>Aprovechar para avanzar en mil cosas, la vida es corta</span></button>
+      <button type="button" class="opt" onclick="pick('q1','lav',2,this)"><span class="ico">😴</span><span>Apagar el mundo y descansar, cero culpa</span></button>
+      <button type="button" class="opt" onclick="pick('q1','cin',2,this)"><span class="ico">🍲</span><span>Juntar a la gente que quiero y cocinar para todos</span></button>
+      <button type="button" class="opt" onclick="pick('q1','cli',2,this)"><span class="ico">🌱</span><span>Seguir ese proyecto largo que nadie ve todavía</span></button>
+    </div>
+  </section>
+
+  <section class="qcard reveal" data-qi="1">
+    <div class="qnum">Pregunta 02</div>
+    <h2>Caés en un grupo nuevo de gente. ¿Cómo sos?</h2>
+    <div class="opts">
+      <button type="button" class="opt" onclick="pick('q2','hor',2,this)"><span class="ico">🎭</span><span>Me acoplo al clima del grupo, cambio según con quién esté</span></button>
+      <button type="button" class="opt" onclick="pick('q2','ana',2,this)"><span class="ico">🌳</span><span>Cuento de dónde vengo, mis raíces, los míos</span></button>
+      <button type="button" class="opt" onclick="pick('q2','bug',2,this)"><span class="ico">🔥</span><span>Tomo la delantera, propongo, empujo</span></button>
+      <button type="button" class="opt" onclick="pick('q2','lav',2,this)"><span class="ico">🧘</span><span>Escucho, bajo un cambio, pongo paz</span></button>
+    </div>
+  </section>
+
+  <section class="qcard reveal" data-qi="2">
+    <div class="qnum">Pregunta 03</div>
+    <h2>Tu forma de querer a la gente es…</h2>
+    <div class="opts">
+      <button type="button" class="opt" onclick="pick('q3','cin',2,this)"><span class="ico">🤲</span><span>Estar siempre y hacerle la vida más fácil al otro</span></button>
+      <button type="button" class="opt" onclick="pick('q3','cli',2,this)"><span class="ico">⏳</span><span>Con paciencia: lo bueno lleva su tiempo</span></button>
+      <button type="button" class="opt" onclick="pick('q3','lav',2,this)"><span class="ico">🌊</span><span>Contagiando calma, siendo el lugar seguro</span></button>
+      <button type="button" class="opt" onclick="pick('q3','hor',2,this)"><span class="ico">🎨</span><span>Adaptándome a lo que el otro necesita en cada momento</span></button>
+    </div>
+  </section>
+
+  <section class="qcard reveal" data-qi="3">
+    <div class="qnum">Pregunta 04</div>
+    <h2>Das lo mejor de vos cuando…</h2>
+    <div class="opts">
+      <button type="button" class="opt" onclick="pick('q4','bug',2,this)"><span class="ico">💪</span><span>La cosa se pone difícil — ahí es cuando florezco</span></button>
+      <button type="button" class="opt" onclick="pick('q4','cli',2,this)"><span class="ico">🌾</span><span>Me dejan tranquilo, sin apuro, a mi ritmo</span></button>
+      <button type="button" class="opt" onclick="pick('q4','cin',2,this)"><span class="ico">❤️</span><span>Siento que ayudo a que otros estén mejor</span></button>
+      <button type="button" class="opt" onclick="pick('q4','hor',2,this)"><span class="ico">✨</span><span>Estoy en un entorno que me inspira y me tiñe</span></button>
+    </div>
+  </section>
+
+  <section class="qcard reveal" data-qi="4">
+    <div class="qnum">Pregunta 05</div>
+    <h2>Si fueras un rincón de Montevideo, serías…</h2>
+    <div class="opts">
+      <button type="button" class="opt" onclick="pick('q5','bug',2,this)"><span class="ico">⛰️</span><span>Un mirador alto, en subida, con vista</span></button>
+      <button type="button" class="opt" onclick="pick('q5','ana',2,this)"><span class="ico">🌿</span><span>Un monte criollo, algo bien de acá</span></button>
+      <button type="button" class="opt" onclick="pick('q5','lav',2,this)"><span class="ico">🌇</span><span>Una plaza tranquila al atardecer</span></button>
+      <button type="button" class="opt" onclick="pick('q5','cin',2,this)"><span class="ico">🏠</span><span>Una casa llena de gente y olor a comida</span></button>
+    </div>
+  </section>
+
+  <section class="qcard reveal" data-qi="5">
+    <div class="qnum">Pregunta 06 · la última</div>
+    <h2>¿Qué frase te representa más?</h2>
+    <div class="opts">
+      <button type="button" class="opt" onclick="pick('q6','ana',2,this)"><span class="ico">🪵</span><span>«Mis raíces son mi fuerza»</span></button>
+      <button type="button" class="opt" onclick="pick('q6','hor',2,this)"><span class="ico">🦋</span><span>«Me transformo, pero sigo siendo yo»</span></button>
+      <button type="button" class="opt" onclick="pick('q6','cli',2,this)"><span class="ico">🌙</span><span>«Lo bueno se hace esperar»</span></button>
+      <button type="button" class="opt" onclick="pick('q6','bug',2,this)"><span class="ico">🌵</span><span>«Donde otros ven sequía, yo saco mi mejor versión»</span></button>
+    </div>
+  </section>
+
+  <!-- botón revelar -->
+  <div class="revealbar reveal">
+    <button type="button" class="revealbtn" id="revealbtn" disabled onclick="revelar()">🌟 Revelar qué planta soy</button>
+    <div class="revealhint" id="revealhint">Respondé las 6 preguntas para desbloquear tu resultado</div>
+  </div>
+
+  <!-- RESULTADO (se rellena por JS) -->
+  <section id="resultado">
+    <div class="result-card">
+      <div class="rc-top">
+        <div class="youare">Sos…</div>
+        <div class="bigemo" id="rc-emo">🌱</div>
+        <h2 id="rc-title">—</h2>
+        <p class="tag" id="rc-tag">—</p>
+        <span class="code" id="rc-code">—</span>
+      </div>
+      <div class="rc-body">
+        <p class="why" id="rc-why">—</p>
+        <div class="rc-dato">
+          <div class="vh">✓ Y encima es verdad — dato del catálogo</div>
+          <p id="rc-dato">—</p>
+          <span class="src" id="rc-src">—</span>
+        </div>
+        <div class="rc-actions">
+          <button type="button" class="rc-share" onclick="compartir()">📲 Compartir mi resultado</button>
+          <button type="button" class="rc-again" onclick="reiniciar()">🔁 Rehacer el test</button>
+        </div>
+        <div class="rc-sharehint" id="rc-sharehint"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- a) reacción -->
+  <section class="blk reveal">
+    <h3>¿Te sorprendió tu planta?</h3>
+    <p>Tu voto decide si el jardín sigue armando <b>tests como este</b>.</p>
+    <div class="rowbtns">
+      <button type="button" onclick="engageReact('quiz-planta','love', this)">😍 ¡Increíble!</button>
+      <button type="button" onclick="engageReact('quiz-planta','meh', this)">😐 Más o menos</button>
+      <button type="button" onclick="engageReact('quiz-planta','no', this)">🙅 No es lo mío</button>
+      <span class="react-hint"></span>
+    </div>
+  </section>
+
+  <!-- b) suscripción diaria -->
+  <section class="blk sub-blk reveal">
+    <h3>🌱 Un test nuevo, cada día</h3>
+    <p>Cada mañana, <b>otra pregunta y otro giro</b>: qué planta sos según tu humor, tu signo, tu forma de amar… siempre con las plantas reales de TU jardín y datos verificados. ¿Lo querés fresco todos los días?</p>
+    <div class="rowbtns">
+      <button type="button" class="si" onclick="engageAnswer('quiz-planta-suscripcion-diaria','si', this)">😍 Sí, quiero un test nuevo cada día</button>
+      <button type="button" onclick="engageAnswer('quiz-planta-suscripcion-diaria','no', this)">No, gracias</button>
+      <span class="q-hint"></span>
+    </div>
+  </section>
+
+  <!-- c) decisión -->
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-07-09-quiz-planta')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-07-09-quiz-planta')">✕ No me interesa</button>
+  </div>
+
+  <!-- d) footer -->
+  <footer class="pie">
+    <a href="2026-07-09-quiz-planta-pitch.html">💼 Cómo se vende esto</a>
+    <div class="cred">Test hecho con datos reales del catálogo Pacha Mama · la personalidad es un juego, la botánica jamás se inventa · 09/07/2026</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  // barra de progreso de lectura
+  var prog = document.getElementById('prog');
+  function onScroll(){
+    var h = document.documentElement;
+    var d = h.scrollHeight - h.clientHeight;
+    prog.style.width = (d > 0 ? Math.min(100, (h.scrollTop / d) * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  // reveal on scroll
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+  // dots del tracker
+  var dots = document.getElementById('dots');
+  for (var i=0;i<6;i++){ var d=document.createElement('span'); d.className='dot'; dots.appendChild(d); }
+})();
+
+// ——— lógica del test ———
+var PLANTS = ['bug','ana','cin','cli','lav','hor'];
+var scores = { bug:0, ana:0, cin:0, cli:0, lav:0, hor:0 };
+var answers = {};                 // qid -> { plant, w }
+// prioridad de desempate (favorece resultados menos frecuentes)
+var TIEBREAK = ['ana','hor','cli','cin','lav','bug'];
+
+var RESULTS = {
+  bug: {
+    emo:'🌸', title:'Sos la Buganvilia', code:'Santa Rita · B-1 · Bougainvillea spectabilis',
+    tag:'La ambiciosa que florece más fuerte justo cuando la vida aprieta.',
+    why:'No te achicás ante la adversidad: la usás de combustible. Trepás, insistís y, cuando parece que no da para más, sacás tu <b>mejor versión</b>. Brillás bajo presión.',
+    dato:'Y no es metáfora: en la Buganvilia <b>la sequía estimula la floración</b> — cuanto menos agua recibe, más se llena de brácteas fucsia. Rinde más bajo presión, igual que vos. Encima la «descubrió» Jeanne Baret en 1768, <b>la primera mujer en dar la vuelta al mundo</b>, viajando disfrazada de hombre para que la dejaran subir al barco.',
+    src:'B-1 · water + fun_fact del catálogo',
+    share:'🌸 Hice el test y soy la BUGANVILIA (B-1) de mi jardín: la que florece más fuerte cuando la vida aprieta. ¿Qué planta sos vos?'
+  },
+  ana: {
+    emo:'🌳', title:'Sos la Anacahuita', code:'B-16 · Schinus longifolius',
+    tag:'La de raíces profundas: tu fuerza viene de dónde venís.',
+    why:'No necesitás gritar para tener presencia. Sos leal, resistente y fiel a lo tuyo. La gente sabe que en vos hay algo que <b>no se dobla</b>.',
+    dato:'La Anacahuita es <b>uno de los árboles más simbólicos del Uruguay — protegido por ley nacional desde 1986</b>. Su madera durísima la usaban los charrúas para hacer arcos, y tolera la sequía extrema sin quejarse. Raíz, aguante e identidad hecha planta.',
+    src:'B-16 · fun_fact + charrúa + water del catálogo',
+    share:'🌳 Hice el test y soy la ANACAHUITA (B-16) de mi jardín: raíces profundas, árbol protegido por ley desde 1986. ¿Qué planta sos vos?'
+  },
+  cin: {
+    emo:'🌿', title:'Sos la Cinta', code:'Lazo de amor · B-12 / B-17 · Chlorophytum comosum',
+    tag:'La generosa que mejora el ambiente de todos los que te rodean.',
+    why:'Donde estás vos, se está mejor. Cuidás, sostenés y repartís <b>sin llevar la cuenta</b>. Y encima hacés que parezca fácil.',
+    dato:'La <b>NASA</b> incluyó a la Cinta en su lista de plantas que purifican el aire interior: absorbe formaldehído, xileno y monóxido de carbono, y una sola planta limpia <b>unos 10 m²</b>. Literalmente mejorás el aire de la habitación. Además llena de «hijos» que se regalan a todos: pura generosidad.',
+    src:'B-12 / B-17 · fun_fact del catálogo',
+    share:'🌿 Hice el test y soy la CINTA / lazo de amor (B-12) de mi jardín: la generosa que hasta la NASA reconoce por purificar el aire. ¿Qué planta sos vos?'
+  },
+  cli: {
+    emo:'🌼', title:'Sos la Clivia', code:'Lirio del Cabo · B-13 · Clivia miniata',
+    tag:'La paciente que juega a largo plazo — y por eso dura.',
+    why:'No corrés atrás de lo inmediato. Sabés esperar, aguantar el invierno, confiar en tu proceso. Lo tuyo <b>florece cuando tiene que florecer</b>.',
+    dato:'La Clivia puede <b>vivir 100 años</b>: hay ejemplares en jardines reales que datan de 1830 y todavía florecen. Y su secreto es la paciencia: en invierno se la deja casi sin agua a propósito, porque esa <b>sequía forzada es justo lo que dispara su explosión de flores naranjas</b>. Descansás para volver más fuerte.',
+    src:'B-13 · fun_fact + water del catálogo',
+    share:'🌼 Hice el test y soy la CLIVIA (B-13) de mi jardín: paciente y longeva, puede vivir 100 años. ¿Qué planta sos vos?'
+  },
+  lav: {
+    emo:'💜', title:'Sos la Lavanda', code:'B-10 / B-19 · Lavandula dentata',
+    tag:'La zen: donde estás vos, baja la ansiedad de todos.',
+    why:'Tenés un efecto <b>calmante</b> en la gente. No te agitás por cualquier cosa, pedís poco y ordenás el ambiente con tu sola presencia.',
+    dato:'El nombre «lavanda» viene del latín <b>lavare (lavar)</b>: los romanos la echaban al agua del baño. Su aceite esencial <b>relaja de verdad</b> — la aromaterapia con lavanda está comprobada — y una bolsita seca en el cajón ahuyenta polillas. Pide muy poca agua y odia los pies mojados: bajo mantenimiento y en paz.',
+    src:'B-10 / B-19 · fun_fact + water del catálogo',
+    share:'💜 Hice el test y soy la LAVANDA (B-10) de mi jardín: la zen que baja la ansiedad de todos. ¿Qué planta sos vos?'
+  },
+  hor: {
+    emo:'🌷', title:'Sos la Hortensia', code:'B-5 · Hydrangea macrophylla',
+    tag:'La camaleónica: te transformás según tu entorno, pero seguís siendo vos.',
+    why:'Leés el ambiente y te adaptás como pocas. La gente ve versiones distintas tuyas y <b>todas son verdad</b>. Tu superpoder es la sensibilidad al contexto.',
+    dato:'La Hortensia es <b>la única planta que cambia de color según lo que «come» del suelo</b>: se pone azul con clavos oxidados o borra de café enterrados, y rosa si le agregás cal. Misma planta, colores distintos según dónde esté. Encima «Hydrangea» significa <b>sed de agua</b>: sentís todo intensamente.',
+    src:'B-5 · fun_fact + water del catálogo',
+    share:'🌷 Hice el test y soy la HORTENSIA (B-5) de mi jardín: camaleónica, cambio de color según el suelo. ¿Qué planta sos vos?'
+  }
+};
+
+var lastResult = null;
+
+function pick(qid, plant, w, btn){
+  // deshacer respuesta previa de esta pregunta
+  var prev = answers[qid];
+  if (prev){ scores[prev.plant] -= prev.w; }
+  answers[qid] = { plant: plant, w: w };
+  scores[plant] += w;
+
+  // UI: marcar seleccionada dentro de su tarjeta
+  var card = btn.closest('.qcard');
+  Array.prototype.forEach.call(card.querySelectorAll('.opt'), function(o){
+    o.classList.remove('sel'); o.classList.add('dim');
+  });
+  btn.classList.add('sel'); btn.classList.remove('dim');
+
+  updateProgress();
+}
+
+function updateProgress(){
+  var n = Object.keys(answers).length;
+  document.getElementById('count').textContent = n + ' / 6';
+  var dotEls = document.querySelectorAll('#dots .dot');
+  for (var i=0;i<dotEls.length;i++){ dotEls[i].classList.toggle('on', i < n); }
+  var btn = document.getElementById('revealbtn');
+  var hint = document.getElementById('revealhint');
+  if (n >= 6){
+    btn.disabled = false; btn.classList.add('ready');
+    hint.textContent = '¡Listo! Tocá para descubrir tu planta 🌱';
+  } else {
+    btn.disabled = true; btn.classList.remove('ready');
+    hint.textContent = 'Te faltan ' + (6 - n) + ' — respondé todas para desbloquear tu resultado';
+  }
+}
+
+function winner(){
+  // mayor puntaje; empate -> orden de TIEBREAK
+  var best = TIEBREAK[0], bestScore = -1;
+  TIEBREAK.forEach(function(p){
+    if (scores[p] > bestScore){ bestScore = scores[p]; best = p; }
+  });
+  return best;
+}
+
+function revelar(){
+  var key = winner();
+  lastResult = key;
+  var r = RESULTS[key];
+  document.getElementById('rc-emo').textContent = r.emo;
+  document.getElementById('rc-title').textContent = r.title;
+  document.getElementById('rc-tag').textContent = r.tag;
+  document.getElementById('rc-code').textContent = r.code;
+  document.getElementById('rc-why').innerHTML = r.why;
+  document.getElementById('rc-dato').innerHTML = r.dato;
+  document.getElementById('rc-src').textContent = r.src;
+  var res = document.getElementById('resultado');
+  res.style.display = 'block';
+  setTimeout(function(){ res.scrollIntoView({ behavior:'smooth', block:'start' }); }, 60);
+}
+
+function compartir(){
+  var hint = document.getElementById('rc-sharehint');
+  if (!lastResult){ return; }
+  var txt = RESULTS[lastResult].share + '\n\n🌱 El test del jardín Pacha Mama';
+  if (navigator.share){
+    navigator.share({ title:'¿Qué planta de tu jardín sos?', text: txt })
+      .then(function(){ hint.textContent = '¡Gracias por compartir! 🌱'; })
+      .catch(function(){ hint.textContent = 'Tip: sacá una captura de esta tarjeta y compartila.'; });
+  } else {
+    hint.textContent = '📸 Sacá una captura de pantalla de esta tarjeta y compartila donde quieras.';
+  }
+}
+
+function reiniciar(){
+  scores = { bug:0, ana:0, cin:0, cli:0, lav:0, hor:0 };
+  answers = {}; lastResult = null;
+  document.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('sel'); o.classList.remove('dim'); });
+  document.getElementById('resultado').style.display = 'none';
+  document.getElementById('rc-sharehint').textContent = '';
+  updateProgress();
+  document.querySelector('.qcard').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+// exponer al scope global para los onclick inline
+window.pick = pick;
+window.revelar = revelar;
+window.compartir = compartir;
+window.reiniciar = reiniciar;
+</script>
+<script src="engage.js"></script>
+</body></html>

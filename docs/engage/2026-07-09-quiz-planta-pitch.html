@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2d5016">
+<title>💼 Cómo se vende «¿Qué planta de tu jardín sos?»</title>
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#3d6b1f; --verde3:#5a8a2c;
+    --oro:#c8922b; --oro2:#e0ad3d;
+    --crema:#faf6ec; --papel:#f2ead7; --papel2:#eadfc6;
+    --ink:#221f16; --ink2:#544d3a; --ink3:#8a8069;
+    --vino:#7a2f3a;
+    --line:rgba(34,31,22,.12);
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:var(--sans); background:var(--papel); color:var(--ink); line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(130% 55% at 50% -6%, rgba(45,80,22,.10), transparent),
+      radial-gradient(90% 40% at 0% 100%, rgba(200,146,43,.09), transparent);
+  }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#1c2810;
+    color:#cbd8b4; text-decoration:none; font-size:13px; font-weight:700; letter-spacing:.01em; }
+  .back:active{ opacity:.65; }
+
+  .wrap{ max-width:620px; margin:0 auto; padding-bottom:40px; }
+
+  header.hero{ padding:36px var(--pad) 30px; color:var(--crema); text-align:center;
+    background:
+      radial-gradient(150% 90% at 82% 0%, rgba(200,146,43,.32), transparent 55%),
+      linear-gradient(160deg,#376024 0%,#2d5016 55%,#20380f 100%); }
+  header.hero .kick{ display:inline-block; font-size:11px; font-weight:900; letter-spacing:.2em; text-transform:uppercase;
+    color:#20380f; background:var(--oro2); border-radius:999px; padding:6px 13px; }
+  header.hero h1{ font-family:var(--serif); font-size:clamp(28px,8vw,40px); font-weight:800; letter-spacing:-.02em;
+    line-height:1.05; margin:14px 0 10px; }
+  header.hero h1 em{ font-style:italic; color:var(--oro2); }
+  header.hero p{ font-size:15.5px; color:#e7deca; max-width:44ch; margin:0 auto; }
+  header.hero p b{ color:#fff; }
+
+  main{ padding:6px var(--pad) 0; }
+
+  h2.sec{ font-family:var(--serif); font-size:24px; font-weight:800; letter-spacing:-.01em; color:var(--verde);
+    margin:34px 0 6px; padding-top:8px; }
+  h2.sec .lead{ display:block; font-family:var(--sans); font-size:11px; font-weight:900; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--oro); margin-bottom:3px; }
+  p.body{ font-size:15.5px; color:var(--ink2); margin:10px 0; }
+  p.body b{ color:var(--ink); }
+
+  .why{ margin:16px 0; display:grid; gap:11px; }
+  .why .card{ background:var(--crema); border:1px solid var(--line); border-left:5px solid var(--verde);
+    border-radius:12px; padding:14px 16px; }
+  .why .card h3{ font-size:15px; font-weight:800; color:var(--verde); margin-bottom:4px; }
+  .why .card p{ font-size:14px; color:var(--ink2); }
+  .why .card p b{ color:var(--vino); }
+
+  .split{ margin:22px 0 6px; font-size:12px; font-weight:900; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro); display:flex; align-items:center; gap:10px; }
+  .split::after{ content:""; flex:1; height:1px; background:var(--line); }
+
+  .model{ background:var(--crema); border:1px solid var(--line); border-radius:16px; padding:18px 17px;
+    margin:14px 0; box-shadow:0 10px 26px rgba(34,31,22,.07); }
+  .model .top{ display:flex; align-items:center; gap:11px; margin-bottom:9px; }
+  .model .num{ flex:0 0 auto; width:34px; height:34px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+    font-weight:900; font-size:16px; color:var(--crema); background:linear-gradient(160deg,var(--verde3),var(--verde)); }
+  .model.creative .num{ background:linear-gradient(160deg,var(--oro2),var(--oro)); color:#20380f; }
+  .model .name{ font-family:var(--serif); font-size:19px; font-weight:800; color:var(--verde); line-height:1.15; }
+  .model.creative .name{ color:var(--vino); }
+  .model .row{ margin:9px 0; font-size:14.5px; line-height:1.55; }
+  .model .row .lbl{ display:inline-block; font-size:10.5px; font-weight:900; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--oro); margin-right:6px; }
+  .model .row.works{ color:var(--ink2); }
+  .model .row.works .lbl{ color:var(--verde2); }
+  .model .row b{ color:var(--ink); }
+
+  .pitchbox{ margin:30px 0 10px; border-radius:18px; overflow:hidden; border:2px solid var(--verde); }
+  .pitchbox .ph{ background:var(--verde); color:var(--crema); padding:13px 16px; font-weight:900; font-size:13px;
+    letter-spacing:.1em; text-transform:uppercase; }
+  .pitchbox .pb{ background:var(--crema); padding:18px 17px; }
+  .pitchbox .elev{ font-family:var(--serif); font-size:18px; line-height:1.5; color:var(--ink); font-style:italic; }
+  .pitchbox .elev b{ color:var(--verde); font-style:normal; }
+  .pitchbox ul{ margin:14px 0 0; padding-left:0; list-style:none; display:grid; gap:9px; }
+  .pitchbox li{ font-size:14.5px; color:var(--ink2); padding-left:24px; position:relative; }
+  .pitchbox li::before{ content:"→"; position:absolute; left:0; color:var(--oro); font-weight:900; }
+  .pitchbox li b{ color:var(--ink); }
+
+  footer.pie{ text-align:center; padding:24px var(--pad) 20px; font-size:12.5px; color:var(--ink3); }
+  footer.pie a{ color:var(--vino); text-decoration:none; font-weight:800; }
+  footer.pie .cred{ margin-top:10px; font-size:11px; line-height:1.5; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="kick">Material de venta · Monetización</span>
+    <h1>Cómo se vende<br>«¿Qué <em>planta</em> de tu<br>jardín sos?»</h1>
+    <p>Un test de identidad estilo BuzzFeed que revela <b>cuál de tus plantas reales sos</b>, anclado en datos verificados del catálogo. Acá está por qué engancha y <b>seis formas de ganar plata</b> con eso.</p>
+  </header>
+
+  <main>
+
+    <!-- QUÉ ES / POR QUÉ ENGANCHA -->
+    <h2 class="sec"><span class="lead">El fundamento</span>Qué es y por qué la gente vuelve</h2>
+    <p class="body">No es trivia (la trivia fatiga: te expone lo que <b>no</b> sabés). Es un <b>test de identidad</b>: te habla de VOS. Ese es el género más viral de internet — «¿qué personaje sos?», «tu tipo según…» — porque el resultado no es información, es un <b>espejo halagador y compartible</b>. Y acá tiene un cierre que ninguno tiene: la planta que te toca <b>es una planta real de tu propio jardín</b> y el «por qué» es un dato botánico verificado. El asombro final —«esa soy yo, y encima es verdad»— es el gancho.</p>
+
+    <div class="why">
+      <div class="card">
+        <h3>1. El resultado es un objeto compartible</h3>
+        <p>La tarjeta-perfil («Sos la Buganvilia B-1») está diseñada para <b>captura de pantalla</b>. Cada usuario que comparte es un canal de adquisición gratis: <b>growth loop</b> puro. El resultado identitario tiene la tasa de compartido más alta de cualquier formato de contenido.</p>
+      </div>
+      <div class="card">
+        <h3>2. La suscripción diaria crea el hábito</h3>
+        <p>«Un test nuevo cada día» convierte una novedad en <b>rutina</b>. La variabilidad (hoy tu planta según tu humor, mañana según tu forma de amar) es el mismo mecanismo de recompensa variable que engancha en las apps: razón para <b>volver mañana</b>.</p>
+      </div>
+      <div class="card">
+        <h3>3. Intención altísima en el momento exacto</h3>
+        <p>Cuando alguien acaba de descubrir que «es la Lavanda», está <b>emocionalmente abierto</b> y curioso por esa planta. Es el instante perfecto para ofrecerle algo — cuidarla, comprarla, regalarla. La venta no interrumpe: <b>completa</b> la experiencia.</p>
+      </div>
+    </div>
+
+    <!-- MODELOS -->
+    <h2 class="sec"><span class="lead">6 modelos de monetización</span>Cómo se hace plata con esto</h2>
+
+    <div class="split">3 innovadores · sólidos y accionables</div>
+
+    <div class="model">
+      <div class="top"><div class="num">1</div><div class="name">Patrocinador de resultado (vivero afiliado)</div></div>
+      <div class="row"><span class="lbl">Cómo funciona</span>Cada resultado abre un módulo del <b>vivero aliado</b>: «Tu planta espíritu es la Lavanda — llevátela con 15% off» + mini guía de cuidado. Cobrás por <b>afiliación / CPA</b> (comisión por venta) o una fija mensual por aparecer.</div>
+      <div class="row works"><span class="lbl">Por qué anda</span>Es publicidad que llega en el pico de intención y afinidad. El usuario ya <b>quiere</b> a esa planta: el vivero paga por ese lead calificado, no por un banner frío.</div>
+    </div>
+
+    <div class="model">
+      <div class="top"><div class="num">2</div><div class="name">Freemium: la «semilla premium»</div></div>
+      <div class="row"><span class="lbl">Cómo funciona</span>El test diario es gratis. Por una <b>micro-suscripción</b> (ej. USD 1–2/mes) desbloqueás tests especiales (tu planta según tu signo, tu carta astral verde, el test de fin de año), guardás tu <b>«carné de identidad botánica»</b> y ves cómo evoluciona tu perfil.</div>
+      <div class="row works"><span class="lbl">Por qué anda</span>Ingreso <b>recurrente</b> sobre un hábito ya formado. El costo marginal de un test extra es casi cero y el valor percibido —conocerte mejor— es alto. Miles de micro-pagos &gt; pocos grandes.</div>
+    </div>
+
+    <div class="model">
+      <div class="top"><div class="num">3</div><div class="name">Merch on-demand del resultado</div></div>
+      <div class="row"><span class="lbl">Cómo funciona</span>La tarjeta se vuelve <b>producto físico</b>: lámina, taza, tote, sticker o remera con «Soy la Buganvilia» y su dato real. <b>Print-on-demand</b>: cero inventario, se imprime recién cuando alguien compra.</div>
+      <div class="row works"><span class="lbl">Por qué anda</span>La identidad se paga: la gente compra lo que dice quién es. Además es <b>regalo ideal</b> («le mando su planta a mi vieja»). Margen alto, riesgo cero de stock.</div>
+    </div>
+
+    <div class="split">3 ultra-creativos · para diferenciarse</div>
+
+    <div class="model creative">
+      <div class="top"><div class="num">4</div><div class="name">Apadriná tu planta espíritu (digital → real)</div></div>
+      <div class="row"><span class="lbl">Cómo funciona</span>Pagás una vez y <b>«adoptás» la planta real</b> que te tocó del jardín: recibís sus updates auténticos (foto de su floración, aviso cuando la podan) y, por un plus, te mandan a casa un <b>esqueje o plantín real</b> de esa especie. El resultado digital se convierte en vínculo físico.</div>
+      <div class="row works"><span class="lbl">Por qué anda</span>Convierte un test de 2 minutos en una <b>relación continua</b> y un objeto vivo. Nadie tira una planta que «es su gemela». Retención emocional imbatible + ticket alto por el envío real.</div>
+    </div>
+
+    <div class="model creative">
+      <div class="top"><div class="num">5</div><div class="name">Match botánico: el quiz de a dos (B2B eventos)</div></div>
+      <div class="row"><span class="lbl">Cómo funciona</span>Versión de compatibilidad: «¿Son compatibles sus plantas?» para <b>parejas, equipos de trabajo y casamientos</b>. En un evento, cada invitado descubre su planta y entre todos «arman el jardín» del casamiento o del equipo. Se licencia a <b>organizadores de eventos, bodas y áreas de RRHH</b>.</div>
+      <div class="row works"><span class="lbl">Por qué anda</span>El formato identitario es oro para <b>team-building y dinámicas sociales</b>: rompe el hielo y deja un recuerdo. Vendés la experiencia llave en mano (licencia por evento), no ads sueltos.</div>
+    </div>
+
+    <div class="model creative">
+      <div class="top"><div class="num">6</div><div class="name">Arquetipos verdes: segmentación para marcas de bienestar</div></div>
+      <div class="row"><span class="lbl">Cómo funciona</span>El test es un <b>segmentador emocional</b>: clasifica a la audiencia en arquetipos (la ambiciosa, la zen, la generosa…). Una marca de aromaterapia <b>patrocina a todas las «Lavandas»</b>; una de superfoods, a las «Cintas» que purifican. Auspicio <b>hiper-segmentado por arquetipo</b>, con insights anónimos agregados del mix de personalidades.</div>
+      <div class="row works"><span class="lbl">Por qué anda</span>Las marcas pagan caro por hablarle al segmento correcto en su lenguaje emocional. Acá el propio usuario se <b>autoclasifica jugando</b>: segmentación de primera parte, sin invadir privacidad, con encaje perfecto marca-arquetipo.</div>
+    </div>
+
+    <!-- PITCH DE VENTAS -->
+    <div class="pitchbox">
+      <div class="ph">🎤 El pitch en 20 segundos</div>
+      <div class="pb">
+        <p class="elev">«Tomamos el formato más viral de internet —el test de identidad— y le pusimos un final que nadie puede copiar: <b>la planta que te toca es real, es tuya, y el porqué es un dato verdadero</b>. Se comparte solo, engancha con un test nuevo cada día, y monetiza justo cuando el usuario más quiere a su planta.»</p>
+        <ul>
+          <li><b>A quién:</b> viveros y garden centers (afiliación), marcas de bienestar/cosmética natural (auspicio por arquetipo), organizadores de bodas y RRHH (licencia de eventos), y al propio usuario final (premium + merch + apadrinamiento).</li>
+          <li><b>Cómo se vende:</b> el test gratis es la <b>demo que se difunde sola</b>. Se muestra la métrica de compartidos y de vuelta diaria; sobre esa audiencia enganchada se cierra el patrocinio o la suscripción. El producto es su propio comercial.</li>
+          <li><b>Por qué ahora:</b> es <b>invierno</b> y el jardín «duerme» — pero la relación con el jardín no tiene que dormir. Este test mantiene vivo el vínculo (y el negocio) los 12 meses.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top:22px;">En una frase: <b>un juguete de identidad que se comparte gratis, vuelve cada día y vende en el momento de máxima afinidad</b> — con la honestidad de que cada dato es real.</p>
+
+  </main>
+
+  <footer class="pie">
+    <a href="2026-07-09-quiz-planta.html">← Volver a probar el test</a>
+    <div class="cred">Pitch de monetización · experiencia «¿Qué planta de tu jardín sos?» · jardín Pacha Mama, Montevideo · 09/07/2026</div>
+  </footer>
+
+</div>
+</body></html>

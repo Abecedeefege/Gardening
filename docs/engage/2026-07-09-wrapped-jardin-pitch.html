@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f2019">
+<title>💼 El Wrapped de tu Jardín — Cómo se vende esto</title>
+<style>
+  :root{
+    --bg:#0d1a14; --paper:#f4efe4; --ink:#f4efe4; --ink2:#cdc6b5; --ink3:#8f8974;
+    --verde:#2d5016; --verde2:#3f7a2c; --lima:#b6f36a; --lima2:#d7ff8c;
+    --oro:#f6c33d; --magenta:#ff5db1; --cielo:#5fd2e0; --naranja:#ff9a3d; --violeta:#c3a6ff;
+    --line:rgba(244,239,228,.14);
+    --pad:max(20px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.58;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 50% at 50% -6%, rgba(63,122,44,.28), transparent 60%); }
+
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#08110c;
+    color:#9fb98a; text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+
+  .wrap{ max-width:620px; margin:0 auto; padding:0 var(--pad) 48px; }
+
+  header.h{ padding:42px 0 26px; border-bottom:1px solid var(--line); }
+  header.h .k{ font-size:12px; font-weight:900; letter-spacing:.26em; text-transform:uppercase; color:var(--oro); }
+  header.h h1{ font-size:clamp(32px,9vw,46px); font-weight:900; letter-spacing:-.03em; line-height:1; margin:12px 0 12px; }
+  header.h h1 em{ font-style:normal; background:linear-gradient(92deg,var(--lima),var(--oro)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  header.h p{ font-size:16px; color:var(--ink2); max-width:46ch; }
+  header.h p b{ color:#fff; }
+
+  h2.sec{ font-size:13px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:var(--lima);
+    margin:40px 0 16px; display:flex; align-items:center; gap:10px; }
+  h2.sec::before{ content:""; width:26px; height:3px; border-radius:2px; background:linear-gradient(90deg,var(--lima),var(--oro)); }
+
+  .lead{ font-size:16.5px; line-height:1.62; color:var(--ink); }
+  .lead b{ color:var(--lima2); }
+  .lead + .lead{ margin-top:14px; }
+
+  .why{ list-style:none; margin:18px 0 0; padding:0; display:flex; flex-direction:column; gap:12px; }
+  .why li{ padding:15px 16px; border-radius:14px; background:rgba(244,239,228,.05); border:1px solid var(--line); }
+  .why li .t{ font-size:15px; font-weight:900; color:var(--oro); margin-bottom:4px; }
+  .why li .d{ font-size:14.5px; color:var(--ink2); line-height:1.55; }
+  .why li .d b{ color:#fff; }
+
+  /* modelos */
+  .band{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; margin:34px 0 4px;
+    padding:8px 12px; border-radius:999px; display:inline-block; }
+  .band.inno{ background:rgba(95,210,224,.14); color:var(--cielo); border:1px solid rgba(95,210,224,.3); }
+  .band.wild{ background:rgba(255,93,177,.14); color:var(--magenta); border:1px solid rgba(255,93,177,.3); }
+
+  .model{ margin:16px 0; border-radius:18px; overflow:hidden; border:1px solid var(--line);
+    background:linear-gradient(160deg,rgba(244,239,228,.06),rgba(244,239,228,.02)); }
+  .model .mh{ padding:16px 17px 12px; display:flex; align-items:flex-start; gap:13px; }
+  .model .mh .no{ flex:0 0 auto; width:38px; height:38px; border-radius:11px; display:grid; place-items:center;
+    font-size:17px; font-weight:900; color:#0d1a14; }
+  .model.inno .mh .no{ background:linear-gradient(135deg,var(--cielo),var(--lima)); }
+  .model.wild .mh .no{ background:linear-gradient(135deg,var(--magenta),var(--oro)); }
+  .model .mh .nm{ font-size:18.5px; font-weight:900; letter-spacing:-.01em; line-height:1.2; }
+  .model .mh .nm small{ display:block; font-size:12px; font-weight:800; letter-spacing:.03em; color:var(--ink3); margin-top:3px; text-transform:uppercase; }
+  .model .mb{ padding:0 17px 16px; }
+  .model .mb .row{ display:flex; gap:10px; padding:9px 0; border-top:1px solid var(--line); }
+  .model .mb .row .lab{ flex:0 0 92px; font-size:11px; font-weight:900; letter-spacing:.06em; text-transform:uppercase; color:var(--lima2); padding-top:2px; }
+  .model .mb .row .val{ flex:1; font-size:14.5px; color:var(--ink2); line-height:1.55; }
+  .model .mb .row .val b{ color:#fff; }
+
+  .pitch{ margin:36px 0 0; border-radius:20px; padding:26px 20px;
+    background:linear-gradient(155deg,#1c3a1e,#123021); border:1px solid var(--line); }
+  .pitch .k{ font-size:12px; font-weight:900; letter-spacing:.2em; text-transform:uppercase; color:var(--oro); }
+  .pitch h3{ font-size:24px; font-weight:900; letter-spacing:-.02em; line-height:1.15; margin:10px 0 12px; }
+  .pitch h3 em{ font-style:normal; color:var(--lima); }
+  .pitch p{ font-size:15.5px; color:var(--ink2); line-height:1.62; }
+  .pitch p b{ color:#fff; }
+  .pitch p + p{ margin-top:12px; }
+  .pitch .who{ margin-top:16px; display:flex; flex-direction:column; gap:8px; }
+  .pitch .who div{ font-size:14px; color:var(--ink2); padding-left:20px; position:relative; }
+  .pitch .who div::before{ content:"▸"; position:absolute; left:0; color:var(--lima); font-weight:900; }
+  .pitch .who div b{ color:var(--oro); }
+
+  .foot{ text-align:center; margin-top:40px; font-size:12.5px; color:var(--ink3); line-height:1.6; }
+  .foot a{ color:var(--oro); text-decoration:none; font-weight:900; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="h">
+    <span class="k">Material de venta · Confidencial</span>
+    <h1>Cómo se <em>vende</em> el Wrapped del jardín</h1>
+    <p><b>«El Wrapped de tu Jardín»</b> convierte un catálogo botánico estático en un ritual de temporada que la gente espera, comparte y por el que pagaría. Acá está el porqué y las seis formas de monetizarlo.</p>
+  </header>
+
+  <h2 class="sec">Qué es y por qué engancha</h2>
+  <p class="lead">Tomamos el formato más viral de la última década — el <b>Spotify Wrapped</b> — y lo aplicamos a algo que la gente ya ama pero nunca vio en números: su propio jardín. Cada temporada, un resumen scrolleable de <b>stats reales</b> (52 especies, 10 nativas, 1 romero floreciendo en julio, un limonero que da fruta los 12 meses) rematado con un <b>top 5</b> y una <b>playlist</b> donde cada planta tiene su canción.</p>
+  <p class="lead">Funciona por cuatro palancas de retención y growth comprobadas:</p>
+  <ul class="why">
+    <li>
+      <div class="t">1 · El número-del-presente como gancho</div>
+      <div class="d">No es un dato de enciclopedia: es <b>«esto está pasando AHORA en TU jardín»</b>. El asombro nace de la propiedad + el presente. El usuario no lee sobre plantas, lee sobre <b>su</b> jardín. Eso es identidad, no información.</div>
+    </li>
+    <li>
+      <div class="t">2 · Orgullo e identidad = combustible de share</div>
+      <div class="d">«10 nativas» o «mi limonero labura 12/12» son <b>trofeos</b>. La gente comparte Wrapped porque dice algo lindo sobre ellos. Cada share es adquisición orgánica gratis: marketing hecho por el propio usuario.</div>
+    </li>
+    <li>
+      <div class="t">3 · El loop de suscripción diaria/estacional</div>
+      <div class="d">Un Wrapped fresco cada día (o cada temporada) crea <b>cita recurrente</b>: hábito matutino, notificación esperada, no interrupción. Convierte una visita única en <b>retención D1/D7/D30</b>.</div>
+    </li>
+    <li>
+      <div class="t">4 · Compartibilidad del «top 5»</div>
+      <div class="d">El ranking es formato nativo de captura de pantalla. Es <b>discreto, ordenado y presumible</b> — el mismo motor que hace virales los «top artists». Diseñado para salir de la app hacia WhatsApp e Instagram.</div>
+    </li>
+  </ul>
+
+  <h2 class="sec">6 modelos de monetización</h2>
+
+  <span class="band inno">3 innovadores · piso comercial sólido</span>
+
+  <div class="model inno">
+    <div class="mh">
+      <span class="no">1</span>
+      <div class="nm">Wrapped Pro — suscripción estacional<small>SaaS de consumo · recurrente</small></div>
+    </div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Gratis: el Wrapped de invierno básico. <b>Pro (USD 2-3/mes)</b>: los 4 Wrapped estacionales completos, histórico comparativo («este invierno vs. el anterior»), playlist exportable y stats avanzadas (podas hechas, fruta cosechada por especie).</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">El formato ya probó que la gente <b>espera</b> su Wrapped. Cobrar por «más Wrapped, más seguido» es el upsell más natural que existe: no vendés una feature, vendés <b>más del ritual que ya aman</b>.</span></div>
+    </div>
+  </div>
+
+  <div class="model inno">
+    <div class="mh">
+      <span class="no">2</span>
+      <div class="nm">Vivero Match — comisión por afinidad<small>Marketplace · lead gen</small></div>
+    </div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Cada slide detecta huecos reales del jardín («0 plantas florecen en junio salvo el romero») y sugiere <b>qué comprar para llenarlo</b>, linkeado a viveros locales. Comisión por venta o <b>fee por lead calificado</b>.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">El Wrapped genera <b>intención de compra hiper-contextual</b>: el usuario ya está emocionado con su jardín y ve exactamente qué le falta. Es el momento de máxima conversión, con recomendación honesta atada a datos.</span></div>
+    </div>
+  </div>
+
+  <div class="model inno">
+    <div class="mh">
+      <span class="no">3</span>
+      <div class="nm">Wrapped Card impreso — print-on-demand<small>Merch · físico</small></div>
+    </div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Convertí el Wrapped en un <b>póster o set de postales</b> de diseño (los números grandes, el top 5, la playlist) que el usuario encarga impreso para colgar o regalar. Margen por pieza + envío.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">El jardinero orgulloso quiere <b>un objeto físico</b> de su jardín. Regalo perfecto para el Día de la Madre / cumpleaños del vecino jardinero. El diseño ya está hecho: solo se imprime.</span></div>
+    </div>
+  </div>
+
+  <span class="band wild">3 ultra-creativos · apuestas de alto techo</span>
+
+  <div class="model wild">
+    <div class="mh">
+      <span class="no">4</span>
+      <div class="nm">La Playlist Real — colaboración con música<small>Brand partnership · streaming</small></div>
+    </div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">La «canción por planta» deja de ser chiste: se genera una <b>playlist real de Spotify/YouTube</b> curada por el mood de cada especie (romero rebelde → indie de invierno). Deal de afiliación con la plataforma o con artistas locales que quieran colocarse en «la playlist del jardín de Montevideo».</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">Une dos rituales Wrapped en uno. La música es el <b>puente cultural</b> que saca al producto del nicho jardinería hacia audiencia general — y da un segundo motivo de share («escuchá la banda sonora de mi jardín»).</span></div>
+    </div>
+  </div>
+
+  <div class="model wild">
+    <div class="mh">
+      <span class="no">5</span>
+      <div class="nm">Apuestas de temporada — fantasy garden<small>Gamificación · engagement viral</small></div>
+    </div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Antes de cada Wrapped, el usuario (y sus amigos con jardín) <b>predicen</b>: ¿cuántas nativas tendrás? ¿qué planta será tu «#1»? ¿el durazno florece antes que el ciruelo? El Wrapped revela los resultados. Liga entre jardines, ranking de aciertos, premios de viveros sponsor.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">Convierte un consumo pasivo en <b>competencia social</b>. La anticipación multiplica el engagement, suma un componente multijugador (crecimiento por invitación) y crea inventario publicitario premium para los premios.</span></div>
+    </div>
+  </div>
+
+  <div class="model wild">
+    <div class="mh">
+      <span class="no">6</span>
+      <div class="nm">Wrapped Barrial — data agregada con causa<small>Datos B2B · impacto</small></div>
+    </div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Sumá Wrapped de muchos jardines en un <b>«Wrapped del barrio / de Montevideo»</b>: cuántas nativas hay en la zona, qué frutales fructifican en invierno, biodiversidad por manzana. Se licencia a <b>intendencias, ONGs ambientales y marcas verdes</b> como termómetro de arbolado urbano, con patrocinio visible.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">El dato individual es lindo; el <b>agregado es valioso</b>. Vende el mismo asombro a escala cívica («tu barrio tiene 340 nativas»), abre presupuesto institucional y le da al usuario una <b>causa</b> — otra razón para volver y sumar su jardín.</span></div>
+    </div>
+  </div>
+
+  <div class="pitch">
+    <span class="k">◆ Elevator pitch ◆</span>
+    <h3>«Spotify Wrapped, pero para <em>tu jardín</em>.»</h3>
+    <p>Tomamos un catálogo botánico dormido y lo volvemos un <b>ritual de temporada</b>: números grandes reales, tu top 5, una canción por planta. La gente lo espera, lo comparte y lo colecciona — el mismo loop que hizo del Wrapped el fenómeno cultural más replicado de la década, aplicado a algo que <b>ya está vivo en su casa</b>.</p>
+    <p>El producto ya <b>existe y funciona</b> sobre datos verificables. No hay que inventar contenido: el jardín lo genera solo, cada temporada, para siempre.</p>
+    <div class="who">
+      <div><b>A quién:</b> jardineros hobbistas orgullosos, familias con quinta, escuelas con huerta, y a escala, intendencias y marcas verdes.</div>
+      <div><b>Cómo se entra:</b> gratis y compartible (growth orgánico por el propio share) → suscripción Pro estacional → merch impreso y partnerships.</div>
+      <div><b>El foso:</b> los datos propietarios del jardín de cada usuario. Cuantas más temporadas, más histórico, más razones para no irse.</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    Pitch del «Wrapped de tu Jardín» · datos del catálogo Pacha Mama, Montevideo · 09/07/2026<br>
+    <a href="2026-07-09-wrapped-jardin.html">← Volver a la experiencia</a>
+  </div>
+
+</div>
+</body></html>

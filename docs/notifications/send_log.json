@@ -2,24 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-06-24-a",
-      "ts": "2026-06-24T12:17:59.028Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-24-b",
-      "ts": "2026-06-24T17:26:56.396Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-24-c",
-      "ts": "2026-06-24T23:42:03.334Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-06-25-a",
       "ts": "2026-06-25T12:18:17.612Z",
       "status_code": 201
@@ -337,6 +319,9 @@
     },
     "2026-06-23": {
       "sent": 5
+    },
+    "2026-06-24": {
+      "sent": 3
     }
   }
 }

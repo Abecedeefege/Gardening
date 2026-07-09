@@ -391,24 +391,24 @@
       "title": "🎙️ La Entrevista Exclusiva del Jardín (news-feed revista/celebridad, 1ª persona + estatus)",
       "page": "engage/2026-07-08-entrevista-jardin.html",
       "created": "2026-07-08",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Ciclo 38 (función paralela; corrida del 07/07 se saltó): experiencia news-feed NUEVA de cero, ángulo ESTATUS/CELEBRIDAD + 1ª persona + morbo. Nota de tapa de revista: UNA planta protagonista del PRESENTE (algo que hace AHORA en invierno) es entrevistada a fondo como estrella, con pull-quotes y recuadros de dato verificado. Combina los dos ejes que MÁS retienen y convierten: 1ª persona (Feed, dwell récord 208s) + estatus/orgullo (Récords, 141s), con el dato-presente como protagonista. Distinto de Confesiones (tibio, intimidad coral): acá es UNA estrella con foco total + framing prensa/celebridad (el usuario ama el editorial — Diario promovido). Hipótesis: el foco de tapa en una sola planta-celebridad del presente dispara 'increíble' + suscripción a la entrevista diaria. Promotor: 2026-07-08-a (08:30).",
       "notified_by": [
         "2026-07-08-a"
       ],
-      "result_notes": null
+      "result_notes": "PROMOVIDA 09/07. El 08/07 11:23 UY el usuario abrió el push promotor (2026-07-08-a) → answer 'entrevista-suscripcion-diaria'=SÍ (suscripción explícita) + proposal_approved + dwell 206s / scroll 100% (el 2º dwell más largo del canal, a 2s del récord del Feed). Leyó todo, se suscribió y aprobó — señal FUERTE. Hipótesis VALIDADA y contundente: el foco de tapa en UNA planta-celebridad del presente (romero B-26 floreciendo a contramano) convierte donde el 1ª-persona CORAL falló (Confesiones tibio, Chat rechazado). La clave fue foco INDIVIDUAL + framing prensa/celebridad + dato del PRESENTE. Único matiz: no quedó registrada reacción 😍 explícita (solo sub+approve), pero 206s de lectura es la prueba del asombro. Promoción = página permanente + tarjeta en Ideas → ✨ Experiencias («🎙️ La Entrevista Exclusiva», build.py). Footer: bloque de decisión reemplazado por nota de integración + link al inicio; reacciones/suscripción siguen logueando. El push promotor 2026-07-08-a se retira."
     },
     {
       "id": "2026-07-08-trending-jardin",
       "title": "🔥 Trending del Jardín (news-feed de tendencias/viral, número-presente + orgullo)",
       "page": "engage/2026-07-08-trending-jardin.html",
       "created": "2026-07-08",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 38 (función paralela): experiencia news-feed NUEVA de cero, ángulo TENDENCIAS/VIRAL — panel 'trending' tipo X/Twitter con lo que EXPLOTA en el jardín ESTA semana, número grande de posición por ítem, todo anclado en el presente real del invierno (qué florece/fructifica/aguanta la helada AHORA). Combina los dos disparadores medidos que convierten: NÚMERO-GRANDE-DEL-PRESENTE (Récords) + orgullo + un toque de drama del ranking. Clave: habla del AHORA, no del pasado (Efemérides/historia NO abrió; el número convierte cuando es del presente). Distinto de Récords (superlativos all-time): acá es 'esta semana / ahora mismo', con formato ranking-feed y flechas de tendencia. Hipótesis: el ranking del presente con número protagonista dispara 'increíble' + suscripción al trending diario. Promotor: 2026-07-08-b (13:00).",
       "notified_by": [
         "2026-07-08-b"
       ],
-      "result_notes": null
+      "result_notes": "DROPPED 09/07 por la regla de no-supervivencia sin aprobación explícita (pending de día anterior). Soft-negative: su push promotor (2026-07-08-b) SÍ se abrió el 08/07 14:59 UY (notification_clicked + page_visit) pero NO disparó reacción, ni respuesta de suscripción, ni aprobación — el usuario entró y salió sin señal (acto seguido abrió el top3 18:00Z). Lectura: el ángulo TRENDING/ranking-del-presente traccionó la apertura (el gancho 'lo que la rompe esta semana' funciona) pero NO retuvo ni convirtió — canibaliza a Récords (mismo eje número-presente/orgullo, ya promovido y que ESE MISMO DÍA en el slot c volvió a juntar suscripción). El formato ranking-feed no agregó asombro sobre lo que Récords ya da; el número-presente ya está cubierto. No relanzar Trending como experiencia separada. Página + pitch eliminados (git rm)."
     }
   ]
 }
