@@ -2,58 +2,6 @@
   "_updated_at": "2026-07-09T23:11:27.223Z",
   "events": [
     {
-      "_id": "mqtkcjpf5j9h8n",
-      "type": "notification_clicked",
-      "nid": "2026-06-25-a",
-      "page": "index.html",
-      "ts": "2026-06-25T13:54:07.681Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqtkcjpg1k9keb",
-      "type": "page_visit",
-      "page": "index.html",
-      "nid": "2026-06-25-a",
-      "src": "push",
-      "ts": "2026-06-25T13:54:07.681Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqtsowid9dagih",
-      "type": "notification_clicked",
-      "nid": "2026-06-25-b",
-      "page": "engage/mundo-jardin.html",
-      "ts": "2026-06-25T17:47:41.074Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqtsowidt7hnpe",
-      "type": "page_visit",
-      "page": "engage/mundo-jardin.html",
-      "nid": "2026-06-25-b",
-      "src": "push",
-      "ts": "2026-06-25T17:47:41.074Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqtsp0osdh5uyl",
-      "type": "reaction",
-      "target": "mundo",
-      "value": "love",
-      "page": "engage/mundo-jardin.html",
-      "ts": "2026-06-25T17:47:46.492Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqtsp2q5q1nb95",
-      "type": "dwell",
-      "seconds": 8,
-      "scroll_pct": 100,
-      "page": "engage/mundo-jardin.html",
-      "ts": "2026-06-25T17:47:49.133Z",
-      "device": "sin-nombre"
-    },
-    {
       "_id": "mqv6lwwrrp2zsu",
       "type": "reaction",
       "target": "duelo-r1",
@@ -1519,6 +1467,12 @@
       "sent": 5,
       "clicked": 3,
       "visits": 5,
+      "approvals": 0
+    },
+    "2026-06-25": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 2,
       "approvals": 0
     }
   }

@@ -409,6 +409,54 @@
         "2026-07-08-b"
       ],
       "result_notes": "DROPPED 09/07 por la regla de no-supervivencia sin aprobación explícita (pending de día anterior). Soft-negative: su push promotor (2026-07-08-b) SÍ se abrió el 08/07 14:59 UY (notification_clicked + page_visit) pero NO disparó reacción, ni respuesta de suscripción, ni aprobación — el usuario entró y salió sin señal (acto seguido abrió el top3 18:00Z). Lectura: el ángulo TRENDING/ranking-del-presente traccionó la apertura (el gancho 'lo que la rompe esta semana' funciona) pero NO retuvo ni convirtió — canibaliza a Récords (mismo eje número-presente/orgullo, ya promovido y que ESE MISMO DÍA en el slot c volvió a juntar suscripción). El formato ranking-feed no agregó asombro sobre lo que Récords ya da; el número-presente ya está cubierto. No relanzar Trending como experiencia separada. Página + pitch eliminados (git rm)."
+    },
+    {
+      "id": "2026-07-09-quiz-planta",
+      "title": "🌱 ¿Qué planta de tu jardín sos? (test de personalidad, eje identidad)",
+      "page": "engage/2026-07-09-quiz-planta.html",
+      "created": "2026-07-09",
+      "status": "promoted",
+      "hypothesis": "Ciclo 39 (función paralela): experiencia news-feed NUEVA de cero, ángulo IDENTIDAD estilo test BuzzFeed. El usuario contesta 5 cosas y le asignamos una de SUS plantas con un dato real. Apuesta al eje que convirtió con el Horóscopo (😍+sub+115s): '¿cuál sos vos?' es identidad + auto-descubrimiento + ultra-compartible (resultado screenshoteable). Promotor: 2026-07-09-a (08:30).",
+      "notified_by": [
+        "2026-07-09-a"
+      ],
+      "result_notes": "PROMOVIDA 10/07. El 09/07 14:33 UY el usuario disparó la señal fuerte del eje identidad: reaction 'quiz-planta'=love (😍) + proposal_approved + dwell 103s/scroll 93%. Amó, leyó largo y aprobó. Matiz: NO quedó registrada respuesta a la suscripción diaria (no tocó el CTA de sub), igual que le pasó al Wrapped ese día — el amor+aprobación llegan pero el tap de suscripción quedó pendiente en ambas experiencias del 09/07 (ver learnings: posible fricción del bloque de sub esa noche, o que aprobar ya se siente como 'sí'). El eje IDENTIDAD/quiz reconfirma que convierte (2ª tras Horóscopo). NOTA: el registro de esta proposal faltaba en proposals.json (la corrida del 09/07 creó la página + queue + learnings pero no la registró acá); se agrega hoy directamente como promoted. Promoción = tarjeta en Ideas → ✨ Experiencias («🌱 ¿Qué planta sos?»). Footer: bloque aprobar/rechazar reemplazado por nota de integración; reacciones/sub siguen logueando."
+    },
+    {
+      "id": "2026-07-09-wrapped-jardin",
+      "title": "🎁 El Wrapped de tu Jardín (resumen estacional estilo Spotify Wrapped)",
+      "page": "engage/2026-07-09-wrapped-jardin.html",
+      "created": "2026-07-09",
+      "status": "promoted",
+      "hypothesis": "Ciclo 39 (función paralela): experiencia news-feed NUEVA de cero, meta 'app querida'. Copia el formato viral #1 de la década (Spotify Wrapped) aplicado al jardín: stats reales del invierno (número-presente), top 5 y una canción por planta. Apuesta: el envoltorio Wrapped (familiar, celebratorio, scroll de slides con números grandes) convierte el número-presente donde Trending/ranking falló, porque suma NOVEDAD de formato + orgullo en vez de ranking seco. Promotor: 2026-07-09-b (13:00).",
+      "notified_by": [
+        "2026-07-09-b"
+      ],
+      "result_notes": "PROMOVIDA 10/07. El 09/07 15:18 UY (push clickeado) el usuario disparó señal FUERTE: reaction 'wrapped-jardin'=love (😍) + proposal_approved + dwell 172s/scroll 100% (3er dwell más largo del canal tras Chusmerío 260s y Feed 208s). Hipótesis VALIDADA y con fuerza: el envoltorio 'app querida' (Spotify Wrapped) convierte el número-presente que Trending NO logró — la NOVEDAD de formato + orgullo + celebración retiene 172s donde el ranking seco rebotó. Meta-conclusión clave del ciclo 39: pedir prestada la UI de una app amada (Wrapped) es una jugada ganadora → doblo la apuesta hoy con JardínFlix (Netflix). Matiz: sin answer de suscripción diaria (mismo patrón que el Quiz ese día). NOTA: registro faltaba en proposals.json (creada 09/07 sin registrar); se agrega hoy como promoted. Promoción = tarjeta en Ideas → ✨ Experiencias («🎁 El Wrapped»). Footer: bloque aprobar/rechazar reemplazado por nota de integración."
+    },
+    {
+      "id": "2026-07-10-jardinflix",
+      "title": "🍿 JardínFlix (news-feed catálogo de streaming estilo Netflix)",
+      "page": "engage/2026-07-10-jardinflix.html",
+      "created": "2026-07-10",
+      "status": "pending",
+      "hypothesis": "Ciclo 40 (función paralela): experiencia news-feed NUEVA de cero. Doblo la jugada ganadora del ciclo 39: el Wrapped probó que pedir prestada la UI de una app amada convierte (😍+approved+172s). JardínFlix aplica lo mismo con la interfaz MÁS consumida del planeta — el catálogo Netflix: filas navegables, hero destacado, 'top 10 de esta semana' (número-presente, eje que convierte) y cada planta como 'título basado en hechos reales' con género + sinopsis verificada + código. Sube la frecuencia vs Wrapped: estreno DIARIO en vez de estacional. Hipótesis: la UI familiar de streaming + estreno diario + asombro-real convierte amor→suscripción como el Wrapped, con mayor cadencia de retorno. Promotor: 2026-07-10-a (08:30).",
+      "notified_by": [
+        "2026-07-10-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-10-album-figuritas",
+      "title": "📗 El Álbum de tu Jardín (news-feed álbum de figuritas coleccionable estilo Panini)",
+      "page": "engage/2026-07-10-album-figuritas.html",
+      "created": "2026-07-10",
+      "status": "pending",
+      "hypothesis": "Ciclo 40 (función paralela): experiencia news-feed NUEVA de cero, ángulo COLECCIONISMO/RAREZA/ESTATUS con timing del Mundial 2026 (pico cultural del álbum Panini, jun-jul). Cada planta es una figurita con número y rareza; las difíciles (nativa protegida, longeva +400 años, origen único) son BRILLANTES holográficas — rareza derivada de rasgos REALES. Combina 3 palancas probadas: orgullo/estatus (Récords 141s), la mecánica de completar+coleccionar (nueva, no-juego-de-quiz que fatigó) y la cultura rioplatense del '¿la tenés? me falta'. Incluye 2 figuritas 'fantasma' (caqui B-41 identidad en duda, B-20 sin nombre) que suman morbo+pedido real de ID. Distinto del Álbum-como-lista utilitario que el usuario rechaza: acá es deleite coleccionable + estatus. Hipótesis: rareza+completar+timing-Mundial dispara 'increíble' + suscripción a la figurita del día. Promotor: 2026-07-10-b (13:00).",
+      "notified_by": [
+        "2026-07-10-b"
+      ],
+      "result_notes": null
     }
   ]
 }

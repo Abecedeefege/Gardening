@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1e3a">
+<title>💼 El Álbum de tu Jardín — Cómo se vende esto</title>
+<style>
+  :root{
+    --bg:#0a1526; --ink:#f4efe0; --ink2:#c8cbd6; --ink3:#8b90a0;
+    --azul:#2a5db0; --azul2:#3f7ad6; --oro:#f6c33d; --oro2:#ffe08a; --verde:#46a35a; --cielo:#5fd2e0; --magenta:#ff5db1;
+    --line:rgba(244,239,224,.13);
+    --pad:max(20px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.58; -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 50% at 50% -6%, rgba(63,122,214,.24), transparent 60%); }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#06101f; color:#8aa0c4; text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:620px; margin:0 auto; padding:0 var(--pad) 48px; }
+
+  header.h{ padding:38px 0 24px; border-bottom:1px solid var(--line); }
+  header.h .k{ font-size:12px; font-weight:900; letter-spacing:.26em; text-transform:uppercase; color:var(--oro); }
+  header.h h1{ font-size:clamp(30px,8.5vw,44px); font-weight:900; letter-spacing:-.03em; line-height:1; margin:12px 0 12px; }
+  header.h h1 em{ font-style:normal; background:linear-gradient(92deg,var(--oro),var(--oro2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  header.h p{ font-size:16px; color:var(--ink2); max-width:46ch; }
+  header.h p b{ color:#fff; }
+
+  h2.sec{ font-size:13px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:var(--oro);
+    margin:38px 0 15px; display:flex; align-items:center; gap:10px; }
+  h2.sec::before{ content:""; width:26px; height:3px; border-radius:2px; background:linear-gradient(90deg,var(--oro),var(--azul2)); }
+
+  .lead{ font-size:16.5px; line-height:1.62; color:var(--ink); }
+  .lead b{ color:var(--oro2); }
+  .lead + .lead{ margin-top:14px; }
+
+  .why{ list-style:none; margin:18px 0 0; padding:0; display:flex; flex-direction:column; gap:12px; }
+  .why li{ padding:15px 16px; border-radius:14px; background:rgba(244,239,224,.05); border:1px solid var(--line); }
+  .why li .t{ font-size:15px; font-weight:900; color:var(--oro); margin-bottom:4px; }
+  .why li .d{ font-size:14.5px; color:var(--ink2); line-height:1.55; }
+  .why li .d b{ color:#fff; }
+
+  .band{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; margin:34px 0 4px;
+    padding:8px 12px; border-radius:999px; display:inline-block; }
+  .band.inno{ background:rgba(95,210,224,.14); color:var(--cielo); border:1px solid rgba(95,210,224,.3); }
+  .band.wild{ background:rgba(255,93,177,.14); color:var(--magenta); border:1px solid rgba(255,93,177,.3); }
+
+  .model{ margin:16px 0; border-radius:18px; overflow:hidden; border:1px solid var(--line);
+    background:linear-gradient(160deg,rgba(244,239,224,.06),rgba(244,239,224,.02)); }
+  .model .mh{ padding:16px 17px 12px; display:flex; align-items:flex-start; gap:13px; }
+  .model .mh .no{ flex:0 0 auto; width:38px; height:38px; border-radius:11px; display:grid; place-items:center; font-size:17px; font-weight:900; color:#0a1526; }
+  .model.inno .mh .no{ background:linear-gradient(135deg,var(--cielo),var(--verde)); }
+  .model.wild .mh .no{ background:linear-gradient(135deg,var(--magenta),var(--oro)); }
+  .model .mh .nm{ font-size:18.5px; font-weight:900; letter-spacing:-.01em; line-height:1.2; }
+  .model .mh .nm small{ display:block; font-size:12px; font-weight:800; letter-spacing:.03em; color:var(--ink3); margin-top:3px; text-transform:uppercase; }
+  .model .mb{ padding:0 17px 16px; }
+  .model .mb .row{ display:flex; gap:10px; padding:9px 0; border-top:1px solid var(--line); }
+  .model .mb .row .lab{ flex:0 0 92px; font-size:11px; font-weight:900; letter-spacing:.06em; text-transform:uppercase; color:var(--oro2); padding-top:2px; }
+  .model .mb .row .val{ flex:1; font-size:14.5px; color:var(--ink2); line-height:1.55; }
+  .model .mb .row .val b{ color:#fff; }
+
+  .pitch{ margin:36px 0 0; border-radius:20px; padding:26px 20px; background:linear-gradient(150deg,#123a6e,#0b1e3a); border:1px solid var(--line); }
+  .pitch .k{ font-size:12px; font-weight:900; letter-spacing:.2em; text-transform:uppercase; color:var(--oro); }
+  .pitch h3{ font-size:24px; font-weight:900; letter-spacing:-.02em; line-height:1.15; margin:10px 0 12px; }
+  .pitch h3 em{ font-style:normal; color:var(--oro2); }
+  .pitch p{ font-size:15.5px; color:var(--ink2); line-height:1.62; }
+  .pitch p b{ color:#fff; }
+  .pitch p + p{ margin-top:12px; }
+  .pitch .who{ margin-top:16px; display:flex; flex-direction:column; gap:8px; }
+  .pitch .who div{ font-size:14px; color:var(--ink2); padding-left:20px; position:relative; }
+  .pitch .who div::before{ content:"▸"; position:absolute; left:0; color:var(--oro); font-weight:900; }
+  .pitch .who div b{ color:var(--oro2); }
+
+  .foot{ text-align:center; margin-top:40px; font-size:12.5px; color:var(--ink3); line-height:1.6; }
+  .foot a{ color:var(--oro); text-decoration:none; font-weight:900; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="h">
+    <span class="k">Material de venta · Confidencial</span>
+    <h1>Cómo se <em>vende</em> el Álbum del jardín</h1>
+    <p><b>«El Álbum de tu Jardín»</b> convierte el catálogo botánico en un álbum de figuritas coleccionable: rarezas, brillantes, la que te falta y la cultura del «¿la tenés? me falta». Acá está por qué engancha y las seis formas de monetizarlo.</p>
+  </header>
+
+  <h2 class="sec">Qué es y por qué engancha</h2>
+  <p class="lead">Tomamos el ritual coleccionista más arraigado del Río de la Plata — el <b>álbum de figuritas Panini</b>, que en año de Mundial vive su pico cultural — y lo aplicamos al jardín. Cada planta es una figurita con número, rareza y un «stat estrella» real; las difíciles (nativas, longevas, de origen único) son <b>brillantes holográficas</b>. Hay barra de progreso, secciones y hasta dos figuritas «fantasma» sin identificar.</p>
+  <p class="lead">Funciona por cuatro palancas de retención y growth de eficacia probada en el coleccionismo:</p>
+  <ul class="why">
+    <li><div class="t">1 · Completar la colección = compulsión de cierre</div>
+      <div class="d">La barra «52/52» y las secciones activan el <b>impulso de completar</b> — el mismo que hace que la gente compre sobres hasta pegar la última. El progreso visible es adictivo por diseño.</div></li>
+    <li><div class="t">2 · Rareza = estatus + orgullo</div>
+      <div class="d">Las <b>brillantes</b> (anacahuita protegida por ley, hiedra de +400 años, palta clon de 1926) son trofeos. Tener «la difícil» dice algo lindo sobre el usuario. La rareza está derivada de rasgos reales, no inventada.</div></li>
+    <li><div class="t">3 · «¿La tenés? me falta» = motor social nativo</div>
+      <div class="d">El álbum es intrínsecamente <b>multijugador</b>: se comparte, se compara, se «cambia». La figurita que te falta (el caqui dudoso) es gancho de conversación. Cada intercambio es adquisición orgánica.</div></li>
+    <li><div class="t">4 · La figurita del día = sobre diario</div>
+      <div class="d">«Abrir el sobre» cada mañana es el loop de retorno perfecto: pequeña recompensa, sorpresa acotada, hábito. Convierte una visita en <b>cita diaria</b> — la mecánica del daily reward.</div></li>
+  </ul>
+
+  <h2 class="sec">6 modelos de monetización</h2>
+
+  <span class="band inno">3 innovadores · piso comercial sólido</span>
+
+  <div class="model inno">
+    <div class="mh"><span class="no">1</span><div class="nm">Sobres Premium — la colección completa<small>SaaS coleccionable · recurrente</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Gratis: el álbum básico y la figurita del día. <b>Premium (USD 2-3/mes)</b>: las variantes especiales (figurita animada, «edición estacional», stats ampliados), álbumes temáticos (solo nativas, solo frutales) y el histórico de tu colección temporada a temporada.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">El coleccionista ya está condicionado a <b>pagar por sobres</b>. Cobrar por «más figuritas, ediciones especiales» es el modelo Panini de toda la vida, sin la fricción del papel.</span></div>
+    </div>
+  </div>
+
+  <div class="model inno">
+    <div class="mh"><span class="no">2</span><div class="nm">Figuritas patrocinadas por vivero<small>Marketplace · lead gen</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Las figuritas «que te faltan» (plantas que aún no tenés y llenarían un hueco real) linkean a viveros locales: <b>«completá tu álbum consiguiendo esta especie»</b>. Comisión por venta o fee por lead calificado.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">El «me falta» convierte el impulso de completar en <b>intención de compra concreta</b>. El usuario no compra una planta: compra la figurita que le falta — motivación mucho más fuerte.</span></div>
+    </div>
+  </div>
+
+  <div class="model inno">
+    <div class="mh"><span class="no">3</span><div class="nm">Álbum impreso + set de stickers<small>Merch físico · print-on-demand</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">El álbum del usuario, impreso de verdad: un <b>librito con las 52 figuritas de SU jardín</b> + planchas de stickers para pegar. Margen por pieza + envío. Ideal para escuelas con huerta (material didáctico).</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">El álbum físico es un objeto de <b>nostalgia + orgullo</b> que la gente atesora y regala. Une la magia del papel con datos personalizados de su propio jardín. El arte ya está hecho.</span></div>
+    </div>
+  </div>
+
+  <span class="band wild">3 ultra-creativos · apuestas de alto techo</span>
+
+  <div class="model wild">
+    <div class="mh"><span class="no">4</span><div class="nm">Mercado de cambios entre jardines<small>Economía social · P2P</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">La cultura del «cambio» hecha producto: los usuarios <b>intercambian figuritas raras</b> de sus jardines (fotos, datos, esquejes reales) en un mercado dentro de la app. Comisión por transacción o suscripción al «club de cambios». Los esquejes se cambian de verdad entre vecinos.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">Convierte el coleccionismo en <b>red social con economía propia</b>. Cada cambio es engagement + adquisición (traés a tu vecino), y el intercambio de esquejes reales le da valor tangible fuera de la pantalla.</span></div>
+    </div>
+  </div>
+
+  <div class="model wild">
+    <div class="mh"><span class="no">5</span><div class="nm">La brillante del Mundial · edición limitada<small>Coleccionable de evento · escasez</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Ediciones <b>limitadas por evento</b> (Mundial 2026, Día del Árbol, primavera): una figurita «dorada» especial que solo se consigue esa semana, con dato exclusivo. Quien no la pega, la perdió para siempre. Sponsoreable por marca.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">La <b>escasez temporal</b> es el motor #1 del coleccionismo (la figurita difícil del Mundial). Genera picos de retorno agendados, urgencia real y inventario premium para patrocinadores de temporada.</span></div>
+    </div>
+  </div>
+
+  <div class="model wild">
+    <div class="mh"><span class="no">6</span><div class="nm">El álbum del barrio · colección cívica<small>Datos B2B · impacto</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Sumá los álbumes de muchos jardines en un <b>«álbum del barrio»</b>: cuántas brillantes-nativas hay en la zona, qué especies faltan para tener el «álbum completo del arbolado local». Se licencia a intendencias y ONGs ambientales como termómetro de biodiversidad, con patrocinio visible.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">Le da al coleccionismo una <b>causa colectiva</b>: «entre todos completamos el álbum de nativas del barrio». El dato agregado es valioso para instituciones y le da al usuario otra razón para sumar su jardín y volver.</span></div>
+    </div>
+  </div>
+
+  <div class="pitch">
+    <span class="k">◆ Elevator pitch ◆</span>
+    <h3>«El álbum Panini, pero las figuritas son <em>tus plantas</em>.»</h3>
+    <p>Envolvemos el catálogo en el ritual coleccionista más querido del Río de la Plata: figuritas con rareza, brillantes holográficas, la que te falta y el «¿la tenés?». Cada rareza sale de un rasgo real (nativa, longeva, origen único). La gente lo completa, lo compara, lo cambia — el motor de escasez + estatus + compulsión de cierre que vende sobres hace 60 años.</p>
+    <p>Ya <b>funciona</b> sobre datos verificables, y el «sobre del día» le da razón de retorno diaria. En año de Mundial, el timing cultural es perfecto.</p>
+    <div class="who">
+      <div><b>A quién:</b> jardineros hobbistas, familias, escuelas con huerta (material didáctico); a escala, viveros e intendencias.</div>
+      <div><b>Cómo se entra:</b> gratis y compartible (growth por el «cambio») → sobres Premium → merch impreso, mercado P2P y ediciones limitadas.</div>
+      <div><b>El foso:</b> la colección propietaria de cada usuario + la red de cambios. Cuantas más figuritas y más vecinos, más caro es irse y empezar de cero.</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    Pitch de «El Álbum de tu Jardín» · datos del catálogo Pacha Mama, Montevideo · 10/07/2026<br>
+    <a href="2026-07-10-album-figuritas.html">← Volver a la experiencia</a>
+  </div>
+
+</div>
+</body></html>

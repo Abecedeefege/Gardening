@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+<title>💼 JardínFlix — Cómo se vende esto</title>
+<style>
+  :root{
+    --bg:#0a0a0a; --ink:#f5f5f5; --ink2:#b3b3b3; --ink3:#7a7a7a;
+    --rojo:#e50914; --rojo2:#ff2d3a; --oro:#f6c33d; --verde:#46d369; --cielo:#5fd2e0; --magenta:#ff5db1;
+    --line:rgba(255,255,255,.12);
+    --pad:max(20px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.58; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#000; color:#8a8a8a; text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:620px; margin:0 auto; padding:0 var(--pad) 48px; }
+
+  header.h{ padding:38px 0 24px; border-bottom:1px solid var(--line); }
+  header.h .k{ font-size:12px; font-weight:900; letter-spacing:.26em; text-transform:uppercase; color:var(--rojo2); }
+  header.h h1{ font-size:clamp(30px,8.5vw,44px); font-weight:900; letter-spacing:-.03em; line-height:1; margin:12px 0 12px; }
+  header.h h1 em{ font-style:normal; color:var(--rojo2); }
+  header.h p{ font-size:16px; color:var(--ink2); max-width:46ch; }
+  header.h p b{ color:#fff; }
+
+  h2.sec{ font-size:13px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:var(--verde);
+    margin:38px 0 15px; display:flex; align-items:center; gap:10px; }
+  h2.sec::before{ content:""; width:26px; height:3px; border-radius:2px; background:var(--rojo); }
+
+  .lead{ font-size:16.5px; line-height:1.62; color:var(--ink); }
+  .lead b{ color:var(--verde); }
+  .lead + .lead{ margin-top:14px; }
+
+  .why{ list-style:none; margin:18px 0 0; padding:0; display:flex; flex-direction:column; gap:12px; }
+  .why li{ padding:15px 16px; border-radius:14px; background:rgba(255,255,255,.05); border:1px solid var(--line); }
+  .why li .t{ font-size:15px; font-weight:900; color:var(--oro); margin-bottom:4px; }
+  .why li .d{ font-size:14.5px; color:var(--ink2); line-height:1.55; }
+  .why li .d b{ color:#fff; }
+
+  .band{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; margin:34px 0 4px;
+    padding:8px 12px; border-radius:999px; display:inline-block; }
+  .band.inno{ background:rgba(95,210,224,.14); color:var(--cielo); border:1px solid rgba(95,210,224,.3); }
+  .band.wild{ background:rgba(255,93,177,.14); color:var(--magenta); border:1px solid rgba(255,93,177,.3); }
+
+  .model{ margin:16px 0; border-radius:18px; overflow:hidden; border:1px solid var(--line);
+    background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02)); }
+  .model .mh{ padding:16px 17px 12px; display:flex; align-items:flex-start; gap:13px; }
+  .model .mh .no{ flex:0 0 auto; width:38px; height:38px; border-radius:11px; display:grid; place-items:center; font-size:17px; font-weight:900; color:#0a0a0a; }
+  .model.inno .mh .no{ background:linear-gradient(135deg,var(--cielo),var(--verde)); }
+  .model.wild .mh .no{ background:linear-gradient(135deg,var(--magenta),var(--oro)); }
+  .model .mh .nm{ font-size:18.5px; font-weight:900; letter-spacing:-.01em; line-height:1.2; }
+  .model .mh .nm small{ display:block; font-size:12px; font-weight:800; letter-spacing:.03em; color:var(--ink3); margin-top:3px; text-transform:uppercase; }
+  .model .mb{ padding:0 17px 16px; }
+  .model .mb .row{ display:flex; gap:10px; padding:9px 0; border-top:1px solid var(--line); }
+  .model .mb .row .lab{ flex:0 0 92px; font-size:11px; font-weight:900; letter-spacing:.06em; text-transform:uppercase; color:var(--verde); padding-top:2px; }
+  .model .mb .row .val{ flex:1; font-size:14.5px; color:var(--ink2); line-height:1.55; }
+  .model .mb .row .val b{ color:#fff; }
+
+  .pitch{ margin:36px 0 0; border-radius:20px; padding:26px 20px; background:linear-gradient(150deg,#4a0d12,#141414); border:1px solid var(--line); }
+  .pitch .k{ font-size:12px; font-weight:900; letter-spacing:.2em; text-transform:uppercase; color:var(--oro); }
+  .pitch h3{ font-size:24px; font-weight:900; letter-spacing:-.02em; line-height:1.15; margin:10px 0 12px; }
+  .pitch h3 em{ font-style:normal; color:var(--rojo2); }
+  .pitch p{ font-size:15.5px; color:var(--ink2); line-height:1.62; }
+  .pitch p b{ color:#fff; }
+  .pitch p + p{ margin-top:12px; }
+  .pitch .who{ margin-top:16px; display:flex; flex-direction:column; gap:8px; }
+  .pitch .who div{ font-size:14px; color:var(--ink2); padding-left:20px; position:relative; }
+  .pitch .who div::before{ content:"▸"; position:absolute; left:0; color:var(--verde); font-weight:900; }
+  .pitch .who div b{ color:var(--oro); }
+
+  .foot{ text-align:center; margin-top:40px; font-size:12.5px; color:var(--ink3); line-height:1.6; }
+  .foot a{ color:var(--oro); text-decoration:none; font-weight:900; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="h">
+    <span class="k">Material de venta · Confidencial</span>
+    <h1>Cómo se <em>vende</em> JardínFlix</h1>
+    <p><b>«JardínFlix»</b> convierte un catálogo botánico en una plataforma de streaming: filas navegables, un «top 10 de esta semana», estrenos diarios y títulos basados en hechos reales. Acá está por qué engancha y las seis formas de monetizarlo.</p>
+  </header>
+
+  <h2 class="sec">Qué es y por qué engancha</h2>
+  <p class="lead">Tomamos la interfaz más consumida del planeta — el <b>catálogo de Netflix</b> — y la aplicamos a algo que la gente ya tiene pero nunca «bingeó»: su propio jardín. Cada planta es un título con género, sinopsis real, «% para vos» y su código de catálogo. Las filas se deslizan; el hero destaca uno; el «top 10» está anclado al <b>presente del invierno</b> (lo que florece y fructifica AHORA).</p>
+  <p class="lead">Es la misma jugada que hizo volar al Wrapped, pero con estreno DIARIO en vez de estacional — más frecuencia de retorno:</p>
+  <ul class="why">
+    <li><div class="t">1 · La interfaz que ya aman, gratis de aprender</div>
+      <div class="d">Nadie necesita tutorial: todos saben deslizar filas y mirar el «top 10». Adoptar el <b>lenguaje visual de Netflix</b> elimina la fricción de onboarding. El contenido nuevo (el jardín) entra por un molde familiar.</div></li>
+    <li><div class="t">2 · El estreno diario = hábito, no interrupción</div>
+      <div class="d">«Un título nuevo cada día» transforma la notificación en <b>cita esperada</b>. Es el motor de retención de las plataformas: FOMO de estreno. Convierte visita única en D1/D7/D30.</div></li>
+    <li><div class="t">3 · «Basado en hechos reales» = asombro + credibilidad</div>
+      <div class="d">Cada sinopsis es un dato verificado con código de catálogo. El asombro (clon de 1926, semilla de perezoso gigante) viene envuelto en el formato más adictivo que existe. Nada inventado sobre las plantas: solo el género es un chiste.</div></li>
+    <li><div class="t">4 · El «top 10» es capturable y presumible</div>
+      <div class="d">El ranking del presente es formato nativo de screenshot. «Mi top 10 de esta semana» sale solo hacia WhatsApp — cada share es adquisición orgánica gratis.</div></li>
+  </ul>
+
+  <h2 class="sec">6 modelos de monetización</h2>
+
+  <span class="band inno">3 innovadores · piso comercial sólido</span>
+
+  <div class="model inno">
+    <div class="mh"><span class="no">1</span><div class="nm">JardínFlix Premium — suscripción de estrenos<small>SaaS de consumo · recurrente</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Gratis: el catálogo básico y el top 10 semanal. <b>Premium (USD 2-3/mes)</b>: estreno diario personalizado, «temporadas» completas por planta (todo su calendario animado), listas propias («mi maratón de nativas») y modo «documental» con la ficha ampliada.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">El modelo mental de suscripción ya está instalado por la metáfora: nadie se sorprende de <b>pagar por más streaming</b>. Vendés más del ritual que ya adoptaron, no una feature nueva.</span></div>
+    </div>
+  </div>
+
+  <div class="model inno">
+    <div class="mh"><span class="no">2</span><div class="nm">Product placement de vivero<small>Marketplace · lead gen</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Como Netflix inserta «también te puede gustar», el catálogo sugiere <b>títulos que aún NO tenés</b> (plantas que llenarían un hueco real: «no tenés nada que florezca en junio salvo el romero») linkeados a viveros locales. Comisión por venta o fee por lead calificado.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">La recomendación aparece en el <b>momento de máxima intención</b>: el usuario ya está enganchado explorando su jardín. El «te falta este título» es el CTA de compra más natural del formato.</span></div>
+    </div>
+  </div>
+
+  <div class="model inno">
+    <div class="mh"><span class="no">3</span><div class="nm">Trailers patrocinados · marcas verdes<small>Publicidad nativa</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Una fila «Presentado por…» donde una marca de sustrato, herramientas o cítricos patrocina un carrusel curado («Los frutales del invierno, presentado por [marca]»). Formato nativo, no banner intrusivo.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">El inventario publicitario del streaming es premium precisamente porque <b>no interrumpe, contextualiza</b>. La marca compra relevancia temática con una audiencia hiper-cualificada de jardineros.</span></div>
+    </div>
+  </div>
+
+  <span class="band wild">3 ultra-creativos · apuestas de alto techo</span>
+
+  <div class="model wild">
+    <div class="mh"><span class="no">4</span><div class="nm">Estrenos con countdown · «cae a medianoche»<small>Gamificación de anticipación</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Cada floración/fructificación real se anuncia como un <b>estreno con cuenta regresiva</b>: «Estreno: el Durazno B-30 florece en 21 días». El usuario «agenda» el estreno y recibe el push cuando ocurre de verdad en su jardín. La naturaleza pone el calendario.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">Une el hype de estreno con un evento REAL verificable. Genera <b>múltiples puntos de retorno agendados</b> por temporada y convierte el ciclo biológico del jardín en un calendario de lanzamientos irresistible.</span></div>
+    </div>
+  </div>
+
+  <div class="model wild">
+    <div class="mh"><span class="no">5</span><div class="nm">JardínFlix & Chill — noche de maratón colectiva<small>Evento social · comunidad</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Un «estreno global» semanal: todos los jardines de la comunidad reciben el MISMO título destacado (ej. «esta semana: las nativas protegidas») y comparan su versión. Chat de estreno, votación de «mejor sinopsis», ranking de barrios.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">Convierte un consumo solitario en <b>evento sincronizado</b> — el efecto «todos vimos el mismo capítulo». Suma multijugador (crecimiento por invitación) e inventario de patrocinio para el estreno de la semana.</span></div>
+    </div>
+  </div>
+
+  <div class="model wild">
+    <div class="mh"><span class="no">6</span><div class="nm">La adaptación física · «merch del título»<small>Print-on-demand · coleccionable</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Los pósters de los «títulos» de tu jardín (el hero clon-de-1926, la nativa protegida) impresos como <b>afiches estilo cine</b> para colgar, o un set de «fichas de estreno» tipo cartas. Margen por pieza + envío.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">El póster de cine es un objeto de estatus que la gente ya cuelga. Darle el suyo — su planta como estrella — es <b>orgullo tangible</b> y el regalo perfecto para otro jardinero. El arte ya está diseñado.</span></div>
+    </div>
+  </div>
+
+  <div class="pitch">
+    <span class="k">◆ Elevator pitch ◆</span>
+    <h3>«Netflix, pero el catálogo es <em>tu jardín</em>.»</h3>
+    <p>Envolvemos un catálogo botánico en la interfaz más adictiva del planeta: filas navegables, top 10 del presente y <b>un estreno nuevo cada día</b>. Cada título es un hecho real verificado con código de planta. La gente lo explora, lo maratonea y lo comparte — con la frecuencia de retorno del streaming, no la de un almanaque.</p>
+    <p>Ya <b>funciona</b> sobre datos verificables y el jardín genera contenido nuevo solo, cada día, para siempre. Cero costo de producción de catálogo.</p>
+    <div class="who">
+      <div><b>A quién:</b> jardineros hobbistas, familias con quinta, escuelas con huerta; a escala, marcas verdes y viveros como anunciantes.</div>
+      <div><b>Cómo se entra:</b> gratis y compartible (growth por el propio share) → Premium de estrenos → product placement y merch.</div>
+      <div><b>El foso:</b> el catálogo propietario de cada jardín + el historial de «lo que viste». Cuanto más lo usás, más se personaliza y más cuesta irse.</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    Pitch de «JardínFlix» · datos del catálogo Pacha Mama, Montevideo · 10/07/2026<br>
+    <a href="2026-07-10-jardinflix.html">← Volver a la experiencia</a>
+  </div>
+
+</div>
+</body></html>

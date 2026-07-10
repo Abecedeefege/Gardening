@@ -1437,6 +1437,12 @@ def build_ideas_html(img_data, timeline_modals: str = "",
     # Regla del usuario: cada experiencia que se aprueba se suma acá (no en la
     # nav del inicio). El agente de /engagement agrega una entrada al promover.
     approved_experiences = [
+        {"icon": "🎁", "title": "El Wrapped de tu Jardín",
+         "desc": "Tu temporada en números reales: stats grandes, tu top 5 y una canción por planta, estilo Wrapped.",
+         "page": "engage/2026-07-09-wrapped-jardin.html"},
+        {"icon": "🌱", "title": "¿Qué planta de tu jardín sos?",
+         "desc": "Un test de personalidad: contestás 5 cosas y descubrís cuál de tus plantas sos, con un dato real.",
+         "page": "engage/2026-07-09-quiz-planta.html"},
         {"icon": "🎙️", "title": "La Entrevista Exclusiva",
          "desc": "La nota de tapa a una planta-celebridad del presente: entrevista a fondo, con datos reales verificados.",
          "page": "engage/2026-07-08-entrevista-jardin.html"},
