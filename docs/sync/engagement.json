@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-09T23:11:27.223Z",
+  "_updated_at": "2026-07-10T17:40:14.234Z",
   "events": [
     {
       "_id": "mqv6lwwrrp2zsu",
@@ -1387,6 +1387,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-06-30-chusmerio-jardin.html",
       "ts": "2026-07-09T23:11:27.986Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrf815033bulw9",
+      "type": "notification_clicked",
+      "nid": "2026-07-10-b",
+      "page": "engage/2026-07-10-album-figuritas.html",
+      "ts": "2026-07-10T17:40:15.888Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrf81503f8m5d8",
+      "type": "page_visit",
+      "page": "engage/2026-07-10-album-figuritas.html",
+      "nid": "2026-07-10-b",
+      "src": "push",
+      "ts": "2026-07-10T17:40:15.888Z",
       "device": "sin-nombre"
     }
   ],
