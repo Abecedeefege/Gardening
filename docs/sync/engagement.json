@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-10T17:41:30.802Z",
+  "_updated_at": "2026-07-10T17:41:34.289Z",
   "events": [
     {
       "_id": "mqv6lwwrrp2zsu",
@@ -1413,6 +1413,13 @@
       "value": "love",
       "page": "engage/2026-07-10-album-figuritas.html",
       "ts": "2026-07-10T17:41:32.532Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrf82v9gzrkw2o",
+      "type": "proposal_approved",
+      "proposal_id": "2026-07-10-album-figuritas",
+      "ts": "2026-07-10T17:41:36.580Z",
       "device": "sin-nombre"
     }
   ],
