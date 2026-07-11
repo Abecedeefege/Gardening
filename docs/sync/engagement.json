@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-11T15:21:17.845Z",
+  "_updated_at": "2026-07-11T19:43:59.230Z",
   "events": [
     {
       "_id": "mqwd3hibnayprg",
@@ -1383,6 +1383,23 @@
       "nid": "2026-07-11-task-dia",
       "src": "push",
       "ts": "2026-07-11T15:21:19.081Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrgrw4eejmrvmu",
+      "type": "notification_clicked",
+      "nid": "2026-07-11-b",
+      "page": "engage/2026-07-11-podcast-jardin.html",
+      "ts": "2026-07-11T19:44:00.323Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrgrw4eezfqjgy",
+      "type": "page_visit",
+      "page": "engage/2026-07-11-podcast-jardin.html",
+      "nid": "2026-07-11-b",
+      "src": "push",
+      "ts": "2026-07-11T19:44:00.323Z",
       "device": "sin-nombre"
     }
   ],
