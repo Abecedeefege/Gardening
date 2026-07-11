@@ -444,7 +444,7 @@
       "notified_by": [
         "2026-07-10-a"
       ],
-      "result_notes": null
+      "result_notes": "DROPPED 11/07 por la regla de no-supervivencia sin aprobación explícita. NO-OPEN: su push promotor (2026-07-10-a) se despachó 09:24 UY el 10/07 pero NO quedó registrado click ni page_visit de JardínFlix en engagement.json (cutoff 14:41 UY, con el usuario ACTIVO — abrió y aprobó el Álbum a esa hora). Soft-negative. Lectura: el meta-patrón «UI de app amada» convierte (Wrapped ✓, Álbum ✓ ese mismo día) pero JardínFlix falló — el catálogo de streaming se lee como navegación PASIVA (mirás un menú, no te pasa nada), sin protagonista ni gesto. Las app-UI que ganan tienen un HÉROE del presente (Wrapped: tus números; Álbum: rareza+completar) o un gesto activo. No relanzar JardínFlix. Página + pitch eliminados (git rm)."
     },
     {
       "id": "2026-07-10-album-figuritas",
@@ -455,6 +455,30 @@
       "hypothesis": "Ciclo 40 (función paralela): experiencia news-feed NUEVA de cero, ángulo COLECCIONISMO/RAREZA/ESTATUS con timing del Mundial 2026 (pico cultural del álbum Panini, jun-jul). Cada planta es una figurita con número y rareza; las difíciles (nativa protegida, longeva +400 años, origen único) son BRILLANTES holográficas — rareza derivada de rasgos REALES. Combina 3 palancas probadas: orgullo/estatus (Récords 141s), la mecánica de completar+coleccionar (nueva, no-juego-de-quiz que fatigó) y la cultura rioplatense del '¿la tenés? me falta'. Incluye 2 figuritas 'fantasma' (caqui B-41 identidad en duda, B-20 sin nombre) que suman morbo+pedido real de ID. Distinto del Álbum-como-lista utilitario que el usuario rechaza: acá es deleite coleccionable + estatus. Hipótesis: rareza+completar+timing-Mundial dispara 'increíble' + suscripción a la figurita del día. Promotor: 2026-07-10-b (13:00).",
       "notified_by": [
         "2026-07-10-b"
+      ],
+      "result_notes": "PROMOVIDA 11/07. El 10/07 14:40 UY el usuario abrió el push promotor (2026-07-10-b) → reaction 'album-figuritas'=love (😍) + proposal_approved 14:41 UY. Amó y aprobó, señal clara. Matiz: sin answer de suscripción diaria (mismo hueco de sub que Quiz/Wrapped). Hipótesis VALIDADA: coleccionismo/rareza/estatus con timing Mundial engancha y NO se leyó como lo utilitario que el usuario rechaza — la diferencia con JardínFlix (mismo día, no-open) es que el Álbum tiene GESTO (completar/coleccionar) y HÉROES (las brillantes), mientras el catálogo de streaming es navegación pasiva. Segunda confirmación del meta-patrón «UI de app/formato amado» tras el Wrapped. Promoción = tarjeta en Ideas → ✨ Experiencias («📗 El Álbum de tu Jardín», build.py). Footer: bloque aprobar/rechazar reemplazado por nota de integración; reacciones/suscripción siguen logueando. El push promotor 2026-07-10-b se retira."
+    },
+    {
+      "id": "2026-07-11-historias-jardin",
+      "title": "📖 Las Historias de tu Jardín (news-feed estilo Stories de Instagram/WhatsApp, efímeras 24h)",
+      "page": "engage/2026-07-11-historias-jardin.html",
+      "created": "2026-07-11",
+      "status": "pending",
+      "hypothesis": "Ciclo 41 (función paralela): experiencia news-feed NUEVA de cero. Doblo el meta-patrón «UI de app amada» (Wrapped ✓, Álbum ✓) con el formato de mayor hábito diario del planeta: las Stories. Player real tap-through vertical con barras de progreso; cada planta sube una 'historia' en 1ª persona con un dato real del PRESENTE (invierno: romero floreciendo solo, cítricos cargados, palta clon, liquidámbar pelado que sangra storax). Clave del experimento: la CADUCIDAD 24h es un motor de retorno HONESTO ('desaparece si no entrás hoy') que ataca directamente la meta de suscripción diaria — el formato mismo ES la suscripción. Además pruebo la idea abierta de UX: bloque de SUSCRIPCIÓN PRIMERO (antes de reacción y aprobar) para recuperar la métrica de sub que Quiz/Wrapped/Álbum perdieron. Combina app-UI + 1ª persona (Feed dio dwell récord 208s) + gesto activo (tap-through, lo que a JardínFlix pasivo le faltó). Promotor: 2026-07-11-a (08:30).",
+      "notified_by": [
+        "2026-07-11-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-11-podcast-jardin",
+      "title": "🎧 El Podcast de tu Jardín / «Voces del Cantero» (UI de Spotify podcast, episodio diario, invitado individual)",
+      "page": "engage/2026-07-11-podcast-jardin.html",
+      "created": "2026-07-11",
+      "status": "pending",
+      "hypothesis": "Ciclo 41 (función paralela): experiencia news-feed NUEVA de cero. Segunda apuesta al meta-patrón app-amada, con el formato de MAYOR lealtad de retención que existe: el podcast. UI tipo Spotify (portada del show, botón Seguir, episodio destacado del día con transcript/quotes, lista de episodios expandibles, barra de reproducción). El ángulo es celebridad/entrevista INDIVIDUAL (Entrevista convirtió: sub+approved+206s; foco en UNA planta-invitada por episodio). Episodio de hoy: la Palta Hass B-36 ('el clon de 1926'). La gramática del podcast ('seguir el show', 'episodio nuevo cada mañana') trae incorporado el motivo honesto de retorno → ataca la suscripción diaria. Igual que Historias, pruebo el bloque de SUSCRIPCIÓN PRIMERO. Distinto de Historias (rápido/efímero/coral) y de la Entrevista promovida (revista de texto): acá es show de audio serializado con lista de temporada. Promotor: 2026-07-11-b (13:00).",
+      "notified_by": [
+        "2026-07-11-b"
       ],
       "result_notes": null
     }

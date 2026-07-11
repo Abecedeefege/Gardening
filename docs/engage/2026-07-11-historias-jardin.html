@@ -1,0 +1,275 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Las Historias de tu Jardín</title>
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#3f6d22; --crema:#f5faf0; --oro:#e8c85a;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+  html,body{ background:#0d0f0c; color:#fff; font-family:var(--sans); overflow-x:hidden; }
+  body{ min-height:100vh; }
+  a.back{ display:block; text-align:center; padding:9px 12px; font-size:12.5px; font-weight:700;
+    color:#cfe6bf; background:#12160f; text-decoration:none; position:relative; z-index:60; }
+  a.back:active{ opacity:.7; }
+
+  /* ---- Reel viewer ---- */
+  .reel{ position:relative; width:100%; max-width:460px; margin:0 auto;
+    height:calc(100vh - 34px); height:calc(100dvh - 34px); min-height:520px;
+    background:#0d0f0c; overflow:hidden; }
+  .story{ position:absolute; inset:0; opacity:0; visibility:hidden; transition:opacity .28s ease;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding:66px 22px 30px; }
+  .story.on{ opacity:1; visibility:visible; }
+  .story .grad{ position:absolute; inset:0; z-index:0; }
+  .story .veil{ position:absolute; inset:0; z-index:1;
+    background:linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 26%, rgba(0,0,0,0) 54%, rgba(0,0,0,.78) 100%); }
+  .story .inner{ position:relative; z-index:2; }
+  .emoji{ font-size:82px; line-height:1; filter:drop-shadow(0 6px 16px rgba(0,0,0,.4)); margin-bottom:16px; display:block; }
+  .hook{ font-size:29px; font-weight:900; line-height:1.14; letter-spacing:-.4px;
+    text-shadow:0 2px 12px rgba(0,0,0,.45); margin-bottom:13px; }
+  .hook em{ font-style:normal; color:var(--oro); }
+  .fact{ font-size:15.5px; line-height:1.5; font-weight:500; color:#f2f6ee;
+    text-shadow:0 1px 8px rgba(0,0,0,.5); }
+  .fact b{ color:#fff; font-weight:800; }
+
+  /* header: avatar + handle + timestamp */
+  .shead{ position:absolute; top:20px; left:16px; right:16px; z-index:5;
+    display:flex; align-items:center; gap:10px; }
+  .av{ width:38px; height:38px; border-radius:50%; display:grid; place-items:center; font-size:20px;
+    background:rgba(255,255,255,.16); border:2px solid rgba(255,255,255,.85); flex:none; }
+  .who{ font-size:13.5px; font-weight:800; text-shadow:0 1px 6px rgba(0,0,0,.5); }
+  .who span{ display:block; font-size:11px; font-weight:600; color:#d7e6cc; opacity:.85; }
+  .ago{ margin-left:auto; font-size:11.5px; color:#e7f0df; opacity:.8; font-weight:600; }
+
+  /* progress bars */
+  .bars{ position:absolute; top:8px; left:12px; right:12px; z-index:6; display:flex; gap:4px; }
+  .bar{ flex:1; height:2.6px; border-radius:3px; background:rgba(255,255,255,.32); overflow:hidden; }
+  .bar>i{ display:block; height:100%; width:0; background:#fff; }
+  .bar.done>i{ width:100%; }
+  .bar.act>i{ animation:fillbar var(--dur,6s) linear forwards; }
+  @keyframes fillbar{ from{width:0} to{width:100%} }
+  .reel.paused .bar.act>i{ animation-play-state:paused; }
+
+  /* tap zones */
+  .tap{ position:absolute; top:0; bottom:0; z-index:4; width:38%; }
+  .tap.prev{ left:0; } .tap.next{ right:0; width:62%; }
+
+  .tiny{ position:absolute; z-index:5; bottom:12px; left:0; right:0; text-align:center;
+    font-size:10.5px; color:#cfe0c2; opacity:.75; font-weight:600; pointer-events:none; }
+
+  /* ---- Final panel (subscribe-first) ---- */
+  .end{ max-width:460px; margin:0 auto; background:var(--crema); color:#1c2a12; }
+  .end .wrap{ padding:26px 20px 8px; }
+  .ehead{ text-align:center; padding:30px 20px 8px; }
+  .ehead .em{ font-size:52px; }
+  .ehead h2{ font-size:24px; font-weight:900; margin:8px 0 6px; color:var(--verde); letter-spacing:-.3px; }
+  .ehead p{ font-size:14.5px; color:#41522f; line-height:1.5; }
+  .ehead em{ font-style:normal; color:#b8860b; font-weight:800; }
+  .blk{ background:#fff; border:1.5px solid #e2ead6; border-radius:18px; padding:20px 18px; margin:16px 0; text-align:center; }
+  .blk.sub{ border-color:var(--oro); background:linear-gradient(180deg,#fffef8,#fbf6e6); box-shadow:0 6px 20px rgba(200,168,60,.18); }
+  .blk h3{ font-size:18px; font-weight:900; color:var(--verde); margin-bottom:6px; }
+  .blk p{ font-size:14px; color:#455635; line-height:1.5; margin-bottom:14px; }
+  .rowbtns{ display:flex; gap:9px; justify-content:center; flex-wrap:wrap; }
+  .rowbtns button{ font-family:var(--sans); font-weight:800; font-size:14.5px; cursor:pointer;
+    border-radius:12px; border:1.5px solid #cfe0bf; background:#fff; color:#2d4016; padding:12px 16px; }
+  .rowbtns button:active{ transform:scale(.95); }
+  .rowbtns button.si{ background:var(--verde); color:#fff; border-color:transparent; font-size:15.5px; }
+  .rowbtns button.sel{ outline:3px solid rgba(45,80,22,.25); }
+  .react-hint,.q-hint{ display:block; margin-top:11px; font-size:12.5px; color:#b8860b; font-weight:800; min-height:1.1em; }
+  .engage-actions{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:6px 0 4px; padding:14px; }
+  .engage-actions button{ font-family:var(--sans); font-weight:900; font-size:15px; cursor:pointer; border-radius:12px;
+    border:1.5px solid #cfe0bf; padding:13px 18px; }
+  .engage-actions button:active{ transform:scale(.95); }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; border-color:transparent; }
+  .engage-actions button:last-child{ background:#eef2e7; color:#5a6b3c; }
+  .engage-feedback{ font-size:14px; font-weight:800; color:var(--verde); text-align:center; padding:8px; }
+  footer.pie{ text-align:center; padding:14px 18px 40px; font-size:12.5px; color:#6a7a4d; }
+  footer.pie a{ color:#7a6a12; text-decoration:none; font-weight:800; }
+  footer.pie .cred{ margin-top:10px; font-size:11px; color:#8a9a6d; line-height:1.5; }
+  .replay{ display:block; margin:2px auto 0; background:none; border:none; color:#7a8a5d;
+    font:700 12.5px var(--sans); text-decoration:underline; cursor:pointer; padding:8px; }
+</style>
+
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="reel" id="reel">
+  <div class="bars" id="bars"></div>
+  <div class="shead" id="shead"></div>
+  <div class="tap prev" id="tprev"></div>
+  <div class="tap next" id="tnext"></div>
+  <div class="tiny">Tocá a la derecha para seguir · mantené apretado para pausar</div>
+</div>
+
+<div class="end" id="end" style="display:none">
+  <div class="ehead">
+    <span class="em">🌙</span>
+    <h2>Se terminaron las historias de hoy</h2>
+    <p>Como en la app que ya conocés: <em>desaparecen en 24 h</em>. Mañana tus plantas suben otras nuevas.</p>
+  </div>
+  <div class="wrap">
+
+    <!-- a) suscripción PRIMERO (experimento: recuperar la métrica de sub) -->
+    <section class="blk sub">
+      <h3>🔔 No te pierdas las de mañana</h3>
+      <p>Cada mañana, <b>una historia nueva</b> de una planta tuya con un dato real del momento. Llega sola, se ve en 20 segundos y desaparece. ¿La querés?</p>
+      <div class="rowbtns">
+        <button type="button" class="si" onclick="engageAnswer('historias-suscripcion-diaria','si', this)">🔔 Sí, quiero mi historia diaria</button>
+        <button type="button" onclick="engageAnswer('historias-suscripcion-diaria','no', this)">No, gracias</button>
+      </div>
+      <span class="q-hint"></span>
+    </section>
+
+    <!-- b) reacción -->
+    <section class="blk">
+      <h3>¿Qué te parecieron?</h3>
+      <div class="rowbtns">
+        <button type="button" onclick="engageReact('historias-jardin','love', this)">😍 ¡Increíbles!</button>
+        <button type="button" onclick="engageReact('historias-jardin','meh', this)">😐 Más o menos</button>
+        <button type="button" onclick="engageReact('historias-jardin','no', this)">🙅 No es lo mío</button>
+      </div>
+      <span class="react-hint"></span>
+    </section>
+
+    <!-- c) decisión -->
+    <div class="engage-actions">
+      <button onclick="engageApprove('2026-07-11-historias-jardin')">✅ Aprobar esta mejora</button>
+      <button onclick="engageRejected('2026-07-11-historias-jardin')">✕ No me interesa</button>
+    </div>
+
+    <button class="replay" id="replay">↺ Volver a ver las historias</button>
+
+    <footer class="pie">
+      <a href="2026-07-11-historias-jardin-pitch.html">💼 Cómo se vende esto</a>
+      <div class="cred">Historias armadas con datos reales del catálogo Pacha Mama · cada dato está verificado por especie · invierno 2026</div>
+    </footer>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Cada historia: dato REAL verificado de data_plants.py, en 1ª persona, anclado al presente (julio, invierno).
+  var STORIES = [
+    { code:'B-26', em:'🌿', handle:'romero', name:'Romero', sci:'Salvia rosmarinus', ago:'ahora',
+      g:'linear-gradient(160deg,#2f5d3a,#7fae5a 70%,#c9dd8f)',
+      hook:'Estoy floreciendo. <em>Sola, en pleno invierno.</em>',
+      fact:'De todo tu jardín, en julio floreço <b>yo sola</b> (junio a octubre). Mi nombre latino <b>rosmarinus</b> = «rocío del mar». Y no es cuento: oler mis hojas antes de un examen <b>mejora la memoria un 15%</b>.' },
+    { code:'B-24', em:'🍊', handle:'mandarina.criolla', name:'Mandarina criolla', sci:'Citrus reticulata', ago:'hace 1 h',
+      g:'linear-gradient(160deg,#c2500a,#f0902a 65%,#ffd07a)',
+      hook:'Estoy <em>cargada de fruta</em> justo ahora.',
+      fact:'Mientras casi todos duermen, yo doy. Mi nombre viene de los <b>mandarines</b>, los funcionarios de la China imperial que vestían de naranja. Soy el <b>cítrico más antiguo</b> (3000 a.C.): el padre de naranjas y limones.' },
+    { code:'B-23', em:'🍋', handle:'limonero', name:'Limonero', sci:'Citrus × limon', ago:'hace 2 h',
+      g:'linear-gradient(160deg,#7d8f16,#d4d641 65%,#f4f39a)',
+      hook:'Doy limones los <em>12 meses</em> del año.',
+      fact:'No paro nunca. Y ojo: <b>no existo en la naturaleza</b> — soy un híbrido de cidro × naranja amarga inventado en India hace 2500 años. Mi cáscara tiene <b>4× más vitamina C</b> que mi jugo.' },
+    { code:'B-36', em:'🥑', handle:'palta.hass', name:'Palta Hass', sci:"Persea americana 'Hass'", ago:'hace 3 h',
+      g:'linear-gradient(160deg,#2f4318,#5b7b2b 70%,#9cae63)',
+      hook:'Confesión: <em>soy un clon.</em>',
+      fact:'<b>Todas</b> las paltas Hass del planeta descienden de UN solo árbol plantado por Rudolph Hass en <b>1926</b> en California. Solo me reproduzco por injerto, jamás por semilla: soy idéntica a aquel árbol. El 80% de la palta del mundo soy yo.' },
+    { code:'B-37', em:'🍁', handle:'liquidambar', name:'Liquidámbar', sci:'Liquidambar styraciflua', ago:'hace 5 h',
+      g:'linear-gradient(160deg,#5a2d0c,#a4501a 68%,#e0913f)',
+      hook:'Estoy pelado… pero <em>sangro perfume.</em>',
+      fact:'El invierno me dejó sin una hoja, pero mi tronco larga <b>storax</b>, un bálsamo aromático que se usa hace <b>3000 años</b> en incienso y perfumería. Los mayas lo <b>masticaban como chicle</b>. Mi nombre significa «ámbar líquido».' },
+    { code:'B-15', em:'🌿', handle:'hiedra', name:'Hiedra', sci:'Hedera helix', ago:'hace 7 h',
+      g:'linear-gradient(160deg,#123a1e,#2f6b38 72%,#6fa060)',
+      hook:'Puedo vivir <em>más de 400 años.</em>',
+      fact:'Verde todo el invierno mientras otros se pelan. Tengo <b>dos vidas</b>: de joven trepo con raíces aéreas y hojas en punta; de adulta me quedo quieta, cambio la forma de la hoja y <b>recién ahí floreço</b>. La misma planta parece dos.' },
+    { code:'B-12', em:'🕸️', handle:'lazo.de.amor', name:'Cinta / Lazo de amor', sci:'Chlorophytum comosum', ago:'hace 9 h',
+      g:'linear-gradient(160deg,#20503a,#3f8a63 70%,#8fce9f)',
+      hook:'Te <em>limpio el aire</em> mientras dormís.',
+      fact:'La <b>NASA</b> me puso en su lista de plantas que purifican el aire de interiores: absorbo formaldehído, xileno y monóxido. Una sola de mí limpia <b>unos 10 m²</b>. Y soy de las más fáciles de tener vivas del planeta.' },
+    { code:'B-16', em:'🌳', handle:'anacahuita', name:'Anacahuita', sci:'Schinus longifolius', ago:'hace 12 h',
+      g:'linear-gradient(160deg,#1e3a12,#42641f 70%,#8aa254)',
+      hook:'Estoy <em>protegida por ley.</em>',
+      fact:'Soy uno de los árboles más simbólicos del Uruguay: <b>protegida por ley nacional desde 1986</b>. Los charrúas hacían arcos y rejas con mi madera dura, y mis flores discretas son <b>muy melíferas</b> (las abejas me aman).' },
+    { code:'B-30', em:'🌸', handle:'durazno', name:'Durazno', sci:'Prunus persica', ago:'hace 16 h',
+      g:'linear-gradient(160deg,#7a2d3f,#c06a86 68%,#f0b8c8)',
+      hook:'Me quedé sin una hoja. <em>A propósito.</em>',
+      fact:'Solté todo para aguantar la helada — no estoy muerto, estoy ahorrando. Y aunque me digan «pérsica» (de Persia), soy de <b>China</b>: 8000 años de cultivo. Debajo de mi corteza pelada ya tengo listas <b>las flores de agosto</b>.' }
+  ];
+
+  var reel = document.getElementById('reel');
+  var barsEl = document.getElementById('bars');
+  var sheadEl = document.getElementById('shead');
+  var endEl = document.getElementById('end');
+  var idx = 0, timer = null, DUR = 6200, finished = false;
+
+  // build story DOM
+  STORIES.forEach(function(s, i){
+    var el = document.createElement('div');
+    el.className = 'story'; el.dataset.i = i;
+    el.innerHTML =
+      '<div class="grad" style="background:'+s.g+'"></div>' +
+      '<div class="veil"></div>' +
+      '<div class="inner">' +
+        '<span class="emoji">'+s.em+'</span>' +
+        '<div class="hook">'+s.hook+'</div>' +
+        '<div class="fact">'+s.fact+'</div>' +
+      '</div>';
+    reel.insertBefore(el, document.getElementById('tprev'));
+    var b = document.createElement('div'); b.className='bar'; b.innerHTML='<i></i>';
+    barsEl.appendChild(b);
+  });
+  var storyEls = reel.querySelectorAll('.story');
+  var barEls = barsEl.querySelectorAll('.bar');
+
+  function renderHead(s){
+    sheadEl.innerHTML =
+      '<div class="av">'+s.em+'</div>' +
+      '<div class="who">@'+s.handle+' · '+s.code+'<span>'+s.name+' · '+s.sci+'</span></div>' +
+      '<div class="ago">'+s.ago+'</div>';
+  }
+
+  function show(i){
+    if (i >= STORIES.length){ finish(); return; }
+    if (i < 0) i = 0;
+    idx = i;
+    storyEls.forEach(function(el,k){ el.classList.toggle('on', k===i); });
+    barEls.forEach(function(b,k){
+      b.classList.remove('act','done');
+      var fill = b.querySelector('i');
+      fill.style.animation='none'; void fill.offsetWidth;
+      if (k < i) b.classList.add('done');
+      else if (k === i){ b.style.setProperty('--dur', (DUR/1000)+'s'); b.classList.add('act'); }
+    });
+    renderHead(STORIES[i]);
+    clearTimeout(timer);
+    if (!reel.classList.contains('paused'))
+      timer = setTimeout(function(){ show(idx+1); }, DUR);
+  }
+
+  function finish(){
+    finished = true;
+    clearTimeout(timer);
+    reel.style.display='none';
+    endEl.style.display='block';
+    window.scrollTo(0,0);
+  }
+
+  document.getElementById('tnext').addEventListener('click', function(){ show(idx+1); });
+  document.getElementById('tprev').addEventListener('click', function(){ show(idx-1); });
+
+  // hold to pause
+  var holdTimer=null;
+  function pause(){ reel.classList.add('paused'); clearTimeout(timer); }
+  function resume(){
+    if(!reel.classList.contains('paused')) return;
+    reel.classList.remove('paused');
+    // restart current bar timing roughly
+    show(idx);
+  }
+  ['touchstart','mousedown'].forEach(function(ev){
+    reel.addEventListener(ev, function(){ holdTimer=setTimeout(pause,220); }, {passive:true});
+  });
+  ['touchend','mouseup','touchcancel','mouseleave'].forEach(function(ev){
+    reel.addEventListener(ev, function(){ clearTimeout(holdTimer); if(reel.classList.contains('paused')) resume(); });
+  });
+
+  document.getElementById('replay').addEventListener('click', function(){
+    endEl.style.display='none'; reel.style.display='block'; finished=false; show(0);
+  });
+
+  show(0);
+})();
+</script>
+<script src="engage.js"></script>
