@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-11T14:20:14.212Z",
+  "_updated_at": "2026-07-11T15:21:17.845Z",
   "events": [
     {
       "_id": "mqwd3hibnayprg",
@@ -1357,6 +1357,32 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-10-album-figuritas.html",
       "ts": "2026-07-10T17:41:41.211Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrggchze6fdwu8",
+      "type": "dwell",
+      "seconds": 36,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-11-historias-jardin.html",
+      "ts": "2026-07-11T14:20:49.034Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrgiiay6l1oasv",
+      "type": "notification_clicked",
+      "nid": "2026-07-11-task-dia",
+      "page": "tareas.html",
+      "ts": "2026-07-11T15:21:19.081Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrgiiay62lguo4",
+      "type": "page_visit",
+      "page": "tareas.html",
+      "nid": "2026-07-11-task-dia",
+      "src": "push",
+      "ts": "2026-07-11T15:21:19.081Z",
       "device": "sin-nombre"
     }
   ],
