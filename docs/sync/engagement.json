@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-11T19:43:59.230Z",
+  "_updated_at": "2026-07-11T21:16:58.988Z",
   "events": [
     {
       "_id": "mqwd3hibnayprg",
@@ -1400,6 +1400,15 @@
       "nid": "2026-07-11-b",
       "src": "push",
       "ts": "2026-07-11T19:44:00.323Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrgrwp921m203x",
+      "type": "dwell",
+      "seconds": 27,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-11-podcast-jardin.html",
+      "ts": "2026-07-11T19:44:27.348Z",
       "device": "sin-nombre"
     }
   ],
