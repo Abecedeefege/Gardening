@@ -3112,3 +3112,115 @@ SPLASH_CSS = r"""
   #splash .title{letter-spacing:.02em!important}
 }
 """
+
+
+# ============================================================
+# CSS de las landings por tarea (docs/tasks/<task_id>.html)
+# Standalone: NO usa el bundle CSS del sitio — la landing tiene que abrir
+# instantáneo desde una notificación push. Paleta del sitio.
+# ============================================================
+TAREA_LANDING_CSS = r"""
+:root{
+  --verde:#2d5016; --verde-med:#4a7c23; --fondo:#f5faf0; --card:#ffffff;
+  --tinta:#2c3323; --tinta-suave:#5a6b3c; --borde:#dde8d0;
+  --alta:#c0392b; --media:#b8860b; --baja:#4a7c23;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:var(--fondo);color:var(--tinta);line-height:1.5;
+  padding:14px 14px 40px;max-width:640px;margin:0 auto}
+a{color:var(--verde-med)}
+.back{display:inline-block;font-size:.85rem;font-weight:600;text-decoration:none;
+  color:var(--tinta-suave);margin-bottom:12px}
+.back:active{opacity:.6}
+
+/* --- Cabecera de la tarea --- */
+.task-head{background:var(--card);border:1px solid var(--borde);border-radius:16px;
+  overflow:hidden;box-shadow:0 2px 10px rgba(45,80,22,.08)}
+.task-photo{width:100%;height:190px;object-fit:cover;display:block;background:#e8f0dd}
+.task-head-body{padding:14px 16px 16px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.chip{font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:999px;
+  background:#eef5e4;color:var(--tinta-suave);white-space:nowrap}
+.chip.prio-alta{background:#fdeaea;color:var(--alta)}
+.chip.prio-media{background:#fdf6e0;color:var(--media)}
+.chip.prio-baja{background:#e9f4dc;color:var(--baja)}
+h1{font-size:1.25rem;color:var(--verde);line-height:1.3;margin-bottom:4px}
+.plant-line{font-size:.88rem;color:var(--tinta-suave)}
+
+/* --- Banner de estado --- */
+.state-banner{margin:12px 0 0;padding:10px 14px;border-radius:12px;font-size:.88rem;
+  font-weight:600;background:#e6f3da;color:var(--verde);display:flex;
+  justify-content:space-between;align-items:center;gap:10px}
+.state-banner.snoozed{background:#fdf6e0;color:var(--media)}
+.state-banner button{border:none;background:none;color:inherit;font:inherit;
+  text-decoration:underline;cursor:pointer;padding:4px}
+
+/* --- Info de la tarea --- */
+.task-info{background:var(--card);border:1px solid var(--borde);border-radius:16px;
+  padding:14px 16px;margin-top:12px;font-size:.92rem}
+.task-info .short{font-weight:600;color:var(--verde);margin-bottom:8px}
+.task-info p+p{margin-top:8px}
+.task-info details{margin-top:10px;border-top:1px dashed var(--borde);padding-top:10px}
+.task-info summary{font-weight:700;font-size:.88rem;color:var(--verde-med);
+  cursor:pointer;-webkit-tap-highlight-color:transparent}
+.task-info details>div{margin-top:8px;color:var(--tinta);white-space:pre-line}
+
+/* --- Acciones de estado --- */
+.task-actions{display:flex;gap:8px;margin-top:12px}
+.task-actions button{flex:1;border:1.5px solid var(--borde);background:var(--card);
+  border-radius:12px;padding:11px 8px;font-size:.9rem;font-weight:700;color:var(--tinta);
+  cursor:pointer;-webkit-tap-highlight-color:transparent}
+.task-actions button:active{transform:scale(.97)}
+#snooze-opts{display:none;gap:8px;margin-top:8px}
+#snooze-opts.open{display:flex}
+#snooze-opts button{flex:1;border:1.5px solid var(--borde);background:#fdf6e0;
+  border-radius:12px;padding:9px 6px;font-size:.82rem;font-weight:700;
+  color:var(--media);cursor:pointer}
+
+/* --- Conversación --- */
+.thread{margin-top:20px}
+.thread h2{font-size:1rem;color:var(--verde);margin-bottom:4px}
+.thread-hint{font-size:.8rem;color:var(--tinta-suave);margin-bottom:12px}
+#thread-feed{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.thread-empty{font-size:.85rem;color:var(--tinta-suave);text-align:center;
+  padding:18px 10px;background:#eef5e4;border-radius:12px}
+.msg{max-width:86%;padding:10px 13px;border-radius:16px;font-size:.92rem;
+  white-space:pre-line;overflow-wrap:break-word}
+.msg.user{align-self:flex-end;background:var(--verde-med);color:#fff;
+  border-bottom-right-radius:5px}
+.msg.claude{align-self:flex-start;background:var(--card);
+  border:1px solid var(--borde);border-bottom-left-radius:5px}
+.msg img{max-width:100%;border-radius:10px;display:block;margin-bottom:6px}
+.msg .msg-meta{display:block;font-size:.68rem;opacity:.75;margin-top:5px}
+.msg.user .msg-meta{text-align:right}
+.msg.sending{opacity:.65}
+.msg-pending-hint{align-self:flex-end;font-size:.72rem;color:var(--tinta-suave);
+  margin-top:-4px}
+
+/* --- Composer --- */
+.composer{background:var(--card);border:1.5px solid var(--borde);border-radius:16px;
+  padding:10px}
+#photo-preview{position:relative;margin-bottom:8px}
+#photo-preview img{max-height:120px;border-radius:10px;display:block}
+#photo-preview button{position:absolute;top:-6px;left:-6px;border:none;
+  background:#3f3f46;color:#fff;border-radius:999px;width:24px;height:24px;
+  font-size:.8rem;cursor:pointer}
+#composer-text{width:100%;border:none;resize:none;font:inherit;font-size:.95rem;
+  color:var(--tinta);background:transparent;outline:none;min-height:44px}
+.composer-row{display:flex;gap:8px;margin-top:6px}
+.composer-row button{border:1.5px solid var(--borde);background:#eef5e4;
+  border-radius:11px;padding:9px 14px;font-size:.88rem;font-weight:700;
+  color:var(--tinta-suave);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.composer-row button.primary{flex:1;background:var(--verde);border-color:var(--verde);
+  color:#fff}
+.composer-row button:disabled{opacity:.5}
+.composer-row button:active{transform:scale(.97)}
+
+/* --- Footer + badge de sync --- */
+.task-foot{margin-top:22px;text-align:center;font-size:.85rem}
+#sync-badge{position:fixed;left:10px;bottom:10px;z-index:9999;display:none;
+  font-size:.72rem;font-weight:600;padding:6px 11px;border-radius:999px;
+  max-width:86vw;box-shadow:0 2px 8px rgba(0,0,0,.18);cursor:pointer}
+"""

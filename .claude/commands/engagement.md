@@ -173,7 +173,8 @@ Política de contenido:
 - **Cantidad de notificaciones: la que indique la CADENCIA VIGENTE de learnings.md (default 3/día). Máximo 1 proposal nueva por día.** Cada notificación, a una experiencia distinta.
 - **Toda proposal lleva el link "← Volver al sitio estable" como primer elemento visible y los botones Aprobar / No me interesa al pie.** Sin excepciones.
 - **Proposals sin aprobación explícita de un día anterior se eliminan hoy.** La aprobación es el único pase a permanencia.
-- `docs/sync/task_states.json`, `docs/sync/user_tasks.json`, `docs/uploads.json`, `docs/sync/contacts.json` y `docs/images/uploads/` son del usuario: **solo lectura** para este comando (la única excepción es la compactación documentada de `engagement.json`).
+- `docs/sync/task_states.json`, `docs/sync/user_tasks.json`, `docs/uploads.json`, `docs/sync/contacts.json`, `docs/sync/threads/` y `docs/images/uploads/` son del usuario: **solo lectura** para este comando (la única excepción es la compactación documentada de `engagement.json`). Los threads (`docs/sync/threads/*.json`) los sumás a tu lectura de contexto para calibrar contenido, pero los escribe el agente `/responder-tareas`, no vos.
+- En `queue.json`, las entries con `format: "tarea"` (ids `-task-dia`/`-task-semana`/`-top3`/`-reply-*`) son de `gen_task_reminders.py` / `gen_top3_tareas.py` / `/responder-tareas`: **no las cuentes contra el cupo, no las edites ni las borres.**
 - NUNCA commitear secretos, PATs, teléfonos, ni la clave VAPID privada.
 - NUNCA editar `docs/index.html` / `tareas.html` / `ideas.html` a mano — siempre vía `python build.py`.
 - Español uruguayo en todo. Sin frameworks, sin `<form>`, sin APIs externas en runtime.

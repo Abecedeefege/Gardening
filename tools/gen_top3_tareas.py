@@ -132,7 +132,7 @@ def render_page(today, tasks, total_active):
         codes = ", ".join(t.get("plant_codes") or [])
         zone = ZONE_LABEL.get(t.get("plant_zone") or "", t.get("plant_zone") or "")
         cards.append(f"""
-    <a class="card p-{html.escape(t['priority'])}" href="{SITE}tareas.html#task={html.escape(t['id'])}">
+    <a class="card p-{html.escape(t['priority'])}" href="{SITE}tasks/{html.escape(t['id'])}.html">
       <div class="rank">{medals[i]}</div>
       <div class="body">
         <div class="meta"><span class="prio">{PRIO_EMOJI.get(t['priority'], '🌿')} {html.escape(t['priority'].upper())}</span>

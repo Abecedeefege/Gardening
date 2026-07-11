@@ -27,7 +27,7 @@ from data_ideas import (
     WHATSAPP_TEMPLATES_BY_ACTION,
 )
 from data_improvements import IMPROVEMENTS
-from styles import CSS, SPLASH_CSS
+from styles import CSS, SPLASH_CSS, TAREA_LANDING_CSS
 from scripts import JS, SPLASH_JS
 
 ROOT = Path(__file__).parent
@@ -1162,11 +1162,17 @@ def build_og_image(src_path: Path, dst_path: Path):
     img.save(dst_path, "JPEG", quality=82, optimize=True)
 
 
+PRIO_LABELS = {"alta": "🔴 Alta", "media": "🟡 Media", "baja": "🟢 Baja"}
+ZONE_LABELS = {"frente": "📍 Frente (oeste)", "fondo": "📍 Fondo (este)", "interior": "📍 Interior"}
+
+
 def build_task_page(task: dict, plant: dict | None):
     """
-    Genera docs/tasks/{taskId}.html con OG meta tags específicos para esa tarea.
-    Esta página al ser abierta en navegador redirige al index principal.
-    Cuando se comparte el link por WhatsApp, los OG tags muestran el preview correcto.
+    Genera docs/tasks/{taskId}.html — la LANDING de la tarea, destino de los
+    push de recordatorio. Standalone (no carga el bundle del sitio): contexto
+    de la tarea + acciones hecha/posponer + thread de conversación con Claude
+    (feed en docs/sync/threads/<taskId>.json, composer texto/foto vía
+    /api/tarea). Los OG meta tags se mantienen para el preview de WhatsApp.
     """
     task_id = task["id"]
     title = f"{task['title']} — {task['plant_common']}"
@@ -1199,14 +1205,49 @@ def build_task_page(task: dict, plant: dict | None):
 
     page_url_meta = f'  <meta property="og:url" content="{esc(page_url)}">' if page_url else ""
 
-    redirect_target = f"../tareas.html#task={task_id}"
+    # --- Cabecera: foto de la planta (curada, por URL relativa — liviana) ---
+    photo_html = ""
+    if has_og_image:
+        photo_html = (f'<img class="task-photo" src="../images/{esc(task["plant_photo"])}" '
+                      f'alt="{esc(task["plant_common"])}" loading="lazy">')
+
+    chips = [f'<span class="chip prio-{esc(task["priority"])}">{PRIO_LABELS.get(task["priority"], esc(task["priority"]))}</span>']
+    if task.get("due_label"):
+        chips.append(f'<span class="chip">📅 {esc(task["due_label"])}</span>')
+    if task.get("plant_zone"):
+        chips.append(f'<span class="chip">{ZONE_LABELS.get(task["plant_zone"], esc(task["plant_zone"]))}</span>')
+
+    # --- Info: descripción + colapsables cómo/tips ---
+    info_parts = []
+    short = task.get("short_desc") or task.get("description", "")
+    if short:
+        info_parts.append(f'<p class="short">{esc(short)}</p>')
+    if task.get("detail"):
+        info_parts.append(f"<p>{esc(task['detail'])}</p>")
+    if task.get("how_to"):
+        info_parts.append(f"<details><summary>🛠 Cómo hacerlo</summary><div>{esc(task['how_to'])}</div></details>")
+    if task.get("tips"):
+        info_parts.append(f"<details><summary>💡 Tips</summary><div>{esc(task['tips'])}</div></details>")
+    info_html = f'<section class="task-info">{"".join(info_parts)}</section>' if info_parts else ""
+
+    # Datos mínimos que necesita tarea.js (el resto ya está en el HTML)
+    tarea_js_data = json.dumps({
+        "id": task_id,
+        "plant_code": task["plant_codes"][0],
+        "plant_common": task["plant_common"],
+        "title": task["title"],
+    }, ensure_ascii=False)
 
     html = f"""<!DOCTYPE html>
-<html lang="es">
+<html lang="es-UY">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2d5016">
 <title>{esc(title)} · Jardineando · Pacha Mama</title>
 <meta name="description" content="{esc(desc)}">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-32.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Jardineando · Pacha Mama">
@@ -1218,20 +1259,59 @@ def build_task_page(task: dict, plant: dict | None):
 <meta name="twitter:title" content="{esc(title)}">
 <meta name="twitter:description" content="{esc(desc)}">
 
-<meta http-equiv="refresh" content="0; url={redirect_target}">
-<link rel="canonical" href="{esc(page_url) if page_url else redirect_target}">
-<style>
-  body {{ font-family: -apple-system, BlinkMacSystemFont, sans-serif; padding: 40px; max-width: 600px; margin: 0 auto; text-align: center; color: #3f3f46; }}
-  h1 {{ color: #15803d; font-size: 1.4rem; }}
-  a {{ color: #2563eb; }}
-</style>
+<link rel="canonical" href="{esc(page_url) if page_url else f'../tareas.html#task={task_id}'}">
+<style>{TAREA_LANDING_CSS}</style>
 </head>
 <body>
-<h1>🌿 Jardineando · Pacha Mama</h1>
-<p>Redirigiendo a la tarea...</p>
-<p><strong>{esc(title)}</strong></p>
-<p><a href="{redirect_target}">Si no se redirige automáticamente, hacé click acá</a></p>
-<script>window.location.replace("{redirect_target}");</script>
+<a class="back" href="../index.html">← Volver al jardín</a>
+
+<header class="task-head">
+  {photo_html}
+  <div class="task-head-body">
+    <div class="chips">{"".join(chips)}</div>
+    <h1>{esc(task["title"])}</h1>
+    <p class="plant-line">{esc(task["plant_common"])} ({esc(", ".join(task["plant_codes"]))})</p>
+  </div>
+</header>
+
+<div id="state-banner" class="state-banner" hidden></div>
+
+{info_html}
+
+<section class="task-actions" id="task-actions">
+  <button id="btn-done" type="button">✅ Marcar hecha</button>
+  <button id="btn-snooze" type="button">💤 Posponer</button>
+</section>
+<div id="snooze-opts">
+  <button type="button" data-days="7">1 semana</button>
+  <button type="button" data-days="30">1 mes</button>
+  <button type="button" data-days="90">3 meses</button>
+</div>
+
+<section class="thread">
+  <h2>💬 Conversación con Claude</h2>
+  <p class="thread-hint">Contame cómo va, mandá una foto o preguntá lo que quieras
+  sobre esta tarea. Proceso los mensajes cada hora (7–20 h) y te aviso la respuesta
+  por notificación, que te trae de vuelta acá.</p>
+  <div id="thread-feed"><p class="thread-empty">Cargando conversación…</p></div>
+  <div class="composer">
+    <div id="photo-preview" hidden><img id="photo-preview-img" alt="Foto a enviar"><button id="photo-remove" type="button" aria-label="Quitar foto">✕</button></div>
+    <textarea id="composer-text" rows="2" placeholder="Escribí acá…"></textarea>
+    <div class="composer-row">
+      <button id="btn-photo" type="button">📷 Foto</button>
+      <input type="file" id="photo-input" accept="image/*" hidden>
+      <button id="btn-send" class="primary" type="button">Enviar ➤</button>
+    </div>
+  </div>
+</section>
+
+<footer class="task-foot">
+  <a href="../tareas.html#task={task_id}">Ver en el Timeline completo →</a>
+</footer>
+
+<div id="sync-badge" title="Tocar para reintentar"></div>
+<script>window.TAREA = {tarea_js_data};</script>
+<script src="tarea.js"></script>
 </body>
 </html>"""
 
