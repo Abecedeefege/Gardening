@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-12T16:08:44.580Z",
+  "_updated_at": "2026-07-12T16:09:19.456Z",
   "events": [
     {
       "_id": "mqya0uqafnj96e",
@@ -1366,6 +1366,15 @@
       "scroll_pct": 0,
       "page": "engage/2026-07-01-horoscopo-jardin.html",
       "ts": "2026-07-11T21:17:02.759Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrhznmicxu7ovg",
+      "type": "dwell",
+      "seconds": 23,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-12-raspadita-jardin.html",
+      "ts": "2026-07-12T16:09:06.996Z",
       "device": "sin-nombre"
     }
   ],
