@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-12T16:10:17.288Z",
+  "_updated_at": "2026-07-12T19:24:30.182Z",
   "events": [
     {
       "_id": "mqya0uqafnj96e",
@@ -1428,6 +1428,23 @@
       "scroll_pct": 100,
       "page": "engage/top3-tareas.html",
       "ts": "2026-07-12T16:10:17.316Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mri6mw9o8sibc8",
+      "type": "notification_clicked",
+      "nid": "2026-07-12-b",
+      "page": "engage/2026-07-12-documental-jardin.html",
+      "ts": "2026-07-12T19:24:30.299Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mri6mw9o0or7su",
+      "type": "page_visit",
+      "page": "engage/2026-07-12-documental-jardin.html",
+      "nid": "2026-07-12-b",
+      "src": "push",
+      "ts": "2026-07-12T19:24:30.299Z",
       "device": "sin-nombre"
     }
   ],
