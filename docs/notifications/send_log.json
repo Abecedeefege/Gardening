@@ -305,6 +305,12 @@
       "nid": "2026-07-11-c",
       "ts": "2026-07-11T21:06:19.813Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-12-task-dia",
+      "ts": "2026-07-12T11:30:15.017Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
