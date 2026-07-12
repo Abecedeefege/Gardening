@@ -1,0 +1,17 @@
+{
+  "task_id": "plant-F-1",
+  "_updated_at": "2026-07-11T00:00:00.000Z",
+  "messages": [
+    {
+      "id": "m-migrated-1778238699918",
+      "from": "user",
+      "kind": "photo",
+      "text": "Ayer llovió durante horas.  Sigue con estas manchas negras en las hojas como si fueran tierra",
+      "photo": "uploads/F-1/user-1778238699918-71e2_20260508-111139.jpg",
+      "ts": "2026-05-08T11:11:39.918Z",
+      "device": "pix9",
+      "status": "pending",
+      "migrated_from": "user-1778238699918-71e2"
+    }
+  ]
+}

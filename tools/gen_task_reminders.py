@@ -141,8 +141,10 @@ def daily_entry(today, tasks):
         title = f"⏰ Pendiente: {t['plant_common']}"
     else:
         title = f"🌿 Tarea del día: {t['plant_common']}"
-    body = f"{emoji} {t['title']} · {t['due_label']}. Abrila para marcarla o pedir ayuda."
-    url = f"{SITE}tareas.html#task={t['id']}"
+    body = f"{emoji} {t['title']} · {t['due_label']}. Abrila para marcarla, mandar foto o preguntar."
+    # Deep link a la LANDING de la tarea (contexto + conversación con Claude),
+    # no al Timeline genérico.
+    url = f"{SITE}tasks/{t['id']}.html"
     return _entry(f"{date_str}-task-dia", title, body, url, date_str)
 
 

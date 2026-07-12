@@ -52,6 +52,9 @@ docs/index.html      ← Home = Biblioteca de especies (Frente/Fondo/Interior + 
                        Demos/pitch de todas las variantes: docs/engage/splash-*.html
 docs/biblioteca.html ← stub de redirect a index.html (links viejos)
 docs/tareas.html     ← Timeline de tareas (se llega por push deep link)
+docs/tasks/<id>.html ← Landing por tarea (destino de los push de recordatorio): contexto +
+                       acciones hecha/posponer + feed de conversación con Claude. Comparten
+                       docs/tasks/tarea.js. Ver sección «Landings por tarea + threads».
 docs/ideas.html      ← ideas + huerta + espacios + experiencias (con curiosidades) + mejoras
 ```
 
@@ -67,7 +70,10 @@ docs/ideas.html      ← ideas + huerta + espacios + experiencias (con curiosida
 | `images/` | Fotos del jardín (62 archivos) | Agregar fotos nuevas |
 | `tools/gen_task_reminders.py` | Recordatorios push de tareas (diario + semanal, todas las especies) | Cambiar política de recordatorios de tareas |
 | `tools/gen_top3_tareas.py` | Top 3 de tareas prioritarias cada 2 días (regenera `docs/engage/top3-tareas.html` + encola push) | Cambiar ranking/cadencia del top 3 |
-| `docs/index.html`, `docs/biblioteca.html`, `docs/tareas.html`, `docs/ideas.html` | Output del build — **NO editar a mano** | Generado siempre por `python build.py` |
+| `docs/tasks/tarea.js` | JS compartido de las landings por tarea (feed del thread + composer texto/foto + estado + tracking) | Cambiar lógica de la conversación en la landing |
+| `api/tarea.js` | Serverless de Vercel: backend de las landings (message/photo/state → repo, sin PAT en el browser) | Cambiar qué/cómo escribe la landing al repo |
+| `.claude/commands/responder-tareas.md` | Agente respondedor de threads (Routine horaria) | Cambiar política de respuestas por tarea |
+| `docs/index.html`, `docs/biblioteca.html`, `docs/tareas.html`, `docs/ideas.html`, `docs/tasks/<id>.html` | Output del build — **NO editar a mano** | Generado siempre por `python build.py` |
 
 ### Modelo de datos — Tarea
 
@@ -174,6 +180,40 @@ Las fotos llevan un overlay quemado en la esquina inferior izquierda con `task_i
 }
 ```
 
+### Landings por tarea + threads de conversación
+
+Cada tarea tiene una **landing propia** en `docs/tasks/<task_id>.html` (generada por `build_task_page()` en `build.py`; comparten el JS `docs/tasks/tarea.js` y el CSS `TAREA_LANDING_CSS` de `styles.py`). Es el destino de los push de recordatorio de tareas: standalone (~11 KB, NO carga el bundle del sitio), abre instantáneo desde la notificación. Muestra el contexto de la tarea (foto por URL relativa, prioridad, fecha, cómo/tips), botones **hecha / posponer**, y un **feed de conversación con Claude** con composer de texto + foto. Mantiene los OG tags para el preview de WhatsApp.
+
+El usuario escribe desde la landing → `api/tarea.js` (serverless de Vercel, mismo `GH_FEEDBACK_TOKEN` de servidor que `api/feedback.js`, el browser **NO necesita PAT**) escribe al repo. Un mensaje/foto queda como `status: "pending"` en el thread; el agente `/responder-tareas` lo procesa y contesta por push que deep-linkea a la misma landing.
+
+```
+docs/
+├── tasks/
+│   ├── tarea.js                   ← JS compartido de todas las landings (feed + composer + estado + tracking)
+│   └── <task_id>.html             ← Landing por tarea (destino de los push de recordatorio)
+└── sync/
+    └── threads/
+        └── <task_id>.json         ← Conversación de esa tarea (un archivo por tarea → sin contención de 409)
+```
+
+`docs/sync/threads/<task_id>.json` shape:
+```json
+{
+  "task_id": "plant-F-1",
+  "_updated_at": "ISO",
+  "messages": [
+    { "id": "m-...", "from": "user" | "claude", "kind": "text" | "photo",
+      "text": "...", "photo": "uploads/<code>/<task_id>_<ts>.jpg" | null,
+      "ts": "ISO", "device": "...", "status": "pending" | "answered",
+      "reply_to": ["<ids>"], "nid": "<push que anunció la respuesta>" }
+  ]
+}
+```
+
+Fotos de thread: convención `<task_id>_<YYYYMMDD-HHMMSS>.jpg` en `docs/images/uploads/<code>/` + entry en `docs/uploads.json` (`context: "task"`, `via: "landing"`, `ai_status: "pending"`), igual que los uploads del Timeline — así `/responder-tareas` y `/actualizar-tareas` las levantan del mismo índice.
+
+**Ownership (4 actores, escrituras disjuntas):** las landings/`api/tarea.js` hacen append de mensajes `from: "user"` + fotos + `task_states.json`; `/responder-tareas` hace append de `from: "claude"`, marca `answered`, toca data files y encola push `-reply-*`; `/engagement` lee los threads solo para calibrar contenido; el dispatcher solo manda la queue. Nadie pisa lo del otro.
+
 ### Slash commands de Claude Code
 
 Viven en `.claude/commands/<nombre>.md`. Son markdown con frontmatter YAML que describe permisos y body con instrucciones para Claude Code.
@@ -182,6 +222,7 @@ Comandos definidos:
 
 - **`/actualizar-tareas`** — procesador manual de fotos uploadeadas. Lee `docs/uploads.json`, filtra entries con `ai_status: "pending"`, evalúa cada foto contra el contexto de su tarea, propone resoluciones (marcar hecha o `description_override`) y commitea cuando el usuario confirma. Usa la visión nativa de Claude Code, sin Anthropic API key separada.
 - **`/engagement`** — agente diario de engagement (lo corre una Routine de Claude Code ~06:00 UY). Gestiona proposals, encola las 3 notificaciones push del día y commitea a main. Ver sección "Sistema de engagement" abajo.
+- **`/responder-tareas`** — respondedor de los threads de las landings por tarea (lo corre una Routine horaria, 07–20 UY, sesión fresca). Lee `docs/sync/threads/*.json` buscando mensajes/fotos del usuario con `status: "pending"` (+ `user_tasks.json` con `ai_answer: null`), contesta dentro del thread con visión nativa, encola un push `-reply-*` que deep-linkea a la misma landing, y commitea a main. Si no hay nada pendiente, termina sin commitear. Ver sección "Landings por tarea + threads".
 
 ### Sistema de engagement (push + proposals)
 
@@ -212,7 +253,7 @@ docs/
     └── engagement.json            ← Eventos: notification_clicked / page_visit / proposal_approved / proposal_rejected
 ```
 
-**Recordatorios de tareas por push:** las tareas NO tienen sección en la Home — se comunican por push. `tools/gen_task_reminders.py <fecha> --merge` genera y mergea en la queue el recordatorio del día (martes-domingo 08:00: "tarea del día" rotando entre las tareas activas de todas las especies, deep link a `tareas.html#task=<id>`; lunes 08:00: resumen semanal → `tareas.html`). Respeta `task_states.json` (done/snoozed). El agente de `/engagement` lo corre como paso obligatorio de su corrida diaria; sus entries (`format: "tarea"`) son adicionales a la cadencia de experiencias. Además, `tools/gen_top3_tareas.py <fecha> --merge` (también paso obligatorio de `/engagement`, self-gated a cada 2 días con ancla 2026-07-04) regenera `docs/engage/top3-tareas.html` con las 3 tareas prioritarias de todas las especies y encola su push (09:00) — pedido directo del usuario del 04/07/2026.
+**Recordatorios de tareas por push:** las tareas NO tienen sección en la Home — se comunican por push. `tools/gen_task_reminders.py <fecha> --merge` genera y mergea en la queue el recordatorio del día (martes-domingo 08:00: "tarea del día" rotando entre las tareas activas de todas las especies, deep link a la **landing de la tarea** `tasks/<id>.html`; lunes 08:00: resumen semanal → `tareas.html`). Respeta `task_states.json` (done/snoozed). El agente de `/engagement` lo corre como paso obligatorio de su corrida diaria; sus entries (`format: "tarea"`) son adicionales a la cadencia de experiencias. Además, `tools/gen_top3_tareas.py <fecha> --merge` (también paso obligatorio de `/engagement`, self-gated a cada 2 días con ancla 2026-07-04) regenera `docs/engage/top3-tareas.html` con las 3 tareas prioritarias de todas las especies y encola su push (09:00) — pedido directo del usuario del 04/07/2026.
 
 **Timeline — tareas pasadas:** en la vista "Todas" de `tareas.html`, las tareas hechas/cerradas NO aparecen en el flujo principal: van en un módulo colapsado "🗂️ Pasadas / hechas" al final (mismo patrón que las tareas futuras), para dar foco a las pendientes. El deep link `#task=<id>` abre el módulo automáticamente si la tarea está adentro.
 

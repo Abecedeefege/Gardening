@@ -47,7 +47,8 @@
       "last_modified_at": "2026-05-08T14:00:00.000Z",
       "has_photo": true,
       "photo_filename": "user-1778238699918-71e2_20260508-111139.jpg",
-      "ai_answer": null
+      "ai_answer": null,
+      "migrated_to": "thread:plant-F-1"
     },
     "user-1778597583144-7d3d": {
       "id": "user-1778597583144-7d3d",
