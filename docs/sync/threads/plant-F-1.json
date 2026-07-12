@@ -1,6 +1,6 @@
 {
   "task_id": "plant-F-1",
-  "_updated_at": "2026-07-11T00:00:00.000Z",
+  "_updated_at": "2026-07-12T21:26:34.469Z",
   "messages": [
     {
       "id": "m-migrated-1778238699918",
@@ -12,6 +12,16 @@
       "device": "pix9",
       "status": "pending",
       "migrated_from": "user-1778238699918-71e2"
+    },
+    {
+      "id": "m-mriazv5y-elv3ac",
+      "from": "user",
+      "kind": "text",
+      "text": "hoy llovio mucho y no lo pude hacer, lo dejo para manana",
+      "photo": null,
+      "ts": "2026-07-12T21:26:34.203Z",
+      "device": "landing",
+      "status": "pending"
     }
   ]
 }
