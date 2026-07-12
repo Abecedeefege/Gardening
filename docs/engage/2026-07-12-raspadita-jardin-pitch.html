@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2d5016">
+<title>🎰 La Raspadita del Jardín — pitch de monetización</title>
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#3e6b1f; --verde3:#57892c;
+    --bg:#f5faf0; --bg2:#eaf4df;
+    --tinta:#20340d; --tinta2:#516343; --tinta3:#8aa079;
+    --oro:#c99700; --oro2:#f2c94c; --oro3:#ffe89a;
+    --line:rgba(45,80,22,.14);
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--tinta); line-height:1.55; -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 55% at 50% -8%, rgba(201,151,0,.10), transparent 60%); }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:var(--verde); color:#dfeecb;
+    text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:600px; margin:0 auto; padding:0 var(--pad) 44px; }
+
+  header.hero{ margin:14px 0 6px; border-radius:20px; overflow:hidden; text-align:center; position:relative;
+    padding:26px 18px 22px; color:#fff8e6; background:linear-gradient(160deg,#3e6b1f,#2d5016 58%,#20340d);
+    border:1px solid rgba(255,232,154,.26); box-shadow:0 10px 26px rgba(32,52,13,.26); }
+  header.hero::after{ content:""; position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(60% 42% at 84% 6%, rgba(242,201,76,.32), transparent 62%); mix-blend-mode:screen; }
+  header.hero > *{ position:relative; z-index:1; }
+  .kick{ font-size:11px; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:var(--oro3); }
+  header.hero .em{ font-size:46px; display:block; margin:8px 0 2px; }
+  header.hero h1{ font-size:clamp(26px,7.5vw,38px); font-weight:900; letter-spacing:-.03em; line-height:1; margin:2px 0 8px; }
+  header.hero h1 em{ font-style:normal; background:linear-gradient(92deg,var(--oro2),#fff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  header.hero .pos{ font-size:14.5px; color:#e9f2d9; max-width:40ch; margin:0 auto; }
+  header.hero .pos b{ color:#fff; }
+
+  h2.sec{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--verde2);
+    margin:26px 0 12px; padding-bottom:7px; border-bottom:2px solid var(--line); }
+
+  .found{ background:#fff; border:1px solid var(--line); border-radius:16px; padding:16px 16px 6px; box-shadow:0 4px 12px rgba(32,52,13,.06); }
+  .found .fitem{ display:flex; gap:11px; padding:9px 0; border-bottom:1px solid var(--line); }
+  .found .fitem:last-child{ border-bottom:0; }
+  .found .fi-em{ font-size:22px; flex:0 0 auto; line-height:1.3; }
+  .found .fi-t{ font-size:14.5px; }
+  .found .fi-t b{ color:var(--verde2); }
+
+  .grp{ font-size:12px; font-weight:900; letter-spacing:.05em; text-transform:uppercase; margin:20px 0 4px; display:flex; align-items:center; gap:8px; }
+  .grp.inn{ color:var(--verde2); }
+  .grp.ult{ color:var(--oro); }
+  .grp .bar{ flex:1; height:1px; background:var(--line); }
+
+  .model{ background:#fff; border:1px solid var(--line); border-radius:16px; padding:16px 16px 14px; margin:11px 0; box-shadow:0 4px 12px rgba(32,52,13,.06); }
+  .model.ultra{ border:1px solid rgba(201,151,0,.4); box-shadow:0 6px 16px rgba(201,151,0,.14); }
+  .model .mh{ display:flex; align-items:baseline; gap:9px; }
+  .model .mn{ font-size:12px; font-weight:900; color:#fff; background:var(--verde3); border-radius:8px; padding:2px 8px; flex:0 0 auto; }
+  .model.ultra .mn{ background:var(--oro); }
+  .model .mt{ font-size:17px; font-weight:900; letter-spacing:-.01em; line-height:1.15; }
+  .model .msub{ font-size:13px; color:var(--tinta2); margin:5px 0 11px; }
+  .model dl{ margin:0; display:grid; grid-template-columns:auto 1fr; gap:5px 10px; }
+  .model dt{ font-size:10.5px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:var(--tinta3); padding-top:2px; }
+  .model dd{ margin:0; font-size:13.5px; line-height:1.45; }
+  .model dd b{ color:var(--verde2); }
+  .model .rev{ display:inline-block; margin-top:2px; font-size:12px; font-weight:800; color:#7a5a00; background:#fdf1cf;
+    border:1px solid rgba(201,151,0,.35); border-radius:999px; padding:2px 9px; }
+
+  .close{ margin-top:26px; border-radius:18px; padding:20px 18px; color:#fff8e6; text-align:center;
+    background:linear-gradient(160deg,#3e6b1f,#2d5016 60%,#20340d); border:1px solid rgba(255,232,154,.24); box-shadow:0 10px 24px rgba(32,52,13,.24); }
+  .close h3{ font-size:18px; font-weight:900; margin-bottom:8px; }
+  .close h3 em{ font-style:normal; color:var(--oro3); }
+  .close p{ font-size:14px; color:#e9f2d9; }
+  .close p b{ color:#fff; }
+  .foot{ text-align:center; font-size:11.5px; color:var(--tinta3); margin-top:18px; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kick">Pitch de monetización · Interno</div>
+    <span class="em">🎰</span>
+    <h1>La <em>Raspadita</em> del Jardín</h1>
+    <p class="pos">Convertimos cada planta del usuario en una <b>raspadita coleccionable</b>: un gesto de suerte diario que engancha, se comparte y se puede vender.</p>
+  </header>
+
+  <h2 class="sec">El fundamento — por qué este formato convierte</h2>
+  <div class="found">
+    <div class="fitem"><span class="fi-em">👆</span><span class="fi-t"><b>Gesto activo, no scroll pasivo.</b> El tap-to-reveal es una micro-decisión con recompensa inmediata. El cerebro trata cada raspada como una pequeña apuesta: dopamina real, no “otro feed”.</span></div>
+    <div class="fitem"><span class="fi-em">💎</span><span class="fi-t"><b>Coleccionismo y rareza.</b> Comunes, épicas y <b>3 Premio Mayor holográficas</b>. La escasez percibida crea deseo de “completar” y de volver a por la que falta.</span></div>
+    <div class="fitem"><span class="fi-em">🔁</span><span class="fi-t"><b>Hábito diario honesto.</b> “Una raspadita nueva cada día” es una promesa cumplible: 40 plantas × datos rotados = meses de contenido sin inventar nada. Racha = retención.</span></div>
+    <div class="fitem"><span class="fi-em">📲</span><span class="fi-t"><b>Ultra-compartible.</b> El “¡Me salió PREMIO MAYOR!” es un screenshot natural de WhatsApp. El premio mayor es el motor viral gratis.</span></div>
+  </div>
+
+  <h2 class="sec">Seis modelos de monetización</h2>
+
+  <div class="grp inn">🟢 Innovadores · realistas <span class="bar"></span></div>
+
+  <div class="model">
+    <div class="mh"><span class="mn">01</span><span class="mt">Raspadita Diaria +</span></div>
+    <div class="msub">Suscripción premium con racha y colección completable.</div>
+    <dl>
+      <dt>Cómo</dt><dd>Gratis: 1 raspadita/día. <b>Premium</b>: raspaditas ilimitadas, álbum completable de las 40 plantas, historial de rachas, packs temáticos y las holográficas “doradas” exclusivas.</dd>
+      <dt>Ingreso</dt><dd><span class="rev">Suscripción ~USD 2–3/mes o anual</span></dd>
+      <dt>Encaja</dt><dd>El jardinero ya es fiel y ritualista: riega, poda, chequea. Pagar por “completar mi jardín” es coherente con quien colecciona la experiencia de su propio patio.</dd>
+    </dl>
+  </div>
+
+  <div class="model">
+    <div class="mh"><span class="mn">02</span><span class="mt">Raspaditas Sponsoreadas</span></div>
+    <div class="msub">Viveros y marcas de jardinería como “Premio Mayor” con cupón real.</div>
+    <dl>
+      <dt>Cómo</dt><dd>Un vivero patrocina una raspadita: al revelarla, además del dato, aparece un <b>cupón real</b> (“10% en tu fertilizante para cítricos — Vivero X”). Branded, no invasivo, contextual a la planta.</dd>
+      <dt>Ingreso</dt><dd><span class="rev">CPM por raspada + comisión por cupón canjeado</span></dd>
+      <dt>Encaja</dt><dd>La audiencia tiene <b>intención de compra jardinera</b> altísima y local. Un cupón de fertilizante para el limonero que acabás de raspar es la publicidad menos molesta que existe.</dd>
+    </dl>
+  </div>
+
+  <div class="model">
+    <div class="mh"><span class="mn">03</span><span class="mt">Packs de Figuritas + Colección impresa</span></div>
+    <div class="msub">Marketplace de raspaditas temáticas y venta de la colección física.</div>
+    <dl>
+      <dt>Cómo</dt><dd>Packs digitales por tema (<b>Nativas del Uruguay</b>, Frutales, Aromáticas). Y al completar, ofrecer la <b>colección impresa</b>: un set de láminas/cartas del jardín del usuario, printeadas bajo demanda.</dd>
+      <dt>Ingreso</dt><dd><span class="rev">Venta de packs (micropago) + print-on-demand con margen</span></dd>
+      <dt>Encaja</dt><dd>El álbum de figuritas es cultura rioplatense pura. Que el producto físico sea <b>tu</b> jardín lo vuelve un regalo y un objeto de orgullo, no un souvenir genérico.</dd>
+    </dl>
+  </div>
+
+  <div class="grp ult">🟡 Ultra-creativos · audaces <span class="bar"></span></div>
+
+  <div class="model ultra">
+    <div class="mh"><span class="mn">04</span><span class="mt">Raspaditas NFC en la maceta</span></div>
+    <div class="msub">Chapitas físicas escaneables que “raspás” con el celular en el jardín.</div>
+    <dl>
+      <dt>Cómo</dt><dd>Vendemos <b>estacas/chapas NFC</b> que se clavan en cada maceta. Al acercar el celu, se “raspa” la carta de ESA planta ahí parado, frente a ella. Une lo físico y lo digital: el jardín se vuelve tablero de juego.</dd>
+      <dt>Ingreso</dt><dd><span class="rev">Venta de hardware (kit de chapas) + suscripción atada</span></dd>
+      <dt>Encaja</dt><dd>El jardinero <b>vive en el jardín</b>, no en el teléfono. Traer el juego al cantero, con un objeto lindo que también identifica la especie, es utilidad + magia.</dd>
+    </dl>
+  </div>
+
+  <div class="model ultra">
+    <div class="mh"><span class="mn">05</span><span class="mt">La Lotería del Jardín</span></div>
+    <div class="msub">Premios reales de temporada sorteados por la rareza que revelás.</div>
+    <dl>
+      <dt>Cómo</dt><dd>Cada Premio Mayor holográfico da un <b>número de sorteo</b>. Mensual, se sortean premios de estación reales: <b>semillas, plantines, bulbos</b> de la próxima temporada, enviados a casa. Rareza revelada = más chances.</dd>
+      <dt>Ingreso</dt><dd><span class="rev">Sponsorship de viveros (premios) + entradas premium al pozo</span></dd>
+      <dt>Encaja</dt><dd>Ganar un plantín para plantar en primavera es el premio soñado de este público. Alinea el azar del juego con el ciclo real del jardín: ganás algo que <b>vas a plantar</b>.</dd>
+    </dl>
+  </div>
+
+  <div class="model ultra">
+    <div class="mh"><span class="mn">06</span><span class="mt">Quiniela Verde — producto cultural</span></div>
+    <div class="msub">Colaboración con la quiniela/lotería local como edición de coleccionista.</div>
+    <dl>
+      <dt>Cómo</dt><dd>Co-branding con la <b>quiniela</b> rioplatense: una serie oficial de raspaditas “Flora del Uruguay” (físicas y en AR: apuntás la cámara y la raspadita cobra vida sobre la mesa). Producto cultural-educativo, no apuesta de plata.</dd>
+      <dt>Ingreso</dt><dd><span class="rev">Licencia de marca + tirada limitada + patrocinio institucional</span></dd>
+      <dt>Encaja</dt><dd>La raspadita ya es un ícono afectivo local. Reencarnarla como homenaje a las plantas nativas conecta con nostalgia + identidad, y abre puertas de sponsor institucional (bancos, intendencia, viveros).</dd>
+    </dl>
+  </div>
+
+  <h2 class="sec">Pitch de ventas</h2>
+  <div class="close">
+    <h3>El jardín ya tiene lo más difícil: <em>datos verdaderos y un usuario fiel</em>.</h3>
+    <p>La Raspadita transforma esos datos en un <b>hábito de suerte diario</b> que la gente quiere abrir, completar y compartir. Empezamos gratis para construir la racha, activamos <b>suscripción</b> y <b>cupones de viveros</b> para el flujo base, y escalamos hacia lo físico —chapas NFC, sorteos de plantines, ediciones de colección— donde el margen y la magia son mayores. Es entretenimiento, es educación botánica, y es un canal de venta directo a la audiencia jardinera más cálida que hay. <b>Bajo costo, alta emoción, y perfectamente rioplatense.</b></p>
+  </div>
+
+  <p class="foot">La Raspadita del Jardín · Documento interno de producto · Julio 2026</p>
+
+</div>
+</body></html>

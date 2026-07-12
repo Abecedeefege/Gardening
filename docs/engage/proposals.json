@@ -439,7 +439,7 @@
       "title": "🍿 JardínFlix (news-feed catálogo de streaming estilo Netflix)",
       "page": "engage/2026-07-10-jardinflix.html",
       "created": "2026-07-10",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 40 (función paralela): experiencia news-feed NUEVA de cero. Doblo la jugada ganadora del ciclo 39: el Wrapped probó que pedir prestada la UI de una app amada convierte (😍+approved+172s). JardínFlix aplica lo mismo con la interfaz MÁS consumida del planeta — el catálogo Netflix: filas navegables, hero destacado, 'top 10 de esta semana' (número-presente, eje que convierte) y cada planta como 'título basado en hechos reales' con género + sinopsis verificada + código. Sube la frecuencia vs Wrapped: estreno DIARIO en vez de estacional. Hipótesis: la UI familiar de streaming + estreno diario + asombro-real convierte amor→suscripción como el Wrapped, con mayor cadencia de retorno. Promotor: 2026-07-10-a (08:30).",
       "notified_by": [
         "2026-07-10-a"
@@ -451,7 +451,7 @@
       "title": "📗 El Álbum de tu Jardín (news-feed álbum de figuritas coleccionable estilo Panini)",
       "page": "engage/2026-07-10-album-figuritas.html",
       "created": "2026-07-10",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Ciclo 40 (función paralela): experiencia news-feed NUEVA de cero, ángulo COLECCIONISMO/RAREZA/ESTATUS con timing del Mundial 2026 (pico cultural del álbum Panini, jun-jul). Cada planta es una figurita con número y rareza; las difíciles (nativa protegida, longeva +400 años, origen único) son BRILLANTES holográficas — rareza derivada de rasgos REALES. Combina 3 palancas probadas: orgullo/estatus (Récords 141s), la mecánica de completar+coleccionar (nueva, no-juego-de-quiz que fatigó) y la cultura rioplatense del '¿la tenés? me falta'. Incluye 2 figuritas 'fantasma' (caqui B-41 identidad en duda, B-20 sin nombre) que suman morbo+pedido real de ID. Distinto del Álbum-como-lista utilitario que el usuario rechaza: acá es deleite coleccionable + estatus. Hipótesis: rareza+completar+timing-Mundial dispara 'increíble' + suscripción a la figurita del día. Promotor: 2026-07-10-b (13:00).",
       "notified_by": [
         "2026-07-10-b"
@@ -463,22 +463,46 @@
       "title": "📖 Las Historias de tu Jardín (news-feed estilo Stories de Instagram/WhatsApp, efímeras 24h)",
       "page": "engage/2026-07-11-historias-jardin.html",
       "created": "2026-07-11",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 41 (función paralela): experiencia news-feed NUEVA de cero. Doblo el meta-patrón «UI de app amada» (Wrapped ✓, Álbum ✓) con el formato de mayor hábito diario del planeta: las Stories. Player real tap-through vertical con barras de progreso; cada planta sube una 'historia' en 1ª persona con un dato real del PRESENTE (invierno: romero floreciendo solo, cítricos cargados, palta clon, liquidámbar pelado que sangra storax). Clave del experimento: la CADUCIDAD 24h es un motor de retorno HONESTO ('desaparece si no entrás hoy') que ataca directamente la meta de suscripción diaria — el formato mismo ES la suscripción. Además pruebo la idea abierta de UX: bloque de SUSCRIPCIÓN PRIMERO (antes de reacción y aprobar) para recuperar la métrica de sub que Quiz/Wrapped/Álbum perdieron. Combina app-UI + 1ª persona (Feed dio dwell récord 208s) + gesto activo (tap-through, lo que a JardínFlix pasivo le faltó). Promotor: 2026-07-11-a (08:30).",
       "notified_by": [
         "2026-07-11-a"
       ],
-      "result_notes": null
+      "result_notes": "DROPPED 12/07 por la regla de no-supervivencia sin aprobación explícita. Se ABRIÓ pero NO convirtió: dwell 36s/scroll 100% el 11/07 11:20 UY, SIN reacción, SIN answer de suscripción y SIN aprobar. El experimento clave (bloque de SUSCRIPCIÓN PRIMERO + formato nativamente-diario Stories) NO recuperó la métrica de sub, y el dwell fue BAJO (36s vs 172-260s de las ganadoras): el tap-through efímero se consumió rápido sin asombro. Junto con el Podcast (mismo día, mismo patrón), confirma que la app-UI PASIVA/de-consumo (Stories, Podcast, JardínFlix) NO engancha aunque el formato sea nativamente diario — lo que convierte es el HÉROE personal (Wrapped=tus números, Álbum=completar) o el asombro editorial, no el envoltorio de app por sí solo. No relanzar Historias/Stories. Página + pitch eliminados (git rm)."
     },
     {
       "id": "2026-07-11-podcast-jardin",
       "title": "🎧 El Podcast de tu Jardín / «Voces del Cantero» (UI de Spotify podcast, episodio diario, invitado individual)",
       "page": "engage/2026-07-11-podcast-jardin.html",
       "created": "2026-07-11",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 41 (función paralela): experiencia news-feed NUEVA de cero. Segunda apuesta al meta-patrón app-amada, con el formato de MAYOR lealtad de retención que existe: el podcast. UI tipo Spotify (portada del show, botón Seguir, episodio destacado del día con transcript/quotes, lista de episodios expandibles, barra de reproducción). El ángulo es celebridad/entrevista INDIVIDUAL (Entrevista convirtió: sub+approved+206s; foco en UNA planta-invitada por episodio). Episodio de hoy: la Palta Hass B-36 ('el clon de 1926'). La gramática del podcast ('seguir el show', 'episodio nuevo cada mañana') trae incorporado el motivo honesto de retorno → ataca la suscripción diaria. Igual que Historias, pruebo el bloque de SUSCRIPCIÓN PRIMERO. Distinto de Historias (rápido/efímero/coral) y de la Entrevista promovida (revista de texto): acá es show de audio serializado con lista de temporada. Promotor: 2026-07-11-b (13:00).",
       "notified_by": [
         "2026-07-11-b"
+      ],
+      "result_notes": "DROPPED 12/07 por la regla de no-supervivencia sin aprobación explícita. Se ABRIÓ pero NO convirtió: notification_clicked + dwell 27s/scroll 100% el 11/07 16:44 UY, SIN reacción, SIN answer de suscripción y SIN aprobar. Mismo modo de falla que Historias: la UI de app amada (Spotify podcast) con foco individual (Palta Hass B-36) igual dio dwell BAJO (27s) y cero conversión; el experimento sub-primero + formato serializado ('episodio nuevo cada mañana') tampoco recuperó la suscripción. Lectura conjunta ciclo 41: la app-amada de CONSUMO PASIVO ya falló 3 veces (JardínFlix, Historias, Podcast) — el meta-patrón app-amada solo convierte con héroe/gesto de PROTAGONISMO (Wrapped, Álbum). Pivot ciclo 42: una experiencia con GESTO activo real (Raspadita) + una editorial-prestigio con héroe del presente (Documental). No relanzar Podcast. Página + pitch eliminados (git rm)."
+    },
+    {
+      "id": "2026-07-12-raspadita-jardin",
+      "title": "🎰 La Raspadita del Jardín (news-feed de raspaditas de lotería, tap-para-revelar)",
+      "page": "engage/2026-07-12-raspadita-jardin.html",
+      "created": "2026-07-12",
+      "status": "pending",
+      "hypothesis": "Ciclo 42 (función paralela): experiencia news-feed NUEVA de cero. Pivot tras 3 no-conversiones seguidas de la app-amada PASIVA (JardínFlix/Historias/Podcast): vuelvo a un GESTO activo real. 9 raspaditas de lotería (formato ultra-rioplatense) donde cada tap revela con brillo un dato verificado de una planta suya + su código; 3 son «premio mayor» holográficas (Palta clon 1926 B-36, Hiedra +400 años B-15, Anacahuita protegida por ley B-16). Combina 3 palancas medidas: coleccionismo/rareza (Álbum ✓), asombro con dato del PRESENTE protagonista (romero B-26 floreciendo AHORA, chip EN VIVO) y el gesto activo que a los formatos pasivos les faltó. La suscripción es honesta y nativa del formato ('raspadita nueva cada día'). Hipótesis: rascar + la sorpresa del premio mayor dispara 'increíble' + suscripción donde el consumo pasivo no. Promotor: 2026-07-12-a (09:30).",
+      "notified_by": [
+        "2026-07-12-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-12-documental-jardin",
+      "title": "🎬 La Especie del Día — El Documental de tu Jardín (news-feed prestige nature-doc, héroe individual del presente)",
+      "page": "engage/2026-07-12-documental-jardin.html",
+      "created": "2026-07-12",
+      "status": "pending",
+      "hypothesis": "Ciclo 42 (función paralela): experiencia news-feed NUEVA de cero, ángulo DOCUMENTAL DE PRESTIGIO (Nat Geo/BBC Earth). Apuesta a la familia editorial que SÍ convierte a suscripción (Diario/Récords/Chusmerío/Entrevista todos con sub SÍ) con un HÉROE individual del PRESENTE — el Liquidámbar B-37, protagonista de invierno: el último caduco en desnudarse y el árbol que 'sangra ámbar' (storax que los mayas masticaban). Narrado en capítulos con recuadros de dato verificado + un 'reparto de la temporada' (romero EN VIVO B-26, limonero 12/12 B-23, mandarina B-24, palta clon B-36, pindó B-8). Distinto del Podcast (audio, falló por consumo pasivo) y de la Entrevista (Q&A): acá es feature narrado visual+editorial con gravedad de documental. 'Episodio nuevo cada mañana' = motor de suscripción serializado. Hipótesis: el asombro-wonder prestigio con héroe del presente convierte amor→suscripción como el resto de la familia editorial. Promotor: 2026-07-12-b (13:00).",
+      "notified_by": [
+        "2026-07-12-b"
       ],
       "result_notes": null
     }
