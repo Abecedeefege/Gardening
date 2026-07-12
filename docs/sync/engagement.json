@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-12T11:35:00.000Z",
+  "_updated_at": "2026-07-12T16:08:44.580Z",
   "events": [
     {
       "_id": "mqya0uqafnj96e",
@@ -1357,6 +1357,15 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-11-podcast-jardin.html",
       "ts": "2026-07-11T19:44:27.348Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrgv7rtzoncufh",
+      "type": "dwell",
+      "seconds": 3,
+      "scroll_pct": 0,
+      "page": "engage/2026-07-01-horoscopo-jardin.html",
+      "ts": "2026-07-11T21:17:02.759Z",
       "device": "sin-nombre"
     }
   ],
