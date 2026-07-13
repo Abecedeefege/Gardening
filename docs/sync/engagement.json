@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-12T21:26:06.533Z",
+  "_updated_at": "2026-07-13T21:30:24.293Z",
   "events": [
     {
       "_id": "mqyhii1ayaco94",
@@ -1437,6 +1437,23 @@
       "src": "direct",
       "ts": "2026-07-12T21:26:06.141Z",
       "device": "landing"
+    },
+    {
+      "_id": "mrjqkng15tek1r",
+      "type": "notification_clicked",
+      "nid": "2026-07-13-b",
+      "page": "engage/2026-07-13-bereal-jardin.html",
+      "ts": "2026-07-13T21:30:24.044Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrjqkng1omb2ya",
+      "type": "page_visit",
+      "page": "engage/2026-07-13-bereal-jardin.html",
+      "nid": "2026-07-13-b",
+      "src": "push",
+      "ts": "2026-07-13T21:30:24.044Z",
+      "device": "sin-nombre"
     }
   ],
   "daily_summary": {
