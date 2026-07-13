@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-13T12:29:53.186Z",
+  "_updated_at": "2026-07-13T17:30:01.054Z",
   "notifications": [
     {
       "id": "2026-07-13-task-semana",
@@ -35,8 +35,8 @@
       "format": "experiencia",
       "send_at": "2026-07-13T13:00:00-03:00",
       "expires_at": "2026-07-13T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-13T17:30:01.053Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-13 (ciclo 43)"
     },
