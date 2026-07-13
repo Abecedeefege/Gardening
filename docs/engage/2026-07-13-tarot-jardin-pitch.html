@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#221232">
+<title>🔮 El Tarot del Jardín — Pitch de venta</title>
+<style>
+  :root{
+    --verde:#2d5016; --bg:#f5faf0; --bg2:#eaf4df; --tinta:#20340d; --tinta2:#516343; --tinta3:#8aa079;
+    --noche:#221232; --viol:#7a4fb0; --viol2:#b487e8; --viol3:#e7d6fb; --oro:#c99700; --oro2:#f2c94c; --oro3:#ffe89a;
+    --line:rgba(45,80,22,.14);
+    --pad:max(16px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+    --serif:"Georgia","Times New Roman",serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--tinta); line-height:1.55; -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:620px; margin:0 auto; padding-bottom:44px; }
+  .hero{ margin:12px var(--pad); border-radius:20px; padding:26px 20px; color:#f3e9ff; text-align:center;
+    background:linear-gradient(160deg,#3a2358,#221232 60%,#160a24); border:1px solid rgba(180,135,232,.3); }
+  .hero .kick{ font-size:11px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:var(--viol3); }
+  .hero h1{ font-family:var(--serif); font-size:clamp(26px,7.5vw,36px); font-weight:900; font-style:italic; margin:8px 0 6px; }
+  .hero h1 em{ font-style:normal; color:var(--oro3); }
+  .hero p{ font-size:14px; color:#e6d9fb; max-width:44ch; margin:0 auto; }
+
+  section{ margin:20px var(--pad) 0; }
+  h2{ font-family:var(--serif); font-size:20px; font-weight:900; font-style:italic; color:var(--noche); margin-bottom:4px; }
+  h2 .n{ font-style:normal; color:var(--viol); font-size:13px; letter-spacing:.14em; text-transform:uppercase; display:block; margin-bottom:2px; }
+  .sub{ font-size:13.5px; color:var(--tinta2); margin-bottom:12px; }
+
+  .grid{ display:flex; flex-direction:column; gap:12px; }
+  .m{ background:#fff; border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:0 4px 12px rgba(32,52,13,.06); }
+  .m.creativa{ border:1px solid rgba(180,135,232,.4); background:linear-gradient(180deg,#fff, #faf6ff); }
+  .m .tag{ display:inline-block; font-size:10px; font-weight:900; letter-spacing:.08em; text-transform:uppercase;
+    padding:3px 9px; border-radius:999px; margin-bottom:8px; }
+  .m .tag.innov{ color:#2d5016; background:var(--bg2); border:1px solid var(--line); }
+  .m .tag.ultra{ color:#5a3a8a; background:var(--viol3); border:1px solid rgba(180,135,232,.5); }
+  .m h3{ font-size:16px; font-weight:900; letter-spacing:-.01em; margin-bottom:4px; }
+  .m h3 .em{ margin-right:6px; }
+  .m p{ font-size:13.5px; color:var(--tinta2); }
+  .m .how{ margin-top:8px; font-size:12.5px; color:var(--verde); background:var(--bg2); border-radius:10px; padding:8px 11px; }
+  .m .how b{ color:var(--verde); }
+  .m .rev{ margin-top:7px; font-size:12px; font-weight:800; color:#8a5a12; }
+
+  .why{ background:#fff; border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:0 4px 12px rgba(32,52,13,.06); }
+  .why ul{ margin:6px 0 0 18px; font-size:13.5px; color:var(--tinta2); }
+  .why li{ margin:5px 0; }
+  .why b{ color:var(--verde2); }
+  .kpis{ display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+  .kpi{ flex:1 1 44%; background:var(--bg2); border:1px solid var(--line); border-radius:12px; padding:11px; text-align:center; }
+  .kpi .big{ font-size:20px; font-weight:900; color:var(--viol); }
+  .kpi .lbl{ font-size:11px; color:var(--tinta2); font-weight:700; }
+
+  .close{ margin:20px var(--pad) 0; background:linear-gradient(160deg,#3a2358,#221232); color:#f3e9ff; border-radius:18px; padding:22px 18px; text-align:center; }
+  .close h2{ color:#fff; font-style:normal; }
+  .close p{ font-size:13.5px; color:#e6d9fb; max-width:42ch; margin:6px auto 0; }
+  .back{ display:block; text-align:center; margin:18px var(--pad) 0; font-size:13px; font-weight:800; color:var(--viol); text-decoration:none; }
+  .foot{ text-align:center; font-size:11px; color:var(--tinta3); margin:16px var(--pad) 0; }
+</style>
+</head>
+<body>
+<a href="https://gardening-chi.vercel.app/index.html" style="display:block;width:100%;padding:11px 16px;background:#221232;color:#e7d6fb;text-decoration:none;font-size:13px;font-weight:800;box-sizing:border-box;">← Volver al sitio estable</a>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="kick">Pitch de venta · función paralela</div>
+    <h1>El <em>Tarot</em> del Jardín</h1>
+    <p>Una tirada diaria donde las plantas del usuario son los Arcanos. El producto convierte un dato botánico verificado en un ritual de identidad — el formato más adictivo y monetizable que existe: el horóscopo.</p>
+  </div>
+
+  <section>
+    <div class="why">
+      <h2 style="font-style:normal">Por qué funciona <span style="font-weight:900;color:var(--viol)">◆</span></h2>
+      <ul>
+        <li><b>Ritual diario honesto:</b> el tarot/horóscopo es la categoría de contenido con mayor retorno diario del planeta (apps como Co–Star, The Pattern: millones de suscriptores). La gente vuelve <b>cada mañana</b> a leer su carta.</li>
+        <li><b>Identidad = el eje que más convierte</b> en este canal (medido: Horóscopo 😍+sub+115s, Quiz 😍+aprobado+103s). El tarot es identidad + predicción + misterio.</li>
+        <li><b>Gancho único vs. la competencia:</b> ningún tarot del mundo usa TUS plantas reales. Cada carta es verdadera y personal — imposible de copiar sin tu jardín.</li>
+        <li><b>Screenshoteable:</b> “me tocó El Alquimista 🍁” se comparte solo. Motor de crecimiento orgánico gratis.</li>
+      </ul>
+      <div class="kpis">
+        <div class="kpi"><div class="big">1/día</div><div class="lbl">carta fresca = razón honesta de volver</div></div>
+        <div class="kpi"><div class="big">9</div><div class="lbl">Arcanos base, todos con dato verificado</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">3 modelos innovadores</span>Monetización directa y escalable</h2>
+    <div class="grid">
+      <div class="m">
+        <span class="tag innov">Innovador 01</span>
+        <h3><span class="em">🌙</span>Tarot Premium — “La Tirada Completa”</h3>
+        <p>Gratis: 1 carta del día. Premium (suscripción): la tirada de 3 cartas (Pasado/Presente/Futuro), historial de tus cartas, y lecturas estacionales largas. Freemium clásico de la categoría wellness.</p>
+        <div class="how"><b>Cómo:</b> paywall suave después de la carta gratis diaria. USD 2–4/mes, el precio estándar de las apps de astrología.</div>
+        <div class="rev">Ingreso: suscripción recurrente (LTV alto, la categoría retiene años).</div>
+      </div>
+      <div class="m">
+        <span class="tag innov">Innovador 02</span>
+        <h3><span class="em">🃏</span>Mazo físico impreso bajo demanda</h3>
+        <p>El set de Arcanos del usuario impreso como un mazo de tarot real (cartas de lujo con la ilustración de cada planta + su dato al dorso). Print-on-demand, cero stock.</p>
+        <div class="how"><b>Cómo:</b> integración con imprenta on-demand (Printful/local). El jardín de cada usuario = un mazo único e irrepetible = objeto de regalo premium.</div>
+        <div class="rev">Ingreso: venta física por unidad, márgen alto por personalización.</div>
+      </div>
+      <div class="m">
+        <span class="tag innov">Innovador 03</span>
+        <h3><span class="em">🏷️</span>Cartas patrocinadas por viveros</h3>
+        <p>Un vivero/marca de jardinería paga por aparecer como “La carta que te falta”: si el usuario no tiene, p.ej., una lavanda, aparece un Arcano sugerido comprable en el sponsor.</p>
+        <div class="how"><b>Cómo:</b> native ad no invasivo, contextual y útil (recomienda una planta real). CPA por click al vivero.</div>
+        <div class="rev">Ingreso: publicidad contextual + afiliación con viveros.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">3 modelos ultra-creativos</span>Donde nadie más puede competir</h2>
+    <div class="grid">
+      <div class="m creativa">
+        <span class="tag ultra">Ultra 01</span>
+        <h3><span class="em">🎁</span>“Tarot para regalar un jardín”</h3>
+        <p>Antes de regalar una planta, mandás a la persona su Arcano con la lectura (“Te elegí El Alquimista porque transforma la herida en perfume”). La tarjeta de regalo emocional que ninguna florería tiene.</p>
+        <div class="how"><b>Cómo:</b> generador de tarjeta compartible + QR que lleva al Tarot. Venta B2B a florerías y viveros como servicio de valor agregado.</div>
+        <div class="rev">Ingreso: licencia white-label a florerías + micro-pago por tarjeta.</div>
+      </div>
+      <div class="m creativa">
+        <span class="tag ultra">Ultra 02</span>
+        <h3><span class="em">💍</span>Arcanos de boda / eventos</h3>
+        <p>El mirto era sagrado para Venus; las novias romanas lo usaban. Servicio de “tarot botánico de bodas”: cada mesa lleva el Arcano de una planta con su significado. Souvenir + decoración + relato.</p>
+        <div class="how"><b>Cómo:</b> paquete de eventos (impresión + curaduría de significados por planta). Nicho de altísimo ticket.</div>
+        <div class="rev">Ingreso: servicio premium por evento (bodas, aniversarios).</div>
+      </div>
+      <div class="m creativa">
+        <span class="tag ultra">Ultra 03</span>
+        <h3><span class="em">🔊</span>Lectura en audio + ASMR botánico</h3>
+        <p>Tu carta del día narrada por una voz (o clonada con IA) sobre sonido real de tu jardín. La categoría sleep/meditation (Calm, Headspace) vale miles de millones. Acá es personalizada con TU planta del día.</p>
+        <div class="how"><b>Cómo:</b> TTS + capa de audio ambiente. Add-on premium “Tarot para dormir”.</div>
+        <div class="rev">Ingreso: upsell dentro de la suscripción wellness.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="close">
+    <h2>El pitch en una línea</h2>
+    <p>Co–Star construyó un negocio de millones con el horóscopo genérico. Nosotros damos lo mismo — pero cada carta es una planta que el usuario riega, con un dato verdadero. Identidad + naturaleza + ritual diario: el combo que retiene y se comparte solo.</p>
+  </div>
+
+  <a class="back" href="2026-07-13-tarot-jardin.html">← Volver a la experiencia</a>
+  <p class="foot">Función paralela de engagement · datos verificados de data_plants.py · Montevideo 2026</p>
+</div>
+</body></html>

@@ -492,7 +492,7 @@
       "notified_by": [
         "2026-07-12-a"
       ],
-      "result_notes": null
+      "result_notes": "DROPPED 13/07 por la regla de no-supervivencia sin aprobación explícita. Se ABRIÓ pero NO convirtió: dwell 23s/scroll 100% el 12/07 (~13:09 UY), SIN reacción, SIN answer de suscripción y SIN aprobar. El PIVOT a GESTO activo real (rascar) tampoco recuperó la conversión — dwell BAJO (23s, muy por debajo de las ganadoras 100-260s): el gesto de rascar se consumió rápido sin asombro sostenido. Lectura clave: el GESTO por sí solo no convierte (igual que la app-amada pasiva no convertía); lo que convierte es el ÁNGULO editorial/identidad/estatus + asombro, no la mecánica. Diferencia con el Álbum (gesto de coleccionar que SÍ ganó): el Álbum sumaba rareza/estatus persistente + héroes brillantes; la raspadita es sorteo de un solo uso, desechable. No relanzar raspadita/lotería. Página + pitch eliminados (git rm)."
     },
     {
       "id": "2026-07-12-documental-jardin",
@@ -503,6 +503,30 @@
       "hypothesis": "Ciclo 42 (función paralela): experiencia news-feed NUEVA de cero, ángulo DOCUMENTAL DE PRESTIGIO (Nat Geo/BBC Earth). Apuesta a la familia editorial que SÍ convierte a suscripción (Diario/Récords/Chusmerío/Entrevista todos con sub SÍ) con un HÉROE individual del PRESENTE — el Liquidámbar B-37, protagonista de invierno: el último caduco en desnudarse y el árbol que 'sangra ámbar' (storax que los mayas masticaban). Narrado en capítulos con recuadros de dato verificado + un 'reparto de la temporada' (romero EN VIVO B-26, limonero 12/12 B-23, mandarina B-24, palta clon B-36, pindó B-8). Distinto del Podcast (audio, falló por consumo pasivo) y de la Entrevista (Q&A): acá es feature narrado visual+editorial con gravedad de documental. 'Episodio nuevo cada mañana' = motor de suscripción serializado. Hipótesis: el asombro-wonder prestigio con héroe del presente convierte amor→suscripción como el resto de la familia editorial. Promotor: 2026-07-12-b (13:00).",
       "notified_by": [
         "2026-07-12-b"
+      ],
+      "result_notes": "DROPPED 13/07 por la regla de no-supervivencia sin aprobación explícita. Se ABRIÓ vía push (2026-07-12-b, 16:24 UY el 12/07, notification_clicked + page_visit) pero NO quedó registrada reacción, respuesta de suscripción ni aprobación hasta el cutoff (21:26Z, ~2h después de la apertura y con el usuario activo): soft-negative. Lectura: el Documental de PRESTIGIO (nature-doc, héroe Liquidámbar del presente) traccionó la apertura pero NO retuvo ni convirtió como el resto de la familia editorial (Diario/Récords/Entrevista SÍ). Hipótesis del fracaso: el framing 'documental para MIRAR' se lee como consumo PASIVO (como el Podcast/Historias) aunque sea editorial — le faltó la VOZ en 1ª persona o el gesto de protagonismo que sí tienen los editoriales que convierten (Entrevista = Q&A, Diario = titulares punzantes). El asombro-wonder narrado en 3ª persona no basta. No relanzar Documental. Página + pitch eliminados (git rm)."
+    },
+    {
+      "id": "2026-07-13-tarot-jardin",
+      "title": "🔮 El Tarot del Jardín (news-feed de tarot/identidad, tirada de Arcanos flip-card)",
+      "page": "engage/2026-07-13-tarot-jardin.html",
+      "created": "2026-07-13",
+      "status": "pending",
+      "hypothesis": "Ciclo 43 (función paralela): experiencia news-feed NUEVA de cero, ángulo IDENTIDAD/TAROT — el eje que MÁS convirtió a suscripción (Horóscopo 😍+sub+115s, Quiz 😍+aprobado+103s). Cada planta del usuario es un Arcano Mayor con un mensaje de identidad + un dato REAL verificado que la vuelve esa carta (Palta clon 1926 = El Inmortal, Hiedra +400 años = La Ancestra, Liquidámbar storax = El Alquimista, Romero floreciendo AHORA = El Arcano del Día / vivo). Se apoya en la categoría de contenido con MAYOR retorno diario del planeta (tarot/horóscopo: Co-Star, The Pattern). Distinto del Horóscopo promovido (lectura por signo del día): acá es una TIRADA — el usuario da vuelta 9 cartas (gesto de flip) y cada Arcano le habla A ÉL. La suscripción es honesta y nativa ('tu Arcano del Día, cada mañana'). Distinto de la Raspadita fallida: acá el gesto (flip) es vehículo de un payload de IDENTIDAD (converter), no una lotería desechable. Hipótesis: identidad + misterio + dato real dispara 'increíble' + suscripción como el Horóscopo/Quiz. Promotor: 2026-07-13-a (08:30).",
+      "notified_by": [
+        "2026-07-13-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-13-bereal-jardin",
+      "title": "📸 El BeReal de tu Jardín (UI de BeReal, captura diaria del presente + cámara trasera con el dato)",
+      "page": "engage/2026-07-13-bereal-jardin.html",
+      "created": "2026-07-13",
+      "status": "pending",
+      "hypothesis": "Ciclo 43 (función paralela): experiencia news-feed NUEVA de cero, meta-patrón 'UI de app amada CON héroe/gesto' (Wrapped ✓ 172s, Álbum ✓) — pero con la app cuya gramática ES la suscripción diaria: BeReal ('es hora, sin filtro, ahora', notificación a hora random). A diferencia de la app-amada PASIVA que falló 3 veces (JardínFlix/Historias/Podcast, consumo de catálogo/player), BeReal tiene HÉROE (el presente real: romero floreciendo AHORA, liquidámbar pelado sangrando storax, cítricos cargados) y GESTO (dar vuelta la cámara frontal→trasera para revelar el secreto/dato verificado). Suma el eje 1ª persona/social que dio el dwell récord del canal (Feed 208s). 8 capturas ancladas al invierno real, cada una con dato verificado en la 'trasera'. La suscripción es nativa del formato ('BeReal del jardín, una captura al día'). Hipótesis: el motor de retorno honesto de BeReal + presente-héroe + gesto de revelar convierte donde el consumo pasivo no. Promotor: 2026-07-13-b (13:00).",
+      "notified_by": [
+        "2026-07-13-b"
       ],
       "result_notes": null
     }

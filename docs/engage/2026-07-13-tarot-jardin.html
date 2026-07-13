@@ -1,0 +1,311 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2d5016">
+<title>🔮 El Tarot del Jardín</title>
+<meta property="og:title" content="🔮 El Tarot de tu Jardín">
+<meta property="og:description" content="Tus plantas son los Arcanos. Dá vuelta las cartas y leé lo que dicen de vos — con un dato real de cada una.">
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#3e6b1f; --verde3:#57892c;
+    --bg:#f5faf0; --bg2:#eaf4df;
+    --tinta:#20340d; --tinta2:#516343; --tinta3:#8aa079;
+    --noche:#221232; --noche2:#160a24;
+    --oro:#c99700; --oro2:#f2c94c; --oro3:#ffe89a;
+    --viol:#7a4fb0; --viol2:#b487e8; --viol3:#e7d6fb;
+    --line:rgba(45,80,22,.14);
+    --pad:max(16px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+    --serif:"Georgia","Times New Roman",serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--tinta); line-height:1.5; -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 60% at 50% -8%, rgba(122,79,176,.16), transparent 60%),
+                     radial-gradient(90% 50% at 50% 108%, rgba(45,80,22,.10), transparent 60%); }
+
+  .prog-bar{ position:fixed; top:0; left:0; height:4px; width:0; z-index:140;
+    background:linear-gradient(90deg,var(--viol2),var(--oro2),var(--verde3)); transition:width .35s ease; box-shadow:0 0 8px rgba(201,151,0,.6); }
+  .wrap{ max-width:560px; margin:0 auto; padding-bottom:44px; }
+
+  .hero{ position:relative; margin:12px var(--pad) 6px; border-radius:20px; overflow:hidden; text-align:center;
+    padding:28px 18px 24px; color:#f3e9ff;
+    background:linear-gradient(160deg,#3a2358,#221232 58%,#160a24);
+    border:1px solid rgba(180,135,232,.32); box-shadow:0 10px 26px rgba(22,10,36,.32); }
+  .hero::after{ content:""; position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(58% 42% at 84% 6%, rgba(242,201,76,.30), transparent 60%),
+              radial-gradient(56% 44% at 8% 98%, rgba(180,135,232,.30), transparent 60%);
+    mix-blend-mode:screen; }
+  .hero > *{ position:relative; z-index:1; }
+  .hero .kick{ font-size:11px; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:var(--viol3); }
+  .hero .em{ font-size:52px; line-height:1; display:block; margin:8px 0 2px; filter:drop-shadow(0 6px 14px rgba(0,0,0,.45)); }
+  .hero h1{ font-family:var(--serif); font-size:clamp(30px,9vw,44px); font-weight:900; letter-spacing:-.02em; line-height:.98; margin:2px 0 10px; }
+  .hero h1 em{ font-style:italic; background:linear-gradient(92deg,var(--oro2),var(--oro3) 55%,#fff);
+    -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero p{ font-size:14px; color:#e6d9fb; max-width:34ch; margin:0 auto; }
+  .hero p b{ color:#fff; }
+
+  .counter{ position:sticky; top:0; z-index:100; margin:10px 0 4px; padding:9px var(--pad);
+    display:flex; align-items:center; gap:10px; justify-content:center;
+    background:rgba(245,250,240,.9); backdrop-filter:saturate(1.4) blur(8px);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .counter .lbl{ font-size:12.5px; font-weight:900; letter-spacing:.02em; color:var(--tinta2); text-transform:uppercase; }
+  .counter .dots{ display:flex; gap:5px; flex-wrap:wrap; }
+  .counter .dot{ width:10px; height:10px; border-radius:50%; background:rgba(122,79,176,.18); transition:all .3s; }
+  .counter .dot.on{ background:linear-gradient(150deg,var(--oro2),var(--viol)); box-shadow:0 0 6px rgba(122,79,176,.6); transform:scale(1.1); }
+  .counter .num{ font-variant-numeric:tabular-nums; font-weight:900; color:var(--viol); font-size:14px; }
+
+  .lead{ margin:10px var(--pad) 0; font-size:13.5px; color:var(--tinta2); text-align:center; }
+  .lead b{ color:var(--verde2); }
+
+  .feed{ padding:8px var(--pad) 0; }
+  .card{ position:relative; margin:15px 0; border-radius:18px; min-height:184px; cursor:pointer;
+    perspective:1200px; }
+  .inner{ position:relative; width:100%; min-height:184px; transition:transform .6s cubic-bezier(.4,.2,.2,1); transform-style:preserve-3d; }
+  .card.flipped .inner{ transform:rotateY(180deg); }
+  .face{ position:absolute; inset:0; border-radius:18px; overflow:hidden; backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+
+  /* dorso (face down) */
+  .back{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; text-align:center;
+    color:#f3e9ff; padding:20px;
+    background:linear-gradient(150deg,#3a2358,#221232 60%,#160a24);
+    border:1px solid rgba(180,135,232,.4);
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(242,201,76,.14), transparent 26%),
+      radial-gradient(circle at 80% 80%, rgba(180,135,232,.16), transparent 26%),
+      linear-gradient(150deg,#3a2358,#221232 60%,#160a24); }
+  .back .orn{ font-size:34px; filter:drop-shadow(0 2px 6px rgba(0,0,0,.4)); animation:bob 3s ease-in-out infinite; }
+  @keyframes bob{ 0%,100%{ transform:translateY(0) rotate(-4deg);} 50%{ transform:translateY(-4px) rotate(4deg);} }
+  .back .rn{ font-family:var(--serif); font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--oro3); font-weight:700; }
+  .back .rh{ font-size:12.5px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:#d9c6f5;
+    border:1px solid rgba(180,135,232,.5); border-radius:999px; padding:5px 13px; }
+  .back .rsub{ font-size:11px; color:#b79fe0; }
+
+  /* frente (revealed) */
+  .front{ transform:rotateY(180deg); background:#fff; border:1px solid var(--line);
+    box-shadow:0 6px 16px rgba(32,52,13,.10); padding:18px 17px; }
+  .card.arcano .front{ border:1px solid rgba(201,151,0,.42); box-shadow:0 8px 22px rgba(201,151,0,.2); }
+  .card.vivo .front{ border:1px solid rgba(20,140,70,.4); }
+  .fnum{ font-family:var(--serif); font-size:12px; letter-spacing:.2em; color:var(--viol); font-weight:700; text-transform:uppercase; }
+  .arc{ font-family:var(--serif); font-size:23px; font-weight:900; font-style:italic; letter-spacing:-.01em; line-height:1.08; margin:3px 0 6px; color:var(--tinta); }
+  .row1{ display:flex; align-items:center; gap:11px; margin-bottom:6px; }
+  .pemo{ font-size:34px; line-height:1; flex:0 0 auto; filter:drop-shadow(0 4px 8px rgba(0,0,0,.14)); }
+  .names{ flex:1 1 auto; min-width:0; }
+  .cname{ font-size:15px; font-weight:900; line-height:1.1; }
+  .ccode{ display:inline-block; margin-top:2px; font-size:10.5px; font-weight:900; letter-spacing:.08em;
+    color:var(--verde); background:var(--bg2); border:1px solid var(--line); padding:2px 8px; border-radius:999px; }
+  .read{ font-size:14px; line-height:1.5; color:var(--viol); font-style:italic; font-family:var(--serif); margin:4px 0 8px; }
+  .read b{ color:#5a3a8a; font-style:normal; }
+  .fact{ font-size:13px; line-height:1.48; color:var(--tinta2); border-top:1px dashed var(--line); padding-top:8px; }
+  .fact b{ color:var(--verde2); }
+  .chip{ display:inline-flex; align-items:center; gap:5px; margin-top:9px; font-size:10.5px; font-weight:900;
+    letter-spacing:.06em; text-transform:uppercase; padding:4px 10px; border-radius:999px; }
+  .chip.dia{ color:#0e5a2a; background:#d6f5df; border:1px solid rgba(20,140,70,.35); }
+  .chip.dia .pulse{ width:8px; height:8px; border-radius:50%; background:#1aa85a; box-shadow:0 0 0 0 rgba(26,168,90,.6); animation:pulse 1.6s infinite; }
+  @keyframes pulse{ 0%{ box-shadow:0 0 0 0 rgba(26,168,90,.55);} 70%{ box-shadow:0 0 0 7px rgba(26,168,90,0);} 100%{ box-shadow:0 0 0 0 rgba(26,168,90,0);} }
+  .chip.may{ color:#5a3d00; background:linear-gradient(120deg,#ffe89a,#f2c94c,#ffe89a); border:1px solid rgba(201,151,0,.5); }
+
+  .card.arcano .front::before{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.4; border-radius:18px;
+    background:linear-gradient(115deg, transparent 22%, rgba(242,201,76,.16) 40%, rgba(180,135,232,.16) 56%, transparent 74%);
+    background-size:280% 280%; animation:holo 6s ease-in-out infinite; mix-blend-mode:screen; }
+  @keyframes holo{ 0%{ background-position:0% 50%;} 50%{ background-position:100% 50%;} 100%{ background-position:0% 50%;} }
+
+  .finale{ margin:22px var(--pad) 0; opacity:0; max-height:0; overflow:hidden; transition:opacity .6s ease, max-height .9s ease; }
+  .finale.show{ opacity:1; max-height:2600px; }
+  .fcard{ border-radius:18px; padding:24px 18px; text-align:center; color:#f3e9ff;
+    background:linear-gradient(160deg,#3a2358,#221232 60%,#160a24); border:1px solid rgba(180,135,232,.3);
+    box-shadow:0 10px 24px rgba(22,10,36,.3); }
+  .fcard .em{ font-size:46px; }
+  .fcard h2{ font-family:var(--serif); font-size:24px; font-weight:900; font-style:italic; letter-spacing:-.01em; margin:6px 0 6px; }
+  .fcard h2 em{ font-style:normal; color:var(--oro3); }
+  .fcard p{ font-size:14px; color:#e6d9fb; max-width:37ch; margin:0 auto; }
+
+  .block{ margin:14px 0 0; background:#fff; border:1px solid var(--line); border-radius:16px; padding:16px; text-align:center;
+    box-shadow:0 4px 12px rgba(32,52,13,.06); }
+  .block .qh{ font-size:15px; font-weight:900; color:var(--tinta); margin-bottom:4px; }
+  .block .qs{ font-size:13px; color:var(--tinta2); margin-bottom:12px; }
+  .btnrow{ display:flex; gap:9px; justify-content:center; flex-wrap:wrap; }
+  .btnrow button{ font-family:var(--sans); font-weight:800; font-size:15px; cursor:pointer; border-radius:12px;
+    padding:11px 15px; border:1px solid var(--line); background:var(--bg2); color:var(--tinta); transition:transform .12s; }
+  .btnrow button:active{ transform:scale(.94); }
+  .btnrow button.sel{ outline:2px solid var(--viol); }
+  .react .btnrow button{ font-size:26px; padding:8px 13px; line-height:1; }
+  .react-hint, .q-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:800; color:var(--verde2); min-height:16px; }
+  .qsi{ background:var(--verde) !important; color:#eef7df !important; border-color:transparent !important; }
+
+  .engage-actions{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:16px 0 0; padding:4px; }
+  .engage-actions button{ font-family:var(--sans); font-weight:900; font-size:15px; cursor:pointer; border-radius:12px;
+    padding:13px 16px; border:1px solid var(--line); transition:transform .12s; }
+  .engage-actions button:active{ transform:scale(.95); }
+  .engage-actions button:first-child{ background:var(--verde); color:#eef7df; border-color:transparent; }
+  .engage-actions button:last-child{ background:#fff; color:var(--tinta2); }
+  .engage-feedback{ font-size:14px; font-weight:800; color:var(--verde2); padding:8px; }
+  .foot{ text-align:center; font-size:11.5px; color:var(--tinta3); margin:20px var(--pad) 0; line-height:1.5; }
+  .pitchlink{ display:block; text-align:center; margin:14px var(--pad) 0; font-size:12px; color:var(--viol); text-decoration:none; font-weight:700; }
+</style>
+</head>
+<body>
+<a href="https://gardening-chi.vercel.app/index.html" style="display:block;width:100%;padding:11px 16px;background:#2d5016;color:#dfeecb;text-decoration:none;font-size:13px;font-weight:800;box-sizing:border-box;">← Volver al sitio estable</a>
+
+<div class="prog-bar" id="progBar"></div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kick">La tirada del jardín · Julio 2026</div>
+    <span class="em">🔮</span>
+    <h1>El <em>Tarot</em><br>del Jardín</h1>
+    <p><b>Dá vuelta cada carta.</b> Tus plantas son los Arcanos Mayores: cada una tiene un mensaje para vos y un secreto real que la vuelve esa carta.</p>
+  </header>
+
+  <div class="counter">
+    <span class="lbl">Reveladas</span>
+    <div class="dots" id="dots"></div>
+    <span class="num" id="num">0/9</span>
+  </div>
+
+  <p class="lead">Empezá por <b>El Arcano del Día</b> — hoy lo tiene la única planta tuya que se anima a florecer en pleno invierno.</p>
+
+  <div class="feed" id="feed"></div>
+
+  <div class="finale" id="finale">
+    <div class="fcard">
+      <span class="em">🌙</span>
+      <h2>Tu tirada quedó <em>completa</em></h2>
+      <p>Nueve Arcanos, nueve plantas tuyas, nueve secretos verdaderos. La carta que te tocó el día que las leíste: el Romero, floreciendo a contramano de todo.</p>
+    </div>
+
+    <div class="block react">
+      <div class="qh">¿Qué te pareció tu tirada?</div>
+      <div class="btnrow">
+        <button onclick="engageReact('tarot-jardin','love', this)">😍</button>
+        <button onclick="engageReact('tarot-jardin','like', this)">🙂</button>
+        <button onclick="engageReact('tarot-jardin','meh', this)">😐</button>
+        <button onclick="engageReact('tarot-jardin','no', this)">🙅</button>
+      </div>
+      <span class="react-hint"></span>
+    </div>
+
+    <div class="block">
+      <div class="qh">¿Querés tu Arcano del Día, cada mañana?</div>
+      <div class="qs">Una carta nueva por día — una planta tuya, su mensaje y su dato real. Un toque y listo.</div>
+      <div class="btnrow">
+        <button class="qsi" onclick="engageAnswer('tarot-suscripcion-diaria','si', this)">Sí, quiero mi carta diaria</button>
+        <button onclick="engageAnswer('tarot-suscripcion-diaria','no', this)">No</button>
+      </div>
+      <span class="q-hint"></span>
+    </div>
+
+    <div class="engage-actions">
+      <button onclick="engageApprove('2026-07-13-tarot-jardin')">✅ Aprobar esta mejora</button>
+      <button onclick="engageRejected('2026-07-13-tarot-jardin')">✕ No me interesa</button>
+    </div>
+
+    <a class="pitchlink" href="2026-07-13-tarot-jardin-pitch.html">◆ Cómo se vende esta experiencia →</a>
+    <p class="foot">Cada carta se apoya en un dato verificado de tus plantas · Montevideo, pleno invierno 🌙<br>El romero está floreciendo AHORA MISMO en tu jardín.</p>
+  </div>
+
+</div>
+
+<script>
+  var CARDS = [
+    { emoji:"🌿", name:"Romero", code:"B-26", arc:"La Que Florece a Contramano", num:"El Arcano del Día", cls:"vivo",
+      chip:'<span class="chip dia"><span class="pulse"></span>En vivo · floreciendo AHORA</span>',
+      read:"Florecés justo cuando <b>nadie lo espera</b>. Mientras todo duerme, vos das señal de vida.",
+      fact:"Es de las <b>poquísimas</b> plantas que florecen en julio, en pleno invierno. Oler romero antes de un examen mejoró la memoria un <b>15%</b> en estudios universitarios." },
+    { emoji:"🥑", name:"Palta Hass", code:"B-36", arc:"El Inmortal", num:"Arcano Mayor", cls:"arcano",
+      chip:'<span class="chip may">⭐ Arcano brillante</span>',
+      read:"No cambiás tu esencia por nada. Sos <b>fiel a vos misma</b> aunque pasen las décadas.",
+      fact:"<b>TODAS</b> las paltas Hass del mundo descienden de <b>UN solo árbol</b> plantado por Rudolph Hass en 1926. Solo se reproduce por injerto: cada una es un clon idéntico." },
+    { emoji:"🍃", name:"Hiedra común", code:"B-15", arc:"La Ancestra", num:"Arcano Mayor", cls:"arcano",
+      chip:'<span class="chip may">⭐ Arcano brillante</span>',
+      read:"Tenés la <b>paciencia de los siglos</b>. Lo que otros apuran, vos lo dejás madurar.",
+      fact:"Puede vivir <b>+400 años</b>. Tiene una fase juvenil que trepa y una adulta que florece y no trepa: parece dos plantas distintas en una sola vida." },
+    { emoji:"🌳", name:"Anacahuita", code:"B-16", arc:"La Protegida", num:"Arcano Mayor", cls:"arcano",
+      chip:'<span class="chip may">⭐ Arcano brillante</span>',
+      read:"Lo que sos <b>está amparado</b>. Hay fuerzas mayores cuidando lo tuyo.",
+      fact:"Nativa uruguaya <b>protegida por ley nacional desde 1986</b>. Los charrúas usaban su madera dura para hacer arcos." },
+    { emoji:"🍋", name:"Limonero", code:"B-23", arc:"La Abundancia", num:"Arcano Mayor", cls:"",
+      chip:"",
+      read:"<b>Nunca te falta qué dar</b>. Tu generosidad no conoce estaciones.",
+      fact:"Da fruta los <b>12 meses</b> del año. La cáscara tiene <b>4× más vitamina C</b> que el jugo. No existe en la naturaleza: es híbrido de cidro × naranja amarga." },
+    { emoji:"🪴", name:"Cinta / Lazo de amor", code:"B-12", arc:"La Purificadora", num:"Arcano Mayor", cls:"",
+      chip:"",
+      read:"<b>Limpiás el aire</b> donde estás. La gente respira mejor cuando te tiene cerca.",
+      fact:"La <b>NASA</b> la incluyó en su lista de plantas que purifican el aire interior: absorbe formaldehído, xileno y monóxido de carbono." },
+    { emoji:"🍁", name:"Liquidámbar", code:"B-37", arc:"El Alquimista", num:"Arcano Mayor", cls:"arcano",
+      chip:'<span class="chip may">⭐ Arcano brillante</span>',
+      read:"<b>Transformás la herida en perfume</b>. Donde te cortan, das algo precioso.",
+      fact:"Su tronco produce un bálsamo aromático llamado <b>storax</b>: los mayas lo masticaban como chicle. Su nombre significa <b>“ámbar líquido”</b>." },
+    { emoji:"🌸", name:"Mirto común", code:"B-27", arc:"La Enamorada", num:"Arcano Mayor", cls:"",
+      chip:"",
+      read:"<b>El amor te eligió de símbolo</b>. Donde estás vos, algo florece por dentro.",
+      fact:"Era sagrado para <b>Venus / Afrodita</b>. Las novias romanas llevaban coronas de mirto en el pelo." },
+    { emoji:"🩷", name:"Aguaribay / Molle", code:"F-8", arc:"El Sagrado", num:"Arcano Mayor", cls:"",
+      chip:"",
+      read:"<b>Lo cotidiano en vos es sagrado</b>. Lo simple que hacés, para otros es un tesoro.",
+      fact:"Sus frutos rosados son la verdadera <b>“pimienta rosa”</b> de delicatessen (no vienen de un pimentero real). Era sagrado para incas y guaraníes; sus hojas repelen mosquitos." },
+  ];
+
+  var TOTAL = CARDS.length;
+  var revealed = 0;
+  var done = new Array(TOTAL).fill(false);
+
+  var feed = document.getElementById('feed');
+  var dotsEl = document.getElementById('dots');
+  var numEl = document.getElementById('num');
+  var progBar = document.getElementById('progBar');
+  var finale = document.getElementById('finale');
+
+  for (var d=0; d<TOTAL; d++){
+    var dot = document.createElement('div');
+    dot.className = 'dot'; dot.dataset.i = d;
+    dotsEl.appendChild(dot);
+  }
+
+  CARDS.forEach(function(c, i){
+    var card = document.createElement('div');
+    card.className = 'card' + (c.cls ? ' ' + c.cls : '');
+    card.dataset.i = i;
+    card.innerHTML =
+      '<div class="inner">' +
+        '<div class="face back">' +
+          '<span class="orn">' + (c.cls === 'vivo' ? '🌙' : '✦') + '</span>' +
+          '<span class="rn">' + c.num + '</span>' +
+          '<span class="rh">Tocá para dar vuelta</span>' +
+          '<span class="rsub">' + (c.cls === 'arcano' ? '⭐ Puede ser un Arcano brillante' : 'Una planta tuya te espera') + '</span>' +
+        '</div>' +
+        '<div class="face front">' +
+          '<div class="fnum">' + c.num + '</div>' +
+          '<div class="arc">' + c.arc + '</div>' +
+          '<div class="row1">' +
+            '<div class="pemo">' + c.emoji + '</div>' +
+            '<div class="names"><div class="cname">' + c.name + '</div><span class="ccode">' + c.code + '</span></div>' +
+          '</div>' +
+          '<div class="read">' + c.read + '</div>' +
+          '<div class="fact">🔎 ' + c.fact + '</div>' +
+          c.chip +
+        '</div>' +
+      '</div>';
+    card.addEventListener('click', function(){ flip(card, i); });
+    feed.appendChild(card);
+  });
+
+  function flip(card, i){
+    if (done[i]) return;
+    done[i] = true;
+    revealed++;
+    card.classList.add('flipped');
+    dotsEl.children[i].classList.add('on');
+    numEl.textContent = revealed + '/' + TOTAL;
+    progBar.style.width = Math.round((revealed / TOTAL) * 100) + '%';
+    if (revealed === TOTAL){
+      setTimeout(function(){
+        finale.classList.add('show');
+        setTimeout(function(){ finale.scrollIntoView({ behavior:'smooth', block:'start' }); }, 250);
+      }, 550);
+    }
+  }
+</script>
+<script src="engage.js"></script>
+</body></html>
