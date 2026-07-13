@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-13T12:10:59.213Z",
+  "_updated_at": "2026-07-13T12:29:53.186Z",
   "notifications": [
     {
       "id": "2026-07-13-task-semana",
@@ -61,8 +61,8 @@
       "format": "tarea",
       "send_at": "2026-07-13T09:11:00-03:00",
       "expires_at": "2026-07-13T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-13T12:29:53.060Z",
       "fail_reason": null,
       "created_by": "responder-tareas 2026-07-13"
     },
@@ -74,8 +74,8 @@
       "format": "tarea",
       "send_at": "2026-07-13T09:12:00-03:00",
       "expires_at": "2026-07-13T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-13T12:29:53.186Z",
       "fail_reason": null,
       "created_by": "responder-tareas 2026-07-13"
     }
