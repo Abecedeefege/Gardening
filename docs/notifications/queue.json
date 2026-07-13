@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-13T09:15:16.963159",
+  "_updated_at": "2026-07-13T12:06:34.000Z",
   "notifications": [
     {
       "id": "2026-07-13-task-semana",
@@ -52,6 +52,32 @@
       "sent_at": null,
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-13 (ciclo 43)"
+    },
+    {
+      "id": "2026-07-13-reply-plant-F-1",
+      "title": "🌿 Te contesté: Guayabo del país",
+      "body": "Confirmado: es fumagina, no tierra. Te dejé el plan de tratamiento. Y tranqui con la poda, no hay apuro.",
+      "url": "https://gardening-chi.vercel.app/tasks/plant-F-1.html",
+      "format": "tarea",
+      "send_at": "2026-07-13T09:11:00-03:00",
+      "expires_at": "2026-07-13T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "responder-tareas 2026-07-13"
+    },
+    {
+      "id": "2026-07-13-reply-user-1781114206236-60d0",
+      "title": "🌿 Te contesté: ¿Guayabo o hiedra?",
+      "body": "El B-15 ya está confirmado como hiedra común, no guayabo del país (ese es F-1). Te cuento por qué.",
+      "url": "https://gardening-chi.vercel.app/tareas.html#task=user-1781114206236-60d0",
+      "format": "tarea",
+      "send_at": "2026-07-13T09:12:00-03:00",
+      "expires_at": "2026-07-13T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "responder-tareas 2026-07-13"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "_synced_at": "2026-06-10T17:56:47.000Z",
-  "_last_writer": "pix9",
+  "_last_writer": "responder-tareas",
   "tasks": {
     "user-1778160757771-7240": {
       "id": "user-1778160757771-7240",
@@ -15,7 +15,10 @@
       "last_modified_at": "2026-05-07T14:00:00.000Z",
       "has_photo": false,
       "photo_filename": null,
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "Listado para Montevideo (lat -34.9°S, otoño/inicio invierno). VERDURAS para sembrar/transplantar AHORA en mayo: ajo (a diente directo, 10-15 cm enterrado, cosecha enero), cebolla (de almácigo a definitivo), habas, arvejas (semilla directa), lechuga de invierno (mantecosa, romana — plantines), espinaca, acelga, rúcula, perejil, cilantro, repollo y coliflor (plantines). HIERBAS: tomillo, orégano, ciboulette ya establecidos toleran trasplante; lavanda mejor en jul-ago. FRUTAS: la ventana óptima de plantación de frutales caducos (manzano, ciruelo, durazno, peral, cerezo, higo, kaki, ciruelo japonés) es JULIO-AGOSTO a raíz desnuda en plena dormancia — en mayo es prematuro pero podés ir abonando los lugares previstos. Cítricos NO van en mayo (frío) — esperar octubre. BERRIES: frutillas SÍ van bien ahora (corona descubierta, lugar soleado, riego moderado). Arándano y frambuesa también van bien plantar a partir de junio. EVITAR en mayo: tomate, morrón, zapallo, pepino, sandía, melón, berenjena (todos van en sept-oct). Si querés un plan concreto para tu jardín avísame qué espacio tenés disponible (cantero, maceta, fondo) y armo lista priorizada con compañeros plantados.",
+        "answered_at": "2026-05-07T14:00:00.000Z"
+      }
     },
     "user-1778160814168-a314": {
       "id": "user-1778160814168-a314",
@@ -30,7 +33,10 @@
       "last_modified_at": "2026-05-07T14:00:00.000Z",
       "has_photo": false,
       "photo_filename": null,
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "Auditoría completa: las 16 especies no 100% confirmadas YA TIENEN cada una su urgency de identificación específica. Listado y ventana esperada (mes recomendado para foto/foto+flor que cierra ID): F-5 Coronita de novia (Spiraea? — flor sept-oct) → existing 'Confirmar especie viendo la floración'; B-2 Jazmín → 'Foto en floración + decidir hijos' (oct-dic); B-9 Crespón (Lagerstroemia? — confirmado por hojas/corteza, falta flor) → 'Confirmar especie en floración' (ene-feb); B-13 Clivia (confirmado por porte) → 'Confirmar especie en floración' (sept-oct para flor naranja); B-14 sospecha lapachillo → 'Foto en floración para ID' (ago-sept); B-15 vegetación galpón → 'Acercarse y fotografiar de cerca' (cuando puedas con escalera); B-20 arbusto caduco → 'Foto al brotar (sept-oct)'; B-25 Gardenia (confirmado por síntomas) → ahora marcado 100%, no necesita más confirmación; B-32 varitas peladas → 'Foto del brote primaveral' (sept-oct); B-34 Mandioca brava (recién identificada tentativa) → 'Confirmar con foto de flor' (oct-dic); B-40 Lonicera nitida → 'Confirmar en floración' (oct-nov); B-41 Caqui → 'Confirmar variedad' refoto en mayo 2027 con frutos; B-45 sin identificar → 'Foto hoja + flor' (oct-dic); B-46 vivero → '6 urgencies por subgrupo' + 'Subir fotos plantines incógnita'; B-47 palmeras butiá vs pindó → 'Confirmar especie' (esperar hojas pinnadas adultas, feb 2027); B-49 trifoliado → 'Confirmar trifoliado (esperar flor primavera)' (oct-nov 2026). Refactor adicional aplicado: B-25 Gardenia removido '(a confirmar)' — los síntomas (pulgones, hormigas, cloración férrica) son inequívocos. ⚠️ NADA QUE HACER POR EL USER AHORA: cada urgency está scheduleada para su ventana botánica óptima.",
+        "answered_at": "2026-05-07T14:00:00.000Z"
+      }
     },
     "user-1778238699918-71e2": {
       "id": "user-1778238699918-71e2",
@@ -47,7 +53,10 @@
       "last_modified_at": "2026-05-08T14:00:00.000Z",
       "has_photo": true,
       "photo_filename": "user-1778238699918-71e2_20260508-111139.jpg",
-      "ai_answer": null,
+      "ai_answer": {
+        "summary": "Fumagina confirmada (hongo negro sobre melaza de plaga chupadora, no tierra). Plan de tratamiento agregado como tarea F-1 alta prioridad: buscar plaga origen + neem/jabón potásico semanal x3 semanas. Respondido en el thread de plant-F-1.",
+        "answered_at": "2026-07-13T12:06:34.000Z"
+      },
       "migrated_to": "thread:plant-F-1"
     },
     "user-1778597583144-7d3d": {
@@ -205,7 +214,10 @@
       "last_modified_at": "2026-06-10T17:56:46.236Z",
       "has_photo": false,
       "photo_filename": null,
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "El B-15 ya está confirmado como hiedra común (Hedera helix): se identificó con una foto bien cercana en mayo 2026 — hoja palmeada de 3 a 5 lóbulos, verde oscuro brillante, con venación blanco-verdosa marcada, típica de la hiedra. No es el guayabo del país: ese es F-1, está en el FRENTE (no en el fondo), y tiene hoja entera ovalada gris-plateada por debajo con flores blancas y rojas comestibles en primavera — planta bien distinta. Si te quedan dudas, mandá una foto bien cerca de la hoja puntual que estás mirando (puede haber otra plantita colada cerca) y la reviso de nuevo.",
+        "answered_at": "2026-07-13T12:06:34.000Z"
+      }
     }
   }
 }

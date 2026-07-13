@@ -1037,8 +1037,13 @@
       "context": "question",
       "task_id": "user-1781114206236-60d0",
       "task_title_snapshot": "Esto es un guayabo del pais",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "El B-15 ya está confirmado como hiedra común (Hedera helix): se identificó con una foto bien cercana en mayo 2026 — hoja palmeada de 3 a 5 lóbulos, verde oscuro brillante, con venación blanco-verdosa marcada, típica de la hiedra. No es el guayabo del país: ese es F-1, está en el FRENTE (no en el fondo), y tiene hoja entera ovalada gris-plateada por debajo con flores blancas y rojas comestibles en primavera — planta bien distinta. Si te quedan dudas, mandá una foto bien cerca de la hoja puntual que estás mirando (puede haber otra plantita colada cerca) y la reviso de nuevo.",
+        "next_steps": "Ninguno salvo que el usuario mande foto de la hoja puntual en caso de duda.",
+        "processed_at": "2026-07-13T12:06:34.000Z"
+      },
       "user_context": "Esto es un guayabo del pais",
       "plant_id": "B-15"
     }
