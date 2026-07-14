@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-14T17:37:54.973Z",
+  "_updated_at": "2026-07-14T17:38:05.322Z",
   "events": [
     {
       "_id": "mr0lxevniz9e83",
@@ -1349,6 +1349,15 @@
       "nid": "2026-07-14-b",
       "src": "push",
       "ts": "2026-07-14T17:37:55.651Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrkxprwy9ip9ks",
+      "type": "dwell",
+      "seconds": 11,
+      "scroll_pct": 45,
+      "page": "engage/2026-07-14-adn-jardin.html",
+      "ts": "2026-07-14T17:38:06.609Z",
       "device": "sin-nombre"
     }
   ],
