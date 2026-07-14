@@ -2,154 +2,6 @@
   "_updated_at": "2026-07-13T21:30:36.042Z",
   "events": [
     {
-      "_id": "mqyhii1ayaco94",
-      "type": "notification_clicked",
-      "nid": "2026-06-28-c",
-      "page": "index.html",
-      "ts": "2026-06-29T00:33:37.484Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqyhii1a41gtil",
-      "type": "page_visit",
-      "page": "index.html",
-      "nid": "2026-06-28-c",
-      "src": "push",
-      "ts": "2026-06-29T00:33:37.484Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqyhk4vxyxtvty",
-      "type": "page_visit",
-      "page": "engage/2026-06-29-diario-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-06-29T00:34:53.756Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqyhlrqta71m8y",
-      "type": "answer",
-      "qid": "diario-suscripcion-diaria",
-      "value": "si",
-      "page": "engage/2026-06-29-diario-jardin.html",
-      "ts": "2026-06-29T00:36:10.037Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqyhltuthpd5hs",
-      "type": "reaction",
-      "target": "diario",
-      "value": "love",
-      "page": "engage/2026-06-29-diario-jardin.html",
-      "ts": "2026-06-29T00:36:12.773Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqyhlve1sb3vqr",
-      "type": "proposal_approved",
-      "proposal_id": "2026-06-29-diario-jardin",
-      "ts": "2026-06-29T00:36:14.761Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqyhm3r4hjnxyl",
-      "type": "dwell",
-      "seconds": 92,
-      "scroll_pct": 100,
-      "page": "engage/2026-06-29-diario-jardin.html",
-      "ts": "2026-06-29T00:36:25.600Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqyhp124sv1esi",
-      "type": "reaction",
-      "target": "records",
-      "value": "love",
-      "page": "engage/2026-06-29-records-jardin.html",
-      "ts": "2026-06-29T00:38:42.076Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqyhp2mj25uybf",
-      "type": "answer",
-      "qid": "records-suscripcion-diaria",
-      "value": "si",
-      "page": "engage/2026-06-29-records-jardin.html",
-      "ts": "2026-06-29T00:38:44.107Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqyhp4vvwowofz",
-      "type": "proposal_approved",
-      "proposal_id": "2026-06-29-records-jardin",
-      "ts": "2026-06-29T00:38:47.035Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqyhp7fswncasm",
-      "type": "dwell",
-      "seconds": 141,
-      "scroll_pct": 100,
-      "page": "engage/2026-06-29-records-jardin.html",
-      "ts": "2026-06-29T00:38:50.344Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqyhrl1yfskbgd",
-      "type": "dwell",
-      "seconds": 5,
-      "scroll_pct": 100,
-      "page": "engage/2026-06-29-records-jardin.html",
-      "ts": "2026-06-29T00:40:41.302Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqyhrs524vvkej",
-      "type": "dwell",
-      "seconds": 4,
-      "scroll_pct": 100,
-      "page": "engage/2026-06-29-diario-jardin.html",
-      "ts": "2026-06-29T00:40:50.485Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqyhvnlne3cfj6",
-      "type": "dwell",
-      "seconds": 5,
-      "scroll_pct": 0,
-      "page": "engage/2026-06-29-diario-jardin.html",
-      "ts": "2026-06-29T00:43:51.227Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mqz8jm5tnxze4b",
-      "type": "page_visit",
-      "page": "engage/2026-06-29-diario-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-06-29T13:10:19.117Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "mqz8k3vef4ou2z",
-      "type": "dwell",
-      "seconds": 23,
-      "scroll_pct": 95,
-      "page": "engage/2026-06-29-diario-jardin.html",
-      "ts": "2026-06-29T13:10:42.074Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "mqz8kjt504mhrz",
-      "type": "dwell",
-      "seconds": 18,
-      "scroll_pct": 100,
-      "page": "engage/2026-06-29-records-jardin.html",
-      "ts": "2026-06-29T13:11:02.729Z",
-      "device": "pix9"
-    },
-    {
       "_id": "mr0lxevniz9e83",
       "type": "dwell",
       "seconds": 142,
@@ -1567,6 +1419,12 @@
       "clicked": 0,
       "visits": 0,
       "approvals": 0
+    },
+    "2026-06-29": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 3,
+      "approvals": 2
     }
   }
 }

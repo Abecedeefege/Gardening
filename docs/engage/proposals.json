@@ -511,22 +511,46 @@
       "title": "🔮 El Tarot del Jardín (news-feed de tarot/identidad, tirada de Arcanos flip-card)",
       "page": "engage/2026-07-13-tarot-jardin.html",
       "created": "2026-07-13",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 43 (función paralela): experiencia news-feed NUEVA de cero, ángulo IDENTIDAD/TAROT — el eje que MÁS convirtió a suscripción (Horóscopo 😍+sub+115s, Quiz 😍+aprobado+103s). Cada planta del usuario es un Arcano Mayor con un mensaje de identidad + un dato REAL verificado que la vuelve esa carta (Palta clon 1926 = El Inmortal, Hiedra +400 años = La Ancestra, Liquidámbar storax = El Alquimista, Romero floreciendo AHORA = El Arcano del Día / vivo). Se apoya en la categoría de contenido con MAYOR retorno diario del planeta (tarot/horóscopo: Co-Star, The Pattern). Distinto del Horóscopo promovido (lectura por signo del día): acá es una TIRADA — el usuario da vuelta 9 cartas (gesto de flip) y cada Arcano le habla A ÉL. La suscripción es honesta y nativa ('tu Arcano del Día, cada mañana'). Distinto de la Raspadita fallida: acá el gesto (flip) es vehículo de un payload de IDENTIDAD (converter), no una lotería desechable. Hipótesis: identidad + misterio + dato real dispara 'increíble' + suscripción como el Horóscopo/Quiz. Promotor: 2026-07-13-a (08:30).",
       "notified_by": [
         "2026-07-13-a"
       ],
-      "result_notes": null
+      "result_notes": "DROPPED 14/07 por la regla de no-supervivencia sin aprobación explícita. NO-OPEN: su push promotor (2026-07-13-a) se despachó 09:10 UY el 13/07 pero NO quedó registrado ni click ni page_visit del Tarot en engagement.json (cutoff 13/07 18:30 UY, con el usuario ACTIVO — abrió el BeReal a las 18:30 UY). Soft-negative. SORPRENDE porque IDENTIDAD es el eje que MÁS convirtió (Horóscopo 😍+sub+115s, Quiz 😍+aprobado+103s), pero el Tarot no ganó ni la apertura. Hipótesis del fracaso: el gancho 'te tiró las cartas / tus plantas son los Arcanos' se leyó como 'otro Horóscopo' (ya promovido y vivo en Ideas) — canibalización del propio eje identidad-mística. El gesto flip no ayudó a la APERTURA (se decide antes de abrir). Lectura: identidad convierte, pero NO repetir el sub-género místico/predicción cuando el Horóscopo ya lo cubre; la identidad fresca (Quiz=test, o self-focused tipo perfil) sí tiene espacio. No relanzar Tarot. Página + pitch eliminados (git rm)."
     },
     {
       "id": "2026-07-13-bereal-jardin",
       "title": "📸 El BeReal de tu Jardín (UI de BeReal, captura diaria del presente + cámara trasera con el dato)",
       "page": "engage/2026-07-13-bereal-jardin.html",
       "created": "2026-07-13",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 43 (función paralela): experiencia news-feed NUEVA de cero, meta-patrón 'UI de app amada CON héroe/gesto' (Wrapped ✓ 172s, Álbum ✓) — pero con la app cuya gramática ES la suscripción diaria: BeReal ('es hora, sin filtro, ahora', notificación a hora random). A diferencia de la app-amada PASIVA que falló 3 veces (JardínFlix/Historias/Podcast, consumo de catálogo/player), BeReal tiene HÉROE (el presente real: romero floreciendo AHORA, liquidámbar pelado sangrando storax, cítricos cargados) y GESTO (dar vuelta la cámara frontal→trasera para revelar el secreto/dato verificado). Suma el eje 1ª persona/social que dio el dwell récord del canal (Feed 208s). 8 capturas ancladas al invierno real, cada una con dato verificado en la 'trasera'. La suscripción es nativa del formato ('BeReal del jardín, una captura al día'). Hipótesis: el motor de retorno honesto de BeReal + presente-héroe + gesto de revelar convierte donde el consumo pasivo no. Promotor: 2026-07-13-b (13:00).",
       "notified_by": [
         "2026-07-13-b"
+      ],
+      "result_notes": "DROPPED 14/07 por la regla de no-supervivencia sin aprobación explícita. Se ABRIÓ vía push (2026-07-13-b, notification_clicked + page_visit 13/07 18:30 UY) pero NO convirtió: dwell 12s/scroll 18%, SIN reacción, SIN answer de suscripción, SIN aprobar — rebote rápido. Lectura: el meta-patrón «UI de app amada CON héroe/gesto» (Wrapped ✓ 172s, Álbum ✓) NO se sostuvo con BeReal, pese a tener héroe (presente del invierno) y gesto (dar vuelta la cámara). El envoltorio BeReal se consumió como una galería de capturas — semi-pasiva, sin el arco narrativo/estatus que retiene. Con esto la app-amada de FORMATO-captura ya no rinde (BeReal 12s se suma a Historias 36s/Podcast 27s/JardínFlix no-open): lo único que sostuvo la app-amada fue Wrapped (números-tuyos) y Álbum (coleccionar+rareza), donde el HÉROE es el USUARIO/su logro, no una foto del presente. No relanzar BeReal/captura-diaria. Página + pitch eliminados (git rm)."
+    },
+    {
+      "id": "2026-07-14-exclusiva-jardin",
+      "title": "🚨 La Exclusiva del Jardín (news-feed tabloide portada-bomba, celebridad individual + chisme)",
+      "page": "engage/2026-07-14-exclusiva-jardin.html",
+      "created": "2026-07-14",
+      "status": "pending",
+      "hypothesis": "Ciclo 44 (función paralela): ANCLA SEGURA tras 8 fallos seguidos de formatos-gimmick. Fusión de los DOS mayores dwell del canal: TABLOIDE/CHISME (Chusmerío 260s, RÉCORD) + CELEBRIDAD INDIVIDUAL (Entrevista 206s+sub). Portada-bomba de revista de escándalos sobre UNA planta protagonista del presente (Palta Hass B-36, el clon millonario de un solo árbol de 1926), con revelaciones que ESCALAN (padre secreto → clonación imposible → imperio del 80%) y recuadros de dato verificado con código. Reparto de apoyo con escándalos reales (palta B-22, buganvilia B-1, pera B-39, jazmín B-3). Morbo jugoso (NO miedo — la Lista Negra fracasó), foco individual, dato del PRESENTE. Distinto del Chusmerío (feed de muchos chismes cortos) y de la Entrevista (Q&A amable): acá es UN caso desarrollado con build-up. Hipótesis: chisme+celebridad, el eje más confiable, rompe la racha y convierte amor→suscripción. Promotor: 2026-07-14-a (08:30).",
+      "notified_by": [
+        "2026-07-14-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-14-adn-jardin",
+      "title": "🧬 El ADN de tu Jardín (news-feed de identidad self-focused, perfil del dueño leído en su colección)",
+      "page": "engage/2026-07-14-adn-jardin.html",
+      "created": "2026-07-14",
+      "status": "pending",
+      "hypothesis": "Ciclo 44 (función paralela): IDENTIDAD FRESCA — el eje que 2× MÁS convirtió (Horóscopo 😍+sub+115s, Quiz 😍+103s) pero SIN caer en el sub-género místico que canibalizó al Tarot ayer (no-open porque se leyó como 'otro horóscopo'). Reframe como análisis tipo test genético/personalidad, framing CIENCIA (no astral): 'tu jardín es tu ADN — lo que plantaste dice quién sos'. Cada 'gen'/rasgo del DUEÑO se deduce de un dato verificado de su colección real (10 nativas → gen de las raíces; 11 frutales → paciencia; palta clon 1926 + hiedra 400 años → lo que perdura; romero a contramano → optimismo). Self-focused ('esto sos VOS') = el hook de identidad más fuerte, ultra-screenshot-eable. Distinto del Quiz (asigna UNA planta) y del Wrapped (stats sueltas): acá es un RETRATO psicológico del usuario con arco y veredicto. Hipótesis: identidad self-focused no-mística convierte donde el Tarot no-abrió. Promotor: 2026-07-14-b (13:00).",
+      "notified_by": [
+        "2026-07-14-b"
       ],
       "result_notes": null
     }
