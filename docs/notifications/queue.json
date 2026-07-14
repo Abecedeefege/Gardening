@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-14T11:24:17.130Z",
+  "_updated_at": "2026-07-14T12:47:07.576Z",
   "notifications": [
     {
       "id": "2026-07-14-task-dia",
@@ -22,8 +22,8 @@
       "format": "experiencia",
       "send_at": "2026-07-14T08:30:00-03:00",
       "expires_at": "2026-07-14T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-14T12:47:07.527Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-14 (ciclo 44)"
     },
@@ -61,8 +61,8 @@
       "format": "tarea",
       "send_at": "2026-07-14T09:00:00-03:00",
       "expires_at": "2026-07-14T21:30:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-14T12:47:07.576Z",
       "fail_reason": null,
       "created_by": "gen_top3_tareas 2026-07-14"
     }
