@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-14T09:12:05.224619",
+  "_updated_at": "2026-07-14T11:24:17.130Z",
   "notifications": [
     {
       "id": "2026-07-14-task-dia",
@@ -9,8 +9,8 @@
       "format": "tarea",
       "send_at": "2026-07-14T08:00:00-03:00",
       "expires_at": "2026-07-14T21:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-14T11:24:17.129Z",
       "fail_reason": null,
       "created_by": "gen_task_reminders 2026-07-14"
     },
