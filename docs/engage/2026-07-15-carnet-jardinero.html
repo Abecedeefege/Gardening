@@ -1,0 +1,318 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e2018">
+<title>🎖️ Tu Carnet de Jardinero — Nivel LEYENDA</title>
+<meta property="og:title" content="🎖️ Tu Carnet de Jardinero: alcanzaste el nivel LEYENDA">
+<meta property="og:description" content="Analizamos tu jardín real y te dio rango. 52 especies, 10 nativas, un árbol protegido por ley y otro de 400 años. Mirá tu carnet y tus medallas desbloqueadas.">
+<style>
+  :root{
+    --bg:#0c1a13; --bg2:#0f2318; --ink:#eef4ec; --ink2:#b7c6bb; --ink3:#7d8f82;
+    --verde:#2f7d4f; --verde2:#43a86a; --lima:#8fd06a; --oro:#e2b13a; --oro2:#ffe08a;
+    --cielo:#4fd2c0; --magenta:#ff6ba6; --line:rgba(238,244,236,.12);
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+    --serif:"Iowan Old Style",Palatino,Georgia,"Times New Roman",serif;
+    --mono:"SFMono-Regular",Menlo,Consolas,monospace;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.55; -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 40% at 50% -4%, rgba(67,168,106,.2), transparent 60%),
+      radial-gradient(90% 40% at 100% 100%, rgba(226,177,58,.08), transparent); }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#08120c; color:#9db8a6; text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .prog{ position:fixed; top:0; left:0; height:3px; width:0; z-index:90;
+    background:linear-gradient(90deg,var(--verde2),var(--lima),var(--oro)); transition:width .1s linear; }
+  .wrap{ max-width:560px; margin:0 auto; padding:0 var(--pad) 10px; }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .55s ease, transform .55s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .intro{ padding:26px 2px 6px; }
+  .intro .k{ font-family:var(--sans); font-size:11px; font-weight:900; letter-spacing:.2em; text-transform:uppercase; color:var(--lima); }
+  .intro h1{ font-family:var(--serif); font-size:clamp(29px,8.6vw,42px); font-weight:800; letter-spacing:-.02em; line-height:1.04; margin:10px 0 10px; }
+  .intro h1 em{ font-style:italic; color:var(--oro2); }
+  .intro p{ font-size:15.5px; color:var(--ink2); max-width:40ch; }
+  .intro p b{ color:#fff; }
+
+  /* ——— EL CARNET ——— */
+  .card{ position:relative; margin:14px 0 6px; border-radius:20px; padding:20px 18px 18px; overflow:hidden;
+    background:linear-gradient(150deg,#12402a 0%,#0f2e20 55%,#123a4a 100%);
+    border:1px solid rgba(255,224,138,.28); box-shadow:0 20px 44px rgba(0,0,0,.4); }
+  .card::before{ content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(115deg, transparent 30%, rgba(255,255,255,.11) 45%, transparent 60%); mix-blend-mode:screen; }
+  .card .chip{ width:40px; height:29px; border-radius:7px; background:linear-gradient(135deg,var(--oro2),var(--oro));
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.15); }
+  .card .top{ display:flex; align-items:center; justify-content:space-between; }
+  .card .top .org{ font-size:10px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:var(--oro2); text-align:right; line-height:1.4; }
+  .card .rankrow{ margin:16px 0 2px; display:flex; align-items:baseline; gap:10px; }
+  .card .rankrow .lv{ font-family:var(--mono); font-size:12px; font-weight:800; color:var(--lima); letter-spacing:.05em; }
+  .card .rank{ font-family:var(--serif); font-size:clamp(34px,11vw,50px); font-weight:800; letter-spacing:.01em; line-height:1;
+    background:linear-gradient(92deg,var(--oro2),#fff,var(--oro2)); -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow:0 2px 20px rgba(255,224,138,.25); }
+  .card .holder{ font-size:13px; color:#d7e6da; margin-top:12px; }
+  .card .holder b{ color:#fff; font-weight:800; }
+  .card .xpwrap{ margin-top:13px; }
+  .card .xpbar{ height:9px; border-radius:999px; background:rgba(0,0,0,.28); overflow:hidden; }
+  .card .xpfill{ height:100%; width:0; border-radius:999px; background:linear-gradient(90deg,var(--verde2),var(--lima),var(--oro2));
+    transition:width 1.3s cubic-bezier(.2,.7,.2,1); }
+  .card .xplab{ display:flex; justify-content:space-between; font-family:var(--mono); font-size:10.5px; color:#bcd2c2; margin-top:6px; }
+  .card .foil{ position:absolute; right:-8px; bottom:-8px; font-size:72px; opacity:.16; filter:blur(.3px); }
+
+  .note{ text-align:center; font-size:11.5px; color:var(--ink3); margin:6px 0 2px; font-style:italic; }
+
+  /* ——— STAT BARS ——— */
+  h2.sec{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--lima);
+    margin:30px 0 12px; display:flex; align-items:center; gap:9px; }
+  h2.sec::before{ content:""; width:22px; height:3px; border-radius:2px; background:linear-gradient(90deg,var(--lima),var(--oro)); }
+  .stats{ display:flex; flex-direction:column; gap:12px; }
+  .stat{ background:rgba(238,244,236,.04); border:1px solid var(--line); border-radius:13px; padding:13px 15px; }
+  .stat .sh{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:8px; }
+  .stat .sh .nm{ font-size:14px; font-weight:800; color:#eef4ec; }
+  .stat .sh .nm span{ font-size:16px; margin-right:5px; }
+  .stat .sh .vv{ font-family:var(--mono); font-size:16px; font-weight:800; color:var(--oro2); }
+  .stat .track{ height:8px; border-radius:999px; background:rgba(0,0,0,.28); overflow:hidden; }
+  .stat .fill{ height:100%; width:0; border-radius:999px; transition:width 1.1s cubic-bezier(.2,.7,.2,1); }
+  .stat .fill.g{ background:linear-gradient(90deg,var(--verde2),var(--lima)); }
+  .stat .fill.o{ background:linear-gradient(90deg,var(--oro),var(--oro2)); }
+  .stat .fill.c{ background:linear-gradient(90deg,#2e7f86,var(--cielo)); }
+  .stat .cap{ font-size:12px; color:var(--ink2); margin-top:7px; line-height:1.45; }
+
+  /* ——— MEDALLERO ——— */
+  .badges{ display:grid; grid-template-columns:1fr 1fr; gap:11px; }
+  .badge{ position:relative; background:linear-gradient(155deg,rgba(238,244,236,.07),rgba(238,244,236,.02));
+    border:1px solid var(--line); border-radius:15px; padding:15px 13px; overflow:hidden; }
+  .badge.gold{ border-color:rgba(226,177,58,.4); box-shadow:inset 0 0 22px rgba(226,177,58,.09); }
+  .badge .ic{ font-size:30px; line-height:1; display:block; margin-bottom:8px; filter:drop-shadow(0 3px 8px rgba(0,0,0,.4)); }
+  .badge .bt{ font-size:13.5px; font-weight:900; color:#fff; letter-spacing:-.01em; line-height:1.18; }
+  .badge .bd{ font-size:11.5px; color:var(--ink2); margin-top:5px; line-height:1.42; }
+  .badge .bd b{ color:var(--oro2); font-weight:800; }
+  .badge .cod{ display:inline-block; margin-top:8px; font-family:var(--mono); font-size:10px; color:var(--ink3); }
+  .badge.gold::after{ content:"✦ RARA"; position:absolute; top:9px; right:9px; font-family:var(--mono); font-size:8.5px;
+    font-weight:800; letter-spacing:.08em; color:var(--oro); }
+
+  /* ——— MISIÓN ——— */
+  .mission{ margin-top:14px; border-radius:16px; padding:17px 16px; background:linear-gradient(150deg,#123a4a,#0f2e20);
+    border:1px solid rgba(79,210,192,.28); }
+  .mission .mk{ font-family:var(--mono); font-size:10.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--cielo); }
+  .mission h3{ font-size:18px; font-weight:900; margin:7px 0 6px; color:#fff; letter-spacing:-.01em; }
+  .mission p{ font-size:13.5px; color:var(--ink2); line-height:1.5; }
+  .mission p b{ color:var(--oro2); }
+
+  /* ——— bloques engagement ——— */
+  .blk{ margin:20px 0; background:rgba(238,244,236,.04); border:1px solid var(--line); border-radius:16px;
+    padding:22px 18px; text-align:center; }
+  .blk h3{ font-family:var(--serif); font-size:21px; font-weight:800; color:#fff; margin-bottom:6px; }
+  .blk > p{ font-size:14px; color:var(--ink2); max-width:44ch; margin:0 auto 15px; line-height:1.55; }
+  .blk > p b{ color:var(--oro2); }
+  .rowbtns{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+  .rowbtns button{ font-family:var(--sans); font-weight:800; font-size:14.5px; color:var(--ink); cursor:pointer;
+    background:rgba(238,244,236,.06); border:1px solid var(--line); border-radius:12px; padding:11px 16px; transition:transform .12s, border-color .12s; }
+  .rowbtns button:active{ transform:scale(.95); }
+  .rowbtns button.sel{ border-color:var(--lima); color:var(--lima); background:rgba(143,208,106,.1); }
+  .rowbtns button:disabled:not(.sel){ opacity:.4; }
+  .react-hint,.q-hint{ display:block; margin-top:10px; font-size:12.5px; color:var(--lima); font-weight:700; min-height:1.2em; }
+
+  .sub-blk{ background:linear-gradient(155deg,#123a4a,#0f2e20); border-color:rgba(255,224,138,.28); }
+  .sub-blk h3{ color:var(--oro2); }
+  .sub-blk .rowbtns button.si{ background:var(--oro2); color:#122018; border-color:transparent; font-weight:900; }
+  .sub-blk .rowbtns button.si.sel{ box-shadow:0 0 0 2px rgba(255,224,138,.5); }
+  .sub-blk .q-hint{ color:var(--oro2); }
+
+  .engage-actions{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:8px 0 4px; padding:14px 0; }
+  .engage-actions button{ font-family:var(--sans); font-weight:900; font-size:15px; cursor:pointer; border-radius:13px; padding:13px 18px; border:1px solid var(--line); transition:transform .12s; }
+  .engage-actions button:active{ transform:scale(.95); }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; border-color:transparent; }
+  .engage-actions button:last-child{ background:rgba(238,244,236,.06); color:var(--ink2); }
+  .engage-feedback{ text-align:center; font-family:var(--sans); font-size:14px; color:var(--lima); font-weight:700; padding:6px; }
+
+  footer.pie{ text-align:center; padding:10px 0 30px; font-family:var(--sans); font-size:12.5px; color:var(--ink3); }
+  footer.pie a{ color:var(--oro2); text-decoration:none; font-weight:800; }
+  footer.pie .cred{ margin-top:10px; font-size:11px; color:var(--ink3); line-height:1.5; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="prog" id="prog"></div>
+
+<div class="wrap">
+
+  <section class="intro reveal">
+    <span class="k">🎖️ Perfil de jardinero · Rango oficial de la casa</span>
+    <h1>Analizamos tu jardín<br>y te dio <em>rango</em>.</h1>
+    <p>No cualquiera junta lo que vos juntaste. Le pusimos números a tu colección real, la comparamos con lo que anda dando vueltas, y salió tu <b>Carnet de Jardinero</b>. Guardá la captura: esto sos VOS.</p>
+  </section>
+
+  <!-- EL CARNET -->
+  <section class="card reveal">
+    <div class="top">
+      <div class="chip"></div>
+      <div class="org">Jardín Pacha Mama<br>Montevideo · Est. invierno 2026</div>
+    </div>
+    <div class="rankrow">
+      <span class="rank">LEYENDA</span>
+    </div>
+    <div class="lv" style="font-family:var(--mono);font-size:12px;font-weight:800;color:var(--lima);margin-top:4px;">RANGO 9 / 10 · CURADOR/A DE COLECCIÓN</div>
+    <div class="holder">Titular: <b>vos</b> · Colección: <b>52 especies</b> vivas · 8 medallas desbloqueadas</div>
+    <div class="xpwrap">
+      <div class="xpbar"><div class="xpfill" id="xpfill" data-pct="88"></div></div>
+      <div class="xplab"><span>Rango LEYENDA</span><span id="xptxt">88% → GUARDIÁN DEL MONTE</span></div>
+    </div>
+    <span class="foil">🌿</span>
+  </section>
+  <p class="note reveal">Un carnet de juego, hecho con datos 100% reales de tu catálogo. Sin trampa.</p>
+
+  <!-- STATS -->
+  <h2 class="sec reveal">Tus estadísticas</h2>
+  <div class="stats">
+    <div class="stat reveal">
+      <div class="sh"><span class="nm"><span>🌱</span>Biodiversidad</span><span class="vv">52</span></div>
+      <div class="track"><div class="fill g" data-pct="92"></div></div>
+      <div class="cap"><b>52 especies distintas</b> en 65 ejemplares catalogados. Un jardín chico puede tener 8-10; el tuyo juega en otra liga.</div>
+    </div>
+    <div class="stat reveal">
+      <div class="sh"><span class="nm"><span>🇺🇾</span>Raíces nativas</span><span class="vv">10</span></div>
+      <div class="track"><div class="fill g" data-pct="70"></div></div>
+      <div class="cap"><b>10 especies nativas</b> del Río de la Plata (guayabo, aguaribay, anacahuita, pindó, lapachillo, lantana, viraró y más). No las trajo una moda: las elegiste vos.</div>
+    </div>
+    <div class="stat reveal">
+      <div class="sh"><span class="nm"><span>🍑</span>Despensa viva</span><span class="vv">11</span></div>
+      <div class="track"><div class="fill o" data-pct="78"></div></div>
+      <div class="cap"><b>11 frutales</b>: palta, limón, mandarina, durazno, pera, ciruela, guayabo... tu jardín también es una huerta escondida.</div>
+    </div>
+    <div class="stat reveal">
+      <div class="sh"><span class="nm"><span>🌳</span>Guardia perenne</span><span class="vv">30</span></div>
+      <div class="track"><div class="fill c" data-pct="58"></div></div>
+      <div class="cap"><b>30 perennes</b> que aguantan el verde todo el año + <b>15 caducos</b> que se desnudan en invierno para sobrevivir la helada. Equilibrio de jardinero con oficio.</div>
+    </div>
+  </div>
+
+  <!-- MEDALLERO -->
+  <h2 class="sec reveal">Tu medallero</h2>
+  <div class="badges">
+    <div class="badge gold reveal">
+      <span class="ic">⚖️</span>
+      <div class="bt">Custodio Legal</div>
+      <div class="bd">Tenés un árbol <b>protegido por ley nacional desde 1986</b>: la anacahuita.</div>
+      <span class="cod">B-16 · nativa</span>
+    </div>
+    <div class="badge gold reveal">
+      <span class="ic">🕰️</span>
+      <div class="bt">Guardián de lo Ancestral</div>
+      <div class="bd">Cuidás una especie que puede vivir <b>+400 años</b>: la hiedra.</div>
+      <span class="cod">B-15 · Hedera helix</span>
+    </div>
+    <div class="badge gold reveal">
+      <span class="ic">🧬</span>
+      <div class="bt">Dueño/a de un Clon</div>
+      <div class="bd">Tu palta Hass es copia idéntica de <b>UN árbol de 1926</b>; ~80% del mercado mundial.</div>
+      <span class="cod">B-36 · Persea 'Hass'</span>
+    </div>
+    <div class="badge gold reveal">
+      <span class="ic">🛰️</span>
+      <div class="bt">Aliado de la NASA</div>
+      <div class="bd">Tenés una planta de la <b>lista de la NASA</b> que purifica el aire: la cinta.</div>
+      <span class="cod">B-12 · Chlorophytum</span>
+    </div>
+    <div class="badge reveal">
+      <span class="ic">❄️</span>
+      <div class="bt">Jardinero de Invierno</div>
+      <div class="bd">Tenés la <b>única especie en flor en julio</b>: el romero, a contramano del frío.</div>
+      <span class="cod">B-26 · florece jun–oct</span>
+    </div>
+    <div class="badge reveal">
+      <span class="ic">🍋</span>
+      <div class="bt">Cosecha Perpetua</div>
+      <div class="bd">Tu limonero da fruta <b>los 12 meses del año</b>. Nunca sin limón.</div>
+      <span class="cod">B-23 · fruta 12/12</span>
+    </div>
+    <div class="badge reveal">
+      <span class="ic">🐝</span>
+      <div class="bt">Refugio de Polinizadores</div>
+      <div class="bd">Lavanda, aguaribay, lantana, abelia: un <b>buffet para abejas y mariposas</b> casi todo el año.</div>
+      <span class="cod">B-10 · F-8 · B-29 · F-7</span>
+    </div>
+    <div class="badge reveal">
+      <span class="ic">🌎</span>
+      <div class="bt">Coleccionista Global</div>
+      <div class="bd">Persia, China, Malasia, California: tu jardín es un <b>mapa del mundo</b> en macetas.</div>
+      <span class="cod">F-4 · B-30 · B-4 · B-36</span>
+    </div>
+  </div>
+
+  <!-- MISIÓN -->
+  <div class="mission reveal">
+    <span class="mk">▸ Próximo rango · Guardián del Monte</span>
+    <h3>Te falta poco para el rango 10</h3>
+    <p>Para saltar de <b>LEYENDA</b> a <b>GUARDIÁN DEL MONTE</b> (rango máximo), el jardín pide algo lindo: sumar <b>2 especies nativas más</b> (llegar a 12) y cerrar los <b>2 expedientes de identidad pendientes</b> (el caqui B-41 y el arbusto sin nombre B-20). Cada mañana te decimos cuánto avanzaste.</p>
+  </div>
+
+  <!-- reacción -->
+  <section class="blk reveal">
+    <h3>¿Te gustó verte con rango?</h3>
+    <p>Tu voto decide si el jardín te sigue haciendo <b>carnet, medallas y misiones</b>.</p>
+    <div class="rowbtns">
+      <button type="button" onclick="engageReact('carnet','love', this)">😍 ¡Me encantó!</button>
+      <button type="button" onclick="engageReact('carnet','meh', this)">😐 Más o menos</button>
+      <button type="button" onclick="engageReact('carnet','no', this)">🙅 No es lo mío</button>
+    </div>
+    <span class="react-hint"></span>
+  </section>
+
+  <!-- suscripción -->
+  <section class="blk sub-blk reveal">
+    <h3>🎖️ Tu progreso, cada mañana</h3>
+    <p>Cada día te mandamos <b>una medalla nueva por desbloquear</b> y cuánto te falta para el próximo rango — con la misión concreta del día para tu jardín real. El carnet que sube solo, atado a lo que hacés. ¿Querés tu progreso diario?</p>
+    <div class="rowbtns">
+      <button type="button" class="si" onclick="engageAnswer('carnet-suscripcion-diaria','si', this)">🎖️ Sí, quiero subir de nivel</button>
+      <button type="button" onclick="engageAnswer('carnet-suscripcion-diaria','no', this)">No, gracias</button>
+    </div>
+    <span class="q-hint"></span>
+  </section>
+
+  <!-- decisión -->
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-07-15-carnet-jardinero')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-07-15-carnet-jardinero')">✕ No me interesa</button>
+  </div>
+
+  <footer class="pie">
+    <a href="2026-07-15-carnet-jardinero-pitch.html">💼 Cómo se vende esto</a>
+    <div class="cred">Carnet armado con datos reales del catálogo Pacha Mama · rango y medallas de juego, stats verificados · 15/07/2026</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var prog = document.getElementById('prog');
+  function onScroll(){
+    var h = document.documentElement;
+    var d = h.scrollHeight - h.clientHeight;
+    prog.style.width = (d > 0 ? Math.min(100, (h.scrollTop / d) * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  function fillBar(el){
+    var pct = el.getAttribute('data-pct');
+    if (pct != null) el.style.width = pct + '%';
+  }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        e.target.classList.add('in');
+        e.target.querySelectorAll && e.target.querySelectorAll('.fill,.xpfill').forEach(fillBar);
+        if (e.target.classList.contains('fill') || e.target.classList.contains('xpfill')) fillBar(e.target);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+  // asegurar que la barra del carnet se llene aunque el card ya esté visible
+  setTimeout(function(){ document.querySelectorAll('.fill,.xpfill').forEach(fillBar); }, 400);
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>

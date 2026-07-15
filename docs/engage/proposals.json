@@ -535,22 +535,46 @@
       "title": "🚨 La Exclusiva del Jardín (news-feed tabloide portada-bomba, celebridad individual + chisme)",
       "page": "engage/2026-07-14-exclusiva-jardin.html",
       "created": "2026-07-14",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 44 (función paralela): ANCLA SEGURA tras 8 fallos seguidos de formatos-gimmick. Fusión de los DOS mayores dwell del canal: TABLOIDE/CHISME (Chusmerío 260s, RÉCORD) + CELEBRIDAD INDIVIDUAL (Entrevista 206s+sub). Portada-bomba de revista de escándalos sobre UNA planta protagonista del presente (Palta Hass B-36, el clon millonario de un solo árbol de 1926), con revelaciones que ESCALAN (padre secreto → clonación imposible → imperio del 80%) y recuadros de dato verificado con código. Reparto de apoyo con escándalos reales (palta B-22, buganvilia B-1, pera B-39, jazmín B-3). Morbo jugoso (NO miedo — la Lista Negra fracasó), foco individual, dato del PRESENTE. Distinto del Chusmerío (feed de muchos chismes cortos) y de la Entrevista (Q&A amable): acá es UN caso desarrollado con build-up. Hipótesis: chisme+celebridad, el eje más confiable, rompe la racha y convierte amor→suscripción. Promotor: 2026-07-14-a (08:30).",
       "notified_by": [
         "2026-07-14-a"
       ],
-      "result_notes": null
+      "result_notes": "DROPPED 15/07 por la regla de no-supervivencia sin aprobación explícita. Se ABRIÓ pero con lectura DÉBIL y CERO conversión: dwell 33s / scroll 22% el 14/07 (~12:41 UY, aparentemente navegación directa — no quedó notification_clicked del promotor 2026-07-14-a), SIN reacción, SIN answer de suscripción, SIN aprobar. Ventana razonablemente completa (el usuario siguió activo después: abrió el ADN 14:37 UY). Lectura dura: ni siquiera el ANCLA SEGURA (fusión chisme+celebridad, los dos mayores dwell del canal) convirtió esta vez — pero un solo scroll de 22% no es un veredicto sobre el ÁNGULO (chisme/celebridad SIGUEN vivos y probados en Chusmerío/Entrevista/Feed promovidos). Hipótesis del bajo enganche: portada-bomba de UN solo caso muy desarrollado (build-up largo) pesa más que el feed de muchos chismes cortos del Chusmerío que arrasó — el formato 'nota larga de una planta' cansa donde el scroll rápido de titulares retiene. No relanzar la Exclusiva como caso-único-largo; el motor chisme ya vive en el Chusmerío. Página + pitch eliminados (git rm)."
     },
     {
       "id": "2026-07-14-adn-jardin",
       "title": "🧬 El ADN de tu Jardín (news-feed de identidad self-focused, perfil del dueño leído en su colección)",
       "page": "engage/2026-07-14-adn-jardin.html",
       "created": "2026-07-14",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 44 (función paralela): IDENTIDAD FRESCA — el eje que 2× MÁS convirtió (Horóscopo 😍+sub+115s, Quiz 😍+103s) pero SIN caer en el sub-género místico que canibalizó al Tarot ayer (no-open porque se leyó como 'otro horóscopo'). Reframe como análisis tipo test genético/personalidad, framing CIENCIA (no astral): 'tu jardín es tu ADN — lo que plantaste dice quién sos'. Cada 'gen'/rasgo del DUEÑO se deduce de un dato verificado de su colección real (10 nativas → gen de las raíces; 11 frutales → paciencia; palta clon 1926 + hiedra 400 años → lo que perdura; romero a contramano → optimismo). Self-focused ('esto sos VOS') = el hook de identidad más fuerte, ultra-screenshot-eable. Distinto del Quiz (asigna UNA planta) y del Wrapped (stats sueltas): acá es un RETRATO psicológico del usuario con arco y veredicto. Hipótesis: identidad self-focused no-mística convierte donde el Tarot no-abrió. Promotor: 2026-07-14-b (13:00).",
       "notified_by": [
         "2026-07-14-b"
+      ],
+      "result_notes": "DROPPED 15/07 por la regla de no-supervivencia sin aprobación explícita. Lectura INCONCLUSA (no un negativo limpio): se abrió vía push (2026-07-14-b, notification_clicked + page_visit 14/07 14:37 UY) con dwell 11s / scroll 45%, SIN reacción/sub/aprobación — PERO se abrió apenas ~11s ANTES del cutoff de datos (engagement.json último evento 17:38Z), así que cualquier lectura/decisión posterior NO quedó sincronizada. NO concluir que la identidad self-focused está muerta: el eje identidad convirtió 2× fuerte (Horóscopo/Quiz) y este test nunca tuvo ventana limpia. Se dropea por la regla (pending de día anterior), no por señal negativa. Candidato a re-medir con ventana limpia si vuelve la hipótesis. Página + pitch eliminados (git rm)."
+    },
+    {
+      "id": "2026-07-15-prensa-mundial",
+      "title": "📣 El Cable — El mundo habla de tu jardín (news-feed de despachos de agencia, editorial/estatus)",
+      "page": "engage/2026-07-15-prensa-mundial.html",
+      "created": "2026-07-15",
+      "status": "pending",
+      "hypothesis": "Ciclo 45 (función paralela): RE-ANCLA en la familia EDITORIAL/PRENSA (la que MÁS convirtió a suscripción: Diario/Entrevista/Chusmerío/Récords), con un ÁNGULO FRESCO que esquiva canibalizar a Récords (leaderboard interno) y al Chusmerío (chisme). El Cable es una agencia de noticias internacional: 8 'despachos' cortos donde el MUNDO GRANDE REAL (NASA, una ley nacional uruguaya de 1986, Coco Chanel/Nº22, la ciencia de la memoria, la arqueología maya) habló de UNA planta que el usuario tiene a 5 metros. El hook es estatus prestado de máxima autoridad: 'lo que tenés en el fondo es, en secreto, mundialmente famoso'. Feed de titulares cortos (Chusmerío 260s retuvo con scroll rápido; la Exclusiva 14/07 con UN caso largo no) + orgullo/asombro + dato del PRESENTE (romero en flor AHORA, palta/cítricos en cosecha) + edición diaria. Todo dato 100% verificado con código de catálogo. Promotor: 2026-07-15-a (08:30). react target 'prensa', sub qid 'prensa-suscripcion-diaria'.",
+      "notified_by": [
+        "2026-07-15-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-15-carnet-jardinero",
+      "title": "🎖️ El Carnet de Jardinero (perfil de jugador con rango + medallero + misión, héroe = el usuario)",
+      "page": "engage/2026-07-15-carnet-jardinero.html",
+      "created": "2026-07-15",
+      "status": "pending",
+      "hypothesis": "Ciclo 45 (función paralela): RE-ANCLA en el meta-patrón que MÁS retuvo — «app amada donde el HÉROE es el USUARIO y hay LOGRO/ESTATUS persistente» (Wrapped 172s 'tus números' ✓, Álbum coleccionar+rareza ✓) — fusionado con identidad self-focused (Horóscopo/Quiz convirtieron) y orgullo (Récords 141s). Es la gramática de Duolingo/Steam/Strava (perfil de jugador: rango LEYENDA, XP hacia el próximo nivel, medallero de 8 logros, misión del día) pero llena de datos 100% reales del jardín: 52 especies, 10 nativas, un árbol protegido por ley (anacahuita B-16), otro de +400 años (hiedra B-15), la planta de la NASA (cinta B-12), el clon millonario (palta B-36). El usuario es la estrella ('esto sos VOS'), ultra-screenshot-eable; la misión del día (sumar 2 nativas + cerrar los 2 expedientes de identidad abiertos) es motor de retorno honesto atado a acciones reales. Distinto de Wrapped (stats de temporada sueltas) y del Tarot/ADN (identidad sin logro): acá es rango+medallero PERSISTENTE. Promotor: 2026-07-15-b (13:00). react target 'carnet', sub qid 'carnet-suscripcion-diaria'.",
+      "notified_by": [
+        "2026-07-15-b"
       ],
       "result_notes": null
     }

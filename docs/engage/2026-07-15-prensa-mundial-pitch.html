@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1c22">
+<title>💼 El Cable — Cómo se vende esto</title>
+<style>
+  :root{
+    --bg:#0c1720; --ink:#eef3ec; --ink2:#c3ccc6; --ink3:#828d86;
+    --azul:#2e5f86; --azul2:#4f88b6; --oro:#caa03a; --oro2:#ffe08a; --verde:#46a35a; --cielo:#5fd2c0; --magenta:#ff6ba6;
+    --line:rgba(238,243,236,.13);
+    --pad:max(20px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.58; -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 50% at 50% -6%, rgba(79,136,182,.22), transparent 60%); }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#081019; color:#8aa6bc; text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:620px; margin:0 auto; padding:0 var(--pad) 48px; }
+
+  header.h{ padding:38px 0 24px; border-bottom:1px solid var(--line); }
+  header.h .k{ font-size:12px; font-weight:900; letter-spacing:.26em; text-transform:uppercase; color:var(--oro); }
+  header.h h1{ font-size:clamp(30px,8.5vw,44px); font-weight:900; letter-spacing:-.03em; line-height:1; margin:12px 0 12px; }
+  header.h h1 em{ font-style:normal; background:linear-gradient(92deg,var(--oro),var(--oro2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  header.h p{ font-size:16px; color:var(--ink2); max-width:46ch; }
+  header.h p b{ color:#fff; }
+
+  h2.sec{ font-size:13px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:var(--oro);
+    margin:38px 0 15px; display:flex; align-items:center; gap:10px; }
+  h2.sec::before{ content:""; width:26px; height:3px; border-radius:2px; background:linear-gradient(90deg,var(--oro),var(--azul2)); }
+
+  .lead{ font-size:16.5px; line-height:1.62; color:var(--ink); }
+  .lead b{ color:var(--oro2); }
+  .lead + .lead{ margin-top:14px; }
+
+  .why{ list-style:none; margin:18px 0 0; padding:0; display:flex; flex-direction:column; gap:12px; }
+  .why li{ padding:15px 16px; border-radius:14px; background:rgba(238,243,236,.05); border:1px solid var(--line); }
+  .why li .t{ font-size:15px; font-weight:900; color:var(--oro); margin-bottom:4px; }
+  .why li .d{ font-size:14.5px; color:var(--ink2); line-height:1.55; }
+  .why li .d b{ color:#fff; }
+
+  .band{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; margin:34px 0 4px;
+    padding:8px 12px; border-radius:999px; display:inline-block; }
+  .band.inno{ background:rgba(95,210,192,.14); color:var(--cielo); border:1px solid rgba(95,210,192,.3); }
+  .band.wild{ background:rgba(255,107,166,.14); color:var(--magenta); border:1px solid rgba(255,107,166,.3); }
+
+  .model{ margin:16px 0; border-radius:18px; overflow:hidden; border:1px solid var(--line);
+    background:linear-gradient(160deg,rgba(238,243,236,.06),rgba(238,243,236,.02)); }
+  .model .mh{ padding:16px 17px 12px; display:flex; align-items:flex-start; gap:13px; }
+  .model .mh .no{ flex:0 0 auto; width:38px; height:38px; border-radius:11px; display:grid; place-items:center; font-size:17px; font-weight:900; color:#0c1720; }
+  .model.inno .mh .no{ background:linear-gradient(135deg,var(--cielo),var(--verde)); }
+  .model.wild .mh .no{ background:linear-gradient(135deg,var(--magenta),var(--oro)); }
+  .model .mh .nm{ font-size:18.5px; font-weight:900; letter-spacing:-.01em; line-height:1.2; }
+  .model .mh .nm small{ display:block; font-size:12px; font-weight:800; letter-spacing:.03em; color:var(--ink3); margin-top:3px; text-transform:uppercase; }
+  .model .mb{ padding:0 17px 16px; }
+  .model .mb .row{ display:flex; gap:10px; padding:9px 0; border-top:1px solid var(--line); }
+  .model .mb .row .lab{ flex:0 0 92px; font-size:11px; font-weight:900; letter-spacing:.06em; text-transform:uppercase; color:var(--oro2); padding-top:2px; }
+  .model .mb .row .val{ flex:1; font-size:14.5px; color:var(--ink2); line-height:1.55; }
+  .model .mb .row .val b{ color:#fff; }
+
+  .pitch{ margin:36px 0 0; border-radius:20px; padding:26px 20px; background:linear-gradient(150deg,#123a52,#0b1e2a); border:1px solid var(--line); }
+  .pitch .k{ font-size:12px; font-weight:900; letter-spacing:.2em; text-transform:uppercase; color:var(--oro); }
+  .pitch h3{ font-size:24px; font-weight:900; letter-spacing:-.02em; line-height:1.15; margin:10px 0 12px; }
+  .pitch h3 em{ font-style:normal; color:var(--oro2); }
+  .pitch p{ font-size:15.5px; color:var(--ink2); line-height:1.62; }
+  .pitch p b{ color:#fff; }
+  .pitch p + p{ margin-top:12px; }
+  .pitch .who{ margin-top:16px; display:flex; flex-direction:column; gap:8px; }
+  .pitch .who div{ font-size:14px; color:var(--ink2); padding-left:20px; position:relative; }
+  .pitch .who div::before{ content:"▸"; position:absolute; left:0; color:var(--oro); font-weight:900; }
+  .pitch .who div b{ color:var(--oro2); }
+
+  .foot{ text-align:center; margin-top:40px; font-size:12.5px; color:var(--ink3); line-height:1.6; }
+  .foot a{ color:var(--oro); text-decoration:none; font-weight:900; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="h">
+    <span class="k">Material de venta · Confidencial</span>
+    <h1>Cómo se <em>vende</em> El Cable</h1>
+    <p><b>«El Cable — el mundo habla de tu jardín»</b> reencuadra el catálogo botánico como una agencia de noticias internacional: cada planta del usuario tuvo su minuto de fama planetaria (NASA, una ley, Chanel, la ciencia). Acá está por qué engancha y las seis formas de monetizarlo.</p>
+  </header>
+
+  <h2 class="sec">Qué es y por qué engancha</h2>
+  <p class="lead">Tomamos el formato de mayor autoridad y hábito diario que existe — <b>el despacho de agencia / el titular de prensa</b> — y lo apuntamos al patio del usuario. Cada «cable» es un dato REAL y verificado que conecta una planta suya con el mundo grande: la NASA, el Boletín Oficial, la alta perfumería, la arqueología. El gancho es un giro de estatus irresistible: <b>«lo que tenés en el fondo es, en secreto, mundialmente famoso»</b>.</p>
+  <p class="lead">Se apoya en las cuatro palancas que ya midieron conversión en este canal (editorial + orgullo + asombro + novedad diaria):</p>
+  <ul class="why">
+    <li><div class="t">1 · Estatus por asociación = orgullo instantáneo</div>
+      <div class="d">Que la <b>NASA, una ley nacional o Chanel</b> validen tu planta te sube el estatus sin que hagas nada. Es el mismo orgullo que hizo de Récords (141s) un ganador, pero prestado de instituciones de máxima autoridad — más creíble y más compartible.</div></li>
+    <li><div class="t">2 · Formato prensa = autoridad + hábito</div>
+      <div class="d">El framing editorial/agencia (Diario, Entrevista, Chusmerío: todos convirtieron a suscripción) trae credibilidad y una gramática de <b>«edición del día»</b> que pide volver mañana. La familia prensa es la que más convirtió.</div></li>
+    <li><div class="t">3 · Feed de titulares cortos = scroll que retiene</div>
+      <div class="d">Ocho despachos breves y punzantes, no una nota larga: el <b>scroll rápido de titulares</b> es lo que sostuvo al Chusmerío (260s, récord) donde la nota-única-larga cansa. Cada cable es una recompensa de 10 segundos.</div></li>
+    <li><div class="t">4 · «Increíble que sea MÍO» = compartible</div>
+      <div class="d">«La pimienta rosa gourmet crece en mi vereda» es una captura de pantalla lista para WhatsApp. El asombro anclado en <b>algo propio</b> es el motor viral más limpio: el usuario presume, y presumir trae usuarios nuevos.</div></li>
+  </ul>
+
+  <h2 class="sec">6 modelos de monetización</h2>
+
+  <span class="band inno">3 innovadores · piso comercial sólido</span>
+
+  <div class="model inno">
+    <div class="mh"><span class="no">1</span><div class="nm">Suscripción «Corresponsal Premium»<small>SaaS editorial · recurrente</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Gratis: el despacho del día. <b>Premium (USD 2-3/mes)</b>: el archivo completo de cables de tus plantas, despachos «en profundidad» (la historia larga detrás del titular), y ediciones temáticas (semana de nativas, semana de la NASA).</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">Es el modelo diario de cualquier medio: el titular es gancho gratis, <b>la profundidad y el archivo se pagan</b>. El hábito de «leer las noticias» ya está instalado en el usuario.</span></div>
+    </div>
+  </div>
+
+  <div class="model inno">
+    <div class="mh"><span class="no">2</span><div class="nm">Cable patrocinado por marca verde<small>Native advertising · contextual</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Un despacho al día puede ser <b>«presentado por»</b> una marca afín y real: el cable de la cinta-NASA lo presenta un purificador de aire; el del romero-memoria, una marca de aromaterapia; el de la gardenia, una perfumería. Contenido editorial genuino, con sponsor visible.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">El native advertising funciona cuando el <b>contexto es perfecto</b>: la marca aparece justo al lado del dato que la valida. No interrumpe — completa la nota. CPM premium por relevancia quirúrgica.</span></div>
+    </div>
+  </div>
+
+  <div class="model inno">
+    <div class="mh"><span class="no">3</span><div class="nm">«El dossier de tu jardín» impreso<small>Merch físico · print-on-demand</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Un <b>diario/revista impreso con TODOS los cables del jardín del usuario</b> — su patio como portada de agencia internacional. Objeto de regalo y orgullo. Margen por pieza + envío; edición especial para escuelas con huerta.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">«Mi jardín salió en el diario» es un objeto de <b>vanidad noble</b> que se atesora y se regala. El contenido ya está escrito y personalizado; solo falta maquetar e imprimir.</span></div>
+    </div>
+  </div>
+
+  <span class="band wild">3 ultra-creativos · apuestas de alto techo</span>
+
+  <div class="model wild">
+    <div class="mh"><span class="no">4</span><div class="nm">La agencia de noticias de barrio<small>Datos hiperlocales · B2B</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Sumá los cables de muchos jardines en un <b>«noticiero del arbolado del barrio»</b>: qué especies protegidas hay en la zona, qué floreció esta semana, qué nativa está en peligro. Se licencia a intendencias, medios locales y ONGs ambientales como fuente de datos verde con patrocinio.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">Convierte miles de patios en una <b>red de corresponsales de biodiversidad</b>. El dato agregado local es valioso para instituciones y medios, y le da al usuario la sensación de aportar a algo más grande.</span></div>
+    </div>
+  </div>
+
+  <div class="model wild">
+    <div class="mh"><span class="no">5</span><div class="nm">El cable en audio · «radio del jardín»<small>Podcast diario auto-generado · sponsor</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">El despacho del día, narrado en <b>30 segundos de audio con voz de locutor de agencia</b> (TTS), para escuchar mientras regás o desayunás. Spot de sponsor pre-roll de 5 segundos. Serie diaria distribuible en plataformas de podcast.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">El audio diario corto es el formato de <b>mayor lealtad y menor fricción</b> (se consume en tiempos muertos). La «radio de tu jardín» crea un ritual de mañana con inventario de audio-ads premium.</span></div>
+    </div>
+  </div>
+
+  <div class="model wild">
+    <div class="mh"><span class="no">6</span><div class="nm">Licencia «tu marca habla de tu jardín»<small>White-label · viveros y marcas</small></div></div>
+    <div class="mb">
+      <div class="row"><span class="lab">Cómo</span><span class="val">Viveros, marcas de jardinería o clubes de plantas licencian la <b>agencia con su propia cabecera</b>: mandan a sus clientes despachos verificados sobre las plantas que les vendieron, con su logo. Fee de licencia mensual + setup.</span></div>
+      <div class="row"><span class="lab">Por qué anda</span><span class="val">Le da a cualquier vivero un <b>canal de fidelización de contenido</b> listo para usar, sin equipo editorial. El motor de datos verificados es el activo; la cabecera es intercambiable. Ingreso B2B recurrente y escalable.</span></div>
+    </div>
+  </div>
+
+  <div class="pitch">
+    <span class="k">◆ Elevator pitch ◆</span>
+    <h3>«Una agencia de noticias internacional donde la única estrella es <em>tu jardín</em>.»</h3>
+    <p>El mundo grande —la NASA, una ley, Chanel, los mayas— ya escribió, en la vida real, sobre plantas que el usuario tiene a cinco metros y trata como muebles. El Cable recopila esos titulares y se los devuelve como despachos diarios: <b>orgullo de estatus prestado de las máximas autoridades</b>, en el formato prensa que más convirtió en este canal, servido como scroll de titulares cortos que retiene.</p>
+    <p>Ya <b>funciona</b> sobre datos 100% verificables (cada cable lleva su código de catálogo), y la «edición del día» le da la razón de retorno diaria que busca la suscripción.</p>
+    <div class="who">
+      <div><b>A quién:</b> jardineros hobbistas y orgullosos, familias, escuelas; a escala, viveros, marcas verdes, medios e intendencias.</div>
+      <div><b>Cómo se entra:</b> gratis y ultra-compartible (el asombro presumible) → Corresponsal Premium → native ads, merch impreso, audio y licencias white-label.</div>
+      <div><b>El foso:</b> el corpus verificado por planta + el archivo personal de cables de cada jardín. Nadie más tiene el dato curado atado al patio específico del usuario.</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    Pitch de «El Cable — el mundo habla de tu jardín» · datos del catálogo Pacha Mama, Montevideo · 15/07/2026<br>
+    <a href="2026-07-15-prensa-mundial.html">← Volver a la experiencia</a>
+  </div>
+
+</div>
+</body></html>

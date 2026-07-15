@@ -2,24 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-06-30-a",
-      "ts": "2026-06-30T12:07:15.903Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-30-b",
-      "ts": "2026-06-30T16:55:08.504Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-06-30-curio-lapachillo",
-      "ts": "2026-06-30T23:44:13.825Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-07-01-a",
       "ts": "2026-07-01T12:32:39.464Z",
       "status_code": 201
@@ -420,6 +402,9 @@
       "sent": 3
     },
     "2026-06-29": {
+      "sent": 3
+    },
+    "2026-06-30": {
       "sent": 3
     }
   }
