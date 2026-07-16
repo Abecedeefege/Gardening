@@ -1,67 +1,67 @@
 {
- "_updated_at": "2026-07-16T12:37:12Z",
- "notifications": [
-  {
-   "id": "2026-07-16-task-dia",
-   "title": "⏰ Pendiente: Guayabo del país",
-   "body": "🔴 Tratar fumagina + buscar plaga origen · Mayo 2026 — empezar YA. Abrila para marcarla, mandar foto o preguntar.",
-   "url": "https://gardening-chi.vercel.app/tasks/plant-F-1-4.html",
-   "format": "tarea",
-   "send_at": "2026-07-16T08:00:00-03:00",
-   "expires_at": "2026-07-16T21:00:00-03:00",
-   "status": "sent",
-   "sent_at": "2026-07-16T11:38:15.019Z",
-   "fail_reason": null,
-   "created_by": "gen_task_reminders 2026-07-16"
-  },
-  {
-   "id": "2026-07-16-a",
-   "title": "🧭 ¿Qué jardinero sos?",
-   "body": "Leímos tus 52 especies y tu jardín ya lo dijo. 10 nativas, un árbol con ley propia, la palta de 1926… Descubrí tu tipo.",
-   "url": "https://gardening-chi.vercel.app/engage/2026-07-16-jardinero-sos.html",
-   "send_at": "2026-07-16T08:30:00-03:00",
-   "expires_at": "2026-07-16T22:00:00-03:00",
-   "status": "sent",
-   "sent_at": "2026-07-16T11:38:15.118Z",
-   "fail_reason": null,
-   "created_by": "engagement-agent 2026-07-16"
-  },
-  {
-   "id": "2026-07-16-b",
-   "title": "🎙️ Tus plantas declararon hoy",
-   "body": "Pusimos un micrófono en tu cantero. El limonero que no descansa, la palta de la realeza, el guayabo pidiendo ayuda. 8 frases cortitas.",
-   "url": "https://gardening-chi.vercel.app/engage/2026-07-16-declaraciones.html",
-   "send_at": "2026-07-16T13:00:00-03:00",
-   "expires_at": "2026-07-16T22:00:00-03:00",
-   "status": "pending",
-   "sent_at": null,
-   "fail_reason": null,
-   "created_by": "engagement-agent 2026-07-16"
-  },
-  {
-   "id": "2026-07-16-c",
-   "title": "🏆 Los récords de tu jardín",
-   "body": "El cítrico más antiguo del mundo, la flor de Chanel, la planta de la NASA… todo vive en tu cantero. Repasá tus marcas.",
-   "url": "https://gardening-chi.vercel.app/engage/2026-06-29-records-jardin.html",
-   "send_at": "2026-07-16T18:00:00-03:00",
-   "expires_at": "2026-07-16T22:00:00-03:00",
-   "status": "pending",
-   "sent_at": null,
-   "fail_reason": null,
-   "created_by": "engagement-agent 2026-07-16"
-  },
-  {
-   "id": "2026-07-16-top3",
-   "title": "🎯 Las 3 del jardín (edición fresca)",
-   "body": "Tus 3 prioritarias de hoy: Gardenia / Jazmín del Cabo · Guayabo del país · Liquidámbar. Una pantalla, tres cosas, listo.",
-   "url": "https://gardening-chi.vercel.app/engage/top3-tareas.html?d=2026-07-16",
-   "format": "tarea",
-   "send_at": "2026-07-16T11:00:00-03:00",
-   "expires_at": "2026-07-16T21:30:00-03:00",
-   "status": "pending",
-   "sent_at": null,
-   "fail_reason": null,
-   "created_by": "gen_top3_tareas 2026-07-16"
-  }
- ]
+  "_updated_at": "2026-07-16T15:13:02.886Z",
+  "notifications": [
+    {
+      "id": "2026-07-16-task-dia",
+      "title": "⏰ Pendiente: Guayabo del país",
+      "body": "🔴 Tratar fumagina + buscar plaga origen · Mayo 2026 — empezar YA. Abrila para marcarla, mandar foto o preguntar.",
+      "url": "https://gardening-chi.vercel.app/tasks/plant-F-1-4.html",
+      "format": "tarea",
+      "send_at": "2026-07-16T08:00:00-03:00",
+      "expires_at": "2026-07-16T21:00:00-03:00",
+      "status": "sent",
+      "sent_at": "2026-07-16T11:38:15.019Z",
+      "fail_reason": null,
+      "created_by": "gen_task_reminders 2026-07-16"
+    },
+    {
+      "id": "2026-07-16-a",
+      "title": "🧭 ¿Qué jardinero sos?",
+      "body": "Leímos tus 52 especies y tu jardín ya lo dijo. 10 nativas, un árbol con ley propia, la palta de 1926… Descubrí tu tipo.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-16-jardinero-sos.html",
+      "send_at": "2026-07-16T08:30:00-03:00",
+      "expires_at": "2026-07-16T22:00:00-03:00",
+      "status": "sent",
+      "sent_at": "2026-07-16T11:38:15.118Z",
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-07-16"
+    },
+    {
+      "id": "2026-07-16-b",
+      "title": "🎙️ Tus plantas declararon hoy",
+      "body": "Pusimos un micrófono en tu cantero. El limonero que no descansa, la palta de la realeza, el guayabo pidiendo ayuda. 8 frases cortitas.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-16-declaraciones.html",
+      "send_at": "2026-07-16T13:00:00-03:00",
+      "expires_at": "2026-07-16T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-07-16"
+    },
+    {
+      "id": "2026-07-16-c",
+      "title": "🏆 Los récords de tu jardín",
+      "body": "El cítrico más antiguo del mundo, la flor de Chanel, la planta de la NASA… todo vive en tu cantero. Repasá tus marcas.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-06-29-records-jardin.html",
+      "send_at": "2026-07-16T18:00:00-03:00",
+      "expires_at": "2026-07-16T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-07-16"
+    },
+    {
+      "id": "2026-07-16-top3",
+      "title": "🎯 Las 3 del jardín (edición fresca)",
+      "body": "Tus 3 prioritarias de hoy: Gardenia / Jazmín del Cabo · Guayabo del país · Liquidámbar. Una pantalla, tres cosas, listo.",
+      "url": "https://gardening-chi.vercel.app/engage/top3-tareas.html?d=2026-07-16",
+      "format": "tarea",
+      "send_at": "2026-07-16T11:00:00-03:00",
+      "expires_at": "2026-07-16T21:30:00-03:00",
+      "status": "sent",
+      "sent_at": "2026-07-16T15:13:02.885Z",
+      "fail_reason": null,
+      "created_by": "gen_top3_tareas 2026-07-16"
+    }
+  ]
 }
