@@ -22,7 +22,7 @@ Uso:
   python tools/gen_top3_tareas.py [YYYY-MM-DD]                    # imprime la entry del día (si toca)
   python tools/gen_top3_tareas.py [YYYY-MM-DD] --merge            # además regenera la página y mergea en queue.json
   python tools/gen_top3_tareas.py [YYYY-MM-DD] --merge --force    # ídem aunque no toque por cadencia
-  python tools/gen_top3_tareas.py [YYYY-MM-DD] --merge --send-at 11:15   # hora de envío custom (default 09:00)
+  python tools/gen_top3_tareas.py [YYYY-MM-DD] --merge --send-at 11:15   # hora de envío custom (default 11:00)
 """
 import datetime
 import html
@@ -42,7 +42,7 @@ STATES_PATH = os.path.join(ROOT, "docs", "sync", "task_states.json")
 PAGE_PATH = os.path.join(ROOT, "docs", "engage", "top3-tareas.html")
 
 ANCHOR = datetime.date(2026, 7, 4)   # primer envío; después cada 2 días
-DEFAULT_SEND = "09:00"
+DEFAULT_SEND = "11:00"
 
 PRIO_EMOJI = {"alta": "🔴", "media": "🟡", "baja": "🟢"}
 PRIO_RANK = {"alta": 0, "media": 1, "baja": 2}

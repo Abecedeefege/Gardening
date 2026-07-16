@@ -5,10 +5,15 @@ No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
 ## ⏱️ CADENCIA VIGENTE: 3 pushes/día — fijada por el usuario el 18/06
 
-Cola escrita A MANO (3 entries pending en queue.json). Slots base: 08:30 / 13:00 / 18:00 (-03:00). **El primer send_at
+Cola escrita A MANO (3 entries pending en queue.json). Slots base: **10:00 / 13:00 / 18:00 (-03:00)**. **El primer send_at
 propio ≥60 min después de la corrida** + margen para que Vercel deploye. expires_at = mismo día 22:00 -03:00.
 Cada notificación a un destino DISTINTO. Timestamps SIEMPRE con `-03:00`. **3 pushes curados ganan a 20 — CONFIRMADO.**
-El usuario abre 2-3/día. Los recordatorios task-dia/task-semana (08:00) + top3 (09:00) son ADICIONALES al cupo.
+El usuario abre 2-3/día.
+
+**🚫 PISO 10:00 — PEDIDO DEL USUARIO 16/07: NINGUNA push antes de las 10:00 -03:00.** Ya aplicado en los generadores:
+`gen_task_reminders.py` task-dia/semana → **10:00** (era 08:00); `gen_top3_tareas.py` DEFAULT_SEND → **11:00** (era 09:00).
+Los recordatorios task-dia (10:00) + top3 (11:00) son ADICIONALES al cupo. Si el slot base propio (10:00) choca con task-dia
+(10:00), corré el propio a 10:30. NUNCA programes send_at < 10:00.
 
 ## 📌 PEDIDOS DIRECTOS DEL USUARIO 04/07 — NO PISAR
 

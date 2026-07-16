@@ -8,13 +8,13 @@ GitHub Actions cada 30 min). Complementa a gen_queue.py / al agente de
 /engagement, que manejan las notificaciones de experiencias.
 
 Política:
-  - TODOS los días (martes a domingo): 1 "tarea del día" a las 08:00 -03:00,
+  - TODOS los días (martes a domingo): 1 "tarea del día" a las 10:00 -03:00,
     con deep link a tareas.html#task=<id>. La tarea se elige rotando
     determinísticamente (día del año módulo N) sobre el pool más urgente:
     vencidas + las que vencen este mes; si no hay, rota sobre todas las
     activas. La rotación garantiza que las tareas de TODAS las especies
     pasan por el slot con los días.
-  - Los LUNES: resumen semanal a las 08:00 -03:00 ("Tu semana en el jardín",
+  - Los LUNES: resumen semanal a las 10:00 -03:00 ("Tu semana en el jardín",
     cuántas tareas hay para el mes y cuáles encabezan) con deep link a
     tareas.html.
 
@@ -111,7 +111,7 @@ def _entry(nid, title, body, url, date_str):
         "body": _clip(body, 130),
         "url": url,
         "format": "tarea",
-        "send_at": f"{date_str}T08:00:00-03:00",
+        "send_at": f"{date_str}T10:00:00-03:00",
         "expires_at": f"{date_str}T21:00:00-03:00",
         "status": "pending",
         "sent_at": None,
@@ -217,9 +217,9 @@ def write_plan(today):
     plan = {
         "generated": today.isoformat(),
         "policy": {
-            "daily": "Martes a domingo 08:00 -03:00: 1 'tarea del día' (rotación determinística "
+            "daily": "Martes a domingo 10:00 -03:00: 1 'tarea del día' (rotación determinística "
                      "sobre vencidas + del mes; cubre todas las especies con los días) → tareas.html#task=<id>",
-            "weekly": "Lunes 08:00 -03:00: resumen semanal con conteo y tareas que encabezan → tareas.html",
+            "weekly": "Lunes 10:00 -03:00: resumen semanal con conteo y tareas que encabezan → tareas.html",
             "state": "Respeta docs/sync/task_states.json: done no se recuerda, snoozed solo si venció.",
             "dispatch": "Las entries se mergean en docs/notifications/queue.json (corrida diaria de /engagement "
                         "con --merge); el dispatcher de GitHub Actions las manda.",
