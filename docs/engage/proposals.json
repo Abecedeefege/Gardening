@@ -487,24 +487,24 @@
       "title": "🎰 La Raspadita del Jardín (news-feed de raspaditas de lotería, tap-para-revelar)",
       "page": "engage/2026-07-12-raspadita-jardin.html",
       "created": "2026-07-12",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 42 (función paralela): experiencia news-feed NUEVA de cero. Pivot tras 3 no-conversiones seguidas de la app-amada PASIVA (JardínFlix/Historias/Podcast): vuelvo a un GESTO activo real. 9 raspaditas de lotería (formato ultra-rioplatense) donde cada tap revela con brillo un dato verificado de una planta suya + su código; 3 son «premio mayor» holográficas (Palta clon 1926 B-36, Hiedra +400 años B-15, Anacahuita protegida por ley B-16). Combina 3 palancas medidas: coleccionismo/rareza (Álbum ✓), asombro con dato del PRESENTE protagonista (romero B-26 floreciendo AHORA, chip EN VIVO) y el gesto activo que a los formatos pasivos les faltó. La suscripción es honesta y nativa del formato ('raspadita nueva cada día'). Hipótesis: rascar + la sorpresa del premio mayor dispara 'increíble' + suscripción donde el consumo pasivo no. Promotor: 2026-07-12-a (09:30).",
       "notified_by": [
         "2026-07-12-a"
       ],
-      "result_notes": "DROPPED 13/07 por la regla de no-supervivencia sin aprobación explícita. Se ABRIÓ pero NO convirtió: dwell 23s/scroll 100% el 12/07 (~13:09 UY), SIN reacción, SIN answer de suscripción y SIN aprobar. El PIVOT a GESTO activo real (rascar) tampoco recuperó la conversión — dwell BAJO (23s, muy por debajo de las ganadoras 100-260s): el gesto de rascar se consumió rápido sin asombro sostenido. Lectura clave: el GESTO por sí solo no convierte (igual que la app-amada pasiva no convertía); lo que convierte es el ÁNGULO editorial/identidad/estatus + asombro, no la mecánica. Diferencia con el Álbum (gesto de coleccionar que SÍ ganó): el Álbum sumaba rareza/estatus persistente + héroes brillantes; la raspadita es sorteo de un solo uso, desechable. No relanzar raspadita/lotería. Página + pitch eliminados (git rm)."
+      "result_notes": "dropped 12/07: gesto desechable, dwell 23s, sin conversión (regla no-supervivencia sin aprobación). Archivo ya removido en corrida previa; status reconciliado hoy."
     },
     {
       "id": "2026-07-12-documental-jardin",
       "title": "🎬 La Especie del Día — El Documental de tu Jardín (news-feed prestige nature-doc, héroe individual del presente)",
       "page": "engage/2026-07-12-documental-jardin.html",
       "created": "2026-07-12",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 42 (función paralela): experiencia news-feed NUEVA de cero, ángulo DOCUMENTAL DE PRESTIGIO (Nat Geo/BBC Earth). Apuesta a la familia editorial que SÍ convierte a suscripción (Diario/Récords/Chusmerío/Entrevista todos con sub SÍ) con un HÉROE individual del PRESENTE — el Liquidámbar B-37, protagonista de invierno: el último caduco en desnudarse y el árbol que 'sangra ámbar' (storax que los mayas masticaban). Narrado en capítulos con recuadros de dato verificado + un 'reparto de la temporada' (romero EN VIVO B-26, limonero 12/12 B-23, mandarina B-24, palta clon B-36, pindó B-8). Distinto del Podcast (audio, falló por consumo pasivo) y de la Entrevista (Q&A): acá es feature narrado visual+editorial con gravedad de documental. 'Episodio nuevo cada mañana' = motor de suscripción serializado. Hipótesis: el asombro-wonder prestigio con héroe del presente convierte amor→suscripción como el resto de la familia editorial. Promotor: 2026-07-12-b (13:00).",
       "notified_by": [
         "2026-07-12-b"
       ],
-      "result_notes": "DROPPED 13/07 por la regla de no-supervivencia sin aprobación explícita. Se ABRIÓ vía push (2026-07-12-b, 16:24 UY el 12/07, notification_clicked + page_visit) pero NO quedó registrada reacción, respuesta de suscripción ni aprobación hasta el cutoff (21:26Z, ~2h después de la apertura y con el usuario activo): soft-negative. Lectura: el Documental de PRESTIGIO (nature-doc, héroe Liquidámbar del presente) traccionó la apertura pero NO retuvo ni convirtió como el resto de la familia editorial (Diario/Récords/Entrevista SÍ). Hipótesis del fracaso: el framing 'documental para MIRAR' se lee como consumo PASIVO (como el Podcast/Historias) aunque sea editorial — le faltó la VOZ en 1ª persona o el gesto de protagonismo que sí tienen los editoriales que convierten (Entrevista = Q&A, Diario = titulares punzantes). El asombro-wonder narrado en 3ª persona no basta. No relanzar Documental. Página + pitch eliminados (git rm)."
+      "result_notes": "dropped 12/07: editorial pasivo 3ª pers (documental para mirar), sin conversión. Archivo ya removido; status reconciliado hoy."
     },
     {
       "id": "2026-07-13-tarot-jardin",
@@ -559,22 +559,46 @@
       "title": "📣 El Cable — El mundo habla de tu jardín (news-feed de despachos de agencia, editorial/estatus)",
       "page": "engage/2026-07-15-prensa-mundial.html",
       "created": "2026-07-15",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 45 (función paralela): RE-ANCLA en la familia EDITORIAL/PRENSA (la que MÁS convirtió a suscripción: Diario/Entrevista/Chusmerío/Récords), con un ÁNGULO FRESCO que esquiva canibalizar a Récords (leaderboard interno) y al Chusmerío (chisme). El Cable es una agencia de noticias internacional: 8 'despachos' cortos donde el MUNDO GRANDE REAL (NASA, una ley nacional uruguaya de 1986, Coco Chanel/Nº22, la ciencia de la memoria, la arqueología maya) habló de UNA planta que el usuario tiene a 5 metros. El hook es estatus prestado de máxima autoridad: 'lo que tenés en el fondo es, en secreto, mundialmente famoso'. Feed de titulares cortos (Chusmerío 260s retuvo con scroll rápido; la Exclusiva 14/07 con UN caso largo no) + orgullo/asombro + dato del PRESENTE (romero en flor AHORA, palta/cítricos en cosecha) + edición diaria. Todo dato 100% verificado con código de catálogo. Promotor: 2026-07-15-a (08:30). react target 'prensa', sub qid 'prensa-suscripcion-diaria'.",
       "notified_by": [
         "2026-07-15-a"
       ],
-      "result_notes": null
+      "result_notes": "dropped 16/07: sin aprobación explícita. VENTANA EN BLANCO — cero eventos de engagement desde 14/07T17:38Z (~40h), el usuario no abrió la app el 15/07. NO es evidencia de que el ángulo editorial-estatus falle; es ausencia/fatiga. Regla no-supervivencia aplica igual."
     },
     {
       "id": "2026-07-15-carnet-jardinero",
       "title": "🎖️ El Carnet de Jardinero (perfil de jugador con rango + medallero + misión, héroe = el usuario)",
       "page": "engage/2026-07-15-carnet-jardinero.html",
       "created": "2026-07-15",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 45 (función paralela): RE-ANCLA en el meta-patrón que MÁS retuvo — «app amada donde el HÉROE es el USUARIO y hay LOGRO/ESTATUS persistente» (Wrapped 172s 'tus números' ✓, Álbum coleccionar+rareza ✓) — fusionado con identidad self-focused (Horóscopo/Quiz convirtieron) y orgullo (Récords 141s). Es la gramática de Duolingo/Steam/Strava (perfil de jugador: rango LEYENDA, XP hacia el próximo nivel, medallero de 8 logros, misión del día) pero llena de datos 100% reales del jardín: 52 especies, 10 nativas, un árbol protegido por ley (anacahuita B-16), otro de +400 años (hiedra B-15), la planta de la NASA (cinta B-12), el clon millonario (palta B-36). El usuario es la estrella ('esto sos VOS'), ultra-screenshot-eable; la misión del día (sumar 2 nativas + cerrar los 2 expedientes de identidad abiertos) es motor de retorno honesto atado a acciones reales. Distinto de Wrapped (stats de temporada sueltas) y del Tarot/ADN (identidad sin logro): acá es rango+medallero PERSISTENTE. Promotor: 2026-07-15-b (13:00). react target 'carnet', sub qid 'carnet-suscripcion-diaria'.",
       "notified_by": [
         "2026-07-15-b"
+      ],
+      "result_notes": "dropped 16/07: sin aprobación explícita. Misma ventana en blanco que El Cable (cero interacción 15/07). Angulo user-hero-rango QUEDA sin testear, no refutado."
+    },
+    {
+      "id": "2026-07-16-jardinero-sos",
+      "title": "🧭 ¿Qué jardinero sos? (test de identidad — el jardín real revela el arquetipo del usuario)",
+      "page": "engage/2026-07-16-jardinero-sos.html",
+      "created": "2026-07-16",
+      "status": "pending",
+      "hypothesis": "Familia identidad-self-focused (Quiz 😍+103s, Horóscopo sub+😍 CONVIRTIERON). Fresco: no es 'qué planta sos' sino 'qué JARDINERO sos' → el usuario es el héroe/protagonista. Feed de evidencia real (10 nativas, ley 1986, hiedra 400a, Chanel Nº22, palta clon 1926, romero en flor, limonero 12/12) que corona en un arquetipo compartible ('Curador de Rarezas'). Espejo+orgullo+estatus. Debería convertir donde el user-hero (Carnet, sin datos 15/07) quedó sin testear.",
+      "notified_by": [
+        "2026-07-16-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-16-declaraciones",
+      "title": "🎙️ Declaraciones — tus plantas hablan (8 soundbites en 1ª persona)",
+      "page": "engage/2026-07-16-declaraciones.html",
+      "created": "2026-07-16",
+      "status": "pending",
+      "hypothesis": "Familia celebridad/1ª-persona-individual (Entrevista sub+206s CONVIRTIÓ) pero SERVIDA como FEED de ítems cortos, no nota-larga — el fix del 14/07 (Exclusiva nota-única-larga 33s DROPPED). Cada planta = celebridad con una frase punzante sobre un dato real; 3 'declaran ahora' anclan en el presente (romero en flor, gardenia/guayabo con tarea activa real). Antropomorfismo + placa-de-cita compartible. Prueba: ¿el ángulo entrevista en formato-feed rompe la drought?",
+      "notified_by": [
+        "2026-07-16-b"
       ],
       "result_notes": null
     }

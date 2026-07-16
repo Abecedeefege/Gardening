@@ -66,8 +66,8 @@ FORMATO nota-única-larga (build-up que cansa) vs el scroll rápido de muchos ti
 ## 📈 Slot c (tarde) — rotar promovidas ganadoras descansadas = reactiva SUSCRIPCIÓN
 
 - Rotar una promovida ganadora bien descansada al slot c REACTIVA la suscripción — CONFIRMADO ×2 (08/07 Récords re-sub; 09/07 Chusmerío 260s+re-sub+😍).
-- 14/07 slot c → 🎙️ Entrevista (sent 21:14Z, tras cutoff → sin datos). **15/07 slot c → 🍵 Chusmerío** (descansado desde 09/07 = 6 días, chisme sub-converter 260s).
-- Candidatas descansadas próximas: Récords (rest desde 09/07), Horóscopo (rest desde 11/07), Diario. Chusmerío queda "usado" tras hoy. NO doble-chisme ni doble-identidad el mismo día.
+- 15/07 slot c → 🍵 Chusmerío (sent 21:29Z) — SIN DATOS (ventana en blanco, ver drought). **16/07 slot c → 🏆 Récords** (descansado desde 09/07 = 7 días, orgullo/número, converter 141s+😍+sub). NO doblé identidad ni celebridad con las 2 nuevas de hoy (jardinero=identidad, declaraciones=celebridad) → Récords (orgullo) es 3er ángulo limpio.
+- Candidatas descansadas próximas: Horóscopo (rest desde 11/07 — OJO no el mismo día que jardinero-sos: doble-identidad), Diario, Chusmerío (usado 15/07). Récords queda "usado" tras hoy.
 
 ## 🎯 Señal real medida — qué engancha (histórico)
 
@@ -82,10 +82,11 @@ FORMATO nota-única-larga (build-up que cansa) vs el scroll rápido de muchos ti
 
 - Push subscription device `pix9`: **active** (desde 11/06). Verificado 13/07.
 - Logging por `/api/feedback` (outbox localStorage, sin PAT). Confiable desde 15/06.
-- **Cutoff de datos:** engagement.json último evento **2026-07-14T17:38Z** (ADN abierto 14:37 UY, dwell 11s). Cubre el 14/07 hasta ahí:
-  Exclusiva lectura 33s/22% (browse directo ~12:41 UY, sin conv); ADN abierto vía push 11s ANTES del cutoff (INCONCLUSO). NO cubre:
-  slot c Entrevista (sent 21:14Z tras cutoff → sin datos).
-- **Compactación 15/07:** 30/06 movido a daily_summary (engagement {sent3/clic5/visits6/appr4} + send_log {sent3}). Ventana viva **01/07–14/07**.
+- ⚠️ **DROUGHT DE INTERACCIÓN 15-16/07:** engagement.json último evento **2026-07-14T17:38Z** — CERO eventos nuevos en ~40h.
+  Las 3 push del 15/07 (Cable a, Carnet b, Chusmerío c) + task-dia se enviaron TODAS OK (send_log 201), pero el usuario NO abrió
+  nada. Esto NO refuta los ángulos (Cable=editorial-estatus, Carnet=user-hero-rango quedan SIN TESTEAR) — es ausencia/fatiga del usuario.
+  Watch 16/07: si sigue en blanco tras hoy = fatiga real → bajar intensidad y apoyarse en task-dia (canal más confiable). Si abre = era ausencia puntual.
+- **Compactación 16/07:** 01/07 movido a daily_summary (engagement {sent3/clic3/visits5/appr2} + send_log {sent3}). Ventana viva **02/07–14/07** (nada nuevo).
 - Upload pendiente: 1 foto de B-15 en uploads.json (territorio de /actualizar-tareas, no tocar).
 
 ## Conclusiones de los pushN enviados (por feedback real)
@@ -93,30 +94,37 @@ FORMATO nota-única-larga (build-up que cansa) vs el scroll rápido de muchos ti
 - **08-10/07 (última tanda GANADORA)** — Entrevista (sub+206s), Quiz (😍+103s), Wrapped (😍+172s), Álbum (😍) → 4 PROMOVIDAS. Récords/Chusmerío slot c re-push → re-sub SÍ.
 - **11-14/07 (racha de fallos)** — Historias/Podcast/BeReal (app-pasiva), Raspadita (gesto), Documental (editorial-pasivo), Tarot (mística canibaliza),
   y 14/07 Exclusiva (chisme+celebridad pero nota-larga, 33s/22%) + ADN (identidad self-focused, lectura INCONCLUSA a 11s del cutoff). TODOS DROPPED.
+- **15/07 (SIN DATOS — ventana en blanco):** Cable (editorial-estatus), Carnet (user-hero-rango), Chusmerío-c: las 3 se ENVIARON OK pero el usuario
+  no abrió NINGUNA en ~40h. NO es señal de contenido: es AUSENCIA. push1/push2/push3 del 15/07 = 0 opens, 0 conv, 0 nada. Conclusión honesta: el
+  canal quedó mudo, no hay aprendizaje de contenido posible del 15/07. Los 3 ángulos siguen sin refutar.
 - **Meta-conclusión:** convierten social/celebridad-individual/identidad/chisme/orgullo/editorial-con-voz/**app-amada con héroe=usuario** —
   NUNCA gesto solo, editorial pasivo, app pasiva, ni el ángulo-bueno-en-formato-malo (nota-única-larga). FOCO INDIVIDUAL + PRESENTE + asombro/dwell alto.
   La suscripción la gana la familia EDITORIAL/PRENSA + asombro y el USER-HERO con logro persistente, no el CTA forzado.
+- **⚠️ Lección operativa nueva (16/07):** cuando la ventana está EN BLANCO, no re-anclar en los ángulos untested (quedan pendientes de dato); volver a
+  ángulos CON conversión previa comprobada para maximizar el chance de re-enganche, y vigilar la señal binaria «¿volvió?» antes que cualquier matiz de contenido.
 
-## 🔭 Corrida 15/07 — ciclo 45 (esta corrida)
+## 🔭 Corrida 16/07 — ciclo 46 (esta corrida)
 
-- **Proposals resueltas:** Exclusiva→DROPPED (chisme+celebridad OK pero nota-larga, 33s/22% sin conv), ADN→DROPPED por la regla (lectura
-  INCONCLUSA, abierto 11s antes del cutoff — NO concluir que identidad self-focused está muerta). Ambas páginas+pitches git rm.
-- **DECISIÓN:** re-ancla FUERTE en los 2 ejes MÁS probados, cada uno con el FORMATO correcto (la lección del 14/07):
-- **2 experiencias NUEVAS de cero (pending, created=15/07):**
-  - 📣 **El Cable — el mundo habla de tu jardín** (`engage/2026-07-15-prensa-mundial.html`) — EDITORIAL/PRENSA + ESTATUS, ángulo FRESCO:
-    agencia de noticias internacional, 8 despachos CORTOS (feed, no nota-larga) donde el mundo REAL (NASA, ley uruguaya 1986, Chanel Nº22,
-    ciencia memoria, arqueología maya) habló de UNA planta suya. Estatus prestado de máxima autoridad + PRESENTE (romero en flor, cosechas).
-    Esquiva canibalizar Récords (leaderboard interno) y Chusmerío (chisme). Push a (08:30). react `prensa`, sub `prensa-suscripcion-diaria`.
-  - 🎖️ **El Carnet de Jardinero** (`engage/2026-07-15-carnet-jardinero.html`) — META-PATRÓN GANADOR «app amada, héroe=USUARIO, logro persistente»
-    (Wrapped/Álbum) + identidad self-focused + orgullo. Perfil de jugador estilo Duolingo/Steam: rango LEYENDA, XP al próximo nivel, medallero de
-    8 logros REALES (anacahuita protegida por ley B-16, hiedra 400 años B-15, cinta NASA B-12, palta clon B-36), misión del día atada a acciones
-    reales. El usuario es la estrella, screenshot-eable. Push b (13:00). react `carnet`, sub `carnet-suscripcion-diaria`.
-  - **Cola ciclo 45:** (a) 08:30 📣 El Cable; (b) 13:00 🎖️ Carnet; (c) 18:00 🍵 Chusmerío (rotación descansada 6 días, sub-converter).
-    + 08:00 task-día (Gardenia B-25 pulgones+hormigas). Top3 NO tocó (próx 16/07). 3 ángulos distintos: editorial-estatus / user-hero / chisme.
-- **Watch 45:** (1) ¿el re-ancla en 2 ejes probados con FORMATO correcto rompe la drought de conversión (5 días sin sub/love)? (2) ¿el Cable
-  (editorial-estatus como FEED de titulares) convierte donde la Exclusiva (nota-larga) no? (3) ¿el Carnet (user-hero rango) iguala a Wrapped/Álbum?
-  (4) Si hay FATIGA real (varios días sin ningún click a experiencias), bajar intensidad / apoyarse más en task-dia (canal confiable). (5) Si las 2
-  nuevas no juntan aprobación con ventana limpia, se dropean el 16/07 — que TOCA top3, y quedan libres Récords/Horóscopo para slot c.
+- **Proposals resueltas:** Cable (prensa-mundial)→DROPPED, Carnet (carnet-jardinero)→DROPPED — ambas por la regla no-supervivencia (sin aprobación
+  de un día anterior), PERO con VENTANA EN BLANCO: cero interacción 15/07 (ver drought). Sus ángulos (editorial-estatus / user-hero-rango) quedan
+  SIN TESTEAR, NO refutados — reintentables cuando el usuario vuelva. Páginas+pitches git rm. También reconcilié 2 stragglers 12/07 (raspadita,
+  documental) que seguían "pending" con el archivo ya borrado → status dropped.
+- **DECISIÓN:** ante la drought (no sé qué pasó con Cable/Carnet), vuelvo a 2 ejes CON DATOS DE CONVERSIÓN PREVIA (no los untested), cada uno FEED
+  de ítems cortos, ambos self/individual + presente + asombro:
+- **2 experiencias NUEVAS de cero (pending, created=16/07):**
+  - 🧭 **¿Qué jardinero sos?** (`engage/2026-07-16-jardinero-sos.html`) — familia IDENTIDAD-self (Quiz 😍+103s, Horóscopo sub+😍 CONVIRTIERON).
+    Fresco: no «qué planta sos» sino «qué JARDINERO sos» → el USUARIO es el héroe. Feed de 6 evidencias reales (10 nativas, ley 1986 B-16, hiedra
+    400a B-15, Chanel Nº22 B-25, palta clon 1926 B-36, romero en flor B-26, limonero 12/12 B-23) que corona en arquetipo compartible «Curador de
+    Rarezas». Push a (08:30). react `jardinero`, sub `jardinero-suscripcion-diaria`.
+  - 🎙️ **Declaraciones — tus plantas hablan** (`engage/2026-07-16-declaraciones.html`) — familia CELEBRIDAD/1ª-persona (Entrevista sub+206s CONVIRTIÓ)
+    servida como FEED de 8 soundbites CORTOS (el fix del 14/07 vs nota-larga). Cada planta = celebridad con frase punzante sobre dato real; 3 «declaran
+    ahora» anclan en el presente (romero en flor, gardenia B-25 + guayabo F-1 con tarea activa real). Push b (13:00). react `declaraciones`, sub `declaraciones-suscripcion-diaria`.
+  - **Cola ciclo 46:** (a) 08:30 🧭 Jardinero; (b) 13:00 🎙️ Declaraciones; (c) 18:00 🏆 Récords (rotación descansada 7 días, orgullo sub-converter).
+    + 08:00 task-día (Guayabo F-1 fumagina+plaga) + 09:00 top3 (TOCÓ: Gardenia/Guayabo/Liquidámbar). 3 ángulos distintos: identidad / celebridad / orgullo.
+- **Watch 46:** (1) ¿VUELVE el usuario? La señal #1 es si hay CUALQUIER evento tras 40h de silencio. (2) ¿jardinero-sos (identidad-user-hero) e/o
+  declaraciones (celebridad-feed-corto) convierten y rompen la drought? (3) Si sigue TODO en blanco mañana = fatiga confirmada → bajar a 2 push/día
+  o apoyarse casi solo en task-dia. (4) Si las 2 nuevas no juntan aprobación con ventana limpia, se dropean el 17/07; quedan Horóscopo/Diario/Chusmerío
+  descansadas para slot c (no doble-identidad con jardinero si aún vivo). (5) Cable/Carnet reintentables cuando haya datos.
 
 ## Contexto del jardín (julio 2026 = pleno invierno, lat -34.9°S)
 
