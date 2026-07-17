@@ -583,22 +583,46 @@
       "title": "🧭 ¿Qué jardinero sos? (test de identidad — el jardín real revela el arquetipo del usuario)",
       "page": "engage/2026-07-16-jardinero-sos.html",
       "created": "2026-07-16",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Familia identidad-self-focused (Quiz 😍+103s, Horóscopo sub+😍 CONVIRTIERON). Fresco: no es 'qué planta sos' sino 'qué JARDINERO sos' → el usuario es el héroe/protagonista. Feed de evidencia real (10 nativas, ley 1986, hiedra 400a, Chanel Nº22, palta clon 1926, romero en flor, limonero 12/12) que corona en un arquetipo compartible ('Curador de Rarezas'). Espejo+orgullo+estatus. Debería convertir donde el user-hero (Carnet, sin datos 15/07) quedó sin testear.",
       "notified_by": [
         "2026-07-16-a"
       ],
-      "result_notes": null
+      "result_notes": "DROPPED 17/07 por la regla de no-supervivencia sin aprobación explícita. NO-OPEN: cero eventos del jardinero-sos en engagement.json — su push promotor (2026-07-16-a) salió 08:38 UY, pero la ÚNICA actividad del usuario el 16/07 fue a la tarde (17:02 UY, abrió Declaraciones). Casi seguro un MISS DE TIMING (push matinal en día de actividad vespertina), no un rechazo del ángulo. El eje identidad-self/user-hero (Quiz 😍+103s, Horóscopo sub+😍 convirtieron) queda SIN TESTEAR de nuevo, NO refutado — reintentable con push en la ventana de tarde. Página + pitch git rm."
     },
     {
       "id": "2026-07-16-declaraciones",
       "title": "🎙️ Declaraciones — tus plantas hablan (8 soundbites en 1ª persona)",
       "page": "engage/2026-07-16-declaraciones.html",
       "created": "2026-07-16",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Familia celebridad/1ª-persona-individual (Entrevista sub+206s CONVIRTIÓ) pero SERVIDA como FEED de ítems cortos, no nota-larga — el fix del 14/07 (Exclusiva nota-única-larga 33s DROPPED). Cada planta = celebridad con una frase punzante sobre un dato real; 3 'declaran ahora' anclan en el presente (romero en flor, gardenia/guayabo con tarea activa real). Antropomorfismo + placa-de-cita compartible. Prueba: ¿el ángulo entrevista en formato-feed rompe la drought?",
       "notified_by": [
         "2026-07-16-b"
+      ],
+      "result_notes": "DROPPED 17/07 por la regla de no-supervivencia sin aprobación explícita. SOFT-NEGATIVE parcial: el usuario abrió la página (push b, 13:00; único evento sincronizado: answer 'declaraciones-suscripcion-diaria'=NO a las 14:02 UY) pero SIN reacción, SIN dwell/scroll registrado y SIN aprobar. Rompió la drought de 40h (volvió), pero la celebridad-1ª-persona servida como FEED de soundbites no convirtió a suscripción esta vez — dijo NO al sub explícitamente. El ángulo entrevista/celebridad SIGUE vivo y probado (Entrevista sub+206s promovida); el matiz es que el formato-feed-de-frases no reprodujo la conversión de la nota-de-tapa individual. No relanzar declaraciones como tal. Página + pitch git rm."
+    },
+    {
+      "id": "2026-07-17-resenas",
+      "title": "⭐ Reseñas de tu Jardín (news-feed de reseñas con estrellas, número/estatus + humor honesto)",
+      "page": "engage/2026-07-17-resenas.html",
+      "created": "2026-07-17",
+      "status": "pending",
+      "hypothesis": "Ciclo 47 (función paralela): experiencia news-feed NUEVA de cero, eje NÚMERO/ESTATUS + HUMOR (Récords orgullo 141s + Memes humor, ambos converters). Cada planta es un 'lugar' reseñable estilo Google Maps/App Store: puntaje de estrellas + reseña punzante sobre un dato REAL verificado + código. Diferencial fresco vs Récords: las estrellas VARÍAN — el ligustro invasor F-9 (2★) y la caña muda tóxica I-2 (3★) bajan la nota, lo que vuelve el sistema creíble y gracioso (no autobombo). 3 ancladas en el presente (romero en flor B-26, gardenia B-25 y guayabo F-1 con tarea activa). Puntaje global 4,8★ = orgullo cuantificado ultra-compartible. Feed de ítems cortos (el fix vs nota-larga). Prueba: ¿el frame 'reseñas con estrellas' —lenguaje universal de decisión— convierte amor→suscripción tras la drought? Promotor: 2026-07-17-a (10:30).",
+      "notified_by": [
+        "2026-07-17-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-17-anuario",
+      "title": "🎓 El Anuario de tu Jardín (news-feed de superlativos estilo anuario del liceo, orgullo + humor + nostalgia)",
+      "page": "engage/2026-07-17-anuario.html",
+      "created": "2026-07-17",
+      "status": "pending",
+      "hypothesis": "Ciclo 47 (función paralela): experiencia news-feed NUEVA de cero, eje SUPERLATIVOS/ORGULLO + HUMOR + NOSTALGIA (Récords orgullo + Memes humor + toque identidad). Formato anuario del liceo: cada planta gana un premio ('el más probable de sobrevivir al fin del mundo' = Hiedra B-15 +400a; 'reina del glamour' = Gardenia B-25 Chanel Nº22; 'el que nunca falta al trabajo' = Limonero B-23 12/12; 'el intocable con inmunidad legal' = Anacahuita B-16 ley 1986). Todo dato verificado con código. 2 premios de la semana anclan el presente (romero en flor, guayabo con tarea). La nostalgia del anuario + el superlativo divertido = orgullo+humor a la vez, screenshot-eable (diploma compartible). Feed de ítems cortos. Distinto de Reseñas (mismo día): allá es rating/consumidor, acá es premio/nostalgia — dos registros emocionales distintos. Prueba: ¿el frame superlativo-nostálgico convierte? Promotor: 2026-07-17-b (13:30).",
+      "notified_by": [
+        "2026-07-17-b"
       ],
       "result_notes": null
     }

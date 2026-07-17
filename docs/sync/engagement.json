@@ -2,66 +2,6 @@
   "_updated_at": "2026-07-16T17:02:40.124Z",
   "events": [
     {
-      "_id": "mr3jr0ykprxoof",
-      "type": "notification_clicked",
-      "nid": "2026-07-02-a",
-      "page": "engage/2026-07-02-confesiones-jardin.html",
-      "ts": "2026-07-02T13:35:05.369Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr3jr0ykzc0blw",
-      "type": "page_visit",
-      "page": "engage/2026-07-02-confesiones-jardin.html",
-      "nid": "2026-07-02-a",
-      "src": "push",
-      "ts": "2026-07-02T13:35:05.369Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr3jtjtsdpjot3",
-      "type": "reaction",
-      "target": "confesiones",
-      "value": "meh",
-      "page": "engage/2026-07-02-confesiones-jardin.html",
-      "ts": "2026-07-02T13:37:03.135Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr3jtmssqn7erm",
-      "type": "proposal_approved",
-      "proposal_id": "2026-07-02-confesiones-jardin",
-      "ts": "2026-07-02T13:37:06.988Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr3jtvhueld1xf",
-      "type": "dwell",
-      "seconds": 133,
-      "scroll_pct": 100,
-      "page": "engage/2026-07-02-confesiones-jardin.html",
-      "ts": "2026-07-02T13:37:18.258Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr3u0y5lzgrx7e",
-      "type": "page_visit",
-      "page": "engage/2026-06-29-feed-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-07-02T18:22:44.455Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "mr3u19ukixwfy9",
-      "type": "dwell",
-      "seconds": 15,
-      "scroll_pct": 20,
-      "page": "engage/2026-06-29-feed-jardin.html",
-      "ts": "2026-07-02T18:22:59.612Z",
-      "device": "pix9"
-    },
-    {
       "_id": "mr4zmxgp57qf0c",
       "type": "notification_clicked",
       "nid": "2026-07-03-a",
@@ -1098,6 +1038,12 @@
       "clicked": 3,
       "visits": 5,
       "approvals": 2
+    },
+    "2026-07-02": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 2,
+      "approvals": 1
     }
   }
 }

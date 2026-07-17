@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c1a13">
+<title>⭐ Reseñas de tu Jardín — lo que opinan de tus plantas</title>
+<meta property="og:title" content="⭐ Tu jardín tiene 4,8 estrellas. Mirá las reseñas verificadas">
+<meta property="og:description" content="La palta clon de 1926, el limonero que trabaja 12 meses, el ligustro invasor con 2 estrellas. Reseñas honestas de cada planta tuya, con dato real.">
+<style>
+  :root{
+    --bg:#0c1a13; --bg2:#0f2318; --ink:#eef4ec; --ink2:#b7c6bb; --ink3:#7d8f82;
+    --verde:#2f7d4f; --verde2:#43a86a; --lima:#8fd06a; --oro:#f6c33d; --oro2:#ffe08a;
+    --cielo:#4fd2c0; --magenta:#ff6ba6; --rojo:#ff7a6b; --line:rgba(238,244,236,.12);
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+    --serif:"Iowan Old Style",Palatino,Georgia,"Times New Roman",serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.55; -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 40% at 50% -4%, rgba(246,195,61,.16), transparent 60%),
+      radial-gradient(90% 40% at 0% 100%, rgba(79,210,192,.08), transparent); }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#08120c; color:#9db8a6; text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .prog{ position:fixed; top:0; left:0; height:3px; width:0; z-index:90;
+    background:linear-gradient(90deg,var(--oro),var(--lima),var(--cielo)); transition:width .1s linear; }
+  .wrap{ max-width:560px; margin:0 auto; padding:0 var(--pad) 10px; }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:30px 0 8px; text-align:center; }
+  .hero h1{ font-family:var(--serif); font-size:31px; line-height:1.12; margin:6px 0 10px; letter-spacing:-.01em; }
+  .hero p{ color:var(--ink2); font-size:15px; max-width:34ch; margin:0 auto; }
+  .score{ display:inline-flex; flex-direction:column; align-items:center; gap:2px; margin:6px auto 4px;
+    background:rgba(246,195,61,.1); border:1px solid rgba(246,195,61,.3); border-radius:16px; padding:12px 22px; }
+  .score .big{ font-family:var(--serif); font-size:44px; font-weight:700; color:var(--oro2); line-height:1; }
+  .score .st{ font-size:19px; letter-spacing:2px; color:var(--oro); }
+  .score .sub{ font-size:11.5px; color:var(--ink3); text-transform:uppercase; letter-spacing:.08em; margin-top:3px; }
+
+  .rev{ background:linear-gradient(180deg,var(--bg2),#0b1a12); border:1px solid var(--line); border-radius:16px;
+    padding:15px 16px 14px; margin:12px 0; }
+  .rev .top{ display:flex; align-items:center; gap:11px; }
+  .rev .av{ width:40px; height:40px; border-radius:11px; display:grid; place-items:center; font-size:21px;
+    background:rgba(143,208,106,.12); border:1px solid var(--line); flex:none; }
+  .rev .nm{ font-weight:900; font-size:15px; line-height:1.2; }
+  .rev .rl{ font-size:11.5px; color:var(--ink3); }
+  .rev .code{ margin-left:auto; font-size:11px; font-weight:800; color:var(--ink3); border:1px solid var(--line); border-radius:6px; padding:2px 7px; align-self:flex-start; }
+  .rev .stars{ font-size:16px; letter-spacing:1.5px; color:var(--oro); margin:9px 0 5px; }
+  .rev .stars .off{ color:#3a4a3f; }
+  .rev .txt{ font-size:14.5px; color:var(--ink); }
+  .rev .txt em{ color:var(--oro2); font-style:normal; font-weight:600; }
+  .rev .foot{ font-size:11.5px; color:var(--ink3); margin-top:9px; border-top:1px solid var(--line); padding-top:8px; }
+  .rev.low .stars{ color:var(--rojo); }
+  .rev.now{ border-color:rgba(79,210,192,.32); }
+  .rev.now .badge{ display:inline-block; font-size:10px; font-weight:900; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--cielo); background:rgba(79,210,192,.12); border-radius:5px; padding:2px 7px; margin-bottom:7px; }
+
+  .blk{ background:var(--bg2); border:1px solid var(--line); border-radius:18px; padding:20px 18px; margin:16px 0; text-align:center; }
+  .blk h3{ font-size:18px; margin-bottom:6px; }
+  .blk p{ color:var(--ink2); font-size:14px; }
+  .rowbtns{ display:flex; gap:9px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
+  .rowbtns button{ font-family:var(--sans); font-weight:800; font-size:14.5px; cursor:pointer; border-radius:12px;
+    padding:12px 15px; border:1px solid var(--line); background:rgba(238,244,236,.06); color:var(--ink); transition:transform .12s; }
+  .rowbtns button:active{ transform:scale(.94); }
+  .rowbtns button.sel{ outline:2px solid var(--lima); }
+  .react-hint,.q-hint{ display:block; margin-top:10px; font-size:12.5px; color:var(--lima); font-weight:700; min-height:1.2em; }
+  .sub-blk{ background:linear-gradient(180deg,#231a08,#160f06); border-color:rgba(246,195,61,.3); }
+  .sub-blk h3{ color:var(--oro2); }
+  .sub-blk .si{ background:var(--oro); color:#2a1e04; border-color:transparent; }
+  .sub-blk .q-hint{ color:var(--oro2); }
+
+  .engage-actions{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:8px 0 4px; padding:14px 0; }
+  .engage-actions button{ font-family:var(--sans); font-weight:900; font-size:15px; cursor:pointer; border-radius:13px; padding:13px 18px; border:1px solid var(--line); transition:transform .12s; }
+  .engage-actions button:active{ transform:scale(.95); }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; border-color:transparent; }
+  .engage-actions button:last-child{ background:rgba(238,244,236,.06); color:var(--ink2); }
+
+  .pie{ text-align:center; padding:18px 0 8px; }
+  .pie a{ color:var(--cielo); font-weight:800; font-size:14px; text-decoration:none; }
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:10px; line-height:1.5; }
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <div class="score">
+      <span class="big">4,8</span>
+      <span class="st">★★★★★</span>
+      <span class="sub">52 especies · reseñas verificadas</span>
+    </div>
+    <h1>Reseñas de tu jardín</h1>
+    <p>Si tus plantas estuvieran en Google Maps, esto opinarían de ellas. Reseñas honestas —sí, hay alguna de 2 estrellas— con un dato 100% real.</p>
+  </header>
+
+  <div class="rev reveal">
+    <div class="top"><div class="av">🥑</div><div><div class="nm">Palta Hass</div><div class="rl">Frutal · realeza genética</div></div><span class="code">B-36</span></div>
+    <div class="stars">★★★★★</div>
+    <div class="txt">“Impecable. <em>Todas</em> las paltas Hass del mundo descienden de un solo árbol de 1926 — o sea, esta es de la familia real. El 80% del mercado global lleva su sangre. Volvería a plantar.”</div>
+    <div class="foot">★★★★★ · «Un clásico que nunca falla» · 128 útiles</div>
+  </div>
+
+  <div class="rev reveal">
+    <div class="top"><div class="av">🍋</div><div><div class="nm">Limonero</div><div class="rl">Frutal · adicto al trabajo</div></div><span class="code">B-23</span></div>
+    <div class="stars">★★★★★</div>
+    <div class="txt">“No conoce el descanso: da fruta los <em>12 meses del año</em>. Encima ni existe en la naturaleza, es un híbrido de cidro y naranja de hace 2.500 años. Un fenómeno.”</div>
+    <div class="foot">★★★★★ · «Siempre hay para el mate y la limonada» · 96 útiles</div>
+  </div>
+
+  <div class="rev now reveal">
+    <span class="badge">● reseñado esta semana</span>
+    <div class="top"><div class="av">💜</div><div><div class="nm">Romero</div><div class="rl">Aromática · el rebelde</div></div><span class="code">B-26</span></div>
+    <div class="stars">★★★★★</div>
+    <div class="txt">“Mientras todo el jardín duerme el invierno, este está <em>en flor ahora mismo</em> — la única en julio. A contramano de todos. Bonus: oler romero mejora la memoria, lo dice la ciencia.”</div>
+    <div class="foot">★★★★★ · «Rinde hasta con heladas» · 71 útiles</div>
+  </div>
+
+  <div class="rev reveal">
+    <div class="top"><div class="av">🛡️</div><div><div class="nm">Anacahuita</div><div class="rl">Nativa · con fuero</div></div><span class="code">B-16</span></div>
+    <div class="stars">★★★★★</div>
+    <div class="txt">“Cinco estrellas y además <em>protegida por ley nacional desde 1986</em>. Tenés un árbol con inmunidad legal en el fondo. Cortarla es delito. Respeto total.”</div>
+    <div class="foot">★★★★★ · «Patrimonio del Uruguay en casa» · 84 útiles</div>
+  </div>
+
+  <div class="rev reveal">
+    <div class="top"><div class="av">🤍</div><div><div class="nm">Gardenia / Jazmín del Cabo</div><div class="rl">Ornamental · alta costura</div></div><span class="code">B-25</span></div>
+    <div class="stars">★★★★<span class="off">★</span></div>
+    <div class="txt">“Perfume de lujo: hacen falta <em>600 kg de sus flores para 1 litro</em> de aceite, y Chanel Nº22 huele a ella. Le saco media estrella solo porque esta semana anda con pulgones y hormigas —nada que una manito no arregle.”</div>
+    <div class="foot">★★★★☆ · «Glamour con mantenimiento» · tarea abierta · 63 útiles</div>
+  </div>
+
+  <div class="rev reveal">
+    <div class="top"><div class="av">🪴</div><div><div class="nm">Cinta / Lazo de amor</div><div class="rl">Interior · certificada NASA</div></div><span class="code">B-12</span></div>
+    <div class="stars">★★★★★</div>
+    <div class="txt">“La <em>NASA</em> la puso en su lista de plantas que limpian el aire: se come el formaldehído y el monóxido de una habitación. Una planta de interior con currículum espacial.”</div>
+    <div class="foot">★★★★★ · «Aire más limpio, cero esfuerzo» · 58 útiles</div>
+  </div>
+
+  <div class="rev reveal">
+    <div class="top"><div class="av">🍊</div><div><div class="nm">Mandarina criolla</div><div class="rl">Frutal · de abolengo</div></div><span class="code">B-24</span></div>
+    <div class="stars">★★★★★</div>
+    <div class="txt">“La reseña más antigua del catálogo: es <em>el cítrico más viejo que se conoce</em>. Su nombre viene de los mandarines, los funcionarios de túnica naranja de la China imperial. Historia pura, y encima rica.”</div>
+    <div class="foot">★★★★★ · «Siglos de trayectoria» · 47 útiles</div>
+  </div>
+
+  <div class="rev low reveal">
+    <div class="top"><div class="av">🐦</div><div><div class="nm">Ligustro</div><div class="rl">Árbol · polémico</div></div><span class="code">F-9</span></div>
+    <div class="stars">★★<span class="off">★★★</span></div>
+    <div class="txt">“Lindo de ver, pero ojo: está <em>catalogado como especie invasora</em> en gran parte de Sudamérica. Los pájaros esparcen sus semillas y aparece donde no lo llamaste. Se hace querer… y se hace mucho.”</div>
+    <div class="foot">★★☆☆☆ · «Hermoso pero avasallante» · 39 útiles</div>
+  </div>
+
+  <div class="rev low reveal">
+    <div class="top"><div class="av">🤫</div><div><div class="nm">Caña muda</div><div class="rl">Interior · manejar con cuidado</div></div><span class="code">I-2</span></div>
+    <div class="stars">★★★<span class="off">★★</span></div>
+    <div class="txt">“Divina de interior, pero su savia <em>te deja sin voz</em> si la masticás —cristales de oxalato que paralizan la garganta, de ahí el nombre—. Tres estrellas y un cartel de ‘no tocar’ para los peques.”</div>
+    <div class="foot">★★★☆☆ · «Bella pero traicionera» · 34 útiles</div>
+  </div>
+
+  <div class="rev now reveal">
+    <span class="badge">● reseñado esta semana</span>
+    <div class="top"><div class="av">🌸</div><div><div class="nm">Guayabo del país</div><div class="rl">Nativa · golosina</div></div><span class="code">F-1</span></div>
+    <div class="stars">★★★★<span class="off">★</span></div>
+    <div class="txt">“Nativo y comestible hasta las flores: sus <em>pétalos se comían como caramelo</em> los chicos en Uruguay y Brasil. Media estrella menos solo por esta semana: tiene fumagina y hay que darle una mano.”</div>
+    <div class="foot">★★★★☆ · «Dulce y nuestro» · tarea abierta · 52 útiles</div>
+  </div>
+
+  <!-- reacción -->
+  <section class="blk reveal">
+    <h3>¿Qué te parecieron las reseñas?</h3>
+    <p>Tu voto decide si tu jardín sigue teniendo su propia página de reseñas.</p>
+    <div class="rowbtns">
+      <button type="button" onclick="engageReact('resenas','love', this)">😍 ¡Geniales!</button>
+      <button type="button" onclick="engageReact('resenas','meh', this)">😐 Más o menos</button>
+      <button type="button" onclick="engageReact('resenas','no', this)">🙅 No es lo mío</button>
+    </div>
+    <span class="react-hint"></span>
+  </section>
+
+  <!-- suscripción -->
+  <section class="blk sub-blk reveal">
+    <h3>⭐ Una reseña nueva cada día</h3>
+    <p>Cada mañana calificamos otra planta tuya con su dato real —y las de la semana llevan lo que le pasa <b>hoy</b>: lo que florece, lo que fructifica, la tarea que le urge—. ¿La querés todos los días?</p>
+    <div class="rowbtns">
+      <button type="button" class="si" onclick="engageAnswer('resenas-suscripcion-diaria','si', this)">⭐ Sí, la reseña de cada día</button>
+      <button type="button" onclick="engageAnswer('resenas-suscripcion-diaria','no', this)">No, gracias</button>
+    </div>
+    <span class="q-hint"></span>
+  </section>
+
+  <!-- decisión -->
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-07-17-resenas')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-07-17-resenas')">✕ No me interesa</button>
+  </div>
+
+  <footer class="pie">
+    <a href="2026-07-17-resenas-pitch.html">💼 Cómo se vende esto</a>
+    <div class="cred">Reseñas y puntajes armados con datos reales del catálogo Pacha Mama · cada estrella se apoya en un hecho verificado (rareza, uso, origen, estado actual) con código de catálogo · 17/07/2026</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var prog = document.getElementById('prog');
+  function onScroll(){
+    var h = document.documentElement;
+    var d = h.scrollHeight - h.clientHeight;
+    prog.style.width = (d > 0 ? Math.min(100, (h.scrollTop / d) * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>
