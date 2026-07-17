@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-16T17:02:40.124Z",
+  "_updated_at": "2026-07-17T14:41:29.626Z",
   "events": [
     {
       "_id": "mr4zmxgp57qf0c",
@@ -915,6 +915,15 @@
       "value": "no",
       "page": "engage/2026-07-16-declaraciones.html",
       "ts": "2026-07-16T17:02:42.391Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrnrc1ye0mmwb6",
+      "type": "dwell",
+      "seconds": 18,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-16-declaraciones.html",
+      "ts": "2026-07-16T17:02:47.270Z",
       "device": "sin-nombre"
     }
   ],
