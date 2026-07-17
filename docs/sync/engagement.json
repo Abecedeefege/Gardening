@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-17T17:30:09.963Z",
+  "_updated_at": "2026-07-17T23:09:56.854Z",
   "events": [
     {
       "_id": "mr4zmxgp57qf0c",
@@ -942,6 +942,15 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-07-17T17:30:09.336Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrp7rc6kqztzpl",
+      "type": "dwell",
+      "seconds": 12,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-17-anuario.html",
+      "ts": "2026-07-17T17:30:20.396Z",
       "device": "sin-nombre"
     }
   ],
