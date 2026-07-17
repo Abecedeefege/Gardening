@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-17T14:41:32.540Z",
+  "_updated_at": "2026-07-17T17:30:09.963Z",
   "events": [
     {
       "_id": "mr4zmxgp57qf0c",
@@ -933,6 +933,15 @@
       "scroll_pct": 18,
       "page": "engage/2026-07-17-resenas.html",
       "ts": "2026-07-17T14:41:33.543Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrp7r3nf0dras7",
+      "type": "page_visit",
+      "page": "engage/2026-07-17-anuario.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-17T17:30:09.336Z",
       "device": "sin-nombre"
     }
   ],
