@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-17T14:41:29.626Z",
+  "_updated_at": "2026-07-17T14:41:32.540Z",
   "events": [
     {
       "_id": "mr4zmxgp57qf0c",
@@ -924,6 +924,15 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-16-declaraciones.html",
       "ts": "2026-07-16T17:02:47.270Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrp1qa93tnyyjt",
+      "type": "dwell",
+      "seconds": 3,
+      "scroll_pct": 18,
+      "page": "engage/2026-07-17-resenas.html",
+      "ts": "2026-07-17T14:41:33.543Z",
       "device": "sin-nombre"
     }
   ],
