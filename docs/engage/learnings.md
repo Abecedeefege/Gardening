@@ -63,9 +63,9 @@ protagonista; **UI de app AMADA CON HÉROE=USUARIO + LOGRO/ESTATUS persistente**
 ## 📈 Slot c (tarde) — rotar promovidas ganadoras descansadas = reactiva SUSCRIPCIÓN
 
 - Rotar una promovida ganadora bien descansada al slot c REACTIVA la suscripción — CONFIRMADO ×2 (08/07 Récords re-sub; 09/07 Chusmerío 260s+re-sub+😍).
-- 16/07 slot c → 🏆 Récords (sent 21:16Z, SIN DATOS aún). **17/07 slot c → 📱 Feed** (social 1ª pers, dwell RÉCORD 208s + doble-sub, sin pushear desde su
-  promoción 01/07 = bien descansado; eje DISTINTO a las 2 nuevas de hoy que son orgullo/número). Récords/Chusmerío quedan "usados" recientes.
-- Candidatas descansadas próximas: Horóscopo (rest desde 11/07), Diario, Wrapped, Entrevista. Récords (16/07) y Chusmerío (15/07) descansar unos días.
+- **18/07 slot c → 🔮 Horóscopo** (identidad, 😍+sub, descansado desde 11/07 = 7 días; eje DISTINTO a las 2 nuevas de hoy: chisme + user-hero).
+- 17/07 slot c → 📱 Feed: abrió pero REBOTÓ (9s, 6% scroll) — social 1ª pers NO reactivó como esperaba (día flojo generalizado, no refuta el ángulo per se).
+- Candidatas descansadas próximas: Diario, Wrapped, Entrevista, Álbum, Récords. Chusmerío (uso su FAMILIA hoy en Se Comenta) y Feed (17/07) descansar.
 
 ## 🎯 Señal real medida — qué engancha (histórico)
 
@@ -78,12 +78,13 @@ protagonista; **UI de app AMADA CON HÉROE=USUARIO + LOGRO/ESTATUS persistente**
 
 ## Estado del sistema
 
-- Push subscription device `pix9`: **active** (verificado 17/07 — sigue active).
+- Push subscription device `pix9`: **active** (verificado 18/07 — sigue active).
 - Logging por `/api/feedback` (outbox localStorage, sin PAT). Confiable desde 15/06.
-- **🟡 VUELTA DÉBIL 16/07:** tras ~40h de silencio (últ. evento previo 14/07T17:38Z), el usuario VOLVIÓ el 16/07 pero con UN solo evento:
-  `answer declaraciones-suscripcion-diaria = NO` a las 14:02 UY (abrió el push b). jardinero-sos (push a, 08:38 UY) = NO-OPEN. La drought se
-  rompió pero la señal es mínima. **Watch 17/07:** ¿vuelve más fuerte? ¿las 2 nuevas convierten? Si sigue mínimo → considerar bajar a 2/día + apoyar en task-dia.
-- **Compactación 17/07:** 02/07 movido a daily_summary (engagement {sent3/clic1/visits2/appr1} + send_log {sent3}). Ventana viva **03/07–16/07**.
+- **🟠 SEÑAL DÉBIL SOSTENIDA 16-17/07:** el usuario VUELVE cada día y ABRE los 3 pushes, pero NO convierte. 17/07: los 3 abiertos, CERO
+  reacción/sub/aprobación (Reseñas 3s/18% rebote · Anuario 12s/100% leyó-sin-convertir · Feed 9s/6% rebote). 4º día flojo seguido. Que abra TODO
+  = el CANAL push funciona; el cuello es el CONTENIDO/ángulo, no el timing ni la suscripción. **Watch 18/07:** ¿convierte chisme (Se Comenta) o
+  user-hero (Regalo)? Si sigue 0-conversión 2 días más → bajar a 2/día + reforzar task-dia (único canal que SIEMPRE abre+convierte).
+- **Compactación 18/07:** 03/07 movido a daily_summary (engagement + send_log {sent3}). Ventana viva **04/07–17/07**.
 - Upload pendiente: 1 foto de B-15 en uploads.json (territorio de /actualizar-tareas, no tocar).
 
 ## Conclusiones de los pushN enviados (por feedback real)
@@ -94,14 +95,17 @@ protagonista; **UI de app AMADA CON HÉROE=USUARIO + LOGRO/ESTATUS persistente**
 - **16/07 (vuelta débil):** push1 jardinero-sos (identidad user-hero) = NO-OPEN (push matinal en día de actividad vespertina → MISS DE TIMING, no
   refuta el ángulo). push2 declaraciones (celebridad-feed) = abrió pero sub=NO, sin reacción/aprobación → SOFT-NEGATIVE: el formato feed-de-frases
   no reprodujo la conversión de la nota-de-tapa individual (Entrevista). push3 Récords slot c = sin datos aún.
-- **17/07 (ciclo 47) — DECISIÓN:** ante vuelta débil, re-anclo en 2 ejes CON conversión previa, ambos feed-de-ítems-cortos, ambos orgullo/número+humor
-  (evito repetir hoy los 2 que ayer flojearon: identidad-jardinero y celebridad-declaraciones):
-  - ⭐ **Reseñas de tu Jardín** (`2026-07-17-resenas.html`) — reviews con estrellas (Récords orgullo + Memes humor). Diferencial: estrellas VARÍAN
-    (ligustro invasor 2★, caña muda tóxica 3★) → creíble+gracioso. Puntaje global 4,8★. Push a (10:30). react `resenas`, sub `resenas-suscripcion-diaria`.
-  - 🎓 **El Anuario de tu Jardín** (`2026-07-17-anuario.html`) — superlativos del anuario del liceo (orgullo+humor+nostalgia). «El más probable de
-    sobrevivir al fin del mundo» = Hiedra B-15, «reina del glamour» = Gardenia B-25, etc. Push b (13:30). react `anuario`, sub `anuario-suscripcion-diaria`.
-  - **Cola ciclo 47:** (a) 10:30 ⭐ Reseñas; (b) 13:30 🎓 Anuario; (c) 18:00 📱 Feed (rotación descansada, social/208s). + 10:00 task-día (Pindó B-8
-    limpieza, prioridad baja). top3 NO tocó. 3 ejes: rating/número · superlativo/nostalgia · social-1ª-persona.
+- **17/07 (ciclo 47) — RESULTADO: los 3 abiertos, 0 conversión.** ⭐ Reseñas (rating/estrellas) push a → REBOTE 3s/18%. 🎓 Anuario (superlativo/nostalgia)
+  push b → leyó completo 12s/100% pero SIN reacción/sub/aprobación. 📱 Feed slot c → rebote 9s/6%. **Lección:** el eje ORGULLO/SUPERLATIVO sobre las
+  PLANTAS (héroe=planta) está fatigado — dos superlativos el mismo día saturó. Ambos DROPPED. El usuario abre pero el contenido no lo agarra.
+- **18/07 (ciclo 48) — DECISIÓN:** ante 4º día flojo, cambio de EJE (no más orgullo-superlativo-sobre-plantas) y vuelvo a las 2 familias que más
+  convirtieron, cada una en un eje bien distinto:
+  - 🗣️ **Se Comenta en el Cantero** (`2026-07-18-secomenta.html`) — CHISME/tabloide (familia Chusmerío = 260s RÉCORD +😍+re-sub), rebrand fresco,
+    rumores 100% verídicos anclados al PRESENTE (romero en flor, guayabo con drama). Push a (10:30). react `secomenta`, sub `secomenta-suscripcion-diaria`.
+  - 🎁 **El Regalo del Invierno** (`2026-07-18-regalo-invierno.html`) — USER-HERO/gratitud (familia Wrapped/Álbum = las 😍): héroe=USUARIO, «todo lo que
+    tu jardín te da hoy» (52 especies vivas, limón 365 días, romero en flor). Da vuelta la cámara: gratitud, no tareas. Push b (13:00). react `regalo`, sub `regalo-suscripcion-diaria`.
+  - **Cola ciclo 48:** (a) 10:30 🗣️ Se Comenta; (b) 13:00 🎁 Regalo; (c) 18:00 🔮 Horóscopo (rotación descansada 7d, identidad 😍+sub). + 10:00 task-día
+    (Guayabo F-1 fumagina, ALTA); 11:00 top3 (tocó hoy: Gardenia/Guayabo/Liquidámbar). 3 ejes: chisme · user-hero-gratitud · identidad.
 - **Meta-conclusión:** convierten social/celebridad-individual/identidad/chisme/orgullo/editorial-con-voz/**app-amada con héroe=usuario** — NUNCA
   gesto solo, editorial pasivo, app pasiva, ni nota-única-larga. FOCO INDIVIDUAL + PRESENTE + asombro/dwell alto. Cuando la señal es débil/ausente,
   volver a ángulos CON conversión previa (no untested) y vigilar la señal binaria «¿volvió?» antes que cualquier matiz de contenido.
