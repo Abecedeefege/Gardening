@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-18T09:12:04.327963",
+  "_updated_at": "2026-07-18T13:47:56.639Z",
   "notifications": [
     {
       "id": "2026-07-18-task-dia",
@@ -9,8 +9,8 @@
       "format": "tarea",
       "send_at": "2026-07-18T10:00:00-03:00",
       "expires_at": "2026-07-18T21:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-18T13:47:56.563Z",
       "fail_reason": null,
       "created_by": "gen_task_reminders 2026-07-18"
     },
@@ -21,8 +21,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-18-secomenta.html",
       "send_at": "2026-07-18T10:30:00-03:00",
       "expires_at": "2026-07-18T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-18T13:47:56.638Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-18"
     },

@@ -1,445 +1,457 @@
 {
- "events": [
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-04-task-dia",
-   "ts": "2026-07-04T11:25:03.793Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-04-a",
-   "ts": "2026-07-04T12:43:45.752Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-04-b",
-   "ts": "2026-07-04T16:30:51.471Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-04-top3",
-   "ts": "2026-07-04T16:30:51.597Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-04-expedientes",
-   "ts": "2026-07-04T16:30:51.724Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-04-c",
-   "ts": "2026-07-04T23:34:23.046Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-05-task-dia",
-   "ts": "2026-07-05T11:28:33.784Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-05-a",
-   "ts": "2026-07-05T12:49:53.190Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-05-b",
-   "ts": "2026-07-05T17:07:52.140Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-05-c",
-   "ts": "2026-07-05T22:07:23.659Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-06-task-semana",
-   "ts": "2026-07-06T13:43:00.675Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-06-a",
-   "ts": "2026-07-06T13:43:00.771Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-06-top3",
-   "ts": "2026-07-06T13:43:00.839Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-06-b",
-   "ts": "2026-07-06T16:45:31.825Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-06-c",
-   "ts": "2026-07-06T22:12:57.878Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-08-task-dia",
-   "ts": "2026-07-08T11:45:48.541Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-08-a",
-   "ts": "2026-07-08T11:45:48.668Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-08-top3",
-   "ts": "2026-07-08T14:01:11.534Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-08-b",
-   "ts": "2026-07-08T16:10:35.071Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-08-c",
-   "ts": "2026-07-08T21:49:01.498Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-09-task-dia",
-   "ts": "2026-07-09T15:43:55.252Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-09-a",
-   "ts": "2026-07-09T15:43:55.353Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-09-b",
-   "ts": "2026-07-09T17:33:53.324Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-09-c",
-   "ts": "2026-07-09T22:24:32.409Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-10-task-dia",
-   "ts": "2026-07-10T12:24:06.532Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-10-a",
-   "ts": "2026-07-10T12:24:06.586Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-10-top3",
-   "ts": "2026-07-10T12:24:06.793Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-10-b",
-   "ts": "2026-07-10T17:08:22.024Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-10-c",
-   "ts": "2026-07-10T21:19:54.318Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-11-task-dia",
-   "ts": "2026-07-11T11:02:58.855Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-11-a",
-   "ts": "2026-07-11T12:05:15.061Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-11-b",
-   "ts": "2026-07-11T16:55:56.465Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-11-c",
-   "ts": "2026-07-11T21:06:19.813Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-12-task-dia",
-   "ts": "2026-07-12T11:30:15.017Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-12-top3",
-   "ts": "2026-07-12T12:07:23.446Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-12-a",
-   "ts": "2026-07-12T13:56:19.207Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-12-b",
-   "ts": "2026-07-12T17:08:14.999Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-12-c",
-   "ts": "2026-07-12T21:23:52.969Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-13-task-semana",
-   "ts": "2026-07-13T12:10:59.137Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-13-a",
-   "ts": "2026-07-13T12:10:59.212Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-13-reply-plant-F-1",
-   "ts": "2026-07-13T12:29:53.060Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-13-reply-user-1781114206236-60d0",
-   "ts": "2026-07-13T12:29:53.186Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-13-b",
-   "ts": "2026-07-13T17:30:01.053Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-13-c",
-   "ts": "2026-07-13T21:28:37.840Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-14-task-dia",
-   "ts": "2026-07-14T11:24:17.129Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-14-a",
-   "ts": "2026-07-14T12:47:07.527Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-14-top3",
-   "ts": "2026-07-14T12:47:07.576Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-14-b",
-   "ts": "2026-07-14T16:12:49.768Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-14-c",
-   "ts": "2026-07-14T21:14:31.691Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-15-task-dia",
-   "ts": "2026-07-15T11:27:28.141Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-15-a",
-   "ts": "2026-07-15T12:52:59.106Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-15-b",
-   "ts": "2026-07-15T16:20:01.427Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-15-c",
-   "ts": "2026-07-15T21:29:49.350Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-16-task-dia",
-   "ts": "2026-07-16T11:38:15.019Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-16-a",
-   "ts": "2026-07-16T11:38:15.118Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-16-top3",
-   "ts": "2026-07-16T15:13:02.885Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-16-b",
-   "ts": "2026-07-16T16:43:03.508Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-16-c",
-   "ts": "2026-07-16T21:16:25.904Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-17-task-dia",
-   "ts": "2026-07-17T14:16:40.254Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-17-a",
-   "ts": "2026-07-17T14:16:40.398Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-17-b",
-   "ts": "2026-07-17T17:09:11.600Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-17-c",
-   "ts": "2026-07-17T21:33:17.990Z",
-   "status_code": 201
-  }
- ],
- "daily_summary": {
-  "2026-06-28": {
-   "sent": 3
-  },
-  "2026-06-27": {
-   "sent": 3
-  },
-  "2026-06-11": {
-   "sent": 1
-  },
-  "2026-06-12": {
-   "sent": 14
-  },
-  "2026-06-13": {
-   "sent": 21
-  },
-  "2026-06-14": {
-   "sent": 40
-  },
-  "2026-06-15": {
-   "sent": 19
-  },
-  "2026-06-16": {
-   "sent": 20
-  },
-  "2026-06-17": {
-   "sent": 13
-  },
-  "2026-06-18": {
-   "sent": 3
-  },
-  "2026-06-19": {
-   "sent": 3
-  },
-  "2026-06-20": {
-   "sent": 3
-  },
-  "2026-06-22": {
-   "sent": 3
-  },
-  "2026-06-23": {
-   "sent": 5
-  },
-  "2026-06-24": {
-   "sent": 3
-  },
-  "2026-06-25": {
-   "sent": 3
-  },
-  "2026-06-26": {
-   "sent": 3
-  },
-  "2026-06-29": {
-   "sent": 3
-  },
-  "2026-06-30": {
-   "sent": 3
-  },
-  "2026-07-01": {
-   "sent": 3
-  },
-  "2026-07-02": {
-   "sent": 3
-  },
-  "2026-07-03": {
-   "sent": 3
-  }
- },
- "_updated_at": "2026-07-16T09:07:35Z"
+  "events": [
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-04-task-dia",
+      "ts": "2026-07-04T11:25:03.793Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-04-a",
+      "ts": "2026-07-04T12:43:45.752Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-04-b",
+      "ts": "2026-07-04T16:30:51.471Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-04-top3",
+      "ts": "2026-07-04T16:30:51.597Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-04-expedientes",
+      "ts": "2026-07-04T16:30:51.724Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-04-c",
+      "ts": "2026-07-04T23:34:23.046Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-05-task-dia",
+      "ts": "2026-07-05T11:28:33.784Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-05-a",
+      "ts": "2026-07-05T12:49:53.190Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-05-b",
+      "ts": "2026-07-05T17:07:52.140Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-05-c",
+      "ts": "2026-07-05T22:07:23.659Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-06-task-semana",
+      "ts": "2026-07-06T13:43:00.675Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-06-a",
+      "ts": "2026-07-06T13:43:00.771Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-06-top3",
+      "ts": "2026-07-06T13:43:00.839Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-06-b",
+      "ts": "2026-07-06T16:45:31.825Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-06-c",
+      "ts": "2026-07-06T22:12:57.878Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-08-task-dia",
+      "ts": "2026-07-08T11:45:48.541Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-08-a",
+      "ts": "2026-07-08T11:45:48.668Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-08-top3",
+      "ts": "2026-07-08T14:01:11.534Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-08-b",
+      "ts": "2026-07-08T16:10:35.071Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-08-c",
+      "ts": "2026-07-08T21:49:01.498Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-09-task-dia",
+      "ts": "2026-07-09T15:43:55.252Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-09-a",
+      "ts": "2026-07-09T15:43:55.353Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-09-b",
+      "ts": "2026-07-09T17:33:53.324Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-09-c",
+      "ts": "2026-07-09T22:24:32.409Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-10-task-dia",
+      "ts": "2026-07-10T12:24:06.532Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-10-a",
+      "ts": "2026-07-10T12:24:06.586Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-10-top3",
+      "ts": "2026-07-10T12:24:06.793Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-10-b",
+      "ts": "2026-07-10T17:08:22.024Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-10-c",
+      "ts": "2026-07-10T21:19:54.318Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-11-task-dia",
+      "ts": "2026-07-11T11:02:58.855Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-11-a",
+      "ts": "2026-07-11T12:05:15.061Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-11-b",
+      "ts": "2026-07-11T16:55:56.465Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-11-c",
+      "ts": "2026-07-11T21:06:19.813Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-12-task-dia",
+      "ts": "2026-07-12T11:30:15.017Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-12-top3",
+      "ts": "2026-07-12T12:07:23.446Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-12-a",
+      "ts": "2026-07-12T13:56:19.207Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-12-b",
+      "ts": "2026-07-12T17:08:14.999Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-12-c",
+      "ts": "2026-07-12T21:23:52.969Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-13-task-semana",
+      "ts": "2026-07-13T12:10:59.137Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-13-a",
+      "ts": "2026-07-13T12:10:59.212Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-13-reply-plant-F-1",
+      "ts": "2026-07-13T12:29:53.060Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-13-reply-user-1781114206236-60d0",
+      "ts": "2026-07-13T12:29:53.186Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-13-b",
+      "ts": "2026-07-13T17:30:01.053Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-13-c",
+      "ts": "2026-07-13T21:28:37.840Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-14-task-dia",
+      "ts": "2026-07-14T11:24:17.129Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-14-a",
+      "ts": "2026-07-14T12:47:07.527Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-14-top3",
+      "ts": "2026-07-14T12:47:07.576Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-14-b",
+      "ts": "2026-07-14T16:12:49.768Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-14-c",
+      "ts": "2026-07-14T21:14:31.691Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-15-task-dia",
+      "ts": "2026-07-15T11:27:28.141Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-15-a",
+      "ts": "2026-07-15T12:52:59.106Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-15-b",
+      "ts": "2026-07-15T16:20:01.427Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-15-c",
+      "ts": "2026-07-15T21:29:49.350Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-16-task-dia",
+      "ts": "2026-07-16T11:38:15.019Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-16-a",
+      "ts": "2026-07-16T11:38:15.118Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-16-top3",
+      "ts": "2026-07-16T15:13:02.885Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-16-b",
+      "ts": "2026-07-16T16:43:03.508Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-16-c",
+      "ts": "2026-07-16T21:16:25.904Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-17-task-dia",
+      "ts": "2026-07-17T14:16:40.254Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-17-a",
+      "ts": "2026-07-17T14:16:40.398Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-17-b",
+      "ts": "2026-07-17T17:09:11.600Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-17-c",
+      "ts": "2026-07-17T21:33:17.990Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-18-task-dia",
+      "ts": "2026-07-18T13:47:56.563Z",
+      "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-18-a",
+      "ts": "2026-07-18T13:47:56.638Z",
+      "status_code": 201
+    }
+  ],
+  "daily_summary": {
+    "2026-06-28": {
+      "sent": 3
+    },
+    "2026-06-27": {
+      "sent": 3
+    },
+    "2026-06-11": {
+      "sent": 1
+    },
+    "2026-06-12": {
+      "sent": 14
+    },
+    "2026-06-13": {
+      "sent": 21
+    },
+    "2026-06-14": {
+      "sent": 40
+    },
+    "2026-06-15": {
+      "sent": 19
+    },
+    "2026-06-16": {
+      "sent": 20
+    },
+    "2026-06-17": {
+      "sent": 13
+    },
+    "2026-06-18": {
+      "sent": 3
+    },
+    "2026-06-19": {
+      "sent": 3
+    },
+    "2026-06-20": {
+      "sent": 3
+    },
+    "2026-06-22": {
+      "sent": 3
+    },
+    "2026-06-23": {
+      "sent": 5
+    },
+    "2026-06-24": {
+      "sent": 3
+    },
+    "2026-06-25": {
+      "sent": 3
+    },
+    "2026-06-26": {
+      "sent": 3
+    },
+    "2026-06-29": {
+      "sent": 3
+    },
+    "2026-06-30": {
+      "sent": 3
+    },
+    "2026-07-01": {
+      "sent": 3
+    },
+    "2026-07-02": {
+      "sent": 3
+    },
+    "2026-07-03": {
+      "sent": 3
+    }
+  },
+  "_updated_at": "2026-07-16T09:07:35Z"
 }
