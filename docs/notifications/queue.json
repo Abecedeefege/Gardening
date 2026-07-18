@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-18T16:56:20.435Z",
+  "_updated_at": "2026-07-18T21:05:51.341Z",
   "notifications": [
     {
       "id": "2026-07-18-task-dia",
@@ -45,8 +45,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-01-horoscopo-jardin.html",
       "send_at": "2026-07-18T18:00:00-03:00",
       "expires_at": "2026-07-18T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-18T21:05:51.339Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-18"
     },
