@@ -1,0 +1,386 @@
+{
+ "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
+ "_updated": "2026-07-18",
+ "plants": {
+  "F-1": {
+   "common": "Guayabo del país",
+   "paginas_historicas": 10,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-secomenta.html",
+     "fact": "petalos golosina / fumagina hoy"
+    }
+   ]
+  },
+  "F-2": {
+   "common": "Bignonia rosada / Podranea",
+   "paginas_historicas": 4,
+   "featured": []
+  },
+  "F-3": {
+   "common": "Fotinia",
+   "paginas_historicas": 3,
+   "featured": []
+  },
+  "F-4": {
+   "common": "Ciruelo de jardín",
+   "paginas_historicas": 6,
+   "featured": []
+  },
+  "F-5": {
+   "common": "Coronita de novia (?)",
+   "paginas_historicas": 4,
+   "featured": []
+  },
+  "F-7": {
+   "common": "Abelia",
+   "paginas_historicas": 5,
+   "featured": []
+  },
+  "F-8": {
+   "common": "Aguaribay / Molle",
+   "paginas_historicas": 7,
+   "featured": []
+  },
+  "F-9": {
+   "common": "Ligustro",
+   "paginas_historicas": 6,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-secomenta.html",
+     "fact": "invasora Sudamerica"
+    }
+   ]
+  },
+  "F-10": {
+   "common": "Fresno (americano)",
+   "paginas_historicas": 4,
+   "featured": []
+  },
+  "B-1": {
+   "common": "Santa Rita / Buganvilia",
+   "paginas_historicas": 8,
+   "featured": []
+  },
+  "B-2": {
+   "common": "Jazmín (a confirmar variedad)",
+   "paginas_historicas": 4,
+   "featured": []
+  },
+  "B-3": {
+   "common": "Jazmín de leche / estrellado",
+   "paginas_historicas": 5,
+   "featured": []
+  },
+  "B-4": {
+   "common": "Hibisco / Rosa china",
+   "paginas_historicas": 6,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-regalo-invierno.html",
+     "fact": "flor nacional 3 paises / codigo del pelo / muro norte"
+    }
+   ]
+  },
+  "B-5a": {
+   "common": "Hortensia",
+   "paginas_historicas": 5,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-regalo-invierno.html",
+     "fact": "clavos oxidados=azul / cal=rosa"
+    }
+   ]
+  },
+  "B-6": {
+   "common": "Esparraguera cola de zorro",
+   "paginas_historicas": 7,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-horoscopo(semana).html",
+     "fact": "no es helecho / cladodios / bayas toxicas"
+    }
+   ]
+  },
+  "B-7": {
+   "common": "Azarero / Pitósporo",
+   "paginas_historicas": 4,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-horoscopo(semana).html",
+     "fact": "perfume azahar / bonsai"
+    }
+   ]
+  },
+  "B-8": {
+   "common": "Palmera pindó",
+   "paginas_historicas": 7,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-horoscopo(semana).html",
+     "fact": "Romanzoff / golosina coco-banana / fruta julio"
+    }
+   ]
+  },
+  "B-9": {
+   "common": "Crespón / Mirto de crepe",
+   "paginas_historicas": 8,
+   "featured": []
+  },
+  "B-10": {
+   "common": "Lavanda",
+   "paginas_historicas": 8,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-regalo-invierno.html",
+     "fact": "lavare / aromaterapia / bolsita almohada"
+    }
+   ]
+  },
+  "B-12": {
+   "common": "Cinta / Lazo de amor",
+   "paginas_historicas": 7,
+   "featured": []
+  },
+  "B-13": {
+   "common": "Clivia / Lirio del Cabo",
+   "paginas_historicas": 7,
+   "featured": []
+  },
+  "B-14": {
+   "common": "Lapachillo",
+   "paginas_historicas": 6,
+   "featured": []
+  },
+  "B-15": {
+   "common": "Hiedra común",
+   "paginas_historicas": 6,
+   "featured": []
+  },
+  "B-16": {
+   "common": "Anacahuita",
+   "paginas_historicas": 8,
+   "featured": []
+  },
+  "B-18": {
+   "common": "Rosa de Siria / Althea",
+   "paginas_historicas": 6,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-horoscopo(semana).html",
+     "fact": "flor de un dia / escudo e himno Corea"
+    }
+   ]
+  },
+  "B-20": {
+   "common": "Arbusto caduco a identificar",
+   "paginas_historicas": 4,
+   "featured": []
+  },
+  "B-22": {
+   "common": "Palta uruguaya",
+   "paginas_historicas": 8,
+   "featured": []
+  },
+  "B-23": {
+   "common": "Limonero",
+   "paginas_historicas": 10,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-secomenta.html",
+     "fact": "fruta 12 meses / hibrido 2500 anos"
+    }
+   ]
+  },
+  "B-24": {
+   "common": "Mandarina criolla",
+   "paginas_historicas": 7,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-regalo-invierno.html",
+     "fact": "citrico mas antiguo 3000aC / mandarines / fruta en julio"
+    }
+   ]
+  },
+  "B-25": {
+   "common": "Gardenia / Jazmín del Cabo",
+   "paginas_historicas": 6,
+   "featured": []
+  },
+  "B-26": {
+   "common": "Romero",
+   "paginas_historicas": 11,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-secomenta.html",
+     "fact": "unica flor en julio / memoria"
+    }
+   ]
+  },
+  "B-27": {
+   "common": "Mirto común",
+   "paginas_historicas": 4,
+   "featured": []
+  },
+  "B-29": {
+   "common": "Lantana / Camará",
+   "paginas_historicas": 8,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-regalo-invierno.html",
+     "fact": "flores semaforo para polinizadores"
+    }
+   ]
+  },
+  "B-30": {
+   "common": "Durazno",
+   "paginas_historicas": 6,
+   "featured": []
+  },
+  "B-32": {
+   "common": "Viraró",
+   "paginas_historicas": 8,
+   "featured": []
+  },
+  "B-34": {
+   "common": "Mandioca brava (tentativa)",
+   "paginas_historicas": 8,
+   "featured": []
+  },
+  "B-36": {
+   "common": "Palta Haas",
+   "paginas_historicas": 9,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-secomenta.html",
+     "fact": "clon 1926 / 80% mercado"
+    }
+   ]
+  },
+  "B-37": {
+   "common": "Liquidámbar",
+   "paginas_historicas": 9,
+   "featured": []
+  },
+  "B-38": {
+   "common": "Ciruela amarilla",
+   "paginas_historicas": 5,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-horoscopo(semana).html",
+     "fact": "japonesa pero china / florece agosto / vitamina C"
+    }
+   ]
+  },
+  "B-39": {
+   "common": "Pera Williams",
+   "paginas_historicas": 7,
+   "featured": []
+  },
+  "B-40": {
+   "common": "Madreselva china siempreverde",
+   "paginas_historicas": 6,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-horoscopo(semana).html",
+     "fact": "flores insignificantes / bayas para aves / topiaria"
+    }
+   ]
+  },
+  "B-41": {
+   "common": "Caqui / Persimón (identidad en duda)",
+   "paginas_historicas": 8,
+   "featured": []
+  },
+  "B-42": {
+   "common": "Pata de vaca",
+   "paginas_historicas": 6,
+   "featured": []
+  },
+  "B-43": {
+   "common": "Pitósporo",
+   "paginas_historicas": 3,
+   "featured": []
+  },
+  "B-44": {
+   "common": "Evónimo japonés variegado",
+   "paginas_historicas": 4,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-horoscopo(semana).html",
+     "fact": "velos nupciales / color invernal"
+    }
+   ]
+  },
+  "B-45": {
+   "common": "Sin identificar (al lado de la pared, atrás de B-35)",
+   "paginas_historicas": 3,
+   "featured": []
+  },
+  "B-46": {
+   "common": "Vivero / Plantines",
+   "paginas_historicas": 4,
+   "featured": []
+  },
+  "B-48": {
+   "common": "Plantín de roble joven (Quercus sp.)",
+   "paginas_historicas": 6,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-horoscopo(semana).html",
+     "fact": "roble 300 anos / bellota"
+    }
+   ]
+  },
+  "B-49": {
+   "common": "Plantín trifoliado (posible glicinia o leguminosa)",
+   "paginas_historicas": 3,
+   "featured": []
+  },
+  "B-47": {
+   "common": "Plantines de palmera (lote separado)",
+   "paginas_historicas": 5,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-horoscopo(semana).html",
+     "fact": "cania de butia / palmares Castillos / 56 plantines"
+    }
+   ]
+  },
+  "I-1": {
+   "common": "Singonio / Pata de gallo",
+   "paginas_historicas": 3,
+   "featured": []
+  },
+  "I-2": {
+   "common": "Difenbaquia / Caña muda",
+   "paginas_historicas": 6,
+   "featured": [
+    {
+     "date": "2026-07-18",
+     "page": "2026-07-18-secomenta.html",
+     "fact": "oxalato / cana muda"
+    }
+   ]
+  }
+ }
+}

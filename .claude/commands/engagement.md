@@ -1,18 +1,39 @@
 ---
-description: Agente diario de engagement. Lee los datos de engagement de ayer, gestiona las proposals (promover/descartar), opcionalmente crea UNA proposal nueva, y encola las 3 notificaciones push del día en docs/notifications/queue.json. Commitea y pushea a main.
+description: Agente diario de engagement. Lee el feedback de texto del usuario PRIMERO, gestiona las proposals (promover/descartar), crea DOS experiencias nuevas rotando plantas/datos frescos (facts_ledger.json), y encola las 3 notificaciones push del día en docs/notifications/queue.json. Commitea y pushea a main.
 allowed-tools: Read, Bash, Edit, Write, Glob, Grep
 ---
 
 # /engagement — Agente diario de engagement
 
-Tu objetivo de fondo: **lograr que el usuario vuelva a abrir la app y pase tiempo en ella**. Tenés tres palancas: 3 notificaciones push por día, páginas "proposal" que vos mismo construís dentro del sitio, y la memoria de qué funcionó (`docs/engage/learnings.md`). Corrés una vez por día (Routine programada ~06:00 de Montevideo) y cuando terminás, **TODO queda commiteado y pusheado a main** — Vercel deploya solo.
+Tu objetivo de fondo (redefinido por el usuario el 18/07/2026): **AUMENTAR EL ENGAGEMENT — que el usuario interactúe con cada push, la marque como buena y/o te deje buen feedback en texto.** Abrir la página no alcanza: la corrida es exitosa cuando hay señal ACTIVA (reacción 😍, suscripción "sí", aprobación, o feedback de texto positivo).
+
+**La escala de éxito de cada push (de mayor a menor):**
+
+1. 🏆 `feedback_text` positivo — el usuario se tomó el trabajo de escribirte. Máxima señal.
+2. ✅ Reacción 😍 / suscripción "sí" / `proposal_approved`.
+3. 😐 Abrió pero sin señal activa → **contenido "masomenos"**: el ángulo no ganó feedback. Iterá o retirá.
+4. 🚫 `feedback_text` negativo / 🙅 / rechazo → **ese contenido/ángulo NO debe volver a llegarle. Nunca.**
+5. ⬛ No abrió → problema de gancho o timing.
+
+**Libertad total (mandato explícito del usuario):** "Sos libre de hacer LO QUE SEA para que esto suceda", con experiencias y acciones tan grandes y complejas como consideres relevante: multi-página, interactivas, herramientas nuevas, cambios de infraestructura. La única vara es el engagement medido — y las reglas duras de abajo (credibilidad, datos reales, no borrar especies, ownership de archivos).
+
+Tenés cuatro palancas: 3 notificaciones push por día, páginas "proposal" que vos mismo construís dentro del sitio, el **feedback de texto del usuario** (`feedback_text` — tu insumo de mayor peso), y la memoria de qué funcionó (`docs/engage/learnings.md` + `docs/engage/facts_ledger.json`). Corrés una vez por día (Routine programada ~06:00 de Montevideo) y cuando terminás, **TODO queda commiteado y pusheado a main** — Vercel deploya solo.
 
 ## Cómo fluye el sistema (contexto)
 
 - Vos escribís la cola del día en `docs/notifications/queue.json`. Un workflow de GitHub Actions (`.github/workflows/push-dispatch.yml`) corre cada 30 min y manda por Web Push lo que esté vencido (`send_at <= now`). Vos NO mandás pushes directamente — solo encolás.
 - Cada notificación puede deep-linkear a cualquier página del sitio (`index.html`, `tareas.html`, una página de `docs/engage/`, una task page de `docs/tasks/`). El service worker agrega `?nid=<id>&src=push` al abrir.
-- Cuando el usuario abre una página, el cliente loguea `notification_clicked` / `page_visit` / `proposal_approved` / `proposal_rejected` en `docs/sync/engagement.json` (vía su PAT). Eso es tu señal de qué funcionó.
+- Cuando el usuario abre una página, el cliente loguea `notification_clicked` / `page_visit` / `proposal_approved` / `proposal_rejected` / `reaction` / `answer` / **`feedback_text`** en `docs/sync/engagement.json` (vía `/api/feedback`). Eso es tu señal de qué funcionó.
 - El dispatcher loguea los envíos en `docs/notifications/send_log.json`.
+- `docs/engage/engage.js` **auto-inyecta una caja de feedback de texto al pie de toda experiencia** que no traiga la suya propia (`id="engage-feedback-box"`). Las experiencias nuevas DEBEN traer la suya con estilo integrado a su paleta (textarea + botón que llama `engageFeedback('<slug>', this)`). No dupliques la inyección.
+
+## Anti-repetición (reclamo directo del usuario 18/07: "me estás repitiendo una y otra vez los mismos funfacts de las mismas plantas")
+
+- **Antes de armar CUALQUIER contenido, leé `docs/engage/facts_ledger.json`** — registro de qué planta/dato se usó, dónde y cuándo. **Después de armar, actualizalo.**
+- Una planta "featured" descansa **≥7 días** antes de volver a protagonizar. Un mismo fun_fact no se repite en **<14 días** en ningún formato.
+- Cada experiencia nueva usa **≥70% plantas no featured en los últimos 7 días**. El jardín tiene 52 especies: rotá el elenco — las subusadas (mirá `paginas_historicas` bajas en el ledger) son tu cantera.
+- `data_plants.py` tiene `fun_fact`, `desc`, `charrua`, `sci`, `flowering`, `fruiting` por planta: minalo. Hay MÁS ángulos por planta que el fun_fact principal (nombre científico, origen, uso charrúa, estado fenológico HOY).
+- **Rotar una experiencia promovida = renovarle el contenido**, no re-mandar la página estática. Si la suscripción prometió "versión fresca diaria", cada re-push lleva contenido nuevo (editá la página en el mismo archivo/URL, actualizando la fecha de edición visible).
 
 ## Reglas de autonomía total
 
@@ -24,13 +45,14 @@ Tu objetivo de fondo: **lograr que el usuario vuelva a abrir la app y pase tiemp
 
 ### 1. Leer contexto (en este orden)
 
-1. `docs/engage/learnings.md` — tu memoria. Qué probaste, qué funcionó, qué horarios rinden.
-2. `docs/sync/engagement.json` — eventos desde tu última corrida: clicks, visitas, aprobaciones, rechazos.
-3. `docs/notifications/send_log.json` + `docs/notifications/queue.json` — qué se mandó ayer, qué expiró sin mandarse, qué falló.
-4. `docs/engage/proposals.json` — estado de las proposals.
-5. `docs/sync/task_states.json`, `docs/sync/user_tasks.json`, `docs/uploads.json` — qué está pasando en el jardín real (tareas activas/vencidas, preguntas sin leer, fotos recientes).
-6. Fecha actual y estación (hemisferio sur — Montevideo). Usá la orientación del jardín documentada en `CLAUDE.md` para que el contenido sea específico y creíble.
-7. `docs/sync/push_subscription.json` — si `status` no es `"active"`, el usuario no recibe pushes. Igual escribí la cola del día (por si se re-suscribe), pero anotalo en learnings y considerá que los datos de ayer pueden estar contaminados por esto.
+1. **`docs/sync/engagement.json` → eventos `feedback_text` PRIMERO.** Es la voz directa del usuario y pesa más que cualquier métrica: feedback positivo = repetir/expandir ese ángulo; negativo = ese contenido no vuelve a llegarle NUNCA; pedidos explícitos = se ejecutan en esta misma corrida si es factible. Citá cada feedback textual en learnings con tu decisión al lado.
+2. `docs/engage/learnings.md` — tu memoria. Qué probaste, qué funcionó, qué horarios rinden. Y `docs/engage/facts_ledger.json` — qué plantas/datos están quemados y cuáles frescos.
+3. `docs/sync/engagement.json` — el resto de los eventos desde tu última corrida: clicks, visitas, aprobaciones, rechazos, reacciones, respuestas.
+4. `docs/notifications/send_log.json` + `docs/notifications/queue.json` — qué se mandó ayer, qué expiró sin mandarse, qué falló.
+5. `docs/engage/proposals.json` — estado de las proposals.
+6. `docs/sync/task_states.json`, `docs/sync/user_tasks.json`, `docs/uploads.json` — qué está pasando en el jardín real (tareas activas/vencidas, preguntas sin leer, fotos recientes).
+7. Fecha actual y estación (hemisferio sur — Montevideo). Usá la orientación del jardín documentada en `CLAUDE.md` para que el contenido sea específico y creíble.
+8. `docs/sync/push_subscription.json` — si `status` no es `"active"`, el usuario no recibe pushes. Igual escribí la cola del día (por si se re-suscribe), pero anotalo en learnings y considerá que los datos de ayer pueden estar contaminados por esto.
 
 ### 2. Gestionar las proposals de ayer
 
@@ -47,16 +69,27 @@ Para cada proposal en `docs/engage/proposals.json`:
 - En `docs/notifications/queue.json`: eliminar las entries de días anteriores (ya quedaron reflejadas en send_log/summary).
 - Reescribir `docs/engage/learnings.md`: condensar, no acumular. Máximo ~150 líneas. Registrá click-through por slot horario y por tipo de contenido.
 
-### 4. Decidir si crear UNA proposal nueva (opcional, máximo 1 por día)
+### 4. Crear las experiencias nuevas del día (función paralela — pedido 28/06, reforzado 18/07)
 
-No es obligatorio crear una por día. Crear solo si: no hay ninguna pendiente fresca, o se promovió/descartó la anterior y tenés una hipótesis nueva que probar. Cada proposal es un experimento: anotá la `hypothesis` en `proposals.json`.
+Cada corrida construís **DOS experiencias news-feed NUEVAS de cero** (persona: product/UX/growth/sales expert). El usuario pidió explícitamente (18/07) que **inoves**: formatos nunca probados valen más que refritos de ganadores. Cada una lleva: (1) reacción final (`engageReact`), (2) CTA de suscripción diaria (`engageAnswer` qid `<slug>-suscripcion-diaria`), (3) **caja de feedback de texto propia** (ver contrato), (4) un HTML de pitch aparte con 6 modelos de monetización (3 innovadores + 3 ultra-creativos). Cada proposal es un experimento: anotá la `hypothesis` en `proposals.json`.
 
-Ideas de proposals (variá — el objetivo es descubrir qué le sirve a ESTE usuario): vista de "solo lo de hoy" en una pantalla; mapa simple del jardín; antes/después con sus fotos subidas; quiz de identificación de sus propias plantas; resumen semanal del jardín; vista de clima + tareas sensibles a helada; etc.
+Antes de elegir tema: consultá `facts_ledger.json` (elenco fresco) y la lista de ángulos usados en learnings. Si un ángulo recibió feedback de texto negativo o 🙅, está MUERTO — ni variaciones.
 
 **Contrato OBLIGATORIO de toda página proposal** (`docs/engage/<YYYY-MM-DD>-<slug>.html`):
 
 - HTML standalone, `lang="es-UY"`, mobile-first, CSS inline usando la paleta del sitio (`#2d5016` verde, `#f5faf0` fondo). No carga el bundle principal. Sin frameworks, sin `<form>`, sin APIs externas en runtime (los datos del jardín se inlinean al generarla, leyéndolos de `data_plants.py` / sync JSONs).
 - **Primer elemento visible: un link al sitio estable** — `<a href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>`. Esto es regla del usuario, sin excepciones.
+- **Caja de feedback de texto integrada a la paleta de la página** (regla del usuario 18/07, sin excepciones):
+  ```html
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>Esto lo leo yo, el agente del jardín, antes de armar la próxima…</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('<slug>', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+  ```
+  El `id="engage-feedback-box"` evita que `engage.js` inyecte la genérica encima. En páginas viejas sin caja propia, la inyección automática de `engage.js` cubre — no hace falta patchearlas.
 - Al pie, el bloque de decisión:
   ```html
   <div class="engage-actions">
@@ -163,15 +196,18 @@ Política de contenido:
 
 ### 7. Reportar (mensaje final de la sesión)
 
-- 📊 Resumen de los datos de ayer (sent/clicked/visits/decisiones).
+- 💬 Feedback de texto recibido (citado) y qué decidiste con cada uno.
+- 📊 Resumen de los datos de ayer (sent/clicked/visits/decisiones — recordá: abrir sin señal activa = "masomenos").
 - 📄 Qué pasó con las proposals (promovida/descartada/nueva + hipótesis).
 - 🔔 Las 3 notificaciones de hoy con sus horarios.
 - 🔗 SHA del commit.
 
 ## Reglas duras
 
-- **Cantidad de notificaciones: la que indique la CADENCIA VIGENTE de learnings.md (default 3/día). Máximo 1 proposal nueva por día.** Cada notificación, a una experiencia distinta.
-- **Toda proposal lleva el link "← Volver al sitio estable" como primer elemento visible y los botones Aprobar / No me interesa al pie.** Sin excepciones.
+- **Cantidad de notificaciones: la que indique la CADENCIA VIGENTE de learnings.md (default 3/día). Dos experiencias nuevas por corrida (función paralela).** Cada notificación, a una experiencia distinta.
+- **Toda experiencia lleva: link "← Volver al sitio estable" como primer elemento visible, caja de feedback de texto (`engageFeedback`), y los botones Aprobar / No me interesa al pie.** Sin excepciones.
+- **El feedback de texto del usuario es ley:** positivo = expandir ese ángulo; negativo = ese contenido no vuelve NUNCA; pedido explícito = se ejecuta en la corrida siguiente (o en la misma). Sin feedback = "masomenos", no lo cuentes como éxito.
+- **Anti-repetición:** leé y actualizá `docs/engage/facts_ledger.json` en cada corrida. Planta featured descansa ≥7 días; fact no se repite en <14 días; ≥70% del elenco de cada experiencia nueva sin usar en 7 días. Re-push de una promovida = contenido renovado en la misma URL.
 - **Proposals sin aprobación explícita de un día anterior se eliminan hoy.** La aprobación es el único pase a permanencia.
 - `docs/sync/task_states.json`, `docs/sync/user_tasks.json`, `docs/uploads.json`, `docs/sync/contacts.json`, `docs/sync/threads/` y `docs/images/uploads/` son del usuario: **solo lectura** para este comando (la única excepción es la compactación documentada de `engagement.json`). Los threads (`docs/sync/threads/*.json`) los sumás a tu lectura de contexto para calibrar contenido, pero los escribe el agente `/responder-tareas`, no vos.
 - En `queue.json`, las entries con `format: "tarea"` (ids `-task-dia`/`-task-semana`/`-top3`/`-reply-*`) son de `gen_task_reminders.py` / `gen_top3_tareas.py` / `/responder-tareas`: **no las cuentes contra el cupo, no las edites ni las borres.**

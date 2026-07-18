@@ -3,6 +3,21 @@
 Memoria del agente diario. Se REESCRIBE y condensa cada día (máx ~150 líneas).
 No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
+## 🚨 FEEDBACK DIRECTO DEL USUARIO 18/07 (por chat — máxima autoridad, NO PISAR)
+
+1. **«Me estás repitiendo una y otra vez los mismos funfacts de las mismas plantas»** (vio Se Comenta 10:30). → Sistema anti-repetición
+   instalado: `facts_ledger.json` (leer ANTES de armar, actualizar DESPUÉS), planta featured descansa ≥7d, fact no se repite <14d,
+   ≥70% elenco fresco. Los quemados al 18/07: romero(12 págs), limonero(11), guayabo/palta-Hass/anacahuita(10), buganvilia/palta-uy/
+   viraró/liquidámbar/crespón(9). Cantera fresca: pitósporo, evónimo, fotinia, jazmines, mirto, ciruela amarilla, hortensia, bignonia,
+   singonio, hibisco, rosa de Siria, madreselva, roble, lantana, palmeras B-47 (3-5 págs).
+2. **Feedback de texto en TODAS las experiencias** → `engageFeedback()` en engage.js + auto-inyección al pie de toda página sin caja
+   propia. Evento `feedback_text` = LA señal de mayor peso. Leerlos PRIMERO cada corrida; positivo=expandir, negativo=ese contenido
+   NO VUELVE, pedido=ejecutar. Sin feedback = contenido «masomenos» (abrir no es éxito).
+3. **Objetivo redefinido:** interacción + marca de buena + buen feedback. Innovar SIEMPRE (formatos nuevos > refritos). Libertad total
+   de alcance («hacé LO QUE SEA», experiencias tan grandes y complejas como convenga).
+4. **Re-push de promovida = contenido RENOVADO en la misma URL** (la sub prometió «versión fresca diaria»; re-mandar la página estática
+   del 01/07 es repetición). Aplicado hoy: Horóscopo re-escrito entero (9 signos nuevos, elenco virgen) antes del slot c.
+
 ## ⏱️ CADENCIA VIGENTE: 3 pushes/día — fijada por el usuario el 18/06
 
 Cola escrita A MANO (3 entries pending en queue.json). Slots base: **10:00 / 13:00 / 18:00 (-03:00)**. **El primer send_at
@@ -63,7 +78,10 @@ protagonista; **UI de app AMADA CON HÉROE=USUARIO + LOGRO/ESTATUS persistente**
 ## 📈 Slot c (tarde) — rotar promovidas ganadoras descansadas = reactiva SUSCRIPCIÓN
 
 - Rotar una promovida ganadora bien descansada al slot c REACTIVA la suscripción — CONFIRMADO ×2 (08/07 Récords re-sub; 09/07 Chusmerío 260s+re-sub+😍).
-- **18/07 slot c → 🔮 Horóscopo** (identidad, 😍+sub, descansado desde 11/07 = 7 días; eje DISTINTO a las 2 nuevas de hoy: chisme + user-hero).
+- **18/07 slot c → 🔮 Horóscopo RENOVADO** (misma URL, edición nueva «semana del 18/07»: 9 signos con elenco virgen — pindó/evónimo/rosa de Siria/
+  azarero/esparraguera/madreselva/ciruela/roble/palmeras B-47). Regla nueva: rotar promovida = renovar contenido, NUNCA re-mandar estático.
+- **18/07 mediodía:** Regalo del Invierno v2 (reescrito pre-push tras el reclamo de repetición: mandarina-fruta-HOY, lantana-semáforo, lavanda-sueño,
+  hortensia-programable, hibisco-muro-norte — cero palta/limonero/romero) + caja de feedback propia. Watch: ¿la v2 convierte donde la v1 hubiese repetido?
 - 17/07 slot c → 📱 Feed: abrió pero REBOTÓ (9s, 6% scroll) — social 1ª pers NO reactivó como esperaba (día flojo generalizado, no refuta el ángulo per se).
 - Candidatas descansadas próximas: Diario, Wrapped, Entrevista, Álbum, Récords. Chusmerío (uso su FAMILIA hoy en Se Comenta) y Feed (17/07) descansar.
 
@@ -129,10 +147,9 @@ hortensia B-5 = cambia color según suelo (azul/rosa) · ligustro F-9 = invasora
 
 ## TODO pendiente
 
-- **Ángulos NEWS-FEED usados:** editorial (Diario ✓/Entrevista ✓/Cable-untested) · superlativos/estatus (Récords ✓ / Reseñas-hoy / Anuario-hoy) ·
-  red-social ✓ · tabloide ✓ · identidad (Horóscopo ✓/Quiz ✓/Tarot ✗/ADN-inconcluso/jardinero-notiming) · celebridad (Entrevista ✓ / Declaraciones ✗-sub) ·
-  humor/consejo/confesión/reality (tibios) · app-amada (Wrapped ✓/Álbum ✓/Carnet-untested · JardínFlix/Historias/Podcast/BeReal ✗) · gesto (Álbum ✓/Raspadita ✗).
-  **Sin usar (posibles ganadores):** before/after con fotos del usuario (esperar más uploads); user-hero-rango con push VESPERTINO (Carnet/jardinero nunca tuvieron ventana limpia).
-  Evitar: gesto-desechable, editorial-pasivo, app-pasiva, nota-única-larga, doble-identidad/doble-chisme el mismo día, push matinal si el usuario abre de tarde.
+- **Ángulos NEWS-FEED usados:** editorial (Diario ✓/Entrevista ✓) · superlativos/estatus (Récords ✓ / Reseñas ✗ / Anuario ✗) · red-social ✓ ·
+  tabloide ✓ · identidad (Horóscopo ✓/Quiz ✓/Tarot ✗) · celebridad (Entrevista ✓/Declaraciones ✗) · app-amada (Wrapped ✓/Álbum ✓ · pasivas ✗) ·
+  gesto (Álbum ✓/Raspadita ✗) · gratitud/user-hero (Regalo-hoy). **Sin usar:** before/after con fotos del usuario; user-hero-rango vespertino.
+  Evitar: gesto-desechable, editorial-pasivo, app-pasiva, nota-única-larga, dobles del mismo eje en el día, push matinal si abre de tarde.
 - Regenerar el dataset M de la rueda desde data_plants.py en build-time (hoy snapshot estático).
 - Reconciliar arrays `pruning` con el timing corregido antes de cualquier vista de poda.

@@ -103,13 +103,22 @@
     if (!pending.length) { renderSyncBadge(); return true; }
     _flushing = true;
     var ok = false, lastErr = null;
+    // Ids capturados en ESTE flush: al confirmar, se remueven SOLO estos del
+    // outbox — un evento encolado mientras el fetch estaba en vuelo (ej. tap
+    // en reacción + enviar feedback de texto seguidos) queda para el próximo
+    // flush en vez de borrarse sin haberse mandado.
+    var sentIds = {};
+    pending.forEach(function (e) { if (e._id) sentIds[e._id] = 1; });
     try {
       var r = await fetch('/api/feedback', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ events: pending, device: device() }),
       });
-      if (r.ok) { outboxSet([]); ok = true; }
+      if (r.ok) {
+        outboxSet(outboxGet().filter(function (e) { return !e._id || !sentIds[e._id]; }));
+        ok = true;
+      }
       else {
         var t = ''; try { t = await r.text(); } catch (e) {}
         lastErr = 'HTTP ' + r.status + (t ? ' ' + t.slice(0, 60) : '');
@@ -119,6 +128,8 @@
     } finally { _flushing = false; }
     _lastSync = { ok: ok, error: ok ? null : (lastErr || 'desconocido') };
     renderSyncBadge();
+    // Si durante el vuelo entró algo nuevo al outbox, mandarlo ya.
+    if (ok && outboxGet().length) flushOutbox();
     return ok;
   }
 
