@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-18T14:52:20.334Z",
+  "_updated_at": "2026-07-18T14:52:34.835Z",
   "events": [
     {
       "_id": "mr6bb5o4uttfx9",
@@ -901,6 +901,15 @@
       "nid": "2026-07-18-a",
       "src": "push",
       "ts": "2026-07-18T14:52:20.281Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrqhkbbxjcs35r",
+      "type": "dwell",
+      "seconds": 15,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-18-secomenta.html",
+      "ts": "2026-07-18T14:52:35.037Z",
       "device": "sin-nombre"
     }
   ],
