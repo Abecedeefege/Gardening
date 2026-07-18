@@ -257,6 +257,58 @@
     document.body.appendChild(box);
   }
 
+  // --- Feedback libre en texto (pedido del usuario 18/07) ---
+  // El texto que escriba acá lo lee el agente en su próxima pasada y es la
+  // señal de MAYOR peso: feedback positivo = repetir el ángulo; negativo =
+  // no volver a mandarlo; sin feedback = contenido "masomenos".
+  // Uso en página (opcional, con estilo propio): un contenedor con
+  // id="engage-feedback-box" que tenga un <textarea> y un botón que llame
+  // engageFeedback('<slug>', this). Si la página NO trae el suyo, este
+  // archivo inyecta uno estándar al pie automáticamente.
+  window.engageFeedback = function (targetId, btn) {
+    btn = btn || ((typeof event !== 'undefined' && event) ? event.target : null);
+    var box = btn && btn.closest ? (btn.closest('#engage-feedback-box') || btn.closest('section') || btn.parentElement) : document.getElementById('engage-feedback-box');
+    var ta = box ? box.querySelector('textarea') : null;
+    var hint = box ? box.querySelector('.fb-hint') : null;
+    var text = ta ? ta.value.trim() : '';
+    if (!text) { if (hint) hint.textContent = 'Escribí algo primero — aunque sea una palabra.'; if (ta) ta.focus(); return; }
+    if (btn) btn.disabled = true;
+    if (ta) ta.disabled = true;
+    if (hint) hint.textContent = 'Guardando…';
+    logEvents([{ type: 'feedback_text', target: targetId || pageName(), text: text.slice(0, 2000),
+      page: pageName(), ts: new Date().toISOString(), device: device() }]).then(function (ok) {
+      if (hint) hint.textContent = ok
+        ? '✓ Recibido. Lo leo en la próxima pasada y ajusto el rumbo con esto.'
+        : '✓ Guardado en este equipo — se sube en cuanto haya conexión.';
+    });
+  };
+
+  // Caja de feedback estándar: se inyecta en TODA experiencia que no traiga
+  // la suya propia (id engage-feedback-box). Estilo autocontenido (tarjeta
+  // oscura sólida) para funcionar sobre cualquier paleta.
+  function injectFeedbackControl() {
+    if (!document.body || document.getElementById('engage-feedback-box')) return;
+    var slug = pageName().replace(/^engage\//, '').replace(/\.html$/, '');
+    var box = document.createElement('section');
+    box.id = 'engage-feedback-box';
+    box.style.cssText = 'max-width:560px;margin:20px auto 6px;padding:18px 16px;border-radius:16px;' +
+      'background:#14231a;border:1px solid rgba(255,255,255,.15);color:#eef4ec;text-align:center;' +
+      'font:400 14px/1.5 -apple-system,BlinkMacSystemFont,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.25);';
+    box.innerHTML =
+      '<div style="font-weight:900;font-size:16.5px;margin-bottom:4px;">💬 Decime qué te pareció</div>' +
+      '<div style="color:#b7c6bb;font-size:13.5px;max-width:42ch;margin:0 auto 12px;">Esto lo leo yo, el agente del jardín, antes de armar la próxima. Qué te gustó, qué te aburrió, qué querés ver — tu texto pesa más que cualquier botón.</div>' +
+      '<textarea rows="3" placeholder="Escribime lo que quieras…" style="width:100%;box-sizing:border-box;' +
+      'background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:11px;color:#eef4ec;' +
+      'padding:11px 12px;font:inherit;resize:vertical;"></textarea>' +
+      '<button type="button" onclick="engageFeedback(\'' + slug.replace(/'/g, '') + '\', this)" ' +
+      'style="margin-top:10px;background:#2f7d4f;color:#fff;border:none;border-radius:12px;padding:12px 20px;' +
+      'font:800 14.5px -apple-system,BlinkMacSystemFont,sans-serif;cursor:pointer;">Enviar feedback</button>' +
+      '<span class="fb-hint" style="display:block;margin-top:9px;font-size:12.5px;font-weight:700;color:#8fd06a;min-height:1.2em;"></span>';
+    var unsub = document.getElementById('engage-unsub');
+    if (unsub && unsub.parentElement) unsub.parentElement.insertBefore(box, unsub);
+    else document.body.appendChild(box);
+  }
+
   // --- Reacciones granulares (😍/🙂/😐/🙅) ---
   // Uso en la página: <button onclick="engageReact('<page_id>','love', this)">😍</button>
   function markSelected(btn) {
@@ -317,7 +369,7 @@
   });
   window.addEventListener('pagehide', flushDwell);
 
-  function init() { trackLanding(); injectUnsubControl(); }
+  function init() { trackLanding(); injectUnsubControl(); injectFeedbackControl(); }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {

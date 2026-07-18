@@ -4,7 +4,7 @@
 <meta name="theme-color" content="#0c1a13">
 <title>🎁 El Regalo del Invierno — lo que tu jardín te da hoy</title>
 <meta property="og:title" content="🎁 Tu jardín te está regalando cosas ahora mismo">
-<meta property="og:description" content="En pleno invierno, con casi todo dormido, mantenés 52 especies vivas. Limón los 365 días, romero en flor justo ahora, un linaje de 1926. Mirá todo lo que te da.">
+<meta property="og:description" content="En pleno invierno mantenés 52 especies vivas. El cítrico más antiguo del mundo en fruta hoy, un semáforo para abejas, mejor sueño y hasta el color que vos elijas. Mirá todo lo que te da.">
 <style>
   :root{
     --bg:#0c1a13; --bg2:#102a1b; --ink:#eef4ec; --ink2:#bcccbf; --ink3:#7d8f82;
@@ -46,6 +46,7 @@
   .gift .code{ margin-left:auto; font-size:11px; font-weight:800; color:var(--ink3); border:1px solid var(--line); border-radius:6px; padding:2px 7px; align-self:flex-start; }
   .gift .txt{ font-size:14.5px; color:var(--ink); margin-top:10px; }
   .gift .txt em{ color:var(--oro2); font-style:normal; font-weight:600; }
+  .gift .hoy{ font-size:11.5px; color:var(--cielo); font-weight:800; margin-top:9px; border-top:1px solid var(--line); padding-top:8px; }
   .gift.now{ border-color:rgba(79,210,192,.32); }
   .gift.now .tag{ color:var(--cielo); }
 
@@ -70,6 +71,14 @@
   .sub-blk h3{ color:var(--oro2); }
   .sub-blk .si{ background:var(--oro); color:#2a1e04; border-color:transparent; }
   .sub-blk .q-hint{ color:var(--oro2); }
+
+  .fb-blk textarea{ width:100%; margin-top:12px; background:rgba(238,244,236,.06); border:1px solid var(--line);
+    border-radius:12px; color:var(--ink); padding:12px 13px; font:400 14.5px/1.5 var(--sans); resize:vertical; }
+  .fb-blk textarea::placeholder{ color:var(--ink3); }
+  .fb-blk .fb-send{ margin-top:11px; background:var(--verde); color:#fff; border:none; border-radius:12px;
+    padding:12px 22px; font:800 14.5px var(--sans); cursor:pointer; transition:transform .12s; }
+  .fb-blk .fb-send:active{ transform:scale(.95); }
+  .fb-blk .fb-hint{ display:block; margin-top:9px; font-size:12.5px; color:var(--lima); font-weight:700; min-height:1.2em; }
 
   .engage-actions{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:8px 0 4px; padding:14px 0; }
   .engage-actions button{ font-family:var(--sans); font-weight:900; font-size:15px; cursor:pointer; border-radius:13px; padding:13px 18px; border:1px solid var(--line); transition:transform .12s; }
@@ -97,28 +106,33 @@
   </header>
 
   <div class="gift now reveal">
-    <div class="top"><div class="av">🍋</div><div><div class="tag">🎁 tu regalo de todos los días</div><div class="nm">Limón, los 365 días</div></div><span class="code">B-23</span></div>
-    <div class="txt">Mientras el resto del país se queda sin cítricos, tu limonero da fruta <em>los 12 meses del año</em> — no conoce el invierno. Tenés para el mate, la limonada y la cocina todo el año. Y ni existe en la naturaleza: es un híbrido de 2.500 años. Tuyo.</div>
-  </div>
-
-  <div class="gift now reveal">
-    <div class="top"><div class="av">💜</div><div><div class="tag">🎁 floreciendo para vos ahora</div><div class="nm">El único perfume del invierno</div></div><span class="code">B-26</span></div>
-    <div class="txt">En el jardín más callado del año, tu romero es <em>el único que está en flor justo ahora</em> — el único que florece en julio. Un regalo de aroma cuando nada más se anima. Bonus: olerlo <em>mejora la memoria</em>, lo dice la ciencia.</div>
+    <div class="top"><div class="av">🍊</div><div><div class="tag">🎁 en fruta ahora mismo</div><div class="nm">El cítrico más antiguo del mundo</div></div><span class="code">B-24</span></div>
+    <div class="txt">Tu mandarina criolla es descendiente directa del <em>cítrico más antiguo que se conoce: 3000 a.C.</em> Su nombre viene de los «mandarines», los funcionarios de la China imperial de túnica naranja. Y justo en julio, cuando menos color hay, te lo devuelve <em>cargada de fruta</em>.</div>
+    <div class="hoy">● HOY: en plena temporada de fruta — julio es su mes</div>
   </div>
 
   <div class="gift reveal">
-    <div class="top"><div class="av">🥑</div><div><div class="tag">🎁 un pedazo de historia, tuyo</div><div class="nm">Sos dueño de un linaje de 1926</div></div><span class="code">B-36</span></div>
-    <div class="txt">Tu palta Hass desciende de <em>un solo árbol de 1926</em>: casi el 80% de las paltas del mundo llevan esa sangre. No tenés una planta cualquiera — cuidás un pedacito de historia botánica que el planeta entero comparte. Y con fruto hasta la primavera.</div>
+    <div class="top"><div class="av">🚦</div><div><div class="tag">🎁 un invento nativo, gratis</div><div class="nm">Un semáforo para abejas</div></div><span class="code">B-29</span></div>
+    <div class="txt">Tu lantana hace algo que casi nadie sabe: sus flores <em>cambian de color a medida que envejecen</em> — nacen amarillas, pasan a naranja y terminan rojas. ¿Para qué? Es un <em>cartel luminoso para los polinizadores</em>: les avisa cuáles conviene visitar. Ingeniería nativa funcionando en tu cantero.</div>
+    <div class="hoy">● Nativa — una de tus 10 especies del monte criollo</div>
   </div>
 
   <div class="gift reveal">
-    <div class="top"><div class="av">🌳</div><div><div class="tag">🎁 tu granito de país</div><div class="nm">Cuidás una especie protegida</div></div><span class="code">B-16</span></div>
-    <div class="txt">Tu anacahuita está <em>protegida por ley en Uruguay desde 1986</em>. Tenerla viva y sana es, literalmente, cuidar patrimonio natural del país. De tus 52 especies, <em>10 son nativas</em> — un cachito de monte uruguayo, sostenido por vos.</div>
+    <div class="top"><div class="av">🌙</div><div><div class="tag">🎁 mejor sueño, cosechable hoy</div><div class="nm">Un somnífero en el cantero</div></div><span class="code">B-10</span></div>
+    <div class="txt">Tu lavanda está verde también en invierno, y su aceite esencial <em>relaja de verdad — aromaterapia comprobada</em>. Los romanos la echaban al baño: de ahí su nombre («lavare», lavar). El regalo: cortá unas ramitas hoy, armá una bolsita y <em>ponela bajo la almohada</em>.</div>
+    <div class="hoy">● HOY: las ramitas están listas para cortar, aun en julio</div>
   </div>
 
   <div class="gift reveal">
-    <div class="top"><div class="av">🌿</div><div><div class="tag">🎁 aire limpio, gratis</div><div class="nm">Tu casa respira mejor</div></div><span class="code">B-12</span></div>
-    <div class="txt">Tu cinta figura en la <em>lista de la NASA</em> de plantas que purifican el aire de interiores. Mientras la mirás, ella limpia el aire que respirás — un regalo silencioso que trabaja las 24 horas, sin pedirte casi nada.</div>
+    <div class="top"><div class="av">🎨</div><div><div class="tag">🎁 el color lo elegís vos</div><div class="nm">Una flor programable</div></div><span class="code">B-5a</span></div>
+    <div class="txt">Tu hortensia es la única planta del jardín que <em>te deja elegir de qué color va a florecer</em>: si enterrás 3-5 clavos oxidados (o borra de café) al pie, sale <em>azul</em>; con un poco de cal, sale <em>rosa</em>. Y el momento de programarla es ahora, en invierno, para que la primavera traiga tu color.</div>
+    <div class="hoy">● HOY: enterrá los clavos esta semana → flores azules en primavera</div>
+  </div>
+
+  <div class="gift reveal">
+    <div class="top"><div class="av">🌺</div><div><div class="tag">🎁 tu embajada tropical</div><div class="nm">La flor nacional de 3 países</div></div><span class="code">B-4</span></div>
+    <div class="txt">Tu hibisco es la flor nacional de <em>Malasia, Corea del Sur y Hawái</em> — y vive en tu muro norte, el lado que <em>recibe sol todo el día en invierno</em>: el mejor asiento de la casa. Dato de su tierra: llevarla en el pelo a la izquierda decía «soltera», a la derecha «casada».</div>
+    <div class="hoy">● Instalado en el muro norte — el rincón más cálido de tu jardín hoy</div>
   </div>
 
   <!-- balance del invierno -->
@@ -127,9 +141,9 @@
     <p>Lo que sostenés mientras casi todo el hemisferio duerme.</p>
     <div class="grid">
       <div><div class="n">52</div><div class="l">especies vivas hoy</div></div>
+      <div><div class="n">5</div><div class="l">especies con fruta este julio</div></div>
+      <div><div class="n">30</div><div class="l">perennes verdes ahora</div></div>
       <div><div class="n">10</div><div class="l">nativas del Uruguay</div></div>
-      <div><div class="n">11</div><div class="l">frutales dándote comida</div></div>
-      <div><div class="n">365</div><div class="l">días de limón al año</div></div>
     </div>
   </section>
 
@@ -148,12 +162,21 @@
   <!-- suscripción -->
   <section class="blk sub-blk reveal">
     <h3>🎁 Un regalo nuevo cada día</h3>
-    <p>Cada mañana te mostramos otra cosa que tu jardín te está dando <b>hoy</b> —lo que florece, lo que da fruta, lo que te limpia el aire—. Un motivo por día para acordarte de todo lo que cuidás. ¿La querés?</p>
+    <p>Cada mañana te mostramos otra cosa que tu jardín te está dando <b>hoy</b> —siempre una planta distinta, siempre un dato que no viste antes—. ¿La querés?</p>
     <div class="rowbtns">
       <button type="button" class="si" onclick="engageAnswer('regalo-suscripcion-diaria','si', this)">🎁 Sí, un regalo cada día</button>
       <button type="button" onclick="engageAnswer('regalo-suscripcion-diaria','no', this)">No, gracias</button>
     </div>
     <span class="q-hint"></span>
+  </section>
+
+  <!-- feedback libre -->
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>Esto lo leo yo, el agente del jardín, antes de armar la próxima: qué te gustó, qué te aburrió, qué querés ver. Tu texto pesa más que cualquier botón.</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('regalo', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
   </section>
 
   <!-- decisión -->
@@ -164,7 +187,7 @@
 
   <footer class="pie">
     <a href="2026-07-18-regalo-invierno-pitch.html">💼 Cómo se vende esto</a>
-    <div class="cred">Balance armado con datos 100% reales del catálogo Pacha Mama · cada regalo se apoya en un hecho verificado (producción, rareza, uso, estado actual) con código de catálogo · números de especies verificados · 18/07/2026</div>
+    <div class="cred">Balance armado con datos 100% reales del catálogo Pacha Mama · cada regalo se apoya en un hecho verificado (producción, rareza, uso, estado actual) con código de catálogo · 18/07/2026</div>
   </footer>
 
 </div>
