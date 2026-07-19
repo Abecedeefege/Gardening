@@ -722,6 +722,23 @@
         "processed_at": "2026-05-05T17:55:00.000Z"
       },
       "_stamp": "20260505-174014"
+    },
+    {
+      "filename": null,
+      "uploaded_at": "2026-07-18T14:57:55.552Z",
+      "uploaded_by": "landing",
+      "context": "task_text",
+      "task_id": "plant-B-25-3",
+      "task_title_snapshot": "Tratar pulgones + cortar tránsito de hormigas (Gardenia)",
+      "user_context": "Tengo aceite de Neem.  Ajusta para que las instituciones nos ayuden a tratar con eso",
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Usuario ya tiene aceite de neem disponible y pide ajustar el plan para usarlo ahora en vez de esperar la escalada por jabón potásico. how_to actualizado en data_plants.py: neem pasa a paso 2 (uso directo, 3-5 ml/L + emulsionante) con advertencia de no aplicar antes de heladas invernales; jabón potásico queda como refuerzo si no alcanza.",
+        "next_steps": "Aplicar neem al atardecer en noche sin helada prevista, repetir c/7-10 días 2-3 veces, manteniendo la barrera de vaselina contra hormigas en paralelo.",
+        "processed_at": "2026-07-19T12:09:00.000Z"
+      },
+      "_stamp": "20260719-120900"
     }
   ],
   "B-42": [

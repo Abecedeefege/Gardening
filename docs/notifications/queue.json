@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-19T09:20:19.265999",
+  "_updated_at": "2026-07-19T12:14:00.000000",
   "notifications": [
     {
       "id": "2026-07-19-task-dia",
@@ -49,6 +49,19 @@
       "sent_at": null,
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-19"
+    },
+    {
+      "id": "2026-07-19-reply-plant-B-25-3",
+      "title": "🌿 Te contesté: Gardenia",
+      "body": "Ajusté el plan de pulgones para que uses el neem que ya tenés — dosis, cuándo aplicarlo y ojo con las heladas.",
+      "url": "https://gardening-chi.vercel.app/tasks/plant-B-25-3.html",
+      "format": "tarea",
+      "send_at": "2026-07-19T12:14:00-03:00",
+      "expires_at": "2026-07-19T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "responder-tareas 2026-07-19"
     }
   ]
 }
