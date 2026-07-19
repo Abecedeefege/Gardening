@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-18T18:07:55.058Z",
+  "_updated_at": "2026-07-19T00:29:12.940Z",
   "events": [
     {
       "_id": "mr6bb5o4uttfx9",
@@ -955,6 +955,23 @@
       "src": "direct",
       "ts": "2026-07-18T18:07:54.165Z",
       "device": "landing"
+    },
+    {
+      "_id": "mrr25ve1ixyt6v",
+      "type": "notification_clicked",
+      "nid": "2026-07-18-c",
+      "page": "engage/2026-07-01-horoscopo-jardin.html",
+      "ts": "2026-07-19T00:29:13.128Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrr25ve1goneqj",
+      "type": "page_visit",
+      "page": "engage/2026-07-01-horoscopo-jardin.html",
+      "nid": "2026-07-18-c",
+      "src": "push",
+      "ts": "2026-07-19T00:29:13.128Z",
+      "device": "sin-nombre"
     }
   ],
   "daily_summary": {
