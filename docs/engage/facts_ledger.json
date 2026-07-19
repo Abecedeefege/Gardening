@@ -1,6 +1,6 @@
 {
  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-07-18",
+ "_updated": "2026-07-19",
  "plants": {
   "F-1": {
    "common": "Guayabo del país",
@@ -20,13 +20,25 @@
   },
   "F-3": {
    "common": "Fotinia",
-   "paginas_historicas": 3,
-   "featured": []
+   "paginas_historicas": 4,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-09-quiz-planta(reno-19-07).html",
+     "fact": "hibrido Alabama 1940 / brotes rojos viran a verde = defensa"
+    }
+   ]
   },
   "F-4": {
    "common": "Ciruelo de jardín",
-   "paginas_historicas": 6,
-   "featured": []
+   "paginas_historicas": 7,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-19-nombre-apellido.html",
+     "fact": "Pissard Persia 1880 / todos los ciruelos purpura de 1 ejemplar"
+    }
+   ]
   },
   "F-5": {
    "common": "Coronita de novia (?)",
@@ -35,13 +47,25 @@
   },
   "F-7": {
    "common": "Abelia",
-   "paginas_historicas": 5,
-   "featured": []
+   "paginas_historicas": 6,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-19-nombre-apellido.html",
+     "fact": "Clarke Abel China 1817 / naufragio / semillas perdidas"
+    }
+   ]
   },
   "F-8": {
    "common": "Aguaribay / Molle",
-   "paginas_historicas": 7,
-   "featured": []
+   "paginas_historicas": 8,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-19-racha-jardin.html",
+     "fact": "pimienta rosa real / repele mosquitos / sagrado incas-guaranies"
+    }
+   ]
   },
   "F-9": {
    "common": "Ligustro",
@@ -56,23 +80,47 @@
   },
   "F-10": {
    "common": "Fresno (americano)",
-   "paginas_historicas": 4,
-   "featured": []
+   "paginas_historicas": 5,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-09-quiz-planta(reno-19-07).html",
+     "fact": "rebrota fuerte tras poda drastica / resiliencia"
+    }
+   ]
   },
   "B-1": {
    "common": "Santa Rita / Buganvilia",
-   "paginas_historicas": 8,
-   "featured": []
+   "paginas_historicas": 9,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-19-nombre-apellido.html",
+     "fact": "Jeanne Baret 1a mujer circunnavegar / nombre robado 244 anios"
+    }
+   ]
   },
   "B-2": {
    "common": "Jazmín (a confirmar variedad)",
-   "paginas_historicas": 4,
-   "featured": []
+   "paginas_historicas": 5,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-09-quiz-planta(reno-19-07).html",
+     "fact": "se acoda solo / da hijos para regalar / generoso"
+    }
+   ]
   },
   "B-3": {
    "common": "Jazmín de leche / estrellado",
-   "paginas_historicas": 5,
-   "featured": []
+   "paginas_historicas": 6,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-09-quiz-planta(reno-19-07).html",
+     "fact": "no es jazmin verdadero / apocinacea / flor seca infusion China"
+    }
+   ]
   },
   "B-4": {
    "common": "Hibisco / Rosa china",
@@ -131,8 +179,14 @@
   },
   "B-9": {
    "common": "Crespón / Mirto de crepe",
-   "paginas_historicas": 8,
-   "featured": []
+   "paginas_historicas": 9,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-19-nombre-apellido.html",
+     "fact": "Magnus von Lagerstrom amigo de Linneo / flor papel crepe"
+    }
+   ]
   },
   "B-10": {
    "common": "Lavanda",
@@ -147,18 +201,36 @@
   },
   "B-12": {
    "common": "Cinta / Lazo de amor",
-   "paginas_historicas": 7,
-   "featured": []
+   "paginas_historicas": 8,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-19-racha-jardin.html",
+     "fact": "NASA aire limpio 10m2 / perenne sin licencia"
+    }
+   ]
   },
   "B-13": {
    "common": "Clivia / Lirio del Cabo",
-   "paginas_historicas": 7,
-   "featured": []
+   "paginas_historicas": 8,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-19-nombre-apellido.html",
+     "fact": "duquesa Charlotte Clive / vive 100 anios / ejemplares 1830"
+    }
+   ]
   },
   "B-14": {
    "common": "Lapachillo",
-   "paginas_historicas": 6,
-   "featured": []
+   "paginas_historicas": 7,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-09-quiz-planta(reno-19-07).html",
+     "fact": "nativo / prima del lapacho / madera charrua-guarani"
+    }
+   ]
   },
   "B-15": {
    "common": "Hiedra común",
@@ -167,8 +239,14 @@
   },
   "B-16": {
    "common": "Anacahuita",
-   "paginas_historicas": 8,
-   "featured": []
+   "paginas_historicas": 9,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-19-racha-jardin.html",
+     "fact": "protegida por ley desde 1986 / madera charrua"
+    }
+   ]
   },
   "B-18": {
    "common": "Rosa de Siria / Althea",
@@ -231,8 +309,14 @@
   },
   "B-27": {
    "common": "Mirto común",
-   "paginas_historicas": 4,
-   "featured": []
+   "paginas_historicas": 5,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-19-racha-jardin.html",
+     "fact": "sagrado para Venus / licor mirto / perenne invierno"
+    }
+   ]
   },
   "B-29": {
    "common": "Lantana / Camará",
@@ -252,8 +336,14 @@
   },
   "B-32": {
    "common": "Viraró",
-   "paginas_historicas": 8,
-   "featured": []
+   "paginas_historicas": 9,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-09-quiz-planta(reno-19-07).html",
+     "fact": "sepalos rosados crecen post-polinizacion / helicoptero / madera dura"
+    }
+   ]
   },
   "B-34": {
    "common": "Mandioca brava (tentativa)",
@@ -310,8 +400,14 @@
   },
   "B-42": {
    "common": "Pata de vaca",
-   "paginas_historicas": 6,
-   "featured": []
+   "paginas_historicas": 7,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-19-nombre-apellido.html",
+     "fact": "hermanos Bauhin / hoja partida en dos"
+    }
+   ]
   },
   "B-43": {
    "common": "Pitósporo",
@@ -368,8 +464,14 @@
   },
   "I-1": {
    "common": "Singonio / Pata de gallo",
-   "paginas_historicas": 3,
-   "featured": []
+   "paginas_historicas": 4,
+   "featured": [
+    {
+     "date": "2026-07-19",
+     "page": "2026-07-19-racha-jardin.html",
+     "fact": "trepa 10m / pellizcar puntas = mata densa / interior"
+    }
+   ]
   },
   "I-2": {
    "common": "Difenbaquia / Caña muda",

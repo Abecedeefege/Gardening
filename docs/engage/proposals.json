@@ -420,7 +420,7 @@
       "notified_by": [
         "2026-07-09-a"
       ],
-      "result_notes": "PROMOVIDA 10/07. El 09/07 14:33 UY el usuario disparó la señal fuerte del eje identidad: reaction 'quiz-planta'=love (😍) + proposal_approved + dwell 103s/scroll 93%. Amó, leyó largo y aprobó. Matiz: NO quedó registrada respuesta a la suscripción diaria (no tocó el CTA de sub), igual que le pasó al Wrapped ese día — el amor+aprobación llegan pero el tap de suscripción quedó pendiente en ambas experiencias del 09/07 (ver learnings: posible fricción del bloque de sub esa noche, o que aprobar ya se siente como 'sí'). El eje IDENTIDAD/quiz reconfirma que convierte (2ª tras Horóscopo). NOTA: el registro de esta proposal faltaba en proposals.json (la corrida del 09/07 creó la página + queue + learnings pero no la registró acá); se agrega hoy directamente como promoted. Promoción = tarjeta en Ideas → ✨ Experiencias («🌱 ¿Qué planta sos?»). Footer: bloque aprobar/rechazar reemplazado por nota de integración; reacciones/sub siguen logueando."
+      "result_notes": "PROMOVIDA 10/07. El 09/07 14:33 UY el usuario disparó la señal fuerte del eje identidad: reaction 'quiz-planta'=love (😍) + proposal_approved + dwell 103s/scroll 93%. Amó, leyó largo y aprobó. Matiz: NO quedó registrada respuesta a la suscripción diaria (no tocó el CTA de sub), igual que le pasó al Wrapped ese día — el amor+aprobación llegan pero el tap de suscripción quedó pendiente en ambas experiencias del 09/07 (ver learnings: posible fricción del bloque de sub esa noche, o que aprobar ya se siente como 'sí'). El eje IDENTIDAD/quiz reconfirma que convierte (2ª tras Horóscopo). NOTA: el registro de esta proposal faltaba en proposals.json (la corrida del 09/07 creó la página + queue + learnings pero no la registró acá); se agrega hoy directamente como promoted. Promoción = tarjeta en Ideas → ✨ Experiencias («🌱 ¿Qué planta sos?»). Footer: bloque aprobar/rechazar reemplazado por nota de integración; reacciones/sub siguen logueando. || 19/07 ROTACIÓN AL SLOT C con RENOVACIÓN de contenido (regla re-push promovida = contenido nuevo, no estático): los 6 resultados se reescribieron con elenco FRESCO y sin colisión con las 2 experiencias nuevas de hoy — Fresno F-10 (rebrota tras poda=resiliencia), Lapachillo B-14 (nativo/raíces), Jazmín B-2 (generoso/se acoda), Viraró B-32 (paciente/sépalos post-polinización), Jazmín de leche B-3 (sereno/no-verdadero-jazmín), Fotinia F-3 (camaleónica/brotes rojos→verde). Preguntas y scoring intactos. Edición visible '19/07'. Reactivación de sub esperada por eje identidad descansado 10 días."
     },
     {
       "id": "2026-07-09-wrapped-jardin",
@@ -631,22 +631,46 @@
       "title": "🗣️ Se Comenta en el Cantero (news-feed de chusmerío/tabloide, rumores verídicos)",
       "page": "engage/2026-07-18-secomenta.html",
       "created": "2026-07-18",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "El chisme es el formato #1 en retención (Chusmerío 260s RÉCORD +😍+re-sub). Rebrand fresco de la familia tabloide, descansada 3 días, con rumores 100% verídicos anclados en el PRESENTE (romero en flor ahora, guayabo con drama abierto). Ante la vuelta débil vuelvo a un ángulo con conversión previa fuerte. Espero love + sub por asombro/humor/chisme.",
       "notified_by": [
         "2026-07-18-a"
       ],
-      "result_notes": null
+      "result_notes": "Descartada 19/07 por la regla de no-supervivencia (pending de día anterior sin aprobación explícita). 18/07 push a (10:30): ABRIÓ y LEYÓ COMPLETO (dwell 15s, scroll 100%) pero CERO conversión — sin reacción, sin sub, sin aprobar. El chisme/tabloide (familia Chusmerío 260s RÉCORD) esta vez NO reactivó: lectura completa pero pasiva. Hipótesis del flop: el rebrand corto (15s vs 260s del original) no dio el dwell profundo del Chusmerío; el chisme ya se sirvió varias veces y fatiga como ángulo. Chisme entra en descanso largo. Página eliminada."
     },
     {
       "id": "2026-07-18-regalo-invierno",
       "title": "🎁 El Regalo del Invierno (news-feed user-hero de gratitud, «todo lo que tu jardín te da hoy»)",
       "page": "engage/2026-07-18-regalo-invierno.html",
       "created": "2026-07-18",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Patrón Wrapped/Álbum (los 2 que más convirtieron con 😍): HÉROE = USUARIO + logro/estatus persistente. Doy vuelta la cámara: gratitud en vez de tareas. Eje DISTINTO al de ayer (ayer héroe=planta/superlativo, flopeó); acá el usuario es el protagonista de un balance emotivo anclado en el HOY (52 especies vivas en invierno, limón 365 días, romero en flor). Espero love + sub por auto-estatus/orgullo.",
       "notified_by": [
         "2026-07-18-b"
+      ],
+      "result_notes": "Descartada 19/07 por la regla de no-supervivencia (pending de día anterior sin aprobación explícita). 18/07 push b (13:00): NO ABIERTA (sin notification_clicked para 2026-07-18-b). El ángulo gratitud/user-hero no llegó a testearse: falló el GANCHO del push o el timing del mediodía. No refuta el eje user-hero (Wrapped/Álbum convirtieron), pero el título/hook de 'gratitud' no motivó la apertura. Reintentar user-hero con mecánica más fuerte (racha/estatus persistente) en vez de balance emotivo. Página eliminada."
+    },
+    {
+      "id": "2026-07-19-racha-jardin",
+      "title": "🔥 La Racha del Jardín (news-feed user-hero + mecánica de racha/retención estilo Duolingo)",
+      "page": "engage/2026-07-19-racha-jardin.html",
+      "created": "2026-07-19",
+      "status": "pending",
+      "hypothesis": "Ciclo 49 (función paralela, experiencia NUEVA de cero). Tras 5 días flojos (abre todo, convierte nada), traigo la MECÁNICA DE RETENCIÓN más probada del mundo (racha de Duolingo) al jardín, sobre el eje que MÁS convirtió: HÉROE=USUARIO + logro/estatus PERSISTENTE (Wrapped 😍+172s, Álbum 😍, Récords 😍+sub). Formato nunca probado (streak/loop diario). Optimizada específicamente para la SUSCRIPCIÓN: 'te aviso cada día para que no la rompas' = el usuario PIDE la notificación. Racha real y honesta (28 días desde el solsticio 21/06, 52 especies vivas cruzando el invierno). Elenco 100% fresco no-usado-en-7d: Cinta B-12, Anacahuita B-16, Mirto B-27, Aguaribay F-8, Singonio I-1. Espero love + SÍ a sub por miedo-a-romper-la-racha + estatus.",
+      "notified_by": [
+        "2026-07-19-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-19-nombre-apellido",
+      "title": "🕯️ Nombre y Apellido (news-feed editorial: la persona real detrás de cada nombre botánico)",
+      "page": "engage/2026-07-19-nombre-apellido.html",
+      "created": "2026-07-19",
+      "status": "pending",
+      "hypothesis": "Ciclo 49 (función paralela, experiencia NUEVA de cero). Ángulo EDITORIAL-CON-VOZ + AWE + INDIVIDUAL (los ejes que convierten: Diario 😍+sub, Entrevista sub+206s), en un shell nunca usado: las biografías humanas REALES escondidas en los nombres científicos. Lead emocional potente = Jeanne Baret (buganvilia), primera mujer en circunnavegar el mundo, disfrazada de hombre, a la que le robaron el nombre 244 años. Servido como FEED de 6 ítems cortos (no nota-larga, que floppeó). Efecto 'objetos significativos': la historia detrás multiplica el valor de la planta común. Elenco 100% fresco: Buganvilia B-1, Abelia F-7, Crespón B-9, Clivia B-13, Pata de vaca B-42, Ciruelo F-4. Espero love + sub por asombro/emoción + ganas-de-contarlo.",
+      "notified_by": [
+        "2026-07-19-b"
       ],
       "result_notes": null
     }

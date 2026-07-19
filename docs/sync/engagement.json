@@ -2,56 +2,6 @@
   "_updated_at": "2026-07-19T00:29:12.940Z",
   "events": [
     {
-      "_id": "mr6bb5o4uttfx9",
-      "type": "notification_clicked",
-      "nid": "2026-07-04-task-dia",
-      "page": "tareas.html",
-      "ts": "2026-07-04T12:02:06.579Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr6bb5o42w96k6",
-      "type": "page_visit",
-      "page": "tareas.html",
-      "nid": "2026-07-04-task-dia",
-      "src": "push",
-      "ts": "2026-07-04T12:02:06.579Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr6ltskhu8azip",
-      "type": "notification_clicked",
-      "nid": "2026-07-04-b",
-      "page": "engage/2026-07-04-memes-jardin.html",
-      "ts": "2026-07-04T16:56:32.223Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr6ltskhe8zizv",
-      "type": "page_visit",
-      "page": "engage/2026-07-04-memes-jardin.html",
-      "nid": "2026-07-04-b",
-      "src": "push",
-      "ts": "2026-07-04T16:56:32.223Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr6lv6gh3uwexu",
-      "type": "proposal_approved",
-      "proposal_id": "2026-07-04-memes-jardin",
-      "ts": "2026-07-04T16:57:36.881Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr6lvbbxejczcp",
-      "type": "dwell",
-      "seconds": 71,
-      "scroll_pct": 100,
-      "page": "engage/2026-07-04-memes-jardin.html",
-      "ts": "2026-07-04T16:57:43.197Z",
-      "device": "sin-nombre"
-    },
-    {
       "_id": "mr7qmuijflgj7d",
       "type": "notification_clicked",
       "nid": "2026-07-05-task-dia",
@@ -1105,6 +1055,12 @@
       "sent": 0,
       "clicked": 1,
       "visits": 1,
+      "approvals": 1
+    },
+    "2026-07-04": {
+      "sent": 4,
+      "clicked": 2,
+      "visits": 2,
       "approvals": 1
     }
   }

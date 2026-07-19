@@ -96,26 +96,23 @@ protagonista; **UI de app AMADA CON HÉROE=USUARIO + LOGRO/ESTATUS persistente**
 
 ## Estado del sistema
 
-- Push subscription device `pix9`: **active** (verificado 18/07 — sigue active).
+- Push subscription device `pix9`: **active** (verificado 19/07 — sigue active).
 - Logging por `/api/feedback` (outbox localStorage, sin PAT). Confiable desde 15/06.
-- **🟠 SEÑAL DÉBIL SOSTENIDA 16-17/07:** el usuario VUELVE cada día y ABRE los 3 pushes, pero NO convierte. 17/07: los 3 abiertos, CERO
-  reacción/sub/aprobación (Reseñas 3s/18% rebote · Anuario 12s/100% leyó-sin-convertir · Feed 9s/6% rebote). 4º día flojo seguido. Que abra TODO
-  = el CANAL push funciona; el cuello es el CONTENIDO/ángulo, no el timing ni la suscripción. **Watch 18/07:** ¿convierte chisme (Se Comenta) o
-  user-hero (Regalo)? Si sigue 0-conversión 2 días más → bajar a 2/día + reforzar task-dia (único canal que SIEMPRE abre+convierte).
-- **Compactación 18/07:** 03/07 movido a daily_summary (engagement + send_log {sent3}). Ventana viva **04/07–17/07**.
+- **🟠 SEÑAL DÉBIL SOSTENIDA 16-18/07 (5 días):** el usuario VUELVE cada día y ABRE, pero NO convierte. 18/07 (ciclo 48): Se Comenta (chisme) abrió
+  y LEYÓ 100%/15s pero 0 conversión; Regalo (user-hero/gratitud) NO ABRIÓ; Horóscopo abrió 00:29 (medianoche, timing malo). CERO reacción/sub/aprobación,
+  0 feedback_text. Que abra = el CANAL push anda; el cuello es CONTENIDO/ángulo. **Lecciones 18/07:** (a) el CHISME fatigó — lectura completa pero pasiva
+  (15s vs 260s del Chusmerío original); descansar la familia tabloide. (b) gratitud/balance-emotivo NO enganchó el GANCHO (no-open): user-hero necesita
+  MECÁNICA fuerte (racha/estatus), no un balance sentimental. **Watch 19/07:** ¿convierte la RACHA (retención/estatus) o los EXPEDIENTES-humanos (editorial/awe)?
+  Si sigue 0-conversión → considerar 2/día + reforzar task-dia (único canal que SIEMPRE abre+convierte; 19/07 task-dia = Liquidámbar B-37).
+- **Compactación 19/07:** 04/07 movido a daily_summary (engagement {clk2 vis2 apr1} + send_log). Ventana viva **05/07–19/07**.
 - Upload pendiente: 1 foto de B-15 en uploads.json (territorio de /actualizar-tareas, no tocar).
 
 ## Conclusiones de los pushN enviados (por feedback real)
 
 - **08-10/07 (última tanda GANADORA)** — Entrevista (sub+206s), Quiz (😍+103s), Wrapped (😍+172s), Álbum (😍) → 4 PROMOVIDAS.
-- **11-15/07 (racha de fallos + ventana en blanco)** — Historias/Podcast/BeReal (app-pasiva), Raspadita (gesto), Documental (editorial-pasivo),
-  Tarot (mística canibaliza), Exclusiva (nota-larga 33s), ADN (inconcluso), + 15/07 Cable/Carnet SIN DATOS (ventana en blanco). TODOS DROPPED.
-- **16/07 (vuelta débil):** push1 jardinero-sos (identidad user-hero) = NO-OPEN (push matinal en día de actividad vespertina → MISS DE TIMING, no
-  refuta el ángulo). push2 declaraciones (celebridad-feed) = abrió pero sub=NO, sin reacción/aprobación → SOFT-NEGATIVE: el formato feed-de-frases
-  no reprodujo la conversión de la nota-de-tapa individual (Entrevista). push3 Récords slot c = sin datos aún.
-- **17/07 (ciclo 47) — RESULTADO: los 3 abiertos, 0 conversión.** ⭐ Reseñas (rating/estrellas) push a → REBOTE 3s/18%. 🎓 Anuario (superlativo/nostalgia)
-  push b → leyó completo 12s/100% pero SIN reacción/sub/aprobación. 📱 Feed slot c → rebote 9s/6%. **Lección:** el eje ORGULLO/SUPERLATIVO sobre las
-  PLANTAS (héroe=planta) está fatigado — dos superlativos el mismo día saturó. Ambos DROPPED. El usuario abre pero el contenido no lo agarra.
+- **11-17/07 (racha larga de fallos)** — app-pasiva (Historias/Podcast/BeReal), gesto (Raspadita), editorial-pasivo (Documental), mística (Tarot),
+  nota-larga (Exclusiva 33s), celebridad-feed-de-frases (Declaraciones, sub=NO), y **orgullo/superlativo-sobre-PLANTAS fatigado** (Reseñas 3s-rebote / Anuario
+  12s-100%-sin-convertir, 17/07: dos superlativos el mismo día saturó). TODOS DROPPED. Timing: push matinal en día de actividad vespertina = MISS (jardinero-sos 16/07).
 - **18/07 (ciclo 48) — DECISIÓN:** ante 4º día flojo, cambio de EJE (no más orgullo-superlativo-sobre-plantas) y vuelvo a las 2 familias que más
   convirtieron, cada una en un eje bien distinto:
   - 🗣️ **Se Comenta en el Cantero** (`2026-07-18-secomenta.html`) — CHISME/tabloide (familia Chusmerío = 260s RÉCORD +😍+re-sub), rebrand fresco,
@@ -124,6 +121,17 @@ protagonista; **UI de app AMADA CON HÉROE=USUARIO + LOGRO/ESTATUS persistente**
     tu jardín te da hoy» (52 especies vivas, limón 365 días, romero en flor). Da vuelta la cámara: gratitud, no tareas. Push b (13:00). react `regalo`, sub `regalo-suscripcion-diaria`.
   - **Cola ciclo 48:** (a) 10:30 🗣️ Se Comenta; (b) 13:00 🎁 Regalo; (c) 18:00 🔮 Horóscopo (rotación descansada 7d, identidad 😍+sub). + 10:00 task-día
     (Guayabo F-1 fumagina, ALTA); 11:00 top3 (tocó hoy: Gardenia/Guayabo/Liquidámbar). 3 ejes: chisme · user-hero-gratitud · identidad.
+- **18/07 (ciclo 48) — RESULTADO: 5º día flojo, 0 conversión.** Se Comenta (chisme) leyó 100%/15s pero pasivo → DROPPED (chisme fatigado). Regalo
+  (gratitud) NO-OPEN → DROPPED (el hook no motivó apertura). Horóscopo renovado abrió a medianoche (timing) → sin señal. Chisme + gratitud-emotivo fuera por ahora.
+- **19/07 (ciclo 49) — DECISIÓN:** ante 5 días flojos, dos apuestas NUEVAS en los dos ejes que MÁS convirtieron, cada una con un giro de formato nunca probado:
+  - 🔥 **La Racha del Jardín** (`2026-07-19-racha-jardin.html`) — MECÁNICA DE RETENCIÓN (racha Duolingo) sobre user-hero+estatus-persistente (los 😍: Wrapped/Álbum/Récords).
+    Optimizada para SUSCRIPCIÓN: «te aviso para no romperla» = el usuario pide la notif. Racha real (28d desde solsticio 21/06). Elenco fresco: Cinta B-12/Anacahuita B-16/Mirto B-27/Aguaribay F-8/Singonio I-1. Push a (10:30). react `racha-jardin`, sub `racha-jardin-suscripcion-diaria`.
+  - 🕯️ **Nombre y Apellido** (`2026-07-19-nombre-apellido.html`) — EDITORIAL+AWE+INDIVIDUAL (Diario 😍+sub, Entrevista sub+206s): las biografías humanas reales
+    detrás de los nombres científicos, feed de 6 ítems cortos. Lead=Jeanne Baret (buganvilia B-1, 1ª mujer en circunnavegar). Elenco fresco: B-1/F-7/B-9/B-13/B-42/F-4. Push b (13:00). react `nombre-apellido`, sub `nombre-apellido-suscripcion-diaria`.
+  - **Slot c (18:00) → 🌱 Quiz «¿Qué planta sos?» RENOVADO** (identidad, 😍+103s, descansado 10d). Regla re-push=contenido nuevo: 6 resultados reescritos con elenco
+    fresco NO-colisionante (Fresno F-10/Lapachillo B-14/Jazmín B-2/Viraró B-32/Jazmín de leche B-3/Fotinia F-3); preguntas+scoring intactos. Reactivar sub por identidad.
+  - **Cola ciclo 49:** (a)10:30 Racha; (b)13:00 Nombre y Apellido; (c)18:00 Quiz-reno. + 10:00 task-día (Liquidámbar B-37 limpieza copa). top3 NO tocó (próx 20/07).
+    3 ejes distintos y SIN colisión de plantas entre pushes (aprendizaje del reclamo de repetición): retención-racha · editorial-biografías · identidad-quiz.
 - **Meta-conclusión:** convierten social/celebridad-individual/identidad/chisme/orgullo/editorial-con-voz/**app-amada con héroe=usuario** — NUNCA
   gesto solo, editorial pasivo, app pasiva, ni nota-única-larga. FOCO INDIVIDUAL + PRESENTE + asombro/dwell alto. Cuando la señal es débil/ausente,
   volver a ángulos CON conversión previa (no untested) y vigilar la señal binaria «¿volvió?» antes que cualquier matiz de contenido.
