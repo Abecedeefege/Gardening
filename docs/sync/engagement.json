@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-19T18:54:46.468Z",
+  "_updated_at": "2026-07-19T18:55:20.541Z",
   "events": [
     {
       "_id": "mr7qmuijflgj7d",
@@ -939,6 +939,23 @@
       "src": "push",
       "ts": "2026-07-19T18:54:48.349Z",
       "device": "landing"
+    },
+    {
+      "_id": "mrs5oeiowfov8r",
+      "type": "notification_clicked",
+      "nid": "2026-07-19-b",
+      "page": "engage/2026-07-19-nombre-apellido.html",
+      "ts": "2026-07-19T18:55:22.750Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrs5oeiog588za",
+      "type": "page_visit",
+      "page": "engage/2026-07-19-nombre-apellido.html",
+      "nid": "2026-07-19-b",
+      "src": "push",
+      "ts": "2026-07-19T18:55:22.750Z",
+      "device": "sin-nombre"
     }
   ],
   "daily_summary": {
