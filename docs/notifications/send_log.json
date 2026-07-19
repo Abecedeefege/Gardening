@@ -383,6 +383,12 @@
       "nid": "2026-07-19-reply-plant-B-25-3",
       "ts": "2026-07-19T15:56:07.367Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-19-b",
+      "ts": "2026-07-19T16:58:20.322Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {

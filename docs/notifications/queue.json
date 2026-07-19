@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-19T15:56:07.369Z",
+  "_updated_at": "2026-07-19T16:58:20.323Z",
   "notifications": [
     {
       "id": "2026-07-19-task-dia",
@@ -33,8 +33,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-19-nombre-apellido.html",
       "send_at": "2026-07-19T13:00:00-03:00",
       "expires_at": "2026-07-19T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-19T16:58:20.322Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-19"
     },
