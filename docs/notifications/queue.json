@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-20T09:17:21.493322",
+  "_updated_at": "2026-07-20T14:34:53.478Z",
   "notifications": [
     {
       "id": "2026-07-20-task-semana",
@@ -9,8 +9,8 @@
       "format": "tarea",
       "send_at": "2026-07-20T10:00:00-03:00",
       "expires_at": "2026-07-20T21:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-20T14:34:53.299Z",
       "fail_reason": null,
       "created_by": "gen_task_reminders 2026-07-20"
     },
@@ -21,8 +21,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-20-quiniela-jardin.html",
       "send_at": "2026-07-20T10:30:00-03:00",
       "expires_at": "2026-07-20T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-20T14:34:53.398Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-20"
     },
@@ -58,8 +58,8 @@
       "format": "tarea",
       "send_at": "2026-07-20T11:00:00-03:00",
       "expires_at": "2026-07-20T21:30:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-20T14:34:53.477Z",
       "fail_reason": null,
       "created_by": "gen_top3_tareas 2026-07-20"
     }
