@@ -2,92 +2,6 @@
   "_updated_at": "2026-07-19T18:55:20.541Z",
   "events": [
     {
-      "_id": "mr7qmuijflgj7d",
-      "type": "notification_clicked",
-      "nid": "2026-07-05-task-dia",
-      "page": "tareas.html",
-      "ts": "2026-07-05T11:58:52.407Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr7qmuijktbsal",
-      "type": "page_visit",
-      "page": "tareas.html",
-      "nid": "2026-07-05-task-dia",
-      "src": "push",
-      "ts": "2026-07-05T11:58:52.407Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr7vw0xqbxzlwq",
-      "type": "notification_clicked",
-      "nid": "2026-07-05-a",
-      "page": "engage/2026-07-05-tasacion-jardin.html",
-      "ts": "2026-07-05T14:25:58.715Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr7vw0xqdp90wq",
-      "type": "page_visit",
-      "page": "engage/2026-07-05-tasacion-jardin.html",
-      "nid": "2026-07-05-a",
-      "src": "push",
-      "ts": "2026-07-05T14:25:58.715Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr7w0222alw0d6",
-      "type": "reaction",
-      "target": "tasacion",
-      "value": "no",
-      "page": "engage/2026-07-05-tasacion-jardin.html",
-      "ts": "2026-07-05T14:29:06.793Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr7w03f09ruy8t",
-      "type": "answer",
-      "qid": "tasacion-suscripcion-diaria",
-      "value": "no",
-      "page": "engage/2026-07-05-tasacion-jardin.html",
-      "ts": "2026-07-05T14:29:08.556Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr7w04wjhie6d0",
-      "type": "proposal_rejected",
-      "proposal_id": "2026-07-05-tasacion-jardin",
-      "ts": "2026-07-05T14:29:10.483Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr7w09uaf7ldzl",
-      "type": "dwell",
-      "seconds": 198,
-      "scroll_pct": 100,
-      "page": "engage/2026-07-05-tasacion-jardin.html",
-      "ts": "2026-07-05T14:29:16.882Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr8cqwidtkbmmu",
-      "type": "dwell",
-      "seconds": 25,
-      "scroll_pct": 100,
-      "page": "engage/mundo-jardin.html",
-      "ts": "2026-07-05T22:17:53.173Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr8cr3y5jzx45e",
-      "type": "dwell",
-      "seconds": 9,
-      "scroll_pct": 100,
-      "page": "engage/mundo-jardin.html",
-      "ts": "2026-07-05T22:18:02.813Z",
-      "device": "sin-nombre"
-    },
-    {
       "_id": "mr9ceqqfryq3p7",
       "type": "notification_clicked",
       "nid": "2026-07-06-task-semana",
@@ -1096,6 +1010,12 @@
       "clicked": 2,
       "visits": 2,
       "approvals": 1
+    },
+    "2026-07-05": {
+      "sent": 0,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
     }
   }
 }

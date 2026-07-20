@@ -655,22 +655,46 @@
       "title": "🔥 La Racha del Jardín (news-feed user-hero + mecánica de racha/retención estilo Duolingo)",
       "page": "engage/2026-07-19-racha-jardin.html",
       "created": "2026-07-19",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 49 (función paralela, experiencia NUEVA de cero). Tras 5 días flojos (abre todo, convierte nada), traigo la MECÁNICA DE RETENCIÓN más probada del mundo (racha de Duolingo) al jardín, sobre el eje que MÁS convirtió: HÉROE=USUARIO + logro/estatus PERSISTENTE (Wrapped 😍+172s, Álbum 😍, Récords 😍+sub). Formato nunca probado (streak/loop diario). Optimizada específicamente para la SUSCRIPCIÓN: 'te aviso cada día para que no la rompas' = el usuario PIDE la notificación. Racha real y honesta (28 días desde el solsticio 21/06, 52 especies vivas cruzando el invierno). Elenco 100% fresco no-usado-en-7d: Cinta B-12, Anacahuita B-16, Mirto B-27, Aguaribay F-8, Singonio I-1. Espero love + SÍ a sub por miedo-a-romper-la-racha + estatus.",
       "notified_by": [
         "2026-07-19-a"
       ],
-      "result_notes": null
+      "result_notes": "DROPPED 20/07 por la regla de no-supervivencia sin aprobacion explicita. NO-OPEN: el push promotor (2026-07-19-a, 10:30) nunca se abrio (sin notification_clicked ni page_visit en engagement.json). 2do dia consecutivo que un hook de RETENCION/estatus-persistente no motiva apertura (18/07 Regalo user-hero NO-OPEN tambien). Lectura: la 'racha/streak' Duolingo-style, aunque sea el eje user-hero que dio los 😍 (Wrapped/Album), NO gancha en el TITULAR — el usuario no abre por 'mantene tu racha'. El gancho de apertura necesita ASOMBRO/DRAMA/CURIOSIDAD concreta del presente, no una mecanica abstracta de compromiso. No relanzar racha. Pagina + pitch eliminados (git rm)."
     },
     {
       "id": "2026-07-19-nombre-apellido",
       "title": "🕯️ Nombre y Apellido (news-feed editorial: la persona real detrás de cada nombre botánico)",
       "page": "engage/2026-07-19-nombre-apellido.html",
       "created": "2026-07-19",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 49 (función paralela, experiencia NUEVA de cero). Ángulo EDITORIAL-CON-VOZ + AWE + INDIVIDUAL (los ejes que convierten: Diario 😍+sub, Entrevista sub+206s), en un shell nunca usado: las biografías humanas REALES escondidas en los nombres científicos. Lead emocional potente = Jeanne Baret (buganvilia), primera mujer en circunnavegar el mundo, disfrazada de hombre, a la que le robaron el nombre 244 años. Servido como FEED de 6 ítems cortos (no nota-larga, que floppeó). Efecto 'objetos significativos': la historia detrás multiplica el valor de la planta común. Elenco 100% fresco: Buganvilia B-1, Abelia F-7, Crespón B-9, Clivia B-13, Pata de vaca B-42, Ciruelo F-4. Espero love + sub por asombro/emoción + ganas-de-contarlo.",
       "notified_by": [
         "2026-07-19-b"
+      ],
+      "result_notes": "DROPPED 20/07 por la regla de no-supervivencia sin aprobacion explicita. Se ABRIO (notification_clicked 19/07 18:55Z / 15:55 UY) pero SIN señal activa: sin reaccion, sin respuesta de suscripcion, sin feedback_text, sin dwell registrado = 'masomenos' (abrir no es exito). El eje EDITORIAL+AWE+INDIVIDUAL (biografias humanas detras del nombre cientifico) atrajo el click pero no convirtio — 6to dia flojo. Matiz: el Diario (editorial) SI convirtio en su momento; la diferencia puede ser que 'biografias de personas muertas' es PASADO/historia (eje perdedor, ver Efemerides dropped) disfrazado de editorial, mientras el Diario habla del PRESENTE del jardin. Lectura: editorial convierte cuando el protagonista es el PRESENTE de TUS plantas, no una persona historica. No relanzar Nombre y Apellido. Pagina + pitch eliminados (git rm)."
+    },
+    {
+      "id": "2026-07-20-guardia-jardin",
+      "title": "🩺 La Guardia del Jardín (news-feed de triage/urgencias, user-hero medico)",
+      "page": "engage/2026-07-20-guardia-jardin.html",
+      "created": "2026-07-20",
+      "status": "pending",
+      "hypothesis": "Ciclo 50 (funcion paralela). 6 dias de sequia de conversion; el UNICO canal que sigue convirtiendo son las TAREAS (19/07 el usuario clickeo el reply-landing de la Gardenia B-25). Apuesta: bridgear el formato experiencia con el canal que convierte. Frame ER/sala de guardia — el usuario es el MEDICO-HEROE (eje user-hero que dio los 😍), con signos vitales, triage por color y voz en 1a persona de cada paciente. Los criticos son TAREAS REALES activas (Gardenia pulgones+hormigas, Liquidambar limpieza copa, Guayabo fumagina), cero urgencia inventada. La Gardenia como paciente estrella = callback directo al task que el usuario toco ayer. Distinto de user-hero-gratitud (Regalo NO-OPEN) y user-hero-racha (Racha NO-OPEN): aca hay DRAMA + STAKES (una vida que salvar HOY), no una mecanica abstracta. Suscripcion nativa: 'el pase de sala diario' = nadie deja un critico sin control. Slot c (18:00, el mejor-abierto). Elenco fresco 83% (B-25/B-37/B-30/B-39/B-15 fresh; F-1 re-uso por ser tarea real).",
+      "notified_by": [
+        "2026-07-20-c"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-20-quiniela-jardin",
+      "title": "🎲 La Quiniela del Jardín (news-feed de prediccion/apuesta, suscripcion nativa)",
+      "page": "engage/2026-07-20-quiniela-jardin.html",
+      "created": "2026-07-20",
+      "status": "pending",
+      "hypothesis": "Ciclo 50 (funcion paralela). Formato NUNCA probado: prediccion/apuesta. La mecanica de prediccion es el motor de retencion mas fuerte que existe (deportes/clima) y aca la suscripcion es INTRINSECA: el usuario 'juega su palpito' sobre que hace su jardin (carrera de 1a flor durazno vs pera en agosto, cuantas paltas, si cae otra helada, el invicto del invierno) y NECESITA la notif para saber si gano — la notif deja de ser interrupcion y pasa a ser el premio pedido. Sesgo de compromiso + efecto Zeigarnik hacen la retencion solos. Anclaje cultural rioplatense (quiniela) = adopcion sin explicar. Resultados REALES sobre datos fenologicos verificados (fl/fr reales), cero sorteo. Ataca el gap que arrastramos: subir la TASA de suscripcion. Slot a (10:30, ligero/matinal). Elenco fresco (B-30/B-39/B-22/B-15 fresh; F-1 mencion invicto).",
+      "notified_by": [
+        "2026-07-20-a"
       ],
       "result_notes": null
     }

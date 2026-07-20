@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e1710">
+<title>💼 La Quiniela del Jardín — pitch de negocio</title>
+<style>
+  :root{
+    --bg:#0e1710; --bg2:#152219; --card:#17271b; --ink:#eef5ec; --ink2:#b6ccb9; --ink3:#7d9784;
+    --verde:#2d5016; --verde2:#7fbf5a; --verde3:#a8e07d; --pap:#f5faf0; --oro:#e8b84b; --oro2:#ffd873; --azul:#6fb7c9;
+    --line:rgba(238,245,236,.12);
+    --pad:max(16px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#09110b; color:#a2b58a; text-decoration:none; font-size:13px; font-weight:800; }
+  .wrap{ max-width:620px; margin:0 auto; padding:0 var(--pad) 40px; }
+  .hero{ padding:28px 0 8px; }
+  .kick{ font-size:11px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--oro2); }
+  h1{ font-size:27px; line-height:1.15; margin:10px 0; font-weight:900; }
+  h1 em{ font-style:normal; color:var(--oro2); }
+  .lead{ color:var(--ink2); font-size:15.5px; }
+  h2{ font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--verde3); margin:26px 0 12px; }
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; margin:11px 0; }
+  .card h3{ font-size:17px; margin-bottom:5px; }
+  .card .kind{ font-size:10.5px; font-weight:900; text-transform:uppercase; letter-spacing:.06em; padding:3px 8px; border-radius:6px; margin-left:8px; }
+  .kind.inn{ color:#0c1a08; background:var(--verde3); } .kind.cre{ color:#1a1204; background:var(--oro); }
+  .card p{ color:var(--ink2); font-size:14px; margin-top:4px; }
+  .card .num{ display:inline-block; margin-top:9px; font-size:12.5px; font-weight:800; color:var(--oro2); background:rgba(232,184,75,.1); border:1px solid rgba(232,184,75,.24); border-radius:8px; padding:5px 10px; }
+  .grid{ display:flex; gap:9px; flex-wrap:wrap; margin:10px 0; }
+  .kpi{ flex:1; min-width:120px; background:var(--bg2); border:1px solid var(--line); border-radius:12px; padding:13px; text-align:center; }
+  .kpi b{ display:block; font-size:22px; color:var(--oro2); }
+  .kpi span{ font-size:11.5px; color:var(--ink3); }
+  ul{ margin:8px 0 0 18px; color:var(--ink2); font-size:14px; }
+  li{ margin:4px 0; }
+  .pie{ text-align:center; padding:26px 0 8px; } .pie a{ color:var(--azul); font-weight:800; text-decoration:none; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kick">🎲 La Quiniela del Jardín · pitch</div>
+    <h1>Apostar a la <em>naturaleza</em>: el motor de retención más viejo del mundo, aplicado a plantas</h1>
+    <p class="lead">La predicción es la mecánica de enganche más poderosa que existe (deportes, clima, elecciones). «La Quiniela» la lleva al jardín: el usuario juega su pálpito sobre qué hace su planta a continuación y —clave— <b>necesita la suscripción para saber si ganó</b>. La notificación deja de ser interrupción y pasa a ser el premio que el usuario pidió. Y no hay sorteo trucho: los resultados los canta la naturaleza, sobre datos fenológicos reales.</p>
+  </header>
+
+  <h2>Por qué funciona</h2>
+  <div class="grid">
+    <div class="kpi"><b>Loop</b><span>apuesta → espera → resultado → nueva apuesta</span></div>
+    <div class="kpi"><b>Sub nativa</b><span>la notif ES el resultado, no spam</span></div>
+    <div class="kpi"><b>Cultural</b><span>quiniela = ADN rioplatense</span></div>
+  </div>
+  <p class="lead">El sesgo de compromiso (ya jugué, quiero ver cómo sale) y el efecto Zeigarnik (lo abierto molesta hasta cerrarse) hacen el trabajo de retención solos. Cada resultado real dispara la próxima apuesta: bucle infinito, cero contenido inventado.</p>
+
+  <h2>3 modelos de monetización — innovadores</h2>
+
+  <div class="card">
+    <h3>Pozo comunitario<span class="kind inn">innovador</span></h3>
+    <p>Quiniela social entre vecinos/región: todos juegan «¿qué florece primero en el barrio?». Entrada simbólica, el pozo se reparte entre aciertos en créditos de vivero. Datos colectivos de floración por microzona = producto B2B agrometeorológico aparte.</p>
+    <span class="num">Fee 10% del pozo + venta de dataset fenológico regional</span>
+  </div>
+  <div class="card">
+    <h3>Cuotas premium con IA<span class="kind inn">innovador</span></h3>
+    <p>Gratis jugás con cuotas fijas; PRO (US$3/mes) te da cuotas dinámicas calculadas por IA sobre clima real + historia de tu planta, y jugadas ilimitadas. El que quiere «ganarle a la banca» paga por mejor información.</p>
+    <span class="num">1.000 users × 5% × US$3 = US$150/mes recurrente</span>
+  </div>
+  <div class="card">
+    <h3>Sponsoreo de jugadas<span class="kind inn">innovador</span></h3>
+    <p>Marcas de vivero/fertilizante patrocinan una jugada («La cosecha oculta, presentada por [Fertilizante X]») y ofrecen el producto que mejora la probabilidad del resultado. Publicidad nativa, contextual y no invasiva.</p>
+    <span class="num">US$50–150 por jugada patrocinada / semana</span>
+  </div>
+
+  <h2>3 modelos — ultra-creativos</h2>
+
+  <div class="card">
+    <h3>Mercado de predicciones de tu jardín<span class="kind cre">ultra-creativo</span></h3>
+    <p>Estilo bolsa: cada evento («la palta baja 5+ frutos») cotiza y el usuario compra/vende «acciones» con créditos. La sabiduría de multitudes genera un pronóstico de cosecha sorprendentemente preciso, que se licencia a productores.</p>
+    <span class="num">Spread por transacción + licencia de forecast agrícola</span>
+  </div>
+  <div class="card">
+    <h3>Cromos de acierto / coleccionable<span class="kind cre">ultra-creativo</span></h3>
+    <p>Cada acierto real imprime un «cromo» conmemorativo con la fecha exacta del evento («Primera flor 2026 · 14 ago · durazno»). Coleccionás la temporada. Los raros (evento inusual) se pueden intercambiar. Álbum físico premium imprimible = venta directa.</p>
+    <span class="num">Álbum impreso US$15–25 fin de temporada</span>
+  </div>
+  <div class="card">
+    <h3>Quiniela del clima escolar<span class="kind cre">ultra-creativo</span></h3>
+    <p>Versión educativa licenciada a escuelas: los chicos apuestan a la fenología del patio y aprenden ciencia observando (fenología ciudadana). Vendible como currícula STEM + kit de sensores. Impacto social que abre fondos y subsidios.</p>
+    <span class="num">Licencia institucional US$300–800/año por escuela</span>
+  </div>
+
+  <h2>El activo defendible</h2>
+  <ul>
+    <li>La suscripción es intrínseca a la mecánica: no hay que convencer de aceptar notificaciones, son el premio.</li>
+    <li>Cada apuesta genera un dato: qué le importa al usuario de su jardín. Segmentación pura para todo lo demás.</li>
+    <li>Los eventos son reales y verificables → confianza inquebrantable, a diferencia de cualquier juego de azar.</li>
+    <li>Anclaje cultural rioplatense (quiniela) = adopción inmediata sin explicar la mecánica.</li>
+  </ul>
+
+  <footer class="pie">
+    <a href="2026-07-20-quiniela-jardin.html">← Volver a la experiencia</a>
+  </footer>
+</div>
+</body></html>

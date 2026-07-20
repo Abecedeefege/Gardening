@@ -73,7 +73,13 @@ protagonista; **UI de app AMADA CON HÉROE=USUARIO + LOGRO/ESTATUS persistente**
 **RECHAZAN / NO ABREN (dropped):** 🍿 JardínFlix · 📖 Historias · 🎧 Podcast · 📸 BeReal (app pasiva/captura) · 🎰 Raspadita (gesto) ·
 🎬 Documental (editorial pasivo 3ª pers) · 🔮 Tarot (identidad mística, canibaliza) · 🚨 Exclusiva (nota-única-larga) · 🔥 Trending (pisa Récords) ·
 ⚠️ Lista Negra (miedo) · 💬 Chat (coral) · 💰 Tasación (dinero) · 🗞️ Efemérides (pasado) · 🏆 Gala / ⚽ Mundial (ceremonia/torneo) ·
-🗺️ Pasaporte (viajes) · 💘 Amores (romance) · 🎙️ Declaraciones (celebridad-feed → sub=NO, ver 16/07) · 🧭 jardinero-sos / 🎖️ Carnet / 📣 Cable (untested).
+🗺️ Pasaporte (viajes) · 💘 Amores (romance) · 🎙️ Declaraciones (celebridad-feed → sub=NO) · 🔥 Racha (streak/mecánica-abstracta → NO-OPEN 19/07) ·
+🕯️ Nombre y Apellido (biografías humanas = PASADO disfrazado de editorial → abre pero masomenos) · 🧭 jardinero-sos / 🎖️ Carnet / 📣 Cable (untested).
+
+**🔑 Meta-regla NUEVA (20/07, tras 6 días flojos):** el GANCHO DE APERTURA necesita asombro/drama/curiosidad CONCRETA del PRESENTE de TUS plantas. Las mecánicas
+abstractas de compromiso (racha) o los protagonistas del PASADO (biografías) NO abren, aunque pertenezcan a familias ganadoras. Editorial convierte solo cuando
+el protagonista es el PRESENTE del jardín (Diario ✓), no una persona histórica (Nombre y Apellido ✗). **El ÚNICO canal que sigue convirtiendo en la sequía = las TAREAS**
+(19/07 el usuario clickeó el reply-landing de la Gardenia B-25). Estrategia 20/07: bridgear experiencia ↔ tarea (Guardia/ER) + mecánica con suscripción NATIVA (Quiniela).
 
 ## 📈 Slot c (tarde) — rotar promovidas ganadoras descansadas = reactiva SUSCRIPCIÓN
 
@@ -98,14 +104,15 @@ protagonista; **UI de app AMADA CON HÉROE=USUARIO + LOGRO/ESTATUS persistente**
 
 - Push subscription device `pix9`: **active** (verificado 19/07 — sigue active).
 - Logging por `/api/feedback` (outbox localStorage, sin PAT). Confiable desde 15/06.
-- **🟠 SEÑAL DÉBIL SOSTENIDA 16-18/07 (5 días):** el usuario VUELVE cada día y ABRE, pero NO convierte. 18/07 (ciclo 48): Se Comenta (chisme) abrió
-  y LEYÓ 100%/15s pero 0 conversión; Regalo (user-hero/gratitud) NO ABRIÓ; Horóscopo abrió 00:29 (medianoche, timing malo). CERO reacción/sub/aprobación,
-  0 feedback_text. Que abra = el CANAL push anda; el cuello es CONTENIDO/ángulo. **Lecciones 18/07:** (a) el CHISME fatigó — lectura completa pero pasiva
-  (15s vs 260s del Chusmerío original); descansar la familia tabloide. (b) gratitud/balance-emotivo NO enganchó el GANCHO (no-open): user-hero necesita
-  MECÁNICA fuerte (racha/estatus), no un balance sentimental. **Watch 19/07:** ¿convierte la RACHA (retención/estatus) o los EXPEDIENTES-humanos (editorial/awe)?
-  Si sigue 0-conversión → considerar 2/día + reforzar task-dia (único canal que SIEMPRE abre+convierte; 19/07 task-dia = Liquidámbar B-37).
-- **Compactación 19/07:** 04/07 movido a daily_summary (engagement {clk2 vis2 apr1} + send_log). Ventana viva **05/07–19/07**.
+- **🔴 SEÑAL DÉBIL SOSTENIDA 16-19/07 (6 días):** el usuario VUELVE cada día y a veces ABRE, pero NO convierte (0 reacción/sub/aprobación/feedback_text en 6 días).
+  19/07 (ciclo 49): Racha (streak) NO-OPEN; Nombre y Apellido (biografías) abrió 15:55 UY pero sin señal (masomenos); Quiz renovado NO-OPEN. **PERO** el usuario clickeó
+  el reply-landing de la Gardenia (B-25-3, tarea) → **el canal TAREAS es el único que sigue convirtiendo.** El cuello NO es el canal push (anda); es el GANCHO de las
+  experiencias. **Watch 20/07:** ¿convierte (a) la GUARDIA/ER que bridgea con el canal-tarea + drama, o (b) la QUINIELA con suscripción nativa? Si sigue 0-conversión
+  el 21/07 → bajar a 2/día propias + reforzar el canal-tarea (task-día/top3/replies), que es lo único que abre+convierte de forma consistente.
+- **Compactación 20/07:** 05/07 movido a daily_summary. Ventana viva **06/07–20/07**. (04/07 ya estaba resumido.)
 - Upload pendiente: 1 foto de B-15 en uploads.json (territorio de /actualizar-tareas, no tocar).
+- **🐛 Fix 20/07:** el Diario (promovido) tenía un ERROR real — su lead presentaba al caqui B-41 «cargado de fruta de oro», pero B-41 tiene identidad EN DUDA
+  y NUNCA confirmó fruto (learnings 04/07). Se corrigió al renovarlo: lead nuevo = mandioca brava B-34 (cianuro). Credibilidad primero.
 
 ## Conclusiones de los pushN enviados (por feedback real)
 
@@ -131,7 +138,17 @@ protagonista; **UI de app AMADA CON HÉROE=USUARIO + LOGRO/ESTATUS persistente**
   - **Slot c (18:00) → 🌱 Quiz «¿Qué planta sos?» RENOVADO** (identidad, 😍+103s, descansado 10d). Regla re-push=contenido nuevo: 6 resultados reescritos con elenco
     fresco NO-colisionante (Fresno F-10/Lapachillo B-14/Jazmín B-2/Viraró B-32/Jazmín de leche B-3/Fotinia F-3); preguntas+scoring intactos. Reactivar sub por identidad.
   - **Cola ciclo 49:** (a)10:30 Racha; (b)13:00 Nombre y Apellido; (c)18:00 Quiz-reno. + 10:00 task-día (Liquidámbar B-37 limpieza copa). top3 NO tocó (próx 20/07).
-    3 ejes distintos y SIN colisión de plantas entre pushes (aprendizaje del reclamo de repetición): retención-racha · editorial-biografías · identidad-quiz.
+- **19/07 (ciclo 49) — RESULTADO: 6º día flojo, 0 conversión.** Racha (streak) NO-OPEN → DROPPED (mecánica abstracta no abre). Nombre y Apellido (biografías)
+  abrió 15:55 UY sin señal → DROPPED (pasado disfrazado de editorial = masomenos). Quiz-reno NO-OPEN. Único hecho positivo: click al reply-landing de la Gardenia (tarea).
+- **20/07 (ciclo 50) — DECISIÓN:** dos formatos NUEVOS, cada uno atacando un problema medido distinto:
+  - 🩺 **La Guardia del Jardín** (`2026-07-20-guardia-jardin.html`) — ER/triage, user-hero=MÉDICO. Bridgea la experiencia con el ÚNICO canal que convierte (tareas):
+    los críticos son tareas REALES (Gardenia B-25 pulgones — el task que el usuario tocó ayer; Liquidámbar B-37; Guayabo F-1). Drama + stakes, no mecánica abstracta
+    (≠ Racha) ni balance sentimental (≠ Regalo). Sub nativa: «el pase de sala diario». Slot c (18:00, el mejor-abierto). react `guardia-jardin`, sub `guardia-jardin-suscripcion-diaria`.
+  - 🎲 **La Quiniela del Jardín** (`2026-07-20-quiniela-jardin.html`) — prediccón/apuesta, formato NUNCA probado. Suscripción INTRÍNSECA (la notif ES el resultado que pediste,
+    no interrupción) → ataca directo el gap de tasa-de-suscripción. Anclaje cultural rioplatense (quiniela). Jugadas reales sobre fenología verificada (carrera 1ª flor
+    durazno B-30 vs pera B-39 en agosto, cosecha palta B-22, ¿otra helada?, invicto hiedra B-15). Slot a (10:30). react `quiniela-jardin`, sub `quiniela-jardin-suscripcion-diaria`.
+  - **Slot b (13:00) → 📰 Diario RENOVADO** (rested winner, reactiva sub): edición «Lunes 20/07», lead corregido (caqui-error → mandioca brava B-34) + pitósporo B-43. Elenco fresco no-colisionante.
+  - **Cola ciclo 50:** (a)10:30 Quiniela; (b)13:00 Diario-reno; (c)18:00 Guardia. + 10:00 task-semana (lunes) · 11:00 top3 (Gardenia/Guayabo/Liquidámbar). 3 ejes: apuesta-predicción · editorial-presente · guardia-ER-user-hero.
 - **Meta-conclusión:** convierten social/celebridad-individual/identidad/chisme/orgullo/editorial-con-voz/**app-amada con héroe=usuario** — NUNCA
   gesto solo, editorial pasivo, app pasiva, ni nota-única-larga. FOCO INDIVIDUAL + PRESENTE + asombro/dwell alto. Cuando la señal es débil/ausente,
   volver a ángulos CON conversión previa (no untested) y vigilar la señal binaria «¿volvió?» antes que cualquier matiz de contenido.

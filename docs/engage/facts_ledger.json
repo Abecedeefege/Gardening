@@ -1,15 +1,20 @@
 {
  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-07-19",
+ "_updated": "2026-07-20",
  "plants": {
   "F-1": {
    "common": "Guayabo del país",
-   "paginas_historicas": 10,
+   "paginas_historicas": 11,
    "featured": [
     {
      "date": "2026-07-18",
      "page": "2026-07-18-secomenta.html",
      "fact": "petalos golosina / fumagina hoy"
+    },
+    {
+     "date": "2026-07-20",
+     "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
+     "fact": "re-uso <7d: guayabo observacion(tarea real fumagina)+invicto nativo — NO por fun_fact nuevo sino por tarea real"
     }
    ]
   },
@@ -234,8 +239,14 @@
   },
   "B-15": {
    "common": "Hiedra común",
-   "paginas_historicas": 6,
-   "featured": []
+   "paginas_historicas": 7,
+   "featured": [
+    {
+     "date": "2026-07-20",
+     "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
+     "fact": "+400 anios / invicto del invierno / donante universal resistencia"
+    }
+   ]
   },
   "B-16": {
    "common": "Anacahuita",
@@ -266,8 +277,14 @@
   },
   "B-22": {
    "common": "Palta uruguaya",
-   "paginas_historicas": 8,
-   "featured": []
+   "paginas_historicas": 9,
+   "featured": [
+    {
+     "date": "2026-07-20",
+     "page": "2026-07-20-quiniela-jardin.html",
+     "fact": "viudo evolutivo perezosos gigantes 13000 anios / cosecha oculta"
+    }
+   ]
   },
   "B-23": {
    "common": "Limonero",
@@ -293,8 +310,14 @@
   },
   "B-25": {
    "common": "Gardenia / Jazmín del Cabo",
-   "paginas_historicas": 6,
-   "featured": []
+   "paginas_historicas": 7,
+   "featured": [
+    {
+     "date": "2026-07-20",
+     "page": "2026-07-20-guardia-jardin.html",
+     "fact": "pulgones+hormigas ganadero / 600kg flores=1L Chanel Nº22 / paciente critico"
+    }
+   ]
   },
   "B-26": {
    "common": "Romero",
@@ -331,8 +354,14 @@
   },
   "B-30": {
    "common": "Durazno",
-   "paginas_historicas": 6,
-   "featured": []
+   "paginas_historicas": 7,
+   "featured": [
+    {
+     "date": "2026-07-20",
+     "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
+     "fact": "coma inducido dormancia / florece agosto primero / carrera 1a flor"
+    }
+   ]
   },
   "B-32": {
    "common": "Viraró",
@@ -347,8 +376,14 @@
   },
   "B-34": {
    "common": "Mandioca brava (tentativa)",
-   "paginas_historicas": 8,
-   "featured": []
+   "paginas_historicas": 9,
+   "featured": [
+    {
+     "date": "2026-07-20",
+     "page": "2026-06-29-diario-jardin(reno-20-07).html",
+     "fact": "latex cianogenico brava / nativa Cono Sur / mandioca domesticada = veneno a alimento"
+    }
+   ]
   },
   "B-36": {
    "common": "Palta Haas",
@@ -363,8 +398,14 @@
   },
   "B-37": {
    "common": "Liquidámbar",
-   "paginas_historicas": 9,
-   "featured": []
+   "paginas_historicas": 10,
+   "featured": [
+    {
+     "date": "2026-07-20",
+     "page": "2026-07-20-guardia-jardin.html",
+     "fact": "storax balsamo maya / dormancia = ventana limpieza copa"
+    }
+   ]
   },
   "B-38": {
    "common": "Ciruela amarilla",
@@ -379,8 +420,14 @@
   },
   "B-39": {
    "common": "Pera Williams",
-   "paginas_historicas": 7,
-   "featured": []
+   "paginas_historicas": 8,
+   "featured": [
+    {
+     "date": "2026-07-20",
+     "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
+     "fact": "reposo / flor blanca agosto / carrera 1a flor vs durazno"
+    }
+   ]
   },
   "B-40": {
    "common": "Madreselva china siempreverde",
@@ -411,8 +458,14 @@
   },
   "B-43": {
    "common": "Pitósporo",
-   "paginas_historicas": 3,
-   "featured": []
+   "paginas_historicas": 4,
+   "featured": [
+    {
+     "date": "2026-07-20",
+     "page": "2026-06-29-diario-jardin(reno-20-07).html",
+     "fact": "tobira=puerta japones / semilla resina pega patas aves / poda drastica costera"
+    }
+   ]
   },
   "B-44": {
    "common": "Evónimo japonés variegado",
