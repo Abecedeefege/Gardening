@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-20T16:14:20.103Z",
+  "_updated_at": "2026-07-20T21:31:56.287Z",
   "notifications": [
     {
       "id": "2026-07-20-task-semana",
@@ -45,8 +45,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-20-guardia-jardin.html",
       "send_at": "2026-07-20T18:00:00-03:00",
       "expires_at": "2026-07-20T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-20T21:31:56.285Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-20"
     },
