@@ -679,22 +679,46 @@
       "title": "🩺 La Guardia del Jardín (news-feed de triage/urgencias, user-hero medico)",
       "page": "engage/2026-07-20-guardia-jardin.html",
       "created": "2026-07-20",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 50 (funcion paralela). 6 dias de sequia de conversion; el UNICO canal que sigue convirtiendo son las TAREAS (19/07 el usuario clickeo el reply-landing de la Gardenia B-25). Apuesta: bridgear el formato experiencia con el canal que convierte. Frame ER/sala de guardia — el usuario es el MEDICO-HEROE (eje user-hero que dio los 😍), con signos vitales, triage por color y voz en 1a persona de cada paciente. Los criticos son TAREAS REALES activas (Gardenia pulgones+hormigas, Liquidambar limpieza copa, Guayabo fumagina), cero urgencia inventada. La Gardenia como paciente estrella = callback directo al task que el usuario toco ayer. Distinto de user-hero-gratitud (Regalo NO-OPEN) y user-hero-racha (Racha NO-OPEN): aca hay DRAMA + STAKES (una vida que salvar HOY), no una mecanica abstracta. Suscripcion nativa: 'el pase de sala diario' = nadie deja un critico sin control. Slot c (18:00, el mejor-abierto). Elenco fresco 83% (B-25/B-37/B-30/B-39/B-15 fresh; F-1 re-uso por ser tarea real).",
       "notified_by": [
         "2026-07-20-c"
       ],
-      "result_notes": null
+      "result_notes": "Descartada 21/07 sin aprobación. CONFOUND: el 20/07 fue ventana en blanco (0 eventos, el usuario no abrió NADA — probablemente ausente), así que NO es refutación limpia del ángulo ER/user-hero-médico ni del bridge con tareas. Página efímera eliminada."
     },
     {
       "id": "2026-07-20-quiniela-jardin",
       "title": "🎲 La Quiniela del Jardín (news-feed de prediccion/apuesta, suscripcion nativa)",
       "page": "engage/2026-07-20-quiniela-jardin.html",
       "created": "2026-07-20",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Ciclo 50 (funcion paralela). Formato NUNCA probado: prediccion/apuesta. La mecanica de prediccion es el motor de retencion mas fuerte que existe (deportes/clima) y aca la suscripcion es INTRINSECA: el usuario 'juega su palpito' sobre que hace su jardin (carrera de 1a flor durazno vs pera en agosto, cuantas paltas, si cae otra helada, el invicto del invierno) y NECESITA la notif para saber si gano — la notif deja de ser interrupcion y pasa a ser el premio pedido. Sesgo de compromiso + efecto Zeigarnik hacen la retencion solos. Anclaje cultural rioplatense (quiniela) = adopcion sin explicar. Resultados REALES sobre datos fenologicos verificados (fl/fr reales), cero sorteo. Ataca el gap que arrastramos: subir la TASA de suscripcion. Slot a (10:30, ligero/matinal). Elenco fresco (B-30/B-39/B-22/B-15 fresh; F-1 mencion invicto).",
       "notified_by": [
         "2026-07-20-a"
+      ],
+      "result_notes": "Descartada 21/07 sin aprobación. Mismo CONFOUND: 20/07 en blanco (0 eventos). La suscripción intrínseca (la notif ES el resultado) sigue sin testear limpio — reintentada hoy en Cuenta Regresiva (aviso-el-día-que-pase). Página efímera eliminada."
+    },
+    {
+      "id": "2026-07-21-cuenta-regresiva",
+      "title": "La Cuenta Regresiva del Jardín",
+      "page": "engage/2026-07-21-cuenta-regresiva.html",
+      "created": "2026-07-21",
+      "status": "pending",
+      "hypothesis": "Formato NUEVO (cuenta regresiva). Ataca directo el gap de tasa-de-suscripción con suscripción INTRÍNSECA: la notif no interrumpe, ES el evento que el usuario pidió (el día que abra la 1a flor). Anticipación + efecto Zeigarnik = motivo de retorno. Cast fresco (F-2 Podranea, F-5 coronita, B-49 misterio) + eventos de estación (primavera 23/09, heladas). Si convierte a sub, encontramos el mecanismo que rompe la sequía de 7 días.",
+      "notified_by": [
+        "2026-07-21-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-21-asamblea-jardin",
+      "title": "La Asamblea del Jardín",
+      "page": "engage/2026-07-21-asamblea-jardin.html",
+      "created": "2026-07-21",
+      "status": "pending",
+      "hypothesis": "Formato NUEVO (asamblea de vecinos/consorcio, ancla cultural rioplatense). User-hero=PRESIDENTE con poder de resolución + humor + editorial-con-voz (lo que engancha acá). Puentea con el ÚNICO canal que convierte: los puntos 1-2 son tareas reales enlazadas a su landing (Gardenia B-25, Guayabo F-1). Puntos 3-4 con cast fresco (vivero B-46, caqui B-41 identidad-en-duda). Si convierte, confirma que envolver tareas en experiencia-con-voz+agencia abre donde la tarea seca no.",
+      "notified_by": [
+        "2026-07-21-c"
       ],
       "result_notes": null
     }

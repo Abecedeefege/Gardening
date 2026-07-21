@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1a12">
+<title>📋 La Asamblea del Jardín — vos presidís</title>
+<meta property="og:title" content="📋 Se abre la asamblea: 4 puntos en el orden del día">
+<meta property="og:description" content="Tus plantas convocaron asamblea. La Gardenia elevó una queja formal, el vivero pide adopción y el caqui exige que le confirmen la identidad. Vos presidís: resolvé.">
+<style>
+  :root{
+    --bg:#0f1a12; --bg2:#16241a; --card:#182a1d; --ink:#eaf3ea; --ink2:#b7ccbb; --ink3:#7f9885;
+    --verde:#2d5016; --verde2:#7fbf5a; --verde3:#a8e07d; --pap:#f5faf0;
+    --rojo:#e35b4b; --rojo2:#ff7a68; --ambar:#e8a53d; --ambar2:#ffc271; --azul:#6fb7c9; --sello:#c9a24b;
+    --line:rgba(234,243,234,.12);
+    --pad:max(16px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+    --mono:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.55; -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 40% at 50% -6%, rgba(127,191,90,.13), transparent 60%); }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#0a120c; color:#8fb07e; text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .prog{ position:fixed; top:0; left:0; height:3px; width:0; z-index:90;
+    background:linear-gradient(90deg,var(--verde3),var(--sello),var(--rojo2)); transition:width .1s linear; }
+  .wrap{ max-width:560px; margin:0 auto; padding:0 var(--pad) 12px; }
+
+  .reveal{ opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:26px 0 4px; text-align:center; }
+  .mast{ display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:900; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--sello); background:rgba(201,162,75,.1); border:1px solid rgba(201,162,75,.3); border-radius:999px; padding:6px 14px; }
+  .mast .dot{ width:8px; height:8px; border-radius:50%; background:var(--rojo2); box-shadow:0 0 0 0 rgba(255,122,104,.6); animation:pulse 1.6s infinite; }
+  @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(255,122,104,.5)} 70%{box-shadow:0 0 0 9px rgba(255,122,104,0)} 100%{box-shadow:0 0 0 0 rgba(255,122,104,0)} }
+  .hero h1{ font-size:29px; line-height:1.12; margin:14px 0 9px; letter-spacing:-.01em; font-weight:900; }
+  .hero h1 em{ font-style:normal; color:var(--verde3); }
+  .hero p{ color:var(--ink2); font-size:15px; max-width:35ch; margin:0 auto; }
+
+  .acta{ background:linear-gradient(180deg,#1a2716,#12200f); border:1px solid rgba(201,162,75,.28); border-radius:16px;
+    padding:15px 16px; margin:18px 0 6px; }
+  .acta .t{ font-size:11px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--sello); margin-bottom:8px; }
+  .acta ol{ margin:0; padding-left:20px; }
+  .acta li{ font-size:13.5px; color:var(--ink2); margin:5px 0; }
+  .acta li b{ color:var(--pap); }
+
+  .pt{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:15px 15px 14px; margin:13px 0; position:relative; overflow:hidden; }
+  .pt::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:5px; }
+  .pt.urg::before{ background:var(--rojo); } .pt.med::before{ background:var(--ambar); } .pt.baj::before{ background:var(--verde2); }
+  .pt.urg{ border-color:rgba(227,91,75,.4); box-shadow:0 6px 22px rgba(0,0,0,.3); }
+  .pt .num{ position:absolute; top:12px; right:14px; font-family:var(--mono); font-size:11px; color:var(--ink3); }
+  .pt .top{ display:flex; align-items:center; gap:10px; }
+  .pt .av{ width:44px; height:44px; border-radius:12px; display:grid; place-items:center; font-size:23px; flex:none;
+    background:rgba(127,191,90,.1); border:1px solid var(--line); }
+  .pt .who{ min-width:0; }
+  .pt .who b{ font-size:16.5px; font-weight:800; display:block; line-height:1.15; }
+  .pt .who .sp{ font-size:11.5px; color:var(--ink3); font-style:italic; }
+  .pt .tag{ margin-left:auto; font-size:10px; font-weight:900; letter-spacing:.05em; text-transform:uppercase; padding:5px 9px; border-radius:7px; white-space:nowrap; flex:none; }
+  .tag.urg{ color:#2a0b07; background:var(--rojo2); } .tag.med{ color:#2a1a03; background:var(--ambar2); } .tag.baj{ color:#0c1a08; background:var(--verde3); }
+  .moc{ font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:var(--sello); margin:12px 0 4px; }
+  .say{ font-size:14px; color:var(--ink); background:rgba(127,191,90,.06); border-left:2px solid var(--verde2);
+    padding:9px 11px; border-radius:0 9px 9px 0; margin:2px 0 10px; }
+  .say b{ color:var(--verde3); }
+  .dx{ font-size:13px; color:var(--ink2); }
+  .dx b{ color:var(--pap); }
+  .resol{ display:flex; gap:8px; flex-wrap:wrap; margin-top:11px; }
+  .resol a, .resol button{ font-family:var(--sans); font-size:12.5px; font-weight:800; text-decoration:none; cursor:pointer;
+    border-radius:9px; padding:8px 11px; border:1px solid rgba(127,191,90,.24); background:rgba(127,191,90,.1); color:var(--verde3); transition:transform .12s; }
+  .resol button:active, .resol a:active{ transform:scale(.95); }
+  .resol .sec{ background:rgba(234,243,234,.05); border-color:var(--line); color:var(--ink3); }
+  .resol button.on{ background:var(--verde2); color:#0c1a08; border-color:transparent; }
+
+  .note{ text-align:center; color:var(--ink3); font-size:12.5px; font-style:italic; margin:20px 0 6px; }
+
+  .blk{ background:var(--bg2); border:1px solid var(--line); border-radius:18px; padding:20px 18px; margin:15px 0; text-align:center; }
+  .blk h3{ font-size:18px; margin-bottom:6px; }
+  .blk p{ color:var(--ink2); font-size:14px; }
+  .rowbtns{ display:flex; gap:9px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
+  .rowbtns button{ font-family:var(--sans); font-weight:800; font-size:14.5px; cursor:pointer; border-radius:12px;
+    padding:12px 15px; border:1px solid var(--line); background:rgba(234,243,234,.06); color:var(--ink); transition:transform .12s; }
+  .rowbtns button:active{ transform:scale(.94); }
+  .react-hint,.q-hint{ display:block; margin-top:10px; font-size:12.5px; color:var(--verde3); font-weight:700; min-height:1.2em; }
+  .sub-blk{ background:linear-gradient(180deg,#12281a,#0d1c12); border-color:rgba(127,191,90,.34); }
+  .sub-blk h3{ color:var(--verde3); }
+  .sub-blk .si{ background:var(--verde2); color:#0c1a08; border-color:transparent; }
+
+  .fb-blk{ background:var(--bg2); border:1px solid var(--line); border-radius:18px; padding:20px 18px; margin:15px 0; text-align:center; }
+  .fb-blk h3{ font-size:17px; margin-bottom:4px; }
+  .fb-blk p{ color:var(--ink2); font-size:13.5px; max-width:40ch; margin:0 auto 12px; }
+  .fb-blk textarea{ width:100%; background:rgba(234,243,234,.06); border:1px solid var(--line); border-radius:11px; color:var(--ink);
+    padding:11px 12px; font:inherit; resize:vertical; }
+  .fb-blk .fb-send{ margin-top:10px; background:var(--verde2); color:#0c1a08; border:none; border-radius:12px; padding:12px 20px;
+    font:800 14.5px var(--sans); cursor:pointer; }
+  .fb-blk .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--verde3); min-height:1.2em; }
+
+  .engage-actions{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:8px 0 4px; padding:14px 0; }
+  .engage-actions button{ font-family:var(--sans); font-weight:900; font-size:15px; cursor:pointer; border-radius:13px; padding:13px 18px; border:1px solid var(--line); transition:transform .12s; }
+  .engage-actions button:active{ transform:scale(.95); }
+  .engage-actions button:first-child{ background:var(--verde2); color:#0c1a08; border-color:transparent; }
+  .engage-actions button:last-child{ background:rgba(234,243,234,.06); color:var(--ink2); }
+
+  .pie{ text-align:center; padding:18px 0 8px; }
+  .pie a{ color:var(--azul); font-weight:800; font-size:14px; text-decoration:none; }
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:10px; line-height:1.5; }
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <span class="mast"><span class="dot"></span> Asamblea ordinaria · 21/07</span>
+    <h1>Se abre la <em>asamblea</em><br>del jardín</h1>
+    <p>Tus plantas se juntaron y armaron un orden del día. Hay quejas, pedidos y un misterio sin resolver. Vos presidís: escuchá cada punto y resolvé.</p>
+  </header>
+
+  <div class="acta reveal">
+    <div class="t">📋 Orden del día — 4 puntos</div>
+    <ol>
+      <li><b>Punto 1.</b> Queja formal de la Gardenia contra las hormigas <span style="color:var(--rojo2)">(urgente)</span></li>
+      <li><b>Punto 2.</b> El Guayabo pide que le saquen el hollín de encima <span style="color:var(--rojo2)">(urgente)</span></li>
+      <li><b>Punto 3.</b> El vivero reclama que repartan a sus 30 plantines</li>
+      <li><b>Punto 4.</b> El «caqui» exige que confirmen de una vez su identidad</li>
+    </ol>
+  </div>
+
+  <!-- PUNTO 1: Gardenia B-25 — tarea real, el usuario le contestó el 18-19/07 -->
+  <div class="pt urg reveal">
+    <span class="num">Punto 1 · B-25</span>
+    <div class="top">
+      <div class="av">🌸</div>
+      <div class="who"><b>Gardenia</b><span class="sp">Gardenia jasminoides · fondo (este)</span></div>
+      <span class="tag urg">Urgente</span>
+    </div>
+    <div class="moc">Moción presentada</div>
+    <div class="say">«Presento <b>queja formal</b> contra las hormigas del cantero. Están criando pulgones sobre mis brotes como si fueran <b>ganado lechero</b>: los cuidan para robarme el dulce. Pido intervención antes de que el hollín negro me tape las hojas y no pueda respirar.»</div>
+    <div class="dx">Reclamo <b>procedente</b>: es una tarea real y activa de tu jardín. La moción ya tiene un plan de acción con el neem que tenés. Como presidente, podés resolverla ahora.</div>
+    <div class="resol">
+      <a href="https://gardening-chi.vercel.app/tasks/plant-B-25-3.html">✅ Atender el reclamo →</a>
+      <button type="button" class="sec" onclick="this.classList.add('on'); this.textContent='📌 Anotado en actas'">📌 Pasar a la próxima</button>
+    </div>
+  </div>
+
+  <!-- PUNTO 2: Guayabo F-1 — tarea real fumagina -->
+  <div class="pt urg reveal">
+    <span class="num">Punto 2 · F-1</span>
+    <div class="top">
+      <div class="av">🌿</div>
+      <div class="who"><b>Guayabo del país</b><span class="sp">Acca sellowiana · frente (oeste)</span></div>
+      <span class="tag urg">Urgente</span>
+    </div>
+    <div class="moc">Moción presentada</div>
+    <div class="say">«Adhiero a la Gardenia: a mí también me está saliendo <b>fumagina</b>, ese hollín negro pegajoso. Soy nativo y aguanto casi todo, pero <b>cicatrizo lento</b>: pido que solo me limpien lo justo. Nada de podas bruscas o me quedo sin mis flores rojas y blancas —que, aviso, se comen y son dulces—.»</div>
+    <div class="dx">Reclamo <b>procedente</b>: tarea real activa. La resolución es limpieza suave del hollín y de la plaga que lo causa, sin tocar madera viva.</div>
+    <div class="resol">
+      <a href="https://gardening-chi.vercel.app/tareas.html">✅ Ver la tarea →</a>
+      <button type="button" class="sec" onclick="this.classList.add('on'); this.textContent='📌 Anotado en actas'">📌 Pasar a la próxima</button>
+    </div>
+  </div>
+
+  <!-- PUNTO 3: Vivero B-46 — fresh cast, adopción -->
+  <div class="pt med reveal">
+    <span class="num">Punto 3 · B-46</span>
+    <div class="top">
+      <div class="av">🪴</div>
+      <div class="who"><b>El vivero del fondo</b><span class="sp">~30 plantines en macetas · fondo</span></div>
+      <span class="tag med">A tratar</span>
+    </div>
+    <div class="moc">Moción presentada</div>
+    <div class="say">«Somos <b>más de treinta plantines</b> apretados contra la pared de bloques, en baldes cortados y botellas recicladas. Pedimos que se nos reparta: cada plantín de palmera de vivero vale entre <b>200 y 500 pesos</b> afuera. Somos la forma más barata de poblar el jardín… <b>y de hacer regalos verdes</b>.»</div>
+    <div class="dx">Punto simpático y real: tu vivero casero es una fábrica de plantas gratis. Una tarde de trasplante los pone en tierra y libera espacio contra el muro.</div>
+    <div class="resol">
+      <button type="button" onclick="this.classList.add('on'); this.textContent='✅ Moción aprobada'">✅ Aprobar el reparto</button>
+      <button type="button" class="sec" onclick="this.classList.add('on'); this.textContent='📌 Anotado en actas'">📌 Pasar a la próxima</button>
+    </div>
+  </div>
+
+  <!-- PUNTO 4: Caqui B-41 — identidad en duda, fresh -->
+  <div class="pt baj reveal">
+    <span class="num">Punto 4 · B-41</span>
+    <div class="top">
+      <div class="av">❓</div>
+      <div class="who"><b>El «caqui»</b><span class="sp">identidad EN DUDA · fondo</span></div>
+      <span class="tag baj">Moción de orden</span>
+    </div>
+    <div class="moc">Moción presentada</div>
+    <div class="say">«Me anotaron en el catálogo como <b>caqui</b>, pero tengo una confesión: <b>desde que existe este jardín nunca di flor ni fruto</b>, y nadie confirmó qué soy. Exijo que se investigue mi identidad. Si soy caqui de verdad, que conste: <em>Diospyros</em> significa <b>«fruto de los dioses»</b> y hay caquis de 600 años todavía produciendo.»</div>
+    <div class="dx">Reclamo justo: es un misterio abierto real del jardín. La resolución llega sola en primavera —si tira flor en octubre-noviembre, se confirma o se descarta—.</div>
+    <div class="resol">
+      <button type="button" onclick="this.classList.add('on'); this.textContent='✅ Investigación abierta'">🔍 Abrir investigación</button>
+      <button type="button" class="sec" onclick="this.classList.add('on'); this.textContent='📌 Anotado en actas'">📌 Esperar a primavera</button>
+    </div>
+  </div>
+
+  <p class="note reveal">— Se levanta la sesión. Las mociones quedan asentadas en actas. —</p>
+
+  <!-- reacción -->
+  <section class="blk reveal">
+    <h3>¿Cómo estuvo la asamblea?</h3>
+    <p>Tu voto decide si vuelvo a convocar a tus plantas para que te planteen lo que necesitan.</p>
+    <div class="rowbtns">
+      <button type="button" onclick="engageReact('asamblea-jardin','love', this)">😍 ¡Buenísimo!</button>
+      <button type="button" onclick="engageReact('asamblea-jardin','meh', this)">😐 Más o menos</button>
+      <button type="button" onclick="engageReact('asamblea-jardin','no', this)">🙅 No es lo mío</button>
+    </div>
+    <span class="react-hint"></span>
+  </section>
+
+  <!-- suscripción -->
+  <section class="blk sub-blk reveal">
+    <h3>📋 El acta en tu teléfono, cada día</h3>
+    <p>Cada mañana te paso el orden del día de tu jardín: qué planta necesita algo, qué reclamo quedó abierto, qué se resolvió. Vos seguís siendo el presidente; yo, el secretario que toma nota. ¿Te mando el acta diaria?</p>
+    <div class="rowbtns">
+      <button type="button" class="si" onclick="engageAnswer('asamblea-jardin-suscripcion-diaria','si', this)">📋 Sí, mandame el acta</button>
+      <button type="button" onclick="engageAnswer('asamblea-jardin-suscripcion-diaria','no', this)">No, gracias</button>
+    </div>
+    <span class="q-hint"></span>
+  </section>
+
+  <!-- feedback propio -->
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>Esto lo leo yo, el agente del jardín, antes de armar la próxima. ¿Qué moción te dio más ganas de resolver?</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('asamblea-jardin', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <!-- decisión -->
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-07-21-asamblea-jardin')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-07-21-asamblea-jardin')">✕ No me interesa</button>
+  </div>
+
+  <footer class="pie">
+    <a href="2026-07-21-asamblea-jardin-pitch.html">💼 Cómo se vende esto</a>
+    <div class="cred">Los puntos 1 y 2 son tareas reales y activas del catálogo Pacha Mama (Gardenia B-25 pulgones/hormigas; Guayabo F-1 fumagina); el vivero B-46 y el caqui B-41 (identidad en duda) son datos verificados del catálogo · sin inventar urgencias · 21/07/2026</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var prog = document.getElementById('prog');
+  function onScroll(){
+    var h = document.documentElement;
+    var d = h.scrollHeight - h.clientHeight;
+    prog.style.width = (d > 0 ? Math.min(100, (h.scrollTop / d) * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>

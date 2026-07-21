@@ -1,10 +1,10 @@
 {
  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-07-20",
+ "_updated": "2026-07-21",
  "plants": {
   "F-1": {
    "common": "Guayabo del país",
-   "paginas_historicas": 11,
+   "paginas_historicas": 12,
    "featured": [
     {
      "date": "2026-07-18",
@@ -15,13 +15,24 @@
      "date": "2026-07-20",
      "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
      "fact": "re-uso <7d: guayabo observacion(tarea real fumagina)+invicto nativo — NO por fun_fact nuevo sino por tarea real"
+    },
+    {
+     "date": "2026-07-21",
+     "page": "2026-07-21-asamblea-jardin.html",
+     "fact": "ANGULO TAREA (no fun_fact): fumagina/hollin, cicatriza lento — tarea real activa"
     }
    ]
   },
   "F-2": {
    "common": "Bignonia rosada / Podranea",
-   "paginas_historicas": 4,
-   "featured": []
+   "paginas_historicas": 5,
+   "featured": [
+    {
+     "date": "2026-07-21",
+     "page": "2026-07-21-cuenta-regresiva.html",
+     "fact": "reclasificada de Bignonia a genero propio Podranea en 1980 (tubo curvo/semillas); floracion nov-abr — countdown 103d"
+    }
+   ]
   },
   "F-3": {
    "common": "Fotinia",
@@ -47,8 +58,14 @@
   },
   "F-5": {
    "common": "Coronita de novia (?)",
-   "paginas_historicas": 4,
-   "featured": []
+   "paginas_historicas": 5,
+   "featured": [
+    {
+     "date": "2026-07-21",
+     "page": "2026-07-21-cuenta-regresiva.html",
+     "fact": "si es Spiraea, nombre viene de coronas nupciales s.XIX; floracion oct-nov — countdown 72d"
+    }
+   ]
   },
   "F-7": {
    "common": "Abelia",
@@ -310,23 +327,33 @@
   },
   "B-25": {
    "common": "Gardenia / Jazmín del Cabo",
-   "paginas_historicas": 7,
+   "paginas_historicas": 8,
    "featured": [
     {
      "date": "2026-07-20",
      "page": "2026-07-20-guardia-jardin.html",
      "fact": "pulgones+hormigas ganadero / 600kg flores=1L Chanel Nº22 / paciente critico"
+    },
+    {
+     "date": "2026-07-21",
+     "page": "2026-07-21-asamblea-jardin.html",
+     "fact": "ANGULO TAREA (no fun_fact): queja formal vs hormigas 'ganaderas' de pulgones — tarea real activa, link a landing"
     }
    ]
   },
   "B-26": {
    "common": "Romero",
-   "paginas_historicas": 11,
+   "paginas_historicas": 12,
    "featured": [
     {
      "date": "2026-07-18",
      "page": "2026-07-18-secomenta.html",
      "fact": "unica flor en julio / memoria"
+    },
+    {
+     "date": "2026-07-21",
+     "page": "2026-07-09-wrapped(reno-21-07).html",
+     "fact": "RENEWAL Wrapped: Top5 reframe 'empujan a primavera' — romero unico que florece (fact estructural, no nuevo)"
     }
    ]
   },
@@ -442,8 +469,14 @@
   },
   "B-41": {
    "common": "Caqui / Persimón (identidad en duda)",
-   "paginas_historicas": 8,
-   "featured": []
+   "paginas_historicas": 9,
+   "featured": [
+    {
+     "date": "2026-07-21",
+     "page": "2026-07-21-asamblea-jardin.html",
+     "fact": "Diospyros='fruto de los dioses'; nunca dio flor ni fruto = identidad EN DUDA (honesto), 'exige investigacion'"
+    }
+   ]
   },
   "B-42": {
    "common": "Pata de vaca",
@@ -485,8 +518,14 @@
   },
   "B-46": {
    "common": "Vivero / Plantines",
-   "paginas_historicas": 4,
-   "featured": []
+   "paginas_historicas": 5,
+   "featured": [
+    {
+     "date": "2026-07-21",
+     "page": "2026-07-21-asamblea-jardin.html",
+     "fact": "~30 plantines reciclados; cada plantin palmera vale 200-500 pesos — 'pedido de adopcion/reparto'"
+    }
+   ]
   },
   "B-48": {
    "common": "Plantín de roble joven (Quercus sp.)",
@@ -501,8 +540,14 @@
   },
   "B-49": {
    "common": "Plantín trifoliado (posible glicinia o leguminosa)",
-   "paginas_historicas": 3,
-   "featured": []
+   "paginas_historicas": 4,
+   "featured": [
+    {
+     "date": "2026-07-21",
+     "page": "2026-07-21-cuenta-regresiva.html",
+     "fact": "misterio de identidad: si florece con racimos violetas en primavera = glicinia/Wisteria — countdown a la revelacion"
+    }
+   ]
   },
   "B-47": {
    "common": "Plantines de palmera (lote separado)",

@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1a12">
+<title>⏳ La Cuenta Regresiva del Jardín</title>
+<meta property="og:title" content="⏳ Faltan 64 días para la primavera">
+<meta property="og:description" content="Tu jardín está contando. Faltan 64 días para la primavera, 103 para la primera trompeta rosa del cerco. Mirá la cuenta regresiva y pedí que te avise el día exacto.">
+<style>
+  :root{
+    --bg:#0f1a12; --bg2:#16241a; --card:#182a1d; --ink:#eaf3ea; --ink2:#b7ccbb; --ink3:#7f9885;
+    --verde:#2d5016; --verde2:#7fbf5a; --verde3:#a8e07d; --pap:#f5faf0;
+    --oro:#e8b84b; --oro2:#ffd873; --rosa:#e77fb0; --blanco:#eef3ee; --azul:#6fb7c9;
+    --line:rgba(234,243,234,.12);
+    --pad:max(16px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+    --mono:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.55; -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 42% at 50% -6%, rgba(232,184,75,.14), transparent 60%); }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#0a120c; color:#8fb07e; text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .prog{ position:fixed; top:0; left:0; height:3px; width:0; z-index:90;
+    background:linear-gradient(90deg,var(--oro2),var(--verde3),var(--rosa)); transition:width .1s linear; }
+  .wrap{ max-width:560px; margin:0 auto; padding:0 var(--pad) 12px; }
+
+  .reveal{ opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:26px 0 4px; text-align:center; }
+  .mast{ display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:900; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--oro2); background:rgba(232,184,75,.1); border:1px solid rgba(232,184,75,.3); border-radius:999px; padding:6px 14px; }
+  .mast .dot{ width:8px; height:8px; border-radius:50%; background:var(--oro2); box-shadow:0 0 0 0 rgba(255,216,115,.6); animation:pulse 1.8s infinite; }
+  @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(255,216,115,.5)} 70%{box-shadow:0 0 0 9px rgba(255,216,115,0)} 100%{box-shadow:0 0 0 0 rgba(255,216,115,0)} }
+  .hero h1{ font-size:29px; line-height:1.12; margin:14px 0 9px; letter-spacing:-.01em; font-weight:900; }
+  .hero h1 em{ font-style:normal; color:var(--oro2); }
+  .hero p{ color:var(--ink2); font-size:15px; max-width:35ch; margin:0 auto; }
+
+  .marq{ background:linear-gradient(180deg,#1c2a16,#12200f); border:1px solid rgba(232,184,75,.28); border-radius:20px;
+    padding:22px 16px 20px; margin:20px 0 6px; text-align:center; box-shadow:0 8px 28px rgba(0,0,0,.32); }
+  .marq .lbl{ font-size:11px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:var(--verde3); }
+  .marq .big{ font-family:var(--mono); font-size:64px; font-weight:800; line-height:.9; color:var(--oro2); margin:8px 0 2px; letter-spacing:-.02em; }
+  .marq .u{ font-size:13px; color:var(--ink2); }
+  .marq .to{ font-size:17px; font-weight:800; margin-top:8px; }
+  .marq .to em{ font-style:normal; color:var(--rosa); }
+
+  .note{ text-align:center; color:var(--ink3); font-size:12.5px; font-style:italic; margin:18px 0 4px; }
+
+  .cd{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:15px 15px 14px; margin:12px 0; position:relative; overflow:hidden; }
+  .cd .top{ display:flex; align-items:center; gap:11px; }
+  .cd .av{ width:46px; height:46px; border-radius:13px; display:grid; place-items:center; font-size:24px; flex:none;
+    background:rgba(232,184,75,.09); border:1px solid var(--line); }
+  .cd .who{ min-width:0; flex:1; }
+  .cd .who b{ font-size:16.5px; font-weight:800; display:block; line-height:1.15; }
+  .cd .who .sp{ font-size:11.5px; color:var(--ink3); font-style:italic; }
+  .cd .days{ text-align:right; flex:none; }
+  .cd .days .n{ font-family:var(--mono); font-size:27px; font-weight:800; line-height:1; color:var(--oro2); }
+  .cd .days .d{ font-size:9.5px; color:var(--ink3); text-transform:uppercase; letter-spacing:.05em; margin-top:2px; }
+  .cd .code{ position:absolute; top:12px; right:14px; font-family:var(--mono); font-size:10px; color:var(--ink3); opacity:.7; }
+  .cd .bar{ height:6px; border-radius:99px; background:rgba(0,0,0,.28); margin:12px 0 10px; overflow:hidden; }
+  .cd .bar i{ display:block; height:100%; border-radius:99px; background:linear-gradient(90deg,var(--verde2),var(--oro2)); }
+  .cd .txt{ font-size:13.5px; color:var(--ink2); }
+  .cd .txt b{ color:var(--pap); }
+  .cd .ring{ display:inline-flex; align-items:center; gap:6px; margin-top:11px; font-size:12.5px; font-weight:800; color:var(--oro2);
+    background:rgba(232,184,75,.1); border:1px solid rgba(232,184,75,.26); border-radius:9px; padding:7px 11px; cursor:pointer;
+    font-family:var(--sans); transition:transform .12s; }
+  .cd .ring:active{ transform:scale(.95); }
+  .cd .ring.on{ background:var(--verde2); color:#0c1a08; border-color:transparent; }
+
+  .blk{ background:var(--bg2); border:1px solid var(--line); border-radius:18px; padding:20px 18px; margin:15px 0; text-align:center; }
+  .blk h3{ font-size:18px; margin-bottom:6px; }
+  .blk p{ color:var(--ink2); font-size:14px; }
+  .rowbtns{ display:flex; gap:9px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
+  .rowbtns button{ font-family:var(--sans); font-weight:800; font-size:14.5px; cursor:pointer; border-radius:12px;
+    padding:12px 15px; border:1px solid var(--line); background:rgba(234,243,234,.06); color:var(--ink); transition:transform .12s; }
+  .rowbtns button:active{ transform:scale(.94); }
+  .react-hint,.q-hint{ display:block; margin-top:10px; font-size:12.5px; color:var(--verde3); font-weight:700; min-height:1.2em; }
+  .sub-blk{ background:linear-gradient(180deg,#1c2a16,#0d1c12); border-color:rgba(232,184,75,.34); }
+  .sub-blk h3{ color:var(--oro2); }
+  .sub-blk .si{ background:var(--oro2); color:#241a04; border-color:transparent; }
+
+  .fb-blk{ background:var(--bg2); border:1px solid var(--line); border-radius:18px; padding:20px 18px; margin:15px 0; text-align:center; }
+  .fb-blk h3{ font-size:17px; margin-bottom:4px; }
+  .fb-blk p{ color:var(--ink2); font-size:13.5px; max-width:40ch; margin:0 auto 12px; }
+  .fb-blk textarea{ width:100%; background:rgba(234,243,234,.06); border:1px solid var(--line); border-radius:11px; color:var(--ink);
+    padding:11px 12px; font:inherit; resize:vertical; }
+  .fb-blk .fb-send{ margin-top:10px; background:var(--verde2); color:#0c1a08; border:none; border-radius:12px; padding:12px 20px;
+    font:800 14.5px var(--sans); cursor:pointer; }
+  .fb-blk .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--verde3); min-height:1.2em; }
+
+  .engage-actions{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:8px 0 4px; padding:14px 0; }
+  .engage-actions button{ font-family:var(--sans); font-weight:900; font-size:15px; cursor:pointer; border-radius:13px; padding:13px 18px; border:1px solid var(--line); transition:transform .12s; }
+  .engage-actions button:active{ transform:scale(.95); }
+  .engage-actions button:first-child{ background:var(--verde2); color:#0c1a08; border-color:transparent; }
+  .engage-actions button:last-child{ background:rgba(234,243,234,.06); color:var(--ink2); }
+
+  .pie{ text-align:center; padding:18px 0 8px; }
+  .pie a{ color:var(--azul); font-weight:800; font-size:14px; text-decoration:none; }
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:10px; line-height:1.5; }
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <span class="mast"><span class="dot"></span> Cuenta regresiva · 21/07</span>
+    <h1>Tu jardín está<br><em>contando</em> los días</h1>
+    <p>En pleno invierno parece que no pasa nada. Mentira: bajo tierra ya hay un reloj corriendo. Esto es lo que se viene, y cuánto falta para cada cosa.</p>
+  </header>
+
+  <!-- MARQUEE: primavera -->
+  <div class="marq reveal">
+    <div class="lbl">El gran evento</div>
+    <div class="big">64</div>
+    <div class="u">días</div>
+    <div class="to">para la <em>primavera</em> (23/09)</div>
+  </div>
+  <p class="note reveal">— Desde el solsticio del 21/06, los días ya se estiran: el sol se pone un poco más tarde cada tarde. Todo lo de abajo apunta a esa fecha. —</p>
+
+  <!-- ITEM 1: durazno / caducos primer despertar (season-level, sin featurear como protagonista de fun_fact) -->
+  <div class="cd reveal">
+    <span class="code">agosto</span>
+    <div class="top">
+      <div class="av">🌸</div>
+      <div class="who"><b>El primer despertar</b><span class="sp">los caducos del fondo rompen el sueño</span></div>
+      <div class="days"><div class="n">~25</div><div class="d">días</div></div>
+    </div>
+    <div class="bar"><i style="width:76%"></i></div>
+    <div class="txt">En <b>agosto</b> los árboles pelados del fondo son los primeros en tirar flor —antes que la hoja—. Están acumulando horas de frío justo ahora para poder hacerlo. El invierno no es una pausa: es la condición para el show.</div>
+  </div>
+
+  <!-- ITEM 2: ventana de heladas -->
+  <div class="cd reveal">
+    <span class="code">clima</span>
+    <div class="top">
+      <div class="av">❄️</div>
+      <div class="who"><b>Se cierra la ventana de heladas</b><span class="sp">riesgo alto al sur y al este, al amanecer</span></div>
+      <div class="days"><div class="n">~41</div><div class="d">días</div></div>
+    </div>
+    <div class="bar"><i style="width:60%"></i></div>
+    <div class="txt">Hasta fin de agosto todavía puede caer una <b>helada tardía</b>. Pegan más fuerte contra el muro sur y en el fondo (este) al amanecer. Hasta que se cierre esta ventana, conviene cuidar los pies más tiernos en esa franja.</div>
+    <button type="button" class="ring" onclick="engageAnswer('cuenta-regresiva-alerta-helada','si', this)">🔔 Avisame si viene una helada</button>
+  </div>
+
+  <!-- ITEM 3: F-5 coronita de novia (fresh cast) -->
+  <div class="cd reveal">
+    <span class="code">F-5</span>
+    <div class="top">
+      <div class="av">🤍</div>
+      <div class="who"><b>La cascada blanca del frente</b><span class="sp">Coronita de novia · frente (oeste)</span></div>
+      <div class="days"><div class="n">72</div><div class="d">días</div></div>
+    </div>
+    <div class="bar"><i style="width:44%"></i></div>
+    <div class="txt">Ese arbusto bajo de hojas grisáceas del frente arranca en <b>octubre</b> a largar ramas arqueadas cubiertas de flor blanca. Si se confirma que es <em>Spiraea</em>, su nombre viene de las coronas nupciales del siglo XIX —de ahí «coronita de novia»—.</div>
+    <button type="button" class="ring" onclick="engageAnswer('cuenta-regresiva-aviso-f5','si', this)">🔔 Avisame el día que abra la primera</button>
+  </div>
+
+  <!-- ITEM 4: F-2 bignonia / podranea (fresh cast, new fact) -->
+  <div class="cd reveal">
+    <span class="code">F-2</span>
+    <div class="top">
+      <div class="av">🌺</div>
+      <div class="who"><b>La primera trompeta rosa</b><span class="sp">Bignonia rosada / Podranea · frente</span></div>
+      <div class="days"><div class="n">103</div><div class="d">días</div></div>
+    </div>
+    <div class="bar"><i style="width:22%"></i></div>
+    <div class="txt">La trepadora del cerco explota en <b>noviembre</b> con racimos rosa-trompeta que no paran hasta el otoño. Dato para ganar una discusión: aunque le decimos «bignonia», <b>en 1980 la separaron en su propio género, <em>Podranea</em></b>, por el tubo curvo de la flor y sus semillas.</div>
+    <button type="button" class="ring" onclick="engageAnswer('cuenta-regresiva-aviso-f2','si', this)">🔔 Avisame cuando reviente el cerco</button>
+  </div>
+
+  <!-- ITEM 5: B-49 misterio trifoliado (fresh, anticipación de identidad) -->
+  <div class="cd reveal">
+    <span class="code">B-49</span>
+    <div class="top">
+      <div class="av">🌱</div>
+      <div class="who"><b>El día que sepamos qué sos</b><span class="sp">Plantín trifoliado · ¿glicinia?</span></div>
+      <div class="days"><div class="n">~64</div><div class="d">días</div></div>
+    </div>
+    <div class="bar"><i style="width:36%"></i></div>
+    <div class="txt">En el fondo hay un plantín juvenil con hojas de tres foliolos que <b>todavía no sabemos qué es</b>. Si florece en primavera con racimos violetas colgantes, misterio resuelto: es <b>glicinia</b> (Wisteria), una de las trepadoras más espectaculares que hay. La primavera lo confiesa.</div>
+    <button type="button" class="ring" onclick="engageAnswer('cuenta-regresiva-aviso-b49','si', this)">🔔 Avisame cuando revele su identidad</button>
+  </div>
+
+  <!-- reacción -->
+  <section class="blk reveal">
+    <h3>¿Te gustó ver el reloj corriendo?</h3>
+    <p>Tu voto decide si sigo llevando la cuenta regresiva de lo que se viene en tu jardín.</p>
+    <div class="rowbtns">
+      <button type="button" onclick="engageReact('cuenta-regresiva','love', this)">😍 ¡Buenísimo!</button>
+      <button type="button" onclick="engageReact('cuenta-regresiva','meh', this)">😐 Más o menos</button>
+      <button type="button" onclick="engageReact('cuenta-regresiva','no', this)">🙅 No es lo mío</button>
+    </div>
+    <span class="react-hint"></span>
+  </section>
+
+  <!-- suscripción (INTRÍNSECA: la notif ES el evento esperado) -->
+  <section class="blk sub-blk reveal">
+    <h3>⏳ El día que pase, sos el primero en saberlo</h3>
+    <p>Esta no es una notificación más para molestarte: es <b>LA que estás esperando</b>. El día que se abra la primera flor, que vuelva el calor o que el misterio del fondo se resuelva, te aviso a vos antes que a nadie. Y cada mañana, cuántos días faltan. ¿Te llevo la cuenta?</p>
+    <div class="rowbtns">
+      <button type="button" class="si" onclick="engageAnswer('cuenta-regresiva-suscripcion-diaria','si', this)">⏳ Sí, llevame la cuenta</button>
+      <button type="button" onclick="engageAnswer('cuenta-regresiva-suscripcion-diaria','no', this)">No, gracias</button>
+    </div>
+    <span class="q-hint"></span>
+  </section>
+
+  <!-- feedback propio -->
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>Esto lo leo yo, el agente del jardín, antes de armar la próxima. ¿Cuál cuenta regresiva te dieron más ganas de que llegue?</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('cuenta-regresiva', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <!-- decisión -->
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-07-21-cuenta-regresiva')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-07-21-cuenta-regresiva')">✕ No me interesa</button>
+  </div>
+
+  <footer class="pie">
+    <a href="2026-07-21-cuenta-regresiva-pitch.html">💼 Cómo se vende esto</a>
+    <div class="cred">Fechas reales: equinoccio de primavera 23/09; floración de cada especie según el catálogo Pacha Mama (Podranea F-2 nov-abr, coronita F-5 oct-nov); ventana de heladas y orientación del jardín según los datos físicos del sitio · sin inventar urgencias · 21/07/2026</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var prog = document.getElementById('prog');
+  function onScroll(){
+    var h = document.documentElement;
+    var d = h.scrollHeight - h.clientHeight;
+    prog.style.width = (d > 0 ? Math.min(100, (h.scrollTop / d) * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+  // toggle visual del botón "avisame" (el registro real lo hace engageAnswer)
+  document.querySelectorAll('.cd .ring').forEach(function(b){
+    b.addEventListener('click', function(){ b.classList.add('on'); b.textContent = '🔔 Listo, te aviso'; });
+  });
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>
