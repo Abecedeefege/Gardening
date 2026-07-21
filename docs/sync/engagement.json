@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-21T22:21:12.912Z",
+  "_updated_at": "2026-07-21T22:23:10.737Z",
   "events": [
     {
       "_id": "mr9ceqqfryq3p7",
@@ -921,6 +921,15 @@
       "nid": "2026-07-21-c",
       "src": "push",
       "ts": "2026-07-21T22:21:13.140Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrv7zcfrqvkhzo",
+      "type": "feedback_text",
+      "target": "asamblea-jardin",
+      "text": "Esta todo perfecto.  Tené en cuenta que está lloviendo hace días en Montevideo, no he podido avanzar",
+      "page": "engage/2026-07-21-asamblea-jardin.html",
+      "ts": "2026-07-21T22:23:11.031Z",
       "device": "sin-nombre"
     }
   ],
