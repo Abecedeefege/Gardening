@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-21T17:01:33.529Z",
+  "_updated_at": "2026-07-21T17:01:43.673Z",
   "events": [
     {
       "_id": "mr9ceqqfryq3p7",
@@ -895,6 +895,15 @@
       "value": "meh",
       "page": "engage/2026-07-09-wrapped-jardin.html",
       "ts": "2026-07-21T17:01:33.427Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mruwhydalswhdt",
+      "type": "dwell",
+      "seconds": 35,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-09-wrapped-jardin.html",
+      "ts": "2026-07-21T17:01:43.870Z",
       "device": "sin-nombre"
     }
   ],
