@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-21T17:01:43.673Z",
+  "_updated_at": "2026-07-21T22:21:12.912Z",
   "events": [
     {
       "_id": "mr9ceqqfryq3p7",
@@ -904,6 +904,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-09-wrapped-jardin.html",
       "ts": "2026-07-21T17:01:43.870Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrv7wth1hed04g",
+      "type": "notification_clicked",
+      "nid": "2026-07-21-c",
+      "page": "engage/2026-07-21-asamblea-jardin.html",
+      "ts": "2026-07-21T22:21:13.140Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrv7wth1zzye29",
+      "type": "page_visit",
+      "page": "engage/2026-07-21-asamblea-jardin.html",
+      "nid": "2026-07-21-c",
+      "src": "push",
+      "ts": "2026-07-21T22:21:13.140Z",
       "device": "sin-nombre"
     }
   ],
