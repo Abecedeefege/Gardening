@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-19T18:55:20.541Z",
+  "_updated_at": "2026-07-21T17:01:08.933Z",
   "events": [
     {
       "_id": "mr9ceqqfryq3p7",
@@ -869,6 +869,23 @@
       "nid": "2026-07-19-b",
       "src": "push",
       "ts": "2026-07-19T18:55:22.750Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mruwh765otpxhc",
+      "type": "notification_clicked",
+      "nid": "2026-07-21-b",
+      "page": "engage/2026-07-09-wrapped-jardin.html",
+      "ts": "2026-07-21T17:01:08.617Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mruwh76568pwga",
+      "type": "page_visit",
+      "page": "engage/2026-07-09-wrapped-jardin.html",
+      "nid": "2026-07-21-b",
+      "src": "push",
+      "ts": "2026-07-21T17:01:08.617Z",
       "device": "sin-nombre"
     }
   ],
