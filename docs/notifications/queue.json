@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-21T09:16:23.763407",
+  "_updated_at": "2026-07-21T13:45:13.880Z",
   "notifications": [
     {
       "id": "2026-07-21-task-dia",
@@ -9,8 +9,8 @@
       "format": "tarea",
       "send_at": "2026-07-21T10:00:00-03:00",
       "expires_at": "2026-07-21T21:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-21T13:45:13.754Z",
       "fail_reason": null,
       "created_by": "gen_task_reminders 2026-07-21"
     },
@@ -21,8 +21,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-21-cuenta-regresiva.html",
       "send_at": "2026-07-21T10:30:00-03:00",
       "expires_at": "2026-07-21T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-21T13:45:13.879Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-21"
     },
