@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-22T13:48:11.505Z",
+  "_updated_at": "2026-07-22T15:40:23.173Z",
   "notifications": [
     {
       "id": "2026-07-22-task-dia",
@@ -58,8 +58,8 @@
       "format": "tarea",
       "send_at": "2026-07-22T11:00:00-03:00",
       "expires_at": "2026-07-22T21:30:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-22T15:40:23.172Z",
       "fail_reason": null,
       "created_by": "gen_top3_tareas 2026-07-22"
     }
