@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-22T09:00:00.000Z",
+  "_updated_at": "2026-07-22T14:17:03.258Z",
   "events": [
     {
       "_id": "mrc635gnrijqqv",
@@ -737,6 +737,23 @@
       "page": "engage/2026-07-21-asamblea-jardin.html",
       "ts": "2026-07-21T22:23:11.031Z",
       "device": "sin-nombre"
+    },
+    {
+      "_id": "mrw6229cabqd05",
+      "type": "notification_clicked",
+      "nid": "2026-07-22-task-dia",
+      "page": "tasks/plant-B-25-3.html",
+      "ts": "2026-07-22T14:17:04.743Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrw6229cul8ap0",
+      "type": "page_visit",
+      "page": "tasks/plant-B-25-3.html",
+      "nid": "2026-07-22-task-dia",
+      "src": "push",
+      "ts": "2026-07-22T14:17:04.743Z",
+      "device": "landing"
     }
   ],
   "daily_summary": {
