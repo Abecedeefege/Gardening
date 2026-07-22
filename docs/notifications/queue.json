@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-22T17:01:12.378Z",
+  "_updated_at": "2026-07-22T21:11:48.844Z",
   "notifications": [
     {
       "id": "2026-07-22-task-dia",
@@ -45,8 +45,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-22-grupo-jardin.html",
       "send_at": "2026-07-22T18:00:00-03:00",
       "expires_at": "2026-07-22T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-22T21:11:48.843Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-22"
     },
