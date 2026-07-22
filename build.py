@@ -1517,6 +1517,9 @@ def build_ideas_html(img_data, timeline_modals: str = "",
     # Regla del usuario: cada experiencia que se aprueba se suma acá (no en la
     # nav del inicio). El agente de /engagement agrega una entrada al promover.
     approved_experiences = [
+        {"icon": "📋", "title": "La Asamblea del Jardín",
+         "desc": "Tus plantas convocan asamblea y vos presidís: cada moción es una tarea o novedad real que resolvés con humor.",
+         "page": "engage/2026-07-21-asamblea-jardin.html"},
         {"icon": "📗", "title": "El Álbum de tu Jardín",
          "desc": "Tu jardín como álbum de figuritas: 52 láminas, 4 brillantes por rareza real y 2 fantasmas por resolver.",
          "page": "engage/2026-07-10-album-figuritas.html"},

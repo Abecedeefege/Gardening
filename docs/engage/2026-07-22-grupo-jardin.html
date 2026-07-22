@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b141a">
+<title>🌿 El grupo de WhatsApp del Jardín</title>
+<meta property="og:title" content="🌿 El grupo del jardín se prendió fuego con la lluvia">
+<meta property="og:description" content="El Romero se queja de los pies mojados, la Gardenia festeja que se le fueron los pulgones y el Durazno ni se enteró. Espiá el grupo de tus plantas.">
+<style>
+  :root{
+    --wa-bg:#0b141a; --wa-panel:#111b21; --wa-in:#202c33; --wa-out:#005c4b; --wa-head:#202c33;
+    --ink:#e9edef; --ink2:#aebac1; --ink3:#8696a0; --tick:#53bdeb;
+    --verde:#2d5016; --verde2:#7fbf5a; --verde3:#a8e07d; --pap:#f5faf0;
+    --line:rgba(233,237,239,.1);
+    --pad:max(14px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--wa-bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased;
+    background-image:linear-gradient(rgba(11,20,26,.94),rgba(11,20,26,.94)); overflow-x:hidden; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#060d12; color:#7fa896; text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .prog{ position:fixed; top:0; left:0; height:3px; width:0; z-index:90; background:linear-gradient(90deg,var(--verde3),var(--tick)); transition:width .1s linear; }
+  .wrap{ max-width:520px; margin:0 auto; }
+
+  .chat-head{ display:flex; align-items:center; gap:11px; background:var(--wa-head); padding:11px var(--pad); position:sticky; top:0; z-index:20; border-bottom:1px solid var(--line); }
+  .avatar{ width:42px; height:42px; border-radius:50%; background:radial-gradient(circle at 30% 30%,#3a5a2a,#1c2e14); display:grid; place-items:center; font-size:22px; flex:0 0 auto; }
+  .chat-head .nm{ font-weight:800; font-size:16px; }
+  .chat-head .st{ font-size:12.5px; color:var(--ink3); margin-top:1px; }
+
+  .stream{ padding:16px var(--pad) 6px; }
+  .daystamp{ text-align:center; margin:6px auto 16px; }
+  .daystamp span{ background:var(--wa-in); color:var(--ink2); font-size:11.5px; font-weight:700; padding:5px 12px; border-radius:8px; }
+
+  .msg{ max-width:85%; margin-bottom:9px; padding:7px 10px 6px; border-radius:9px; font-size:14.5px; position:relative; opacity:0; transform:translateY(10px);
+    transition:opacity .45s ease, transform .45s ease; }
+  .msg.in{ opacity:1; transform:none; }
+  .msg .nm{ font-size:12.5px; font-weight:800; margin-bottom:2px; }
+  .msg .tx{ color:#e9edef; }
+  .msg .tx b{ color:#fff; }
+  .msg .meta{ display:block; text-align:right; font-size:10.5px; color:var(--ink3); margin-top:2px; }
+  .msg.them{ background:var(--wa-in); border-top-left-radius:2px; margin-right:auto; }
+  .msg.me{ background:var(--wa-out); border-top-right-radius:2px; margin-left:auto; }
+  .msg.me .meta{ color:#9ad9c5; }
+  .fact{ display:block; margin-top:5px; padding-top:5px; border-top:1px dashed rgba(255,255,255,.14); font-size:12.5px; color:var(--ink2); }
+  .fact b{ color:var(--verde3); }
+  .c1{ color:#8fd0f5 } .c2{ color:#f5a89a } .c3{ color:#f7c86b } .c4{ color:#a8e07d } .c5{ color:#d8a8f0 } .c6{ color:#7fd0c0 } .c7{ color:#f59ec8 }
+
+  .zone{ max-width:520px; margin:0 auto; padding:0 var(--pad); }
+  .blk{ background:var(--wa-panel); border:1px solid var(--line); border-radius:16px; padding:18px 16px; margin:16px 0; }
+  .blk h3{ font-size:17px; font-weight:900; margin-bottom:6px; color:var(--ink); }
+  .blk p{ color:var(--ink2); font-size:14px; }
+  .react-row{ display:flex; gap:9px; flex-wrap:wrap; margin-top:14px; }
+  .react-row button{ flex:1; min-width:96px; font-family:var(--sans); font-weight:800; font-size:14.5px; cursor:pointer; border-radius:12px;
+    padding:13px 8px; border:1px solid var(--line); background:rgba(233,237,239,.05); color:var(--ink); transition:transform .12s; }
+  .react-row button:active{ transform:scale(.94); }
+  .sub-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+  .sub-row button{ flex:1; min-width:130px; font-family:var(--sans); font-weight:800; font-size:14.5px; cursor:pointer; border-radius:12px;
+    padding:13px 10px; border:1px solid var(--line); background:rgba(233,237,239,.05); color:var(--ink2); transition:transform .12s; }
+  .sub-row button:active{ transform:scale(.94); }
+  .sub-row button.si{ background:#00a884; color:#04120d; border-color:transparent; }
+
+  .fb-blk textarea{ width:100%; margin-top:10px; background:#0c151b; border:1px solid var(--line); border-radius:11px; color:var(--ink);
+    font-family:var(--sans); font-size:15px; padding:11px 12px; resize:vertical; }
+  .fb-blk textarea:focus{ outline:none; border-color:#00a884; }
+  .fb-send{ margin-top:10px; font-family:var(--sans); font-weight:900; font-size:15px; cursor:pointer; border-radius:12px; padding:12px 18px;
+    border:none; background:var(--verde2); color:#0c1a08; transition:transform .12s; }
+  .fb-send:active{ transform:scale(.95); }
+  .fb-hint{ display:block; margin-top:9px; font-size:13px; color:var(--verde3); min-height:16px; }
+
+  .engage-actions{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:8px 0 4px; padding:14px 0; }
+  .engage-actions button{ font-family:var(--sans); font-weight:900; font-size:15px; cursor:pointer; border-radius:13px; padding:13px 18px; border:1px solid var(--line); transition:transform .12s; }
+  .engage-actions button:active{ transform:scale(.95); }
+  .engage-actions button:first-child{ background:var(--verde2); color:#0c1a08; border-color:transparent; }
+  .engage-actions button:last-child{ background:rgba(233,237,239,.06); color:var(--ink2); }
+
+  .pie{ text-align:center; padding:22px 0 8px; }
+  .pie a{ display:inline-block; color:var(--verde3); font-weight:800; font-size:14px; text-decoration:none; border:1px solid rgba(127,191,90,.3);
+    border-radius:11px; padding:11px 18px; }
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:14px; line-height:1.5; padding:0 var(--pad); }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="prog" id="prog"></div>
+
+<div class="wrap">
+  <div class="chat-head">
+    <div class="avatar">🌿</div>
+    <div>
+      <div class="nm">Jardín Pacha Mama</div>
+      <div class="st">52 participantes · en línea bajo la lluvia</div>
+    </div>
+  </div>
+
+  <div class="stream" id="stream">
+    <div class="daystamp msg"><span>HOY · llueve hace días en Montevideo</span></div>
+
+    <div class="msg them"><div class="nm c1">💙 Hortensia · B-5a</div><div class="tx">Chicas ESTO ES VIDA 😍 tomo agua sin parar. Igual me deben un trasplante eh 👀
+      <span class="fact"><b>Real:</b> es la más sedienta de la casa; el invierno lluvioso es su paraíso.</span></div><span class="meta">10:12 ✓✓</span></div>
+
+    <div class="msg them"><div class="nm c2">🌵 Romero · B-26</div><div class="tx">Yo me estoy pudriendo los pies 🙄 soy mediterráneo, la lluvia NO es lo mío. Alguien que me drene la maceta porfa
+      <span class="fact"><b>Real:</b> odia los pies mojados… pero es la <b>única</b> del jardín que florece en pleno julio.</span></div><span class="meta">10:14 ✓✓</span></div>
+
+    <div class="msg them"><div class="nm c3">💜 Lavanda · B-10</div><div class="tx">+1 romero. Secá esa tierra que nos ahogamos 😤</div><span class="meta">10:15 ✓✓</span></div>
+
+    <div class="msg them"><div class="nm c4">🤍 Gardenia · B-25</div><div class="tx">Al menos el agua me sacó de encima a los pulgones y a las hormigas “ganaderas” 😌 respiro
+      <span class="fact"><b>Real:</b> la lluvia voltea pulgones y desarma las hileras de hormigas que los ordeñan.</span></div><span class="meta">10:21 ✓✓</span></div>
+
+    <div class="msg them"><div class="nm c6">💪 Guayabo · F-1</div><div class="tx">Nativo, banco cualquier clima. Encima la lluvia me lava el hollín negro de las hojas, gracias 🙏
+      <span class="fact"><b>Real:</b> nativo del país; la lluvia enjuaga la fumagina y lo deja respirar.</span></div><span class="meta">10:29 ✓✓</span></div>
+
+    <div class="msg them"><div class="nm c5">😴 Durazno · B-30</div><div class="tx">Yo ni me entero, estoy en coma invernal 😴 avisen cuando sea agosto que ahí despierto con la primera flor</div><span class="meta">10:33 ✓✓</span></div>
+
+    <div class="msg them"><div class="nm c7">🍐 Pera Williams · B-39</div><div class="tx">Ojo durazno que este año te gano LA CARRERA de la primera flor 👀🏁
+      <span class="fact"><b>Real:</b> los dos caducos abren en agosto; se llevan una picardía de días.</span></div><span class="meta">10:40 ✓✓</span></div>
+
+    <div class="msg them"><div class="nm c3">🍊 Mandarina · B-24</div><div class="tx">Nosotros seguimos dando fruta como si nada 🍊 lluvia = fruta más jugosa. No paramos ni en invierno</div><span class="meta">10:52 ✓✓</span></div>
+
+    <div class="msg them"><div class="nm c1">🥥 Pindó · B-8</div><div class="tx">Racimo coco-banana listo, vengan a buscarlo antes que los pájaros 🥥🐦
+      <span class="fact"><b>Real:</b> palmera nativa, con fruto comestible justo ahora (marzo–julio).</span></div><span class="meta">11:03 ✓✓</span></div>
+
+    <div class="msg them"><div class="nm c4">🌱 El Vivero · B-46</div><div class="tx">Somos como 30 acá y nos entra agua a todos 😅 cuidado con encharcarnos que somos bebés</div><span class="meta">11:10 ✓✓</span></div>
+
+    <div class="msg them"><div class="nm c6">😎 Hiedra · B-15</div><div class="tx">400 años de inviernos encima. Este ni lo siento, sigan sigan 😎</div><span class="meta">11:18 ✓✓</span></div>
+
+    <div class="msg them"><div class="nm c2">🫥 Caqui (?) · B-41</div><div class="tx">Che… ¿alguien me confirma quién soy? Nunca di flor ni fruto, sigo con la identidad en duda 🫥</div><span class="meta">11:26 ✓✓</span></div>
+
+    <div class="msg me"><div class="tx">Vos: … 👀 (leído)</div><span class="meta">ahora ✓✓</span></div>
+  </div>
+
+  <div class="zone">
+    <section class="blk reveal">
+      <h3>¿Te copó espiar el grupo?</h3>
+      <p>Todo lo que dijeron es verdad — solo les puse voz. El chisme del cantero, en tiempo real.</p>
+      <div class="react-row">
+        <button type="button" onclick="engageReact('grupo-jardin','love', this)">😍 ¡Genial!</button>
+        <button type="button" onclick="engageReact('grupo-jardin','meh', this)">😐 Más o menos</button>
+        <button type="button" onclick="engageReact('grupo-jardin','no', this)">🙅 No es lo mío</button>
+      </div>
+    </section>
+
+    <section class="blk reveal">
+      <h3>💬 Sumate al grupo todos los días</h3>
+      <p>Cada día te mando el resumen fresco del grupo: quién se quejó, quién festejó y qué pasó de verdad en tu jardín. Como estar en la conversa.</p>
+      <div class="sub-row">
+        <button type="button" class="si" onclick="engageAnswer('grupo-jardin-suscripcion-diaria','si', this)">💬 Sí, sumame al grupo</button>
+        <button type="button" onclick="engageAnswer('grupo-jardin-suscripcion-diaria','no', this)">No, gracias</button>
+      </div>
+    </section>
+
+    <section class="blk fb-blk reveal" id="engage-feedback-box">
+      <h3>💬 Decime qué te pareció</h3>
+      <p>Esto lo leo yo, el agente del jardín, antes de armar el próximo. ¿Qué planta te hizo más reír?</p>
+      <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+      <button type="button" class="fb-send" onclick="engageFeedback('grupo-jardin', this)">Enviar feedback</button>
+      <span class="fb-hint"></span>
+    </section>
+
+    <div class="engage-actions">
+      <button onclick="engageApprove('2026-07-22-grupo-jardin')">✅ Aprobar esta mejora</button>
+      <button onclick="engageRejected('2026-07-22-grupo-jardin')">✕ No me interesa</button>
+    </div>
+
+    <footer class="pie">
+      <a href="2026-07-22-grupo-jardin-pitch.html">💼 Cómo se vende esto</a>
+      <div class="cred">Cada mensaje se apoya en un dato real del catálogo Pacha Mama: Hortensia B-5a sedienta; Romero B-26 mediterráneo y única floración de julio; Gardenia B-25 (tarea real de pulgones/hormigas); Guayabo F-1 nativo con fumagina; Durazno B-30 y Pera B-39 caducos que abren en agosto; cítricos B-24 con fruta; Pindó B-8 nativo con fruto; vivero B-46; Hiedra B-15 +400 años; Caqui B-41 identidad en duda. Sin inventar urgencias · 22/07/2026</div>
+    </footer>
+  </div>
+</div>
+
+<script>
+(function(){
+  var prog = document.getElementById('prog');
+  function onScroll(){
+    var h = document.documentElement;
+    var d = h.scrollHeight - h.clientHeight;
+    prog.style.width = (d > 0 ? Math.min(100, (h.scrollTop / d) * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+  // Mensajes del chat: aparecen en cascada al entrar en viewport
+  var msgs = Array.prototype.slice.call(document.querySelectorAll('#stream .msg'));
+  var i = 0;
+  function pop(){ if(i<msgs.length){ msgs[i].classList.add('in'); i++; setTimeout(pop, 260); } }
+  setTimeout(pop, 300);
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>

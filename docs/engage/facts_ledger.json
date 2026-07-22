@@ -1,10 +1,10 @@
 {
  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-07-21",
+ "_updated": "2026-07-22",
  "plants": {
   "F-1": {
    "common": "Guayabo del país",
-   "paginas_historicas": 12,
+   "paginas_historicas": 13,
    "featured": [
     {
      "date": "2026-07-18",
@@ -20,6 +20,11 @@
      "date": "2026-07-21",
      "page": "2026-07-21-asamblea-jardin.html",
      "fact": "ANGULO TAREA (no fun_fact): fumagina/hollin, cicatriza lento — tarea real activa"
+    },
+    {
+     "date": "2026-07-22",
+     "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
+     "fact": "ANGULO LLUVIA (no fun_fact): la lluvia lava la fumagina de las hojas del nativo — tarea real"
     }
    ]
   },
@@ -157,12 +162,17 @@
   },
   "B-5a": {
    "common": "Hortensia",
-   "paginas_historicas": 5,
+   "paginas_historicas": 6,
    "featured": [
     {
      "date": "2026-07-18",
      "page": "2026-07-18-regalo-invierno.html",
      "fact": "clavos oxidados=azul / cal=rosa"
+    },
+    {
+     "date": "2026-07-22",
+     "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
+     "fact": "ANGULO LLUVIA: la mas sedienta, festeja el invierno lluvioso (trasplante pendiente honesto)"
     }
    ]
   },
@@ -190,12 +200,17 @@
   },
   "B-8": {
    "common": "Palmera pindó",
-   "paginas_historicas": 7,
+   "paginas_historicas": 8,
    "featured": [
     {
      "date": "2026-07-18",
      "page": "2026-07-18-horoscopo(semana).html",
      "fact": "Romanzoff / golosina coco-banana / fruta julio"
+    },
+    {
+     "date": "2026-07-22",
+     "page": "2026-07-22-grupo-jardin.html",
+     "fact": "ANGULO LLUVIA: palmera nativa con fruto coco-banana ahora (mar-jul)"
     }
    ]
   },
@@ -212,12 +227,17 @@
   },
   "B-10": {
    "common": "Lavanda",
-   "paginas_historicas": 8,
+   "paginas_historicas": 9,
    "featured": [
     {
      "date": "2026-07-18",
      "page": "2026-07-18-regalo-invierno.html",
      "fact": "lavare / aromaterapia / bolsita almohada"
+    },
+    {
+     "date": "2026-07-22",
+     "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
+     "fact": "ANGULO LLUVIA: mediterranea, se queja del exceso de agua (drenaje)"
     }
    ]
   },
@@ -256,12 +276,17 @@
   },
   "B-15": {
    "common": "Hiedra común",
-   "paginas_historicas": 7,
+   "paginas_historicas": 8,
    "featured": [
     {
      "date": "2026-07-20",
      "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
      "fact": "+400 anios / invicto del invierno / donante universal resistencia"
+    },
+    {
+     "date": "2026-07-22",
+     "page": "2026-07-22-grupo-jardin.html",
+     "fact": "ANGULO LLUVIA: +400 anios de inviernos, ni se inmuta"
     }
    ]
   },
@@ -294,12 +319,17 @@
   },
   "B-22": {
    "common": "Palta uruguaya",
-   "paginas_historicas": 9,
+   "paginas_historicas": 10,
    "featured": [
     {
      "date": "2026-07-20",
      "page": "2026-07-20-quiniela-jardin.html",
      "fact": "viudo evolutivo perezosos gigantes 13000 anios / cosecha oculta"
+    },
+    {
+     "date": "2026-07-22",
+     "page": "2026-07-22-lluvia-tareas.html",
+     "fact": "ANGULO LLUVIA: caveat honesto — humedad pegada al cuello del tronco favorece hongos de base"
     }
    ]
   },
@@ -316,18 +346,23 @@
   },
   "B-24": {
    "common": "Mandarina criolla",
-   "paginas_historicas": 7,
+   "paginas_historicas": 8,
    "featured": [
     {
      "date": "2026-07-18",
      "page": "2026-07-18-regalo-invierno.html",
      "fact": "citrico mas antiguo 3000aC / mandarines / fruta en julio"
+    },
+    {
+     "date": "2026-07-22",
+     "page": "2026-07-22-grupo-jardin.html",
+     "fact": "ANGULO LLUVIA: citrico da fruta en julio, lluvia = fruta mas jugosa"
     }
    ]
   },
   "B-25": {
    "common": "Gardenia / Jazmín del Cabo",
-   "paginas_historicas": 8,
+   "paginas_historicas": 9,
    "featured": [
     {
      "date": "2026-07-20",
@@ -338,12 +373,17 @@
      "date": "2026-07-21",
      "page": "2026-07-21-asamblea-jardin.html",
      "fact": "ANGULO TAREA (no fun_fact): queja formal vs hormigas 'ganaderas' de pulgones — tarea real activa, link a landing"
+    },
+    {
+     "date": "2026-07-22",
+     "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
+     "fact": "ANGULO LLUVIA (no fun_fact): el agua voltea pulgones y desarma hormigas — tarea real, alivio"
     }
    ]
   },
   "B-26": {
    "common": "Romero",
-   "paginas_historicas": 12,
+   "paginas_historicas": 13,
    "featured": [
     {
      "date": "2026-07-18",
@@ -354,6 +394,11 @@
      "date": "2026-07-21",
      "page": "2026-07-09-wrapped(reno-21-07).html",
      "fact": "RENEWAL Wrapped: Top5 reframe 'empujan a primavera' — romero unico que florece (fact estructural, no nuevo)"
+    },
+    {
+     "date": "2026-07-22",
+     "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
+     "fact": "ANGULO LLUVIA: mediterranea odia pies mojados = caveat honesto de drenaje; unica flor de julio"
     }
    ]
   },
@@ -381,12 +426,17 @@
   },
   "B-30": {
    "common": "Durazno",
-   "paginas_historicas": 7,
+   "paginas_historicas": 8,
    "featured": [
     {
      "date": "2026-07-20",
      "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
      "fact": "coma inducido dormancia / florece agosto primero / carrera 1a flor"
+    },
+    {
+     "date": "2026-07-22",
+     "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
+     "fact": "ANGULO LLUVIA: caduco en coma invernal, recarga suelo para florecer en agosto"
     }
    ]
   },
@@ -447,12 +497,17 @@
   },
   "B-39": {
    "common": "Pera Williams",
-   "paginas_historicas": 8,
+   "paginas_historicas": 9,
    "featured": [
     {
      "date": "2026-07-20",
      "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
      "fact": "reposo / flor blanca agosto / carrera 1a flor vs durazno"
+    },
+    {
+     "date": "2026-07-22",
+     "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
+     "fact": "ANGULO LLUVIA: caduco, carrera de la 1a flor vs durazno en agosto"
     }
    ]
   },
@@ -469,12 +524,17 @@
   },
   "B-41": {
    "common": "Caqui / Persimón (identidad en duda)",
-   "paginas_historicas": 9,
+   "paginas_historicas": 10,
    "featured": [
     {
      "date": "2026-07-21",
      "page": "2026-07-21-asamblea-jardin.html",
      "fact": "Diospyros='fruto de los dioses'; nunca dio flor ni fruto = identidad EN DUDA (honesto), 'exige investigacion'"
+    },
+    {
+     "date": "2026-07-22",
+     "page": "2026-07-22-grupo-jardin.html",
+     "fact": "ANGULO LLUVIA: sigue con identidad en duda (nunca flor ni fruto) — honesto"
     }
    ]
   },
@@ -518,12 +578,17 @@
   },
   "B-46": {
    "common": "Vivero / Plantines",
-   "paginas_historicas": 5,
+   "paginas_historicas": 6,
    "featured": [
     {
      "date": "2026-07-21",
      "page": "2026-07-21-asamblea-jardin.html",
      "fact": "~30 plantines reciclados; cada plantin palmera vale 200-500 pesos — 'pedido de adopcion/reparto'"
+    },
+    {
+     "date": "2026-07-22",
+     "page": "2026-07-22-grupo-jardin.html",
+     "fact": "ANGULO LLUVIA: ~30 plantines, cuidado con encharcarlos (damping-off)"
     }
    ]
   },

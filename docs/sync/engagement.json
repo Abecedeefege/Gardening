@@ -1,200 +1,6 @@
 {
-  "_updated_at": "2026-07-21T22:23:10.737Z",
+  "_updated_at": "2026-07-22T09:00:00.000Z",
   "events": [
-    {
-      "_id": "mr9ceqqfryq3p7",
-      "type": "notification_clicked",
-      "nid": "2026-07-06-task-semana",
-      "page": "tareas.html",
-      "ts": "2026-07-06T14:56:11.989Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr9ceqqfm655d0",
-      "type": "page_visit",
-      "page": "tareas.html",
-      "nid": "2026-07-06-task-semana",
-      "src": "push",
-      "ts": "2026-07-06T14:56:11.989Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr9iqydyk07q55",
-      "type": "notification_clicked",
-      "nid": "2026-07-06-b",
-      "page": "engage/2026-07-06-chat-jardin.html",
-      "ts": "2026-07-06T17:53:39.476Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr9iqydygd22jf",
-      "type": "page_visit",
-      "page": "engage/2026-07-06-chat-jardin.html",
-      "nid": "2026-07-06-b",
-      "src": "push",
-      "ts": "2026-07-06T17:53:39.476Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr9ir65xzzhmml",
-      "type": "reaction",
-      "target": "chat",
-      "value": "meh",
-      "page": "engage/2026-07-06-chat-jardin.html",
-      "ts": "2026-07-06T17:53:49.557Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr9ir7xw6ze3jb",
-      "type": "answer",
-      "qid": "chat-suscripcion-diaria",
-      "value": "no",
-      "page": "engage/2026-07-06-chat-jardin.html",
-      "ts": "2026-07-06T17:53:51.860Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr9ir8zfg2c9q6",
-      "type": "proposal_rejected",
-      "proposal_id": "2026-07-06-chat-jardin",
-      "ts": "2026-07-06T17:53:53.211Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr9irc2u9cbntd",
-      "type": "dwell",
-      "seconds": 18,
-      "scroll_pct": 100,
-      "page": "engage/2026-07-06-chat-jardin.html",
-      "ts": "2026-07-06T17:53:57.221Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr9sar7zx21bho",
-      "type": "reaction",
-      "target": "duelo-r1",
-      "value": "correct",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-07-06T22:20:59.855Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr9saxgau6rih5",
-      "type": "reaction",
-      "target": "duelo-r2",
-      "value": "wrong",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-07-06T22:21:07.930Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr9sb0q6rymhe8",
-      "type": "reaction",
-      "target": "duelo-r3",
-      "value": "correct",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-07-06T22:21:12.174Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr9sb3qm6ptyjy",
-      "type": "reaction",
-      "target": "duelo-r4",
-      "value": "correct",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-07-06T22:21:16.078Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr9sb7aoouitls",
-      "type": "reaction",
-      "target": "duelo-r5",
-      "value": "correct",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-07-06T22:21:20.688Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr9sbbz8wlfd3m",
-      "type": "reaction",
-      "target": "duelo-r6",
-      "value": "correct",
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-07-06T22:21:26.756Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mr9sbfq4730lx7",
-      "type": "dwell",
-      "seconds": 36,
-      "scroll_pct": 100,
-      "page": "engage/duelo-jardin.html",
-      "ts": "2026-07-06T22:21:31.612Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mra1uty7liei5b",
-      "type": "page_visit",
-      "page": "engage/2026-06-29-feed-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-07-07T02:48:33.052Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "mra1uujdy3xsul",
-      "type": "page_visit",
-      "page": "engage/2026-06-29-feed-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-07-07T02:48:33.814Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mra1v0y61pddkr",
-      "type": "dwell",
-      "seconds": 9,
-      "scroll_pct": 13,
-      "page": "engage/2026-06-29-feed-jardin.html",
-      "ts": "2026-07-07T02:48:42.126Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "mra1v5v5vi5t3y",
-      "type": "page_visit",
-      "page": "engage/2026-06-30-superpoderes-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-07-07T02:48:48.494Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mra1v9tp2dli5k",
-      "type": "dwell",
-      "seconds": 6,
-      "scroll_pct": 55,
-      "page": "engage/2026-06-30-superpoderes-jardin.html",
-      "ts": "2026-07-07T02:48:53.629Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "mra1vic4pxn7i9",
-      "type": "page_visit",
-      "page": "engage/2026-06-30-chusmerio-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-07-07T02:49:04.657Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mra1vl4wf94p47",
-      "type": "dwell",
-      "seconds": 4,
-      "scroll_pct": 8,
-      "page": "engage/2026-06-30-chusmerio-jardin.html",
-      "ts": "2026-07-07T02:49:08.288Z",
-      "device": "pix9"
-    },
     {
       "_id": "mrc635gnrijqqv",
       "type": "notification_clicked",
@@ -1076,6 +882,18 @@
       "sent": 0,
       "clicked": 2,
       "visits": 2,
+      "approvals": 0
+    },
+    "2026-07-06": {
+      "sent": 5,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-07-07": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 4,
       "approvals": 0
     }
   }

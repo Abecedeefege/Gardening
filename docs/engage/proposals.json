@@ -701,24 +701,48 @@
     {
       "id": "2026-07-21-cuenta-regresiva",
       "title": "La Cuenta Regresiva del Jardín",
-      "page": "engage/2026-07-21-cuenta-regresiva.html",
+      "page": null,
       "created": "2026-07-21",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Formato NUEVO (cuenta regresiva). Ataca directo el gap de tasa-de-suscripción con suscripción INTRÍNSECA: la notif no interrumpe, ES el evento que el usuario pidió (el día que abra la 1a flor). Anticipación + efecto Zeigarnik = motivo de retorno. Cast fresco (F-2 Podranea, F-5 coronita, B-49 misterio) + eventos de estación (primavera 23/09, heladas). Si convierte a sub, encontramos el mecanismo que rompe la sequía de 7 días.",
       "notified_by": [
         "2026-07-21-a"
       ],
-      "result_notes": null
+      "result_notes": "DROPPED 22/07 por la regla de no-supervivencia sin aprobacion explicita (pending de dia anterior). El push promotor (a, 10:30) se envio 201 pero NO se registro NINGUN evento: el usuario no lo abrio. Contraste directo con la Asamblea del mismo dia (feedback_text positivo a las 18:00): con el usuario CLARAMENTE activo y receptivo esa jornada, la Cuenta Regresiva simplemente no engancho la apertura. 2do intento del mecanismo 'suscripcion intrinseca/countdown' sin traccion (el 1ro, quiniela 20/07, cayo en ventana en blanco). Lectura: el countdown/anticipacion NO abre — el usuario responde a AGENCIA+HUMOR+PRESENTE (Asamblea), no a espera pasiva de un evento futuro. Se cierra la linea countdown. Pagina + pitch eliminados (git rm)."
     },
     {
       "id": "2026-07-21-asamblea-jardin",
       "title": "La Asamblea del Jardín",
       "page": "engage/2026-07-21-asamblea-jardin.html",
       "created": "2026-07-21",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Formato NUEVO (asamblea de vecinos/consorcio, ancla cultural rioplatense). User-hero=PRESIDENTE con poder de resolución + humor + editorial-con-voz (lo que engancha acá). Puentea con el ÚNICO canal que convierte: los puntos 1-2 son tareas reales enlazadas a su landing (Gardenia B-25, Guayabo F-1). Puntos 3-4 con cast fresco (vivero B-46, caqui B-41 identidad-en-duda). Si convierte, confirma que envolver tareas en experiencia-con-voz+agencia abre donde la tarea seca no.",
       "notified_by": [
         "2026-07-21-c"
+      ],
+      "result_notes": "PROMOVIDA 22/07. 🏆 PRIMER feedback_text del canal — y POSITIVO: el 21/07 22:23Z el usuario abrio el push (c, 18:00) y escribio 'Esta todo perfecto. Tene en cuenta que esta lloviendo hace dias en Montevideo, no he podido avanzar'. Segun la escala de exito, feedback_text positivo es la senal de MAXIMO peso (tier 1, por encima de proposal_approved). El angulo GANADOR queda validado: user-hero=PRESIDENTE con agencia + humor + ancla cultural rioplatense (asamblea de vecinos) + PUENTE a tareas reales (mociones = pulgones Gardenia B-25, fumagina Guayabo F-1). Promocion = pagina permanente + tarjeta en Ideas -> Experiencias (build.py, icono 📋) + footer pasado a nota de integracion. El usuario tambien dejo un DATO clave: lleva dias de lluvia y no pudo avanzar -> las tareas no se pueden ejecutar; hay que sacarle la culpa, no exigirle accion (ver experiencias 22/07)."
+    },
+    {
+      "id": "2026-07-22-lluvia-tareas",
+      "title": "💧 La lluvia te está haciendo las tareas (parte anti-culpa, clima real)",
+      "page": "engage/2026-07-22-lluvia-tareas.html",
+      "created": "2026-07-22",
+      "status": "pending",
+      "hypothesis": "Respuesta DIRECTA al feedback_text del usuario (21/07): 'esta lloviendo hace dias, no he podido avanzar'. Formato NUEVO (checklist de tareas auto-completadas por el clima). Eje empatia/ALIVIO + agencia + humor: da vuelta la culpa del jardinero mostrando con datos reales que el jardin avanzo SIN el (5 de 7 tareas 'tachadas' por la lluvia: riego profundo, pulgones Gardenia B-25, fumagina Guayabo F-1, sed Hortensia B-5a, recarga de suelo caducos) + 2 honestas que si le esperan (drenaje mediterraneas Romero B-26/Lavanda B-10, cuello del tronco). Apuesta: sacarle la culpa el dia de lluvia convierte el peor momento en un gancho; el alivio es la emocion que mas retiene en wellness. Se ancla en el clima REAL que el propio usuario reporto.",
+      "notified_by": [
+        "2026-07-22-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-22-grupo-jardin",
+      "title": "🌿 El grupo de WhatsApp del Jardín (chat grupal en 1ª persona)",
+      "page": "engage/2026-07-22-grupo-jardin.html",
+      "created": "2026-07-22",
+      "status": "pending",
+      "hypothesis": "Formato NUEVO (simulacion de grupo de WhatsApp vs feed individual). Lleva el eje 1ª-persona-social —el que dio el dwell RECORD del canal (Feed 208s)— al habitat mas pegajoso del Rio de la Plata: el grupo de WhatsApp. 12 plantas chatean sobre la lluvia de estos dias, cada mensaje con un dato real via ANGULO NUEVO (reaccion al clima, no su fun_fact): Hortensia festeja el agua, Romero/Lavanda se quejan de pies mojados, Gardenia celebra que se fueron los pulgones, Durazno en coma, Pera lo desafia a la carrera de la 1a flor. Apuesta: conflicto+humor+1a persona en un formato ultra-familiar dispara reenvio y 'increible'. Ancla en la lluvia real reportada por el usuario. Slot dorado (18:00, donde converten la Asamblea).",
+      "notified_by": [
+        "2026-07-22-c"
       ],
       "result_notes": null
     }
