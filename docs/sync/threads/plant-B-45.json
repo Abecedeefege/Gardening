@@ -1,0 +1,16 @@
+{
+  "task_id": "plant-B-45",
+  "_updated_at": "2026-07-23T18:21:34.493Z",
+  "messages": [
+    {
+      "id": "m-mrxu8afa-7wcqf0",
+      "from": "user",
+      "kind": "photo",
+      "text": "Así?",
+      "photo": "uploads/B-45/plant-B-45_20260723-182131.jpg",
+      "ts": "2026-07-23T18:21:31.493Z",
+      "device": "landing",
+      "status": "pending"
+    }
+  ]
+}
