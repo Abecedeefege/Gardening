@@ -1,0 +1,16 @@
+{
+  "task_id": "plant-B-46-4",
+  "_updated_at": "2026-07-23T18:19:28.963Z",
+  "messages": [
+    {
+      "id": "m-mrxu5maq-wt3p76",
+      "from": "user",
+      "kind": "photo",
+      "text": "Están en una parte del jardín en la que hay sombra todo el día.  Luz pero nunca sol directo.  Ok?",
+      "photo": "uploads/B-46/plant-B-46-4_20260723-181926.jpg",
+      "ts": "2026-07-23T18:19:26.950Z",
+      "device": "landing",
+      "status": "pending"
+    }
+  ]
+}
