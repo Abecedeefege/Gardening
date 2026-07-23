@@ -2,9 +2,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0f1a12">
-<title>✅ Repaso del día — jueves 23/07</title>
-<meta property="og:title" content="✅ Así quedó tu jardín hoy">
-<meta property="og:description" content="6 tareas cerradas, 2 en curso con instrucciones, 2 agendadas para primavera. Tus preguntas contestadas: cómo cortar la rama del liquidámbar y cómo tratar la fumagina del guayabo.">
+<title>🌱 Tus tareas pendientes</title>
+<meta property="og:title" content="🌱 Tus tareas pendientes del jardín">
+<meta property="og:description" content="Lo que falta hacer, sin lo ya hecho. Para hacer ahora + lo agendado para primavera.">
 <style>
   :root{
     --bg:#0f1a12; --bg2:#16241a; --card:#182a1d; --ink:#eaf3ea; --ink2:#b7ccbb; --ink3:#7f9885;
@@ -30,31 +30,29 @@
   .hero h1 em{ font-style:normal; color:var(--verde3); }
   .hero p{ color:var(--ink2); font-size:15px; max-width:38ch; margin:0 auto; }
 
-  .score{ display:flex; gap:8px; margin:18px 0 6px; }
-  .score .s{ flex:1; text-align:center; background:var(--card); border:1px solid var(--line); border-radius:13px; padding:12px 6px; }
-  .score .s .big{ font-size:26px; font-weight:900; font-family:var(--mono); line-height:1; }
-  .score .s.ok .big{ color:var(--verde3); } .score .s.go .big{ color:var(--sol); } .score .s.next .big{ color:var(--azul2); }
-  .score .s .lbl{ font-size:10.5px; color:var(--ink3); font-weight:800; text-transform:uppercase; letter-spacing:.04em; margin-top:5px; }
+  .tally{ text-align:center; margin:16px 0 4px; font-size:13px; color:var(--ink3); font-weight:700; }
+  .tally b{ color:var(--sol); } .tally .sp{ color:var(--line); margin:0 8px; }
 
-  h2.sec{ font-size:13px; text-transform:uppercase; letter-spacing:.08em; margin:28px 0 8px; display:flex; align-items:center; gap:8px; }
-  h2.ok{ color:var(--verde3); } h2.go{ color:var(--sol); } h2.next{ color:var(--azul2); }
+  h2.sec{ font-size:13px; text-transform:uppercase; letter-spacing:.08em; margin:26px 0 8px; display:flex; align-items:center; gap:8px; }
+  h2.go{ color:var(--sol); } h2.next{ color:var(--azul2); }
 
-  .item{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px 13px; margin:9px 0; position:relative; overflow:hidden; }
+  .item{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:13px 14px; margin:9px 0; position:relative; overflow:hidden; }
   .item::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; }
-  .item.ok::before{ background:var(--verde2); } .item.go::before{ background:var(--sol); } .item.next::before{ background:var(--azul); }
+  .item.go::before{ background:var(--sol); } .item.next::before{ background:var(--azul); }
+  .item.go{ border-color:rgba(255,210,87,.4); box-shadow:0 4px 18px rgba(0,0,0,.25); }
   .item .head{ display:flex; align-items:baseline; gap:8px; }
-  .item h4{ font-size:15px; font-weight:800; line-height:1.25; }
+  .item h4{ font-size:16px; font-weight:800; line-height:1.25; }
   .item .code{ margin-left:auto; font-family:var(--mono); font-size:11px; color:var(--ink3); flex:none; }
-  .item .desc{ font-size:13px; color:var(--ink2); margin-top:6px; }
+  .item .desc{ font-size:13.5px; color:var(--ink2); margin-top:6px; }
   .item .desc b{ color:var(--pap); }
-  .item .steps{ margin:8px 0 2px; padding-left:18px; }
-  .item .steps li{ font-size:13px; color:var(--ink2); margin:4px 0; }
+  .item .steps{ margin:9px 0 2px; padding-left:18px; }
+  .item .steps li{ font-size:13.5px; color:var(--ink2); margin:5px 0; }
   .item .steps li b{ color:var(--pap); }
-  .item a.go{ display:inline-block; margin-top:8px; font-size:12px; font-weight:800; text-decoration:none; color:var(--azul2); background:rgba(111,183,201,.1); border:1px solid rgba(111,183,201,.22); border-radius:8px; padding:6px 10px; }
+  .item .when{ display:inline-block; font-size:11px; font-weight:800; color:var(--azul2); background:rgba(111,183,201,.1); border:1px solid rgba(111,183,201,.22); border-radius:7px; padding:3px 9px; margin-top:8px; }
+  .item a.go{ display:inline-block; margin-top:10px; font-size:12.5px; font-weight:800; text-decoration:none; color:#0c1a08; background:var(--sol); border-radius:9px; padding:8px 12px; }
   .item a.go:active{ transform:scale(.96); }
-  .q{ font-size:12.5px; color:var(--sol); font-style:italic; margin:2px 0 6px; }
 
-  .note{ background:rgba(255,210,87,.07); border:1px solid rgba(255,210,87,.22); border-radius:12px; padding:11px 13px; margin:10px 0; font-size:13px; color:var(--ink2); }
+  .note{ background:rgba(255,210,87,.07); border:1px solid rgba(255,210,87,.22); border-radius:12px; padding:11px 13px; margin:16px 0 6px; font-size:13px; color:var(--ink2); }
   .note b{ color:var(--sol); }
 
   .pie{ text-align:center; padding:22px 0 6px; }
@@ -68,68 +66,25 @@
 <div class="wrap">
 
   <header class="hero">
-    <span class="mast">✅ Repaso del día · jueves 23/07</span>
-    <h1>Buen día de jardín:<br><em>así quedó</em></h1>
-    <p>Contesté todo lo que me mandaste. Acá el resumen: lo cerrado, lo que sigue con instrucciones, y lo que agendé para primavera.</p>
+    <span class="mast">🌱 Tareas pendientes · actualizado 23/07</span>
+    <h1>Lo que <em>falta</em> hacer</h1>
+    <p>Solo lo pendiente. A medida que vas cerrando tareas, desaparecen de acá.</p>
   </header>
 
-  <div class="score">
-    <div class="s ok"><div class="big">7</div><div class="lbl">Cerradas</div></div>
-    <div class="s go"><div class="big">1</div><div class="lbl">En curso</div></div>
-    <div class="s next"><div class="big">2</div><div class="lbl">A primavera</div></div>
-  </div>
+  <div class="tally"><b>1</b> para hacer ahora <span class="sp">·</span> <b>2</b> agendadas para primavera</div>
 
-  <!-- CERRADAS -->
-  <h2 class="sec ok">✅ Cerradas hoy</h2>
-
-  <div class="item ok">
-    <div class="head"><h4>Pera Williams — poda invernal</h4><span class="code">B-39</span></div>
-    <div class="desc">Quedó muy prolija: estructura abierta, cortes limpios. 👌 Tip para el año que viene: favorecé una guía central para ir armando la forma piramidal.</div>
-  </div>
-
-  <div class="item ok">
-    <div class="head"><h4>Cola de zorro — sacar colas viejas</h4><span class="code">B-6</span></div>
-    <div class="desc">Impecable: solo plumas verdes y firmes, y hasta rastrillaste alrededor. 🌿 (Ojo con los pinchos de la base la próxima.)</div>
-  </div>
-
-  <div class="item ok">
-    <div class="head"><h4>Vivero — palmeras a sombra luminosa</h4><span class="code">B-46</span></div>
-    <div class="desc">Confirmado ✅: luz sin sol directo es ideal para plantines chicos en invierno. A futuro, de a poco más sol desde primavera (de grandes son de sol pleno).</div>
-  </div>
-
-  <div class="item ok">
-    <div class="head"><h4>Pindó — hojas secas</h4><span class="code">B-8</span></div>
-    <div class="desc">Decidiste dejarlas caer solas — válido 👍. Único cuidado: cortá alguna solo si queda colgando cerca de un paso o del techo.</div>
-  </div>
-
-  <div class="item ok">
-    <div class="head"><h4>Fresno — decisión de luz</h4><span class="code">F-10</span></div>
-    <div class="desc">Decidido: el corte <b>no va en el fresno</b>, va en la <b>fotinia F-6</b> que le tapa el sol. Como el fresno es caduco, la sombra molesta recién en primavera. Agendé esa poda selectiva para <b>fines de agosto</b> (su ventana).</div>
-  </div>
-
-  <div class="item ok">
-    <div class="head"><h4>Vivero — romeros en maceta chica</h4><span class="code">B-46</span></div>
-    <div class="desc">Se murieron todos (frío + humedad + raíz apretada; el romero odia los pies mojados). Los <b>saqué de las tareas</b>. Esto <b>no toca</b> al romero grande del muro norte (B-26), que está perfecto. Para reintentar: esquejes en maceta honda, sustrato con arena y casi sin riego.</div>
-  </div>
-
-  <div class="item ok">
-    <div class="head"><h4>Guayabo — poda + fumagina</h4><span class="code">F-1</span></div>
-    <div class="desc">Podaste todas las ramas secas y afectadas (fuerte, pero <b>el guayabo es durísimo y rebrota con ganas</b> — en primavera empuja de nuevo). Sobre tu duda sanitaria: la fumagina <b>no infecta a las personas</b> (es moho saprófito, no patógeno humano) y el guayabo no tiene savia tóxica. Alcanza con lavarte manos/antebrazos, no tocarte los ojos hasta lavarte, y desinfectar cualquier cortecito. Si sos alérgico/asmático, para la próxima: guantes + barbijo N95. Si el hollín reaparece = quedó plaga viva → jabón potásico o aceite.</div>
-  </div>
-
-  <!-- EN CURSO -->
-  <h2 class="sec go">🔧 En curso — con instrucciones</h2>
+  <!-- PARA HACER AHORA -->
+  <h2 class="sec go">🔧 Para hacer ahora</h2>
 
   <div class="item go">
-    <div class="head"><h4>Liquidámbar — rama que sombrea la palta</h4><span class="code">B-37</span></div>
-    <p class="q">Preguntaste: «¿a qué altura hago el corte?»</p>
-    <div class="desc">No la cortes a media rama (el muñón se pudre). Sacá la rama <b>entera desde su origen</b>, justo por fuera del «cuello» (el anillo engrosado donde nace del tronco). Como es larga y pesada, <b>3 cortes</b> para que no se desgarre:</div>
+    <div class="head"><h4>Liquidámbar — sacar la rama que sombrea la palta</h4><span class="code">B-37</span></div>
+    <div class="desc">No la cortes a media rama (el muñón se pudre). Sacá la rama <b>entera desde su origen</b>, justo por fuera del «cuello» (el anillo engrosado donde nace del tronco). Como es larga y pesada, <b>3 cortes</b> para que no se desgarre la corteza:</div>
     <ol class="steps">
       <li>Corte por <b>abajo</b>, a 20-30 cm del cuello, entrando 1/3.</li>
       <li>Corte por <b>arriba</b> un poco más afuera → cae el grueso de la rama.</li>
       <li>Corte final <b>limpio</b>, justo por fuera del cuello, para sacar el tocón.</li>
     </ol>
-    <div class="desc">Día seco + árbol en dormancia = cicatriza perfecto.</div>
+    <div class="desc">Árbol en dormancia + día seco = cicatriza perfecto. Cuando la saques, mandame la foto y la cierro.</div>
     <a class="go" href="https://gardening-chi.vercel.app/tasks/plant-B-37.html">Abrir tarea B-37 →</a>
   </div>
 
@@ -138,19 +93,21 @@
 
   <div class="item next">
     <div class="head"><h4>«Caqui» — confirmar identidad</h4><span class="code">B-41</span></div>
-    <div class="desc">Sin brotes en invierno no hay con qué confirmarlo. De acuerdo: lo <b>hablamos de nuevo a fines de primavera (noviembre)</b>. Si tira flor y fruto, sale de dudas. Hasta entonces no necesita nada.</div>
+    <div class="desc">En invierno, pelado y sin brotes, no hay con qué confirmarlo — manda la flor/fruto. Si tira flor y fruto, sale de dudas.</div>
+    <span class="when">🗓️ Fines de primavera · noviembre</span>
   </div>
 
   <div class="item next">
     <div class="head"><h4>Arbusto sin identificar — foto en flor</h4><span class="code">B-45</span></div>
-    <div class="desc">Con tu foto: perenne, hojas opuestas chicas y lustrosas, brotes rojizos de invierno. Dos candidatos: <b>jazmín estrellado</b> (Trachelospermum) o <b>eugenia/arrayán</b>. Para confirmar necesito verla <b>en flor</b> — la agendé para <b>octubre</b>: si da florcitas blancas en estrella y perfume = jazmín; si da flor/fruto tipo mirto = eugenia.</div>
+    <div class="desc">Perenne, hojas opuestas chicas y lustrosas. Candidatos: <b>jazmín estrellado</b> o <b>eugenia/arrayán</b>. Para confirmar necesito verla <b>en flor</b>: florcitas blancas en estrella y perfume = jazmín; flor/fruto tipo mirto = eugenia.</div>
+    <span class="when">🗓️ Octubre</span>
   </div>
 
-  <div class="note">🌳 <b>Lo que se viene:</b> los caducos frutales (durazno B-30, ciruelos F-4/B-38, crespón B-9, caqui B-41) se podan <b>en agosto</b>, cuando las yemas empiecen a hincharse. Cuando llegue el momento te armo el plan.</div>
+  <div class="note">🌳 <b>Se viene en agosto:</b> la poda de los caducos frutales (durazno B-30, ciruelos F-4/B-38, crespón B-9, «caqui» B-41), cuando las yemas empiecen a hincharse. Cuando llegue el momento te aparecen acá.</div>
 
   <footer class="pie">
     <a href="https://gardening-chi.vercel.app/tareas.html">Ver el Timeline completo →</a>
-    <div class="cred">Repaso generado a partir de tus respuestas en las landings de cada tarea (23/07). Estados actualizados: 6 cerradas, 2 en curso, 2 diferidas a primavera · fotos evaluadas: B-39, B-6, B-37, B-45, B-46 · 23/07/2026</div>
+    <div class="cred">Tu landing de tareas pendientes — se actualiza a medida que vas cerrando cosas · última actualización 23/07/2026</div>
   </footer>
 
 </div>
