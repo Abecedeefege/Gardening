@@ -1,0 +1,16 @@
+{
+  "task_id": "plant-F-1-4",
+  "_updated_at": "2026-07-23T18:08:31.541Z",
+  "messages": [
+    {
+      "id": "m-mrxtrkut-3yl5a9",
+      "from": "user",
+      "kind": "text",
+      "text": "La voy a podar, cortamos las ramas con hojas enfermas? Como lo hago?",
+      "photo": null,
+      "ts": "2026-07-23T18:08:31.344Z",
+      "device": "landing",
+      "status": "pending"
+    }
+  ]
+}
