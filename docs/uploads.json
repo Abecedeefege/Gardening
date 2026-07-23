@@ -1136,5 +1136,19 @@
       "user_context": "Está bien podarla ahora para liberar el camino?",
       "plant_id": "F-2"
     }
+  ],
+  "B-39": [
+    {
+      "filename": "plant-B-39_20260723-180338.jpg",
+      "uploaded_at": "2026-07-23T18:03:38.445Z",
+      "uploaded_by": "landing",
+      "context": "task",
+      "task_id": "plant-B-39",
+      "task_title_snapshot": "Poda invernal forma piramidal",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Listo, hecho",
+      "via": "landing"
+    }
   ]
 }
