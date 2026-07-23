@@ -225,6 +225,18 @@
         "processed_at": "2026-05-05T17:55:00.000Z"
       },
       "user_context": "Actualiza el numero de referencia y la foto de perfil de la tarea para que entienda mejor a qué planta referimos.  Dividamos en tareas y especies dentro de lo posible las fotos"
+    },
+    {
+      "filename": "plant-B-46-4_20260723-181926.jpg",
+      "uploaded_at": "2026-07-23T18:19:26.950Z",
+      "uploaded_by": "landing",
+      "context": "task",
+      "task_id": "plant-B-46-4",
+      "task_title_snapshot": "Palmeras: mover a sombra parcial húmeda",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Están en una parte del jardín en la que hay sombra todo el día.  Luz pero nunca sol directo.  Ok?",
+      "via": "landing"
     }
   ],
   "B-37": [
