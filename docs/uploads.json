@@ -233,8 +233,13 @@
       "context": "task",
       "task_id": "plant-B-46-4",
       "task_title_snapshot": "Palmeras: mover a sombra parcial húmeda",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Plantines de palmera reubicados a sombra luminosa (luz sin sol directo). Correcto para plantines en invierno; de adultos butiá/pindó querrán sol pleno (subir sol de a poco desde primavera).",
+        "next_steps": "",
+        "processed_at": "2026-07-23T18:42:00.000Z"
+      },
       "user_context": "Están en una parte del jardín en la que hay sombra todo el día.  Luz pero nunca sol directo.  Ok?",
       "via": "landing"
     }
@@ -270,8 +275,13 @@
       "context": "task",
       "task_id": "plant-B-37",
       "task_title_snapshot": "Limpieza de copa en dormancia",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Foto pre-corte del liquidámbar (rama baja que sombrea la palta). Se dio recomendación de corte: sacar la rama entera en el cuello, método de 3 cortes. Pendiente ejecutar.",
+        "next_steps": "",
+        "processed_at": "2026-07-23T18:42:00.000Z"
+      },
       "user_context": "Pienso sacarle esa rama que le quita sol a la palta.  Alguna recomendación de a que altura hacer el corte?",
       "via": "landing"
     }
@@ -607,8 +617,13 @@
       "context": "task",
       "task_id": "plant-B-45",
       "task_title_snapshot": "Foto de la especie centrada",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Arbusto/trepadora perenne, hojas opuestas chicas lustrosas con brotes rojizos de invierno. Candidatos: jazmín estrellado (Trachelospermum) o eugenia/arrayán. Requiere foto en floración (primavera) para confirmar.",
+        "next_steps": "",
+        "processed_at": "2026-07-23T18:42:00.000Z"
+      },
       "user_context": "Así?",
       "via": "landing"
     }
@@ -1181,8 +1196,13 @@
       "context": "task",
       "task_id": "plant-B-39",
       "task_title_snapshot": "Poda invernal forma piramidal",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Poda invernal hecha. Pera joven con estructura abierta y cortes limpios — correcto. Tip futuro: favorecer una guía central para la forma piramidal.",
+        "next_steps": "",
+        "processed_at": "2026-07-23T18:42:00.000Z"
+      },
       "user_context": "Listo, hecho",
       "via": "landing"
     }
@@ -1195,8 +1215,13 @@
       "context": "task",
       "task_id": "plant-B-6-2",
       "task_title_snapshot": "Poda otoñal Cola de zorro — sacar colas viejas",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Poda hecha. Cola de zorro con solo plumas verdes/firmes, colas viejas retiradas y zona rastrillada — correcto.",
+        "next_steps": "",
+        "processed_at": "2026-07-23T18:42:00.000Z"
+      },
       "user_context": "Hecho listo",
       "via": "landing"
     }

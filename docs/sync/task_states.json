@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-07-23T18:33:51.203Z",
-  "_last_writer": "landing",
+  "_synced_at": "2026-07-23T18:42:00.000Z",
+  "_last_writer": "responder-tareas",
   "tasks": {
     "plant-F-9": {
       "status": "done",
@@ -13,10 +13,10 @@
     "plant-F-10": {
       "status": "done",
       "snoozed_until": null,
-      "completed_at": "2026-05-03T16:30:00.000Z",
+      "completed_at": "2026-07-23T18:42:00.000Z",
       "completed_via_ai": true,
-      "ai_summary": "Fraxinus sp. (fresno), probablemente F. pennsylvanica — hoja pinnada compuesta opuesta de 7 foliolos lanceolados aserrados, y base de tronco con rebrotes finos por poda fuerte previa. Sin frutos visibles (puede ser pie macho o todavía recuperándose).",
-      "last_modified_at": "2026-05-03T16:30:00.000Z"
+      "ai_summary": "Evaluado y decidido (23/07): liberar luz al fresno vía poda selectiva de la fotinia F-6 en su ventana (fines de agosto, tarea plant-F-9). El corte no va en el fresno.",
+      "last_modified_at": "2026-07-23T18:42:00.000Z"
     },
     "plant-B-30-2": {
       "status": "done",
@@ -119,13 +119,12 @@
       "last_modified_at": "2026-05-05T14:30:00.000Z"
     },
     "plant-B-41-3": {
-      "status": "active",
-      "snoozed_until": null,
+      "status": "snoozed",
+      "snoozed_until": "2026-11-15T00:00:00.000Z",
       "completed_at": null,
-      "description_override": "Identidad EN DUDA (04/07/2026): nunca se le vieron flores ni frutos desde que existe el catálogo, y la foto del 04/05 lo muestra pelado SIN fruta colgando — un caqui real en mayo-julio tendría frutos naranjas a la vista. Verificación: AHORA foto de corteza (placas cuadriculadas tipo piel de cocodrilo) y ramitas en zigzag; en octubre-noviembre foto de brotación y flor. Detalle completo en la tarea.",
-      "description_override_at": "2026-07-04T12:20:00.000Z",
-      "last_ai_summary": "Duda de identidad elevada por el usuario: sin flor ni fruto jamás vistos. Chequear corteza en invierno y flor en primavera.",
-      "last_modified_at": "2026-07-04T12:20:00.000Z"
+      "completed_via_ai": false,
+      "ai_summary": "Sin brotes en invierno; se difiere a fines de primavera para confirmar identidad por flor/fruto.",
+      "last_modified_at": "2026-07-23T18:42:00.000Z"
     },
     "plant-B-9-4": {
       "status": "done",
@@ -144,12 +143,12 @@
       "last_modified_at": "2026-05-05T15:30:00.000Z"
     },
     "plant-B-45": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T17:55:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Foto del 05/05 17:51 confirma hojas opuestas elípticas brillantes con venación marcada y leve clorosis férrica (amarilleo entre venas) en algunas. ID tentativa: madreselva (Lonicera japonica) o jazmín solano (Solanum jasminoides). Tarea de foto centrada cumplida — confirmación definitiva con flor en oct-dic vía urgencia plant-B-45-2 que sigue activa.",
-      "last_modified_at": "2026-05-05T17:55:00.000Z"
+      "status": "snoozed",
+      "snoozed_until": "2026-10-15T00:00:00.000Z",
+      "completed_at": null,
+      "completed_via_ai": false,
+      "ai_summary": "Perenne de hojas opuestas; a la espera de floración para identificar (jazmín estrellado vs eugenia).",
+      "last_modified_at": "2026-07-23T18:42:00.000Z"
     },
     "plant-B-43": {
       "status": "done",
@@ -170,14 +169,18 @@
     "plant-B-46-4": {
       "status": "done",
       "snoozed_until": null,
-      "completed_at": "2026-05-05T14:49:37.815Z",
-      "last_modified_at": "2026-05-05T14:49:37.816Z"
+      "completed_at": "2026-07-23T18:42:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Plantines de palmera reubicados a sombra luminosa. Confirmado OK para invierno.",
+      "last_modified_at": "2026-07-23T18:42:00.000Z"
     },
     "plant-B-46-6": {
       "status": "done",
       "snoozed_until": null,
-      "completed_at": "2026-05-05T14:50:10.550Z",
-      "last_modified_at": "2026-05-05T14:50:10.550Z"
+      "completed_at": "2026-07-23T18:42:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Romeros del vivero en maceta chica murieron (frío+humedad, raíz apretada). Descartados con consentimiento del usuario (23/07). NO afecta al romero B-26 del muro norte.",
+      "last_modified_at": "2026-07-23T18:42:00.000Z"
     },
     "plant-B-42": {
       "status": "done",
@@ -282,8 +285,10 @@
     "plant-B-6-2": {
       "status": "done",
       "snoozed_until": null,
-      "completed_at": "2026-05-06T18:19:37.508Z",
-      "last_modified_at": "2026-05-06T18:19:37.512Z"
+      "completed_at": "2026-07-23T18:42:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Poda de cola de zorro hecha (foto 23/07). Colas viejas retiradas.",
+      "last_modified_at": "2026-07-23T18:42:00.000Z"
     },
     "plant-B-5a-2": {
       "status": "done",
@@ -422,9 +427,18 @@
     "plant-B-8": {
       "status": "done",
       "snoozed_until": null,
-      "completed_at": "2026-07-23T18:33:51.203Z",
-      "last_modified_at": "2026-07-23T18:33:51.203Z",
-      "changed_via": "landing"
+      "completed_at": "2026-07-23T18:42:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Decisión del usuario: dejar caer las hojas secas del pindó naturalmente (23/07).",
+      "last_modified_at": "2026-07-23T18:42:00.000Z"
+    },
+    "plant-B-39": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-07-23T18:42:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Poda invernal piramidal hecha (foto 23/07). Estructura abierta, cortes limpios.",
+      "last_modified_at": "2026-07-23T18:42:00.000Z"
     }
   }
 }
