@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-23T15:48:03.307Z",
+  "_updated_at": "2026-07-23T15:48:04.627Z",
   "events": [
     {
       "_id": "mrcs6t0w99u7n8",
@@ -660,6 +660,23 @@
       "scroll_pct": 93,
       "page": "engage/2026-07-21-asamblea-jardin.html",
       "ts": "2026-07-21T22:23:19.402Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrxoqx8u2vfjij",
+      "type": "notification_clicked",
+      "nid": "2026-07-23-a",
+      "page": "engage/2026-07-23-ronda-medica.html",
+      "ts": "2026-07-23T15:48:03.914Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrxoqx8uymgtqy",
+      "type": "page_visit",
+      "page": "engage/2026-07-23-ronda-medica.html",
+      "nid": "2026-07-23-a",
+      "src": "push",
+      "ts": "2026-07-23T15:48:03.914Z",
       "device": "sin-nombre"
     }
   ],
