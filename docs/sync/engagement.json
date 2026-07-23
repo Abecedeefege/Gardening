@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-23T15:49:16.209Z",
+  "_updated_at": "2026-07-23T15:49:31.989Z",
   "events": [
     {
       "_id": "mrcs6t0w99u7n8",
@@ -685,6 +685,23 @@
       "proposal_id": "2026-07-23-ronda-medica",
       "ts": "2026-07-23T15:49:16.842Z",
       "device": "sin-nombre"
+    },
+    {
+      "_id": "mrxosu4sgn7ksj",
+      "type": "notification_clicked",
+      "nid": "2026-07-23-reply-plant-B-25-3",
+      "page": "tasks/plant-B-25-3.html",
+      "ts": "2026-07-23T15:49:33.192Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxosu4souj5kw",
+      "type": "page_visit",
+      "page": "tasks/plant-B-25-3.html",
+      "nid": "2026-07-23-reply-plant-B-25-3",
+      "src": "push",
+      "ts": "2026-07-23T15:49:33.192Z",
+      "device": "landing"
     }
   ],
   "daily_summary": {
