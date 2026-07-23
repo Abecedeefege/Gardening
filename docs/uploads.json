@@ -599,6 +599,18 @@
         "processed_at": "2026-05-05T17:55:00.000Z"
       },
       "user_context": "Si no hace falta más nada actualiza la fecha de la tarea"
+    },
+    {
+      "filename": "plant-B-45_20260723-182131.jpg",
+      "uploaded_at": "2026-07-23T18:21:31.493Z",
+      "uploaded_by": "landing",
+      "context": "task",
+      "task_id": "plant-B-45",
+      "task_title_snapshot": "Foto de la especie centrada",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Así?",
+      "via": "landing"
     }
   ],
   "B-43": [
