@@ -1,0 +1,16 @@
+{
+  "task_id": "plant-B-37",
+  "_updated_at": "2026-07-23T18:17:45.131Z",
+  "messages": [
+    {
+      "id": "m-mrxu3dzp-tmziti",
+      "from": "user",
+      "kind": "photo",
+      "text": "Pienso sacarle esa rama que le quita sol a la palta.  Alguna recomendación de a que altura hacer el corte?",
+      "photo": "uploads/B-37/plant-B-37_20260723-181743.jpg",
+      "ts": "2026-07-23T18:17:43.087Z",
+      "device": "landing",
+      "status": "pending"
+    }
+  ]
+}
