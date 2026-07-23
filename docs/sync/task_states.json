@@ -1,5 +1,5 @@
 {
-  "_synced_at": "2026-07-23T18:42:00.000Z",
+  "_synced_at": "2026-07-23T19:12:00.000Z",
   "_last_writer": "responder-tareas",
   "tasks": {
     "plant-F-9": {
@@ -391,10 +391,12 @@
       "last_modified_at": "2026-05-12T18:49:42.692Z"
     },
     "plant-F-1-4": {
-      "status": "snoozed",
-      "snoozed_until": "2026-05-17T15:55:14.481Z",
-      "completed_at": null,
-      "last_modified_at": "2026-05-16T15:55:14.485Z"
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-07-23T19:12:00.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Usuario podó todas las ramas secas/afectadas por la fumagina (poda fuerte, 23/07). Consulta sanitaria respondida: fumagina no es patógeno humano, higiene básica alcanza. Guayabo rebrota bien; vigilar si el hollín reaparece (= plaga viva → tratar con jabón/aceite).",
+      "last_modified_at": "2026-07-23T19:12:00.000Z"
     },
     "plant-B-29-2": {
       "status": "done",
