@@ -250,6 +250,18 @@
         "next_steps": "Re-fotografiar en 2-3 semanas (mediados/fines de mayo) cuando el árbol esté en peak rojo-borgoña. La tarea original ya quedó marcada done por el usuario el 02/05.",
         "processed_at": "2026-05-03T17:05:00.000Z"
       }
+    },
+    {
+      "filename": "plant-B-37_20260723-181743.jpg",
+      "uploaded_at": "2026-07-23T18:17:43.087Z",
+      "uploaded_by": "landing",
+      "context": "task",
+      "task_id": "plant-B-37",
+      "task_title_snapshot": "Limpieza de copa en dormancia",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Pienso sacarle esa rama que le quita sol a la palta.  Alguna recomendación de a que altura hacer el corte?",
+      "via": "landing"
     }
   ],
   "B-23": [
