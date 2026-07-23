@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-23T21:35:23.389Z",
+  "_updated_at": "2026-07-23T21:35:24.423Z",
   "events": [
     {
       "_id": "mrcs6t0w99u7n8",
@@ -853,6 +853,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-23-ronda-medica.html",
       "ts": "2026-07-23T15:49:21.559Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mry15lxzahthhq",
+      "type": "notification_clicked",
+      "nid": "2026-07-23-b",
+      "page": "engage/2026-07-23-mercado-pases.html",
+      "ts": "2026-07-23T21:35:24.499Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mry15lxz7dhky5",
+      "type": "page_visit",
+      "page": "engage/2026-07-23-mercado-pases.html",
+      "nid": "2026-07-23-b",
+      "src": "push",
+      "ts": "2026-07-23T21:35:24.499Z",
       "device": "sin-nombre"
     }
   ],
