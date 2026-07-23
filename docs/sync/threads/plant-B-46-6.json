@@ -1,0 +1,16 @@
+{
+  "task_id": "plant-B-46-6",
+  "_updated_at": "2026-07-23T18:10:03.350Z",
+  "messages": [
+    {
+      "id": "m-mrxttjo8-8glr75",
+      "from": "user",
+      "kind": "text",
+      "text": "Estos romeros en macetas chicas murieron todos, podés borrarlos",
+      "photo": null,
+      "ts": "2026-07-23T18:10:03.139Z",
+      "device": "landing",
+      "status": "pending"
+    }
+  ]
+}
