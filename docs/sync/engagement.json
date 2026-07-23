@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-23T21:37:13.982Z",
+  "_updated_at": "2026-07-23T21:37:18.970Z",
   "events": [
     {
       "_id": "mrcs6t0w99u7n8",
@@ -888,6 +888,13 @@
       "value": "no",
       "page": "engage/2026-07-23-mercado-pases.html",
       "ts": "2026-07-23T21:37:15.336Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mry183f5ljfv21",
+      "type": "proposal_rejected",
+      "proposal_id": "2026-07-23-mercado-pases",
+      "ts": "2026-07-23T21:37:20.465Z",
       "device": "sin-nombre"
     }
   ],
