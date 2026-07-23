@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-23T09:20:00-03:00",
+  "_updated_at": "2026-07-23T09:10:00-03:00",
   "notifications": [
     {
       "id": "2026-07-23-task-dia",
@@ -37,6 +37,19 @@
       "sent_at": null,
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-23"
+    },
+    {
+      "id": "2026-07-23-reply-plant-B-25-3",
+      "title": "🌿 Te contesté: Gardenia",
+      "body": "Sobre la lluvia y el neem: en cuanto escampe y no vaya a helar, dale con la aplicación. Plan y detalles en la tarea.",
+      "url": "https://gardening-chi.vercel.app/tasks/plant-B-25-3.html",
+      "format": "tarea",
+      "send_at": "2026-07-23T09:10:00-03:00",
+      "expires_at": "2026-07-23T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "responder-tareas 2026-07-23"
     }
   ]
 }
