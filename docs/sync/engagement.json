@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-23T18:09:27.997Z",
+  "_updated_at": "2026-07-23T18:16:56.432Z",
   "events": [
     {
       "_id": "mrcs6t0w99u7n8",
@@ -754,6 +754,15 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-07-23T18:09:28.859Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxu2ea10p3feu",
+      "type": "page_visit",
+      "page": "tasks/plant-B-37.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T18:16:57.286Z",
       "device": "landing"
     }
   ],
