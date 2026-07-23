@@ -1150,5 +1150,19 @@
       "user_context": "Listo, hecho",
       "via": "landing"
     }
+  ],
+  "B-6": [
+    {
+      "filename": "plant-B-6-2_20260723-180719.jpg",
+      "uploaded_at": "2026-07-23T18:07:19.868Z",
+      "uploaded_by": "landing",
+      "context": "task",
+      "task_id": "plant-B-6-2",
+      "task_title_snapshot": "Poda otoñal Cola de zorro — sacar colas viejas",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Hecho listo",
+      "via": "landing"
+    }
   ]
 }
