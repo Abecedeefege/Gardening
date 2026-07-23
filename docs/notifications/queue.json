@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-23T13:52:49.783Z",
+  "_updated_at": "2026-07-23T19:45:00-03:00",
   "notifications": [
     {
       "id": "2026-07-23-task-dia",
@@ -50,6 +50,19 @@
       "sent_at": "2026-07-23T13:52:49.782Z",
       "fail_reason": null,
       "created_by": "responder-tareas 2026-07-23"
+    },
+    {
+      "id": "2026-07-24-pendientes",
+      "title": "🌱 Tus tareas pendientes de hoy",
+      "body": "Lo que falta en el jardín: 1 para hacer ahora (podar la rama del liquidámbar) + las 3 que se vienen en agosto.",
+      "url": "https://gardening-chi.vercel.app/engage/tareas-pendientes.html",
+      "send_at": "2026-07-24T10:00:00-03:00",
+      "expires_at": "2026-07-24T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "format": "tarea",
+      "created_by": "responder-tareas 2026-07-23 (landing diaria pendientes)"
     }
   ]
 }

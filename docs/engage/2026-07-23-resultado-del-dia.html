@@ -1,115 +1,13 @@
 <!DOCTYPE html><html lang="es-UY"><head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0f1a12">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="0; url=tareas-pendientes.html">
 <title>🌱 Tus tareas pendientes</title>
-<meta property="og:title" content="🌱 Tus tareas pendientes del jardín">
-<meta property="og:description" content="Lo que falta hacer, sin lo ya hecho. Para hacer ahora + lo agendado para primavera.">
-<style>
-  :root{
-    --bg:#0f1a12; --bg2:#16241a; --card:#182a1d; --ink:#eaf3ea; --ink2:#b7ccbb; --ink3:#7f9885;
-    --verde:#2d5016; --verde2:#7fbf5a; --verde3:#a8e07d; --pap:#f5faf0;
-    --rojo:#e35b4b; --rojo2:#ff7a68; --ambar:#e8a53d; --ambar2:#ffc271; --azul:#6fb7c9; --azul2:#a6dcea; --sol:#ffd257; --sello:#c9a24b;
-    --line:rgba(234,243,234,.12);
-    --pad:max(16px,env(safe-area-inset-left));
-    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
-    --mono:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
-  }
-  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
-  html{ scroll-behavior:smooth; }
-  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.55; -webkit-font-smoothing:antialiased;
-    background-image:radial-gradient(120% 40% at 50% -6%, rgba(127,191,90,.14), transparent 60%); }
-  .back{ display:block; width:100%; padding:11px var(--pad); background:#0a120c; color:#8fb07e; text-decoration:none; font-size:13px; font-weight:800; }
-  .back:active{ opacity:.6; }
-  .wrap{ max-width:600px; margin:0 auto; padding:0 var(--pad) 30px; }
-
-  .hero{ padding:24px 0 4px; text-align:center; }
-  .mast{ display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:900; letter-spacing:.16em; text-transform:uppercase;
-    color:var(--verde3); background:rgba(127,191,90,.1); border:1px solid rgba(127,191,90,.3); border-radius:999px; padding:6px 14px; }
-  .hero h1{ font-size:28px; line-height:1.14; margin:13px 0 8px; letter-spacing:-.01em; font-weight:900; }
-  .hero h1 em{ font-style:normal; color:var(--verde3); }
-  .hero p{ color:var(--ink2); font-size:15px; max-width:38ch; margin:0 auto; }
-
-  .tally{ text-align:center; margin:16px 0 4px; font-size:13px; color:var(--ink3); font-weight:700; }
-  .tally b{ color:var(--sol); } .tally .sp{ color:var(--line); margin:0 8px; }
-
-  h2.sec{ font-size:13px; text-transform:uppercase; letter-spacing:.08em; margin:26px 0 8px; display:flex; align-items:center; gap:8px; }
-  h2.go{ color:var(--sol); } h2.next{ color:var(--azul2); }
-
-  .item{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:13px 14px; margin:9px 0; position:relative; overflow:hidden; }
-  .item::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; }
-  .item.go::before{ background:var(--sol); } .item.next::before{ background:var(--azul); }
-  .item.go{ border-color:rgba(255,210,87,.4); box-shadow:0 4px 18px rgba(0,0,0,.25); }
-  .item .head{ display:flex; align-items:baseline; gap:8px; }
-  .item h4{ font-size:16px; font-weight:800; line-height:1.25; }
-  .item .code{ margin-left:auto; font-family:var(--mono); font-size:11px; color:var(--ink3); flex:none; }
-  .item .desc{ font-size:13.5px; color:var(--ink2); margin-top:6px; }
-  .item .desc b{ color:var(--pap); }
-  .item .steps{ margin:9px 0 2px; padding-left:18px; }
-  .item .steps li{ font-size:13.5px; color:var(--ink2); margin:5px 0; }
-  .item .steps li b{ color:var(--pap); }
-  .item .when{ display:inline-block; font-size:11px; font-weight:800; color:var(--azul2); background:rgba(111,183,201,.1); border:1px solid rgba(111,183,201,.22); border-radius:7px; padding:3px 9px; margin-top:8px; }
-  .item a.go{ display:inline-block; margin-top:10px; font-size:12.5px; font-weight:800; text-decoration:none; color:#0c1a08; background:var(--sol); border-radius:9px; padding:8px 12px; }
-  .item a.go:active{ transform:scale(.96); }
-
-  .note{ background:rgba(255,210,87,.07); border:1px solid rgba(255,210,87,.22); border-radius:12px; padding:11px 13px; margin:16px 0 6px; font-size:13px; color:var(--ink2); }
-  .note b{ color:var(--sol); }
-
-  .pie{ text-align:center; padding:22px 0 6px; }
-  .pie a{ color:var(--azul); font-weight:800; font-size:14px; text-decoration:none; }
-  .cred{ color:var(--ink3); font-size:11.5px; margin-top:12px; line-height:1.5; }
-</style>
+<link rel="canonical" href="https://gardening-chi.vercel.app/engage/tareas-pendientes.html">
+<style>body{font-family:-apple-system,system-ui,sans-serif;background:#0f1a12;color:#eaf3ea;text-align:center;padding:40px 20px;line-height:1.6}a{color:#a8e07d;font-weight:800}</style>
 </head>
 <body>
-<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
-
-<div class="wrap">
-
-  <header class="hero">
-    <span class="mast">🌱 Tareas pendientes · actualizado 23/07</span>
-    <h1>Lo que <em>falta</em> hacer</h1>
-    <p>Solo lo pendiente. A medida que vas cerrando tareas, desaparecen de acá.</p>
-  </header>
-
-  <div class="tally"><b>1</b> para hacer ahora <span class="sp">·</span> <b>2</b> agendadas para primavera</div>
-
-  <!-- PARA HACER AHORA -->
-  <h2 class="sec go">🔧 Para hacer ahora</h2>
-
-  <div class="item go">
-    <div class="head"><h4>Liquidámbar — sacar la rama que sombrea la palta</h4><span class="code">B-37</span></div>
-    <div class="desc">No la cortes a media rama (el muñón se pudre). Sacá la rama <b>entera desde su origen</b>, justo por fuera del «cuello» (el anillo engrosado donde nace del tronco). Como es larga y pesada, <b>3 cortes</b> para que no se desgarre la corteza:</div>
-    <ol class="steps">
-      <li>Corte por <b>abajo</b>, a 20-30 cm del cuello, entrando 1/3.</li>
-      <li>Corte por <b>arriba</b> un poco más afuera → cae el grueso de la rama.</li>
-      <li>Corte final <b>limpio</b>, justo por fuera del cuello, para sacar el tocón.</li>
-    </ol>
-    <div class="desc"><b>Opción B (corte de reducción):</b> si no querés sacar toda la rama, podés acortarla hasta una bifurcación (~4-5 m) — pero quedate con la rama que apunta <b>lejos</b> de la palta y que sea gruesa (≥1/3 de lo que cortás); si no, se seca. Si las dos ramas del fork van hacia la palta, no te saca la sombra: ahí mejor el corte en el tronco.</div>
-    <div class="desc">Árbol en dormancia + día seco = cicatriza perfecto. Ojo con la escalera a esa altura. Cuando la saques, mandame la foto y la cierro.</div>
-    <a class="go" href="https://gardening-chi.vercel.app/tasks/plant-B-37.html">Abrir tarea B-37 →</a>
-  </div>
-
-  <!-- A PRIMAVERA -->
-  <h2 class="sec next">🗓️ Agendadas para primavera</h2>
-
-  <div class="item next">
-    <div class="head"><h4>«Caqui» — confirmar identidad</h4><span class="code">B-41</span></div>
-    <div class="desc">En invierno, pelado y sin brotes, no hay con qué confirmarlo — manda la flor/fruto. Si tira flor y fruto, sale de dudas.</div>
-    <span class="when">🗓️ Fines de primavera · noviembre</span>
-  </div>
-
-  <div class="item next">
-    <div class="head"><h4>Arbusto sin identificar — foto en flor</h4><span class="code">B-45</span></div>
-    <div class="desc">Perenne, hojas opuestas chicas y lustrosas. Candidatos: <b>jazmín estrellado</b> o <b>eugenia/arrayán</b>. Para confirmar necesito verla <b>en flor</b>: florcitas blancas en estrella y perfume = jazmín; flor/fruto tipo mirto = eugenia.</div>
-    <span class="when">🗓️ Octubre</span>
-  </div>
-
-  <div class="note">🌳 <b>Se viene en agosto:</b> la poda de los caducos frutales (durazno B-30, ciruelos F-4/B-38, crespón B-9, «caqui» B-41), cuando las yemas empiecen a hincharse. Cuando llegue el momento te aparecen acá.</div>
-
-  <footer class="pie">
-    <a href="https://gardening-chi.vercel.app/tareas.html">Ver el Timeline completo →</a>
-    <div class="cred">Tu landing de tareas pendientes — se actualiza a medida que vas cerrando cosas · última actualización 23/07/2026</div>
-  </footer>
-
-</div>
+<p>Tu landing de tareas pendientes se mudó a una dirección fija.</p>
+<p><a href="tareas-pendientes.html">→ Ir a tus tareas pendientes</a></p>
+<script>location.replace("tareas-pendientes.html");</script>
 </body></html>

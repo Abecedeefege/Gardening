@@ -36,6 +36,10 @@ Persona product/UX/growth/sales. Cada una: (1) `engageReact` target=slug, (2) CT
 4. **Splash** «Hora dorada» integrado en Home. Demos `splash-*.html` = referencia, NO tocar.
 5. ⚠️ **Pillow (PIL) no viene instalado:** `pip install Pillow` ANTES de gen_*.py / build.py.
 
+## 📌 PEDIDO DIRECTO DEL USUARIO 23/07 — landing diaria de pendientes (NO PISAR)
+
+**`docs/engage/tareas-pendientes.html`** = landing FIJA (URL estable, permanente, NO experimento — no borrar/renombrar) que el usuario recibe TODOS LOS DÍAS por push. Ver PASO OBLIGATORIO en `.claude/commands/engagement.md`. Cada corrida: (a) actualizarla a mano desde `task_states.json`+`data_plants.py` — solo lo pendiente, 3 bloques (🔧 Para hacer ahora / 📅 Top 3 próximas / 🗓️ Primavera) + módulo feedback general al pie (`engageFeedback('landing-pendientes')`); (b) encolar su push `<fecha>-pendientes` (`format:"tarea"`, ~10:00, adicional al cupo). La vieja `2026-07-23-resultado-del-dia.html` quedó como redirect a la fija.
+
 ## 🚀 QUÉ CONVIERTE — el ÁNGULO decide dentro del news-feed
 
 **CONVIERTEN (PROMOVIDAS):** 📋 **Asamblea (usuario=PRESIDENTE+agencia+humor+bridge-tareas) = feedback_text POSITIVO, la señal top** · 🍵 Chusmerío 260s😍 · 📱 Feed(social 1ª pers, habla AL usuario) 208s😍 · 🎙️ Entrevista(celebridad) sub+206s · 🎁 Wrapped 😍+172s (⚠️ FATIGADO: descansar) · 🏆 Récords 😍+sub+141s · 📗 Álbum · 🔮 Horóscopo(identidad) 😍+sub · 🌱 Quiz «¿qué planta sos?» 😍+103s · 📰 Diario · 😂Memes/🧪Superpoderes/💌Consultorio/🎤Confesiones/📺Reality (tibio).

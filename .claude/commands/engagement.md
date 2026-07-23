@@ -144,6 +144,20 @@ a la cadencia — no las cuentes contra el cupo, no las edites ni las borres, y 
 elimines la página `top3-tareas.html` ni la proposal `2026-07-04-top3-tareas`
 (experiencia comisionada permanente, no experimento).
 
+**PASO OBLIGATORIO — landing diaria de tareas pendientes (pedido directo del
+usuario 23/07/2026).** `docs/engage/tareas-pendientes.html` es la landing FIJA
+(URL estable, permanente — NO borrar ni renombrar, NO es un experimento) que el
+usuario recibe TODOS LOS DÍAS por push. Cada corrida:
+1. **Actualizala** a mano según `task_states.json` + `data_plants.py`: dejá SOLO
+   lo pendiente (sacá lo que quedó `done`), con 3 bloques: «🔧 Para hacer ahora»
+   (tareas activas cuya ventana ya llegó, alta primero), «📅 Top 3 próximas
+   tareas» (las 3 tareas activas con la ventana más cercana a futuro) y «🗓️
+   Agendadas para primavera» (las diferidas). Mantené el módulo de feedback
+   general del pie (`engageFeedback('landing-pendientes')` + `engage.js`).
+2. **Encolá su push** (id `<fecha>-pendientes`, `format: "tarea"`, ~10:00 -03:00,
+   url a `tareas-pendientes.html`). Es ADICIONAL al cupo de experiencias — no lo
+   cuentes contra las 2/día, no lo edites como experiencia.
+
 **Mirá la sección "CADENCIA VIGENTE" de `docs/engage/learnings.md`.** Si pide alta
 frecuencia (ej. cada 15 min), **NO escribas la cola a mano**: corré
 
@@ -210,7 +224,7 @@ Política de contenido:
 - **Anti-repetición:** leé y actualizá `docs/engage/facts_ledger.json` en cada corrida. Planta featured descansa ≥7 días; fact no se repite en <14 días; ≥70% del elenco de cada experiencia nueva sin usar en 7 días. Re-push de una promovida = contenido renovado en la misma URL.
 - **Proposals sin aprobación explícita de un día anterior se eliminan hoy.** La aprobación es el único pase a permanencia.
 - `docs/sync/task_states.json`, `docs/sync/user_tasks.json`, `docs/uploads.json`, `docs/sync/contacts.json`, `docs/sync/threads/` y `docs/images/uploads/` son del usuario: **solo lectura** para este comando (la única excepción es la compactación documentada de `engagement.json`). Los threads (`docs/sync/threads/*.json`) los sumás a tu lectura de contexto para calibrar contenido, pero los escribe el agente `/responder-tareas`, no vos.
-- En `queue.json`, las entries con `format: "tarea"` (ids `-task-dia`/`-task-semana`/`-top3`/`-reply-*`) son de `gen_task_reminders.py` / `gen_top3_tareas.py` / `/responder-tareas`: **no las cuentes contra el cupo, no las edites ni las borres.**
+- En `queue.json`, las entries con `format: "tarea"` (ids `-task-dia`/`-task-semana`/`-top3`/`-pendientes`/`-reply-*`) son de `gen_task_reminders.py` / `gen_top3_tareas.py` / la landing diaria de pendientes / `/responder-tareas`: **no las cuentes contra el cupo, no las edites ni las borres.**
 - NUNCA commitear secretos, PATs, teléfonos, ni la clave VAPID privada.
 - NUNCA editar `docs/index.html` / `tareas.html` / `ideas.html` a mano — siempre vía `python build.py`.
 - Español uruguayo en todo. Sin frameworks, sin `<form>`, sin APIs externas en runtime.
