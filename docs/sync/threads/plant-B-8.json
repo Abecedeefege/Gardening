@@ -1,0 +1,16 @@
+{
+  "task_id": "plant-B-8",
+  "_updated_at": "2026-07-23T18:33:47.820Z",
+  "messages": [
+    {
+      "id": "m-mrxuo329-0xqe39",
+      "from": "user",
+      "kind": "text",
+      "text": "Las dejo caer cuando caigan.  Listo",
+      "photo": null,
+      "ts": "2026-07-23T18:33:47.690Z",
+      "device": "landing",
+      "status": "pending"
+    }
+  ]
+}
