@@ -727,22 +727,46 @@
       "title": "💧 La lluvia te está haciendo las tareas (parte anti-culpa, clima real)",
       "page": "engage/2026-07-22-lluvia-tareas.html",
       "created": "2026-07-22",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Respuesta DIRECTA al feedback_text del usuario (21/07): 'esta lloviendo hace dias, no he podido avanzar'. Formato NUEVO (checklist de tareas auto-completadas por el clima). Eje empatia/ALIVIO + agencia + humor: da vuelta la culpa del jardinero mostrando con datos reales que el jardin avanzo SIN el (5 de 7 tareas 'tachadas' por la lluvia: riego profundo, pulgones Gardenia B-25, fumagina Guayabo F-1, sed Hortensia B-5a, recarga de suelo caducos) + 2 honestas que si le esperan (drenaje mediterraneas Romero B-26/Lavanda B-10, cuello del tronco). Apuesta: sacarle la culpa el dia de lluvia convierte el peor momento en un gancho; el alivio es la emocion que mas retiene en wellness. Se ancla en el clima REAL que el propio usuario reporto.",
       "notified_by": [
         "2026-07-22-a"
       ],
-      "result_notes": null
+      "result_notes": "Descartada 23/07 por no-supervivencia (pending de día anterior sin aprobación). Sin clicks ni reacción 22/07 — solo task-dia convirtió. Hipótesis del fracaso: el formato 'checklist auto-tachado por el clima' es alivio pero PASIVO (te muestra que el jardín avanzó sin vos = quita agencia). El eje ganador es AGENCIA del usuario, no relevo de culpa vía pasividad. La lluvia como ancla real sirve; el usuario-espectador no."
     },
     {
       "id": "2026-07-22-grupo-jardin",
       "title": "🌿 El grupo de WhatsApp del Jardín (chat grupal en 1ª persona)",
       "page": "engage/2026-07-22-grupo-jardin.html",
       "created": "2026-07-22",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Formato NUEVO (simulacion de grupo de WhatsApp vs feed individual). Lleva el eje 1ª-persona-social —el que dio el dwell RECORD del canal (Feed 208s)— al habitat mas pegajoso del Rio de la Plata: el grupo de WhatsApp. 12 plantas chatean sobre la lluvia de estos dias, cada mensaje con un dato real via ANGULO NUEVO (reaccion al clima, no su fun_fact): Hortensia festeja el agua, Romero/Lavanda se quejan de pies mojados, Gardenia celebra que se fueron los pulgones, Durazno en coma, Pera lo desafia a la carrera de la 1a flor. Apuesta: conflicto+humor+1a persona en un formato ultra-familiar dispara reenvio y 'increible'. Ancla en la lluvia real reportada por el usuario. Slot dorado (18:00, donde converten la Asamblea).",
       "notified_by": [
         "2026-07-22-c"
+      ],
+      "result_notes": "Descartada 23/07 por no-supervivencia (pending de día anterior sin aprobación). Sin clicks 22/07 en el slot dorado 18:00. Hipótesis: el chat-grupal (12 plantas charlando) es consumo social PASIVO — el usuario mira una conversación ajena, no participa. Contradice la meta-regla (a): 'app amada' solo convierte con HÉROE=USUARIO+AGENCIA. El Feed 1ª-persona ganó porque hablaba AL usuario; el grupo lo deja afuera mirando. Línea chat-coral = confirmada floja (ya estaba en la lista de rechazos)."
+    },
+    {
+      "id": "2026-07-23-ronda-medica",
+      "title": "Ronda médica del jardín — sos el jefe de guardia",
+      "page": "engage/2026-07-23-ronda-medica.html",
+      "created": "2026-07-23",
+      "status": "pending",
+      "hypothesis": "Vuelvo a la fórmula ganadora tras el flop pasivo del 22/07: HÉROE=USUARIO con AUTORIDAD (médico que decide alta/tratamiento/observación) + humor rioplatense + bridge a tarea real (Gardenia B-25) + ancla presente (riesgos post-lluvia). Diagnóstico = el dolor #1 del jardinero ('¿está enfermo o es normal?'); convertir miedo en control con signos vitales legibles debería abrir mejor que el chat pasivo. Sub-género médico-autoridad, distinto de Consultorio (ahí la planta pedía consejo; acá el usuario manda).",
+      "notified_by": [
+        "2026-07-23-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-23-mercado-pases",
+      "title": "Mercado de pases del jardín — armá el once de la primavera",
+      "page": "engage/2026-07-23-mercado-pases.html",
+      "created": "2026-07-23",
+      "status": "pending",
+      "hypothesis": "Segunda variante del molde ganador (usuario=DT con agencia) + ataca el valle de retención invernal resignificando el invierno como 'pretemporada'. Bridge a tarea real (Gardenia tocada) + inventario ocioso real (cantera B-46, 30 plantines) + fun_facts por ángulo nuevo (limonero 12/12=goleador, palto clon 1926=intransferible). Riesgo: fútbol-torneo ya falló (Mundial), pero acá el eje es AGENCIA-manager (vos decidís el plantel), no espectáculo pasivo de torneo. Slot dorado 18:00 donde ganó la Asamblea.",
+      "notified_by": [
+        "2026-07-23-c"
       ],
       "result_notes": null
     }
