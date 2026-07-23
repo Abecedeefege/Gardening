@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-23T19:34:18.148Z",
+  "_updated_at": "2026-07-23T21:35:23.389Z",
   "events": [
     {
       "_id": "mrcs6t0w99u7n8",
@@ -845,6 +845,15 @@
       "src": "direct",
       "ts": "2026-07-23T19:34:18.757Z",
       "device": "landing"
+    },
+    {
+      "_id": "mrxosl5j2hro71",
+      "type": "dwell",
+      "seconds": 78,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-23-ronda-medica.html",
+      "ts": "2026-07-23T15:49:21.559Z",
+      "device": "sin-nombre"
     }
   ],
   "daily_summary": {
