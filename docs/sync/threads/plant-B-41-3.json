@@ -1,0 +1,16 @@
+{
+  "task_id": "plant-B-41-3",
+  "_updated_at": "2026-07-23T18:20:29.415Z",
+  "messages": [
+    {
+      "id": "m-mrxu6ysq-lxq5yi",
+      "from": "user",
+      "kind": "text",
+      "text": "No le veo brotes de ningún tipo.  Hablemos de nuevo a fines de primavera de esta",
+      "photo": null,
+      "ts": "2026-07-23T18:20:29.240Z",
+      "device": "landing",
+      "status": "pending"
+    }
+  ]
+}
