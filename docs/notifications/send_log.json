@@ -413,6 +413,12 @@
       "nid": "2026-07-23-reply-plant-B-25-3",
       "ts": "2026-07-23T13:52:49.782Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-23-b",
+      "ts": "2026-07-23T21:20:56.019Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
