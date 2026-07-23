@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-23T21:37:47.722Z",
+  "_updated_at": "2026-07-23T21:37:53.366Z",
   "events": [
     {
       "_id": "mrcs6t0w99u7n8",
@@ -904,6 +904,15 @@
       "text": "Mucho texto, muy cargado, no es realmente lo que busco en una app de jardin",
       "page": "engage/2026-07-23-mercado-pases.html",
       "ts": "2026-07-23T21:37:49.046Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mry18tw5u6yngw",
+      "type": "dwell",
+      "seconds": 150,
+      "scroll_pct": 97,
+      "page": "engage/2026-07-23-mercado-pases.html",
+      "ts": "2026-07-23T21:37:54.773Z",
       "device": "sin-nombre"
     }
   ],
