@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-23T09:13:09.026059",
+  "_updated_at": "2026-07-23T09:20:00-03:00",
   "notifications": [
     {
       "id": "2026-07-23-task-dia",
@@ -28,18 +28,6 @@
     },
     {
       "id": "2026-07-23-b",
-      "title": "🍵 Chusmerío: edición de lluvia",
-      "body": "Nuevo escándalo destapado: la única planta que se anima a florecer bajo la lluvia (y el riesgo que corre).",
-      "url": "https://gardening-chi.vercel.app/engage/2026-06-30-chusmerio-jardin.html",
-      "send_at": "2026-07-23T13:00:00-03:00",
-      "expires_at": "2026-07-23T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-23"
-    },
-    {
-      "id": "2026-07-23-c",
       "title": "🔧 Se abrió el mercado de pases",
       "body": "El invierno es la pretemporada. Sos el DT: subí la cantera, renová al goleador, armá el once de la primavera.",
       "url": "https://gardening-chi.vercel.app/engage/2026-07-23-mercado-pases.html",

@@ -17,15 +17,16 @@ No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 3. **Objetivo:** interacción + marca de buena + buen feedback. Innovar SIEMPRE (formatos nuevos > refritos).
 4. **Re-push de promovida = contenido RENOVADO en misma URL** (nunca re-mandar estático).
 
-## ⏱️ CADENCIA VIGENTE: 3 pushes propios/día (fijada 18/06)
+## ⏱️ CADENCIA VIGENTE: 2 pushes propios/día (bajada de 3→2 el 23/07 por PEDIDO DIRECTO del usuario)
 
-Slots base **10:30 / 13:00 / 18:00 -03:00**. **🚫 PISO 10:00: NINGUNA push antes de 10:00.**
-task-dia (10:00) + top3 (11:00, cada 2d) son ADICIONALES al cupo. Primer send_at propio ≥60 min post-corrida. expires_at = mismo día 22:00. Cada notif a destino DISTINTO. Timestamps con `-03:00`.
-**Regla dura: la cola SIEMPRE 3 propias pending.** El 3º slot = rotación de una promovida ganadora descansada, RENOVADA con contenido fresco en misma URL.
+**El usuario pidió por chat el 23/07: «bajemos a un máximo de 2 push por día».** → Cadencia propia = **2/día**, NO 3.
+Slots base **10:30 / 18:00 -03:00** (se elimina el 13:00). **🚫 PISO 10:00: NINGUNA push antes de 10:00.**
+task-dia (10:00) + top3 (11:00, cada 2d) son ADICIONALES al cupo (canal de tareas comisionado, separado). Primer send_at propio ≥60 min post-corrida. expires_at = mismo día 22:00. Cada notif a destino DISTINTO. Timestamps con `-03:00`.
+**Regla dura: la cola SIEMPRE 2 propias pending = las 2 experiencias nuevas de la función paralela** (una a 10:30, otra a 18:00). **YA NO hay 3er slot de winner descansado** — con 2/día, ambos slots son para las 2 experiencias nuevas de cero. (Renovar un winner descansado queda como opción solo si algún día NO se crean 2 experiencias nuevas.)
 
 ## 🆕 FUNCIÓN PARALELA (28/06): 2 experiencias NUEVAS de cero por corrida
 
-Persona product/UX/growth/sales. Cada una: (1) `engageReact` target=slug, (2) CTA sub diaria `engageAnswer` qid `<slug>-suscripcion-diaria`, (3) caja feedback propia `engageFeedback('<slug>')` id `engage-feedback-box`, (4) botones `engageApprove/engageRejected('<id>')` (proposal pending), (5) HTML de pitch aparte con 6 modelos (3 innovadores + 3 ultra-creativos). Contrato: link "← Volver al sitio estable" PRIMERO, `engage.js` al pie, SOLO datos verificados. Ambas van a 2 de los 3 pushes; el 3º = winner descansado renovado.
+Persona product/UX/growth/sales. Cada una: (1) `engageReact` target=slug, (2) CTA sub diaria `engageAnswer` qid `<slug>-suscripcion-diaria`, (3) caja feedback propia `engageFeedback('<slug>')` id `engage-feedback-box`, (4) botones `engageApprove/engageRejected('<id>')` (proposal pending), (5) HTML de pitch aparte con 6 modelos (3 innovadores + 3 ultra-creativos). Contrato: link "← Volver al sitio estable" PRIMERO, `engage.js` al pie, SOLO datos verificados. Con la cadencia 2/día (23/07), **las 2 experiencias nuevas ocupan los 2 slots propios** (10:30 y 18:00); ya no hay 3er slot de winner descansado.
 
 ## 📌 PEDIDOS DIRECTOS DEL USUARIO 04/07 — NO PISAR
 
@@ -58,8 +59,8 @@ Persona product/UX/growth/sales. Cada una: (1) `engageReact` target=slug, (2) CT
 - **23/07 (ciclo 53) — DECISIÓN:** vuelvo 100% a la fórmula ganadora (HÉROE=USUARIO+AUTORIDAD+bridge-tareas) con 2 formatos NUEVOS de AGENCIA, dejando la lluvia como ancla real pero con el usuario decidiendo:
   - 🩺 **Ronda médica del jardín** (`2026-07-23-ronda-medica.html`) — usuario=JEFE DE GUARDIA, cada planta paciente con signos vitales + decisión (alta/tratamiento/observación). Ataca el dolor #1 del jardinero («¿enfermo o normal?») = miedo→control. Cast: Romero B-26 (pie mojado post-lluvia), Gardenia B-25 (tarea real), Hortensia B-5a (alta feliz), Lavanda B-10, Durazno B-30/35 (dormancia). Push a (10:30). react `ronda-medica`, sub `ronda-medica-suscripcion-diaria`.
   - 🔧 **Mercado de pases** (`2026-07-23-mercado-pases.html`) — usuario=DT, el invierno = pretemporada (ataca el valle de retención invernal). Decisiones: subir cantera B-46 (30 plantines), renovar Limonero B-23 (12/12), pretemporada Crespón B-9, intransferible Palto B-36 (clon 1926), Gardenia B-25 tocada (tarea real). Push c (18:00, slot dorado). react `mercado-pases`, sub `mercado-pases-suscripcion-diaria`.
-  - Slot b (13:00) → 🍵 **Chusmerío RENOVADO** (winner 260s😍, descansado): «edición de lluvia», kicker a 23/07 + chisme nuevo prepend (Romero B-26 = única que florece bajo la lluvia + riesgo Phytophthora). Renovación real en misma URL.
-  - **Cola ciclo 53:** (a)10:30 ronda-medica; (b)13:00 chusmerio-lluvia; (c)18:00 mercado-pases. + 10:00 task-dia (Guayabo F-1 fumagina). top3 no toca (próx 24/07).
+  - **CAMBIO DE CADENCIA (23/07, pedido del usuario): 3→2 pushes propios/día.** Los 2 slots quedan para las 2 experiencias nuevas. El Chusmerío renovado (edición de lluvia, chisme nuevo del Romero B-26) quedó commiteado en el repo pero **se sacó de la cola de hoy** (ya no hay 3er slot). Sirve como winner descansado listo para cuando toque.
+  - **Cola ciclo 53 (final, 2/día):** (a)10:30 ronda-medica; (b)18:00 mercado-pases. + 10:00 task-dia (Guayabo F-1 fumagina). top3 no toca (próx 24/07).
 - **Watch 24/07:** ¿la vuelta a AGENCIA (médico/DT) repite el clic de la Asamblea que la lluvia-pasiva no dio? Si ronda-medica o mercado-pases convierten → confirmado que el problema del 22/07 fue PASIVIDAD, no fatiga del canal. Si el usuario deja feedback_text: oro, citarlo y ejecutar.
 
 ## Contexto del jardín (julio 2026 = pleno invierno + LLUVIA, lat -34.9°S)
