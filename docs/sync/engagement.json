@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T13:30:32.641Z",
+  "_updated_at": "2026-07-24T14:08:54.547Z",
   "events": [
     {
       "_id": "mrf815033bulw9",
@@ -793,6 +793,15 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-07-24T13:30:31.410Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz0n8j8dhb7p2",
+      "type": "page_visit",
+      "page": "engage/2026-07-02-confesiones-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-24T14:08:53.491Z",
       "device": "sin-nombre"
     }
   ],
