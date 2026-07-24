@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T19:37:52.396Z",
+  "_updated_at": "2026-07-24T21:14:47.196Z",
   "events": [
     {
       "_id": "mrf815033bulw9",
@@ -1005,6 +1005,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-24-jardin-hoy.html",
       "ts": "2026-07-24T19:37:52.427Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrzfuxorwsvzy5",
+      "type": "notification_clicked",
+      "nid": "2026-07-24-b",
+      "page": "engage/2026-07-24-tu-semana.html",
+      "ts": "2026-07-24T21:14:46.922Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrzfuxornhycrv",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-tu-semana.html",
+      "nid": "2026-07-24-b",
+      "src": "push",
+      "ts": "2026-07-24T21:14:46.922Z",
       "device": "sin-nombre"
     }
   ],
