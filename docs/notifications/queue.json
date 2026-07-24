@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T15:05:26.334Z",
+  "_updated_at": "2026-07-24T14:54:00-03:00",
   "notifications": [
     {
       "id": "2026-07-24-task-dia",
@@ -63,6 +63,18 @@
       "sent_at": "2026-07-24T15:05:26.333Z",
       "fail_reason": null,
       "created_by": "gen_top3_tareas 2026-07-24"
+    },
+    {
+      "id": "2026-07-24-jardin-hoy-v2",
+      "title": "🌤️ Rearmé «Tu jardín hoy»",
+      "body": "Escuché tu feedback: la hice la push diaria, saqué lo que sobraba y sumé las tareas de julio y agosto en menús. Miralo.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
+      "send_at": "2026-07-24T14:55:00-03:00",
+      "expires_at": "2026-07-24T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-07-24 (rebuild por feedback usuario)"
     }
   ]
 }

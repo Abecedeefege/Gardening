@@ -3,7 +3,14 @@
 Memoria del agente diario. Se REESCRIBE y condensa cada día (máx ~150 líneas).
 No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
-## 🚨🚨 PIVOTE 24/07 — feedback_text tier-1 MATA el role-play verboso (LO MÁS IMPORTANTE)
+## 📌📌 MANDATO DIRECTO DEL USUARIO 24/07 (por chat + feedback_text — MÁXIMA AUTORIDAD, NO PISAR)
+
+1. **UNA SOLA PUSH DIARIA, NO TRES.** El usuario: «Siento que estos TRES push [task-dia + pendientes + top3] deberían haber sido una comunicación». → **Consolidar el canal-tarea en UNA push por día.** La push diaria oficial es **🌤️ «Tu jardín hoy»** (`2026-07-24-jardin-hoy.html`), que ABSORBE estado + tareas. **A futuro: NO encolar task-dia + pendientes + top3 como 3 pushes separados** — su contenido va dentro de jardin-hoy. (Los tools gen_task_reminders/gen_top3 siguen generando la DATA, pero el push al usuario es uno solo → revisar el flujo para que no dupliquen notificación.)
+2. **«Tu jardín hoy» = PROMOVIDA, la push diaria fija.** El usuario: «Esta debería ser la push diaria». Pidió sacar de la landing: el bloque de reacción, el de suscripción y el de «¿la dejo fija?» (ya no es experimento → es el core). Aplicado en v2.
+3. **La landing lleva:** vistazo de 5s (estado + 3 chips) + menú COLAPSADO «Tareas de julio» + menú COLAPSADO «Para agosto» + caja **«🙋 Pedime lo que necesites»** (dudas / especie desconocida / solicitudes — «estas tareas son el lugar para pedirlo»). Mantener actualizados los menús por mes con `task_states.json` + `data_plants.py` cada corrida.
+4. **El pivote minimalista quedó VALIDADO en 1 iteración** (feedback tier-1 positivo el mismo día). Seguir por acá: liviano, glanceable, garden-close, cero role-play verboso.
+
+## 🚨🚨 PIVOTE 24/07 — feedback_text tier-1 MATA el role-play verboso
 
 - **23/07 21:37Z — feedback_text del usuario sobre mercado-pases: «Mucho texto, muy cargado, no es realmente lo que busco en una app de jardín».** Señal tier-1, la de mayor peso. Leyó TODO (150s/97%) y aun así lo RECHAZÓ + reaction 'no' + suscripción 'no'.
 - **AMBAS agencias-teatrales del 23/07 fueron RECHAZADAS:** ronda-medica (jefe de guardia) proposal_rejected 78s; mercado-pases (DT) proposal_rejected + feedback negativo. → las 2 DROPEADAS + borradas 24/07.

@@ -772,15 +772,16 @@
     },
     {
       "id": "2026-07-24-jardin-hoy",
-      "title": "🌤️ Tu jardín hoy — vistazo diario minimalista",
+      "title": "🌤️ Tu jardín hoy — vistazo diario minimalista (PUSH DIARIA OFICIAL)",
       "page": "engage/2026-07-24-jardin-hoy.html",
       "created": "2026-07-24",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "PIVOTE por feedback_text tier-1 del 23/07 («mucho texto, muy cargado, no es lo que busco en una app de jardín») + doble rechazo de las 2 agencias-teatrales. Respuesta directa: experiencia RADICALMENTE minimalista, paleta clara, casi sin prosa — un solo vistazo de 5s (estado calmo + 3 chips de qué está vivo). Anclada en estado REAL (no trivia reciclada: el elenco de fun_facts está quemado según facts_ledger). Hipótesis: lo que el usuario quiere de una 'app de jardín' es calma y utilidad glanceable, no walls de texto ni role-play. Si convierte → el pivote a minimalismo es el camino y se puede volver el core diario.",
       "notified_by": [
-        "2026-07-24-a"
+        "2026-07-24-a",
+        "2026-07-24-jardin-hoy-v2"
       ],
-      "result_notes": null
+      "result_notes": "PROMOVIDA el MISMO 24/07 por feedback_text tier-1 EXPLÍCITO del usuario (17:50Z, sobre esta misma experiencia): «Esta debería ser la push diaria.» + instrucciones concretas de edición. El pivote minimalista quedó VALIDADO en la primera iteración. Cambios pedidos y aplicados en la landing (v2): (1) sacar el bloque de reacción «¿Te sirve así de simple?»; (2) sacar el bloque de suscripción «🌤️ Un vistazo cada mañana»; (3) sacar el bloque de decisión «¿La dejo fija?»; (4) sumar menú COLAPSADO «Tareas de julio» (Liquidámbar B-37 rama + Guayabo F-1 limpieza); (5) sumar menú COLAPSADO «Para agosto» (poda Durazno B-30/35, Ciruelo F-4, Crespón B-9); (6) sumar caja «🙋 Pedime lo que necesites» (dudas / especie desconocida / solicitudes → este es el lugar para pedirlo). ESTA ES AHORA LA PUSH DIARIA OFICIAL y consolida el canal-tarea (ver mandato de consolidación en learnings). Página permanente, NO dropear."
     },
     {
       "id": "2026-07-24-tu-semana",
