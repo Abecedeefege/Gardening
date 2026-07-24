@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T18:07:02.624Z",
+  "_updated_at": "2026-07-24T18:09:12.876Z",
   "events": [
     {
       "_id": "mrf815033bulw9",
@@ -969,6 +969,15 @@
       "scroll_pct": 72,
       "page": "engage/2026-07-24-jardin-hoy.html",
       "ts": "2026-07-24T18:07:02.795Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz98ahk9jlfd0",
+      "type": "feedback_text",
+      "target": "jardin-hoy",
+      "text": "Que puedo hacer hoy?",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-24T18:09:12.728Z",
       "device": "sin-nombre"
     }
   ],
