@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T17:48:02.829Z",
+  "_updated_at": "2026-07-24T17:50:35.713Z",
   "events": [
     {
       "_id": "mrf815033bulw9",
@@ -925,6 +925,15 @@
       "nid": "2026-07-24-a",
       "src": "push",
       "ts": "2026-07-24T17:48:03.055Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8kca5l9zsb8",
+      "type": "feedback_text",
+      "target": "jardin-hoy",
+      "text": "Esta debería ser la push diaria.\nSaca \"¿Te sirve así de simple?\"\nSaca \"🌤️ Un vistazo cada mañana\"\nSaca \" ¿La dejo fija?\"\n\nSúmale un menú colapsado con las tareas de este mes (que quizás no son hoy pero si julio)\n\nSúmale un menú colapsado que sea de cosas para hacer en agosto \n\nRecordá si tenés alguna duda, especie desconocida o solicitud, estás tareas son el lugar para pedirlo",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-24T17:50:35.309Z",
       "device": "sin-nombre"
     }
   ],
