@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T21:15:11.688Z",
+  "_updated_at": "2026-07-24T21:16:28.971Z",
   "events": [
     {
       "_id": "mrf815033bulw9",
@@ -1040,6 +1040,15 @@
       "scroll_pct": 68,
       "page": "engage/2026-07-24-tu-semana.html",
       "ts": "2026-07-24T21:15:12.074Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrzfx446mu2f0r",
+      "type": "feedback_text",
+      "target": "tu-semana",
+      "text": "Los plantines de palta no los toque, siguen contra la pared a la sombra",
+      "page": "engage/2026-07-24-tu-semana.html",
+      "ts": "2026-07-24T21:16:28.566Z",
       "device": "sin-nombre"
     }
   ],
