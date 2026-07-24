@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T17:55:23.582Z",
+  "_updated_at": "2026-07-24T21:02:02.996Z",
   "notifications": [
     {
       "id": "2026-07-24-task-dia",
@@ -46,8 +46,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-24-tu-semana.html",
       "send_at": "2026-07-24T18:00:00-03:00",
       "expires_at": "2026-07-24T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-24T21:02:02.994Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-24"
     },

@@ -425,6 +425,12 @@
       "nid": "2026-07-24-jardin-hoy-v2",
       "ts": "2026-07-24T17:55:23.581Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-24-b",
+      "ts": "2026-07-24T21:02:02.994Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
