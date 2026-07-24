@@ -1,6 +1,6 @@
 {
  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-07-23",
+ "_updated": "2026-07-24",
  "plants": {
   "F-1": {
    "common": "Guayabo del país",
@@ -30,6 +30,11 @@
      "date": "2026-07-23",
      "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
      "fact": "task-dia 23/07: fumagina, tarea real (canal tarea)"
+    },
+    {
+     "date": "2026-07-24",
+     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+     "fact": "ANGULO LOGRO (tu-semana): limpieza de fumagina cerrada 23/07 — tarea real, no fun_fact"
     }
    ]
   },
@@ -118,6 +123,11 @@
      "date": "2026-07-19",
      "page": "2026-07-09-quiz-planta(reno-19-07).html",
      "fact": "rebrota fuerte tras poda drastica / resiliencia"
+    },
+    {
+     "date": "2026-07-24",
+     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+     "fact": "ANGULO LOGRO (tu-semana): decisión fresno/fotinia (poda agosto) 23/07"
     }
    ]
   },
@@ -194,6 +204,11 @@
      "date": "2026-07-18",
      "page": "2026-07-18-horoscopo(semana).html",
      "fact": "no es helecho / cladodios / bayas toxicas"
+    },
+    {
+     "date": "2026-07-24",
+     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+     "fact": "ANGULO LOGRO (tu-semana): poda de cola de zorro cerrada 23/07"
     }
    ]
   },
@@ -221,6 +236,11 @@
      "date": "2026-07-22",
      "page": "2026-07-22-grupo-jardin.html",
      "fact": "ANGULO LLUVIA: palmera nativa con fruto coco-banana ahora (mar-jul)"
+    },
+    {
+     "date": "2026-07-24",
+     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+     "fact": "ANGULO LOGRO (tu-semana): pindó, dejar caer hojas 23/07"
     }
    ]
   },
@@ -366,6 +386,11 @@
      "date": "2026-07-23",
      "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
      "fact": "ANGULO DT: goleador 12/12 = renovar contrato (fruta todo el año)"
+    },
+    {
+     "date": "2026-07-24",
+     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+     "fact": "ANGULO ESTADO (jardin-hoy): 'con fruta' — chip minimalista"
     }
    ]
   },
@@ -382,6 +407,11 @@
      "date": "2026-07-22",
      "page": "2026-07-22-grupo-jardin.html",
      "fact": "ANGULO LLUVIA: citrico da fruta en julio, lluvia = fruta mas jugosa"
+    },
+    {
+     "date": "2026-07-24",
+     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+     "fact": "ANGULO ESTADO (jardin-hoy): 'con fruta' — chip minimalista"
     }
    ]
   },
@@ -434,6 +464,11 @@
      "date": "2026-07-23",
      "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
      "fact": "ANGULO MEDICO+CHUSMERIO: única en flor en julio / riesgo pie mojado post-lluvia (Phytophthora) — dato real, no fun_fact repetido"
+    },
+    {
+     "date": "2026-07-24",
+     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+     "fact": "ANGULO ESTADO (jardin-hoy): 'en flor' — vistazo minimalista, sin fun_fact"
     }
    ]
   },
@@ -477,6 +512,11 @@
      "date": "2026-07-23",
      "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
      "fact": "ANGULO MEDICO: caduco en dormancia, acumula horas-frío (reposo normal, no enfermo)"
+    },
+    {
+     "date": "2026-07-24",
+     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+     "fact": "ANGULO ESTADO (jardin-hoy): 'durmiendo' — chip minimalista"
     }
    ]
   },
@@ -553,6 +593,11 @@
      "date": "2026-07-22",
      "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
      "fact": "ANGULO LLUVIA: caduco, carrera de la 1a flor vs durazno en agosto"
+    },
+    {
+     "date": "2026-07-24",
+     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+     "fact": "ANGULO ESTADO+LOGRO: 'durmiendo' (jardin-hoy) + poda invernal cerrada 23/07 (tu-semana)"
     }
    ]
   },
@@ -639,6 +684,11 @@
      "date": "2026-07-23",
      "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
      "fact": "ANGULO DT: vivero ~30 plantines = la cantera/inferiores a subir al plantel"
+    },
+    {
+     "date": "2026-07-24",
+     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+     "fact": "ANGULO LOGRO (tu-semana): vivero de palmeras reubicado 23/07"
     }
    ]
   },

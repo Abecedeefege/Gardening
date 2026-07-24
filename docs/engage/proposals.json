@@ -749,24 +749,48 @@
     {
       "id": "2026-07-23-ronda-medica",
       "title": "Ronda médica del jardín — sos el jefe de guardia",
-      "page": "engage/2026-07-23-ronda-medica.html",
+      "page": null,
       "created": "2026-07-23",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Vuelvo a la fórmula ganadora tras el flop pasivo del 22/07: HÉROE=USUARIO con AUTORIDAD (médico que decide alta/tratamiento/observación) + humor rioplatense + bridge a tarea real (Gardenia B-25) + ancla presente (riesgos post-lluvia). Diagnóstico = el dolor #1 del jardinero ('¿está enfermo o es normal?'); convertir miedo en control con signos vitales legibles debería abrir mejor que el chat pasivo. Sub-género médico-autoridad, distinto de Consultorio (ahí la planta pedía consejo; acá el usuario manda).",
       "notified_by": [
         "2026-07-23-a"
       ],
-      "result_notes": null
+      "result_notes": "RECHAZADA 24/07 (proposal_rejected 23/07 15:49Z, 78s/100% dwell, sin reacción ni suscripción). Descartada + página/pitch borrados. DATO CLAVE: la hipótesis 'AGENCIA convierte donde la pasividad falló' quedó REFUTADA — el usuario tuvo AGENCIA (jefe de guardia decidiendo) y aun así rechazó. Junto al rechazo de mercado-pases y su feedback_text ('mucho texto, muy cargado'), la lectura es que el problema NO era pasividad sino la FORMA: role-play denso y verboso. El eje agencia-autoridad-teatral quedó agotado."
     },
     {
       "id": "2026-07-23-mercado-pases",
       "title": "Mercado de pases del jardín — armá el once de la primavera",
-      "page": "engage/2026-07-23-mercado-pases.html",
+      "page": null,
       "created": "2026-07-23",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Segunda variante del molde ganador (usuario=DT con agencia) + ataca el valle de retención invernal resignificando el invierno como 'pretemporada'. Bridge a tarea real (Gardenia tocada) + inventario ocioso real (cantera B-46, 30 plantines) + fun_facts por ángulo nuevo (limonero 12/12=goleador, palto clon 1926=intransferible). Riesgo: fútbol-torneo ya falló (Mundial), pero acá el eje es AGENCIA-manager (vos decidís el plantel), no espectáculo pasivo de torneo. Slot dorado 18:00 donde ganó la Asamblea.",
       "notified_by": [
         "2026-07-23-b"
+      ],
+      "result_notes": "RECHAZADA 24/07 con la SEÑAL MÁS FUERTE del canal: proposal_rejected + reaction 'no' + suscripción 'no' + 150s/97% dwell + feedback_text tier-1: «Mucho texto, muy cargado, no es realmente lo que busco en una app de jardín» (23/07 21:37Z). Leyó TODO (150s) y aun así lo rechazó por SOBRECARGA, no por falta de interés. Página/pitch borrados. Es el mandato de pivote: menos texto, menos teatro, más app-de-jardín real. Fútbol-metáfora doblemente muerto (Mundial + esto). El role-play verboso está CERRADO."
+    },
+    {
+      "id": "2026-07-24-jardin-hoy",
+      "title": "🌤️ Tu jardín hoy — vistazo diario minimalista",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "created": "2026-07-24",
+      "status": "pending",
+      "hypothesis": "PIVOTE por feedback_text tier-1 del 23/07 («mucho texto, muy cargado, no es lo que busco en una app de jardín») + doble rechazo de las 2 agencias-teatrales. Respuesta directa: experiencia RADICALMENTE minimalista, paleta clara, casi sin prosa — un solo vistazo de 5s (estado calmo + 3 chips de qué está vivo). Anclada en estado REAL (no trivia reciclada: el elenco de fun_facts está quemado según facts_ledger). Hipótesis: lo que el usuario quiere de una 'app de jardín' es calma y utilidad glanceable, no walls de texto ni role-play. Si convierte → el pivote a minimalismo es el camino y se puede volver el core diario.",
+      "notified_by": [
+        "2026-07-24-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-24-tu-semana",
+      "title": "✅ Tu semana en el jardín — recap minimalista de logros reales",
+      "page": "engage/2026-07-24-tu-semana.html",
+      "created": "2026-07-24",
+      "status": "pending",
+      "hypothesis": "Segunda del pivote minimalista. Celebración de progreso (eje ganador histórico) pero DESPOJADA: número grande + 6 tildes de una línea de las tareas REALES que el usuario cerró el 23/07 (task_states), cero párrafos. HÉROE=USUARIO en modo orgullo/logro (el axis que sí convierte) sin el peso teatral que el usuario rechazó. Contrasta con jardin-hoy (estado presente) para A/B del pivote: ¿engancha más el vistazo de hoy o el recap de logros? Real, garden-close, liviano. Si convierte → resumen semanal fijo (domingos).",
+      "notified_by": [
+        "2026-07-24-b"
       ],
       "result_notes": null
     }

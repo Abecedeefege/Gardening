@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🌤️ Tu jardín hoy</title>
+<meta property="og:title" content="🌤️ Tu jardín hoy — un vistazo de 5 segundos">
+<meta property="og:description" content="Sin listas largas ni texto de más: lo que está vivo, lo que duerme y si hay algo urgente. Un solo vistazo a tu jardín, cada mañana.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 20px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:40px 0 8px; text-align:center; }
+  .hero .day{ font-size:12px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:var(--ink3); }
+  .hero h1{ font-size:34px; line-height:1.08; margin:10px 0 6px; font-weight:900; letter-spacing:-.02em; }
+  .hero .sun{ font-size:44px; }
+
+  /* estado principal: un solo mensaje grande y calmo */
+  .estado{ background:var(--card); border:1px solid var(--line); border-radius:22px; padding:26px 22px; margin:22px 0 14px;
+    text-align:center; box-shadow:0 8px 26px rgba(45,80,22,.06); }
+  .estado .em{ font-size:40px; display:block; margin-bottom:8px; }
+  .estado b{ font-size:20px; font-weight:900; display:block; }
+  .estado p{ color:var(--ink2); font-size:15px; margin-top:6px; }
+
+  /* tres chips de estado — emoji + 2 palabras, cero párrafos */
+  .chips{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin:6px 0 4px; }
+  .chip{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 8px; text-align:center; }
+  .chip .e{ font-size:26px; display:block; }
+  .chip .k{ font-size:11px; font-weight:900; letter-spacing:.04em; text-transform:uppercase; color:var(--verde2); margin:7px 0 2px; }
+  .chip .v{ font-size:12.5px; color:var(--ink2); font-weight:600; line-height:1.3; }
+
+  .hint{ text-align:center; color:var(--ink3); font-size:12.5px; font-style:italic; margin:16px 0 4px; }
+
+  .blk{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px 18px; margin:14px 0; text-align:center; box-shadow:0 6px 20px rgba(45,80,22,.05); }
+  .blk h3{ font-size:18px; margin-bottom:5px; font-weight:900; }
+  .blk p{ color:var(--ink2); font-size:14px; max-width:34ch; margin:0 auto; }
+  .rowbtns{ display:flex; gap:9px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
+  .rowbtns button{ font-family:var(--sans); font-weight:800; font-size:14.5px; cursor:pointer; border-radius:12px;
+    padding:12px 15px; border:1px solid var(--line); background:#f2f8ea; color:var(--ink); transition:transform .12s; }
+  .rowbtns button:active{ transform:scale(.94); }
+  .rowbtns button.sel{ outline:2px solid var(--verde2); }
+  .react-hint,.q-hint,.fb-hint{ display:block; margin-top:10px; font-size:12.5px; color:var(--verde2); font-weight:700; min-height:1.2em; }
+  .sub-blk{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border-color:rgba(90,138,46,.3); }
+  .sub-blk .si{ background:var(--verde2); color:#fff; border-color:transparent; }
+  .fb-blk textarea{ width:100%; background:#f2f8ea; border:1px solid var(--line); border-radius:11px; color:var(--ink);
+    padding:11px 12px; font:inherit; resize:vertical; margin-top:6px; }
+  .fb-blk .fb-send{ margin-top:10px; background:var(--verde2); color:#fff; border:none; border-radius:12px; padding:12px 20px;
+    font:800 14.5px var(--sans); cursor:pointer; }
+  .engage-actions{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:8px 0 4px; padding:12px 0; }
+  .engage-actions button{ font-family:var(--sans); cursor:pointer; }
+  .pie{ text-align:center; padding:16px 0 8px; }
+  .pie a{ color:var(--verde2); font-weight:800; font-size:14px; text-decoration:none; }
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:10px; line-height:1.5; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <span class="sun">🌤️</span>
+    <div class="day">Viernes 24 · pleno invierno</div>
+    <h1>Tu jardín hoy</h1>
+  </header>
+
+  <!-- Un solo mensaje, honesto: el jardín quedó al día tras la sesión del 23 -->
+  <div class="estado reveal">
+    <span class="em">😌</span>
+    <b>Hoy no hay nada urgente.</b>
+    <p>Cerraste todo lo pendiente. El jardín está descansando el invierno — y vos también podés.</p>
+  </div>
+
+  <!-- Tres chips: qué está vivo AHORA. Sin párrafos. -->
+  <div class="chips reveal">
+    <div class="chip">
+      <span class="e">🌹</span>
+      <div class="k">En flor</div>
+      <div class="v">Romero</div>
+    </div>
+    <div class="chip">
+      <span class="e">🍋</span>
+      <div class="k">Con fruta</div>
+      <div class="v">Limonero · Mandarina</div>
+    </div>
+    <div class="chip">
+      <span class="e">😴</span>
+      <div class="k">Durmiendo</div>
+      <div class="v">Duraznos · Pera</div>
+    </div>
+  </div>
+
+  <p class="hint reveal">Eso es todo. Un vistazo, sin scroll infinito.</p>
+
+  <!-- reacción -->
+  <section class="blk reveal">
+    <h3>¿Te sirve así de simple?</h3>
+    <p>Menos texto, más vistazo. ¿Es lo que buscás en una app de jardín?</p>
+    <div class="rowbtns">
+      <button type="button" onclick="engageReact('jardin-hoy','love', this)">😍 Sí, esto</button>
+      <button type="button" onclick="engageReact('jardin-hoy','meh', this)">😐 Más o menos</button>
+      <button type="button" onclick="engageReact('jardin-hoy','no', this)">🙅 No</button>
+    </div>
+    <span class="react-hint"></span>
+  </section>
+
+  <!-- suscripción -->
+  <section class="blk sub-blk reveal">
+    <h3>🌤️ Un vistazo cada mañana</h3>
+    <p>Te lo mando todos los días: qué floreció, qué necesita algo, si podés estar tranquilo. Cinco segundos, sin más.</p>
+    <div class="rowbtns">
+      <button type="button" class="si" onclick="engageAnswer('jardin-hoy-suscripcion-diaria','si', this)">🌤️ Sí, todas las mañanas</button>
+      <button type="button" onclick="engageAnswer('jardin-hoy-suscripcion-diaria','no', this)">No, gracias</button>
+    </div>
+    <span class="q-hint"></span>
+  </section>
+
+  <!-- feedback -->
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 ¿Qué te gustaría ver acá?</h3>
+    <p>Ayer me dijiste que había mucho texto. Bajé todo a un vistazo. Decime si voy bien.</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('jardin-hoy', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <!-- decisión de permanencia -->
+  <section class="blk reveal">
+    <h3>¿La dejo fija?</h3>
+    <p>Si este vistazo diario es lo que querías, lo integro al inicio de la app.</p>
+    <div class="engage-actions">
+      <button type="button" style="background:var(--verde2); color:#fff; font-weight:900; border:none; border-radius:13px; padding:13px 18px;" onclick="engageApprove('2026-07-24-jardin-hoy')">✅ Aprobar esta mejora</button>
+      <button type="button" style="background:#f2f8ea; color:var(--ink2); font-weight:900; border:1px solid var(--line); border-radius:13px; padding:13px 18px;" onclick="engageRejected('2026-07-24-jardin-hoy')">✕ No me interesa</button>
+    </div>
+    <a href="https://gardening-chi.vercel.app/index.html" style="color:var(--verde2); font-weight:800; font-size:13.5px; text-decoration:none;">← Volver al sitio estable</a>
+  </section>
+
+  <footer class="pie">
+    <a href="2026-07-24-jardin-hoy-pitch.html">💼 Cómo se vende esto</a>
+    <div class="cred">Estado real del catálogo Pacha Mama al 24/07/2026: Romero B-26 (única en flor en julio), Limonero B-23 y Mandarina B-24 (cítricos con fruta), Duraznos B-30/35 y Pera B-39 (caducos en dormancia). Tareas del 23/07 cerradas · sin urgencias inventadas.</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>

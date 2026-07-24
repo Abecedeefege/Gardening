@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>✅ Tu semana en el jardín</title>
+<meta property="og:title" content="✅ Lo que hiciste esta semana en el jardín">
+<meta property="og:description" content="Sin sermones ni listas de pendientes: solo lo que ya lograste. Podaste, limpiaste, ordenaste. El jardín quedó listo para el invierno gracias a vos.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 20px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:40px 0 6px; text-align:center; }
+  .hero .kick{ font-size:12px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:var(--ink3); }
+  .hero h1{ font-size:32px; line-height:1.08; margin:10px 0 4px; font-weight:900; letter-spacing:-.02em; }
+
+  /* número grande de logro */
+  .big{ text-align:center; margin:18px 0 8px; }
+  .big .n{ font-size:70px; font-weight:900; line-height:1; color:var(--verde2); letter-spacing:-.03em; }
+  .big .l{ font-size:14px; font-weight:800; color:var(--ink2); text-transform:uppercase; letter-spacing:.06em; margin-top:2px; }
+
+  /* lista de tildes — una línea cada una, cero párrafos */
+  .done{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:8px 6px; margin:14px 0; box-shadow:0 8px 26px rgba(45,80,22,.06); }
+  .done .r{ display:flex; align-items:center; gap:12px; padding:13px 14px; border-bottom:1px solid var(--line); }
+  .done .r:last-child{ border-bottom:none; }
+  .done .tick{ width:30px; height:30px; border-radius:50%; background:var(--verde3); color:var(--verde); display:grid; place-items:center; font-size:16px; font-weight:900; flex:none; }
+  .done .txt{ font-size:15.5px; font-weight:700; }
+  .done .txt .sub{ display:block; font-size:12px; font-weight:600; color:var(--ink3); }
+
+  .kudos{ text-align:center; color:var(--ink2); font-size:15px; margin:16px auto 4px; max-width:32ch; }
+  .kudos b{ color:var(--verde); }
+
+  .blk{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px 18px; margin:14px 0; text-align:center; box-shadow:0 6px 20px rgba(45,80,22,.05); }
+  .blk h3{ font-size:18px; margin-bottom:5px; font-weight:900; }
+  .blk p{ color:var(--ink2); font-size:14px; max-width:34ch; margin:0 auto; }
+  .rowbtns{ display:flex; gap:9px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
+  .rowbtns button{ font-family:var(--sans); font-weight:800; font-size:14.5px; cursor:pointer; border-radius:12px;
+    padding:12px 15px; border:1px solid var(--line); background:#f2f8ea; color:var(--ink); transition:transform .12s; }
+  .rowbtns button:active{ transform:scale(.94); }
+  .rowbtns button.sel{ outline:2px solid var(--verde2); }
+  .react-hint,.q-hint,.fb-hint{ display:block; margin-top:10px; font-size:12.5px; color:var(--verde2); font-weight:700; min-height:1.2em; }
+  .sub-blk{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border-color:rgba(90,138,46,.3); }
+  .sub-blk .si{ background:var(--verde2); color:#fff; border-color:transparent; }
+  .fb-blk textarea{ width:100%; background:#f2f8ea; border:1px solid var(--line); border-radius:11px; color:var(--ink);
+    padding:11px 12px; font:inherit; resize:vertical; margin-top:6px; }
+  .fb-blk .fb-send{ margin-top:10px; background:var(--verde2); color:#fff; border:none; border-radius:12px; padding:12px 20px;
+    font:800 14.5px var(--sans); cursor:pointer; }
+  .engage-actions{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:8px 0 4px; padding:12px 0; }
+  .engage-actions button{ font-family:var(--sans); cursor:pointer; }
+  .pie{ text-align:center; padding:16px 0 8px; }
+  .pie a{ color:var(--verde2); font-weight:800; font-size:14px; text-decoration:none; }
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:10px; line-height:1.5; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <div class="kick">Semana del 18 al 24 de julio</div>
+    <h1>Tu semana<br>en el jardín</h1>
+  </header>
+
+  <div class="big reveal">
+    <div class="n">6</div>
+    <div class="l">tareas que cerraste</div>
+  </div>
+
+  <!-- Tildes de tareas REALES completadas el 23/07 (task_states) -->
+  <div class="done reveal">
+    <div class="r"><span class="tick">✓</span><span class="txt">Podaste la Pera Williams<span class="sub">poda invernal, estructura abierta</span></span></div>
+    <div class="r"><span class="tick">✓</span><span class="txt">Limpiaste el Guayabo del país<span class="sub">sacaste las ramas con fumagina</span></span></div>
+    <div class="r"><span class="tick">✓</span><span class="txt">Podaste la cola de zorro<span class="sub">retiraste las colas viejas</span></span></div>
+    <div class="r"><span class="tick">✓</span><span class="txt">Ordenaste el vivero de plantines<span class="sub">palmeras a sombra luminosa</span></span></div>
+    <div class="r"><span class="tick">✓</span><span class="txt">Dejaste descansar al Pindó<span class="sub">las hojas secas caen solas</span></span></div>
+    <div class="r"><span class="tick">✓</span><span class="txt">Resolviste el fresno y la fotinia<span class="sub">poda para liberar luz, en agosto</span></span></div>
+  </div>
+
+  <p class="kudos reveal">El jardín quedó <b>listo para dormir el invierno</b>. Todo esto lo hiciste vos. 👏</p>
+
+  <!-- reacción -->
+  <section class="blk reveal">
+    <h3>¿Te gusta ver lo que lograste?</h3>
+    <p>Sin pendientes ni retos: solo lo hecho.</p>
+    <div class="rowbtns">
+      <button type="button" onclick="engageReact('tu-semana','love', this)">😍 Me encanta</button>
+      <button type="button" onclick="engageReact('tu-semana','meh', this)">😐 Más o menos</button>
+      <button type="button" onclick="engageReact('tu-semana','no', this)">🙅 No</button>
+    </div>
+    <span class="react-hint"></span>
+  </section>
+
+  <!-- suscripción -->
+  <section class="blk sub-blk reveal">
+    <h3>👏 Tu resumen, cada domingo</h3>
+    <p>Un cierre de semana con todo lo que hiciste crecer y cuidar. Corto, lindo, tuyo.</p>
+    <div class="rowbtns">
+      <button type="button" class="si" onclick="engageAnswer('tu-semana-suscripcion-diaria','si', this)">👏 Sí, cada domingo</button>
+      <button type="button" onclick="engageAnswer('tu-semana-suscripcion-diaria','no', this)">No, gracias</button>
+    </div>
+    <span class="q-hint"></span>
+  </section>
+
+  <!-- feedback -->
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>Probé algo bien liviano, sin párrafos largos. ¿Así mejor?</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('tu-semana', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <!-- decisión de permanencia -->
+  <section class="blk reveal">
+    <h3>¿La dejo fija?</h3>
+    <p>Si te gusta cerrar la semana viendo tus logros, la sumo a la app.</p>
+    <div class="engage-actions">
+      <button type="button" style="background:var(--verde2); color:#fff; font-weight:900; border:none; border-radius:13px; padding:13px 18px;" onclick="engageApprove('2026-07-24-tu-semana')">✅ Aprobar esta mejora</button>
+      <button type="button" style="background:#f2f8ea; color:var(--ink2); font-weight:900; border:1px solid var(--line); border-radius:13px; padding:13px 18px;" onclick="engageRejected('2026-07-24-tu-semana')">✕ No me interesa</button>
+    </div>
+    <a href="https://gardening-chi.vercel.app/index.html" style="color:var(--verde2); font-weight:800; font-size:13.5px; text-decoration:none;">← Volver al sitio estable</a>
+  </section>
+
+  <footer class="pie">
+    <a href="2026-07-24-tu-semana-pitch.html">💼 Cómo se vende esto</a>
+    <div class="cred">Tareas reales cerradas el 23/07/2026 (task_states): Pera Williams B-39 (poda), Guayabo F-1 (poda de fumagina), Esparraguera cola de zorro B-6 (poda), vivero de palmeras B-46 (reubicación), Pindó B-8 (dejar caer hojas), Fresno F-10 + Fotinia F-6 (decisión de poda para agosto). Sin inventar logros.</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>

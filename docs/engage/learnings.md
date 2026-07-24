@@ -3,12 +3,21 @@
 Memoria del agente diario. Se REESCRIBE y condensa cada día (máx ~150 líneas).
 No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
-## 🏆 BREAKTHROUGH 21/07 + LECTURA 22/07: qué convierte y qué NO (crítico)
+## 🚨🚨 PIVOTE 24/07 — feedback_text tier-1 MATA el role-play verboso (LO MÁS IMPORTANTE)
 
-- **21/07 22:23Z — PRIMER feedback_text del canal, POSITIVO** sobre la Asamblea:
-  «Esta todo perfecto. Tené en cuenta que está lloviendo hace días en Montevideo, no he podido avanzar». Señal tier-1. → **Asamblea PROMOVIDA 22/07** (Ideas → Experiencias, 📋).
-- **FÓRMULA GANADORA:** HÉROE=USUARIO con AUTORIDAD/AGENCIA (presidente/juez/DT/médico) + humor + ancla cultural rioplatense + **PUENTE a tareas reales**. Este es el molde a explotar.
-- **🚨 LECTURA 22/07 (ciclo 52) — la fórmula LLUVIA-PASIVA FALLÓ.** Encolé 2 experiencias ancladas en la lluvia real (lluvia-tareas = checklist auto-tachado por el clima; grupo-jardin = chat de 12 plantas). **Resultado: 0 clicks / 0 reacción en a/b/c. Solo task-dia convirtió** (clic 14:17Z). Diagnóstico: **ambas eran PASIVAS** — lluvia-tareas mostraba que el jardín avanzó *sin* el usuario (le quita agencia); grupo-jardin lo deja *mirando* una charla ajena. **El ancla-lluvia es real y buena, pero el usuario-espectador NO abre.** Confirmado meta-regla (a): sin HÉROE=USUARIO+AGENCIA no hay conversión, por más real que sea el ancla. Las 2 → **DROPEADAS 23/07**.
+- **23/07 21:37Z — feedback_text del usuario sobre mercado-pases: «Mucho texto, muy cargado, no es realmente lo que busco en una app de jardín».** Señal tier-1, la de mayor peso. Leyó TODO (150s/97%) y aun así lo RECHAZÓ + reaction 'no' + suscripción 'no'.
+- **AMBAS agencias-teatrales del 23/07 fueron RECHAZADAS:** ronda-medica (jefe de guardia) proposal_rejected 78s; mercado-pases (DT) proposal_rejected + feedback negativo. → las 2 DROPEADAS + borradas 24/07.
+- **HIPÓTESIS 'AGENCIA convierte donde la pasividad falló' → REFUTADA.** El usuario TUVO agencia/autoridad (decidía altas, armaba el once) y rechazó igual. El problema del 22/07 NO era pasividad: era (y es) la **FORMA — role-play denso, teatral, verboso.** El eje agencia-autoridad-teatral (médico/DT/presidente/juez) está **AGOTADO**.
+- **MANDATO DEL USUARIO (deducido del texto):** quiere una **app de jardín de verdad**, calma, con **poco texto**, glanceable. No walls de prosa, no metáforas rebuscadas (fútbol doblemente muerto: Mundial + mercado-pases).
+- **PIVOTE 24/07 (ciclo 54):** 2 experiencias RADICALMENTE minimalistas, paleta CLARA, casi sin prosa, ancladas en estado/logros REALES (no trivia — el elenco de fun_facts está QUEMADO, ver facts_ledger):
+  - 🌤️ **jardin-hoy** (a, 10:30): vistazo de 5s — estado calmo («hoy nada urgente») + 3 chips (en flor/con fruta/durmiendo). Cero párrafos.
+  - ✅ **tu-semana** (b, 18:00): recap de logros — número grande (6) + 6 tildes de 1 línea de las tareas que el usuario CERRÓ el 23/07. HÉROE=USUARIO en modo orgullo, sin peso teatral.
+- **WATCH 25/07:** ¿el minimalismo convierte donde el role-play verboso murió? Si jardin-hoy o tu-semana enganchan → el pivote es el camino y hay que despedirse del formato news-feed-cargado. Si el usuario deja feedback_text: ORO, citarlo y ejecutar. Si tampoco convierten → revisar si el problema es fatiga global de push (bajar frecuencia).
+
+## Contexto previo (21-22/07, ahora RE-LEÍDO a la luz del pivote)
+
+- **21/07 — feedback_text POSITIVO** sobre la Asamblea: «Está todo perfecto. Está lloviendo hace días, no he podido avanzar». → Asamblea promovida. PERO ojo: ese «está todo perfecto» era sobre el SITIO en general, y venía con la Asamblea que ERA densa. El 23/07 corrigió: el texto cargado cansa. La Asamblea quizás ganó por HUMOR+bridge, no por su densidad.
+- **22/07 — lluvia-tareas y grupo-jardin: 0 clicks.** En su momento lo leí como 'pasividad'. A la luz del 24/07, sumo lectura: ambas TAMBIÉN eran cargadas. Pasividad + densidad, dos pecados.
 
 ## 🚨 FEEDBACK DIRECTO DEL USUARIO 18/07 (por chat — máxima autoridad, NO PISAR)
 
@@ -44,7 +53,7 @@ Persona product/UX/growth/sales. Cada una: (1) `engageReact` target=slug, (2) CT
 
 **CONVIERTEN (PROMOVIDAS):** 📋 **Asamblea (usuario=PRESIDENTE+agencia+humor+bridge-tareas) = feedback_text POSITIVO, la señal top** · 🍵 Chusmerío 260s😍 · 📱 Feed(social 1ª pers, habla AL usuario) 208s😍 · 🎙️ Entrevista(celebridad) sub+206s · 🎁 Wrapped 😍+172s (⚠️ FATIGADO: descansar) · 🏆 Récords 😍+sub+141s · 📗 Álbum · 🔮 Horóscopo(identidad) 😍+sub · 🌱 Quiz «¿qué planta sos?» 😍+103s · 📰 Diario · 😂Memes/🧪Superpoderes/💌Consultorio/🎤Confesiones/📺Reality (tibio).
 
-**RECHAZAN/NO ABREN (dropped):** app pasiva · gesto solo · editorial pasivo 3ª pers · mística repetida · nota-larga · ranking-presente · miedo · **chat coral (grupo-jardin 22/07: 0 clicks)** · dinero/tasación · pasado/biografías · ceremonia/torneo (Gala/Mundial) · viajes · romance · celebridad-frases · mecánica abstracta (racha/streak) · superlativo-fatigado · **⏳ countdown/anticipación (CERRADO)** · **💧 alivio-PASIVO (lluvia-tareas 22/07: checklist auto-tachado = le quita agencia al usuario, 0 clicks).**
+**RECHAZAN/NO ABREN (dropped):** app pasiva · gesto solo · editorial pasivo 3ª pers · mística repetida · nota-larga · ranking-presente · miedo · **chat coral (grupo-jardin 22/07: 0 clicks)** · dinero/tasación · pasado/biografías · ceremonia/torneo (Gala/Mundial) · viajes · romance · celebridad-frases · mecánica abstracta (racha/streak) · superlativo-fatigado · **⏳ countdown/anticipación (CERRADO)** · **💧 alivio-PASIVO** · **🎭 ROLE-PLAY VERBOSO / agencia-teatral (ronda-medica + mercado-pases 23/07: RECHAZADOS pese a agencia — feedback tier-1 «mucho texto, muy cargado». CERRADO: médico/DT/presidente/juez/farándula con prosa densa NO va).**
 
 **🔑 Meta-reglas:** (a) **«app amada» solo convierte con HÉROE=USUARIO + AGENCIA/AUTORIDAD/LOGRO** — consumo/observación PASIVA NO (confirmado x2: 22/07 lluvia-tareas y grupo-jardin murieron por pasivos). (b) convierte el ÁNGULO (agencia/autoridad/identidad/estatus) + drama del PRESENTE. (c) editorial con VOZ 1ª pers que le habla AL usuario, no que lo deja mirando. (d) feed de ítems cortos, no caso-largo. (e) no repetir sub-género de identidad ya promovido. (f) el GANCHO necesita drama/curiosidad CONCRETA del PRESENTE. (g) **las TAREAS son el canal más fiable** (task-dia convierte casi siempre). (h) el CLIMA REAL es buen ancla, PERO solo si el usuario es protagonista-que-decide, no espectador.
 
@@ -52,20 +61,18 @@ Persona product/UX/growth/sales. Cada una: (1) `engageReact` target=slug, (2) CT
 
 - Push subscription device `pix9`: **active** (22/07). Logging por `/api/feedback` confiable.
 - **Contexto lluvia (21/07→):** días de lluvia en MVD, usuario no puede avanzar. Tareas no ejecutables → NO nagear/culpar. La lluvia es contenido real (drenaje, plagas volteadas, dormancia) PERO enmarcado con el usuario decidiendo, no mirando.
-- **Compactación 23/07:** engagement.json −12 eventos <09/07 → daily_summary (75 vivos); send_log −5 <09/07 (66 vivos); queue −entries 22/07.
+- **Compactación 24/07:** engagement.json −eventos <10/07 → daily_summary (89 vivos); send_log −4 del 09/07 (66 vivos); queue −entries 23/07.
 
 ## Conclusiones de los pushN enviados (por feedback real)
+
+- **23/07 (ciclo 53) — DOBLE RECHAZO + feedback tier-1 (dato decisivo):** a=ronda-medica (jefe de guardia) → proposal_rejected, 78s, sin reacción/sub · b=mercado-pases (DT) → proposal_rejected + reaction 'no' + sub 'no' + **feedback_text «Mucho texto, muy cargado, no es lo que busco en una app de jardín»** (150s/97%). task-dia (fumagina) y el reply de gardenia SÍ clicaron (canal-tarea sigue firme). **Conclusión: el role-play verboso está muerto — la densidad cansa aunque el usuario lea todo. La agencia NO alcanza si viene envuelta en texto.** Las 2 dropeadas + borradas.
+- **24/07 (ciclo 54) — PIVOTE a minimalismo:** dejo el news-feed-cargado y pruebo 2 experiencias liviano-glanceable de estado/logro real. Ver bloque PIVOTE arriba.
 
 - **08-10/07 (tanda ganadora):** Entrevista(sub+206s), Quiz(😍+103s), Wrapped(😍+172s), Álbum(😍) → 4 PROMOVIDAS.
 - **11-20/07:** racha de fallos (app-pasiva, gesto, mística, nota-larga, celebridad, superlativo, racha, biografías). Único positivo sostenido: canal-tarea.
 - **21/07 (ciclo 51):** a=Cuenta Regresiva (NO abrió) · b=Wrapped-reno (meh, fatiga) · c=**Asamblea (feedback_text POSITIVO)** 🏆. Lectura: agencia+humor+bridge GANA; countdown y Wrapped pierden.
 - **22/07 (ciclo 52) — DATO CLAVE:** a=lluvia-tareas (0) · b=Horóscopo-lluvia (0) · c=grupo-jardin (0, slot dorado 18:00) · **solo task-dia clicó.** Confirma: **el ancla-lluvia sin agencia del usuario NO abre.** Las 2 experiencias pasivas murieron → dropeadas.
-- **23/07 (ciclo 53) — DECISIÓN:** vuelvo 100% a la fórmula ganadora (HÉROE=USUARIO+AUTORIDAD+bridge-tareas) con 2 formatos NUEVOS de AGENCIA, dejando la lluvia como ancla real pero con el usuario decidiendo:
-  - 🩺 **Ronda médica del jardín** (`2026-07-23-ronda-medica.html`) — usuario=JEFE DE GUARDIA, cada planta paciente con signos vitales + decisión (alta/tratamiento/observación). Ataca el dolor #1 del jardinero («¿enfermo o normal?») = miedo→control. Cast: Romero B-26 (pie mojado post-lluvia), Gardenia B-25 (tarea real), Hortensia B-5a (alta feliz), Lavanda B-10, Durazno B-30/35 (dormancia). Push a (10:30). react `ronda-medica`, sub `ronda-medica-suscripcion-diaria`.
-  - 🔧 **Mercado de pases** (`2026-07-23-mercado-pases.html`) — usuario=DT, el invierno = pretemporada (ataca el valle de retención invernal). Decisiones: subir cantera B-46 (30 plantines), renovar Limonero B-23 (12/12), pretemporada Crespón B-9, intransferible Palto B-36 (clon 1926), Gardenia B-25 tocada (tarea real). Push c (18:00, slot dorado). react `mercado-pases`, sub `mercado-pases-suscripcion-diaria`.
-  - **CAMBIO DE CADENCIA (23/07, pedido del usuario): 3→2 pushes propios/día.** Los 2 slots quedan para las 2 experiencias nuevas. El Chusmerío renovado (edición de lluvia, chisme nuevo del Romero B-26) quedó commiteado en el repo pero **se sacó de la cola de hoy** (ya no hay 3er slot). Sirve como winner descansado listo para cuando toque.
-  - **Cola ciclo 53 (final, 2/día):** (a)10:30 ronda-medica; (b)18:00 mercado-pases. + 10:00 task-dia (Guayabo F-1 fumagina). top3 no toca (próx 24/07).
-- **Watch 24/07:** ¿la vuelta a AGENCIA (médico/DT) repite el clic de la Asamblea que la lluvia-pasiva no dio? Si ronda-medica o mercado-pases convierten → confirmado que el problema del 22/07 fue PASIVIDAD, no fatiga del canal. Si el usuario deja feedback_text: oro, citarlo y ejecutar.
+- **24/07 (ciclo 54) — Cola (2/día):** (a)10:30 🌤️ jardin-hoy (vistazo minimalista); (b)18:00 ✅ tu-semana (recap de logros). + canal-tarea: 10:00 task-dia (Guayabo F-1 limpieza), 10:00 pendientes (landing fija), 11:00 top3 (Gardenia/Liquidámbar/Hortensia). react `jardin-hoy`/`tu-semana`, sub `<slug>-suscripcion-diaria`.
 
 ## Contexto del jardín (julio 2026 = pleno invierno + LLUVIA, lat -34.9°S)
 
@@ -80,6 +87,7 @@ Persona product/UX/growth/sales. Cada una: (1) `engageReact` target=slug, (2) CT
 
 ## TODO pendiente
 
-- **Formatos SIN usar:** before/after con fotos del usuario; user=juez (litigios entre plantas). **Evitar:** countdown (cerrado), gesto, editorial-pasivo, app-pasiva, nota-larga, superlativo-fatigado, racha, biografías, Wrapped (fatigó), **chat-coral y alivio-pasivo (ambos murieron 22/07)**.
-- Si ronda-medica o mercado-pases convierten → serializar (parte de guardia diario / informe de pretemporada). Si NO → el problema NO era pasividad y hay que revisar frecuencia/fatiga global.
+- **DIRECCIÓN 24/07+:** MINIMALISMO. Poco texto, paleta clara, glanceable, garden-close, dato REAL (estado/logro/tarea, NO trivia — elenco quemado). **Evitar:** role-play verboso/teatral (CERRADO 23/07), countdown, gesto, editorial-pasivo, app-pasiva, nota-larga, superlativo-fatigado, racha, biografías, Wrapped (fatigó), chat-coral, alivio-pasivo.
+- Si jardin-hoy o tu-semana convierten → serializar (vistazo diario / resumen semanal fijo) y empezar a mover el core hacia lo liviano. Si NO → el problema es fatiga global de push; bajar frecuencia y consultar al usuario dentro de la app.
+- Formatos livianos aún sin probar: before/after con fotos reales del usuario; una sola foto grande + 3 palabras; mini-mapa del jardín tocable.
 - Regenerar dataset M de la rueda desde data_plants.py en build-time. Reconciliar arrays `pruning` antes de cualquier vista de poda.

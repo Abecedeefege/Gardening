@@ -1,55 +1,18 @@
 {
-  "_updated_at": "2026-07-23T21:20:56.021Z",
+  "_updated_at": "2026-07-24T09:11:13.650385",
   "notifications": [
     {
-      "id": "2026-07-23-task-dia",
+      "id": "2026-07-24-task-dia",
       "title": "⏰ Pendiente: Guayabo del país",
-      "body": "🔴 Tratar fumagina + buscar plaga origen · Mayo 2026 — empezar YA. Abrila para marcarla, mandar foto o preguntar.",
-      "url": "https://gardening-chi.vercel.app/tasks/plant-F-1-4.html",
+      "body": "🟢 Limpieza invernal de ramas secas · Cualquier momento — madera muerta, no depende de la estación. Abrila para marcarla, mandar…",
+      "url": "https://gardening-chi.vercel.app/tasks/plant-F-1.html",
       "format": "tarea",
-      "send_at": "2026-07-23T10:00:00-03:00",
-      "expires_at": "2026-07-23T21:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-23T13:52:49.686Z",
+      "send_at": "2026-07-24T10:00:00-03:00",
+      "expires_at": "2026-07-24T21:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "gen_task_reminders 2026-07-23"
-    },
-    {
-      "id": "2026-07-23-a",
-      "title": "🩺 Pasá la ronda de la guardia",
-      "body": "El jardín amaneció internado tras la lluvia. Sos el jefe de guardia: 5 pacientes esperan tu decisión.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-23-ronda-medica.html",
-      "send_at": "2026-07-23T10:30:00-03:00",
-      "expires_at": "2026-07-23T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-23T13:52:49.732Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-23"
-    },
-    {
-      "id": "2026-07-23-b",
-      "title": "🔧 Se abrió el mercado de pases",
-      "body": "El invierno es la pretemporada. Sos el DT: subí la cantera, renová al goleador, armá el once de la primavera.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-23-mercado-pases.html",
-      "send_at": "2026-07-23T18:00:00-03:00",
-      "expires_at": "2026-07-23T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-23T21:20:56.019Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-23"
-    },
-    {
-      "id": "2026-07-23-reply-plant-B-25-3",
-      "title": "🌿 Te contesté: Gardenia",
-      "body": "Sobre la lluvia y el neem: en cuanto escampe y no vaya a helar, dale con la aplicación. Plan y detalles en la tarea.",
-      "url": "https://gardening-chi.vercel.app/tasks/plant-B-25-3.html",
-      "format": "tarea",
-      "send_at": "2026-07-23T09:10:00-03:00",
-      "expires_at": "2026-07-23T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-23T13:52:49.782Z",
-      "fail_reason": null,
-      "created_by": "responder-tareas 2026-07-23"
+      "created_by": "gen_task_reminders 2026-07-24"
     },
     {
       "id": "2026-07-24-pendientes",
@@ -63,6 +26,43 @@
       "fail_reason": null,
       "format": "tarea",
       "created_by": "responder-tareas 2026-07-23 (landing diaria pendientes)"
+    },
+    {
+      "id": "2026-07-24-a",
+      "title": "🌤️ Tu jardín hoy, de un vistazo",
+      "body": "Escuché: menos texto. Un solo panel de 5 segundos — qué floreció, qué duerme, si hay algo urgente. Sin listas eternas.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
+      "send_at": "2026-07-24T10:30:00-03:00",
+      "expires_at": "2026-07-24T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-07-24"
+    },
+    {
+      "id": "2026-07-24-b",
+      "title": "✅ Todo lo que hiciste esta semana",
+      "body": "Podaste, limpiaste, ordenaste: 6 tareas cerradas. El jardín quedó listo para el invierno gracias a vos. Miralo en 10 segundos.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-tu-semana.html",
+      "send_at": "2026-07-24T18:00:00-03:00",
+      "expires_at": "2026-07-24T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-07-24"
+    },
+    {
+      "id": "2026-07-24-top3",
+      "title": "🎯 Las 3 del jardín (edición fresca)",
+      "body": "Tus 3 prioritarias de hoy: Gardenia / Jazmín del Cabo · Liquidámbar · Hortensia. Una pantalla, tres cosas, listo.",
+      "url": "https://gardening-chi.vercel.app/engage/top3-tareas.html?d=2026-07-24",
+      "format": "tarea",
+      "send_at": "2026-07-24T11:00:00-03:00",
+      "expires_at": "2026-07-24T21:30:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "gen_top3_tareas 2026-07-24"
     }
   ]
 }

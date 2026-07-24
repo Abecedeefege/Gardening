@@ -2,30 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-07-09-task-dia",
-      "ts": "2026-07-09T15:43:55.252Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-07-09-a",
-      "ts": "2026-07-09T15:43:55.353Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-07-09-b",
-      "ts": "2026-07-09T17:33:53.324Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-07-09-c",
-      "ts": "2026-07-09T22:24:32.409Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-07-10-task-dia",
       "ts": "2026-07-10T12:24:06.532Z",
       "status_code": 201
@@ -496,6 +472,9 @@
     },
     "2026-07-08": {
       "sent": 5
+    },
+    "2026-07-09": {
+      "sent": 4
     }
   },
   "_updated_at": "2026-07-23T09:05:00-03:00"

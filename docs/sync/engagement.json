@@ -2,144 +2,6 @@
   "_updated_at": "2026-07-23T21:37:53.366Z",
   "events": [
     {
-      "_id": "mrcs6t0w99u7n8",
-      "type": "notification_clicked",
-      "nid": "2026-07-08-c",
-      "page": "engage/2026-06-29-records-jardin.html",
-      "ts": "2026-07-09T00:41:14.093Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrcs6t0wf1a5gx",
-      "type": "page_visit",
-      "page": "engage/2026-06-29-records-jardin.html",
-      "nid": "2026-07-08-c",
-      "src": "push",
-      "ts": "2026-07-09T00:41:14.093Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrcs82xzppeq8l",
-      "type": "answer",
-      "qid": "records-suscripcion-diaria",
-      "value": "si",
-      "page": "engage/2026-06-29-records-jardin.html",
-      "ts": "2026-07-09T00:42:13.607Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrcs84se70f4ss",
-      "type": "reaction",
-      "target": "records",
-      "value": "meh",
-      "page": "engage/2026-06-29-records-jardin.html",
-      "ts": "2026-07-09T00:42:15.998Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrcs88lpa9b2ue",
-      "type": "dwell",
-      "seconds": 67,
-      "scroll_pct": 100,
-      "page": "engage/2026-06-29-records-jardin.html",
-      "ts": "2026-07-09T00:42:20.941Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrdscvdkt6c4q4",
-      "type": "dwell",
-      "seconds": 103,
-      "scroll_pct": 93,
-      "page": "engage/2026-07-09-quiz-planta.html",
-      "ts": "2026-07-09T17:33:43.255Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrdsd4qram8omh",
-      "type": "reaction",
-      "target": "quiz-planta",
-      "value": "love",
-      "page": "engage/2026-07-09-quiz-planta.html",
-      "ts": "2026-07-09T17:33:55.395Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrdsd92cp3frxs",
-      "type": "proposal_approved",
-      "proposal_id": "2026-07-09-quiz-planta",
-      "ts": "2026-07-09T17:34:00.996Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrdtyvyq9rpkz8",
-      "type": "notification_clicked",
-      "nid": "2026-07-09-b",
-      "page": "engage/2026-07-09-wrapped-jardin.html",
-      "ts": "2026-07-09T18:18:50.064Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrdtyvyqcnai9e",
-      "type": "page_visit",
-      "page": "engage/2026-07-09-wrapped-jardin.html",
-      "nid": "2026-07-09-b",
-      "src": "push",
-      "ts": "2026-07-09T18:18:50.064Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrdu28e6pvnazg",
-      "type": "reaction",
-      "target": "wrapped-jardin",
-      "value": "love",
-      "page": "engage/2026-07-09-wrapped-jardin.html",
-      "ts": "2026-07-09T18:21:26.142Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrdu2al1l47q9r",
-      "type": "proposal_approved",
-      "proposal_id": "2026-07-09-wrapped-jardin",
-      "ts": "2026-07-09T18:21:28.981Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrdu2kgdgzlzhj",
-      "type": "dwell",
-      "seconds": 172,
-      "scroll_pct": 100,
-      "page": "engage/2026-07-09-wrapped-jardin.html",
-      "ts": "2026-07-09T18:21:41.773Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mre4f0va2funfl",
-      "type": "answer",
-      "qid": "chusmerio-suscripcion-diaria",
-      "value": "si",
-      "page": "engage/2026-06-30-chusmerio-jardin.html",
-      "ts": "2026-07-09T23:11:19.078Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mre4f4cxyp4z8l",
-      "type": "reaction",
-      "target": "chusmerio",
-      "value": "love",
-      "page": "engage/2026-06-30-chusmerio-jardin.html",
-      "ts": "2026-07-09T23:11:23.601Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mre4f7qqk1iv4n",
-      "type": "dwell",
-      "seconds": 260,
-      "scroll_pct": 100,
-      "page": "engage/2026-06-30-chusmerio-jardin.html",
-      "ts": "2026-07-09T23:11:27.986Z",
-      "device": "sin-nombre"
-    },
-    {
       "_id": "mrf815033bulw9",
       "type": "notification_clicked",
       "nid": "2026-07-10-b",
@@ -1078,6 +940,12 @@
       "clicked": 4,
       "visits": 5,
       "approvals": 1
+    },
+    "2026-07-09": {
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 2,
+      "sent": 4
     }
   }
 }
