@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T17:47:54.022Z",
+  "_updated_at": "2026-07-24T17:47:55.794Z",
   "events": [
     {
       "_id": "mrf815033bulw9",
@@ -908,6 +908,15 @@
       "page": "engage/top3-tareas.html",
       "ts": "2026-07-24T17:47:54.192Z",
       "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8gxcrvpvn7x",
+      "type": "page_visit",
+      "page": "tasks/plant-F-1.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-24T17:47:55.992Z",
+      "device": "landing"
     }
   ],
   "daily_summary": {
