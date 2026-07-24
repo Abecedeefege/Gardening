@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T21:14:47.196Z",
+  "_updated_at": "2026-07-24T21:15:04.635Z",
   "events": [
     {
       "_id": "mrf815033bulw9",
@@ -1022,6 +1022,15 @@
       "nid": "2026-07-24-b",
       "src": "push",
       "ts": "2026-07-24T21:14:46.922Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrzfvbgcwx1tg1",
+      "type": "answer",
+      "qid": "tu-semana-suscripcion-diaria",
+      "value": "si",
+      "page": "engage/2026-07-24-tu-semana.html",
+      "ts": "2026-07-24T21:15:04.764Z",
       "device": "sin-nombre"
     }
   ],
