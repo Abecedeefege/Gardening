@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T17:47:51.768Z",
+  "_updated_at": "2026-07-24T17:47:54.022Z",
   "events": [
     {
       "_id": "mrf815033bulw9",
@@ -898,6 +898,15 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-07-24T17:47:51.615Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8gvyojouv0j",
+      "type": "dwell",
+      "seconds": 3,
+      "scroll_pct": 0,
+      "page": "engage/top3-tareas.html",
+      "ts": "2026-07-24T17:47:54.192Z",
       "device": "sin-nombre"
     }
   ],
