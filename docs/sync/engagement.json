@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T17:46:40.483Z",
+  "_updated_at": "2026-07-24T17:46:41.989Z",
   "events": [
     {
       "_id": "mrf815033bulw9",
@@ -854,6 +854,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-24-jardin-hoy.html",
       "ts": "2026-07-24T17:46:40.276Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8fbx2y1fmyp",
+      "type": "notification_clicked",
+      "nid": "2026-07-24-pendientes",
+      "page": "engage/tareas-pendientes.html",
+      "ts": "2026-07-24T17:46:41.556Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8fbx2bby7o5",
+      "type": "page_visit",
+      "page": "engage/tareas-pendientes.html",
+      "nid": "2026-07-24-pendientes",
+      "src": "push",
+      "ts": "2026-07-24T17:46:41.556Z",
       "device": "sin-nombre"
     }
   ],
