@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T21:15:04.635Z",
+  "_updated_at": "2026-07-24T21:15:11.688Z",
   "events": [
     {
       "_id": "mrf815033bulw9",
@@ -1031,6 +1031,15 @@
       "value": "si",
       "page": "engage/2026-07-24-tu-semana.html",
       "ts": "2026-07-24T21:15:04.764Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrzfvh3evaew8d",
+      "type": "dwell",
+      "seconds": 25,
+      "scroll_pct": 68,
+      "page": "engage/2026-07-24-tu-semana.html",
+      "ts": "2026-07-24T21:15:12.074Z",
       "device": "sin-nombre"
     }
   ],
