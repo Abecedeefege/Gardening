@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T13:05:33.749Z",
+  "_updated_at": "2026-07-24T15:05:26.334Z",
   "notifications": [
     {
       "id": "2026-07-24-task-dia",
@@ -34,8 +34,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
       "send_at": "2026-07-24T10:30:00-03:00",
       "expires_at": "2026-07-24T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-24T15:05:26.284Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-24"
     },
@@ -59,8 +59,8 @@
       "format": "tarea",
       "send_at": "2026-07-24T11:00:00-03:00",
       "expires_at": "2026-07-24T21:30:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-24T15:05:26.333Z",
       "fail_reason": null,
       "created_by": "gen_top3_tareas 2026-07-24"
     }
