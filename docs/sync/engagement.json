@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-23T21:37:53.366Z",
+  "_updated_at": "2026-07-24T12:23:34.714Z",
   "events": [
     {
       "_id": "mrf815033bulw9",
@@ -775,6 +775,15 @@
       "scroll_pct": 97,
       "page": "engage/2026-07-23-mercado-pases.html",
       "ts": "2026-07-23T21:37:54.773Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrywvs2p7aykem",
+      "type": "page_visit",
+      "page": "engage/2026-07-01-horoscopo-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-24T12:23:33.600Z",
       "device": "sin-nombre"
     }
   ],
