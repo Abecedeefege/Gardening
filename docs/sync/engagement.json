@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T16:32:20.975Z",
+  "_updated_at": "2026-07-24T17:45:45.712Z",
   "events": [
     {
       "_id": "mrf815033bulw9",
@@ -812,6 +812,23 @@
       "src": "direct",
       "ts": "2026-07-24T16:32:19.520Z",
       "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8e4k3xgc934",
+      "type": "notification_clicked",
+      "nid": "2026-07-24-task-dia",
+      "page": "tasks/plant-F-1.html",
+      "ts": "2026-07-24T17:45:45.355Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrz8e4k3rk40rh",
+      "type": "page_visit",
+      "page": "tasks/plant-F-1.html",
+      "nid": "2026-07-24-task-dia",
+      "src": "push",
+      "ts": "2026-07-24T17:45:45.355Z",
+      "device": "landing"
     }
   ],
   "daily_summary": {
