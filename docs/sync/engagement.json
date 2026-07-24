@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T17:47:41.568Z",
+  "_updated_at": "2026-07-24T17:47:48.436Z",
   "events": [
     {
       "_id": "mrf815033bulw9",
@@ -880,6 +880,15 @@
       "scroll_pct": 100,
       "page": "engage/tareas-pendientes.html",
       "ts": "2026-07-24T17:47:41.397Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8grjfa6msqu",
+      "type": "page_visit",
+      "page": "engage/tareas-pendientes.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-24T17:47:48.459Z",
       "device": "sin-nombre"
     }
   ],
