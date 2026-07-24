@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T19:35:41.908Z",
+  "_updated_at": "2026-07-24T19:37:37.048Z",
   "events": [
     {
       "_id": "mrf815033bulw9",
@@ -987,6 +987,15 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-07-24T19:35:41.262Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrzcdz8tzst31r",
+      "type": "feedback_text",
+      "target": "jardin-hoy",
+      "text": "Justo 3 tareas en cada módulo?  Nada más que quieras/precises que haga?\n\nAgregame una tarea que sea\"definir plantas para huerta\" y proponerme algunas sugerencias",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-24T19:37:36.941Z",
       "device": "sin-nombre"
     }
   ],
