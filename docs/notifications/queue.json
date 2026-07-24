@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-24T09:11:13.650385",
+  "_updated_at": "2026-07-24T13:05:33.749Z",
   "notifications": [
     {
       "id": "2026-07-24-task-dia",
@@ -9,8 +9,8 @@
       "format": "tarea",
       "send_at": "2026-07-24T10:00:00-03:00",
       "expires_at": "2026-07-24T21:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-24T13:05:33.620Z",
       "fail_reason": null,
       "created_by": "gen_task_reminders 2026-07-24"
     },
@@ -21,8 +21,8 @@
       "url": "https://gardening-chi.vercel.app/engage/tareas-pendientes.html",
       "send_at": "2026-07-24T10:00:00-03:00",
       "expires_at": "2026-07-24T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-24T13:05:33.748Z",
       "fail_reason": null,
       "format": "tarea",
       "created_by": "responder-tareas 2026-07-23 (landing diaria pendientes)"
