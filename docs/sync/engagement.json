@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-25T20:51:51.788Z",
+  "_updated_at": "2026-07-25T20:51:52.800Z",
   "events": [
     {
       "_id": "mrggchze6fdwu8",
@@ -1042,6 +1042,15 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-24-jardin-hoy.html",
       "ts": "2026-07-25T20:51:54.052Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms0uhd4euu4o8v",
+      "type": "page_visit",
+      "page": "engage/2026-07-25-mi-huerta.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-25T20:51:54.158Z",
       "device": "sin-nombre"
     }
   ],
