@@ -37,6 +37,19 @@
       "sent_at": null,
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-25"
+    },
+    {
+      "id": "2026-07-25-reply-plant-F-1",
+      "title": "🌿 Te contesté: guayabo F-1",
+      "body": "Tranqui con la poda — lo enfermo/seco no cuenta en el límite del 10%. Quedó hecha la limpieza invernal.",
+      "url": "https://gardening-chi.vercel.app/tasks/plant-F-1.html",
+      "format": "tarea",
+      "send_at": "2026-07-25T09:10:15-03:00",
+      "expires_at": "2026-07-25T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "responder-tareas 2026-07-25"
     }
   ]
 }

@@ -1,7 +1,15 @@
 {
-  "_synced_at": "2026-07-23T19:12:00.000Z",
+  "_synced_at": "2026-07-25T12:05:15.000Z",
   "_last_writer": "responder-tareas",
   "tasks": {
+    "plant-F-1": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-07-24T18:07:50.488Z",
+      "completed_via_ai": true,
+      "ai_summary": "El usuario podó todo lo que estaba enfermo, seco o muerto en el guayabo F-1 (24/07). Se le confirmó que el límite del 10% es solo para madera viva — lo que sacó no cuenta ahí, así que la limpieza invernal queda hecha.",
+      "last_modified_at": "2026-07-25T12:05:15.000Z"
+    },
     "plant-F-9": {
       "status": "done",
       "snoozed_until": null,
