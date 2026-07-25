@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-25T20:51:52.800Z",
+  "_updated_at": "2026-07-25T20:53:07.647Z",
   "events": [
     {
       "_id": "mrggchze6fdwu8",
@@ -1051,6 +1051,15 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-07-25T20:51:54.158Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms0uizfezwz3xf",
+      "type": "dwell",
+      "seconds": 76,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-25-mi-huerta.html",
+      "ts": "2026-07-25T20:53:09.722Z",
       "device": "sin-nombre"
     }
   ],
