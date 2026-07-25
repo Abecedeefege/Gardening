@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-25T20:53:09.066Z",
+  "_updated_at": "2026-07-25T20:53:45.321Z",
   "events": [
     {
       "_id": "mrggchze6fdwu8",
@@ -1078,6 +1078,23 @@
       "src": "push",
       "ts": "2026-07-25T20:53:09.946Z",
       "device": "sin-nombre"
+    },
+    {
+      "_id": "ms0ujshy0p78uo",
+      "type": "notification_clicked",
+      "nid": "2026-07-25-reply-plant-F-1",
+      "page": "tasks/plant-F-1.html",
+      "ts": "2026-07-25T20:53:47.395Z",
+      "device": "landing"
+    },
+    {
+      "_id": "ms0ujshyryuqeh",
+      "type": "page_visit",
+      "page": "tasks/plant-F-1.html",
+      "nid": "2026-07-25-reply-plant-F-1",
+      "src": "push",
+      "ts": "2026-07-25T20:53:47.395Z",
+      "device": "landing"
     }
   ],
   "daily_summary": {
