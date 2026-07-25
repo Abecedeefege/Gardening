@@ -788,10 +788,34 @@
       "title": "✅ Tu semana en el jardín — recap minimalista de logros reales",
       "page": "engage/2026-07-24-tu-semana.html",
       "created": "2026-07-24",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Segunda del pivote minimalista. Celebración de progreso (eje ganador histórico) pero DESPOJADA: número grande + 6 tildes de una línea de las tareas REALES que el usuario cerró el 23/07 (task_states), cero párrafos. HÉROE=USUARIO en modo orgullo/logro (el axis que sí convierte) sin el peso teatral que el usuario rechazó. Contrasta con jardin-hoy (estado presente) para A/B del pivote: ¿engancha más el vistazo de hoy o el recap de logros? Real, garden-close, liviano. Si convierte → resumen semanal fijo (domingos).",
       "notified_by": [
         "2026-07-24-b"
+      ],
+      "result_notes": "Ganó suscripción \"sí\" (answer si, 24/07 21:15Z) = señal tier-2 → NO se dropea, se promueve. PERO el usuario dejó feedback_text de CORRECCIÓN: \"Los plantines de palta no los toqué, siguen contra la pared a la sombra\" — la página afirmaba un ordenamiento del vivero que rozaba ese punto. Corregido en la página (línea de vivero + cred) para reflejar que la palta quedó sin tocar. Ángulo RECAP-DE-LOGROS validado (héroe=usuario, orgullo). Se sirve como resumen semanal (domingos), sin competir con la push diaria jardin-hoy."
+    },
+    {
+      "id": "2026-07-25-mapa-solar",
+      "title": "🧭 El sol de tu jardín (mapa tocable de orientación)",
+      "page": "engage/2026-07-25-mapa-solar.html",
+      "created": "2026-07-25",
+      "status": "pending",
+      "hypothesis": "Formato NUEVO (mapa espacial tocable, nunca probado) + ángulo FRESCO (orientación este-oeste, 0 fun_facts quemados) + agencia (el usuario toca y decide dónde va la huerta / qué proteger de la helada). Minimalista, garden-close, con un \"ajá\" real. Si el mapa engancha, valida la capa espacial (feature más pedida en learnings: \"mini-mapa del jardín tocable\").",
+      "notified_by": [
+        "2026-07-25-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-25-mi-huerta",
+      "title": "🥬 Diseñá tu huerta (guía de decisión estacional)",
+      "page": "engage/2026-07-25-mi-huerta.html",
+      "created": "2026-07-25",
+      "status": "pending",
+      "hypothesis": "Responde un PEDIDO TEXTUAL directo del usuario (24/07 19:37: \"agregame una tarea definir plantas para huerta y proponeme sugerencias\"). Intención pura + agencia (elegís dónde y qué) + datos reales del calendario de siembra del catálogo + a prueba de lluvia (se hace hoy). Cast 100% fresco (hortalizas, nunca en el ledger). Debería ser la de mayor conversión — el usuario lo pidió con todas las letras.",
+      "notified_by": [
+        "2026-07-25-b"
       ],
       "result_notes": null
     }

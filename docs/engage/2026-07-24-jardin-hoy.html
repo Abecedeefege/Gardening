@@ -4,7 +4,7 @@
 <meta name="theme-color" content="#f5faf0">
 <title>🌤️ Tu jardín hoy</title>
 <meta property="og:title" content="🌤️ Tu jardín hoy — un vistazo de 5 segundos">
-<meta property="og:description" content="Lo que está vivo, lo que duerme, y las tareas del mes en un menú colapsado. Un solo panel, cada día. Y si tenés una duda o un pedido, este es el lugar.">
+<meta property="og:description" content="Qué podés hacer hoy (incluso con lluvia), las tareas de julio y de agosto en menús, y la huerta lista para definir. Un solo panel, cada día.">
 <style>
   :root{
     --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
@@ -33,11 +33,22 @@
   .estado b{ font-size:19px; font-weight:900; display:block; }
   .estado p{ color:var(--ink2); font-size:14.5px; margin-top:6px; }
 
+  /* destacado "hoy sí podés" */
+  .hoy{ background:linear-gradient(180deg,#fef6df,#fffdf6); border:1px solid rgba(224,169,46,.35); border-radius:20px;
+    padding:20px 18px; margin:14px 0; box-shadow:0 6px 20px rgba(224,169,46,.1); }
+  .hoy .tag{ font-size:11px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:#b7860b; }
+  .hoy h3{ font-size:18px; font-weight:900; margin:6px 0 6px; }
+  .hoy p{ color:var(--ink2); font-size:14px; }
+  .hoy a.cta{ display:inline-block; margin-top:12px; background:var(--sol); color:#3a2c05; text-decoration:none;
+    font-weight:900; font-size:14px; padding:11px 18px; border-radius:12px; }
+
   .chips{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin:6px 0 4px; }
   .chip{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 8px; text-align:center; }
   .chip .e{ font-size:26px; display:block; }
   .chip .k{ font-size:11px; font-weight:900; letter-spacing:.04em; text-transform:uppercase; color:var(--verde2); margin:7px 0 2px; }
   .chip .v{ font-size:12.5px; color:var(--ink2); font-weight:600; line-height:1.3; }
+
+  .sect-lbl{ font-size:12px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:var(--ink3); margin:22px 4px 2px; }
 
   /* menús colapsados de tareas */
   details{ background:var(--card); border:1px solid var(--line); border-radius:16px; margin:11px 0; overflow:hidden; box-shadow:0 4px 16px rgba(45,80,22,.05); }
@@ -56,7 +67,9 @@
   .task .d{ font-size:13px; color:var(--ink2); margin-top:5px; }
   .task .when{ display:inline-block; font-size:11px; font-weight:800; color:var(--sol); background:#fdf4dd; border:1px solid rgba(224,169,46,.28); border-radius:7px; padding:3px 9px; margin-top:8px; }
   .task .when.ag{ color:var(--verde2); background:#eef7e0; border-color:rgba(90,138,46,.28); }
+  .task .when.hoy2{ color:#b7860b; }
   .task a{ display:inline-block; margin-top:9px; margin-left:8px; font-size:12px; font-weight:800; text-decoration:none; color:var(--azul); }
+  .menu-note{ padding:11px 16px 14px; font-size:12px; color:var(--ink3); border-top:1px dashed var(--line); }
 
   .ask{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border:1px solid rgba(90,138,46,.3); border-radius:20px; padding:22px 18px; margin:18px 0 10px; text-align:center; box-shadow:0 6px 20px rgba(45,80,22,.05); }
   .ask h3{ font-size:17px; margin-bottom:5px; font-weight:900; }
@@ -77,16 +90,25 @@
 
   <header class="hero reveal">
     <span class="sun">🌤️</span>
-    <div class="day">Viernes 24 de julio · pleno invierno</div>
+    <div class="day">Sábado 25 de julio · pleno invierno</div>
     <h1>Tu jardín hoy</h1>
   </header>
 
   <div class="estado reveal">
     <span class="em">😌</span>
-    <b>Nada urgente para hoy.</b>
-    <p>El jardín está descansando el invierno. Hay 3 cosas de julio que podés hacer mañana si el día está seco — las dejo abajo, sin apuro. El resto (poda de los frutales caducos) es para agosto.</p>
+    <b>Afuera, nada urgente.</b>
+    <p>El jardín está en dormancia y sigue lloviendo sobre Montevideo. La poda de los frutales caducos es para agosto y no conviene tocar nada mojado. Pero hay algo que <b>sí</b> podés hacer hoy, adentro y sin barro.</p>
   </div>
 
+  <!-- ¿QUÉ PUEDO HACER HOY? — respuesta directa al feedback del 24/07 -->
+  <div class="hoy reveal">
+    <div class="tag">🌧️ Tarea a prueba de lluvia · hoy</div>
+    <h3>Definí tu huerta de primavera</h3>
+    <p>Julio-agosto es justo la ventana para <b>decidir qué vas a plantar</b> antes de que arranque la temporada. Es la tarea que pediste — te armé una guía con sugerencias concretas para tu clima (qué sembrar ahora, qué en agosto, dónde ubicarla). Se hace desde el sillón.</p>
+    <a class="cta" href="https://gardening-chi.vercel.app/engage/2026-07-25-mi-huerta.html">Abrir «Diseñá tu huerta» →</a>
+  </div>
+
+  <div class="sect-lbl reveal">Cómo viene el catálogo</div>
   <div class="chips reveal">
     <div class="chip">
       <span class="e">🌹</span>
@@ -101,17 +123,22 @@
     <div class="chip">
       <span class="e">😴</span>
       <div class="k">Durmiendo</div>
-      <div class="v">Duraznos · Pera</div>
+      <div class="v">Duraznos · Pera · Crespón</div>
     </div>
   </div>
 
   <!-- MENÚ COLAPSADO: TAREAS DE JULIO -->
   <details class="reveal" open>
-    <summary><span class="ic">🔧</span> Tareas de julio · para mañana <span class="cnt">3</span><span class="chev">▾</span></summary>
+    <summary><span class="ic">🔧</span> Tareas de julio <span class="cnt">4</span><span class="chev">▾</span></summary>
+    <div class="task">
+      <div class="th"><h4>Definir plantas para la huerta</h4><span class="code">huerta</span></div>
+      <div class="d">La que pediste. Elegí qué sembrar y dónde armarla antes de la primavera — te dejé una guía con sugerencias por época. <b>Se puede hacer hoy, con lluvia.</b> <a href="https://gardening-chi.vercel.app/engage/2026-07-25-mi-huerta.html">Abrir guía →</a></div>
+      <span class="when hoy2">Ahora · a prueba de lluvia</span>
+    </div>
     <div class="task">
       <div class="th"><h4>Hortensia — trasplantar a maceta grande o cantero</h4><span class="code">B-5a/b</span></div>
       <div class="d">Los 2 ejemplares en macetas chicas: pasalos a maceta de 40+ cm o a tierra <b>ahora que están pelados</b> — el invierno en dormancia es el momento ideal, antes del rebrote. Sustrato rico, ácido y bien drenado. <a href="https://gardening-chi.vercel.app/tasks/plant-B-5a.html">Abrir tarea →</a></div>
-      <span class="when">Ideal este mes · día sin lluvia</span>
+      <span class="when">Este mes · día sin lluvia</span>
     </div>
     <div class="task">
       <div class="th"><h4>Liquidámbar — sacar la rama que le hace sombra a la palta</h4><span class="code">B-37</span></div>
@@ -123,36 +150,56 @@
       <div class="d">Cinta con vaselina en el tronco (corta a las hormigas) + neem 3-5 ml/L pulverizado en el envés. <b>Solo si el día amanece seco y no hay pronóstico de helada.</b> <a href="https://gardening-chi.vercel.app/tasks/plant-B-25-3.html">Abrir tarea →</a></div>
       <span class="when">Si el día está seco y templado</span>
     </div>
-    <div class="task" style="opacity:.6">
-      <div class="th"><h4>✅ Guayabo — limpieza de ramas secas</h4><span class="code">F-1</span></div>
-      <div class="d">Hecho: podaste todo lo seco/enfermo. Quedó cerrada. 👏</div>
-    </div>
+    <div class="menu-note">Estas 4 son <b>todas</b> las de julio (la huerta la sumé por tu pedido). El grueso del trabajo es la poda de fin de invierno, y esa cae en agosto — la tenés abajo. ✅ Ya cerraste la limpieza del Guayabo F-1 el 23/07. 👏</div>
   </details>
 
   <!-- MENÚ COLAPSADO: PARA AGOSTO -->
   <details class="reveal">
-    <summary><span class="ic">🗓️</span> Para hacer en agosto <span class="cnt">3</span><span class="chev">▾</span></summary>
+    <summary><span class="ic">🗓️</span> Para hacer en agosto <span class="cnt">12</span><span class="chev">▾</span></summary>
     <div class="task">
-      <div class="th"><h4>Durazno — poda invernal en vaso abierto</h4><span class="code">B-30/35</span></div>
-      <div class="d">Abrir el centro en copa para que entre sol y aire. En seco (los carozos odian la poda con humedad).</div>
-      <span class="when ag">1ª semana de agosto · cuando hinchen las yemas</span>
+      <div class="th"><h4>La gran poda de fin de invierno · cuando hinchen las yemas</h4><span class="code">~ago</span></div>
+      <div class="d">El momento clave del año para los caducos y arbustos de flor. Se hace <b>en seco</b> (los cortes con humedad abren la puerta a hongos), apenas empiecen a hincharse las yemas — más o menos a mediados de agosto.</div>
+      <span class="when ag">Mediados de agosto · en seco</span>
+    </div>
+    <div class="task">
+      <div class="th"><h4>Durazno — poda en vaso abierto</h4><span class="code">B-30/35</span></div>
+      <div class="d">Abrí el centro en copa para que entre sol y aire. 1ª semana de agosto, sin abrir del todo.</div>
     </div>
     <div class="task">
       <div class="th"><h4>Ciruelo — poda de formación</h4><span class="code">F-4</span></div>
-      <div class="d">Elegí 3-4 ramas madre bien abiertas y sacá lo que va al centro. En día seco, como el durazno.</div>
-      <span class="when ag">1ª semana de agosto · cuando hinchen las yemas</span>
+      <div class="d">Elegí 3-4 ramas madre bien abiertas y sacá lo que va al centro. 1ª semana de agosto.</div>
     </div>
     <div class="task">
       <div class="th"><h4>Crespón — poda severa de formación</h4><span class="code">B-9</span></div>
       <div class="d">Florece en madera nueva: aguanta una poda fuerte que lo hace explotar en flor en verano. No lo descabeces.</div>
-      <span class="when ag">Mediados de agosto · cuando hinchen las yemas</span>
     </div>
+    <div class="task">
+      <div class="th"><h4>Rosa de Siria (Althea) — poda severa</h4><span class="code">B-18</span></div>
+      <div class="d">También florece en madera nueva. Poda de invierno fuerte = más flor en verano.</div>
+    </div>
+    <div class="task">
+      <div class="th"><h4>Caqui — poda en copa abierta</h4><span class="code">B-41</span></div>
+      <div class="d">Abrí el centro, sacá lo cruzado. (Ojo: su identidad sigue en duda; una foto en brotación ayuda a cerrarla.)</div>
+    </div>
+    <div class="task">
+      <div class="th"><h4>Hibisco / Rosa china — poda de fin de invierno</h4><span class="code">B-4</span></div>
+      <div class="d">Recorte de limpieza y formación antes del brote.</div>
+    </div>
+    <div class="task">
+      <div class="th"><h4>Bignonia rosada (Podranea) — poda fuerte</h4><span class="code">F-2</span></div>
+      <div class="d">Reducí guías viejas para que rebrote cargada de flor.</div>
+    </div>
+    <div class="task">
+      <div class="th"><h4>Abelia — poda de fin de invierno previa al brote</h4><span class="code">F-7</span></div>
+      <div class="d">Limpieza y rebaje suave antes de que arranque.</div>
+    </div>
+    <div class="menu-note">Y para <b>fines de agosto</b>, ya con más margen: recorte parejo del cerco de Azareros/Pitósporos (B-7·11·31·33), control de la Hiedra sobre el galpón (B-15) y acidificar la tierra de la Gardenia antes de brotar (B-25). En total, <b>12 tareas de agosto</b>. <b>¿Querés que te las reordene por prioridad, o que arme un plan por fin de semana?</b> Pedímelo abajo.</div>
   </details>
 
   <!-- PEDIME / CONSULTÁ -->
   <section class="ask reveal" id="engage-feedback-box">
     <h3>🙋 Pedime lo que necesites</h3>
-    <p>¿Una duda, una planta que no reconocés, algo que querés que sume o cambie? Escribime acá — este es el lugar para pedirlo.</p>
+    <p>¿Una duda, una planta que no reconocés, algo que querés que sume, cambie o reordene? Escribime acá — este es el lugar para pedirlo.</p>
     <textarea rows="3" placeholder="Escribime tu duda, pedido o especie a identificar…"></textarea>
     <button type="button" class="send" onclick="engageFeedback('jardin-hoy', this)">Enviar</button>
     <span class="fb-hint"></span>
@@ -160,7 +207,7 @@
 
   <footer class="pie">
     <a href="https://gardening-chi.vercel.app/tareas.html">Ver el Timeline completo →</a>
-    <div class="cred">Tu vistazo diario del jardín · estado y tareas reales del catálogo Pacha Mama · se actualiza cada mañana · 24/07/2026</div>
+    <div class="cred">Tu vistazo diario del jardín · estado y tareas reales del catálogo Pacha Mama · se actualiza cada mañana · edición 25/07/2026</div>
   </footer>
 
 </div>

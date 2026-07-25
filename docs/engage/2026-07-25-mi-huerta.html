@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🥬 Diseñá tu huerta</title>
+<meta property="og:title" content="🥬 Diseñá tu huerta — antes de la primavera">
+<meta property="og:description" content="Lo que pediste: elegí qué sembrar y dónde. Guía corta, por época, para tu clima de Montevideo. Vos decidís, yo te armo el plan.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
+    --sol:#e0a92e; --tom:#d1552f; --azul:#3f7d8a;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 26px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:34px 0 6px; text-align:center; }
+  .hero .em{ font-size:44px; }
+  .hero .kick{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3); margin-top:6px; }
+  .hero h1{ font-size:32px; line-height:1.08; margin:8px 0 8px; font-weight:900; letter-spacing:-.02em; }
+  .hero p{ color:var(--ink2); font-size:14.5px; max-width:34ch; margin:0 auto; }
+
+  .step-lbl{ display:flex; align-items:center; gap:9px; margin:26px 4px 10px; }
+  .step-lbl .n{ width:26px; height:26px; border-radius:50%; background:var(--verde2); color:#fff; font-weight:900; font-size:14px; display:grid; place-items:center; flex:none; }
+  .step-lbl h2{ font-size:17px; font-weight:900; }
+
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px 16px; margin:11px 0; box-shadow:0 5px 18px rgba(45,80,22,.05); }
+  .place{ display:flex; gap:12px; align-items:flex-start; }
+  .place .pe{ font-size:28px; flex:none; }
+  .place h3{ font-size:15.5px; font-weight:900; }
+  .place p{ font-size:13px; color:var(--ink2); margin-top:3px; }
+  .place .best{ font-size:11.5px; color:var(--verde2); font-weight:800; margin-top:6px; }
+
+  .sun-tip{ background:linear-gradient(180deg,#fef6df,#fffdf6); border:1px solid rgba(224,169,46,.35); border-radius:14px; padding:13px 15px; margin:10px 0 2px; font-size:12.5px; color:#7a5a12; }
+  .sun-tip b{ color:#8a5a00; }
+
+  .win{ margin:12px 0; border-radius:18px; overflow:hidden; border:1px solid var(--line); box-shadow:0 5px 18px rgba(45,80,22,.05); }
+  .win .wh{ padding:13px 16px; font-weight:900; font-size:14.5px; display:flex; align-items:center; gap:9px; color:#fff; }
+  .win.now .wh{ background:linear-gradient(90deg,#5a8a2e,#79a83e); }
+  .win.ago .wh{ background:linear-gradient(90deg,#c98a1e,#e0a92e); }
+  .win.sep .wh{ background:linear-gradient(90deg,#3f7d8a,#59a1af); }
+  .win .wh .badge{ margin-left:auto; font-size:11px; font-weight:800; background:rgba(255,255,255,.22); padding:3px 10px; border-radius:999px; }
+  .veglist{ background:var(--card); padding:6px 4px; }
+  .veg{ display:flex; align-items:baseline; gap:9px; padding:9px 13px; border-top:1px solid var(--line); }
+  .veg:first-child{ border-top:none; }
+  .veg .vn{ font-weight:800; font-size:14px; }
+  .veg .vt{ font-size:12px; color:var(--ink2); }
+  .veg .vsun{ margin-left:auto; font-size:10.5px; font-weight:800; color:var(--ink3); white-space:nowrap; flex:none; }
+
+  .qbox{ background:var(--verde); color:#eef7e0; border-radius:20px; padding:22px 18px; margin:24px 0 8px; text-align:center; }
+  .qbox h3{ font-size:17.5px; font-weight:900; }
+  .qbox p{ color:#cfe6b8; font-size:13.5px; margin:5px auto 14px; max-width:34ch; }
+  .qbtns{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .qbtns button{ background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.28); border-radius:12px; padding:11px 18px; font:800 14px var(--sans); cursor:pointer; }
+  .qbtns button.sel{ background:#fff; color:var(--verde); border-color:#fff; }
+  .qbtns button:disabled{ opacity:.9; }
+  .q-hint{ display:block; margin-top:11px; font-size:13px; font-weight:800; color:#bfe39a; min-height:1.1em; }
+
+  .react{ text-align:center; margin:24px 0 6px; }
+  .react .rl{ font-size:14.5px; font-weight:800; color:var(--ink2); margin-bottom:10px; }
+  .react .btns{ display:flex; gap:9px; justify-content:center; }
+  .react .btns button{ font-size:26px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:8px 13px; cursor:pointer; transition:transform .1s; }
+  .react .btns button.sel{ background:var(--verde3); border-color:var(--verde2); transform:scale(1.08); }
+  .react-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.1em; }
+
+  .fb-blk{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border:1px solid rgba(90,138,46,.3); border-radius:20px; padding:22px 18px; margin:20px 0 10px; text-align:center; }
+  .fb-blk h3{ font-size:17px; margin-bottom:5px; font-weight:900; }
+  .fb-blk p{ color:var(--ink2); font-size:13.5px; max-width:38ch; margin:0 auto 12px; }
+  .fb-blk textarea{ width:100%; background:#fff; border:1px solid var(--line); border-radius:11px; color:var(--ink); padding:11px 12px; font:inherit; resize:vertical; }
+  .fb-blk .fb-send{ margin-top:10px; background:var(--verde2); color:#fff; border:none; border-radius:12px; padding:12px 22px; font:800 14.5px var(--sans); cursor:pointer; }
+  .fb-blk .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.2em; }
+
+  .engage-actions{ display:flex; gap:10px; margin:16px 0 6px; }
+  .engage-actions button{ flex:1; padding:13px 10px; border-radius:13px; font:800 14px var(--sans); cursor:pointer; border:1px solid var(--line); }
+  .engage-actions button:first-child{ background:var(--verde2); color:#fff; border-color:var(--verde2); }
+  .engage-actions button:last-child{ background:#fff; color:var(--ink3); }
+
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:16px; line-height:1.5; text-align:center; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <div class="em">🥬</div>
+    <div class="kick">La tarea que pediste</div>
+    <h1>Diseñá tu huerta</h1>
+    <p>Antes de que arranque la primavera. Vos elegís dónde y qué — yo te armo el plan de siembra. Se hace hoy, con lluvia, desde adentro.</p>
+  </header>
+
+  <!-- PASO 1: DÓNDE -->
+  <div class="step-lbl reveal"><span class="n">1</span><h2>¿Dónde la armás?</h2></div>
+
+  <div class="card place reveal">
+    <span class="pe">🌞</span>
+    <div>
+      <h3>Cantero al sol en el fondo o el frente</h3>
+      <p>4-6 m² de tierra removida y abonada. Lo más productivo: da para todo (tomate, morrón, zapallito, hojas). Pide preparar la tierra una vez.</p>
+      <div class="best">✔ Si buscás una huerta de verdad, con rotación.</div>
+    </div>
+  </div>
+  <div class="card place reveal">
+    <span class="pe">📏</span>
+    <div>
+      <h3>Cama elevada (cajón de 1×3 m)</h3>
+      <p>Madera, 30 cm de alto, tierra + compost. Cómoda (no te agachás), drenaje perfecto, lista para sembrar ya.</p>
+      <div class="best">✔ Si la tierra del fondo es dura o hay raíces de árboles cerca.</div>
+    </div>
+  </div>
+  <div class="card place reveal">
+    <span class="pe">🪴</span>
+    <div>
+      <h3>Macetones grandes (50 L+)</h3>
+      <p>5-8 macetones con tomate, morrón, lechuga y aromáticas. Movibles, sin obra, control total del sustrato.</p>
+      <div class="best">✔ Para probar sin comprometerte a un espacio fijo.</div>
+    </div>
+  </div>
+
+  <div class="sun-tip reveal">☀️ <b>Ojo con el sol:</b> tu casa mira este-oeste. La huerta quiere <b>6 h de sol mínimo</b> → el <b>frente (oeste, sol de tarde)</b> o el <b>muro norte</b> son los mejores lugares. El fondo (este) solo tiene sol de mañana; sirve para lechuga y hojas de media sombra.</div>
+
+  <!-- PASO 2: QUÉ -->
+  <div class="step-lbl reveal"><span class="n">2</span><h2>¿Qué plantás? — por época</h2></div>
+
+  <div class="win now reveal">
+    <div class="wh">🌱 Sembrar ahora (julio) <span class="badge">ya mismo</span></div>
+    <div class="veglist">
+      <div class="veg"><span class="vn">Lechuga</span><span class="vt">de invierno, mantecosa/criolla</span><span class="vsun">sol parcial</span></div>
+      <div class="veg"><span class="vn">Cebolla</span><span class="vt">de almácigo a lugar definitivo</span><span class="vsun">pleno sol</span></div>
+    </div>
+  </div>
+
+  <div class="win ago reveal">
+    <div class="wh">🌤️ Arrancan en agosto <span class="badge">en 1-2 sem</span></div>
+    <div class="veglist">
+      <div class="veg"><span class="vn">Tomate</span><span class="vt">almácigo protegido — 'Platense' o cherry</span><span class="vsun">pleno sol</span></div>
+      <div class="veg"><span class="vn">Morrón / Pimiento</span><span class="vt">almácigo protegido</span><span class="vsun">pleno sol</span></div>
+      <div class="veg"><span class="vn">Acelga</span><span class="vt">produce 6-8 meses por planta</span><span class="vsun">sol / parcial</span></div>
+      <div class="veg"><span class="vn">Rúcula</span><span class="vt">rápida, cortá y vuelve a brotar</span><span class="vsun">sol parcial</span></div>
+      <div class="veg"><span class="vn">Zanahoria</span><span class="vt">siembra directa, no trasplantar</span><span class="vsun">sol</span></div>
+      <div class="veg"><span class="vn">Perejil · Cilantro</span><span class="vt">aromáticas de base</span><span class="vsun">sol parcial</span></div>
+    </div>
+  </div>
+
+  <div class="win sep reveal">
+    <div class="wh">🌸 Para septiembre-octubre <span class="badge">la ola grande</span></div>
+    <div class="veglist">
+      <div class="veg"><span class="vn">Zapallito de tronco</span><span class="vt">siembra directa, mucho espacio</span><span class="vsun">pleno sol</span></div>
+      <div class="veg"><span class="vn">Albahaca</span><span class="vt">compañera del tomate</span><span class="vsun">sol</span></div>
+    </div>
+  </div>
+
+  <!-- PREGUNTA / DECISIÓN (agencia) -->
+  <div class="qbox reveal">
+    <h3>¿Arrancamos?</h3>
+    <p>Decime qué lugar te cierra y te armo el plan de siembra semana a semana, con cantidades y compañeros de plantación.</p>
+    <div class="qbtns">
+      <button type="button" onclick="engageAnswer('mi-huerta-arranca','si', this)">Sí, dale 🌱</button>
+      <button type="button" onclick="engageAnswer('mi-huerta-arranca','pensando', this)">Lo estoy pensando</button>
+    </div>
+    <span class="q-hint"></span>
+  </div>
+
+  <!-- SUSCRIPCIÓN DIARIA -->
+  <div class="qbox reveal" style="background:var(--tom)">
+    <h3>🔔 ¿Te mando la huerta cada día?</h3>
+    <p>Una tarjeta corta por día en tu ventana de siembra: qué toca sembrar/trasplantar esta semana, sin que se te pase ninguna época.</p>
+    <div class="qbtns">
+      <button type="button" onclick="engageAnswer('mi-huerta-suscripcion-diaria','si', this)">Sí, quiero</button>
+      <button type="button" onclick="engageAnswer('mi-huerta-suscripcion-diaria','no', this)">No hace falta</button>
+    </div>
+    <span class="q-hint"></span>
+  </div>
+
+  <!-- REACCIÓN -->
+  <div class="react reveal">
+    <div class="rl">¿Te sirvió esta guía?</div>
+    <div class="btns">
+      <button type="button" onclick="engageReact('mi-huerta','love', this)">😍</button>
+      <button type="button" onclick="engageReact('mi-huerta','like', this)">🙂</button>
+      <button type="button" onclick="engageReact('mi-huerta','meh', this)">😐</button>
+      <button type="button" onclick="engageReact('mi-huerta','no', this)">🙅</button>
+    </div>
+    <span class="react-hint"></span>
+  </div>
+
+  <!-- FEEDBACK PROPIO -->
+  <section class="fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>¿Qué querés plantar que no está? ¿Preferís otro formato? Esto lo leo yo antes de armar la próxima.</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('mi-huerta', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <!-- DECISIÓN PROPOSAL -->
+  <div class="engage-actions reveal">
+    <button onclick="engageApprove('2026-07-25-mi-huerta')">✅ Sumá esto al sitio</button>
+    <button onclick="engageRejected('2026-07-25-mi-huerta')">✕ No me interesa</button>
+  </div>
+
+  <div class="cred reveal">Sugerencias según el calendario de siembra del propio catálogo Pacha Mama · Montevideo, lat -34.9°S · 25/07/2026</div>
+
+</div>
+
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>

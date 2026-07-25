@@ -3,98 +3,74 @@
 Memoria del agente diario. Se REESCRIBE y condensa cada día (máx ~150 líneas).
 No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
-## 📌📌 MANDATO DIRECTO DEL USUARIO 24/07 (por chat + feedback_text — MÁXIMA AUTORIDAD, NO PISAR)
+## 📌📌 MANDATO DIRECTO DEL USUARIO 24/07 (chat + feedback_text — MÁXIMA AUTORIDAD, NO PISAR)
 
-1. **UNA SOLA PUSH DIARIA, NO TRES.** El usuario: «Siento que estos TRES push [task-dia + pendientes + top3] deberían haber sido una comunicación». → **Consolidar el canal-tarea en UNA push por día.** La push diaria oficial es **🌤️ «Tu jardín hoy»** (`2026-07-24-jardin-hoy.html`), que ABSORBE estado + tareas. **A futuro: NO encolar task-dia + pendientes + top3 como 3 pushes separados** — su contenido va dentro de jardin-hoy. (Los tools gen_task_reminders/gen_top3 siguen generando la DATA, pero el push al usuario es uno solo → revisar el flujo para que no dupliquen notificación.)
-2. **«Tu jardín hoy» = PROMOVIDA, la push diaria fija.** El usuario: «Esta debería ser la push diaria». Pidió sacar de la landing: el bloque de reacción, el de suscripción y el de «¿la dejo fija?» (ya no es experimento → es el core). Aplicado en v2.
-3. **La landing lleva:** vistazo de 5s (estado + 3 chips) + menú COLAPSADO «Tareas de julio» + menú COLAPSADO «Para agosto» + caja **«🙋 Pedime lo que necesites»** (dudas / especie desconocida / solicitudes — «estas tareas son el lugar para pedirlo»). Mantener actualizados los menús por mes con `task_states.json` + `data_plants.py` cada corrida.
-4. **El pivote minimalista quedó VALIDADO en 1 iteración** (feedback tier-1 positivo el mismo día). Seguir por acá: liviano, glanceable, garden-close, cero role-play verboso.
+1. **UNA SOLA PUSH DIARIA PARA TAREAS, NO TRES.** «Estos TRES push [task-dia + pendientes + top3] deberían haber sido UNA comunicación». → El canal-tarea se consolida en **🌤️ «Tu jardín hoy»** (`2026-07-24-jardin-hoy.html`, PROMOVIDA, URL estable). **NO encolar task-dia/pendientes/top3 como pushes separados** — su contenido va DENTRO de jardin-hoy. (Aplicado desde 25/07: NO corrí gen_task_reminders/gen_top3 con --merge; jardin-hoy es la única push de tareas, mantenida a mano.)
+2. **La landing lleva:** vistazo de 5 s (estado + 3 chips) + menú COLAPSADO «Tareas de julio» + menú COLAPSADO «Para agosto» + caja **«🙋 Pedime lo que necesites»**. Sin bloque de reacción/suscripción/«¿la dejo fija?» (ya es core, no experimento). Mantener menús por mes actualizados con task_states + data_plants cada corrida.
+3. **Feedback posterior 24/07 (ejecutado el 25/07):**
+   - «¿Qué puedo hacer hoy?» → jardin-hoy ahora abre con una **acción a prueba de lluvia para HOY** (definir la huerta, se hace adentro). No dejar al usuario sin algo accionable en días de lluvia.
+   - «¿Justo 3 tareas en cada módulo? ¿Nada más?» → NO capar a 3. Julio son 4 reales (+huerta); **agosto son 12** (la gran poda de fin de invierno). Mostrar el número real, con nota de que son «todas».
+   - «Agregame una tarea: definir plantas para huerta y proponeme sugerencias» → **EJECUTADO**: tarea «Definir plantas para la huerta» en jardin-hoy + experiencia dedicada **`2026-07-25-mi-huerta`** con sugerencias por época (datos del calendario HUERTA del catálogo).
+4. **CORRECCIÓN factual 24/07 (tu-semana):** «Los plantines de PALTA no los toqué, siguen contra la pared a la sombra». → tu-semana afirmaba de más sobre el vivero. **CORREGIDO** en la página. **HECHO VERIFICADO (no contradecir):** los plantines de palta están contra la pared, a la sombra, SIN MOVER. Lo que sí se reubicó fue el vivero de palmeras (B-46).
 
-## 🚨🚨 PIVOTE 24/07 — feedback_text tier-1 MATA el role-play verboso
+## ✅ PIVOTE MINIMALISTA — VALIDADO (24/07, confirmado tier-1)
 
-- **23/07 21:37Z — feedback_text del usuario sobre mercado-pases: «Mucho texto, muy cargado, no es realmente lo que busco en una app de jardín».** Señal tier-1, la de mayor peso. Leyó TODO (150s/97%) y aun así lo RECHAZÓ + reaction 'no' + suscripción 'no'.
-- **AMBAS agencias-teatrales del 23/07 fueron RECHAZADAS:** ronda-medica (jefe de guardia) proposal_rejected 78s; mercado-pases (DT) proposal_rejected + feedback negativo. → las 2 DROPEADAS + borradas 24/07.
-- **HIPÓTESIS 'AGENCIA convierte donde la pasividad falló' → REFUTADA.** El usuario TUVO agencia/autoridad (decidía altas, armaba el once) y rechazó igual. El problema del 22/07 NO era pasividad: era (y es) la **FORMA — role-play denso, teatral, verboso.** El eje agencia-autoridad-teatral (médico/DT/presidente/juez) está **AGOTADO**.
-- **MANDATO DEL USUARIO (deducido del texto):** quiere una **app de jardín de verdad**, calma, con **poco texto**, glanceable. No walls de prosa, no metáforas rebuscadas (fútbol doblemente muerto: Mundial + mercado-pases).
-- **PIVOTE 24/07 (ciclo 54):** 2 experiencias RADICALMENTE minimalistas, paleta CLARA, casi sin prosa, ancladas en estado/logros REALES (no trivia — el elenco de fun_facts está QUEMADO, ver facts_ledger):
-  - 🌤️ **jardin-hoy** (a, 10:30): vistazo de 5s — estado calmo («hoy nada urgente») + 3 chips (en flor/con fruta/durmiendo). Cero párrafos.
-  - ✅ **tu-semana** (b, 18:00): recap de logros — número grande (6) + 6 tildes de 1 línea de las tareas que el usuario CERRÓ el 23/07. HÉROE=USUARIO en modo orgullo, sin peso teatral.
-- **WATCH 25/07:** ¿el minimalismo convierte donde el role-play verboso murió? Si jardin-hoy o tu-semana enganchan → el pivote es el camino y hay que despedirse del formato news-feed-cargado. Si el usuario deja feedback_text: ORO, citarlo y ejecutar. Si tampoco convierten → revisar si el problema es fatiga global de push (bajar frecuencia).
+- **jardin-hoy (minimalista, glanceable, poco texto) = 3 feedback_text el mismo día + clicks repetidos + revisitas.** El formato liviano/garden-close es EL camino. El usuario vuelve, lee y ESCRIBE. Máxima señal.
+- **Contraste 23/07: role-play verboso (mercado-pases/ronda-medica) = RECHAZO + «mucho texto, muy cargado».** Muerto y enterrado. NO volver a: médico/DT/presidente/juez/farándula, prosa densa, metáforas rebuscadas, walls de texto.
+- **tu-semana (recap de logros) = suscripción «sí» (tier-2)** + la corrección de palta. Ángulo RECAP-DE-LOGROS (héroe=usuario, orgullo) VALIDADO → PROMOVIDO como resumen semanal (domingos), sin competir con la push diaria. Cuidar credibilidad: SOLO tareas realmente cerradas en task_states.
 
-## Contexto previo (21-22/07, ahora RE-LEÍDO a la luz del pivote)
+## ⏱️ CADENCIA VIGENTE: 3 pushes/día = 1 tarea (jardin-hoy) + 2 experiencias nuevas
 
-- **21/07 — feedback_text POSITIVO** sobre la Asamblea: «Está todo perfecto. Está lloviendo hace días, no he podido avanzar». → Asamblea promovida. PERO ojo: ese «está todo perfecto» era sobre el SITIO en general, y venía con la Asamblea que ERA densa. El 23/07 corrigió: el texto cargado cansa. La Asamblea quizás ganó por HUMOR+bridge, no por su densidad.
-- **22/07 — lluvia-tareas y grupo-jardin: 0 clicks.** En su momento lo leí como 'pasividad'. A la luz del 24/07, sumo lectura: ambas TAMBIÉN eran cargadas. Pasividad + densidad, dos pecados.
+- **jardin-hoy** (canal-tarea consolidado, `format:"tarea"`): **10:00**. Absorbe estado + tareas. Es la ÚNICA push de tareas del día (ya NO task-dia/pendientes/top3 sueltas).
+- **2 experiencias nuevas de cero** (función paralela, persona product/UX/growth/sales): slots **13:30 / 18:00** (18:00 = slot dorado histórico → la de mayor conversión ahí). Cada una: reacción + CTA sub diaria + caja feedback propia + botones aprobar/rechazar + HTML de pitch con 6 modelos (3 innovadores + 3 ultra-creativos).
+- **🚫 PISO 10:00.** Primer send_at ≥60 min post-corrida. expires_at = mismo día 22:00 -03:00. Timestamps con `-03:00`. Cada notif a destino DISTINTO.
+- Nota: bajé de los ~4-5 pushes/día previos (con task-dia+pendientes+top3 sueltos) a estos 3 limpios. Es exactamente el reclamo del usuario resuelto.
 
-## 🚨 FEEDBACK DIRECTO DEL USUARIO 18/07 (por chat — máxima autoridad, NO PISAR)
+## 🆕 EXPERIENCIAS DE HOY (25/07, ciclo 55) — 2 nuevas de cero
 
-1. **«Me repetís los mismos funfacts»** → anti-repetición: `facts_ledger.json` (leer ANTES, actualizar DESPUÉS), planta featured descansa ≥7d, fact no <14d. **Con el elenco quemado: tocar plantas por ÁNGULO NUEVO (tarea/clima/rol), NUNCA repitiendo su fun_fact.**
-2. **feedback_text = LA señal de mayor peso.** Leer PRIMERO. Positivo=expandir, negativo=NUNCA vuelve, pedido=ejecutar.
-3. **Objetivo:** interacción + marca de buena + buen feedback. Innovar SIEMPRE (formatos nuevos > refritos).
-4. **Re-push de promovida = contenido RENOVADO en misma URL** (nunca re-mandar estático).
+- **A · 🧭 `2026-07-25-mapa-solar`** (13:30): mapa TOCABLE de orientación (compás de 4 zonas: norte cálido / oeste-frente sol de tarde / este-fondo sol de mañana / sur sombrío). Formato NUEVO (espacial, nunca probado) + ángulo FRESCO (orientación, 0 fun_facts) + agencia (tocás y decidís). Ata a dónde poner la huerta y qué proteger de la helada. Hipótesis: valida la capa espacial (feature más pedida).
+- **B · 🥬 `2026-07-25-mi-huerta`** (18:00, slot dorado): guía de decisión de huerta. Responde el PEDIDO TEXTUAL directo. Agencia (elegís dónde + qué) + datos reales del calendario HUERTA + a prueba de lluvia. Cast 100% fresco (hortalizas). **Debería ser la de mayor conversión — lo pidió con todas las letras.**
+- **WATCH 26/07:** ¿mi-huerta convierte (era pedido explícito)? ¿mapa-solar valida lo espacial/tocable? Si mi-huerta gana → serializar «calendario vivo de huerta». Si mapa-solar gana → invertir en mapa real con plantas ubicadas.
 
-## ⏱️ CADENCIA VIGENTE: 2 pushes propios/día (bajada de 3→2 el 23/07 por PEDIDO DIRECTO del usuario)
+## 🚫 ANTI-REPETICIÓN (reclamo 18/07: «me repetís los mismos funfacts»)
 
-**El usuario pidió por chat el 23/07: «bajemos a un máximo de 2 push por día».** → Cadencia propia = **2/día**, NO 3.
-Slots base **10:30 / 18:00 -03:00** (se elimina el 13:00). **🚫 PISO 10:00: NINGUNA push antes de 10:00.**
-task-dia (10:00) + top3 (11:00, cada 2d) son ADICIONALES al cupo (canal de tareas comisionado, separado). Primer send_at propio ≥60 min post-corrida. expires_at = mismo día 22:00. Cada notif a destino DISTINTO. Timestamps con `-03:00`.
-**Regla dura: la cola SIEMPRE 2 propias pending = las 2 experiencias nuevas de la función paralela** (una a 10:30, otra a 18:00). **YA NO hay 3er slot de winner descansado** — con 2/día, ambos slots son para las 2 experiencias nuevas de cero. (Renovar un winner descansado queda como opción solo si algún día NO se crean 2 experiencias nuevas.)
+- Leer `facts_ledger.json` ANTES, actualizar DESPUÉS. **Elenco de fun_facts ornamentales QUEMADO** (una mega-experiencia tocó casi todas las plantas <7d). → NO usar fun_facts. Tocar plantas por **ÁNGULO NUEVO** (tarea / estado / orientación / huerta), nunca por su dato curioso.
+- mapa-solar usa plantas como LANDMARKS por orientación (no fun_fact). mi-huerta usa hortalizas (cast nuevo, fuera del ledger de ornamentales). Ambas cumplen el espíritu.
+- Re-push de promovida = contenido RENOVADO en la misma URL (jardin-hoy: editar el mismo archivo, subir la fecha visible).
 
-## 🆕 FUNCIÓN PARALELA (28/06): 2 experiencias NUEVAS de cero por corrida
+## 📌 PEDIDOS DIRECTOS PREVIOS — NO PISAR
 
-Persona product/UX/growth/sales. Cada una: (1) `engageReact` target=slug, (2) CTA sub diaria `engageAnswer` qid `<slug>-suscripcion-diaria`, (3) caja feedback propia `engageFeedback('<slug>')` id `engage-feedback-box`, (4) botones `engageApprove/engageRejected('<id>')` (proposal pending), (5) HTML de pitch aparte con 6 modelos (3 innovadores + 3 ultra-creativos). Contrato: link "← Volver al sitio estable" PRIMERO, `engage.js` al pie, SOLO datos verificados. Con la cadencia 2/día (23/07), **las 2 experiencias nuevas ocupan los 2 slots propios** (10:30 y 18:00); ya no hay 3er slot de winner descansado.
+- **04/07:** 🕵️ Expedientes (`2026-07-04-expedientes-jardin.html`) comisionada, exenta. B-41 caqui identidad EN DUDA. 🎯 Top 3 (`top3-tareas.html`) — la DATA sigue viva pero su push se fundió en jardin-hoy (mandato 24/07). NO borrar página ni proposal. Splash «Hora dorada» integrado (demos = referencia, no tocar). ⚠️ Pillow no viene: `pip install Pillow` antes de gen_*.py/build.py.
+- **23/07:** `tareas-pendientes.html` = página fija (no borrar/renombrar). Ahora es DETALLE complementario; el vistazo diario pasó a jardin-hoy (nota actualizada en la página, 25/07). Ya NO se pushea suelta.
+- **Asamblea** (`2026-07-21-asamblea-jardin.html`) promovida (feedback_text positivo).
 
-## 📌 PEDIDOS DIRECTOS DEL USUARIO 04/07 — NO PISAR
+## 🚀 QUÉ CONVIERTE — meta-reglas
 
-1. **🕵️ Expedientes** (`2026-07-04-expedientes-jardin.html`) — COMISIONADA, EXENTA de no-supervivencia. B-41 caqui: identidad EN DUDA.
-2. **🎯 Top 3** (`top3-tareas.html`) — cada 2d (ancla 04/07): `gen_top3_tareas.py <fecha> --merge` (self-gated). **Corrió 22/07; próx 24/07.** NO borrar página ni proposal.
-3. Timeline: hechas/cerradas colapsadas en "🗂️ Pasadas / hechas".
-4. **Splash** «Hora dorada» integrado en Home. Demos `splash-*.html` = referencia, NO tocar.
-5. ⚠️ **Pillow (PIL) no viene instalado:** `pip install Pillow` ANTES de gen_*.py / build.py.
+- **HÉROE = USUARIO + AGENCIA/AUTORIDAD/LOGRO/DECISIÓN.** Consumo pasivo NO convierte (22/07: lluvia-tareas y grupo-jardin murieron por pasivos). El usuario tiene que DECIDIR o LOGRAR algo.
+- **Minimalismo gana** (24/07 validado): poco texto, paleta clara, glanceable, garden-close, dato REAL (estado/logro/tarea/orientación/huerta). NADA de trivia ni prosa.
+- **Las TAREAS y los PEDIDOS EXPLÍCITOS son el canal más fiable.** Cuando el usuario pide algo por texto, ejecutarlo ES la mejor experiencia posible.
+- **feedback_text = ley.** Positivo = expandir. Negativo = NUNCA vuelve. Pedido = ejecutar YA. Sin señal activa = «masomenos», no cuenta como éxito.
+- **MUERTOS (no volver):** role-play verboso/teatral · countdown/anticipación · app pasiva · editorial pasivo 3ª pers · gesto solo · mística repetida · nota-larga · superlativo-fatigado · racha/streak · biografías · chat-coral · dinero/tasación · alivio-pasivo · Wrapped (fatigado) · fútbol (Mundial + mercado-pases doblemente muerto).
 
-## 📌 PEDIDO DIRECTO DEL USUARIO 23/07 — landing diaria de pendientes (NO PISAR)
+## 📈 Estado del sistema + jardín (julio 2026)
 
-**`docs/engage/tareas-pendientes.html`** = landing FIJA (URL estable, permanente, NO experimento — no borrar/renombrar) que el usuario recibe TODOS LOS DÍAS por push. Ver PASO OBLIGATORIO en `.claude/commands/engagement.md`. Cada corrida: (a) actualizarla a mano desde `task_states.json`+`data_plants.py` — solo lo pendiente, 3 bloques (🔧 Para hacer ahora / 📅 Top 3 próximas / 🗓️ Primavera) + módulo feedback general al pie (`engageFeedback('landing-pendientes')`); (b) encolar su push `<fecha>-pendientes` (`format:"tarea"`, ~10:00, adicional al cupo). La vieja `2026-07-23-resultado-del-dia.html` quedó como redirect a la fija.
-
-## 🚀 QUÉ CONVIERTE — el ÁNGULO decide dentro del news-feed
-
-**CONVIERTEN (PROMOVIDAS):** 📋 **Asamblea (usuario=PRESIDENTE+agencia+humor+bridge-tareas) = feedback_text POSITIVO, la señal top** · 🍵 Chusmerío 260s😍 · 📱 Feed(social 1ª pers, habla AL usuario) 208s😍 · 🎙️ Entrevista(celebridad) sub+206s · 🎁 Wrapped 😍+172s (⚠️ FATIGADO: descansar) · 🏆 Récords 😍+sub+141s · 📗 Álbum · 🔮 Horóscopo(identidad) 😍+sub · 🌱 Quiz «¿qué planta sos?» 😍+103s · 📰 Diario · 😂Memes/🧪Superpoderes/💌Consultorio/🎤Confesiones/📺Reality (tibio).
-
-**RECHAZAN/NO ABREN (dropped):** app pasiva · gesto solo · editorial pasivo 3ª pers · mística repetida · nota-larga · ranking-presente · miedo · **chat coral (grupo-jardin 22/07: 0 clicks)** · dinero/tasación · pasado/biografías · ceremonia/torneo (Gala/Mundial) · viajes · romance · celebridad-frases · mecánica abstracta (racha/streak) · superlativo-fatigado · **⏳ countdown/anticipación (CERRADO)** · **💧 alivio-PASIVO** · **🎭 ROLE-PLAY VERBOSO / agencia-teatral (ronda-medica + mercado-pases 23/07: RECHAZADOS pese a agencia — feedback tier-1 «mucho texto, muy cargado». CERRADO: médico/DT/presidente/juez/farándula con prosa densa NO va).**
-
-**🔑 Meta-reglas:** (a) **«app amada» solo convierte con HÉROE=USUARIO + AGENCIA/AUTORIDAD/LOGRO** — consumo/observación PASIVA NO (confirmado x2: 22/07 lluvia-tareas y grupo-jardin murieron por pasivos). (b) convierte el ÁNGULO (agencia/autoridad/identidad/estatus) + drama del PRESENTE. (c) editorial con VOZ 1ª pers que le habla AL usuario, no que lo deja mirando. (d) feed de ítems cortos, no caso-largo. (e) no repetir sub-género de identidad ya promovido. (f) el GANCHO necesita drama/curiosidad CONCRETA del PRESENTE. (g) **las TAREAS son el canal más fiable** (task-dia convierte casi siempre). (h) el CLIMA REAL es buen ancla, PERO solo si el usuario es protagonista-que-decide, no espectador.
-
-## 📈 Estado del sistema + lluvia
-
-- Push subscription device `pix9`: **active** (22/07). Logging por `/api/feedback` confiable.
-- **Contexto lluvia (21/07→):** días de lluvia en MVD, usuario no puede avanzar. Tareas no ejecutables → NO nagear/culpar. La lluvia es contenido real (drenaje, plagas volteadas, dormancia) PERO enmarcado con el usuario decidiendo, no mirando.
-- **Compactación 24/07:** engagement.json −eventos <10/07 → daily_summary (89 vivos); send_log −4 del 09/07 (66 vivos); queue −entries 23/07.
-
-## Conclusiones de los pushN enviados (por feedback real)
-
-- **23/07 (ciclo 53) — DOBLE RECHAZO + feedback tier-1 (dato decisivo):** a=ronda-medica (jefe de guardia) → proposal_rejected, 78s, sin reacción/sub · b=mercado-pases (DT) → proposal_rejected + reaction 'no' + sub 'no' + **feedback_text «Mucho texto, muy cargado, no es lo que busco en una app de jardín»** (150s/97%). task-dia (fumagina) y el reply de gardenia SÍ clicaron (canal-tarea sigue firme). **Conclusión: el role-play verboso está muerto — la densidad cansa aunque el usuario lea todo. La agencia NO alcanza si viene envuelta en texto.** Las 2 dropeadas + borradas.
-- **24/07 (ciclo 54) — PIVOTE a minimalismo:** dejo el news-feed-cargado y pruebo 2 experiencias liviano-glanceable de estado/logro real. Ver bloque PIVOTE arriba.
-
-- **08-10/07 (tanda ganadora):** Entrevista(sub+206s), Quiz(😍+103s), Wrapped(😍+172s), Álbum(😍) → 4 PROMOVIDAS.
-- **11-20/07:** racha de fallos (app-pasiva, gesto, mística, nota-larga, celebridad, superlativo, racha, biografías). Único positivo sostenido: canal-tarea.
-- **21/07 (ciclo 51):** a=Cuenta Regresiva (NO abrió) · b=Wrapped-reno (meh, fatiga) · c=**Asamblea (feedback_text POSITIVO)** 🏆. Lectura: agencia+humor+bridge GANA; countdown y Wrapped pierden.
-- **22/07 (ciclo 52) — DATO CLAVE:** a=lluvia-tareas (0) · b=Horóscopo-lluvia (0) · c=grupo-jardin (0, slot dorado 18:00) · **solo task-dia clicó.** Confirma: **el ancla-lluvia sin agencia del usuario NO abre.** Las 2 experiencias pasivas murieron → dropeadas.
-- **24/07 (ciclo 54) — Cola (2/día):** (a)10:30 🌤️ jardin-hoy (vistazo minimalista); (b)18:00 ✅ tu-semana (recap de logros). + canal-tarea: 10:00 task-dia (Guayabo F-1 limpieza), 10:00 pendientes (landing fija), 11:00 top3 (Gardenia/Liquidámbar/Hortensia). react `jardin-hoy`/`tu-semana`, sub `<slug>-suscripcion-diaria`.
-
-## Contexto del jardín (julio 2026 = pleno invierno + LLUVIA, lat -34.9°S)
-
-- Jardín en DORMANCIA + lluvia. **NO inventar urgencia; usuario no puede salir.** ~62 días a primavera (equinoccio 23/09); heladas tardías posibles hasta ~fin agosto (pegan al sur y este al amanecer).
-- Señales REALES: cítricos cargados (mandarina B-24, limonero B-23 da 12/12); romero B-26 florece jun-oct (ÚNICA en julio) — mediterráneo, odia pies mojados; palta B-22/B-36 y pindó B-8 con fruto; caducos pelados (durazno B-30/35, crespón B-9, liquidámbar B-37, pera B-39) acumulando frío+agua → primeros en florecer en agosto; perennes verdes (guayabo F-1, mirto B-27, hiedra B-15). Hortensia B-5a = la más sedienta (= gran ganadora de la lluvia).
-- Efecto lluvia (horticultura estándar): riego profundo; agua voltea pulgones y desarma hormigas (Gardenia B-25); enjuaga fumagina (Guayabo F-1); PERO mediterráneas (romero/lavanda B-10) resienten encharcamiento → hongos de base (Phytophthora).
-- Tareas activas reales: Gardenia B-25 pulgones+hormigas (alta); Guayabo F-1 fumagina (alta, task-dia hoy); Liquidámbar B-37 limpieza copa (alta).
+- Push subscription device `pix9`: **active** (25/07). Logging por `/api/feedback` confiable.
+- **Contexto lluvia (21/07→):** sigue lloviendo en MVD, usuario no puede salir a podar/tocar tierra mojada. NO nagear. Ofrecer SIEMPRE una acción a prueba de lluvia (definir huerta, planificar, decidir). La lluvia es real: no inventar urgencias afuera.
+- Jardín en DORMANCIA. ~60 días a primavera (equinoccio 23/09). Heladas tardías posibles hasta ~fin agosto (pican al SUR y ESTE al amanecer → mapa-solar lo usa como ancla real).
+- Tareas reales JULIO (4): huerta (pedido), Hortensia B-5a/b trasplante (alta), Liquidámbar B-37 rama (alta), Gardenia B-25 pulgones/hormigas (alta). AGOSTO (12): gran poda de fin de invierno cuando hinchen las yemas (durazno B-30/35, ciruelo F-4, crespón B-9, althea B-18, caqui B-41, hibisco B-4, podranea F-2, abelia F-7, B-4) + fines de ago (cerco B-7·11·31·33, hiedra B-15, acidificar gardenia B-25). ✅ Guayabo F-1 limpieza cerrada 23/07.
+- **HUERTA (calendario del catálogo):** sembrar YA (jul): lechuga, cebolla. Arranca agosto: tomate, morrón, acelga, rúcula, zanahoria, perejil, cilantro. Sept-oct: zapallito, albahaca. Sol: frente (oeste) o muro norte = mejores (6h+). Fondo (este) = solo mañana, hojas de media sombra.
 
 ## Verificados clave (NO contradecir)
 
-52 especies · 65 id_codes · 10 nativas · romero B-26 = única que florece en julio · limonero B-23 = fruta 12/12 · palta Hass B-36 = clon de 1926 (~80% mercado) · anacahuita B-16 = protegida por ley 1986 · hiedra B-15 = +400 años · liquidámbar B-37 = storax/«ámbar líquido» · gardenia B-25 = 600kg flores→1L Chanel Nº22 · pindó B-8 = fruto coco-banana mar-jul · B-41 caqui = identidad EN DUDA · B-46 vivero = ~30 plantines · B-49 = trifoliado ¿glicinia? (revela en primavera).
+52 especies · 65 id_codes · 10 nativas · casa alineada este-oeste · norte = muro cálido (hibisco/lapachillo, sol todo el invierno) · sur = pera Williams B-39 (sombrío/húmedo) · este/fondo = liquidámbar B-37/palto B-36/pileta (sol mañana) · oeste/frente = fotinias/ligustro F-9/fresno F-10 (sol tarde) · romero B-26 = única que florece en julio · limonero B-23 fruta 12/12 · **plantines de palta contra la pared a la sombra, SIN TOCAR** (aclaración usuario 24/07) · B-41 caqui identidad EN DUDA.
 
-## TODO pendiente
+## Conclusiones de los pushN (por feedback real)
 
-- **DIRECCIÓN 24/07+:** MINIMALISMO. Poco texto, paleta clara, glanceable, garden-close, dato REAL (estado/logro/tarea, NO trivia — elenco quemado). **Evitar:** role-play verboso/teatral (CERRADO 23/07), countdown, gesto, editorial-pasivo, app-pasiva, nota-larga, superlativo-fatigado, racha, biografías, Wrapped (fatigó), chat-coral, alivio-pasivo.
-- Si jardin-hoy o tu-semana convierten → serializar (vistazo diario / resumen semanal fijo) y empezar a mover el core hacia lo liviano. Si NO → el problema es fatiga global de push; bajar frecuencia y consultar al usuario dentro de la app.
-- Formatos livianos aún sin probar: before/after con fotos reales del usuario; una sola foto grande + 3 palabras; mini-mapa del jardín tocable.
-- Regenerar dataset M de la rueda desde data_plants.py en build-time. Reconciliar arrays `pruning` antes de cualquier vista de poda.
+- **24/07 (ciclo 54) — jardin-hoy GANADORA (3 feedback_text tier-1) + tu-semana sub «sí».** El minimalismo + tareas reales + pedime-box = el usuario vuelve y escribe. Ejecuté sus 3 pedidos el 25/07. tu-semana promovida (recap semanal) con la palta corregida.
+- **25/07 (ciclo 55) — Cola limpia (3): 10:00 jardin-hoy (consolidada, +huerta +agosto expandido +acción-de-hoy) · 13:30 mapa-solar (espacial/orientación) · 18:00 mi-huerta (pedido explícito).** Cero pushes de tareas sueltas: reclamo del usuario resuelto.
+- **23/07 (ciclo 53):** doble rechazo role-play + feedback tier-1 «mucho texto». Mató el teatro verboso.
+- **08-10/07:** tanda ganadora (Entrevista, Quiz, Wrapped, Álbum → 4 promovidas). **11-20/07:** racha de fallos (pasivo/mística/nota-larga/celebridad/racha/biografías); único sostenido = canal-tarea.
+
+## TODO / próximos experimentos livianos (aún sin probar)
+
+- before/after con fotos reales del usuario · una sola foto grande + 3 palabras · mapa del jardín REAL con cada planta ubicada (si mapa-solar valida lo espacial) · calendario vivo de huerta (si mi-huerta valida) · reordenar tareas de agosto por prioridad / plan por fin de semana (ofrecido en jardin-hoy — si el usuario lo pide, ejecutar).

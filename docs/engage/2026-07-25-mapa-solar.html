@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🧭 El sol de tu jardín</title>
+<meta property="og:title" content="🧭 El sol de tu jardín — tocá cada rincón">
+<meta property="og:description" content="Tu casa mira este-oeste. Tocá cada lado y mirá dónde pega el sol de invierno, qué rincón es el más cálido y dónde pican las heladas al amanecer.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --line:rgba(45,80,22,.12);
+    --sol:#e0a92e; --azul:#3f7d8a; --frio:#5c85b8;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 26px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:34px 0 4px; text-align:center; }
+  .hero .em{ font-size:44px; }
+  .hero .kick{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3); margin-top:6px; }
+  .hero h1{ font-size:31px; line-height:1.08; margin:8px 0 8px; font-weight:900; letter-spacing:-.02em; }
+  .hero p{ color:var(--ink2); font-size:14px; max-width:33ch; margin:0 auto; }
+
+  .hint-tap{ text-align:center; font-size:12.5px; font-weight:800; color:var(--sol); margin:18px 0 8px; }
+
+  /* mapa: compás con casa al centro */
+  .map{ position:relative; background:var(--card); border:1px solid var(--line); border-radius:22px; padding:14px; margin:6px 0 4px; box-shadow:0 8px 24px rgba(45,80,22,.07); }
+  .maprow{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .zone{ border:1.5px solid var(--line); border-radius:16px; padding:15px 12px; text-align:center; cursor:pointer; transition:transform .12s, box-shadow .12s, border-color .12s; background:#fbfdf8; }
+  .zone:active{ transform:scale(.97); }
+  .zone.on{ border-color:var(--verde2); box-shadow:0 0 0 3px rgba(90,138,46,.15); background:#fff; }
+  .zone .card-dir{ font-size:10.5px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:var(--ink3); }
+  .zone .ze{ font-size:30px; display:block; margin:4px 0 2px; }
+  .zone .zn{ font-size:13.5px; font-weight:900; }
+  .zone .zs{ font-size:11px; font-weight:800; margin-top:3px; }
+  .zone.warm .zs{ color:var(--sol); } .zone.cool .zs{ color:var(--frio); } .zone.mid .zs{ color:var(--verde2); }
+  .house{ text-align:center; padding:8px 0 2px; font-size:11px; font-weight:800; color:var(--ink3); letter-spacing:.05em; }
+  .house .hemoji{ font-size:20px; }
+
+  .detail{ background:var(--verde); color:#eef7e0; border-radius:18px; padding:18px 17px; margin:12px 0 4px; min-height:120px; }
+  .detail .dh{ display:flex; align-items:center; gap:10px; }
+  .detail .dh .de{ font-size:26px; }
+  .detail .dh h3{ font-size:17px; font-weight:900; }
+  .detail .dsun{ font-size:12.5px; font-weight:800; color:#ffe6a3; margin:9px 0 4px; }
+  .detail p{ font-size:13.5px; color:#d8ead0; margin-top:5px; }
+  .detail .plants{ margin-top:10px; font-size:12.5px; color:#eef7e0; }
+  .detail .plants b{ color:#fff; }
+  .detail .tip{ margin-top:11px; background:rgba(255,255,255,.1); border-radius:11px; padding:10px 12px; font-size:12.5px; color:#f0f8e8; }
+
+  .qbox{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 18px; margin:22px 0 8px; text-align:center; box-shadow:0 5px 18px rgba(45,80,22,.05); }
+  .qbox h3{ font-size:16.5px; font-weight:900; }
+  .qbox p{ color:var(--ink2); font-size:13px; margin:5px auto 13px; max-width:34ch; }
+  .qbtns{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .qbtns button{ background:#f2f8ea; color:var(--verde); border:1px solid var(--line); border-radius:12px; padding:11px 18px; font:800 14px var(--sans); cursor:pointer; }
+  .qbtns button.sel{ background:var(--verde2); color:#fff; border-color:var(--verde2); }
+  .q-hint{ display:block; margin-top:11px; font-size:13px; font-weight:800; color:var(--verde2); min-height:1.1em; }
+
+  .react{ text-align:center; margin:24px 0 6px; }
+  .react .rl{ font-size:14.5px; font-weight:800; color:var(--ink2); margin-bottom:10px; }
+  .react .btns{ display:flex; gap:9px; justify-content:center; }
+  .react .btns button{ font-size:26px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:8px 13px; cursor:pointer; transition:transform .1s; }
+  .react .btns button.sel{ background:#dff0cc; border-color:var(--verde2); transform:scale(1.08); }
+  .react-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.1em; }
+
+  .fb-blk{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border:1px solid rgba(90,138,46,.3); border-radius:20px; padding:22px 18px; margin:20px 0 10px; text-align:center; }
+  .fb-blk h3{ font-size:17px; margin-bottom:5px; font-weight:900; }
+  .fb-blk p{ color:var(--ink2); font-size:13.5px; max-width:38ch; margin:0 auto 12px; }
+  .fb-blk textarea{ width:100%; background:#fff; border:1px solid var(--line); border-radius:11px; color:var(--ink); padding:11px 12px; font:inherit; resize:vertical; }
+  .fb-blk .fb-send{ margin-top:10px; background:var(--verde2); color:#fff; border:none; border-radius:12px; padding:12px 22px; font:800 14.5px var(--sans); cursor:pointer; }
+  .fb-blk .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.2em; }
+
+  .engage-actions{ display:flex; gap:10px; margin:16px 0 6px; }
+  .engage-actions button{ flex:1; padding:13px 10px; border-radius:13px; font:800 14px var(--sans); cursor:pointer; border:1px solid var(--line); }
+  .engage-actions button:first-child{ background:var(--verde2); color:#fff; border-color:var(--verde2); }
+  .engage-actions button:last-child{ background:#fff; color:var(--ink3); }
+
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:16px; line-height:1.5; text-align:center; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <div class="em">🧭</div>
+    <div class="kick">Tu jardín, desde arriba</div>
+    <h1>El sol de tu jardín</h1>
+    <p>Tu casa mira casi perfecto este-oeste. Eso decide qué rincón es cálido, cuál duerme a la sombra y dónde pican las heladas del amanecer.</p>
+  </header>
+
+  <div class="hint-tap reveal">👆 Tocá cada lado para ver su sol</div>
+
+  <div class="map reveal">
+    <div class="maprow" style="margin-bottom:10px;">
+      <div class="zone warm" data-z="norte" style="grid-column:1 / span 2;">
+        <div class="card-dir">Norte</div>
+        <span class="ze">🔆</span>
+        <div class="zn">Muro del hibisco y el lapachillo</div>
+        <div class="zs">El lado más cálido del año</div>
+      </div>
+    </div>
+    <div class="maprow">
+      <div class="zone mid" data-z="oeste">
+        <div class="card-dir">Oeste · Frente</div>
+        <span class="ze">🌇</span>
+        <div class="zn">Fotinias, ligustro, fresno</div>
+        <div class="zs">Sol de tarde</div>
+      </div>
+      <div class="zone mid" data-z="este">
+        <div class="card-dir">Este · Fondo</div>
+        <span class="ze">🌅</span>
+        <div class="zn">Liquidámbar, palto, pileta</div>
+        <div class="zs">Sol de mañana</div>
+      </div>
+    </div>
+    <div class="house">
+      <span class="hemoji">🏠</span><br>la casa (eje este-oeste)
+    </div>
+    <div class="maprow" style="margin-top:10px;">
+      <div class="zone cool" data-z="sur" style="grid-column:1 / span 2;">
+        <div class="card-dir">Sur</div>
+        <span class="ze">🌥️</span>
+        <div class="zn">Pera Williams</div>
+        <div class="zs">El rincón más sombrío y húmedo</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail reveal" id="detail">
+    <div class="dh"><span class="de">👆</span><h3>Tocá un lado del mapa</h3></div>
+    <p>Cada rincón se comporta distinto en invierno. Empezá por el que más te intriga.</p>
+  </div>
+
+  <!-- PREGUNTA / DECISIÓN -->
+  <div class="qbox reveal">
+    <h3>¿Te sorprendió algún rincón?</h3>
+    <p>A veces uno riega o poda sin darse cuenta de que ese lado casi no ve sol en invierno. ¿Te cerró el mapa?</p>
+    <div class="qbtns">
+      <button type="button" onclick="engageAnswer('mapa-solar-util','si', this)">Sí, me sirvió</button>
+      <button type="button" onclick="engageAnswer('mapa-solar-util','sabia', this)">Ya lo sabía</button>
+    </div>
+    <span class="q-hint"></span>
+  </div>
+
+  <!-- SUSCRIPCIÓN DIARIA -->
+  <div class="qbox reveal" style="background:linear-gradient(180deg,#eef6ff,#f7fbff);border-color:rgba(92,133,184,.3)">
+    <h3>🔔 ¿Te aviso qué proteger del frío?</h3>
+    <p>Hasta fin de agosto puede haber heladas tardías — pican al sur y al este al amanecer. Te mando un aviso corto los días de riesgo, con qué tapar.</p>
+    <div class="qbtns">
+      <button type="button" onclick="engageAnswer('mapa-solar-suscripcion-diaria','si', this)" style="background:#eaf1fb;color:#2f5788;border-color:rgba(92,133,184,.3)">Sí, avisame</button>
+      <button type="button" onclick="engageAnswer('mapa-solar-suscripcion-diaria','no', this)" style="background:#eaf1fb;color:#2f5788;border-color:rgba(92,133,184,.3)">No hace falta</button>
+    </div>
+    <span class="q-hint"></span>
+  </div>
+
+  <!-- REACCIÓN -->
+  <div class="react reveal">
+    <div class="rl">¿Qué te pareció el mapa?</div>
+    <div class="btns">
+      <button type="button" onclick="engageReact('mapa-solar','love', this)">😍</button>
+      <button type="button" onclick="engageReact('mapa-solar','like', this)">🙂</button>
+      <button type="button" onclick="engageReact('mapa-solar','meh', this)">😐</button>
+      <button type="button" onclick="engageReact('mapa-solar','no', this)">🙅</button>
+    </div>
+    <span class="react-hint"></span>
+  </div>
+
+  <!-- FEEDBACK PROPIO -->
+  <section class="fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>¿Te gustaría un mapa tocable de verdad, con cada planta ubicada? Esto lo leo yo antes de armar la próxima.</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('mapa-solar', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <!-- DECISIÓN PROPOSAL -->
+  <div class="engage-actions reveal">
+    <button onclick="engageApprove('2026-07-25-mapa-solar')">✅ Sumá el mapa al sitio</button>
+    <button onclick="engageRejected('2026-07-25-mapa-solar')">✕ No me interesa</button>
+  </div>
+
+  <div class="cred reveal">Orientación real del jardín (eje este-oeste) del catálogo Pacha Mama · Montevideo, lat -34.9°S · 25/07/2026</div>
+
+</div>
+
+<script>
+(function(){
+  var DATA = {
+    norte: {
+      em:'🔆', h:'Norte — el muro cálido',
+      sun:'☀️ Sol todo el día en invierno',
+      p:'En el hemisferio sur, el sol de invierno pasa bajo y por el norte. Este muro es el lugar más luminoso y templado del año: junta calor y lo suelta de noche.',
+      plants:'Ahí viven el <b>hibisco</b> y el <b>lapachillo</b>.',
+      tip:'💡 Es el mejor rincón para lo que ama el sol pleno: frutales, rosales, hierbas mediterráneas… y la huerta.'
+    },
+    oeste: {
+      em:'🌇', h:'Oeste — el Frente',
+      sun:'🌤️ Sol de tarde, hasta el atardecer',
+      p:'Acá se oculta el sol. Recibe la luz fuerte de la segunda mitad del día, cuando ya calentó el aire.',
+      plants:'El eje de las <b>Fotinias (F-1 a F-6)</b>, el <b>ligustro (F-9)</b> y el <b>fresno (F-10)</b>.',
+      tip:'💡 Buen sol para heliófilas. Segunda mejor opción (después del norte) para ubicar la huerta.'
+    },
+    este: {
+      em:'🌅', h:'Este — el Fondo',
+      sun:'🌤️ Sol de mañana, hasta el mediodía',
+      p:'Por acá sale el sol. Luz suave de la mañana y sombra fresca por la tarde — más amable con las plantas de media sombra.',
+      plants:'Donde están el <b>liquidámbar (B-37)</b>, el <b>palto (B-36)</b> y la pileta.',
+      tip:'💡 Cuidado: las heladas tardías pican fuerte acá al amanecer. Protegé los pies tiernos hasta fin de agosto.'
+    },
+    sur: {
+      em:'🌥️', h:'Sur — el rincón fresco',
+      sun:'🌫️ Poco sol directo en invierno',
+      p:'El lado que mira sur casi no ve sol en invierno: más sombra, más humedad acumulada. Se seca más lento después de la lluvia.',
+      plants:'Ahí está la <b>pera Williams (B-39)</b>.',
+      tip:'💡 Ideal para plantas de sombra y humedad. Vigilá hongos de base tras estos días de lluvia; también pican heladas al amanecer.'
+    }
+  };
+  var detail = document.getElementById('detail');
+  function render(z){
+    var d = DATA[z]; if(!d) return;
+    detail.innerHTML =
+      '<div class="dh"><span class="de">'+d.em+'</span><h3>'+d.h+'</h3></div>'+
+      '<div class="dsun">'+d.sun+'</div>'+
+      '<p>'+d.p+'</p>'+
+      '<div class="plants">'+d.plants+'</div>'+
+      '<div class="tip">'+d.tip+'</div>';
+  }
+  document.querySelectorAll('.zone').forEach(function(el){
+    el.addEventListener('click', function(){
+      document.querySelectorAll('.zone').forEach(function(z){ z.classList.remove('on'); });
+      el.classList.add('on');
+      render(el.getAttribute('data-z'));
+      detail.scrollIntoView({behavior:'smooth', block:'nearest'});
+    });
+  });
+
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>

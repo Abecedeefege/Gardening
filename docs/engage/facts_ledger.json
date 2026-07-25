@@ -1,10 +1,10 @@
 {
  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-07-24",
+ "_updated": "2026-07-25",
  "plants": {
   "F-1": {
    "common": "Guayabo del país",
-   "paginas_historicas": 14,
+   "paginas_historicas": 15,
    "featured": [
     {
      "date": "2026-07-18",
@@ -35,50 +35,75 @@
      "date": "2026-07-24",
      "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
      "fact": "ANGULO LOGRO (tu-semana): limpieza de fumagina cerrada 23/07 — tarea real, no fun_fact"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-25-mapa-solar.html",
+     "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
     }
    ]
   },
   "F-2": {
    "common": "Bignonia rosada / Podranea",
-   "paginas_historicas": 5,
+   "paginas_historicas": 6,
    "featured": [
     {
      "date": "2026-07-21",
      "page": "2026-07-21-cuenta-regresiva.html",
      "fact": "reclasificada de Bignonia a genero propio Podranea en 1980 (tubo curvo/semillas); floracion nov-abr — countdown 103d"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-25-mapa-solar.html",
+     "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
     }
    ]
   },
   "F-3": {
    "common": "Fotinia",
-   "paginas_historicas": 4,
+   "paginas_historicas": 5,
    "featured": [
     {
      "date": "2026-07-19",
      "page": "2026-07-09-quiz-planta(reno-19-07).html",
      "fact": "hibrido Alabama 1940 / brotes rojos viran a verde = defensa"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-25-mapa-solar.html",
+     "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
     }
    ]
   },
   "F-4": {
    "common": "Ciruelo de jardín",
-   "paginas_historicas": 7,
+   "paginas_historicas": 8,
    "featured": [
     {
      "date": "2026-07-19",
      "page": "2026-07-19-nombre-apellido.html",
      "fact": "Pissard Persia 1880 / todos los ciruelos purpura de 1 ejemplar"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-25-mapa-solar.html",
+     "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
     }
    ]
   },
   "F-5": {
    "common": "Coronita de novia (?)",
-   "paginas_historicas": 5,
+   "paginas_historicas": 6,
    "featured": [
     {
      "date": "2026-07-21",
      "page": "2026-07-21-cuenta-regresiva.html",
      "fact": "si es Spiraea, nombre viene de coronas nupciales s.XIX; floracion oct-nov — countdown 72d"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-25-mapa-solar.html",
+     "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
     }
    ]
   },
@@ -106,18 +131,23 @@
   },
   "F-9": {
    "common": "Ligustro",
-   "paginas_historicas": 6,
+   "paginas_historicas": 7,
    "featured": [
     {
      "date": "2026-07-18",
      "page": "2026-07-18-secomenta.html",
      "fact": "invasora Sudamerica"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-25-mapa-solar.html",
+     "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
     }
    ]
   },
   "F-10": {
    "common": "Fresno (americano)",
-   "paginas_historicas": 5,
+   "paginas_historicas": 6,
    "featured": [
     {
      "date": "2026-07-19",
@@ -128,6 +158,11 @@
      "date": "2026-07-24",
      "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
      "fact": "ANGULO LOGRO (tu-semana): decisión fresno/fotinia (poda agosto) 23/07"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-25-mapa-solar.html",
+     "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
     }
    ]
   },
@@ -166,18 +201,23 @@
   },
   "B-4": {
    "common": "Hibisco / Rosa china",
-   "paginas_historicas": 6,
+   "paginas_historicas": 7,
    "featured": [
     {
      "date": "2026-07-18",
      "page": "2026-07-18-regalo-invierno.html",
      "fact": "flor nacional 3 paises / codigo del pelo / muro norte"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-25-mapa-solar.html",
+     "fact": "ANGULO ORIENTACION: muro norte (hibisco), lado cálido"
     }
    ]
   },
   "B-5a": {
    "common": "Hortensia",
-   "paginas_historicas": 7,
+   "paginas_historicas": 8,
    "featured": [
     {
      "date": "2026-07-18",
@@ -193,6 +233,11 @@
      "date": "2026-07-23",
      "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
      "fact": "ANGULO MEDICO: la más sedienta = alta feliz tras la lluvia (nota positiva)"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
+     "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
     }
    ]
   },
@@ -246,7 +291,7 @@
   },
   "B-9": {
    "common": "Crespón / Mirto de crepe",
-   "paginas_historicas": 10,
+   "paginas_historicas": 11,
    "featured": [
     {
      "date": "2026-07-19",
@@ -257,6 +302,11 @@
      "date": "2026-07-23",
      "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
      "fact": "ANGULO DT: caduco en pretemporada, debuta en primavera"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
+     "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
     }
    ]
   },
@@ -305,12 +355,17 @@
   },
   "B-14": {
    "common": "Lapachillo",
-   "paginas_historicas": 7,
+   "paginas_historicas": 8,
    "featured": [
     {
      "date": "2026-07-19",
      "page": "2026-07-09-quiz-planta(reno-19-07).html",
      "fact": "nativo / prima del lapacho / madera charrua-guarani"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-25-mapa-solar.html",
+     "fact": "ANGULO ORIENTACION: muro norte (lapachillo)"
     }
    ]
   },
@@ -343,12 +398,17 @@
   },
   "B-18": {
    "common": "Rosa de Siria / Althea",
-   "paginas_historicas": 6,
+   "paginas_historicas": 7,
    "featured": [
     {
      "date": "2026-07-18",
      "page": "2026-07-18-horoscopo(semana).html",
      "fact": "flor de un dia / escudo e himno Corea"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
+     "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
     }
    ]
   },
@@ -417,7 +477,7 @@
   },
   "B-25": {
    "common": "Gardenia / Jazmín del Cabo",
-   "paginas_historicas": 10,
+   "paginas_historicas": 11,
    "featured": [
     {
      "date": "2026-07-20",
@@ -438,6 +498,11 @@
      "date": "2026-07-23",
      "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
      "fact": "ANGULO MEDICO+DT: tarea real activa (pulgones/hormigas), lluvia bajó plaga — paciente/jugador tocado"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
+     "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
     }
    ]
   },
@@ -496,7 +561,7 @@
   },
   "B-30": {
    "common": "Durazno",
-   "paginas_historicas": 9,
+   "paginas_historicas": 10,
    "featured": [
     {
      "date": "2026-07-20",
@@ -517,6 +582,11 @@
      "date": "2026-07-24",
      "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
      "fact": "ANGULO ESTADO (jardin-hoy): 'durmiendo' — chip minimalista"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
+     "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
     }
    ]
   },
@@ -544,7 +614,7 @@
   },
   "B-36": {
    "common": "Palta Haas",
-   "paginas_historicas": 10,
+   "paginas_historicas": 11,
    "featured": [
     {
      "date": "2026-07-18",
@@ -555,17 +625,32 @@
      "date": "2026-07-23",
      "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
      "fact": "ANGULO DT: palto Hass clon 1926 (~80% mercado) = figura intransferible/patrimonio"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-25-mapa-solar.html",
+     "fact": "ANGULO ORIENTACION: landmark este/fondo (palto)"
     }
    ]
   },
   "B-37": {
    "common": "Liquidámbar",
-   "paginas_historicas": 10,
+   "paginas_historicas": 12,
    "featured": [
     {
      "date": "2026-07-20",
      "page": "2026-07-20-guardia-jardin.html",
      "fact": "storax balsamo maya / dormancia = ventana limpieza copa"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-25-mapa-solar.html",
+     "fact": "ANGULO ORIENTACION (no fun_fact): landmark este/fondo, sol de mañana"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
+     "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
     }
    ]
   },
@@ -582,7 +667,7 @@
   },
   "B-39": {
    "common": "Pera Williams",
-   "paginas_historicas": 9,
+   "paginas_historicas": 10,
    "featured": [
     {
      "date": "2026-07-20",
@@ -598,6 +683,11 @@
      "date": "2026-07-24",
      "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
      "fact": "ANGULO ESTADO+LOGRO: 'durmiendo' (jardin-hoy) + poda invernal cerrada 23/07 (tu-semana)"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-25-mapa-solar.html",
+     "fact": "ANGULO ORIENTACION: landmark sur, rincón sombrío/húmedo (pera Williams)"
     }
    ]
   },
@@ -614,7 +704,7 @@
   },
   "B-41": {
    "common": "Caqui / Persimón (identidad en duda)",
-   "paginas_historicas": 10,
+   "paginas_historicas": 11,
    "featured": [
     {
      "date": "2026-07-21",
@@ -625,6 +715,11 @@
      "date": "2026-07-22",
      "page": "2026-07-22-grupo-jardin.html",
      "fact": "ANGULO LLUVIA: sigue con identidad en duda (nunca flor ni fruto) — honesto"
+    },
+    {
+     "date": "2026-07-25",
+     "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
+     "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
     }
    ]
   },
@@ -747,5 +842,11 @@
     }
    ]
   }
- }
+ },
+ "_notas_angulos": [
+  {
+   "date": "2026-07-25",
+   "nota": "mi-huerta.html usa cast 100% FRESCO: hortalizas del calendario HUERTA (lechuga, tomate, morrón, acelga, rúcula, zanahoria, perejil, cilantro, cebolla, zapallito, albahaca) — nunca en el ledger de ornamentales. mapa-solar.html usa landmarks por ORIENTACION, no por fun_fact. Elenco de fun_facts ornamentales sigue QUEMADO: NO usar fun_facts, solo ángulos (tarea/estado/orientacion/huerta)."
+  }
+ ]
 }
