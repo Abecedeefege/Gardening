@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-25T09:05:00-03:00",
+  "_updated_at": "2026-07-25T14:01:26.511Z",
   "notifications": [
     {
       "id": "2026-07-25-jardin-hoy",
@@ -9,8 +9,8 @@
       "format": "tarea",
       "send_at": "2026-07-25T10:00:00-03:00",
       "expires_at": "2026-07-25T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-25T14:01:26.384Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-25 (push diaria consolidada estado+tareas)"
     },
@@ -46,8 +46,8 @@
       "format": "tarea",
       "send_at": "2026-07-25T09:10:15-03:00",
       "expires_at": "2026-07-25T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-25T14:01:26.511Z",
       "fail_reason": null,
       "created_by": "responder-tareas 2026-07-25"
     }
