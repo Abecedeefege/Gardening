@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-26T21:46:52.824Z",
+  "_updated_at": "2026-07-26T21:47:03.926Z",
   "events": [
     {
       "_id": "mrhznmicxu7ovg",
@@ -1077,6 +1077,15 @@
       "value": "tierra",
       "page": "engage/2026-07-26-vos-decidis.html",
       "ts": "2026-07-26T21:46:54.087Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bw6nclk7mff",
+      "type": "answer",
+      "qid": "vd-liquidambar",
+      "value": "yo",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:47:05.256Z",
       "device": "sin-nombre"
     }
   ],
