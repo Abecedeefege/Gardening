@@ -407,6 +407,12 @@
       "nid": "2026-07-26-jardin-hoy",
       "ts": "2026-07-26T14:14:37.537Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-26-a",
+      "ts": "2026-07-26T16:34:55.475Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
