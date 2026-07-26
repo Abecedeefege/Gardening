@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-26T21:45:49.284Z",
+  "_updated_at": "2026-07-26T21:45:50.843Z",
   "events": [
     {
       "_id": "mrhznmicxu7ovg",
@@ -1042,6 +1042,23 @@
       "scroll_pct": 79,
       "page": "engage/2026-07-25-mapa-solar.html",
       "ts": "2026-07-25T20:53:43.109Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2buklj6uan6g",
+      "type": "notification_clicked",
+      "nid": "2026-07-26-a",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:45:50.022Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bukljlylge1",
+      "type": "page_visit",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "nid": "2026-07-26-a",
+      "src": "push",
+      "ts": "2026-07-26T21:45:50.022Z",
       "device": "sin-nombre"
     }
   ],
