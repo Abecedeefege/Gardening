@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-26T21:47:34.934Z",
+  "_updated_at": "2026-07-26T21:47:37.377Z",
   "events": [
     {
       "_id": "mrhznmicxu7ovg",
@@ -1113,6 +1113,15 @@
       "value": "si",
       "page": "engage/2026-07-26-vos-decidis.html",
       "ts": "2026-07-26T21:47:36.239Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bwweip4x0gl",
+      "type": "reaction",
+      "target": "vos-decidis",
+      "value": "like",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:47:38.634Z",
       "device": "sin-nombre"
     }
   ],
