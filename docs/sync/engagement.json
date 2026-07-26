@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-26T21:47:27.502Z",
+  "_updated_at": "2026-07-26T21:47:34.934Z",
   "events": [
     {
       "_id": "mrhznmicxu7ovg",
@@ -1104,6 +1104,15 @@
       "value": "prioridad",
       "page": "engage/2026-07-26-vos-decidis.html",
       "ts": "2026-07-26T21:47:28.798Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bwujzgzjwkz",
+      "type": "answer",
+      "qid": "vos-decidis-suscripcion-diaria",
+      "value": "si",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:47:36.239Z",
       "device": "sin-nombre"
     }
   ],
