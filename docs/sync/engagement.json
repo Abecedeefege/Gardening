@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-26T21:45:50.843Z",
+  "_updated_at": "2026-07-26T21:46:22.130Z",
   "events": [
     {
       "_id": "mrhznmicxu7ovg",
@@ -1059,6 +1059,15 @@
       "nid": "2026-07-26-a",
       "src": "push",
       "ts": "2026-07-26T21:45:50.022Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bvab47ed79m",
+      "type": "answer",
+      "qid": "vd-huerta-lugar",
+      "value": "norte",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:46:23.344Z",
       "device": "sin-nombre"
     }
   ],
