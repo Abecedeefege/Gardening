@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-26T21:47:12.949Z",
+  "_updated_at": "2026-07-26T21:47:27.502Z",
   "events": [
     {
       "_id": "mrhznmicxu7ovg",
@@ -1095,6 +1095,15 @@
       "value": "observar",
       "page": "engage/2026-07-26-vos-decidis.html",
       "ts": "2026-07-26T21:47:14.193Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bwotamffzav",
+      "type": "answer",
+      "qid": "vd-agosto",
+      "value": "prioridad",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:47:28.798Z",
       "device": "sin-nombre"
     }
   ],
