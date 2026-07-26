@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-25T20:53:45.321Z",
+  "_updated_at": "2026-07-26T21:45:49.284Z",
   "events": [
     {
       "_id": "mrhznmicxu7ovg",
@@ -1034,6 +1034,15 @@
       "src": "push",
       "ts": "2026-07-25T20:53:47.395Z",
       "device": "landing"
+    },
+    {
+      "_id": "ms0ujp6uz0xakm",
+      "type": "dwell",
+      "seconds": 33,
+      "scroll_pct": 79,
+      "page": "engage/2026-07-25-mapa-solar.html",
+      "ts": "2026-07-25T20:53:43.109Z",
+      "device": "sin-nombre"
     }
   ],
   "daily_summary": {
