@@ -71,6 +71,20 @@
   .task a{ display:inline-block; margin-top:9px; margin-left:8px; font-size:12px; font-weight:800; text-decoration:none; color:var(--azul); }
   .menu-note{ padding:11px 16px 14px; font-size:12px; color:var(--ink3); border-top:1px dashed var(--line); }
 
+  /* huerta inline */
+  .hsun{ margin:0 16px; background:linear-gradient(180deg,#fef6df,#fffdf6); border:1px solid rgba(224,169,46,.3); border-radius:12px; padding:11px 13px; font-size:12px; color:#7a5a12; }
+  .hsun b{ color:#8a5a00; }
+  .hwin{ padding:6px 16px 2px; }
+  .hwin .wt{ font-size:12px; font-weight:900; letter-spacing:.03em; text-transform:uppercase; margin:12px 0 5px; display:flex; align-items:center; gap:7px; }
+  .hwin.now .wt{ color:var(--verde2); }
+  .hwin.ago .wt{ color:#b7860b; }
+  .hwin.sep .wt{ color:var(--azul); }
+  .hveg{ display:flex; align-items:baseline; gap:8px; padding:6px 0; border-top:1px solid var(--line); font-size:13px; }
+  .hveg:first-of-type{ border-top:none; }
+  .hveg b{ font-weight:800; }
+  .hveg .vt{ color:var(--ink2); font-size:12px; }
+  .hveg .vs{ margin-left:auto; font-size:10px; font-weight:800; color:var(--ink3); white-space:nowrap; flex:none; }
+
   .ask{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border:1px solid rgba(90,138,46,.3); border-radius:20px; padding:22px 18px; margin:18px 0 10px; text-align:center; box-shadow:0 6px 20px rgba(45,80,22,.05); }
   .ask h3{ font-size:17px; margin-bottom:5px; font-weight:900; }
   .ask p{ color:var(--ink2); font-size:13.5px; max-width:36ch; margin:0 auto 12px; }
@@ -90,7 +104,7 @@
 
   <header class="hero reveal">
     <span class="sun">🌤️</span>
-    <div class="day">Sábado 25 de julio · pleno invierno</div>
+    <div class="day">Domingo 26 de julio · pleno invierno</div>
     <h1>Tu jardín hoy</h1>
   </header>
 
@@ -104,8 +118,8 @@
   <div class="hoy reveal">
     <div class="tag">🌧️ Tarea a prueba de lluvia · hoy</div>
     <h3>Definí tu huerta de primavera</h3>
-    <p>Julio-agosto es justo la ventana para <b>decidir qué vas a plantar</b> antes de que arranque la temporada. Es la tarea que pediste — te armé una guía con sugerencias concretas para tu clima (qué sembrar ahora, qué en agosto, dónde ubicarla). Se hace desde el sillón.</p>
-    <a class="cta" href="https://gardening-chi.vercel.app/engage/2026-07-25-mi-huerta.html">Abrir «Diseñá tu huerta» →</a>
+    <p>Julio-agosto es justo la ventana para <b>decidir qué vas a plantar</b> antes de que arranque la temporada. Es la tarea que pediste — te dejé acá abajo las sugerencias para tu clima (qué sembrar ahora, qué en agosto, dónde ubicarla). Se hace desde el sillón.</p>
+    <a class="cta" href="#huerta">Ver las sugerencias de huerta ↓</a>
   </div>
 
   <div class="sect-lbl reveal">Cómo viene el catálogo</div>
@@ -132,7 +146,7 @@
     <summary><span class="ic">🔧</span> Tareas de julio <span class="cnt">4</span><span class="chev">▾</span></summary>
     <div class="task">
       <div class="th"><h4>Definir plantas para la huerta</h4><span class="code">huerta</span></div>
-      <div class="d">La que pediste. Elegí qué sembrar y dónde armarla antes de la primavera — te dejé una guía con sugerencias por época. <b>Se puede hacer hoy, con lluvia.</b> <a href="https://gardening-chi.vercel.app/engage/2026-07-25-mi-huerta.html">Abrir guía →</a></div>
+      <div class="d">La que pediste. Elegí qué sembrar y dónde armarla antes de la primavera — te dejé las sugerencias por época acá abajo. <b>Se puede hacer hoy, con lluvia.</b> <a href="#huerta">Ver sugerencias ↓</a></div>
       <span class="when hoy2">Ahora · a prueba de lluvia</span>
     </div>
     <div class="task">
@@ -196,6 +210,32 @@
     <div class="menu-note">Y para <b>fines de agosto</b>, ya con más margen: recorte parejo del cerco de Azareros/Pitósporos (B-7·11·31·33), control de la Hiedra sobre el galpón (B-15) y acidificar la tierra de la Gardenia antes de brotar (B-25). En total, <b>12 tareas de agosto</b>. <b>¿Querés que te las reordene por prioridad, o que arme un plan por fin de semana?</b> Pedímelo abajo.</div>
   </details>
 
+  <!-- MENÚ COLAPSADO: SUGERENCIAS DE HUERTA (lo que pediste) -->
+  <details class="reveal" id="huerta">
+    <summary><span class="ic">🥬</span> Sugerencias para tu huerta <span class="cnt">tu pedido</span><span class="chev">▾</span></summary>
+    <div class="hwin"><div class="hsun">☀️ <b>Dónde:</b> la huerta quiere <b>6 h de sol mínimo</b>. Tu casa mira este-oeste → el <b>frente (oeste, sol de tarde)</b> o el <b>muro norte</b> son los mejores. El fondo (este) solo tiene sol de mañana: sirve para lechuga y hojas de media sombra.</div></div>
+    <div class="hwin now">
+      <div class="wt">🌱 Sembrar ahora (julio)</div>
+      <div class="hveg"><b>Lechuga</b> <span class="vt">de invierno, mantecosa/criolla</span><span class="vs">sol parcial</span></div>
+      <div class="hveg"><b>Cebolla</b> <span class="vt">de almácigo a lugar definitivo</span><span class="vs">pleno sol</span></div>
+    </div>
+    <div class="hwin ago">
+      <div class="wt">🌤️ Arrancan en agosto</div>
+      <div class="hveg"><b>Tomate</b> <span class="vt">almácigo protegido — 'Platense' o cherry</span><span class="vs">pleno sol</span></div>
+      <div class="hveg"><b>Morrón</b> <span class="vt">almácigo protegido</span><span class="vs">pleno sol</span></div>
+      <div class="hveg"><b>Acelga</b> <span class="vt">produce 6-8 meses por planta</span><span class="vs">sol/parcial</span></div>
+      <div class="hveg"><b>Rúcula</b> <span class="vt">rápida, cortá y rebrota</span><span class="vs">sol parcial</span></div>
+      <div class="hveg"><b>Zanahoria</b> <span class="vt">siembra directa, no trasplantar</span><span class="vs">sol</span></div>
+      <div class="hveg"><b>Perejil · Cilantro</b> <span class="vt">aromáticas de base</span><span class="vs">sol parcial</span></div>
+    </div>
+    <div class="hwin sep">
+      <div class="wt">🌸 Septiembre-octubre</div>
+      <div class="hveg"><b>Zapallito de tronco</b> <span class="vt">siembra directa, mucho espacio</span><span class="vs">pleno sol</span></div>
+      <div class="hveg"><b>Albahaca</b> <span class="vt">compañera del tomate</span><span class="vs">sol</span></div>
+    </div>
+    <div class="menu-note">Decime qué lugar te cierra (frente / norte / fondo / macetones) y te armo el plan de siembra semana a semana, con cantidades y compañeros. Pedímelo abajo 👇 — o marcalo en «🌿 Vos decidís» si te llegó.</div>
+  </details>
+
   <!-- PEDIME / CONSULTÁ -->
   <section class="ask reveal" id="engage-feedback-box">
     <h3>🙋 Pedime lo que necesites</h3>
@@ -207,7 +247,7 @@
 
   <footer class="pie">
     <a href="https://gardening-chi.vercel.app/tareas.html">Ver el Timeline completo →</a>
-    <div class="cred">Tu vistazo diario del jardín · estado y tareas reales del catálogo Pacha Mama · se actualiza cada mañana · edición 25/07/2026</div>
+    <div class="cred">Tu vistazo diario del jardín · estado y tareas reales del catálogo Pacha Mama · se actualiza cada mañana · edición 26/07/2026</div>
   </footer>
 
 </div>

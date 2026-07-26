@@ -1,6 +1,6 @@
 {
  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-07-25",
+ "_updated": "2026-07-26",
  "plants": {
   "F-1": {
    "common": "Guayabo del país",
@@ -109,12 +109,17 @@
   },
   "F-7": {
    "common": "Abelia",
-   "paginas_historicas": 6,
+   "paginas_historicas": 7,
    "featured": [
     {
      "date": "2026-07-19",
      "page": "2026-07-19-nombre-apellido.html",
      "fact": "Clarke Abel China 1817 / naufragio / semillas perdidas"
+    },
+    {
+     "date": "2026-07-26",
+     "page": "2026-07-26-mi-primavera.html",
+     "fact": "ANGULO FLORACION/recompensa: florece primavera-otono sin parar, iman de abejas"
     }
    ]
   },
@@ -217,7 +222,7 @@
   },
   "B-5a": {
    "common": "Hortensia",
-   "paginas_historicas": 8,
+   "paginas_historicas": 9,
    "featured": [
     {
      "date": "2026-07-18",
@@ -238,6 +243,11 @@
      "date": "2026-07-25",
      "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
      "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
+    },
+    {
+     "date": "2026-07-26",
+     "page": "2026-07-26-vos-decidis.html",
+     "fact": "ANGULO DECISION/tarea (no fun_fact): trasplante tierra vs maceton, vos-decidis"
     }
    ]
   },
@@ -344,12 +354,17 @@
   },
   "B-13": {
    "common": "Clivia / Lirio del Cabo",
-   "paginas_historicas": 8,
+   "paginas_historicas": 9,
    "featured": [
     {
      "date": "2026-07-19",
      "page": "2026-07-19-nombre-apellido.html",
      "fact": "duquesa Charlotte Clive / vive 100 anios / ejemplares 1830"
+    },
+    {
+     "date": "2026-07-26",
+     "page": "2026-07-26-mi-primavera.html",
+     "fact": "ANGULO FLORACION/recompensa (no fun_fact): umbela naranja fin invierno/primavera, elegí-tu-primavera"
     }
    ]
   },
@@ -539,12 +554,17 @@
   },
   "B-27": {
    "common": "Mirto común",
-   "paginas_historicas": 5,
+   "paginas_historicas": 6,
    "featured": [
     {
      "date": "2026-07-19",
      "page": "2026-07-19-racha-jardin.html",
      "fact": "sagrado para Venus / licor mirto / perenne invierno"
+    },
+    {
+     "date": "2026-07-26",
+     "page": "2026-07-26-mi-primavera.html",
+     "fact": "ANGULO FLORACION/recompensa: flor perfumada Venus + baya comestible"
     }
    ]
   },
@@ -592,12 +612,17 @@
   },
   "B-32": {
    "common": "Viraró",
-   "paginas_historicas": 9,
+   "paginas_historicas": 10,
    "featured": [
     {
      "date": "2026-07-19",
      "page": "2026-07-09-quiz-planta(reno-19-07).html",
      "fact": "sepalos rosados crecen post-polinizacion / helicoptero / madera dura"
+    },
+    {
+     "date": "2026-07-26",
+     "page": "2026-07-26-mi-primavera.html",
+     "fact": "ANGULO FLORACION/recompensa: sepalos rosados sept-nov, confeti nativo"
     }
    ]
   },
@@ -635,7 +660,7 @@
   },
   "B-37": {
    "common": "Liquidámbar",
-   "paginas_historicas": 12,
+   "paginas_historicas": 13,
    "featured": [
     {
      "date": "2026-07-20",
@@ -651,17 +676,27 @@
      "date": "2026-07-25",
      "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
      "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
+    },
+    {
+     "date": "2026-07-26",
+     "page": "2026-07-26-vos-decidis.html",
+     "fact": "ANGULO DECISION/tarea (no fun_fact): rama que sombrea la palta, quien poda, vos-decidis"
     }
    ]
   },
   "B-38": {
    "common": "Ciruela amarilla",
-   "paginas_historicas": 5,
+   "paginas_historicas": 6,
    "featured": [
     {
      "date": "2026-07-18",
      "page": "2026-07-18-horoscopo(semana).html",
      "fact": "japonesa pero china / florece agosto / vitamina C"
+    },
+    {
+     "date": "2026-07-26",
+     "page": "2026-07-26-mi-primavera.html",
+     "fact": "ANGULO FLORACION/recompensa: nube de flor blanca en agosto, de las primeras"
     }
    ]
   },
@@ -704,7 +739,7 @@
   },
   "B-41": {
    "common": "Caqui / Persimón (identidad en duda)",
-   "paginas_historicas": 11,
+   "paginas_historicas": 12,
    "featured": [
     {
      "date": "2026-07-21",
@@ -720,6 +755,11 @@
      "date": "2026-07-25",
      "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
      "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
+    },
+    {
+     "date": "2026-07-26",
+     "page": "2026-07-26-vos-decidis.html",
+     "fact": "ANGULO DECISION/tarea (no fun_fact): identidad en duda, observar vs investigar, vos-decidis"
     }
    ]
   },
@@ -847,6 +887,10 @@
   {
    "date": "2026-07-25",
    "nota": "mi-huerta.html usa cast 100% FRESCO: hortalizas del calendario HUERTA (lechuga, tomate, morrón, acelga, rúcula, zanahoria, perejil, cilantro, cebolla, zapallito, albahaca) — nunca en el ledger de ornamentales. mapa-solar.html usa landmarks por ORIENTACION, no por fun_fact. Elenco de fun_facts ornamentales sigue QUEMADO: NO usar fun_facts, solo ángulos (tarea/estado/orientacion/huerta)."
+  },
+  {
+   "date": "2026-07-26",
+   "nota": "CICLO 56 pivote agencia tras 25/07 plano. vos-decidis.html = feed de DECISIONES reales (huerta ubicacion, hortensia B-5a, liquidambar B-37, caqui B-41, poda agosto) por angulo TAREA, no fun_fact. mi-primavera.html = feed de FLORACION/recompensa con cast 100% FRESCO (B-13 Clivia, B-32 Viraro, B-38 Ciruela amarilla, F-7 Abelia, B-27 Mirto — todas descansadas >=7d, usadas por floracion/recompensa no por fun_fact). Elenco de fun_facts ornamentales SIGUE QUEMADO: nunca usar fun_facts, solo angulos (tarea/estado/floracion/huerta/decision). mi-huerta dropeada pero su contenido serializado en jardin-hoy (#huerta)."
   }
  ]
 }

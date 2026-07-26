@@ -800,22 +800,46 @@
       "title": "🧭 El sol de tu jardín (mapa tocable de orientación)",
       "page": "engage/2026-07-25-mapa-solar.html",
       "created": "2026-07-25",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Formato NUEVO (mapa espacial tocable, nunca probado) + ángulo FRESCO (orientación este-oeste, 0 fun_facts quemados) + agencia (el usuario toca y decide dónde va la huerta / qué proteger de la helada). Minimalista, garden-close, con un \"ajá\" real. Si el mapa engancha, valida la capa espacial (feature más pedida en learnings: \"mini-mapa del jardín tocable\").",
       "notified_by": [
         "2026-07-25-a"
       ],
-      "result_notes": null
+      "result_notes": "DROPPED 26/07 por la regla de no-supervivencia sin aprobación explícita (pending de día anterior). El push promotor (2026-07-25-a) SÍ se abrió (notification_clicked 25/07 20:53) pero el usuario rebotó de inmediato: sin dwell registrado, sin reacción, sin suscripción, sin aprobación — el opuesto exacto de la señal fuerte. Lectura: la capa espacial/mapa tocable NO enganchó, consistente con el historial (mapa de luz y calendario-lista fueron rechazados 3× en junio). El eje ESPACIAL/UTILITARIO queda confirmado como perdedor incluso en formato tocable. No relanzar mapas de orientación. Página + pitch eliminados (git rm)."
     },
     {
       "id": "2026-07-25-mi-huerta",
       "title": "🥬 Diseñá tu huerta (guía de decisión estacional)",
       "page": "engage/2026-07-25-mi-huerta.html",
       "created": "2026-07-25",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Responde un PEDIDO TEXTUAL directo del usuario (24/07 19:37: \"agregame una tarea definir plantas para huerta y proponeme sugerencias\"). Intención pura + agencia (elegís dónde y qué) + datos reales del calendario de siembra del catálogo + a prueba de lluvia (se hace hoy). Cast 100% fresco (hortalizas, nunca en el ledger). Debería ser la de mayor conversión — el usuario lo pidió con todas las letras.",
       "notified_by": [
         "2026-07-25-b"
+      ],
+      "result_notes": "DROPPED 26/07 por la regla de no-supervivencia sin aprobación explícita (pending de día anterior). Matiz importante: fue la de MEJOR lectura del día — page_visit directo 25/07 20:51 + dwell 76s / scroll 100% (leyó todo con atención), pero SIN señal activa (ni reacción, ni suscripción, ni aprobación). Como fue un PEDIDO EXPLÍCITO del usuario y leyó completo, NO se descarta el ángulo: el contenido de huerta (dónde + qué por época) se SERIALIZÓ dentro de jardin-hoy (push diaria permanente) como menú colapsable «🥬 Sugerencias para tu huerta» con deep-link #huerta, y la decisión de UBICACIÓN se recoge en la nueva experiencia «Vos decidís» (decisión 1). Así el pedido sobrevive aunque la página-experimento se retire. Página + pitch eliminados (git rm)."
+    },
+    {
+      "id": "2026-07-26-vos-decidis",
+      "title": "🌿 Vos decidís (feed de decisiones reales del jardín)",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "created": "2026-07-26",
+      "status": "pending",
+      "hypothesis": "Pivote data-driven tras un 25/07 plano (mapa-solar rebotó, mi-huerta leyó pero no convirtió, cero señal activa): doblar la apuesta al eje que MÁS convierte según los datos — HÉROE=USUARIO + AGENCIA/AUTORIDAD. Formato NUEVO (feed de decisiones, no persona temática): 5 tarjetas, cada una una decisión real y abierta del jardín (ubicación de huerta, trasplante de hortensia, quién poda el liquidámbar, identidad del caqui, orden de la poda de agosto). El usuario TOCA su elección y yo la ejecuto — no consume tiempo, lo devuelve. Bonus: cada tap es dato de intención declarada que me deja actuar en la próxima corrida (recojo la ubicación de huerta que mi-huerta no cerró). Minimalista. Anti-repetición vía ángulo TAREA (no fun_facts). Hipótesis: la autoridad + utilidad real convierte a suscripción donde el contenido temático fatigó.",
+      "notified_by": [
+        "2026-07-26-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-26-mi-primavera",
+      "title": "🌸 Elegí tu primavera (feed de anticipación/recompensa con agencia)",
+      "page": "engage/2026-07-26-mi-primavera.html",
+      "created": "2026-07-26",
+      "status": "pending",
+      "hypothesis": "Segunda experiencia (función paralela). Combina los DOS ejes que más rindieron — agencia (elegís) + recompensa/orgullo (es TU planta, TU primavera) — en un formato NUEVO: feed de anticipación. 5 plantas del jardín a punto de florecer/fructificar en ~60 días; el usuario elige la que más quiere ver y yo le doy prioridad de cuidado. Cast 100% FRESCO (Clivia B-13, Viraró B-32, Ciruela amarilla B-38, Abelia F-7, Mirto B-27 — todas descansadas ≥7d, usadas por ángulo FLORACIÓN/recompensa, no fun_fact). Slot dorado 18:00. Hipótesis: la anticipación con propiedad emocional (\"tengo algo esperándome\") convierte a suscripción mejor que la novedad pasiva; el usuario vuelve porque eligió un futuro concreto de su jardín.",
+      "notified_by": [
+        "2026-07-26-b"
       ],
       "result_notes": null
     }

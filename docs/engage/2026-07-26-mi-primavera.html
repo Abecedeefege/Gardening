@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🌸 Elegí tu primavera</title>
+<meta property="og:title" content="🌸 Elegí tu primavera — vos elegís, yo la cuido">
+<meta property="og:description" content="Faltan ~60 días para la primavera. Estas 5 plantas tuyas están por regalarte algo. Elegí la que más querés ver y le doy prioridad en su cuidado.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
+    --sol:#e0a92e; --tom:#d1552f; --azul:#3f7d8a; --rosa:#c65a86;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 26px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:34px 0 6px; text-align:center; }
+  .hero .em{ font-size:44px; }
+  .hero .kick{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3); margin-top:6px; }
+  .hero h1{ font-size:33px; line-height:1.06; margin:8px 0 8px; font-weight:900; letter-spacing:-.02em; }
+  .hero p{ color:var(--ink2); font-size:14.5px; max-width:35ch; margin:0 auto; }
+  .hero .count{ display:inline-block; margin-top:12px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:7px 15px; font-size:12.5px; font-weight:900; color:var(--verde2); box-shadow:0 4px 14px rgba(45,80,22,.06); }
+
+  .step-note{ text-align:center; font-size:13px; color:var(--ink3); font-weight:700; margin:20px 0 2px; }
+
+  .bloom{ background:var(--card); border:1px solid var(--line); border-radius:22px; padding:0; margin:14px 0; overflow:hidden; box-shadow:0 6px 20px rgba(45,80,22,.06); transition:border-color .2s, box-shadow .2s; }
+  .bloom .top{ padding:20px 18px 4px; display:flex; gap:14px; align-items:flex-start; }
+  .bloom .pe{ font-size:40px; flex:none; line-height:1; }
+  .bloom h3{ font-size:18px; font-weight:900; line-height:1.15; }
+  .bloom .sci{ font-size:12px; font-style:italic; color:var(--ink3); margin-top:2px; }
+  .bloom .code{ font-family:ui-monospace,Menlo,monospace; font-size:10.5px; color:var(--ink3); }
+  .bloom .gift{ padding:4px 18px 2px; font-size:14px; color:var(--ink2); }
+  .bloom .gift b{ color:var(--ink); }
+  .bloom .meta{ display:flex; flex-wrap:wrap; gap:7px; padding:12px 18px 6px; }
+  .bloom .tag{ font-size:11px; font-weight:800; border-radius:8px; padding:4px 9px; }
+  .tag.when{ background:#fdf4dd; color:#b7860b; border:1px solid rgba(224,169,46,.28); }
+  .tag.zona{ background:#eef6ff; color:var(--azul); border:1px solid rgba(63,125,138,.22); }
+  .tag.nat{ background:var(--verde3); color:var(--verde); border:1px solid rgba(90,138,46,.3); }
+  .bloom .pick{ display:block; width:calc(100% - 36px); margin:10px 18px 18px; padding:13px; border-radius:13px; border:1.5px solid var(--verde2); background:#fff; color:var(--verde2); font:900 14.5px var(--sans); cursor:pointer; transition:transform .08s; }
+  .bloom .pick:active{ transform:scale(.98); }
+  .bloom.sel{ border-color:var(--rosa); box-shadow:0 8px 26px rgba(198,90,134,.18); }
+  .bloom.sel .pick{ background:var(--rosa); color:#fff; border-color:var(--rosa); }
+  .bloom.dim{ opacity:.55; }
+  .pick-hint{ text-align:center; font-size:13px; font-weight:800; color:var(--rosa); min-height:1.2em; margin:4px 0 0; }
+
+  .qbox{ background:var(--verde); color:#eef7e0; border-radius:20px; padding:22px 18px; margin:26px 0 8px; text-align:center; }
+  .qbox.rosa{ background:var(--rosa); }
+  .qbox h3{ font-size:17.5px; font-weight:900; }
+  .qbox p{ color:#cfe6b8; font-size:13.5px; margin:5px auto 14px; max-width:34ch; }
+  .qbox.rosa p{ color:#ffe0ec; }
+  .qbtns{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .qbtns button{ background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.3); border-radius:12px; padding:11px 18px; font:800 14px var(--sans); cursor:pointer; }
+  .qbtns button.sel{ background:#fff; color:var(--verde); border-color:#fff; }
+  .qbox.rosa .qbtns button.sel{ color:var(--rosa); }
+  .q-hint{ display:block; margin-top:11px; font-size:13px; font-weight:800; color:#e9ffd0; min-height:1.1em; }
+
+  .react{ text-align:center; margin:24px 0 6px; }
+  .react .rl{ font-size:14.5px; font-weight:800; color:var(--ink2); margin-bottom:10px; }
+  .react .btns{ display:flex; gap:9px; justify-content:center; }
+  .react .btns button{ font-size:26px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:8px 13px; cursor:pointer; transition:transform .1s; }
+  .react .btns button.sel{ background:var(--verde3); border-color:var(--verde2); transform:scale(1.08); }
+  .react-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.1em; }
+
+  .fb-blk{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border:1px solid rgba(90,138,46,.3); border-radius:20px; padding:22px 18px; margin:20px 0 10px; text-align:center; }
+  .fb-blk h3{ font-size:17px; margin-bottom:5px; font-weight:900; }
+  .fb-blk p{ color:var(--ink2); font-size:13.5px; max-width:38ch; margin:0 auto 12px; }
+  .fb-blk textarea{ width:100%; background:#fff; border:1px solid var(--line); border-radius:11px; color:var(--ink); padding:11px 12px; font:inherit; resize:vertical; }
+  .fb-blk .fb-send{ margin-top:10px; background:var(--verde2); color:#fff; border:none; border-radius:12px; padding:12px 22px; font:800 14.5px var(--sans); cursor:pointer; }
+  .fb-blk .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.2em; }
+
+  .engage-actions{ display:flex; gap:10px; margin:16px 0 6px; }
+  .engage-actions button{ flex:1; padding:13px 10px; border-radius:13px; font:800 14px var(--sans); cursor:pointer; border:1px solid var(--line); }
+  .engage-actions button:first-child{ background:var(--verde2); color:#fff; border-color:var(--verde2); }
+  .engage-actions button:last-child{ background:#fff; color:var(--ink3); }
+
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:16px; line-height:1.5; text-align:center; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <div class="em">🌸</div>
+    <div class="kick">Vos elegís, yo la cuido</div>
+    <h1>Elegí tu primavera</h1>
+    <p>Faltan ~60 días para el equinoccio. Estas 5 plantas tuyas están juntando fuerzas para regalarte algo. Elegí la que MÁS querés ver este año y le doy prioridad en su cuidado.</p>
+    <div class="count">🗓️ Primavera: 23 de septiembre</div>
+  </header>
+
+  <div class="step-note reveal">Tocá «Quiero ver esta» en tu favorita — elegís una</div>
+
+  <!-- 1 · CLIVIA B-13 -->
+  <div class="bloom reveal" data-code="B-13">
+    <div class="top">
+      <span class="pe">🧡</span>
+      <div>
+        <h3>Clivia / Lirio del Cabo</h3>
+        <div class="sci">Clivia miniata <span class="code">· B-13</span></div>
+      </div>
+    </div>
+    <div class="gift">Del rincón sombrío del fondo va a salir el naranja más intenso del año: <b>umbelas de flor encendida</b> justo cuando el resto todavía duerme. Y hay un truco — cuanto más apretada la maceta, más flor te da.</div>
+    <div class="meta">
+      <span class="tag when">🌤️ Fin de invierno · sept-oct</span>
+      <span class="tag zona">🌿 Fondo, a la sombra</span>
+    </div>
+    <button type="button" class="pick" onclick="pick('B-13','Clivia', this)">Quiero ver esta 🌟</button>
+  </div>
+
+  <!-- 2 · VIRARÓ B-32 -->
+  <div class="bloom reveal" data-code="B-32">
+    <div class="top">
+      <span class="pe">💗</span>
+      <div>
+        <h3>Viraró</h3>
+        <div class="sci">Ruprechtia laxiflora <span class="code">· B-32</span></div>
+      </div>
+    </div>
+    <div class="gift">Tu nativo con un truco de magia: después de florecer, los sépalos se agrandan y se tiñen de <b>rosa</b>, y caen girando como pequeños helicópteros de confeti. Un árbol del Río de la Plata haciendo su show.</div>
+    <div class="meta">
+      <span class="tag when">🌤️ sept-nov</span>
+      <span class="tag nat">🇺🇾 Nativo rioplatense</span>
+    </div>
+    <button type="button" class="pick" onclick="pick('B-32','Viraró', this)">Quiero ver esta 🌟</button>
+  </div>
+
+  <!-- 3 · CIRUELA AMARILLA B-38 -->
+  <div class="bloom reveal" data-code="B-38">
+    <div class="top">
+      <span class="pe">🤍</span>
+      <div>
+        <h3>Ciruela amarilla</h3>
+        <div class="sci">Prunus salicina <span class="code">· B-38</span></div>
+      </div>
+    </div>
+    <div class="gift">Es de las <b>primeras en despertar</b>: se cubre de una nube de flor blanca en pleno agosto, antes de sacar una sola hoja. La señal de que el invierno se está yendo — y después, ciruelas.</div>
+    <div class="meta">
+      <span class="tag when">🌤️ Agosto · de las primeras</span>
+      <span class="tag zona">☀️ Caduco de fruta</span>
+    </div>
+    <button type="button" class="pick" onclick="pick('B-38','Ciruela amarilla', this)">Quiero ver esta 🌟</button>
+  </div>
+
+  <!-- 4 · ABELIA F-7 -->
+  <div class="bloom reveal" data-code="F-7">
+    <div class="top">
+      <span class="pe">🌸</span>
+      <div>
+        <h3>Abelia</h3>
+        <div class="sci">Abelia × grandiflora <span class="code">· F-7</span></div>
+      </div>
+    </div>
+    <div class="gift">La maratonista: arranca a florecer en primavera y <b>no para hasta el otoño</b>. Campanitas blanco-rosadas sin descanso, e imán de abejas y mariposas todo el tiempo cálido.</div>
+    <div class="meta">
+      <span class="tag when">🌤️ Primavera a otoño</span>
+      <span class="tag zona">🌇 Frente, sol de tarde</span>
+    </div>
+    <button type="button" class="pick" onclick="pick('F-7','Abelia', this)">Quiero ver esta 🌟</button>
+  </div>
+
+  <!-- 5 · MIRTO B-27 -->
+  <div class="bloom reveal" data-code="B-27">
+    <div class="top">
+      <span class="pe">🫐</span>
+      <div>
+        <h3>Mirto común</h3>
+        <div class="sci">Myrtus communis <span class="code">· B-27</span></div>
+      </div>
+    </div>
+    <div class="gift">Doble regalo: primero <b>flor blanca perfumada</b> de estambres (la planta que los griegos consagraron a Venus), y después <b>bayas azul-negras comestibles</b> — de esas se hace el licor de mirto.</div>
+    <div class="meta">
+      <span class="tag when">🌤️ Fin primavera · flor + baya</span>
+      <span class="tag zona">🌿 Perenne aromático</span>
+    </div>
+    <button type="button" class="pick" onclick="pick('B-27','Mirto', this)">Quiero ver esta 🌟</button>
+  </div>
+
+  <p class="pick-hint reveal" id="pickHint"></p>
+
+  <!-- SUSCRIPCIÓN DIARIA -->
+  <div class="qbox rosa reveal">
+    <h3>🔔 ¿Te cuento la cuenta regresiva?</h3>
+    <p>Una foto-recuerdo por día de lo que se viene: qué planta está por brotar, florecer o dar fruto, camino a la primavera. Pura anticipación linda.</p>
+    <div class="qbtns">
+      <button type="button" onclick="engageAnswer('mi-primavera-suscripcion-diaria','si', this)">Sí, quiero</button>
+      <button type="button" onclick="engageAnswer('mi-primavera-suscripcion-diaria','no', this)">No hace falta</button>
+    </div>
+    <span class="q-hint"></span>
+  </div>
+
+  <!-- REACCIÓN -->
+  <div class="react reveal">
+    <div class="rl">¿Te emocionó pensar en tu primavera?</div>
+    <div class="btns">
+      <button type="button" onclick="engageReact('mi-primavera','love', this)">😍</button>
+      <button type="button" onclick="engageReact('mi-primavera','like', this)">🙂</button>
+      <button type="button" onclick="engageReact('mi-primavera','meh', this)">😐</button>
+      <button type="button" onclick="engageReact('mi-primavera','no', this)">🙅</button>
+    </div>
+    <span class="react-hint"></span>
+  </div>
+
+  <!-- FEEDBACK PROPIO -->
+  <section class="fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>¿Cuál esperás con más ganas? ¿Hay otra planta tuya que querés ver acá? Lo leo yo antes de armar la próxima.</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('mi-primavera', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <!-- DECISIÓN PROPOSAL -->
+  <div class="engage-actions reveal">
+    <button onclick="engageApprove('2026-07-26-mi-primavera')">✅ Sumá esto al sitio</button>
+    <button onclick="engageRejected('2026-07-26-mi-primavera')">✕ No me interesa</button>
+  </div>
+
+  <div class="cred reveal">Fechas de floración/fructificación del propio catálogo Pacha Mama · hemisferio sur, Montevideo lat -34.9°S · 26/07/2026</div>
+
+</div>
+
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+  window.pick = function(code, name, btn){
+    var cards = document.querySelectorAll('.bloom');
+    cards.forEach(function(c){
+      c.classList.remove('sel'); c.classList.add('dim');
+      var b = c.querySelector('.pick'); if (b){ b.textContent = 'Quiero ver esta 🌟'; b.disabled = false; }
+    });
+    var card = btn.closest('.bloom');
+    card.classList.add('sel'); card.classList.remove('dim');
+    btn.textContent = '✔ ' + name + ' — es tuya';
+    var hint = document.getElementById('pickHint');
+    if (hint) hint.textContent = 'Dale — le doy prioridad al cuidado de la ' + name + ' de acá a la primavera. 🌱';
+    if (typeof engageAnswer === 'function') engageAnswer('mi-primavera-prioridad', code, btn);
+  };
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>

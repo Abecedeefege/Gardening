@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🌿 Vos decidís</title>
+<meta property="og:title" content="🌿 Vos decidís — el jardín te consulta">
+<meta property="og:description" content="5 decisiones reales que tu jardín necesita de vos, hoy. Tocás, elegís, y yo ejecuto tu decisión. Acá el que manda sos vos.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
+    --sol:#e0a92e; --tom:#d1552f; --azul:#3f7d8a;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 26px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:34px 0 6px; text-align:center; }
+  .hero .em{ font-size:44px; }
+  .hero .kick{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3); margin-top:6px; }
+  .hero h1{ font-size:33px; line-height:1.06; margin:8px 0 8px; font-weight:900; letter-spacing:-.02em; }
+  .hero p{ color:var(--ink2); font-size:14.5px; max-width:34ch; margin:0 auto; }
+
+  .prog{ display:flex; gap:6px; justify-content:center; margin:16px 0 4px; }
+  .prog i{ width:22px; height:5px; border-radius:99px; background:var(--line); transition:background .3s; }
+  .prog i.on{ background:var(--verde2); }
+
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 18px; margin:14px 0; box-shadow:0 6px 20px rgba(45,80,22,.06); }
+  .card .no{ display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:900; letter-spacing:.06em; text-transform:uppercase; color:var(--verde2); }
+  .card .no .dot{ width:20px; height:20px; border-radius:50%; background:var(--verde3); color:var(--verde); display:grid; place-items:center; font-size:12px; }
+  .card h3{ font-size:18.5px; font-weight:900; line-height:1.2; margin:10px 0 4px; }
+  .card .ctx{ font-size:13.5px; color:var(--ink2); }
+  .card .code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; color:var(--ink3); }
+  .opts{ display:flex; flex-direction:column; gap:9px; margin-top:14px; }
+  .opts button{ width:100%; text-align:left; background:#f7fbf1; border:1px solid var(--line); border-radius:13px; padding:13px 15px; font:800 14px var(--sans); color:var(--ink); cursor:pointer; transition:transform .08s, background .15s, border-color .15s; display:flex; align-items:center; gap:11px; }
+  .opts button .oe{ font-size:19px; flex:none; }
+  .opts button .osub{ display:block; font-weight:600; font-size:12px; color:var(--ink3); margin-top:2px; }
+  .opts button:active{ transform:scale(.985); }
+  .opts button.sel{ background:var(--verde); color:#fff; border-color:var(--verde); }
+  .opts button.sel .osub{ color:#cfe6b8; }
+  .opts button.dim{ opacity:.5; }
+  .decided{ display:block; margin-top:11px; font-size:12.5px; font-weight:800; color:var(--verde2); min-height:1.1em; }
+
+  .qbox{ background:var(--verde); color:#eef7e0; border-radius:20px; padding:22px 18px; margin:26px 0 8px; text-align:center; }
+  .qbox.tom{ background:var(--tom); }
+  .qbox h3{ font-size:17.5px; font-weight:900; }
+  .qbox p{ color:#cfe6b8; font-size:13.5px; margin:5px auto 14px; max-width:34ch; }
+  .qbox.tom p{ color:#ffe4d6; }
+  .qbtns{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .qbtns button{ background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.3); border-radius:12px; padding:11px 18px; font:800 14px var(--sans); cursor:pointer; }
+  .qbtns button.sel{ background:#fff; color:var(--verde); border-color:#fff; }
+  .qbox.tom .qbtns button.sel{ color:var(--tom); }
+  .q-hint{ display:block; margin-top:11px; font-size:13px; font-weight:800; color:#e9ffd0; min-height:1.1em; }
+
+  .react{ text-align:center; margin:24px 0 6px; }
+  .react .rl{ font-size:14.5px; font-weight:800; color:var(--ink2); margin-bottom:10px; }
+  .react .btns{ display:flex; gap:9px; justify-content:center; }
+  .react .btns button{ font-size:26px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:8px 13px; cursor:pointer; transition:transform .1s; }
+  .react .btns button.sel{ background:var(--verde3); border-color:var(--verde2); transform:scale(1.08); }
+  .react-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.1em; }
+
+  .fb-blk{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border:1px solid rgba(90,138,46,.3); border-radius:20px; padding:22px 18px; margin:20px 0 10px; text-align:center; }
+  .fb-blk h3{ font-size:17px; margin-bottom:5px; font-weight:900; }
+  .fb-blk p{ color:var(--ink2); font-size:13.5px; max-width:38ch; margin:0 auto 12px; }
+  .fb-blk textarea{ width:100%; background:#fff; border:1px solid var(--line); border-radius:11px; color:var(--ink); padding:11px 12px; font:inherit; resize:vertical; }
+  .fb-blk .fb-send{ margin-top:10px; background:var(--verde2); color:#fff; border:none; border-radius:12px; padding:12px 22px; font:800 14.5px var(--sans); cursor:pointer; }
+  .fb-blk .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.2em; }
+
+  .engage-actions{ display:flex; gap:10px; margin:16px 0 6px; }
+  .engage-actions button{ flex:1; padding:13px 10px; border-radius:13px; font:800 14px var(--sans); cursor:pointer; border:1px solid var(--line); }
+  .engage-actions button:first-child{ background:var(--verde2); color:#fff; border-color:var(--verde2); }
+  .engage-actions button:last-child{ background:#fff; color:var(--ink3); }
+
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:16px; line-height:1.5; text-align:center; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <div class="em">🌿</div>
+    <div class="kick">El jardín te consulta</div>
+    <h1>Vos decidís</h1>
+    <p>Hay 5 cosas que tu jardín necesita que decidas vos — nadie más las puede decidir. Tocá tu elección en cada una. Lo que marques, lo ejecuto yo.</p>
+  </header>
+
+  <div class="prog reveal"><i></i><i></i><i></i><i></i><i></i></div>
+
+  <!-- DECISIÓN 1 -->
+  <div class="card reveal">
+    <span class="no"><span class="dot">1</span> Tu huerta de primavera</span>
+    <h3>¿Dónde la armamos?</h3>
+    <p class="ctx">Lo pediste vos. Tu casa mira este-oeste, así que el sol manda: la huerta quiere 6 h mínimo. Elegí y te armo el plan de siembra para ese lugar.</p>
+    <div class="opts">
+      <button type="button" onclick="decide('vd-huerta-lugar','frente', this)"><span class="oe">🌇</span><span>Frente (oeste)<span class="osub">Sol de tarde, 6 h+ — el mejor para tomate y morrón</span></span></button>
+      <button type="button" onclick="decide('vd-huerta-lugar','norte', this)"><span class="oe">🧱</span><span>Muro norte<span class="osub">Lado cálido, sol todo el invierno — ideal aromáticas</span></span></button>
+      <button type="button" onclick="decide('vd-huerta-lugar','fondo', this)"><span class="oe">🌿</span><span>Fondo (este)<span class="osub">Solo sol de mañana — lechuga y hojas de media sombra</span></span></button>
+      <button type="button" onclick="decide('vd-huerta-lugar','macetones', this)"><span class="oe">🪴</span><span>Macetones movibles<span class="osub">Sin obra, los muevo buscando el sol</span></span></button>
+    </div>
+    <span class="decided"></span>
+  </div>
+
+  <!-- DECISIÓN 2 -->
+  <div class="card reveal">
+    <span class="no"><span class="dot">2</span> Hortensia <span class="code">B-5a/b</span></span>
+    <h3>¿A tierra o a macetón?</h3>
+    <p class="ctx">Los 2 ejemplares en macetas chicas hay que pasarlos ahora que están pelados (dormancia = momento ideal). ¿Adónde los mudamos?</p>
+    <div class="opts">
+      <button type="button" onclick="decide('vd-hortensia','tierra', this)"><span class="oe">🌍</span><span>A tierra, en cantero<span class="osub">Más raíz, más flor — pero fija el lugar</span></span></button>
+      <button type="button" onclick="decide('vd-hortensia','maceton', this)"><span class="oe">🪴</span><span>A macetón de 40 cm+<span class="osub">Movible, control del sustrato ácido</span></span></button>
+    </div>
+    <span class="decided"></span>
+  </div>
+
+  <!-- DECISIÓN 3 -->
+  <div class="card reveal">
+    <span class="no"><span class="dot">3</span> Liquidámbar <span class="code">B-37</span></span>
+    <h3>La rama que le tapa el sol a la palta</h3>
+    <p class="ctx">Hay que sacarla entera desde el origen, en 3 cortes, un día seco de dormancia. ¿Quién la hace?</p>
+    <div class="opts">
+      <button type="button" onclick="decide('vd-liquidambar','yo', this)"><span class="oe">🪚</span><span>La hago yo<span class="osub">Te dejo el paso a paso de los 3 cortes</span></span></button>
+      <button type="button" onclick="decide('vd-liquidambar','jardinero', this)"><span class="oe">👷</span><span>Llamo al jardinero<span class="osub">Te preparo el WhatsApp con la tarea</span></span></button>
+    </div>
+    <span class="decided"></span>
+  </div>
+
+  <!-- DECISIÓN 4 -->
+  <div class="card reveal">
+    <span class="no"><span class="dot">4</span> El caqui misterioso <span class="code">B-41</span></span>
+    <h3>Nunca dio flor ni fruto</h3>
+    <p class="ctx">Su identidad está en duda: lo tenemos como caqui, pero no lo confirma nada. Ahora está en observación hasta noviembre. ¿Lo dejamos así o querés que investigue ya?</p>
+    <div class="opts">
+      <button type="button" onclick="decide('vd-caqui','observar', this)"><span class="oe">🔭</span><span>Dejarlo en observación<span class="osub">Esperar flor/fruto en primavera para confirmar</span></span></button>
+      <button type="button" onclick="decide('vd-caqui','investigar', this)"><span class="oe">🕵️</span><span>Investigá ya<span class="osub">Cruzo corteza, yema y porte para arriesgar una ID</span></span></button>
+    </div>
+    <span class="decided"></span>
+  </div>
+
+  <!-- DECISIÓN 5 -->
+  <div class="card reveal">
+    <span class="no"><span class="dot">5</span> La gran poda de agosto</span>
+    <h3>Son 12 tareas. ¿Cómo las querés?</h3>
+    <p class="ctx">El mes que viene se concentra el trabajo pesado del año (durazno, ciruelo, crespón, althea, hibisco…). Elegí cómo te lo ordeno y lo tenés listo antes de que arranque.</p>
+    <div class="opts">
+      <button type="button" onclick="decide('vd-agosto','prioridad', this)"><span class="oe">🔢</span><span>Por prioridad<span class="osub">De lo más urgente a lo que puede esperar</span></span></button>
+      <button type="button" onclick="decide('vd-agosto','finde', this)"><span class="oe">📅</span><span>Plan por fin de semana<span class="osub">Reparto las 12 en los findes de agosto</span></span></button>
+      <button type="button" onclick="decide('vd-agosto','contacto', this)"><span class="oe">👷</span><span>Todo al jardinero<span class="osub">Te armo la lista para pasársela junta</span></span></button>
+    </div>
+    <span class="decided"></span>
+  </div>
+
+  <!-- SUSCRIPCIÓN DIARIA -->
+  <div class="qbox tom reveal">
+    <h3>🔔 ¿Te consulto una decisión por día?</h3>
+    <p>Una sola pregunta corta cada mañana sobre algo real del jardín. Vos tocás, yo ejecuto. Cero relleno.</p>
+    <div class="qbtns">
+      <button type="button" onclick="engageAnswer('vos-decidis-suscripcion-diaria','si', this)">Sí, dale</button>
+      <button type="button" onclick="engageAnswer('vos-decidis-suscripcion-diaria','no', this)">No hace falta</button>
+    </div>
+    <span class="q-hint"></span>
+  </div>
+
+  <!-- REACCIÓN -->
+  <div class="react reveal">
+    <div class="rl">¿Te gustó tener el timón?</div>
+    <div class="btns">
+      <button type="button" onclick="engageReact('vos-decidis','love', this)">😍</button>
+      <button type="button" onclick="engageReact('vos-decidis','like', this)">🙂</button>
+      <button type="button" onclick="engageReact('vos-decidis','meh', this)">😐</button>
+      <button type="button" onclick="engageReact('vos-decidis','no', this)">🙅</button>
+    </div>
+    <span class="react-hint"></span>
+  </div>
+
+  <!-- FEEDBACK PROPIO -->
+  <section class="fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>¿Falta alguna decisión que querés tomar vos? ¿Otra forma de preguntártelo? Lo leo yo antes de armar la próxima.</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('vos-decidis', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <!-- DECISIÓN PROPOSAL -->
+  <div class="engage-actions reveal">
+    <button onclick="engageApprove('2026-07-26-vos-decidis')">✅ Sumá esto al sitio</button>
+    <button onclick="engageRejected('2026-07-26-vos-decidis')">✕ No me interesa</button>
+  </div>
+
+  <div class="cred reveal">Cada decisión está anclada en una tarea o duda real del catálogo Pacha Mama · lo que marques lo leo y lo ejecuto en la próxima corrida · Montevideo · 26/07/2026</div>
+
+</div>
+
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+  // Selección visual de la decisión + progreso, delegando el registro a engageAnswer de engage.js
+  var decided = {};
+  window.decide = function(qid, value, btn){
+    var card = btn.closest('.card');
+    card.querySelectorAll('.opts button').forEach(function(b){ b.classList.remove('sel'); b.classList.add('dim'); });
+    btn.classList.add('sel'); btn.classList.remove('dim');
+    var msg = card.querySelector('.decided');
+    if (msg) msg.textContent = '✔ Anotado. Lo ejecuto con esto.';
+    decided[qid] = value;
+    var dots = document.querySelectorAll('.prog i');
+    var n = Object.keys(decided).length;
+    for (var i=0;i<dots.length;i++){ dots[i].classList.toggle('on', i < n); }
+    if (typeof engageAnswer === 'function') engageAnswer(qid, value, btn);
+  };
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>
