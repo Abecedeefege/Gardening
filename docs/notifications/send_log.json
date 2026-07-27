@@ -401,6 +401,12 @@
       "nid": "2026-07-27-b",
       "ts": "2026-07-27T17:22:06.368Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-27-a",
+      "ts": "2026-07-27T21:38:02.191Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {

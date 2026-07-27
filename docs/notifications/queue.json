@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-27T17:22:06.370Z",
+  "_updated_at": "2026-07-27T21:38:02.193Z",
   "notifications": [
     {
       "id": "2026-07-27-jardin-hoy",
@@ -33,8 +33,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-27-vos-decidis.html",
       "send_at": "2026-07-27T18:00:00-03:00",
       "expires_at": "2026-07-27T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-27T21:38:02.191Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-27 (serializacion del ganador vos-decidis, slot dorado)"
     }
