@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-27T22:56:31.859Z",
+  "_updated_at": "2026-07-27T22:56:36.772Z",
   "events": [
     {
       "_id": "mrjqkng15tek1r",
@@ -1120,6 +1120,15 @@
       "nid": "2026-07-27-a",
       "src": "push",
       "ts": "2026-07-27T22:56:31.620Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3ttgl0az7z3f",
+      "type": "answer",
+      "qid": "vd2-huerta-arranque",
+      "value": "lechuga",
+      "page": "engage/2026-07-27-vos-decidis.html",
+      "ts": "2026-07-27T22:56:37.427Z",
       "device": "sin-nombre"
     }
   ],
