@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-27T22:57:03.950Z",
+  "_updated_at": "2026-07-27T23:23:15.504Z",
   "events": [
     {
       "_id": "mrjqkng15tek1r",
@@ -1138,6 +1138,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-27-vos-decidis.html",
       "ts": "2026-07-27T22:57:04.240Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3urp6x2kaytf",
+      "type": "notification_clicked",
+      "nid": "2026-07-27-b",
+      "page": "engage/2026-07-27-mi-objetivo.html",
+      "ts": "2026-07-27T23:23:14.887Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3urp6x8pjeqb",
+      "type": "page_visit",
+      "page": "engage/2026-07-27-mi-objetivo.html",
+      "nid": "2026-07-27-b",
+      "src": "push",
+      "ts": "2026-07-27T23:23:14.887Z",
       "device": "sin-nombre"
     }
   ],
