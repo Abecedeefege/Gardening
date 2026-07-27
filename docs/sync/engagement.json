@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-27T00:42:53.878Z",
+  "_updated_at": "2026-07-27T00:42:56.736Z",
   "events": [
     {
       "_id": "mrhznmicxu7ovg",
@@ -1175,6 +1175,13 @@
       "value": "no",
       "page": "engage/2026-07-26-mi-primavera.html",
       "ts": "2026-07-27T00:42:55.335Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2i6dk0rec7bt",
+      "type": "proposal_rejected",
+      "proposal_id": "2026-07-26-mi-primavera",
+      "ts": "2026-07-27T00:42:58.464Z",
       "device": "sin-nombre"
     }
   ],
