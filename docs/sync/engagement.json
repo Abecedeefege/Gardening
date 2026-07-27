@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-27T00:42:46.451Z",
+  "_updated_at": "2026-07-27T00:42:53.878Z",
   "events": [
     {
       "_id": "mrhznmicxu7ovg",
@@ -1166,6 +1166,15 @@
       "value": "F-7",
       "page": "engage/2026-07-26-mi-primavera.html",
       "ts": "2026-07-27T00:42:48.005Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2i6b53szu0sn",
+      "type": "answer",
+      "qid": "mi-primavera-suscripcion-diaria",
+      "value": "no",
+      "page": "engage/2026-07-26-mi-primavera.html",
+      "ts": "2026-07-27T00:42:55.335Z",
       "device": "sin-nombre"
     }
   ],
