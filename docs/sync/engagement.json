@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-27T00:42:58.747Z",
+  "_updated_at": "2026-07-27T22:56:31.859Z",
   "events": [
     {
       "_id": "mrjqkng15tek1r",
@@ -1103,6 +1103,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-26-mi-primavera.html",
       "ts": "2026-07-27T00:43:00.361Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3ttc3p1h170w",
+      "type": "notification_clicked",
+      "nid": "2026-07-27-a",
+      "page": "engage/2026-07-27-vos-decidis.html",
+      "ts": "2026-07-27T22:56:31.620Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3ttc3pvuuct9",
+      "type": "page_visit",
+      "page": "engage/2026-07-27-vos-decidis.html",
+      "nid": "2026-07-27-a",
+      "src": "push",
+      "ts": "2026-07-27T22:56:31.620Z",
       "device": "sin-nombre"
     }
   ],
