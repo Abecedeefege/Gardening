@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-27T23:23:27.190Z",
+  "_updated_at": "2026-07-27T23:23:58.912Z",
   "events": [
     {
       "_id": "mrjqkng15tek1r",
@@ -1182,6 +1182,15 @@
       "value": "flor",
       "page": "engage/2026-07-27-mi-objetivo.html",
       "ts": "2026-07-27T23:23:27.900Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3usnenv6tehg",
+      "type": "answer",
+      "qid": "mi-objetivo-goal",
+      "value": "huerta",
+      "page": "engage/2026-07-27-mi-objetivo.html",
+      "ts": "2026-07-27T23:23:59.231Z",
       "device": "sin-nombre"
     }
   ],
