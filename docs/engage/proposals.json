@@ -824,22 +824,46 @@
       "title": "🌿 Vos decidís (feed de decisiones reales del jardín)",
       "page": "engage/2026-07-26-vos-decidis.html",
       "created": "2026-07-26",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Pivote data-driven tras un 25/07 plano (mapa-solar rebotó, mi-huerta leyó pero no convirtió, cero señal activa): doblar la apuesta al eje que MÁS convierte según los datos — HÉROE=USUARIO + AGENCIA/AUTORIDAD. Formato NUEVO (feed de decisiones, no persona temática): 5 tarjetas, cada una una decisión real y abierta del jardín (ubicación de huerta, trasplante de hortensia, quién poda el liquidámbar, identidad del caqui, orden de la poda de agosto). El usuario TOCA su elección y yo la ejecuto — no consume tiempo, lo devuelve. Bonus: cada tap es dato de intención declarada que me deja actuar en la próxima corrida (recojo la ubicación de huerta que mi-huerta no cerró). Minimalista. Anti-repetición vía ángulo TAREA (no fun_facts). Hipótesis: la autoridad + utilidad real convierte a suscripción donde el contenido temático fatigó.",
       "notified_by": [
         "2026-07-26-a"
       ],
-      "result_notes": null
+      "result_notes": "PROMOVIDA/SERIALIZADA 27/07 como formato recurrente 'una decisión por día'. Señal ganadora del ciclo 56: respondió las 5 decisiones (huerta=norte, hortensia=tierra, liquidambar=yo, caqui=observar, agosto=prioridad), suscripción diaria 'SÍ', reacción 'like', 116s/100%. Es la ÚNICA variante que convirtió a suscripción. La suscripción prometió versión fresca diaria → se renueva en la misma familia con contenido nuevo: hoy 2026-07-27-vos-decidis.html suma un RECAP de ejecución (las 5 decisiones de ayer, ya hechas) + 4 decisiones nuevas (arranque de huerta, rincón de la hortensia, plantines de palta, destino del vivero). Decisiones de ayer ejecutadas en contenido: jardin-hoy refleja huerta→muro norte, hortensia→a tierra, liquidambar→paso a paso (lo hace el usuario), agosto→ordenado por prioridad; caqui sigue snoozed a 15/11 (observar). Página + pitch dated 07-26 eliminados (git rm); el formato continúa en la versión 07-27."
     },
     {
       "id": "2026-07-26-mi-primavera",
       "title": "🌸 Elegí tu primavera (feed de anticipación/recompensa con agencia)",
       "page": "engage/2026-07-26-mi-primavera.html",
       "created": "2026-07-26",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Segunda experiencia (función paralela). Combina los DOS ejes que más rindieron — agencia (elegís) + recompensa/orgullo (es TU planta, TU primavera) — en un formato NUEVO: feed de anticipación. 5 plantas del jardín a punto de florecer/fructificar en ~60 días; el usuario elige la que más quiere ver y yo le doy prioridad de cuidado. Cast 100% FRESCO (Clivia B-13, Viraró B-32, Ciruela amarilla B-38, Abelia F-7, Mirto B-27 — todas descansadas ≥7d, usadas por ángulo FLORACIÓN/recompensa, no fun_fact). Slot dorado 18:00. Hipótesis: la anticipación con propiedad emocional (\"tengo algo esperándome\") convierte a suscripción mejor que la novedad pasiva; el usuario vuelve porque eligió un futuro concreto de su jardín.",
       "notified_by": [
         "2026-07-26-b"
+      ],
+      "result_notes": "DROPPED 27/07. proposal_rejected explícito (27/07 00:42) + suscripción diaria 'no' + solo respondió las prioridades (B-13, F-7) sin más señal. El eje ANTICIPACIÓN/recompensa pierde de forma clara frente a AGENCIA/DECISIÓN (vos-decidis ganó el mismo ciclo). Queda como MUERTO: countdown/anticipación-vacía ya estaba marcado; esto confirma que 'elegí un futuro' no convierte si no hay acción inmediata que el usuario controle. Página + pitch eliminados (git rm). Las plantas del cast (Clivia B-13, Viraró B-32, Ciruela amarilla B-38, Abelia F-7, Mirto B-27) vuelven al pool fresco."
+    },
+    {
+      "id": "2026-07-27-vos-decidis",
+      "title": "🌿 Vos decidís v2 (recap de ejecución + 4 decisiones nuevas)",
+      "page": "engage/2026-07-27-vos-decidis.html",
+      "created": "2026-07-27",
+      "status": "pending",
+      "hypothesis": "Serialización del ganador del ciclo 56 (agencia/decisión = única que convirtió a suscripción). v2 agrega la pieza que lo vuelve hábito: el LOOP DE EJECUCIÓN — abre mostrando las 5 decisiones de ayer YA HECHAS (recibo), y recién después pide las 4 nuevas. Hipótesis: ver la prueba de que sus taps movieron cosas reales sube la reacción a 😍 y sostiene la suscripción diaria. Anti-repetición vía ángulo DECISIÓN/tarea (no fun_fact); decisiones nuevas ancladas en tareas reales (huerta muro norte, hortensia a tierra, plantines de palta sin tocar, vivero B-46).",
+      "notified_by": [
+        "2026-07-27-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-27-mi-objetivo",
+      "title": "🎯 Tu objetivo, mi plan (objetivo→plan, formato nuevo)",
+      "page": "engage/2026-07-27-mi-objetivo.html",
+      "created": "2026-07-27",
+      "status": "pending",
+      "hypothesis": "Formato NUNCA probado (mandato de innovar 18/07). Extiende el eje ganador (agencia) un nivel arriba: en vez de elegir entre opciones que doy, el usuario DECLARA un resultado (más flor / primera cosecha / sombra / fauna) y yo genero un plan de 3 pasos con sus plantas reales. Combina agencia + identidad (qué jardinero sos) + deliverable concreto, costo de contenido cero. Cast fresco por ángulo función/objetivo (Crespón B-9, Althea B-18, Lantana B-29, Santa Rita B-1, Azarero B-7, Madreselva B-40, Anacahuita B-16, Aguaribay F-8 — mayoría descansada ≥7d). Hipótesis: 'declarar el destino' engancha como o más que 'elegir la acción'; el objetivo elegido segmenta al usuario mejor que cualquier encuesta. Riesgo: si no convierte donde vos-decidis sí, el aprendizaje es que la agencia necesita accionabilidad inmediata, no aspiración.",
+      "notified_by": [
+        "2026-07-27-b"
       ],
       "result_notes": null
     }

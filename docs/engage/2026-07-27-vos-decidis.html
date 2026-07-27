@@ -3,8 +3,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f5faf0">
 <title>🌿 Vos decidís</title>
-<meta property="og:title" content="🌿 Vos decidís — el jardín te consulta">
-<meta property="og:description" content="5 decisiones reales que tu jardín necesita de vos, hoy. Tocás, elegís, y yo ejecuto tu decisión. Acá el que manda sos vos.">
+<meta property="og:title" content="🌿 Vos decidís — lo de ayer ya lo ejecuté">
+<meta property="og:description" content="Lo que marcaste ayer, ya está hecho. Hoy hay 4 decisiones nuevas que tu jardín necesita de vos. Tocás, elegís, y yo ejecuto.">
 <style>
   :root{
     --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
@@ -28,9 +28,22 @@
   .hero h1{ font-size:33px; line-height:1.06; margin:8px 0 8px; font-weight:900; letter-spacing:-.02em; }
   .hero p{ color:var(--ink2); font-size:14.5px; max-width:34ch; margin:0 auto; }
 
-  .prog{ display:flex; gap:6px; justify-content:center; margin:16px 0 4px; }
-  .prog i{ width:22px; height:5px; border-radius:99px; background:var(--line); transition:background .3s; }
+  /* recap de ayer = prueba de que tus taps mueven cosas */
+  .recap{ background:linear-gradient(180deg,#eef8e0,#f6fbef); border:1px solid rgba(90,138,46,.28); border-radius:20px; padding:20px 18px; margin:20px 0 6px; }
+  .recap .rt{ font-size:12.5px; font-weight:900; letter-spacing:.06em; text-transform:uppercase; color:var(--verde2); display:flex; align-items:center; gap:8px; }
+  .recap h2{ font-size:18px; font-weight:900; margin:6px 0 4px; }
+  .recap .rp{ color:var(--ink2); font-size:13px; margin-bottom:10px; }
+  .rrow{ display:flex; gap:10px; padding:9px 0; border-top:1px solid var(--line); font-size:13.5px; }
+  .rrow:first-of-type{ border-top:none; }
+  .rrow .rk{ flex:none; width:20px; text-align:center; }
+  .rrow b{ font-weight:800; }
+  .rrow .done{ display:block; color:var(--verde2); font-weight:700; font-size:12.5px; margin-top:1px; }
+
+  .prog{ display:flex; gap:6px; justify-content:center; margin:22px 0 4px; }
+  .prog i{ width:26px; height:5px; border-radius:99px; background:var(--line); transition:background .3s; }
   .prog i.on{ background:var(--verde2); }
+
+  .sect-lbl{ text-align:center; font-size:12px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--ink3); margin:18px 0 2px; }
 
   .card{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 18px; margin:14px 0; box-shadow:0 6px 20px rgba(45,80,22,.06); }
   .card .no{ display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:900; letter-spacing:.06em; text-transform:uppercase; color:var(--verde2); }
@@ -88,90 +101,91 @@
 
   <header class="hero reveal">
     <div class="em">🌿</div>
-    <div class="kick">El jardín te consulta</div>
+    <div class="kick">El jardín te consulta · día 2</div>
     <h1>Vos decidís</h1>
-    <p>Hay 5 cosas que tu jardín necesita que decidas vos — nadie más las puede decidir. Tocá tu elección en cada una. Lo que marques, lo ejecuto yo.</p>
+    <p>Ayer me diste 5 órdenes. Las cumplí todas. Acá te muestro qué hice con cada una — y las 4 nuevas de hoy.</p>
   </header>
 
-  <div class="prog reveal"><i></i><i></i><i></i><i></i><i></i></div>
+  <!-- RECAP: lo que decidió ayer, ya ejecutado -->
+  <div class="recap reveal">
+    <div class="rt">✅ Lo que decidiste ayer, hecho</div>
+    <h2>Tus 5 taps se convirtieron en esto</h2>
+    <p class="rp">No quedaron en una encuesta: cada uno movió algo real del plan.</p>
+    <div class="rrow"><span class="rk">🧱</span><div><b>Huerta → al muro norte.</b><span class="done">Lado cálido, sol todo el invierno. El plan de siembra para ese muro ya está armado (decisión 1, abajo).</span></div></div>
+    <div class="rrow"><span class="rk">🌍</span><div><b>Hortensia B-5a/b → a tierra.</b><span class="done">Van a cantero ahora, en dormancia. Falta el rincón exacto (decisión 2).</span></div></div>
+    <div class="rrow"><span class="rk">🪚</span><div><b>Liquidámbar B-37 → la hacés vos.</b><span class="done">Te dejé el paso a paso de los 3 cortes en «Tu jardín hoy».</span></div></div>
+    <div class="rrow"><span class="rk">🔭</span><div><b>Caqui B-41 → en observación.</b><span class="done">Sigue en la lupa hasta que dé señales en primavera. No lo forzamos.</span></div></div>
+    <div class="rrow"><span class="rk">🔢</span><div><b>Poda de agosto → por prioridad.</b><span class="done">Ordené las 12 de lo más urgente a lo que puede esperar. Está en «Tu jardín hoy».</span></div></div>
+  </div>
+
+  <div class="sect-lbl reveal">— Las 4 decisiones de hoy —</div>
+  <div class="prog reveal"><i></i><i></i><i></i><i></i></div>
 
   <!-- DECISIÓN 1 -->
   <div class="card reveal">
-    <span class="no"><span class="dot">1</span> Tu huerta de primavera</span>
-    <h3>¿Dónde la armamos?</h3>
-    <p class="ctx">Lo pediste vos. Tu casa mira este-oeste, así que el sol manda: la huerta quiere 6 h mínimo. Elegí y te armo el plan de siembra para ese lugar.</p>
+    <span class="no"><span class="dot">1</span> Tu huerta del muro norte</span>
+    <h3>¿Con qué la arrancás?</h3>
+    <p class="ctx">Elegiste el muro norte: perfecto, es el lado que más sol junta en invierno. Julio es ventana de siembra para dos cultivos. Elegí por dónde empezar y te armo la primera línea de siembra esta semana.</p>
     <div class="opts">
-      <button type="button" onclick="decide('vd-huerta-lugar','frente', this)"><span class="oe">🌇</span><span>Frente (oeste)<span class="osub">Sol de tarde, 6 h+ — el mejor para tomate y morrón</span></span></button>
-      <button type="button" onclick="decide('vd-huerta-lugar','norte', this)"><span class="oe">🧱</span><span>Muro norte<span class="osub">Lado cálido, sol todo el invierno — ideal aromáticas</span></span></button>
-      <button type="button" onclick="decide('vd-huerta-lugar','fondo', this)"><span class="oe">🌿</span><span>Fondo (este)<span class="osub">Solo sol de mañana — lechuga y hojas de media sombra</span></span></button>
-      <button type="button" onclick="decide('vd-huerta-lugar','macetones', this)"><span class="oe">🪴</span><span>Macetones movibles<span class="osub">Sin obra, los muevo buscando el sol</span></span></button>
+      <button type="button" onclick="decide('vd2-huerta-arranque','lechuga', this)"><span class="oe">🥬</span><span>Lechuga de invierno<span class="osub">Mantecosa o criolla — cosechás hojas en ~40 días</span></span></button>
+      <button type="button" onclick="decide('vd2-huerta-arranque','cebolla', this)"><span class="oe">🧅</span><span>Cebolla<span class="osub">De almácigo a lugar definitivo, para el verano</span></span></button>
+      <button type="button" onclick="decide('vd2-huerta-arranque','ambas', this)"><span class="oe">🌱</span><span>Arranco con las dos<span class="osub">Hoja rápida + bulbo de fondo, el cantero completo</span></span></button>
     </div>
     <span class="decided"></span>
   </div>
 
   <!-- DECISIÓN 2 -->
   <div class="card reveal">
-    <span class="no"><span class="dot">2</span> Hortensia <span class="code">B-5a/b</span></span>
-    <h3>¿A tierra o a macetón?</h3>
-    <p class="ctx">Los 2 ejemplares en macetas chicas hay que pasarlos ahora que están pelados (dormancia = momento ideal). ¿Adónde los mudamos?</p>
+    <span class="no"><span class="dot">2</span> Hortensia <span class="code">B-5a/b</span> → a tierra</span>
+    <h3>¿En qué rincón la plantamos?</h3>
+    <p class="ctx">Ya decidiste que va a cantero. La hortensia pide luz suave y suelo fresco — el sol fuerte de la tarde la quema. Tu casa mira este-oeste, así que hay un lado ideal. ¿Cuál elegís?</p>
     <div class="opts">
-      <button type="button" onclick="decide('vd-hortensia','tierra', this)"><span class="oe">🌍</span><span>A tierra, en cantero<span class="osub">Más raíz, más flor — pero fija el lugar</span></span></button>
-      <button type="button" onclick="decide('vd-hortensia','maceton', this)"><span class="oe">🪴</span><span>A macetón de 40 cm+<span class="osub">Movible, control del sustrato ácido</span></span></button>
+      <button type="button" onclick="decide('vd2-hortensia-rincon','sur', this)"><span class="oe">🌥️</span><span>Rincón sur (junto a la pera)<span class="osub">Sombra fresca y húmeda — su lugar de manual</span></span></button>
+      <button type="button" onclick="decide('vd2-hortensia-rincon','fondo', this)"><span class="oe">🌿</span><span>Fondo (este)<span class="osub">Sol de mañana suave, resguardo de la tarde</span></span></button>
     </div>
     <span class="decided"></span>
   </div>
 
   <!-- DECISIÓN 3 -->
   <div class="card reveal">
-    <span class="no"><span class="dot">3</span> Liquidámbar <span class="code">B-37</span></span>
-    <h3>La rama que le tapa el sol a la palta</h3>
-    <p class="ctx">Hay que sacarla entera desde el origen, en 3 cortes, un día seco de dormancia. ¿Quién la hace?</p>
+    <span class="no"><span class="dot">3</span> Plantines de palta</span>
+    <h3>Siguen contra la pared, a la sombra</h3>
+    <p class="ctx">Tus paltas jóvenes están sin tocar, pegadas al muro para pasar el invierno. En primavera empujan raíz y van a pedir más lugar y más luz. ¿Qué hacemos cuando afloje el frío?</p>
     <div class="opts">
-      <button type="button" onclick="decide('vd-liquidambar','yo', this)"><span class="oe">🪚</span><span>La hago yo<span class="osub">Te dejo el paso a paso de los 3 cortes</span></span></button>
-      <button type="button" onclick="decide('vd-liquidambar','jardinero', this)"><span class="oe">👷</span><span>Llamo al jardinero<span class="osub">Te preparo el WhatsApp con la tarea</span></span></button>
+      <button type="button" onclick="decide('vd2-palta','quedan', this)"><span class="oe">🧱</span><span>Se quedan donde están<span class="osub">Otro año contra la pared, sin mover nada</span></span></button>
+      <button type="button" onclick="decide('vd2-palta','maceta', this)"><span class="oe">🪴</span><span>A macetas más grandes<span class="osub">Más raíz sin comprometer el lugar todavía</span></span></button>
+      <button type="button" onclick="decide('vd2-palta','jardin', this)"><span class="oe">🌳</span><span>Uno al jardín, al sol<span class="osub">Elijo el más fuerte y lo planto definitivo</span></span></button>
     </div>
     <span class="decided"></span>
   </div>
 
   <!-- DECISIÓN 4 -->
   <div class="card reveal">
-    <span class="no"><span class="dot">4</span> El caqui misterioso <span class="code">B-41</span></span>
-    <h3>Nunca dio flor ni fruto</h3>
-    <p class="ctx">Su identidad está en duda: lo tenemos como caqui, pero no lo confirma nada. Ahora está en observación hasta noviembre. ¿Lo dejamos así o querés que investigue ya?</p>
+    <span class="no"><span class="dot">4</span> El vivero <span class="code">B-46</span></span>
+    <h3>~30 plantines esperando destino</h3>
+    <p class="ctx">Reciclaste como 30 plantines (varios de palmera, que no son baratos). Ya están reubicados y sanos. Ahora la pregunta buena: ¿para qué son? Elegí y te armo el plan.</p>
     <div class="opts">
-      <button type="button" onclick="decide('vd-caqui','observar', this)"><span class="oe">🔭</span><span>Dejarlo en observación<span class="osub">Esperar flor/fruto en primavera para confirmar</span></span></button>
-      <button type="button" onclick="decide('vd-caqui','investigar', this)"><span class="oe">🕵️</span><span>Investigá ya<span class="osub">Cruzo corteza, yema y porte para arriesgar una ID</span></span></button>
-    </div>
-    <span class="decided"></span>
-  </div>
-
-  <!-- DECISIÓN 5 -->
-  <div class="card reveal">
-    <span class="no"><span class="dot">5</span> La gran poda de agosto</span>
-    <h3>Son 12 tareas. ¿Cómo las querés?</h3>
-    <p class="ctx">El mes que viene se concentra el trabajo pesado del año (durazno, ciruelo, crespón, althea, hibisco…). Elegí cómo te lo ordeno y lo tenés listo antes de que arranque.</p>
-    <div class="opts">
-      <button type="button" onclick="decide('vd-agosto','prioridad', this)"><span class="oe">🔢</span><span>Por prioridad<span class="osub">De lo más urgente a lo que puede esperar</span></span></button>
-      <button type="button" onclick="decide('vd-agosto','finde', this)"><span class="oe">📅</span><span>Plan por fin de semana<span class="osub">Reparto las 12 en los findes de agosto</span></span></button>
-      <button type="button" onclick="decide('vd-agosto','contacto', this)"><span class="oe">👷</span><span>Todo al jardinero<span class="osub">Te armo la lista para pasársela junta</span></span></button>
+      <button type="button" onclick="decide('vd2-vivero','repartir', this)"><span class="oe">🎁</span><span>Para regalar / repartir<span class="osub">Te preparo cuáles ya están listos para dar</span></span></button>
+      <button type="button" onclick="decide('vd2-vivero','plantar', this)"><span class="oe">🌴</span><span>Plantarlos en el jardín<span class="osub">Busco los huecos con sol donde entran</span></span></button>
+      <button type="button" onclick="decide('vd2-vivero','crecer', this)"><span class="oe">⏳</span><span>Que crezcan un año más<span class="osub">Los dejo engordar en vivero hasta el próximo invierno</span></span></button>
     </div>
     <span class="decided"></span>
   </div>
 
   <!-- SUSCRIPCIÓN DIARIA -->
   <div class="qbox tom reveal">
-    <h3>🔔 ¿Te consulto una decisión por día?</h3>
-    <p>Una sola pregunta corta cada mañana sobre algo real del jardín. Vos tocás, yo ejecuto. Cero relleno.</p>
+    <h3>🔔 Seguimos con una decisión por día</h3>
+    <p>Ayer dijiste que sí. Una consulta corta cada mañana sobre algo real del jardín — vos tocás, yo ejecuto. ¿La mantenemos?</p>
     <div class="qbtns">
-      <button type="button" onclick="engageAnswer('vos-decidis-suscripcion-diaria','si', this)">Sí, dale</button>
-      <button type="button" onclick="engageAnswer('vos-decidis-suscripcion-diaria','no', this)">No hace falta</button>
+      <button type="button" onclick="engageAnswer('vos-decidis-suscripcion-diaria','si', this)">Sí, seguí</button>
+      <button type="button" onclick="engageAnswer('vos-decidis-suscripcion-diaria','no', this)">Pará por ahora</button>
     </div>
     <span class="q-hint"></span>
   </div>
 
   <!-- REACCIÓN -->
   <div class="react reveal">
-    <div class="rl">¿Te gustó tener el timón?</div>
+    <div class="rl">¿Te gustó ver lo de ayer ya hecho?</div>
     <div class="btns">
       <button type="button" onclick="engageReact('vos-decidis','love', this)">😍</button>
       <button type="button" onclick="engageReact('vos-decidis','like', this)">🙂</button>
@@ -184,7 +198,7 @@
   <!-- FEEDBACK PROPIO -->
   <section class="fb-blk reveal" id="engage-feedback-box">
     <h3>💬 Decime qué te pareció</h3>
-    <p>¿Falta alguna decisión que querés tomar vos? ¿Otra forma de preguntártelo? Lo leo yo antes de armar la próxima.</p>
+    <p>¿Hay otra decisión que querés tomar vos? ¿Ejecuté bien lo de ayer? Lo leo yo antes de armar la de mañana.</p>
     <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
     <button type="button" class="fb-send" onclick="engageFeedback('vos-decidis', this)">Enviar feedback</button>
     <span class="fb-hint"></span>
@@ -192,11 +206,11 @@
 
   <!-- DECISIÓN PROPOSAL -->
   <div class="engage-actions reveal">
-    <button onclick="engageApprove('2026-07-26-vos-decidis')">✅ Sumá esto al sitio</button>
-    <button onclick="engageRejected('2026-07-26-vos-decidis')">✕ No me interesa</button>
+    <button onclick="engageApprove('2026-07-27-vos-decidis')">✅ Dejá esto fijo</button>
+    <button onclick="engageRejected('2026-07-27-vos-decidis')">✕ No me interesa</button>
   </div>
 
-  <div class="cred reveal">Cada decisión está anclada en una tarea o duda real del catálogo Pacha Mama · lo que marques lo leo y lo ejecuto en la próxima corrida · Montevideo · 26/07/2026</div>
+  <div class="cred reveal">Cada decisión está anclada en una tarea o duda real del catálogo Pacha Mama · lo de ayer ya está ejecutado, lo de hoy lo ejecuto en la próxima corrida · Montevideo · 27/07/2026</div>
 
 </div>
 
@@ -207,7 +221,6 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
 
-  // Selección visual de la decisión + progreso, delegando el registro a engageAnswer de engage.js
   var decided = {};
   window.decide = function(qid, value, btn){
     var card = btn.closest('.card');
