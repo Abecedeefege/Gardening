@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-27T23:24:03.747Z",
+  "_updated_at": "2026-07-27T23:24:08.123Z",
   "events": [
     {
       "_id": "mrjqkng15tek1r",
@@ -1200,6 +1200,15 @@
       "value": "flor",
       "page": "engage/2026-07-27-mi-objetivo.html",
       "ts": "2026-07-27T23:24:04.278Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3usuoguaw58g",
+      "type": "dwell",
+      "seconds": 54,
+      "scroll_pct": 95,
+      "page": "engage/2026-07-27-mi-objetivo.html",
+      "ts": "2026-07-27T23:24:08.656Z",
       "device": "sin-nombre"
     }
   ],
