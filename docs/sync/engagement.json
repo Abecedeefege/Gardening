@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-27T00:42:38.450Z",
+  "_updated_at": "2026-07-27T00:42:46.451Z",
   "events": [
     {
       "_id": "mrhznmicxu7ovg",
@@ -1157,6 +1157,15 @@
       "value": "B-13",
       "page": "engage/2026-07-26-mi-primavera.html",
       "ts": "2026-07-27T00:42:40.159Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2i65hhorlvgk",
+      "type": "answer",
+      "qid": "mi-primavera-prioridad",
+      "value": "F-7",
+      "page": "engage/2026-07-26-mi-primavera.html",
+      "ts": "2026-07-27T00:42:48.005Z",
       "device": "sin-nombre"
     }
   ],
