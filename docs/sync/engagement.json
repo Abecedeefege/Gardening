@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-28T23:50:52.408Z",
+  "_updated_at": "2026-07-28T23:50:57.902Z",
   "events": [
     {
       "_id": "mrktiovyklrz78",
@@ -1340,6 +1340,13 @@
       "nid": "2026-07-28-a",
       "src": "push",
       "ts": "2026-07-28T23:50:51.033Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms5b76gz7e6k39",
+      "type": "proposal_rejected",
+      "proposal_id": "2026-07-28-vos-decidis",
+      "ts": "2026-07-28T23:50:57.155Z",
       "device": "sin-nombre"
     }
   ],
