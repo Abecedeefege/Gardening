@@ -1,6 +1,6 @@
 {
   "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
-  "_updated": "2026-07-27",
+  "_updated": "2026-07-28",
   "plants": {
     "F-1": {
       "common": "Guayabo del país",
@@ -45,7 +45,7 @@
     },
     "F-2": {
       "common": "Bignonia rosada / Podranea",
-      "paginas_historicas": 6,
+      "paginas_historicas": 7,
       "featured": [
         {
           "date": "2026-07-21",
@@ -56,6 +56,11 @@
           "date": "2026-07-25",
           "page": "2026-07-25-mapa-solar.html",
           "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
+        },
+        {
+          "date": "2026-07-28",
+          "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
+          "fact": "ANGULO OBJETIVO-FLOR (no fun_fact): opcion en decision de prioridad de flor (poda podranea)"
         }
       ]
     },
@@ -321,7 +326,7 @@
     },
     "B-9": {
       "common": "Crespón / Mirto de crepe",
-      "paginas_historicas": 12,
+      "paginas_historicas": 13,
       "featured": [
         {
           "date": "2026-07-19",
@@ -342,6 +347,11 @@
           "date": "2026-07-27",
           "page": "2026-07-27-mi-objetivo.html",
           "fact": "ANGULO OBJETIVO (mas flor): poda severa agosto = flor de verano (madera nueva)"
+        },
+        {
+          "date": "2026-07-28",
+          "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
+          "fact": "ANGULO OBJETIVO-FLOR (no fun_fact): decision \"cual explota primero\" — poda agosto en madera nueva = flor de verano. Ejecuta objetivo declarado del usuario (mas flor)"
         }
       ]
     },
@@ -443,7 +453,7 @@
     },
     "B-18": {
       "common": "Rosa de Siria / Althea",
-      "paginas_historicas": 8,
+      "paginas_historicas": 9,
       "featured": [
         {
           "date": "2026-07-18",
@@ -459,6 +469,11 @@
           "date": "2026-07-27",
           "page": "2026-07-27-mi-objetivo.html",
           "fact": "ANGULO OBJETIVO (mas flor): poda severa = mas flor (madera nueva)"
+        },
+        {
+          "date": "2026-07-28",
+          "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
+          "fact": "ANGULO OBJETIVO-FLOR (no fun_fact): opcion en decision de prioridad de flor (poda severa althea)"
         }
       ]
     },
@@ -490,7 +505,7 @@
     },
     "B-23": {
       "common": "Limonero",
-      "paginas_historicas": 11,
+      "paginas_historicas": 12,
       "featured": [
         {
           "date": "2026-07-18",
@@ -506,6 +521,11 @@
           "date": "2026-07-24",
           "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
           "fact": "ANGULO ESTADO (jardin-hoy): 'con fruta' — chip minimalista"
+        },
+        {
+          "date": "2026-07-28",
+          "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
+          "fact": "ANGULO ESTADO REAL (no fun_fact): duelo esto-o-esto — limonero cargado de fruta HOY (dato factual invierno)"
         }
       ]
     },
@@ -563,7 +583,7 @@
     },
     "B-26": {
       "common": "Romero",
-      "paginas_historicas": 14,
+      "paginas_historicas": 15,
       "featured": [
         {
           "date": "2026-07-18",
@@ -589,6 +609,11 @@
           "date": "2026-07-24",
           "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
           "fact": "ANGULO ESTADO (jardin-hoy): 'en flor' — vistazo minimalista, sin fun_fact"
+        },
+        {
+          "date": "2026-07-28",
+          "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
+          "fact": "ANGULO ESTADO REAL (no fun_fact): duelo esto-o-esto — unica en flor este mes (dato factual julio)"
         }
       ]
     },
@@ -944,6 +969,17 @@
           "date": "2026-07-18",
           "page": "2026-07-18-secomenta.html",
           "fact": "oxalato / cana muda"
+        }
+      ]
+    },
+    "B-5": {
+      "common": "Hortensia",
+      "paginas_historicas": 1,
+      "featured": [
+        {
+          "date": "2026-07-28",
+          "page": "2026-07-28-vos-decidis.html",
+          "fact": "ANGULO DECISION/TAREA (no fun_fact): rincon donde plantarla a tierra (carry-over sin responder del 27/07)"
         }
       ]
     }

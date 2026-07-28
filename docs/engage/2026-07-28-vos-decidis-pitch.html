@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#14231a">
+<title>💼 Pitch — Vos decidís</title>
+<style>
+  :root{ --bg:#0f1a12; --card:#17271b; --ink:#eef4ec; --ink2:#a9bfad; --ink3:#7d947f; --verde:#79a83e; --sol:#e0a92e; --tom:#e07a4f; --rosa:#e46fa0; --line:rgba(255,255,255,.12); --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }
+  *{ box-sizing:border-box; margin:0; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.55; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; padding:11px 18px; background:#0b140e; color:var(--verde); text-decoration:none; font-size:13px; font-weight:800; }
+  .wrap{ max-width:640px; margin:0 auto; padding:26px 18px 40px; }
+  .kick{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--sol); }
+  h1{ font-size:29px; line-height:1.1; margin:8px 0 6px; font-weight:900; }
+  .sub{ color:var(--ink2); font-size:15px; }
+  h2{ font-size:16px; font-weight:900; margin:30px 0 6px; color:#fff; border-left:3px solid var(--verde); padding-left:10px; }
+  .lead{ color:var(--ink2); font-size:14px; }
+  .grid{ display:grid; gap:12px; margin-top:12px; }
+  .m{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 16px; }
+  .m .mt{ display:flex; align-items:baseline; gap:8px; }
+  .m .tag{ font-size:10.5px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:3px 9px; border-radius:999px; flex:none; }
+  .tag.inn{ background:rgba(121,168,62,.18); color:var(--verde); }
+  .tag.cre{ background:rgba(228,111,160,.18); color:var(--rosa); }
+  .m h3{ font-size:16px; font-weight:900; }
+  .m p{ color:var(--ink2); font-size:13.5px; margin-top:6px; }
+  .m .rev{ margin-top:9px; font-size:12.5px; color:var(--sol); font-weight:800; }
+  .fund{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; margin-top:12px; }
+  .fund li{ margin:5px 0 5px 18px; font-size:13.5px; color:var(--ink2); }
+  .fund b{ color:var(--ink); }
+  .pitch{ background:linear-gradient(180deg,#1c3324,#152417); border:1px solid var(--line); border-radius:16px; padding:18px; margin-top:12px; font-size:14.5px; }
+  .pitch b{ color:#fff; }
+  .kpis{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:12px; }
+  .kpi{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:13px; text-align:center; }
+  .kpi .n{ font-size:22px; font-weight:900; color:var(--verde); }
+  .kpi .l{ font-size:11px; color:var(--ink3); font-weight:700; margin-top:2px; }
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:24px; text-align:center; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="wrap">
+  <div class="kick">Pitch de producto · confidencial · v3</div>
+  <h1>🌸 Vos decidís</h1>
+  <p class="sub">La app aprendió del propio usuario: ayer declaró un objetivo (<b>más flor</b>) y hoy la app se lo devuelve convertido en decisiones concretas. No es un feed de tareas: es un <b>motor de intención→acción</b> que escucha lo que el usuario quiere y arma el plan por él.</p>
+
+  <h2>Por qué convierte (dato real)</h2>
+  <p class="lead">«Vos decidís» fue la única variante del mes que juntó suscripción + reacción positiva + respuestas completas (116 s de sesión el 26/07). El experimento paralelo del 27/07 mostró que el usuario <b>declara objetivos</b> con gusto (54 s leyendo, eligió «flor» de forma dominante) pero no convierte con la sola aspiración. La v3 cierra ese hueco: toma el objetivo declarado y lo transforma en decisiones ejecutables. Aspiración escuchada + agencia inmediata = el habit-loop completo.</p>
+  <div class="kpis">
+    <div class="kpi"><div class="n">116 s</div><div class="l">sesión récord del formato</div></div>
+    <div class="kpi"><div class="n">flor</div><div class="l">objetivo declarado por el usuario</div></div>
+    <div class="kpi"><div class="n">Sí</div><div class="l">suscripción diaria ya activada</div></div>
+  </div>
+
+  <h2>3 modelos innovadores</h2>
+  <div class="grid">
+    <div class="m">
+      <div class="mt"><span class="tag inn">Innovador</span></div>
+      <h3>1 · «Hacelo por mí» — ejecución premium</h3>
+      <p>Cada decisión (podar el crespón, trasplantar la hortensia, sembrar la caléndula) ofrece un botón «que lo haga un pro»: cotización y reserva de un jardinero verificado en 2 taps, con el contexto ya cargado. La app pasa de recomendar a coordinar el servicio.</p>
+      <div class="rev">Ingreso: fee de marketplace de servicios (15-20% por reserva).</div>
+    </div>
+    <div class="m">
+      <div class="mt"><span class="tag inn">Innovador</span></div>
+      <h3>2 · «Objetivo premium» — el plan anual guiado</h3>
+      <p>El usuario declara un objetivo grande («más flor», «primera cosecha», «sombra en 3 años») y la suscripción se lo desglosa en una decisión accionable por día, con el material y el momento exactos. Vende el resultado, no las tareas sueltas.</p>
+      <div class="rev">Ingreso: suscripción premium orientada a objetivo.</div>
+    </div>
+    <div class="m">
+      <div class="mt"><span class="tag inn">Innovador</span></div>
+      <h3>3 · Datos de intención declarada (B2B anónimo)</h3>
+      <p>«El 41% de los usuarios de Montevideo priorizó flor de verano y va a podar crespón/althea en agosto» es demanda pura para viveros e insumeras. No es comportamiento inferido: es intención tipeada. Panel agregado y anonimizado por región y estación.</p>
+      <div class="rev">Ingreso: licencia de dashboard B2B.</div>
+    </div>
+  </div>
+
+  <h2>3 modelos ultra-creativos</h2>
+  <div class="grid">
+    <div class="m">
+      <div class="mt"><span class="tag cre">Ultra-creativo</span></div>
+      <h3>4 · «Apadriná una flor» — el ramo con nombre</h3>
+      <p>El usuario elige el arbusto que quiere ver explotar; una marca de vivero o florería «apadrina» esa flor: cuando florece de verdad (foto real del usuario en verano), recibe un cupón de la marca y una tarjeta «Mi crespón floreció, patrocinado por X». Pago por resultado floral verificado.</p>
+      <div class="rev">Ingreso: sponsorship pay-per-bloom + cupones de conversión.</div>
+    </div>
+    <div class="m">
+      <div class="mt"><span class="tag cre">Ultra-creativo</span></div>
+      <h3>5 · El recibo que se comparte</h3>
+      <p>El loop de ejecución es contenido social: «Mi jardín cumplió su objetivo de flor» como tarjeta lista para compartir, con branding de un sponsor. Prueba de progreso = orgullo = distribución orgánica gratis, y una marca paga por estar en la tarjeta.</p>
+      <div class="rev">Ingreso: branded share-cards + adquisición viral.</div>
+    </div>
+    <div class="m">
+      <div class="mt"><span class="tag cre">Ultra-creativo</span></div>
+      <h3>6 · Decisiones que financian flor nativa</h3>
+      <p>Modo «cada objetivo cumplido siembra»: por cada primavera de flor lograda, un sponsor financia flores nativas para polinizadores en un espacio público de Montevideo. La marca compra impacto medible y el usuario ve crecer «su primavera» más allá de su jardín.</p>
+      <div class="rev">Ingreso: sponsorship de impacto / CSR por objetivo.</div>
+    </div>
+  </div>
+
+  <h2>Fundamento</h2>
+  <div class="fund">
+    <ul>
+      <li><b>Insight validado con dato duro:</b> agencia + autoridad fue el único eje que convirtió a suscripción.</li>
+      <li><b>La app escucha:</b> el objetivo declarado ayer (flor) define el contenido de hoy — personalización de costo cero.</li>
+      <li><b>Loop de ejecución:</b> mostrar lo cumplido cierra el ciclo intención→acción→prueba y crea el hábito.</li>
+      <li><b>Dato irremplazable:</b> intención declarada tap-a-tap, no comportamiento inferido — el activo más caro de vender.</li>
+    </ul>
+  </div>
+
+  <div class="pitch">
+    <b>El pitch en una línea:</b> el usuario nos dice qué quiere de su jardín, y cada mañana se lo devolvemos convertido en una decisión de un tap que ejecutamos por él. Escuchamos el objetivo, armamos el plan, mostramos el recibo. La app no pide atención: le da al usuario el jardín que pidió.
+  </div>
+
+  <div class="cred">Documento de estrategia · experiencia «Vos decidís» v3 · generado por el agente de engagement · 28/07/2026</div>
+</div>
+</body></html>

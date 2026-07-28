@@ -2,32 +2,6 @@
   "_updated_at": "2026-07-27T23:24:08.123Z",
   "events": [
     {
-      "_id": "mrjqkng15tek1r",
-      "type": "notification_clicked",
-      "nid": "2026-07-13-b",
-      "page": "engage/2026-07-13-bereal-jardin.html",
-      "ts": "2026-07-13T21:30:24.044Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrjqkng1omb2ya",
-      "type": "page_visit",
-      "page": "engage/2026-07-13-bereal-jardin.html",
-      "nid": "2026-07-13-b",
-      "src": "push",
-      "ts": "2026-07-13T21:30:24.044Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrjqkwjbm597um",
-      "type": "dwell",
-      "seconds": 12,
-      "scroll_pct": 18,
-      "page": "engage/2026-07-13-bereal-jardin.html",
-      "ts": "2026-07-13T21:30:35.831Z",
-      "device": "sin-nombre"
-    },
-    {
       "_id": "mrktiovyklrz78",
       "type": "dwell",
       "seconds": 21,
@@ -1397,6 +1371,12 @@
       "sent": 5,
       "clicked": 2,
       "visits": 4,
+      "approvals": 0
+    },
+    "2026-07-13": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
       "approvals": 0
     }
   }

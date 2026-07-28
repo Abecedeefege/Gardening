@@ -1,42 +1,42 @@
 {
-  "_updated_at": "2026-07-27T21:38:02.193Z",
+  "_updated_at": "2026-07-28T09:10:00-03:00",
   "notifications": [
     {
-      "id": "2026-07-27-jardin-hoy",
+      "id": "2026-07-28-jardin-hoy",
       "title": "🌤️ Tu jardín hoy",
-      "body": "Lo que decidiste ayer ya está encaminado. Tu huerta arranca en el muro norte: mirá el plan de siembra.",
+      "body": "Ayer elegiste lechuga y pediste más flor. Las dos ya están en el plan — mirá el vistazo de hoy.",
       "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
       "format": "tarea",
-      "send_at": "2026-07-27T10:00:00-03:00",
-      "expires_at": "2026-07-27T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-27T15:41:10.373Z",
+      "send_at": "2026-07-28T10:00:00-03:00",
+      "expires_at": "2026-07-28T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-27 (push diaria consolidada estado+tareas+huerta, decisiones de ayer ejecutadas)"
+      "created_by": "engagement-agent 2026-07-28 (push diaria consolidada estado+tareas+huerta; ejecuta lechuga + objetivo flor)"
     },
     {
-      "id": "2026-07-27-b",
-      "title": "🎯 Poné el objetivo",
-      "body": "No más tareas sueltas. Elegí qué querés lograr esta primavera y te armo el plan con las plantas que ya tenés.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-27-mi-objetivo.html",
-      "send_at": "2026-07-27T13:30:00-03:00",
-      "expires_at": "2026-07-27T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-27T17:22:06.368Z",
+      "id": "2026-07-28-b",
+      "title": "👉 Esto o esto: ¿qué jardinero sos?",
+      "body": "5 toques, cero lectura. Al final te digo tu perfil de jardinero. Tardás 20 segundos.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-28-esto-o-esto.html",
+      "send_at": "2026-07-28T13:30:00-03:00",
+      "expires_at": "2026-07-28T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-27 (experimento nuevo: objetivo→plan)"
+      "created_by": "engagement-agent 2026-07-28 (experimento nuevo: duelos binarios cero-lectura, ataca queja 'mucho texto')"
     },
     {
-      "id": "2026-07-27-a",
-      "title": "🌿 Lo de ayer, hecho",
-      "body": "Tus 5 decisiones de ayer ya están ejecutadas. Mirá el recibo y tomá las 4 nuevas de hoy.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-27-vos-decidis.html",
-      "send_at": "2026-07-27T18:00:00-03:00",
-      "expires_at": "2026-07-27T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-27T21:38:02.191Z",
+      "id": "2026-07-28-a",
+      "title": "🌸 Pediste más flor: acá está",
+      "body": "Convertí tu objetivo en 3 decisiones. Elegí qué querés ver explotar de flor este verano.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-28-vos-decidis.html",
+      "send_at": "2026-07-28T18:00:00-03:00",
+      "expires_at": "2026-07-28T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-27 (serializacion del ganador vos-decidis, slot dorado)"
+      "created_by": "engagement-agent 2026-07-28 (serializacion vos-decidis v3, slot dorado; ejecuta objetivo flor declarado)"
     }
   ]
 }

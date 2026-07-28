@@ -3,13 +3,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f5faf0">
 <title>🌿 Vos decidís</title>
-<meta property="og:title" content="🌿 Vos decidís — lo de ayer ya lo ejecuté">
-<meta property="og:description" content="Lo que marcaste ayer, ya está hecho. Hoy hay 4 decisiones nuevas que tu jardín necesita de vos. Tocás, elegís, y yo ejecuto.">
+<meta property="og:title" content="🌿 Vos decidís — pediste más flor, armemos tu primavera">
+<meta property="og:description" content="Ayer elegiste lechuga y me dijiste que querés más flor. La lechuga ya está sembrada en el plan; hoy decidís qué arbusto querés ver explotar de flor este verano.">
 <style>
   :root{
     --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
     --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
-    --sol:#e0a92e; --tom:#d1552f; --azul:#3f7d8a;
+    --sol:#e0a92e; --tom:#d1552f; --azul:#3f7d8a; --rosa:#c85a8e;
     --pad:max(18px,env(safe-area-inset-left));
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
   }
@@ -28,7 +28,6 @@
   .hero h1{ font-size:33px; line-height:1.06; margin:8px 0 8px; font-weight:900; letter-spacing:-.02em; }
   .hero p{ color:var(--ink2); font-size:14.5px; max-width:34ch; margin:0 auto; }
 
-  /* recap de ayer = prueba de que tus taps mueven cosas */
   .recap{ background:linear-gradient(180deg,#eef8e0,#f6fbef); border:1px solid rgba(90,138,46,.28); border-radius:20px; padding:20px 18px; margin:20px 0 6px; }
   .recap .rt{ font-size:12.5px; font-weight:900; letter-spacing:.06em; text-transform:uppercase; color:var(--verde2); display:flex; align-items:center; gap:8px; }
   .recap h2{ font-size:18px; font-weight:900; margin:6px 0 4px; }
@@ -41,13 +40,13 @@
 
   .prog{ display:flex; gap:6px; justify-content:center; margin:22px 0 4px; }
   .prog i{ width:26px; height:5px; border-radius:99px; background:var(--line); transition:background .3s; }
-  .prog i.on{ background:var(--verde2); }
+  .prog i.on{ background:var(--rosa); }
 
   .sect-lbl{ text-align:center; font-size:12px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--ink3); margin:18px 0 2px; }
 
   .card{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 18px; margin:14px 0; box-shadow:0 6px 20px rgba(45,80,22,.06); }
-  .card .no{ display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:900; letter-spacing:.06em; text-transform:uppercase; color:var(--verde2); }
-  .card .no .dot{ width:20px; height:20px; border-radius:50%; background:var(--verde3); color:var(--verde); display:grid; place-items:center; font-size:12px; }
+  .card .no{ display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:900; letter-spacing:.06em; text-transform:uppercase; color:var(--rosa); }
+  .card .no .dot{ width:20px; height:20px; border-radius:50%; background:#fbe4ef; color:var(--rosa); display:grid; place-items:center; font-size:12px; }
   .card h3{ font-size:18.5px; font-weight:900; line-height:1.2; margin:10px 0 4px; }
   .card .ctx{ font-size:13.5px; color:var(--ink2); }
   .card .code{ font-family:ui-monospace,Menlo,monospace; font-size:11px; color:var(--ink3); }
@@ -56,21 +55,20 @@
   .opts button .oe{ font-size:19px; flex:none; }
   .opts button .osub{ display:block; font-weight:600; font-size:12px; color:var(--ink3); margin-top:2px; }
   .opts button:active{ transform:scale(.985); }
-  .opts button.sel{ background:var(--verde); color:#fff; border-color:var(--verde); }
-  .opts button.sel .osub{ color:#cfe6b8; }
+  .opts button.sel{ background:var(--rosa); color:#fff; border-color:var(--rosa); }
+  .opts button.sel .osub{ color:#ffe0ee; }
   .opts button.dim{ opacity:.5; }
-  .decided{ display:block; margin-top:11px; font-size:12.5px; font-weight:800; color:var(--verde2); min-height:1.1em; }
+  .decided{ display:block; margin-top:11px; font-size:12.5px; font-weight:800; color:var(--rosa); min-height:1.1em; }
 
   .qbox{ background:var(--verde); color:#eef7e0; border-radius:20px; padding:22px 18px; margin:26px 0 8px; text-align:center; }
-  .qbox.tom{ background:var(--tom); }
+  .qbox.tom{ background:var(--rosa); }
   .qbox h3{ font-size:17.5px; font-weight:900; }
   .qbox p{ color:#cfe6b8; font-size:13.5px; margin:5px auto 14px; max-width:34ch; }
-  .qbox.tom p{ color:#ffe4d6; }
+  .qbox.tom p{ color:#ffe0ee; }
   .qbtns{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
-  .qbtns button{ background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.3); border-radius:12px; padding:11px 18px; font:800 14px var(--sans); cursor:pointer; }
-  .qbtns button.sel{ background:#fff; color:var(--verde); border-color:#fff; }
-  .qbox.tom .qbtns button.sel{ color:var(--tom); }
-  .q-hint{ display:block; margin-top:11px; font-size:13px; font-weight:800; color:#e9ffd0; min-height:1.1em; }
+  .qbtns button{ background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.35); border-radius:12px; padding:11px 18px; font:800 14px var(--sans); cursor:pointer; }
+  .qbtns button.sel{ background:#fff; color:var(--rosa); border-color:#fff; }
+  .q-hint{ display:block; margin-top:11px; font-size:13px; font-weight:800; color:#fff; min-height:1.1em; }
 
   .react{ text-align:center; margin:24px 0 6px; }
   .react .rl{ font-size:14.5px; font-weight:800; color:var(--ink2); margin-bottom:10px; }
@@ -100,82 +98,66 @@
 <div class="wrap">
 
   <header class="hero reveal">
-    <div class="em">🌿</div>
-    <div class="kick">El jardín te consulta · día 2</div>
+    <div class="em">🌸</div>
+    <div class="kick">El jardín te consulta · día 3</div>
     <h1>Vos decidís</h1>
-    <p>Ayer me diste 5 órdenes. Las cumplí todas. Acá te muestro qué hice con cada una — y las 4 nuevas de hoy.</p>
+    <p>Ayer elegiste lechuga y me pediste una cosa: <b>más flor</b>. La lechuga ya está en el plan. Ahora armemos tu primavera de flor.</p>
   </header>
 
-  <!-- RECAP: lo que decidió ayer, ya ejecutado -->
+  <!-- RECAP: lo de ayer, ejecutado -->
   <div class="recap reveal">
     <div class="rt">✅ Lo que decidiste ayer, hecho</div>
-    <h2>Tus 5 taps se convirtieron en esto</h2>
-    <p class="rp">No quedaron en una encuesta: cada uno movió algo real del plan.</p>
-    <div class="rrow"><span class="rk">🧱</span><div><b>Huerta → al muro norte.</b><span class="done">Lado cálido, sol todo el invierno. El plan de siembra para ese muro ya está armado (decisión 1, abajo).</span></div></div>
-    <div class="rrow"><span class="rk">🌍</span><div><b>Hortensia B-5a/b → a tierra.</b><span class="done">Van a cantero ahora, en dormancia. Falta el rincón exacto (decisión 2).</span></div></div>
-    <div class="rrow"><span class="rk">🪚</span><div><b>Liquidámbar B-37 → la hacés vos.</b><span class="done">Te dejé el paso a paso de los 3 cortes en «Tu jardín hoy».</span></div></div>
-    <div class="rrow"><span class="rk">🔭</span><div><b>Caqui B-41 → en observación.</b><span class="done">Sigue en la lupa hasta que dé señales en primavera. No lo forzamos.</span></div></div>
-    <div class="rrow"><span class="rk">🔢</span><div><b>Poda de agosto → por prioridad.</b><span class="done">Ordené las 12 de lo más urgente a lo que puede esperar. Está en «Tu jardín hoy».</span></div></div>
+    <h2>Tus taps ya movieron cosas</h2>
+    <p class="rp">No quedaron en la pantalla: cada uno ya está en el plan real.</p>
+    <div class="rrow"><span class="rk">🥬</span><div><b>Huerta → arrancás con lechuga.</b><span class="done">Quedó como primera línea de siembra del muro norte, en «Tu jardín hoy». Se siembra esta semana.</span></div></div>
+    <div class="rrow"><span class="rk">🌸</span><div><b>Tu objetivo → más flor.</b><span class="done">Lo tomé como norte del año. Las 3 decisiones de hoy son exactamente para eso: definir qué va a florecer y cuándo.</span></div></div>
   </div>
 
-  <div class="sect-lbl reveal">— Las 4 decisiones de hoy —</div>
-  <div class="prog reveal"><i></i><i></i><i></i><i></i></div>
+  <div class="sect-lbl reveal">— 3 decisiones para tu primavera de flor —</div>
+  <div class="prog reveal"><i></i><i></i><i></i></div>
 
   <!-- DECISIÓN 1 -->
   <div class="card reveal">
-    <span class="no"><span class="dot">1</span> Tu huerta del muro norte</span>
-    <h3>¿Con qué la arrancás?</h3>
-    <p class="ctx">Elegiste el muro norte: perfecto, es el lado que más sol junta en invierno. Julio es ventana de siembra para dos cultivos. Elegí por dónde empezar y te armo la primera línea de siembra esta semana.</p>
+    <span class="no"><span class="dot">1</span> La flor más grande del verano</span>
+    <h3>¿A cuál le doy prioridad de poda?</h3>
+    <p class="ctx">Estos tres florecen en <b>madera nueva</b>: una poda fuerte en agosto los hace explotar de flor todo el verano. Los tres se podan igual, pero empiezo por el que vos quieras ver primero.</p>
     <div class="opts">
-      <button type="button" onclick="decide('vd2-huerta-arranque','lechuga', this)"><span class="oe">🥬</span><span>Lechuga de invierno<span class="osub">Mantecosa o criolla — cosechás hojas en ~40 días</span></span></button>
-      <button type="button" onclick="decide('vd2-huerta-arranque','cebolla', this)"><span class="oe">🧅</span><span>Cebolla<span class="osub">De almácigo a lugar definitivo, para el verano</span></span></button>
-      <button type="button" onclick="decide('vd2-huerta-arranque','ambas', this)"><span class="oe">🌱</span><span>Arranco con las dos<span class="osub">Hoja rápida + bulbo de fondo, el cantero completo</span></span></button>
+      <button type="button" onclick="decide('vd3-flor-prioridad','crespon', this)"><span class="oe">🌸</span><span>Crespón <span class="code">B-9</span><span class="osub">Racimos rosados de diciembre a marzo — el rey del verano</span></span></button>
+      <button type="button" onclick="decide('vd3-flor-prioridad','althea', this)"><span class="oe">🌺</span><span>Rosa de Siria / Althea <span class="code">B-18</span><span class="osub">Flor de hibisco todo el verano, aguanta poda severa</span></span></button>
+      <button type="button" onclick="decide('vd3-flor-prioridad','podranea', this)"><span class="oe">🌷</span><span>Bignonia rosada <span class="code">F-2</span><span class="osub">Cascada de campanitas rosadas sobre el frente</span></span></button>
     </div>
     <span class="decided"></span>
   </div>
 
   <!-- DECISIÓN 2 -->
   <div class="card reveal">
-    <span class="no"><span class="dot">2</span> Hortensia <span class="code">B-5a/b</span> → a tierra</span>
+    <span class="no"><span class="dot">2</span> Flor rápida, ya mismo</span>
+    <h3>¿Sumamos color para la primavera temprana?</h3>
+    <p class="ctx">Los arbustos dan flor en verano, pero para no esperar tanto podemos sembrar <b>flor de estación</b> ahora, en el muro norte, al lado de la lechuga. Es a prueba de lluvia (se siembra igual). ¿Vamos?</p>
+    <div class="opts">
+      <button type="button" onclick="decide('vd3-flor-rapida','calendula', this)"><span class="oe">🟠</span><span>Caléndula + copete<span class="osub">Naranjas y amarillas en ~8 semanas, además espantan plagas de la huerta</span></span></button>
+      <button type="button" onclick="decide('vd3-flor-rapida','alegrias', this)"><span class="oe">🌼</span><span>Alegrías del hogar<span class="osub">Color continuo, van bien en el sector con algo de sombra</span></span></button>
+      <button type="button" onclick="decide('vd3-flor-rapida','solo-arbustos', this)"><span class="oe">🌳</span><span>Solo los arbustos<span class="osub">Me quedo con la flor de verano, sin sumar siembra ahora</span></span></button>
+    </div>
+    <span class="decided"></span>
+  </div>
+
+  <!-- DECISIÓN 3 (carry-over: hortensia rincón, quedó sin responder) -->
+  <div class="card reveal">
+    <span class="no"><span class="dot">3</span> Hortensia <span class="code">B-5a/b</span> → a tierra</span>
     <h3>¿En qué rincón la plantamos?</h3>
-    <p class="ctx">Ya decidiste que va a cantero. La hortensia pide luz suave y suelo fresco — el sol fuerte de la tarde la quema. Tu casa mira este-oeste, así que hay un lado ideal. ¿Cuál elegís?</p>
+    <p class="ctx">Ya decidiste que va a cantero, y es una de las que más flor da si la ubicamos bien. Pide luz suave y suelo fresco: el sol fuerte de la tarde la quema. Tu casa mira este-oeste, así que hay un lado ideal.</p>
     <div class="opts">
-      <button type="button" onclick="decide('vd2-hortensia-rincon','sur', this)"><span class="oe">🌥️</span><span>Rincón sur (junto a la pera)<span class="osub">Sombra fresca y húmeda — su lugar de manual</span></span></button>
-      <button type="button" onclick="decide('vd2-hortensia-rincon','fondo', this)"><span class="oe">🌿</span><span>Fondo (este)<span class="osub">Sol de mañana suave, resguardo de la tarde</span></span></button>
-    </div>
-    <span class="decided"></span>
-  </div>
-
-  <!-- DECISIÓN 3 -->
-  <div class="card reveal">
-    <span class="no"><span class="dot">3</span> Plantines de palta</span>
-    <h3>Siguen contra la pared, a la sombra</h3>
-    <p class="ctx">Tus paltas jóvenes están sin tocar, pegadas al muro para pasar el invierno. En primavera empujan raíz y van a pedir más lugar y más luz. ¿Qué hacemos cuando afloje el frío?</p>
-    <div class="opts">
-      <button type="button" onclick="decide('vd2-palta','quedan', this)"><span class="oe">🧱</span><span>Se quedan donde están<span class="osub">Otro año contra la pared, sin mover nada</span></span></button>
-      <button type="button" onclick="decide('vd2-palta','maceta', this)"><span class="oe">🪴</span><span>A macetas más grandes<span class="osub">Más raíz sin comprometer el lugar todavía</span></span></button>
-      <button type="button" onclick="decide('vd2-palta','jardin', this)"><span class="oe">🌳</span><span>Uno al jardín, al sol<span class="osub">Elijo el más fuerte y lo planto definitivo</span></span></button>
-    </div>
-    <span class="decided"></span>
-  </div>
-
-  <!-- DECISIÓN 4 -->
-  <div class="card reveal">
-    <span class="no"><span class="dot">4</span> El vivero <span class="code">B-46</span></span>
-    <h3>~30 plantines esperando destino</h3>
-    <p class="ctx">Reciclaste como 30 plantines (varios de palmera, que no son baratos). Ya están reubicados y sanos. Ahora la pregunta buena: ¿para qué son? Elegí y te armo el plan.</p>
-    <div class="opts">
-      <button type="button" onclick="decide('vd2-vivero','repartir', this)"><span class="oe">🎁</span><span>Para regalar / repartir<span class="osub">Te preparo cuáles ya están listos para dar</span></span></button>
-      <button type="button" onclick="decide('vd2-vivero','plantar', this)"><span class="oe">🌴</span><span>Plantarlos en el jardín<span class="osub">Busco los huecos con sol donde entran</span></span></button>
-      <button type="button" onclick="decide('vd2-vivero','crecer', this)"><span class="oe">⏳</span><span>Que crezcan un año más<span class="osub">Los dejo engordar en vivero hasta el próximo invierno</span></span></button>
+      <button type="button" onclick="decide('vd3-hortensia-rincon','sur', this)"><span class="oe">🌥️</span><span>Rincón sur (junto a la pera)<span class="osub">Sombra fresca y húmeda — su lugar de manual, flor azul intensa</span></span></button>
+      <button type="button" onclick="decide('vd3-hortensia-rincon','fondo', this)"><span class="oe">🌿</span><span>Fondo (este)<span class="osub">Sol de mañana suave, resguardo de la tarde</span></span></button>
     </div>
     <span class="decided"></span>
   </div>
 
   <!-- SUSCRIPCIÓN DIARIA -->
   <div class="qbox tom reveal">
-    <h3>🔔 Seguimos con una decisión por día</h3>
-    <p>Ayer dijiste que sí. Una consulta corta cada mañana sobre algo real del jardín — vos tocás, yo ejecuto. ¿La mantenemos?</p>
+    <h3>🔔 Una decisión por día, cada mañana</h3>
+    <p>Una consulta corta sobre algo real del jardín — vos tocás, yo ejecuto y a la mañana siguiente te muestro el recibo. ¿Seguimos?</p>
     <div class="qbtns">
       <button type="button" onclick="engageAnswer('vos-decidis-suscripcion-diaria','si', this)">Sí, seguí</button>
       <button type="button" onclick="engageAnswer('vos-decidis-suscripcion-diaria','no', this)">Pará por ahora</button>
@@ -185,7 +167,7 @@
 
   <!-- REACCIÓN -->
   <div class="react reveal">
-    <div class="rl">¿Te gustó ver lo de ayer ya hecho?</div>
+    <div class="rl">¿Te gustó que arme tu primavera con lo que pediste?</div>
     <div class="btns">
       <button type="button" onclick="engageReact('vos-decidis','love', this)">😍</button>
       <button type="button" onclick="engageReact('vos-decidis','like', this)">🙂</button>
@@ -198,7 +180,7 @@
   <!-- FEEDBACK PROPIO -->
   <section class="fb-blk reveal" id="engage-feedback-box">
     <h3>💬 Decime qué te pareció</h3>
-    <p>¿Hay otra decisión que querés tomar vos? ¿Ejecuté bien lo de ayer? Lo leo yo antes de armar la de mañana.</p>
+    <p>¿Otra flor que querés sí o sí? ¿Un rincón que tengo que tener en cuenta? Lo leo yo antes de armar la de mañana.</p>
     <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
     <button type="button" class="fb-send" onclick="engageFeedback('vos-decidis', this)">Enviar feedback</button>
     <span class="fb-hint"></span>
@@ -206,11 +188,11 @@
 
   <!-- DECISIÓN PROPOSAL -->
   <div class="engage-actions reveal">
-    <button onclick="engageApprove('2026-07-27-vos-decidis')">✅ Dejá esto fijo</button>
-    <button onclick="engageRejected('2026-07-27-vos-decidis')">✕ No me interesa</button>
+    <button onclick="engageApprove('2026-07-28-vos-decidis')">✅ Dejá esto fijo</button>
+    <button onclick="engageRejected('2026-07-28-vos-decidis')">✕ No me interesa</button>
   </div>
 
-  <div class="cred reveal">Cada decisión está anclada en una tarea o duda real del catálogo Pacha Mama · lo de ayer ya está ejecutado, lo de hoy lo ejecuto en la próxima corrida · Montevideo · 27/07/2026</div>
+  <div class="cred reveal">Cada decisión está anclada en una tarea o especie real del catálogo Pacha Mama · lo de ayer ya está ejecutado, lo de hoy lo ejecuto en la próxima corrida · Montevideo · 28/07/2026</div>
 
 </div>
 

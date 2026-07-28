@@ -848,22 +848,46 @@
       "title": "🌿 Vos decidís v2 (recap de ejecución + 4 decisiones nuevas)",
       "page": "engage/2026-07-27-vos-decidis.html",
       "created": "2026-07-27",
-      "status": "pending",
+      "status": "promoted",
       "hypothesis": "Serialización del ganador del ciclo 56 (agencia/decisión = única que convirtió a suscripción). v2 agrega la pieza que lo vuelve hábito: el LOOP DE EJECUCIÓN — abre mostrando las 5 decisiones de ayer YA HECHAS (recibo), y recién después pide las 4 nuevas. Hipótesis: ver la prueba de que sus taps movieron cosas reales sube la reacción a 😍 y sostiene la suscripción diaria. Anti-repetición vía ángulo DECISIÓN/tarea (no fun_fact); decisiones nuevas ancladas en tareas reales (huerta muro norte, hortensia a tierra, plantines de palta sin tocar, vivero B-46).",
       "notified_by": [
         "2026-07-27-a"
       ],
-      "result_notes": null
+      "result_notes": "SERIALIZADA (continua) 28/07 pero con SEÑAL MÁS DÉBIL que el 26/07: el usuario abrió, leyó al 100% (33 s) y respondió SOLO 1 de 4 decisiones (huerta-arranque='lechuga'); NO renovó la suscripción ni dejó reacción. Lectura: el loop de ejecución NO subió la señal a 😍 — 4 decisiones fue DEMASIADO, empieza a fatigar. Decisión ejecutada en contenido: 'lechuga' quedó como primera línea de siembra en jardin-hoy. La suscripción del 26/07 sigue vigente (el usuario no dijo basta) → el formato continúa en 2026-07-28-vos-decidis.html pero MÁS CORTO (3 decisiones, no 4) y re-enfocado en el objetivo que el usuario declaró ayer (más flor). Página + pitch dated 07-27 eliminados (git rm)."
     },
     {
       "id": "2026-07-27-mi-objetivo",
       "title": "🎯 Tu objetivo, mi plan (objetivo→plan, formato nuevo)",
       "page": "engage/2026-07-27-mi-objetivo.html",
       "created": "2026-07-27",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Formato NUNCA probado (mandato de innovar 18/07). Extiende el eje ganador (agencia) un nivel arriba: en vez de elegir entre opciones que doy, el usuario DECLARA un resultado (más flor / primera cosecha / sombra / fauna) y yo genero un plan de 3 pasos con sus plantas reales. Combina agencia + identidad (qué jardinero sos) + deliverable concreto, costo de contenido cero. Cast fresco por ángulo función/objetivo (Crespón B-9, Althea B-18, Lantana B-29, Santa Rita B-1, Azarero B-7, Madreselva B-40, Anacahuita B-16, Aguaribay F-8 — mayoría descansada ≥7d). Hipótesis: 'declarar el destino' engancha como o más que 'elegir la acción'; el objetivo elegido segmenta al usuario mejor que cualquier encuesta. Riesgo: si no convierte donde vos-decidis sí, el aprendizaje es que la agencia necesita accionabilidad inmediata, no aspiración.",
       "notified_by": [
         "2026-07-27-b"
+      ],
+      "result_notes": "DROPPED 28/07 (pending de día anterior sin aprobación). PERO fue un experimento MUY valioso: el usuario abrió, leyó al 95% (54 s) y respondió el objetivo 5 veces con 'flor' DOMINANTE (3 de 5; también 'sombra' y 'huerta'). Confirma la hipótesis de riesgo: declarar el objetivo ENGANCHA (lee y responde) pero NO convierte a suscripción por sí solo — la aspiración necesita accionabilidad inmediata. Aprendizaje ejecutado: el objetivo declarado ('más flor') se SERIALIZA en vos-decidis v3 (28/07), que lo convierte en 3 decisiones concretas de flor (poda de crespón/althea/podranea + flor rápida + rincón de la hortensia). Así la intención sobrevive aunque la página-experimento se retire. Página + pitch eliminados (git rm); cast (B-9, B-18, B-29, B-1, B-7, B-40, B-16, F-8) vuelve al pool."
+    },
+    {
+      "id": "2026-07-28-vos-decidis",
+      "title": "🌸 Vos decidís v3 (objetivo del usuario → decisiones de flor)",
+      "page": "engage/2026-07-28-vos-decidis.html",
+      "created": "2026-07-28",
+      "status": "pending",
+      "hypothesis": "Serialización del ganador (agencia) FUSIONADA con el aprendizaje del experimento de ayer: el usuario declaró 'más flor' como objetivo pero la aspiración sola no convirtió. v3 le devuelve ese objetivo convertido en 3 decisiones ejecutables de flor (qué arbusto priorizar para poda de agosto, si sumar flor de estación rápida, rincón de la hortensia). Además ACORTA a 3 decisiones (el 27/07 con 4 fatigó: respondió solo 1). Recap arriba = loop de ejecución (lechuga ya sembrada). Hipótesis: 'te escuché y te lo convertí en plan' + menos fricción recupera la suscripción/reacción que el 27/07 no dio. Riesgo: si tampoco convierte, la serie vos-decidis está fatigada y toca rotar el eje ganador a otro formato (esto-o-esto es el candidato).",
+      "notified_by": [
+        "2026-07-28-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-28-esto-o-esto",
+      "title": "👉 Esto o esto (duelos binarios, cero lectura + perfil de jardinero)",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "created": "2026-07-28",
+      "status": "pending",
+      "hypothesis": "Formato NUNCA probado que ataca de frente la queja #1 ('mucho texto, muy cargado', 23/07) y la fatiga del texto en vos-decidis (27/07: 1 de 4 respondidas). Conserva el eje ganador (agencia) pero a FRICCIÓN MÍNIMA: 5 duelos binarios, un toque cada uno, CERO lectura, y un 'perfil de jardinero' revelado al final (cosechador/florista/equilibrado + preferencias de manos y horario). Cada toque es dato de gusto declarado que personaliza el resto del producto. Anclas reales del jardín (limonero con fruta, romero en flor, huerta muro norte, poda de agosto, orientación este/oeste). Hipótesis: sacar toda la lectura sube el tap-through y el perfil-recompensa convierte a suscripción donde el texto denso fatigó. Riesgo: si el usuario lo siente 'liviano/sin sustancia', el aprendizaje es que quiere agencia CON contenido, no gamificación pura.",
+      "notified_by": [
+        "2026-07-28-b"
       ],
       "result_notes": null
     }
