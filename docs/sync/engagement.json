@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-28T14:38:56.343Z",
+  "_updated_at": "2026-07-28T14:42:17.590Z",
   "events": [
     {
       "_id": "mrktiovyklrz78",
@@ -1200,6 +1200,15 @@
       "nid": "2026-07-28-jardin-hoy",
       "src": "push",
       "ts": "2026-07-28T14:38:57.087Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms4rlmiy1t31hg",
+      "type": "feedback_text",
+      "target": "jardin-hoy",
+      "text": "Cada tarea debería tener una caja como está de feedback así te puedo dejar comentarios.\n1- ignora lo de la lechuga, me voy de viaje en 10dias y no va a suceder antes.  A mi vuelta a fin de agosto lo vemos\n2- incluirme en ka tarea una foto de la especie así estoy seguro cuál es \n3- caqui ignóralo hAsta primavera porque no sabemos qué es\n4 mándame esto de nuevo",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-28T14:42:18.826Z",
       "device": "sin-nombre"
     }
   ],
