@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-28T19:15:17.226Z",
+  "_updated_at": "2026-07-28T19:15:22.185Z",
   "events": [
     {
       "_id": "mrktiovyklrz78",
@@ -1253,6 +1253,15 @@
       "value": "flor",
       "page": "engage/2026-07-28-esto-o-esto.html",
       "ts": "2026-07-28T19:15:19.443Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51ctopd8rdr1",
+      "type": "answer",
+      "qid": "ee-manos",
+      "value": "yo",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:15:24.361Z",
       "device": "sin-nombre"
     }
   ],
