@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-28T14:11:20.761Z",
+  "_updated_at": "2026-07-28T17:47:08.769Z",
   "notifications": [
     {
       "id": "2026-07-28-jardin-hoy",
@@ -21,8 +21,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-28-esto-o-esto.html",
       "send_at": "2026-07-28T13:30:00-03:00",
       "expires_at": "2026-07-28T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-28T17:47:08.768Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-28 (experimento nuevo: duelos binarios cero-lectura, ataca queja 'mucho texto')"
     },
