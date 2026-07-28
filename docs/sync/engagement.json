@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-28T19:15:42.600Z",
+  "_updated_at": "2026-07-28T19:16:19.543Z",
   "events": [
     {
       "_id": "mrktiovyklrz78",
@@ -1298,6 +1298,15 @@
       "value": "meh",
       "page": "engage/2026-07-28-esto-o-esto.html",
       "ts": "2026-07-28T19:15:44.872Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51e1p7pqic2x",
+      "type": "feedback_text",
+      "target": "esto-o-esto",
+      "text": "No es mi tipo de experiencia.\n\nRevisa lo que te escribí más temprano en el liquidámbar.",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:16:21.403Z",
       "device": "sin-nombre"
     }
   ],
