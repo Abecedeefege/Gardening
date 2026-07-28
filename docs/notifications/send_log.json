@@ -383,6 +383,12 @@
       "nid": "2026-07-28-b",
       "ts": "2026-07-28T17:47:08.768Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-28-a",
+      "ts": "2026-07-28T21:47:27.139Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
