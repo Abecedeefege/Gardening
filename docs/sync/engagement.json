@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-28T19:15:34.061Z",
+  "_updated_at": "2026-07-28T19:15:41.092Z",
   "events": [
     {
       "_id": "mrktiovyklrz78",
@@ -1280,6 +1280,15 @@
       "value": "frutal",
       "page": "engage/2026-07-28-esto-o-esto.html",
       "ts": "2026-07-28T19:15:36.286Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51d83igpq611",
+      "type": "answer",
+      "qid": "esto-o-esto-suscripcion-diaria",
+      "value": "no",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:15:43.038Z",
       "device": "sin-nombre"
     }
   ],
