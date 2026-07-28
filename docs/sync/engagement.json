@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-28T19:16:21.822Z",
+  "_updated_at": "2026-07-28T19:16:28.960Z",
   "events": [
     {
       "_id": "mrktiovyklrz78",
@@ -1314,6 +1314,15 @@
       "type": "proposal_rejected",
       "proposal_id": "2026-07-28-esto-o-esto",
       "ts": "2026-07-28T19:16:24.063Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51e93nx9dcrk",
+      "type": "dwell",
+      "seconds": 86,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:16:30.995Z",
       "device": "sin-nombre"
     }
   ],
