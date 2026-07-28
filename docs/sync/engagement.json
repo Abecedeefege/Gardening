@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-28T19:16:28.960Z",
+  "_updated_at": "2026-07-28T23:50:52.408Z",
   "events": [
     {
       "_id": "mrktiovyklrz78",
@@ -1323,6 +1323,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-28-esto-o-esto.html",
       "ts": "2026-07-28T19:16:30.995Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms5b71r08kcycl",
+      "type": "notification_clicked",
+      "nid": "2026-07-28-a",
+      "page": "engage/2026-07-28-vos-decidis.html",
+      "ts": "2026-07-28T23:50:51.033Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms5b71r0ic9n8o",
+      "type": "page_visit",
+      "page": "engage/2026-07-28-vos-decidis.html",
+      "nid": "2026-07-28-a",
+      "src": "push",
+      "ts": "2026-07-28T23:50:51.033Z",
       "device": "sin-nombre"
     }
   ],
