@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-28T19:15:04.026Z",
+  "_updated_at": "2026-07-28T19:15:08.905Z",
   "events": [
     {
       "_id": "mrktiovyklrz78",
@@ -1235,6 +1235,15 @@
       "nid": "2026-07-28-b",
       "src": "push",
       "ts": "2026-07-28T19:15:04.722Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51cjhenz5rbo",
+      "type": "answer",
+      "qid": "ee-orgullo",
+      "value": "fruta",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:15:11.138Z",
       "device": "sin-nombre"
     }
   ],
