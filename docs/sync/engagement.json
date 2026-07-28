@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-27T23:24:08.123Z",
+  "_updated_at": "2026-07-28T14:38:56.343Z",
   "events": [
     {
       "_id": "mrktiovyklrz78",
@@ -1183,6 +1183,23 @@
       "scroll_pct": 95,
       "page": "engage/2026-07-27-mi-objetivo.html",
       "ts": "2026-07-27T23:24:08.656Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms4rhav42vxyl1",
+      "type": "notification_clicked",
+      "nid": "2026-07-28-jardin-hoy",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-28T14:38:57.087Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms4rhav4duqwtm",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-07-28-jardin-hoy",
+      "src": "push",
+      "ts": "2026-07-28T14:38:57.087Z",
       "device": "sin-nombre"
     }
   ],
