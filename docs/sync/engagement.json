@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-28T19:16:19.543Z",
+  "_updated_at": "2026-07-28T19:16:21.822Z",
   "events": [
     {
       "_id": "mrktiovyklrz78",
@@ -1307,6 +1307,13 @@
       "text": "No es mi tipo de experiencia.\n\nRevisa lo que te escribí más temprano en el liquidámbar.",
       "page": "engage/2026-07-28-esto-o-esto.html",
       "ts": "2026-07-28T19:16:21.403Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51e3r3l4e09t",
+      "type": "proposal_rejected",
+      "proposal_id": "2026-07-28-esto-o-esto",
+      "ts": "2026-07-28T19:16:24.063Z",
       "device": "sin-nombre"
     }
   ],
