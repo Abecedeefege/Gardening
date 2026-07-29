@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-29T17:37:41.647Z",
+  "_updated_at": "2026-07-29T21:11:54.653Z",
   "notifications": [
     {
       "id": "2026-07-29-jardin-hoy",
@@ -33,8 +33,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-29-antes-de-irte.html",
       "send_at": "2026-07-29T18:00:00-03:00",
       "expires_at": "2026-07-29T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-29T21:11:54.652Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-29 (slot dorado; honra feedback directo del viaje, vende tranquilidad + cuenta regresiva)"
     }
