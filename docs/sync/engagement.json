@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-29T23:08:47.502Z",
+  "_updated_at": "2026-07-29T23:43:46.086Z",
   "events": [
     {
       "_id": "mrnrby6vkdxjhi",
@@ -1356,6 +1356,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-29-los-que-no-duermen.html",
       "ts": "2026-07-29T23:08:47.165Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms6qdrkl8e0w5w",
+      "type": "notification_clicked",
+      "nid": "2026-07-29-b",
+      "page": "engage/2026-07-29-antes-de-irte.html",
+      "ts": "2026-07-29T23:43:44.852Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms6qdrklt6v18m",
+      "type": "page_visit",
+      "page": "engage/2026-07-29-antes-de-irte.html",
+      "nid": "2026-07-29-b",
+      "src": "push",
+      "ts": "2026-07-29T23:43:44.852Z",
       "device": "sin-nombre"
     }
   ],
