@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-29T21:14:33.443Z",
+  "_updated_at": "2026-07-29T23:08:34.112Z",
   "events": [
     {
       "_id": "mrnrby6vkdxjhi",
@@ -1330,6 +1330,23 @@
       "scroll_pct": 0,
       "page": "engage/2026-06-13-rueda-ano.html",
       "ts": "2026-06-28T21:03:58.782Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms6p4hubhtqftq",
+      "type": "notification_clicked",
+      "nid": "2026-07-29-a",
+      "page": "engage/2026-07-29-los-que-no-duermen.html",
+      "ts": "2026-07-29T23:08:32.721Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms6p4hubli3an6",
+      "type": "page_visit",
+      "page": "engage/2026-07-29-los-que-no-duermen.html",
+      "nid": "2026-07-29-a",
+      "src": "push",
+      "ts": "2026-07-29T23:08:32.721Z",
       "device": "sin-nombre"
     }
   ],
