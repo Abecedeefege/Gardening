@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-29T23:08:34.112Z",
+  "_updated_at": "2026-07-29T23:08:47.502Z",
   "events": [
     {
       "_id": "mrnrby6vkdxjhi",
@@ -1347,6 +1347,15 @@
       "nid": "2026-07-29-a",
       "src": "push",
       "ts": "2026-07-29T23:08:32.721Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms6p4szhwg2euc",
+      "type": "dwell",
+      "seconds": 14,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-29-los-que-no-duermen.html",
+      "ts": "2026-07-29T23:08:47.165Z",
       "device": "sin-nombre"
     }
   ],
