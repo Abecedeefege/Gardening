@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-29T14:26:16.639Z",
+  "_updated_at": "2026-07-29T17:37:41.647Z",
   "notifications": [
     {
       "id": "2026-07-29-jardin-hoy",
@@ -21,8 +21,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-29-los-que-no-duermen.html",
       "send_at": "2026-07-29T13:30:00-03:00",
       "expires_at": "2026-07-29T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-29T17:37:41.645Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-29 (experimento: feed visual con fotos reales, plantas activas de invierno)"
     },
