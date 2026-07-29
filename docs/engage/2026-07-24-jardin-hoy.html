@@ -71,6 +71,17 @@
   .task a{ display:inline-block; margin-top:9px; margin-left:8px; font-size:12px; font-weight:800; text-decoration:none; color:var(--azul); }
   .menu-note{ padding:11px 16px 14px; font-size:12px; color:var(--ink3); border-top:1px dashed var(--line); }
 
+  /* foto de la especie en la tarea (pedido 28/07) */
+  .task .thp{ display:flex; gap:12px; align-items:flex-start; }
+  .task .photo{ width:64px; height:64px; border-radius:12px; object-fit:cover; flex:none; border:1px solid var(--line); background:#eef4e6; }
+  .task .thp .body{ flex:1; min-width:0; }
+  /* caja de feedback por tarea (pedido 28/07: "cada tarea debería tener una caja") */
+  .tfb{ margin-top:10px; }
+  .tfb textarea{ width:100%; box-sizing:border-box; background:#f7fbf1; border:1px solid var(--line); border-radius:10px; color:var(--ink); padding:9px 11px; font:13px/1.4 var(--sans); resize:vertical; }
+  .tfb button{ margin-top:7px; background:#eef7e0; color:var(--verde); border:1px solid rgba(90,138,46,.3); border-radius:9px; padding:8px 15px; font:800 12.5px var(--sans); cursor:pointer; }
+  .tfb button:active{ opacity:.7; }
+  .tfb .fb-hint{ display:block; margin-top:6px; font-size:12px; font-weight:700; color:var(--verde2); min-height:1em; }
+
   /* huerta inline */
   .hsun{ margin:0 16px; background:linear-gradient(180deg,#fef6df,#fffdf6); border:1px solid rgba(224,169,46,.3); border-radius:12px; padding:11px 13px; font-size:12px; color:#7a5a12; }
   .hsun b{ color:#8a5a00; }
@@ -104,22 +115,22 @@
 
   <header class="hero reveal">
     <span class="sun">🌤️</span>
-    <div class="day">Martes 28 de julio · pleno invierno</div>
+    <div class="day">Miércoles 29 de julio · pleno invierno</div>
     <h1>Tu jardín hoy</h1>
   </header>
 
   <div class="estado reveal">
-    <span class="em">🌸</span>
-    <b>Ayer elegiste lechuga y me pediste más flor.</b>
-    <p>En «Vos decidís» arrancaste la huerta con <b>lechuga</b> (ya está en el plan de siembra, abajo) y me dijiste que lo que más querés este año es <b>más flor</b>. Las dos cosas ya las tengo encaminadas: la lechuga se siembra ahora y la flor se define con la poda de agosto (los arbustos que florecen en madera nueva). El jardín sigue en dormancia y con humedad, así que lo de afuera espera un día seco.</p>
+    <span class="em">✈️</span>
+    <b>Anotado: te vas de viaje en ~10 días y volvés a fin de agosto.</b>
+    <p>Ajusté todo a eso. La <b>lechuga y la huerta quedan en pausa hasta tu vuelta</b> — no tiene sentido sembrar y dejarla sola tres semanas (lo pediste así). En invierno el jardín está en dormancia: casi no pide agua, así que <b>se banca la ausencia sin drama</b>. Lo único que conviene, si querés, es adelantar antes de irte las dos podas de día seco que ya tenías. El resto te espera para septiembre.</p>
   </div>
 
-  <!-- ¿QUÉ PUEDO HACER HOY? — huerta ya con lugar y cultivo decididos -->
+  <!-- ¿QUÉ PUEDO HACER HOY? — modo viaje -->
   <div class="hoy reveal">
-    <div class="tag">🥬 Tarea a prueba de lluvia · hoy</div>
-    <h3>Sembrá la primera línea de lechuga</h3>
-    <p>Ya está todo decidido: <b>muro norte</b> (el más soleado en invierno) y arrancás con <b>lechuga</b> de invierno. Es la ventana justa de julio. Se hace desde el sillón —almácigo o siembra directa— y no necesita día seco. Abajo tenés el plan completo por época para ese muro.</p>
-    <a class="cta" href="#huerta">Ver el plan de siembra ↓</a>
+    <div class="tag">🍃 A prueba de lluvia · hoy</div>
+    <h3>Nada urgente afuera — decidime el rincón de la hortensia</h3>
+    <p>Es la única decisión que sigue abierta y la podés cerrar desde el sillón, llueva o no. Las 2 hortensias van <b>a tierra</b>: falta elegir entre el <b>rincón sur</b> (junto a la pera, sombra fresca) o el <b>fondo</b> (sol de mañana suave). Decidilo abajo y lo dejo listo para plantar cuando haya un día seco antes del viaje.</p>
+    <a class="cta" href="#tareas-jul">Ver las tareas de antes de irte ↓</a>
   </div>
 
   <div class="sect-lbl reveal">Cómo viene el catálogo</div>
@@ -141,30 +152,32 @@
     </div>
   </div>
 
-  <!-- MENÚ COLAPSADO: TAREAS DE JULIO -->
-  <details class="reveal" open>
-    <summary><span class="ic">🔧</span> Tareas de julio <span class="cnt">4</span><span class="chev">▾</span></summary>
+  <!-- MENÚ COLAPSADO: TAREAS ANTES DEL VIAJE -->
+  <details class="reveal" id="tareas-jul" open>
+    <summary><span class="ic">✈️</span> Antes de irte · si hay día seco <span class="cnt">2</span><span class="chev">▾</span></summary>
     <div class="task">
-      <div class="th"><h4>Sembrar la primera línea: lechuga, muro norte</h4><span class="code">huerta</span></div>
-      <div class="d">Lugar y cultivo ya decididos: <b>muro norte + lechuga de invierno</b> (lo elegiste ayer). El plan completo por época lo tenés acá abajo. <b>La siembra se puede hacer hoy.</b> <a href="#huerta">Ver el plan ↓</a></div>
-      <span class="when hoy2">Ahora · a prueba de lluvia</span>
+      <div class="thp">
+        <img class="photo" src="https://gardening-chi.vercel.app/images/B-37_liquidambar_otonal.jpg" alt="Liquidámbar B-37" loading="lazy">
+        <div class="body">
+          <div class="th"><h4>Liquidámbar — la rama que le hace sombra a la palta (la hacés vos)</h4><span class="code">B-37</span></div>
+          <div class="d">Elegiste hacerla vos. En <b>3 cortes</b>: 1) por debajo a 20 cm del tronco, 2) por arriba un poco más afuera (cae sin desgarrar), 3) el final al ras del cuello, sin tocón. Día seco de dormancia = cicatriza perfecto. Buen candidato para dejar hecho antes del viaje. <a href="https://gardening-chi.vercel.app/tasks/plant-B-37.html">Abrir tarea →</a></div>
+          <span class="when">Antes de irte · día seco</span>
+          <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea (dudas, ya la hice, dónde corté…)"></textarea><button type="button" onclick="engageFeedback('jh-liquidambar-B37', this)">Comentar esta tarea</button><span class="fb-hint"></span></div>
+        </div>
+      </div>
     </div>
     <div class="task">
-      <div class="th"><h4>Hortensia — pasar a tierra, en cantero</h4><span class="code">B-5a/b</span></div>
-      <div class="d">Ya decidiste que van <b>a tierra</b>. Los 2 ejemplares se plantan en cantero <b>ahora que están pelados</b> (dormancia = momento ideal, antes del rebrote). Suelo rico, ácido y bien drenado; falta elegir el rincón (te lo pregunto en «Vos decidís»). <a href="https://gardening-chi.vercel.app/tasks/plant-B-5a.html">Abrir tarea →</a></div>
-      <span class="when">Este mes · día sin lluvia</span>
+      <div class="thp">
+        <span class="photo" style="display:flex;align-items:center;justify-content:center;font-size:30px;">🌺</span>
+        <div class="body">
+          <div class="th"><h4>Hortensia — pasar a tierra, en cantero</h4><span class="code">B-5a/b</span></div>
+          <div class="d">Los 2 ejemplares van <b>a tierra</b> (decidido). Se plantan <b>pelados</b>, en dormancia = momento ideal. Suelo rico, ácido y drenado. Falta el rincón: <b>decidilo arriba</b> ☝️ y, si hay un día seco antes del viaje, quedan plantadas. Si no, esperan sin problema. <a href="https://gardening-chi.vercel.app/tasks/plant-B-5a.html">Abrir tarea →</a></div>
+          <span class="when">Antes de irte · día seco (o a la vuelta)</span>
+          <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea (el rincón, dudas, ya las planté…)"></textarea><button type="button" onclick="engageFeedback('jh-hortensia-B5', this)">Comentar esta tarea</button><span class="fb-hint"></span></div>
+        </div>
+      </div>
     </div>
-    <div class="task">
-      <div class="th"><h4>Liquidámbar — la rama que le hace sombra a la palta (la hacés vos)</h4><span class="code">B-37</span></div>
-      <div class="d">Elegiste hacerla vos. El paso a paso: sacá la rama entera desde su origen en <b>3 cortes</b> — 1) un corte por debajo a 20 cm del tronco, 2) uno por arriba un poco más afuera (cae sin desgarrar), 3) el corte final al ras del cuello, sin dejar tocón. Día seco y frío de dormancia y cicatriza perfecto. <a href="https://gardening-chi.vercel.app/tasks/plant-B-37.html">Abrir tarea →</a></div>
-      <span class="when">Este mes · aprovechá un día seco</span>
-    </div>
-    <div class="task">
-      <div class="th"><h4>Gardenia — neem contra pulgones + cortar el paso de las hormigas</h4><span class="code">B-25</span></div>
-      <div class="d">Cinta con vaselina en el tronco (corta a las hormigas) + neem 3-5 ml/L pulverizado en el envés. <b>Solo si el día amanece seco y no hay pronóstico de helada.</b> <a href="https://gardening-chi.vercel.app/tasks/plant-B-25-3.html">Abrir tarea →</a></div>
-      <span class="when">Si el día está seco y templado</span>
-    </div>
-    <div class="menu-note">Estas 4 son <b>todas</b> las de julio (la huerta la sumé por tu pedido). El grueso del trabajo es la poda de fin de invierno, y esa cae en agosto — la tenés abajo. ✅ Ya cerraste la limpieza del Guayabo F-1 el 23/07. 👏</div>
+    <div class="menu-note">La <b>Gardenia (B-25)</b> —neem + cortar las hormigas— la dejo <b>para tu vuelta</b>: es tratamiento sostenido y no tiene sentido arrancarlo justo antes de tres semanas afuera. La <b>huerta</b> también espera septiembre. ✅ Ya cerraste el Guayabo F-1 el 23/07. 👏</div>
   </details>
 
   <!-- MENÚ COLAPSADO: PARA AGOSTO (ordenado por prioridad, como pediste) -->
@@ -212,11 +225,11 @@
 
   <!-- MENÚ COLAPSADO: SUGERENCIAS DE HUERTA (lo que pediste) -->
   <details class="reveal" id="huerta">
-    <summary><span class="ic">🥬</span> Plan de siembra · muro norte <span class="cnt">decidido</span><span class="chev">▾</span></summary>
-    <div class="hwin"><div class="hsun">✅ <b>Decidido: muro norte + arranque con lechuga.</b> El muro norte es el lado que más sol junta en invierno (hemisferio sur), con las <b>6 h+</b> que la huerta necesita. Este es el calendario de siembra para ese muro.</div></div>
+    <summary><span class="ic">🥬</span> Plan de siembra · muro norte <span class="cnt">en pausa</span><span class="chev">▾</span></summary>
+    <div class="hwin"><div class="hsun">⏸️ <b>En pausa hasta tu vuelta (fin de agosto).</b> Como te vas ~3 semanas, no arrancamos la siembra ahora: los plantines recién nacidos no se dejan solos. El lugar ya está elegido (<b>muro norte</b>, el más soleado en invierno). A tu vuelta caemos justo en la mejor ventana de primavera — este es el calendario que te va a esperar.</div></div>
     <div class="hwin now">
-      <div class="wt">🌱 Sembrar ahora (julio)</div>
-      <div class="hveg"><b>Lechuga ⭐</b> <span class="vt">de invierno, mantecosa/criolla — tu arranque elegido</span><span class="vs">sol parcial</span></div>
+      <div class="wt">🌱 Al volver (fin ago / sept)</div>
+      <div class="hveg"><b>Lechuga ⭐</b> <span class="vt">de invierno, mantecosa/criolla — tu arranque elegido, apenas vuelvas</span><span class="vs">sol parcial</span></div>
       <div class="hveg"><b>Cebolla</b> <span class="vt">de almácigo a lugar definitivo</span><span class="vs">pleno sol</span></div>
     </div>
     <div class="hwin ago">
@@ -247,7 +260,7 @@
 
   <footer class="pie">
     <a href="https://gardening-chi.vercel.app/tareas.html">Ver el Timeline completo →</a>
-    <div class="cred">Tu vistazo diario del jardín · estado y tareas reales del catálogo Pacha Mama · se actualiza cada mañana · edición 28/07/2026</div>
+    <div class="cred">Tu vistazo diario del jardín · estado y tareas reales del catálogo Pacha Mama · se actualiza cada mañana · edición 29/07/2026</div>
   </footer>
 
 </div>

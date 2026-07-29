@@ -872,22 +872,46 @@
       "title": "🌸 Vos decidís v3 (objetivo del usuario → decisiones de flor)",
       "page": "engage/2026-07-28-vos-decidis.html",
       "created": "2026-07-28",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Serialización del ganador (agencia) FUSIONADA con el aprendizaje del experimento de ayer: el usuario declaró 'más flor' como objetivo pero la aspiración sola no convirtió. v3 le devuelve ese objetivo convertido en 3 decisiones ejecutables de flor (qué arbusto priorizar para poda de agosto, si sumar flor de estación rápida, rincón de la hortensia). Además ACORTA a 3 decisiones (el 27/07 con 4 fatigó: respondió solo 1). Recap arriba = loop de ejecución (lechuga ya sembrada). Hipótesis: 'te escuché y te lo convertí en plan' + menos fricción recupera la suscripción/reacción que el 27/07 no dio. Riesgo: si tampoco convierte, la serie vos-decidis está fatigada y toca rotar el eje ganador a otro formato (esto-o-esto es el candidato).",
       "notified_by": [
         "2026-07-28-a"
       ],
-      "result_notes": null
+      "result_notes": "REJECTED 28/07 (proposal_rejected + sub \"no\"). Serie vos-decidis FATIGADA: sub cancelada, abierta 23:50 fuera de ventana. El eje agencia sigue vivo pero el FORMATO feed-de-decisiones se quemó tras 3 dias. Rotar a otro contenedor."
     },
     {
       "id": "2026-07-28-esto-o-esto",
       "title": "👉 Esto o esto (duelos binarios, cero lectura + perfil de jardinero)",
       "page": "engage/2026-07-28-esto-o-esto.html",
       "created": "2026-07-28",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Formato NUNCA probado que ataca de frente la queja #1 ('mucho texto, muy cargado', 23/07) y la fatiga del texto en vos-decidis (27/07: 1 de 4 respondidas). Conserva el eje ganador (agencia) pero a FRICCIÓN MÍNIMA: 5 duelos binarios, un toque cada uno, CERO lectura, y un 'perfil de jardinero' revelado al final (cosechador/florista/equilibrado + preferencias de manos y horario). Cada toque es dato de gusto declarado que personaliza el resto del producto. Anclas reales del jardín (limonero con fruta, romero en flor, huerta muro norte, poda de agosto, orientación este/oeste). Hipótesis: sacar toda la lectura sube el tap-through y el perfil-recompensa convierte a suscripción donde el texto denso fatigó. Riesgo: si el usuario lo siente 'liviano/sin sustancia', el aprendizaje es que quiere agencia CON contenido, no gamificación pura.",
       "notified_by": [
         "2026-07-28-b"
+      ],
+      "result_notes": "REJECTED 28/07 (proposal_rejected + sub \"no\"). Formato cero-lectura duels MUERTO: reaccion meh, sub no, feedback_text \"No es mi tipo de experiencia. Revisa lo del liquidambar\" = quiere sustancia/dialogo real, no toques-gimmick."
+    },
+    {
+      "id": "2026-07-29-antes-de-irte",
+      "title": "✈️ Antes de irte",
+      "page": "engage/2026-07-29-antes-de-irte.html",
+      "created": "2026-07-29",
+      "status": "pending",
+      "hypothesis": "El usuario avisó que se va de viaje ~10 dias (vuelve fin de agosto). Una checklist calmada y anclada en dormancia invernal + cuenta regresiva diaria honra ese dato exacto y vende TRANQUILIDAD (agencia sobre lo que controla). Apuesto a reaccion positiva + sub a la cuenta regresiva porque resuelve una ansiedad real y timely.",
+      "notified_by": [
+        "2026-07-29-b"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-29-los-que-no-duermen",
+      "title": "🌿 Los que no duermen",
+      "page": "engage/2026-07-29-los-que-no-duermen.html",
+      "created": "2026-07-29",
+      "status": "pending",
+      "hypothesis": "Formato nuevo: feed visual con FOTOS REALES (primer engage con fotos inline de plantas) de las 3 plantas activas en invierno (interior I-1/I-2 + perenne B-44, cast descansado >=10d). Ataca la temporada muerta con un motivo real para volver + voto de gusto (agencia low-friction). Tras la muerte de vos-decidis/esto-o-esto pruebo si lo VISUAL+REAL (lo que pidio: fotos para saber cual es cual) convierte donde el texto y los gestos-gimmick no.",
+      "notified_by": [
+        "2026-07-29-a"
       ],
       "result_notes": null
     }

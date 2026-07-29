@@ -2,50 +2,6 @@
   "_updated_at": "2026-07-28T23:51:06.577Z",
   "events": [
     {
-      "_id": "mrktiovyklrz78",
-      "type": "dwell",
-      "seconds": 21,
-      "scroll_pct": 40,
-      "page": "engage/2026-06-29-diario-jardin.html",
-      "ts": "2026-07-14T15:40:37.630Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrktjgjtyjtrjk",
-      "type": "dwell",
-      "seconds": 33,
-      "scroll_pct": 22,
-      "page": "engage/2026-07-14-exclusiva-jardin.html",
-      "ts": "2026-07-14T15:41:13.481Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrkxpjgk2g1hip",
-      "type": "notification_clicked",
-      "nid": "2026-07-14-b",
-      "page": "engage/2026-07-14-adn-jardin.html",
-      "ts": "2026-07-14T17:37:55.651Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrkxpjgkj50k3y",
-      "type": "page_visit",
-      "page": "engage/2026-07-14-adn-jardin.html",
-      "nid": "2026-07-14-b",
-      "src": "push",
-      "ts": "2026-07-14T17:37:55.651Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrkxprwy9ip9ks",
-      "type": "dwell",
-      "seconds": 11,
-      "scroll_pct": 45,
-      "page": "engage/2026-07-14-adn-jardin.html",
-      "ts": "2026-07-14T17:38:06.609Z",
-      "device": "sin-nombre"
-    },
-    {
       "_id": "mrnrby6vkdxjhi",
       "type": "answer",
       "qid": "declaraciones-suscripcion-diaria",
@@ -1556,6 +1512,12 @@
       "approvals": 0
     },
     "2026-07-13": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-07-14": {
       "sent": 0,
       "clicked": 1,
       "visits": 1,

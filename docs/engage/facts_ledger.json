@@ -1,6 +1,6 @@
 {
   "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
-  "_updated": "2026-07-28",
+  "_updated": "2026-07-29",
   "plants": {
     "F-1": {
       "common": "Guayabo del país",
@@ -730,7 +730,7 @@
     },
     "B-37": {
       "common": "Liquidámbar",
-      "paginas_historicas": 14,
+      "paginas_historicas": 15,
       "featured": [
         {
           "date": "2026-07-20",
@@ -756,6 +756,11 @@
           "date": "2026-07-27",
           "page": "2026-07-27-vos-decidis.html",
           "fact": "ANGULO DECISION/tarea (recap): rama a la palta, la poda el usuario (paso a paso)"
+        },
+        {
+          "date": "2026-07-29",
+          "page": "2026-07-29-antes-de-irte.html + jardin-hoy",
+          "fact": "ANGULO TAREA/VIAJE: dejar la rama de sombra hecha antes de irse (mejor en dormancia) — tarea real, foto real"
         }
       ]
     },
@@ -872,12 +877,17 @@
     },
     "B-44": {
       "common": "Evónimo japonés variegado",
-      "paginas_historicas": 4,
+      "paginas_historicas": 5,
       "featured": [
         {
           "date": "2026-07-18",
           "page": "2026-07-18-horoscopo(semana).html",
           "fact": "velos nupciales / color invernal"
+        },
+        {
+          "date": "2026-07-29",
+          "page": "2026-07-29-los-que-no-duermen.html",
+          "fact": "ANGULO PERENNE INVERNAL: de los pocos que dan color plateado en pleno invierno; riego bajo, foto real"
         }
       ]
     },
@@ -952,23 +962,33 @@
     },
     "I-1": {
       "common": "Singonio / Pata de gallo",
-      "paginas_historicas": 4,
+      "paginas_historicas": 5,
       "featured": [
         {
           "date": "2026-07-19",
           "page": "2026-07-19-racha-jardin.html",
           "fact": "trepa 10m / pellizcar puntas = mata densa / interior"
+        },
+        {
+          "date": "2026-07-29",
+          "page": "2026-07-29-antes-de-irte.html + 2026-07-29-los-que-no-duermen.html",
+          "fact": "ANGULO INTERIOR/INVIERNO+VIAJE: cuidado de ausencia (riego cada 14d invierno, luz indirecta) + protagonista de la guardia de invierno con foto real"
         }
       ]
     },
     "I-2": {
       "common": "Difenbaquia / Caña muda",
-      "paginas_historicas": 6,
+      "paginas_historicas": 7,
       "featured": [
         {
           "date": "2026-07-18",
           "page": "2026-07-18-secomenta.html",
           "fact": "oxalato / cana muda"
+        },
+        {
+          "date": "2026-07-29",
+          "page": "2026-07-29-antes-de-irte.html + 2026-07-29-los-que-no-duermen.html",
+          "fact": "ANGULO INTERIOR/INVIERNO: riego cada 14d, drenaje critico, savia toxica; guardia de invierno con foto real"
         }
       ]
     },
