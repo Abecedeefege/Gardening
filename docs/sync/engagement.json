@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-29T23:43:46.086Z",
+  "_updated_at": "2026-07-29T23:44:15.439Z",
   "events": [
     {
       "_id": "mrnrby6vkdxjhi",
@@ -1373,6 +1373,15 @@
       "nid": "2026-07-29-b",
       "src": "push",
       "ts": "2026-07-29T23:43:44.852Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms6qeeqj0t812p",
+      "type": "dwell",
+      "seconds": 30,
+      "scroll_pct": 86,
+      "page": "engage/2026-07-29-antes-de-irte.html",
+      "ts": "2026-07-29T23:44:14.874Z",
       "device": "sin-nombre"
     }
   ],
