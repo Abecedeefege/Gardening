@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-28T23:51:06.577Z",
+  "_updated_at": "2026-07-29T21:14:33.443Z",
   "events": [
     {
       "_id": "mrnrby6vkdxjhi",
@@ -1321,6 +1321,15 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-28-vos-decidis.html",
       "ts": "2026-07-28T23:51:06.025Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mqya0w8v8lkffp",
+      "type": "dwell",
+      "seconds": 2,
+      "scroll_pct": 0,
+      "page": "engage/2026-06-13-rueda-ano.html",
+      "ts": "2026-06-28T21:03:58.782Z",
       "device": "sin-nombre"
     }
   ],
