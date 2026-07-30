@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-30T12:41:00-03:00",
+  "_updated_at": "2026-07-30T15:51:48.973Z",
   "notifications": [
     {
       "id": "2026-07-30-jardin-hoy",
@@ -22,8 +22,8 @@
       "format": "tarea",
       "send_at": "2026-07-30T12:45:00-03:00",
       "expires_at": "2026-07-30T20:30:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-30T15:51:48.972Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-30 (push extra a pedido del usuario: sale al jardin soleado, foco poda; huerta/lechuga removida)"
     }
