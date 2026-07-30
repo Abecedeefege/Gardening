@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-30T17:55:00.000Z",
+  "_updated_at": "2026-07-30T17:58:00.000Z",
   "notifications": [
     {
       "id": "2026-07-30-jardin-hoy",
@@ -33,12 +33,12 @@
       "body": "Del 7 al 23 no estás: 4 tareas van antes de irte (los carozos, sí o sí) y 11 quedan para la vuelta.",
       "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
       "format": "tarea",
-      "send_at": "2026-07-30T15:45:00-03:00",
+      "send_at": "2026-07-30T14:55:00-03:00",
       "expires_at": "2026-07-30T22:00:00-03:00",
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "created_by": "daily-tasks-review 2026-07-30 (pedido directo: feedback del daily ejecutado — B-37 hecho, foto+comentario en todas las de agosto, plan reordenado al viaje 7-23/08)"
+      "created_by": "daily-tasks-review 2026-07-30 (pedido directo, envio adelantado a mano: feedback del daily ejecutado — B-37 hecho, foto+comentario en todas las de agosto, plan reordenado al viaje 7-23/08)"
     }
   ]
 }
