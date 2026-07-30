@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🌱 Los que se multiplican solos</title>
+<meta property="og:title" content="🌱 Los que se multiplican solos">
+<meta property="og:description" content="Tres plantas de tu jardín que hacen hijos gratis. Con fotos reales y el cómo exacto para tener el doble sin gastar un peso.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#fff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#eef7e0; --line:rgba(45,80,22,.12);
+    --sol:#e0a92e; --rosa:#c76b8e;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 26px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:34px 0 6px; text-align:center; }
+  .hero .em{ font-size:44px; }
+  .hero .k{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3); margin-top:6px; }
+  .hero h1{ font-size:31px; line-height:1.1; margin:9px 0 8px; font-weight:900; letter-spacing:-.02em; }
+  .hero p{ color:var(--ink2); font-size:14.5px; max-width:34ch; margin:0 auto; }
+
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:20px; overflow:hidden; margin:16px 0; box-shadow:0 8px 24px rgba(45,80,22,.06); }
+  .card .ph{ position:relative; }
+  .card img{ display:block; width:100%; height:190px; object-fit:cover; background:#e6efdc; }
+  .card .badge{ position:absolute; left:12px; top:12px; background:rgba(30,42,23,.82); color:#fff; font-size:11px; font-weight:800; padding:5px 11px; border-radius:999px; backdrop-filter:blur(3px); }
+  .card .code{ position:absolute; right:12px; top:12px; background:rgba(255,255,255,.9); color:var(--verde); font-size:10.5px; font-weight:800; font-family:ui-monospace,Menlo,monospace; padding:4px 9px; border-radius:999px; }
+  .card .body{ padding:16px 17px 18px; }
+  .card h3{ font-size:18px; font-weight:900; line-height:1.15; }
+  .card .sci{ font-size:12px; font-style:italic; color:var(--ink3); margin-top:2px; }
+  .card .lead{ font-size:14px; color:var(--ink2); margin-top:9px; }
+  .how{ margin-top:12px; background:var(--verde3); border:1px solid rgba(90,138,46,.22); border-radius:13px; padding:12px 14px; }
+  .how .ht{ font-size:11px; font-weight:900; letter-spacing:.07em; text-transform:uppercase; color:var(--verde2); margin-bottom:6px; }
+  .how ol{ margin:0; padding-left:18px; }
+  .how li{ font-size:13px; color:var(--ink); margin:4px 0; }
+  .how .tip{ font-size:12px; color:var(--ink2); margin-top:7px; }
+
+  .nota{ background:linear-gradient(180deg,#fef6df,#fffdf6); border:1px solid rgba(224,169,46,.35); border-radius:16px; padding:15px 16px; margin:16px 0; font-size:13.5px; color:#7a5a12; }
+  .nota b{ color:#8a5a00; }
+
+  .blk{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 18px; margin:16px 0; box-shadow:0 6px 20px rgba(45,80,22,.05); }
+  .react h3, .sub h3, .fb-blk h3{ font-size:17px; font-weight:900; text-align:center; }
+  .react p, .sub p, .fb-blk p{ color:var(--ink2); font-size:13.5px; text-align:center; max-width:34ch; margin:5px auto 0; }
+  .react-row{ display:flex; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap; }
+  .react-row button{ font-size:26px; background:#f4f9ec; border:1px solid var(--line); border-radius:14px; width:56px; height:52px; cursor:pointer; transition:transform .12s; }
+  .react-row button:active{ transform:scale(.9); }
+  .sub{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border-color:rgba(90,138,46,.3); text-align:center; }
+  .sub-row{ display:flex; gap:11px; justify-content:center; margin-top:14px; }
+  .sub-row button{ border:none; border-radius:12px; padding:12px 22px; font:800 14.5px var(--sans); cursor:pointer; }
+  .sub-row .si{ background:var(--verde2); color:#fff; }
+  .sub-row .no{ background:#eef2e8; color:var(--ink2); }
+  .sub-hint{ display:block; margin-top:10px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.1em; }
+
+  .fb-blk textarea{ width:100%; background:#f7fbf1; border:1px solid var(--line); border-radius:11px; color:var(--ink); padding:11px 12px; font:14px/1.4 var(--sans); resize:vertical; margin-top:12px; }
+  .fb-send{ margin-top:9px; background:var(--verde2); color:#fff; border:none; border-radius:11px; padding:11px 20px; font:800 14px var(--sans); cursor:pointer; }
+  .fb-send:active{ opacity:.75; }
+  .fb-hint{ display:block; margin-top:8px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.1em; }
+
+  .engage-actions{ display:flex; gap:11px; margin:20px 0 6px; }
+  .engage-actions button{ flex:1; border-radius:13px; padding:14px 10px; font:800 14px var(--sans); cursor:pointer; border:1px solid var(--line); }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; border-color:var(--verde); }
+  .engage-actions button:last-child{ background:#fff; color:var(--ink3); }
+  .foot{ text-align:center; color:var(--ink3); font-size:11.5px; margin-top:14px; line-height:1.5; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <span class="em">🌱</span>
+    <div class="k">El truco gratis del invierno</div>
+    <h1>Los que se multiplican solos</h1>
+    <p>Tres plantas de tu jardín hacen hijos sin que hagas nada. Con la técnica exacta, tenés el doble para regalar o rellenar canteros — sin gastar un peso.</p>
+  </header>
+
+  <!-- CINTA -->
+  <article class="card reveal">
+    <div class="ph">
+      <img src="https://gardening-chi.vercel.app/images/PXL_20260428_130332242_MP.webp" alt="Cinta / Lazo de amor" loading="lazy">
+      <span class="badge">🍼 La que más hijos hace</span>
+      <span class="code">B-12</span>
+    </div>
+    <div class="body">
+      <h3>Cinta / Lazo de amor</h3>
+      <div class="sci">Chlorophytum comosum</div>
+      <p class="lead">Cuelga unos brazos largos con "bebés" en la punta: son plantas enteras listas, con raíces ya asomando. Por algo también le dicen "mala madre" — echa los hijos de casa solita.</p>
+      <div class="how">
+        <div class="ht">Cómo hacer una nueva</div>
+        <ol>
+          <li>Elegí un hijito que ya tenga raicitas blancas en la base.</li>
+          <li>Apoyalo (sin cortarlo) en un vasito con tierra al lado de la madre.</li>
+          <li>Cuando agarre en 2-3 semanas, cortás el cordón. Listo.</li>
+        </ol>
+        <div class="tip">💡 Va en fondo (sombra parcial / luz indirecta), justo donde ya está. Ideal para rellenar los rincones oscuros del jardín.</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- JAZMIN -->
+  <article class="card reveal">
+    <div class="ph">
+      <img src="https://gardening-chi.vercel.app/images/B-2_jazmin_offshoots.jpg" alt="Jazmín con renuevos al pie" loading="lazy">
+      <span class="badge">🌿 Ya te dio 2 hijos</span>
+      <span class="code">B-2</span>
+    </div>
+    <div class="body">
+      <h3>Jazmín</h3>
+      <div class="sci">Jasminum sp.</div>
+      <p class="lead">Mirá la foto: al pie de la madre (bajo la Santa Rita) ya brotaron <b>B-2B y B-2C</b>, dos renuevos. El jazmín se "acoda" solo: cuando una rama toca tierra húmeda, echa raíz por su cuenta.</p>
+      <div class="how">
+        <div class="ht">Cómo darle una mano (acodo)</div>
+        <ol>
+          <li>Doblá una rama baja hasta el suelo y tapá un tramo con tierra.</li>
+          <li>Poné una piedra encima para que no se levante.</li>
+          <li>En primavera ya tiene raíz propia: cortás y trasplantás.</li>
+        </ol>
+        <div class="tip">💡 Los dos hijos que ya tenés se pueden separar en primavera. Jazmín gratis para el cerco o para regalar.</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- HIEDRA -->
+  <article class="card reveal">
+    <div class="ph">
+      <img src="https://gardening-chi.vercel.app/images/PXL_20260428_130401399_MP.webp" alt="Hiedra común" loading="lazy">
+      <span class="badge">💧 La del vaso de agua</span>
+      <span class="code">B-15</span>
+    </div>
+    <div class="body">
+      <h3>Hiedra común</h3>
+      <div class="sci">Hedera helix</div>
+      <p class="lead">La más fácil de todas: un pedacito en agua y arranca. En su fase joven (la que tenés, trepadora) echa raíces aéreas por todos lados — es una máquina de hacer esquejes.</p>
+      <div class="how">
+        <div class="ht">Cómo (esqueje al agua)</div>
+        <ol>
+          <li>Cortá una punta de 10-15 cm, justo debajo de un nudo.</li>
+          <li>Sacale las hojas de abajo y ponela en un frasco con agua.</li>
+          <li>En 2-3 semanas tiene raíces. A tierra y listo.</li>
+        </ol>
+        <div class="tip">💡 Tapa rápido paredones y bordes feos. Ojo: es agresiva — plantala donde quieras que cubra TODO.</div>
+      </div>
+    </div>
+  </article>
+
+  <div class="nota reveal">
+    ✈️ <b>Esto no es tarea de ahora.</b> Sos vos el que decide cuándo: la mejor época de multiplicación es la primavera, justo cuando volvés del viaje. Guardá la idea — te la recuerdo a la vuelta si querés. Hoy es solo para que sepas la plata en plantas que tenés dando vueltas.
+  </div>
+
+  <!-- REACCIÓN -->
+  <section class="blk react reveal">
+    <h3>¿Te copó saber esto?</h3>
+    <p>Tu reacción me dice si el ángulo "sacale más a lo que ya tenés" vale la pena.</p>
+    <div class="react-row">
+      <button type="button" onclick="engageReact('se-multiplican-solos','love', this)" aria-label="Me encantó">😍</button>
+      <button type="button" onclick="engageReact('se-multiplican-solos','like', this)" aria-label="Me gustó">🙂</button>
+      <button type="button" onclick="engageReact('se-multiplican-solos','meh', this)" aria-label="Meh">😐</button>
+      <button type="button" onclick="engageReact('se-multiplican-solos','no', this)" aria-label="No">🙅</button>
+    </div>
+  </section>
+
+  <!-- SUSCRIPCIÓN -->
+  <section class="blk sub reveal">
+    <h3>🌱 Una planta gratis por día</h3>
+    <p>¿Querés que cada mañana te muestre otra planta tuya que se puede multiplicar, dividir o regalar — con el cómo exacto?</p>
+    <div class="sub-row">
+      <button type="button" class="si" onclick="engageAnswer('se-multiplican-solos-suscripcion-diaria','si', this)">Sí, dale</button>
+      <button type="button" class="no" onclick="engageAnswer('se-multiplican-solos-suscripcion-diaria','no', this)">No</button>
+    </div>
+    <span class="sub-hint" id="sh"></span>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>Esto lo leo yo, el agente del jardín, antes de armar la próxima…</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('se-multiplican-solos', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <div class="engage-actions reveal">
+    <button onclick="engageApprove('2026-07-30-se-multiplican-solos')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-07-30-se-multiplican-solos')">✕ No me interesa</button>
+  </div>
+
+  <div class="foot reveal">Datos reales de tu catálogo Pacha Mama · fotos de tu jardín · 30/07/2026</div>
+
+</div>
+
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>

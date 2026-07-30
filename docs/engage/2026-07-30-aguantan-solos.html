@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🛡️ Los que aguantan solos</title>
+<meta property="og:title" content="🛡️ Los que aguantan solos">
+<meta property="og:description" content="Te vas 3 semanas. Estas plantas de tu jardín no te necesitan para nada — y acá está el porqué real de cada una.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#fff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#eef7e0; --line:rgba(45,80,22,.12);
+    --sol:#e0a92e; --azul:#3f7d8a;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 26px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:34px 0 6px; text-align:center; }
+  .hero .em{ font-size:44px; }
+  .hero .k{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3); margin-top:6px; }
+  .hero h1{ font-size:31px; line-height:1.1; margin:9px 0 8px; font-weight:900; letter-spacing:-.02em; }
+  .hero p{ color:var(--ink2); font-size:14.5px; max-width:34ch; margin:0 auto; }
+
+  .meter{ display:flex; align-items:center; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px 16px; margin:16px 0; box-shadow:0 6px 20px rgba(45,80,22,.05); }
+  .meter .big{ font-size:34px; font-weight:900; color:var(--verde2); line-height:1; }
+  .meter .t{ font-size:13.5px; color:var(--ink2); }
+  .meter .t b{ color:var(--ink); }
+
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:20px; overflow:hidden; margin:15px 0; box-shadow:0 8px 24px rgba(45,80,22,.06); }
+  .card .ph{ position:relative; }
+  .card img{ display:block; width:100%; height:180px; object-fit:cover; background:#e6efdc; }
+  .card .code{ position:absolute; right:12px; top:12px; background:rgba(255,255,255,.9); color:var(--verde); font-size:10.5px; font-weight:800; font-family:ui-monospace,Menlo,monospace; padding:4px 9px; border-radius:999px; }
+  .card .stars{ position:absolute; left:12px; top:12px; background:rgba(30,42,23,.82); color:#ffd873; font-size:13px; letter-spacing:2px; padding:5px 11px; border-radius:999px; }
+  .card .body{ padding:16px 17px 18px; }
+  .card h3{ font-size:18px; font-weight:900; line-height:1.15; }
+  .card .sci{ font-size:12px; font-style:italic; color:var(--ink3); margin-top:2px; }
+  .card .lead{ font-size:14px; color:var(--ink2); margin-top:9px; }
+  .why{ margin-top:12px; display:flex; gap:9px; align-items:flex-start; background:var(--verde3); border:1px solid rgba(90,138,46,.22); border-radius:13px; padding:11px 13px; }
+  .why .ic{ font-size:18px; flex:none; }
+  .why .txt{ font-size:13px; color:var(--ink); }
+  .why .txt b{ color:var(--verde); }
+  .pick{ margin-top:11px; text-align:center; }
+  .pick button{ background:#fff; border:1px solid var(--line); border-radius:11px; padding:9px 16px; font:800 12.5px var(--sans); color:var(--verde2); cursor:pointer; }
+  .pick button:active{ background:var(--verde3); }
+  .pick .done{ font-size:12px; font-weight:800; color:var(--verde2); }
+
+  .nota{ background:linear-gradient(180deg,#e9f2fb,#f4f9fd); border:1px solid rgba(63,125,138,.3); border-radius:16px; padding:15px 16px; margin:16px 0; font-size:13.5px; color:#2f5a63; }
+  .nota b{ color:#1f4750; }
+
+  .blk{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 18px; margin:16px 0; box-shadow:0 6px 20px rgba(45,80,22,.05); }
+  .react h3, .sub h3, .fb-blk h3{ font-size:17px; font-weight:900; text-align:center; }
+  .react p, .sub p, .fb-blk p{ color:var(--ink2); font-size:13.5px; text-align:center; max-width:34ch; margin:5px auto 0; }
+  .react-row{ display:flex; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap; }
+  .react-row button{ font-size:26px; background:#f4f9ec; border:1px solid var(--line); border-radius:14px; width:56px; height:52px; cursor:pointer; transition:transform .12s; }
+  .react-row button:active{ transform:scale(.9); }
+  .sub{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border-color:rgba(90,138,46,.3); text-align:center; }
+  .sub-row{ display:flex; gap:11px; justify-content:center; margin-top:14px; }
+  .sub-row button{ border:none; border-radius:12px; padding:12px 22px; font:800 14.5px var(--sans); cursor:pointer; }
+  .sub-row .si{ background:var(--verde2); color:#fff; }
+  .sub-row .no{ background:#eef2e8; color:var(--ink2); }
+  .sub-hint{ display:block; margin-top:10px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.1em; }
+
+  .fb-blk textarea{ width:100%; background:#f7fbf1; border:1px solid var(--line); border-radius:11px; color:var(--ink); padding:11px 12px; font:14px/1.4 var(--sans); resize:vertical; margin-top:12px; }
+  .fb-send{ margin-top:9px; background:var(--verde2); color:#fff; border:none; border-radius:11px; padding:11px 20px; font:800 14px var(--sans); cursor:pointer; }
+  .fb-send:active{ opacity:.75; }
+  .fb-hint{ display:block; margin-top:8px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.1em; }
+
+  .engage-actions{ display:flex; gap:11px; margin:20px 0 6px; }
+  .engage-actions button{ flex:1; border-radius:13px; padding:14px 10px; font:800 14px var(--sans); cursor:pointer; border:1px solid var(--line); }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; border-color:var(--verde); }
+  .engage-actions button:last-child{ background:#fff; color:var(--ink3); }
+  .foot{ text-align:center; color:var(--ink3); font-size:11.5px; margin-top:14px; line-height:1.5; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <span class="em">🛡️</span>
+    <div class="k">Modo viaje · tranquilo</div>
+    <h1>Los que aguantan solos</h1>
+    <p>Te vas poco más de una semana y volvés a fin de agosto. Estas tres plantas no te van a extrañar ni un poco — y no es suerte, es biología. El porqué real de cada una.</p>
+  </header>
+
+  <div class="meter reveal">
+    <span class="big">0</span>
+    <span class="t">veces que tenés que regar estas plantas <b>en todo el viaje</b>. En invierno la tierra guarda la humedad y ellas casi no transpiran. Cero drama.</span>
+  </div>
+
+  <!-- MANDIOCA -->
+  <article class="card reveal">
+    <div class="ph">
+      <img src="https://gardening-chi.vercel.app/images/PXL_20260428_131001512_MP.jpg" alt="Mandioca brava" loading="lazy">
+      <span class="stars">★★★★★</span>
+      <span class="code">B-34</span>
+    </div>
+    <div class="body">
+      <h3>Mandioca brava</h3>
+      <div class="sci">Manihot grahamii · nativa del Cono Sur</div>
+      <p class="lead">Nativa de acá nomás (Uruguay, Argentina, sur de Brasil). Está hecha para nuestros veranos secos y nuestros inviernos: le da igual que la mires o no.</p>
+      <div class="why">
+        <span class="ic">💪</span>
+        <span class="txt"><b>Por qué aguanta:</b> tolera la sequía una vez establecida, y en invierno pide <b>casi nada</b> de agua. Al ser nativa, ya conoce el clima de memoria. Ni la pienses en el viaje.</span>
+      </div>
+      <div class="pick"><button type="button" onclick="engageAnswer('aguantan-solos-sorprende','B-34', this)">Me sorprende que aguante 👍</button></div>
+    </div>
+  </article>
+
+  <!-- PATA DE VACA -->
+  <article class="card reveal">
+    <div class="ph">
+      <img src="https://gardening-chi.vercel.app/images/B-42-43_entre_romero_b27.jpg" alt="Pata de vaca y pitósporo entre el romero" loading="lazy">
+      <span class="stars">★★★★☆</span>
+      <span class="code">B-42</span>
+    </div>
+    <div class="body">
+      <h3>Pata de vaca</h3>
+      <div class="sci">Bauhinia forficata · nativa</div>
+      <p class="lead">El arbolito de la hoja partida en dos, como una pezuña. Es nativo y rústico: aguanta sequía moderada sin chistar, y ahora en invierno está semi-dormido.</p>
+      <div class="why">
+        <span class="ic">🐾</span>
+        <span class="txt"><b>Por qué aguanta:</b> rústica y nativa, con raíz profunda que busca su propia agua. En dormancia gasta menos todavía. La lluvia de invierno le sobra para tres semanas.</span>
+      </div>
+      <div class="pick"><button type="button" onclick="engageAnswer('aguantan-solos-sorprende','B-42', this)">Me sorprende que aguante 👍</button></div>
+    </div>
+  </article>
+
+  <!-- PITOSPORO -->
+  <article class="card reveal">
+    <div class="ph">
+      <img src="https://gardening-chi.vercel.app/images/B-42-43_entre_romero_b27.jpg" alt="Pitósporo entre romero y mirto" loading="lazy">
+      <span class="stars">★★★★★</span>
+      <span class="code">B-43</span>
+    </div>
+    <div class="body">
+      <h3>Pitósporo</h3>
+      <div class="sci">Pittosporum tobira · el del cerco</div>
+      <p class="lead">El arbusto perenne que crece entre el romero y el mirto. Es de los clásicos "planta y olvidate": se usa en la costa justo porque banca viento, sal y descuido.</p>
+      <div class="why">
+        <span class="ic">🌊</span>
+        <span class="txt"><b>Por qué aguanta:</b> tolera muy bien la sequía una vez establecido y no necesita riego frecuente. Perenne y duro de matar. Va a estar igualito cuando vuelvas.</span>
+      </div>
+      <div class="pick"><button type="button" onclick="engageAnswer('aguantan-solos-sorprende','B-43', this)">Me sorprende que aguante 👍</button></div>
+    </div>
+  </article>
+
+  <div class="nota reveal">
+    🧳 <b>La regla del viajero de invierno:</b> lo único que sufre una ausencia larga son las <b>macetas</b> (se secan más rápido que la tierra) y los <b>plantines chicos</b>. Los tres de arriba están en tierra y ya grandes: son tu red de seguridad. Antes de irte, un riego generoso a lo que esté en maceta y listo.
+  </div>
+
+  <!-- REACCIÓN -->
+  <section class="blk react reveal">
+    <h3>¿Te dejó más tranquilo?</h3>
+    <p>Tu reacción me dice si "saber que tu jardín se banca solo" es contenido que suma.</p>
+    <div class="react-row">
+      <button type="button" onclick="engageReact('aguantan-solos','love', this)" aria-label="Me encantó">😍</button>
+      <button type="button" onclick="engageReact('aguantan-solos','like', this)" aria-label="Me gustó">🙂</button>
+      <button type="button" onclick="engageReact('aguantan-solos','meh', this)" aria-label="Meh">😐</button>
+      <button type="button" onclick="engageReact('aguantan-solos','no', this)" aria-label="No">🙅</button>
+    </div>
+  </section>
+
+  <!-- SUSCRIPCIÓN -->
+  <section class="blk sub reveal">
+    <h3>🛡️ El parte tranquilo, cada día del viaje</h3>
+    <p>¿Querés que mientras estés afuera te mande cada mañana un "todo bien" corto: qué de tu jardín no necesita nada y por qué?</p>
+    <div class="sub-row">
+      <button type="button" class="si" onclick="engageAnswer('aguantan-solos-suscripcion-diaria','si', this)">Sí, tranquilizame</button>
+      <button type="button" class="no" onclick="engageAnswer('aguantan-solos-suscripcion-diaria','no', this)">No</button>
+    </div>
+    <span class="sub-hint" id="sh"></span>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>Esto lo leo yo, el agente del jardín, antes de armar la próxima…</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('aguantan-solos', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <div class="engage-actions reveal">
+    <button onclick="engageApprove('2026-07-30-aguantan-solos')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-07-30-aguantan-solos')">✕ No me interesa</button>
+  </div>
+
+  <div class="foot reveal">Datos reales de tu catálogo Pacha Mama · fotos de tu jardín · 30/07/2026</div>
+
+</div>
+
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>

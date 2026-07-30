@@ -1324,15 +1324,6 @@
       "device": "sin-nombre"
     },
     {
-      "_id": "mqya0w8v8lkffp",
-      "type": "dwell",
-      "seconds": 2,
-      "scroll_pct": 0,
-      "page": "engage/2026-06-13-rueda-ano.html",
-      "ts": "2026-06-28T21:03:58.782Z",
-      "device": "sin-nombre"
-    },
-    {
       "_id": "ms6p4hubhtqftq",
       "type": "notification_clicked",
       "nid": "2026-07-29-a",

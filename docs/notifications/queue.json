@@ -1,42 +1,42 @@
 {
-  "_updated_at": "2026-07-29T21:11:54.653Z",
+  "_updated_at": "2026-07-30T09:20:00-03:00",
   "notifications": [
     {
-      "id": "2026-07-29-jardin-hoy",
+      "id": "2026-07-30-jardin-hoy",
       "title": "🌤️ Tu jardín hoy · modo viaje",
-      "body": "Anoté que te vas ~3 semanas. Ajusté todo: la huerta espera, y quedaron 2 cosas por si hay día seco antes de irte.",
+      "body": "Nada urgente afuera. Falta una sola decisión que cerrás desde el sillón: el rincón de la hortensia. La huerta te espera para septiembre.",
       "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
       "format": "tarea",
-      "send_at": "2026-07-29T10:00:00-03:00",
-      "expires_at": "2026-07-29T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-29T14:26:16.637Z",
+      "send_at": "2026-07-30T10:00:00-03:00",
+      "expires_at": "2026-07-30T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-29 (push diaria consolidada; reencuadra a modo viaje + cajas de feedback por tarea + fotos, pedido 28/07)"
+      "created_by": "engagement-agent 2026-07-30 (push diaria consolidada, modo viaje, refrescada al 30/07)"
     },
     {
-      "id": "2026-07-29-a",
-      "title": "🌿 Los que no duermen",
-      "body": "El durazno y la pera duermen pelados, pero tu jardín tiene guardia: 3 plantas siguen verdes. Con fotos reales.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-29-los-que-no-duermen.html",
-      "send_at": "2026-07-29T13:30:00-03:00",
-      "expires_at": "2026-07-29T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-29T17:37:41.645Z",
+      "id": "2026-07-30-a",
+      "title": "🌱 Los que se multiplican solos",
+      "body": "Tres plantas tuyas hacen hijos gratis. Mirá la foto del jazmín: ya te dio dos. El cómo exacto para tener el doble sin gastar.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-30-se-multiplican-solos.html",
+      "send_at": "2026-07-30T13:30:00-03:00",
+      "expires_at": "2026-07-30T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-29 (experimento: feed visual con fotos reales, plantas activas de invierno)"
+      "created_by": "engagement-agent 2026-07-30 (experimento: propagacion gratis, cast fresco + fotos reales, angulo how-to)"
     },
     {
-      "id": "2026-07-29-b",
-      "title": "✈️ Antes de irte",
-      "body": "Te vas 3 semanas y es invierno: la mejor estación para dejarlo solo. Lo poco que conviene dejar listo, en 4 pasos.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-29-antes-de-irte.html",
-      "send_at": "2026-07-29T18:00:00-03:00",
-      "expires_at": "2026-07-29T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-29T21:11:54.652Z",
+      "id": "2026-07-30-b",
+      "title": "🛡️ Los que aguantan solos",
+      "body": "Te vas y es invierno: estas 3 plantas tuyas no te van a extrañar ni un poco. Y no es suerte, es biología. Cero riegos en todo el viaje.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-30-aguantan-solos.html",
+      "send_at": "2026-07-30T18:00:00-03:00",
+      "expires_at": "2026-07-30T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-29 (slot dorado; honra feedback directo del viaje, vende tranquilidad + cuenta regresiva)"
+      "created_by": "engagement-agent 2026-07-30 (slot dorado: tranquilidad de viaje con prueba biologica, cast fresco + fotos)"
     }
   ]
 }

@@ -896,22 +896,46 @@
       "title": "✈️ Antes de irte",
       "page": "engage/2026-07-29-antes-de-irte.html",
       "created": "2026-07-29",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "El usuario avisó que se va de viaje ~10 dias (vuelve fin de agosto). Una checklist calmada y anclada en dormancia invernal + cuenta regresiva diaria honra ese dato exacto y vende TRANQUILIDAD (agencia sobre lo que controla). Apuesto a reaccion positiva + sub a la cuenta regresiva porque resuelve una ansiedad real y timely.",
       "notified_by": [
         "2026-07-29-b"
       ],
-      "result_notes": null
+      "result_notes": "Abierta 23:44 (tarde, fuera de ventana), dwell 30s, SIN reacción/sub/aprobación = masomenos. El eje viaje es real pero el formato checklist-prep no ganó señal activa. No sobrevive sin aprobación (regla). El contenido de viaje se mantiene vivo en jardin-hoy (modo viaje)."
     },
     {
       "id": "2026-07-29-los-que-no-duermen",
       "title": "🌿 Los que no duermen",
       "page": "engage/2026-07-29-los-que-no-duermen.html",
       "created": "2026-07-29",
-      "status": "pending",
+      "status": "dropped",
       "hypothesis": "Formato nuevo: feed visual con FOTOS REALES (primer engage con fotos inline de plantas) de las 3 plantas activas en invierno (interior I-1/I-2 + perenne B-44, cast descansado >=10d). Ataca la temporada muerta con un motivo real para volver + voto de gusto (agencia low-friction). Tras la muerte de vos-decidis/esto-o-esto pruebo si lo VISUAL+REAL (lo que pidio: fotos para saber cual es cual) convierte donde el texto y los gestos-gimmick no.",
       "notified_by": [
         "2026-07-29-a"
+      ],
+      "result_notes": "Abierta 23:08, dwell 15s, SIN voto/reacción/sub = masomenos. El experimento visual+fotos reales se abrió pero no gatilló la interacción (voto \"cuál te alegra\"). Las fotos siguen siendo un NEED validado; el contenedor \"guardia de invierno\" no convirtió. No sobrevive sin aprobación."
+    },
+    {
+      "id": "2026-07-30-se-multiplican-solos",
+      "title": "🌱 Los que se multiplican solos (propagación gratis)",
+      "page": "engage/2026-07-30-se-multiplican-solos.html",
+      "created": "2026-07-30",
+      "status": "pending",
+      "hypothesis": "El ángulo 'sacale MÁS a lo que ya tenés / plantas gratis' (codicia sana + habilidad concreta) engancha donde la trivia y los gimmicks murieron. Cast 100% fresco (B-12 cinta, B-2 jazmín, B-15 hiedra, todas rested >7d) con fotos reales — incluida la foto que MUESTRA los hijos del jazmín. Sustancia (cómo-hacerlo real: pup/acodo/esqueje), no juego. Slot 13:30.",
+      "notified_by": [
+        "2026-07-30-a"
+      ],
+      "result_notes": null
+    },
+    {
+      "id": "2026-07-30-aguantan-solos",
+      "title": "🛡️ Los que aguantan solos (tranquilidad de viaje)",
+      "page": "engage/2026-07-30-aguantan-solos.html",
+      "created": "2026-07-30",
+      "status": "pending",
+      "hypothesis": "Vender TRANQUILIDAD (quitar preocupación) al viajero pega más que sumar tareas. Honra el contexto real del viaje SIN nagear, con prueba biológica por planta (nativa/dormancia/raíz). Cast 100% fresco (B-34 mandioca, B-42 pata de vaca, B-43 pitósporo, rested) con fotos reales. Slot dorado 18:00. Ángulo alivio pero CON sustancia (el porqué), no alivio pasivo vacío.",
+      "notified_by": [
+        "2026-07-30-b"
       ],
       "result_notes": null
     }

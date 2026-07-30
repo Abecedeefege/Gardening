@@ -1,6 +1,6 @@
 {
   "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
-  "_updated": "2026-07-29",
+  "_updated": "2026-07-30",
   "plants": {
     "F-1": {
       "common": "Guayabo del país",
@@ -199,12 +199,17 @@
     },
     "B-2": {
       "common": "Jazmín (a confirmar variedad)",
-      "paginas_historicas": 5,
+      "paginas_historicas": 6,
       "featured": [
         {
           "date": "2026-07-19",
           "page": "2026-07-09-quiz-planta(reno-19-07).html",
           "fact": "se acoda solo / da hijos para regalar / generoso"
+        },
+        {
+          "date": "2026-07-30",
+          "page": "2026-07-30-se-multiplican-solos.html",
+          "fact": "ANGULO PROPAGACION (acodo how-to, evolucion del \"da hijos\" 19/07): foto real muestra B-2B/B-2C, separar en primavera"
         }
       ]
     },
@@ -378,12 +383,17 @@
     },
     "B-12": {
       "common": "Cinta / Lazo de amor",
-      "paginas_historicas": 8,
+      "paginas_historicas": 9,
       "featured": [
         {
           "date": "2026-07-19",
           "page": "2026-07-19-racha-jardin.html",
           "fact": "NASA aire limpio 10m2 / perenne sin licencia"
+        },
+        {
+          "date": "2026-07-30",
+          "page": "2026-07-30-se-multiplican-solos.html",
+          "fact": "ANGULO PROPAGACION (how-to, no fun_fact NASA): hijuelos colgantes del lazo de amor = plantas gratis, cast fresco rested"
         }
       ]
     },
@@ -421,7 +431,7 @@
     },
     "B-15": {
       "common": "Hiedra común",
-      "paginas_historicas": 8,
+      "paginas_historicas": 9,
       "featured": [
         {
           "date": "2026-07-20",
@@ -432,6 +442,11 @@
           "date": "2026-07-22",
           "page": "2026-07-22-grupo-jardin.html",
           "fact": "ANGULO LLUVIA: +400 anios de inviernos, ni se inmuta"
+        },
+        {
+          "date": "2026-07-30",
+          "page": "2026-07-30-se-multiplican-solos.html",
+          "fact": "ANGULO PROPAGACION (esqueje al agua, no fun_fact +400anios): la mas facil de multiplicar, foto real"
         }
       ]
     },
@@ -698,12 +713,17 @@
     },
     "B-34": {
       "common": "Mandioca brava (tentativa)",
-      "paginas_historicas": 9,
+      "paginas_historicas": 10,
       "featured": [
         {
           "date": "2026-07-20",
           "page": "2026-06-29-diario-jardin(reno-20-07).html",
           "fact": "latex cianogenico brava / nativa Cono Sur / mandioca domesticada = veneno a alimento"
+        },
+        {
+          "date": "2026-07-30",
+          "page": "2026-07-30-aguantan-solos.html",
+          "fact": "ANGULO RESISTENCIA/VIAJE (no fun_fact latex): nativa Cono Sur, tolera sequia, invierno casi sin agua = se banca 3 semanas, foto real"
         }
       ]
     },
@@ -855,23 +875,33 @@
     },
     "B-42": {
       "common": "Pata de vaca",
-      "paginas_historicas": 7,
+      "paginas_historicas": 8,
       "featured": [
         {
           "date": "2026-07-19",
           "page": "2026-07-19-nombre-apellido.html",
           "fact": "hermanos Bauhin / hoja partida en dos"
+        },
+        {
+          "date": "2026-07-30",
+          "page": "2026-07-30-aguantan-solos.html",
+          "fact": "ANGULO RESISTENCIA/VIAJE (no fun_fact Bauhin): rustica nativa, raiz profunda + dormancia = autosuficiente en el viaje, foto real"
         }
       ]
     },
     "B-43": {
       "common": "Pitósporo",
-      "paginas_historicas": 4,
+      "paginas_historicas": 5,
       "featured": [
         {
           "date": "2026-07-20",
           "page": "2026-06-29-diario-jardin(reno-20-07).html",
           "fact": "tobira=puerta japones / semilla resina pega patas aves / poda drastica costera"
+        },
+        {
+          "date": "2026-07-30",
+          "page": "2026-07-30-aguantan-solos.html",
+          "fact": "ANGULO RESISTENCIA/VIAJE (no fun_fact tobira): planta-y-olvidate costera, tolera sequia = duro de matar, foto real"
         }
       ]
     },
@@ -1016,6 +1046,10 @@
     {
       "date": "2026-07-27",
       "nota": "CICLO 57. vos-decidis GANO el 56 (agencia/decision: 5 respuestas + suscripcion SI + like + 116s) → SERIALIZADO como 'una decision por dia' con loop de ejecucion (recap de lo de ayer ya hecho + 4 decisiones nuevas). mi-primavera (anticipacion) REJECTED → MUERTO. Experiencia nueva mi-objetivo.html = formato NUNCA probado (objetivo→plan de 3 pasos): el usuario declara un resultado y genero el plan con plantas reales. Cast de mi-objetivo por ANGULO OBJETIVO/funcion (no fun_fact): B-9/B-18/B-29/B-1 (flor), B-7/B-40/F-8 (sombra), B-40/B-16/F-8 (fauna) — mayoria descansada >=7d. Elenco de fun_facts ornamentales SIGUE QUEMADO. Decisiones del 56 ejecutadas en contenido (jardin-hoy + recap vos-decidis), no en data_plants (evitar romper build; si el usuario las quiere como cambios de tarea, lo pide)."
+    },
+    {
+      "date": "2026-07-30",
+      "nota": "CICLO 60. Dos experiencias 29/07 (antes-de-irte, los-que-no-duermen) = masomenos (abiertas tarde, sin senal activa) -> ambas dropped. Hoy: dos experiencias con cast 100% FRESCO (rested >7d) + FOTOS REALES (NEED validado del usuario) + SUSTANCIA real, NO gimmick. se-multiplican-solos = propagacion (cinta B-12/jazmin B-2/hiedra B-15) angulo how-to gratis. aguantan-solos = resistencia/viaje (mandioca B-34/pata de vaca B-42/pitosporo B-43) angulo tranquilidad-con-prueba. Elenco de fun_facts ornamentales SIGUE QUEMADO: usados por angulo propagacion/resistencia, no fun_fact. jardin-hoy refrescado a 30/07 (modo viaje se mantiene)."
     }
   ]
 }
