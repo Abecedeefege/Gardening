@@ -1,0 +1,16 @@
+{
+  "task_id": "plant-B-30",
+  "_updated_at": "2026-07-30T18:09:24.429Z",
+  "messages": [
+    {
+      "id": "m-ms7tvo8s-cqyp39",
+      "from": "user",
+      "kind": "text",
+      "text": "Llovió hace 2 días y está anunciado lluvia para el sábado, en dos días.  Hoy está divino, lo hago hoy?",
+      "photo": null,
+      "ts": "2026-07-30T18:09:24.220Z",
+      "device": "landing",
+      "status": "pending"
+    }
+  ]
+}
