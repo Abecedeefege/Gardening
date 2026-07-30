@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-30T18:27:00.000Z",
+  "_updated_at": "2026-07-30T18:54:52.469Z",
   "notifications": [
     {
       "id": "2026-07-30-jardin-hoy",
@@ -48,8 +48,8 @@
       "format": "tarea",
       "send_at": "2026-07-30T15:20:00-03:00",
       "expires_at": "2026-07-30T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-30T18:54:52.468Z",
       "fail_reason": null,
       "created_by": "responder-tareas 2026-07-30"
     }

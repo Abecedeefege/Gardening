@@ -371,6 +371,12 @@
       "nid": "2026-07-30-jardin-hoy-viaje",
       "ts": "2026-07-30T18:00:50.055Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-07-30-reply-plant-B-30",
+      "ts": "2026-07-30T18:54:52.468Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
