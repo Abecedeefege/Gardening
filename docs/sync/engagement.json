@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-30T18:07:07.542Z",
+  "_updated_at": "2026-07-30T18:07:43.808Z",
   "events": [
     {
       "_id": "mrnrby6vkdxjhi",
@@ -1469,6 +1469,15 @@
       "nid": "2026-07-30-jardin-hoy-viaje",
       "src": "push",
       "ts": "2026-07-30T18:07:07.950Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7ttilnybcvxp",
+      "type": "dwell",
+      "seconds": 37,
+      "scroll_pct": 50,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-30T18:07:44.747Z",
       "device": "sin-nombre"
     }
   ],
