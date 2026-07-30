@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-30T18:00:50.057Z",
+  "_updated_at": "2026-07-30T18:27:00.000Z",
   "notifications": [
     {
       "id": "2026-07-30-jardin-hoy",
@@ -39,6 +39,19 @@
       "sent_at": "2026-07-30T18:00:50.055Z",
       "fail_reason": null,
       "created_by": "daily-tasks-review 2026-07-30 (pedido directo, envio adelantado a mano: feedback del daily ejecutado — B-37 hecho, foto+comentario en todas las de agosto, plan reordenado al viaje 7-23/08)"
+    },
+    {
+      "id": "2026-07-30-reply-plant-B-30",
+      "title": "🌿 Te contesté: sí, el durazno hoy",
+      "body": "Cortando hoy le das 48 h de secado antes de la lluvia del sábado. Aprovechá y hacé el ciruelo y la ciruela también.",
+      "url": "https://gardening-chi.vercel.app/tasks/plant-B-30.html",
+      "format": "tarea",
+      "send_at": "2026-07-30T15:20:00-03:00",
+      "expires_at": "2026-07-30T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "responder-tareas 2026-07-30"
     }
   ]
 }
