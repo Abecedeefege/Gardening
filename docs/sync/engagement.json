@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-30T16:24:22.416Z",
+  "_updated_at": "2026-07-30T16:24:34.802Z",
   "events": [
     {
       "_id": "mrnrby6vkdxjhi",
@@ -1443,6 +1443,15 @@
       "text": "Mi viaje va a ser del 7-23 de agosto.  Actualiza esta y todas las otras pendientes de julio y agosto para recomendarme si conviene hacerlo antes o después del viaje",
       "page": "engage/2026-07-24-jardin-hoy.html",
       "ts": "2026-07-30T16:24:22.061Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7q4v3vs1fw00",
+      "type": "dwell",
+      "seconds": 199,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-30T16:24:35.707Z",
       "device": "sin-nombre"
     }
   ],
