@@ -1,454 +1,462 @@
 {
-  "_synced_at": "2026-07-25T12:05:15.000Z",
-  "_last_writer": "responder-tareas",
-  "tasks": {
-    "plant-F-1": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-07-24T18:07:50.488Z",
-      "completed_via_ai": true,
-      "ai_summary": "El usuario podó todo lo que estaba enfermo, seco o muerto en el guayabo F-1 (24/07). Se le confirmó que el límite del 10% es solo para madera viva — lo que sacó no cuenta ahí, así que la limpieza invernal queda hecha.",
-      "last_modified_at": "2026-07-25T12:05:15.000Z"
-    },
-    "plant-F-9": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-04T16:30:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "El usuario aclaró (04/05): no compiten, ambas establecidas. La fotinia (más grande, arriba) sombra al ligustro abajo. Decisión: mantener ambas y podar selectivamente la fotinia para liberar luz al ligustro. La urgencia se reescribió en data_plants.py como 'Poda selectiva de Fotinia F-6 — liberar luz al ligustro' para agosto-septiembre 2026.",
-      "last_modified_at": "2026-05-04T16:30:00.000Z"
-    },
-    "plant-F-10": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-07-23T18:42:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Evaluado y decidido (23/07): liberar luz al fresno vía poda selectiva de la fotinia F-6 en su ventana (fines de agosto, tarea plant-F-9). El corte no va en el fresno.",
-      "last_modified_at": "2026-07-23T18:42:00.000Z"
-    },
-    "plant-B-30-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-02T19:17:10.186Z"
-    },
-    "plant-B-37-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-02T19:20:14.303Z"
-    },
-    "plant-B-23-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-04T18:04:45.603Z",
-      "last_modified_at": "2026-05-04T18:04:45.604Z"
-    },
-    "plant-B-24-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-04T18:05:09.615Z",
-      "last_modified_at": "2026-05-04T18:05:09.615Z"
-    },
-    "plant-B-22-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-02T19:24:41.331Z"
-    },
-    "plant-B-41-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-02T19:30:01.420Z"
-    },
-    "plant-B-44": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-02T19:36:21.558Z"
-    },
-    "plant-F-4-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-02T21:20:40.327Z"
-    },
-    "plant-F-1-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T14:30:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Foto 18:08 muestra base del Guayabo F-1 prácticamente despejada — rastrillado cumplido. Foto 18:09 con consulta sobre 'hojas enfermas' resuelta: las manchas blanco-grises son envés plateado natural del Acca sellowiana + polvo ambiental, NO patología. Agregada urgencia opcional 'Lavar follaje con manguera' para sacar polvo.",
-      "last_modified_at": "2026-05-05T14:30:00.000Z"
-    },
-    "plant-B-13-3": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T14:53:37.600Z",
-      "last_modified_at": "2026-05-05T14:53:37.602Z"
-    },
-    "plant-B-46-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-04T16:16:12.696Z",
-      "last_modified_at": "2026-05-04T16:16:12.698Z"
-    },
-    "plant-B-1-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-04T17:19:28.042Z",
-      "last_modified_at": "2026-05-04T17:19:28.042Z"
-    },
-    "plant-B-36": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-04T17:30:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Palta Hass fotografiada vertical con árbol llenando el frame, paltas verdes ovoides colgantes visibles, copa densa. Cumple criterio de hero photo de la especie.",
-      "last_modified_at": "2026-05-04T17:30:00.000Z"
-    },
-    "plant-B-36-3": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T17:55:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Mejoró notablemente vs el anterior — ahora hay capa de hojas secas distribuidas como mulch alrededor del tronco del palto. No es compost denso ideal pero cumple parcialmente la función protectora. Tarea aceptada como cumplida.",
-      "last_modified_at": "2026-05-05T17:55:00.000Z"
-    },
-    "plant-B-46": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T14:30:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Fotos del 05/05 mostraron 2 plantines incógnita. X-1: probable roble (Quercus sp.) por hoja lobulada característica. X-2: trifoliada con foliolos en grupos de 3, especie por confirmar. Agregadas 2 urgencias para seguimiento individual.",
-      "last_modified_at": "2026-05-05T14:30:00.000Z"
-    },
-    "plant-F-8": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T14:30:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Aguaribay (Schinus molle) fotografiado entero al frente del portón con copa frondosa visible. Cumple criterio de panorámica del frente.",
-      "last_modified_at": "2026-05-05T14:30:00.000Z"
-    },
-    "plant-B-41-3": {
-      "status": "snoozed",
-      "snoozed_until": "2026-11-15T00:00:00.000Z",
-      "completed_at": null,
-      "completed_via_ai": false,
-      "ai_summary": "Sin brotes en invierno; se difiere a fines de primavera para confirmar identidad por flor/fruto.",
-      "last_modified_at": "2026-07-23T18:42:00.000Z"
-    },
-    "plant-B-9-4": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T14:30:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Usuario confirma que ya identifica todos los caducos sin necesidad de marcarlos con cinta — tarea cerrada por innecesaria.",
-      "last_modified_at": "2026-05-05T14:30:00.000Z"
-    },
-    "plant-B-9-3": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T15:30:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Foto del 05/05 sí enfoca el tronco del Crespón (B-9). La corteza canela exfoliante todavía no es muy notable — el árbol parece relativamente joven (troncos múltiples delgados). La exfoliación característica se desarrolla con la edad. Tarea cumplida con la foto del tronco aunque el efecto canela no es espectacular aún.",
-      "last_modified_at": "2026-05-05T15:30:00.000Z"
-    },
-    "plant-B-45": {
-      "status": "snoozed",
-      "snoozed_until": "2026-10-15T00:00:00.000Z",
-      "completed_at": null,
-      "completed_via_ai": false,
-      "ai_summary": "Perenne de hojas opuestas; a la espera de floración para identificar (jazmín estrellado vs eugenia).",
-      "last_modified_at": "2026-07-23T18:42:00.000Z"
-    },
-    "plant-B-43": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T19:00:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "B-43 confirmado por el usuario como Pittosporum tobira (pitósporo). Refactor aplicado en data_plants.py: common, sci, desc, fun_fact, cuidados completos. La urgencia 'Identificar planta alta de atrás' eliminada — eso pasa a ser parte de B-42 (Bauhinia + alta dentada).",
-      "last_modified_at": "2026-05-05T19:00:00.000Z"
-    },
-    "plant-B-25-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T14:30:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Inspección reveló PLAGA: pulgones (áfidos) negros agrupados en pecíolos y brotes nuevos de la gardenia + hormigas negras protegiéndolos (simbiosis hormiga-pulgón) + hojas nuevas curvadas. Tarea de inspección cumplida. Agregada urgencia nueva 'Tratar pulgones + cortar tránsito de hormigas' (alta prioridad, mayo 2026) con plan de 4 pasos.",
-      "last_modified_at": "2026-05-05T14:30:00.000Z"
-    },
-    "plant-B-46-4": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-07-23T18:42:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Plantines de palmera reubicados a sombra luminosa. Confirmado OK para invierno.",
-      "last_modified_at": "2026-07-23T18:42:00.000Z"
-    },
-    "plant-B-46-6": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-07-23T18:42:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Romeros del vivero en maceta chica murieron (frío+humedad, raíz apretada). Descartados con consentimiento del usuario (23/07). NO afecta al romero B-26 del muro norte.",
-      "last_modified_at": "2026-07-23T18:42:00.000Z"
-    },
-    "plant-B-42": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T19:00:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "B-42 identificada como Bauhinia forficata (Pata de vaca) — hoja en pezuña doble inequívoca confirmada en fotos previas (18:22 del 04/05). Refactor completo aplicado: nativa rioplatense, ornamental con flor blanca en primavera-verano, uso medicinal hipoglucemiante. User mencionó que en el sector hay 2 especies — agregada urgencia separada para confirmar la otra alta de hojas dentadas.",
-      "last_modified_at": "2026-05-05T19:00:00.000Z"
-    },
-    "plant-B-27": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T15:30:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "B-27 IDENTIFICADO como Mirto común (Myrtus communis) — confirmado por bayas negras pequeñas en racimos + hojas opuestas elípticas brillantes verde oscuro visibles en foto del 05/05 (subida por error a B-42 pero contenido era de B-27). Refactor aplicado: common, sci, desc, fun_fact, prune, water, light. Reemplazada urgencia 'Foto en floración para identificar' por 2 nuevas: 'Cosechar bayas de mirto (otoño)' y 'Foto en floración (referencia catálogo)'.",
-      "last_modified_at": "2026-05-05T15:30:00.000Z"
-    },
-    "plant-B-48": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T15:30:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Plantín X-1 confirmado como Quercus sp. (roble joven) — hojas con lóbulos redondeados característicos del género claramente visibles en la foto del 05/05.",
-      "last_modified_at": "2026-05-05T15:30:00.000Z"
-    },
-    "plant-B-49": {
-      "status": "active",
-      "snoozed_until": null,
-      "completed_at": null,
-      "description_override": "Foto del 05/05 17:41 muestra mejor el plantín X-2: hojas trifoliadas verde brillante con foliolos ovalados-redondeados lisos. Identificación tentativa: posible glicinia juvenil (Wisteria sinensis) — las hojas trifoliadas en jóvenes después se vuelven pinnadas en glicinias adultas. Confirmación con flor en oct-nov 2026 (ver tarea plant-B-49).",
-      "description_override_at": "2026-05-05T17:55:00.000Z",
-      "last_ai_summary": "Hojas trifoliadas con foliolos ovalados lisos brillantes — posible glicinia juvenil. Esperar flor primavera.",
-      "last_modified_at": "2026-05-05T17:55:00.000Z"
-    },
-    "plant-B-25-3": {
-      "status": "snoozed",
-      "snoozed_until": "2026-05-13T18:50:33.586Z",
-      "completed_at": null,
-      "last_modified_at": "2026-05-12T18:50:33.586Z"
-    },
-    "plant-B-47-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T18:46:19.274Z",
-      "last_modified_at": "2026-05-05T18:46:19.275Z"
-    },
-    "plant-B-46-8": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T15:30:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Plantín X-1 confirmado como Quercus sp. (roble joven) — hojas con lóbulos redondeados característicos del género claramente visibles en la foto del 05/05.",
-      "last_modified_at": "2026-05-05T15:30:00.000Z"
-    },
-    "plant-B-46-9": {
-      "status": "active",
-      "snoozed_until": null,
-      "completed_at": null,
-      "description_override": "Foto del 05/05 muestra que el plantín X-2 NO es trifoliada como yo había evaluado antes — es pinnada compuesta (raquis con varios foliolos pareados). Posibles candidatos: Koelreuteria paniculata (jabonero de la China), Fraxinus pennsylvanica (fresno juvenil, hijo del B-37 vía samara), o Sapindus. Para confirmar: foto cercana del raquis completo mostrando el patrón pinnado (foliolos pareados u opuestos) + foto del nudo de inserción + medir cuántos foliolos por hoja entera.",
-      "description_override_at": "2026-05-05T15:30:00.000Z",
-      "last_ai_summary": "Hoja pinnada compuesta confirmada (no trifoliada). Pendiente foto cercana del raquis para ID exacta.",
-      "last_modified_at": "2026-05-05T15:30:00.000Z"
-    },
-    "plant-I-1-3": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T18:50:16.756Z",
-      "last_modified_at": "2026-05-05T18:50:16.757Z"
-    },
-    "plant-F-1-3": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-08T14:00:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Lluvia + foto cercana cumplieron la función diagnóstica. El user tenía razón: NO era polvo. La foto reveló fumagina (sooty mold) clara — manchas negras adherentes que no se van con la lluvia, parche con zonas verdes intactas. Tarea cerrada. Tratamiento se mueve a urgency nueva plant-F-1-4 (alta prioridad).",
-      "last_modified_at": "2026-05-08T14:00:00.000Z"
-    },
-    "user-1778238699918-71e2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-08T14:00:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "🔬 DIAGNÓSTICO: el Guayabo F-1 tiene FUMAGINA (sooty mold) — un hongo negro carbonáceo (Capnodium / Cladosporium). NO es tierra ni polvo: se ve por el patrón de cobertura adherente que no se va con la lluvia y deja zonas verdes parcheadas debajo. ⚠️ La fumagina por sí sola no enferma al árbol — crece sobre la MELAZA (sustancia pegajosa azucarada) que segregan insectos chupadores: cochinilla, escama, pulgones o mosca blanca. El problema real es la plaga, la fumagina es el síntoma. PLAN concreto creado como urgency plant-F-1-4 (alta prioridad, 'Tratar fumagina + buscar plaga origen'): (1) detective con linterna en envés/brotes/bifurcaciones para encontrar la plaga, también mirar plantas de arriba que puedan dejar caer melaza, (2) pulverizar aceite de neem 5 ml/L + jabón potásico 3 ml/L cada 7 días por 3 semanas al atardecer, (3) limpiar fumagina con paño + jabón (no urgente, sale sola una vez cortada la melaza). Foto a la semana 2 para ver evolución.",
-      "last_modified_at": "2026-05-08T17:00:00.000Z"
-    },
-    "plant-I-1": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T19:00:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "User confirma que la foto actual del Singonio (I-1) ya es excelente y la tarea de 'foto centrada' no tiene sentido. Cerrada por innecesaria.",
-      "last_modified_at": "2026-05-05T19:00:00.000Z"
-    },
-    "plant-I-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-05T19:00:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "User confirma que la foto actual de la Difenbaquia (I-2) ya es excelente y la tarea de 'foto centrada' no tiene sentido. Cerrada por innecesaria.",
-      "last_modified_at": "2026-05-05T19:00:00.000Z"
-    },
-    "plant-B-6-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-07-23T18:42:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Poda de cola de zorro hecha (foto 23/07). Colas viejas retiradas.",
-      "last_modified_at": "2026-07-23T18:42:00.000Z"
-    },
-    "plant-B-5a-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-06T18:21:00.383Z",
-      "last_modified_at": "2026-05-06T18:21:00.383Z"
-    },
-    "plant-B-25-4": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-06T18:24:36.230Z",
-      "last_modified_at": "2026-05-06T18:24:36.230Z"
-    },
-    "plant-B-7-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-06T18:39:43.809Z",
-      "last_modified_at": "2026-05-06T18:39:43.809Z"
-    },
-    "plant-B-40-3": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-06T18:41:25.860Z",
-      "last_modified_at": "2026-05-06T18:41:25.861Z"
-    },
-    "plant-B-48-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-07T13:28:30.745Z",
-      "last_modified_at": "2026-05-07T13:28:30.748Z"
-    },
-    "plant-B-49-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-07T13:28:33.330Z",
-      "last_modified_at": "2026-05-07T13:28:33.330Z"
-    },
-    "plant-B-47": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-07T13:28:36.177Z",
-      "last_modified_at": "2026-05-07T13:28:36.177Z"
-    },
-    "user-1778160757771-7240": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-07T14:00:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Listado para Montevideo (lat -34.9°S, otoño/inicio invierno). VERDURAS para sembrar/transplantar AHORA en mayo: ajo (a diente directo, 10-15 cm enterrado, cosecha enero), cebolla (de almácigo a definitivo), habas, arvejas (semilla directa), lechuga de invierno (mantecosa, romana — plantines), espinaca, acelga, rúcula, perejil, cilantro, repollo y coliflor (plantines). HIERBAS: tomillo, orégano, ciboulette ya establecidos toleran trasplante; lavanda mejor en jul-ago. FRUTAS: la ventana óptima de plantación de frutales caducos (manzano, ciruelo, durazno, peral, cerezo, higo, kaki, ciruelo japonés) es JULIO-AGOSTO a raíz desnuda en plena dormancia — en mayo es prematuro pero podés ir abonando los lugares previstos. Cítricos NO van en mayo (frío) — esperar octubre. BERRIES: frutillas SÍ van bien ahora (corona descubierta, lugar soleado, riego moderado). Arándano y frambuesa también van bien plantar a partir de junio. EVITAR en mayo: tomate, morrón, zapallo, pepino, sandía, melón, berenjena (todos van en sept-oct). Si querés un plan concreto para tu jardín avísame qué espacio tenés disponible (cantero, maceta, fondo) y armo lista priorizada con compañeros plantados.",
-      "last_modified_at": "2026-05-07T14:00:00.000Z"
-    },
-    "user-1778160814168-a314": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-07T14:00:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Auditoría completa: las 16 especies no 100% confirmadas YA TIENEN cada una su urgency de identificación específica. Listado y ventana esperada (mes recomendado para foto/foto+flor que cierra ID): F-5 Coronita de novia (Spiraea? — flor sept-oct) → existing 'Confirmar especie viendo la floración'; B-2 Jazmín → 'Foto en floración + decidir hijos' (oct-dic); B-9 Crespón (Lagerstroemia? — confirmado por hojas/corteza, falta flor) → 'Confirmar especie en floración' (ene-feb); B-13 Clivia (confirmado por porte) → 'Confirmar especie en floración' (sept-oct para flor naranja); B-14 sospecha lapachillo → 'Foto en floración para ID' (ago-sept); B-15 vegetación galpón → 'Acercarse y fotografiar de cerca' (cuando puedas con escalera); B-20 arbusto caduco → 'Foto al brotar (sept-oct)'; B-25 Gardenia (confirmado por síntomas) → ahora marcado 100%, no necesita más confirmación; B-32 varitas peladas → 'Foto del brote primaveral' (sept-oct); B-34 Mandioca brava (recién identificada tentativa) → 'Confirmar con foto de flor' (oct-dic); B-40 Lonicera nitida → 'Confirmar en floración' (oct-nov); B-41 Caqui → 'Confirmar variedad' refoto en mayo 2027 con frutos; B-45 sin identificar → 'Foto hoja + flor' (oct-dic); B-46 vivero → '6 urgencies por subgrupo' + 'Subir fotos plantines incógnita'; B-47 palmeras butiá vs pindó → 'Confirmar especie' (esperar hojas pinnadas adultas, feb 2027); B-49 trifoliado → 'Confirmar trifoliado (esperar flor primavera)' (oct-nov 2026). Refactor adicional aplicado: B-25 Gardenia removido '(a confirmar)' — los síntomas (pulgones, hormigas, cloración férrica) son inequívocos. ⚠️ NADA QUE HACER POR EL USER AHORA: cada urgency está scheduleada para su ventana botánica óptima.",
-      "last_modified_at": "2026-05-07T14:00:00.000Z"
-    },
-    "user-1778597583144-7d3d": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-13T16:07:57.664Z",
-      "last_modified_at": "2026-05-13T16:07:57.665Z"
-    },
-    "user-1778597898416-9661": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-12T18:52:52.770Z",
-      "last_modified_at": "2026-05-12T18:52:52.770Z"
-    },
-    "user-1778597957937-4aa6": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-12T18:52:58.655Z",
-      "last_modified_at": "2026-05-12T18:52:58.656Z"
-    },
-    "user-1778598164393-d77d": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-13T16:08:07.326Z",
-      "last_modified_at": "2026-05-13T16:08:07.327Z"
-    },
-    "user-1778598817730-f154": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-13T16:08:12.754Z",
-      "last_modified_at": "2026-05-13T16:08:12.754Z"
-    },
-    "user-1778611738232-a5e1": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-24T22:53:47.180Z",
-      "last_modified_at": "2026-05-24T22:53:47.180Z"
-    },
-    "user-1778611776683-eeef": {
-      "status": "active",
-      "snoozed_until": null,
-      "completed_at": null,
-      "last_modified_at": "2026-05-12T18:49:42.692Z"
-    },
-    "plant-F-1-4": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-07-23T19:12:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Usuario podó todas las ramas secas/afectadas por la fumagina (poda fuerte, 23/07). Consulta sanitaria respondida: fumagina no es patógeno humano, higiene básica alcanza. Guayabo rebrota bien; vigilar si el hollín reaparece (= plaga viva → tratar con jabón/aceite).",
-      "last_modified_at": "2026-07-23T19:12:00.000Z"
-    },
-    "plant-B-29-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-12T18:50:38.028Z",
-      "last_modified_at": "2026-05-12T18:50:38.028Z"
-    },
-    "plant-B-32-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-13T17:00:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Cartel ya no necesario — B-32 identificada como Ruprechtia laxiflora (viraró, nativa de Polygonaceae). El user aceptó la lectura 'rupretchia' del cartel y encaja con las hojas pequeñas opuestas brillantes. Catálogo actualizado: common='Viraró', sci='Ruprechtia laxiflora', desc/fun_fact completos. Urgency original reemplazada por 'Foto de floración + frutos con sépalos rosados' (sept-nov 2026) para documentar el feature ornamental y confirmar si es pie macho o hembra.",
-      "last_modified_at": "2026-05-13T17:00:00.000Z"
-    },
-    "plant-F-2-2": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-05-24T22:53:34.250Z",
-      "last_modified_at": "2026-05-24T22:53:34.254Z"
-    },
-    "user-1781114206236-60d0": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-07-13T12:06:34.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "El B-15 ya está confirmado como hiedra común (Hedera helix): se identificó con una foto bien cercana en mayo 2026 — hoja palmeada de 3 a 5 lóbulos, verde oscuro brillante, con venación blanco-verdosa marcada, típica de la hiedra. No es el guayabo del país: ese es F-1, está en el FRENTE (no en el fondo), y tiene hoja entera ovalada gris-plateada por debajo con flores blancas y rojas comestibles en primavera — planta bien distinta. Si te quedan dudas, mandá una foto bien cerca de la hoja puntual que estás mirando (puede haber otra plantita colada cerca) y la reviso de nuevo.",
-      "last_modified_at": "2026-07-13T12:06:34.000Z"
-    },
-    "plant-B-8": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-07-23T18:42:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Decisión del usuario: dejar caer las hojas secas del pindó naturalmente (23/07).",
-      "last_modified_at": "2026-07-23T18:42:00.000Z"
-    },
-    "plant-B-39": {
-      "status": "done",
-      "snoozed_until": null,
-      "completed_at": "2026-07-23T18:42:00.000Z",
-      "completed_via_ai": true,
-      "ai_summary": "Poda invernal piramidal hecha (foto 23/07). Estructura abierta, cortes limpios.",
-      "last_modified_at": "2026-07-23T18:42:00.000Z"
-    }
+ "_synced_at": "2026-07-30T17:55:00.000Z",
+ "_last_writer": "daily-tasks-review 2026-07-30",
+ "tasks": {
+  "plant-F-1": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-07-24T18:07:50.488Z",
+   "completed_via_ai": true,
+   "ai_summary": "El usuario podó todo lo que estaba enfermo, seco o muerto en el guayabo F-1 (24/07). Se le confirmó que el límite del 10% es solo para madera viva — lo que sacó no cuenta ahí, así que la limpieza invernal queda hecha.",
+   "last_modified_at": "2026-07-25T12:05:15.000Z"
+  },
+  "plant-F-9": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-04T16:30:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "El usuario aclaró (04/05): no compiten, ambas establecidas. La fotinia (más grande, arriba) sombra al ligustro abajo. Decisión: mantener ambas y podar selectivamente la fotinia para liberar luz al ligustro. La urgencia se reescribió en data_plants.py como 'Poda selectiva de Fotinia F-6 — liberar luz al ligustro' para agosto-septiembre 2026.",
+   "last_modified_at": "2026-05-04T16:30:00.000Z"
+  },
+  "plant-F-10": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-07-23T18:42:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Evaluado y decidido (23/07): liberar luz al fresno vía poda selectiva de la fotinia F-6 en su ventana (fines de agosto, tarea plant-F-9). El corte no va en el fresno.",
+   "last_modified_at": "2026-07-23T18:42:00.000Z"
+  },
+  "plant-B-30-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-02T19:17:10.186Z"
+  },
+  "plant-B-37-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-02T19:20:14.303Z"
+  },
+  "plant-B-23-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-04T18:04:45.603Z",
+   "last_modified_at": "2026-05-04T18:04:45.604Z"
+  },
+  "plant-B-24-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-04T18:05:09.615Z",
+   "last_modified_at": "2026-05-04T18:05:09.615Z"
+  },
+  "plant-B-22-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-02T19:24:41.331Z"
+  },
+  "plant-B-41-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-02T19:30:01.420Z"
+  },
+  "plant-B-44": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-02T19:36:21.558Z"
+  },
+  "plant-F-4-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-02T21:20:40.327Z"
+  },
+  "plant-F-1-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T14:30:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Foto 18:08 muestra base del Guayabo F-1 prácticamente despejada — rastrillado cumplido. Foto 18:09 con consulta sobre 'hojas enfermas' resuelta: las manchas blanco-grises son envés plateado natural del Acca sellowiana + polvo ambiental, NO patología. Agregada urgencia opcional 'Lavar follaje con manguera' para sacar polvo.",
+   "last_modified_at": "2026-05-05T14:30:00.000Z"
+  },
+  "plant-B-13-3": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T14:53:37.600Z",
+   "last_modified_at": "2026-05-05T14:53:37.602Z"
+  },
+  "plant-B-46-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-04T16:16:12.696Z",
+   "last_modified_at": "2026-05-04T16:16:12.698Z"
+  },
+  "plant-B-1-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-04T17:19:28.042Z",
+   "last_modified_at": "2026-05-04T17:19:28.042Z"
+  },
+  "plant-B-36": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-04T17:30:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Palta Hass fotografiada vertical con árbol llenando el frame, paltas verdes ovoides colgantes visibles, copa densa. Cumple criterio de hero photo de la especie.",
+   "last_modified_at": "2026-05-04T17:30:00.000Z"
+  },
+  "plant-B-36-3": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T17:55:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Mejoró notablemente vs el anterior — ahora hay capa de hojas secas distribuidas como mulch alrededor del tronco del palto. No es compost denso ideal pero cumple parcialmente la función protectora. Tarea aceptada como cumplida.",
+   "last_modified_at": "2026-05-05T17:55:00.000Z"
+  },
+  "plant-B-46": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T14:30:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Fotos del 05/05 mostraron 2 plantines incógnita. X-1: probable roble (Quercus sp.) por hoja lobulada característica. X-2: trifoliada con foliolos en grupos de 3, especie por confirmar. Agregadas 2 urgencias para seguimiento individual.",
+   "last_modified_at": "2026-05-05T14:30:00.000Z"
+  },
+  "plant-F-8": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T14:30:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Aguaribay (Schinus molle) fotografiado entero al frente del portón con copa frondosa visible. Cumple criterio de panorámica del frente.",
+   "last_modified_at": "2026-05-05T14:30:00.000Z"
+  },
+  "plant-B-41-3": {
+   "status": "snoozed",
+   "snoozed_until": "2026-11-15T00:00:00.000Z",
+   "completed_at": null,
+   "completed_via_ai": false,
+   "ai_summary": "Sin brotes en invierno; se difiere a fines de primavera para confirmar identidad por flor/fruto.",
+   "last_modified_at": "2026-07-23T18:42:00.000Z"
+  },
+  "plant-B-9-4": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T14:30:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Usuario confirma que ya identifica todos los caducos sin necesidad de marcarlos con cinta — tarea cerrada por innecesaria.",
+   "last_modified_at": "2026-05-05T14:30:00.000Z"
+  },
+  "plant-B-9-3": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T15:30:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Foto del 05/05 sí enfoca el tronco del Crespón (B-9). La corteza canela exfoliante todavía no es muy notable — el árbol parece relativamente joven (troncos múltiples delgados). La exfoliación característica se desarrolla con la edad. Tarea cumplida con la foto del tronco aunque el efecto canela no es espectacular aún.",
+   "last_modified_at": "2026-05-05T15:30:00.000Z"
+  },
+  "plant-B-45": {
+   "status": "snoozed",
+   "snoozed_until": "2026-10-15T00:00:00.000Z",
+   "completed_at": null,
+   "completed_via_ai": false,
+   "ai_summary": "Perenne de hojas opuestas; a la espera de floración para identificar (jazmín estrellado vs eugenia).",
+   "last_modified_at": "2026-07-23T18:42:00.000Z"
+  },
+  "plant-B-43": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T19:00:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "B-43 confirmado por el usuario como Pittosporum tobira (pitósporo). Refactor aplicado en data_plants.py: common, sci, desc, fun_fact, cuidados completos. La urgencia 'Identificar planta alta de atrás' eliminada — eso pasa a ser parte de B-42 (Bauhinia + alta dentada).",
+   "last_modified_at": "2026-05-05T19:00:00.000Z"
+  },
+  "plant-B-25-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T14:30:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Inspección reveló PLAGA: pulgones (áfidos) negros agrupados en pecíolos y brotes nuevos de la gardenia + hormigas negras protegiéndolos (simbiosis hormiga-pulgón) + hojas nuevas curvadas. Tarea de inspección cumplida. Agregada urgencia nueva 'Tratar pulgones + cortar tránsito de hormigas' (alta prioridad, mayo 2026) con plan de 4 pasos.",
+   "last_modified_at": "2026-05-05T14:30:00.000Z"
+  },
+  "plant-B-46-4": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-07-23T18:42:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Plantines de palmera reubicados a sombra luminosa. Confirmado OK para invierno.",
+   "last_modified_at": "2026-07-23T18:42:00.000Z"
+  },
+  "plant-B-46-6": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-07-23T18:42:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Romeros del vivero en maceta chica murieron (frío+humedad, raíz apretada). Descartados con consentimiento del usuario (23/07). NO afecta al romero B-26 del muro norte.",
+   "last_modified_at": "2026-07-23T18:42:00.000Z"
+  },
+  "plant-B-42": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T19:00:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "B-42 identificada como Bauhinia forficata (Pata de vaca) — hoja en pezuña doble inequívoca confirmada en fotos previas (18:22 del 04/05). Refactor completo aplicado: nativa rioplatense, ornamental con flor blanca en primavera-verano, uso medicinal hipoglucemiante. User mencionó que en el sector hay 2 especies — agregada urgencia separada para confirmar la otra alta de hojas dentadas.",
+   "last_modified_at": "2026-05-05T19:00:00.000Z"
+  },
+  "plant-B-27": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T15:30:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "B-27 IDENTIFICADO como Mirto común (Myrtus communis) — confirmado por bayas negras pequeñas en racimos + hojas opuestas elípticas brillantes verde oscuro visibles en foto del 05/05 (subida por error a B-42 pero contenido era de B-27). Refactor aplicado: common, sci, desc, fun_fact, prune, water, light. Reemplazada urgencia 'Foto en floración para identificar' por 2 nuevas: 'Cosechar bayas de mirto (otoño)' y 'Foto en floración (referencia catálogo)'.",
+   "last_modified_at": "2026-05-05T15:30:00.000Z"
+  },
+  "plant-B-48": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T15:30:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Plantín X-1 confirmado como Quercus sp. (roble joven) — hojas con lóbulos redondeados característicos del género claramente visibles en la foto del 05/05.",
+   "last_modified_at": "2026-05-05T15:30:00.000Z"
+  },
+  "plant-B-49": {
+   "status": "active",
+   "snoozed_until": null,
+   "completed_at": null,
+   "description_override": "Foto del 05/05 17:41 muestra mejor el plantín X-2: hojas trifoliadas verde brillante con foliolos ovalados-redondeados lisos. Identificación tentativa: posible glicinia juvenil (Wisteria sinensis) — las hojas trifoliadas en jóvenes después se vuelven pinnadas en glicinias adultas. Confirmación con flor en oct-nov 2026 (ver tarea plant-B-49).",
+   "description_override_at": "2026-05-05T17:55:00.000Z",
+   "last_ai_summary": "Hojas trifoliadas con foliolos ovalados lisos brillantes — posible glicinia juvenil. Esperar flor primavera.",
+   "last_modified_at": "2026-05-05T17:55:00.000Z"
+  },
+  "plant-B-25-3": {
+   "status": "snoozed",
+   "snoozed_until": "2026-05-13T18:50:33.586Z",
+   "completed_at": null,
+   "last_modified_at": "2026-05-12T18:50:33.586Z"
+  },
+  "plant-B-47-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T18:46:19.274Z",
+   "last_modified_at": "2026-05-05T18:46:19.275Z"
+  },
+  "plant-B-46-8": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T15:30:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Plantín X-1 confirmado como Quercus sp. (roble joven) — hojas con lóbulos redondeados característicos del género claramente visibles en la foto del 05/05.",
+   "last_modified_at": "2026-05-05T15:30:00.000Z"
+  },
+  "plant-B-46-9": {
+   "status": "active",
+   "snoozed_until": null,
+   "completed_at": null,
+   "description_override": "Foto del 05/05 muestra que el plantín X-2 NO es trifoliada como yo había evaluado antes — es pinnada compuesta (raquis con varios foliolos pareados). Posibles candidatos: Koelreuteria paniculata (jabonero de la China), Fraxinus pennsylvanica (fresno juvenil, hijo del B-37 vía samara), o Sapindus. Para confirmar: foto cercana del raquis completo mostrando el patrón pinnado (foliolos pareados u opuestos) + foto del nudo de inserción + medir cuántos foliolos por hoja entera.",
+   "description_override_at": "2026-05-05T15:30:00.000Z",
+   "last_ai_summary": "Hoja pinnada compuesta confirmada (no trifoliada). Pendiente foto cercana del raquis para ID exacta.",
+   "last_modified_at": "2026-05-05T15:30:00.000Z"
+  },
+  "plant-I-1-3": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T18:50:16.756Z",
+   "last_modified_at": "2026-05-05T18:50:16.757Z"
+  },
+  "plant-F-1-3": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-08T14:00:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Lluvia + foto cercana cumplieron la función diagnóstica. El user tenía razón: NO era polvo. La foto reveló fumagina (sooty mold) clara — manchas negras adherentes que no se van con la lluvia, parche con zonas verdes intactas. Tarea cerrada. Tratamiento se mueve a urgency nueva plant-F-1-4 (alta prioridad).",
+   "last_modified_at": "2026-05-08T14:00:00.000Z"
+  },
+  "user-1778238699918-71e2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-08T14:00:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "🔬 DIAGNÓSTICO: el Guayabo F-1 tiene FUMAGINA (sooty mold) — un hongo negro carbonáceo (Capnodium / Cladosporium). NO es tierra ni polvo: se ve por el patrón de cobertura adherente que no se va con la lluvia y deja zonas verdes parcheadas debajo. ⚠️ La fumagina por sí sola no enferma al árbol — crece sobre la MELAZA (sustancia pegajosa azucarada) que segregan insectos chupadores: cochinilla, escama, pulgones o mosca blanca. El problema real es la plaga, la fumagina es el síntoma. PLAN concreto creado como urgency plant-F-1-4 (alta prioridad, 'Tratar fumagina + buscar plaga origen'): (1) detective con linterna en envés/brotes/bifurcaciones para encontrar la plaga, también mirar plantas de arriba que puedan dejar caer melaza, (2) pulverizar aceite de neem 5 ml/L + jabón potásico 3 ml/L cada 7 días por 3 semanas al atardecer, (3) limpiar fumagina con paño + jabón (no urgente, sale sola una vez cortada la melaza). Foto a la semana 2 para ver evolución.",
+   "last_modified_at": "2026-05-08T17:00:00.000Z"
+  },
+  "plant-I-1": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T19:00:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "User confirma que la foto actual del Singonio (I-1) ya es excelente y la tarea de 'foto centrada' no tiene sentido. Cerrada por innecesaria.",
+   "last_modified_at": "2026-05-05T19:00:00.000Z"
+  },
+  "plant-I-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-05T19:00:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "User confirma que la foto actual de la Difenbaquia (I-2) ya es excelente y la tarea de 'foto centrada' no tiene sentido. Cerrada por innecesaria.",
+   "last_modified_at": "2026-05-05T19:00:00.000Z"
+  },
+  "plant-B-6-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-07-23T18:42:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Poda de cola de zorro hecha (foto 23/07). Colas viejas retiradas.",
+   "last_modified_at": "2026-07-23T18:42:00.000Z"
+  },
+  "plant-B-5a-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-06T18:21:00.383Z",
+   "last_modified_at": "2026-05-06T18:21:00.383Z"
+  },
+  "plant-B-25-4": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-06T18:24:36.230Z",
+   "last_modified_at": "2026-05-06T18:24:36.230Z"
+  },
+  "plant-B-7-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-06T18:39:43.809Z",
+   "last_modified_at": "2026-05-06T18:39:43.809Z"
+  },
+  "plant-B-40-3": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-06T18:41:25.860Z",
+   "last_modified_at": "2026-05-06T18:41:25.861Z"
+  },
+  "plant-B-48-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-07T13:28:30.745Z",
+   "last_modified_at": "2026-05-07T13:28:30.748Z"
+  },
+  "plant-B-49-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-07T13:28:33.330Z",
+   "last_modified_at": "2026-05-07T13:28:33.330Z"
+  },
+  "plant-B-47": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-07T13:28:36.177Z",
+   "last_modified_at": "2026-05-07T13:28:36.177Z"
+  },
+  "user-1778160757771-7240": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-07T14:00:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Listado para Montevideo (lat -34.9°S, otoño/inicio invierno). VERDURAS para sembrar/transplantar AHORA en mayo: ajo (a diente directo, 10-15 cm enterrado, cosecha enero), cebolla (de almácigo a definitivo), habas, arvejas (semilla directa), lechuga de invierno (mantecosa, romana — plantines), espinaca, acelga, rúcula, perejil, cilantro, repollo y coliflor (plantines). HIERBAS: tomillo, orégano, ciboulette ya establecidos toleran trasplante; lavanda mejor en jul-ago. FRUTAS: la ventana óptima de plantación de frutales caducos (manzano, ciruelo, durazno, peral, cerezo, higo, kaki, ciruelo japonés) es JULIO-AGOSTO a raíz desnuda en plena dormancia — en mayo es prematuro pero podés ir abonando los lugares previstos. Cítricos NO van en mayo (frío) — esperar octubre. BERRIES: frutillas SÍ van bien ahora (corona descubierta, lugar soleado, riego moderado). Arándano y frambuesa también van bien plantar a partir de junio. EVITAR en mayo: tomate, morrón, zapallo, pepino, sandía, melón, berenjena (todos van en sept-oct). Si querés un plan concreto para tu jardín avísame qué espacio tenés disponible (cantero, maceta, fondo) y armo lista priorizada con compañeros plantados.",
+   "last_modified_at": "2026-05-07T14:00:00.000Z"
+  },
+  "user-1778160814168-a314": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-07T14:00:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Auditoría completa: las 16 especies no 100% confirmadas YA TIENEN cada una su urgency de identificación específica. Listado y ventana esperada (mes recomendado para foto/foto+flor que cierra ID): F-5 Coronita de novia (Spiraea? — flor sept-oct) → existing 'Confirmar especie viendo la floración'; B-2 Jazmín → 'Foto en floración + decidir hijos' (oct-dic); B-9 Crespón (Lagerstroemia? — confirmado por hojas/corteza, falta flor) → 'Confirmar especie en floración' (ene-feb); B-13 Clivia (confirmado por porte) → 'Confirmar especie en floración' (sept-oct para flor naranja); B-14 sospecha lapachillo → 'Foto en floración para ID' (ago-sept); B-15 vegetación galpón → 'Acercarse y fotografiar de cerca' (cuando puedas con escalera); B-20 arbusto caduco → 'Foto al brotar (sept-oct)'; B-25 Gardenia (confirmado por síntomas) → ahora marcado 100%, no necesita más confirmación; B-32 varitas peladas → 'Foto del brote primaveral' (sept-oct); B-34 Mandioca brava (recién identificada tentativa) → 'Confirmar con foto de flor' (oct-dic); B-40 Lonicera nitida → 'Confirmar en floración' (oct-nov); B-41 Caqui → 'Confirmar variedad' refoto en mayo 2027 con frutos; B-45 sin identificar → 'Foto hoja + flor' (oct-dic); B-46 vivero → '6 urgencies por subgrupo' + 'Subir fotos plantines incógnita'; B-47 palmeras butiá vs pindó → 'Confirmar especie' (esperar hojas pinnadas adultas, feb 2027); B-49 trifoliado → 'Confirmar trifoliado (esperar flor primavera)' (oct-nov 2026). Refactor adicional aplicado: B-25 Gardenia removido '(a confirmar)' — los síntomas (pulgones, hormigas, cloración férrica) son inequívocos. ⚠️ NADA QUE HACER POR EL USER AHORA: cada urgency está scheduleada para su ventana botánica óptima.",
+   "last_modified_at": "2026-05-07T14:00:00.000Z"
+  },
+  "user-1778597583144-7d3d": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-13T16:07:57.664Z",
+   "last_modified_at": "2026-05-13T16:07:57.665Z"
+  },
+  "user-1778597898416-9661": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-12T18:52:52.770Z",
+   "last_modified_at": "2026-05-12T18:52:52.770Z"
+  },
+  "user-1778597957937-4aa6": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-12T18:52:58.655Z",
+   "last_modified_at": "2026-05-12T18:52:58.656Z"
+  },
+  "user-1778598164393-d77d": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-13T16:08:07.326Z",
+   "last_modified_at": "2026-05-13T16:08:07.327Z"
+  },
+  "user-1778598817730-f154": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-13T16:08:12.754Z",
+   "last_modified_at": "2026-05-13T16:08:12.754Z"
+  },
+  "user-1778611738232-a5e1": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-24T22:53:47.180Z",
+   "last_modified_at": "2026-05-24T22:53:47.180Z"
+  },
+  "user-1778611776683-eeef": {
+   "status": "active",
+   "snoozed_until": null,
+   "completed_at": null,
+   "last_modified_at": "2026-05-12T18:49:42.692Z"
+  },
+  "plant-F-1-4": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-07-23T19:12:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Usuario podó todas las ramas secas/afectadas por la fumagina (poda fuerte, 23/07). Consulta sanitaria respondida: fumagina no es patógeno humano, higiene básica alcanza. Guayabo rebrota bien; vigilar si el hollín reaparece (= plaga viva → tratar con jabón/aceite).",
+   "last_modified_at": "2026-07-23T19:12:00.000Z"
+  },
+  "plant-B-29-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-12T18:50:38.028Z",
+   "last_modified_at": "2026-05-12T18:50:38.028Z"
+  },
+  "plant-B-32-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-13T17:00:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Cartel ya no necesario — B-32 identificada como Ruprechtia laxiflora (viraró, nativa de Polygonaceae). El user aceptó la lectura 'rupretchia' del cartel y encaja con las hojas pequeñas opuestas brillantes. Catálogo actualizado: common='Viraró', sci='Ruprechtia laxiflora', desc/fun_fact completos. Urgency original reemplazada por 'Foto de floración + frutos con sépalos rosados' (sept-nov 2026) para documentar el feature ornamental y confirmar si es pie macho o hembra.",
+   "last_modified_at": "2026-05-13T17:00:00.000Z"
+  },
+  "plant-F-2-2": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-05-24T22:53:34.250Z",
+   "last_modified_at": "2026-05-24T22:53:34.254Z"
+  },
+  "user-1781114206236-60d0": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-07-13T12:06:34.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "El B-15 ya está confirmado como hiedra común (Hedera helix): se identificó con una foto bien cercana en mayo 2026 — hoja palmeada de 3 a 5 lóbulos, verde oscuro brillante, con venación blanco-verdosa marcada, típica de la hiedra. No es el guayabo del país: ese es F-1, está en el FRENTE (no en el fondo), y tiene hoja entera ovalada gris-plateada por debajo con flores blancas y rojas comestibles en primavera — planta bien distinta. Si te quedan dudas, mandá una foto bien cerca de la hoja puntual que estás mirando (puede haber otra plantita colada cerca) y la reviso de nuevo.",
+   "last_modified_at": "2026-07-13T12:06:34.000Z"
+  },
+  "plant-B-8": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-07-23T18:42:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Decisión del usuario: dejar caer las hojas secas del pindó naturalmente (23/07).",
+   "last_modified_at": "2026-07-23T18:42:00.000Z"
+  },
+  "plant-B-39": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-07-23T18:42:00.000Z",
+   "completed_via_ai": true,
+   "ai_summary": "Poda invernal piramidal hecha (foto 23/07). Estructura abierta, cortes limpios.",
+   "last_modified_at": "2026-07-23T18:42:00.000Z"
+  },
+  "plant-B-37": {
+   "status": "done",
+   "snoozed_until": null,
+   "completed_at": "2026-07-30T16:21:46.222Z",
+   "completed_via_ai": true,
+   "ai_summary": "El usuario avisó desde jardin-hoy (30/07, feedback jh-liquidambar-B37: «Ya quedó hecho esto») que cortó la rama del liquidámbar que le tapaba el sol a la palta B-36. Cierre de la limpieza de copa en dormancia — corte de reducción en la bifurcación, según lo acordado en el thread del 23/07.",
+   "last_modified_at": "2026-07-30T17:55:00.000Z"
   }
+ }
 }

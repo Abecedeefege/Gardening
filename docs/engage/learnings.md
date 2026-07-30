@@ -6,13 +6,19 @@ No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 ## 📌📌 MANDATO DIRECTO DEL USUARIO 24/07 (chat + feedback_text — MÁXIMA AUTORIDAD, NO PISAR)
 
 1. **UNA SOLA PUSH DIARIA PARA TAREAS, NO TRES.** El canal-tarea se consolida en **🌤️ «Tu jardín hoy»** (`2026-07-24-jardin-hoy.html`, PROMOVIDA, URL estable). **NO encolar task-dia/pendientes/top3 sueltas** — su contenido va DENTRO de jardin-hoy. (NO corro gen_task_reminders/gen_top3 con --merge; jardin-hoy es la única push de tareas, mantenida a mano.)
-2. **jardin-hoy lleva:** vistazo de 5 s (estado + 3 chips) + menús COLAPSADOS por mes + menú huerta + cajas de feedback POR TAREA (`engageFeedback('jh-<slug>')`) + fotos reales por tarea + caja «🙋 Pedime lo que necesites». Mantener menús actualizados con task_states + data_plants cada corrida y subir la fecha visible.
+2. **jardin-hoy lleva:** vistazo de 5 s (estado + 3 chips) + menús COLAPSADOS + menú huerta + **foto real de la especie en TODAS las tareas** + **caja de comentario en TODAS** (`engageFeedback('jh-<slug>')`, colapsada tras botón «💬 Comentar» para no cargar la vista) + caja «🙋 Pedime lo que necesites». Mantener menús actualizados con task_states + data_plants cada corrida y subir la fecha visible.
+   → **Reforzado 30/07** (feedback_text): «Agregame una foto a las especies en las tareas de agosto también así sé a qué hacen referencia. Cada especie/tarea debería tener la posibilidad de dejarte un comentario». **EJECUTADO**: las 16 tarjetas tienen foto + comentario. NO volver a publicar una tarea sin foto y sin caja.
 3. **CORRECCIÓN factual 24/07 (mantener):** plantines de **PALTA** contra la pared, a la sombra, **SIN MOVER**. Lo reubicado fue el vivero de palmeras (B-46).
 
-## ✈️ CONTEXTO DOMINANTE 29/07 → fin agosto: EL USUARIO SE VA DE VIAJE
+## ✈️ CONTEXTO DOMINANTE — VIAJE CONFIRMADO **7 al 23 DE AGOSTO** (fechas exactas, feedback 30/07)
 
-- **feedback_text 28/07 (jardin-hoy):** «ignora lo de la lechuga, me voy de viaje en 10 días, a mi vuelta a fin de agosto lo vemos». → **EJECUTADO:** lechuga/huerta EN PAUSA hasta la vuelta (fin ago); jardin-hoy en **modo viaje**; caqui B-41 snoozed 15/11 («caqui ignóralo hasta primavera» ✓); gardenia B-25 neem → a la vuelta.
-- Desde ~7 de agosto se va ~3 semanas. Durante el viaje: **NO nagear tareas de afuera.** Invierno/dormancia = el jardín se banca solo. A la vuelta cae la gran poda de agosto + arranque de huerta.
+- **feedback_text 30/07 (jh-hortensia-B5):** «Mi viaje va a ser del 7-23 de agosto. Actualiza esta y todas las otras pendientes de julio y agosto para recomendarme si conviene hacerlo antes o después del viaje». → **EJECUTADO 30/07**: jardin-hoy reordenada en **3 ventanas** con veredicto antes/después POR TAREA.
+- **Las 3 ventanas (usar SIEMPRE hasta el 24/08):**
+  - **Antes de irte (30/7–6/8) = 4 tareas.** Los 3 carozos (durazno B-30/35, ciruelo F-4, ciruela amarilla B-38): son los primeros en florecer, para el 23 ya arrancaron → podar después es tarde. + Hortensia B-5a/b a tierra (pelada y dormida no toma agua; plantarla a la vuelta = justo en brotación). **Si solo llega a una: el durazno.**
+  - **Durante (7–23/8) = 0.** Dormancia + lluvia de agosto. **NO nagear NADA.**
+  - **A la vuelta (24–31/8) = 11.** Todas tienen margen real: crespón B-9 y althea B-18 brotan en octubre; caqui B-41 es el último en despertar; hibisco B-4 conviene ATRASARLO (perenne + heladas tardías hasta fin de agosto); pitósporo B-43 reducción rebrota mejor con el empuje cerca; gardenia neem B-25-3 son 2-3 aplicaciones cada 7-10 días (inútil arrancarlo antes de irse); gardenia acidificar B-25, cerco B-7·11·31·33, abelia F-7 tienen su ventana en la última semana de agosto; podranea F-2 y hiedra B-15 sin reloj.
+- **Corrección importante que salió de este repaso:** la **ciruela amarilla B-38** y el **pitósporo B-43-2** (reducción a 2-3 m) faltaban en la lista de agosto de jardin-hoy. Verificar SIEMPRE la lista contra `generate_tasks_from_plants(PLANTS)` + `task_states.json`, no contra la edición anterior de la página.
+- **La gran poda NO es «mediados de agosto» este año** — con el viaje, la ventana real es **fin de agosto en adelante**, y horticulturalmente da igual o mejor para casi todo.
 
 ## 🚫 EJES/FORMATOS MUERTOS (feedback duro — NO volver, ni variaciones)
 
@@ -72,8 +78,9 @@ No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
 - Push subscription device `pix9`: **active**. Logging por `/api/feedback` confiable.
 - Jardín en DORMANCIA. ~55 días a primavera (equinoccio 23/09). Heladas tardías posibles hasta ~fin agosto (pican al SUR y ESTE al amanecer).
-- **Decisiones del usuario (ejecutadas):** huerta→**muro norte** (en pausa por viaje) · arranque→**lechuga** (a la vuelta) · hortensia B-5a/b→**a tierra** (falta rincón: sur vs fondo — se pregunta en jardin-hoy) · liquidámbar B-37→**lo poda el usuario** (thread resuelto: corte de reducción en bifurcación) · caqui B-41→**observar** (snoozed 15/11) · gardenia B-25 neem→**a la vuelta** · poda agosto→**por prioridad** · **OBJETIVO DECLARADO = «más flor»**.
-- Tareas reales antes del viaje (día seco): Liquidámbar B-37 rama (la hace el usuario), Hortensia B-5a/b a tierra. AGOSTO (a la vuelta): gran poda fin de invierno (durazno B-30/35, ciruelo F-4, crespón B-9, althea B-18, hibisco B-4, podranea F-2, abelia F-7) + fines de ago (cerco B-7·11·31·33, hiedra B-15, acidificar gardenia B-25).
+- **Decisiones del usuario (ejecutadas):** huerta→**muro norte** (en pausa hasta la vuelta) · arranque→**lechuga** (a la vuelta) · hortensia B-5a/b→**a tierra ANTES del viaje**; rincón: le recomendé el **sur junto a la pera B-39** (sombra fresca/húmeda) y quedó abierto a que elija fondo por comentario · liquidámbar B-37→**✅ HECHO 30/07** (avisó él: «Ya quedó hecho esto» → `task_states.json` marcado done) · caqui B-41 identidad→**observar** (plant-B-41-3 snoozed 15/11; ojo: la PODA plant-B-41 sigue activa, va a la vuelta) · gardenia B-25 neem→**a la vuelta** · **OBJETIVO DECLARADO = «más flor»**.
+- **Pendientes reales al 30/07: 15.** 4 antes del viaje (B-30/35 durazno, F-4 ciruelo, B-38 ciruela amarilla, B-5a/b hortensia) + 11 a la vuelta (B-9 crespón, B-18 althea, B-41 caqui, B-43-2 pitósporo reducción, B-25-3 gardenia neem, B-4 hibisco, F-2 podranea, B-25 gardenia acidificar, B-7·11·31·33 cerco, B-15 hiedra, F-7 abelia).
+- **30/07 (jueves) salieron 3 push de tarea** — las 2 de cadencia/pedido + **una extra a pedido explícito del usuario en chat** («revisá el feedback y mandame una push actualizando las tareas»): `2026-07-30-jardin-hoy-viaje` 15:45. Un pedido directo del usuario pisa la cadencia semanal.
 
 ## Verificados clave (NO contradecir)
 
