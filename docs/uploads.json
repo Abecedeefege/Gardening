@@ -1225,5 +1225,19 @@
       "user_context": "Hecho listo",
       "via": "landing"
     }
+  ],
+  "B-30": [
+    {
+      "filename": "plant-B-30_20260730-193320.jpg",
+      "uploaded_at": "2026-07-30T19:33:20.548Z",
+      "uploaded_by": "landing",
+      "context": "task",
+      "task_id": "plant-B-30",
+      "task_title_snapshot": "Poda invernal en vaso abierto",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "No veo 48hs de sol... Veo apenas un par de horas que le quedan a hoy",
+      "via": "landing"
+    }
   ]
 }
