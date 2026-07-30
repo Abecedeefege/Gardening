@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-30T16:21:16.276Z",
+  "_updated_at": "2026-07-30T16:21:45.700Z",
   "events": [
     {
       "_id": "mrnrby6vkdxjhi",
@@ -1416,6 +1416,15 @@
       "nid": "2026-07-30-jardin-hoy-sol",
       "src": "push",
       "ts": "2026-07-30T16:21:16.784Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7q18bydokfi7",
+      "type": "feedback_text",
+      "target": "jh-liquidambar-B37",
+      "text": "Ya quedó hecho esto",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-30T16:21:46.222Z",
       "device": "sin-nombre"
     }
   ],
