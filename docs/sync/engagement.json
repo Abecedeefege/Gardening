@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-30T18:07:43.808Z",
+  "_updated_at": "2026-07-30T18:07:44.974Z",
   "events": [
     {
       "_id": "mrnrby6vkdxjhi",
@@ -1479,6 +1479,15 @@
       "page": "engage/2026-07-24-jardin-hoy.html",
       "ts": "2026-07-30T18:07:44.747Z",
       "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7ttiu5zyfk5g",
+      "type": "page_visit",
+      "page": "tasks/plant-B-30.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-30T18:07:45.052Z",
+      "device": "landing"
     }
   ],
   "daily_summary": {
