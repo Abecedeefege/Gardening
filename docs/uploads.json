@@ -1234,8 +1234,13 @@
       "context": "task",
       "task_id": "plant-B-30",
       "task_title_snapshot": "Poda invernal en vaso abierto",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": false,
+        "summary": "Captura del pronóstico de Montevideo (30/07 16:32): hoy despejado 15/9 con 10% de lluvia, pero viernes 31/07 21/13 con 65% y sábado 01/08 14/11 con 65%. Domingo 02/08 10%, lunes 03/08 10%, martes 04/08 5%.",
+        "next_steps": "Se corrige la recomendación: NO podar hoy (herida fresca con dos días de lluvia encima y viernes tibio = riesgo de gomosis/cancro en carozo). La ventana buena es domingo 02/08, con lunes y martes secos detrás; alternativas lunes 03 o martes 04. Alcanza para durazno B-30/35, ciruelo F-4 y ciruela amarilla B-38 en una salida, con 5 días de margen antes del viaje del 07/08.",
+        "processed_at": "2026-07-30T19:45:00.000Z"
+      },
       "user_context": "No veo 48hs de sol... Veo apenas un par de horas que le quedan a hoy",
       "via": "landing"
     }
