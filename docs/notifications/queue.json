@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-30T17:58:00.000Z",
+  "_updated_at": "2026-07-30T18:00:50.057Z",
   "notifications": [
     {
       "id": "2026-07-30-jardin-hoy",
@@ -35,8 +35,8 @@
       "format": "tarea",
       "send_at": "2026-07-30T14:55:00-03:00",
       "expires_at": "2026-07-30T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-30T18:00:50.055Z",
       "fail_reason": null,
       "created_by": "daily-tasks-review 2026-07-30 (pedido directo, envio adelantado a mano: feedback del daily ejecutado — B-37 hecho, foto+comentario en todas las de agosto, plan reordenado al viaje 7-23/08)"
     }
