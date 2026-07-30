@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-30T16:21:45.700Z",
+  "_updated_at": "2026-07-30T16:23:12.065Z",
   "events": [
     {
       "_id": "mrnrby6vkdxjhi",
@@ -1425,6 +1425,15 @@
       "text": "Ya quedó hecho esto",
       "page": "engage/2026-07-24-jardin-hoy.html",
       "ts": "2026-07-30T16:21:46.222Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7q332t7pc76k",
+      "type": "feedback_text",
+      "target": "jardin-hoy",
+      "text": "Agregame una foto a las especies en las tareas de agosto también así se a qué hacen referencia.  Cada especie/tarea debería tener la posibilidad de dejarte un comentario",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-30T16:23:12.725Z",
       "device": "sin-nombre"
     }
   ],
