@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-30T13:55:19.840Z",
+  "_updated_at": "2026-07-30T14:10:00-03:00",
   "notifications": [
     {
       "id": "2026-07-30-jardin-hoy",
@@ -13,30 +13,6 @@
       "sent_at": "2026-07-30T13:55:19.838Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-30 (push diaria consolidada, modo viaje, refrescada al 30/07)"
-    },
-    {
-      "id": "2026-07-30-a",
-      "title": "🌱 Los que se multiplican solos",
-      "body": "Tres plantas tuyas hacen hijos gratis. Mirá la foto del jazmín: ya te dio dos. El cómo exacto para tener el doble sin gastar.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-30-se-multiplican-solos.html",
-      "send_at": "2026-07-30T13:30:00-03:00",
-      "expires_at": "2026-07-30T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-30 (experimento: propagacion gratis, cast fresco + fotos reales, angulo how-to)"
-    },
-    {
-      "id": "2026-07-30-b",
-      "title": "🛡️ Los que aguantan solos",
-      "body": "Te vas y es invierno: estas 3 plantas tuyas no te van a extrañar ni un poco. Y no es suerte, es biología. Cero riegos en todo el viaje.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-30-aguantan-solos.html",
-      "send_at": "2026-07-30T18:00:00-03:00",
-      "expires_at": "2026-07-30T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-30 (slot dorado: tranquilidad de viaje con prueba biologica, cast fresco + fotos)"
     }
   ]
 }

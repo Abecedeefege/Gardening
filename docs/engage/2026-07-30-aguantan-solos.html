@@ -66,6 +66,12 @@
   .sub-row .si{ background:var(--verde2); color:#fff; }
   .sub-row .no{ background:#eef2e8; color:var(--ink2); }
   .sub-hint{ display:block; margin-top:10px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.1em; }
+  .slot{ display:flex; align-items:center; justify-content:space-between; gap:10px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px 12px; margin-top:10px; }
+  .slot-lbl{ font-size:13.5px; font-weight:800; color:var(--verde); }
+  .slot-btns{ display:flex; gap:7px; flex:none; }
+  .slot-btns button{ border:none; border-radius:9px; padding:8px 14px; font:800 12.5px var(--sans); cursor:pointer; }
+  .slot-btns .si{ background:var(--verde2); color:#fff; }
+  .slot-btns .no{ background:#eef2e8; color:var(--ink2); }
 
   .fb-blk textarea{ width:100%; background:#f7fbf1; border:1px solid var(--line); border-radius:11px; color:var(--ink); padding:11px 12px; font:14px/1.4 var(--sans); resize:vertical; margin-top:12px; }
   .fb-send{ margin-top:9px; background:var(--verde2); color:#fff; border:none; border-radius:11px; padding:11px 20px; font:800 14px var(--sans); cursor:pointer; }
@@ -169,13 +175,23 @@
     </div>
   </section>
 
-  <!-- SUSCRIPCIÓN -->
+  <!-- SLOTS DISPONIBLES -->
   <section class="blk sub reveal">
-    <h3>🛡️ El parte tranquilo, cada día del viaje</h3>
-    <p>¿Querés que mientras estés afuera te mande cada mañana un "todo bien" corto: qué de tu jardín no necesita nada y por qué?</p>
-    <div class="sub-row">
-      <button type="button" class="si" onclick="engageAnswer('aguantan-solos-suscripcion-diaria','si', this)">Sí, tranquilizame</button>
-      <button type="button" class="no" onclick="engageAnswer('aguantan-solos-suscripcion-diaria','no', this)">No</button>
+    <h3>📅 ¿La querés de nuevo? Prendé un slot</h3>
+    <p>Hay <b>2 espacios por semana</b> para experiencias. Elegí en cuál querés volver a recibir ésta. Si no prendés ninguno, no te la mando otra vez — y cada envío trae igual una experiencia nueva.</p>
+    <div class="slot">
+      <span class="slot-lbl">🗓️ Lunes · 18:00</span>
+      <span class="slot-btns">
+        <button type="button" class="si" onclick="engageAnswer('aguantan-solos-slot-lun18','si', this)">Prender</button>
+        <button type="button" class="no" onclick="engageAnswer('aguantan-solos-slot-lun18','no', this)">No</button>
+      </span>
+    </div>
+    <div class="slot">
+      <span class="slot-lbl">🗓️ Sábado · 11:00</span>
+      <span class="slot-btns">
+        <button type="button" class="si" onclick="engageAnswer('aguantan-solos-slot-sab11','si', this)">Prender</button>
+        <button type="button" class="no" onclick="engageAnswer('aguantan-solos-slot-sab11','no', this)">No</button>
+      </span>
     </div>
     <span class="sub-hint" id="sh"></span>
   </section>

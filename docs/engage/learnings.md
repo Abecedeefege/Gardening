@@ -28,17 +28,33 @@ No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 - **Agencia/decisión** sigue siendo eje fuerte, pero rotar el contenedor (no >2-3 días el mismo molde).
 - **feedback_text = ley.** Positivo = expandir. Negativo = NUNCA vuelve. Pedido = ejecutar YA. Sin señal activa = «masomenos», no cuenta como éxito.
 
-## ⏱️ CADENCIA VIGENTE: 3 pushes/día = 1 tarea (jardin-hoy) + 2 experiencias nuevas
+## ⏱️ CADENCIA VIGENTE 30/07 (pedido directo del usuario — MÁXIMA AUTORIDAD): SEMANAL, día-consciente
 
-- **jardin-hoy** (canal-tarea, `format:"tarea"`): **10:00**. ÚNICA push de tareas.
-- **2 experiencias nuevas de cero**: slots **13:30 / 18:00**. **18:00 = slot dorado.** Cada una: reacción + CTA sub diaria + caja feedback propia + botones aprobar/rechazar + HTML pitch con 6 modelos (3 innovadores + 3 ultra-creativos).
-- Primer send_at ≥60 min post-corrida. expires_at = mismo día 22:00 -03:00. Timestamps `-03:00`. Cada notif a destino DISTINTO.
+**Total 5 push/semana. La corrida es día-consciente: encolá SOLO lo que toca ese día.**
 
-## 🆕 EXPERIENCIAS DE HOY (30/07, ciclo 60)
+| Día | Tarea (jardin-hoy) | Experiencia |
+|---|---|---|
+| **Lunes** | ✅ 10:00 | ✅ 18:00 |
+| Mar / Mié / Vie / Dom | — | — |
+| **Jueves** | ✅ 10:00 | — |
+| **Sábado** | ✅ 10:00 | ✅ 11:00 |
 
-- **A · 🌱 `2026-07-30-se-multiplican-solos`** (13:30): PROPAGACIÓN gratis. Cast 100% fresco (B-12 cinta hijuelos, B-2 jazmín acodo —la foto muestra B-2B/B-2C—, B-15 hiedra esqueje), fotos reales, cómo-hacerlo real. Ángulo «sacale más a lo que ya tenés» = codicia sana + habilidad, NO trivia.
-- **B · 🛡️ `2026-07-30-aguantan-solos`** (18:00 dorado): TRANQUILIDAD de viaje CON PRUEBA biológica. Cast fresco (B-34 mandioca, B-42 pata de vaca, B-43 pitósporo), fotos reales. Honra el viaje SIN nagear; alivio pero con sustancia (el porqué: nativa/dormancia/raíz), no alivio pasivo vacío.
-- **WATCH 31/07:** ¿la sustancia+foto+cast-fresco convierte donde el gimmick murió? ¿el ángulo «plantas gratis» (A) o «paz mental de viaje» (B) gana reacción/sub? Si el usuario deja fechas exactas del viaje → afinar plan de reentrada fin de agosto.
+- **Tareas = 3/sem** (Lun/Jue/Sáb 10:00): push `jardin-hoy` (`format:"tarea"`), refrescada.
+- **Experiencias = 2/sem** (Lun 18:00, Sáb 11:00): **UNA sola push por slot**. Esa landing = **original NUEVA (protagonista) + experiencias YA APROBADAS agrupadas dentro (links)**. Nunca pushes separadas — si hay varias, una linkea a la otra.
+- **Días sin slot:** mantenimiento (feedback/proposals/compactar/ledger/learnings), **0 push nuevas**.
+- **Aprobación = recurrencia.** Una experiencia solo se re-manda si el usuario la **aprobó** (`engageApprove` → `status:"approved"`, se conserva la página). La original nueva SIEMPRE va (es el experimento), pero para VOLVER necesita aprobación. Pending sin aprobar **ya NO se borra el mismo día**: simplemente no recurre.
+- **CTA nuevo = "slots disponibles"** (reemplaza suscripción diaria): cada experiencia muestra Lun 18:00 / Sáb 11:00 como opt-in (`<slug>-slot-lun18` / `<slug>-slot-sab11`).
+- Cada experiencia: reacción + selector de slots + caja feedback propia + botones aprobar/rechazar + HTML pitch (6 modelos). send_at ≥60 min post-corrida. expires_at = mismo día 22:00 -03:00. Timestamps `-03:00`.
+- **NO correr** gen_task_reminders / gen_top3 con --merge (canal tarea consolidado en jardin-hoy).
+
+## 🆕 EXPERIENCIAS EN EL POOL (ciclo 60, 30/07) — ambas con CTA de slots, esperando aprobación
+
+⚠️ **30/07 fue JUEVES = día tarea-only** con la cadencia nueva. Las 2 experiencias construidas hoy NO se pushearon (saqué `-a`/`-b` de la cola; jardin-hoy 10:00 sí salió). Quedan como **candidatas del pool** para el próximo slot de experiencia (**Sáb 01/08 11:00**). Ambas ya migradas al CTA de **slots disponibles** (Lun18/Sáb11):
+
+- **🌱 `2026-07-30-se-multiplican-solos`**: PROPAGACIÓN gratis. Cast 100% fresco (B-12 cinta hijuelos, B-2 jazmín acodo —foto muestra B-2B/B-2C—, B-15 hiedra esqueje), fotos reales, cómo-hacerlo. Ángulo «sacale más a lo que ya tenés» = codicia sana + habilidad, NO trivia.
+- **🛡️ `2026-07-30-aguantan-solos`**: TRANQUILIDAD de viaje CON PRUEBA biológica. Cast fresco (B-34 mandioca, B-42 pata de vaca, B-43 pitósporo), fotos reales. Honra el viaje SIN nagear; alivio con sustancia (nativa/dormancia/raíz), no alivio pasivo vacío.
+- **SÁBADO 01/08 11:00:** slot de experiencia → **1 push**. Protagonista = una original NUEVA de cero (SIEMPRE) + linkear las aprobadas que haya. Si el usuario prende slots en alguna de estas dos, entran como recurrentes. Si no, la original nueva del sábado igual va.
+- **WATCH:** ¿la sustancia+foto+cast-fresco convierte donde el gimmick murió? ¿prende algún slot? Si deja fechas exactas del viaje → plan de reentrada fin de agosto.
 
 ## 🚫 ANTI-REPETICIÓN
 
