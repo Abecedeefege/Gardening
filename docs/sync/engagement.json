@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-30T15:35:17.765Z",
+  "_updated_at": "2026-07-30T15:36:02.474Z",
   "events": [
     {
       "_id": "mrnrby6vkdxjhi",
@@ -1390,6 +1390,15 @@
       "nid": "2026-07-30-jardin-hoy",
       "src": "push",
       "ts": "2026-07-30T15:35:18.027Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7oefqonwr5xg",
+      "type": "dwell",
+      "seconds": 45,
+      "scroll_pct": 93,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-30T15:36:03.120Z",
       "device": "sin-nombre"
     }
   ],
