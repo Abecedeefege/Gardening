@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-31T22:43:16.699Z",
+  "_updated_at": "2026-07-31T22:44:17.296Z",
   "events": [
     {
       "_id": "mrp1qa93tnyyjt",
@@ -1521,6 +1521,15 @@
       "nid": "2026-07-31-el-parte",
       "src": "push",
       "ts": "2026-07-31T22:43:16.283Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms9j501oy0z4vw",
+      "type": "answer",
+      "qid": "el-parte-slot-lun18",
+      "value": "no",
+      "page": "engage/2026-07-31-el-parte.html",
+      "ts": "2026-07-31T22:44:17.148Z",
       "device": "sin-nombre"
     }
   ],
