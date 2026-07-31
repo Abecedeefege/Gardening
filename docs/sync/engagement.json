@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-31T22:44:17.296Z",
+  "_updated_at": "2026-07-31T22:44:19.400Z",
   "events": [
     {
       "_id": "mrp1qa93tnyyjt",
@@ -1530,6 +1530,15 @@
       "value": "no",
       "page": "engage/2026-07-31-el-parte.html",
       "ts": "2026-07-31T22:44:17.148Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms9j51sg68of6h",
+      "type": "answer",
+      "qid": "el-parte-slot-sab11",
+      "value": "no",
+      "page": "engage/2026-07-31-el-parte.html",
+      "ts": "2026-07-31T22:44:19.408Z",
       "device": "sin-nombre"
     }
   ],
