@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-31T06:20:00-03:00",
+  "_updated_at": "2026-07-31T21:02:16.540Z",
   "notifications": [
     {
       "id": "2026-07-31-el-parte",
@@ -8,8 +8,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-31-el-parte.html",
       "send_at": "2026-07-31T18:00:00-03:00",
       "expires_at": "2026-07-31T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-07-31T21:02:16.539Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-07-31"
     }
