@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-31T22:44:23.948Z",
+  "_updated_at": "2026-07-31T22:44:30.838Z",
   "events": [
     {
       "_id": "mrp1qa93tnyyjt",
@@ -1548,6 +1548,15 @@
       "value": "meh",
       "page": "engage/2026-07-31-el-parte.html",
       "ts": "2026-07-31T22:44:23.882Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms9j5am0hcm2zu",
+      "type": "dwell",
+      "seconds": 75,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-31-el-parte.html",
+      "ts": "2026-07-31T22:44:30.840Z",
       "device": "sin-nombre"
     }
   ],
