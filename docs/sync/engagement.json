@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-07-31T22:44:19.400Z",
+  "_updated_at": "2026-07-31T22:44:23.948Z",
   "events": [
     {
       "_id": "mrp1qa93tnyyjt",
@@ -1539,6 +1539,15 @@
       "value": "no",
       "page": "engage/2026-07-31-el-parte.html",
       "ts": "2026-07-31T22:44:19.408Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms9j558qua1ie1",
+      "type": "reaction",
+      "target": "el-parte",
+      "value": "meh",
+      "page": "engage/2026-07-31-el-parte.html",
+      "ts": "2026-07-31T22:44:23.882Z",
       "device": "sin-nombre"
     }
   ],
