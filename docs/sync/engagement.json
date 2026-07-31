@@ -1,1716 +1,1733 @@
 {
- "_updated_at": "2026-07-31T06:10:00-03:00",
- "events": [
-  {
-   "_id": "mrp1qa93tnyyjt",
-   "type": "dwell",
-   "seconds": 3,
-   "scroll_pct": 18,
-   "page": "engage/2026-07-17-resenas.html",
-   "ts": "2026-07-17T14:41:33.543Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrp7r3nf0dras7",
-   "type": "page_visit",
-   "page": "engage/2026-07-17-anuario.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-17T17:30:09.336Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrp7rc6kqztzpl",
-   "type": "dwell",
-   "seconds": 12,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-17-anuario.html",
-   "ts": "2026-07-17T17:30:20.396Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrpjwanhrb8z1x",
-   "type": "dwell",
-   "seconds": 9,
-   "scroll_pct": 6,
-   "page": "engage/2026-06-29-feed-jardin.html",
-   "ts": "2026-07-17T23:10:07.085Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrqhjzy3vg01sq",
-   "type": "notification_clicked",
-   "nid": "2026-07-18-a",
-   "page": "engage/2026-07-18-secomenta.html",
-   "ts": "2026-07-18T14:52:20.281Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrqhjzy41mr19t",
-   "type": "page_visit",
-   "page": "engage/2026-07-18-secomenta.html",
-   "nid": "2026-07-18-a",
-   "src": "push",
-   "ts": "2026-07-18T14:52:20.281Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrqhkbbxjcs35r",
-   "type": "dwell",
-   "seconds": 15,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-18-secomenta.html",
-   "ts": "2026-07-18T14:52:35.037Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrqhppsdan6kdi",
-   "type": "notification_clicked",
-   "nid": "2026-07-18-top3",
-   "page": "engage/top3-tareas.html",
-   "ts": "2026-07-18T14:56:47.052Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrqhppsd4o8htl",
-   "type": "page_visit",
-   "page": "engage/top3-tareas.html",
-   "nid": "2026-07-18-top3",
-   "src": "push",
-   "ts": "2026-07-18T14:56:47.052Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrqhpzhb8q3cca",
-   "type": "dwell",
-   "seconds": 13,
-   "scroll_pct": 37,
-   "page": "engage/top3-tareas.html",
-   "ts": "2026-07-18T14:56:59.615Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrqhq01psx2bdp",
-   "type": "page_visit",
-   "page": "tasks/plant-B-25-3.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-18T14:57:00.348Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrqojhvbbnhyhb",
-   "type": "page_visit",
-   "page": "tasks/plant-B-14.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-18T18:07:54.165Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrr25ve1ixyt6v",
-   "type": "notification_clicked",
-   "nid": "2026-07-18-c",
-   "page": "engage/2026-07-01-horoscopo-jardin.html",
-   "ts": "2026-07-19T00:29:13.128Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrr25ve1goneqj",
-   "type": "page_visit",
-   "page": "engage/2026-07-01-horoscopo-jardin.html",
-   "nid": "2026-07-18-c",
-   "src": "push",
-   "ts": "2026-07-19T00:29:13.128Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrs5nnza81506c",
-   "type": "notification_clicked",
-   "nid": "2026-07-19-reply-plant-B-25-3",
-   "page": "tasks/plant-B-25-3.html",
-   "ts": "2026-07-19T18:54:48.349Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrs5nnza7okx3w",
-   "type": "page_visit",
-   "page": "tasks/plant-B-25-3.html",
-   "nid": "2026-07-19-reply-plant-B-25-3",
-   "src": "push",
-   "ts": "2026-07-19T18:54:48.349Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrs5oeiowfov8r",
-   "type": "notification_clicked",
-   "nid": "2026-07-19-b",
-   "page": "engage/2026-07-19-nombre-apellido.html",
-   "ts": "2026-07-19T18:55:22.750Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrs5oeiog588za",
-   "type": "page_visit",
-   "page": "engage/2026-07-19-nombre-apellido.html",
-   "nid": "2026-07-19-b",
-   "src": "push",
-   "ts": "2026-07-19T18:55:22.750Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mruwh765otpxhc",
-   "type": "notification_clicked",
-   "nid": "2026-07-21-b",
-   "page": "engage/2026-07-09-wrapped-jardin.html",
-   "ts": "2026-07-21T17:01:08.617Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mruwh76568pwga",
-   "type": "page_visit",
-   "page": "engage/2026-07-09-wrapped-jardin.html",
-   "nid": "2026-07-21-b",
-   "src": "push",
-   "ts": "2026-07-21T17:01:08.617Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mruwhqb7w7sqwk",
-   "type": "reaction",
-   "target": "wrapped-jardin",
-   "value": "meh",
-   "page": "engage/2026-07-09-wrapped-jardin.html",
-   "ts": "2026-07-21T17:01:33.427Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mruwhydalswhdt",
-   "type": "dwell",
-   "seconds": 35,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-09-wrapped-jardin.html",
-   "ts": "2026-07-21T17:01:43.870Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrv7wth1hed04g",
-   "type": "notification_clicked",
-   "nid": "2026-07-21-c",
-   "page": "engage/2026-07-21-asamblea-jardin.html",
-   "ts": "2026-07-21T22:21:13.140Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrv7wth1zzye29",
-   "type": "page_visit",
-   "page": "engage/2026-07-21-asamblea-jardin.html",
-   "nid": "2026-07-21-c",
-   "src": "push",
-   "ts": "2026-07-21T22:21:13.140Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrv7zcfrqvkhzo",
-   "type": "feedback_text",
-   "target": "asamblea-jardin",
-   "text": "Esta todo perfecto.  Tené en cuenta que está lloviendo hace días en Montevideo, no he podido avanzar",
-   "page": "engage/2026-07-21-asamblea-jardin.html",
-   "ts": "2026-07-21T22:23:11.031Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrw6229cabqd05",
-   "type": "notification_clicked",
-   "nid": "2026-07-22-task-dia",
-   "page": "tasks/plant-B-25-3.html",
-   "ts": "2026-07-22T14:17:04.743Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrw6229cul8ap0",
-   "type": "page_visit",
-   "page": "tasks/plant-B-25-3.html",
-   "nid": "2026-07-22-task-dia",
-   "src": "push",
-   "ts": "2026-07-22T14:17:04.743Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrv7ziwa3jox1h",
-   "type": "dwell",
-   "seconds": 126,
-   "scroll_pct": 93,
-   "page": "engage/2026-07-21-asamblea-jardin.html",
-   "ts": "2026-07-21T22:23:19.402Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrxoqx8u2vfjij",
-   "type": "notification_clicked",
-   "nid": "2026-07-23-a",
-   "page": "engage/2026-07-23-ronda-medica.html",
-   "ts": "2026-07-23T15:48:03.914Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrxoqx8uymgtqy",
-   "type": "page_visit",
-   "page": "engage/2026-07-23-ronda-medica.html",
-   "nid": "2026-07-23-a",
-   "src": "push",
-   "ts": "2026-07-23T15:48:03.914Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrxoshii9oqfti",
-   "type": "proposal_rejected",
-   "proposal_id": "2026-07-23-ronda-medica",
-   "ts": "2026-07-23T15:49:16.842Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrxosu4sgn7ksj",
-   "type": "notification_clicked",
-   "nid": "2026-07-23-reply-plant-B-25-3",
-   "page": "tasks/plant-B-25-3.html",
-   "ts": "2026-07-23T15:49:33.192Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxosu4souj5kw",
-   "type": "page_visit",
-   "page": "tasks/plant-B-25-3.html",
-   "nid": "2026-07-23-reply-plant-B-25-3",
-   "src": "push",
-   "ts": "2026-07-23T15:49:33.192Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxouowkrxpq5v",
-   "type": "notification_clicked",
-   "nid": "2026-07-23-task-dia",
-   "page": "tasks/plant-F-1-4.html",
-   "ts": "2026-07-23T15:50:59.730Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxouowku6q3hd",
-   "type": "page_visit",
-   "page": "tasks/plant-F-1-4.html",
-   "nid": "2026-07-23-task-dia",
-   "src": "push",
-   "ts": "2026-07-23T15:50:59.730Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxsz8ahb7pm6v",
-   "type": "page_visit",
-   "page": "tasks/plant-B-6-2.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-23T17:46:29.942Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxtkjbfpmxhp5",
-   "type": "page_visit",
-   "page": "tasks/plant-B-39.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-23T18:03:04.010Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxtqrhu7vl5z6",
-   "type": "page_visit",
-   "page": "tasks/plant-F-1-4.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-23T18:07:54.545Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxtss9odsn2vy",
-   "type": "page_visit",
-   "page": "tasks/plant-B-46-6.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-23T18:09:28.859Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxu2ea10p3feu",
-   "type": "page_visit",
-   "page": "tasks/plant-B-37.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-23T18:16:57.286Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxu43d9d8ud8h",
-   "type": "page_visit",
-   "page": "tasks/plant-B-46-4.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-23T18:18:16.458Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxu5zw0nr2oi1",
-   "type": "page_visit",
-   "page": "tasks/plant-B-41-3.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-23T18:19:45.263Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxu75mh83roko",
-   "type": "page_visit",
-   "page": "tasks/plant-B-45.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-23T18:20:39.352Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxu8tnxxx1le7",
-   "type": "page_visit",
-   "page": "tasks/plant-F-10.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-23T18:21:57.164Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxua3f0bzpkj3",
-   "type": "page_visit",
-   "page": "tasks/plant-B-9-3.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-23T18:22:56.459Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxuam1y2pw5ac",
-   "type": "page_visit",
-   "page": "tasks/plant-F-1.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-23T18:23:20.613Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxunsdo7witmw",
-   "type": "page_visit",
-   "page": "tasks/plant-B-8.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-23T18:33:35.338Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxunt0870c3mz",
-   "type": "page_visit",
-   "page": "tasks/plant-B-8.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-23T18:33:36.149Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxwtvnrhx5vrq",
-   "type": "page_visit",
-   "page": "tasks/plant-B-37.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-23T19:34:18.757Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrxosl5j2hro71",
-   "type": "dwell",
-   "seconds": 78,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-23-ronda-medica.html",
-   "ts": "2026-07-23T15:49:21.559Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mry15lxzahthhq",
-   "type": "notification_clicked",
-   "nid": "2026-07-23-b",
-   "page": "engage/2026-07-23-mercado-pases.html",
-   "ts": "2026-07-23T21:35:24.499Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mry15lxz7dhky5",
-   "type": "page_visit",
-   "page": "engage/2026-07-23-mercado-pases.html",
-   "nid": "2026-07-23-b",
-   "src": "push",
-   "ts": "2026-07-23T21:35:24.499Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mry17xjja6f4ps",
-   "type": "reaction",
-   "target": "mercado-pases",
-   "value": "no",
-   "page": "engage/2026-07-23-mercado-pases.html",
-   "ts": "2026-07-23T21:37:12.847Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mry17zgogleyde",
-   "type": "answer",
-   "qid": "mercado-pases-suscripcion-diaria",
-   "value": "no",
-   "page": "engage/2026-07-23-mercado-pases.html",
-   "ts": "2026-07-23T21:37:15.336Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mry183f5ljfv21",
-   "type": "proposal_rejected",
-   "proposal_id": "2026-07-23-mercado-pases",
-   "ts": "2026-07-23T21:37:20.465Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mry18ph2kmv4hr",
-   "type": "feedback_text",
-   "target": "mercado-pases",
-   "text": "Mucho texto, muy cargado, no es realmente lo que busco en una app de jardin",
-   "page": "engage/2026-07-23-mercado-pases.html",
-   "ts": "2026-07-23T21:37:49.046Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mry18tw5u6yngw",
-   "type": "dwell",
-   "seconds": 150,
-   "scroll_pct": 97,
-   "page": "engage/2026-07-23-mercado-pases.html",
-   "ts": "2026-07-23T21:37:54.773Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrywvs2p7aykem",
-   "type": "page_visit",
-   "page": "engage/2026-07-01-horoscopo-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T12:23:33.600Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mryz9w8jddf6py",
-   "type": "page_visit",
-   "page": "engage/2026-07-01-consultorio-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T13:30:31.410Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz0n8j8dhb7p2",
-   "type": "page_visit",
-   "page": "engage/2026-07-02-confesiones-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T14:08:53.491Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz5rozkntav33",
-   "type": "page_visit",
-   "page": "engage/2026-07-09-quiz-planta.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T16:32:19.520Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8e4k3xgc934",
-   "type": "notification_clicked",
-   "nid": "2026-07-24-task-dia",
-   "page": "tasks/plant-F-1.html",
-   "ts": "2026-07-24T17:45:45.355Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrz8e4k3rk40rh",
-   "type": "page_visit",
-   "page": "tasks/plant-F-1.html",
-   "nid": "2026-07-24-task-dia",
-   "src": "push",
-   "ts": "2026-07-24T17:45:45.355Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrz8egn3q8zu05",
-   "type": "notification_clicked",
-   "nid": "2026-07-24-a",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T17:46:01.019Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8egn3zzkwfz",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": "2026-07-24-a",
-   "src": "push",
-   "ts": "2026-07-24T17:46:01.019Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8faxgvo12i6",
-   "type": "dwell",
-   "seconds": 39,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T17:46:40.276Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8fbx2y1fmyp",
-   "type": "notification_clicked",
-   "nid": "2026-07-24-pendientes",
-   "page": "engage/tareas-pendientes.html",
-   "ts": "2026-07-24T17:46:41.556Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8fbx2bby7o5",
-   "type": "page_visit",
-   "page": "engage/tareas-pendientes.html",
-   "nid": "2026-07-24-pendientes",
-   "src": "push",
-   "ts": "2026-07-24T17:46:41.556Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8gm39xm54as",
-   "type": "dwell",
-   "seconds": 60,
-   "scroll_pct": 100,
-   "page": "engage/tareas-pendientes.html",
-   "ts": "2026-07-24T17:47:41.397Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8grjfa6msqu",
-   "type": "page_visit",
-   "page": "engage/tareas-pendientes.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T17:47:48.459Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8gtz3on6bpr",
-   "type": "page_visit",
-   "page": "engage/top3-tareas.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T17:47:51.615Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8gvyojouv0j",
-   "type": "dwell",
-   "seconds": 3,
-   "scroll_pct": 0,
-   "page": "engage/top3-tareas.html",
-   "ts": "2026-07-24T17:47:54.192Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8gxcrvpvn7x",
-   "type": "page_visit",
-   "page": "tasks/plant-F-1.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T17:47:55.992Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrz8h2swuxtngy",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": "2026-07-24-a",
-   "src": "push",
-   "ts": "2026-07-24T17:48:03.055Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8kca5l9zsb8",
-   "type": "feedback_text",
-   "target": "jardin-hoy",
-   "text": "Esta debería ser la push diaria.\nSaca \"¿Te sirve así de simple?\"\nSaca \"🌤️ Un vistazo cada mañana\"\nSaca \" ¿La dejo fija?\"\n\nSúmale un menú colapsado con las tareas de este mes (que quizás no son hoy pero si julio)\n\nSúmale un menú colapsado que sea de cosas para hacer en agosto \n\nRecordá si tenés alguna duda, especie desconocida o solicitud, estás tareas son el lugar para pedirlo",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T17:50:35.309Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8kgvyjlydr2",
-   "type": "dwell",
-   "seconds": 158,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T17:50:41.278Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz956dlfivs96",
-   "type": "notification_clicked",
-   "nid": "2026-07-24-jardin-hoy-v2",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T18:06:47.432Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz956dl9ecpu4",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": "2026-07-24-jardin-hoy-v2",
-   "src": "push",
-   "ts": "2026-07-24T18:06:47.432Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz95i8b8rxlp0",
-   "type": "dwell",
-   "seconds": 15,
-   "scroll_pct": 72,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T18:07:02.795Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz98ahk9jlfd0",
-   "type": "feedback_text",
-   "target": "jardin-hoy",
-   "text": "Que puedo hacer hoy?",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T18:09:12.728Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzcbhzjawcyfj",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T19:35:41.262Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzcdz8tzst31r",
-   "type": "feedback_text",
-   "target": "jardin-hoy",
-   "text": "Justo 3 tareas en cada módulo?  Nada más que quieras/precises que haga?\n\nAgregame una tarea que sea\"definir plantas para huerta\" y proponerme algunas sugerencias",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T19:37:36.941Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzceb6z62wszx",
-   "type": "dwell",
-   "seconds": 131,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T19:37:52.427Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzfuxorwsvzy5",
-   "type": "notification_clicked",
-   "nid": "2026-07-24-b",
-   "page": "engage/2026-07-24-tu-semana.html",
-   "ts": "2026-07-24T21:14:46.922Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzfuxornhycrv",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-tu-semana.html",
-   "nid": "2026-07-24-b",
-   "src": "push",
-   "ts": "2026-07-24T21:14:46.922Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzfvbgcwx1tg1",
-   "type": "answer",
-   "qid": "tu-semana-suscripcion-diaria",
-   "value": "si",
-   "page": "engage/2026-07-24-tu-semana.html",
-   "ts": "2026-07-24T21:15:04.764Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzfvh3evaew8d",
-   "type": "dwell",
-   "seconds": 25,
-   "scroll_pct": 68,
-   "page": "engage/2026-07-24-tu-semana.html",
-   "ts": "2026-07-24T21:15:12.074Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzfx446mu2f0r",
-   "type": "feedback_text",
-   "target": "tu-semana",
-   "text": "Los plantines de palta no los toque, siguen contra la pared a la sombra",
-   "page": "engage/2026-07-24-tu-semana.html",
-   "ts": "2026-07-24T21:16:28.566Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0d4xb38faajl",
-   "type": "page_visit",
-   "page": "engage/2026-07-03-reality-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-25T12:46:20.319Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0ugx0g764n7x",
-   "type": "notification_clicked",
-   "nid": "2026-07-25-jardin-hoy",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-25T20:51:33.279Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0ugx0g44m6d9",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": "2026-07-25-jardin-hoy",
-   "src": "push",
-   "ts": "2026-07-25T20:51:33.279Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0uhd1gmsnae6",
-   "type": "dwell",
-   "seconds": 21,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-25T20:51:54.052Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0uhd4euu4o8v",
-   "type": "page_visit",
-   "page": "engage/2026-07-25-mi-huerta.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-25T20:51:54.158Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0uizfezwz3xf",
-   "type": "dwell",
-   "seconds": 76,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-25-mi-huerta.html",
-   "ts": "2026-07-25T20:53:09.722Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0uizln29bb0r",
-   "type": "notification_clicked",
-   "nid": "2026-07-25-a",
-   "page": "engage/2026-07-25-mapa-solar.html",
-   "ts": "2026-07-25T20:53:09.946Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0uizlnciy9ok",
-   "type": "page_visit",
-   "page": "engage/2026-07-25-mapa-solar.html",
-   "nid": "2026-07-25-a",
-   "src": "push",
-   "ts": "2026-07-25T20:53:09.946Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0ujshy0p78uo",
-   "type": "notification_clicked",
-   "nid": "2026-07-25-reply-plant-F-1",
-   "page": "tasks/plant-F-1.html",
-   "ts": "2026-07-25T20:53:47.395Z",
-   "device": "landing"
-  },
-  {
-   "_id": "ms0ujshyryuqeh",
-   "type": "page_visit",
-   "page": "tasks/plant-F-1.html",
-   "nid": "2026-07-25-reply-plant-F-1",
-   "src": "push",
-   "ts": "2026-07-25T20:53:47.395Z",
-   "device": "landing"
-  },
-  {
-   "_id": "ms0ujp6uz0xakm",
-   "type": "dwell",
-   "seconds": 33,
-   "scroll_pct": 79,
-   "page": "engage/2026-07-25-mapa-solar.html",
-   "ts": "2026-07-25T20:53:43.109Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2buklj6uan6g",
-   "type": "notification_clicked",
-   "nid": "2026-07-26-a",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:45:50.022Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bukljlylge1",
-   "type": "page_visit",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "nid": "2026-07-26-a",
-   "src": "push",
-   "ts": "2026-07-26T21:45:50.022Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bvab47ed79m",
-   "type": "answer",
-   "qid": "vd-huerta-lugar",
-   "value": "norte",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:46:23.344Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bvy13cus49n",
-   "type": "answer",
-   "qid": "vd-hortensia",
-   "value": "tierra",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:46:54.087Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bw6nclk7mff",
-   "type": "answer",
-   "qid": "vd-liquidambar",
-   "value": "yo",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:47:05.256Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bwdjl6praiz",
-   "type": "answer",
-   "qid": "vd-caqui",
-   "value": "observar",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:47:14.193Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bwotamffzav",
-   "type": "answer",
-   "qid": "vd-agosto",
-   "value": "prioridad",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:47:28.798Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bwujzgzjwkz",
-   "type": "answer",
-   "qid": "vos-decidis-suscripcion-diaria",
-   "value": "si",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:47:36.239Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bwweip4x0gl",
-   "type": "reaction",
-   "target": "vos-decidis",
-   "value": "like",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:47:38.634Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bx1rripqmoy",
-   "type": "dwell",
-   "seconds": 116,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:47:45.590Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2i5ue701fhir",
-   "type": "notification_clicked",
-   "nid": "2026-07-26-b",
-   "page": "engage/2026-07-26-mi-primavera.html",
-   "ts": "2026-07-27T00:42:33.630Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2i5ue795pg3x",
-   "type": "page_visit",
-   "page": "engage/2026-07-26-mi-primavera.html",
-   "nid": "2026-07-26-b",
-   "src": "push",
-   "ts": "2026-07-27T00:42:33.630Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2i5zfj5kaau0",
-   "type": "answer",
-   "qid": "mi-primavera-prioridad",
-   "value": "B-13",
-   "page": "engage/2026-07-26-mi-primavera.html",
-   "ts": "2026-07-27T00:42:40.159Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2i65hhorlvgk",
-   "type": "answer",
-   "qid": "mi-primavera-prioridad",
-   "value": "F-7",
-   "page": "engage/2026-07-26-mi-primavera.html",
-   "ts": "2026-07-27T00:42:48.005Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2i6b53szu0sn",
-   "type": "answer",
-   "qid": "mi-primavera-suscripcion-diaria",
-   "value": "no",
-   "page": "engage/2026-07-26-mi-primavera.html",
-   "ts": "2026-07-27T00:42:55.335Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2i6dk0rec7bt",
-   "type": "proposal_rejected",
-   "proposal_id": "2026-07-26-mi-primavera",
-   "ts": "2026-07-27T00:42:58.464Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2i6f0pzfvcfl",
-   "type": "dwell",
-   "seconds": 27,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-26-mi-primavera.html",
-   "ts": "2026-07-27T00:43:00.361Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms3ttc3p1h170w",
-   "type": "notification_clicked",
-   "nid": "2026-07-27-a",
-   "page": "engage/2026-07-27-vos-decidis.html",
-   "ts": "2026-07-27T22:56:31.620Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms3ttc3pvuuct9",
-   "type": "page_visit",
-   "page": "engage/2026-07-27-vos-decidis.html",
-   "nid": "2026-07-27-a",
-   "src": "push",
-   "ts": "2026-07-27T22:56:31.620Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms3ttgl0az7z3f",
-   "type": "answer",
-   "qid": "vd2-huerta-arranque",
-   "value": "lechuga",
-   "page": "engage/2026-07-27-vos-decidis.html",
-   "ts": "2026-07-27T22:56:37.427Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms3tu19s7zfj8s",
-   "type": "dwell",
-   "seconds": 33,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-27-vos-decidis.html",
-   "ts": "2026-07-27T22:57:04.240Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms3urp6x2kaytf",
-   "type": "notification_clicked",
-   "nid": "2026-07-27-b",
-   "page": "engage/2026-07-27-mi-objetivo.html",
-   "ts": "2026-07-27T23:23:14.887Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms3urp6x8pjeqb",
-   "type": "page_visit",
-   "page": "engage/2026-07-27-mi-objetivo.html",
-   "nid": "2026-07-27-b",
-   "src": "push",
-   "ts": "2026-07-27T23:23:14.887Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms3urx2qpf6tmx",
-   "type": "answer",
-   "qid": "mi-objetivo-goal",
-   "value": "flor",
-   "page": "engage/2026-07-27-mi-objetivo.html",
-   "ts": "2026-07-27T23:23:25.106Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms3ury712ng76l",
-   "type": "answer",
-   "qid": "mi-objetivo-goal",
-   "value": "sombra",
-   "page": "engage/2026-07-27-mi-objetivo.html",
-   "ts": "2026-07-27T23:23:26.557Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms3urz8c3pjwbr",
-   "type": "answer",
-   "qid": "mi-objetivo-goal",
-   "value": "flor",
-   "page": "engage/2026-07-27-mi-objetivo.html",
-   "ts": "2026-07-27T23:23:27.900Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms3usnenv6tehg",
-   "type": "answer",
-   "qid": "mi-objetivo-goal",
-   "value": "huerta",
-   "page": "engage/2026-07-27-mi-objetivo.html",
-   "ts": "2026-07-27T23:23:59.231Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms3usrauarkclc",
-   "type": "answer",
-   "qid": "mi-objetivo-goal",
-   "value": "flor",
-   "page": "engage/2026-07-27-mi-objetivo.html",
-   "ts": "2026-07-27T23:24:04.278Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms3usuoguaw58g",
-   "type": "dwell",
-   "seconds": 54,
-   "scroll_pct": 95,
-   "page": "engage/2026-07-27-mi-objetivo.html",
-   "ts": "2026-07-27T23:24:08.656Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms4rhav42vxyl1",
-   "type": "notification_clicked",
-   "nid": "2026-07-28-jardin-hoy",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-28T14:38:57.087Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms4rhav4duqwtm",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": "2026-07-28-jardin-hoy",
-   "src": "push",
-   "ts": "2026-07-28T14:38:57.087Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms4rlmiy1t31hg",
-   "type": "feedback_text",
-   "target": "jardin-hoy",
-   "text": "Cada tarea debería tener una caja como está de feedback así te puedo dejar comentarios.\n1- ignora lo de la lechuga, me voy de viaje en 10dias y no va a suceder antes.  A mi vuelta a fin de agosto lo vemos\n2- incluirme en ka tarea una foto de la especie así estoy seguro cuál es \n3- caqui ignóralo hAsta primavera porque no sabemos qué es\n4 mándame esto de nuevo",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-28T14:42:18.826Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms4rlsvdminmty",
-   "type": "dwell",
-   "seconds": 210,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-28T14:42:27.049Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms51cejawh3s99",
-   "type": "notification_clicked",
-   "nid": "2026-07-28-b",
-   "page": "engage/2026-07-28-esto-o-esto.html",
-   "ts": "2026-07-28T19:15:04.722Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms51cejas9bx9f",
-   "type": "page_visit",
-   "page": "engage/2026-07-28-esto-o-esto.html",
-   "nid": "2026-07-28-b",
-   "src": "push",
-   "ts": "2026-07-28T19:15:04.722Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms51cjhenz5rbo",
-   "type": "answer",
-   "qid": "ee-orgullo",
-   "value": "fruta",
-   "page": "engage/2026-07-28-esto-o-esto.html",
-   "ts": "2026-07-28T19:15:11.138Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms51cpw3vootth",
-   "type": "answer",
-   "qid": "ee-ficha",
-   "value": "flor",
-   "page": "engage/2026-07-28-esto-o-esto.html",
-   "ts": "2026-07-28T19:15:19.443Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms51ctopd8rdr1",
-   "type": "answer",
-   "qid": "ee-manos",
-   "value": "yo",
-   "page": "engage/2026-07-28-esto-o-esto.html",
-   "ts": "2026-07-28T19:15:24.361Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms51cx9ktcs8nw",
-   "type": "answer",
-   "qid": "ee-momento",
-   "value": "manana",
-   "page": "engage/2026-07-28-esto-o-esto.html",
-   "ts": "2026-07-28T19:15:29.000Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms51d2vznzc6yc",
-   "type": "answer",
-   "qid": "ee-mimar",
-   "value": "frutal",
-   "page": "engage/2026-07-28-esto-o-esto.html",
-   "ts": "2026-07-28T19:15:36.286Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms51d83igpq611",
-   "type": "answer",
-   "qid": "esto-o-esto-suscripcion-diaria",
-   "value": "no",
-   "page": "engage/2026-07-28-esto-o-esto.html",
-   "ts": "2026-07-28T19:15:43.038Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms51d9iguyrk0u",
-   "type": "reaction",
-   "target": "esto-o-esto",
-   "value": "meh",
-   "page": "engage/2026-07-28-esto-o-esto.html",
-   "ts": "2026-07-28T19:15:44.872Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms51e1p7pqic2x",
-   "type": "feedback_text",
-   "target": "esto-o-esto",
-   "text": "No es mi tipo de experiencia.\n\nRevisa lo que te escribí más temprano en el liquidámbar.",
-   "page": "engage/2026-07-28-esto-o-esto.html",
-   "ts": "2026-07-28T19:16:21.403Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms51e3r3l4e09t",
-   "type": "proposal_rejected",
-   "proposal_id": "2026-07-28-esto-o-esto",
-   "ts": "2026-07-28T19:16:24.063Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms51e93nx9dcrk",
-   "type": "dwell",
-   "seconds": 86,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-28-esto-o-esto.html",
-   "ts": "2026-07-28T19:16:30.995Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms5b71r08kcycl",
-   "type": "notification_clicked",
-   "nid": "2026-07-28-a",
-   "page": "engage/2026-07-28-vos-decidis.html",
-   "ts": "2026-07-28T23:50:51.033Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms5b71r0ic9n8o",
-   "type": "page_visit",
-   "page": "engage/2026-07-28-vos-decidis.html",
-   "nid": "2026-07-28-a",
-   "src": "push",
-   "ts": "2026-07-28T23:50:51.033Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms5b76gz7e6k39",
-   "type": "proposal_rejected",
-   "proposal_id": "2026-07-28-vos-decidis",
-   "ts": "2026-07-28T23:50:57.155Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms5b7acc9tfylz",
-   "type": "answer",
-   "qid": "vos-decidis-suscripcion-diaria",
-   "value": "no",
-   "page": "engage/2026-07-28-vos-decidis.html",
-   "ts": "2026-07-28T23:51:02.171Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms5b7dbe38szgc",
-   "type": "dwell",
-   "seconds": 15,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-28-vos-decidis.html",
-   "ts": "2026-07-28T23:51:06.025Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms6p4hubhtqftq",
-   "type": "notification_clicked",
-   "nid": "2026-07-29-a",
-   "page": "engage/2026-07-29-los-que-no-duermen.html",
-   "ts": "2026-07-29T23:08:32.721Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms6p4hubli3an6",
-   "type": "page_visit",
-   "page": "engage/2026-07-29-los-que-no-duermen.html",
-   "nid": "2026-07-29-a",
-   "src": "push",
-   "ts": "2026-07-29T23:08:32.721Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms6p4szhwg2euc",
-   "type": "dwell",
-   "seconds": 14,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-29-los-que-no-duermen.html",
-   "ts": "2026-07-29T23:08:47.165Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms6qdrkl8e0w5w",
-   "type": "notification_clicked",
-   "nid": "2026-07-29-b",
-   "page": "engage/2026-07-29-antes-de-irte.html",
-   "ts": "2026-07-29T23:43:44.852Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms6qdrklt6v18m",
-   "type": "page_visit",
-   "page": "engage/2026-07-29-antes-de-irte.html",
-   "nid": "2026-07-29-b",
-   "src": "push",
-   "ts": "2026-07-29T23:43:44.852Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms6qeeqj0t812p",
-   "type": "dwell",
-   "seconds": 30,
-   "scroll_pct": 86,
-   "page": "engage/2026-07-29-antes-de-irte.html",
-   "ts": "2026-07-29T23:44:14.874Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms7odgy6wc9yqg",
-   "type": "notification_clicked",
-   "nid": "2026-07-30-jardin-hoy",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-30T15:35:18.027Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms7odgy6zcrl6r",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": "2026-07-30-jardin-hoy",
-   "src": "push",
-   "ts": "2026-07-30T15:35:18.027Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms7oefqonwr5xg",
-   "type": "dwell",
-   "seconds": 45,
-   "scroll_pct": 93,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-30T15:36:03.120Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms7q0lm9kvcx7l",
-   "type": "notification_clicked",
-   "nid": "2026-07-30-jardin-hoy-sol",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-30T16:21:16.784Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms7q0lm9sdnk0b",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": "2026-07-30-jardin-hoy-sol",
-   "src": "push",
-   "ts": "2026-07-30T16:21:16.784Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms7q18bydokfi7",
-   "type": "feedback_text",
-   "target": "jh-liquidambar-B37",
-   "text": "Ya quedó hecho esto",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-30T16:21:46.222Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms7q332t7pc76k",
-   "type": "feedback_text",
-   "target": "jardin-hoy",
-   "text": "Agregame una foto a las especies en las tareas de agosto también así se a qué hacen referencia.  Cada especie/tarea debería tener la posibilidad de dejarte un comentario",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-30T16:23:12.725Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms7q4kktav0jot",
-   "type": "feedback_text",
-   "target": "jh-hortensia-B5",
-   "text": "Mi viaje va a ser del 7-23 de agosto.  Actualiza esta y todas las otras pendientes de julio y agosto para recomendarme si conviene hacerlo antes o después del viaje",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-30T16:24:22.061Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms7q4v3vs1fw00",
-   "type": "dwell",
-   "seconds": 199,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-30T16:24:35.707Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms7tsq7jt94thq",
-   "type": "notification_clicked",
-   "nid": "2026-07-30-jardin-hoy-viaje",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-30T18:07:07.950Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms7tsq7j8xcpdw",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": "2026-07-30-jardin-hoy-viaje",
-   "src": "push",
-   "ts": "2026-07-30T18:07:07.950Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms7ttilnybcvxp",
-   "type": "dwell",
-   "seconds": 37,
-   "scroll_pct": 50,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-30T18:07:44.747Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms7ttiu5zyfk5g",
-   "type": "page_visit",
-   "page": "tasks/plant-B-30.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-30T18:07:45.052Z",
-   "device": "landing"
-  },
-  {
-   "_id": "ms7tvsjvkabcc5",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-30T18:09:30.952Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms7u48a357bi9p",
-   "type": "page_visit",
-   "page": "tasks/plant-B-38.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-30T18:16:04.584Z",
-   "device": "landing"
-  },
-  {
-   "_id": "ms7wtxf79onwvw",
-   "type": "notification_clicked",
-   "nid": "2026-07-30-reply-plant-B-30",
-   "page": "tasks/plant-B-30.html",
-   "ts": "2026-07-30T19:32:02.797Z",
-   "device": "landing"
-  },
-  {
-   "_id": "ms7wtxf7f22ulz",
-   "type": "page_visit",
-   "page": "tasks/plant-B-30.html",
-   "nid": "2026-07-30-reply-plant-B-30",
-   "src": "push",
-   "ts": "2026-07-30T19:32:02.797Z",
-   "device": "landing"
+  "_updated_at": "2026-07-31T22:43:16.699Z",
+  "events": [
+    {
+      "_id": "mrp1qa93tnyyjt",
+      "type": "dwell",
+      "seconds": 3,
+      "scroll_pct": 18,
+      "page": "engage/2026-07-17-resenas.html",
+      "ts": "2026-07-17T14:41:33.543Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrp7r3nf0dras7",
+      "type": "page_visit",
+      "page": "engage/2026-07-17-anuario.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-17T17:30:09.336Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrp7rc6kqztzpl",
+      "type": "dwell",
+      "seconds": 12,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-17-anuario.html",
+      "ts": "2026-07-17T17:30:20.396Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrpjwanhrb8z1x",
+      "type": "dwell",
+      "seconds": 9,
+      "scroll_pct": 6,
+      "page": "engage/2026-06-29-feed-jardin.html",
+      "ts": "2026-07-17T23:10:07.085Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrqhjzy3vg01sq",
+      "type": "notification_clicked",
+      "nid": "2026-07-18-a",
+      "page": "engage/2026-07-18-secomenta.html",
+      "ts": "2026-07-18T14:52:20.281Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrqhjzy41mr19t",
+      "type": "page_visit",
+      "page": "engage/2026-07-18-secomenta.html",
+      "nid": "2026-07-18-a",
+      "src": "push",
+      "ts": "2026-07-18T14:52:20.281Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrqhkbbxjcs35r",
+      "type": "dwell",
+      "seconds": 15,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-18-secomenta.html",
+      "ts": "2026-07-18T14:52:35.037Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrqhppsdan6kdi",
+      "type": "notification_clicked",
+      "nid": "2026-07-18-top3",
+      "page": "engage/top3-tareas.html",
+      "ts": "2026-07-18T14:56:47.052Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrqhppsd4o8htl",
+      "type": "page_visit",
+      "page": "engage/top3-tareas.html",
+      "nid": "2026-07-18-top3",
+      "src": "push",
+      "ts": "2026-07-18T14:56:47.052Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrqhpzhb8q3cca",
+      "type": "dwell",
+      "seconds": 13,
+      "scroll_pct": 37,
+      "page": "engage/top3-tareas.html",
+      "ts": "2026-07-18T14:56:59.615Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrqhq01psx2bdp",
+      "type": "page_visit",
+      "page": "tasks/plant-B-25-3.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-18T14:57:00.348Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrqojhvbbnhyhb",
+      "type": "page_visit",
+      "page": "tasks/plant-B-14.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-18T18:07:54.165Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrr25ve1ixyt6v",
+      "type": "notification_clicked",
+      "nid": "2026-07-18-c",
+      "page": "engage/2026-07-01-horoscopo-jardin.html",
+      "ts": "2026-07-19T00:29:13.128Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrr25ve1goneqj",
+      "type": "page_visit",
+      "page": "engage/2026-07-01-horoscopo-jardin.html",
+      "nid": "2026-07-18-c",
+      "src": "push",
+      "ts": "2026-07-19T00:29:13.128Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrs5nnza81506c",
+      "type": "notification_clicked",
+      "nid": "2026-07-19-reply-plant-B-25-3",
+      "page": "tasks/plant-B-25-3.html",
+      "ts": "2026-07-19T18:54:48.349Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrs5nnza7okx3w",
+      "type": "page_visit",
+      "page": "tasks/plant-B-25-3.html",
+      "nid": "2026-07-19-reply-plant-B-25-3",
+      "src": "push",
+      "ts": "2026-07-19T18:54:48.349Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrs5oeiowfov8r",
+      "type": "notification_clicked",
+      "nid": "2026-07-19-b",
+      "page": "engage/2026-07-19-nombre-apellido.html",
+      "ts": "2026-07-19T18:55:22.750Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrs5oeiog588za",
+      "type": "page_visit",
+      "page": "engage/2026-07-19-nombre-apellido.html",
+      "nid": "2026-07-19-b",
+      "src": "push",
+      "ts": "2026-07-19T18:55:22.750Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mruwh765otpxhc",
+      "type": "notification_clicked",
+      "nid": "2026-07-21-b",
+      "page": "engage/2026-07-09-wrapped-jardin.html",
+      "ts": "2026-07-21T17:01:08.617Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mruwh76568pwga",
+      "type": "page_visit",
+      "page": "engage/2026-07-09-wrapped-jardin.html",
+      "nid": "2026-07-21-b",
+      "src": "push",
+      "ts": "2026-07-21T17:01:08.617Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mruwhqb7w7sqwk",
+      "type": "reaction",
+      "target": "wrapped-jardin",
+      "value": "meh",
+      "page": "engage/2026-07-09-wrapped-jardin.html",
+      "ts": "2026-07-21T17:01:33.427Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mruwhydalswhdt",
+      "type": "dwell",
+      "seconds": 35,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-09-wrapped-jardin.html",
+      "ts": "2026-07-21T17:01:43.870Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrv7wth1hed04g",
+      "type": "notification_clicked",
+      "nid": "2026-07-21-c",
+      "page": "engage/2026-07-21-asamblea-jardin.html",
+      "ts": "2026-07-21T22:21:13.140Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrv7wth1zzye29",
+      "type": "page_visit",
+      "page": "engage/2026-07-21-asamblea-jardin.html",
+      "nid": "2026-07-21-c",
+      "src": "push",
+      "ts": "2026-07-21T22:21:13.140Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrv7zcfrqvkhzo",
+      "type": "feedback_text",
+      "target": "asamblea-jardin",
+      "text": "Esta todo perfecto.  Tené en cuenta que está lloviendo hace días en Montevideo, no he podido avanzar",
+      "page": "engage/2026-07-21-asamblea-jardin.html",
+      "ts": "2026-07-21T22:23:11.031Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrw6229cabqd05",
+      "type": "notification_clicked",
+      "nid": "2026-07-22-task-dia",
+      "page": "tasks/plant-B-25-3.html",
+      "ts": "2026-07-22T14:17:04.743Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrw6229cul8ap0",
+      "type": "page_visit",
+      "page": "tasks/plant-B-25-3.html",
+      "nid": "2026-07-22-task-dia",
+      "src": "push",
+      "ts": "2026-07-22T14:17:04.743Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrv7ziwa3jox1h",
+      "type": "dwell",
+      "seconds": 126,
+      "scroll_pct": 93,
+      "page": "engage/2026-07-21-asamblea-jardin.html",
+      "ts": "2026-07-21T22:23:19.402Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrxoqx8u2vfjij",
+      "type": "notification_clicked",
+      "nid": "2026-07-23-a",
+      "page": "engage/2026-07-23-ronda-medica.html",
+      "ts": "2026-07-23T15:48:03.914Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrxoqx8uymgtqy",
+      "type": "page_visit",
+      "page": "engage/2026-07-23-ronda-medica.html",
+      "nid": "2026-07-23-a",
+      "src": "push",
+      "ts": "2026-07-23T15:48:03.914Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrxoshii9oqfti",
+      "type": "proposal_rejected",
+      "proposal_id": "2026-07-23-ronda-medica",
+      "ts": "2026-07-23T15:49:16.842Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrxosu4sgn7ksj",
+      "type": "notification_clicked",
+      "nid": "2026-07-23-reply-plant-B-25-3",
+      "page": "tasks/plant-B-25-3.html",
+      "ts": "2026-07-23T15:49:33.192Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxosu4souj5kw",
+      "type": "page_visit",
+      "page": "tasks/plant-B-25-3.html",
+      "nid": "2026-07-23-reply-plant-B-25-3",
+      "src": "push",
+      "ts": "2026-07-23T15:49:33.192Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxouowkrxpq5v",
+      "type": "notification_clicked",
+      "nid": "2026-07-23-task-dia",
+      "page": "tasks/plant-F-1-4.html",
+      "ts": "2026-07-23T15:50:59.730Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxouowku6q3hd",
+      "type": "page_visit",
+      "page": "tasks/plant-F-1-4.html",
+      "nid": "2026-07-23-task-dia",
+      "src": "push",
+      "ts": "2026-07-23T15:50:59.730Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxsz8ahb7pm6v",
+      "type": "page_visit",
+      "page": "tasks/plant-B-6-2.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T17:46:29.942Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxtkjbfpmxhp5",
+      "type": "page_visit",
+      "page": "tasks/plant-B-39.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T18:03:04.010Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxtqrhu7vl5z6",
+      "type": "page_visit",
+      "page": "tasks/plant-F-1-4.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T18:07:54.545Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxtss9odsn2vy",
+      "type": "page_visit",
+      "page": "tasks/plant-B-46-6.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T18:09:28.859Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxu2ea10p3feu",
+      "type": "page_visit",
+      "page": "tasks/plant-B-37.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T18:16:57.286Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxu43d9d8ud8h",
+      "type": "page_visit",
+      "page": "tasks/plant-B-46-4.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T18:18:16.458Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxu5zw0nr2oi1",
+      "type": "page_visit",
+      "page": "tasks/plant-B-41-3.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T18:19:45.263Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxu75mh83roko",
+      "type": "page_visit",
+      "page": "tasks/plant-B-45.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T18:20:39.352Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxu8tnxxx1le7",
+      "type": "page_visit",
+      "page": "tasks/plant-F-10.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T18:21:57.164Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxua3f0bzpkj3",
+      "type": "page_visit",
+      "page": "tasks/plant-B-9-3.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T18:22:56.459Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxuam1y2pw5ac",
+      "type": "page_visit",
+      "page": "tasks/plant-F-1.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T18:23:20.613Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxunsdo7witmw",
+      "type": "page_visit",
+      "page": "tasks/plant-B-8.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T18:33:35.338Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxunt0870c3mz",
+      "type": "page_visit",
+      "page": "tasks/plant-B-8.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T18:33:36.149Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxwtvnrhx5vrq",
+      "type": "page_visit",
+      "page": "tasks/plant-B-37.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-23T19:34:18.757Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrxosl5j2hro71",
+      "type": "dwell",
+      "seconds": 78,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-23-ronda-medica.html",
+      "ts": "2026-07-23T15:49:21.559Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mry15lxzahthhq",
+      "type": "notification_clicked",
+      "nid": "2026-07-23-b",
+      "page": "engage/2026-07-23-mercado-pases.html",
+      "ts": "2026-07-23T21:35:24.499Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mry15lxz7dhky5",
+      "type": "page_visit",
+      "page": "engage/2026-07-23-mercado-pases.html",
+      "nid": "2026-07-23-b",
+      "src": "push",
+      "ts": "2026-07-23T21:35:24.499Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mry17xjja6f4ps",
+      "type": "reaction",
+      "target": "mercado-pases",
+      "value": "no",
+      "page": "engage/2026-07-23-mercado-pases.html",
+      "ts": "2026-07-23T21:37:12.847Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mry17zgogleyde",
+      "type": "answer",
+      "qid": "mercado-pases-suscripcion-diaria",
+      "value": "no",
+      "page": "engage/2026-07-23-mercado-pases.html",
+      "ts": "2026-07-23T21:37:15.336Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mry183f5ljfv21",
+      "type": "proposal_rejected",
+      "proposal_id": "2026-07-23-mercado-pases",
+      "ts": "2026-07-23T21:37:20.465Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mry18ph2kmv4hr",
+      "type": "feedback_text",
+      "target": "mercado-pases",
+      "text": "Mucho texto, muy cargado, no es realmente lo que busco en una app de jardin",
+      "page": "engage/2026-07-23-mercado-pases.html",
+      "ts": "2026-07-23T21:37:49.046Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mry18tw5u6yngw",
+      "type": "dwell",
+      "seconds": 150,
+      "scroll_pct": 97,
+      "page": "engage/2026-07-23-mercado-pases.html",
+      "ts": "2026-07-23T21:37:54.773Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrywvs2p7aykem",
+      "type": "page_visit",
+      "page": "engage/2026-07-01-horoscopo-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-24T12:23:33.600Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mryz9w8jddf6py",
+      "type": "page_visit",
+      "page": "engage/2026-07-01-consultorio-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-24T13:30:31.410Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz0n8j8dhb7p2",
+      "type": "page_visit",
+      "page": "engage/2026-07-02-confesiones-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-24T14:08:53.491Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz5rozkntav33",
+      "type": "page_visit",
+      "page": "engage/2026-07-09-quiz-planta.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-24T16:32:19.520Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8e4k3xgc934",
+      "type": "notification_clicked",
+      "nid": "2026-07-24-task-dia",
+      "page": "tasks/plant-F-1.html",
+      "ts": "2026-07-24T17:45:45.355Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrz8e4k3rk40rh",
+      "type": "page_visit",
+      "page": "tasks/plant-F-1.html",
+      "nid": "2026-07-24-task-dia",
+      "src": "push",
+      "ts": "2026-07-24T17:45:45.355Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrz8egn3q8zu05",
+      "type": "notification_clicked",
+      "nid": "2026-07-24-a",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-24T17:46:01.019Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8egn3zzkwfz",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-07-24-a",
+      "src": "push",
+      "ts": "2026-07-24T17:46:01.019Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8faxgvo12i6",
+      "type": "dwell",
+      "seconds": 39,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-24T17:46:40.276Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8fbx2y1fmyp",
+      "type": "notification_clicked",
+      "nid": "2026-07-24-pendientes",
+      "page": "engage/tareas-pendientes.html",
+      "ts": "2026-07-24T17:46:41.556Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8fbx2bby7o5",
+      "type": "page_visit",
+      "page": "engage/tareas-pendientes.html",
+      "nid": "2026-07-24-pendientes",
+      "src": "push",
+      "ts": "2026-07-24T17:46:41.556Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8gm39xm54as",
+      "type": "dwell",
+      "seconds": 60,
+      "scroll_pct": 100,
+      "page": "engage/tareas-pendientes.html",
+      "ts": "2026-07-24T17:47:41.397Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8grjfa6msqu",
+      "type": "page_visit",
+      "page": "engage/tareas-pendientes.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-24T17:47:48.459Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8gtz3on6bpr",
+      "type": "page_visit",
+      "page": "engage/top3-tareas.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-24T17:47:51.615Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8gvyojouv0j",
+      "type": "dwell",
+      "seconds": 3,
+      "scroll_pct": 0,
+      "page": "engage/top3-tareas.html",
+      "ts": "2026-07-24T17:47:54.192Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8gxcrvpvn7x",
+      "type": "page_visit",
+      "page": "tasks/plant-F-1.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-24T17:47:55.992Z",
+      "device": "landing"
+    },
+    {
+      "_id": "mrz8h2swuxtngy",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-07-24-a",
+      "src": "push",
+      "ts": "2026-07-24T17:48:03.055Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8kca5l9zsb8",
+      "type": "feedback_text",
+      "target": "jardin-hoy",
+      "text": "Esta debería ser la push diaria.\nSaca \"¿Te sirve así de simple?\"\nSaca \"🌤️ Un vistazo cada mañana\"\nSaca \" ¿La dejo fija?\"\n\nSúmale un menú colapsado con las tareas de este mes (que quizás no son hoy pero si julio)\n\nSúmale un menú colapsado que sea de cosas para hacer en agosto \n\nRecordá si tenés alguna duda, especie desconocida o solicitud, estás tareas son el lugar para pedirlo",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-24T17:50:35.309Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz8kgvyjlydr2",
+      "type": "dwell",
+      "seconds": 158,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-24T17:50:41.278Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz956dlfivs96",
+      "type": "notification_clicked",
+      "nid": "2026-07-24-jardin-hoy-v2",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-24T18:06:47.432Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz956dl9ecpu4",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-07-24-jardin-hoy-v2",
+      "src": "push",
+      "ts": "2026-07-24T18:06:47.432Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz95i8b8rxlp0",
+      "type": "dwell",
+      "seconds": 15,
+      "scroll_pct": 72,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-24T18:07:02.795Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrz98ahk9jlfd0",
+      "type": "feedback_text",
+      "target": "jardin-hoy",
+      "text": "Que puedo hacer hoy?",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-24T18:09:12.728Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrzcbhzjawcyfj",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-24T19:35:41.262Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrzcdz8tzst31r",
+      "type": "feedback_text",
+      "target": "jardin-hoy",
+      "text": "Justo 3 tareas en cada módulo?  Nada más que quieras/precises que haga?\n\nAgregame una tarea que sea\"definir plantas para huerta\" y proponerme algunas sugerencias",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-24T19:37:36.941Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrzceb6z62wszx",
+      "type": "dwell",
+      "seconds": 131,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-24T19:37:52.427Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrzfuxorwsvzy5",
+      "type": "notification_clicked",
+      "nid": "2026-07-24-b",
+      "page": "engage/2026-07-24-tu-semana.html",
+      "ts": "2026-07-24T21:14:46.922Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrzfuxornhycrv",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-tu-semana.html",
+      "nid": "2026-07-24-b",
+      "src": "push",
+      "ts": "2026-07-24T21:14:46.922Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrzfvbgcwx1tg1",
+      "type": "answer",
+      "qid": "tu-semana-suscripcion-diaria",
+      "value": "si",
+      "page": "engage/2026-07-24-tu-semana.html",
+      "ts": "2026-07-24T21:15:04.764Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrzfvh3evaew8d",
+      "type": "dwell",
+      "seconds": 25,
+      "scroll_pct": 68,
+      "page": "engage/2026-07-24-tu-semana.html",
+      "ts": "2026-07-24T21:15:12.074Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mrzfx446mu2f0r",
+      "type": "feedback_text",
+      "target": "tu-semana",
+      "text": "Los plantines de palta no los toque, siguen contra la pared a la sombra",
+      "page": "engage/2026-07-24-tu-semana.html",
+      "ts": "2026-07-24T21:16:28.566Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms0d4xb38faajl",
+      "type": "page_visit",
+      "page": "engage/2026-07-03-reality-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-25T12:46:20.319Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms0ugx0g764n7x",
+      "type": "notification_clicked",
+      "nid": "2026-07-25-jardin-hoy",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-25T20:51:33.279Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms0ugx0g44m6d9",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-07-25-jardin-hoy",
+      "src": "push",
+      "ts": "2026-07-25T20:51:33.279Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms0uhd1gmsnae6",
+      "type": "dwell",
+      "seconds": 21,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-25T20:51:54.052Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms0uhd4euu4o8v",
+      "type": "page_visit",
+      "page": "engage/2026-07-25-mi-huerta.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-25T20:51:54.158Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms0uizfezwz3xf",
+      "type": "dwell",
+      "seconds": 76,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-25-mi-huerta.html",
+      "ts": "2026-07-25T20:53:09.722Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms0uizln29bb0r",
+      "type": "notification_clicked",
+      "nid": "2026-07-25-a",
+      "page": "engage/2026-07-25-mapa-solar.html",
+      "ts": "2026-07-25T20:53:09.946Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms0uizlnciy9ok",
+      "type": "page_visit",
+      "page": "engage/2026-07-25-mapa-solar.html",
+      "nid": "2026-07-25-a",
+      "src": "push",
+      "ts": "2026-07-25T20:53:09.946Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms0ujshy0p78uo",
+      "type": "notification_clicked",
+      "nid": "2026-07-25-reply-plant-F-1",
+      "page": "tasks/plant-F-1.html",
+      "ts": "2026-07-25T20:53:47.395Z",
+      "device": "landing"
+    },
+    {
+      "_id": "ms0ujshyryuqeh",
+      "type": "page_visit",
+      "page": "tasks/plant-F-1.html",
+      "nid": "2026-07-25-reply-plant-F-1",
+      "src": "push",
+      "ts": "2026-07-25T20:53:47.395Z",
+      "device": "landing"
+    },
+    {
+      "_id": "ms0ujp6uz0xakm",
+      "type": "dwell",
+      "seconds": 33,
+      "scroll_pct": 79,
+      "page": "engage/2026-07-25-mapa-solar.html",
+      "ts": "2026-07-25T20:53:43.109Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2buklj6uan6g",
+      "type": "notification_clicked",
+      "nid": "2026-07-26-a",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:45:50.022Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bukljlylge1",
+      "type": "page_visit",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "nid": "2026-07-26-a",
+      "src": "push",
+      "ts": "2026-07-26T21:45:50.022Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bvab47ed79m",
+      "type": "answer",
+      "qid": "vd-huerta-lugar",
+      "value": "norte",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:46:23.344Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bvy13cus49n",
+      "type": "answer",
+      "qid": "vd-hortensia",
+      "value": "tierra",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:46:54.087Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bw6nclk7mff",
+      "type": "answer",
+      "qid": "vd-liquidambar",
+      "value": "yo",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:47:05.256Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bwdjl6praiz",
+      "type": "answer",
+      "qid": "vd-caqui",
+      "value": "observar",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:47:14.193Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bwotamffzav",
+      "type": "answer",
+      "qid": "vd-agosto",
+      "value": "prioridad",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:47:28.798Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bwujzgzjwkz",
+      "type": "answer",
+      "qid": "vos-decidis-suscripcion-diaria",
+      "value": "si",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:47:36.239Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bwweip4x0gl",
+      "type": "reaction",
+      "target": "vos-decidis",
+      "value": "like",
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:47:38.634Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2bx1rripqmoy",
+      "type": "dwell",
+      "seconds": 116,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-26-vos-decidis.html",
+      "ts": "2026-07-26T21:47:45.590Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2i5ue701fhir",
+      "type": "notification_clicked",
+      "nid": "2026-07-26-b",
+      "page": "engage/2026-07-26-mi-primavera.html",
+      "ts": "2026-07-27T00:42:33.630Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2i5ue795pg3x",
+      "type": "page_visit",
+      "page": "engage/2026-07-26-mi-primavera.html",
+      "nid": "2026-07-26-b",
+      "src": "push",
+      "ts": "2026-07-27T00:42:33.630Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2i5zfj5kaau0",
+      "type": "answer",
+      "qid": "mi-primavera-prioridad",
+      "value": "B-13",
+      "page": "engage/2026-07-26-mi-primavera.html",
+      "ts": "2026-07-27T00:42:40.159Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2i65hhorlvgk",
+      "type": "answer",
+      "qid": "mi-primavera-prioridad",
+      "value": "F-7",
+      "page": "engage/2026-07-26-mi-primavera.html",
+      "ts": "2026-07-27T00:42:48.005Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2i6b53szu0sn",
+      "type": "answer",
+      "qid": "mi-primavera-suscripcion-diaria",
+      "value": "no",
+      "page": "engage/2026-07-26-mi-primavera.html",
+      "ts": "2026-07-27T00:42:55.335Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2i6dk0rec7bt",
+      "type": "proposal_rejected",
+      "proposal_id": "2026-07-26-mi-primavera",
+      "ts": "2026-07-27T00:42:58.464Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms2i6f0pzfvcfl",
+      "type": "dwell",
+      "seconds": 27,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-26-mi-primavera.html",
+      "ts": "2026-07-27T00:43:00.361Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3ttc3p1h170w",
+      "type": "notification_clicked",
+      "nid": "2026-07-27-a",
+      "page": "engage/2026-07-27-vos-decidis.html",
+      "ts": "2026-07-27T22:56:31.620Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3ttc3pvuuct9",
+      "type": "page_visit",
+      "page": "engage/2026-07-27-vos-decidis.html",
+      "nid": "2026-07-27-a",
+      "src": "push",
+      "ts": "2026-07-27T22:56:31.620Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3ttgl0az7z3f",
+      "type": "answer",
+      "qid": "vd2-huerta-arranque",
+      "value": "lechuga",
+      "page": "engage/2026-07-27-vos-decidis.html",
+      "ts": "2026-07-27T22:56:37.427Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3tu19s7zfj8s",
+      "type": "dwell",
+      "seconds": 33,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-27-vos-decidis.html",
+      "ts": "2026-07-27T22:57:04.240Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3urp6x2kaytf",
+      "type": "notification_clicked",
+      "nid": "2026-07-27-b",
+      "page": "engage/2026-07-27-mi-objetivo.html",
+      "ts": "2026-07-27T23:23:14.887Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3urp6x8pjeqb",
+      "type": "page_visit",
+      "page": "engage/2026-07-27-mi-objetivo.html",
+      "nid": "2026-07-27-b",
+      "src": "push",
+      "ts": "2026-07-27T23:23:14.887Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3urx2qpf6tmx",
+      "type": "answer",
+      "qid": "mi-objetivo-goal",
+      "value": "flor",
+      "page": "engage/2026-07-27-mi-objetivo.html",
+      "ts": "2026-07-27T23:23:25.106Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3ury712ng76l",
+      "type": "answer",
+      "qid": "mi-objetivo-goal",
+      "value": "sombra",
+      "page": "engage/2026-07-27-mi-objetivo.html",
+      "ts": "2026-07-27T23:23:26.557Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3urz8c3pjwbr",
+      "type": "answer",
+      "qid": "mi-objetivo-goal",
+      "value": "flor",
+      "page": "engage/2026-07-27-mi-objetivo.html",
+      "ts": "2026-07-27T23:23:27.900Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3usnenv6tehg",
+      "type": "answer",
+      "qid": "mi-objetivo-goal",
+      "value": "huerta",
+      "page": "engage/2026-07-27-mi-objetivo.html",
+      "ts": "2026-07-27T23:23:59.231Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3usrauarkclc",
+      "type": "answer",
+      "qid": "mi-objetivo-goal",
+      "value": "flor",
+      "page": "engage/2026-07-27-mi-objetivo.html",
+      "ts": "2026-07-27T23:24:04.278Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms3usuoguaw58g",
+      "type": "dwell",
+      "seconds": 54,
+      "scroll_pct": 95,
+      "page": "engage/2026-07-27-mi-objetivo.html",
+      "ts": "2026-07-27T23:24:08.656Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms4rhav42vxyl1",
+      "type": "notification_clicked",
+      "nid": "2026-07-28-jardin-hoy",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-28T14:38:57.087Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms4rhav4duqwtm",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-07-28-jardin-hoy",
+      "src": "push",
+      "ts": "2026-07-28T14:38:57.087Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms4rlmiy1t31hg",
+      "type": "feedback_text",
+      "target": "jardin-hoy",
+      "text": "Cada tarea debería tener una caja como está de feedback así te puedo dejar comentarios.\n1- ignora lo de la lechuga, me voy de viaje en 10dias y no va a suceder antes.  A mi vuelta a fin de agosto lo vemos\n2- incluirme en ka tarea una foto de la especie así estoy seguro cuál es \n3- caqui ignóralo hAsta primavera porque no sabemos qué es\n4 mándame esto de nuevo",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-28T14:42:18.826Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms4rlsvdminmty",
+      "type": "dwell",
+      "seconds": 210,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-28T14:42:27.049Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51cejawh3s99",
+      "type": "notification_clicked",
+      "nid": "2026-07-28-b",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:15:04.722Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51cejas9bx9f",
+      "type": "page_visit",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "nid": "2026-07-28-b",
+      "src": "push",
+      "ts": "2026-07-28T19:15:04.722Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51cjhenz5rbo",
+      "type": "answer",
+      "qid": "ee-orgullo",
+      "value": "fruta",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:15:11.138Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51cpw3vootth",
+      "type": "answer",
+      "qid": "ee-ficha",
+      "value": "flor",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:15:19.443Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51ctopd8rdr1",
+      "type": "answer",
+      "qid": "ee-manos",
+      "value": "yo",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:15:24.361Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51cx9ktcs8nw",
+      "type": "answer",
+      "qid": "ee-momento",
+      "value": "manana",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:15:29.000Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51d2vznzc6yc",
+      "type": "answer",
+      "qid": "ee-mimar",
+      "value": "frutal",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:15:36.286Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51d83igpq611",
+      "type": "answer",
+      "qid": "esto-o-esto-suscripcion-diaria",
+      "value": "no",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:15:43.038Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51d9iguyrk0u",
+      "type": "reaction",
+      "target": "esto-o-esto",
+      "value": "meh",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:15:44.872Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51e1p7pqic2x",
+      "type": "feedback_text",
+      "target": "esto-o-esto",
+      "text": "No es mi tipo de experiencia.\n\nRevisa lo que te escribí más temprano en el liquidámbar.",
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:16:21.403Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51e3r3l4e09t",
+      "type": "proposal_rejected",
+      "proposal_id": "2026-07-28-esto-o-esto",
+      "ts": "2026-07-28T19:16:24.063Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms51e93nx9dcrk",
+      "type": "dwell",
+      "seconds": 86,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-28-esto-o-esto.html",
+      "ts": "2026-07-28T19:16:30.995Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms5b71r08kcycl",
+      "type": "notification_clicked",
+      "nid": "2026-07-28-a",
+      "page": "engage/2026-07-28-vos-decidis.html",
+      "ts": "2026-07-28T23:50:51.033Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms5b71r0ic9n8o",
+      "type": "page_visit",
+      "page": "engage/2026-07-28-vos-decidis.html",
+      "nid": "2026-07-28-a",
+      "src": "push",
+      "ts": "2026-07-28T23:50:51.033Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms5b76gz7e6k39",
+      "type": "proposal_rejected",
+      "proposal_id": "2026-07-28-vos-decidis",
+      "ts": "2026-07-28T23:50:57.155Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms5b7acc9tfylz",
+      "type": "answer",
+      "qid": "vos-decidis-suscripcion-diaria",
+      "value": "no",
+      "page": "engage/2026-07-28-vos-decidis.html",
+      "ts": "2026-07-28T23:51:02.171Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms5b7dbe38szgc",
+      "type": "dwell",
+      "seconds": 15,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-28-vos-decidis.html",
+      "ts": "2026-07-28T23:51:06.025Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms6p4hubhtqftq",
+      "type": "notification_clicked",
+      "nid": "2026-07-29-a",
+      "page": "engage/2026-07-29-los-que-no-duermen.html",
+      "ts": "2026-07-29T23:08:32.721Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms6p4hubli3an6",
+      "type": "page_visit",
+      "page": "engage/2026-07-29-los-que-no-duermen.html",
+      "nid": "2026-07-29-a",
+      "src": "push",
+      "ts": "2026-07-29T23:08:32.721Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms6p4szhwg2euc",
+      "type": "dwell",
+      "seconds": 14,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-29-los-que-no-duermen.html",
+      "ts": "2026-07-29T23:08:47.165Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms6qdrkl8e0w5w",
+      "type": "notification_clicked",
+      "nid": "2026-07-29-b",
+      "page": "engage/2026-07-29-antes-de-irte.html",
+      "ts": "2026-07-29T23:43:44.852Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms6qdrklt6v18m",
+      "type": "page_visit",
+      "page": "engage/2026-07-29-antes-de-irte.html",
+      "nid": "2026-07-29-b",
+      "src": "push",
+      "ts": "2026-07-29T23:43:44.852Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms6qeeqj0t812p",
+      "type": "dwell",
+      "seconds": 30,
+      "scroll_pct": 86,
+      "page": "engage/2026-07-29-antes-de-irte.html",
+      "ts": "2026-07-29T23:44:14.874Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7odgy6wc9yqg",
+      "type": "notification_clicked",
+      "nid": "2026-07-30-jardin-hoy",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-30T15:35:18.027Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7odgy6zcrl6r",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-07-30-jardin-hoy",
+      "src": "push",
+      "ts": "2026-07-30T15:35:18.027Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7oefqonwr5xg",
+      "type": "dwell",
+      "seconds": 45,
+      "scroll_pct": 93,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-30T15:36:03.120Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7q0lm9kvcx7l",
+      "type": "notification_clicked",
+      "nid": "2026-07-30-jardin-hoy-sol",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-30T16:21:16.784Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7q0lm9sdnk0b",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-07-30-jardin-hoy-sol",
+      "src": "push",
+      "ts": "2026-07-30T16:21:16.784Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7q18bydokfi7",
+      "type": "feedback_text",
+      "target": "jh-liquidambar-B37",
+      "text": "Ya quedó hecho esto",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-30T16:21:46.222Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7q332t7pc76k",
+      "type": "feedback_text",
+      "target": "jardin-hoy",
+      "text": "Agregame una foto a las especies en las tareas de agosto también así se a qué hacen referencia.  Cada especie/tarea debería tener la posibilidad de dejarte un comentario",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-30T16:23:12.725Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7q4kktav0jot",
+      "type": "feedback_text",
+      "target": "jh-hortensia-B5",
+      "text": "Mi viaje va a ser del 7-23 de agosto.  Actualiza esta y todas las otras pendientes de julio y agosto para recomendarme si conviene hacerlo antes o después del viaje",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-30T16:24:22.061Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7q4v3vs1fw00",
+      "type": "dwell",
+      "seconds": 199,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-30T16:24:35.707Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7tsq7jt94thq",
+      "type": "notification_clicked",
+      "nid": "2026-07-30-jardin-hoy-viaje",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-30T18:07:07.950Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7tsq7j8xcpdw",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-07-30-jardin-hoy-viaje",
+      "src": "push",
+      "ts": "2026-07-30T18:07:07.950Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7ttilnybcvxp",
+      "type": "dwell",
+      "seconds": 37,
+      "scroll_pct": 50,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-07-30T18:07:44.747Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7ttiu5zyfk5g",
+      "type": "page_visit",
+      "page": "tasks/plant-B-30.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-30T18:07:45.052Z",
+      "device": "landing"
+    },
+    {
+      "_id": "ms7tvsjvkabcc5",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-30T18:09:30.952Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms7u48a357bi9p",
+      "type": "page_visit",
+      "page": "tasks/plant-B-38.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-07-30T18:16:04.584Z",
+      "device": "landing"
+    },
+    {
+      "_id": "ms7wtxf79onwvw",
+      "type": "notification_clicked",
+      "nid": "2026-07-30-reply-plant-B-30",
+      "page": "tasks/plant-B-30.html",
+      "ts": "2026-07-30T19:32:02.797Z",
+      "device": "landing"
+    },
+    {
+      "_id": "ms7wtxf7f22ulz",
+      "type": "page_visit",
+      "page": "tasks/plant-B-30.html",
+      "nid": "2026-07-30-reply-plant-B-30",
+      "src": "push",
+      "ts": "2026-07-30T19:32:02.797Z",
+      "device": "landing"
+    },
+    {
+      "_id": "ms9j3p31y7wekc",
+      "type": "notification_clicked",
+      "nid": "2026-07-31-el-parte",
+      "page": "engage/2026-07-31-el-parte.html",
+      "ts": "2026-07-31T22:43:16.283Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "ms9j3p31411uok",
+      "type": "page_visit",
+      "page": "engage/2026-07-31-el-parte.html",
+      "nid": "2026-07-31-el-parte",
+      "src": "push",
+      "ts": "2026-07-31T22:43:16.283Z",
+      "device": "sin-nombre"
+    }
+  ],
+  "daily_summary": {
+    "2026-06-28": {
+      "sent": 3,
+      "clicked": 0,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-06-27": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-06-24": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-06-12": {
+      "sent": 14,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-06-13": {
+      "sent": 21,
+      "clicked": 3,
+      "visits": 4,
+      "approvals": 1
+    },
+    "2026-06-14": {
+      "sent": 39,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-06-15": {
+      "sent": 19,
+      "clicked": 2,
+      "visits": 4,
+      "approvals": 0
+    },
+    "2026-06-16": {
+      "sent": 20,
+      "clicked": 1,
+      "visits": 3,
+      "approvals": 0
+    },
+    "2026-06-17": {
+      "sent": 13,
+      "clicked": 1,
+      "visits": 4,
+      "approvals": 0
+    },
+    "2026-06-18": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 3,
+      "approvals": 1
+    },
+    "2026-06-19": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-06-20": {
+      "sent": 3,
+      "clicked": 3,
+      "visits": 3,
+      "approvals": 0
+    },
+    "2026-06-21": {
+      "sent": 3,
+      "clicked": 3,
+      "visits": 3,
+      "approvals": 0
+    },
+    "2026-06-22": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-06-23": {
+      "sent": 5,
+      "clicked": 3,
+      "visits": 5,
+      "approvals": 0
+    },
+    "2026-06-25": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-06-26": {
+      "sent": 3,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-06-29": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 3,
+      "approvals": 2
+    },
+    "2026-06-30": {
+      "sent": 3,
+      "clicked": 5,
+      "visits": 6,
+      "approvals": 4
+    },
+    "2026-07-01": {
+      "sent": 3,
+      "clicked": 3,
+      "visits": 5,
+      "approvals": 2
+    },
+    "2026-07-02": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 2,
+      "approvals": 1
+    },
+    "2026-07-03": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 1
+    },
+    "2026-07-04": {
+      "sent": 4,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 1
+    },
+    "2026-07-05": {
+      "sent": 0,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-07-06": {
+      "sent": 5,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-07-07": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 4,
+      "approvals": 0
+    },
+    "2026-07-08": {
+      "sent": 5,
+      "clicked": 4,
+      "visits": 5,
+      "approvals": 1
+    },
+    "2026-07-09": {
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 2,
+      "sent": 4
+    },
+    "2026-07-10": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 1
+    },
+    "2026-07-11": {
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0,
+      "sent": 4
+    },
+    "2026-07-12": {
+      "sent": 5,
+      "clicked": 2,
+      "visits": 4,
+      "approvals": 0
+    },
+    "2026-07-13": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-07-14": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-07-16": {
+      "sent": 5,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    }
   }
- ],
- "daily_summary": {
-  "2026-06-28": {
-   "sent": 3,
-   "clicked": 0,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-06-27": {
-   "sent": 3,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-06-24": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-06-12": {
-   "sent": 14,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-06-13": {
-   "sent": 21,
-   "clicked": 3,
-   "visits": 4,
-   "approvals": 1
-  },
-  "2026-06-14": {
-   "sent": 39,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-06-15": {
-   "sent": 19,
-   "clicked": 2,
-   "visits": 4,
-   "approvals": 0
-  },
-  "2026-06-16": {
-   "sent": 20,
-   "clicked": 1,
-   "visits": 3,
-   "approvals": 0
-  },
-  "2026-06-17": {
-   "sent": 13,
-   "clicked": 1,
-   "visits": 4,
-   "approvals": 0
-  },
-  "2026-06-18": {
-   "sent": 3,
-   "clicked": 2,
-   "visits": 3,
-   "approvals": 1
-  },
-  "2026-06-19": {
-   "sent": 3,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-06-20": {
-   "sent": 3,
-   "clicked": 3,
-   "visits": 3,
-   "approvals": 0
-  },
-  "2026-06-21": {
-   "sent": 3,
-   "clicked": 3,
-   "visits": 3,
-   "approvals": 0
-  },
-  "2026-06-22": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-06-23": {
-   "sent": 5,
-   "clicked": 3,
-   "visits": 5,
-   "approvals": 0
-  },
-  "2026-06-25": {
-   "sent": 3,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-06-26": {
-   "sent": 3,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-06-29": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 3,
-   "approvals": 2
-  },
-  "2026-06-30": {
-   "sent": 3,
-   "clicked": 5,
-   "visits": 6,
-   "approvals": 4
-  },
-  "2026-07-01": {
-   "sent": 3,
-   "clicked": 3,
-   "visits": 5,
-   "approvals": 2
-  },
-  "2026-07-02": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 2,
-   "approvals": 1
-  },
-  "2026-07-03": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 1
-  },
-  "2026-07-04": {
-   "sent": 4,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 1
-  },
-  "2026-07-05": {
-   "sent": 0,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-07-06": {
-   "sent": 5,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-07-07": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 4,
-   "approvals": 0
-  },
-  "2026-07-08": {
-   "sent": 5,
-   "clicked": 4,
-   "visits": 5,
-   "approvals": 1
-  },
-  "2026-07-09": {
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 2,
-   "sent": 4
-  },
-  "2026-07-10": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 1
-  },
-  "2026-07-11": {
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0,
-   "sent": 4
-  },
-  "2026-07-12": {
-   "sent": 5,
-   "clicked": 2,
-   "visits": 4,
-   "approvals": 0
-  },
-  "2026-07-13": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-07-14": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-07-16": {
-   "sent": 5,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  }
- }
 }
