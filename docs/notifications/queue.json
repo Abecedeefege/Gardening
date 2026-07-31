@@ -1,57 +1,17 @@
 {
-  "_updated_at": "2026-07-30T18:54:52.469Z",
+  "_updated_at": "2026-07-31T06:20:00-03:00",
   "notifications": [
     {
-      "id": "2026-07-30-jardin-hoy",
-      "title": "🌤️ Tu jardín hoy · modo viaje",
-      "body": "Nada urgente afuera. Falta una sola decisión que cerrás desde el sillón: el rincón de la hortensia. La huerta te espera para septiembre.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
-      "format": "tarea",
-      "send_at": "2026-07-30T10:00:00-03:00",
-      "expires_at": "2026-07-30T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-30T13:55:19.838Z",
+      "id": "2026-07-31-el-parte",
+      "title": "📰 Salió El Parte de tu jardín",
+      "body": "La mandarina está en su punto, el pindó tiene coquitos y el viraró despierta en agosto. Tu diario de hoy.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-31-el-parte.html",
+      "send_at": "2026-07-31T18:00:00-03:00",
+      "expires_at": "2026-07-31T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-30 (push diaria consolidada, modo viaje, refrescada al 30/07)"
-    },
-    {
-      "id": "2026-07-30-jardin-hoy-sol",
-      "title": "☀️ ¿Salís a podar? Solo una cosa hoy",
-      "body": "Día seco y soleado: la única poda que conviene ahora es la rama del liquidámbar sobre la palta. El resto es para agosto. Abrí y mirá el paso a paso.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
-      "format": "tarea",
-      "send_at": "2026-07-30T12:45:00-03:00",
-      "expires_at": "2026-07-30T20:30:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-30T15:51:48.972Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-30 (push extra a pedido del usuario: sale al jardin soleado, foco poda; huerta/lechuga removida)"
-    },
-    {
-      "id": "2026-07-30-jardin-hoy-viaje",
-      "title": "🧳 Reordené tus tareas al viaje",
-      "body": "Del 7 al 23 no estás: 4 tareas van antes de irte (los carozos, sí o sí) y 11 quedan para la vuelta.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
-      "format": "tarea",
-      "send_at": "2026-07-30T14:55:00-03:00",
-      "expires_at": "2026-07-30T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-30T18:00:50.055Z",
-      "fail_reason": null,
-      "created_by": "daily-tasks-review 2026-07-30 (pedido directo, envio adelantado a mano: feedback del daily ejecutado — B-37 hecho, foto+comentario en todas las de agosto, plan reordenado al viaje 7-23/08)"
-    },
-    {
-      "id": "2026-07-30-reply-plant-B-30",
-      "title": "🌿 Te contesté: sí, el durazno hoy",
-      "body": "Cortando hoy le das 48 h de secado antes de la lluvia del sábado. Aprovechá y hacé el ciruelo y la ciruela también.",
-      "url": "https://gardening-chi.vercel.app/tasks/plant-B-30.html",
-      "format": "tarea",
-      "send_at": "2026-07-30T15:20:00-03:00",
-      "expires_at": "2026-07-30T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-30T18:54:52.468Z",
-      "fail_reason": null,
-      "created_by": "responder-tareas 2026-07-30"
+      "created_by": "engagement-agent 2026-07-31"
     }
   ]
 }

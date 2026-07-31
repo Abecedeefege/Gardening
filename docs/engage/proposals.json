@@ -934,6 +934,18 @@
       "hypothesis": "Vender TRANQUILIDAD (quitar preocupación) al viajero pega más que sumar tareas. Honra el contexto real del viaje SIN nagear, con prueba biológica por planta (nativa/dormancia/raíz). Cast 100% fresco (B-34 mandioca, B-42 pata de vaca, B-43 pitósporo, rested) con fotos reales. Slot dorado 18:00. Ángulo alivio pero CON sustancia (el porqué), no alivio pasivo vacío.",
       "notified_by": [],
       "result_notes": "Construida 30/07 (jueves = día tarea-only con la cadencia nueva) → NO pusheada. Migrada al CTA de slots disponibles (Lun18/Sáb11). Queda como candidata del pool para el próximo slot de experiencia (Sáb 01/08 11:00). Recurre solo si el usuario prende un slot / la aprueba."
+    },
+    {
+      "id": "2026-07-31-el-parte",
+      "title": "📰 El Parte del Jardín (diario personalizado news-feed)",
+      "page": "engage/2026-07-31-el-parte.html",
+      "created": "2026-07-31",
+      "status": "pending",
+      "hypothesis": "Un formato NOTICIERO/diario del jardín real (despachos fechados con foto+dato verídico) entrega la SUSTANCIA que el usuario premia y justifica de forma natural la recurrencia (un diario tiene edición nueva cada día). Cast fresco+seasonal (mandarina/pindó en fruto, viraró que despierta en el viaje, lavanda) evita la repetición que el usuario odia. Espero 😍 y/o al menos un slot prendido.",
+      "notified_by": [
+        "2026-07-31-el-parte"
+      ],
+      "result_notes": null
     }
   ]
 }

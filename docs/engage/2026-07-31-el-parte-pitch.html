@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#22331a"><title>💼 Pitch · El Parte del Jardín</title>
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#3f6e22; --papel:#f5faf0; --papel2:#eaf2e0;
+    --tinta:#24301a; --tinta2:#566049; --linea:#d4e0c6; --oro:#c79a2e; --rojo:#9a2b1e;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    --serif:Georgia,"Times New Roman",serif;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; margin:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); color:var(--tinta); background:#22331a; line-height:1.55; -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:760px; margin:0 auto; background:var(--papel); box-shadow:0 18px 60px rgba(0,0,0,.4); }
+  .back{ display:block; color:#dfe9d2; text-decoration:none; font-size:13px; font-weight:700; padding:11px var(--pad); background:#22331a; }
+  .back:active{ opacity:.8; }
+
+  .hero{ background:linear-gradient(155deg,#2d5016,#1a3010); color:#eef3e6; padding:40px var(--pad) 34px; }
+  .hero .eyebrow{ font-size:11px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:#c2dca0; }
+  .hero h1{ font-family:var(--serif); font-size:clamp(30px,8.5vw,46px); line-height:1.04; font-weight:900; margin:10px 0 12px; }
+  .hero .em{ font-size:34px; display:block; margin-bottom:4px; }
+  .hero p{ font-size:clamp(15px,4.2vw,18px); max-width:48ch; opacity:.94; }
+  .hero .stat-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; }
+  .stat{ background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:12px; padding:12px 14px; flex:1 1 130px; }
+  .stat b{ display:block; font-family:var(--serif); font-size:26px; color:#e0c45a; line-height:1; }
+  .stat span{ font-size:12px; opacity:.85; }
+
+  .sec{ padding:34px var(--pad); border-bottom:1px solid var(--linea); }
+  .sec h2{ font-family:var(--serif); font-size:clamp(23px,6vw,32px); font-weight:900; line-height:1.1; margin-bottom:6px; }
+  .sec .lead{ color:var(--tinta2); font-size:15.5px; max-width:54ch; margin-bottom:18px; }
+  .label{ font-size:11px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:var(--verde2); margin-bottom:8px; }
+  .label.alt{ color:var(--oro); }
+
+  p.body{ font-size:15.5px; margin-bottom:12px; max-width:60ch; }
+  .why{ background:var(--papel2); border-radius:12px; padding:16px 16px; margin-top:14px; }
+  .why h4{ font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--verde); margin-bottom:8px; }
+  .why ul{ margin:0; padding-left:18px; } .why li{ font-size:14.5px; margin-bottom:6px; }
+  .why li b{ color:var(--verde); }
+
+  .grid{ display:grid; gap:16px; }
+  .card{ border:1px solid var(--linea); border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 6px 20px rgba(40,60,20,.07); }
+  .card .top{ padding:16px 17px 12px; background:linear-gradient(160deg,#f0f6e8,#e3eed6); border-bottom:1px solid var(--linea); }
+  .card.alt .top{ background:linear-gradient(160deg,#fbf2dc,#f4e6c3); }
+  .card .num{ font-family:var(--serif); font-size:13px; font-weight:800; color:var(--verde2); letter-spacing:.05em; }
+  .card.alt .num{ color:var(--oro); }
+  .card h3{ font-family:var(--serif); font-size:21px; font-weight:900; line-height:1.12; margin:3px 0 2px; }
+  .card .tagline{ font-size:13.5px; color:var(--tinta2); font-style:italic; }
+  .card .body-in{ padding:15px 17px 18px; }
+  .card .row{ display:flex; gap:8px; font-size:13.5px; padding:7px 0; border-bottom:1px dashed var(--linea); }
+  .card .row:last-child{ border-bottom:none; }
+  .card .row .k{ font-weight:800; min-width:104px; color:var(--verde); flex:none; }
+  .card.alt .row .k{ color:var(--oro); }
+  .card .row .v{ color:#33402a; }
+  .price{ display:inline-block; font-family:var(--serif); font-weight:900; font-size:18px; color:var(--verde); margin-top:6px; }
+  .card.alt .price{ color:#9a6a0e; }
+  .effort{ display:inline-flex; gap:5px; align-items:center; font-size:11.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; padding:4px 9px; border-radius:999px; margin-top:8px; }
+  .effort.lo{ background:#e2f0d3; color:#3f6e22; } .effort.mid{ background:#fbf0d4; color:#9a6a0e; } .effort.hi{ background:#f6dfd9; color:#9a2b1e; }
+
+  .close{ background:linear-gradient(155deg,#2d5016,#1a3010); color:#eef3e6; padding:38px var(--pad) 44px; }
+  .close h2{ font-family:var(--serif); font-size:clamp(24px,6.5vw,34px); font-weight:900; margin-bottom:14px; color:#fff; }
+  .close p{ font-size:16px; max-width:52ch; opacity:.95; margin-bottom:12px; }
+  .close .kick{ font-size:11px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:#c2dca0; margin-bottom:8px; }
+  .foot{ text-align:center; color:var(--tinta2); font-size:11.5px; padding:18px var(--pad) 26px; }
+</style>
+</head>
+<body>
+<a class="back" href="2026-07-31-el-parte.html">← Volver a El Parte</a>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="eyebrow">Deck de monetización</span>
+    <h1><span class="em">📰</span>El Parte del Jardín</h1>
+    <p>El noticiero diario del jardín real de cada persona. Foto verdadera + un dato accionable y sorprendente, con tono de titular pero 100% verídico. Una edición nueva cada mañana: el formato news-feed convierte la curiosidad en hábito diario.</p>
+    <div class="stat-row">
+      <div class="stat"><b>1×/día</b><span>edición fresca = razón para volver a abrir</span></div>
+      <div class="stat"><b>0</b><span>datos inventados: todo sale del catálogo real</span></div>
+      <div class="stat"><b>6</b><span>vías de monetización, 3 viables + 3 audaces</span></div>
+    </div>
+  </header>
+
+  <!-- POR QUÉ RETIENE -->
+  <section class="sec">
+    <div class="label">El producto</div>
+    <h2>Por qué un diario retiene donde un quiz aburre</h2>
+    <p class="body">Los formatos gimmick (duelos, quizzes, countdowns) se agotan: una vez que jugaste, ya está. Un <b>diario no se agota nunca</b> porque el mundo que reporta cambia solo: el jardín florece, fructifica, duerme y despierta al ritmo de las estaciones. Cada mañana hay novedad genuina que reportar, y esa novedad es sobre algo que el usuario ama y posee: <i>su</i> jardín.</p>
+    <div class="why">
+      <h4>Los tres motores de retención</h4>
+      <ul>
+        <li><b>Hábito de portada:</b> el news-feed entrena a abrir a la misma hora, como el diario de papel o el feed de una app.</li>
+        <li><b>Sustancia, no gimmick:</b> cada tarjeta enseña algo verídico y accionable — el usuario sale sabiendo más de su jardín.</li>
+        <li><b>Fenología como calendario editorial infinito:</b> la naturaleza escribe los titulares gratis, 365 días al año. Nunca falta tema.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- INNOVADORES -->
+  <section class="sec">
+    <div class="label">Vías viables · cercanas</div>
+    <h2>3 modelos innovadores</h2>
+    <p class="lead">Rentabilidad realista con el producto casi tal como está hoy. Bajo riesgo, encajan con la fenología real.</p>
+    <div class="grid">
+
+      <article class="card">
+        <div class="top">
+          <div class="num">Modelo 01</div>
+          <h3>El Parte Premium</h3>
+          <div class="tagline">Suscripción del diario, con edición ampliada.</div>
+        </div>
+        <div class="body-in">
+          <div class="row"><span class="k">Cómo funciona</span><span class="v">La edición gratis cubre 3-4 plantas destacadas del día. Premium reporta las 40 especies, agrega alertas fenológicas anticipadas ("tu pera florece en 6 días") y el archivo histórico de ediciones.</span></div>
+          <div class="row"><span class="k">Por qué encaja</span><span class="v">El hábito diario ya está construido; premium solo profundiza lo que el usuario ya quiere. El valor sube justo cuando el jardín está más activo (primavera).</span></div>
+          <div class="row"><span class="k">Esfuerzo/retorno</span><span class="v">La infraestructura de contenido ya existe; se paywall-ea profundidad, no se crea de cero.</span></div>
+          <span class="price">USD 2-4 / mes</span>
+          <span class="effort lo">Esfuerzo bajo · retorno recurrente</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="top">
+          <div class="num">Modelo 02</div>
+          <h3>Despacho patrocinado por fenología</h3>
+          <div class="tagline">El vivero correcto, en el día correcto.</div>
+        </div>
+        <div class="body-in">
+          <div class="row"><span class="k">Cómo funciona</span><span class="v">Cuando el calendario real dice "la pera florece esta semana", El Parte suma un despacho patrocinado y contextual: el vivero o insumo que corresponde a ese momento exacto (fungicida de floración, abono de frutales), nunca genérico.</span></div>
+          <div class="row"><span class="k">Por qué encaja</span><span class="v">La fenología entrega timing de intención de compra perfecto. Es publicidad que llega justo cuando es útil, así que no molesta: se lee como consejo.</span></div>
+          <div class="row"><span class="k">Esfuerzo/retorno</span><span class="v">Requiere red de viveros locales; CPM alto por ultra-relevancia y baja competencia en el nicho.</span></div>
+          <span class="price">CPM premium · comisión por venta</span>
+          <span class="effort mid">Esfuerzo medio · retorno alto por relevancia</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="top">
+          <div class="num">Modelo 03</div>
+          <h3>El Parte White-Label</h3>
+          <div class="tagline">Viveros y paisajistas le dan el diario a sus clientes.</div>
+        </div>
+        <div class="body-in">
+          <div class="row"><span class="k">Cómo funciona</span><span class="v">Un vivero o estudio de paisajismo licencia la plataforma con su marca. Cada cliente que compró un jardín recibe "El Parte de [su vivero]" a diario. El vivero paga por cliente activo.</span></div>
+          <div class="row"><span class="k">Por qué encaja</span><span class="v">Resuelve el mayor problema del vivero: retención post-venta. El diario mantiene al cliente enganchado con la marca todos los días, y genera re-compra contextual.</span></div>
+          <div class="row"><span class="k">Esfuerzo/retorno</span><span class="v">B2B SaaS: ticket alto, pocos clientes necesarios para rentabilidad. El contenido se autogenera del catálogo de cada cliente.</span></div>
+          <span class="price">USD 200-800 / mes por vivero</span>
+          <span class="effort mid">Esfuerzo medio · retorno B2B recurrente</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ULTRA-CREATIVOS -->
+  <section class="sec">
+    <div class="label alt">Vías audaces · creativas</div>
+    <h2>3 modelos ultra-creativos</h2>
+    <p class="lead">Apuestas más arriesgadas, pero cada una nace de una fortaleza única del formato diario. Mayor techo, mayor esfuerzo.</p>
+    <div class="grid">
+
+      <article class="card alt">
+        <div class="top">
+          <div class="num">Modelo 04</div>
+          <h3>La Edición de Colección</h3>
+          <div class="tagline">El diario que se imprime en papel, una vez por estación.</div>
+        </div>
+        <div class="body-in">
+          <div class="row"><span class="k">Cómo funciona</span><span class="v">Cuatro veces al año, El Parte compila la mejor edición estacional en un periódico físico de verdad — impreso, con las fotos reales del jardín de ese trimestre. Llega por correo como objeto de colección / regalo.</span></div>
+          <div class="row"><span class="k">Por qué encaja</span><span class="v">El formato ya ES un diario: el salto a papel es natural y emotivo. Un año de jardín encuadernado es un regalo que nadie más puede dar. Convierte datos efímeros en patrimonio.</span></div>
+          <div class="row"><span class="k">Esfuerzo/retorno</span><span class="v">Print-on-demand; margen por unidad alto, ticket emocional. Estacional = 4 momentos de venta al año.</span></div>
+          <span class="price">USD 15-30 por edición impresa</span>
+          <span class="effort hi">Esfuerzo alto · margen y valor emocional altos</span>
+        </div>
+      </article>
+
+      <article class="card alt">
+        <div class="top">
+          <div class="num">Modelo 05</div>
+          <h3>Corresponsalías cruzadas</h3>
+          <div class="tagline">Suscribite al Parte del jardín de otro.</div>
+        </div>
+        <div class="body-in">
+          <div class="row"><span class="k">Cómo funciona</span><span class="v">Marketplace de jardines: podés suscribirte al Parte de un vecino, de un jardín botánico o de un creador famoso. Los mejores "corresponsales" (jardines espectaculares) monetizan su audiencia; la plataforma cobra revenue-share.</span></div>
+          <div class="row"><span class="k">Por qué encaja</span><span class="v">El viraró ya es "corresponsal del jardín en tu ausencia" — la metáfora periodística ya está en el producto. Un jardín interesante es contenido; el diario le da formato de medio con seguidores.</span></div>
+          <div class="row"><span class="k">Esfuerzo/retorno</span><span class="v">Efecto red: cada jardín es a la vez lector y emisor. Techo enorme si prende, riesgo de arranque en frío.</span></div>
+          <span class="price">Suscripción + revenue-share</span>
+          <span class="effort hi">Esfuerzo alto · techo tipo plataforma</span>
+        </div>
+      </article>
+
+      <article class="card alt">
+        <div class="top">
+          <div class="num">Modelo 06</div>
+          <h3>El Parte en Audio</h3>
+          <div class="tagline">Tu jardín, narrado en 90 segundos cada mañana.</div>
+        </div>
+        <div class="body-in">
+          <div class="row"><span class="k">Cómo funciona</span><span class="v">La edición del día se autogenera como micro-pódcast narrado: "Buenos días, hoy en tu jardín el romero sigue siendo el único en flor…". Se escucha con el mate, camino al trabajo, sin mirar pantalla. Premium de audio + slots de sponsor leído.</span></div>
+          <div class="row"><span class="k">Por qué encaja</span><span class="v">El contenido diario ya está escrito en tono de titular — es guion listo para voz. El audio captura el momento "mañana con mate" y suma un canal de hábito que la pantalla no cubre.</span></div>
+          <div class="row"><span class="k">Esfuerzo/retorno</span><span class="v">TTS autogenerado, costo marginal casi cero por edición. Sponsor de audio (host-read) tiene el CPM más alto del mercado publicitario.</span></div>
+          <span class="price">Premium audio + sponsor leído</span>
+          <span class="effort mid">Esfuerzo medio · costo marginal casi nulo</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="close">
+    <div class="kick">El pitch, en cuatro líneas</div>
+    <h2>Vendemos el único diario que nunca se queda sin noticias.</h2>
+    <p>El Parte del Jardín convierte algo que la gente ya ama —su propio jardín— en un hábito diario de 30 segundos, con sustancia real y foto verdadera. La naturaleza escribe los titulares gratis y sin fin, así que el costo de contenido tiende a cero mientras la retención tiende al hábito.</p>
+    <p>Arrancamos con la suscripción premium y el patrocinio fenológico —caja hoy, riesgo bajo—; el white-label abre el B2B; y las tres apuestas creativas (papel, corresponsalías, audio) le ponen un techo de plataforma. Un formato, seis motores, cero datos inventados.</p>
+  </section>
+
+  <div class="foot">Deck de monetización · El Parte del Jardín · 31/07/2026 · material de venta, datos y fotos del jardín real</div>
+
+</div>
+</body></html>

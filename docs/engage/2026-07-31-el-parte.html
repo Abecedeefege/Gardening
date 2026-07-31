@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>📰 El Parte del Jardín</title>
+<meta property="og:title" content="📰 El Parte del Jardín — Edición viernes 31/07">
+<meta property="og:description" content="El noticiero diario de tu jardín. Hoy: la mandarina está en su mejor punto, el pindó tiene coquitos colgando, y el viraró se prepara para despertar mientras vos viajás.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#fff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#eef7e0; --line:rgba(45,80,22,.12);
+    --sol:#e0a92e; --azul:#3f7d8a; --paper:#fbfdf6;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+    --serif:Georgia,"Times New Roman",Cambria,"Playfair Display",serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 26px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* ---- MASTHEAD (cabecera de diario) ---- */
+  .mast{ text-align:center; padding:26px 0 6px; }
+  .mast .top-rule{ display:flex; align-items:center; justify-content:space-between; font-size:10px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--ink3); border-bottom:1px solid var(--line); padding-bottom:7px; margin-bottom:12px; }
+  .mast .name{ font-family:var(--serif); font-weight:900; font-size:35px; line-height:1.02; letter-spacing:-.02em; color:var(--verde); }
+  .mast .name .em{ display:block; font-size:26px; margin-bottom:2px; }
+  .mast .rule{ border:none; border-top:3px double var(--verde2); margin:12px 0 8px; opacity:.55; }
+  .mast .sub{ font-family:var(--serif); font-style:italic; font-size:14px; color:var(--ink2); max-width:32ch; margin:2px auto 0; }
+  .mast .edcion{ display:inline-block; margin-top:11px; font-size:10.5px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:var(--verde2); background:var(--verde3); border:1px solid rgba(90,138,46,.28); border-radius:999px; padding:5px 13px; }
+
+  /* ---- PORTADA (lead) ---- */
+  .lead-lbl{ display:flex; align-items:center; gap:8px; margin:20px 0 2px; }
+  .lead-lbl .tag{ font-size:10px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:#fff; background:var(--verde); padding:4px 10px; border-radius:6px; }
+  .lead-lbl .hair{ flex:1; height:1px; background:var(--line); }
+
+  .lead{ background:var(--card); border:1px solid var(--line); border-radius:20px; overflow:hidden; box-shadow:0 10px 30px rgba(45,80,22,.09); }
+  .lead .ph{ position:relative; }
+  .lead img{ display:block; width:100%; height:220px; object-fit:cover; background:#e6efdc; }
+  .lead .code{ position:absolute; right:12px; top:12px; background:rgba(255,255,255,.92); color:var(--verde); font-size:10.5px; font-weight:800; font-family:ui-monospace,Menlo,monospace; padding:4px 9px; border-radius:999px; }
+  .lead .flag{ position:absolute; left:12px; top:12px; background:var(--sol); color:#3a2a00; font-size:11px; font-weight:900; letter-spacing:.02em; padding:5px 11px; border-radius:999px; box-shadow:0 3px 10px rgba(0,0,0,.18); }
+  .lead .body{ padding:18px 18px 20px; }
+  .lead .kicker{ font-size:11px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--verde2); }
+  .lead h2{ font-family:var(--serif); font-size:26px; font-weight:900; line-height:1.08; letter-spacing:-.01em; margin:5px 0 3px; }
+  .lead .sci{ font-size:12px; font-style:italic; color:var(--ink3); }
+  .lead .drop{ font-size:15px; color:var(--ink2); margin-top:11px; }
+  .lead .drop::first-letter{ font-family:var(--serif); font-weight:900; font-size:40px; float:left; line-height:.82; margin:3px 8px 0 0; color:var(--verde); }
+
+  .dato{ margin-top:13px; display:flex; gap:10px; align-items:flex-start; background:var(--verde3); border:1px solid rgba(90,138,46,.22); border-left:4px solid var(--verde2); border-radius:0 13px 13px 0; padding:12px 14px; }
+  .dato .ic{ font-size:19px; flex:none; }
+  .dato .txt{ font-size:13.5px; color:var(--ink); }
+  .dato .txt b{ color:var(--verde); }
+  .dato .lab{ display:block; font-size:9.5px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:var(--verde2); margin-bottom:3px; }
+
+  .pick{ margin-top:13px; text-align:center; }
+  .pick button{ background:#fff; border:1px solid var(--line); border-radius:11px; padding:9px 16px; font:800 12.5px var(--sans); color:var(--verde2); cursor:pointer; }
+  .pick button:active{ background:var(--verde3); }
+  .pick .done{ font-size:12px; font-weight:800; color:var(--verde2); }
+
+  /* ---- DESPACHOS cortos ---- */
+  .col-lbl{ display:flex; align-items:center; gap:8px; margin:24px 0 4px; }
+  .col-lbl .tag{ font-size:10px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:var(--verde2); }
+  .col-lbl .hair{ flex:1; height:1px; background:var(--line); }
+
+  .desp{ background:var(--card); border:1px solid var(--line); border-radius:18px; overflow:hidden; margin:14px 0; box-shadow:0 8px 22px rgba(45,80,22,.06); display:flex; }
+  .desp .ph{ position:relative; width:112px; flex:none; }
+  .desp img{ display:block; width:112px; height:100%; min-height:100%; object-fit:cover; background:#e6efdc; }
+  .desp .code{ position:absolute; left:6px; top:6px; background:rgba(255,255,255,.92); color:var(--verde); font-size:9px; font-weight:800; font-family:ui-monospace,Menlo,monospace; padding:3px 6px; border-radius:999px; }
+  .desp .body{ padding:13px 14px 14px; min-width:0; }
+  .desp .kicker{ font-size:9.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--verde2); }
+  .desp h3{ font-family:var(--serif); font-size:17.5px; font-weight:900; line-height:1.12; margin:3px 0 2px; }
+  .desp .sci{ font-size:11px; font-style:italic; color:var(--ink3); }
+  .desp .txt{ font-size:12.5px; color:var(--ink2); margin-top:7px; }
+  .desp .mini{ margin-top:9px; font-size:11.5px; color:var(--ink); background:var(--verde3); border-radius:9px; padding:7px 9px; }
+  .desp .mini b{ color:var(--verde); }
+  .desp .pick2{ margin-top:9px; }
+  .desp .pick2 button{ background:#fff; border:1px solid var(--line); border-radius:9px; padding:6px 11px; font:800 11px var(--sans); color:var(--verde2); cursor:pointer; }
+  .desp .pick2 button:active{ background:var(--verde3); }
+  .desp .pick2 .done{ font-size:11px; font-weight:800; color:var(--verde2); }
+  @media(max-width:400px){ .desp{ flex-direction:column; } .desp .ph, .desp img{ width:100%; height:150px; min-height:0; } }
+
+  /* ---- clima / el tiempo ---- */
+  .clima{ background:linear-gradient(180deg,#e9f2fb,#f4f9fd); border:1px solid rgba(63,125,138,.3); border-radius:16px; padding:15px 16px; margin:18px 0 6px; }
+  .clima .h{ display:flex; align-items:center; gap:8px; font-size:11px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:#1f4750; margin-bottom:7px; }
+  .clima .h .line{ flex:1; height:1px; background:rgba(63,125,138,.3); }
+  .clima p{ font-size:13px; color:#2f5a63; }
+  .clima p b{ color:#173c44; }
+  .clima p + p{ margin-top:7px; }
+
+  /* ---- bloques compartidos (react / sub / feedback) ---- */
+  .blk{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 18px; margin:16px 0; box-shadow:0 6px 20px rgba(45,80,22,.05); }
+  .react h3, .sub h3, .fb-blk h3{ font-size:17px; font-weight:900; text-align:center; }
+  .react p, .sub p, .fb-blk p{ color:var(--ink2); font-size:13.5px; text-align:center; max-width:34ch; margin:5px auto 0; }
+  .react-row{ display:flex; justify-content:center; gap:10px; margin-top:14px; flex-wrap:wrap; }
+  .react-row button{ font-size:26px; background:#f4f9ec; border:1px solid var(--line); border-radius:14px; width:56px; height:52px; cursor:pointer; transition:transform .12s; }
+  .react-row button:active{ transform:scale(.9); }
+  .sub{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border-color:rgba(90,138,46,.3); text-align:center; }
+  .sub-hint{ display:block; margin-top:10px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.1em; }
+  .slot{ display:flex; align-items:center; justify-content:space-between; gap:10px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px 12px; margin-top:10px; }
+  .slot-lbl{ font-size:13.5px; font-weight:800; color:var(--verde); }
+  .slot-btns{ display:flex; gap:7px; flex:none; }
+  .slot-btns button{ border:none; border-radius:9px; padding:8px 14px; font:800 12.5px var(--sans); cursor:pointer; }
+  .slot-btns .si{ background:var(--verde2); color:#fff; }
+  .slot-btns .no{ background:#eef2e8; color:var(--ink2); }
+
+  .fb-blk textarea{ width:100%; background:#f7fbf1; border:1px solid var(--line); border-radius:11px; color:var(--ink); padding:11px 12px; font:14px/1.4 var(--sans); resize:vertical; margin-top:12px; }
+  .fb-send{ margin-top:9px; background:var(--verde2); color:#fff; border:none; border-radius:11px; padding:11px 20px; font:800 14px var(--sans); cursor:pointer; }
+  .fb-send:active{ opacity:.75; }
+  .fb-hint{ display:block; margin-top:8px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.1em; }
+
+  .pitch-link{ display:block; text-align:center; margin:16px 0 2px; font-size:13px; font-weight:800; color:var(--azul); text-decoration:none; }
+  .pitch-link:active{ opacity:.6; }
+
+  .engage-actions{ display:flex; gap:11px; margin:20px 0 6px; }
+  .engage-actions button{ flex:1; border-radius:13px; padding:14px 10px; font:800 14px var(--sans); cursor:pointer; border:1px solid var(--line); }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; border-color:var(--verde); }
+  .engage-actions button:last-child{ background:#fff; color:var(--ink3); }
+  .foot{ text-align:center; color:var(--ink3); font-size:11.5px; margin-top:14px; line-height:1.5; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <!-- MASTHEAD -->
+  <header class="mast reveal">
+    <div class="top-rule"><span>Montevideo · es-UY</span><span>Invierno</span></div>
+    <div class="name"><span class="em">📰</span>El Parte del Jardín</div>
+    <hr class="rule">
+    <p class="sub">Todo lo que pasó anoche en tu jardín, contado de mañana.</p>
+    <span class="edcion">Edición · Viernes 31/07/2026</span>
+  </header>
+
+  <!-- PORTADA / LEAD -->
+  <div class="lead-lbl reveal"><span class="tag">Portada</span><span class="hair"></span></div>
+  <article class="lead reveal">
+    <div class="ph">
+      <img src="https://gardening-chi.vercel.app/images/PXL_20260428_130827515_MP.webp" alt="Mandarina criolla en fruto" loading="lazy">
+      <span class="flag">🍊 En su punto</span>
+      <span class="code">B-24 · fondo</span>
+    </div>
+    <div class="body">
+      <div class="kicker">El titular de hoy</div>
+      <h2>La mandarina está en su mejor momento del año</h2>
+      <div class="sci">Citrus reticulata · perenne</div>
+      <p class="drop">Mientras casi todo el jardín duerme, la mandarina del fondo está <b>madurando ahora mismo</b>: el invierno es su temporada. Da fruto de abril a agosto, así que estás justo en el pico. Andá probando una.</p>
+      <div class="dato">
+        <span class="ic">👑</span>
+        <span class="txt"><span class="lab">Dato del despacho</span>Es el <b>cítrico cultivado más antiguo que se conoce</b> (~3000 a.C.): el "padre" genético de naranjas y limones modernos. Su nombre viene de los <i>mandarines</i>, los funcionarios de la China imperial que vestían túnicas anaranjadas.</span>
+      </div>
+      <div class="pick"><button type="button" onclick="engageAnswer('el-parte-lei','B-24', this)">Buenísimo 👍</button></div>
+    </div>
+  </article>
+
+  <!-- DESPACHOS -->
+  <div class="col-lbl reveal"><span class="tag">Más despachos de hoy</span><span class="hair"></span></div>
+
+  <!-- PINDÓ -->
+  <article class="desp reveal">
+    <div class="ph">
+      <img src="https://gardening-chi.vercel.app/images/PXL_20260426_194320163_MP.webp" alt="Palmera pindó con coquitos" loading="lazy">
+      <span class="code">B-8</span>
+    </div>
+    <div class="body">
+      <div class="kicker">Fruta · fondo</div>
+      <h3>El pindó tiene coquitos maduros colgando</h3>
+      <div class="sci">Syagrus romanzoffiana · nativa</div>
+      <p class="txt">Racimos anaranjados en pleno invierno: da fruto de marzo a julio. Palmera nativa, dura de acá.</p>
+      <div class="mini"><b>Dato:</b> pindó es guaraní. Su fruto sabe a <b>coco-banana</b> y los chicos guaraníes lo chupaban como golosina natural.</div>
+      <div class="pick2"><button type="button" onclick="engageAnswer('el-parte-lei','B-8', this)">Buenísimo 👍</button></div>
+    </div>
+  </article>
+
+  <!-- VIRARÓ -->
+  <article class="desp reveal">
+    <div class="ph">
+      <img src="https://gardening-chi.vercel.app/images/PXL_20260428_130952009_MP.webp" alt="Viraró" loading="lazy">
+      <span class="code">B-32</span>
+    </div>
+    <div class="body">
+      <div class="kicker">Corresponsal · fondo</div>
+      <h3>El viraró va a despertar mientras viajás</h3>
+      <div class="sci">Ruprechtia laxiflora · nativo</div>
+      <p class="txt">Es el próximo en arrancar: brota en agosto, justo entre el 7 y el 23 que estás de viaje. Queda de corresponsal.</p>
+      <div class="mini"><b>Dato:</b> sus "flores" rosadas no son pétalos: son <b>sépalos</b> que se agrandan tras la polinización y hacen de alitas para que el viento lleve la semilla.</div>
+      <div class="pick2"><button type="button" onclick="engageAnswer('el-parte-lei','B-32', this)">Buenísimo 👍</button></div>
+    </div>
+  </article>
+
+  <!-- LAVANDA -->
+  <article class="desp reveal">
+    <div class="ph">
+      <img src="https://gardening-chi.vercel.app/images/PXL_20260428_130145017_MP.webp" alt="Lavanda verde en invierno" loading="lazy">
+      <span class="code">B-10</span>
+    </div>
+    <div class="body">
+      <div class="kicker">Aguanta el frío · fondo</div>
+      <h3>La lavanda sigue verde y perfumada</h3>
+      <div class="sci">Lavandula dentata · mediterránea</div>
+      <p class="txt">Mientras casi todo duerme, ella sigue firme y aromática: está hecha para el frío del Mediterráneo.</p>
+      <div class="mini"><b>Dato:</b> su nombre viene del latín <i>lavare</i> (lavar): los romanos la echaban al baño. Una bolsita seca en el cajón <b>espanta las polillas</b>.</div>
+      <div class="pick2"><button type="button" onclick="engageAnswer('el-parte-lei','B-10', this)">Buenísimo 👍</button></div>
+    </div>
+  </article>
+
+  <!-- EL TIEMPO / CLIMA -->
+  <section class="clima reveal">
+    <div class="h"><span>🌡️ El tiempo en el jardín</span><span class="line"></span></div>
+    <p>Jardín en <b>dormancia general</b>: la mayoría ahorra energía bajo tierra. Es normal y es sano.</p>
+    <p>Quedan posibles <b>heladas tardías</b> hasta fin de agosto, que pican más fuerte al <b>sur y al este al amanecer</b>. A las mediterráneas como la lavanda y a los caducos pelados no les hacen nada — están hechos para este frío. No hay nada que hacer antes de viajar.</p>
+  </section>
+
+  <!-- REACCIÓN -->
+  <section class="blk react reveal">
+    <h3>¿Qué te pareció El Parte?</h3>
+    <p>Tu reacción me dice si un noticiero diario de tu jardín real es algo que te suma.</p>
+    <div class="react-row">
+      <button type="button" onclick="engageReact('el-parte','love', this)" aria-label="Me encantó">😍</button>
+      <button type="button" onclick="engageReact('el-parte','like', this)" aria-label="Me gustó">🙂</button>
+      <button type="button" onclick="engageReact('el-parte','meh', this)" aria-label="Meh">😐</button>
+      <button type="button" onclick="engageReact('el-parte','no', this)" aria-label="No">🙅</button>
+    </div>
+  </section>
+
+  <!-- SLOTS / SUSCRIPCIÓN -->
+  <section class="blk sub reveal">
+    <h3>📅 ¿Querés El Parte de nuevo? Prendé un slot</h3>
+    <p>El Parte sale con una edición nueva y fresca de tu jardín. Elegí en qué slot(s) querés recibirlo. Si no prendés ninguno, no te lo mando de nuevo.</p>
+    <div class="slot"><span class="slot-lbl">🗓️ Lunes · 18:00</span><span class="slot-btns"><button type="button" class="si" onclick="engageAnswer('el-parte-slot-lun18','si', this)">Prender</button><button type="button" class="no" onclick="engageAnswer('el-parte-slot-lun18','no', this)">No</button></span></div>
+    <div class="slot"><span class="slot-lbl">🗓️ Sábado · 11:00</span><span class="slot-btns"><button type="button" class="si" onclick="engageAnswer('el-parte-slot-sab11','si', this)">Prender</button><button type="button" class="no" onclick="engageAnswer('el-parte-slot-sab11','no', this)">No</button></span></div>
+    <span class="sub-hint" id="sh"></span>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>Esto lo leo yo, el agente del jardín, antes de armar la próxima edición…</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('el-parte', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <a class="pitch-link" href="2026-07-31-el-parte-pitch.html">🧭 ¿Cómo se podría vender El Parte? →</a>
+
+  <div class="engage-actions reveal">
+    <button onclick="engageApprove('2026-07-31-el-parte')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-07-31-el-parte')">✕ No me interesa</button>
+  </div>
+
+  <div class="foot reveal">Datos reales de tu catálogo · fotos de tu jardín · 31/07/2026</div>
+
+</div>
+
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>
