@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-01T09:20:00.000Z",
+  "_updated_at": "2026-08-01T13:58:22.837Z",
   "notifications": [
     {
       "id": "2026-08-01-jardin-hoy",
@@ -8,8 +8,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
       "send_at": "2026-08-01T10:00:00-03:00",
       "expires_at": "2026-08-01T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-08-01T13:58:22.836Z",
       "fail_reason": null,
       "format": "tarea",
       "created_by": "engagement-agent 2026-08-01"
