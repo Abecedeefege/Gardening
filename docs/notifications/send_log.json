@@ -2,30 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-07-17-task-dia",
-      "ts": "2026-07-17T14:16:40.254Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-07-17-a",
-      "ts": "2026-07-17T14:16:40.398Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-07-17-b",
-      "ts": "2026-07-17T17:09:11.600Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-07-17-c",
-      "ts": "2026-07-17T21:33:17.990Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-07-18-task-dia",
       "ts": "2026-07-18T13:47:56.563Z",
       "status_code": 201
@@ -446,7 +422,13 @@
     "2026-07-16": {
       "sent": 5,
       "failed": 0
+    },
+    "2026-07-17": {
+      "sent": 4,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
     }
   },
-  "_updated_at": "2026-07-31T06:10:00-03:00"
+  "_updated_at": "2026-08-01T09:20:00.000Z"
 }

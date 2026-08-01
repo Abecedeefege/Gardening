@@ -923,7 +923,7 @@
       "status": "pending",
       "hypothesis": "El ángulo 'sacale MÁS a lo que ya tenés / plantas gratis' (codicia sana + habilidad concreta) engancha donde la trivia y los gimmicks murieron. Cast 100% fresco (B-12 cinta, B-2 jazmín, B-15 hiedra, todas rested >7d) con fotos reales — incluida la foto que MUESTRA los hijos del jazmín. Sustancia (cómo-hacerlo real: pup/acodo/esqueje), no juego. Slot 13:30.",
       "notified_by": [],
-      "result_notes": "Construida 30/07 (jueves = día tarea-only con la cadencia nueva) → NO pusheada. Migrada al CTA de slots disponibles (Lun18/Sáb11). Queda como candidata del pool para el próximo slot de experiencia (Sáb 01/08 11:00). Recurre solo si el usuario prende un slot / la aprueba."
+      "result_notes": "Nunca pusheada (jueves = task-only). Sin datos. Sigue como candidata de pool para un slot futuro."
     },
     {
       "id": "2026-07-30-aguantan-solos",
@@ -933,7 +933,7 @@
       "status": "pending",
       "hypothesis": "Vender TRANQUILIDAD (quitar preocupación) al viajero pega más que sumar tareas. Honra el contexto real del viaje SIN nagear, con prueba biológica por planta (nativa/dormancia/raíz). Cast 100% fresco (B-34 mandioca, B-42 pata de vaca, B-43 pitósporo, rested) con fotos reales. Slot dorado 18:00. Ángulo alivio pero CON sustancia (el porqué), no alivio pasivo vacío.",
       "notified_by": [],
-      "result_notes": "Construida 30/07 (jueves = día tarea-only con la cadencia nueva) → NO pusheada. Migrada al CTA de slots disponibles (Lun18/Sáb11). Queda como candidata del pool para el próximo slot de experiencia (Sáb 01/08 11:00). Recurre solo si el usuario prende un slot / la aprueba."
+      "result_notes": "Nunca pusheada. Además el eje \"tranquilidad de viaje\" ya mostró bajo enganche el 29/07 (antes-de-irte). Candidata débil."
     },
     {
       "id": "2026-07-31-el-parte",
@@ -945,6 +945,19 @@
       "notified_by": [
         "2026-07-31-el-parte"
       ],
+      "result_notes": "Abierta 22:43 (tarde). Dwell 75s, scroll 100% — leyó todo. Pero ambos slots en NO (lun18 y sab11) y reacción MEH, sin feedback de texto. Veredicto: el formato NOTICIERO/diario NO convierte. El usuario lee el contenido pero no quiere la recurrencia de un 'diario': el valor no está en enterarse, está en que lo ayude a HACER. No recurre. El eje 'despacho/edición periódica' queda archivado."
+    },
+    {
+      "id": "2026-08-01-el-taller",
+      "title": "🪚 El Taller nº 1 — poda de carozos paso a paso (walkthrough guiado en mano)",
+      "page": "engage/2026-08-01-el-taller.html",
+      "created": "2026-08-01",
+      "status": "pending",
+      "hypothesis": "El pico histórico de engagement fue el thread del liquidámbar: ayuda técnica REAL, profunda y específica de SU árbol — el usuario la citó como referencia ('revisá lo que te escribí en el liquidámbar'). Hipótesis: si productizo ese eje como formato repetible — un walkthrough guiado paso a paso, que se abre CON LA HERRAMIENTA EN LA MANO y avanza al ritmo del trabajo físico — gana donde murieron el gimmick (esto-o-esto), la agencia repetida (vos-decidis) y el diario (el-parte). El timing lo hace insoslayable: mañana domingo 2 es el día seco, es la semana exacta de poda de Prunus, y quedan 6 días para el viaje. Formato nunca probado: wizard de 7 pasos + diagramas SVG + checklist de herramientas persistente. Señal a mirar: cuántos pasos completa (taller-paso-N), reacción 😍, y si prende un slot.",
+      "notified_by": [
+        "2026-08-01-el-taller"
+      ],
+      "pitch": "engage/2026-08-01-el-taller-pitch.html",
       "result_notes": null
     }
   ]

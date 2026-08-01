@@ -1,17 +1,30 @@
 {
-  "_updated_at": "2026-07-31T21:02:16.540Z",
+  "_updated_at": "2026-08-01T09:20:00.000Z",
   "notifications": [
     {
-      "id": "2026-07-31-el-parte",
-      "title": "📰 Salió El Parte de tu jardín",
-      "body": "La mandarina está en su punto, el pindó tiene coquitos y el viraró despierta en agosto. Tu diario de hoy.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-31-el-parte.html",
-      "send_at": "2026-07-31T18:00:00-03:00",
-      "expires_at": "2026-07-31T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-07-31T21:02:16.539Z",
+      "id": "2026-08-01-jardin-hoy",
+      "title": "⏳ Quedan 6 días y mañana es el día",
+      "body": "Los tres carozos se podan mañana: es la semana exacta del año. Te dejé las 4 de antes de irte.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
+      "send_at": "2026-08-01T10:00:00-03:00",
+      "expires_at": "2026-08-01T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-07-31"
+      "format": "tarea",
+      "created_by": "engagement-agent 2026-08-01"
+    },
+    {
+      "id": "2026-08-01-el-taller",
+      "title": "🪚 El Taller: poda de carozos",
+      "body": "Abrilo mañana con el serrucho en la mano. Te voy pasando paso por paso, uno a la vez.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html",
+      "send_at": "2026-08-01T11:00:00-03:00",
+      "expires_at": "2026-08-01T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-08-01"
     }
   ]
 }

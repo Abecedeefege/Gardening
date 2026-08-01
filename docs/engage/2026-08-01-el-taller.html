@@ -1,0 +1,556 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🪚 El Taller — Poda de carozos, paso a paso</title>
+<meta property="og:title" content="🪚 El Taller — Poda de carozos, paso a paso">
+<meta property="og:description" content="Mañana, 3 árboles, 90 minutos. Abrilo con el serrucho en la mano: te voy pasando paso por paso.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
+    --sol:#e0a92e; --azul:#3f7d8a; --rojo:#b4442e; --madera:#8a5a2b;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 24px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* HERO */
+  .hero{ padding:34px 0 6px; text-align:center; }
+  .hero .em{ font-size:46px; display:block; }
+  .hero .kicker{ font-size:11.5px; font-weight:900; letter-spacing:.19em; text-transform:uppercase; color:var(--madera); margin-top:8px; }
+  .hero h1{ font-size:36px; line-height:1.05; margin:8px 0 8px; font-weight:900; letter-spacing:-.025em; }
+  .hero .sub{ color:var(--ink2); font-size:15px; max-width:32ch; margin:0 auto; }
+
+  /* barra de datos duros */
+  .facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:9px; margin:18px 0 6px; }
+  .fact{ background:var(--card); border:1px solid var(--line); border-radius:15px; padding:13px 6px; text-align:center; }
+  .fact .n{ display:block; font-size:22px; font-weight:900; color:var(--verde); line-height:1.1; }
+  .fact .l{ font-size:10.5px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--ink3); margin-top:4px; }
+
+  .blk{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 18px; margin:14px 0;
+    box-shadow:0 6px 20px rgba(45,80,22,.05); }
+  .blk h3{ font-size:17.5px; font-weight:900; margin-bottom:7px; letter-spacing:-.01em; }
+  .blk p{ color:var(--ink2); font-size:14px; }
+  .blk p + p{ margin-top:8px; }
+  .lbl{ font-size:11px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:var(--ink3); }
+
+  .porque{ background:linear-gradient(180deg,#fef6df,#fffdf6); border-color:rgba(224,169,46,.35); }
+  .porque .lbl{ color:#b7860b; }
+  .porque b{ color:var(--ink); }
+
+  /* CHECKLIST HERRAMIENTAS */
+  .tools{ list-style:none; margin-top:10px; }
+  .tools li{ display:flex; align-items:center; gap:11px; padding:11px 12px; border:1px solid var(--line); border-radius:13px;
+    margin-top:8px; background:#fafcf6; cursor:pointer; transition:background .18s, border-color .18s; }
+  .tools li:active{ opacity:.7; }
+  .tools li .bx{ width:23px; height:23px; border-radius:7px; border:2px solid var(--ink3); flex:none; display:grid; place-items:center;
+    font-size:14px; color:#fff; font-weight:900; transition:background .18s, border-color .18s; }
+  .tools li .tx{ font-size:13.5px; font-weight:700; line-height:1.35; }
+  .tools li .tx small{ display:block; font-weight:500; color:var(--ink3); font-size:12px; margin-top:1px; }
+  .tools li.on{ background:#eef7e0; border-color:rgba(90,138,46,.4); }
+  .tools li.on .bx{ background:var(--verde2); border-color:var(--verde2); }
+  .tools li.on .bx::after{ content:"✓"; }
+  .tools li.on .tx{ text-decoration:line-through; text-decoration-color:rgba(90,138,46,.5); }
+  .tools-hint{ font-size:12px; color:var(--ink3); margin-top:10px; }
+
+  /* DIAGRAMA */
+  .diag{ display:grid; grid-template-columns:1fr 1fr; gap:11px; margin-top:12px; }
+  .diag figure{ background:#fafcf6; border:1px solid var(--line); border-radius:15px; padding:11px 8px 9px; text-align:center; }
+  .diag figure.bad{ background:#fdf3f0; border-color:rgba(180,68,46,.24); }
+  .diag svg{ width:100%; height:auto; display:block; }
+  .diag figcaption{ font-size:12px; font-weight:800; margin-top:6px; color:var(--verde2); }
+  .diag figure.bad figcaption{ color:var(--rojo); }
+  .diag figcaption small{ display:block; font-weight:600; color:var(--ink3); font-size:11px; margin-top:2px; line-height:1.35; }
+
+  /* WIZARD */
+  .taller{ background:linear-gradient(180deg,#1e2a17,#2d3a22); border:none; color:#eef4e6; padding:22px 18px 20px; }
+  .taller .lbl{ color:#a9c48a; }
+  .taller h3{ color:#fff; }
+  .taller p{ color:#c9d8b8; }
+  .prog{ height:6px; border-radius:99px; background:rgba(255,255,255,.14); margin:14px 0 4px; overflow:hidden; }
+  .prog i{ display:block; height:100%; width:0%; background:linear-gradient(90deg,#8fc34a,#c6e58a); border-radius:99px; transition:width .45s cubic-bezier(.4,0,.2,1); }
+  .prog-txt{ font-size:11.5px; font-weight:800; letter-spacing:.05em; color:#a9c48a; text-transform:uppercase; }
+  .step{ display:none; margin-top:15px; }
+  .step.on{ display:block; animation:sIn .38s ease both; }
+  @keyframes sIn{ from{ opacity:0; transform:translateY(10px);} to{ opacity:1; transform:none;} }
+  .step .num{ display:inline-block; background:rgba(143,195,74,.18); color:#c6e58a; font-size:11px; font-weight:900;
+    letter-spacing:.1em; text-transform:uppercase; padding:4px 11px; border-radius:99px; }
+  .step h4{ font-size:20px; font-weight:900; color:#fff; margin:10px 0 8px; line-height:1.2; letter-spacing:-.015em; }
+  .step .body{ font-size:14.5px; color:#d3e2c2; }
+  .step .como{ margin-top:11px; padding:11px 13px; background:rgba(255,255,255,.07); border-radius:12px; font-size:13.5px; color:#dbe8cc; }
+  .step .como b{ color:#c6e58a; }
+  .step .err{ margin-top:9px; padding:11px 13px; background:rgba(180,68,46,.16); border-left:3px solid #d97a5f; border-radius:0 12px 12px 0;
+    font-size:13px; color:#f0cfc5; }
+  .step .err b{ color:#ffb59e; }
+  .nav{ display:flex; gap:9px; margin-top:16px; }
+  .nav button{ flex:1; border:none; border-radius:13px; padding:14px 10px; font:900 15px var(--sans); cursor:pointer; }
+  .nav .next{ background:#8fc34a; color:#1e2a17; }
+  .nav .prev{ flex:0 0 52px; background:rgba(255,255,255,.1); color:#c9d8b8; font-size:18px; }
+  .nav button:active{ opacity:.75; }
+  .fin{ display:none; margin-top:15px; text-align:center; }
+  .fin.on{ display:block; animation:sIn .4s ease both; }
+  .fin .em{ font-size:44px; }
+  .fin h4{ font-size:22px; color:#fff; font-weight:900; margin:8px 0 6px; }
+  .fin p{ color:#c9d8b8; font-size:14px; }
+  .fin a{ display:inline-block; margin-top:13px; background:#8fc34a; color:#1e2a17; text-decoration:none;
+    font-weight:900; font-size:14.5px; padding:13px 22px; border-radius:13px; }
+
+  /* CORTE svg */
+  .corte{ background:#fafcf6; border:1px solid var(--line); border-radius:15px; padding:13px 10px 10px; margin-top:12px; text-align:center; }
+  .corte svg{ width:100%; max-width:340px; height:auto; }
+  .corte .cap{ font-size:12.5px; color:var(--ink2); margin-top:8px; text-align:left; }
+
+  /* DUDAS */
+  details.duda{ background:var(--card); border:1px solid var(--line); border-radius:15px; margin-top:10px; overflow:hidden; }
+  details.duda summary{ list-style:none; cursor:pointer; padding:14px 15px; font-weight:800; font-size:14.5px; display:flex; gap:9px; align-items:center; }
+  details.duda summary::-webkit-details-marker{ display:none; }
+  details.duda summary .chev{ margin-left:auto; color:var(--ink3); font-size:12px; transition:transform .2s; }
+  details.duda[open] summary .chev{ transform:rotate(180deg); }
+  details.duda .cnt{ padding:0 15px 15px; font-size:13.5px; color:var(--ink2); border-top:1px solid var(--line); padding-top:12px; }
+  details.duda .cnt b{ color:var(--ink); }
+  details.duda .cnt ul{ margin:8px 0 0; padding-left:19px; }
+  details.duda .cnt li{ margin:5px 0; }
+
+  /* LOS TRES */
+  .arbol{ display:flex; gap:12px; align-items:flex-start; padding:13px 0; border-top:1px solid var(--line); }
+  .arbol:first-of-type{ border-top:none; padding-top:6px; }
+  .arbol img{ width:70px; height:70px; border-radius:13px; object-fit:cover; flex:none; border:1px solid var(--line); background:#eef4e6; }
+  .arbol .b{ flex:1; min-width:0; }
+  .arbol h4{ font-size:14.5px; font-weight:900; }
+  .arbol .sci{ font-size:11.5px; color:var(--ink3); font-style:italic; }
+  .arbol .pct{ display:inline-block; font-size:11px; font-weight:900; color:#b7860b; background:#fdf4dd;
+    border:1px solid rgba(224,169,46,.3); border-radius:7px; padding:3px 9px; margin:6px 0 0; }
+  .arbol p{ font-size:13px; color:var(--ink2); margin-top:6px; }
+  .arbol a{ font-size:12px; font-weight:800; color:var(--azul); text-decoration:none; display:inline-block; margin-top:6px; }
+
+  /* SLOTS */
+  .slots{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border-color:rgba(90,138,46,.3); }
+  .slot{ display:flex; align-items:center; gap:10px; padding:12px 13px; background:#fff; border:1px solid var(--line);
+    border-radius:13px; margin-top:9px; }
+  .slot-lbl{ font-size:13.5px; font-weight:800; }
+  .slot-btns{ margin-left:auto; display:flex; gap:7px; flex:none; }
+  .slot-btns button{ border:1px solid var(--line); background:#f7fbf1; color:var(--ink2); border-radius:9px;
+    padding:8px 13px; font:800 12.5px var(--sans); cursor:pointer; }
+  .slot-btns .si{ background:var(--verde2); color:#fff; border-color:var(--verde2); }
+  .slot-btns button:active{ opacity:.7; }
+  .slot-btns button.sel{ background:var(--verde); color:#fff; border-color:var(--verde); }
+  .slot-btns button:disabled:not(.sel){ opacity:.4; }
+
+  /* REACCION */
+  .react{ text-align:center; }
+  .react .row{ display:flex; justify-content:center; gap:11px; margin-top:12px; }
+  .react button{ width:58px; height:58px; border-radius:50%; border:1px solid var(--line); background:#fff;
+    font-size:27px; cursor:pointer; transition:transform .15s; }
+  .react button:active{ transform:scale(.88); }
+  .react button.sel{ background:var(--verde3); border-color:var(--verde2); transform:scale(1.08); }
+
+  /* FEEDBACK */
+  .fb-blk{ background:linear-gradient(180deg,#eaf2f6,#f8fbfc); border-color:rgba(63,125,138,.28); }
+  .fb-blk textarea{ width:100%; background:#fff; border:1px solid rgba(63,125,138,.22); border-radius:12px;
+    color:var(--ink); padding:11px 12px; font:14px/1.45 var(--sans); resize:vertical; margin-top:10px; }
+  .fb-blk .fb-send{ margin-top:9px; background:var(--azul); color:#fff; border:none; border-radius:12px;
+    padding:12px 22px; font:800 14.5px var(--sans); cursor:pointer; }
+  .fb-blk .fb-send:active{ opacity:.75; }
+  .fb-blk .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--azul); min-height:1.2em; }
+
+  /* BIBLIOTECA */
+  .lib{ background:#fbfdf8; }
+  .lib a.item{ display:flex; align-items:center; gap:10px; padding:11px 12px; border:1px solid var(--line);
+    border-radius:12px; margin-top:8px; text-decoration:none; color:var(--ink); background:#fff; }
+  .lib a.item .e{ font-size:19px; }
+  .lib a.item .t{ font-size:13.5px; font-weight:800; }
+  .lib a.item .t small{ display:block; font-weight:500; color:var(--ink3); font-size:11.5px; }
+  .lib a.item .go{ margin-left:auto; color:var(--ink3); font-weight:900; }
+  .lib .none{ font-size:13px; color:var(--ink2); background:#f2f8ea; border:1px dashed rgba(90,138,46,.35);
+    border-radius:12px; padding:12px 13px; margin-top:9px; }
+
+  .engage-actions{ display:flex; flex-direction:column; gap:10px; margin:20px 0 8px; }
+  .engage-actions button{ border:none; border-radius:14px; padding:15px; font:900 15px var(--sans); cursor:pointer; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:#fff; color:var(--ink3); border:1px solid var(--line); }
+  .engage-actions button:active{ opacity:.75; }
+
+  .pie{ text-align:center; padding:14px 0 8px; }
+  .pie a{ color:var(--verde2); font-weight:800; font-size:14px; text-decoration:none; }
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:10px; line-height:1.55; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <span class="em">🪚</span>
+    <div class="kicker">El Taller · nº 1</div>
+    <h1>Poda de carozos</h1>
+    <p class="sub">Abrí esto <b>mañana, con el serrucho en la mano</b>. Te voy pasando paso por paso, uno a la vez.</p>
+  </header>
+
+  <div class="facts reveal">
+    <div class="fact"><span class="n">3</span><span class="l">árboles</span></div>
+    <div class="fact"><span class="n">~90′</span><span class="l">una salida</span></div>
+    <div class="fact"><span class="n">6</span><span class="l">días al viaje</span></div>
+  </div>
+
+  <!-- POR QUÉ ESTA SEMANA -->
+  <section class="blk porque reveal">
+    <div class="lbl">⏱️ Por qué esta semana y no otra</div>
+    <h3>Es la única ventana buena del año</h3>
+    <p>Los tres son <b>Prunus</b>, y los Prunus se podan en el <b>filo final</b> de la dormancia: con la yema ya hinchada pero todavía cerrada. Ahí la herida cicatriza rápido porque el árbol está por arrancar — no queda semanas abierta juntando helada y hongo, como pasa si podás en junio.</p>
+    <p>Tus tres florecen en <b>agosto</b>. Cuando vuelvas del viaje el 23 ya van a estar en flor: podar sobre flor es tirar la cosecha. Y una <b>helada tardía</b> sobre brote nuevo pega justo al este y al sur, que es donde están el durazno y la ciruela.</p>
+    <p style="margin-top:10px"><b>Traducción:</b> este fin de semana, o el año que viene.</p>
+  </section>
+
+  <!-- HERRAMIENTAS -->
+  <section class="blk reveal">
+    <div class="lbl">🧰 La mesa antes de salir</div>
+    <h3>Cinco cosas, tocalas para tacharlas</h3>
+    <ul class="tools" id="tools">
+      <li onclick="tool(this,1)"><span class="bx"></span><span class="tx">Tijera de podar afilada<small>Si corta y desgarra, no corta: afilala o usá el serrucho</small></span></li>
+      <li onclick="tool(this,2)"><span class="bx"></span><span class="tx">Serrucho de poda<small>Para todo lo que pase el grosor de tu pulgar</small></span></li>
+      <li onclick="tool(this,3)"><span class="bx"></span><span class="tx">Alcohol 70% + trapo<small>Desinfectás <b>entre árbol y árbol</b>. Los Prunus se contagian entre sí</small></span></li>
+      <li onclick="tool(this,4)"><span class="bx"></span><span class="tx">Pasta cicatrizante<small>Solo para cortes de más de 1,5 cm. Cualquier vivero</small></span></li>
+      <li onclick="tool(this,5)"><span class="bx"></span><span class="tx">Bolsa o carretilla<small>Lo que sacás no se composta si tiene goma o momias</small></span></li>
+    </ul>
+    <p class="tools-hint">Si te falta la pasta cicatrizante, hacelo igual: los cortes chicos no la necesitan. Lo que <b>no</b> es negociable es el alcohol.</p>
+  </section>
+
+  <!-- DIAGRAMA -->
+  <section class="blk reveal">
+    <div class="lbl">🎯 La forma a la que apuntás</div>
+    <h3>Vaso abierto: el sol tiene que llegar al piso</h3>
+    <div class="diag">
+      <figure>
+        <svg viewBox="0 0 120 120" role="img" aria-label="Copa en vaso abierto: tres ramas madre saliendo hacia afuera, centro despejado, sol entrando">
+          <circle cx="60" cy="16" r="9" fill="#e0a92e"/>
+          <g stroke="#e0a92e" stroke-width="1.6" stroke-linecap="round" opacity=".55">
+            <line x1="60" y1="30" x2="60" y2="72"/><line x1="52" y1="30" x2="44" y2="66"/><line x1="68" y1="30" x2="76" y2="66"/>
+          </g>
+          <path d="M60 112 L60 74" stroke="#8a5a2b" stroke-width="7" stroke-linecap="round"/>
+          <path d="M60 76 C48 66 34 58 26 44" stroke="#8a5a2b" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+          <path d="M60 76 C72 66 86 58 94 44" stroke="#8a5a2b" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+          <path d="M60 76 C58 62 56 50 52 36" stroke="#8a5a2b" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <g stroke="#8a5a2b" stroke-width="2.6" stroke-linecap="round" fill="none">
+            <path d="M40 55 C34 48 30 44 24 40"/><path d="M80 55 C86 48 90 44 96 40"/><path d="M55 48 C50 42 47 38 43 32"/>
+          </g>
+          <ellipse cx="60" cy="112" rx="26" ry="3.4" fill="#dff0cc"/>
+        </svg>
+        <figcaption>✅ Vaso abierto<small>3-4 madres hacia afuera, centro vacío</small></figcaption>
+      </figure>
+      <figure class="bad">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Copa cerrada: ramas verticales amontonadas en el centro, sin luz adentro">
+          <circle cx="60" cy="16" r="9" fill="#e0a92e" opacity=".38"/>
+          <g stroke="#e0a92e" stroke-width="1.6" stroke-linecap="round" opacity=".3">
+            <line x1="60" y1="30" x2="60" y2="42"/><line x1="52" y1="30" x2="49" y2="42"/><line x1="68" y1="30" x2="71" y2="42"/>
+          </g>
+          <path d="M60 112 L60 74" stroke="#8a5a2b" stroke-width="7" stroke-linecap="round"/>
+          <g stroke="#8a5a2b" stroke-width="5" fill="none" stroke-linecap="round">
+            <path d="M60 76 C57 60 56 50 58 36"/><path d="M60 76 C64 60 66 50 65 34"/>
+            <path d="M60 76 C52 62 50 52 51 40"/><path d="M60 76 C68 64 71 54 72 42"/>
+          </g>
+          <g stroke="#8a5a2b" stroke-width="2.4" stroke-linecap="round" fill="none">
+            <path d="M57 58 C62 52 64 50 67 46"/><path d="M65 56 C60 50 58 48 55 44"/><path d="M53 50 C58 46 61 44 64 41"/>
+          </g>
+          <path d="M44 30 L76 62 M76 30 L44 62" stroke="#b4442e" stroke-width="3.4" stroke-linecap="round" opacity=".8"/>
+          <ellipse cx="60" cy="112" rx="26" ry="3.4" fill="#f0d9d2"/>
+        </svg>
+        <figcaption>❌ Centro cerrado<small>Fruta chica, rama que se quiebra, hongo</small></figcaption>
+      </figure>
+    </div>
+    <p style="margin-top:11px;font-size:13.5px;color:var(--ink2)">La prueba casera: cuando termines, parate abajo y mirá para arriba. <b>Tenés que ver cielo en el medio.</b> Si ves una maraña, todavía te falta.</p>
+  </section>
+
+  <!-- WIZARD -->
+  <section class="blk taller reveal" id="taller">
+    <div class="lbl">🪚 El taller guiado</div>
+    <h3>Empezá por el durazno</h3>
+    <p style="font-size:13.5px">Es el más exigente y el que más se nota. Cuando lo tengas hecho, los otros dos salen solos.</p>
+
+    <div class="prog"><i id="bar"></i></div>
+    <div class="prog-txt" id="ptxt">Paso 1 de 7</div>
+
+    <div class="step on" data-s="1">
+      <span class="num">Paso 1</span>
+      <h4>Mirá el árbol dos minutos sin tocar nada</h4>
+      <div class="body">Antes del primer corte, dale una vuelta completa. Estás buscando <b>cuáles van a ser las 3 o 4 ramas madre</b>: las que salen del tronco hacia afuera, bien repartidas, formando una copa como un vaso.</div>
+      <div class="como"><b>Cómo elegirlas:</b> que salgan a distinta altura (no todas del mismo punto), que apunten a lados distintos, y que el ángulo con el tronco sea abierto — cerca de 45°. Las que salen casi pegadas al tronco, verticales, se parten con el peso de la fruta.</div>
+      <div class="err"><b>El error:</b> arrancar cortando lo primero que molesta. Después te das cuenta de que era la mejor madre que tenías y no hay vuelta atrás.</div>
+      <div class="nav"><button class="next" onclick="paso(1)">Elegidas, seguir →</button></div>
+    </div>
+
+    <div class="step" data-s="2">
+      <span class="num">Paso 2</span>
+      <h4>Sacá lo muerto, lo roto y lo que tiene goma</h4>
+      <div class="body">Este paso no requiere criterio, es limpieza pura. Todo lo seco, lo quebrado y todo lo que tenga <b>goma ámbar</b> pegoteada sale.</div>
+      <div class="como"><b>Cómo reconocer madera muerta:</b> rascá la corteza con la uña. Si abajo aparece verde, está viva. Si aparece marrón seco, está muerta — cortala hasta llegar a verde.</div>
+      <div class="err"><b>El error:</b> cortar justo en el borde de la mancha de goma. Hay que ir <b>bien por debajo del foco</b>, hasta madera limpia, o volvés a tener el mismo problema en tres meses.</div>
+      <div class="nav"><button class="prev" onclick="paso(-1)">←</button><button class="next" onclick="paso(2)">Listo, seguir →</button></div>
+    </div>
+
+    <div class="step" data-s="3">
+      <span class="num">Paso 3</span>
+      <h4>Afuera todos los chupones</h4>
+      <div class="body">Los chupones son las ramas <b>verticales y agresivas</b> que salen para arriba desde el centro o desde la base. Crecen rápido, no dan fruta y le roban energía a todo lo demás.</div>
+      <div class="como"><b>Cómo los reconocés:</b> van derechito al cielo, son más largos y más lisos que el resto, y la corteza es más clara. Si dudás, mirá el ángulo: <b>vertical = chupón.</b></div>
+      <div class="err"><b>El error:</b> dejar un tocón. El corte va <b>al ras de donde nace</b>, sin dejar muñón — el muñón se seca y es la puerta de entrada del hongo.</div>
+      <div class="nav"><button class="prev" onclick="paso(-1)">←</button><button class="next" onclick="paso(3)">Listo, seguir →</button></div>
+    </div>
+
+    <div class="step" data-s="4">
+      <span class="num">Paso 4</span>
+      <h4>Vaciá el centro</h4>
+      <div class="body">Ahora sí: todo lo que crece <b>hacia adentro</b> o se cruza con otra rama, sale. Este es el paso que convierte el árbol en un vaso.</div>
+      <div class="como"><b>La regla del cruce:</b> cuando dos ramas se rozan, se queda la que apunta hacia afuera y se va la que apunta hacia adentro. Si las dos apuntan bien, se queda la más gruesa.</div>
+      <div class="err"><b>El error:</b> aflojar acá. Es el paso que da miedo porque el árbol queda visiblemente más chico. <b>Es exactamente lo que tiene que pasar:</b> en el durazno el objetivo es sacar entre el 40 y el 50%.</div>
+      <div class="nav"><button class="prev" onclick="paso(-1)">←</button><button class="next" onclick="paso(4)">Listo, seguir →</button></div>
+    </div>
+
+    <div class="step" data-s="5">
+      <span class="num">Paso 5</span>
+      <h4>Acortá las madres un tercio</h4>
+      <div class="body">Las 3-4 que dejaste se acortan aproximadamente <b>un tercio de su largo</b>. Eso obliga al árbol a ramificar hacia los costados en vez de estirarse.</div>
+      <div class="como"><b>Dónde exactamente:</b> a <b>5 mm por encima de una yema que mire hacia afuera</b>, y en bisel — inclinado, para el mismo lado que la yema. La rama nueva va a salir en la dirección que apunta esa yema: por eso elegís siempre una externa.</div>
+      <div class="err"><b>El error:</b> el corte plano y pegado a la yema. Plano junta agua; pegado seca la yema. 5 mm e inclinado.</div>
+      <div class="nav"><button class="prev" onclick="paso(-1)">←</button><button class="next" onclick="paso(5)">Listo, seguir →</button></div>
+    </div>
+
+    <div class="step" data-s="6">
+      <span class="num">Paso 6</span>
+      <h4>Sellá solo lo grueso</h4>
+      <div class="body">Los cortes de <b>más de 1,5 cm</b> se pintan con pasta cicatrizante. Los chicos se cierran solos y taparlos es peor.</div>
+      <div class="como"><b>Por qué en Prunus sí:</b> es el género más propenso a gomosis. Una herida grande abierta en un durazno es una invitación. En un limonero no haría falta; acá sí.</div>
+      <div class="err"><b>El error:</b> sellar todo, incluidos los cortes chicos. La pasta les guarda humedad abajo y ahí es donde arranca el problema.</div>
+      <div class="nav"><button class="prev" onclick="paso(-1)">←</button><button class="next" onclick="paso(6)">Listo, seguir →</button></div>
+    </div>
+
+    <div class="step" data-s="7">
+      <span class="num">Paso 7</span>
+      <h4>Alcohol, y pasás al siguiente</h4>
+      <div class="body">Desinfectá la tijera y el serrucho <b>antes de tocar el próximo árbol</b>. Es el paso que más se saltea y el que más caro sale.</div>
+      <div class="como"><b>Después del durazno B-30 vienen:</b> su hermano <b>B-35</b> (mismo criterio, mismo día), el <b>ciruelo del frente F-4</b> y la <b>ciruela amarilla B-38</b>. Los tres tienen su ficha más abajo con lo que cambia en cada uno.</div>
+      <div class="err"><b>El último error:</b> juntar lo podado en el compost. Si hay goma o frutas momificadas, va a la bolsa — no al compost.</div>
+      <div class="nav"><button class="prev" onclick="paso(-1)">←</button><button class="next" onclick="paso(7)">Terminé el durazno 🎉</button></div>
+    </div>
+
+    <div class="fin" id="fin">
+      <span class="em">🎉</span>
+      <h4>Ese era el difícil</h4>
+      <p>El durazno es el más exigente en poda de todo tu jardín — un año sin podarlo y la cosecha del siguiente cae 70%. Lo que sigue es más liviano.</p>
+      <p style="margin-top:9px"><b>Cuando termines los cuatro, mandame una foto</b> desde la tarea: te digo si quedó bien abierto o si le falta.</p>
+      <a href="https://gardening-chi.vercel.app/tasks/plant-B-30.html">📷 Abrir la tarea del durazno →</a>
+    </div>
+  </section>
+
+  <!-- EL CORTE -->
+  <section class="blk reveal">
+    <div class="lbl">✂️ El detalle que decide todo</div>
+    <h3>Dónde apoyás la tijera</h3>
+    <div class="corte">
+      <svg viewBox="0 0 300 130" role="img" aria-label="Comparación de tres cortes: correcto en bisel 5 mm sobre yema externa, demasiado pegado, y plano con tocón largo">
+        <g stroke="#8a5a2b" stroke-width="9" stroke-linecap="round"><line x1="34" y1="120" x2="34" y2="52"/></g>
+        <path d="M34 62 l13 -9" stroke="#5a8a2e" stroke-width="5" stroke-linecap="round"/>
+        <line x1="20" y1="44" x2="52" y2="34" stroke="#2d5016" stroke-width="2.6" stroke-dasharray="5 4"/>
+        <text x="34" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#5a8a2e" font-family="sans-serif">✅</text>
+        <text x="34" y="34" text-anchor="middle" font-size="9" fill="#5a6b4c" font-family="sans-serif">5 mm · bisel</text>
+
+        <g stroke="#8a5a2b" stroke-width="9" stroke-linecap="round"><line x1="150" y1="120" x2="150" y2="58"/></g>
+        <path d="M150 62 l13 -9" stroke="#5a8a2e" stroke-width="5" stroke-linecap="round"/>
+        <line x1="137" y1="55" x2="167" y2="55" stroke="#b4442e" stroke-width="2.6" stroke-dasharray="5 4"/>
+        <text x="150" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#b4442e" font-family="sans-serif">❌</text>
+        <text x="150" y="34" text-anchor="middle" font-size="9" fill="#8a9a7a" font-family="sans-serif">pegado:</text>
+        <text x="150" y="45" text-anchor="middle" font-size="9" fill="#8a9a7a" font-family="sans-serif">seca la yema</text>
+
+        <g stroke="#8a5a2b" stroke-width="9" stroke-linecap="round"><line x1="266" y1="120" x2="266" y2="30"/></g>
+        <path d="M266 62 l13 -9" stroke="#5a8a2e" stroke-width="5" stroke-linecap="round"/>
+        <line x1="252" y1="30" x2="280" y2="30" stroke="#b4442e" stroke-width="2.6" stroke-dasharray="5 4"/>
+        <text x="266" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#b4442e" font-family="sans-serif">❌</text>
+        <text x="292" y="48" text-anchor="middle" font-size="9" fill="#8a9a7a" font-family="sans-serif">tocón</text>
+      </svg>
+      <p class="cap">La yema verde es la que va a brotar. Cortás <b>5 mm arriba</b> y <b>en bisel</b>, inclinado hacia el mismo lado que ella. Muy pegado la secás; muy lejos dejás un tocón que se pudre.</p>
+    </div>
+  </section>
+
+  <!-- DUDAS -->
+  <section class="blk reveal">
+    <div class="lbl">🤔 Las tres dudas que van a aparecer</div>
+    <h3>Resueltas de antemano</h3>
+
+    <details class="duda">
+      <summary>¿Esta rama la corto o la dejo? <span class="chev">▾</span></summary>
+      <div class="cnt">Pasala por estas cuatro preguntas. <b>Un solo sí y sale:</b>
+        <ul>
+          <li>¿Va hacia adentro de la copa?</li>
+          <li>¿Se cruza o roza con otra?</li>
+          <li>¿Es vertical y lisa (chupón)?</li>
+          <li>¿Está seca, quebrada o con goma?</li>
+        </ul>
+        Si son cuatro noes, se queda. Y si igual dudás: <b>dejala</b>. Podés sacarla el año que viene; volver a pegarla no.</div>
+    </details>
+
+    <details class="duda">
+      <summary>Me pasé, ¿arruiné el árbol? <span class="chev">▾</span></summary>
+      <div class="cnt">Casi seguro que no. El durazno tolera que le saques <b>la mitad</b>, y el ciruelo japonés es tan vigoroso que rebrota fuerte igual. El riesgo real está del otro lado: <b>casi todo el mundo poda de menos</b>, no de más.<br><br>La única forma de arruinarlo de verdad es <b>descabezarlo</b> — cortar todas las ramas a la misma altura, como un cepillo. Eso no se hace nunca, en ninguna especie.</div>
+    </details>
+
+    <details class="duda">
+      <summary>Apareció una gota ámbar pegajosa <span class="chev">▾</span></summary>
+      <div class="cnt">Eso es <b>gomosis</b>: el Prunus exudando savia por una herida infectada. No es fatal, pero se atiende:
+        <ul>
+          <li>Cortá <b>bien por debajo</b> del foco, hasta ver madera limpia y clara.</li>
+          <li>Alcohol en la herramienta <b>antes del siguiente corte</b>, sí o sí.</li>
+          <li>Sellá esa herida aunque sea chica.</li>
+          <li>Lo que sacaste va a la bolsa, no al compost.</li>
+        </ul>
+        Y sacale una foto: mandámela desde la tarea y la miro.</div>
+    </details>
+  </section>
+
+  <!-- LOS TRES -->
+  <section class="blk reveal">
+    <div class="lbl">🌳 Qué cambia en cada uno</div>
+    <h3>Los tres, uno por uno</h3>
+
+    <div class="arbol">
+      <img src="https://gardening-chi.vercel.app/images/b30.jpg" alt="Durazno B-30" loading="lazy">
+      <div class="b">
+        <h4>Durazno <span style="color:var(--ink3);font-size:11.5px;font-family:ui-monospace,monospace">B-30 · B-35</span></h4>
+        <div class="sci">Prunus persica</div>
+        <span class="pct">Sacar 40-50% · vaso abierto</span>
+        <p>El más exigente y el que primero florece. Fructifica en madera del año anterior: por eso la poda fuerte todos los inviernos no es opcional. Son <b>dos ejemplares</b>, mismo criterio para los dos.</p>
+        <a href="https://gardening-chi.vercel.app/tasks/plant-B-30.html">Abrir tarea →</a>
+      </div>
+    </div>
+
+    <div class="arbol">
+      <img src="https://gardening-chi.vercel.app/images/F-4_ciruelo_purpura_otonal.jpg" alt="Ciruelo de jardín F-4" loading="lazy">
+      <div class="b">
+        <h4>Ciruelo de jardín <span style="color:var(--ink3);font-size:11.5px;font-family:ui-monospace,monospace">F-4</span></h4>
+        <div class="sci">Prunus cerasifera 'Pissardii'</div>
+        <span class="pct">Sacar 25-35% · silueta abierta</span>
+        <p>Este es <b>ornamental</b>, no frutal: acá el objetivo es la silueta y el color púrpura de la hoja nueva, no la cosecha. Mano más suave. Está en el frente, así que el sol de la tarde le llega igual — no hace falta abrirlo tanto como al durazno.</p>
+        <a href="https://gardening-chi.vercel.app/tasks/plant-F-4.html">Abrir tarea →</a>
+      </div>
+    </div>
+
+    <div class="arbol">
+      <img src="https://gardening-chi.vercel.app/images/PXL_20260428_130808343_MP.webp" alt="Ciruela amarilla B-38" loading="lazy">
+      <div class="b">
+        <h4>Ciruela amarilla <span style="color:var(--ink3);font-size:11.5px;font-family:ui-monospace,monospace">B-38</span></h4>
+        <div class="sci">Prunus salicina</div>
+        <span class="pct">Sacar 30% · + madera vieja</span>
+        <p>Tiene un paso extra: fructifica en <b>madera de 2-3 años</b>, y lo que pasa los 4 años ya casi no produce. Buscá la madera <b>gris y agrietada</b> y sacala desde la base si no es estructural. Y si encontrás ciruelas momificadas colgando del verano, recogelas: son foco de hongo.</p>
+        <a href="https://gardening-chi.vercel.app/tasks/plant-B-38.html">Abrir tarea →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIBLIOTECA DE APROBADAS -->
+  <section class="blk lib reveal">
+    <div class="lbl">📚 Tus experiencias prendidas</div>
+    <h3>Lo que elegiste que vuelva</h3>
+    <div class="none">Todavía no prendiste ninguna para este slot. Lo que <b>prendas</b> acá abajo vuelve en el horario que elijas; lo que no, no te lo mando de nuevo. Mientras tanto, estas quedan disponibles cuando quieras:</div>
+    <a class="item" href="https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html"><span class="e">🧳</span><span class="t">Tu jardín hoy<small>Las 15 tareas, ordenadas alrededor del viaje</small></span><span class="go">→</span></a>
+    <a class="item" href="https://gardening-chi.vercel.app/engage/2026-07-24-tu-semana.html"><span class="e">✅</span><span class="t">Tu semana<small>Recap de lo que cerraste</small></span><span class="go">→</span></a>
+  </section>
+
+  <!-- SLOTS -->
+  <section class="blk slots reveal">
+    <div class="lbl">🗓️ Slots disponibles</div>
+    <h3>¿Querés más Talleres?</h3>
+    <p style="font-size:13.5px">Un taller por vez, sobre la tarea que de verdad toca esa semana. Prendé el horario que te sirva — si no prendés ninguno, esta no vuelve.</p>
+    <div class="slot"><span class="slot-lbl">🗓️ Lunes · 18:00</span><span class="slot-btns"><button type="button" class="si" onclick="engageAnswer('el-taller-slot-lun18','si', this)">Prender</button><button type="button" class="no" onclick="engageAnswer('el-taller-slot-lun18','no', this)">No</button></span></div>
+    <div class="slot"><span class="slot-lbl">🗓️ Sábado · 11:00</span><span class="slot-btns"><button type="button" class="si" onclick="engageAnswer('el-taller-slot-sab11','si', this)">Prender</button><button type="button" class="no" onclick="engageAnswer('el-taller-slot-sab11','no', this)">No</button></span></div>
+  </section>
+
+  <!-- REACCION -->
+  <section class="blk react reveal">
+    <h3>¿Te sirvió este taller?</h3>
+    <div class="row">
+      <button type="button" onclick="engageReact('el-taller','love', this)" aria-label="Me encantó">😍</button>
+      <button type="button" onclick="engageReact('el-taller','like', this)" aria-label="Me gustó">🙂</button>
+      <button type="button" onclick="engageReact('el-taller','meh', this)" aria-label="Meh">😐</button>
+      <button type="button" onclick="engageReact('el-taller','no', this)" aria-label="No">🙅</button>
+    </div>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p style="font-size:13.5px">Esto lo leo yo, el agente del jardín, antes de armar el próximo. ¿Faltó algo, sobró algo, sobre qué querés el Taller nº 2?</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('el-taller', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-08-01-el-taller')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-08-01-el-taller')">✕ No me interesa</button>
+  </div>
+
+  <footer class="pie">
+    <a href="https://gardening-chi.vercel.app/tareas.html">Ver el Timeline completo →</a>
+    <div class="cred">El Taller nº 1 · edición del 1 de agosto de 2026 · criterio de poda tomado de las fichas B-30/B-35, F-4 y B-38 del catálogo Pacha Mama</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+
+/* checklist de herramientas — persiste en el device */
+var TK = 'taller_tools_20260801';
+function tool(li, n){
+  var on = li.classList.toggle('on');
+  try{
+    var s = JSON.parse(localStorage.getItem(TK) || '{}');
+    s[n] = on; localStorage.setItem(TK, JSON.stringify(s));
+  }catch(e){}
+}
+(function(){
+  try{
+    var s = JSON.parse(localStorage.getItem(TK) || '{}');
+    document.querySelectorAll('#tools li').forEach(function(li, i){ if (s[i+1]) li.classList.add('on'); });
+  }catch(e){}
+})();
+
+/* wizard */
+var TOTAL = 7, cur = 1;
+function render(){
+  document.querySelectorAll('.step').forEach(function(s){
+    s.classList.toggle('on', parseInt(s.dataset.s,10) === cur);
+  });
+  var fin = document.getElementById('fin');
+  var done = cur > TOTAL;
+  fin.classList.toggle('on', done);
+  document.getElementById('bar').style.width = Math.min(100, ((cur-1)/TOTAL)*100) + '%';
+  document.getElementById('ptxt').textContent = done ? 'Durazno terminado ✅' : ('Paso ' + cur + ' de ' + TOTAL);
+}
+function paso(n){
+  if (n < 0){ cur = Math.max(1, cur - 1); render(); return; }
+  /* n = paso que se acaba de completar → queda registrado para que yo sepa hasta dónde llegó.
+     El botón que se pasa es uno suelto y sin padre a propósito: así engage.js loguea
+     pero no deshabilita los botones de navegación del taller. */
+  try{ if (typeof engageAnswer === 'function') engageAnswer('taller-paso-' + n, 'ok', document.createElement('button')); }catch(e){}
+  cur = n + 1;
+  render();
+  var t = document.getElementById('taller');
+  if (t) t.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+render();
+</script>
+<script src="engage.js"></script>
+</body></html>

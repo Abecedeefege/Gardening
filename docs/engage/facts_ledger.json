@@ -1,6 +1,6 @@
 {
  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-07-31",
+ "_updated": "2026-08-01",
  "plants": {
   "F-1": {
    "common": "Guayabo del país",
@@ -82,7 +82,7 @@
   },
   "F-4": {
    "common": "Ciruelo de jardín",
-   "paginas_historicas": 8,
+   "paginas_historicas": 9,
    "featured": [
     {
      "date": "2026-07-19",
@@ -93,6 +93,11 @@
      "date": "2026-07-25",
      "page": "2026-07-25-mapa-solar.html",
      "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
+    },
+    {
+     "date": "2026-08-01",
+     "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
+     "fact": "ANGULO TALLER: diferencia ornamental vs frutal — 25-35%, silueta y color púrpura, no cosecha. Angulo tarea real."
     }
    ]
   },
@@ -681,7 +686,7 @@
   },
   "B-30": {
    "common": "Durazno",
-   "paginas_historicas": 10,
+   "paginas_historicas": 11,
    "featured": [
     {
      "date": "2026-07-20",
@@ -707,6 +712,11 @@
      "date": "2026-07-25",
      "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
      "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
+    },
+    {
+     "date": "2026-08-01",
+     "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
+     "fact": "ANGULO NUEVO 'TALLER/how-to': protocolo de poda en vaso abierto paso a paso (40-50%, 3-4 madres, 5mm sobre yema externa). NO fun_fact — tarea real urgente, ventana exacta."
     }
    ]
   },
@@ -806,7 +816,7 @@
   },
   "B-38": {
    "common": "Ciruela amarilla",
-   "paginas_historicas": 6,
+   "paginas_historicas": 7,
    "featured": [
     {
      "date": "2026-07-18",
@@ -817,6 +827,11 @@
      "date": "2026-07-26",
      "page": "2026-07-26-mi-primavera.html",
      "fact": "ANGULO FLORACION/recompensa: nube de flor blanca en agosto, de las primeras"
+    },
+    {
+     "date": "2026-08-01",
+     "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
+     "fact": "ANGULO TALLER: paso extra de madera gris >4 años improductiva + momificadas como foco de hongo. Angulo tarea real."
     }
    ]
   },
@@ -1052,6 +1067,17 @@
      "fact": "ANGULO DECISION/TAREA (no fun_fact): rincon donde plantarla a tierra (carry-over sin responder del 27/07)"
     }
    ]
+  },
+  "B-35": {
+   "common": "B-35",
+   "paginas_historicas": 1,
+   "featured": [
+    {
+     "date": "2026-08-01",
+     "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
+     "fact": "Nombrado como segundo ejemplar del durazno dentro del taller (mismo criterio que B-30). Angulo tarea real."
+    }
+   ]
   }
  },
  "_notas_angulos": [
@@ -1070,6 +1096,7 @@
   {
    "date": "2026-07-30",
    "nota": "CICLO 60. Dos experiencias 29/07 (antes-de-irte, los-que-no-duermen) = masomenos (abiertas tarde, sin senal activa) -> ambas dropped. Hoy: dos experiencias con cast 100% FRESCO (rested >7d) + FOTOS REALES (NEED validado del usuario) + SUSTANCIA real, NO gimmick. se-multiplican-solos = propagacion (cinta B-12/jazmin B-2/hiedra B-15) angulo how-to gratis. aguantan-solos = resistencia/viaje (mandioca B-34/pata de vaca B-42/pitosporo B-43) angulo tranquilidad-con-prueba. Elenco de fun_facts ornamentales SIGUE QUEMADO: usados por angulo propagacion/resistencia, no fun_fact. jardin-hoy refrescado a 30/07 (modo viaje se mantiene)."
-  }
+  },
+  "2026-08-01 — El Taller nº1: cast monotematico por tarea real (B-30/B-35/F-4/B-38), exento del criterio fun_fact."
  ]
 }

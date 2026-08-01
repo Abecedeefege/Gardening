@@ -1,42 +1,6 @@
 {
-  "_updated_at": "2026-07-31T22:44:30.838Z",
+  "_updated_at": "2026-08-01T09:20:00.000Z",
   "events": [
-    {
-      "_id": "mrp1qa93tnyyjt",
-      "type": "dwell",
-      "seconds": 3,
-      "scroll_pct": 18,
-      "page": "engage/2026-07-17-resenas.html",
-      "ts": "2026-07-17T14:41:33.543Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrp7r3nf0dras7",
-      "type": "page_visit",
-      "page": "engage/2026-07-17-anuario.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-07-17T17:30:09.336Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrp7rc6kqztzpl",
-      "type": "dwell",
-      "seconds": 12,
-      "scroll_pct": 100,
-      "page": "engage/2026-07-17-anuario.html",
-      "ts": "2026-07-17T17:30:20.396Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrpjwanhrb8z1x",
-      "type": "dwell",
-      "seconds": 9,
-      "scroll_pct": 6,
-      "page": "engage/2026-06-29-feed-jardin.html",
-      "ts": "2026-07-17T23:10:07.085Z",
-      "device": "sin-nombre"
-    },
     {
       "_id": "mrqhjzy3vg01sq",
       "type": "notification_clicked",
@@ -1763,6 +1727,12 @@
       "sent": 5,
       "clicked": 0,
       "visits": 0,
+      "approvals": 0
+    },
+    "2026-07-17": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 1,
       "approvals": 0
     }
   }
