@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-01T09:20:00.000Z",
+  "_updated_at": "2026-08-01T17:14:30.470Z",
   "events": [
     {
       "_id": "mrqhjzy3vg01sq",
@@ -1521,6 +1521,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-31-el-parte.html",
       "ts": "2026-07-31T22:44:30.840Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msamsrjtcqu7l9",
+      "type": "notification_clicked",
+      "nid": "2026-08-01-el-taller",
+      "page": "engage/2026-08-01-el-taller.html",
+      "ts": "2026-08-01T17:14:30.904Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msamsrjtrufyu9",
+      "type": "page_visit",
+      "page": "engage/2026-08-01-el-taller.html",
+      "nid": "2026-08-01-el-taller",
+      "src": "push",
+      "ts": "2026-08-01T17:14:30.904Z",
       "device": "sin-nombre"
     }
   ],
