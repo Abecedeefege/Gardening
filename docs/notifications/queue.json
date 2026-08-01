@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-01T13:58:22.837Z",
+  "_updated_at": "2026-08-01T15:06:30.742Z",
   "notifications": [
     {
       "id": "2026-08-01-jardin-hoy",
@@ -21,8 +21,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html",
       "send_at": "2026-08-01T11:00:00-03:00",
       "expires_at": "2026-08-01T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-08-01T15:06:30.741Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-08-01"
     }
