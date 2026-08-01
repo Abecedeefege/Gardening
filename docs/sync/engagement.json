@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-01T17:20:11.686Z",
+  "_updated_at": "2026-08-01T17:20:27.939Z",
   "events": [
     {
       "_id": "mrqhjzy3vg01sq",
@@ -1736,6 +1736,23 @@
       "value": "si",
       "page": "engage/2026-08-01-el-taller.html",
       "ts": "2026-08-01T17:20:13.010Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msan0g9321gpxy",
+      "type": "notification_clicked",
+      "nid": "2026-08-01-jardin-hoy",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-08-01T17:20:29.510Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msan0g93ssfw76",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-08-01-jardin-hoy",
+      "src": "push",
+      "ts": "2026-08-01T17:20:29.510Z",
       "device": "sin-nombre"
     }
   ],
