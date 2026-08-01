@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-01T17:19:13.005Z",
+  "_updated_at": "2026-08-01T17:20:11.686Z",
   "events": [
     {
       "_id": "mrqhjzy3vg01sq",
@@ -1727,6 +1727,15 @@
       "value": "ok",
       "page": "engage/2026-08-01-el-taller.html",
       "ts": "2026-08-01T17:19:13.732Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msan03iqehazfk",
+      "type": "answer",
+      "qid": "el-taller-slot-lun18",
+      "value": "si",
+      "page": "engage/2026-08-01-el-taller.html",
+      "ts": "2026-08-01T17:20:13.010Z",
       "device": "sin-nombre"
     }
   ],
