@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-01T17:17:40.466Z",
+  "_updated_at": "2026-08-01T17:17:45.687Z",
   "events": [
     {
       "_id": "mrqhjzy3vg01sq",
@@ -1646,6 +1646,15 @@
       "text": "Genial esto.  Pero hoy está lloviendo, mándamela cuando esté lindo!",
       "page": "engage/2026-08-01-el-taller.html",
       "ts": "2026-08-01T17:17:41.819Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msamwyw9paxxav",
+      "type": "reaction",
+      "target": "el-taller",
+      "value": "love",
+      "page": "engage/2026-08-01-el-taller.html",
+      "ts": "2026-08-01T17:17:47.049Z",
       "device": "sin-nombre"
     }
   ],
