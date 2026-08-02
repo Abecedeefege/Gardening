@@ -1,17 +1,17 @@
 {
- "_updated_at": "2026-08-02T09:20:00.000Z",
- "notifications": [
-  {
-   "id": "2026-08-02-el-taller",
-   "title": "🪚 Hoy no llueve: es el día",
-   "body": "Me pediste que te la mandara cuando estuviera lindo. Hoy: 0 mm. Hoy y el martes son los días que quedan.",
-   "url": "https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html",
-   "send_at": "2026-08-02T10:00:00-03:00",
-   "expires_at": "2026-08-02T22:00:00-03:00",
-   "status": "pending",
-   "sent_at": null,
-   "fail_reason": null,
-   "created_by": "engagement-agent 2026-08-02"
-  }
- ]
+  "_updated_at": "2026-08-02T14:07:25.480Z",
+  "notifications": [
+    {
+      "id": "2026-08-02-el-taller",
+      "title": "🪚 Hoy no llueve: es el día",
+      "body": "Me pediste que te la mandara cuando estuviera lindo. Hoy: 0 mm. Hoy y el martes son los días que quedan.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html",
+      "send_at": "2026-08-02T10:00:00-03:00",
+      "expires_at": "2026-08-02T22:00:00-03:00",
+      "status": "sent",
+      "sent_at": "2026-08-02T14:07:25.478Z",
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-08-02"
+    }
+  ]
 }
