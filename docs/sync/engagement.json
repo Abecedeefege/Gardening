@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-02T21:43:41.670Z",
+  "_updated_at": "2026-08-02T22:28:14.344Z",
   "events": [
     {
       "_id": "mrr25ve1ixyt6v",
@@ -1862,6 +1862,15 @@
       "page": "engage/2026-08-02-que-mas-podo.html",
       "ts": "2026-08-02T21:43:42.718Z",
       "device": "sin-nombre"
+    },
+    {
+      "_id": "mscdg2ssk9u59p",
+      "type": "page_visit",
+      "page": "tasks/plant-B-9.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-02T22:28:14.763Z",
+      "device": "landing"
     }
   ],
   "daily_summary": {
