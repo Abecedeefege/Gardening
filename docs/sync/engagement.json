@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-02T15:04:10.864Z",
+  "_updated_at": "2026-08-02T15:08:39.648Z",
   "events": [
     {
       "_id": "mrr25ve1ixyt6v",
@@ -1718,6 +1718,15 @@
       "scroll_pct": 26,
       "page": "engage/2026-08-01-el-taller.html",
       "ts": "2026-08-02T15:04:10.983Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msbxqrr2orq5ys",
+      "type": "answer",
+      "qid": "taller-paso-1",
+      "value": "ok",
+      "page": "engage/2026-08-01-el-taller.html",
+      "ts": "2026-08-02T15:08:39.806Z",
       "device": "sin-nombre"
     }
   ],
