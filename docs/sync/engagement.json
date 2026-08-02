@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-02T17:26:47.805Z",
+  "_updated_at": "2026-08-02T21:43:38.270Z",
   "events": [
     {
       "_id": "mrr25ve1ixyt6v",
@@ -1835,6 +1835,23 @@
       "text": "Que otra cosa puedo podar?\nQue tareas puedo hacer con el aceite de Neem ya que lo voy a usar?",
       "page": "engage/2026-08-01-el-taller.html",
       "ts": "2026-08-02T17:26:48.139Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mscbupyz4a5w0a",
+      "type": "notification_clicked",
+      "nid": "2026-08-02-que-mas-podo",
+      "page": "engage/2026-08-02-que-mas-podo.html",
+      "ts": "2026-08-02T21:43:38.743Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mscbupyzpls96i",
+      "type": "page_visit",
+      "page": "engage/2026-08-02-que-mas-podo.html",
+      "nid": "2026-08-02-que-mas-podo",
+      "src": "push",
+      "ts": "2026-08-02T21:43:38.743Z",
       "device": "sin-nombre"
     }
   ],
