@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-02T15:12:25.133Z",
+  "_updated_at": "2026-08-02T15:12:26.771Z",
   "events": [
     {
       "_id": "mrr25ve1ixyt6v",
@@ -1790,6 +1790,15 @@
       "value": "si",
       "page": "engage/2026-08-01-el-taller.html",
       "ts": "2026-08-02T15:12:25.187Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msbxvn5pbkydhl",
+      "type": "reaction",
+      "target": "el-taller",
+      "value": "love",
+      "page": "engage/2026-08-01-el-taller.html",
+      "ts": "2026-08-02T15:12:27.133Z",
       "device": "sin-nombre"
     }
   ],
