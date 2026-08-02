@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-02T15:12:26.771Z",
+  "_updated_at": "2026-08-02T17:25:11.901Z",
   "events": [
     {
       "_id": "mrr25ve1ixyt6v",
@@ -1799,6 +1799,15 @@
       "value": "love",
       "page": "engage/2026-08-01-el-taller.html",
       "ts": "2026-08-02T15:12:27.133Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msc2mchv9g5z9v",
+      "type": "answer",
+      "qid": "taller-arbol-B-30",
+      "value": "ok",
+      "page": "engage/2026-08-01-el-taller.html",
+      "ts": "2026-08-02T17:25:11.490Z",
       "device": "sin-nombre"
     }
   ],
