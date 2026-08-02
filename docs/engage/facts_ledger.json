@@ -1,6 +1,6 @@
 {
  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-08-01",
+ "_updated": "2026-08-02",
  "plants": {
   "F-1": {
    "common": "Guayabo del país",
@@ -82,7 +82,7 @@
   },
   "F-4": {
    "common": "Ciruelo de jardín",
-   "paginas_historicas": 9,
+   "paginas_historicas": 10,
    "featured": [
     {
      "date": "2026-07-19",
@@ -98,6 +98,11 @@
      "date": "2026-08-01",
      "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
      "fact": "ANGULO TALLER: diferencia ornamental vs frutal — 25-35%, silueta y color púrpura, no cosecha. Angulo tarea real."
+    },
+    {
+     "date": "2026-08-02",
+     "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
+     "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
     }
    ]
   },
@@ -686,7 +691,7 @@
   },
   "B-30": {
    "common": "Durazno",
-   "paginas_historicas": 11,
+   "paginas_historicas": 12,
    "featured": [
     {
      "date": "2026-07-20",
@@ -717,6 +722,11 @@
      "date": "2026-08-01",
      "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
      "fact": "ANGULO NUEVO 'TALLER/how-to': protocolo de poda en vaso abierto paso a paso (40-50%, 3-4 madres, 5mm sobre yema externa). NO fun_fact — tarea real urgente, ventana exacta."
+    },
+    {
+     "date": "2026-08-02",
+     "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
+     "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
     }
    ]
   },
@@ -816,7 +826,7 @@
   },
   "B-38": {
    "common": "Ciruela amarilla",
-   "paginas_historicas": 7,
+   "paginas_historicas": 8,
    "featured": [
     {
      "date": "2026-07-18",
@@ -832,6 +842,11 @@
      "date": "2026-08-01",
      "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
      "fact": "ANGULO TALLER: paso extra de madera gris >4 años improductiva + momificadas como foco de hongo. Angulo tarea real."
+    },
+    {
+     "date": "2026-08-02",
+     "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
+     "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
     }
    ]
   },
@@ -1070,12 +1085,17 @@
   },
   "B-35": {
    "common": "B-35",
-   "paginas_historicas": 1,
+   "paginas_historicas": 2,
    "featured": [
     {
      "date": "2026-08-01",
      "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
      "fact": "Nombrado como segundo ejemplar del durazno dentro del taller (mismo criterio que B-30). Angulo tarea real."
+    },
+    {
+     "date": "2026-08-02",
+     "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
+     "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
     }
    ]
   }
@@ -1097,6 +1117,10 @@
    "date": "2026-07-30",
    "nota": "CICLO 60. Dos experiencias 29/07 (antes-de-irte, los-que-no-duermen) = masomenos (abiertas tarde, sin senal activa) -> ambas dropped. Hoy: dos experiencias con cast 100% FRESCO (rested >7d) + FOTOS REALES (NEED validado del usuario) + SUSTANCIA real, NO gimmick. se-multiplican-solos = propagacion (cinta B-12/jazmin B-2/hiedra B-15) angulo how-to gratis. aguantan-solos = resistencia/viaje (mandioca B-34/pata de vaca B-42/pitosporo B-43) angulo tranquilidad-con-prueba. Elenco de fun_facts ornamentales SIGUE QUEMADO: usados por angulo propagacion/resistencia, no fun_fact. jardin-hoy refrescado a 30/07 (modo viaje se mantiene)."
   },
-  "2026-08-01 — El Taller nº1: cast monotematico por tarea real (B-30/B-35/F-4/B-38), exento del criterio fun_fact."
+  "2026-08-01 — El Taller nº1: cast monotematico por tarea real (B-30/B-35/F-4/B-38), exento del criterio fun_fact.",
+  {
+   "date": "2026-08-02",
+   "nota": "CICLO 63 (domingo, dia SIN slot). Excepcion de cadencia aplicada: el usuario pidio textualmente «mandamela cuando este lindo» sobre El Taller; verifique el parte real de Montevideo (hoy 0 mm / 0% prob, unico dia limpio antes del viaje del 7/8) y encole 1 sola push a las 10:00 con la MISMA URL renovada. El Taller quedo APROBADA (love + slot lun18 si + 7/7 pasos x2 + feedback positivo) => primera experiencia RECURRENTE del sistema. El Parte (noticiero) dropped. Elenco de hoy = B-30/B-35/F-4/B-38 por segunda vez consecutiva: es la excepcion monotematica del Taller (el cast lo define la TAREA). Quedan en descanso obligatorio: los 4 carozos NO pueden protagonizar otra experiencia hasta el 09/08 salvo dentro de la misma serie."
+  }
  ]
 }

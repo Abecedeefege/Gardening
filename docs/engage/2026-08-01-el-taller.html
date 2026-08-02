@@ -4,7 +4,7 @@
 <meta name="theme-color" content="#f5faf0">
 <title>🪚 El Taller — Poda de carozos, paso a paso</title>
 <meta property="og:title" content="🪚 El Taller — Poda de carozos, paso a paso">
-<meta property="og:description" content="Mañana, 3 árboles, 90 minutos. Abrilo con el serrucho en la mano: te voy pasando paso por paso.">
+<meta property="og:description" content="Hoy está seco: 0 mm y sin lluvia. 3 árboles, 90 minutos. Abrilo con el serrucho en la mano — te voy pasando paso por paso.">
 <style>
   :root{
     --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
@@ -161,8 +161,43 @@
   .fb-blk .fb-send:active{ opacity:.75; }
   .fb-blk .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--azul); min-height:1.2em; }
 
+  /* ACK — respuesta a un pedido textual del usuario */
+  .ack{ background:linear-gradient(180deg,#e7f3f6,#f7fbfc); border-color:rgba(63,125,138,.3); }
+  .ack .lbl{ color:var(--azul); }
+  .ack .quote{ margin-top:9px; padding:11px 13px; background:#fff; border-left:3px solid var(--azul);
+    border-radius:0 12px 12px 0; font-size:13.5px; color:var(--ink2); font-style:italic; }
+  .ack .parte{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px; }
+  .ack .parte div{ background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px 5px; text-align:center; }
+  .ack .parte .v{ display:block; font-size:16.5px; font-weight:900; color:var(--verde); line-height:1.15; }
+  .ack .parte .k{ font-size:10px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--ink3); margin-top:3px; display:block; }
+
+  /* VENTANAS de clima */
+  .vent{ list-style:none; margin-top:11px; }
+  .vent li{ display:flex; align-items:center; gap:10px; padding:9px 12px; border:1px solid var(--line);
+    border-radius:12px; margin-top:7px; background:#fff; font-size:13px; }
+  .vent li .d{ font-weight:900; flex:none; width:64px; }
+  .vent li .s{ color:var(--ink2); }
+  .vent li.go{ background:#eef7e0; border-color:rgba(90,138,46,.42); }
+  .vent li.go .d{ color:var(--verde); }
+  .vent li.no{ background:#fdf3f0; border-color:rgba(180,68,46,.22); }
+  .vent li.no .d{ color:var(--rojo); }
+  .vent li .m{ margin-left:auto; font-size:11px; font-weight:800; color:var(--ink3); flex:none; }
+
+  /* TICK por árbol */
+  .tick{ display:inline-flex; align-items:center; gap:7px; margin-top:9px; padding:8px 12px; border-radius:11px;
+    border:1px solid var(--line); background:#fafcf6; font:800 12.5px var(--sans); color:var(--ink2); cursor:pointer; }
+  .tick .bx{ width:18px; height:18px; border-radius:6px; border:2px solid var(--ink3); display:grid; place-items:center;
+    font-size:11px; color:#fff; font-weight:900; flex:none; }
+  .tick:active{ opacity:.7; }
+  .tick.on{ background:#eef7e0; border-color:rgba(90,138,46,.45); color:var(--verde); }
+  .tick.on .bx{ background:var(--verde2); border-color:var(--verde2); }
+  .tick.on .bx::after{ content:"✓"; }
+
   /* BIBLIOTECA */
   .lib{ background:#fbfdf8; }
+  .lib a.item.on{ background:#eef7e0; border-color:rgba(90,138,46,.4); }
+  .lib .on-badge{ display:inline-block; font-size:10px; font-weight:900; letter-spacing:.06em; text-transform:uppercase;
+    color:#fff; background:var(--verde2); border-radius:6px; padding:2px 7px; margin-left:7px; vertical-align:2px; }
   .lib a.item{ display:flex; align-items:center; gap:10px; padding:11px 12px; border:1px solid var(--line);
     border-radius:12px; margin-top:8px; text-decoration:none; color:var(--ink); background:#fff; }
   .lib a.item .e{ font-size:19px; }
@@ -190,16 +225,29 @@
 
   <header class="hero reveal">
     <span class="em">🪚</span>
-    <div class="kicker">El Taller · nº 1</div>
+    <div class="kicker">El Taller · nº 1 · hoy sí</div>
     <h1>Poda de carozos</h1>
-    <p class="sub">Abrí esto <b>mañana, con el serrucho en la mano</b>. Te voy pasando paso por paso, uno a la vez.</p>
+    <p class="sub">Hoy <b>no llueve</b>. Abrí esto con el serrucho en la mano: te voy pasando paso por paso, uno a la vez.</p>
   </header>
 
   <div class="facts reveal">
-    <div class="fact"><span class="n">3</span><span class="l">árboles</span></div>
+    <div class="fact"><span class="n">0 mm</span><span class="l">lluvia hoy</span></div>
     <div class="fact"><span class="n">~90′</span><span class="l">una salida</span></div>
-    <div class="fact"><span class="n">6</span><span class="l">días al viaje</span></div>
+    <div class="fact"><span class="n">5</span><span class="l">días al viaje</span></div>
   </div>
+
+  <!-- ACK: respuesta directa al feedback de ayer -->
+  <section class="blk ack reveal">
+    <div class="lbl">📩 Me lo pediste ayer</div>
+    <h3>Te la mando hoy porque hoy está lindo</h3>
+    <div class="quote">«Genial esto. Pero hoy está lloviendo, mándamela cuando esté lindo!»<br><span style="font-style:normal;font-size:11.5px;color:var(--ink3)">— vos, sábado 1º de agosto, 14:17</span></div>
+    <p style="margin-top:11px">Miré el parte antes de mandártela. <b>Hoy es el mejor día que queda antes del viaje</b>, y no por poco: es el único con 0% de probabilidad de lluvia.</p>
+    <div class="parte">
+      <div><span class="v">0 %</span><span class="k">prob. lluvia</span></div>
+      <div><span class="v">14°</span><span class="k">máxima</span></div>
+      <div><span class="v">18 km/h</span><span class="k">viento</span></div>
+    </div>
+  </section>
 
   <!-- POR QUÉ ESTA SEMANA -->
   <section class="blk porque reveal">
@@ -207,7 +255,18 @@
     <h3>Es la única ventana buena del año</h3>
     <p>Los tres son <b>Prunus</b>, y los Prunus se podan en el <b>filo final</b> de la dormancia: con la yema ya hinchada pero todavía cerrada. Ahí la herida cicatriza rápido porque el árbol está por arrancar — no queda semanas abierta juntando helada y hongo, como pasa si podás en junio.</p>
     <p>Tus tres florecen en <b>agosto</b>. Cuando vuelvas del viaje el 23 ya van a estar en flor: podar sobre flor es tirar la cosecha. Y una <b>helada tardía</b> sobre brote nuevo pega justo al este y al sur, que es donde están el durazno y la ciruela.</p>
-    <p style="margin-top:10px"><b>Traducción:</b> este fin de semana, o el año que viene.</p>
+    <p style="margin-top:10px"><b>Traducción:</b> esta semana, o el año que viene.</p>
+
+    <div class="lbl" style="margin-top:16px">🌦️ Los días que quedan</div>
+    <ul class="vent">
+      <li class="go"><span class="d">Hoy dom 2</span><span class="s">seco, sin lluvia</span><span class="m">0 mm</span></li>
+      <li><span class="d">Lun 3</span><span class="s">50% de probabilidad, viento</span><span class="m">dudoso</span></li>
+      <li class="go"><span class="d">Mar 4</span><span class="s">el otro día bueno</span><span class="m">0 mm</span></li>
+      <li class="no"><span class="d">Mié 5</span><span class="s">llovizna</span><span class="m">0,6 mm</span></li>
+      <li class="no"><span class="d">Jue 6</span><span class="s">lluvia y viento fuerte</span><span class="m">7,5 mm</span></li>
+      <li class="no"><span class="d">Vie 7</span><span class="s">te vas de viaje</span><span class="m">✈️</span></li>
+    </ul>
+    <p style="margin-top:11px;font-size:13px">O sea: <b>hoy y el martes</b>. Si hoy hacés el durazno B-30 y su hermano B-35 —que son el 70% del trabajo—, el martes te quedan el ciruelo F-4 y la ciruela B-38, que son cortos. Podar con la madera mojada no es solo incómodo: <b>la humedad en el corte fresco es justo lo que dispara la gomosis</b>.</p>
   </section>
 
   <!-- HERRAMIENTAS -->
@@ -427,6 +486,7 @@
         <span class="pct">Sacar 40-50% · vaso abierto</span>
         <p>El más exigente y el que primero florece. Fructifica en madera del año anterior: por eso la poda fuerte todos los inviernos no es opcional. Son <b>dos ejemplares</b>, mismo criterio para los dos.</p>
         <a href="https://gardening-chi.vercel.app/tasks/plant-B-30.html">Abrir tarea →</a>
+        <div><span class="tick" onclick="arbol(this,'B-30')"><span class="bx"></span>Los dos, hechos</span></div>
       </div>
     </div>
 
@@ -438,6 +498,7 @@
         <span class="pct">Sacar 25-35% · silueta abierta</span>
         <p>Este es <b>ornamental</b>, no frutal: acá el objetivo es la silueta y el color púrpura de la hoja nueva, no la cosecha. Mano más suave. Está en el frente, así que el sol de la tarde le llega igual — no hace falta abrirlo tanto como al durazno.</p>
         <a href="https://gardening-chi.vercel.app/tasks/plant-F-4.html">Abrir tarea →</a>
+        <div><span class="tick" onclick="arbol(this,'F-4')"><span class="bx"></span>Hecho</span></div>
       </div>
     </div>
 
@@ -449,15 +510,19 @@
         <span class="pct">Sacar 30% · + madera vieja</span>
         <p>Tiene un paso extra: fructifica en <b>madera de 2-3 años</b>, y lo que pasa los 4 años ya casi no produce. Buscá la madera <b>gris y agrietada</b> y sacala desde la base si no es estructural. Y si encontrás ciruelas momificadas colgando del verano, recogelas: son foco de hongo.</p>
         <a href="https://gardening-chi.vercel.app/tasks/plant-B-38.html">Abrir tarea →</a>
+        <div><span class="tick" onclick="arbol(this,'B-38')"><span class="bx"></span>Hecho</span></div>
       </div>
     </div>
+
+    <p style="font-size:12.5px;color:var(--ink3);margin-top:12px;border-top:1px solid var(--line);padding-top:11px">Tachá cada uno cuando lo termines — me queda registrado y no te vuelvo a nombrar el que ya está. Lo que tildes queda guardado en este teléfono.</p>
   </section>
 
   <!-- BIBLIOTECA DE APROBADAS -->
   <section class="blk lib reveal">
     <div class="lbl">📚 Tus experiencias prendidas</div>
     <h3>Lo que elegiste que vuelva</h3>
-    <div class="none">Todavía no prendiste ninguna para este slot. Lo que <b>prendas</b> acá abajo vuelve en el horario que elijas; lo que no, no te lo mando de nuevo. Mientras tanto, estas quedan disponibles cuando quieras:</div>
+    <div class="none">Ayer prendiste <b>El Taller</b> en el slot de los <b>lunes 18:00</b> y le pusiste 😍 — así que vuelve, con una tarea real distinta cada vez. Lo que no prendas, no te lo mando de nuevo. Éstas también quedan disponibles:</div>
+    <a class="item on" href="https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html"><span class="e">🪚</span><span class="t">El Taller<span class="on-badge">Lun 18:00</span><small>Poda de carozos · nº 1</small></span><span class="go">→</span></a>
     <a class="item" href="https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html"><span class="e">🧳</span><span class="t">Tu jardín hoy<small>Las 15 tareas, ordenadas alrededor del viaje</small></span><span class="go">→</span></a>
     <a class="item" href="https://gardening-chi.vercel.app/engage/2026-07-24-tu-semana.html"><span class="e">✅</span><span class="t">Tu semana<small>Recap de lo que cerraste</small></span><span class="go">→</span></a>
   </section>
@@ -498,7 +563,7 @@
 
   <footer class="pie">
     <a href="https://gardening-chi.vercel.app/tareas.html">Ver el Timeline completo →</a>
-    <div class="cred">El Taller nº 1 · edición del 1 de agosto de 2026 · criterio de poda tomado de las fichas B-30/B-35, F-4 y B-38 del catálogo Pacha Mama</div>
+    <div class="cred">El Taller nº 1 · <b>edición del domingo 2 de agosto de 2026</b> (revisada con el parte del día) · criterio de poda tomado de las fichas B-30/B-35, F-4 y B-38 del catálogo Pacha Mama</div>
   </footer>
 
 </div>
@@ -524,6 +589,27 @@ function tool(li, n){
   try{
     var s = JSON.parse(localStorage.getItem(TK) || '{}');
     document.querySelectorAll('#tools li').forEach(function(li, i){ if (s[i+1]) li.classList.add('on'); });
+  }catch(e){}
+})();
+
+/* tick por árbol — persiste en el device y me deja registrado cuál cerró */
+var AK = 'taller_arboles_20260802';
+function arbol(el, code){
+  var on = el.classList.toggle('on');
+  try{
+    var s = JSON.parse(localStorage.getItem(AK) || '{}');
+    s[code] = on; localStorage.setItem(AK, JSON.stringify(s));
+  }catch(e){}
+  /* botón suelto a propósito: engage.js loguea sin deshabilitar el toggle */
+  try{ if (on && typeof engageAnswer === 'function') engageAnswer('taller-arbol-' + code, 'ok', document.createElement('button')); }catch(e){}
+}
+(function(){
+  try{
+    var s = JSON.parse(localStorage.getItem(AK) || '{}');
+    document.querySelectorAll('.tick').forEach(function(el){
+      var m = /arbol\(this,'([^']+)'\)/.exec(el.getAttribute('onclick') || '');
+      if (m && s[m[1]]) el.classList.add('on');
+    });
   }catch(e){}
 })();
 
