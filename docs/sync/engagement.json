@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-02T17:25:11.901Z",
+  "_updated_at": "2026-08-02T17:25:17.235Z",
   "events": [
     {
       "_id": "mrr25ve1ixyt6v",
@@ -1808,6 +1808,15 @@
       "value": "ok",
       "page": "engage/2026-08-01-el-taller.html",
       "ts": "2026-08-02T17:25:11.490Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msc2mhbrwhfgon",
+      "type": "answer",
+      "qid": "taller-arbol-B-38",
+      "value": "ok",
+      "page": "engage/2026-08-01-el-taller.html",
+      "ts": "2026-08-02T17:25:17.751Z",
       "device": "sin-nombre"
     }
   ],
