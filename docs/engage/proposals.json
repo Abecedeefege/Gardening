@@ -959,11 +959,24 @@
     "2026-08-02-el-taller"
    ],
    "pitch": "engage/2026-08-01-el-taller-pitch.html",
-   "result_notes": "GANADORA — la mejor senal desde el thread del liquidambar. Dwell 168s scroll 95% + 30s scroll 100%. Completo los 7 pasos del wizard ENTEROS y despues los recorrio de nuevo (taller-paso-1..7 dos veces): el formato walkthrough se consume tal como fue disenado. Reaccion LOVE (unica 'love' del ciclo) + prendio el slot LUNES 18:00 ('si') + feedback_text POSITIVO: «Genial esto. Pero hoy esta lloviendo, mandamela cuando este lindo!». Dejo el slot sabado 11:00 sin prender. Veredicto: APROBADA y RECURRENTE en lun 18:00. Confirma la meta-regla #1: SUSTANCIA tecnica real sobre SU jardin > cualquier gimmick. Pedido explicito atendido el 02/08: verificado el parte (hoy domingo 2 = 0 mm / 0% prob, unico dia sin lluvia antes del viaje) y re-enviada la MISMA URL con contenido renovado (bloque de acuse del feedback citado, tabla de ventanas reales hasta el viaje, ticks persistentes por arbol, biblioteca reflejando el slot prendido).",
+   "result_notes": "GANADORA — la mejor senal desde el thread del liquidambar. Dwell 168s scroll 95% + 30s scroll 100%. Completo los 7 pasos del wizard ENTEROS y despues los recorrio de nuevo (taller-paso-1..7 dos veces): el formato walkthrough se consume tal como fue disenado. Reaccion LOVE (unica 'love' del ciclo) + prendio el slot LUNES 18:00 ('si') + feedback_text POSITIVO: «Genial esto. Pero hoy esta lloviendo, mandamela cuando este lindo!». Dejo el slot sabado 11:00 sin prender. Veredicto: APROBADA y RECURRENTE en lun 18:00. Confirma la meta-regla #1: SUSTANCIA tecnica real sobre SU jardin > cualquier gimmick. Pedido explicito atendido el 02/08: verificado el parte (hoy domingo 2 = 0 mm / 0% prob, unico dia sin lluvia antes del viaje) y re-enviada la MISMA URL con contenido renovado (bloque de acuse del feedback citado, tabla de ventanas reales hasta el viaje, ticks persistentes por arbol, biblioteca reflejando el slot prendido). || 02/08 (2do envio): volvio a recorrer los 7 pasos ENTEROS a ritmo real (15:08-15:11), reacciono LOVE de nuevo y PRENDIO TAMBIEN EL SLOT SABADO 11:00 — ahora tiene los DOS slots. Tildo taller-arbol-B-30 y taller-arbol-B-38 a las 17:25: podo el durazno (los dos ejemplares) y la ciruela amarilla. Falta F-4. Los ticks por arbol funcionaron como instrumento: se exactamente que cerro. Y desde la caja de feedback pregunto que mas podar y que hacer con el neem -> respondido en 2026-08-02-que-mas-podo.",
    "approved_slots": [
-    "lun18"
+    "lun18",
+    "sab11"
    ],
    "recurrence": "Serie «El Taller»: una edicion por tarea real. nº2 = poda de flor (crespon B-9 / althea B-18) a la vuelta del viaje."
+  },
+  {
+   "id": "2026-08-02-que-mas-podo",
+   "title": "🪚 Qué más podar + qué hacer con el neem (respuesta directa a su pregunta)",
+   "page": "engage/2026-08-02-que-mas-podo.html",
+   "created": "2026-08-02",
+   "status": "pending",
+   "hypothesis": "El usuario pregunto dos cosas CONCRETAS con las manos sucias, mientras podaba, y pidio respuesta por push. Hipotesis: contestar una pregunta real en menos de 2 horas, con las fichas de SUS plantas + el parte meteorologico verificado, es la forma mas alta de la meta-regla #1 (sustancia > gimmick). No es una experiencia programada: es un agente contestando. Diferencial vs El Taller: aca la agenda la pone EL, yo solo respondo bien. Apuesta de credibilidad: incluyo explicitamente lo que NO debe podar y donde NO gastar el neem — decir 'no' donde corresponde deberia valer mas que sumar tareas. Senal a mirar: reaccion, si tilda alguno de los 5 ticks (podo-B-9 / B-18 / F-4 / B-15 / B-25-neem), y si prende un slot para que este formato recurra.",
+   "notified_by": [
+    "2026-08-02-que-mas-podo"
+   ],
+   "result_notes": null
   }
  ],
  "_updated_at": "2026-08-02"

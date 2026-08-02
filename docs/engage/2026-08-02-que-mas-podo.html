@@ -1,0 +1,442 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🪚 Qué más podar + el neem — respuesta</title>
+<meta property="og:title" content="🪚 Qué más podar + qué hacer con el neem">
+<meta property="og:description" content="Me preguntaste dos cosas mientras podabas. Te contesto las dos, con lo que da la ficha de cada planta y el parte de estos días.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
+    --sol:#e0a92e; --azul:#3f7d8a; --rojo:#b4442e; --madera:#8a5a2b;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 24px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:30px 0 4px; text-align:center; }
+  .hero .em{ font-size:42px; display:block; }
+  .hero .kicker{ font-size:11.5px; font-weight:900; letter-spacing:.19em; text-transform:uppercase; color:var(--madera); margin-top:8px; }
+  .hero h1{ font-size:32px; line-height:1.06; margin:8px 0 8px; font-weight:900; letter-spacing:-.025em; }
+  .hero .sub{ color:var(--ink2); font-size:15px; max-width:32ch; margin:0 auto; }
+
+  .blk{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 18px; margin:14px 0;
+    box-shadow:0 6px 20px rgba(45,80,22,.05); }
+  .blk h3{ font-size:17.5px; font-weight:900; margin-bottom:7px; letter-spacing:-.01em; }
+  .blk p{ color:var(--ink2); font-size:14px; }
+  .blk p + p{ margin-top:8px; }
+  .lbl{ font-size:11px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:var(--ink3); }
+
+  /* pregunta citada */
+  .q{ background:linear-gradient(180deg,#e7f3f6,#f7fbfc); border-color:rgba(63,125,138,.3); }
+  .q .lbl{ color:var(--azul); }
+  .q .quote{ margin-top:10px; padding:12px 14px; background:#fff; border-left:3px solid var(--azul);
+    border-radius:0 12px 12px 0; font-size:14px; color:var(--ink); font-style:italic; }
+  .q .quote span{ display:block; font-style:normal; font-size:11.5px; color:var(--ink3); margin-top:7px; }
+  .q .hechas{ display:flex; gap:8px; margin-top:12px; }
+  .q .hechas div{ flex:1; background:#fff; border:1px solid rgba(90,138,46,.4); border-radius:12px; padding:10px 6px; text-align:center; }
+  .q .hechas .v{ display:block; font-size:15px; font-weight:900; color:var(--verde2); }
+  .q .hechas .k{ font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:var(--ink3); margin-top:2px; display:block; }
+
+  /* respuesta grande */
+  .ans{ background:linear-gradient(180deg,#1e2a17,#2d3a22); border:none; color:#eef4e6; }
+  .ans .lbl{ color:#a9c48a; }
+  .ans h3{ color:#fff; font-size:20px; }
+  .ans p{ color:#c9d8b8; }
+  .ans .big{ font-size:44px; font-weight:900; color:#c6e58a; line-height:1; letter-spacing:-.03em; }
+
+  /* fichas podables */
+  .item{ display:flex; gap:12px; align-items:flex-start; padding:14px 0; border-top:1px solid var(--line); }
+  .item:first-of-type{ border-top:none; padding-top:8px; }
+  .item img{ width:74px; height:74px; border-radius:13px; object-fit:cover; flex:none; border:1px solid var(--line); background:#eef4e6; }
+  .item .b{ flex:1; min-width:0; }
+  .item h4{ font-size:15px; font-weight:900; }
+  .item .code{ color:var(--ink3); font-size:11.5px; font-family:ui-monospace,monospace; font-weight:700; }
+  .item .sci{ font-size:11.5px; color:var(--ink3); font-style:italic; }
+  .item .tag{ display:inline-block; font-size:11px; font-weight:900; border-radius:7px; padding:3px 9px; margin:6px 6px 0 0; }
+  .item .tag.pct{ color:#b7860b; background:#fdf4dd; border:1px solid rgba(224,169,46,.3); }
+  .item .tag.flor{ color:#a3457c; background:#fbeaf3; border:1px solid rgba(163,69,124,.25); }
+  .item .tag.late{ color:var(--rojo); background:#fdf0ec; border:1px solid rgba(180,68,46,.25); }
+  .item p{ font-size:13px; color:var(--ink2); margin-top:7px; }
+  .item .why{ margin-top:8px; padding:9px 11px; background:#f4f9ec; border-radius:11px; font-size:12.5px; color:var(--ink2); }
+  .item .why b{ color:var(--verde); }
+  .item a{ font-size:12px; font-weight:800; color:var(--azul); text-decoration:none; display:inline-block; margin-top:8px; }
+
+  /* tick */
+  .tick{ display:inline-flex; align-items:center; gap:7px; margin-top:9px; padding:8px 12px; border-radius:11px;
+    border:1px solid var(--line); background:#fafcf6; font:800 12.5px var(--sans); color:var(--ink2); cursor:pointer; }
+  .tick .bx{ width:18px; height:18px; border-radius:6px; border:2px solid var(--ink3); display:grid; place-items:center;
+    font-size:11px; color:#fff; font-weight:900; flex:none; }
+  .tick:active{ opacity:.7; }
+  .tick.on{ background:#eef7e0; border-color:rgba(90,138,46,.45); color:var(--verde); }
+  .tick.on .bx{ background:var(--verde2); border-color:var(--verde2); }
+  .tick.on .bx::after{ content:"✓"; }
+
+  /* NO tocar */
+  .no{ background:linear-gradient(180deg,#fdf3f0,#fffbfa); border-color:rgba(180,68,46,.22); }
+  .no .lbl{ color:var(--rojo); }
+  .no ul{ list-style:none; margin-top:10px; }
+  .no li{ display:flex; gap:10px; padding:10px 12px; background:#fff; border:1px solid var(--line);
+    border-radius:12px; margin-top:7px; font-size:13px; align-items:flex-start; }
+  .no li .x{ color:var(--rojo); font-weight:900; flex:none; }
+  .no li b{ color:var(--ink); }
+  .no li small{ display:block; color:var(--ink3); font-size:12px; margin-top:2px; }
+
+  /* NEEM */
+  .neem{ background:linear-gradient(180deg,#eef6e4,#f8fcf3); border-color:rgba(90,138,46,.32); }
+  .neem .lbl{ color:var(--verde2); }
+  .dosis{ display:flex; gap:8px; margin-top:12px; }
+  .dosis div{ flex:1; background:#fff; border:1px solid var(--line); border-radius:13px; padding:12px 6px; text-align:center; }
+  .dosis .v{ display:block; font-size:17px; font-weight:900; color:var(--verde); line-height:1.15; }
+  .dosis .k{ font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:var(--ink3); margin-top:3px; display:block; }
+  .plan{ list-style:none; margin-top:12px; }
+  .plan li{ display:flex; gap:10px; align-items:center; padding:10px 12px; background:#fff; border:1px solid var(--line);
+    border-radius:12px; margin-top:7px; font-size:13px; }
+  .plan li .d{ font-weight:900; flex:none; width:70px; }
+  .plan li.go{ background:#eef7e0; border-color:rgba(90,138,46,.42); }
+  .plan li.go .d{ color:var(--verde); }
+  .plan li.bad{ background:#fdf3f0; border-color:rgba(180,68,46,.22); }
+  .plan li.bad .d{ color:var(--rojo); }
+  .plan li .m{ margin-left:auto; font-size:11px; font-weight:800; color:var(--ink3); flex:none; }
+  .warn{ margin-top:12px; padding:11px 13px; background:rgba(180,68,46,.09); border-left:3px solid var(--rojo);
+    border-radius:0 12px 12px 0; font-size:13px; color:var(--ink2); }
+  .warn b{ color:var(--ink); }
+
+  /* pendientes */
+  details.pend{ background:var(--card); border:1px solid var(--line); border-radius:15px; margin-top:10px; overflow:hidden; }
+  details.pend summary{ list-style:none; cursor:pointer; padding:14px 15px; font-weight:800; font-size:14.5px; display:flex; gap:9px; align-items:center; }
+  details.pend summary::-webkit-details-marker{ display:none; }
+  details.pend summary .n{ margin-left:auto; background:var(--verde3); color:var(--verde); font-size:11.5px;
+    font-weight:900; border-radius:99px; padding:3px 10px; }
+  details.pend .cnt{ padding:0 15px 15px; border-top:1px solid var(--line); padding-top:12px; }
+  details.pend .row{ display:flex; gap:9px; padding:9px 0; border-top:1px dashed var(--line); font-size:13px; align-items:flex-start; }
+  details.pend .row:first-child{ border-top:none; padding-top:0; }
+  details.pend .row .c{ font-family:ui-monospace,monospace; font-size:11px; font-weight:700; color:var(--ink3); flex:none; width:52px; padding-top:2px; }
+  details.pend .row b{ color:var(--ink); }
+  details.pend .row small{ display:block; color:var(--ink3); font-size:12px; }
+
+  /* SLOTS */
+  .slots{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border-color:rgba(90,138,46,.3); }
+  .slot{ display:flex; align-items:center; gap:10px; padding:12px 13px; background:#fff; border:1px solid var(--line);
+    border-radius:13px; margin-top:9px; }
+  .slot-lbl{ font-size:13.5px; font-weight:800; }
+  .slot-lbl small{ display:block; font-weight:600; color:var(--ink3); font-size:11.5px; }
+  .slot-btns{ margin-left:auto; display:flex; gap:7px; flex:none; }
+  .slot-btns button{ border:1px solid var(--line); background:#f7fbf1; color:var(--ink2); border-radius:9px;
+    padding:8px 13px; font:800 12.5px var(--sans); cursor:pointer; }
+  .slot-btns .si{ background:var(--verde2); color:#fff; border-color:var(--verde2); }
+  .slot-btns button:active{ opacity:.7; }
+  .slot-btns button.sel{ background:var(--verde); color:#fff; border-color:var(--verde); }
+  .slot-btns button:disabled:not(.sel){ opacity:.4; }
+
+  .react{ text-align:center; }
+  .react .row{ display:flex; justify-content:center; gap:11px; margin-top:12px; }
+  .react button{ width:58px; height:58px; border-radius:50%; border:1px solid var(--line); background:#fff;
+    font-size:27px; cursor:pointer; transition:transform .15s; }
+  .react button:active{ transform:scale(.88); }
+  .react button.sel{ background:var(--verde3); border-color:var(--verde2); transform:scale(1.08); }
+
+  .fb-blk{ background:linear-gradient(180deg,#eaf2f6,#f8fbfc); border-color:rgba(63,125,138,.28); }
+  .fb-blk textarea{ width:100%; background:#fff; border:1px solid rgba(63,125,138,.22); border-radius:12px;
+    color:var(--ink); padding:11px 12px; font:14px/1.45 var(--sans); resize:vertical; margin-top:10px; }
+  .fb-blk .fb-send{ margin-top:9px; background:var(--azul); color:#fff; border:none; border-radius:12px;
+    padding:12px 22px; font:800 14.5px var(--sans); cursor:pointer; }
+  .fb-blk .fb-send:active{ opacity:.75; }
+  .fb-blk .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--azul); min-height:1.2em; }
+
+  .lib{ background:#fbfdf8; }
+  .lib a.item2{ display:flex; align-items:center; gap:10px; padding:11px 12px; border:1px solid var(--line);
+    border-radius:12px; margin-top:8px; text-decoration:none; color:var(--ink); background:#fff; }
+  .lib a.item2 .e{ font-size:19px; }
+  .lib a.item2 .t{ font-size:13.5px; font-weight:800; }
+  .lib a.item2 .t small{ display:block; font-weight:500; color:var(--ink3); font-size:11.5px; }
+  .lib a.item2 .go{ margin-left:auto; color:var(--ink3); font-weight:900; }
+  .lib .on-badge{ display:inline-block; font-size:10px; font-weight:900; letter-spacing:.06em; text-transform:uppercase;
+    color:#fff; background:var(--verde2); border-radius:6px; padding:2px 7px; margin-left:7px; vertical-align:2px; }
+
+  .engage-actions{ display:flex; flex-direction:column; gap:10px; margin:20px 0 8px; }
+  .engage-actions button{ border:none; border-radius:14px; padding:15px; font:900 15px var(--sans); cursor:pointer; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:#fff; color:var(--ink3); border:1px solid var(--line); }
+  .engage-actions button:active{ opacity:.75; }
+
+  .pie{ text-align:center; padding:14px 0 8px; }
+  .pie a{ color:var(--verde2); font-weight:800; font-size:14px; text-decoration:none; }
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:10px; line-height:1.55; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <span class="em">🪚</span>
+    <div class="kicker">Respuesta · domingo 2/08</div>
+    <h1>Qué más podar<br>y el neem</h1>
+    <p class="sub">Me preguntaste dos cosas con las manos sucias. Te contesto las dos.</p>
+  </header>
+
+  <!-- LA PREGUNTA -->
+  <section class="blk q reveal">
+    <div class="lbl">💬 Lo que me escribiste recién</div>
+    <div class="quote">«¿Qué otra cosa puedo podar?<br>¿Qué tareas puedo hacer con el aceite de Neem ya que lo voy a usar?»<span>— vos, hoy 14:26, desde El Taller</span></div>
+    <p style="margin-top:12px">Antes de contestarte miré qué tildaste. Vas <b>dos de tres</b> con los primos:</p>
+    <div class="hechas">
+      <div><span class="v">✅ B-30·35</span><span class="k">durazno</span></div>
+      <div><span class="v">✅ B-38</span><span class="k">ciruela</span></div>
+      <div><span class="v">⏳ F-4</span><span class="k">ciruelo</span></div>
+    </div>
+  </section>
+
+  <!-- RESPUESTA 1 -->
+  <section class="blk ans reveal">
+    <div class="lbl">🪚 Pregunta 1</div>
+    <h3>¿Qué otra cosa podés podar?</h3>
+    <p style="margin-top:10px"><span class="big">4</span></p>
+    <p style="margin-top:6px">Cuatro más, hoy mismo, con la tijera que ya tenés afuera. Y dos de ellas <b>no están adelantadas: están atrasadas</b> — su ficha dice junio-julio y estamos a 2 de agosto.</p>
+    <p style="margin-top:9px">Las ordené por lo que más te rinde según lo que me dijiste que querés: <b>más flor</b>.</p>
+  </section>
+
+  <section class="blk reveal">
+    <div class="lbl">🌸 Los cuatro, en orden</div>
+    <h3>Empezá por el crespón</h3>
+
+    <div class="item">
+      <img src="https://gardening-chi.vercel.app/images/b9.jpg" alt="Crespón B-9" loading="lazy">
+      <div class="b">
+        <h4>Crespón <span class="code">B-9</span></h4>
+        <div class="sci">Lagerstroemia indica</div>
+        <span class="tag pct">Sacar 50-70%</span><span class="tag flor">florece en madera nueva</span><span class="tag late">atrasado</span>
+        <p>Poda <b>severa</b>, y no le tengas miedo: eso de que la poda drástica lo arruina («crepe murder») es un mito en esta especie. Tolera perfectamente que le saques dos tercios.</p>
+        <div class="why"><b>Por qué es el nº1 para vos:</b> florece en la madera que va a sacar <i>este</i> año. Cada rama que acortás fuerte se convierte en varias ramas nuevas, y cada una trae su panícula. Podarlo fuerte hoy es literalmente la palanca más directa que tenés para «más flor» este verano.</div>
+        <a href="https://gardening-chi.vercel.app/tasks/plant-B-9.html">Abrir tarea →</a>
+        <div><span class="tick" onclick="hecho(this,'B-9')"><span class="bx"></span>Hecho</span></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://gardening-chi.vercel.app/images/b18.jpg" alt="Althea B-18" loading="lazy">
+      <div class="b">
+        <h4>Rosa de Siria / Althea <span class="code">B-18</span></h4>
+        <div class="sci">Hibiscus syriacus</div>
+        <span class="tag pct">Sacar 40-50%</span><span class="tag flor">florece en madera nueva</span><span class="tag late">atrasada</span>
+        <p>Misma lógica que el crespón. Reducí las ramas del año pasado dejando <b>2-3 yemas</b> en cada una — sí, queda corta y se ve pelada; es exactamente el punto.</p>
+        <div class="why"><b>No la confundas con el hibisco B-4.</b> Ésta es caduca y está dormida, se poda ahora. El B-4 es perenne y tropical: ése ni lo toques todavía (más abajo te explico).</div>
+        <a href="https://gardening-chi.vercel.app/tasks/plant-B-18.html">Abrir tarea →</a>
+        <div><span class="tick" onclick="hecho(this,'B-18')"><span class="bx"></span>Hecho</span></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://gardening-chi.vercel.app/images/F-4_ciruelo_purpura_otonal.jpg" alt="Ciruelo F-4" loading="lazy">
+      <div class="b">
+        <h4>Ciruelo del frente <span class="code">F-4</span></h4>
+        <div class="sci">Prunus cerasifera 'Pissardii'</div>
+        <span class="tag pct">Sacar 25-35%</span>
+        <p>El primo que te falta. Ya sabés el procedimiento entero — es el mismo del Taller, pero con mano más suave: es <b>ornamental</b>, acá buscás silueta y el púrpura de la hoja nueva, no cosecha.</p>
+        <div class="why"><b>Acordate del alcohol</b> antes de pasarte del durazno a éste. Es el paso que más se saltea y los Prunus se contagian entre sí.</div>
+        <a href="https://gardening-chi.vercel.app/tasks/plant-F-4.html">Abrir tarea →</a>
+        <div><span class="tick" onclick="hecho(this,'F-4')"><span class="bx"></span>Hecho</span></div>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://gardening-chi.vercel.app/images/PXL_20260428_130401399_MP.webp" alt="Hiedra B-15" loading="lazy">
+      <div class="b">
+        <h4>Hiedra sobre el galpón <span class="code">B-15</span></h4>
+        <div class="sci">Hedera helix</div>
+        <span class="tag pct">Sin miedo</span>
+        <p>Ésta no es poda de precisión, es contención. Si pasó del galpón, cortá <b>al ras</b> del muro o del tronco que esté trepando. Rebrota desde lo más leñoso, no la vas a matar ni queriendo.</p>
+        <div class="why"><b>Por qué justo ahora:</b> su ficha dice fines de invierno, <b>antes del rebrote</b>. Si la dejás y volvés el 23, agarra el arranque de primavera con toda la estructura vieja intacta y te gana metros.</div>
+        <a href="https://gardening-chi.vercel.app/tasks/plant-B-15.html">Abrir tarea →</a>
+        <div><span class="tick" onclick="hecho(this,'B-15')"><span class="bx"></span>Hecho</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LO QUE NO -->
+  <section class="blk no reveal">
+    <div class="lbl">✋ Y lo que HOY no</div>
+    <h3>Estos cinco esperan, y no es capricho</h3>
+    <p style="font-size:13.5px">Te los digo igual para que no los podes «de paso»: si los tocás ahora y te vas 17 días, el rebrote tierno queda solo frente a las heladas tardías.</p>
+    <ul>
+      <li><span class="x">✕</span><span><b>Hibisco B-4</b> — perenne subtropical. Podar antes de que pase el riesgo de helada le expone brotes nuevos que no van a aguantar. <small>Va a fin de agosto, cuando vuelvas.</small></span></li>
+      <li><span class="x">✕</span><span><b>Pitósporo B-43-2</b> — la reducción fuerte a 2-3 m es agresiva sobre un perenne, y querés estar acá para ver cómo responde. <small>A la vuelta.</small></span></li>
+      <li><span class="x">✕</span><span><b>Podranea F-2</b> y <b>cerco de azarero B-7</b> — perennes, y el cerco además queda feo si lo cortás y no lo podés emparejar en semanas. <small>Última semana de agosto.</small></span></li>
+      <li><span class="x">✕</span><span><b>Limonero B-23, mandarina B-24, paltas, santa rita, lantana</b> — todos esperan a que pase la <b>última helada</b>. En cítricos podar en frío es abrir la puerta a la gomosis. <small>Segunda semana de septiembre.</small></span></li>
+      <li><span class="x">✕</span><span><b>Caqui B-41</b> — está en ventana de poda, pero vos me pediste el 28/07 <b>no tocarlo hasta primavera</b> porque no sabemos qué es. <small>Lo respeto: no te lo vuelvo a nombrar hasta que florezca.</small></span></li>
+    </ul>
+  </section>
+
+  <!-- RESPUESTA 2: NEEM -->
+  <section class="blk ans reveal">
+    <div class="lbl">🧴 Pregunta 2</div>
+    <h3>¿Qué hacés con el aceite de neem?</h3>
+    <p style="margin-top:10px">Hoy tenés <b>una sola</b> tarea real de neem en el jardín — pero es de las urgentes, y es de las pocas que te siguen trabajando mientras estás de viaje.</p>
+  </section>
+
+  <section class="blk neem reveal">
+    <div class="lbl">🐜 La tarea</div>
+    <h3>Gardenia B-25 · pulgones + hormigas</h3>
+    <div class="item" style="padding-top:6px">
+      <img src="https://gardening-chi.vercel.app/images/b25.jpg" alt="Gardenia B-25" loading="lazy">
+      <div class="b">
+        <h4>Gardenia / Jazmín del Cabo <span class="code">B-25</span></h4>
+        <div class="sci">Gardenia jasminoides</div>
+        <p>La inspección ya confirmó la plaga: <b>pulgones negros agrupados en pecíolos y brotes nuevos</b>. No es sospecha, está vista.</p>
+      </div>
+    </div>
+    <div class="dosis">
+      <div><span class="v">3-5 ml/L</span><span class="k">de neem</span></div>
+      <div><span class="v">2-3 gotas</span><span class="k">detergente</span></div>
+      <div><span class="v">al envés</span><span class="k">de la hoja</span></div>
+    </div>
+    <p style="margin-top:12px;font-size:13.5px"><b>El paso que casi todos saltean:</b> antes de pulverizar, <b>cortá el tránsito de las hormigas</b> — una cinta con vaselina alrededor del tronco a 30 cm del suelo. Las hormigas <i>crían</i> a los pulgones y los defienden: si no las cortás, repoblan lo que mataste. Y esa cinta es lo único de todo esto que <b>sigue funcionando los 17 días que no estás</b>.</p>
+
+    <div class="lbl" style="margin-top:16px">📅 El plan alrededor del viaje</div>
+    <ul class="plan">
+      <li class="go"><span class="d">Hoy dom 2</span><span>vaselina + 1ª aplicación</span><span class="m">seco · mín 9°</span></li>
+      <li class="bad"><span class="d">Lun 3</span><span>50% de lluvia — no gastes producto</span><span class="m">✕</span></li>
+      <li class="go"><span class="d">Mar 4</span><span>2ª aplicación</span><span class="m">seco · mín 12°</span></li>
+      <li class="bad"><span class="d">Jue 6</span><span>7,5 mm: lava todo lo que apliques</span><span class="m">✕</span></li>
+      <li><span class="d">24-25/8</span><span>3ª aplicación al volver, y cerrás el ciclo</span><span class="m">✈️ vuelta</span></li>
+    </ul>
+    <p style="margin-top:11px;font-size:13.5px">El neem quiere <b>2-3 aplicaciones cada 7-10 días</b>. Con el viaje en el medio no vas a cerrar el ciclo seguido, y está bien: dos aplicaciones ahora bajan la población, y la barrera de hormigas sostiene el resultado hasta que vuelvas.</p>
+
+    <div class="warn"><b>Tres reglas y una aclaración.</b> Siempre <b>al atardecer</b> (con sol de mediodía el aceite quema la hoja). Nunca si esa noche va a helar — hoy la mínima es 9°, así que estás bien. Y siempre al <b>envés</b>, que es donde está el bicho.<br><br><b>La aclaración:</b> el neem <u>no</u> es fungicida de cortes de poda. No lo uses en las heridas de los carozos — eso es pasta cicatrizante, y el cobre va recién en abril. Son cosas distintas.</div>
+    <a href="https://gardening-chi.vercel.app/tasks/plant-B-25-3.html" style="display:inline-block;margin-top:12px;font-size:12.5px;font-weight:800;color:var(--azul);text-decoration:none">Abrir la tarea de la gardenia →</a>
+    <div><span class="tick" onclick="hecho(this,'B-25-neem')"><span class="bx"></span>Neem aplicado</span></div>
+  </section>
+
+  <section class="blk reveal">
+    <div class="lbl">🍋 Donde NO lo gastes todavía</div>
+    <h3>Los cítricos van en septiembre</h3>
+    <p>El limonero B-23 y la mandarina B-24 tuvieron minador confirmado en mayo y ya fueron tratados. La próxima inspección tiene fecha: <b>septiembre, antes del brote primaveral</b>, para agarrar la cochinilla saliendo de la diapausa invernal. Aplicar neem ahí ahora, en pleno frío y sin plaga visible, no hace nada.</p>
+    <p>El guayabo F-1, que era el otro candidato, ya lo resolviste vos el 23/07 con la poda de lo afectado.</p>
+  </section>
+
+  <!-- MAS PENDIENTES -->
+  <section class="blk reveal">
+    <div class="lbl">📋 Y lo demás que me pediste</div>
+    <h3>Todo lo que queda, en dos cajones</h3>
+    <p style="font-size:13.5px">Contado contra las fichas y contra lo que ya tildaste — no contra la lista de ayer.</p>
+
+    <details class="pend" open>
+      <summary>✈️ Antes de irte (hasta el jueves 6)<span class="n">6</span></summary>
+      <div class="cnt">
+        <div class="row"><span class="c">B-9</span><span><b>Crespón — poda severa</b><small>Hoy. Es tu mayor palanca de flor.</small></span></div>
+        <div class="row"><span class="c">B-18</span><span><b>Althea — poda severa a 2-3 yemas</b><small>Hoy.</small></span></div>
+        <div class="row"><span class="c">F-4</span><span><b>Ciruelo del frente — el primo que falta</b><small>Hoy o el martes.</small></span></div>
+        <div class="row"><span class="c">B-15</span><span><b>Hiedra — cortar la invasión del galpón</b><small>Cualquier día seco.</small></span></div>
+        <div class="row"><span class="c">B-25</span><span><b>Gardenia — vaselina + neem</b><small>Hoy al atardecer y el martes.</small></span></div>
+        <div class="row"><span class="c">B-5a·b</span><span><b>Hortensia a tierra</b><small>Ya perdió todas las hojas: es el momento. Rincón sur, junto a la pera B-39, como quedamos.</small></span></div>
+      </div>
+    </details>
+
+    <details class="pend">
+      <summary>🏠 A la vuelta (24 al 31 de agosto)<span class="n">8</span></summary>
+      <div class="cnt">
+        <div class="row"><span class="c">B-43-2</span><span><b>Pitósporo — reducción a 2-3 m como pantalla</b></span></div>
+        <div class="row"><span class="c">B-4</span><span><b>Hibisco — poda de fin de invierno</b><small>La más atrasable de todas.</small></span></div>
+        <div class="row"><span class="c">F-2</span><span><b>Podranea — poda fuerte de invierno</b></span></div>
+        <div class="row"><span class="c">B-7</span><span><b>Cerco de azarero — recorte parejo (4 ejemplares)</b></span></div>
+        <div class="row"><span class="c">F-7</span><span><b>Abelia — antes de que hinchen las yemas</b></span></div>
+        <div class="row"><span class="c">B-25</span><span><b>Gardenia — acidificar la tierra antes de brotar</b></span></div>
+        <div class="row"><span class="c">B-25-3</span><span><b>Gardenia — 3ª aplicación de neem</b><small>Cierra el ciclo empezado hoy.</small></span></div>
+        <div class="row"><span class="c">huerta</span><span><b>Definir plantines y arrancar con la lechuga</b><small>Muro norte, como decidiste.</small></span></div>
+      </div>
+    </details>
+
+    <p style="margin-top:12px;font-size:12.5px;color:var(--ink3)">Del <b>7 al 23</b> no te voy a pedir nada: el jardín está en dormancia y no necesita a nadie. Si querés, a la vuelta te mando las 8 ordenadas por rendimiento en flor.</p>
+  </section>
+
+  <!-- BIBLIOTECA -->
+  <section class="blk lib reveal">
+    <div class="lbl">📚 Tus experiencias prendidas</div>
+    <h3>Lo que elegiste que vuelva</h3>
+    <a class="item2 on" href="https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html"><span class="e">🪚</span><span class="t">El Taller<span class="on-badge">Lun 18:00 · Sáb 11:00</span><small>Poda de carozos · nº 1</small></span><span class="go">→</span></a>
+    <a class="item2" href="https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html"><span class="e">🧳</span><span class="t">Tu jardín hoy<small>Las tareas, ordenadas alrededor del viaje</small></span><span class="go">→</span></a>
+  </section>
+
+  <!-- SLOTS -->
+  <section class="blk slots reveal">
+    <div class="lbl">🗓️ Slots disponibles</div>
+    <h3>¿Querés que te conteste siempre así?</h3>
+    <p style="font-size:13.5px">Esto no fue una experiencia programada: fue una respuesta a una pregunta tuya, armada con las fichas de tus plantas y el parte del día. Si te sirve, prendela y te llega en el horario que elijas.</p>
+    <div class="slot"><span class="slot-lbl">🗓️ Lunes · 18:00<small>arranque de semana</small></span><span class="slot-btns"><button type="button" class="si" onclick="engageAnswer('que-mas-podo-slot-lun18','si', this)">Prender</button><button type="button" class="no" onclick="engageAnswer('que-mas-podo-slot-lun18','no', this)">No</button></span></div>
+    <div class="slot"><span class="slot-lbl">🗓️ Sábado · 11:00<small>antes de salir al jardín</small></span><span class="slot-btns"><button type="button" class="si" onclick="engageAnswer('que-mas-podo-slot-sab11','si', this)">Prender</button><button type="button" class="no" onclick="engageAnswer('que-mas-podo-slot-sab11','no', this)">No</button></span></div>
+  </section>
+
+  <!-- REACCION -->
+  <section class="blk react reveal">
+    <h3>¿Te contesté lo que preguntabas?</h3>
+    <div class="row">
+      <button type="button" onclick="engageReact('que-mas-podo','love', this)" aria-label="Me encantó">😍</button>
+      <button type="button" onclick="engageReact('que-mas-podo','like', this)" aria-label="Me gustó">🙂</button>
+      <button type="button" onclick="engageReact('que-mas-podo','meh', this)" aria-label="Meh">😐</button>
+      <button type="button" onclick="engageReact('que-mas-podo','no', this)" aria-label="No">🙅</button>
+    </div>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Preguntame otra cosa</h3>
+    <p style="font-size:13.5px">Esto lo leo yo antes de armar lo próximo. Si te queda una duda mientras podás, escribila acá y te contesto — como recién.</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('que-mas-podo', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-08-02-que-mas-podo')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-08-02-que-mas-podo')">✕ No me interesa</button>
+  </div>
+
+  <footer class="pie">
+    <a href="https://gardening-chi.vercel.app/tareas.html">Ver el Timeline completo →</a>
+    <div class="cred">Respuesta del domingo 2 de agosto de 2026, 15:30 · ventanas de poda tomadas de las fichas B-9, B-18, F-4, B-15 del catálogo Pacha Mama · dosis de neem de la ficha de plaga de B-25 · parte meteorológico de Montevideo para el 2 al 8 de agosto</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+
+/* ticks — persisten en el device y me dejan registrado qué cerró */
+var HK = 'podo_hechos_20260802';
+function hecho(el, code){
+  var on = el.classList.toggle('on');
+  try{
+    var s = JSON.parse(localStorage.getItem(HK) || '{}');
+    s[code] = on; localStorage.setItem(HK, JSON.stringify(s));
+  }catch(e){}
+  /* botón suelto a propósito: engage.js loguea sin deshabilitar el toggle */
+  try{ if (on && typeof engageAnswer === 'function') engageAnswer('podo-' + code, 'ok', document.createElement('button')); }catch(e){}
+}
+(function(){
+  try{
+    var s = JSON.parse(localStorage.getItem(HK) || '{}');
+    document.querySelectorAll('.tick').forEach(function(el){
+      var m = /hecho\(this,'([^']+)'\)/.exec(el.getAttribute('onclick') || '');
+      if (m && s[m[1]]) el.classList.add('on');
+    });
+  }catch(e){}
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>
+</content>

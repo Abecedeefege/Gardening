@@ -19,13 +19,24 @@ No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 
 ## 🏆 EL TALLER = PRIMERA EXPERIENCIA APROBADA Y RECURRENTE (01/08)
 
-`2026-08-01-el-taller` — **APPROVED, slot LUNES 18:00.** Es el mejor resultado desde el thread del liquidámbar y define la línea de producto.
+`2026-08-01-el-taller` — **APPROVED en LOS DOS slots: lunes 18:00 + sábado 11:00.** Es el mejor resultado desde el thread del liquidámbar y define la línea de producto.
 
-- Señal: **7/7 pasos del wizard completados… y después recorridos DE NUEVO** (`taller-paso-1..7` ×2), dwell 168s @95% + 30s @100%, reacción **😍 love**, **slot lun18 «sí»**, y feedback de texto positivo.
-- **Sábado 11:00 lo dejó SIN prender.** No es rechazo del formato: es que el sábado ya tiene la push de tarea a las 10:00. Un solo slot de experiencia por semana le alcanza.
+- Señal: **7/7 pasos del wizard completados… y después recorridos DE NUEVO** (`taller-paso-1..7` ×2 el 01/08, ×1 más el 02/08), dwell 168s @95% + 30s @100%, reacción **😍 love las dos veces**, y feedback de texto positivo.
+- **Prendió lun18 el 01/08 y sáb11 el 02/08.** La primera lectura («un slot por semana le alcanza») estaba equivocada: al segundo envío prendió el otro. La suscripción crece con la confianza, no se decide en la primera pasada — **no dar por cerrada una preferencia con un solo dato.**
 - **Por qué ganó (replicar esto, no la estética):** ① sustancia técnica real y verificable sobre SUS árboles ② se abre **con la herramienta en la mano** — acompaña el trabajo físico, no lo describe ③ una pantalla = una decisión ④ los errores anticipados («el error:») ⑤ diagramas propios en vez de texto.
 - **Serie:** una edición por tarea real. El wizard es reutilizable tal cual, solo cambia el contenido. **nº2 = poda de flor (crespón B-9 / althea B-18)**, a la vuelta del viaje. Después: pitósporo B-43 (reducción), cerco B-7·11·31·33 (recorte parejo).
 - **Métrica nueva y valiosa:** `taller-paso-N` me dice exactamente dónde se traba. Hasta ahora: **no se traba en ningún paso.**
+
+## 🔁 02/08 SEGUNDA VUELTA — el usuario PREGUNTA, y eso cambia el juego
+
+Al reabrir El Taller (2º envío) recorrió los 7 pasos otra vez a ritmo real (15:08→15:11), 😍 de nuevo, **prendió también el slot SÁBADO 11:00 → ahora tiene los DOS**, y a las 17:25 tildó `taller-arbol-B-30` y `taller-arbol-B-38`: **podó el durazno (los dos) y la ciruela amarilla. Falta F-4.**
+
+Después preguntó desde la caja de feedback: **«¿Qué otra cosa puedo podar? ¿Qué tareas puedo hacer con el aceite de Neem ya que lo voy a usar?»** y pidió por chat que le conteste **por push**.
+
+- **Los ticks por árbol son el mejor instrumento que construí.** No solo miden: le dan al usuario una razón para volver a abrir la página horas después. Replicar en todo lo que sea multi-tarea.
+- **Cambio de rol detectado:** pasó de consumir lo que le mando a **preguntarme cosas**. Cuando la agenda la pone él, mi trabajo es responder rápido y bien, no proponer. **Contestar una pregunta real < 2 h con las fichas de SUS plantas es la forma más pura de la meta-regla #1.**
+- **Verificar SIEMPRE contra `task_states.json` antes de sugerir.** Casi le recomiendo podar la pera B-39, el pindó B-8 y la esparraguera B-6-2: las tres ya estaban `done` desde el 23/07. La lista de `due_label` miente; el estado real no.
+- **Hallazgo técnico que vale:** los `due_label` de crespón B-9 y althea B-18 dicen «mediados de agosto», pero la **ficha** (`prune_when`) dice **junio-julio**. No están adelantados: **están atrasados**. Y los dos florecen en madera nueva → poda severa ahora = más flor, que es su objetivo declarado. Cuando el `due_label` y la ficha discrepan, **manda la ficha**.
 
 ## 📩 EJECUTADO 02/08 — pedido textual atendido con dato real
 
@@ -45,9 +56,9 @@ Feedback del 01/08: «Genial esto. Pero **hoy está lloviendo, mándamela cuando
 ## ✈️ CONTEXTO DOMINANTE — VIAJE **7 al 23 DE AGOSTO**
 
 - Tres ventanas, con veredicto antes/después POR TAREA. Usar hasta el 24/08:
-  - **Antes de irte (hasta el 6/8) = 4:** los tres carozos (durazno B-30/B-35, ciruelo F-4, ciruela amarilla B-38) — **hoy domingo 2 o el martes 4, no hay más días secos** — + hortensia B-5a/b a tierra (cualquier día).
+  - **Antes de irte (hasta el 6/8) = 6** (recontado el 02/08 contra `task_states`): ✅ durazno B-30/B-35 y ✅ ciruela B-38 ya hechos · falta ciruelo F-4 · **crespón B-9 y althea B-18** (ficha junio-julio: atrasados, madera nueva → más flor) · **hiedra B-15** (fin de invierno, antes del rebrote) · **gardenia B-25 neem + barrera de hormigas** · **hortensia B-5a/b a tierra**. Días secos: **hoy dom 2 y el martes 4**, nada más.
   - **Durante (7–23/8) = 0.** Dormancia + lluvia. **NO nagear NADA.**
-  - **A la vuelta (24–31/8) = 11:** crespón B-9, althea B-18, caqui B-41, pitósporo B-43-2, gardenia neem B-25-3, hibisco B-4 (la más atrasable), podranea F-2, gardenia acidificar B-25, cerco B-7·11·31·33, hiedra B-15, abelia F-7.
+  - **A la vuelta (24–31/8) = 8:** pitósporo B-43-2, hibisco B-4 (la más atrasable), podranea F-2, cerco B-7·11·31·33, abelia F-7, gardenia acidificar B-25, 3ª aplicación de neem B-25-3, huerta/lechuga. **Caqui B-41 fuera de toda lista hasta primavera** (pedido del usuario).
 - La gran poda NO es «mediados de agosto» este año: la ventana real es **fin de agosto en adelante**.
 - Verificar la lista SIEMPRE contra `generate_tasks_from_plants(PLANTS)` + `task_states.json`, no contra la edición anterior de la página.
 
@@ -90,7 +101,7 @@ Feedback del 01/08: «Genial esto. Pero **hoy está lloviendo, mándamela cuando
 - Push subscription device `pix9`: **active**. Logging vía `/api/feedback` confiable.
 - Jardín en DORMANCIA, saliendo. ~52 días al equinoccio (23/09). Heladas tardías posibles hasta fin de agosto — pican al SUR y al ESTE al amanecer.
 - **Decisiones ejecutadas:** huerta → muro norte, arranque con lechuga a la vuelta · hortensia B-5a/b → a tierra antes del viaje, rincón sur junto a la pera B-39 · liquidámbar B-37 ✅ hecho 30/07 · gardenia B-25 neem → a la vuelta · **objetivo declarado del usuario = «más flor»**.
-- **Pendientes reales al 02/08: 15** (4 antes del viaje + 11 a la vuelta).
+- **Pendientes reales al 02/08 (recontados contra `task_states`): 14** — 6 antes del viaje (2 ya cerrados hoy: durazno y ciruela) + 8 a la vuelta.
 
 ## Verificados clave (NO contradecir)
 
@@ -111,7 +122,7 @@ Feedback del 01/08: «Genial esto. Pero **hoy está lloviendo, mándamela cuando
 
 ## TODO / próximos experimentos
 
-- **Lunes 3/08, slot 18:00:** toca original NUEVA + El Taller (aprobado) agrupado dentro. ⚠️ El usuario se va el viernes 7: la original nueva debe respetar «el viaje = tranquilidad, no deberes» (el eje checklist ya murió el 29/07).
+- **Lunes 3/08, slot 18:00:** toca original NUEVA + El Taller (aprobado en LOS DOS slots) agrupado dentro. ⚠️ Se va el viernes 7 y el lunes llueve al 50%: la original nueva debe respetar «el viaje = tranquilidad, no deberes» (el eje checklist murió el 29/07). Antes de armarla, **mirar si tildó B-9/B-18/F-4/B-15/B-25-neem** — si cerró varios, el ángulo natural es el cierre/recap; si no cerró ninguno, no insistir con lo mismo.
 - **Taller nº2 = poda de flor (crespón B-9 / althea B-18)** para el 24/08, a la vuelta. Cast fresco y tarea distinta.
 - **Plan de reentrada del 24/08:** las 11 tareas ordenadas por prioridad y por rendimiento en flor (su objetivo declarado).
 - Before/after con las fotos reales que sube el usuario (el paso «mandame una foto» del taller es la puerta de entrada).
