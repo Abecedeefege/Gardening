@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-02T21:43:38.270Z",
+  "_updated_at": "2026-08-02T21:43:41.670Z",
   "events": [
     {
       "_id": "mrr25ve1ixyt6v",
@@ -1852,6 +1852,15 @@
       "nid": "2026-08-02-que-mas-podo",
       "src": "push",
       "ts": "2026-08-02T21:43:38.743Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mscbut1avzmqls",
+      "type": "dwell",
+      "seconds": 4,
+      "scroll_pct": 0,
+      "page": "engage/2026-08-02-que-mas-podo.html",
+      "ts": "2026-08-02T21:43:42.718Z",
       "device": "sin-nombre"
     }
   ],
