@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-02T17:25:17.235Z",
+  "_updated_at": "2026-08-02T17:25:46.561Z",
   "events": [
     {
       "_id": "mrr25ve1ixyt6v",
@@ -1818,6 +1818,15 @@
       "page": "engage/2026-08-01-el-taller.html",
       "ts": "2026-08-02T17:25:17.751Z",
       "device": "sin-nombre"
+    },
+    {
+      "_id": "msc2n3zgqxl8x5",
+      "type": "page_visit",
+      "page": "tasks/plant-F-4.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-02T17:25:47.115Z",
+      "device": "landing"
     }
   ],
   "daily_summary": {
