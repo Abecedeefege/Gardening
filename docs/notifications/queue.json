@@ -1,5 +1,5 @@
 {
- "_updated_at": "2026-08-02T17:45:00.000Z",
+ "_updated_at": "2026-08-02T17:47:00.000Z",
  "notifications": [
   {
    "id": "2026-08-02-el-taller",
@@ -18,12 +18,12 @@
    "title": "🪚 Te contesto: 4 más y el neem",
    "body": "Crespón y althea están atrasados y son tu palanca de flor. Y el neem tiene una sola tarea real: la gardenia.",
    "url": "https://gardening-chi.vercel.app/engage/2026-08-02-que-mas-podo.html",
-   "send_at": "2026-08-02T16:00:00-03:00",
+   "send_at": "2026-08-02T14:50:00-03:00",
    "expires_at": "2026-08-02T22:00:00-03:00",
    "status": "pending",
    "sent_at": null,
    "fail_reason": null,
-   "created_by": "engagement-agent 2026-08-02 (respuesta a pedido directo)"
+   "created_by": "engagement-agent 2026-08-02 (respuesta a pedido directo; adelantada: pagina ya publicada y el usuario esta podando ahora)"
   }
  ]
 }
