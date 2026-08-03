@@ -293,6 +293,12 @@
       "nid": "2026-08-02-que-mas-podo",
       "ts": "2026-08-02T17:46:33.591Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-08-03-jardin-hoy",
+      "ts": "2026-08-03T15:41:44.284Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
