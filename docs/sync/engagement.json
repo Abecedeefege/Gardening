@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-03T20:22:28.602Z",
+  "_updated_at": "2026-08-03T20:22:29.991Z",
   "events": [
     {
       "_id": "mruwh765otpxhc",
@@ -1864,6 +1864,15 @@
       "scroll_pct": 13,
       "page": "engage/2026-07-21-asamblea-jardin.html",
       "ts": "2026-08-03T20:22:25.422Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msdoe6fjdw4mc6",
+      "type": "page_visit",
+      "page": "engage/2026-07-10-album-figuritas.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-03T20:22:28.111Z",
       "device": "pix9"
     }
   ],
