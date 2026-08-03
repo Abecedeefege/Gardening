@@ -2,36 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-07-19-task-dia",
-      "ts": "2026-07-19T13:52:50.135Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-07-19-a",
-      "ts": "2026-07-19T13:52:50.183Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-07-19-reply-plant-B-25-3",
-      "ts": "2026-07-19T15:56:07.367Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-07-19-b",
-      "ts": "2026-07-19T16:58:20.322Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-07-19-c",
-      "ts": "2026-07-19T21:27:21.011Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-07-20-task-semana",
       "ts": "2026-07-20T14:34:53.299Z",
       "status_code": 201

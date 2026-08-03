@@ -1,57 +1,6 @@
 {
-  "_updated_at": "2026-08-02T22:34:32.348Z",
+  "_updated_at": "2026-08-03T09:45:00.000Z",
   "events": [
-    {
-      "_id": "mrr25ve1ixyt6v",
-      "type": "notification_clicked",
-      "nid": "2026-07-18-c",
-      "page": "engage/2026-07-01-horoscopo-jardin.html",
-      "ts": "2026-07-19T00:29:13.128Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrr25ve1goneqj",
-      "type": "page_visit",
-      "page": "engage/2026-07-01-horoscopo-jardin.html",
-      "nid": "2026-07-18-c",
-      "src": "push",
-      "ts": "2026-07-19T00:29:13.128Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrs5nnza81506c",
-      "type": "notification_clicked",
-      "nid": "2026-07-19-reply-plant-B-25-3",
-      "page": "tasks/plant-B-25-3.html",
-      "ts": "2026-07-19T18:54:48.349Z",
-      "device": "landing"
-    },
-    {
-      "_id": "mrs5nnza7okx3w",
-      "type": "page_visit",
-      "page": "tasks/plant-B-25-3.html",
-      "nid": "2026-07-19-reply-plant-B-25-3",
-      "src": "push",
-      "ts": "2026-07-19T18:54:48.349Z",
-      "device": "landing"
-    },
-    {
-      "_id": "mrs5oeiowfov8r",
-      "type": "notification_clicked",
-      "nid": "2026-07-19-b",
-      "page": "engage/2026-07-19-nombre-apellido.html",
-      "ts": "2026-07-19T18:55:22.750Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrs5oeiog588za",
-      "type": "page_visit",
-      "page": "engage/2026-07-19-nombre-apellido.html",
-      "nid": "2026-07-19-b",
-      "src": "push",
-      "ts": "2026-07-19T18:55:22.750Z",
-      "device": "sin-nombre"
-    },
     {
       "_id": "mruwh765otpxhc",
       "type": "notification_clicked",
@@ -1892,24 +1841,6 @@
     }
   ],
   "daily_summary": {
-    "2026-06-28": {
-      "sent": 3,
-      "clicked": 0,
-      "visits": 1,
-      "approvals": 0
-    },
-    "2026-06-27": {
-      "sent": 3,
-      "clicked": 2,
-      "visits": 2,
-      "approvals": 0
-    },
-    "2026-06-24": {
-      "sent": 3,
-      "clicked": 1,
-      "visits": 1,
-      "approvals": 0
-    },
     "2026-06-12": {
       "sent": 14,
       "clicked": 1,
@@ -1982,6 +1913,12 @@
       "visits": 5,
       "approvals": 0
     },
+    "2026-06-24": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
     "2026-06-25": {
       "sent": 3,
       "clicked": 2,
@@ -1992,6 +1929,18 @@
       "sent": 3,
       "clicked": 0,
       "visits": 0,
+      "approvals": 0
+    },
+    "2026-06-27": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-06-28": {
+      "sent": 3,
+      "clicked": 0,
+      "visits": 1,
       "approvals": 0
     },
     "2026-06-29": {
@@ -2106,6 +2055,12 @@
       "sent": 0,
       "clicked": 2,
       "visits": 4,
+      "approvals": 0
+    },
+    "2026-07-19": {
+      "sent": 0,
+      "clicked": 3,
+      "visits": 3,
       "approvals": 0
     }
   }
