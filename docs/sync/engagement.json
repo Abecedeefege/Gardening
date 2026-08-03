@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-03T20:22:26.730Z",
+  "_updated_at": "2026-08-03T20:22:28.602Z",
   "events": [
     {
       "_id": "mruwh765otpxhc",
@@ -1856,6 +1856,15 @@
       "src": "direct",
       "ts": "2026-08-03T20:22:25.638Z",
       "device": "sin-nombre"
+    },
+    {
+      "_id": "msdoe4cu0elhhr",
+      "type": "dwell",
+      "seconds": 2,
+      "scroll_pct": 13,
+      "page": "engage/2026-07-21-asamblea-jardin.html",
+      "ts": "2026-08-03T20:22:25.422Z",
+      "device": "pix9"
     }
   ],
   "daily_summary": {
