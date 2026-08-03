@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-03T20:22:29.991Z",
+  "_updated_at": "2026-08-03T20:22:38.731Z",
   "events": [
     {
       "_id": "mruwh765otpxhc",
@@ -1873,6 +1873,15 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-08-03T20:22:28.111Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msdoeejss4woph",
+      "type": "dwell",
+      "seconds": 11,
+      "scroll_pct": 21,
+      "page": "engage/2026-07-10-album-figuritas.html",
+      "ts": "2026-08-03T20:22:38.632Z",
       "device": "pix9"
     }
   ],
