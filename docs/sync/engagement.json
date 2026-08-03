@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-03T20:22:38.731Z",
+  "_updated_at": "2026-08-03T20:22:42.383Z",
   "events": [
     {
       "_id": "mruwh765otpxhc",
@@ -1882,6 +1882,15 @@
       "scroll_pct": 21,
       "page": "engage/2026-07-10-album-figuritas.html",
       "ts": "2026-08-03T20:22:38.632Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msdoegzdmepwsi",
+      "type": "page_visit",
+      "page": "engage/2026-07-09-wrapped-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-03T20:22:41.785Z",
       "device": "pix9"
     }
   ],
