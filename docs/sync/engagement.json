@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-03T20:22:46.571Z",
+  "_updated_at": "2026-08-03T22:20:12.946Z",
   "events": [
     {
       "_id": "mruwh765otpxhc",
@@ -1909,6 +1909,23 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-08-03T20:22:45.871Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdsll9qvvif2h",
+      "type": "notification_clicked",
+      "nid": "2026-08-03-jardin-hoy",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-08-03T22:20:12.398Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdsll9qi82enz",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-08-03-jardin-hoy",
+      "src": "push",
+      "ts": "2026-08-03T22:20:12.398Z",
       "device": "sin-nombre"
     }
   ],
