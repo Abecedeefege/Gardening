@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-03T20:22:42.383Z",
+  "_updated_at": "2026-08-03T20:22:44.593Z",
   "events": [
     {
       "_id": "mruwh765otpxhc",
@@ -1891,6 +1891,15 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-08-03T20:22:41.785Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msdoeimf4zsgps",
+      "type": "page_visit",
+      "page": "engage/2026-07-09-quiz-planta.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-03T20:22:43.911Z",
       "device": "pix9"
     }
   ],
