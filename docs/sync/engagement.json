@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-03T22:23:23.514Z",
+  "_updated_at": "2026-08-03T22:23:31.616Z",
   "events": [
     {
       "_id": "mruwh765otpxhc",
@@ -1980,6 +1980,15 @@
       "value": "ok",
       "page": "engage/2026-08-03-el-taller-2.html",
       "ts": "2026-08-03T22:23:23.302Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdspux1xl4sar",
+      "type": "dwell",
+      "seconds": 166,
+      "scroll_pct": 46,
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "ts": "2026-08-03T22:23:31.525Z",
       "device": "sin-nombre"
     }
   ],
