@@ -1,30 +1,17 @@
 {
-  "_updated_at": "2026-08-03T21:48:32.425Z",
+  "_updated_at": "2026-08-04T06:15:00-03:00",
   "notifications": [
     {
-      "id": "2026-08-03-jardin-hoy",
-      "title": "🪚 Los cuatro carozos, cerrados",
-      "body": "Quedan 3 antes del viaje y mañana martes es la única tarde seca: 0 mm. Te dejé el orden.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
-      "send_at": "2026-08-03T10:00:00-03:00",
-      "expires_at": "2026-08-03T22:00:00-03:00",
-      "status": "sent",
-      "format": "tarea",
-      "sent_at": "2026-08-03T15:41:44.284Z",
+      "id": "2026-08-04-tarjeta-campo",
+      "title": "✂️ Verifiqué: hoy no llueve",
+      "body": "Las 3 de hoy en una tarjeta corta — crespón, althea y la hortensia a tierra. 0 mm hasta las 20h.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-08-04-tarjeta-campo.html",
+      "send_at": "2026-08-04T09:30:00-03:00",
+      "expires_at": "2026-08-04T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "engagement-agent 2026-08-03"
-    },
-    {
-      "id": "2026-08-03-el-taller-2",
-      "title": "🌸 El Taller nº 2: poda de flor",
-      "body": "Mañana es tu única tarde seca antes del viaje. Crespón y althea: los dos donde cortar fuerte da MÁS flor.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-08-03-el-taller-2.html",
-      "send_at": "2026-08-03T18:00:00-03:00",
-      "expires_at": "2026-08-03T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-08-03T21:48:32.423Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-08-03"
+      "created_by": "engagement-agent 2026-08-04"
     }
   ]
 }

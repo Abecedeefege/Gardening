@@ -976,7 +976,7 @@
       "notified_by": [
         "2026-08-02-que-mas-podo"
       ],
-      "result_notes": "Respuesta puntual a su pregunta del 02/08, no un formato recurrente. Abrió el push 21:43 (dwell corto) y volvió a las 22:34 a tildar podo-F-4: PODÓ el ciruelo del frente leyendo esta página. Después navegó directo a tasks/plant-B-9 y plant-B-18 — o sea que aceptó el 'empezá por el crespón'. Sin reacción ni aprobación => NO recurre, pero la página se conserva: queda linkeada como referencia desde la biblioteca de El Taller nº 2. Conclusión: contestar una pregunta real convierte en ACCIÓN aunque no gane reacción; el clic no es la métrica, el tick sí."
+      "result_notes": "Sin reaccion pero CON accion: despues de leerla podo el ciruelo F-4 y entro a tasks/plant-B-9 y tasks/plant-B-18. Contestar una pregunta suya convierte en conducta aunque no gane emoji. Pending: no recurre, pero el ANGULO (responder su pregunta < 2h) queda validado."
     },
     {
       "id": "2026-08-03-el-taller-2",
@@ -987,6 +987,18 @@
       "hypothesis": "El Taller nº1 ganó por SUSTANCIA + acompañar el trabajo físico, y quedó aprobado en los dos slots. Serializo el formato con la tarea siguiente, que es la que él mismo eligió: el domingo a la noche navegó directo a tasks/plant-B-9 y plant-B-18 después de leer 'empezá por el crespón'. Tres apuestas nuevas: (1) el gancho no es urgencia inventada sino TIMING verificado — mañana martes es la única tarde seca antes del viaje (0 mm vs 4,5 / 2,7 / 14,3 mm el resto de la semana), y digo explícitamente que NO es urgente, lo que debería subir credibilidad en vez de bajar conversión; (2) el reencuadre del viaje como VENTAJA ('las 3 semanas afuera dejan de ser tiempo muerto') en vez de como deberes — el eje deberes-de-viaje ya murió el 29/07; (3) una pieza de conocimiento contraintuitivo y verificable: crespón/althea florecen en madera NUEVA y la hortensia de al lado en madera VIEJA, o sea que la misma tijera multiplica una y arruina la otra. Sumo la decisión irreversible arbusto-vs-arbolito como pregunta dentro de la app. Predicción: 😍 + al menos un slot prendido + ticks t2-arbusto-B-9/B-18 el martes por la tarde.",
       "notified_by": [
         "2026-08-03-el-taller-2"
+      ],
+      "result_notes": "MASOMENOS-ALTO. Leyo los 7 pasos (t2-paso-1..7, en dos tandas 22:22 y 22:39), dwell 166s, y a las 21:08 -03 escribio: «Recordame las podas asi hago las podas manana si no llueve». Pero NO hubo reaccion ni approve ni tick por arbusto: leyo el taller y pidio un recordatorio mas corto para el momento de hacerlo. Sigue pending -> no recurre sola; la serie El Taller vive por la aprobacion de el-taller nº1. Su pedido se ejecuto el 04/08 con la tarjeta de campo."
+    },
+    {
+      "id": "2026-08-04-tarjeta-campo",
+      "title": "Tarjeta de campo — las podas de hoy",
+      "page": "engage/2026-08-04-tarjeta-campo.html",
+      "created": "2026-08-04",
+      "status": "pending",
+      "hypothesis": "Pedido explicito del usuario (03/08 21:08): «recordame las podas asi las hago manana si no llueve». Hipotesis triple: (1) el formato CORTO de campo — 3 tarjetas, numeros grandes, un error anticipado, un tilde — convierte mejor que el taller largo cuando ya sabe QUE hacer y solo necesita el recordatorio en el momento; (2) verificar la condicion que el puso («si no llueve») con el parte hora por hora (0 mm, 0% de 7 a 20) y mostrarlo citado sube la credibilidad como paso el 02/08; (3) el bloque nuevo de valor — que las ramas que corta hoy son estacas de madera dura de crespon y althea, o sea 6 plantas gratis que enraizan solas durante el viaje — es sustancia que no estaba en ningun taller y ataca su objetivo declarado («mas flor») con cero trabajo extra durante la ausencia.",
+      "notified_by": [
+        "2026-08-04-tarjeta-campo"
       ],
       "result_notes": null
     }

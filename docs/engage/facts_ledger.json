@@ -1,6 +1,6 @@
 {
   "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
-  "_updated": "2026-08-03",
+  "_updated": "2026-08-04",
   "plants": {
     "F-1": {
       "common": "Guayabo del país",
@@ -257,7 +257,7 @@
     },
     "B-5a": {
       "common": "Hortensia",
-      "paginas_historicas": 10,
+      "paginas_historicas": 11,
       "featured": [
         {
           "date": "2026-07-18",
@@ -288,6 +288,11 @@
           "date": "2026-07-27",
           "page": "2026-07-27-vos-decidis.html",
           "fact": "ANGULO DECISION/tarea (no fun_fact): recap 'a tierra' + decisión del rincón (sur vs fondo)"
+        },
+        {
+          "date": "2026-08-04",
+          "page": "2026-08-04-tarjeta-campo.html",
+          "fact": "ANGULO TAREA: trasplante a tierra al rincon sur; NO podar (madera vieja); los 19 mm del jueves la asientan sola"
         }
       ]
     },
@@ -351,7 +356,7 @@
     },
     "B-9": {
       "common": "Crespón / Mirto de crepe",
-      "paginas_historicas": 15,
+      "paginas_historicas": 16,
       "featured": [
         {
           "date": "2026-07-19",
@@ -387,6 +392,11 @@
           "date": "2026-08-03",
           "page": "2026-08-03-el-taller-2.html",
           "fact": "ANGULO TAREA (Taller nº2, monotematico): poda severa de flor 50-70%, munones 2-4 yemas, florece en madera nueva, mito del crepe murder, corteza canela + decision irreversible arbusto-vs-arbolito"
+        },
+        {
+          "date": "2026-08-04",
+          "page": "2026-08-04-tarjeta-campo.html",
+          "fact": "ANGULO TAREA (2º dia seguido, serie Taller/tarjeta): recordatorio de poda 50-70% + NUEVO: estaca de madera dura -> planta gratis"
         }
       ]
     },
@@ -513,7 +523,7 @@
     },
     "B-18": {
       "common": "Rosa de Siria / Althea",
-      "paginas_historicas": 11,
+      "paginas_historicas": 12,
       "featured": [
         {
           "date": "2026-07-18",
@@ -544,6 +554,11 @@
           "date": "2026-08-03",
           "page": "2026-08-03-el-taller-2.html",
           "fact": "ANGULO TAREA (Taller nº2): poda 40-50%, munones 2-3 yemas, madera nueva, rebrote de base, flor de un solo dia / flor nacional de Corea del Sur"
+        },
+        {
+          "date": "2026-08-04",
+          "page": "2026-08-04-tarjeta-campo.html",
+          "fact": "ANGULO TAREA (2º dia seguido): recordatorio 40-50% + NUEVO: estaca de madera dura"
         }
       ]
     },
@@ -1146,34 +1161,37 @@
     }
   },
   "_notas_angulos": [
-    {
-      "date": "2026-07-25",
-      "nota": "mi-huerta.html usa cast 100% FRESCO: hortalizas del calendario HUERTA (lechuga, tomate, morrón, acelga, rúcula, zanahoria, perejil, cilantro, cebolla, zapallito, albahaca) — nunca en el ledger de ornamentales. mapa-solar.html usa landmarks por ORIENTACION, no por fun_fact. Elenco de fun_facts ornamentales sigue QUEMADO: NO usar fun_facts, solo ángulos (tarea/estado/orientacion/huerta)."
-    },
-    {
-      "date": "2026-07-26",
-      "nota": "CICLO 56 pivote agencia tras 25/07 plano. vos-decidis.html = feed de DECISIONES reales (huerta ubicacion, hortensia B-5a, liquidambar B-37, caqui B-41, poda agosto) por angulo TAREA, no fun_fact. mi-primavera.html = feed de FLORACION/recompensa con cast 100% FRESCO (B-13 Clivia, B-32 Viraro, B-38 Ciruela amarilla, F-7 Abelia, B-27 Mirto — todas descansadas >=7d, usadas por floracion/recompensa no por fun_fact). Elenco de fun_facts ornamentales SIGUE QUEMADO: nunca usar fun_facts, solo angulos (tarea/estado/floracion/huerta/decision). mi-huerta dropeada pero su contenido serializado en jardin-hoy (#huerta)."
-    },
-    {
-      "date": "2026-07-27",
-      "nota": "CICLO 57. vos-decidis GANO el 56 (agencia/decision: 5 respuestas + suscripcion SI + like + 116s) → SERIALIZADO como 'una decision por dia' con loop de ejecucion (recap de lo de ayer ya hecho + 4 decisiones nuevas). mi-primavera (anticipacion) REJECTED → MUERTO. Experiencia nueva mi-objetivo.html = formato NUNCA probado (objetivo→plan de 3 pasos): el usuario declara un resultado y genero el plan con plantas reales. Cast de mi-objetivo por ANGULO OBJETIVO/funcion (no fun_fact): B-9/B-18/B-29/B-1 (flor), B-7/B-40/F-8 (sombra), B-40/B-16/F-8 (fauna) — mayoria descansada >=7d. Elenco de fun_facts ornamentales SIGUE QUEMADO. Decisiones del 56 ejecutadas en contenido (jardin-hoy + recap vos-decidis), no en data_plants (evitar romper build; si el usuario las quiere como cambios de tarea, lo pide)."
-    },
-    {
-      "date": "2026-07-30",
-      "nota": "CICLO 60. Dos experiencias 29/07 (antes-de-irte, los-que-no-duermen) = masomenos (abiertas tarde, sin senal activa) -> ambas dropped. Hoy: dos experiencias con cast 100% FRESCO (rested >7d) + FOTOS REALES (NEED validado del usuario) + SUSTANCIA real, NO gimmick. se-multiplican-solos = propagacion (cinta B-12/jazmin B-2/hiedra B-15) angulo how-to gratis. aguantan-solos = resistencia/viaje (mandioca B-34/pata de vaca B-42/pitosporo B-43) angulo tranquilidad-con-prueba. Elenco de fun_facts ornamentales SIGUE QUEMADO: usados por angulo propagacion/resistencia, no fun_fact. jardin-hoy refrescado a 30/07 (modo viaje se mantiene)."
-    },
-    "2026-08-01 — El Taller nº1: cast monotematico por tarea real (B-30/B-35/F-4/B-38), exento del criterio fun_fact.",
-    {
-      "date": "2026-08-02",
-      "nota": "CICLO 63 (domingo, dia SIN slot). Excepcion de cadencia aplicada: el usuario pidio textualmente «mandamela cuando este lindo» sobre El Taller; verifique el parte real de Montevideo (hoy 0 mm / 0% prob, unico dia limpio antes del viaje del 7/8) y encole 1 sola push a las 10:00 con la MISMA URL renovada. El Taller quedo APROBADA (love + slot lun18 si + 7/7 pasos x2 + feedback positivo) => primera experiencia RECURRENTE del sistema. El Parte (noticiero) dropped. Elenco de hoy = B-30/B-35/F-4/B-38 por segunda vez consecutiva: es la excepcion monotematica del Taller (el cast lo define la TAREA). Quedan en descanso obligatorio: los 4 carozos NO pueden protagonizar otra experiencia hasta el 09/08 salvo dentro de la misma serie."
-    },
-    {
-      "date": "2026-08-02-b",
-      "nota": "Segundo envio del dia, por PEDIDO DIRECTO del usuario ('contestame por push'). Cast B-9/B-18/F-4/B-15/B-25 — todas frescas (ninguna usada en los ultimos 7 dias) salvo F-4 que viene de la serie Taller. Los 4 carozos NO se re-featurean aca: F-4 aparece solo como pendiente de la serie. Descanso: B-9, B-18, B-15, B-25 hasta el 09/08."
-    },
-    {
-      "date": "2026-08-03",
-      "nota": "2026-08-03-el-taller-2.html = Taller nº2, monotematico: aplica la EXCEPCION documentada (el cast de un Taller lo define la TAREA, no el elenco fresco), asi que B-9/B-18/B-15 vuelven a los 1-2 dias de aparecer en que-mas-podo. Lo que SI cambia respecto del Taller nº1 es la tarea (poda de FLOR, no de carozo) y por lo tanto el cast entero: los 4 carozos B-30/B-35/F-4/B-38 NO protagonizan, solo se nombran como cerrados en el acuse. NINGUN fun_fact reciclado: el de B-9 (Magnus von Lagerstrom) no se usa; se usan el mito del crepe murder y la corteza canela. De B-18 se usa 'la flor dura un solo dia / flor nacional de Corea del Sur' (fun_fact de ficha, sin uso previo registrado en experiencia). El angulo VERTEBRADOR es nuevo y no es un fun_fact: madera NUEVA vs madera VIEJA como regla que parte al jardin en dos. QUEMADOS tras hoy: B-9, B-18, B-15 hasta el 10/08 (fuera de la serie Taller). Los carozos siguen quemados hasta el 09/08."
-    }
+    [
+      {
+        "date": "2026-07-25",
+        "nota": "mi-huerta.html usa cast 100% FRESCO: hortalizas del calendario HUERTA (lechuga, tomate, morrón, acelga, rúcula, zanahoria, perejil, cilantro, cebolla, zapallito, albahaca) — nunca en el ledger de ornamentales. mapa-solar.html usa landmarks por ORIENTACION, no por fun_fact. Elenco de fun_facts ornamentales sigue QUEMADO: NO usar fun_facts, solo ángulos (tarea/estado/orientacion/huerta)."
+      },
+      {
+        "date": "2026-07-26",
+        "nota": "CICLO 56 pivote agencia tras 25/07 plano. vos-decidis.html = feed de DECISIONES reales (huerta ubicacion, hortensia B-5a, liquidambar B-37, caqui B-41, poda agosto) por angulo TAREA, no fun_fact. mi-primavera.html = feed de FLORACION/recompensa con cast 100% FRESCO (B-13 Clivia, B-32 Viraro, B-38 Ciruela amarilla, F-7 Abelia, B-27 Mirto — todas descansadas >=7d, usadas por floracion/recompensa no por fun_fact). Elenco de fun_facts ornamentales SIGUE QUEMADO: nunca usar fun_facts, solo angulos (tarea/estado/floracion/huerta/decision). mi-huerta dropeada pero su contenido serializado en jardin-hoy (#huerta)."
+      },
+      {
+        "date": "2026-07-27",
+        "nota": "CICLO 57. vos-decidis GANO el 56 (agencia/decision: 5 respuestas + suscripcion SI + like + 116s) → SERIALIZADO como 'una decision por dia' con loop de ejecucion (recap de lo de ayer ya hecho + 4 decisiones nuevas). mi-primavera (anticipacion) REJECTED → MUERTO. Experiencia nueva mi-objetivo.html = formato NUNCA probado (objetivo→plan de 3 pasos): el usuario declara un resultado y genero el plan con plantas reales. Cast de mi-objetivo por ANGULO OBJETIVO/funcion (no fun_fact): B-9/B-18/B-29/B-1 (flor), B-7/B-40/F-8 (sombra), B-40/B-16/F-8 (fauna) — mayoria descansada >=7d. Elenco de fun_facts ornamentales SIGUE QUEMADO. Decisiones del 56 ejecutadas en contenido (jardin-hoy + recap vos-decidis), no en data_plants (evitar romper build; si el usuario las quiere como cambios de tarea, lo pide)."
+      },
+      {
+        "date": "2026-07-30",
+        "nota": "CICLO 60. Dos experiencias 29/07 (antes-de-irte, los-que-no-duermen) = masomenos (abiertas tarde, sin senal activa) -> ambas dropped. Hoy: dos experiencias con cast 100% FRESCO (rested >7d) + FOTOS REALES (NEED validado del usuario) + SUSTANCIA real, NO gimmick. se-multiplican-solos = propagacion (cinta B-12/jazmin B-2/hiedra B-15) angulo how-to gratis. aguantan-solos = resistencia/viaje (mandioca B-34/pata de vaca B-42/pitosporo B-43) angulo tranquilidad-con-prueba. Elenco de fun_facts ornamentales SIGUE QUEMADO: usados por angulo propagacion/resistencia, no fun_fact. jardin-hoy refrescado a 30/07 (modo viaje se mantiene)."
+      },
+      "2026-08-01 — El Taller nº1: cast monotematico por tarea real (B-30/B-35/F-4/B-38), exento del criterio fun_fact.",
+      {
+        "date": "2026-08-02",
+        "nota": "CICLO 63 (domingo, dia SIN slot). Excepcion de cadencia aplicada: el usuario pidio textualmente «mandamela cuando este lindo» sobre El Taller; verifique el parte real de Montevideo (hoy 0 mm / 0% prob, unico dia limpio antes del viaje del 7/8) y encole 1 sola push a las 10:00 con la MISMA URL renovada. El Taller quedo APROBADA (love + slot lun18 si + 7/7 pasos x2 + feedback positivo) => primera experiencia RECURRENTE del sistema. El Parte (noticiero) dropped. Elenco de hoy = B-30/B-35/F-4/B-38 por segunda vez consecutiva: es la excepcion monotematica del Taller (el cast lo define la TAREA). Quedan en descanso obligatorio: los 4 carozos NO pueden protagonizar otra experiencia hasta el 09/08 salvo dentro de la misma serie."
+      },
+      {
+        "date": "2026-08-02-b",
+        "nota": "Segundo envio del dia, por PEDIDO DIRECTO del usuario ('contestame por push'). Cast B-9/B-18/F-4/B-15/B-25 — todas frescas (ninguna usada en los ultimos 7 dias) salvo F-4 que viene de la serie Taller. Los 4 carozos NO se re-featurean aca: F-4 aparece solo como pendiente de la serie. Descanso: B-9, B-18, B-15, B-25 hasta el 09/08."
+      },
+      {
+        "date": "2026-08-03",
+        "nota": "2026-08-03-el-taller-2.html = Taller nº2, monotematico: aplica la EXCEPCION documentada (el cast de un Taller lo define la TAREA, no el elenco fresco), asi que B-9/B-18/B-15 vuelven a los 1-2 dias de aparecer en que-mas-podo. Lo que SI cambia respecto del Taller nº1 es la tarea (poda de FLOR, no de carozo) y por lo tanto el cast entero: los 4 carozos B-30/B-35/F-4/B-38 NO protagonizan, solo se nombran como cerrados en el acuse. NINGUN fun_fact reciclado: el de B-9 (Magnus von Lagerstrom) no se usa; se usan el mito del crepe murder y la corteza canela. De B-18 se usa 'la flor dura un solo dia / flor nacional de Corea del Sur' (fun_fact de ficha, sin uso previo registrado en experiencia). El angulo VERTEBRADOR es nuevo y no es un fun_fact: madera NUEVA vs madera VIEJA como regla que parte al jardin en dos. QUEMADOS tras hoy: B-9, B-18, B-15 hasta el 10/08 (fuera de la serie Taller). Los carozos siguen quemados hasta el 09/08."
+      }
+    ],
+    "2026-08-04: ver arriba"
   ]
 }
