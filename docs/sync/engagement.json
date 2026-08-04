@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-03T22:39:51.029Z",
+  "_updated_at": "2026-08-04T00:08:49.856Z",
   "events": [
     {
       "_id": "mruwh765otpxhc",
@@ -2016,6 +2016,15 @@
       "value": "ok",
       "page": "engage/2026-08-03-el-taller-2.html",
       "ts": "2026-08-03T22:39:51.030Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdwh93t8h6fvl",
+      "type": "feedback_text",
+      "target": "el-taller-2",
+      "text": "Recordame las podas así hago las podas mañana si no llueve",
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "ts": "2026-08-04T00:08:48.472Z",
       "device": "sin-nombre"
     }
   ],
