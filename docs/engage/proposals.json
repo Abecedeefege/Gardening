@@ -976,7 +976,7 @@
       "notified_by": [
         "2026-08-02-que-mas-podo"
       ],
-      "result_notes": "Sin reaccion pero CON accion: despues de leerla podo el ciruelo F-4 y entro a tasks/plant-B-9 y tasks/plant-B-18. Contestar una pregunta suya convierte en conducta aunque no gane emoji. Pending: no recurre, pero el ANGULO (responder su pregunta < 2h) queda validado."
+      "result_notes": "Sin reacción pero CON acción: después de leerla podó el ciruelo F-4 y entró a tasks/plant-B-9 y tasks/plant-B-18. Contestar una pregunta suya convierte en conducta aunque no gane emoji. Pending: no recurre sola, pero su contenido ya vive dentro de el-taller (aprobada)."
     },
     {
       "id": "2026-08-03-el-taller-2",
@@ -988,7 +988,7 @@
       "notified_by": [
         "2026-08-03-el-taller-2"
       ],
-      "result_notes": "MASOMENOS-ALTO. Leyo los 7 pasos (t2-paso-1..7, en dos tandas 22:22 y 22:39), dwell 166s, y a las 21:08 -03 escribio: «Recordame las podas asi hago las podas manana si no llueve». Pero NO hubo reaccion ni approve ni tick por arbusto: leyo el taller y pidio un recordatorio mas corto para el momento de hacerlo. Sigue pending -> no recurre sola; la serie El Taller vive por la aprobacion de el-taller nº1. Su pedido se ejecuto el 04/08 con la tarjeta de campo."
+      "result_notes": "MASOMENOS-ALTO. 7/7 pasos en dos tandas (22:22 y 22:39), dwell 166s, y a las 21:08 -03 escribió «Recordame las podas así hago las podas mañana si no llueve». Sin reacción ni approve → NO recurre. Confirmado 05/08: el taller largo nocturno SIGUE siendo el formato que consume entero. Lo que falló al día siguiente no fue el contenido sino el intento de servirlo corto y de día."
     },
     {
       "id": "2026-08-04-tarjeta-campo",
@@ -1000,8 +1000,8 @@
       "notified_by": [
         "2026-08-04-tarjeta-campo"
       ],
-      "result_notes": null
+      "result_notes": "⬛ CERO SEÑAL — el único push del canal sin una sola apertura desde que arrancó el logging confiable. Enviada 04/08 11:38 -03 (status 201, subscripción pix9 active). A las 24 h: 0 notification_clicked, 0 page_visit, 0 dwell, 0 tc-hecho-*, 0 reacción, 0 slot, 0 feedback. El último evento del sitio es del 04/08 00:15 (el-taller-2). Lectura honesta: NO se puede saber si podó sin la tarjeta o si no hizo nada — los ticks eran el instrumento y no hay ninguno. Lo que SÍ se puede concluir: el gancho falló. El título «✂️ Verifiqué: hoy no llueve» vendía MI proceso (que verifiqué el pronóstico), no un beneficio suyo; y a las 11:38 de un martes seco de 12° estaba trabajando o afuera, no leyendo. Contraste demoledor: el-taller salió 12:06 un sábado (😍) y el-taller-2 a las 18:48 un lunes (7/7 pasos). Los dos hits del canal se consumieron de NOCHE, en el sillón. La tarjeta de campo se diseñó para el momento de la acción y ese momento es justamente cuando el teléfono no se mira. No recurre (sin aprobación). El formato queda en observación, no muerto: la hipótesis 'corto para ejecutar' no llegó a testearse porque nunca se abrió."
     }
   ],
-  "_updated_at": "2026-08-02"
+  "_updated_at": "2026-08-05T09:10:00.000Z"
 }

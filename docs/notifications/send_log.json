@@ -2,30 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-07-21-task-dia",
-      "ts": "2026-07-21T13:45:13.754Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-07-21-a",
-      "ts": "2026-07-21T13:45:13.879Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-07-21-b",
-      "ts": "2026-07-21T16:55:08.832Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-07-21-c",
-      "ts": "2026-07-21T21:06:49.452Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-07-22-task-dia",
       "ts": "2026-07-22T13:48:11.377Z",
       "status_code": 201
@@ -284,12 +260,6 @@
     }
   ],
   "daily_summary": {
-    "2026-06-28": {
-      "sent": 3
-    },
-    "2026-06-27": {
-      "sent": 3
-    },
     "2026-06-11": {
       "sent": 1
     },
@@ -333,6 +303,12 @@
       "sent": 3
     },
     "2026-06-26": {
+      "sent": 3
+    },
+    "2026-06-27": {
+      "sent": 3
+    },
+    "2026-06-28": {
       "sent": 3
     },
     "2026-06-29": {
@@ -384,7 +360,13 @@
     "2026-07-18": {
       "sent": 5,
       "failed": 0
+    },
+    "2026-07-21": {
+      "sent": 4,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
     }
   },
-  "_updated_at": "2026-08-02T09:20:00.000Z"
+  "_updated_at": "2026-08-05T09:10:00.000Z"
 }

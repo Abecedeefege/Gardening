@@ -1,67 +1,6 @@
 {
-  "_updated_at": "2026-08-04T20:56:31.518Z",
+  "_updated_at": "2026-08-05T09:10:00.000Z",
   "events": [
-    {
-      "_id": "mruwh765otpxhc",
-      "type": "notification_clicked",
-      "nid": "2026-07-21-b",
-      "page": "engage/2026-07-09-wrapped-jardin.html",
-      "ts": "2026-07-21T17:01:08.617Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mruwh76568pwga",
-      "type": "page_visit",
-      "page": "engage/2026-07-09-wrapped-jardin.html",
-      "nid": "2026-07-21-b",
-      "src": "push",
-      "ts": "2026-07-21T17:01:08.617Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mruwhqb7w7sqwk",
-      "type": "reaction",
-      "target": "wrapped-jardin",
-      "value": "meh",
-      "page": "engage/2026-07-09-wrapped-jardin.html",
-      "ts": "2026-07-21T17:01:33.427Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mruwhydalswhdt",
-      "type": "dwell",
-      "seconds": 35,
-      "scroll_pct": 100,
-      "page": "engage/2026-07-09-wrapped-jardin.html",
-      "ts": "2026-07-21T17:01:43.870Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrv7wth1hed04g",
-      "type": "notification_clicked",
-      "nid": "2026-07-21-c",
-      "page": "engage/2026-07-21-asamblea-jardin.html",
-      "ts": "2026-07-21T22:21:13.140Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrv7wth1zzye29",
-      "type": "page_visit",
-      "page": "engage/2026-07-21-asamblea-jardin.html",
-      "nid": "2026-07-21-c",
-      "src": "push",
-      "ts": "2026-07-21T22:21:13.140Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mrv7zcfrqvkhzo",
-      "type": "feedback_text",
-      "target": "asamblea-jardin",
-      "text": "Esta todo perfecto.  Tené en cuenta que está lloviendo hace días en Montevideo, no he podido avanzar",
-      "page": "engage/2026-07-21-asamblea-jardin.html",
-      "ts": "2026-07-21T22:23:11.031Z",
-      "device": "sin-nombre"
-    },
     {
       "_id": "mrw6229cabqd05",
       "type": "notification_clicked",
@@ -78,15 +17,6 @@
       "src": "push",
       "ts": "2026-07-22T14:17:04.743Z",
       "device": "landing"
-    },
-    {
-      "_id": "mrv7ziwa3jox1h",
-      "type": "dwell",
-      "seconds": 126,
-      "scroll_pct": 93,
-      "page": "engage/2026-07-21-asamblea-jardin.html",
-      "ts": "2026-07-21T22:23:19.402Z",
-      "device": "sin-nombre"
     },
     {
       "_id": "mrxoqx8u2vfjij",
@@ -2275,6 +2205,12 @@
       "sent": 0,
       "clicked": 3,
       "visits": 3,
+      "approvals": 0
+    },
+    "2026-07-21": {
+      "sent": 0,
+      "clicked": 2,
+      "visits": 2,
       "approvals": 0
     }
   }

@@ -1,6 +1,6 @@
 {
   "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
-  "_updated": "2026-08-04",
+  "_updated": "2026-08-05",
   "plants": {
     "F-1": {
       "common": "Guayabo del país",

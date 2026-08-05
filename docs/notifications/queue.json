@@ -1,17 +1,4 @@
 {
-  "_updated_at": "2026-08-04T14:38:33.140Z",
-  "notifications": [
-    {
-      "id": "2026-08-04-tarjeta-campo",
-      "title": "✂️ Verifiqué: hoy no llueve",
-      "body": "Las 3 de hoy en una tarjeta corta — crespón, althea y la hortensia a tierra. 0 mm hasta las 20h.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-08-04-tarjeta-campo.html",
-      "send_at": "2026-08-04T09:30:00-03:00",
-      "expires_at": "2026-08-04T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-08-04T14:38:33.135Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-08-04"
-    }
-  ]
+  "_updated_at": "2026-08-05T09:10:00.000Z",
+  "notifications": []
 }
