@@ -1,4 +1,18 @@
 {
-  "_updated_at": "2026-08-05T09:10:00.000Z",
-  "notifications": []
+  "_updated_at": "2026-08-06T06:20:00-03:00",
+  "notifications": [
+    {
+      "id": "2026-08-06-jardin-hoy",
+      "title": "🧳 Nada que hacer hoy (ni hasta el 24)",
+      "body": "Llueven 21 mm con viento de 59 km/h. Las 3 podas se corren al 24 y salen igual. Del 7 al 23: silencio.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
+      "send_at": "2026-08-06T10:00:00-03:00",
+      "expires_at": "2026-08-06T22:00:00-03:00",
+      "status": "pending",
+      "format": "tarea",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-08-06"
+    }
+  ]
 }
