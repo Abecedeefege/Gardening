@@ -781,7 +781,7 @@
     "2026-07-24-a",
     "2026-07-24-jardin-hoy-v2"
    ],
-   "result_notes": "PROMOVIDA el MISMO 24/07 por feedback_text tier-1 EXPLÍCITO del usuario (17:50Z, sobre esta misma experiencia): «Esta debería ser la push diaria.» + instrucciones concretas de edición. El pivote minimalista quedó VALIDADO en la primera iteración. Cambios pedidos y aplicados en la landing (v2): (1) sacar el bloque de reacción «¿Te sirve así de simple?»; (2) sacar el bloque de suscripción «🌤️ Un vistazo cada mañana»; (3) sacar el bloque de decisión «¿La dejo fija?»; (4) sumar menú COLAPSADO «Tareas de julio» (Liquidámbar B-37 rama + Guayabo F-1 limpieza); (5) sumar menú COLAPSADO «Para agosto» (poda Durazno B-30/35, Ciruelo F-4, Crespón B-9); (6) sumar caja «🙋 Pedime lo que necesites» (dudas / especie desconocida / solicitudes → este es el lugar para pedirlo). ESTA ES AHORA LA PUSH DIARIA OFICIAL y consolida el canal-tarea (ver mandato de consolidación en learnings). Página permanente, NO dropear."
+   "result_notes": "PROMOVIDA el MISMO 24/07 por feedback_text tier-1 EXPLÍCITO del usuario (17:50Z, sobre esta misma experiencia): «Esta debería ser la push diaria.» + instrucciones concretas de edición. El pivote minimalista quedó VALIDADO en la primera iteración. Cambios pedidos y aplicados en la landing (v2): (1) sacar el bloque de reacción «¿Te sirve así de simple?»; (2) sacar el bloque de suscripción «🌤️ Un vistazo cada mañana»; (3) sacar el bloque de decisión «¿La dejo fija?»; (4) sumar menú COLAPSADO «Tareas de julio» (Liquidámbar B-37 rama + Guayabo F-1 limpieza); (5) sumar menú COLAPSADO «Para agosto» (poda Durazno B-30/35, Ciruelo F-4, Crespón B-9); (6) sumar caja «🙋 Pedime lo que necesites» (dudas / especie desconocida / solicitudes → este es el lugar para pedirlo). ESTA ES AHORA LA PUSH DIARIA OFICIAL y consolida el canal-tarea (ver mandato de consolidación en learnings). Página permanente, NO dropear. || 07/08: la edición del 06/08 («Nada que hacer hoy, ni hasta el 24») cerró ⬛ CERO APERTURA a 24 h — 0 clicks, 0 visitas, 0 feedback. El dispatcher la mandó 11:37 -03 (send_at 10:00, lag +1 h 37), otra vez adentro de la franja muerta 09-12 h. Es el SEGUNDO ⬛ consecutivo y los dos cayeron en esa franja: el reloj queda confirmado como causa dominante, no el contenido. NO se toca la landing por esto ni se cambia el horario por mi cuenta (los horarios son mandato del usuario; la pregunta `horario-tareas` ya está publicada dentro de la app y sigue sin responder). Se relee al volver del viaje."
   },
   {
    "id": "2026-07-24-tu-semana",
@@ -923,7 +923,7 @@
    "status": "pending",
    "hypothesis": "El ángulo 'sacale MÁS a lo que ya tenés / plantas gratis' (codicia sana + habilidad concreta) engancha donde la trivia y los gimmicks murieron. Cast 100% fresco (B-12 cinta, B-2 jazmín, B-15 hiedra, todas rested >7d) con fotos reales — incluida la foto que MUESTRA los hijos del jazmín. Sustancia (cómo-hacerlo real: pup/acodo/esqueje), no juego. Slot 13:30.",
    "notified_by": [],
-   "result_notes": "Sigue en el pool, sin pushear. Decisión sostenida al 06/08: su ventana natural es sept-oct (propagación por semilla / gajo verde / división de mata — la estaca de madera dura ya se gastó el 04/08 dentro del Taller nº2). No forzarla antes del viaje ni durante. Candidata real para la primera quincena de septiembre."
+   "result_notes": "Sigue en el pool, sin pushear. Decisión sostenida al 06/08: su ventana natural es sept-oct (propagación por semilla / gajo verde / división de mata — la estaca de madera dura ya se gastó el 04/08 dentro del Taller nº2). No forzarla antes del viaje ni durante. Candidata real para la primera quincena de septiembre. || 07/08: sigue en el pool, sin pushear. Ventana natural sept-oct y el ángulo de estaca de madera dura ya se gastó el 04/08 → cuando salga, va por semilla / gajo verde / división de mata."
   },
   {
    "id": "2026-07-30-aguantan-solos",
@@ -976,7 +976,7 @@
    "notified_by": [
     "2026-08-02-que-mas-podo"
    ],
-   "result_notes": "Sin reacción pero CON acción: después de leerla podó el ciruelo F-4 y entró a tasks/plant-B-9 y plant-B-18. Contestar una pregunta suya convierte en conducta aunque no gane emoji. Pending: no recurre sola, pero su contenido ya vive dentro de el-taller (aprobada). Confirmado sin cambios al 06/08."
+   "result_notes": "Sin reacción pero CON acción: después de leerla podó el ciruelo F-4 y entró a tasks/plant-B-9 y plant-B-18. Contestar una pregunta suya convierte en conducta aunque no gane emoji. Pending: no recurre sola, pero su contenido ya vive dentro de el-taller (aprobada). Confirmado sin cambios al 06/08. || 07/08: sin señal nueva. Se mantiene pending. Su valor ya se cobró (podó F-4 y entró a B-9/B-18); no se re-manda sin aprobación."
   },
   {
    "id": "2026-08-03-el-taller-2",
@@ -988,7 +988,7 @@
    "notified_by": [
     "2026-08-03-el-taller-2"
    ],
-   "result_notes": "MASOMENOS-ALTO, cerrado sin señal nueva al 06/08. 7/7 pasos en dos tandas (22:22 y 22:39), dwell 166 s, y a las 21:08 -03 escribió el pedido que originó la tarjeta de campo. Cero reacción y cero slot: no recurre. DATO MÁS VALIOSO DEL CANAL: abrió a los 32 min del envío (lun 18:48) — el mejor delay medido. El formato Taller sigue vivo vía la aprobada (2026-08-01-el-taller); el nº3 (pitósporo B-43) queda para la reentrada del 24/08."
+   "result_notes": "MASOMENOS-ALTO, cerrado sin señal nueva al 06/08. 7/7 pasos en dos tandas (22:22 y 22:39), dwell 166 s, y a las 21:08 -03 escribió el pedido que originó la tarjeta de campo. Cero reacción y cero slot: no recurre. DATO MÁS VALIOSO DEL CANAL: abrió a los 32 min del envío (lun 18:48) — el mejor delay medido. El formato Taller sigue vivo vía la aprobada (2026-08-01-el-taller); el nº3 (pitósporo B-43) queda para la reentrada del 24/08. || 07/08: sin señal nueva. Se mantiene pending y la página queda: NO recurre por sí sola — la que recurre es `2026-08-01-el-taller` (aprobada en los dos slots). El taller nº2 vale como fuente del pedido que originó la tarjeta de campo y como molde del taller nº3 (pitósporo B-43, a la vuelta)."
   },
   {
    "id": "2026-08-04-tarjeta-campo",
@@ -1000,8 +1000,8 @@
    "notified_by": [
     "2026-08-04-tarjeta-campo"
    ],
-   "result_notes": "⬛ CERO SEÑAL, confirmado a 48 h (al 06/08 sigue sin una sola visita, click, tick ni feedback). Único push del canal sin apertura desde que el logging es confiable. Diagnóstico principal: LA HORA — el dispatcher la mandó 11:38 -03, dentro de su franja muerta (09-12 h = 11 visitas en dos semanas). Diagnóstico secundario: el título vendía mi proceso ('Verifiqué: hoy no llueve') en vez de un beneficio suyo. SE MANTIENE 'pending' y la página NO se borra: el formato 'tarjeta corta para ejecutar' quedó SIN TESTEAR, no refutado. Re-test a la vuelta (24/08 en adelante) a las 14:30, nunca antes del mediodía. No recurre hasta tener aprobación."
+   "result_notes": "⬛ CERO SEÑAL, confirmado a 48 h (al 06/08 sigue sin una sola visita, click, tick ni feedback). Único push del canal sin apertura desde que el logging es confiable. Diagnóstico principal: LA HORA — el dispatcher la mandó 11:38 -03, dentro de su franja muerta (09-12 h = 11 visitas en dos semanas). Diagnóstico secundario: el título vendía mi proceso ('Verifiqué: hoy no llueve') en vez de un beneficio suyo. SE MANTIENE 'pending' y la página NO se borra: el formato 'tarjeta corta para ejecutar' quedó SIN TESTEAR, no refutado. Re-test a la vuelta (24/08 en adelante) a las 14:30, nunca antes del mediodía. No recurre hasta tener aprobación. || 07/08: sigue ⬛ a 72 h. Con el ⬛ del 06/08 ya son 2 de 2 pushes enviadas en la franja 11:30-ish sin una sola apertura, contra 5 de 5 con apertura en la franja 14-20 h. El formato 'tarjeta corta para ejecutar' sigue SIN TESTEAR. Se mantiene pending, la página no se borra: re-test a la vuelta (24-31/08) a las 14:30, nunca antes del mediodía."
   }
  ],
- "_updated_at": "2026-08-06T09:20:00.000Z"
+ "_updated_at": "2026-08-07T09:10:00.000Z"
 }
