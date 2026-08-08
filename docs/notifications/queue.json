@@ -1,18 +1,18 @@
 {
- "_updated_at": "2026-08-08T09:20:00.000Z",
- "_nota": "Sábado 08/08 = día 2 del VIAJE (7 al 23/08). Slot de TAREA (10:00) DELIBERADAMENTE VACÍO: rige el compromiso publicado el 06/08 de no mandar ninguna push de tareas entre el 7 y el 23. Solo va el slot de experiencia (11:00), permitido por el default 'solo-lindo' de viaje-silencio: lectura placentera, cero-deber, listón alto.",
- "notifications": [
-  {
-   "id": "2026-08-08-el-hueco",
-   "title": "📉 Tu jardín: 32 en noviembre, 1 en julio",
-   "body": "Conté mes por mes las 52 especies y encontré un hueco de 5 meses. Tu «más flor» no está donde pensábamos. Para leer con un café — cero tareas.",
-   "url": "https://gardening-chi.vercel.app/engage/2026-08-08-el-hueco.html",
-   "send_at": "2026-08-08T11:00:00-03:00",
-   "expires_at": "2026-08-08T22:00:00-03:00",
-   "status": "pending",
-   "sent_at": null,
-   "fail_reason": null,
-   "created_by": "engagement-agent 2026-08-08"
-  }
- ]
+  "_updated_at": "2026-08-08T14:32:52.317Z",
+  "_nota": "Sábado 08/08 = día 2 del VIAJE (7 al 23/08). Slot de TAREA (10:00) DELIBERADAMENTE VACÍO: rige el compromiso publicado el 06/08 de no mandar ninguna push de tareas entre el 7 y el 23. Solo va el slot de experiencia (11:00), permitido por el default 'solo-lindo' de viaje-silencio: lectura placentera, cero-deber, listón alto.",
+  "notifications": [
+    {
+      "id": "2026-08-08-el-hueco",
+      "title": "📉 Tu jardín: 32 en noviembre, 1 en julio",
+      "body": "Conté mes por mes las 52 especies y encontré un hueco de 5 meses. Tu «más flor» no está donde pensábamos. Para leer con un café — cero tareas.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-08-08-el-hueco.html",
+      "send_at": "2026-08-08T11:00:00-03:00",
+      "expires_at": "2026-08-08T22:00:00-03:00",
+      "status": "sent",
+      "sent_at": "2026-08-08T14:32:52.316Z",
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-08-08"
+    }
+  ]
 }
