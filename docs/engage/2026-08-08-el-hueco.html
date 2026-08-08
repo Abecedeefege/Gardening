@@ -1,0 +1,403 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>📉 El hueco — dónde está tu «más flor»</title>
+<meta property="og:title" content="📉 El hueco — dónde está tu «más flor»">
+<meta property="og:description" content="Conté mes por mes las 52 especies del jardín. Noviembre: 32 en flor. Julio: 1. Tu «más flor» no está en primavera — está en el hueco.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
+    --sol:#e0a92e; --azul:#3f7d8a; --rojo:#b4442e; --madera:#8a5a2b; --uva:#7a4a86;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 24px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* HERO */
+  .hero{ padding:32px 0 4px; text-align:center; }
+  .hero .em{ font-size:44px; display:block; }
+  .hero .kicker{ font-size:11.5px; font-weight:900; letter-spacing:.19em; text-transform:uppercase; color:var(--uva); margin-top:8px; }
+  .hero h1{ font-size:37px; line-height:1.03; margin:8px 0 10px; font-weight:900; letter-spacing:-.03em; }
+  .hero .sub{ color:var(--ink2); font-size:15px; max-width:33ch; margin:0 auto; }
+
+  .calma{ margin:16px 0 2px; background:#eef7e0; border:1px solid rgba(90,138,46,.3); border-radius:15px; padding:13px 15px; }
+  .calma p{ font-size:13.5px; color:var(--verde); font-weight:600; }
+  .calma b{ font-weight:900; }
+
+  .facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:9px; margin:16px 0 6px; }
+  .fact{ background:var(--card); border:1px solid var(--line); border-radius:15px; padding:13px 6px; text-align:center; }
+  .fact .n{ display:block; font-size:26px; font-weight:900; color:var(--verde); line-height:1.05; }
+  .fact.bad .n{ color:var(--rojo); }
+  .fact .l{ font-size:10px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--ink3); margin-top:4px; line-height:1.25; }
+
+  .blk{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 18px; margin:14px 0;
+    box-shadow:0 6px 20px rgba(45,80,22,.05); }
+  .blk h3{ font-size:18px; font-weight:900; margin-bottom:7px; letter-spacing:-.015em; }
+  .blk p{ color:var(--ink2); font-size:14px; }
+  .blk p + p{ margin-top:9px; }
+  .blk b{ color:var(--ink); }
+  .lbl{ font-size:11px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:var(--ink3); display:block; margin-bottom:5px; }
+
+  /* GRAFICO */
+  .chart{ background:linear-gradient(180deg,#1e2a17,#2a3720); border:none; color:#eef4e6; padding:20px 14px 16px; }
+  .chart .lbl{ color:#a9c48a; padding:0 4px; }
+  .chart h3{ color:#fff; padding:0 4px; }
+  .chart p{ color:#c9d8b8; padding:0 4px; }
+  .bars{ display:grid; grid-template-columns:repeat(12,1fr); gap:4px; align-items:end; height:186px; margin:16px 0 0; }
+  .bar{ display:flex; flex-direction:column; justify-content:flex-end; align-items:center; height:100%; }
+  .bar i{ display:block; width:100%; border-radius:5px 5px 2px 2px; background:linear-gradient(180deg,#8fc34a,#4d8a2a);
+    height:0; transition:height .9s cubic-bezier(.34,1.2,.4,1); }
+  .bar.lo i{ background:linear-gradient(180deg,#e8735a,#b4442e); }
+  .bar.now i{ background:linear-gradient(180deg,#ffd166,#e0a92e); box-shadow:0 0 0 2px rgba(255,209,102,.35); }
+  .bar .n{ font-size:11px; font-weight:900; color:#eef4e6; margin-bottom:3px; }
+  .bar .m{ font-size:9.5px; font-weight:800; color:#8fa87a; margin-top:5px; letter-spacing:.02em; }
+  .bar.lo .m{ color:#e8a294; }
+  .bar.now .m{ color:#ffd166; }
+  .leg{ display:flex; gap:12px; justify-content:center; margin-top:12px; font-size:10.5px; font-weight:700; color:#8fa87a; flex-wrap:wrap; }
+  .leg span{ display:flex; align-items:center; gap:4px; }
+  .leg i{ width:9px; height:9px; border-radius:3px; display:block; }
+
+  .porque{ background:linear-gradient(180deg,#fef6df,#fffdf6); border-color:rgba(224,169,46,.35); }
+  .porque .lbl{ color:#b7860b; }
+
+  .quote{ background:#f4eef7; border:1px solid rgba(122,74,134,.25); border-radius:15px; padding:14px 16px; margin-top:11px; }
+  .quote p{ color:var(--uva); font-size:14.5px; font-weight:700; font-style:italic; }
+  .quote small{ display:block; margin-top:5px; font-size:11.5px; font-weight:700; font-style:normal; color:#9b7ba5; }
+
+  /* filas de especies */
+  .rows{ list-style:none; margin-top:11px; }
+  .rows li{ display:flex; gap:11px; align-items:flex-start; padding:11px 12px; border:1px solid var(--line); border-radius:13px;
+    margin-top:8px; background:#fafcf6; }
+  .rows li .tag{ flex:none; font-size:10px; font-weight:900; letter-spacing:.04em; background:var(--verde3); color:var(--verde);
+    border-radius:6px; padding:4px 6px; min-width:44px; text-align:center; }
+  .rows li .tx{ font-size:13.5px; font-weight:700; line-height:1.35; }
+  .rows li .tx small{ display:block; font-weight:500; color:var(--ink3); font-size:12px; margin-top:2px; line-height:1.4; }
+  .rows li.star{ background:#fffaed; border-color:rgba(224,169,46,.45); }
+  .rows li.star .tag{ background:#ffe9b0; color:#8a6410; }
+
+  /* TARJETAS DE DECISION */
+  .cand{ border:1px solid var(--line); border-radius:17px; padding:15px 15px 13px; margin-top:11px; background:#fafcf6;
+    transition:background .2s, border-color .2s; }
+  .cand.si{ background:#eef7e0; border-color:rgba(90,138,46,.45); }
+  .cand.no{ background:#f4f4f2; border-color:var(--line); opacity:.62; }
+  .cand .top{ display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+  .cand .nm{ font-size:16px; font-weight:900; letter-spacing:-.01em; }
+  .cand .sci{ font-size:11.5px; font-style:italic; color:var(--ink3); font-weight:600; }
+  .cand .when{ display:inline-block; margin-top:7px; font-size:11px; font-weight:900; letter-spacing:.05em; text-transform:uppercase;
+    background:#ffe9b0; color:#8a6410; border-radius:6px; padding:4px 8px; }
+  .cand .why{ font-size:13.5px; color:var(--ink2); margin-top:9px; line-height:1.5; }
+  .cand .why b{ color:var(--ink); }
+  .cand .donde{ font-size:12.5px; color:var(--verde); background:var(--verde3); border-radius:9px; padding:8px 10px; margin-top:9px;
+    font-weight:700; line-height:1.4; }
+  .cand .err{ font-size:12.5px; color:var(--rojo); margin-top:8px; line-height:1.4; font-weight:600; }
+  .yn{ display:flex; gap:8px; margin-top:12px; align-items:center; }
+  .yn button{ flex:1; border:1.5px solid var(--line); background:#fff; border-radius:11px; padding:11px 6px; font:800 13.5px var(--sans);
+    color:var(--ink2); cursor:pointer; transition:.15s; }
+  .yn button:active{ transform:scale(.97); }
+  .yn button.sel{ background:var(--verde2); border-color:var(--verde2); color:#fff; }
+  .yn button:disabled{ cursor:default; }
+  .q-hint{ font-size:12px; font-weight:900; color:var(--verde2); min-width:14px; }
+
+  /* GRATIS */
+  .gratis{ background:linear-gradient(180deg,#e6f3da,#f4fbec); border-color:rgba(90,138,46,.4); }
+  .gratis .lbl{ color:var(--verde2); }
+
+  /* SLOTS */
+  .slots{ background:linear-gradient(180deg,#22301c,#2d3d23); border:none; color:#eef4e6; }
+  .slots .lbl{ color:#a9c48a; }
+  .slots h3{ color:#fff; }
+  .slots p{ color:#c9d8b8; }
+  .slot{ background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16); border-radius:14px; padding:13px 14px; margin-top:10px; }
+  .slot .sn{ font-size:14.5px; font-weight:900; color:#fff; }
+  .slot .sd{ font-size:12.5px; color:#a9c48a; margin-top:2px; }
+  .slot .yn button{ background:rgba(255,255,255,.09); border-color:rgba(255,255,255,.2); color:#dfe9d6; }
+  .slot .yn button.sel{ background:#8fc34a; border-color:#8fc34a; color:#1e2a17; }
+
+  /* APROBADAS */
+  .aprob{ background:#fffdf6; border-color:rgba(224,169,46,.4); }
+  .aprob .lbl{ color:#b7860b; }
+  .aprob a{ display:flex; align-items:center; gap:11px; text-decoration:none; color:var(--ink); background:#fff;
+    border:1px solid rgba(224,169,46,.35); border-radius:14px; padding:13px 14px; margin-top:10px; }
+  .aprob a:active{ opacity:.65; }
+  .aprob a .ic{ font-size:26px; flex:none; }
+  .aprob a .tx{ font-size:14px; font-weight:900; line-height:1.3; }
+  .aprob a .tx small{ display:block; font-weight:500; color:var(--ink3); font-size:12px; margin-top:2px; }
+  .aprob a .go{ margin-left:auto; color:var(--sol); font-weight:900; font-size:18px; }
+
+  /* REACCION */
+  .react{ text-align:center; }
+  .react .btns{ display:flex; gap:9px; justify-content:center; margin-top:12px; }
+  .react .btns button{ flex:1; max-width:78px; font-size:29px; background:#fafcf6; border:1.5px solid var(--line); border-radius:15px;
+    padding:11px 0; cursor:pointer; transition:.15s; }
+  .react .btns button:active{ transform:scale(.93); }
+  .react .btns button.sel{ background:var(--verde3); border-color:var(--verde2); transform:scale(1.06); }
+  .react-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:800; color:var(--verde2); min-height:1.2em; }
+
+  /* FEEDBACK */
+  .fb-blk{ background:linear-gradient(180deg,#14231a,#1c2e21); border:none; color:#eef4ec; }
+  .fb-blk h3{ color:#fff; }
+  .fb-blk p{ color:#b7c6bb; font-size:13.5px; }
+  .fb-blk textarea{ width:100%; margin-top:11px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.2);
+    border-radius:12px; color:#eef4ec; padding:12px; font:400 14px var(--sans); resize:vertical; }
+  .fb-send{ margin-top:10px; width:100%; background:#2f7d4f; color:#fff; border:none; border-radius:12px; padding:13px 20px;
+    font:800 14.5px var(--sans); cursor:pointer; }
+  .fb-send:active{ opacity:.8; }
+  .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:800; color:#8fd06a; min-height:1.2em; }
+
+  .engage-actions{ max-width:480px; margin:18px auto 6px; padding:0 var(--pad); display:flex; flex-direction:column; gap:9px; }
+  .engage-actions button{ width:100%; border:none; border-radius:14px; padding:15px; font:900 15px var(--sans); cursor:pointer; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:#eceee9; color:var(--ink2); }
+  .engage-actions button:active{ opacity:.8; }
+  .engage-feedback{ text-align:center; font-size:14px; font-weight:800; color:var(--verde); padding:14px; }
+
+  .foot{ text-align:center; font-size:11.5px; color:var(--ink3); padding:14px var(--pad) 4px; line-height:1.6; max-width:480px; margin:0 auto; }
+</style>
+</head><body>
+
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <span class="em">📉</span>
+    <span class="kicker">Auditoría · 52 especies</span>
+    <h1>32 contra 1</h1>
+    <p class="sub">Conté, mes por mes, cuántas de tus especies están en flor. El resultado dice algo que no esperaba.</p>
+  </header>
+
+  <div class="calma reveal">
+    <p>☕ <b>Esto es para mirar, no para hacer.</b> Estás de viaje: no hay ninguna tarea acá, y no te va a llegar ninguna push de tareas hasta el 24. Leelo con un café.</p>
+  </div>
+
+  <div class="facts reveal">
+    <div class="fact"><span class="n">32</span><span class="l">especies en flor<br>en noviembre</span></div>
+    <div class="fact bad"><span class="n">1</span><span class="l">en junio<br>y en julio</span></div>
+    <div class="fact bad"><span class="n">4</span><span class="l">especies sostienen<br>todo el invierno</span></div>
+  </div>
+
+  <!-- ============ EL GRAFICO ============ -->
+  <section class="blk chart reveal">
+    <span class="lbl">Tu año, contado</span>
+    <h3>Especies en flor, mes a mes</h3>
+    <p>Sale de tu propio catálogo: el campo <b style="color:#fff">flowering</b> de las 52 fichas, sumado por mes.</p>
+
+    <div class="bars" id="bars">
+      <div class="bar" data-v="16"><span class="n">16</span><i></i><span class="m">E</span></div>
+      <div class="bar" data-v="11"><span class="n">11</span><i></i><span class="m">F</span></div>
+      <div class="bar" data-v="9"><span class="n">9</span><i></i><span class="m">M</span></div>
+      <div class="bar lo" data-v="6"><span class="n">6</span><i></i><span class="m">A</span></div>
+      <div class="bar lo" data-v="3"><span class="n">3</span><i></i><span class="m">M</span></div>
+      <div class="bar lo" data-v="1"><span class="n">1</span><i></i><span class="m">J</span></div>
+      <div class="bar lo" data-v="1"><span class="n">1</span><i></i><span class="m">J</span></div>
+      <div class="bar now" data-v="6"><span class="n">6</span><i></i><span class="m">A</span></div>
+      <div class="bar" data-v="13"><span class="n">13</span><i></i><span class="m">S</span></div>
+      <div class="bar" data-v="26"><span class="n">26</span><i></i><span class="m">O</span></div>
+      <div class="bar" data-v="32"><span class="n">32</span><i></i><span class="m">N</span></div>
+      <div class="bar" data-v="24"><span class="n">24</span><i></i><span class="m">D</span></div>
+    </div>
+    <div class="leg">
+      <span><i style="background:#4d8a2a"></i>lleno</span>
+      <span><i style="background:#b4442e"></i>el hueco</span>
+      <span><i style="background:#e0a92e"></i>hoy</span>
+    </div>
+  </section>
+
+  <!-- ============ EL DATO ============ -->
+  <section class="blk porque reveal">
+    <span class="lbl">Lo que esto significa</span>
+    <h3>Tu «más flor» no está en primavera</h3>
+    <p>El 27 de julio te pregunté qué querías del jardín. Contestaste lo mismo cinco veces:</p>
+    <div class="quote"><p>«Flor.»</p><small>Tu respuesta — 27/07/2026</small></div>
+    <p style="margin-top:12px">Y yo venía pensando en cómo darte <b>más</b> flor. Pero el gráfico dice otra cosa: en noviembre ya tenés <b>32 especies floreciendo a la vez</b>. Ahí no falta nada — ahí sobra, incluso. Meter una planta más de primavera es tirar flor arriba de un mes que ya desborda.</p>
+    <p><b>El problema no es cuánta flor tenés. Es cuándo.</b> De abril a agosto tu jardín cae a entre 1 y 6 especies. Cinco meses. Casi la mitad del año.</p>
+  </section>
+
+  <!-- ============ LOS 4 QUE BANCAN ============ -->
+  <section class="blk reveal">
+    <span class="lbl">El hueco, de cerca</span>
+    <h3>Cuatro especies bancan el otoño-invierno entero</h3>
+    <p>De 52. Estas son, literalmente, todas las que ponen flor entre mayo y julio:</p>
+    <ul class="rows">
+      <li><span class="tag">May</span><span class="tx">Abelia <b>F-7</b> · Lavanda <b>B-10/B-19</b> · Lantana <b>B-29</b><small>Las tres vienen de largo desde primavera y se apagan en mayo. Son la cola de la temporada, no flor de invierno.</small></span></li>
+      <li><span class="tag">Jun</span><span class="tx">Romero <b>B-26</b><small>Sola.</small></span></li>
+      <li><span class="tag">Jul</span><span class="tx">Romero <b>B-26</b><small>Sola otra vez. Un arbusto de cocina sostiene dos meses del jardín.</small></span></li>
+    </ul>
+    <p style="margin-top:12px">Y en agosto subís a 6 — pero mirá <b>quiénes</b> son: durazno, ciruela, pera, ciruelo… <b>cinco de las seis son flor de frutal</b>. Explotan tres semanas, se caen, y sale la hoja. Es un fogonazo, no una temporada.</p>
+  </section>
+
+  <!-- ============ LO QUE PASA HOY ============ -->
+  <section class="blk reveal">
+    <span class="lbl">Ahora mismo, sin vos</span>
+    <h3>El sexto de agosto no es un frutal</h3>
+    <ul class="rows">
+      <li class="star"><span class="tag">B-32</span><span class="tx">Viraró — <i>Ruprechtia laxiflora</i><small>Nativa. Florece agosto y setiembre: está arrancando en estos días, mientras vos no estás. Es dioica — hay pie macho y pie hembra, y solo el hembra arma esos frutos con alas color salmón que después se ven de lejos. Es la única flor de agosto de tu jardín que no se cae en tres semanas.</small></span></li>
+    </ul>
+    <p style="margin-top:12px">No hay nada que hacer con esto. Solo que sepas que pasó, y que a la vuelta el viraró va a estar en su momento — si querés mirarle la flor de cerca para saber qué pie te tocó, esta es la ventana.</p>
+  </section>
+
+  <!-- ============ LAS DECISIONES ============ -->
+  <section class="blk reveal">
+    <span class="lbl">Sin moverte de donde estás</span>
+    <h3>Cuatro candidatas para llenar el hueco</h3>
+    <p>Ninguna se compra ni se planta hoy. Tocá <b>sí</b> o <b>no</b> a cada una y a la vuelta te armo la lista con las que dijiste que sí — con vivero, época y lugar exacto.</p>
+  </section>
+
+  <div class="cand reveal" id="c-camelia">
+    <div class="top"><span class="nm">Camelia</span><span class="sci">Camellia japonica</span></div>
+    <span class="when">Flor: mayo → agosto</span>
+    <p class="why">La que te tapa <b>el agujero entero</b>. Florece justo en los cuatro meses donde hoy tenés al romero solo. Y no es flor tímida: son flores grandes, de 8-10 cm, sobre hoja lustrosa que queda verde todo el año.</p>
+    <div class="donde">📍 Rincón sur, junto a la pera <b>B-39</b> — el lado sombrío y húmedo. Es exactamente lo que pide: media sombra, suelo ácido, y <b>nada</b> de sol de la tarde. Ahí ya decidiste mandar la hortensia <b>B-5a/b</b>: las dos son acidófilas y quieren lo mismo. Se plantan juntas.</div>
+    <p class="err">⚠️ El error clásico: plantarla al sol pleno del norte «para que florezca más». Se le quema la hoja y aborta los pimpollos. La camelia es planta de sombra.</p>
+    <div class="yn"><button type="button" onclick="engageAnswer('hueco-camelia','si',this)">Sí, la quiero</button><button type="button" onclick="engageAnswer('hueco-camelia','no',this)">No</button><span class="q-hint"></span></div>
+  </div>
+
+  <div class="cand reveal" id="c-aloe">
+    <div class="top"><span class="nm">Aloe candelabro</span><span class="sci">Aloe arborescens</span></div>
+    <span class="when">Flor: junio → agosto</span>
+    <p class="why">La contracara de la camelia: <b>pleno sol, riego casi cero, aguanta helada</b>. Tira espigas naranjas encendidas en pleno invierno, cuando no hay absolutamente nada más prendido. Se multiplica sola por hijuelos, así que de una planta salen diez.</p>
+    <div class="donde">📍 Muro norte, cerca del hibisco <b>B-4</b> y el lapachillo <b>B-14</b>. En invierno el sol pasa bajo y por el norte: ese muro es el punto más cálido y luminoso que tenés en junio. Es donde el aloe rinde.</div>
+    <p class="err">⚠️ El error: regarla. En invierno, con la tierra fría y mojada, se pudre la base. Se planta y se olvida.</p>
+    <div class="yn"><button type="button" onclick="engageAnswer('hueco-aloe','si',this)">Sí, la quiero</button><button type="button" onclick="engageAnswer('hueco-aloe','no',this)">No</button><span class="q-hint"></span></div>
+  </div>
+
+  <div class="cand reveal" id="c-salvia">
+    <div class="top"><span class="nm">Salvia de otoño</span><span class="sci">Salvia leucantha</span></div>
+    <span class="when">Flor: marzo → junio</span>
+    <p class="why">No ataca el fondo del pozo: ataca <b>el escalón</b>. Es el momento en que caés de 9 especies en marzo a 3 en mayo. Esta florece justo ahí, en espigas violetas aterciopeladas, y encima es imbancable de fácil: se corta a ras en invierno y rebrota.</p>
+    <div class="donde">📍 Frente, al oeste, entre las fotinias <b>F-3/F-6/F-11</b>. Quiere pleno sol y ahí tenés sol de tarde hasta que se esconde. Además el frente es lo que ves al llegar a casa — en abril y mayo hoy no hay nada que mirar ahí.</div>
+    <p class="err">⚠️ El error: no cortarla. Si la dejás, en dos años es un matorral leñoso que florece por las puntas. Corte bajo cada invierno y vuelve entera.</p>
+    <div class="yn"><button type="button" onclick="engageAnswer('hueco-salvia','si',this)">Sí, la quiero</button><button type="button" onclick="engageAnswer('hueco-salvia','no',this)">No</button><span class="q-hint"></span></div>
+  </div>
+
+  <div class="cand reveal" id="c-jazmin">
+    <div class="top"><span class="nm">Jazmín de invierno</span><span class="sci">Jasminum nudiflorum</span></div>
+    <span class="when">Flor: junio → agosto</span>
+    <p class="why">El truco de esta es que florece <b>sobre la madera pelada</b>, sin una sola hoja: ramas verdes desnudas cubiertas de estrellas amarillas en el peor mes del año. <i>Nudiflorum</i> quiere decir literalmente «de flor desnuda». Cae en cascada, así que va sobre un muro o una reja.</p>
+    <div class="donde">📍 Cualquier muro o reja que quede a la vista desde adentro de casa. En junio no salís al jardín — esta hay que ponerla donde la veas por la ventana.</div>
+    <p class="err">⚠️ El error: confundirlo con el jazmín de leche <b>B-3</b> que ya tenés. Ese es perfumado y florece de octubre a enero. Este no tiene olor y florece cuando el otro duerme. Son complementarios, no repetidos.</p>
+    <div class="yn"><button type="button" onclick="engageAnswer('hueco-jazmin','si',this)">Sí, la quiero</button><button type="button" onclick="engageAnswer('hueco-jazmin','no',this)">No</button><span class="q-hint"></span></div>
+  </div>
+
+  <!-- ============ LA GRATIS ============ -->
+  <section class="blk gratis reveal">
+    <span class="lbl">Y la que no cuesta un peso</span>
+    <h3>Ya tenés dos de las cuatro que bancan el hueco</h3>
+    <p>Romero <b>B-26</b> (junio→octubre) y lavanda <b>B-10/B-19</b> (setiembre→mayo). Entre las dos cubren casi todo el año — el problema es que <b>hay una de cada una</b>.</p>
+    <p>No te van a dar meses nuevos. Te van a dar <b>volumen</b> en el mes que hoy está vacío: seis romeros en flor en julio se ven; uno no. Y las dos son de las más fáciles de multiplicar por gajo que existen — mismo principio que vimos con el crespón, pero con madera semi-madura en vez de dormida.</p>
+    <p><b>Costo: cero.</b> Materia prima: las plantas que ya tenés.</p>
+    <div class="yn"><button type="button" onclick="engageAnswer('hueco-multiplicar','si',this)">Sí, hagamos esto</button><button type="button" onclick="engageAnswer('hueco-multiplicar','no',this)">No</button><span class="q-hint"></span></div>
+  </section>
+
+  <section class="blk reveal">
+    <span class="lbl">Para que quede claro</span>
+    <h3>Cómo leer el gráfico sin engañarte</h3>
+    <p>El gráfico cuenta <b>especies distintas en flor</b>, no cantidad de flor. Noviembre con 32 especies no significa que noviembre sea 32 veces más lindo que julio — significa que en julio, si querés ver una flor, tenés un solo lugar adonde ir a mirar.</p>
+    <p>Y sale del campo <code>flowering</code> de tus fichas, que son promedios para Montevideo. El año real corre una o dos semanas para cualquier lado según el invierno. <b>El hueco es real; los bordes son aproximados.</b></p>
+  </section>
+
+  <!-- ============ APROBADAS ============ -->
+  <section class="blk aprob reveal">
+    <span class="lbl">También prendidas</span>
+    <h3>Lo que ya aprobaste</h3>
+    <p>Estas quedaron activas porque las prendiste vos. Las dejo acá adentro, a mano:</p>
+    <a href="2026-08-01-el-taller.html">
+      <span class="ic">🪚</span>
+      <span class="tx">El Taller — poda de carozos<small>Aprobada en los dos slots. Paso a paso, con el serrucho en la mano.</small></span>
+      <span class="go">›</span>
+    </a>
+  </section>
+
+  <!-- ============ SLOTS ============ -->
+  <section class="blk slots reveal">
+    <span class="lbl">Cuándo querés esto</span>
+    <h3>¿La dejo prendida?</h3>
+    <p>Si esta te sirvió, decime en qué momento de la semana querés que vuelva con contenido nuevo. Si no la prendés, no vuelve — y en su lugar te llega otra cosa distinta.</p>
+    <div class="slot">
+      <div class="sn">🌙 Lunes 18:00</div>
+      <div class="sd">Arranque de semana, de tardecita.</div>
+      <div class="yn"><button type="button" onclick="engageAnswer('hueco-slot-lun18','si',this)">Sí</button><button type="button" onclick="engageAnswer('hueco-slot-lun18','no',this)">No</button><span class="q-hint"></span></div>
+    </div>
+    <div class="slot">
+      <div class="sn">☀️ Sábado 11:00</div>
+      <div class="sd">Fin de semana, con tiempo.</div>
+      <div class="yn"><button type="button" onclick="engageAnswer('hueco-slot-sab11','si',this)">Sí</button><button type="button" onclick="engageAnswer('hueco-slot-sab11','no',this)">No</button><span class="q-hint"></span></div>
+    </div>
+  </section>
+
+  <!-- ============ REACCION ============ -->
+  <section class="blk react reveal">
+    <h3>¿Qué te pareció?</h3>
+    <div class="btns">
+      <button type="button" onclick="engageReact('el-hueco','love',this)">😍</button>
+      <button type="button" onclick="engageReact('el-hueco','like',this)">🙂</button>
+      <button type="button" onclick="engageReact('el-hueco','meh',this)">😐</button>
+      <button type="button" onclick="engageReact('el-hueco','no',this)">🙅</button>
+    </div>
+    <span class="react-hint"></span>
+  </section>
+
+  <!-- ============ FEEDBACK ============ -->
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>Esto lo leo yo, el agente del jardín, antes de armar la próxima. ¿Le pegué al problema? ¿Querés otras candidatas? ¿Preferís que ataque otro mes? Tu texto pesa más que cualquier botón.</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('el-hueco', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+</div>
+
+<div class="engage-actions">
+  <button type="button" onclick="engageApprove('2026-08-08-el-hueco')">✅ Aprobar esta mejora</button>
+  <button type="button" onclick="engageRejected('2026-08-08-el-hueco')">✕ No me interesa</button>
+</div>
+
+<p class="foot">Datos calculados el 08/08/2026 sobre las 52 fichas de <code>data_plants.py</code>.<br>Jardín en Montevideo · casa alineada este-oeste · viaje del 7 al 23 de agosto.</p>
+
+<script>
+  // Revelado progresivo
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:.12, rootMargin:'0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // Barras: crecen cuando el gráfico entra en pantalla
+  var chart = document.getElementById('bars');
+  var MAXV = 32;
+  var bio = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      bio.unobserve(e.target);
+      var bars = e.target.querySelectorAll('.bar');
+      bars.forEach(function(b, i){
+        var v = parseInt(b.getAttribute('data-v'), 10);
+        setTimeout(function(){
+          b.querySelector('i').style.height = Math.max(4, Math.round(v / MAXV * 100)) + '%';
+        }, 70 * i);
+      });
+    });
+  }, { threshold:.35 });
+  if (chart) bio.observe(chart);
+
+  // Marca visual de la tarjeta al elegir sí/no
+  document.querySelectorAll('.cand').forEach(function(card){
+    card.querySelectorAll('.yn button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        card.classList.remove('si','no');
+        card.classList.add(btn.textContent.trim() === 'No' ? 'no' : 'si');
+      });
+    });
+  });
+</script>
+<script src="engage.js"></script>
+</body></html>

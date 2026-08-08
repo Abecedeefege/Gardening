@@ -2,42 +2,6 @@
  "events": [
   {
    "type": "notification_sent",
-   "nid": "2026-07-24-task-dia",
-   "ts": "2026-07-24T13:05:33.620Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-24-pendientes",
-   "ts": "2026-07-24T13:05:33.748Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-24-a",
-   "ts": "2026-07-24T15:05:26.284Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-24-top3",
-   "ts": "2026-07-24T15:05:26.333Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-24-jardin-hoy-v2",
-   "ts": "2026-07-24T17:55:23.581Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-24-b",
-   "ts": "2026-07-24T21:02:02.994Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
    "nid": "2026-07-25-jardin-hoy",
    "ts": "2026-07-25T14:01:26.384Z",
    "status_code": 201
@@ -329,5 +293,5 @@
    "sent": 4
   }
  },
- "_updated_at": "2026-08-07T09:10:00.000Z"
+ "_updated_at": "2026-08-08T09:20:00.000Z"
 }

@@ -1001,6 +1001,18 @@
     "2026-08-04-tarjeta-campo"
    ],
    "result_notes": "⬛ CERO SEÑAL, confirmado a 48 h (al 06/08 sigue sin una sola visita, click, tick ni feedback). Único push del canal sin apertura desde que el logging es confiable. Diagnóstico principal: LA HORA — el dispatcher la mandó 11:38 -03, dentro de su franja muerta (09-12 h = 11 visitas en dos semanas). Diagnóstico secundario: el título vendía mi proceso ('Verifiqué: hoy no llueve') en vez de un beneficio suyo. SE MANTIENE 'pending' y la página NO se borra: el formato 'tarjeta corta para ejecutar' quedó SIN TESTEAR, no refutado. Re-test a la vuelta (24/08 en adelante) a las 14:30, nunca antes del mediodía. No recurre hasta tener aprobación. || 07/08: sigue ⬛ a 72 h. Con el ⬛ del 06/08 ya son 2 de 2 pushes enviadas en la franja 11:30-ish sin una sola apertura, contra 5 de 5 con apertura en la franja 14-20 h. El formato 'tarjeta corta para ejecutar' sigue SIN TESTEAR. Se mantiene pending, la página no se borra: re-test a la vuelta (24-31/08) a las 14:30, nunca antes del mediodía."
+  },
+  {
+   "id": "2026-08-08-el-hueco",
+   "title": "El hueco — auditoría de floración: dónde está tu «más flor»",
+   "page": "engage/2026-08-08-el-hueco.html",
+   "created": "2026-08-08",
+   "status": "pending",
+   "hypothesis": "Un dato COMPUTADO de sus propias 52 fichas (nov=32 especies en flor vs jun/jul=1) refuta su propio objetivo declarado ('flor', 27/07) y lo reencuadra: no le falta MAS flor, le falta flor en OTRO MES. Es sustancia tecnica real sobre SU jardin (regla #1 del canal, la que gano con el Taller) pero con cero-deber, que es lo unico admisible durante el viaje. Las 4 candidatas se deciden con un tap desde el avion y se convierten en la lista de la reentrada del 24/08, asi que la experiencia produce trabajo util sin pedirle trabajo. Espero >=1 tap de candidata; el exito seria 😍 + slot prendido.",
+   "notified_by": [
+    "2026-08-08-el-hueco"
+   ],
+   "result_notes": null
   }
  ],
  "_updated_at": "2026-08-07T09:10:00.000Z"

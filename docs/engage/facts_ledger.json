@@ -1,6 +1,6 @@
 {
  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-08-07",
+ "_updated": "2026-08-08",
  "plants": {
   "F-1": {
    "common": "Guayabo del país",
@@ -66,7 +66,7 @@
   },
   "F-3": {
    "common": "Fotinia",
-   "paginas_historicas": 5,
+   "paginas_historicas": 6,
    "featured": [
     {
      "date": "2026-07-19",
@@ -77,6 +77,11 @@
      "date": "2026-07-25",
      "page": "2026-07-25-mapa-solar.html",
      "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
+    },
+    {
+     "date": "2026-08-08",
+     "page": "2026-08-08-el-hueco.html",
+     "fact": "Referencia de UBICACION (frente/oeste) para la salvia. No featured por fun_fact."
     }
    ]
   },
@@ -129,7 +134,7 @@
   },
   "F-7": {
    "common": "Abelia",
-   "paginas_historicas": 8,
+   "paginas_historicas": 9,
    "featured": [
     {
      "date": "2026-07-19",
@@ -140,6 +145,11 @@
      "date": "2026-07-26",
      "page": "2026-07-26-mi-primavera.html",
      "fact": "ANGULO FLORACION/recompensa: florece primavera-otono sin parar, iman de abejas"
+    },
+    {
+     "date": "2026-08-08",
+     "page": "2026-08-08-el-hueco.html",
+     "fact": "Gap-filler: abelia nov-mayo, cola de temporada que se apaga en mayo. Angulo NUEVO."
     }
    ]
   },
@@ -230,18 +240,23 @@
   },
   "B-3": {
    "common": "Jazmín de leche / estrellado",
-   "paginas_historicas": 6,
+   "paginas_historicas": 7,
    "featured": [
     {
      "date": "2026-07-19",
      "page": "2026-07-09-quiz-planta(reno-19-07).html",
      "fact": "no es jazmin verdadero / apocinacea / flor seca infusion China"
+    },
+    {
+     "date": "2026-08-08",
+     "page": "2026-08-08-el-hueco.html",
+     "fact": "Contraste con jazmin de invierno propuesto: B-3 perfumado oct-ene vs Jasminum nudiflorum sin olor jun-ago. Angulo NUEVO."
     }
    ]
   },
   "B-4": {
    "common": "Hibisco / Rosa china",
-   "paginas_historicas": 8,
+   "paginas_historicas": 9,
    "featured": [
     {
      "date": "2026-07-18",
@@ -252,12 +267,17 @@
      "date": "2026-07-25",
      "page": "2026-07-25-mapa-solar.html",
      "fact": "ANGULO ORIENTACION: muro norte (hibisco), lado cálido"
+    },
+    {
+     "date": "2026-08-08",
+     "page": "2026-08-08-el-hueco.html",
+     "fact": "Referencia de UBICACION (muro norte calido) para el aloe. No featured por fun_fact."
     }
    ]
   },
   "B-5a": {
    "common": "Hortensia",
-   "paginas_historicas": 12,
+   "paginas_historicas": 13,
    "featured": [
     {
      "date": "2026-07-18",
@@ -298,6 +318,11 @@
      "date": "2026-08-06",
      "page": "2026-07-24-jardin-hoy.html (edición cierre pre-viaje)",
      "fact": "ANGULO VENTANA JUSTA: única de las 3 con reloj real — trasplante en dormancia OK, con brote arrancado pierde la primera floración → 29-30/08"
+    },
+    {
+     "date": "2026-08-08",
+     "page": "2026-08-08-el-hueco.html",
+     "fact": "Referencia: ya decidido a tierra en el rincon sur; camelia es su companiera acidofila. No featured por fun_fact."
     }
    ]
   },
@@ -412,7 +437,7 @@
   },
   "B-10": {
    "common": "Lavanda",
-   "paginas_historicas": 11,
+   "paginas_historicas": 12,
    "featured": [
     {
      "date": "2026-07-18",
@@ -433,6 +458,11 @@
      "date": "2026-07-31",
      "page": "2026-07-31-el-parte.html",
      "fact": "ANGULO CLIMA-INVIERNO (El Parte): lavanda mediterranea verde/aromatica en frio / lavare=lavar romanos / bolsita espanta polillas — no le hacen nada las heladas tardias"
+    },
+    {
+     "date": "2026-08-08",
+     "page": "2026-08-08-el-hueco.html",
+     "fact": "Gap-filler: florece set-mayo, una de las 4 que bancan otonio-invierno. Angulo NUEVO (cobertura anual, no fun_fact)."
     }
    ]
   },
@@ -470,7 +500,7 @@
   },
   "B-14": {
    "common": "Lapachillo",
-   "paginas_historicas": 8,
+   "paginas_historicas": 9,
    "featured": [
     {
      "date": "2026-07-19",
@@ -481,6 +511,11 @@
      "date": "2026-07-25",
      "page": "2026-07-25-mapa-solar.html",
      "fact": "ANGULO ORIENTACION: muro norte (lapachillo)"
+    },
+    {
+     "date": "2026-08-08",
+     "page": "2026-08-08-el-hueco.html",
+     "fact": "Referencia de UBICACION (muro norte). No featured por fun_fact."
     }
    ]
   },
@@ -693,7 +728,7 @@
   },
   "B-26": {
    "common": "Romero",
-   "paginas_historicas": 15,
+   "paginas_historicas": 16,
    "featured": [
     {
      "date": "2026-07-18",
@@ -724,6 +759,11 @@
      "date": "2026-07-28",
      "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
      "fact": "ANGULO ESTADO REAL (no fun_fact): duelo esto-o-esto — unica en flor este mes (dato factual julio)"
+    },
+    {
+     "date": "2026-08-08",
+     "page": "2026-08-08-el-hueco.html",
+     "fact": "DATO DE GRAFICO, no fun_fact: unica especie en flor en junio Y julio -> es el AGUJERO, no la curiosidad. Ademas: multiplicar por gajo para dar volumen al mes vacio."
     }
    ]
   },
@@ -745,7 +785,7 @@
   },
   "B-29": {
    "common": "Lantana / Camará",
-   "paginas_historicas": 9,
+   "paginas_historicas": 10,
    "featured": [
     {
      "date": "2026-07-18",
@@ -756,6 +796,11 @@
      "date": "2026-07-27",
      "page": "2026-07-27-mi-objetivo.html",
      "fact": "ANGULO OBJETIVO (mas flor / fauna): florece sola, iman de mariposas"
+    },
+    {
+     "date": "2026-08-08",
+     "page": "2026-08-08-el-hueco.html",
+     "fact": "Gap-filler: lantana oct-mayo. Angulo NUEVO."
     }
    ]
   },
@@ -802,7 +847,7 @@
   },
   "B-32": {
    "common": "Viraró",
-   "paginas_historicas": 11,
+   "paginas_historicas": 12,
    "featured": [
     {
      "date": "2026-07-19",
@@ -818,6 +863,11 @@
      "date": "2026-07-31",
      "page": "2026-07-31-el-parte.html",
      "fact": "ANGULO PROXIMO-DESPERTAR+NATIVA (El Parte): viraro nativo, sepalos rosados=alitas de dispersion por viento — florece agosto = corresponsal durante el viaje"
+    },
+    {
+     "date": "2026-08-08",
+     "page": "2026-08-08-el-hueco.html",
+     "fact": "PROTAGONISTA: viraro florece agosto-setiembre (esta arrancando AHORA, durante el viaje) + dioica, pie hembra arma fruto alado color salmon. Angulo NUEVO (nunca se uso la floracion ni la dioicia)."
     }
    ]
   },
@@ -922,7 +972,7 @@
   },
   "B-39": {
    "common": "Pera Williams",
-   "paginas_historicas": 11,
+   "paginas_historicas": 12,
    "featured": [
     {
      "date": "2026-07-20",
@@ -948,6 +998,11 @@
      "date": "2026-08-06",
      "page": "2026-07-24-jardin-hoy.html (edición cierre pre-viaje)",
      "fact": "ANGULO LOGRO: poda piramidal cerrada 23/07; vecina del rincón sur donde va la hortensia"
+    },
+    {
+     "date": "2026-08-08",
+     "page": "2026-08-08-el-hueco.html",
+     "fact": "Referencia de UBICACION (rincon sur sombrio/humedo) para la camelia. No featured por fun_fact."
     }
    ]
   },
@@ -1224,5 +1279,6 @@
   ],
   "2026-08-04: ver arriba"
  ],
- "_nota_07_08": "Viernes 07/08 = día 1 del VIAJE (7 al 23/08) y día sin slot. Corrida de MANTENIMIENTO: no se armó contenido, no se consumió ninguna planta del elenco — el ledger queda intacto y descansando 17 días enteros. QUEMADOS al 07/08: carozos (B-30, B-35, F-4, B-38) hasta el 09/08 · B-15 hasta el 10/08 · B-9, B-18, B-5a, B-39 hasta el 13/08 · romero B-26 («única flor de julio», usado 4×) hasta mediados de agosto. Todos vencen DENTRO del viaje, así que el 24/08 el elenco entero vuelve a estar disponible — es el mejor punto de partida que tuvo el canal. ELENCO FRESCO reservado para la reentrada: viraró B-32 (florece en agosto, nunca usado — protagonista natural del 24/08), mandarina B-24, pindó B-8, limonero B-23, mirto B-27, guayabo F-1, pitósporo B-43 (taller nº3), hibisco B-4, podranea F-2, abelia F-7, gardenia B-25. Recordatorio: el canal TAREA (jardin-hoy / taller / tarjeta) es monotemático — su cast lo define la tarea real, la regla del ≥70% fresco no aplica ahí."
+ "_nota_07_08": "Viernes 07/08 = día 1 del VIAJE (7 al 23/08) y día sin slot. Corrida de MANTENIMIENTO: no se armó contenido, no se consumió ninguna planta del elenco — el ledger queda intacto y descansando 17 días enteros. QUEMADOS al 07/08: carozos (B-30, B-35, F-4, B-38) hasta el 09/08 · B-15 hasta el 10/08 · B-9, B-18, B-5a, B-39 hasta el 13/08 · romero B-26 («única flor de julio», usado 4×) hasta mediados de agosto. Todos vencen DENTRO del viaje, así que el 24/08 el elenco entero vuelve a estar disponible — es el mejor punto de partida que tuvo el canal. ELENCO FRESCO reservado para la reentrada: viraró B-32 (florece en agosto, nunca usado — protagonista natural del 24/08), mandarina B-24, pindó B-8, limonero B-23, mirto B-27, guayabo F-1, pitósporo B-43 (taller nº3), hibisco B-4, podranea F-2, abelia F-7, gardenia B-25. Recordatorio: el canal TAREA (jardin-hoy / taller / tarjeta) es monotemático — su cast lo define la tarea real, la regla del ≥70% fresco no aplica ahí.",
+ "_nota_08_08": "Sabado 08/08 = dia 2 del VIAJE y dia CON slot de experiencia (11:00). Se mando UNA sola push: la experiencia 'el-hueco'. El slot de TAREA (10:00) quedo VACIO a proposito: rige el compromiso publicado el 06/08 (0 push de tareas del 7 al 23). ANGULO NUEVO ESTRENADO: AUDITORIA COMPUTADA sobre el catalogo entero -- se conto el campo 'flowering' de las 52 fichas mes a mes (Ene16 Feb11 Mar9 Abr6 May3 Jun1 Jul1 Ago6 Set13 Oct26 Nov32 Dic24). El hallazgo (nov=32 vs jun/jul=1; solo 4 especies bancan mayo-julio; 5 de las 6 de agosto son flor de frutal efimera) es dato duro NUEVO, no fun_fact -> NO cuenta como quemar plantas por curiosidad. ELENCO: 100% fresco por la regla de >=7 dias (el mas reciente era B-32 y B-10 del 31/07, 8 dias). Los quemados del viaje (B-9, B-18, B-5a, B-39, B-30/35, F-4, B-38, B-15) NO se usaron como protagonistas: aparecen solo como barras del grafico o como referencia de ubicacion. CONSUMIDO HOY -> descansan hasta el 15/08: B-32 (viraro, floracion+dioicia), B-10 (lavanda), F-7 (abelia), B-29 (lantana), B-3 (jazmin de leche). B-26 (romero) vuelve a tocarse pero como PROBLEMA, no como trivia -- sigue vedado para fun_fact hasta fines de agosto. NO REPETIR EN <14 DIAS: el grafico de 12 meses, el par 32-vs-1, y las 4 candidatas (camelia / aloe arborescens / salvia leucantha / jasminum nudiflorum). Si el usuario prende alguna con tap 'si', a la vuelta se convierte en lista de compra concreta -- eso SI es contenido nuevo, no repeticion. ELENCO INTACTO Y DISPONIBLE PARA LA REENTRADA DEL 24/08: mandarina B-24, pindo B-8, limonero B-23, mirto B-27, guayabo F-1, pitosporo B-43, podranea F-2, gardenia B-25, clivia B-13, pata de vaca B-42, anacahuita B-16, bugambilia B-1, hortensia B-5b."
 }

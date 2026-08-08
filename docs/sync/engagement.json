@@ -2,197 +2,12 @@
  "_updated_at": "2026-08-07T09:10:00.000Z",
  "events": [
   {
-   "_id": "mrywvs2p7aykem",
-   "type": "page_visit",
-   "page": "engage/2026-07-01-horoscopo-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T12:23:33.600Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mryz9w8jddf6py",
-   "type": "page_visit",
-   "page": "engage/2026-07-01-consultorio-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T13:30:31.410Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz0n8j8dhb7p2",
-   "type": "page_visit",
-   "page": "engage/2026-07-02-confesiones-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T14:08:53.491Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz5rozkntav33",
-   "type": "page_visit",
-   "page": "engage/2026-07-09-quiz-planta.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T16:32:19.520Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8e4k3xgc934",
-   "type": "notification_clicked",
-   "nid": "2026-07-24-task-dia",
-   "page": "tasks/plant-F-1.html",
-   "ts": "2026-07-24T17:45:45.355Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrz8e4k3rk40rh",
-   "type": "page_visit",
-   "page": "tasks/plant-F-1.html",
-   "nid": "2026-07-24-task-dia",
-   "src": "push",
-   "ts": "2026-07-24T17:45:45.355Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrz8egn3q8zu05",
-   "type": "notification_clicked",
-   "nid": "2026-07-24-a",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T17:46:01.019Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8egn3zzkwfz",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": "2026-07-24-a",
-   "src": "push",
-   "ts": "2026-07-24T17:46:01.019Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8faxgvo12i6",
-   "type": "dwell",
-   "seconds": 39,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T17:46:40.276Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8fbx2y1fmyp",
-   "type": "notification_clicked",
-   "nid": "2026-07-24-pendientes",
-   "page": "engage/tareas-pendientes.html",
-   "ts": "2026-07-24T17:46:41.556Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8fbx2bby7o5",
-   "type": "page_visit",
-   "page": "engage/tareas-pendientes.html",
-   "nid": "2026-07-24-pendientes",
-   "src": "push",
-   "ts": "2026-07-24T17:46:41.556Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8gm39xm54as",
-   "type": "dwell",
-   "seconds": 60,
-   "scroll_pct": 100,
-   "page": "engage/tareas-pendientes.html",
-   "ts": "2026-07-24T17:47:41.397Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8grjfa6msqu",
-   "type": "page_visit",
-   "page": "engage/tareas-pendientes.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T17:47:48.459Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8gtz3on6bpr",
-   "type": "page_visit",
-   "page": "engage/top3-tareas.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T17:47:51.615Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8gvyojouv0j",
-   "type": "dwell",
-   "seconds": 3,
-   "scroll_pct": 0,
-   "page": "engage/top3-tareas.html",
-   "ts": "2026-07-24T17:47:54.192Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8gxcrvpvn7x",
-   "type": "page_visit",
-   "page": "tasks/plant-F-1.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T17:47:55.992Z",
-   "device": "landing"
-  },
-  {
-   "_id": "mrz8h2swuxtngy",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": "2026-07-24-a",
-   "src": "push",
-   "ts": "2026-07-24T17:48:03.055Z",
-   "device": "sin-nombre"
-  },
-  {
    "_id": "mrz8kca5l9zsb8",
    "type": "feedback_text",
    "target": "jardin-hoy",
    "text": "Esta debería ser la push diaria.\nSaca \"¿Te sirve así de simple?\"\nSaca \"🌤️ Un vistazo cada mañana\"\nSaca \" ¿La dejo fija?\"\n\nSúmale un menú colapsado con las tareas de este mes (que quizás no son hoy pero si julio)\n\nSúmale un menú colapsado que sea de cosas para hacer en agosto \n\nRecordá si tenés alguna duda, especie desconocida o solicitud, estás tareas son el lugar para pedirlo",
    "page": "engage/2026-07-24-jardin-hoy.html",
    "ts": "2026-07-24T17:50:35.309Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz8kgvyjlydr2",
-   "type": "dwell",
-   "seconds": 158,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T17:50:41.278Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz956dlfivs96",
-   "type": "notification_clicked",
-   "nid": "2026-07-24-jardin-hoy-v2",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T18:06:47.432Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz956dl9ecpu4",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": "2026-07-24-jardin-hoy-v2",
-   "src": "push",
-   "ts": "2026-07-24T18:06:47.432Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz95i8b8rxlp0",
-   "type": "dwell",
-   "seconds": 15,
-   "scroll_pct": 72,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T18:07:02.795Z",
    "device": "sin-nombre"
   },
   {
@@ -205,65 +20,12 @@
    "device": "sin-nombre"
   },
   {
-   "_id": "mrzcbhzjawcyfj",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-24T19:35:41.262Z",
-   "device": "sin-nombre"
-  },
-  {
    "_id": "mrzcdz8tzst31r",
    "type": "feedback_text",
    "target": "jardin-hoy",
    "text": "Justo 3 tareas en cada módulo?  Nada más que quieras/precises que haga?\n\nAgregame una tarea que sea\"definir plantas para huerta\" y proponerme algunas sugerencias",
    "page": "engage/2026-07-24-jardin-hoy.html",
    "ts": "2026-07-24T19:37:36.941Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzceb6z62wszx",
-   "type": "dwell",
-   "seconds": 131,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T19:37:52.427Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzfuxorwsvzy5",
-   "type": "notification_clicked",
-   "nid": "2026-07-24-b",
-   "page": "engage/2026-07-24-tu-semana.html",
-   "ts": "2026-07-24T21:14:46.922Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzfuxornhycrv",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-tu-semana.html",
-   "nid": "2026-07-24-b",
-   "src": "push",
-   "ts": "2026-07-24T21:14:46.922Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzfvbgcwx1tg1",
-   "type": "answer",
-   "qid": "tu-semana-suscripcion-diaria",
-   "value": "si",
-   "page": "engage/2026-07-24-tu-semana.html",
-   "ts": "2026-07-24T21:15:04.764Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzfvh3evaew8d",
-   "type": "dwell",
-   "seconds": 25,
-   "scroll_pct": 68,
-   "page": "engage/2026-07-24-tu-semana.html",
-   "ts": "2026-07-24T21:15:12.074Z",
    "device": "sin-nombre"
   },
   {
@@ -1957,6 +1719,12 @@
    "feedback": [
     "Mucho texto, muy cargado, no es realmente lo que busco en una app de jardin"
    ]
+  },
+  "2026-07-24": {
+   "sent": 0,
+   "clicked": 5,
+   "visits": 14,
+   "approvals": 0
   }
  }
 }
