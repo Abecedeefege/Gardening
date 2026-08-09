@@ -17,11 +17,12 @@ No es un log: es lo que necesito recordar para decidir el contenido de mañana.
 - **Única excepción a los días sin slot:** que el usuario **lo pida explícitamente**. Si el pedido es condicional («cuando esté lindo», «si no llueve»), la condición se **verifica con datos reales** antes de encolar y se muestra citada.
 - Cada experiencia: back-link «← Volver al sitio estable» primero + reacción + selector de slots (`<slug>-slot-lun18` / `<slug>-slot-sab11`) + caja de feedback propia (`id=engage-feedback-box`) + aprobar/rechazar + HTML de pitch con 6 modelos. `send_at` ≥60 min post-corrida, `expires_at` mismo día 22:00, timestamps `-03:00`.
 
-## ✈️ CONTEXTO DOMINANTE — **VIAJE 7 AL 23 DE AGOSTO** (día 2 al 08/08)
+## ✈️ CONTEXTO DOMINANTE — **VIAJE 7 AL 23 DE AGOSTO** (día 3 al 09/08)
 
 - **Compromiso publicado el 06/08, a cumplir a rajatabla: del 7 al 23 NO se manda NINGUNA push de tareas.** Adentro caen 7 slots de tarea (sáb 8 ✅ cumplido, lun 10, jue 13, sáb 15, lun 17, jue 20, sáb 22). Se lo dije con número. **Romperlo quema el activo más caro que tengo.**
-- Las experiencias del viaje quedaron sujetas a `viaje-silencio` (`total` / `solo-lindo` / `todo`). **Sigue sin contestar al 08/08** → rige el default: **0 tareas + experiencia solo si es lectura placentera, cero-deber y con listón alto.** Releerlo antes de cada slot del viaje (lun 10, sáb 15, lun 17, sáb 22).
-- **08/08 el listón se consideró alcanzado** y salió `el-hueco` (ver abajo). Si en los próximos slots no hay un hallazgo de ese calibre, **no mandar nada** es la respuesta correcta.
+- Las experiencias del viaje quedaron sujetas a `viaje-silencio` (`total` / `solo-lindo` / `todo`). **Sigue sin contestar al 09/08** → rige el default: **0 tareas + experiencia solo si es lectura placentera, cero-deber y con listón alto.** Releerlo antes de cada slot del viaje (lun 10, sáb 15, lun 17, sáb 22).
+- **08/08 el listón se consideró alcanzado** y salió `el-hueco`: **cero apertura a 18 h** (ver abajo). Si en los próximos slots no hay un hallazgo de ese calibre, **no mandar nada** es la respuesta correcta.
+- **⚠️ Regla nueva 09/08 — el viaje NO es ventana de medición.** 5 días sin un solo evento (04/08 00:15 → 09/08). Un ⬛ durante el viaje **no condena un formato**: mide la disponibilidad del usuario, no el contenido. **Ningún eje se archiva con evidencia recogida entre el 07 y el 23.** Todo veredicto queda suspendido hasta la reentrada del 24/08.
 - **Las 3 abiertas se corrieron al 24/08** (crespón B-9, althea B-18, hortensia B-5a/b) con justificación técnica real. **Excepción: la hortensia sí tiene reloj → 29-30/08, antes del brote.**
 - ✅ Cerradas: durazno B-30/35, ciruela B-38, ciruelo F-4, liquidámbar B-37, pera B-39.
 - **A la vuelta (24-31/08) = 9 + las 3 corridas = 12.** B-41 caqui NO se nombra como urgencia hasta primavera (pedido del usuario).
@@ -38,6 +39,7 @@ Ordenado por **hora de envío REAL** (send_log, no la cola):
 | **Dom 02/08 11:07** | **el-taller re-push** | +4 h | **🏆 ÉXITO (😍 + 2º slot)** |
 | **Mié 06/08 11:37** | jardin-hoy «cierre» | **nunca** | ⬛ |
 | **Mar 04/08 11:38** | tarjeta-campo | **nunca** | ⬛ |
+| **Sáb 08/08 11:32** | el-hueco (viaje) | **nunca (18 h)** | ⬛ — *pero es día 2 de viaje: no computa como veredicto* |
 | **Sáb 01/08 12:06** | **el-taller** | +2 h 08 | **🏆 ÉXITO MÁXIMO** |
 | Dom 02/08 14:46 | que-mas-podo | +3 h 57 | acción real (podó F-4) |
 | Vie 31/07 18:02 | el-parte | +1 h 41 | masomenos |
@@ -104,10 +106,11 @@ Ordenado por **hora de envío REAL** (send_log, no la cola):
 - **03/08:** «recordame las podas… si no llueve» → EJECUTADO 04/08.
 - **Asamblea, tu-semana, vos-decidis, jardin-hoy** promovidas + **el-taller** aprobada: no borrar.
 
-## 📈 Estado del sistema + jardín (08/08/2026)
+## 📈 Estado del sistema + jardín (09/08/2026)
 
-- Push subscription device `pix9`: **active**. Logging vía `/api/feedback` confiable.
-- **Silencio total del usuario desde el 04/08 00:15** (0 eventos el 04, 05, 06, 07). Se explica por víspera + viaje + dos push flojas. **No sobre-interpretar como rechazo.**
+- Push subscription device `pix9`: **active**. Logging vía `/api/feedback` confiable → el silencio es real, no un bug de tracking.
+- **Silencio total del usuario desde el 04/08 00:15** (0 eventos el 04, 05, 06, 07, 08). Cinco días. Se explica por víspera + viaje. **No sobre-interpretar como rechazo** (ver regla del 09/08 arriba).
+- Threads (`docs/sync/threads/`): **0 mensajes pendientes**, el último del usuario es del 30/07. Nada que calibrar desde ese canal.
 - Sin responder: `podas-previaje`, `viaje-silencio`, `horario-tareas`. Los tres son insumo de la reentrada.
 - Parte verificado 06/08 (open-meteo, MVD): del 8 al 15/08 **0-2 mm, mínimas 7-9 °C, sin heladas**. El jardín aguanta solo los 17 días.
 - Jardín en DORMANCIA, saliendo. ~46 días al equinoccio (23/09). Helada posible hasta fin de agosto, pica al SUR y al ESTE al amanecer.
@@ -123,7 +126,7 @@ Ordenado por **hora de envío REAL** (send_log, no la cola):
 
 ## Conclusiones de los push (por feedback real)
 
-- **08/08 — el-hueco (experiencia del viaje): PENDIENTE DE MEDIR.** Primera auditoría computada del canal. Señales a mirar: taps `hueco-camelia/aloe/salvia/jazmin/multiplicar` (miden si el eje «decidir sin hacer» funciona), slots, 😍, feedback. **Si hay taps pero no reacción, el formato sirve y falta el gancho; si no hay taps, el eje-objetivo está muerto y se cierra.**
+- **08/08 — el-hueco (experiencia del viaje): ⬛ CERO APERTURA a 18 h — VEREDICTO SUSPENDIDO.** Enviada 11:32, 0 clicks, 0 taps `hueco-*`, 0 slots, 0 reacción, 0 feedback. **NO se archiva el eje-objetivo ni el formato auditoría-computada:** el usuario no abrió NADA en 5 días (día 2 de viaje). Un ⬛ sin ninguna apertura en la ventana no distingue «mal contenido» de «usuario ausente». Queda `pending`, la página se conserva, y **se re-mide a la reentrada (24/08) antes de cualquier decisión.** Si al volver tampoco engancha, ahí sí se cierra.
 - **06/08 — jardin-hoy «cierre»: ⬛ CERO APERTURA.** Contenido honesto pero era el 4º jardin-hoy en 6 días: **repetición de formato**, no mala hora (ver corrección arriba).
 - **04/08 — tarjeta-campo: ⬛ CERO APERTURA.** Formato sin testear, no muerto. **Re-test a la vuelta, primera semana.**
 - **03/08 — el-taller-2: MASOMENOS-ALTO.** 7/7 pasos + dwell 166 s + un pedido concreto, cero reacción. Abrió a los **32 min**.
@@ -136,7 +139,9 @@ Ordenado por **hora de envío REAL** (send_log, no la cola):
 
 ## TODO / próximos experimentos
 
+- **LUNES 10/08 — próximo slot (experiencia 18:00). Slot de tarea 10:00: VACÍO, sin excepción.** Decisión ya tomada el 09/08: con 5-6 días de silencio total, **el default es NO mandar**. Solo va si el hallazgo supera a `el-hueco` — y si va, tiene que ser **más corto que el-hueco, un solo hallazgo, un solo tap**: la hipótesis a testear es que en viaje lo único que sobrevive es lo brevísimo. Cantera abajo.
 - **Slots del viaje (lun 10, sáb 15, lun 17, sáb 22): 0 tareas SIEMPRE.** Experiencia solo si hay un hallazgo del calibre de `el-hueco`. **Sin hallazgo → no mandar nada.** Releer `viaje-silencio` cada vez.
+- **09/08 (domingo, día 3): mantenimiento puro, 0 push** — correcto por cadencia. Compactados engagement (15 eventos → daily_summary) y send_log (4). Queue vaciada.
 - **Cantera de auditorías computadas** (mismo molde, dato nuevo, para cuando haga falta): curva de FRUTA mes a mes · cuántas especies dependen de un solo ejemplar (riesgo de perder algo irreemplazable) · reparto real de luz frente/fondo/interior vs lo que cada ficha pide · las 5 especies sin identificar como «causas abiertas».
 - **LUNES 24/08 — reentrada.** ① Leer `podas-previaje` y armar la lista real ② aplicar `horario-tareas` si contestó ③ **Taller nº3 = pitósporo B-43**, con viraró B-32 en flor de elenco ④ preguntar por las estacas ⑤ hortensia el 29-30/08, la única con reloj ⑥ **si prendió candidatas en `el-hueco`, la lista de compra concreta es la primera entrega de la vuelta.**
 - **Before/after con fotos reales:** si sube foto del crespón podado, devolverle veredicto es el siguiente salto de valor.

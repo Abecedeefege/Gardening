@@ -1,138 +1,6 @@
 {
- "_updated_at": "2026-08-07T09:10:00.000Z",
+ "_updated_at": "2026-08-09T09:10:00Z",
  "events": [
-  {
-   "_id": "mrz8kca5l9zsb8",
-   "type": "feedback_text",
-   "target": "jardin-hoy",
-   "text": "Esta debería ser la push diaria.\nSaca \"¿Te sirve así de simple?\"\nSaca \"🌤️ Un vistazo cada mañana\"\nSaca \" ¿La dejo fija?\"\n\nSúmale un menú colapsado con las tareas de este mes (que quizás no son hoy pero si julio)\n\nSúmale un menú colapsado que sea de cosas para hacer en agosto \n\nRecordá si tenés alguna duda, especie desconocida o solicitud, estás tareas son el lugar para pedirlo",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T17:50:35.309Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrz98ahk9jlfd0",
-   "type": "feedback_text",
-   "target": "jardin-hoy",
-   "text": "Que puedo hacer hoy?",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T18:09:12.728Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzcdz8tzst31r",
-   "type": "feedback_text",
-   "target": "jardin-hoy",
-   "text": "Justo 3 tareas en cada módulo?  Nada más que quieras/precises que haga?\n\nAgregame una tarea que sea\"definir plantas para huerta\" y proponerme algunas sugerencias",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-24T19:37:36.941Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mrzfx446mu2f0r",
-   "type": "feedback_text",
-   "target": "tu-semana",
-   "text": "Los plantines de palta no los toque, siguen contra la pared a la sombra",
-   "page": "engage/2026-07-24-tu-semana.html",
-   "ts": "2026-07-24T21:16:28.566Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0d4xb38faajl",
-   "type": "page_visit",
-   "page": "engage/2026-07-03-reality-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-25T12:46:20.319Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0ugx0g764n7x",
-   "type": "notification_clicked",
-   "nid": "2026-07-25-jardin-hoy",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-25T20:51:33.279Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0ugx0g44m6d9",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": "2026-07-25-jardin-hoy",
-   "src": "push",
-   "ts": "2026-07-25T20:51:33.279Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0uhd1gmsnae6",
-   "type": "dwell",
-   "seconds": 21,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-07-25T20:51:54.052Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0uhd4euu4o8v",
-   "type": "page_visit",
-   "page": "engage/2026-07-25-mi-huerta.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-07-25T20:51:54.158Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0uizfezwz3xf",
-   "type": "dwell",
-   "seconds": 76,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-25-mi-huerta.html",
-   "ts": "2026-07-25T20:53:09.722Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0uizln29bb0r",
-   "type": "notification_clicked",
-   "nid": "2026-07-25-a",
-   "page": "engage/2026-07-25-mapa-solar.html",
-   "ts": "2026-07-25T20:53:09.946Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0uizlnciy9ok",
-   "type": "page_visit",
-   "page": "engage/2026-07-25-mapa-solar.html",
-   "nid": "2026-07-25-a",
-   "src": "push",
-   "ts": "2026-07-25T20:53:09.946Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms0ujshy0p78uo",
-   "type": "notification_clicked",
-   "nid": "2026-07-25-reply-plant-F-1",
-   "page": "tasks/plant-F-1.html",
-   "ts": "2026-07-25T20:53:47.395Z",
-   "device": "landing"
-  },
-  {
-   "_id": "ms0ujshyryuqeh",
-   "type": "page_visit",
-   "page": "tasks/plant-F-1.html",
-   "nid": "2026-07-25-reply-plant-F-1",
-   "src": "push",
-   "ts": "2026-07-25T20:53:47.395Z",
-   "device": "landing"
-  },
-  {
-   "_id": "ms0ujp6uz0xakm",
-   "type": "dwell",
-   "seconds": 33,
-   "scroll_pct": 79,
-   "page": "engage/2026-07-25-mapa-solar.html",
-   "ts": "2026-07-25T20:53:43.109Z",
-   "device": "sin-nombre"
-  },
   {
    "_id": "ms2buklj6uan6g",
    "type": "notification_clicked",
@@ -1724,6 +1592,12 @@
    "sent": 0,
    "clicked": 5,
    "visits": 14,
+   "approvals": 0
+  },
+  "2026-07-25": {
+   "sent": 0,
+   "clicked": 3,
+   "visits": 5,
    "approvals": 0
   }
  }
