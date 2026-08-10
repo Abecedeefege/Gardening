@@ -1,95 +1,6 @@
 {
- "_updated_at": "2026-08-09T09:10:00Z",
+ "_updated_at": "2026-08-10T09:20:00Z",
  "events": [
-  {
-   "_id": "ms2buklj6uan6g",
-   "type": "notification_clicked",
-   "nid": "2026-07-26-a",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:45:50.022Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bukljlylge1",
-   "type": "page_visit",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "nid": "2026-07-26-a",
-   "src": "push",
-   "ts": "2026-07-26T21:45:50.022Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bvab47ed79m",
-   "type": "answer",
-   "qid": "vd-huerta-lugar",
-   "value": "norte",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:46:23.344Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bvy13cus49n",
-   "type": "answer",
-   "qid": "vd-hortensia",
-   "value": "tierra",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:46:54.087Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bw6nclk7mff",
-   "type": "answer",
-   "qid": "vd-liquidambar",
-   "value": "yo",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:47:05.256Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bwdjl6praiz",
-   "type": "answer",
-   "qid": "vd-caqui",
-   "value": "observar",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:47:14.193Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bwotamffzav",
-   "type": "answer",
-   "qid": "vd-agosto",
-   "value": "prioridad",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:47:28.798Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bwujzgzjwkz",
-   "type": "answer",
-   "qid": "vos-decidis-suscripcion-diaria",
-   "value": "si",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:47:36.239Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bwweip4x0gl",
-   "type": "reaction",
-   "target": "vos-decidis",
-   "value": "like",
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:47:38.634Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms2bx1rripqmoy",
-   "type": "dwell",
-   "seconds": 116,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-26-vos-decidis.html",
-   "ts": "2026-07-26T21:47:45.590Z",
-   "device": "sin-nombre"
-  },
   {
    "_id": "ms2i5ue701fhir",
    "type": "notification_clicked",
@@ -1598,6 +1509,12 @@
    "sent": 0,
    "clicked": 3,
    "visits": 5,
+   "approvals": 0
+  },
+  "2026-07-26": {
+   "sent": 0,
+   "clicked": 1,
+   "visits": 1,
    "approvals": 0
   }
  }
