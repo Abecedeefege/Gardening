@@ -1,18 +1,5 @@
 {
-  "_updated_at": "2026-08-10T21:11:38.053Z",
-  "_nota": "Lunes 10/08 = día 4 del VIAJE (7 al 23/08). Cadencia vigente: lunes tiene slot de TAREA 10:00 y slot de EXPERIENCIA 18:00. El slot de tarea queda DELIBERADAMENTE VACÍO por el compromiso publicado el 06/08 (cero push de tareas del 7 al 23) — es el 2º de los 7 slots de tarea que se saltean. Se encola SOLO la experiencia: «La última mandarina», una pantalla, un solo hallazgo (fruta en pie 3 → 2), un solo tap, cero deberes. Agrupa dentro la única aprobada (el-taller) en pausa hasta el 24/08. Próximo slot: sábado 15/08 11:00 (experiencia); tarea del sábado también vacía.",
-  "notifications": [
-    {
-      "id": "2026-08-10-ultima-mandarina",
-      "title": "🍊 La última mandarina del año",
-      "body": "De 52 especies, solo 3 tienen fruta hoy. En setiembre son 2: la mandarina cierra. Volvés justo. Cero tareas.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-08-10-ultima-mandarina.html",
-      "send_at": "2026-08-10T18:00:00-03:00",
-      "expires_at": "2026-08-10T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-08-10T21:11:38.052Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-08-10"
-    }
-  ]
+  "_updated_at": "2026-08-11T09:10:00.000Z",
+  "_nota": "Martes 11/08 = día 5 del VIAJE (7 al 23/08). Martes NO tiene slot en la cadencia vigente (semanal día-consciente: tareas Lun/Jue/Sáb 10:00, experiencias Lun 18:00 y Sáb 11:00). Corrida de MANTENIMIENTO: 0 push encoladas, queue vaciada de días anteriores. Próximo slot: jueves 13/08 10:00 (tarea) — DELIBERADAMENTE VACÍO por el compromiso publicado el 06/08 de no mandar ninguna push de tareas del 7 al 23. Primer slot con contenido posible: sábado 15/08 11:00 (experiencia).",
+  "notifications": []
 }
