@@ -1,1362 +1,1193 @@
 {
-  "_updated_at": "2026-08-11T09:10:00.000Z",
-  "events": [
-    {
-      "_id": "ms4rhav42vxyl1",
-      "type": "notification_clicked",
-      "nid": "2026-07-28-jardin-hoy",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-07-28T14:38:57.087Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms4rhav4duqwtm",
-      "type": "page_visit",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "nid": "2026-07-28-jardin-hoy",
-      "src": "push",
-      "ts": "2026-07-28T14:38:57.087Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms4rlmiy1t31hg",
-      "type": "feedback_text",
-      "target": "jardin-hoy",
-      "text": "Cada tarea debería tener una caja como está de feedback así te puedo dejar comentarios.\n1- ignora lo de la lechuga, me voy de viaje en 10dias y no va a suceder antes.  A mi vuelta a fin de agosto lo vemos\n2- incluirme en ka tarea una foto de la especie así estoy seguro cuál es \n3- caqui ignóralo hAsta primavera porque no sabemos qué es\n4 mándame esto de nuevo",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-07-28T14:42:18.826Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms4rlsvdminmty",
-      "type": "dwell",
-      "seconds": 210,
-      "scroll_pct": 100,
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-07-28T14:42:27.049Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms51cejawh3s99",
-      "type": "notification_clicked",
-      "nid": "2026-07-28-b",
-      "page": "engage/2026-07-28-esto-o-esto.html",
-      "ts": "2026-07-28T19:15:04.722Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms51cejas9bx9f",
-      "type": "page_visit",
-      "page": "engage/2026-07-28-esto-o-esto.html",
-      "nid": "2026-07-28-b",
-      "src": "push",
-      "ts": "2026-07-28T19:15:04.722Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms51cjhenz5rbo",
-      "type": "answer",
-      "qid": "ee-orgullo",
-      "value": "fruta",
-      "page": "engage/2026-07-28-esto-o-esto.html",
-      "ts": "2026-07-28T19:15:11.138Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms51cpw3vootth",
-      "type": "answer",
-      "qid": "ee-ficha",
-      "value": "flor",
-      "page": "engage/2026-07-28-esto-o-esto.html",
-      "ts": "2026-07-28T19:15:19.443Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms51ctopd8rdr1",
-      "type": "answer",
-      "qid": "ee-manos",
-      "value": "yo",
-      "page": "engage/2026-07-28-esto-o-esto.html",
-      "ts": "2026-07-28T19:15:24.361Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms51cx9ktcs8nw",
-      "type": "answer",
-      "qid": "ee-momento",
-      "value": "manana",
-      "page": "engage/2026-07-28-esto-o-esto.html",
-      "ts": "2026-07-28T19:15:29.000Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms51d2vznzc6yc",
-      "type": "answer",
-      "qid": "ee-mimar",
-      "value": "frutal",
-      "page": "engage/2026-07-28-esto-o-esto.html",
-      "ts": "2026-07-28T19:15:36.286Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms51d83igpq611",
-      "type": "answer",
-      "qid": "esto-o-esto-suscripcion-diaria",
-      "value": "no",
-      "page": "engage/2026-07-28-esto-o-esto.html",
-      "ts": "2026-07-28T19:15:43.038Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms51d9iguyrk0u",
-      "type": "reaction",
-      "target": "esto-o-esto",
-      "value": "meh",
-      "page": "engage/2026-07-28-esto-o-esto.html",
-      "ts": "2026-07-28T19:15:44.872Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms51e1p7pqic2x",
-      "type": "feedback_text",
-      "target": "esto-o-esto",
-      "text": "No es mi tipo de experiencia.\n\nRevisa lo que te escribí más temprano en el liquidámbar.",
-      "page": "engage/2026-07-28-esto-o-esto.html",
-      "ts": "2026-07-28T19:16:21.403Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms51e3r3l4e09t",
-      "type": "proposal_rejected",
-      "proposal_id": "2026-07-28-esto-o-esto",
-      "ts": "2026-07-28T19:16:24.063Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms51e93nx9dcrk",
-      "type": "dwell",
-      "seconds": 86,
-      "scroll_pct": 100,
-      "page": "engage/2026-07-28-esto-o-esto.html",
-      "ts": "2026-07-28T19:16:30.995Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms5b71r08kcycl",
-      "type": "notification_clicked",
-      "nid": "2026-07-28-a",
-      "page": "engage/2026-07-28-vos-decidis.html",
-      "ts": "2026-07-28T23:50:51.033Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms5b71r0ic9n8o",
-      "type": "page_visit",
-      "page": "engage/2026-07-28-vos-decidis.html",
-      "nid": "2026-07-28-a",
-      "src": "push",
-      "ts": "2026-07-28T23:50:51.033Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms5b76gz7e6k39",
-      "type": "proposal_rejected",
-      "proposal_id": "2026-07-28-vos-decidis",
-      "ts": "2026-07-28T23:50:57.155Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms5b7acc9tfylz",
-      "type": "answer",
-      "qid": "vos-decidis-suscripcion-diaria",
-      "value": "no",
-      "page": "engage/2026-07-28-vos-decidis.html",
-      "ts": "2026-07-28T23:51:02.171Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms5b7dbe38szgc",
-      "type": "dwell",
-      "seconds": 15,
-      "scroll_pct": 100,
-      "page": "engage/2026-07-28-vos-decidis.html",
-      "ts": "2026-07-28T23:51:06.025Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms6p4hubhtqftq",
-      "type": "notification_clicked",
-      "nid": "2026-07-29-a",
-      "page": "engage/2026-07-29-los-que-no-duermen.html",
-      "ts": "2026-07-29T23:08:32.721Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms6p4hubli3an6",
-      "type": "page_visit",
-      "page": "engage/2026-07-29-los-que-no-duermen.html",
-      "nid": "2026-07-29-a",
-      "src": "push",
-      "ts": "2026-07-29T23:08:32.721Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms6p4szhwg2euc",
-      "type": "dwell",
-      "seconds": 14,
-      "scroll_pct": 100,
-      "page": "engage/2026-07-29-los-que-no-duermen.html",
-      "ts": "2026-07-29T23:08:47.165Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms6qdrkl8e0w5w",
-      "type": "notification_clicked",
-      "nid": "2026-07-29-b",
-      "page": "engage/2026-07-29-antes-de-irte.html",
-      "ts": "2026-07-29T23:43:44.852Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms6qdrklt6v18m",
-      "type": "page_visit",
-      "page": "engage/2026-07-29-antes-de-irte.html",
-      "nid": "2026-07-29-b",
-      "src": "push",
-      "ts": "2026-07-29T23:43:44.852Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms6qeeqj0t812p",
-      "type": "dwell",
-      "seconds": 30,
-      "scroll_pct": 86,
-      "page": "engage/2026-07-29-antes-de-irte.html",
-      "ts": "2026-07-29T23:44:14.874Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms7odgy6wc9yqg",
-      "type": "notification_clicked",
-      "nid": "2026-07-30-jardin-hoy",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-07-30T15:35:18.027Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms7odgy6zcrl6r",
-      "type": "page_visit",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "nid": "2026-07-30-jardin-hoy",
-      "src": "push",
-      "ts": "2026-07-30T15:35:18.027Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms7oefqonwr5xg",
-      "type": "dwell",
-      "seconds": 45,
-      "scroll_pct": 93,
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-07-30T15:36:03.120Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms7q0lm9kvcx7l",
-      "type": "notification_clicked",
-      "nid": "2026-07-30-jardin-hoy-sol",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-07-30T16:21:16.784Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms7q0lm9sdnk0b",
-      "type": "page_visit",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "nid": "2026-07-30-jardin-hoy-sol",
-      "src": "push",
-      "ts": "2026-07-30T16:21:16.784Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms7q18bydokfi7",
-      "type": "feedback_text",
-      "target": "jh-liquidambar-B37",
-      "text": "Ya quedó hecho esto",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-07-30T16:21:46.222Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms7q332t7pc76k",
-      "type": "feedback_text",
-      "target": "jardin-hoy",
-      "text": "Agregame una foto a las especies en las tareas de agosto también así se a qué hacen referencia.  Cada especie/tarea debería tener la posibilidad de dejarte un comentario",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-07-30T16:23:12.725Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms7q4kktav0jot",
-      "type": "feedback_text",
-      "target": "jh-hortensia-B5",
-      "text": "Mi viaje va a ser del 7-23 de agosto.  Actualiza esta y todas las otras pendientes de julio y agosto para recomendarme si conviene hacerlo antes o después del viaje",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-07-30T16:24:22.061Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms7q4v3vs1fw00",
-      "type": "dwell",
-      "seconds": 199,
-      "scroll_pct": 100,
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-07-30T16:24:35.707Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms7tsq7jt94thq",
-      "type": "notification_clicked",
-      "nid": "2026-07-30-jardin-hoy-viaje",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-07-30T18:07:07.950Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms7tsq7j8xcpdw",
-      "type": "page_visit",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "nid": "2026-07-30-jardin-hoy-viaje",
-      "src": "push",
-      "ts": "2026-07-30T18:07:07.950Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms7ttilnybcvxp",
-      "type": "dwell",
-      "seconds": 37,
-      "scroll_pct": 50,
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-07-30T18:07:44.747Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms7ttiu5zyfk5g",
-      "type": "page_visit",
-      "page": "tasks/plant-B-30.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-07-30T18:07:45.052Z",
-      "device": "landing"
-    },
-    {
-      "_id": "ms7tvsjvkabcc5",
-      "type": "page_visit",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-07-30T18:09:30.952Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms7u48a357bi9p",
-      "type": "page_visit",
-      "page": "tasks/plant-B-38.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-07-30T18:16:04.584Z",
-      "device": "landing"
-    },
-    {
-      "_id": "ms7wtxf79onwvw",
-      "type": "notification_clicked",
-      "nid": "2026-07-30-reply-plant-B-30",
-      "page": "tasks/plant-B-30.html",
-      "ts": "2026-07-30T19:32:02.797Z",
-      "device": "landing"
-    },
-    {
-      "_id": "ms7wtxf7f22ulz",
-      "type": "page_visit",
-      "page": "tasks/plant-B-30.html",
-      "nid": "2026-07-30-reply-plant-B-30",
-      "src": "push",
-      "ts": "2026-07-30T19:32:02.797Z",
-      "device": "landing"
-    },
-    {
-      "_id": "ms9j3p31y7wekc",
-      "type": "notification_clicked",
-      "nid": "2026-07-31-el-parte",
-      "page": "engage/2026-07-31-el-parte.html",
-      "ts": "2026-07-31T22:43:16.283Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms9j3p31411uok",
-      "type": "page_visit",
-      "page": "engage/2026-07-31-el-parte.html",
-      "nid": "2026-07-31-el-parte",
-      "src": "push",
-      "ts": "2026-07-31T22:43:16.283Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms9j501oy0z4vw",
-      "type": "answer",
-      "qid": "el-parte-slot-lun18",
-      "value": "no",
-      "page": "engage/2026-07-31-el-parte.html",
-      "ts": "2026-07-31T22:44:17.148Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms9j51sg68of6h",
-      "type": "answer",
-      "qid": "el-parte-slot-sab11",
-      "value": "no",
-      "page": "engage/2026-07-31-el-parte.html",
-      "ts": "2026-07-31T22:44:19.408Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms9j558qua1ie1",
-      "type": "reaction",
-      "target": "el-parte",
-      "value": "meh",
-      "page": "engage/2026-07-31-el-parte.html",
-      "ts": "2026-07-31T22:44:23.882Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "ms9j5am0hcm2zu",
-      "type": "dwell",
-      "seconds": 75,
-      "scroll_pct": 100,
-      "page": "engage/2026-07-31-el-parte.html",
-      "ts": "2026-07-31T22:44:30.840Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamsrjtcqu7l9",
-      "type": "notification_clicked",
-      "nid": "2026-08-01-el-taller",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:14:30.904Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamsrjtrufyu9",
-      "type": "page_visit",
-      "page": "engage/2026-08-01-el-taller.html",
-      "nid": "2026-08-01-el-taller",
-      "src": "push",
-      "ts": "2026-08-01T17:14:30.904Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamtzeyi8g4pe",
-      "type": "answer",
-      "qid": "taller-paso-1",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:15:27.754Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamu4bv28mnhh",
-      "type": "answer",
-      "qid": "taller-paso-2",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:15:34.123Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamubtle7o3yz",
-      "type": "answer",
-      "qid": "taller-paso-3",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:15:43.833Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamudbkwra5xm",
-      "type": "answer",
-      "qid": "taller-paso-4",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:15:45.776Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamuomj9kx58e",
-      "type": "answer",
-      "qid": "taller-paso-3",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:16:00.427Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamup8g76vlhn",
-      "type": "answer",
-      "qid": "taller-paso-4",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:16:01.216Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamv6krp6bu2y",
-      "type": "answer",
-      "qid": "taller-paso-5",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:16:23.691Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamvbmceobjzh",
-      "type": "answer",
-      "qid": "taller-paso-6",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:16:30.228Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamvemo2x9vs9",
-      "type": "answer",
-      "qid": "taller-paso-7",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:16:34.128Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamwdglallz9w",
-      "type": "dwell",
-      "seconds": 168,
-      "scroll_pct": 95,
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:17:19.269Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamwdn0m67bd3",
-      "type": "page_visit",
-      "page": "engage/2026-08-01-el-taller.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-08-01T17:17:19.500Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamwuuzcvpzjp",
-      "type": "feedback_text",
-      "target": "el-taller",
-      "text": "Genial esto.  Pero hoy está lloviendo, mándamela cuando esté lindo!",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:17:41.819Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamwyw9paxxav",
-      "type": "reaction",
-      "target": "el-taller",
-      "value": "love",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:17:47.049Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamx0fss7kx59",
-      "type": "dwell",
-      "seconds": 30,
-      "scroll_pct": 100,
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:17:49.048Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamyn40tllapy",
-      "type": "answer",
-      "qid": "taller-paso-1",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:19:05.088Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamypowfuceej",
-      "type": "answer",
-      "qid": "taller-paso-2",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:19:08.431Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamyqyz60up13",
-      "type": "answer",
-      "qid": "taller-paso-3",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:19:10.091Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamyrqgayzigs",
-      "type": "answer",
-      "qid": "taller-paso-4",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:19:11.080Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamysd5d7ehyn",
-      "type": "answer",
-      "qid": "taller-paso-5",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:19:11.897Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamyt3njntvjr",
-      "type": "answer",
-      "qid": "taller-paso-6",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:19:12.851Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamyts4fzkk7i",
-      "type": "answer",
-      "qid": "taller-paso-7",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:19:13.732Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msan03iqehazfk",
-      "type": "answer",
-      "qid": "el-taller-slot-lun18",
-      "value": "si",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:20:13.010Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msan0g9321gpxy",
-      "type": "notification_clicked",
-      "nid": "2026-08-01-jardin-hoy",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-08-01T17:20:29.510Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msan0g93ssfw76",
-      "type": "page_visit",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "nid": "2026-08-01-jardin-hoy",
-      "src": "push",
-      "ts": "2026-08-01T17:20:29.510Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msan0zi4jjnkkg",
-      "type": "dwell",
-      "seconds": 25,
-      "scroll_pct": 98,
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-08-01T17:20:54.460Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msbxja6qxessdr",
-      "type": "notification_clicked",
-      "nid": "2026-08-02-el-taller",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-02T15:02:50.449Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msbxja6qadpwe9",
-      "type": "page_visit",
-      "page": "engage/2026-08-01-el-taller.html",
-      "nid": "2026-08-02-el-taller",
-      "src": "push",
-      "ts": "2026-08-02T15:02:50.449Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msbxl0brbra9f9",
-      "type": "dwell",
-      "seconds": 81,
-      "scroll_pct": 26,
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-02T15:04:10.983Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msbxqrr2orq5ys",
-      "type": "answer",
-      "qid": "taller-paso-1",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-02T15:08:39.806Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msbxrgsyvijccb",
-      "type": "answer",
-      "qid": "taller-paso-2",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-02T15:09:12.274Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msbxruz2nyppmi",
-      "type": "answer",
-      "qid": "taller-paso-3",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-02T15:09:30.637Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msbxsgs4khsur0",
-      "type": "answer",
-      "qid": "taller-paso-4",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-02T15:09:58.900Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msbxtdqo1lnah8",
-      "type": "answer",
-      "qid": "taller-paso-5",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-02T15:10:41.616Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msbxtvem1hz6pr",
-      "type": "answer",
-      "qid": "taller-paso-6",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-02T15:11:04.510Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msbxu475y582jo",
-      "type": "answer",
-      "qid": "taller-paso-7",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-02T15:11:15.905Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msbxvlnnzj2wcr",
-      "type": "answer",
-      "qid": "el-taller-slot-sab11",
-      "value": "si",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-02T15:12:25.187Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msbxvn5pbkydhl",
-      "type": "reaction",
-      "target": "el-taller",
-      "value": "love",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-02T15:12:27.133Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msc2mchv9g5z9v",
-      "type": "answer",
-      "qid": "taller-arbol-B-30",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-02T17:25:11.490Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msc2mhbrwhfgon",
-      "type": "answer",
-      "qid": "taller-arbol-B-38",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-02T17:25:17.751Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msc2n3zgqxl8x5",
-      "type": "page_visit",
-      "page": "tasks/plant-F-4.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-08-02T17:25:47.115Z",
-      "device": "landing"
-    },
-    {
-      "_id": "msc2of2jqg0wnx",
-      "type": "feedback_text",
-      "target": "el-taller",
-      "text": "Que otra cosa puedo podar?\nQue tareas puedo hacer con el aceite de Neem ya que lo voy a usar?",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-02T17:26:48.139Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mscbupyz4a5w0a",
-      "type": "notification_clicked",
-      "nid": "2026-08-02-que-mas-podo",
-      "page": "engage/2026-08-02-que-mas-podo.html",
-      "ts": "2026-08-02T21:43:38.743Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mscbupyzpls96i",
-      "type": "page_visit",
-      "page": "engage/2026-08-02-que-mas-podo.html",
-      "nid": "2026-08-02-que-mas-podo",
-      "src": "push",
-      "ts": "2026-08-02T21:43:38.743Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mscbut1avzmqls",
-      "type": "dwell",
-      "seconds": 4,
-      "scroll_pct": 0,
-      "page": "engage/2026-08-02-que-mas-podo.html",
-      "ts": "2026-08-02T21:43:42.718Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mscdg2ssk9u59p",
-      "type": "page_visit",
-      "page": "tasks/plant-B-9.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-08-02T22:28:14.763Z",
-      "device": "landing"
-    },
-    {
-      "_id": "mscdk5qntc4vqe",
-      "type": "page_visit",
-      "page": "tasks/plant-B-18.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-08-02T22:31:25.198Z",
-      "device": "landing"
-    },
-    {
-      "_id": "mscdo6s83767pf",
-      "type": "answer",
-      "qid": "podo-F-4",
-      "value": "ok",
-      "page": "engage/2026-08-02-que-mas-podo.html",
-      "ts": "2026-08-02T22:34:33.176Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdoe32lrrc66m",
-      "type": "page_visit",
-      "page": "engage/2026-07-21-asamblea-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-08-03T20:22:23.754Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "msdoe4ixlgapfj",
-      "type": "page_visit",
-      "page": "engage/2026-07-21-asamblea-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-08-03T20:22:25.638Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdoe4cu0elhhr",
-      "type": "dwell",
-      "seconds": 2,
-      "scroll_pct": 13,
-      "page": "engage/2026-07-21-asamblea-jardin.html",
-      "ts": "2026-08-03T20:22:25.422Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "msdoe6fjdw4mc6",
-      "type": "page_visit",
-      "page": "engage/2026-07-10-album-figuritas.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-08-03T20:22:28.111Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "msdoeejss4woph",
-      "type": "dwell",
-      "seconds": 11,
-      "scroll_pct": 21,
-      "page": "engage/2026-07-10-album-figuritas.html",
-      "ts": "2026-08-03T20:22:38.632Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "msdoegzdmepwsi",
-      "type": "page_visit",
-      "page": "engage/2026-07-09-wrapped-jardin.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-08-03T20:22:41.785Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "msdoeimf4zsgps",
-      "type": "page_visit",
-      "page": "engage/2026-07-09-quiz-planta.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-08-03T20:22:43.911Z",
-      "device": "pix9"
-    },
-    {
-      "_id": "msdoek4ye1pd8e",
-      "type": "page_visit",
-      "page": "engage/2026-07-09-quiz-planta.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-08-03T20:22:45.871Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdsll9qvvif2h",
-      "type": "notification_clicked",
-      "nid": "2026-08-03-jardin-hoy",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-08-03T22:20:12.398Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdsll9qi82enz",
-      "type": "page_visit",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "nid": "2026-08-03-jardin-hoy",
-      "src": "push",
-      "ts": "2026-08-03T22:20:12.398Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdsmatc0vq7bl",
-      "type": "dwell",
-      "seconds": 33,
-      "scroll_pct": 33,
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-08-03T22:20:45.504Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdsmayqpxc5xk",
-      "type": "page_visit",
-      "page": "engage/2026-08-03-el-taller-2.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-08-03T22:20:45.697Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdsoicsxwlliz",
-      "type": "answer",
-      "qid": "t2-paso-1",
-      "value": "ok",
-      "page": "engage/2026-08-03-el-taller-2.html",
-      "ts": "2026-08-03T22:22:28.588Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdsp2c5yamtof",
-      "type": "answer",
-      "qid": "t2-paso-2",
-      "value": "ok",
-      "page": "engage/2026-08-03-el-taller-2.html",
-      "ts": "2026-08-03T22:22:54.485Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdsp4sx7asrii",
-      "type": "answer",
-      "qid": "t2-paso-3",
-      "value": "ok",
-      "page": "engage/2026-08-03-el-taller-2.html",
-      "ts": "2026-08-03T22:22:57.681Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdspokmrewa4r",
-      "type": "answer",
-      "qid": "t2-paso-4",
-      "value": "ok",
-      "page": "engage/2026-08-03-el-taller-2.html",
-      "ts": "2026-08-03T22:23:23.302Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdspux1xl4sar",
-      "type": "dwell",
-      "seconds": 166,
-      "scroll_pct": 46,
-      "page": "engage/2026-08-03-el-taller-2.html",
-      "ts": "2026-08-03T22:23:31.525Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdt9si6d3meqs",
-      "type": "answer",
-      "qid": "t2-paso-5",
-      "value": "ok",
-      "page": "engage/2026-08-03-el-taller-2.html",
-      "ts": "2026-08-03T22:39:01.518Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdtatagt8a88y",
-      "type": "answer",
-      "qid": "t2-paso-6",
-      "value": "ok",
-      "page": "engage/2026-08-03-el-taller-2.html",
-      "ts": "2026-08-03T22:39:49.192Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdtaupiisucp2",
-      "type": "answer",
-      "qid": "t2-paso-7",
-      "value": "ok",
-      "page": "engage/2026-08-03-el-taller-2.html",
-      "ts": "2026-08-03T22:39:51.030Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdwh93t8h6fvl",
-      "type": "feedback_text",
-      "target": "el-taller-2",
-      "text": "Recordame las podas así hago las podas mañana si no llueve",
-      "page": "engage/2026-08-03-el-taller-2.html",
-      "ts": "2026-08-04T00:08:48.472Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdwozakpwcfxy",
-      "type": "notification_clicked",
-      "nid": "2026-08-03-el-taller-2",
-      "page": "engage/2026-08-03-el-taller-2.html",
-      "ts": "2026-08-04T00:14:49.003Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdwozak1m7li0",
-      "type": "page_visit",
-      "page": "engage/2026-08-03-el-taller-2.html",
-      "nid": "2026-08-03-el-taller-2",
-      "src": "push",
-      "ts": "2026-08-04T00:14:49.003Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msdwpk5aulncs0",
-      "type": "dwell",
-      "seconds": 27,
-      "scroll_pct": 100,
-      "page": "engage/2026-08-03-el-taller-2.html",
-      "ts": "2026-08-04T00:15:16.029Z",
-      "device": "sin-nombre"
-    }
-  ],
-  "daily_summary": {
-    "2026-06-12": {
-      "sent": 14,
-      "clicked": 1,
-      "visits": 1,
-      "approvals": 0
-    },
-    "2026-06-13": {
-      "sent": 21,
-      "clicked": 3,
-      "visits": 4,
-      "approvals": 1
-    },
-    "2026-06-14": {
-      "sent": 39,
-      "clicked": 0,
-      "visits": 0,
-      "approvals": 0
-    },
-    "2026-06-15": {
-      "sent": 19,
-      "clicked": 2,
-      "visits": 4,
-      "approvals": 0
-    },
-    "2026-06-16": {
-      "sent": 20,
-      "clicked": 1,
-      "visits": 3,
-      "approvals": 0
-    },
-    "2026-06-17": {
-      "sent": 13,
-      "clicked": 1,
-      "visits": 4,
-      "approvals": 0
-    },
-    "2026-06-18": {
-      "sent": 3,
-      "clicked": 2,
-      "visits": 3,
-      "approvals": 1
-    },
-    "2026-06-19": {
-      "sent": 3,
-      "clicked": 2,
-      "visits": 2,
-      "approvals": 0
-    },
-    "2026-06-20": {
-      "sent": 3,
-      "clicked": 3,
-      "visits": 3,
-      "approvals": 0
-    },
-    "2026-06-21": {
-      "sent": 3,
-      "clicked": 3,
-      "visits": 3,
-      "approvals": 0
-    },
-    "2026-06-22": {
-      "sent": 3,
-      "clicked": 1,
-      "visits": 1,
-      "approvals": 0
-    },
-    "2026-06-23": {
-      "sent": 5,
-      "clicked": 3,
-      "visits": 5,
-      "approvals": 0
-    },
-    "2026-06-24": {
-      "sent": 3,
-      "clicked": 1,
-      "visits": 1,
-      "approvals": 0
-    },
-    "2026-06-25": {
-      "sent": 3,
-      "clicked": 2,
-      "visits": 2,
-      "approvals": 0
-    },
-    "2026-06-26": {
-      "sent": 3,
-      "clicked": 0,
-      "visits": 0,
-      "approvals": 0
-    },
-    "2026-06-27": {
-      "sent": 3,
-      "clicked": 2,
-      "visits": 2,
-      "approvals": 0
-    },
-    "2026-06-28": {
-      "sent": 3,
-      "clicked": 0,
-      "visits": 1,
-      "approvals": 0
-    },
-    "2026-06-29": {
-      "sent": 3,
-      "clicked": 1,
-      "visits": 3,
-      "approvals": 2
-    },
-    "2026-06-30": {
-      "sent": 3,
-      "clicked": 5,
-      "visits": 6,
-      "approvals": 4
-    },
-    "2026-07-01": {
-      "sent": 3,
-      "clicked": 3,
-      "visits": 5,
-      "approvals": 2
-    },
-    "2026-07-02": {
-      "sent": 3,
-      "clicked": 1,
-      "visits": 2,
-      "approvals": 1
-    },
-    "2026-07-03": {
-      "sent": 3,
-      "clicked": 1,
-      "visits": 1,
-      "approvals": 1
-    },
-    "2026-07-04": {
-      "sent": 4,
-      "clicked": 2,
-      "visits": 2,
-      "approvals": 1
-    },
-    "2026-07-05": {
-      "sent": 0,
-      "clicked": 2,
-      "visits": 2,
-      "approvals": 0
-    },
-    "2026-07-06": {
-      "sent": 5,
-      "clicked": 2,
-      "visits": 2,
-      "approvals": 0
-    },
-    "2026-07-07": {
-      "sent": 0,
-      "clicked": 0,
-      "visits": 4,
-      "approvals": 0
-    },
-    "2026-07-08": {
-      "sent": 5,
-      "clicked": 4,
-      "visits": 5,
-      "approvals": 1
-    },
-    "2026-07-09": {
-      "clicked": 2,
-      "visits": 2,
-      "approvals": 2,
-      "sent": 4
-    },
-    "2026-07-10": {
-      "sent": 0,
-      "clicked": 1,
-      "visits": 1,
-      "approvals": 1
-    },
-    "2026-07-11": {
-      "clicked": 2,
-      "visits": 2,
-      "approvals": 0,
-      "sent": 4
-    },
-    "2026-07-12": {
-      "sent": 5,
-      "clicked": 2,
-      "visits": 4,
-      "approvals": 0
-    },
-    "2026-07-13": {
-      "sent": 0,
-      "clicked": 1,
-      "visits": 1,
-      "approvals": 0
-    },
-    "2026-07-14": {
-      "sent": 0,
-      "clicked": 1,
-      "visits": 1,
-      "approvals": 0
-    },
-    "2026-07-16": {
-      "sent": 5,
-      "clicked": 0,
-      "visits": 0,
-      "approvals": 0
-    },
-    "2026-07-17": {
-      "sent": 0,
-      "clicked": 0,
-      "visits": 1,
-      "approvals": 0
-    },
-    "2026-07-18": {
-      "sent": 0,
-      "clicked": 2,
-      "visits": 4,
-      "approvals": 0
-    },
-    "2026-07-19": {
-      "sent": 0,
-      "clicked": 3,
-      "visits": 3,
-      "approvals": 0
-    },
-    "2026-07-21": {
-      "sent": 0,
-      "clicked": 2,
-      "visits": 2,
-      "approvals": 0
-    },
-    "2026-07-22": {
-      "sent": 0,
-      "clicked": 1,
-      "visits": 1,
-      "approvals": 0
-    },
-    "2026-07-23": {
-      "sent": 0,
-      "clicked": 4,
-      "visits": 18,
-      "approvals": 0,
-      "feedback": [
-        "Mucho texto, muy cargado, no es realmente lo que busco en una app de jardin"
-      ]
-    },
-    "2026-07-24": {
-      "sent": 0,
-      "clicked": 5,
-      "visits": 14,
-      "approvals": 0
-    },
-    "2026-07-25": {
-      "sent": 0,
-      "clicked": 3,
-      "visits": 5,
-      "approvals": 0
-    },
-    "2026-07-26": {
-      "sent": 0,
-      "clicked": 1,
-      "visits": 1,
-      "approvals": 0
-    },
-    "2026-07-27": {
-      "sent": 0,
-      "clicked": 3,
-      "visits": 3,
-      "approvals": 0,
-      "answer": 9
-    }
+ "_updated_at": "2026-08-12T09:20:00.000Z",
+ "events": [
+  {
+   "_id": "ms6p4hubhtqftq",
+   "type": "notification_clicked",
+   "nid": "2026-07-29-a",
+   "page": "engage/2026-07-29-los-que-no-duermen.html",
+   "ts": "2026-07-29T23:08:32.721Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms6p4hubli3an6",
+   "type": "page_visit",
+   "page": "engage/2026-07-29-los-que-no-duermen.html",
+   "nid": "2026-07-29-a",
+   "src": "push",
+   "ts": "2026-07-29T23:08:32.721Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms6p4szhwg2euc",
+   "type": "dwell",
+   "seconds": 14,
+   "scroll_pct": 100,
+   "page": "engage/2026-07-29-los-que-no-duermen.html",
+   "ts": "2026-07-29T23:08:47.165Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms6qdrkl8e0w5w",
+   "type": "notification_clicked",
+   "nid": "2026-07-29-b",
+   "page": "engage/2026-07-29-antes-de-irte.html",
+   "ts": "2026-07-29T23:43:44.852Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms6qdrklt6v18m",
+   "type": "page_visit",
+   "page": "engage/2026-07-29-antes-de-irte.html",
+   "nid": "2026-07-29-b",
+   "src": "push",
+   "ts": "2026-07-29T23:43:44.852Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms6qeeqj0t812p",
+   "type": "dwell",
+   "seconds": 30,
+   "scroll_pct": 86,
+   "page": "engage/2026-07-29-antes-de-irte.html",
+   "ts": "2026-07-29T23:44:14.874Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms7odgy6wc9yqg",
+   "type": "notification_clicked",
+   "nid": "2026-07-30-jardin-hoy",
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "ts": "2026-07-30T15:35:18.027Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms7odgy6zcrl6r",
+   "type": "page_visit",
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "nid": "2026-07-30-jardin-hoy",
+   "src": "push",
+   "ts": "2026-07-30T15:35:18.027Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms7oefqonwr5xg",
+   "type": "dwell",
+   "seconds": 45,
+   "scroll_pct": 93,
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "ts": "2026-07-30T15:36:03.120Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms7q0lm9kvcx7l",
+   "type": "notification_clicked",
+   "nid": "2026-07-30-jardin-hoy-sol",
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "ts": "2026-07-30T16:21:16.784Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms7q0lm9sdnk0b",
+   "type": "page_visit",
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "nid": "2026-07-30-jardin-hoy-sol",
+   "src": "push",
+   "ts": "2026-07-30T16:21:16.784Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms7q18bydokfi7",
+   "type": "feedback_text",
+   "target": "jh-liquidambar-B37",
+   "text": "Ya quedó hecho esto",
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "ts": "2026-07-30T16:21:46.222Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms7q332t7pc76k",
+   "type": "feedback_text",
+   "target": "jardin-hoy",
+   "text": "Agregame una foto a las especies en las tareas de agosto también así se a qué hacen referencia.  Cada especie/tarea debería tener la posibilidad de dejarte un comentario",
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "ts": "2026-07-30T16:23:12.725Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms7q4kktav0jot",
+   "type": "feedback_text",
+   "target": "jh-hortensia-B5",
+   "text": "Mi viaje va a ser del 7-23 de agosto.  Actualiza esta y todas las otras pendientes de julio y agosto para recomendarme si conviene hacerlo antes o después del viaje",
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "ts": "2026-07-30T16:24:22.061Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms7q4v3vs1fw00",
+   "type": "dwell",
+   "seconds": 199,
+   "scroll_pct": 100,
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "ts": "2026-07-30T16:24:35.707Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms7tsq7jt94thq",
+   "type": "notification_clicked",
+   "nid": "2026-07-30-jardin-hoy-viaje",
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "ts": "2026-07-30T18:07:07.950Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms7tsq7j8xcpdw",
+   "type": "page_visit",
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "nid": "2026-07-30-jardin-hoy-viaje",
+   "src": "push",
+   "ts": "2026-07-30T18:07:07.950Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms7ttilnybcvxp",
+   "type": "dwell",
+   "seconds": 37,
+   "scroll_pct": 50,
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "ts": "2026-07-30T18:07:44.747Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms7ttiu5zyfk5g",
+   "type": "page_visit",
+   "page": "tasks/plant-B-30.html",
+   "nid": null,
+   "src": "direct",
+   "ts": "2026-07-30T18:07:45.052Z",
+   "device": "landing"
+  },
+  {
+   "_id": "ms7tvsjvkabcc5",
+   "type": "page_visit",
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "nid": null,
+   "src": "direct",
+   "ts": "2026-07-30T18:09:30.952Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms7u48a357bi9p",
+   "type": "page_visit",
+   "page": "tasks/plant-B-38.html",
+   "nid": null,
+   "src": "direct",
+   "ts": "2026-07-30T18:16:04.584Z",
+   "device": "landing"
+  },
+  {
+   "_id": "ms7wtxf79onwvw",
+   "type": "notification_clicked",
+   "nid": "2026-07-30-reply-plant-B-30",
+   "page": "tasks/plant-B-30.html",
+   "ts": "2026-07-30T19:32:02.797Z",
+   "device": "landing"
+  },
+  {
+   "_id": "ms7wtxf7f22ulz",
+   "type": "page_visit",
+   "page": "tasks/plant-B-30.html",
+   "nid": "2026-07-30-reply-plant-B-30",
+   "src": "push",
+   "ts": "2026-07-30T19:32:02.797Z",
+   "device": "landing"
+  },
+  {
+   "_id": "ms9j3p31y7wekc",
+   "type": "notification_clicked",
+   "nid": "2026-07-31-el-parte",
+   "page": "engage/2026-07-31-el-parte.html",
+   "ts": "2026-07-31T22:43:16.283Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms9j3p31411uok",
+   "type": "page_visit",
+   "page": "engage/2026-07-31-el-parte.html",
+   "nid": "2026-07-31-el-parte",
+   "src": "push",
+   "ts": "2026-07-31T22:43:16.283Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms9j501oy0z4vw",
+   "type": "answer",
+   "qid": "el-parte-slot-lun18",
+   "value": "no",
+   "page": "engage/2026-07-31-el-parte.html",
+   "ts": "2026-07-31T22:44:17.148Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms9j51sg68of6h",
+   "type": "answer",
+   "qid": "el-parte-slot-sab11",
+   "value": "no",
+   "page": "engage/2026-07-31-el-parte.html",
+   "ts": "2026-07-31T22:44:19.408Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms9j558qua1ie1",
+   "type": "reaction",
+   "target": "el-parte",
+   "value": "meh",
+   "page": "engage/2026-07-31-el-parte.html",
+   "ts": "2026-07-31T22:44:23.882Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "ms9j5am0hcm2zu",
+   "type": "dwell",
+   "seconds": 75,
+   "scroll_pct": 100,
+   "page": "engage/2026-07-31-el-parte.html",
+   "ts": "2026-07-31T22:44:30.840Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamsrjtcqu7l9",
+   "type": "notification_clicked",
+   "nid": "2026-08-01-el-taller",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:14:30.904Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamsrjtrufyu9",
+   "type": "page_visit",
+   "page": "engage/2026-08-01-el-taller.html",
+   "nid": "2026-08-01-el-taller",
+   "src": "push",
+   "ts": "2026-08-01T17:14:30.904Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamtzeyi8g4pe",
+   "type": "answer",
+   "qid": "taller-paso-1",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:15:27.754Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamu4bv28mnhh",
+   "type": "answer",
+   "qid": "taller-paso-2",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:15:34.123Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamubtle7o3yz",
+   "type": "answer",
+   "qid": "taller-paso-3",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:15:43.833Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamudbkwra5xm",
+   "type": "answer",
+   "qid": "taller-paso-4",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:15:45.776Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamuomj9kx58e",
+   "type": "answer",
+   "qid": "taller-paso-3",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:16:00.427Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamup8g76vlhn",
+   "type": "answer",
+   "qid": "taller-paso-4",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:16:01.216Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamv6krp6bu2y",
+   "type": "answer",
+   "qid": "taller-paso-5",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:16:23.691Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamvbmceobjzh",
+   "type": "answer",
+   "qid": "taller-paso-6",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:16:30.228Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamvemo2x9vs9",
+   "type": "answer",
+   "qid": "taller-paso-7",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:16:34.128Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamwdglallz9w",
+   "type": "dwell",
+   "seconds": 168,
+   "scroll_pct": 95,
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:17:19.269Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamwdn0m67bd3",
+   "type": "page_visit",
+   "page": "engage/2026-08-01-el-taller.html",
+   "nid": null,
+   "src": "direct",
+   "ts": "2026-08-01T17:17:19.500Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamwuuzcvpzjp",
+   "type": "feedback_text",
+   "target": "el-taller",
+   "text": "Genial esto.  Pero hoy está lloviendo, mándamela cuando esté lindo!",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:17:41.819Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamwyw9paxxav",
+   "type": "reaction",
+   "target": "el-taller",
+   "value": "love",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:17:47.049Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamx0fss7kx59",
+   "type": "dwell",
+   "seconds": 30,
+   "scroll_pct": 100,
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:17:49.048Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamyn40tllapy",
+   "type": "answer",
+   "qid": "taller-paso-1",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:19:05.088Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamypowfuceej",
+   "type": "answer",
+   "qid": "taller-paso-2",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:19:08.431Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamyqyz60up13",
+   "type": "answer",
+   "qid": "taller-paso-3",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:19:10.091Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamyrqgayzigs",
+   "type": "answer",
+   "qid": "taller-paso-4",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:19:11.080Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamysd5d7ehyn",
+   "type": "answer",
+   "qid": "taller-paso-5",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:19:11.897Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamyt3njntvjr",
+   "type": "answer",
+   "qid": "taller-paso-6",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:19:12.851Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msamyts4fzkk7i",
+   "type": "answer",
+   "qid": "taller-paso-7",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:19:13.732Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msan03iqehazfk",
+   "type": "answer",
+   "qid": "el-taller-slot-lun18",
+   "value": "si",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-01T17:20:13.010Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msan0g9321gpxy",
+   "type": "notification_clicked",
+   "nid": "2026-08-01-jardin-hoy",
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "ts": "2026-08-01T17:20:29.510Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msan0g93ssfw76",
+   "type": "page_visit",
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "nid": "2026-08-01-jardin-hoy",
+   "src": "push",
+   "ts": "2026-08-01T17:20:29.510Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msan0zi4jjnkkg",
+   "type": "dwell",
+   "seconds": 25,
+   "scroll_pct": 98,
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "ts": "2026-08-01T17:20:54.460Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msbxja6qxessdr",
+   "type": "notification_clicked",
+   "nid": "2026-08-02-el-taller",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-02T15:02:50.449Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msbxja6qadpwe9",
+   "type": "page_visit",
+   "page": "engage/2026-08-01-el-taller.html",
+   "nid": "2026-08-02-el-taller",
+   "src": "push",
+   "ts": "2026-08-02T15:02:50.449Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msbxl0brbra9f9",
+   "type": "dwell",
+   "seconds": 81,
+   "scroll_pct": 26,
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-02T15:04:10.983Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msbxqrr2orq5ys",
+   "type": "answer",
+   "qid": "taller-paso-1",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-02T15:08:39.806Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msbxrgsyvijccb",
+   "type": "answer",
+   "qid": "taller-paso-2",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-02T15:09:12.274Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msbxruz2nyppmi",
+   "type": "answer",
+   "qid": "taller-paso-3",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-02T15:09:30.637Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msbxsgs4khsur0",
+   "type": "answer",
+   "qid": "taller-paso-4",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-02T15:09:58.900Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msbxtdqo1lnah8",
+   "type": "answer",
+   "qid": "taller-paso-5",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-02T15:10:41.616Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msbxtvem1hz6pr",
+   "type": "answer",
+   "qid": "taller-paso-6",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-02T15:11:04.510Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msbxu475y582jo",
+   "type": "answer",
+   "qid": "taller-paso-7",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-02T15:11:15.905Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msbxvlnnzj2wcr",
+   "type": "answer",
+   "qid": "el-taller-slot-sab11",
+   "value": "si",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-02T15:12:25.187Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msbxvn5pbkydhl",
+   "type": "reaction",
+   "target": "el-taller",
+   "value": "love",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-02T15:12:27.133Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msc2mchv9g5z9v",
+   "type": "answer",
+   "qid": "taller-arbol-B-30",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-02T17:25:11.490Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msc2mhbrwhfgon",
+   "type": "answer",
+   "qid": "taller-arbol-B-38",
+   "value": "ok",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-02T17:25:17.751Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msc2n3zgqxl8x5",
+   "type": "page_visit",
+   "page": "tasks/plant-F-4.html",
+   "nid": null,
+   "src": "direct",
+   "ts": "2026-08-02T17:25:47.115Z",
+   "device": "landing"
+  },
+  {
+   "_id": "msc2of2jqg0wnx",
+   "type": "feedback_text",
+   "target": "el-taller",
+   "text": "Que otra cosa puedo podar?\nQue tareas puedo hacer con el aceite de Neem ya que lo voy a usar?",
+   "page": "engage/2026-08-01-el-taller.html",
+   "ts": "2026-08-02T17:26:48.139Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "mscbupyz4a5w0a",
+   "type": "notification_clicked",
+   "nid": "2026-08-02-que-mas-podo",
+   "page": "engage/2026-08-02-que-mas-podo.html",
+   "ts": "2026-08-02T21:43:38.743Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "mscbupyzpls96i",
+   "type": "page_visit",
+   "page": "engage/2026-08-02-que-mas-podo.html",
+   "nid": "2026-08-02-que-mas-podo",
+   "src": "push",
+   "ts": "2026-08-02T21:43:38.743Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "mscbut1avzmqls",
+   "type": "dwell",
+   "seconds": 4,
+   "scroll_pct": 0,
+   "page": "engage/2026-08-02-que-mas-podo.html",
+   "ts": "2026-08-02T21:43:42.718Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "mscdg2ssk9u59p",
+   "type": "page_visit",
+   "page": "tasks/plant-B-9.html",
+   "nid": null,
+   "src": "direct",
+   "ts": "2026-08-02T22:28:14.763Z",
+   "device": "landing"
+  },
+  {
+   "_id": "mscdk5qntc4vqe",
+   "type": "page_visit",
+   "page": "tasks/plant-B-18.html",
+   "nid": null,
+   "src": "direct",
+   "ts": "2026-08-02T22:31:25.198Z",
+   "device": "landing"
+  },
+  {
+   "_id": "mscdo6s83767pf",
+   "type": "answer",
+   "qid": "podo-F-4",
+   "value": "ok",
+   "page": "engage/2026-08-02-que-mas-podo.html",
+   "ts": "2026-08-02T22:34:33.176Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdoe32lrrc66m",
+   "type": "page_visit",
+   "page": "engage/2026-07-21-asamblea-jardin.html",
+   "nid": null,
+   "src": "direct",
+   "ts": "2026-08-03T20:22:23.754Z",
+   "device": "pix9"
+  },
+  {
+   "_id": "msdoe4ixlgapfj",
+   "type": "page_visit",
+   "page": "engage/2026-07-21-asamblea-jardin.html",
+   "nid": null,
+   "src": "direct",
+   "ts": "2026-08-03T20:22:25.638Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdoe4cu0elhhr",
+   "type": "dwell",
+   "seconds": 2,
+   "scroll_pct": 13,
+   "page": "engage/2026-07-21-asamblea-jardin.html",
+   "ts": "2026-08-03T20:22:25.422Z",
+   "device": "pix9"
+  },
+  {
+   "_id": "msdoe6fjdw4mc6",
+   "type": "page_visit",
+   "page": "engage/2026-07-10-album-figuritas.html",
+   "nid": null,
+   "src": "direct",
+   "ts": "2026-08-03T20:22:28.111Z",
+   "device": "pix9"
+  },
+  {
+   "_id": "msdoeejss4woph",
+   "type": "dwell",
+   "seconds": 11,
+   "scroll_pct": 21,
+   "page": "engage/2026-07-10-album-figuritas.html",
+   "ts": "2026-08-03T20:22:38.632Z",
+   "device": "pix9"
+  },
+  {
+   "_id": "msdoegzdmepwsi",
+   "type": "page_visit",
+   "page": "engage/2026-07-09-wrapped-jardin.html",
+   "nid": null,
+   "src": "direct",
+   "ts": "2026-08-03T20:22:41.785Z",
+   "device": "pix9"
+  },
+  {
+   "_id": "msdoeimf4zsgps",
+   "type": "page_visit",
+   "page": "engage/2026-07-09-quiz-planta.html",
+   "nid": null,
+   "src": "direct",
+   "ts": "2026-08-03T20:22:43.911Z",
+   "device": "pix9"
+  },
+  {
+   "_id": "msdoek4ye1pd8e",
+   "type": "page_visit",
+   "page": "engage/2026-07-09-quiz-planta.html",
+   "nid": null,
+   "src": "direct",
+   "ts": "2026-08-03T20:22:45.871Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdsll9qvvif2h",
+   "type": "notification_clicked",
+   "nid": "2026-08-03-jardin-hoy",
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "ts": "2026-08-03T22:20:12.398Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdsll9qi82enz",
+   "type": "page_visit",
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "nid": "2026-08-03-jardin-hoy",
+   "src": "push",
+   "ts": "2026-08-03T22:20:12.398Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdsmatc0vq7bl",
+   "type": "dwell",
+   "seconds": 33,
+   "scroll_pct": 33,
+   "page": "engage/2026-07-24-jardin-hoy.html",
+   "ts": "2026-08-03T22:20:45.504Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdsmayqpxc5xk",
+   "type": "page_visit",
+   "page": "engage/2026-08-03-el-taller-2.html",
+   "nid": null,
+   "src": "direct",
+   "ts": "2026-08-03T22:20:45.697Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdsoicsxwlliz",
+   "type": "answer",
+   "qid": "t2-paso-1",
+   "value": "ok",
+   "page": "engage/2026-08-03-el-taller-2.html",
+   "ts": "2026-08-03T22:22:28.588Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdsp2c5yamtof",
+   "type": "answer",
+   "qid": "t2-paso-2",
+   "value": "ok",
+   "page": "engage/2026-08-03-el-taller-2.html",
+   "ts": "2026-08-03T22:22:54.485Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdsp4sx7asrii",
+   "type": "answer",
+   "qid": "t2-paso-3",
+   "value": "ok",
+   "page": "engage/2026-08-03-el-taller-2.html",
+   "ts": "2026-08-03T22:22:57.681Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdspokmrewa4r",
+   "type": "answer",
+   "qid": "t2-paso-4",
+   "value": "ok",
+   "page": "engage/2026-08-03-el-taller-2.html",
+   "ts": "2026-08-03T22:23:23.302Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdspux1xl4sar",
+   "type": "dwell",
+   "seconds": 166,
+   "scroll_pct": 46,
+   "page": "engage/2026-08-03-el-taller-2.html",
+   "ts": "2026-08-03T22:23:31.525Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdt9si6d3meqs",
+   "type": "answer",
+   "qid": "t2-paso-5",
+   "value": "ok",
+   "page": "engage/2026-08-03-el-taller-2.html",
+   "ts": "2026-08-03T22:39:01.518Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdtatagt8a88y",
+   "type": "answer",
+   "qid": "t2-paso-6",
+   "value": "ok",
+   "page": "engage/2026-08-03-el-taller-2.html",
+   "ts": "2026-08-03T22:39:49.192Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdtaupiisucp2",
+   "type": "answer",
+   "qid": "t2-paso-7",
+   "value": "ok",
+   "page": "engage/2026-08-03-el-taller-2.html",
+   "ts": "2026-08-03T22:39:51.030Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdwh93t8h6fvl",
+   "type": "feedback_text",
+   "target": "el-taller-2",
+   "text": "Recordame las podas así hago las podas mañana si no llueve",
+   "page": "engage/2026-08-03-el-taller-2.html",
+   "ts": "2026-08-04T00:08:48.472Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdwozakpwcfxy",
+   "type": "notification_clicked",
+   "nid": "2026-08-03-el-taller-2",
+   "page": "engage/2026-08-03-el-taller-2.html",
+   "ts": "2026-08-04T00:14:49.003Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdwozak1m7li0",
+   "type": "page_visit",
+   "page": "engage/2026-08-03-el-taller-2.html",
+   "nid": "2026-08-03-el-taller-2",
+   "src": "push",
+   "ts": "2026-08-04T00:14:49.003Z",
+   "device": "sin-nombre"
+  },
+  {
+   "_id": "msdwpk5aulncs0",
+   "type": "dwell",
+   "seconds": 27,
+   "scroll_pct": 100,
+   "page": "engage/2026-08-03-el-taller-2.html",
+   "ts": "2026-08-04T00:15:16.029Z",
+   "device": "sin-nombre"
   }
+ ],
+ "daily_summary": {
+  "2026-06-12": {
+   "sent": 14,
+   "clicked": 1,
+   "visits": 1,
+   "approvals": 0
+  },
+  "2026-06-13": {
+   "sent": 21,
+   "clicked": 3,
+   "visits": 4,
+   "approvals": 1
+  },
+  "2026-06-14": {
+   "sent": 39,
+   "clicked": 0,
+   "visits": 0,
+   "approvals": 0
+  },
+  "2026-06-15": {
+   "sent": 19,
+   "clicked": 2,
+   "visits": 4,
+   "approvals": 0
+  },
+  "2026-06-16": {
+   "sent": 20,
+   "clicked": 1,
+   "visits": 3,
+   "approvals": 0
+  },
+  "2026-06-17": {
+   "sent": 13,
+   "clicked": 1,
+   "visits": 4,
+   "approvals": 0
+  },
+  "2026-06-18": {
+   "sent": 3,
+   "clicked": 2,
+   "visits": 3,
+   "approvals": 1
+  },
+  "2026-06-19": {
+   "sent": 3,
+   "clicked": 2,
+   "visits": 2,
+   "approvals": 0
+  },
+  "2026-06-20": {
+   "sent": 3,
+   "clicked": 3,
+   "visits": 3,
+   "approvals": 0
+  },
+  "2026-06-21": {
+   "sent": 3,
+   "clicked": 3,
+   "visits": 3,
+   "approvals": 0
+  },
+  "2026-06-22": {
+   "sent": 3,
+   "clicked": 1,
+   "visits": 1,
+   "approvals": 0
+  },
+  "2026-06-23": {
+   "sent": 5,
+   "clicked": 3,
+   "visits": 5,
+   "approvals": 0
+  },
+  "2026-06-24": {
+   "sent": 3,
+   "clicked": 1,
+   "visits": 1,
+   "approvals": 0
+  },
+  "2026-06-25": {
+   "sent": 3,
+   "clicked": 2,
+   "visits": 2,
+   "approvals": 0
+  },
+  "2026-06-26": {
+   "sent": 3,
+   "clicked": 0,
+   "visits": 0,
+   "approvals": 0
+  },
+  "2026-06-27": {
+   "sent": 3,
+   "clicked": 2,
+   "visits": 2,
+   "approvals": 0
+  },
+  "2026-06-28": {
+   "sent": 3,
+   "clicked": 0,
+   "visits": 1,
+   "approvals": 0
+  },
+  "2026-06-29": {
+   "sent": 3,
+   "clicked": 1,
+   "visits": 3,
+   "approvals": 2
+  },
+  "2026-06-30": {
+   "sent": 3,
+   "clicked": 5,
+   "visits": 6,
+   "approvals": 4
+  },
+  "2026-07-01": {
+   "sent": 3,
+   "clicked": 3,
+   "visits": 5,
+   "approvals": 2
+  },
+  "2026-07-02": {
+   "sent": 3,
+   "clicked": 1,
+   "visits": 2,
+   "approvals": 1
+  },
+  "2026-07-03": {
+   "sent": 3,
+   "clicked": 1,
+   "visits": 1,
+   "approvals": 1
+  },
+  "2026-07-04": {
+   "sent": 4,
+   "clicked": 2,
+   "visits": 2,
+   "approvals": 1
+  },
+  "2026-07-05": {
+   "sent": 0,
+   "clicked": 2,
+   "visits": 2,
+   "approvals": 0
+  },
+  "2026-07-06": {
+   "sent": 5,
+   "clicked": 2,
+   "visits": 2,
+   "approvals": 0
+  },
+  "2026-07-07": {
+   "sent": 0,
+   "clicked": 0,
+   "visits": 4,
+   "approvals": 0
+  },
+  "2026-07-08": {
+   "sent": 5,
+   "clicked": 4,
+   "visits": 5,
+   "approvals": 1
+  },
+  "2026-07-09": {
+   "clicked": 2,
+   "visits": 2,
+   "approvals": 2,
+   "sent": 4
+  },
+  "2026-07-10": {
+   "sent": 0,
+   "clicked": 1,
+   "visits": 1,
+   "approvals": 1
+  },
+  "2026-07-11": {
+   "clicked": 2,
+   "visits": 2,
+   "approvals": 0,
+   "sent": 4
+  },
+  "2026-07-12": {
+   "sent": 5,
+   "clicked": 2,
+   "visits": 4,
+   "approvals": 0
+  },
+  "2026-07-13": {
+   "sent": 0,
+   "clicked": 1,
+   "visits": 1,
+   "approvals": 0
+  },
+  "2026-07-14": {
+   "sent": 0,
+   "clicked": 1,
+   "visits": 1,
+   "approvals": 0
+  },
+  "2026-07-16": {
+   "sent": 5,
+   "clicked": 0,
+   "visits": 0,
+   "approvals": 0
+  },
+  "2026-07-17": {
+   "sent": 0,
+   "clicked": 0,
+   "visits": 1,
+   "approvals": 0
+  },
+  "2026-07-18": {
+   "sent": 0,
+   "clicked": 2,
+   "visits": 4,
+   "approvals": 0
+  },
+  "2026-07-19": {
+   "sent": 0,
+   "clicked": 3,
+   "visits": 3,
+   "approvals": 0
+  },
+  "2026-07-21": {
+   "sent": 0,
+   "clicked": 2,
+   "visits": 2,
+   "approvals": 0
+  },
+  "2026-07-22": {
+   "sent": 0,
+   "clicked": 1,
+   "visits": 1,
+   "approvals": 0
+  },
+  "2026-07-23": {
+   "sent": 0,
+   "clicked": 4,
+   "visits": 18,
+   "approvals": 0,
+   "feedback": [
+    "Mucho texto, muy cargado, no es realmente lo que busco en una app de jardin"
+   ]
+  },
+  "2026-07-24": {
+   "sent": 0,
+   "clicked": 5,
+   "visits": 14,
+   "approvals": 0
+  },
+  "2026-07-25": {
+   "sent": 0,
+   "clicked": 3,
+   "visits": 5,
+   "approvals": 0
+  },
+  "2026-07-26": {
+   "sent": 0,
+   "clicked": 1,
+   "visits": 1,
+   "approvals": 0
+  },
+  "2026-07-27": {
+   "sent": 0,
+   "clicked": 3,
+   "visits": 3,
+   "approvals": 0,
+   "answer": 9
+  },
+  "2026-07-28": {
+   "sent": 0,
+   "clicked": 3,
+   "visits": 3,
+   "approvals": 0,
+   "answer": 7,
+   "reaction": 1,
+   "rejections": 2,
+   "feedback": [
+    "Cada tarea debería tener una caja como está de feedback así te puedo dejar comentarios.\n1- ignora lo de la lechuga, me voy de viaje en 10dias y no va a suceder antes.  A mi vuelta a fin de agosto lo v",
+    "No es mi tipo de experiencia.\n\nRevisa lo que te escribí más temprano en el liquidámbar."
+   ]
+  }
+ }
 }
