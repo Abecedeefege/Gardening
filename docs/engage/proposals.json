@@ -1000,7 +1000,7 @@
    "notified_by": [
     "2026-08-04-tarjeta-campo"
    ],
-   "result_notes": "⬛ CERO SEÑAL a 8 días. Formato SIN TESTEAR (no muerto): su envío cayó justo antes del silencio total del 04/08. Re-test a la vuelta, primera semana (24-31/08)."
+   "result_notes": "⬛ CERO SEÑAL a 9 días. Formato SIN TESTEAR (no muerto): su envío cayó justo en la víspera del silencio total del 04/08 y toda la ventana posterior es viaje. Re-test obligatorio en la primera semana de la reentrada (24-31/08), que es cuando el usuario vuelve a tener el jardín delante y una tarjeta de campo tiene sentido."
   },
   {
    "id": "2026-08-08-el-hueco",
@@ -1012,7 +1012,7 @@
    "notified_by": [
     "2026-08-08-el-hueco"
    ],
-   "result_notes": "⬛ CERO APERTURA — VEREDICTO SUSPENDIDO (reconfirmado 12/08, día 6 del viaje). 0 clicks / 0 taps hueco-* / 0 slots. Van 8 días sin un solo evento en engagement.json (último 04/08 00:15): la ventana mide DISPONIBILIDAD, no contenido. NO se archiva el eje-objetivo ni el formato auditoría-computada. Página conservada; se re-mide a la reentrada del 24/08."
+   "result_notes": "⬛ CERO APERTURA — VEREDICTO SUSPENDIDO (re-reconfirmado 13/08, día 7 del viaje). 0 clicks / 0 taps hueco-* / 0 slots a 5 días. Van 9 días sin un solo evento del usuario (último: 04/08 00:15). Un ⬛ recogido entre el 07 y el 23/08 mide DISPONIBILIDAD, no contenido: NO se archiva el eje-objetivo («más flor») ni el formato auditoría-computada. Se re-mide a la reentrada del 24/08; si prendió `hueco-multiplicar`, se paga con lista de compra concreta."
   },
   {
    "id": "2026-08-10-ultima-mandarina",
@@ -1024,8 +1024,8 @@
    "notified_by": [
     "2026-08-10-ultima-mandarina"
    ],
-   "result_notes": "⬛ CERO APERTURA — VEREDICTO SUSPENDIDO (reconfirmado 12/08). Enviada lun 10/08 18:11 -03 (lag 11 min), 0 clicks / 0 taps / 0 slots a 48 h. La hipótesis «en viaje solo sobrevive lo brevísimo» sigue SIN testear. Si prendió el compromiso mandarina-parte-vuelta no aplica (no hubo tap). Página conservada, re-medición 24/08."
+   "result_notes": "⬛ CERO APERTURA — VEREDICTO SUSPENDIDO (re-reconfirmado 13/08). Enviada lun 10/08 18:11 -03 (lag del dispatcher: 11 min, el mejor medido). 0 clicks / 0 taps / 0 slots a 3 días, dentro de la misma ventana ciega del viaje. NO se archiva el formato «tira de fruta / lo que pasa mientras no estás». Si prendió `mandarina-parte-vuelta`, el parte del 23/08 es deuda comprometida."
   }
  ],
- "_updated_at": "2026-08-12T09:20:00.000Z"
+ "_updated_at": "2026-08-13T09:10:00.000Z"
 }

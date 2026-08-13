@@ -1,58 +1,6 @@
 {
- "_updated_at": "2026-08-12T09:20:00.000Z",
+ "_updated_at": "2026-08-13T09:10:00.000Z",
  "events": [
-  {
-   "_id": "ms6p4hubhtqftq",
-   "type": "notification_clicked",
-   "nid": "2026-07-29-a",
-   "page": "engage/2026-07-29-los-que-no-duermen.html",
-   "ts": "2026-07-29T23:08:32.721Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms6p4hubli3an6",
-   "type": "page_visit",
-   "page": "engage/2026-07-29-los-que-no-duermen.html",
-   "nid": "2026-07-29-a",
-   "src": "push",
-   "ts": "2026-07-29T23:08:32.721Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms6p4szhwg2euc",
-   "type": "dwell",
-   "seconds": 14,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-29-los-que-no-duermen.html",
-   "ts": "2026-07-29T23:08:47.165Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms6qdrkl8e0w5w",
-   "type": "notification_clicked",
-   "nid": "2026-07-29-b",
-   "page": "engage/2026-07-29-antes-de-irte.html",
-   "ts": "2026-07-29T23:43:44.852Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms6qdrklt6v18m",
-   "type": "page_visit",
-   "page": "engage/2026-07-29-antes-de-irte.html",
-   "nid": "2026-07-29-b",
-   "src": "push",
-   "ts": "2026-07-29T23:43:44.852Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "ms6qeeqj0t812p",
-   "type": "dwell",
-   "seconds": 30,
-   "scroll_pct": 86,
-   "page": "engage/2026-07-29-antes-de-irte.html",
-   "ts": "2026-07-29T23:44:14.874Z",
-   "device": "sin-nombre"
-  },
   {
    "_id": "ms7odgy6wc9yqg",
    "type": "notification_clicked",
@@ -1188,6 +1136,12 @@
     "Cada tarea debería tener una caja como está de feedback así te puedo dejar comentarios.\n1- ignora lo de la lechuga, me voy de viaje en 10dias y no va a suceder antes.  A mi vuelta a fin de agosto lo v",
     "No es mi tipo de experiencia.\n\nRevisa lo que te escribí más temprano en el liquidámbar."
    ]
+  },
+  "2026-07-29": {
+   "sent": 0,
+   "clicked": 2,
+   "visits": 2,
+   "approvals": 0
   }
  }
 }
