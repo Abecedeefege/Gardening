@@ -1,5 +1,5 @@
 {
- "_updated_at": "2026-08-13T09:10:00.000Z",
- "_nota": "Jueves 13/08 = día 7 del VIAJE (7 al 23/08). El jueves SÍ tiene slot de tarea (10:00) en la cadencia vigente, pero queda DELIBERADAMENTE VACÍO: rige el compromiso publicado el 06/08 de no mandar NINGUNA push de tareas del 7 al 23. Es el 3º de los 7 slots de tarea que caen dentro del viaje (sáb 8 ✅, lun 10 ✅, jue 13 ✅, quedan sáb 15, lun 17, jue 20, sáb 22). Corrida de MANTENIMIENTO: 0 push encoladas. Próximo slot con contenido posible: sábado 15/08 11:00 (experiencia — el compromiso es sobre TAREAS, no sobre experiencias).",
+ "_updated_at": "2026-08-14T09:20:00.000Z",
+ "_nota": "Viernes 14/08 = día 8 del VIAJE (7 al 23/08). El viernes NO tiene slot en la cadencia vigente (semanal día-consciente: tareas Lun/Jue/Sáb 10:00, experiencias Lun 18:00 / Sáb 11:00), así que la corrida es de MANTENIMIENTO puro: 0 push encoladas por diseño, no por omisión. Trabajo hecho hoy: compactación (engagement.json 96→79 eventos, send_log 15→11, feedback_text del 30/07 preservado dentro de daily_summary), re-verificación del pronóstico (open-meteo) y corrección de un número que se había quedado viejo en learnings, y actualización del ledger. Próximo slot: sábado 15/08 11:00 (experiencia). El slot de TAREA del sábado 15 queda vacío a propósito — es el 4º de los 7 que caen dentro del compromiso publicado el 06/08 de no mandar ninguna push de tareas del 7 al 23.",
  "notifications": []
 }

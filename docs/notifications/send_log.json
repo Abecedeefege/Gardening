@@ -2,30 +2,6 @@
  "events": [
   {
    "type": "notification_sent",
-   "nid": "2026-07-30-jardin-hoy",
-   "ts": "2026-07-30T13:55:19.838Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-30-jardin-hoy-sol",
-   "ts": "2026-07-30T15:51:48.972Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-30-jardin-hoy-viaje",
-   "ts": "2026-07-30T18:00:50.055Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
-   "nid": "2026-07-30-reply-plant-B-30",
-   "ts": "2026-07-30T18:54:52.468Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
    "nid": "2026-07-31-el-parte",
    "ts": "2026-07-31T21:02:16.539Z",
    "status_code": 201
@@ -225,7 +201,10 @@
   },
   "2026-07-29": {
    "sent": 3
+  },
+  "2026-07-30": {
+   "sent": 4
   }
  },
- "_updated_at": "2026-08-13T09:10:00.000Z"
+ "_updated_at": "2026-08-14T09:20:00.000Z"
 }
