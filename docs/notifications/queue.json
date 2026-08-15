@@ -1,18 +1,18 @@
 {
- "_updated_at": "2026-08-15T09:20:00.000Z",
- "_nota": "Sábado 15/08 = día 9 del VIAJE (7 al 23/08). La cadencia semanal día-consciente le da al sábado DOS slots: tarea 10:00 y experiencia 11:00. El slot de TAREA queda VACÍO a propósito — es el 4º de los 7 que caen dentro del compromiso publicado el 06/08 de no mandar ninguna push de tareas del 7 al 23 (cumplidos: sáb 8, lun 10, jue 13, sáb 15; faltan lun 17, jue 20, sáb 22). El slot de EXPERIENCIA sí se manda: decisión tomada el 12/08 y confirmada hoy — el compromiso es sobre TAREAS, y saltear un slot que el usuario fijó sería degradar su cadencia con evidencia que yo mismo declaré inadmisible (el viaje no es ventana de medición). Una sola push de experiencia, con la original nueva del día + El Taller (aprobada en los dos slots) linkeado y en pausa dentro de la misma landing. Cero-deber estricto. El pronóstico se re-verificó hoy contra open-meteo antes de encolar: el ~45 mm que traía la memoria se cayó a 9,7 mm entre el 16 y el 23, así que ese argumento NO se publicó; en su lugar va el frío real verificado (máximas 9,3-12,0 del 17 al 23) y la ausencia total de heladas (mínima absoluta 4,8 °C el 25).",
- "notifications": [
-  {
-   "id": "2026-08-15-florecio-lo-que-podaste",
-   "title": "🌸 Floreció lo que podaste",
-   "body": "13 días después de tu última tijera, 4 de tus árboles están abriendo la flor. Son exactamente los que tocaste vos.",
-   "url": "https://gardening-chi.vercel.app/engage/2026-08-15-florecio-lo-que-podaste.html",
-   "send_at": "2026-08-15T11:00:00-03:00",
-   "expires_at": "2026-08-15T22:00:00-03:00",
-   "status": "pending",
-   "sent_at": null,
-   "fail_reason": null,
-   "created_by": "engagement-agent 2026-08-15"
-  }
- ]
+  "_updated_at": "2026-08-15T14:19:36.860Z",
+  "_nota": "Sábado 15/08 = día 9 del VIAJE (7 al 23/08). La cadencia semanal día-consciente le da al sábado DOS slots: tarea 10:00 y experiencia 11:00. El slot de TAREA queda VACÍO a propósito — es el 4º de los 7 que caen dentro del compromiso publicado el 06/08 de no mandar ninguna push de tareas del 7 al 23 (cumplidos: sáb 8, lun 10, jue 13, sáb 15; faltan lun 17, jue 20, sáb 22). El slot de EXPERIENCIA sí se manda: decisión tomada el 12/08 y confirmada hoy — el compromiso es sobre TAREAS, y saltear un slot que el usuario fijó sería degradar su cadencia con evidencia que yo mismo declaré inadmisible (el viaje no es ventana de medición). Una sola push de experiencia, con la original nueva del día + El Taller (aprobada en los dos slots) linkeado y en pausa dentro de la misma landing. Cero-deber estricto. El pronóstico se re-verificó hoy contra open-meteo antes de encolar: el ~45 mm que traía la memoria se cayó a 9,7 mm entre el 16 y el 23, así que ese argumento NO se publicó; en su lugar va el frío real verificado (máximas 9,3-12,0 del 17 al 23) y la ausencia total de heladas (mínima absoluta 4,8 °C el 25).",
+  "notifications": [
+    {
+      "id": "2026-08-15-florecio-lo-que-podaste",
+      "title": "🌸 Floreció lo que podaste",
+      "body": "13 días después de tu última tijera, 4 de tus árboles están abriendo la flor. Son exactamente los que tocaste vos.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-08-15-florecio-lo-que-podaste.html",
+      "send_at": "2026-08-15T11:00:00-03:00",
+      "expires_at": "2026-08-15T22:00:00-03:00",
+      "status": "sent",
+      "sent_at": "2026-08-15T14:19:36.858Z",
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-08-15"
+    }
+  ]
 }

@@ -59,6 +59,12 @@
       "nid": "2026-08-10-ultima-mandarina",
       "ts": "2026-08-10T21:11:38.052Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-08-15-florecio-lo-que-podaste",
+      "ts": "2026-08-15T14:19:36.858Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
