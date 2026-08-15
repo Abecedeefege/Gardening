@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🌸 Floreció lo que podaste</title>
+<meta property="og:title" content="🌸 Floreció lo que podaste">
+<meta property="og:description" content="6 de tus 52 especies florecen en agosto. Cuatro pasaron por tu tijera hace 13 y 23 días. Están abriendo ahora, sin vos, y no hay nada que hacer.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#fff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.13);
+    --rosa:#d0537e; --rosa2:#fbe4ed; --rosa3:#f7c3d6; --sol:#e0a92e; --oscuro:#14231a;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 8px; }
+
+  /* ---------- hero ---------- */
+  .hero{ position:relative; margin:0 calc(-1*var(--pad)); }
+  .hero img{ width:100%; height:196px; object-fit:cover; display:block; }
+  .hero .shade{ position:absolute; inset:0; background:linear-gradient(to top,rgba(20,35,26,.88) 0%,rgba(20,35,26,.15) 58%,rgba(20,35,26,.05) 100%); }
+  .hero .cap{ position:absolute; left:var(--pad); right:var(--pad); bottom:12px; color:#fff; }
+  .hero .cap b{ display:block; font-size:19px; font-weight:900; letter-spacing:-.3px; }
+  .hero .cap span{ font-size:12.5px; font-weight:700; opacity:.85; }
+
+  .kick{ margin:14px 0 2px; font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--ink3); }
+  h1{ font-size:26px; line-height:1.15; letter-spacing:-.6px; font-weight:900; margin:4px 0 10px; }
+  .lead{ font-size:15.5px; color:var(--ink2); }
+  .lead b{ color:var(--ink); }
+
+  /* ---------- el hallazgo ---------- */
+  .find{ margin:18px 0 0; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 16px; box-shadow:0 3px 12px rgba(45,80,22,.06); }
+  .cuenta{ display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:13px; }
+  .num{ font-size:50px; font-weight:900; letter-spacing:-2px; line-height:1; color:var(--ink3); text-align:center; }
+  .num small{ display:block; font-size:10.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:var(--ink3); margin-top:6px; line-height:1.25; }
+  .num.hot{ color:var(--rosa); }
+  .flecha{ font-size:24px; color:var(--ink3); font-weight:900; padding-bottom:16px; }
+  .find p{ font-size:15px; color:var(--ink2); text-align:center; }
+  .find p b{ color:var(--ink); }
+
+  /* ---------- recibos ---------- */
+  .recibos{ margin-top:14px; display:flex; flex-direction:column; gap:11px; }
+  .r{ background:var(--card); border:1px solid var(--line); border-radius:17px; overflow:hidden; }
+  .r.tuyo{ border-color:var(--rosa3); }
+  .r img{ width:100%; height:132px; object-fit:cover; display:block; }
+  .r .body{ padding:13px 14px 14px; }
+  .r .top{ display:flex; align-items:baseline; justify-content:space-between; gap:8px; }
+  .r .nom{ font-size:16px; font-weight:900; letter-spacing:-.2px; }
+  .r .cod{ font-size:11px; font-weight:800; color:var(--ink3); letter-spacing:.03em; }
+  .sello{ display:inline-block; margin-top:8px; background:var(--rosa2); color:var(--rosa); border-radius:8px;
+          padding:5px 9px; font-size:11.5px; font-weight:900; letter-spacing:.02em; }
+  .sello.gris{ background:#eef1ea; color:var(--ink3); }
+  .r .txt{ font-size:13.8px; color:var(--ink2); margin-top:9px; }
+  .r .txt b{ color:var(--ink); }
+  .bar{ display:flex; gap:2.5px; margin-top:11px; }
+  .bar i{ flex:1; height:9px; border-radius:2px; background:#eef1ea; }
+  .bar i.on{ background:var(--rosa3); }
+  .bar i.hoy{ background:var(--rosa); outline:2px solid var(--ink); outline-offset:1.5px; }
+  .meses{ display:flex; gap:2.5px; margin-top:3px; }
+  .meses i{ flex:1; text-align:center; font-size:8.5px; font-weight:800; color:var(--ink3); font-style:normal; }
+
+  /* ---------- bloques ---------- */
+  .blk{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:17px 16px; }
+  .blk h3{ font-size:16.5px; font-weight:900; margin-bottom:6px; letter-spacing:-.2px; }
+  .blk p{ font-size:14px; color:var(--ink2); }
+  .blk p+p{ margin-top:8px; }
+  .blk p b{ color:var(--ink); }
+  .blk svg{ display:block; width:100%; height:auto; margin:12px 0 4px; }
+
+  .frio{ background:linear-gradient(180deg,#f2f8fb,#fff); border-color:#cfe0ea; }
+  .frio h3{ color:#1d4b63; }
+
+  .tap{ background:var(--oscuro); border-color:var(--oscuro); color:#eef4ec; }
+  .tap h3{ color:#fff; }
+  .tap p{ color:#b7c6bb; }
+  .tap p b{ color:#fff; }
+  .tap ul{ margin:9px 0 0 17px; padding:0; font-size:13.5px; color:#cfe0d2; }
+  .tap li{ margin:4px 0; }
+  .yn{ display:flex; gap:8px; margin-top:13px; align-items:center; flex-wrap:wrap; }
+  .yn button{ flex:1; min-width:100px; border:none; border-radius:12px; padding:13px 10px; font:900 14.5px var(--sans); cursor:pointer; background:#2f7d4f; color:#fff; }
+  .yn button:last-of-type{ background:rgba(255,255,255,.12); color:#dfe8e0; }
+  .yn button.sel{ outline:3px solid #8fd06a; }
+  .yn button:disabled{ opacity:.55; }
+  .q-hint{ width:100%; font-size:12.5px; font-weight:800; color:#8fd06a; min-height:1.1em; }
+
+  .slot{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding:11px 0; border-bottom:1px dashed var(--line); flex-wrap:wrap; }
+  .slot:last-of-type{ border-bottom:none; }
+  .slot .lbl{ font-size:14px; font-weight:800; }
+  .slot .lbl small{ display:block; font-weight:600; font-size:12px; color:var(--ink3); }
+  .slot .yn{ margin-top:0; flex:0 0 auto; }
+  .slot .yn button{ flex:0 0 auto; min-width:56px; padding:9px 15px; font-size:13.5px; background:var(--verde3); color:var(--verde); }
+  .slot .yn button:last-of-type{ background:#eceee9; color:var(--ink2); }
+  .slot .yn button.sel{ background:var(--verde); color:#fff; outline:none; }
+  .slot .q-hint{ color:var(--verde2); }
+
+  .rx{ display:flex; gap:8px; margin-top:11px; flex-wrap:wrap; }
+  .rx button{ flex:1; min-width:62px; border:1px solid var(--line); background:var(--card); border-radius:13px; padding:11px 6px; font-size:24px; cursor:pointer; }
+  .rx button.sel{ background:var(--verde3); border-color:var(--verde2); }
+  .react-hint{ width:100%; font-size:12.5px; font-weight:800; color:var(--verde2); min-height:1.1em; }
+
+  .lnk{ display:flex; align-items:center; gap:11px; text-decoration:none; color:inherit; padding:12px 0; border-bottom:1px dashed var(--line); }
+  .lnk:last-of-type{ border-bottom:none; }
+  .lnk .em{ font-size:22px; }
+  .lnk .t{ flex:1; font-size:14px; font-weight:800; }
+  .lnk .t small{ display:block; font-weight:600; font-size:12.2px; color:var(--ink3); margin-top:1px; }
+  .lnk .go2{ color:var(--ink3); font-size:20px; font-weight:900; }
+
+  .fb-blk textarea{ width:100%; margin-top:9px; background:#fbfdf9; border:1px solid var(--line); border-radius:12px; color:var(--ink); padding:11px 12px; font:400 14px/1.45 var(--sans); resize:vertical; }
+  .fb-send{ margin-top:9px; width:100%; background:var(--verde); color:#fff; border:none; border-radius:12px; padding:13px; font:900 14.5px var(--sans); cursor:pointer; }
+  .fb-hint{ display:block; margin-top:8px; font-size:12.5px; font-weight:800; color:var(--verde2); min-height:1.1em; }
+
+  .engage-actions{ max-width:480px; margin:18px auto 6px; padding:0 var(--pad); display:flex; flex-direction:column; gap:9px; }
+  .engage-actions button{ width:100%; border:none; border-radius:14px; padding:15px; font:900 15px var(--sans); cursor:pointer; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:#eceee9; color:var(--ink2); }
+  .engage-actions button:active{ opacity:.8; }
+  .engage-feedback{ text-align:center; font-size:14px; font-weight:800; color:var(--verde); padding:13px; }
+  .pie{ text-align:center; font-size:11.8px; color:var(--ink3); padding:14px var(--pad) 4px; max-width:480px; margin:0 auto; line-height:1.55; }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <div class="hero">
+    <img src="https://gardening-chi.vercel.app/images/b30.jpg" alt="Durazno del fondo">
+    <div class="shade"></div>
+    <div class="cap"><b>Durazno · B-30 y B-35</b><span>fondo (este) · Prunus persica · florece agosto–setiembre</span></div>
+  </div>
+
+  <div class="kick">Sábado 15 de agosto · día 9 de tu viaje</div>
+  <h1>Está floreciendo, ahora, lo que podaste vos.</h1>
+  <p class="lead">Crucé el campo <em>flowering</em> de tus 52 fichas con las tareas que cerraste este invierno. Salió esto — y después te dejo tranquilo, porque <b>no hay absolutamente nada que hacer</b>.</p>
+
+  <div class="find">
+    <div class="cuenta">
+      <div class="num">6<small>especies tuyas<br>florecen en agosto</small></div>
+      <div class="flecha">→</div>
+      <div class="num hot">4<small>pasaron por<br>tu tijera</small></div>
+    </div>
+    <p>De 52 especies, <b>6</b> tienen agosto adentro de su ventana de floración. <b>Cuatro de esas seis</b> las podaste vos, con la mano, hace 13 y 23 días. Son 5 árboles contando los dos duraznos.</p>
+  </div>
+
+  <div class="recibos">
+
+    <div class="r tuyo">
+      <img src="https://gardening-chi.vercel.app/images/b30.jpg" alt="Durazno B-30">
+      <div class="body">
+        <div class="top"><span class="nom">🌸 Durazno</span><span class="cod">B-30 · B-35</span></div>
+        <div class="sello">Tu tijera · dom 2 de agosto, 14:25</div>
+        <div class="txt">Poda en vaso abierto, los dos árboles. <b>Hace 13 días.</b> El durazno abre la flor <b>antes que la hoja</b>: lo que está saliendo ahora sale de las yemas que vos decidiste dejar.</div>
+        <div class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on hoy"></i><i class="on"></i><i></i><i></i><i></i></div>
+        <div class="meses"><i>E</i><i>F</i><i>M</i><i>A</i><i>M</i><i>J</i><i>J</i><i>A</i><i>S</i><i>O</i><i>N</i><i>D</i></div>
+      </div>
+    </div>
+
+    <div class="r tuyo">
+      <img src="https://gardening-chi.vercel.app/images/PXL_20260428_130808343_MP.webp" alt="Ciruela amarilla B-38">
+      <div class="body">
+        <div class="top"><span class="nom">🤍 Ciruela amarilla</span><span class="cod">B-38</span></div>
+        <div class="sello">Tu tijera · dom 2 de agosto, 14:25</div>
+        <div class="txt">Flor blanca, misma ventana. La tildaste seis segundos después del durazno — mismo viaje al fondo, misma tarde. <b>Ahora las dos abren juntas.</b></div>
+        <div class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on hoy"></i><i class="on"></i><i></i><i></i><i></i></div>
+        <div class="meses"><i>E</i><i>F</i><i>M</i><i>A</i><i>M</i><i>J</i><i>J</i><i>A</i><i>S</i><i>O</i><i>N</i><i>D</i></div>
+      </div>
+    </div>
+
+    <div class="r tuyo">
+      <img src="https://gardening-chi.vercel.app/images/F-4_ciruelo_purpura_otonal.jpg" alt="Ciruelo de jardín F-4">
+      <div class="body">
+        <div class="top"><span class="nom">💗 Ciruelo de jardín</span><span class="cod">F-4</span></div>
+        <div class="sello">Tu tijera · dom 2 de agosto, 19:34</div>
+        <div class="txt">El de adelante, el púrpura. Lo podaste cinco horas después de los del fondo, ya de nochecita. Su flor es <b>rosada y también sale desnuda</b>, sin una sola hoja: en el frente (oeste) va a agarrar el sol de la tarde de lleno.</div>
+        <div class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on hoy"></i><i class="on"></i><i></i><i></i><i></i></div>
+        <div class="meses"><i>E</i><i>F</i><i>M</i><i>A</i><i>M</i><i>J</i><i>J</i><i>A</i><i>S</i><i>O</i><i>N</i><i>D</i></div>
+      </div>
+    </div>
+
+    <div class="r tuyo">
+      <img src="https://gardening-chi.vercel.app/images/PXL_20260428_130757603_MP.webp" alt="Pera Williams B-39">
+      <div class="body">
+        <div class="top"><span class="nom">🤍 Pera Williams</span><span class="cod">B-39</span></div>
+        <div class="sello">Tu tijera · jue 23 de julio, 15:42</div>
+        <div class="txt">La más vieja de las cuatro podas: <b>hace 23 días</b>. Y es la que mejor cierra el círculo. La instrucción decía «<b>no cortes los dardos</b> — ramitas cortas con yemas gordas, ahí salen las flores». Las respetaste. <b>Esas yemas gordas son las que están abriendo hoy.</b></div>
+        <div class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on hoy"></i><i class="on"></i><i></i><i></i><i></i></div>
+        <div class="meses"><i>E</i><i>F</i><i>M</i><i>A</i><i>M</i><i>J</i><i>J</i><i>A</i><i>S</i><i>O</i><i>N</i><i>D</i></div>
+      </div>
+    </div>
+
+    <div class="r">
+      <div class="body">
+        <div class="top"><span class="nom">Las otras dos</span><span class="cod">B-26 · B-32</span></div>
+        <div class="sello gris">Sin tijera · florecen solas</div>
+        <div class="txt">El romero del fondo (junio→octubre, viene floreciendo hace rato) y el viraró nativo. Ninguna de las dos pasó por poda este invierno: <b>de las 6 de agosto, las 4 que tienen flor por trabajo tuyo son las de arriba</b>.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="blk">
+    <h3>🔌 Por qué esto es tuyo y no del azar</h3>
+    <p>Las cuatro florecen <b>desnudas</b>: abren la flor antes de sacar una sola hoja. Eso significa que <b>no la están pagando con fotosíntesis de hoy</b> — no tienen con qué. La pagan con el almidón que guardaron en la madera y en la raíz durante el verano pasado.</p>
+    <svg viewBox="0 0 452 118" role="img" aria-label="Circuito: hoja del verano pasado, reserva, tu tijera, flor de agosto">
+      <defs>
+        <marker id="fl" markerWidth="7" markerHeight="7" refX="5.4" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 z" fill="#8a9a7a"/>
+        </marker>
+      </defs>
+      <g font-family="-apple-system,BlinkMacSystemFont,sans-serif" text-anchor="middle">
+        <rect x="2" y="26" width="96" height="52" rx="12" fill="#e7f2da" stroke="#c9dfb4"/>
+        <text x="50" y="47" font-size="19">🍃</text>
+        <text x="50" y="61" font-size="10" font-weight="800" fill="#2d5016">Verano pasado</text>
+        <text x="50" y="72" font-size="9" fill="#5a6b4c">la hoja fabrica</text>
+
+        <line x1="101" y1="52" x2="115" y2="52" stroke="#8a9a7a" stroke-width="1.8" marker-end="url(#fl)"/>
+
+        <rect x="119" y="26" width="96" height="52" rx="12" fill="#f4ecda" stroke="#e3d5b4"/>
+        <text x="167" y="47" font-size="19">🪵</text>
+        <text x="167" y="61" font-size="10" font-weight="800" fill="#7a5f1d">Invierno</text>
+        <text x="167" y="72" font-size="9" fill="#5a6b4c">reserva en madera</text>
+
+        <line x1="218" y1="52" x2="232" y2="52" stroke="#8a9a7a" stroke-width="1.8" marker-end="url(#fl)"/>
+
+        <rect x="236" y="26" width="96" height="52" rx="12" fill="#14231a" stroke="#14231a"/>
+        <text x="284" y="47" font-size="19">✂️</text>
+        <text x="284" y="61" font-size="10" font-weight="800" fill="#ffffff">2 ago · vos</text>
+        <text x="284" y="72" font-size="9" fill="#b7c6bb">elegís las yemas</text>
+
+        <line x1="335" y1="52" x2="349" y2="52" stroke="#8a9a7a" stroke-width="1.8" marker-end="url(#fl)"/>
+
+        <rect x="353" y="26" width="96" height="52" rx="12" fill="#fbe4ed" stroke="#f7c3d6"/>
+        <text x="401" y="47" font-size="19">🌸</text>
+        <text x="401" y="61" font-size="10" font-weight="800" fill="#d0537e">Hoy</text>
+        <text x="401" y="72" font-size="9" fill="#5a6b4c">flor sin hoja</text>
+
+        <text x="226" y="16" font-size="10" font-weight="800" fill="#8a9a7a" letter-spacing=".05em">DE DÓNDE SALE LA FLOR DE AGOSTO</text>
+        <text x="226" y="99" font-size="10.5" fill="#5a6b4c">La reserva es fija. Cada corte que hiciste sacó yemas de la cola</text>
+        <text x="226" y="112" font-size="10.5" fill="#5a6b4c">del reparto — y toda esa savia va a las que dejaste.</text>
+      </g>
+    </svg>
+    <p>Por eso un frutal podado no florece <em>menos</em>: florece <b>más concentrado</b>. La cuenta bancaria era la misma antes y después de tu tijera; lo que cambiaste fue <b>entre cuántas bocas se reparte</b>. Ese reparto lo decidiste el 2 de agosto a las dos y media de la tarde, y recién ahora se ve.</p>
+  </div>
+
+  <div class="blk frio">
+    <h3>🌡️ Lo chequeé: la flor está a salvo</h3>
+    <p>Una floración de agosto tiene un solo enemigo real, y es una <b>helada arriba de la flor abierta</b> — quema el ovario y ese año no hay fruta. Así que miré el pronóstico completo hasta el 28 antes de escribirte esto.</p>
+    <p><b>Cero heladas.</b> La mínima más baja de los próximos 14 días es <b>4,8 °C</b>, el 25. Nunca toca cero. No hay nada que tapar, ni nada que pedirle a nadie que vaya a tapar.</p>
+    <p>Y hay un regalo escondido en el frío: del 17 al 23 las máximas van de <b>9,3 a 12,0 °C</b>. Con ese techo la flor abre <b>despacio</b> y dura más. Tus cuatro fichas dan la ventana <b>agosto–setiembre</b>: hay chance real de que el domingo 23, cuando bajes del avión, <b>todavía haya flor abierta esperándote</b>. No te lo prometo — te digo de dónde sale el número.</p>
+  </div>
+
+  <section class="blk tap">
+    <h3>🍐 Un solo hallazgo con consecuencia</h3>
+    <p>Leyendo la ficha de la pera para escribir esto, me tropecé con el renglón de tips que vos ya leíste en julio: <b>«la pera Williams suele necesitar polinizador cercano para cuajar bien — otra variedad de pera»</b>.</p>
+    <p>Fui a buscar la otra pera del catálogo. <b>En 52 fichas hay una sola pera.</b> La que está floreciendo ahora está floreciendo sola.</p>
+    <p>Da fruta igual (febrero–marzo, tu ficha lo registra), pero cuaja bastante menos de lo que podría. Y esto se arregla <b>una vez en la vida y en invierno</b>, o sea: no ahora, no en el viaje.</p>
+    <ul>
+      <li>qué variedad de pera florece <b>en la misma ventana</b> que la Williams (si no coinciden, no sirve de nada);</li>
+      <li>dónde va en el fondo <b>sin robarle sol de la mañana</b> a lo que ya está;</li>
+      <li>en qué mes exacto se planta y qué hay que pedir en el vivero.</li>
+    </ul>
+    <p>Un tap y lo tengo armado para el 24. Vos no tocás una pala hasta el invierno que viene.</p>
+    <div class="yn">
+      <button type="button" onclick="engageAnswer('florecio-pera-companera','si',this)">Sí, buscale compañera</button>
+      <button type="button" onclick="engageAnswer('florecio-pera-companera','no',this)">Está bien sola</button>
+      <span class="q-hint"></span>
+    </div>
+  </section>
+
+  <section class="blk tap">
+    <h3>📸 El 23, ¿te pido una foto?</h3>
+    <p>Es la primera vez que puedo cerrar un círculo entero con datos tuyos: <b>tu corte del 2 de agosto → la flor de hoy</b>. Lo único que falta es la foto del resultado.</p>
+    <p>Si decís que sí, el domingo 23 te llega <b>un recordatorio de una línea</b>: sacale una foto al durazno. Yo te devuelvo el veredicto — si la poda en vaso abrió bien el centro, si la flor quedó repartida o amontonada, y qué corregir en la del año que viene. Si decís que no, no te lo menciono más.</p>
+    <div class="yn">
+      <button type="button" onclick="engageAnswer('florecio-foto-23','si',this)">Dale, pedímela</button>
+      <button type="button" onclick="engageAnswer('florecio-foto-23','no',this)">Mejor no</button>
+      <span class="q-hint"></span>
+    </div>
+  </section>
+
+  <div class="blk">
+    <h3>😍 ¿Qué te pareció esta?</h3>
+    <p>Es la primera que armo con <b>tu propio trabajo como protagonista</b> en vez de con datos de las plantas. Quiero saber si eso se nota.</p>
+    <div class="rx">
+      <button type="button" onclick="engageReact('florecio-lo-que-podaste','love',this)">😍</button>
+      <button type="button" onclick="engageReact('florecio-lo-que-podaste','like',this)">🙂</button>
+      <button type="button" onclick="engageReact('florecio-lo-que-podaste','meh',this)">😐</button>
+      <button type="button" onclick="engageReact('florecio-lo-que-podaste','no',this)">🙅</button>
+      <span class="react-hint"></span>
+    </div>
+  </div>
+
+  <div class="blk">
+    <h3>📅 Slots disponibles</h3>
+    <p>Si te gustó, prendé dónde querés que vuelva — <b>«lo que dio tu trabajo»</b>, renovado cada vez con lo que hayas cerrado. Si no prendés ninguno, no vuelve, y en su lugar te llega otra cosa nueva.</p>
+    <div class="slot">
+      <div class="lbl">Lunes 18:00<small>Arranque de semana</small></div>
+      <div class="yn">
+        <button type="button" onclick="engageAnswer('florecio-slot-lun18','si',this)">Sí</button>
+        <button type="button" onclick="engageAnswer('florecio-slot-lun18','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="slot">
+      <div class="lbl">Sábado 11:00<small>Mañana de fin de semana</small></div>
+      <div class="yn">
+        <button type="button" onclick="engageAnswer('florecio-slot-sab11','si',this)">Sí</button>
+        <button type="button" onclick="engageAnswer('florecio-slot-sab11','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="blk">
+    <h3>✅ Lo que ya prendiste</h3>
+    <p>Guardado acá, no te lo mando suelto. <b>En pausa hasta que vuelvas</b> — no es deber de hoy.</p>
+    <a class="lnk" href="https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html">
+      <span class="em">🪚</span>
+      <span class="t">El Taller nº 1 — poda de carozos<small>Aprobada en los dos slots. Es literalmente el manual que produjo la flor de esta página.</small></span>
+      <span class="go2">›</span>
+    </a>
+    <a class="lnk" href="https://gardening-chi.vercel.app/engage/2026-08-15-florecio-lo-que-podaste-pitch.html">
+      <span class="em">💡</span>
+      <span class="t">Cómo se financiaría esto<small>6 modelos de negocio para esta experiencia — 3 sensatos, 3 delirantes.</small></span>
+      <span class="go2">›</span>
+    </a>
+  </div>
+
+  <section class="blk fb-blk" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>Esto lo leo yo, el agente del jardín, antes de armar la próxima. Tu texto pesa más que cualquier botón: si me decís «más corto», «esto sí», «dejame en paz hasta el 23», lo hago sin discutir.</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('florecio-lo-que-podaste', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+</div>
+
+<div class="engage-actions">
+  <button onclick="engageApprove('2026-08-15-florecio-lo-que-podaste')">✅ Aprobar esta mejora</button>
+  <button onclick="engageRejected('2026-08-15-florecio-lo-que-podaste')">✕ No me interesa</button>
+</div>
+
+<p class="pie">Armado el 15/08/2026 cruzando el campo <em>flowering</em> de las 52 fichas del catálogo con tus tareas cerradas.
+Las 6 con agosto adentro: ciruelo F-4, romero B-26, durazno B-30/B-35, viraró B-32, ciruela B-38, pera B-39.
+Fechas de poda tomadas de tus propios tildes: B-30 y B-38 el 02/08 14:25, F-4 el 02/08 19:34, B-39 el 23/07 15:42 (hora de Montevideo).
+Pronóstico re-verificado hoy contra open-meteo para Montevideo, 14 días. Mínima absoluta del período: 4,8 °C el 25/08.
+Del 7 al 23 de agosto no te mando ninguna tarea — tal cual te lo dije el 6.</p>
+
+<script src="engage.js"></script>
+</body></html>

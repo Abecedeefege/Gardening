@@ -1025,7 +1025,19 @@
     "2026-08-10-ultima-mandarina"
    ],
    "result_notes": "⬛ CERO APERTURA — VEREDICTO SUSPENDIDO (re-reconfirmado 13/08). Enviada lun 10/08 18:11 -03 (lag del dispatcher: 11 min, el mejor medido). 0 clicks / 0 taps / 0 slots a 3 días, dentro de la misma ventana ciega del viaje. NO se archiva el formato «tira de fruta / lo que pasa mientras no estás». Si prendió `mandarina-parte-vuelta`, el parte del 23/08 es deuda comprometida."
+  },
+  {
+   "id": "2026-08-15-florecio-lo-que-podaste",
+   "title": "🌸 Floreció lo que podaste — el resultado de su propio trabajo, con fecha y hora",
+   "page": "engage/2026-08-15-florecio-lo-que-podaste.html",
+   "created": "2026-08-15",
+   "status": "pending",
+   "hypothesis": "Formato NUEVO nunca probado en el canal: el protagonista no es una planta ni un dato del catalogo, es EL TRABAJO DEL USUARIO devuelto como resultado observable. Cruce inedito: campo flowering de las 52 fichas x los timestamps reales de sus propios tildes (taller-arbol-B-30 y B-38 el 02/08 14:25, podo-F-4 el 02/08 19:34, plant-B-39 done el 23/07 15:42). Hallazgo: de 6 especies con agosto en su ventana de floracion, 4 pasaron por su tijera hace 13 y 23 dias, y estan abriendo AHORA mientras el no esta. Tres apuestas: (1) el bucle cerrado accion->resultado es la unica municion que ninguna experiencia anterior uso, y ataca la meta-regla #1 (sustancia sobre SU jardin) desde el angulo de mayor recompensa emocional posible sin pedirle nada — cero-deber estricto, mandatorio durante el viaje; (2) sustancia tecnica real y contraintuitiva: los 4 florecen DESNUDOS (flor antes que hoja) o sea que la flor se paga con la reserva del verano pasado, y la poda no reduce la floracion sino que concentra el reparto de una reserva fija — con diagrama propio de 4 pasos, que es lo que gano con El Taller; (3) el hallazgo con consecuencia: su propia ficha de la pera Williams pide polinizador de otra variedad y en 52 fichas hay UNA sola pera, o sea la que florece hoy florece sola. Se decide con un tap desde el avion y produce trabajo MIO (variedad + ubicacion + mes) para la reentrada del 24. Ademas: pronostico re-verificado hoy contra open-meteo (el numero que traia la memoria, ~45 mm, se cayo a 9,7 mm — NO se publico) y el frio real 17-23/08 (max 9,3-12,0) se usa honestamente como regalo: alarga la floracion, hay chance de que quede flor abierta el 23. Segundo tap = consentimiento para pedirle una foto el 23 y devolverle veredicto de poda (el before/after que learnings marca como el proximo salto de valor). Prediccion: 😍 + al menos un slot prendido + el tap de la pera en si.",
+   "notified_by": [
+    "2026-08-15-florecio-lo-que-podaste"
+   ],
+   "result_notes": null
   }
  ],
- "_updated_at": "2026-08-13T09:10:00.000Z"
+ "_updated_at": "2026-08-15T09:20:00.000Z"
 }

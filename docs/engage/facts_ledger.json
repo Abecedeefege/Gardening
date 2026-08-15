@@ -1,6 +1,6 @@
 {
  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-08-14",
+ "_updated": "2026-08-15",
  "plants": {
   "F-1": {
    "common": "Guayabo del país",
@@ -87,7 +87,7 @@
   },
   "F-4": {
    "common": "Ciruelo de jardín",
-   "paginas_historicas": 12,
+   "paginas_historicas": 13,
    "featured": [
     {
      "date": "2026-07-19",
@@ -113,6 +113,11 @@
      "date": "2026-08-02",
      "page": "2026-08-02-que-mas-podo.html",
      "fact": "ANGULO RESPUESTA (pregunta directa del usuario): ventana de poda real de ficha + porque florece en madera nueva. B-25 = dosis de neem y barrera de hormigas."
+    },
+    {
+     "date": "2026-08-15",
+     "page": "2026-08-15-florecio-lo-que-podaste.html",
+     "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Tilde podo-F-4 el 02/08 19:34; flor rosada desnuda, frente/oeste sol de tarde."
     }
    ]
   },
@@ -738,7 +743,7 @@
   },
   "B-26": {
    "common": "Romero",
-   "paginas_historicas": 16,
+   "paginas_historicas": 17,
    "featured": [
     {
      "date": "2026-07-18",
@@ -774,6 +779,11 @@
      "date": "2026-08-08",
      "page": "2026-08-08-el-hueco.html",
      "fact": "DATO DE GRAFICO, no fun_fact: unica especie en flor en junio Y julio -> es el AGUJERO, no la curiosidad. Ademas: multiplicar por gajo para dar volumen al mes vacio."
+    },
+    {
+     "date": "2026-08-15",
+     "page": "2026-08-15-florecio-lo-que-podaste.html",
+     "fact": "MENCION DE CONTEO solamente (una de las 6 con agosto en flowering, jun-oct). SIN fun_fact - sigue vedada para fun_fact hasta fines de agosto."
     }
    ]
   },
@@ -816,7 +826,7 @@
   },
   "B-30": {
    "common": "Durazno",
-   "paginas_historicas": 13,
+   "paginas_historicas": 14,
    "featured": [
     {
      "date": "2026-07-20",
@@ -852,12 +862,17 @@
      "date": "2026-08-02",
      "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
      "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
+    },
+    {
+     "date": "2026-08-15",
+     "page": "2026-08-15-florecio-lo-que-podaste.html",
+     "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Poda en vaso abierto tildada 02/08 14:25 (taller-arbol-B-30)."
     }
    ]
   },
   "B-32": {
    "common": "Viraró",
-   "paginas_historicas": 12,
+   "paginas_historicas": 13,
    "featured": [
     {
      "date": "2026-07-19",
@@ -878,6 +893,11 @@
      "date": "2026-08-08",
      "page": "2026-08-08-el-hueco.html",
      "fact": "PROTAGONISTA: viraro florece agosto-setiembre (esta arrancando AHORA, durante el viaje) + dioica, pie hembra arma fruto alado color salmon. Angulo NUEVO (nunca se uso la floracion ni la dioicia)."
+    },
+    {
+     "date": "2026-08-15",
+     "page": "2026-08-15-florecio-lo-que-podaste.html",
+     "fact": "MENCION DE CONTEO solamente (una de las 6 con agosto en flowering). NO protagonista y SIN el fun_fact de los sepalos rosados: ese angulo ya se uso 19/07, 26/07, 31/07 y 08/08 (protagonista) - repetirlo hoy habria violado la regla de anti-repeticion que nace del reclamo del 18/07. Descansa hasta el 22/08."
     }
    ]
   },
@@ -961,7 +981,7 @@
   },
   "B-38": {
    "common": "Ciruela amarilla",
-   "paginas_historicas": 9,
+   "paginas_historicas": 10,
    "featured": [
     {
      "date": "2026-07-18",
@@ -982,12 +1002,17 @@
      "date": "2026-08-02",
      "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
      "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
+    },
+    {
+     "date": "2026-08-15",
+     "page": "2026-08-15-florecio-lo-que-podaste.html",
+     "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Tilde taller-arbol-B-38 el 02/08 14:25, flor blanca misma ventana."
     }
    ]
   },
   "B-39": {
    "common": "Pera Williams",
-   "paginas_historicas": 12,
+   "paginas_historicas": 13,
    "featured": [
     {
      "date": "2026-07-20",
@@ -1018,6 +1043,11 @@
      "date": "2026-08-08",
      "page": "2026-08-08-el-hueco.html",
      "fact": "Referencia de UBICACION (rincon sur sombrio/humedo) para la camelia. No featured por fun_fact."
+    },
+    {
+     "date": "2026-08-15",
+     "page": "2026-08-15-florecio-lo-que-podaste.html",
+     "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Cierre del circulo: la instruccion 'no cortes los dardos - yemas gordas' que leyo el 23/07 (plant-B-39 done 15:42) son exactamente las yemas que abren hoy. Ademas HALLAZGO NUEVO con consecuencia: su ficha pide polinizador de otra variedad y en 52 fichas hay UNA sola pera -> tap florecio-pera-companera para la reentrada del 24/08."
     }
    ]
   },
@@ -1245,7 +1275,7 @@
   },
   "B-35": {
    "common": "B-35",
-   "paginas_historicas": 2,
+   "paginas_historicas": 3,
    "featured": [
     {
      "date": "2026-08-01",
@@ -1256,6 +1286,11 @@
      "date": "2026-08-02",
      "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
      "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
+    },
+    {
+     "date": "2026-08-15",
+     "page": "2026-08-15-florecio-lo-que-podaste.html",
+     "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Segundo durazno, mismo tilde que B-30 el 02/08."
     }
    ]
   }
