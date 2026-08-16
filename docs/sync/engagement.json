@@ -1,247 +1,6 @@
 {
-  "_updated_at": "2026-08-15T09:20:00.000Z",
+  "_updated_at": "2026-08-16T09:10:00.000Z",
   "events": [
-    {
-      "_id": "msamsrjtcqu7l9",
-      "type": "notification_clicked",
-      "nid": "2026-08-01-el-taller",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:14:30.904Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamsrjtrufyu9",
-      "type": "page_visit",
-      "page": "engage/2026-08-01-el-taller.html",
-      "nid": "2026-08-01-el-taller",
-      "src": "push",
-      "ts": "2026-08-01T17:14:30.904Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamtzeyi8g4pe",
-      "type": "answer",
-      "qid": "taller-paso-1",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:15:27.754Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamu4bv28mnhh",
-      "type": "answer",
-      "qid": "taller-paso-2",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:15:34.123Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamubtle7o3yz",
-      "type": "answer",
-      "qid": "taller-paso-3",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:15:43.833Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamudbkwra5xm",
-      "type": "answer",
-      "qid": "taller-paso-4",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:15:45.776Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamuomj9kx58e",
-      "type": "answer",
-      "qid": "taller-paso-3",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:16:00.427Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamup8g76vlhn",
-      "type": "answer",
-      "qid": "taller-paso-4",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:16:01.216Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamv6krp6bu2y",
-      "type": "answer",
-      "qid": "taller-paso-5",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:16:23.691Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamvbmceobjzh",
-      "type": "answer",
-      "qid": "taller-paso-6",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:16:30.228Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamvemo2x9vs9",
-      "type": "answer",
-      "qid": "taller-paso-7",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:16:34.128Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamwdglallz9w",
-      "type": "dwell",
-      "seconds": 168,
-      "scroll_pct": 95,
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:17:19.269Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamwdn0m67bd3",
-      "type": "page_visit",
-      "page": "engage/2026-08-01-el-taller.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-08-01T17:17:19.500Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamwuuzcvpzjp",
-      "type": "feedback_text",
-      "target": "el-taller",
-      "text": "Genial esto.  Pero hoy está lloviendo, mándamela cuando esté lindo!",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:17:41.819Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamwyw9paxxav",
-      "type": "reaction",
-      "target": "el-taller",
-      "value": "love",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:17:47.049Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamx0fss7kx59",
-      "type": "dwell",
-      "seconds": 30,
-      "scroll_pct": 100,
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:17:49.048Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamyn40tllapy",
-      "type": "answer",
-      "qid": "taller-paso-1",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:19:05.088Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamypowfuceej",
-      "type": "answer",
-      "qid": "taller-paso-2",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:19:08.431Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamyqyz60up13",
-      "type": "answer",
-      "qid": "taller-paso-3",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:19:10.091Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamyrqgayzigs",
-      "type": "answer",
-      "qid": "taller-paso-4",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:19:11.080Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamysd5d7ehyn",
-      "type": "answer",
-      "qid": "taller-paso-5",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:19:11.897Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamyt3njntvjr",
-      "type": "answer",
-      "qid": "taller-paso-6",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:19:12.851Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msamyts4fzkk7i",
-      "type": "answer",
-      "qid": "taller-paso-7",
-      "value": "ok",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:19:13.732Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msan03iqehazfk",
-      "type": "answer",
-      "qid": "el-taller-slot-lun18",
-      "value": "si",
-      "page": "engage/2026-08-01-el-taller.html",
-      "ts": "2026-08-01T17:20:13.010Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msan0g9321gpxy",
-      "type": "notification_clicked",
-      "nid": "2026-08-01-jardin-hoy",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-08-01T17:20:29.510Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msan0g93ssfw76",
-      "type": "page_visit",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "nid": "2026-08-01-jardin-hoy",
-      "src": "push",
-      "ts": "2026-08-01T17:20:29.510Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "msan0zi4jjnkkg",
-      "type": "dwell",
-      "seconds": 25,
-      "scroll_pct": 98,
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-08-01T17:20:54.460Z",
-      "device": "sin-nombre"
-    },
     {
       "_id": "msbxja6qxessdr",
       "type": "notification_clicked",
@@ -963,6 +722,27 @@
       ],
       "reactions": [
         "el-parte:meh"
+      ]
+    },
+    "2026-08-01": {
+      "sent": 0,
+      "clicked": 2,
+      "visits": 3,
+      "approvals": 0,
+      "answer": 17,
+      "reactions": [
+        "el-taller:love"
+      ],
+      "answers": [
+        "el-taller-slot-lun18:si"
+      ],
+      "feedback": [
+        "Genial esto.  Pero hoy está lloviendo, mándamela cuando esté lindo!"
+      ],
+      "dwell": [
+        "168s@95%",
+        "30s@100%",
+        "25s@98%"
       ]
     }
   }
