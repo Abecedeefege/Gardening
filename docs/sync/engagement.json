@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-16T18:53:59.027Z",
+  "_updated_at": "2026-08-16T18:54:03.764Z",
   "events": [
     {
       "_id": "msbxja6qxessdr",
@@ -436,6 +436,15 @@
       "scroll_pct": 28,
       "page": "engage/2026-06-29-feed-jardin.html",
       "ts": "2026-08-16T18:54:01.383Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msw5ylrbvmfqfj",
+      "type": "page_visit",
+      "page": "engage/2026-06-30-superpoderes-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-16T18:54:05.735Z",
       "device": "pix9"
     }
   ],
