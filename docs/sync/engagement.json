@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-16T09:10:00.000Z",
+  "_updated_at": "2026-08-16T18:53:50.828Z",
   "events": [
     {
       "_id": "msbxja6qxessdr",
@@ -410,6 +410,15 @@
       "page": "engage/2026-08-03-el-taller-2.html",
       "ts": "2026-08-04T00:15:16.029Z",
       "device": "sin-nombre"
+    },
+    {
+      "_id": "msw5ybnf92jyuq",
+      "type": "page_visit",
+      "page": "engage/2026-06-29-feed-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-16T18:53:52.633Z",
+      "device": "pix9"
     }
   ],
   "daily_summary": {
