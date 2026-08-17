@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-17T21:25:12.776Z",
+  "_updated_at": "2026-08-17T21:25:14.007Z",
   "events": [
     {
       "_id": "msdoe32lrrc66m",
@@ -284,6 +284,23 @@
       "nid": "2026-08-04-tarjeta-campo",
       "src": "push",
       "ts": "2026-08-04T20:56:32.752Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msxqstuso2tp2p",
+      "type": "notification_clicked",
+      "nid": "2026-08-17-preguntas-abiertas",
+      "page": "engage/2026-08-17-preguntas-abiertas.html",
+      "ts": "2026-08-17T21:25:14.401Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msxqstus2sct3j",
+      "type": "page_visit",
+      "page": "engage/2026-08-17-preguntas-abiertas.html",
+      "nid": "2026-08-17-preguntas-abiertas",
+      "src": "push",
+      "ts": "2026-08-17T21:25:14.401Z",
       "device": "sin-nombre"
     }
   ],
