@@ -1,5 +1,18 @@
 {
-  "_updated_at": "2026-08-16T09:15:00.000Z",
-  "_nota": "Domingo 16/08 = día 10 del VIAJE (7 al 23/08). La cadencia semanal día-consciente NO le da ningún slot al domingo (ni tarea ni experiencia), así que la cola queda VACÍA por diseño: 0 push nuevas. Corrida de mantenimiento pura — feedback leído (0 eventos nuevos: el usuario sigue en silencio desde el 04/08, día 12), proposals gestionadas, compactación de engagement.json (73→46 eventos, el 01/08 pasó a daily_summary preservando su 😍, su slot en «sí», su feedback y sus dwells) y de send_log (11→9), ledger y learnings actualizados. Se re-verificó el pronóstico contra open-meteo aunque hoy no se publica nada: por primera vez en tres corridas los números de ayer SE SOSTIENEN (máximas 8,5-12,5 °C del 17 al 23, cero heladas en 10 días, mínima absoluta 4,9 °C el 25/08) — o sea que la tesis del «frío que alarga la floración» publicada ayer sigue en pie. La lluvia 16→23 se movió de 9,7 a 16,0 mm, pero ese número no se publicó, así que no hay nada que corregir. Entrada la cola: el próximo slot es LUNES 17/08 — experiencia 18:00 (el slot de TAREA de las 10:00 queda vacío: es el 5º de los 7 que caen dentro del compromiso publicado el 06/08).",
-  "notifications": []
+  "_updated_at": "2026-08-17T09:20:00.000Z",
+  "_nota": "Lunes 17/08 = día 11 del VIAJE (7 al 23/08). La cadencia semanal día-consciente le da al lunes DOS slots: tarea 10:00 y experiencia 18:00. El slot de TAREA queda VACÍO a propósito — es el 5º de los 7 que caen dentro del compromiso publicado el 06/08 («del 7 al 23 no te mando ninguna tarea»). Se encola SOLO la experiencia de las 18:00: una push, con la original nueva del día (2026-08-17-preguntas-abiertas) que agrupa y linkea adentro las aprobadas del slot (el-taller nº1) y la del sábado. Contenido cero-deber: los seis expedientes de identidad abiertos del catálogo, que no se resuelven trabajando sino esperando la floración de setiembre-noviembre. Elenco 100% fresco: B-13, B-20, B-2/B-2B/B-2C, B-43, B-45, B-49 (+ B-47 y B-48 en el coda) — ninguno usado en los últimos 7 días, ninguno de los quemados del 15/08. Pronóstico re-verificado hoy contra open-meteo aunque la página casi no lo usa: hoy 17/08 min 10,0 máx 11,8 y 3,1 mm; máximas del 17 al 23 entre 8,7 y 11,8 °C; mínima absoluta 3,8 °C el 25/08, cero heladas en 14 días. La tesis del frío publicada el 15/08 se sostiene (si algo, más frío todavía).",
+  "notifications": [
+    {
+      "id": "2026-08-17-preguntas-abiertas",
+      "title": "Tu jardín tiene 6 preguntas abiertas",
+      "body": "Ninguna se contesta trabajando: se contestan solas. Y la primera vence tres semanas después de que vuelvas.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-08-17-preguntas-abiertas.html",
+      "send_at": "2026-08-17T18:00:00-03:00",
+      "expires_at": "2026-08-17T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-08-17"
+    }
+  ]
 }

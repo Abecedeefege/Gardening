@@ -1036,8 +1036,20 @@
       "notified_by": [
         "2026-08-15-florecio-lo-que-podaste"
       ],
-      "result_notes": "Enviada sáb 15/08 11:19 (dispatcher lag 19 min sobre el send_at de las 11:00). A las 24 h: ⬛ CERO eventos — 0 clicks, 0 taps, 0 slots, 0 feedback. VEREDICTO SUSPENDIDO, no archivada: cae de lleno en la ventana ciega del viaje (7-23/08), donde el usuario lleva 12 días sin un solo evento (último: 04/08 00:15) y un ⬛ mide disponibilidad, no contenido. El bucle cerrado (tick del usuario con hora → fenología de la ficha) sigue siendo munición VIVA y sin gastar: se re-mide de cero en la reentrada del 24/08 y su segunda cuota (poda→FRUTA) está reservada para diciembre-enero. Sí quedó verificado a 24 h lo que la página publicó: el pronóstico del 16/08 confirma máximas de 8,5-12,5 °C del 17 al 23 y cero heladas (mínima absoluta 4,9 °C el 25/08), así que la tesis del «frío que alarga la floración» no quedó desmentida."
+      "result_notes": "⬛ CERO SEÑAL a 48 h (0 clicks, 0 taps, 0 slots, 0 feedback) — VEREDICTO SIGUE SUSPENDIDO. Enviada sáb 15/08 11:19. Ventana ciega del viaje (7-23/08): un ⬛ acá mide disponibilidad, no contenido. NOVEDAD 17/08: el dom 16/08 15:53 UY el usuario SÍ entró al sitio por su cuenta (src=direct desde ideas.html) y abrió dos experiencias VIEJAS (feed-jardin 29/06 y superpoderes-jardin 30/06), 9 y 10 s, 28-29% de scroll — pero NO abrió esta. O sea: está alcanzable y curioso, y aun así el push del sábado no se abrió. El eje (bucle cerrado acción→resultado) NO se archiva; se re-mide de cero el 24/08. Los taps florecio-pera-companera y florecio-foto-23 siguen sin activar: no son deuda comprometida. Se linkea desde la landing del 17/08 para darle una segunda chance de lectura sin gastar una push."
+    },
+    {
+      "id": "2026-08-17-preguntas-abiertas",
+      "title": "Los expedientes abiertos — las 6 preguntas que el catálogo no puede contestar todavía",
+      "page": "engage/2026-08-17-preguntas-abiertas.html",
+      "created": "2026-08-17",
+      "status": "pending",
+      "hypothesis": "Primera experiencia construida sobre lo que el catálogo NO sabe en vez de sobre lo que sabe. Hipótesis: durante el viaje el usuario no puede HACER, y el 15/08 probé mostrarle lo que ya hizo; hoy pruebo la otra punta — darle AGENCIA a costo cero: seis expedientes reales de identidad/destino sin resolver (B-13, B-20, B-2+hijos, B-43, B-45, B-49), cada uno con su horquilla de candidatos y, sobre todo, con QUÉ CAMBIA según la respuesta (riego corrido, mes de poda, cerco gratis vs arrancar ahora, trepadora agresiva vs mansa, una obra de hierro a 20 años). El bloque de sustancia es botánico duro y nunca usado: por qué la hoja converge por ambiente y la flor no, y por lo tanto por qué esperar es la respuesta técnica correcta y no desprolijidad — reencuadra seis 'pendientes' como seis decisiones bien tomadas. El tap principal (abiertas-agenda) es el patrón que learnings marca como el mejor disponible en viaje: un tap suyo que produce trabajo MÍO (yo armo la agenda de las 6 ventanas y le mando una línea la semana justa de cada una). El coda (B-47 palmera, B-48 roble) cierra dos expedientes con una foto de hoja y da un segundo tap con fecha (24/08). Elenco 100% fresco, cero plantas quemadas. Riesgo asumido: sigue dentro de la ventana ciega del viaje, así que un ⬛ no archiva nada.",
+      "notified_by": [
+        "2026-08-17-preguntas-abiertas"
+      ],
+      "result_notes": null
     }
   ],
-  "_updated_at": "2026-08-16T09:15:00.000Z"
+  "_updated_at": "2026-08-17"
 }

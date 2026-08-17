@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🔎 Las preguntas abiertas de tu jardín</title>
+<meta property="og:title" content="🔎 Tu jardín tiene 6 preguntas abiertas">
+<meta property="og:description" content="Seis fichas de tus 52 dicen «a confirmar» desde mayo. Ninguna se contesta trabajando: se contestan esperando. La primera vence tres semanas después de que vuelvas.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#fff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.13);
+    --viol:#6a4fa3; --viol2:#efe9fa; --viol3:#d8ccf0; --sol:#e0a92e; --oscuro:#14231a;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 8px; }
+
+  .hero{ position:relative; margin:0 calc(-1*var(--pad)); }
+  .hero img{ width:100%; height:200px; object-fit:cover; display:block; }
+  .hero .shade{ position:absolute; inset:0; background:linear-gradient(to top,rgba(20,35,26,.9) 0%,rgba(20,35,26,.15) 58%,rgba(20,35,26,.05) 100%); }
+  .hero .cap{ position:absolute; left:var(--pad); right:var(--pad); bottom:12px; color:#fff; }
+  .hero .cap b{ display:block; font-size:19px; font-weight:900; letter-spacing:-.3px; }
+  .hero .cap span{ font-size:12.5px; font-weight:700; opacity:.85; }
+
+  .kick{ margin:14px 0 2px; font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--ink3); }
+  h1{ font-size:26px; line-height:1.15; letter-spacing:-.6px; font-weight:900; margin:4px 0 10px; }
+  .lead{ font-size:15.5px; color:var(--ink2); }
+  .lead b{ color:var(--ink); }
+
+  .find{ margin:18px 0 0; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 16px; box-shadow:0 3px 12px rgba(45,80,22,.06); }
+  .cuenta{ display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:13px; }
+  .num{ font-size:50px; font-weight:900; letter-spacing:-2px; line-height:1; color:var(--ink3); text-align:center; }
+  .num small{ display:block; font-size:10.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:var(--ink3); margin-top:6px; line-height:1.25; }
+  .num.hot{ color:var(--viol); }
+  .flecha{ font-size:24px; color:var(--ink3); font-weight:900; padding-bottom:16px; }
+  .find p{ font-size:15px; color:var(--ink2); text-align:center; }
+  .find p b{ color:var(--ink); }
+
+  .casos{ margin-top:14px; display:flex; flex-direction:column; gap:11px; }
+  .c{ background:var(--card); border:1px solid var(--line); border-radius:17px; overflow:hidden; }
+  .c.abierto{ border-color:var(--viol3); }
+  .c img{ width:100%; height:150px; object-fit:cover; display:block; }
+  .c .body{ padding:13px 14px 14px; }
+  .c .top{ display:flex; align-items:baseline; justify-content:space-between; gap:8px; }
+  .c .nom{ font-size:16px; font-weight:900; letter-spacing:-.2px; }
+  .c .cod{ font-size:11px; font-weight:800; color:var(--ink3); letter-spacing:.03em; }
+  .sello{ display:inline-block; margin-top:8px; background:var(--viol2); color:var(--viol); border-radius:8px;
+          padding:5px 9px; font-size:11.5px; font-weight:900; letter-spacing:.02em; }
+  .sello.gris{ background:#eef1ea; color:var(--ink3); }
+  .c .txt{ font-size:13.8px; color:var(--ink2); margin-top:9px; }
+  .c .txt b{ color:var(--ink); }
+  .c .txt+.txt{ margin-top:7px; }
+  .horq{ margin-top:10px; border-top:1px dashed var(--line); padding-top:9px; }
+  .horq div{ display:flex; gap:8px; font-size:13px; color:var(--ink2); padding:3px 0; }
+  .horq div b{ color:var(--ink); font-weight:800; }
+  .horq .k{ flex:0 0 auto; font-weight:900; color:var(--viol); }
+  .cambia{ margin-top:10px; background:#f7f9f4; border-left:3px solid var(--verde2); border-radius:0 9px 9px 0; padding:9px 11px; font-size:13.2px; color:var(--ink2); }
+  .cambia b{ color:var(--ink); }
+  .bar{ display:flex; gap:2.5px; margin-top:11px; }
+  .bar i{ flex:1; height:9px; border-radius:2px; background:#eef1ea; }
+  .bar i.on{ background:var(--viol3); }
+  .bar i.hoy{ background:var(--oscuro); }
+  .meses{ display:flex; gap:2.5px; margin-top:3px; }
+  .meses i{ flex:1; text-align:center; font-size:8.5px; font-weight:800; color:var(--ink3); font-style:normal; }
+
+  .blk{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:17px 16px; }
+  .blk h3{ font-size:16.5px; font-weight:900; margin-bottom:6px; letter-spacing:-.2px; }
+  .blk p{ font-size:14px; color:var(--ink2); }
+  .blk p+p{ margin-top:8px; }
+  .blk p b{ color:var(--ink); }
+  .blk svg{ display:block; width:100%; height:auto; margin:12px 0 4px; }
+
+  .clave{ background:linear-gradient(180deg,#f6f3fc,#fff); border-color:#ddd2f0; }
+  .clave h3{ color:var(--viol); }
+
+  .tap{ background:var(--oscuro); border-color:var(--oscuro); color:#eef4ec; }
+  .tap h3{ color:#fff; }
+  .tap p{ color:#b7c6bb; }
+  .tap p b{ color:#fff; }
+  .tap ul{ margin:9px 0 0 17px; padding:0; font-size:13.5px; color:#cfe0d2; }
+  .tap li{ margin:4px 0; }
+  .tap li b{ color:#fff; }
+  .yn{ display:flex; gap:8px; margin-top:13px; align-items:center; flex-wrap:wrap; }
+  .yn button{ flex:1; min-width:100px; border:none; border-radius:12px; padding:13px 10px; font:900 14.5px var(--sans); cursor:pointer; background:#2f7d4f; color:#fff; }
+  .yn button:last-of-type{ background:rgba(255,255,255,.12); color:#dfe8e0; }
+  .yn button.sel{ outline:3px solid #8fd06a; }
+  .yn button:disabled{ opacity:.55; }
+  .q-hint{ width:100%; font-size:12.5px; font-weight:800; color:#8fd06a; min-height:1.1em; }
+
+  .slot{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding:11px 0; border-bottom:1px dashed var(--line); flex-wrap:wrap; }
+  .slot:last-of-type{ border-bottom:none; }
+  .slot .lbl{ font-size:14px; font-weight:800; }
+  .slot .lbl small{ display:block; font-weight:600; font-size:12px; color:var(--ink3); }
+  .slot .yn{ margin-top:0; flex:0 0 auto; }
+  .slot .yn button{ flex:0 0 auto; min-width:56px; padding:9px 15px; font-size:13.5px; background:var(--verde3); color:var(--verde); }
+  .slot .yn button:last-of-type{ background:#eceee9; color:var(--ink2); }
+  .slot .yn button.sel{ background:var(--verde); color:#fff; outline:none; }
+  .slot .q-hint{ color:var(--verde2); }
+
+  .rx{ display:flex; gap:8px; margin-top:11px; flex-wrap:wrap; }
+  .rx button{ flex:1; min-width:62px; border:1px solid var(--line); background:var(--card); border-radius:13px; padding:11px 6px; font-size:24px; cursor:pointer; }
+  .rx button.sel{ background:var(--verde3); border-color:var(--verde2); }
+  .react-hint{ width:100%; font-size:12.5px; font-weight:800; color:var(--verde2); min-height:1.1em; }
+
+  .lnk{ display:flex; align-items:center; gap:11px; text-decoration:none; color:inherit; padding:12px 0; border-bottom:1px dashed var(--line); }
+  .lnk:last-of-type{ border-bottom:none; }
+  .lnk .em{ font-size:22px; }
+  .lnk .t{ flex:1; font-size:14px; font-weight:800; }
+  .lnk .t small{ display:block; font-weight:600; font-size:12.2px; color:var(--ink3); margin-top:1px; }
+  .lnk .go2{ color:var(--ink3); font-size:20px; font-weight:900; }
+
+  .fb-blk textarea{ width:100%; margin-top:9px; background:#fbfdf9; border:1px solid var(--line); border-radius:12px; color:var(--ink); padding:11px 12px; font:400 14px/1.45 var(--sans); resize:vertical; }
+  .fb-send{ margin-top:9px; width:100%; background:var(--verde); color:#fff; border:none; border-radius:12px; padding:13px; font:900 14.5px var(--sans); cursor:pointer; }
+  .fb-hint{ display:block; margin-top:8px; font-size:12.5px; font-weight:800; color:var(--verde2); min-height:1.1em; }
+
+  .engage-actions{ max-width:480px; margin:18px auto 6px; padding:0 var(--pad); display:flex; flex-direction:column; gap:9px; }
+  .engage-actions button{ width:100%; border:none; border-radius:14px; padding:15px; font:900 15px var(--sans); cursor:pointer; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:#eceee9; color:var(--ink2); }
+  .engage-actions button:active{ opacity:.8; }
+  .engage-feedback{ text-align:center; font-size:14px; font-weight:800; color:var(--verde); padding:13px; }
+  .pie{ text-align:center; font-size:11.8px; color:var(--ink3); padding:14px var(--pad) 4px; max-width:480px; margin:0 auto; line-height:1.55; }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <div class="hero">
+    <img src="https://gardening-chi.vercel.app/images/B-45_detras_b35.jpg" alt="B-45, la planta sin identificar contra la pared verde del fondo">
+    <div class="shade"></div>
+    <div class="cap"><b>B-45 · sin nombre desde mayo</b><span>fondo (este) · contra la pared verde, atrás del durazno</span></div>
+  </div>
+
+  <div class="kick">Lunes 17 de agosto · día 11 de tu viaje</div>
+  <h1>Tu jardín tiene seis preguntas abiertas.</h1>
+  <p class="lead">Fui ficha por ficha y saqué todo lo que quedó marcado «<em>a confirmar</em>» desde mayo. Son seis. Lo raro es lo que tienen en común: <b>ninguna se resuelve trabajando.</b> Se resuelven esperando — y la primera vence tres semanas después de que bajes del avión.</p>
+
+  <div class="find">
+    <div class="cuenta">
+      <div class="num">52<small>fichas<br>en el catálogo</small></div>
+      <div class="flecha">→</div>
+      <div class="num hot">6<small>con identidad o destino<br>sin resolver</small></div>
+    </div>
+    <p>Y las seis esperan <b>exactamente la misma cosa</b>: que la planta abra una flor o saque una hoja. O sea, esperan a setiembre. <b>Faltan 37 días para el equinoccio</b> y las respuestas empiezan a llegar antes.</p>
+  </div>
+
+  <div class="blk clave">
+    <h3>🔬 Por qué esperar es la respuesta técnica correcta</h3>
+    <p>Esto no es que me falte información: es que <b>la información todavía no existe</b>, y hay una razón botánica dura detrás.</p>
+    <p>Las partes vegetativas de una planta —hoja, corteza, porte— responden al <b>ambiente</b>. Dos especies que no tienen nada que ver, puestas contra la misma pared, con la misma sombra y el mismo viento, terminan pareciéndose: hoja chica y coriácea, entrenudos cortos, ramas laxas. Es convergencia, y es la razón por la que <b>B-45 lleva cuatro meses sin nombre</b> con una foto perfectamente nítida.</p>
+    <p>La flor no hace eso. La flor es el órgano reproductivo y su forma la fija <b>con quién se cruza y quién la poliniza</b>, no el lugar donde le tocó crecer. Por eso es conservadora, por eso es específica, y por eso <b>todas las claves botánicas del mundo se construyen sobre flores</b> y casi ninguna sobre hojas.</p>
+    <p>Traducido: <b>tener seis expedientes abiertos no es desprolijidad. Es haber esperado el dato bueno en vez de anotar el fácil.</b> Ahora te toca cobrarlo.</p>
+  </div>
+
+  <div class="casos">
+
+    <div class="c abierto">
+      <img src="https://gardening-chi.vercel.app/images/b13.jpg" alt="Clivia B-13">
+      <div class="body">
+        <div class="top"><span class="nom">1 · Clivia</span><span class="cod">B-13 · fondo</span></div>
+        <div class="sello">Contesta primera · setiembre</div>
+        <div class="txt">La ficha dice <em>Clivia miniata <b>(a confirmar)</b></em>. Por hoja son casi idénticas entre sí; recién cuando sube la vara floral se distinguen, y esa vara sube en <b>setiembre</b>. Es la primera del jardín en hablar.</div>
+        <div class="horq">
+          <div><span class="k">A</span><span><b>miniata</b> — umbela naranja, corola abierta, la clásica.</span></div>
+          <div><span class="k">B</span><span><b>gardenii</b> — flor tubular, más fina y colgante.</span></div>
+          <div><span class="k">C</span><span><b>robusta</b> — mata grande, flor multicolor.</span></div>
+        </div>
+        <div class="cambia">Qué cambia: tu ficha le fuerza <b>sequía en invierno</b> para estimular la floración, que es lo correcto para <em>miniata</em>. La <em>gardenii</em> florece en pleno invierno, no en primavera — si resulta ser esa, <b>el calendario de riego de esta planta está corrido varios meses</b> y hay que rehacerlo.</div>
+        <div class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="hoy"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+        <div class="meses"><i>E</i><i>F</i><i>M</i><i>A</i><i>M</i><i>J</i><i>J</i><i>A</i><i>S</i><i>O</i><i>N</i><i>D</i></div>
+      </div>
+    </div>
+
+    <div class="c abierto">
+      <img src="https://gardening-chi.vercel.app/images/b20.jpg" alt="B-20, arbusto caduco sin identificar">
+      <div class="body">
+        <div class="top"><span class="nom">2 · El arbusto pelado</span><span class="cod">B-20 · fondo</span></div>
+        <div class="sello">Contesta al brotar · set–oct</div>
+        <div class="txt">El del tambor de terracota. La ficha entera dice: <em>«Arbusto en tambor casi pelado en mayo. Imposible identificar sin hojas ni flores.»</em> Es el único de las 52 <b>sin siquiera un género tentativo</b> — ni nombre científico provisorio tiene.</div>
+        <div class="txt">Con ramas desnudas no hay nada que leer. Cuando brote van a aparecer las tres cosas que alcanzan para cerrarlo: <b>el patrón de yemas</b> (alternas u opuestas — eso solo ya parte el árbol de posibilidades al medio), <b>la hoja</b> y, con suerte, <b>la flor</b>.</div>
+        <div class="cambia">Qué cambia: mientras no sepamos qué es, <b>nadie puede decirte cuándo podarlo</b>. Si florece sobre madera vieja y lo podás en invierno, le sacás la floración del año entero. La opción segura hoy es <b>no tocarlo</b>, y esa es exactamente la instrucción vigente.</div>
+        <div class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="hoy"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+        <div class="meses"><i>E</i><i>F</i><i>M</i><i>A</i><i>M</i><i>J</i><i>J</i><i>A</i><i>S</i><i>O</i><i>N</i><i>D</i></div>
+      </div>
+    </div>
+
+    <div class="c abierto">
+      <img src="https://gardening-chi.vercel.app/images/B-2_jazmin_offshoots.jpg" alt="Jazmín B-2 con los renuevos B-2B y B-2C al pie">
+      <div class="body">
+        <div class="top"><span class="nom">3 · El jazmín y sus hijos</span><span class="cod">B-2 · B-2B · B-2C</span></div>
+        <div class="sello">Contesta en flor · octubre</div>
+        <div class="txt">Este tiene <b>dos preguntas encimadas</b>. La primera es de identidad: <em>Jasminum</em> sp., sin variedad. La segunda es una decisión que corre reloj — <b>B-2B y B-2C son renuevos basales que ya salieron</b> al pie de la madre, debajo de la Santa Rita.</div>
+        <div class="horq">
+          <div><span class="k">A</span><span><b>mesnyi</b> — flor amarilla, semidoble, sin perfume.</span></div>
+          <div><span class="k">B</span><span><b>azoricum</b> / <b>officinale</b> — blanca, perfumada.</span></div>
+          <div><span class="k">C</span><span><b>polyanthum</b> — rosada por fuera, blanca abierta.</span></div>
+        </div>
+        <div class="cambia">Qué cambia, doble: ① la variedad <b>fija el mes de poda</b> (el amarillo florece a fin de invierno sobre madera vieja: se poda después de florecer, no antes) ② los hijos. Si los dejás, en 2–3 años tenés <b>un cerco denso gratis</b> bajo la Santa Rita. Si no los querés, salen de un tirón <b>ahora</b>: cada mes que pasa la raíz agarra más.</div>
+        <div class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="hoy"></i><i></i><i class="on"></i><i class="on"></i><i></i></div>
+        <div class="meses"><i>E</i><i>F</i><i>M</i><i>A</i><i>M</i><i>J</i><i>J</i><i>A</i><i>S</i><i>O</i><i>N</i><i>D</i></div>
+      </div>
+    </div>
+
+    <div class="c abierto">
+      <img src="https://gardening-chi.vercel.app/images/B-42-43_entre_romero_b27.jpg" alt="Pitósporo B-43">
+      <div class="body">
+        <div class="top"><span class="nom">4 · La contradicción</span><span class="cod">B-43 · fondo</span></div>
+        <div class="sello">Contesta en flor · oct–dic</div>
+        <div class="txt">Este no es un misterio: es <b>una ficha que se contradice a sí misma</b>, y me lo encontré leyendo. El catálogo lo tiene como <em>Pittosporum tobira</em>, que florece <b>blanco</b> con perfume fuerte a azahar. Pero tu foto del <b>5 de mayo</b> muestra la flor <b>amarilla</b>.</div>
+        <div class="txt">Puede ser otra especie del género (<em>P. revolutum</em> australiano, <em>P. heterophyllum</em>), puede ser una flor blanca ya pasada virando a crema, o puede ser que no sea un <em>tobira</em>. <b>Con la flor abierta en octubre se cierra en diez segundos.</b></div>
+        <div class="cambia">Qué cambia: los cuidados no — todos los pitósporos se manejan igual, y eso lo podés dar por firme. Cambia el nombre científico. Y un nombre mal puesto no se queda quieto: <b>es el que después usás para buscar cuándo podar, qué plaga esperar y con qué cruza</b>.</div>
+        <div class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="hoy"></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        <div class="meses"><i>E</i><i>F</i><i>M</i><i>A</i><i>M</i><i>J</i><i>J</i><i>A</i><i>S</i><i>O</i><i>N</i><i>D</i></div>
+      </div>
+    </div>
+
+    <div class="c abierto">
+      <img src="https://gardening-chi.vercel.app/images/B-45_detras_b35.jpg" alt="B-45 contra la pared verde">
+      <div class="body">
+        <div class="top"><span class="nom">5 · La de la pared</span><span class="cod">B-45 · fondo</span></div>
+        <div class="sello">Contesta con la NARIZ · octubre</div>
+        <div class="txt">La de la foto de arriba. Cuatro meses contra la pared verde, atrás del durazno, y sigue sin nombre. Hay cuatro candidatas y —esto es lo lindo— <b>no se separan mirando: se separan oliendo</b>.</div>
+        <div class="horq">
+          <div><span class="k">A</span><span><b>Lonicera japonica</b> (madreselva) — tubular blanca que vira a amarilla, y un <b>perfume que pega al atardecer</b>.</span></div>
+          <div><span class="k">B</span><span><b>Solanum jasminoides</b> — blanca con centro amarillo, <b>sin nada de olor</b>.</span></div>
+          <div><span class="k">C</span><span><b>Jasminum</b> sp. — blanca, perfumada, pero de día.</span></div>
+          <div><span class="k">D</span><span><b>Plumbago auriculata</b> — celeste, inconfundible.</span></div>
+        </div>
+        <div class="cambia">Qué cambia, y bastante: si es <b>madreselva japonica</b> tenés una trepadora de las agresivas — ahorca lo que trepa y se escapa por abajo, hay que darle límite y estructura. Si es <b>Solanum</b>, es un vecino manso que solo pide un recorte. <b>Misma planta hoy, dos manejos opuestos.</b> El dato que las separa es gratis y se junta parándose al lado a la tardecita.</div>
+        <div class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="hoy"></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        <div class="meses"><i>E</i><i>F</i><i>M</i><i>A</i><i>M</i><i>J</i><i>J</i><i>A</i><i>S</i><i>O</i><i>N</i><i>D</i></div>
+      </div>
+    </div>
+
+    <div class="c abierto">
+      <img src="https://gardening-chi.vercel.app/images/uploads/B-49/species-B-49_20260505-174158.jpg" alt="Plantín trifoliado B-49 en maceta negra">
+      <div class="body">
+        <div class="top"><span class="nom">6 · El trifoliado</span><span class="cod">B-49 · vivero</span></div>
+        <div class="sello">Contesta último · oct–nov</div>
+        <div class="txt">Un plantín en maceta negra, hojas brillantes <b>de a tres</b>. Ese detalle solo ya lo encierra en las <b>leguminosas</b> — y ahí adentro quedan tres futuros que no se parecen en nada entre sí. Es la pregunta más chica del jardín y la de consecuencia más grande.</div>
+        <svg viewBox="0 0 452 186" role="img" aria-label="Bifurcación: el mismo plantín trifoliado según qué flor saque">
+          <defs>
+            <marker id="f2" markerWidth="7" markerHeight="7" refX="5.4" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 z" fill="#8a9a7a"/>
+            </marker>
+          </defs>
+          <g font-family="-apple-system,BlinkMacSystemFont,sans-serif">
+            <text x="226" y="13" font-size="10" font-weight="800" fill="#8a9a7a" letter-spacing=".05em" text-anchor="middle">EL MISMO PLANTÍN, SEGÚN QUÉ FLOR SAQUE</text>
+
+            <rect x="4" y="66" width="88" height="52" rx="12" fill="#14231a"/>
+            <text x="48" y="88" font-size="18" text-anchor="middle">🌱</text>
+            <text x="48" y="102" font-size="10" font-weight="800" fill="#fff" text-anchor="middle">B-49 hoy</text>
+            <text x="48" y="112" font-size="8.5" fill="#b7c6bb" text-anchor="middle">3 foliolos</text>
+
+            <path d="M95,80 C112,80 112,36 128,36" fill="none" stroke="#8a9a7a" stroke-width="1.6" marker-end="url(#f2)"/>
+            <path d="M95,92 L128,92" fill="none" stroke="#8a9a7a" stroke-width="1.6" marker-end="url(#f2)"/>
+            <path d="M95,104 C112,104 112,148 128,148" fill="none" stroke="#8a9a7a" stroke-width="1.6" marker-end="url(#f2)"/>
+
+            <rect x="133" y="16" width="128" height="40" rx="10" fill="#efe9fa" stroke="#d8ccf0"/>
+            <text x="143" y="33" font-size="10.5" font-weight="800" fill="#6a4fa3">Racimo colgante VIOLETA</text>
+            <text x="143" y="46" font-size="9.5" fill="#5a6b4c">Glicinia · Wisteria sinensis</text>
+            <rect x="271" y="16" width="177" height="40" rx="10" fill="#fff" stroke="#e0d6ef"/>
+            <text x="280" y="30" font-size="9.8" font-weight="800" fill="#1e2a17">Decisión de 20 años</text>
+            <text x="280" y="42" font-size="9" fill="#5a6b4c">pide pérgola de hierro; estrangula</text>
+            <text x="280" y="52" font-size="9" fill="#5a6b4c">lo que trepa. Vive un siglo.</text>
+
+            <rect x="133" y="72" width="128" height="40" rx="10" fill="#f2f6ec" stroke="#d9e6c9"/>
+            <text x="143" y="89" font-size="10.5" font-weight="800" fill="#2d5016">Racimo colgante BLANCO</text>
+            <text x="143" y="102" font-size="9.5" fill="#5a6b4c">Robinia pseudoacacia</text>
+            <rect x="271" y="72" width="177" height="40" rx="10" fill="#fff" stroke="#e3e8dc"/>
+            <text x="280" y="86" font-size="9.8" font-weight="800" fill="#1e2a17">Árbol grande y espinoso</text>
+            <text x="280" y="98" font-size="9" fill="#5a6b4c">rebrota de raíz por todos lados.</text>
+            <text x="280" y="108" font-size="9" fill="#5a6b4c">Difícil de sacar después.</text>
+
+            <rect x="133" y="128" width="128" height="40" rx="10" fill="#fdf6e3" stroke="#eddfb8"/>
+            <text x="143" y="145" font-size="10.5" font-weight="800" fill="#8a6a12">Flor AMARILLA suelta</text>
+            <text x="143" y="158" font-size="9.5" fill="#5a6b4c">Cytisus / retama</text>
+            <rect x="271" y="128" width="177" height="40" rx="10" fill="#fff" stroke="#e8e4d6"/>
+            <text x="280" y="142" font-size="9.8" font-weight="800" fill="#1e2a17">Arbusto chico, dócil</text>
+            <text x="280" y="154" font-size="9" fill="#5a6b4c">entra en cualquier rincón.</text>
+            <text x="280" y="164" font-size="9" fill="#5a6b4c">Cero consecuencias.</text>
+          </g>
+        </svg>
+        <div class="cambia">Qué cambia: si sale <b>violeta</b>, ese plantín de maceta no va a ningún cantero — necesita una estructura de hierro pensada antes de plantarlo, porque una glicinia adulta <b>parte madera y aprieta caños</b>, y va a estar ahí dentro de cincuenta años. Si sale amarillo, lo plantás donde quieras. <b>La flor de octubre decide una obra.</b></div>
+        <div class="bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="hoy"></i><i></i><i class="on"></i><i class="on"></i><i></i></div>
+        <div class="meses"><i>E</i><i>F</i><i>M</i><i>A</i><i>M</i><i>J</i><i>J</i><i>A</i><i>S</i><i>O</i><i>N</i><i>D</i></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="blk">
+    <h3>📏 Y dos que no necesitan primavera</h3>
+    <p>Encontré otras dos abiertas que <b>no dependen de ninguna flor</b>: se cierran con una foto de una sola hoja, con algo al lado que dé escala. Las separo porque son de otra categoría — esas <b>no las contesta el jardín, las contestás vos en dos minutos</b>, cualquier día.</p>
+    <p><b>B-47 · los 56 plantines de palmera.</b> ¿Butiá o pindó? La hoja lo canta: <b>butiá</b> tiene los segmentos rígidos y armados en arco (esa es la fibra con la que se tejen los sombreros); <b>pindó</b> los tiene largos y péndulos, una pluma laxa. Importa: el butiá aguanta más frío, el pindó crece más rápido y llega mucho más alto.</p>
+    <p><b>B-48 · el roble.</b> Tres candidatos y se separan por el <b>lóbulo</b>: <em>robur</em> redondeado, <em>palustris</em> puntiagudo con seno profundo, <em>cerris</em> triangular. Importa porque el <em>palustris</em> pide suelo más ácido y húmedo que el <em>robur</em> — y eso decide dónde se planta un árbol que vas a tener cien años.</p>
+  </div>
+
+  <section class="blk tap">
+    <h3>🔔 ¿Te aviso cuando se abra cada ventana?</h3>
+    <p>Esto es lo único que te propongo, y no te cuesta nada más que un tap. Las seis ventanas <b>no se abren juntas</b>: la clivia arranca en setiembre, el arbusto pelado cuando brote, las otras cuatro en octubre-noviembre.</p>
+    <p>Si decís que sí, me armo la agenda yo y te va llegando <b>una línea, la semana justa de cada una</b>:</p>
+    <ul>
+      <li>«esta semana subiría la vara de la clivia — <b>una foto de la flor abierta</b>»;</li>
+      <li>«B-45 ya tendría flor — <b>pasá a la tardecita y decime si huele</b>»;</li>
+      <li>y así con las seis, cada una en su semana.</li>
+    </ul>
+    <p>Vos sacás la foto o das el dato. <b>Yo cierro el expediente, corrijo la ficha y actualizo el catálogo.</b> Ninguna de las seis te pide trabajo de jardín: te piden treinta segundos de atención en el momento correcto — que es justamente lo que sin aviso se pasa de largo un año más.</p>
+    <div class="yn">
+      <button type="button" onclick="engageAnswer('abiertas-agenda','si',this)">Sí, armá la agenda</button>
+      <button type="button" onclick="engageAnswer('abiertas-agenda','no',this)">No hace falta</button>
+      <span class="q-hint"></span>
+    </div>
+  </section>
+
+  <section class="blk tap">
+    <h3>📏 Las dos de la foto de hoja, ¿te las pido el 24?</h3>
+    <p>La palmera y el roble no esperan a nadie. Si querés, el <b>lunes 24</b> —ya de vuelta, primer día— te llega un solo recordatorio: <b>una foto de una hoja de cada uno, con una regla o una moneda al lado</b>. Con eso cierro las dos el mismo día y quedan seis expedientes en cuatro.</p>
+    <div class="yn">
+      <button type="button" onclick="engageAnswer('abiertas-fotos-hoja','si',this)">Dale, el 24</button>
+      <button type="button" onclick="engageAnswer('abiertas-fotos-hoja','no',this)">Mejor no</button>
+      <span class="q-hint"></span>
+    </div>
+  </section>
+
+  <div class="blk">
+    <h3>😍 ¿Qué te pareció esta?</h3>
+    <p>Es la primera que armo con <b>lo que el catálogo NO sabe</b> en vez de con lo que sabe. Quiero saber si eso te sirve o si preferís que solo te cuente lo que está confirmado.</p>
+    <div class="rx">
+      <button type="button" onclick="engageReact('preguntas-abiertas','love',this)">😍</button>
+      <button type="button" onclick="engageReact('preguntas-abiertas','like',this)">🙂</button>
+      <button type="button" onclick="engageReact('preguntas-abiertas','meh',this)">😐</button>
+      <button type="button" onclick="engageReact('preguntas-abiertas','no',this)">🙅</button>
+      <span class="react-hint"></span>
+    </div>
+  </div>
+
+  <div class="blk">
+    <h3>📅 Slots disponibles</h3>
+    <p>Si te gustó, prendé dónde querés que vuelva — <b>«los expedientes abiertos»</b>, renovado cada vez: los que se cerraron, lo que contestó el jardín esa semana y los que quedan. Si no prendés ninguno, no vuelve, y en su lugar te llega otra cosa nueva.</p>
+    <div class="slot">
+      <div class="lbl">Lunes 18:00<small>Arranque de semana</small></div>
+      <div class="yn">
+        <button type="button" onclick="engageAnswer('abiertas-slot-lun18','si',this)">Sí</button>
+        <button type="button" onclick="engageAnswer('abiertas-slot-lun18','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+    <div class="slot">
+      <div class="lbl">Sábado 11:00<small>Mañana de fin de semana</small></div>
+      <div class="yn">
+        <button type="button" onclick="engageAnswer('abiertas-slot-sab11','si',this)">Sí</button>
+        <button type="button" onclick="engageAnswer('abiertas-slot-sab11','no',this)">No</button>
+        <span class="q-hint"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="blk">
+    <h3>✅ Lo que ya prendiste</h3>
+    <p>Guardado acá, no te lo mando suelto. <b>En pausa hasta que vuelvas</b> — no es deber de hoy.</p>
+    <a class="lnk" href="https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html">
+      <span class="em">🪚</span>
+      <span class="t">El Taller nº 1 — poda de carozos<small>Aprobada en los dos slots. El nº 3 te espera para el 24: pitósporo, que es justo el expediente 4 de esta página.</small></span>
+      <span class="go2">›</span>
+    </a>
+    <a class="lnk" href="https://gardening-chi.vercel.app/engage/2026-08-15-florecio-lo-que-podaste.html">
+      <span class="em">🌸</span>
+      <span class="t">Floreció lo que podaste<small>La del sábado, por si no llegaste a abrirla. Sigue en pie: la flor de los cuatro frutales aguanta hasta que vuelvas.</small></span>
+      <span class="go2">›</span>
+    </a>
+    <a class="lnk" href="https://gardening-chi.vercel.app/engage/2026-08-17-preguntas-abiertas-pitch.html">
+      <span class="em">💡</span>
+      <span class="t">Cómo se financiaría esto<small>6 modelos de negocio para esta experiencia — 3 sensatos, 3 delirantes.</small></span>
+      <span class="go2">›</span>
+    </a>
+  </div>
+
+  <section class="blk fb-blk" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>Esto lo leo yo, el agente del jardín, antes de armar la próxima. Tu texto pesa más que cualquier botón: si me decís «más corto», «esto sí», «arrancá por el trifoliado», lo hago sin discutir.</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('preguntas-abiertas', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+</div>
+
+<div class="engage-actions">
+  <button onclick="engageApprove('2026-08-17-preguntas-abiertas')">✅ Aprobar esta mejora</button>
+  <button onclick="engageRejected('2026-08-17-preguntas-abiertas')">✕ No me interesa</button>
+</div>
+
+<p class="pie">Armado el 17/08/2026 recorriendo las 52 fichas del catálogo y juntando todo lo marcado «a confirmar», «a determinar» o «a identificar».
+Los seis expedientes: clivia B-13, arbusto B-20, jazmín B-2 con sus renuevos B-2B/B-2C, pitósporo B-43, la de la pared B-45 y el trifoliado B-49.
+Los dos que se cierran con una foto de hoja: plantines de palmera B-47 y roble B-48.
+La flor amarilla del pitósporo está registrada en tu propia foto del 05/05/2026.
+Del 7 al 23 de agosto no te mando ninguna tarea — tal cual te lo dije el 6. Hoy son <b>11 días y 5 slots de tarea vacíos</b>, y así sigue.</p>
+
+<script src="engage.js"></script>
+</body></html>
