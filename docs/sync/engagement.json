@@ -1,633 +1,650 @@
 {
- "_updated_at": "2026-08-17T09:20:00.000Z",
- "events": [
-  {
-   "_id": "msdoe32lrrc66m",
-   "type": "page_visit",
-   "page": "engage/2026-07-21-asamblea-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-03T20:22:23.754Z",
-   "device": "pix9"
-  },
-  {
-   "_id": "msdoe4ixlgapfj",
-   "type": "page_visit",
-   "page": "engage/2026-07-21-asamblea-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-03T20:22:25.638Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdoe4cu0elhhr",
-   "type": "dwell",
-   "seconds": 2,
-   "scroll_pct": 13,
-   "page": "engage/2026-07-21-asamblea-jardin.html",
-   "ts": "2026-08-03T20:22:25.422Z",
-   "device": "pix9"
-  },
-  {
-   "_id": "msdoe6fjdw4mc6",
-   "type": "page_visit",
-   "page": "engage/2026-07-10-album-figuritas.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-03T20:22:28.111Z",
-   "device": "pix9"
-  },
-  {
-   "_id": "msdoeejss4woph",
-   "type": "dwell",
-   "seconds": 11,
-   "scroll_pct": 21,
-   "page": "engage/2026-07-10-album-figuritas.html",
-   "ts": "2026-08-03T20:22:38.632Z",
-   "device": "pix9"
-  },
-  {
-   "_id": "msdoegzdmepwsi",
-   "type": "page_visit",
-   "page": "engage/2026-07-09-wrapped-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-03T20:22:41.785Z",
-   "device": "pix9"
-  },
-  {
-   "_id": "msdoeimf4zsgps",
-   "type": "page_visit",
-   "page": "engage/2026-07-09-quiz-planta.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-03T20:22:43.911Z",
-   "device": "pix9"
-  },
-  {
-   "_id": "msdoek4ye1pd8e",
-   "type": "page_visit",
-   "page": "engage/2026-07-09-quiz-planta.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-03T20:22:45.871Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdsll9qvvif2h",
-   "type": "notification_clicked",
-   "nid": "2026-08-03-jardin-hoy",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-08-03T22:20:12.398Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdsll9qi82enz",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": "2026-08-03-jardin-hoy",
-   "src": "push",
-   "ts": "2026-08-03T22:20:12.398Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdsmatc0vq7bl",
-   "type": "dwell",
-   "seconds": 33,
-   "scroll_pct": 33,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-08-03T22:20:45.504Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdsmayqpxc5xk",
-   "type": "page_visit",
-   "page": "engage/2026-08-03-el-taller-2.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-03T22:20:45.697Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdsoicsxwlliz",
-   "type": "answer",
-   "qid": "t2-paso-1",
-   "value": "ok",
-   "page": "engage/2026-08-03-el-taller-2.html",
-   "ts": "2026-08-03T22:22:28.588Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdsp2c5yamtof",
-   "type": "answer",
-   "qid": "t2-paso-2",
-   "value": "ok",
-   "page": "engage/2026-08-03-el-taller-2.html",
-   "ts": "2026-08-03T22:22:54.485Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdsp4sx7asrii",
-   "type": "answer",
-   "qid": "t2-paso-3",
-   "value": "ok",
-   "page": "engage/2026-08-03-el-taller-2.html",
-   "ts": "2026-08-03T22:22:57.681Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdspokmrewa4r",
-   "type": "answer",
-   "qid": "t2-paso-4",
-   "value": "ok",
-   "page": "engage/2026-08-03-el-taller-2.html",
-   "ts": "2026-08-03T22:23:23.302Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdspux1xl4sar",
-   "type": "dwell",
-   "seconds": 166,
-   "scroll_pct": 46,
-   "page": "engage/2026-08-03-el-taller-2.html",
-   "ts": "2026-08-03T22:23:31.525Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdt9si6d3meqs",
-   "type": "answer",
-   "qid": "t2-paso-5",
-   "value": "ok",
-   "page": "engage/2026-08-03-el-taller-2.html",
-   "ts": "2026-08-03T22:39:01.518Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdtatagt8a88y",
-   "type": "answer",
-   "qid": "t2-paso-6",
-   "value": "ok",
-   "page": "engage/2026-08-03-el-taller-2.html",
-   "ts": "2026-08-03T22:39:49.192Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdtaupiisucp2",
-   "type": "answer",
-   "qid": "t2-paso-7",
-   "value": "ok",
-   "page": "engage/2026-08-03-el-taller-2.html",
-   "ts": "2026-08-03T22:39:51.030Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdwh93t8h6fvl",
-   "type": "feedback_text",
-   "target": "el-taller-2",
-   "text": "Recordame las podas así hago las podas mañana si no llueve",
-   "page": "engage/2026-08-03-el-taller-2.html",
-   "ts": "2026-08-04T00:08:48.472Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdwozakpwcfxy",
-   "type": "notification_clicked",
-   "nid": "2026-08-03-el-taller-2",
-   "page": "engage/2026-08-03-el-taller-2.html",
-   "ts": "2026-08-04T00:14:49.003Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdwozak1m7li0",
-   "type": "page_visit",
-   "page": "engage/2026-08-03-el-taller-2.html",
-   "nid": "2026-08-03-el-taller-2",
-   "src": "push",
-   "ts": "2026-08-04T00:14:49.003Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msdwpk5aulncs0",
-   "type": "dwell",
-   "seconds": 27,
-   "scroll_pct": 100,
-   "page": "engage/2026-08-03-el-taller-2.html",
-   "ts": "2026-08-04T00:15:16.029Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msw5ybnf92jyuq",
-   "type": "page_visit",
-   "page": "engage/2026-06-29-feed-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-16T18:53:52.633Z",
-   "device": "pix9"
-  },
-  {
-   "_id": "msw5yb0z25tfhj",
-   "type": "page_visit",
-   "page": "engage/2026-06-29-feed-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-16T18:53:51.824Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msw5yief4jfqvi",
-   "type": "dwell",
-   "seconds": 9,
-   "scroll_pct": 28,
-   "page": "engage/2026-06-29-feed-jardin.html",
-   "ts": "2026-08-16T18:54:01.383Z",
-   "device": "pix9"
-  },
-  {
-   "_id": "msw5ylrbvmfqfj",
-   "type": "page_visit",
-   "page": "engage/2026-06-30-superpoderes-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-16T18:54:05.735Z",
-   "device": "pix9"
-  },
-  {
-   "_id": "msw5ykz6odmy2i",
-   "type": "page_visit",
-   "page": "engage/2026-06-30-superpoderes-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-16T18:54:04.719Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msw5ytaqz7tua9",
-   "type": "dwell",
-   "seconds": 10,
-   "scroll_pct": 29,
-   "page": "engage/2026-06-30-superpoderes-jardin.html",
-   "ts": "2026-08-16T18:54:15.506Z",
-   "device": "pix9"
+  "_updated_at": "2026-08-17T21:25:12.776Z",
+  "events": [
+    {
+      "_id": "msdoe32lrrc66m",
+      "type": "page_visit",
+      "page": "engage/2026-07-21-asamblea-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-03T20:22:23.754Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msdoe4ixlgapfj",
+      "type": "page_visit",
+      "page": "engage/2026-07-21-asamblea-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-03T20:22:25.638Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdoe4cu0elhhr",
+      "type": "dwell",
+      "seconds": 2,
+      "scroll_pct": 13,
+      "page": "engage/2026-07-21-asamblea-jardin.html",
+      "ts": "2026-08-03T20:22:25.422Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msdoe6fjdw4mc6",
+      "type": "page_visit",
+      "page": "engage/2026-07-10-album-figuritas.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-03T20:22:28.111Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msdoeejss4woph",
+      "type": "dwell",
+      "seconds": 11,
+      "scroll_pct": 21,
+      "page": "engage/2026-07-10-album-figuritas.html",
+      "ts": "2026-08-03T20:22:38.632Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msdoegzdmepwsi",
+      "type": "page_visit",
+      "page": "engage/2026-07-09-wrapped-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-03T20:22:41.785Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msdoeimf4zsgps",
+      "type": "page_visit",
+      "page": "engage/2026-07-09-quiz-planta.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-03T20:22:43.911Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msdoek4ye1pd8e",
+      "type": "page_visit",
+      "page": "engage/2026-07-09-quiz-planta.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-03T20:22:45.871Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdsll9qvvif2h",
+      "type": "notification_clicked",
+      "nid": "2026-08-03-jardin-hoy",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-08-03T22:20:12.398Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdsll9qi82enz",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-08-03-jardin-hoy",
+      "src": "push",
+      "ts": "2026-08-03T22:20:12.398Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdsmatc0vq7bl",
+      "type": "dwell",
+      "seconds": 33,
+      "scroll_pct": 33,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-08-03T22:20:45.504Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdsmayqpxc5xk",
+      "type": "page_visit",
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-03T22:20:45.697Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdsoicsxwlliz",
+      "type": "answer",
+      "qid": "t2-paso-1",
+      "value": "ok",
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "ts": "2026-08-03T22:22:28.588Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdsp2c5yamtof",
+      "type": "answer",
+      "qid": "t2-paso-2",
+      "value": "ok",
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "ts": "2026-08-03T22:22:54.485Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdsp4sx7asrii",
+      "type": "answer",
+      "qid": "t2-paso-3",
+      "value": "ok",
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "ts": "2026-08-03T22:22:57.681Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdspokmrewa4r",
+      "type": "answer",
+      "qid": "t2-paso-4",
+      "value": "ok",
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "ts": "2026-08-03T22:23:23.302Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdspux1xl4sar",
+      "type": "dwell",
+      "seconds": 166,
+      "scroll_pct": 46,
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "ts": "2026-08-03T22:23:31.525Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdt9si6d3meqs",
+      "type": "answer",
+      "qid": "t2-paso-5",
+      "value": "ok",
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "ts": "2026-08-03T22:39:01.518Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdtatagt8a88y",
+      "type": "answer",
+      "qid": "t2-paso-6",
+      "value": "ok",
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "ts": "2026-08-03T22:39:49.192Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdtaupiisucp2",
+      "type": "answer",
+      "qid": "t2-paso-7",
+      "value": "ok",
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "ts": "2026-08-03T22:39:51.030Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdwh93t8h6fvl",
+      "type": "feedback_text",
+      "target": "el-taller-2",
+      "text": "Recordame las podas así hago las podas mañana si no llueve",
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "ts": "2026-08-04T00:08:48.472Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdwozakpwcfxy",
+      "type": "notification_clicked",
+      "nid": "2026-08-03-el-taller-2",
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "ts": "2026-08-04T00:14:49.003Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdwozak1m7li0",
+      "type": "page_visit",
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "nid": "2026-08-03-el-taller-2",
+      "src": "push",
+      "ts": "2026-08-04T00:14:49.003Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msdwpk5aulncs0",
+      "type": "dwell",
+      "seconds": 27,
+      "scroll_pct": 100,
+      "page": "engage/2026-08-03-el-taller-2.html",
+      "ts": "2026-08-04T00:15:16.029Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msw5ybnf92jyuq",
+      "type": "page_visit",
+      "page": "engage/2026-06-29-feed-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-16T18:53:52.633Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msw5yb0z25tfhj",
+      "type": "page_visit",
+      "page": "engage/2026-06-29-feed-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-16T18:53:51.824Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msw5yief4jfqvi",
+      "type": "dwell",
+      "seconds": 9,
+      "scroll_pct": 28,
+      "page": "engage/2026-06-29-feed-jardin.html",
+      "ts": "2026-08-16T18:54:01.383Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msw5ylrbvmfqfj",
+      "type": "page_visit",
+      "page": "engage/2026-06-30-superpoderes-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-16T18:54:05.735Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msw5ykz6odmy2i",
+      "type": "page_visit",
+      "page": "engage/2026-06-30-superpoderes-jardin.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-08-16T18:54:04.719Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msw5ytaqz7tua9",
+      "type": "dwell",
+      "seconds": 10,
+      "scroll_pct": 29,
+      "page": "engage/2026-06-30-superpoderes-jardin.html",
+      "ts": "2026-08-16T18:54:15.506Z",
+      "device": "pix9"
+    },
+    {
+      "_id": "msf51ur7hg0rpq",
+      "type": "notification_clicked",
+      "nid": "2026-08-04-tarjeta-campo",
+      "page": "engage/2026-08-04-tarjeta-campo.html",
+      "ts": "2026-08-04T20:56:32.752Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msf51ur7zp6d8b",
+      "type": "page_visit",
+      "page": "engage/2026-08-04-tarjeta-campo.html",
+      "nid": "2026-08-04-tarjeta-campo",
+      "src": "push",
+      "ts": "2026-08-04T20:56:32.752Z",
+      "device": "sin-nombre"
+    }
+  ],
+  "daily_summary": {
+    "2026-06-12": {
+      "sent": 14,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-06-13": {
+      "sent": 21,
+      "clicked": 3,
+      "visits": 4,
+      "approvals": 1
+    },
+    "2026-06-14": {
+      "sent": 39,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-06-15": {
+      "sent": 19,
+      "clicked": 2,
+      "visits": 4,
+      "approvals": 0
+    },
+    "2026-06-16": {
+      "sent": 20,
+      "clicked": 1,
+      "visits": 3,
+      "approvals": 0
+    },
+    "2026-06-17": {
+      "sent": 13,
+      "clicked": 1,
+      "visits": 4,
+      "approvals": 0
+    },
+    "2026-06-18": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 3,
+      "approvals": 1
+    },
+    "2026-06-19": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-06-20": {
+      "sent": 3,
+      "clicked": 3,
+      "visits": 3,
+      "approvals": 0
+    },
+    "2026-06-21": {
+      "sent": 3,
+      "clicked": 3,
+      "visits": 3,
+      "approvals": 0
+    },
+    "2026-06-22": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-06-23": {
+      "sent": 5,
+      "clicked": 3,
+      "visits": 5,
+      "approvals": 0
+    },
+    "2026-06-24": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-06-25": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-06-26": {
+      "sent": 3,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-06-27": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-06-28": {
+      "sent": 3,
+      "clicked": 0,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-06-29": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 3,
+      "approvals": 2
+    },
+    "2026-06-30": {
+      "sent": 3,
+      "clicked": 5,
+      "visits": 6,
+      "approvals": 4
+    },
+    "2026-07-01": {
+      "sent": 3,
+      "clicked": 3,
+      "visits": 5,
+      "approvals": 2
+    },
+    "2026-07-02": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 2,
+      "approvals": 1
+    },
+    "2026-07-03": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 1
+    },
+    "2026-07-04": {
+      "sent": 4,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 1
+    },
+    "2026-07-05": {
+      "sent": 0,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-07-06": {
+      "sent": 5,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-07-07": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 4,
+      "approvals": 0
+    },
+    "2026-07-08": {
+      "sent": 5,
+      "clicked": 4,
+      "visits": 5,
+      "approvals": 1
+    },
+    "2026-07-09": {
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 2,
+      "sent": 4
+    },
+    "2026-07-10": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 1
+    },
+    "2026-07-11": {
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0,
+      "sent": 4
+    },
+    "2026-07-12": {
+      "sent": 5,
+      "clicked": 2,
+      "visits": 4,
+      "approvals": 0
+    },
+    "2026-07-13": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-07-14": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-07-16": {
+      "sent": 5,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-07-17": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-07-18": {
+      "sent": 0,
+      "clicked": 2,
+      "visits": 4,
+      "approvals": 0
+    },
+    "2026-07-19": {
+      "sent": 0,
+      "clicked": 3,
+      "visits": 3,
+      "approvals": 0
+    },
+    "2026-07-21": {
+      "sent": 0,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-07-22": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-07-23": {
+      "sent": 0,
+      "clicked": 4,
+      "visits": 18,
+      "approvals": 0,
+      "feedback": [
+        "Mucho texto, muy cargado, no es realmente lo que busco en una app de jardin"
+      ]
+    },
+    "2026-07-24": {
+      "sent": 0,
+      "clicked": 5,
+      "visits": 14,
+      "approvals": 0
+    },
+    "2026-07-25": {
+      "sent": 0,
+      "clicked": 3,
+      "visits": 5,
+      "approvals": 0
+    },
+    "2026-07-26": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-07-27": {
+      "sent": 0,
+      "clicked": 3,
+      "visits": 3,
+      "approvals": 0,
+      "answer": 9
+    },
+    "2026-07-28": {
+      "sent": 0,
+      "clicked": 3,
+      "visits": 3,
+      "approvals": 0,
+      "answer": 7,
+      "reaction": 1,
+      "rejections": 2,
+      "feedback": [
+        "Cada tarea debería tener una caja como está de feedback así te puedo dejar comentarios.\n1- ignora lo de la lechuga, me voy de viaje en 10dias y no va a suceder antes.  A mi vuelta a fin de agosto lo v",
+        "No es mi tipo de experiencia.\n\nRevisa lo que te escribí más temprano en el liquidámbar."
+      ]
+    },
+    "2026-07-29": {
+      "sent": 0,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-07-30": {
+      "sent": 0,
+      "clicked": 4,
+      "visits": 7,
+      "approvals": 0,
+      "feedback": [
+        "Ya quedó hecho esto",
+        "Agregame una foto a las especies en las tareas de agosto también así se a qué hacen referencia.  Cada especie/tarea debería tener la posibilidad de dejarte un comentario",
+        "Mi viaje va a ser del 7-23 de agosto.  Actualiza esta y todas las otras pendientes de julio y agosto para recomendarme si conviene hacerlo antes o después del viaje"
+      ]
+    },
+    "2026-07-31": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0,
+      "answers": [
+        "el-parte-slot-lun18:no",
+        "el-parte-slot-sab11:no"
+      ],
+      "reactions": [
+        "el-parte:meh"
+      ]
+    },
+    "2026-08-01": {
+      "sent": 0,
+      "clicked": 2,
+      "visits": 3,
+      "approvals": 0,
+      "answer": 17,
+      "reactions": [
+        "el-taller:love"
+      ],
+      "answers": [
+        "el-taller-slot-lun18:si"
+      ],
+      "feedback": [
+        "Genial esto.  Pero hoy está lloviendo, mándamela cuando esté lindo!"
+      ],
+      "dwell": [
+        "168s@95%",
+        "30s@100%",
+        "25s@98%"
+      ],
+      "_nota": "GANADORA el-taller: 😍 + slot lunes en «sí» + feedback positivo + dwell 168s@95%."
+    },
+    "2026-08-02": {
+      "sent": 2,
+      "clicked": 2,
+      "visits": 5,
+      "approvals": 0,
+      "answers": 11,
+      "feedback_text": 1,
+      "reactions": [
+        "el-taller:love (RE-PUSH — 2º 😍 del Taller)"
+      ],
+      "answers_clave": [
+        "el-taller-slot-sab11:si (prendió el 2º slot)",
+        "taller-paso-1..7:ok (7/7 pasos, 2ª pasada completa)",
+        "taller-arbol-B-30:ok · taller-arbol-B-38:ok (TICKS reales de poda, 17:25)",
+        "podo-F-4:ok (podó el ciruelo del frente tras leer que-mas-podo, 22:34)"
+      ],
+      "dwell": [
+        "81s@26%",
+        "4s@0%"
+      ],
+      "feedback_quotes": [
+        "Que otra cosa puedo podar?\nQue tareas puedo hacer con el aceite de Neem ya que lo voy a usar?"
+      ],
+      "_nota": "DÍA TIER-1. El Taller re-push = ÉXITO MÁXIMO (😍 + 2º slot + 3 ticks de poda reales). El clic no es la métrica; el tick sí."
+    }
   }
- ],
- "daily_summary": {
-  "2026-06-12": {
-   "sent": 14,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-06-13": {
-   "sent": 21,
-   "clicked": 3,
-   "visits": 4,
-   "approvals": 1
-  },
-  "2026-06-14": {
-   "sent": 39,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-06-15": {
-   "sent": 19,
-   "clicked": 2,
-   "visits": 4,
-   "approvals": 0
-  },
-  "2026-06-16": {
-   "sent": 20,
-   "clicked": 1,
-   "visits": 3,
-   "approvals": 0
-  },
-  "2026-06-17": {
-   "sent": 13,
-   "clicked": 1,
-   "visits": 4,
-   "approvals": 0
-  },
-  "2026-06-18": {
-   "sent": 3,
-   "clicked": 2,
-   "visits": 3,
-   "approvals": 1
-  },
-  "2026-06-19": {
-   "sent": 3,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-06-20": {
-   "sent": 3,
-   "clicked": 3,
-   "visits": 3,
-   "approvals": 0
-  },
-  "2026-06-21": {
-   "sent": 3,
-   "clicked": 3,
-   "visits": 3,
-   "approvals": 0
-  },
-  "2026-06-22": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-06-23": {
-   "sent": 5,
-   "clicked": 3,
-   "visits": 5,
-   "approvals": 0
-  },
-  "2026-06-24": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-06-25": {
-   "sent": 3,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-06-26": {
-   "sent": 3,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-06-27": {
-   "sent": 3,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-06-28": {
-   "sent": 3,
-   "clicked": 0,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-06-29": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 3,
-   "approvals": 2
-  },
-  "2026-06-30": {
-   "sent": 3,
-   "clicked": 5,
-   "visits": 6,
-   "approvals": 4
-  },
-  "2026-07-01": {
-   "sent": 3,
-   "clicked": 3,
-   "visits": 5,
-   "approvals": 2
-  },
-  "2026-07-02": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 2,
-   "approvals": 1
-  },
-  "2026-07-03": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 1
-  },
-  "2026-07-04": {
-   "sent": 4,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 1
-  },
-  "2026-07-05": {
-   "sent": 0,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-07-06": {
-   "sent": 5,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-07-07": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 4,
-   "approvals": 0
-  },
-  "2026-07-08": {
-   "sent": 5,
-   "clicked": 4,
-   "visits": 5,
-   "approvals": 1
-  },
-  "2026-07-09": {
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 2,
-   "sent": 4
-  },
-  "2026-07-10": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 1
-  },
-  "2026-07-11": {
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0,
-   "sent": 4
-  },
-  "2026-07-12": {
-   "sent": 5,
-   "clicked": 2,
-   "visits": 4,
-   "approvals": 0
-  },
-  "2026-07-13": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-07-14": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-07-16": {
-   "sent": 5,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-07-17": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-07-18": {
-   "sent": 0,
-   "clicked": 2,
-   "visits": 4,
-   "approvals": 0
-  },
-  "2026-07-19": {
-   "sent": 0,
-   "clicked": 3,
-   "visits": 3,
-   "approvals": 0
-  },
-  "2026-07-21": {
-   "sent": 0,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-07-22": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-07-23": {
-   "sent": 0,
-   "clicked": 4,
-   "visits": 18,
-   "approvals": 0,
-   "feedback": [
-    "Mucho texto, muy cargado, no es realmente lo que busco en una app de jardin"
-   ]
-  },
-  "2026-07-24": {
-   "sent": 0,
-   "clicked": 5,
-   "visits": 14,
-   "approvals": 0
-  },
-  "2026-07-25": {
-   "sent": 0,
-   "clicked": 3,
-   "visits": 5,
-   "approvals": 0
-  },
-  "2026-07-26": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-07-27": {
-   "sent": 0,
-   "clicked": 3,
-   "visits": 3,
-   "approvals": 0,
-   "answer": 9
-  },
-  "2026-07-28": {
-   "sent": 0,
-   "clicked": 3,
-   "visits": 3,
-   "approvals": 0,
-   "answer": 7,
-   "reaction": 1,
-   "rejections": 2,
-   "feedback": [
-    "Cada tarea debería tener una caja como está de feedback así te puedo dejar comentarios.\n1- ignora lo de la lechuga, me voy de viaje en 10dias y no va a suceder antes.  A mi vuelta a fin de agosto lo v",
-    "No es mi tipo de experiencia.\n\nRevisa lo que te escribí más temprano en el liquidámbar."
-   ]
-  },
-  "2026-07-29": {
-   "sent": 0,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-07-30": {
-   "sent": 0,
-   "clicked": 4,
-   "visits": 7,
-   "approvals": 0,
-   "feedback": [
-    "Ya quedó hecho esto",
-    "Agregame una foto a las especies en las tareas de agosto también así se a qué hacen referencia.  Cada especie/tarea debería tener la posibilidad de dejarte un comentario",
-    "Mi viaje va a ser del 7-23 de agosto.  Actualiza esta y todas las otras pendientes de julio y agosto para recomendarme si conviene hacerlo antes o después del viaje"
-   ]
-  },
-  "2026-07-31": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0,
-   "answers": [
-    "el-parte-slot-lun18:no",
-    "el-parte-slot-sab11:no"
-   ],
-   "reactions": [
-    "el-parte:meh"
-   ]
-  },
-  "2026-08-01": {
-   "sent": 0,
-   "clicked": 2,
-   "visits": 3,
-   "approvals": 0,
-   "answer": 17,
-   "reactions": [
-    "el-taller:love"
-   ],
-   "answers": [
-    "el-taller-slot-lun18:si"
-   ],
-   "feedback": [
-    "Genial esto.  Pero hoy está lloviendo, mándamela cuando esté lindo!"
-   ],
-   "dwell": [
-    "168s@95%",
-    "30s@100%",
-    "25s@98%"
-   ],
-   "_nota": "GANADORA el-taller: 😍 + slot lunes en «sí» + feedback positivo + dwell 168s@95%."
-  },
-  "2026-08-02": {
-   "sent": 2,
-   "clicked": 2,
-   "visits": 5,
-   "approvals": 0,
-   "answers": 11,
-   "feedback_text": 1,
-   "reactions": [
-    "el-taller:love (RE-PUSH — 2º 😍 del Taller)"
-   ],
-   "answers_clave": [
-    "el-taller-slot-sab11:si (prendió el 2º slot)",
-    "taller-paso-1..7:ok (7/7 pasos, 2ª pasada completa)",
-    "taller-arbol-B-30:ok · taller-arbol-B-38:ok (TICKS reales de poda, 17:25)",
-    "podo-F-4:ok (podó el ciruelo del frente tras leer que-mas-podo, 22:34)"
-   ],
-   "dwell": [
-    "81s@26%",
-    "4s@0%"
-   ],
-   "feedback_quotes": [
-    "Que otra cosa puedo podar?\nQue tareas puedo hacer con el aceite de Neem ya que lo voy a usar?"
-   ],
-   "_nota": "DÍA TIER-1. El Taller re-push = ÉXITO MÁXIMO (😍 + 2º slot + 3 ticks de poda reales). El clic no es la métrica; el tick sí."
-  }
- }
 }
