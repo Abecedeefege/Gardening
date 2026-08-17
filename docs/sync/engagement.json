@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-17T21:25:14.987Z",
+  "_updated_at": "2026-08-17T21:25:43.903Z",
   "events": [
     {
       "_id": "msdoe32lrrc66m",
@@ -310,6 +310,15 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-08-17T21:25:13.658Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "msxqthengwtuq2",
+      "type": "dwell",
+      "seconds": 31,
+      "scroll_pct": 41,
+      "page": "engage/2026-08-17-preguntas-abiertas.html",
+      "ts": "2026-08-17T21:25:44.927Z",
       "device": "sin-nombre"
     }
   ],
