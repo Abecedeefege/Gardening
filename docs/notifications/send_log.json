@@ -2,18 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-08-03-jardin-hoy",
-      "ts": "2026-08-03T15:41:44.284Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-08-03-el-taller-2",
-      "ts": "2026-08-03T21:48:32.423Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-08-04-tarjeta-campo",
       "ts": "2026-08-04T14:38:33.135Z",
       "status_code": 201
@@ -201,7 +189,10 @@
     },
     "2026-08-02": {
       "sent": 2
+    },
+    "2026-08-03": {
+      "sent": 2
     }
   },
-  "_updated_at": "2026-08-17T09:20:00.000Z"
+  "_updated_at": "2026-08-18T09:20:00.000Z"
 }

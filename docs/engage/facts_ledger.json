@@ -1,1375 +1,1375 @@
 {
- "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-08-17",
- "plants": {
-  "F-1": {
-   "common": "Guayabo del país",
-   "paginas_historicas": 15,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-secomenta.html",
-     "fact": "petalos golosina / fumagina hoy"
+  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
+  "_updated": "2026-08-18",
+  "plants": {
+    "F-1": {
+      "common": "Guayabo del país",
+      "paginas_historicas": 15,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-secomenta.html",
+          "fact": "petalos golosina / fumagina hoy"
+        },
+        {
+          "date": "2026-07-20",
+          "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
+          "fact": "re-uso <7d: guayabo observacion(tarea real fumagina)+invicto nativo — NO por fun_fact nuevo sino por tarea real"
+        },
+        {
+          "date": "2026-07-21",
+          "page": "2026-07-21-asamblea-jardin.html",
+          "fact": "ANGULO TAREA (no fun_fact): fumagina/hollin, cicatriza lento — tarea real activa"
+        },
+        {
+          "date": "2026-07-22",
+          "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
+          "fact": "ANGULO LLUVIA (no fun_fact): la lluvia lava la fumagina de las hojas del nativo — tarea real"
+        },
+        {
+          "date": "2026-07-23",
+          "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
+          "fact": "task-dia 23/07: fumagina, tarea real (canal tarea)"
+        },
+        {
+          "date": "2026-07-24",
+          "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+          "fact": "ANGULO LOGRO (tu-semana): limpieza de fumagina cerrada 23/07 — tarea real, no fun_fact"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-25-mapa-solar.html",
+          "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
+        }
+      ]
     },
-    {
-     "date": "2026-07-20",
-     "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
-     "fact": "re-uso <7d: guayabo observacion(tarea real fumagina)+invicto nativo — NO por fun_fact nuevo sino por tarea real"
+    "F-2": {
+      "common": "Bignonia rosada / Podranea",
+      "paginas_historicas": 8,
+      "featured": [
+        {
+          "date": "2026-07-21",
+          "page": "2026-07-21-cuenta-regresiva.html",
+          "fact": "reclasificada de Bignonia a genero propio Podranea en 1980 (tubo curvo/semillas); floracion nov-abr — countdown 103d"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-25-mapa-solar.html",
+          "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
+        },
+        {
+          "date": "2026-07-28",
+          "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
+          "fact": "ANGULO OBJETIVO-FLOR (no fun_fact): opcion en decision de prioridad de flor (poda podranea)"
+        }
+      ]
     },
-    {
-     "date": "2026-07-21",
-     "page": "2026-07-21-asamblea-jardin.html",
-     "fact": "ANGULO TAREA (no fun_fact): fumagina/hollin, cicatriza lento — tarea real activa"
+    "F-3": {
+      "common": "Fotinia",
+      "paginas_historicas": 6,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-09-quiz-planta(reno-19-07).html",
+          "fact": "hibrido Alabama 1940 / brotes rojos viran a verde = defensa"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-25-mapa-solar.html",
+          "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
+        },
+        {
+          "date": "2026-08-08",
+          "page": "2026-08-08-el-hueco.html",
+          "fact": "Referencia de UBICACION (frente/oeste) para la salvia. No featured por fun_fact."
+        }
+      ]
     },
-    {
-     "date": "2026-07-22",
-     "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
-     "fact": "ANGULO LLUVIA (no fun_fact): la lluvia lava la fumagina de las hojas del nativo — tarea real"
+    "F-4": {
+      "common": "Ciruelo de jardín",
+      "paginas_historicas": 13,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-19-nombre-apellido.html",
+          "fact": "Pissard Persia 1880 / todos los ciruelos purpura de 1 ejemplar"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-25-mapa-solar.html",
+          "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
+        },
+        {
+          "date": "2026-08-01",
+          "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
+          "fact": "ANGULO TALLER: diferencia ornamental vs frutal — 25-35%, silueta y color púrpura, no cosecha. Angulo tarea real."
+        },
+        {
+          "date": "2026-08-02",
+          "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
+          "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
+        },
+        {
+          "date": "2026-08-02",
+          "page": "2026-08-02-que-mas-podo.html",
+          "fact": "ANGULO RESPUESTA (pregunta directa del usuario): ventana de poda real de ficha + porque florece en madera nueva. B-25 = dosis de neem y barrera de hormigas."
+        },
+        {
+          "date": "2026-08-15",
+          "page": "2026-08-15-florecio-lo-que-podaste.html",
+          "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Tilde podo-F-4 el 02/08 19:34; flor rosada desnuda, frente/oeste sol de tarde."
+        }
+      ]
     },
-    {
-     "date": "2026-07-23",
-     "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
-     "fact": "task-dia 23/07: fumagina, tarea real (canal tarea)"
+    "F-5": {
+      "common": "Coronita de novia (?)",
+      "paginas_historicas": 6,
+      "featured": [
+        {
+          "date": "2026-07-21",
+          "page": "2026-07-21-cuenta-regresiva.html",
+          "fact": "si es Spiraea, nombre viene de coronas nupciales s.XIX; floracion oct-nov — countdown 72d"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-25-mapa-solar.html",
+          "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
+        }
+      ]
     },
-    {
-     "date": "2026-07-24",
-     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
-     "fact": "ANGULO LOGRO (tu-semana): limpieza de fumagina cerrada 23/07 — tarea real, no fun_fact"
+    "F-7": {
+      "common": "Abelia",
+      "paginas_historicas": 9,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-19-nombre-apellido.html",
+          "fact": "Clarke Abel China 1817 / naufragio / semillas perdidas"
+        },
+        {
+          "date": "2026-07-26",
+          "page": "2026-07-26-mi-primavera.html",
+          "fact": "ANGULO FLORACION/recompensa: florece primavera-otono sin parar, iman de abejas"
+        },
+        {
+          "date": "2026-08-08",
+          "page": "2026-08-08-el-hueco.html",
+          "fact": "Gap-filler: abelia nov-mayo, cola de temporada que se apaga en mayo. Angulo NUEVO."
+        }
+      ]
     },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-25-mapa-solar.html",
-     "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
+    "F-8": {
+      "common": "Aguaribay / Molle",
+      "paginas_historicas": 9,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-19-racha-jardin.html",
+          "fact": "pimienta rosa real / repele mosquitos / sagrado incas-guaranies"
+        },
+        {
+          "date": "2026-07-27",
+          "page": "2026-07-27-mi-objetivo.html",
+          "fact": "ANGULO OBJETIVO (sombra + fauna): copa de sombra a futuro, pimienta rosa para aves"
+        }
+      ]
+    },
+    "F-9": {
+      "common": "Ligustro",
+      "paginas_historicas": 7,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-secomenta.html",
+          "fact": "invasora Sudamerica"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-25-mapa-solar.html",
+          "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
+        }
+      ]
+    },
+    "F-10": {
+      "common": "Fresno (americano)",
+      "paginas_historicas": 6,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-09-quiz-planta(reno-19-07).html",
+          "fact": "rebrota fuerte tras poda drastica / resiliencia"
+        },
+        {
+          "date": "2026-07-24",
+          "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+          "fact": "ANGULO LOGRO (tu-semana): decisión fresno/fotinia (poda agosto) 23/07"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-25-mapa-solar.html",
+          "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
+        }
+      ]
+    },
+    "B-1": {
+      "common": "Santa Rita / Buganvilia",
+      "paginas_historicas": 10,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-19-nombre-apellido.html",
+          "fact": "Jeanne Baret 1a mujer circunnavegar / nombre robado 244 anios"
+        },
+        {
+          "date": "2026-07-27",
+          "page": "2026-07-27-mi-objetivo.html",
+          "fact": "ANGULO OBJETIVO (mas flor): florece sola con sol pleno"
+        }
+      ]
+    },
+    "B-2": {
+      "common": "Jazmín (a confirmar variedad)",
+      "paginas_historicas": 7,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-09-quiz-planta(reno-19-07).html",
+          "fact": "se acoda solo / da hijos para regalar / generoso"
+        },
+        {
+          "date": "2026-07-30",
+          "page": "2026-07-30-se-multiplican-solos.html",
+          "fact": "ANGULO PROPAGACION (acodo how-to, evolucion del \"da hijos\" 19/07): foto real muestra B-2B/B-2C, separar en primavera"
+        },
+        {
+          "date": "2026-08-17",
+          "page": "2026-08-17-preguntas-abiertas.html",
+          "fact": "ANGULO EXPEDIENTE ABIERTO doble: variedad de Jasminum (mesnyi/azoricum/officinale/polyanthum) + decision de los renuevos B-2B/B-2C (cerco gratis en 2-3 anios vs arrancar ahora)."
+        }
+      ]
+    },
+    "B-3": {
+      "common": "Jazmín de leche / estrellado",
+      "paginas_historicas": 7,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-09-quiz-planta(reno-19-07).html",
+          "fact": "no es jazmin verdadero / apocinacea / flor seca infusion China"
+        },
+        {
+          "date": "2026-08-08",
+          "page": "2026-08-08-el-hueco.html",
+          "fact": "Contraste con jazmin de invierno propuesto: B-3 perfumado oct-ene vs Jasminum nudiflorum sin olor jun-ago. Angulo NUEVO."
+        }
+      ]
+    },
+    "B-4": {
+      "common": "Hibisco / Rosa china",
+      "paginas_historicas": 9,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-regalo-invierno.html",
+          "fact": "flor nacional 3 paises / codigo del pelo / muro norte"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-25-mapa-solar.html",
+          "fact": "ANGULO ORIENTACION: muro norte (hibisco), lado cálido"
+        },
+        {
+          "date": "2026-08-08",
+          "page": "2026-08-08-el-hueco.html",
+          "fact": "Referencia de UBICACION (muro norte calido) para el aloe. No featured por fun_fact."
+        }
+      ]
+    },
+    "B-5a": {
+      "common": "Hortensia",
+      "paginas_historicas": 13,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-regalo-invierno.html",
+          "fact": "clavos oxidados=azul / cal=rosa"
+        },
+        {
+          "date": "2026-07-22",
+          "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
+          "fact": "ANGULO LLUVIA: la mas sedienta, festeja el invierno lluvioso (trasplante pendiente honesto)"
+        },
+        {
+          "date": "2026-07-23",
+          "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
+          "fact": "ANGULO MEDICO: la más sedienta = alta feliz tras la lluvia (nota positiva)"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
+          "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
+        },
+        {
+          "date": "2026-07-26",
+          "page": "2026-07-26-vos-decidis.html",
+          "fact": "ANGULO DECISION/tarea (no fun_fact): trasplante tierra vs maceton, vos-decidis"
+        },
+        {
+          "date": "2026-07-27",
+          "page": "2026-07-27-vos-decidis.html",
+          "fact": "ANGULO DECISION/tarea (no fun_fact): recap 'a tierra' + decisión del rincón (sur vs fondo)"
+        },
+        {
+          "date": "2026-08-04",
+          "page": "2026-08-04-tarjeta-campo.html",
+          "fact": "ANGULO TAREA: trasplante a tierra al rincon sur; NO podar (madera vieja); los 19 mm del jueves la asientan sola"
+        },
+        {
+          "date": "2026-08-06",
+          "page": "2026-07-24-jardin-hoy.html (edición cierre pre-viaje)",
+          "fact": "ANGULO VENTANA JUSTA: única de las 3 con reloj real — trasplante en dormancia OK, con brote arrancado pierde la primera floración → 29-30/08"
+        },
+        {
+          "date": "2026-08-08",
+          "page": "2026-08-08-el-hueco.html",
+          "fact": "Referencia: ya decidido a tierra en el rincon sur; camelia es su companiera acidofila. No featured por fun_fact."
+        }
+      ]
+    },
+    "B-6": {
+      "common": "Esparraguera cola de zorro",
+      "paginas_historicas": 7,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-horoscopo(semana).html",
+          "fact": "no es helecho / cladodios / bayas toxicas"
+        },
+        {
+          "date": "2026-07-24",
+          "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+          "fact": "ANGULO LOGRO (tu-semana): poda de cola de zorro cerrada 23/07"
+        }
+      ]
+    },
+    "B-7": {
+      "common": "Azarero / Pitósporo",
+      "paginas_historicas": 6,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-horoscopo(semana).html",
+          "fact": "perfume azahar / bonsai"
+        },
+        {
+          "date": "2026-07-27",
+          "page": "2026-07-27-mi-objetivo.html",
+          "fact": "ANGULO OBJETIVO (sombra/reparo): cerco, recorte fin de agosto para tupir"
+        }
+      ]
+    },
+    "B-8": {
+      "common": "Palmera pindó",
+      "paginas_historicas": 9,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-horoscopo(semana).html",
+          "fact": "Romanzoff / golosina coco-banana / fruta julio"
+        },
+        {
+          "date": "2026-07-22",
+          "page": "2026-07-22-grupo-jardin.html",
+          "fact": "ANGULO LLUVIA: palmera nativa con fruto coco-banana ahora (mar-jul)"
+        },
+        {
+          "date": "2026-07-24",
+          "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+          "fact": "ANGULO LOGRO (tu-semana): pindó, dejar caer hojas 23/07"
+        },
+        {
+          "date": "2026-07-31",
+          "page": "2026-07-31-el-parte.html",
+          "fact": "ANGULO ESTADO+NATIVA (El Parte): pindo nativa, coquitos coco-banana golosina guarani / romanzoffiana conde ruso — EN FRUTO en invierno"
+        }
+      ]
+    },
+    "B-9": {
+      "common": "Crespón / Mirto de crepe",
+      "paginas_historicas": 17,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-19-nombre-apellido.html",
+          "fact": "Magnus von Lagerstrom amigo de Linneo / flor papel crepe"
+        },
+        {
+          "date": "2026-07-23",
+          "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
+          "fact": "ANGULO DT: caduco en pretemporada, debuta en primavera"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
+          "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
+        },
+        {
+          "date": "2026-07-27",
+          "page": "2026-07-27-mi-objetivo.html",
+          "fact": "ANGULO OBJETIVO (mas flor): poda severa agosto = flor de verano (madera nueva)"
+        },
+        {
+          "date": "2026-07-28",
+          "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
+          "fact": "ANGULO OBJETIVO-FLOR (no fun_fact): decision \"cual explota primero\" — poda agosto en madera nueva = flor de verano. Ejecuta objetivo declarado del usuario (mas flor)"
+        },
+        {
+          "date": "2026-08-02",
+          "page": "2026-08-02-que-mas-podo.html",
+          "fact": "ANGULO RESPUESTA (pregunta directa del usuario): ventana de poda real de ficha + porque florece en madera nueva. B-25 = dosis de neem y barrera de hormigas."
+        },
+        {
+          "date": "2026-08-03",
+          "page": "2026-08-03-el-taller-2.html",
+          "fact": "ANGULO TAREA (Taller nº2, monotematico): poda severa de flor 50-70%, munones 2-4 yemas, florece en madera nueva, mito del crepe murder, corteza canela + decision irreversible arbusto-vs-arbolito"
+        },
+        {
+          "date": "2026-08-04",
+          "page": "2026-08-04-tarjeta-campo.html",
+          "fact": "ANGULO TAREA (2º dia seguido, serie Taller/tarjeta): recordatorio de poda 50-70% + NUEVO: estaca de madera dura -> planta gratis"
+        },
+        {
+          "date": "2026-08-06",
+          "page": "2026-07-24-jardin-hoy.html (edición cierre pre-viaje)",
+          "fact": "ANGULO VENTANA (no fun_fact): el límite de la poda de flor es la YEMA, no el calendario — el crespón es de los últimos en despertar, el 24/08 llega con margen"
+        }
+      ]
+    },
+    "B-10": {
+      "common": "Lavanda",
+      "paginas_historicas": 12,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-regalo-invierno.html",
+          "fact": "lavare / aromaterapia / bolsita almohada"
+        },
+        {
+          "date": "2026-07-22",
+          "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
+          "fact": "ANGULO LLUVIA: mediterranea, se queja del exceso de agua (drenaje)"
+        },
+        {
+          "date": "2026-07-23",
+          "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
+          "fact": "ANGULO MEDICO: mediterránea muro norte, mismo cuadro que romero (encharcamiento)"
+        },
+        {
+          "date": "2026-07-31",
+          "page": "2026-07-31-el-parte.html",
+          "fact": "ANGULO CLIMA-INVIERNO (El Parte): lavanda mediterranea verde/aromatica en frio / lavare=lavar romanos / bolsita espanta polillas — no le hacen nada las heladas tardias"
+        },
+        {
+          "date": "2026-08-08",
+          "page": "2026-08-08-el-hueco.html",
+          "fact": "Gap-filler: florece set-mayo, una de las 4 que bancan otonio-invierno. Angulo NUEVO (cobertura anual, no fun_fact)."
+        }
+      ]
+    },
+    "B-12": {
+      "common": "Cinta / Lazo de amor",
+      "paginas_historicas": 9,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-19-racha-jardin.html",
+          "fact": "NASA aire limpio 10m2 / perenne sin licencia"
+        },
+        {
+          "date": "2026-07-30",
+          "page": "2026-07-30-se-multiplican-solos.html",
+          "fact": "ANGULO PROPAGACION (how-to, no fun_fact NASA): hijuelos colgantes del lazo de amor = plantas gratis, cast fresco rested"
+        }
+      ]
+    },
+    "B-13": {
+      "common": "Clivia / Lirio del Cabo",
+      "paginas_historicas": 10,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-19-nombre-apellido.html",
+          "fact": "duquesa Charlotte Clive / vive 100 anios / ejemplares 1830"
+        },
+        {
+          "date": "2026-07-26",
+          "page": "2026-07-26-mi-primavera.html",
+          "fact": "ANGULO FLORACION/recompensa (no fun_fact): umbela naranja fin invierno/primavera, elegí-tu-primavera"
+        },
+        {
+          "date": "2026-08-17",
+          "page": "2026-08-17-preguntas-abiertas.html",
+          "fact": "ANGULO EXPEDIENTE ABIERTO (no fun_fact): sci 'a confirmar' — miniata vs gardenii vs robusta, la vara floral de setiembre lo dice. Consecuencia: si es gardenii el forzado de sequia invernal esta corrido."
+        }
+      ]
+    },
+    "B-14": {
+      "common": "Lapachillo",
+      "paginas_historicas": 9,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-09-quiz-planta(reno-19-07).html",
+          "fact": "nativo / prima del lapacho / madera charrua-guarani"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-25-mapa-solar.html",
+          "fact": "ANGULO ORIENTACION: muro norte (lapachillo)"
+        },
+        {
+          "date": "2026-08-08",
+          "page": "2026-08-08-el-hueco.html",
+          "fact": "Referencia de UBICACION (muro norte). No featured por fun_fact."
+        }
+      ]
+    },
+    "B-15": {
+      "common": "Hiedra común",
+      "paginas_historicas": 12,
+      "featured": [
+        {
+          "date": "2026-07-20",
+          "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
+          "fact": "+400 anios / invicto del invierno / donante universal resistencia"
+        },
+        {
+          "date": "2026-07-22",
+          "page": "2026-07-22-grupo-jardin.html",
+          "fact": "ANGULO LLUVIA: +400 anios de inviernos, ni se inmuta"
+        },
+        {
+          "date": "2026-07-30",
+          "page": "2026-07-30-se-multiplican-solos.html",
+          "fact": "ANGULO PROPAGACION (esqueje al agua, no fun_fact +400anios): la mas facil de multiplicar, foto real"
+        },
+        {
+          "date": "2026-08-02",
+          "page": "2026-08-02-que-mas-podo.html",
+          "fact": "ANGULO RESPUESTA (pregunta directa del usuario): ventana de poda real de ficha + porque florece en madera nueva. B-25 = dosis de neem y barrera de hormigas."
+        },
+        {
+          "date": "2026-08-03",
+          "page": "2026-08-03-el-taller-2.html",
+          "fact": "ANGULO TAREA (opcional del Taller nº2): recorte de avances sobre el galpon antes del rebrote, no arrancar de la pared"
+        }
+      ]
+    },
+    "B-16": {
+      "common": "Anacahuita",
+      "paginas_historicas": 10,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-19-racha-jardin.html",
+          "fact": "protegida por ley desde 1986 / madera charrua"
+        },
+        {
+          "date": "2026-07-27",
+          "page": "2026-07-27-mi-objetivo.html",
+          "fact": "ANGULO OBJETIVO (fauna): nativa, bayas comida de pajaros"
+        }
+      ]
+    },
+    "B-18": {
+      "common": "Rosa de Siria / Althea",
+      "paginas_historicas": 13,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-horoscopo(semana).html",
+          "fact": "flor de un dia / escudo e himno Corea"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
+          "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
+        },
+        {
+          "date": "2026-07-27",
+          "page": "2026-07-27-mi-objetivo.html",
+          "fact": "ANGULO OBJETIVO (mas flor): poda severa = mas flor (madera nueva)"
+        },
+        {
+          "date": "2026-07-28",
+          "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
+          "fact": "ANGULO OBJETIVO-FLOR (no fun_fact): opcion en decision de prioridad de flor (poda severa althea)"
+        },
+        {
+          "date": "2026-08-02",
+          "page": "2026-08-02-que-mas-podo.html",
+          "fact": "ANGULO RESPUESTA (pregunta directa del usuario): ventana de poda real de ficha + porque florece en madera nueva. B-25 = dosis de neem y barrera de hormigas."
+        },
+        {
+          "date": "2026-08-03",
+          "page": "2026-08-03-el-taller-2.html",
+          "fact": "ANGULO TAREA (Taller nº2): poda 40-50%, munones 2-3 yemas, madera nueva, rebrote de base, flor de un solo dia / flor nacional de Corea del Sur"
+        },
+        {
+          "date": "2026-08-04",
+          "page": "2026-08-04-tarjeta-campo.html",
+          "fact": "ANGULO TAREA (2º dia seguido): recordatorio 40-50% + NUEVO: estaca de madera dura"
+        },
+        {
+          "date": "2026-08-06",
+          "page": "2026-07-24-jardin-hoy.html (edición cierre pre-viaje)",
+          "fact": "ANGULO VENTANA: la althea brota tardísimo (parece palo seco en agosto) → mayor margen de las tres, sirve hasta principios de septiembre"
+        }
+      ]
+    },
+    "B-20": {
+      "common": "Arbusto caduco a identificar",
+      "paginas_historicas": 5,
+      "featured": [
+        {
+          "date": "2026-08-17",
+          "page": "2026-08-17-preguntas-abiertas.html",
+          "fact": "ANGULO EXPEDIENTE ABIERTO: la unica de 52 sin ni siquiera genero tentativo. Brotacion set-oct = patron de yemas + hoja + flor. Consecuencia: sin ID no hay mes de poda seguro."
+        }
+      ]
+    },
+    "B-22": {
+      "common": "Palta uruguaya",
+      "paginas_historicas": 11,
+      "featured": [
+        {
+          "date": "2026-07-20",
+          "page": "2026-07-20-quiniela-jardin.html",
+          "fact": "viudo evolutivo perezosos gigantes 13000 anios / cosecha oculta"
+        },
+        {
+          "date": "2026-07-22",
+          "page": "2026-07-22-lluvia-tareas.html",
+          "fact": "ANGULO LLUVIA: caveat honesto — humedad pegada al cuello del tronco favorece hongos de base"
+        },
+        {
+          "date": "2026-07-27",
+          "page": "2026-07-27-vos-decidis.html",
+          "fact": "ANGULO DECISION/tarea: plantines de palta contra la pared sin tocar, qué hacer en primavera"
+        }
+      ]
+    },
+    "B-23": {
+      "common": "Limonero",
+      "paginas_historicas": 13,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-secomenta.html",
+          "fact": "fruta 12 meses / hibrido 2500 anos"
+        },
+        {
+          "date": "2026-07-23",
+          "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
+          "fact": "ANGULO DT: goleador 12/12 = renovar contrato (fruta todo el año)"
+        },
+        {
+          "date": "2026-07-24",
+          "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+          "fact": "ANGULO ESTADO (jardin-hoy): 'con fruta' — chip minimalista"
+        },
+        {
+          "date": "2026-07-28",
+          "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
+          "fact": "ANGULO ESTADO REAL (no fun_fact): duelo esto-o-esto — limonero cargado de fruta HOY (dato factual invierno)"
+        },
+        {
+          "date": "2026-08-10",
+          "page": "2026-08-10-ultima-mandarina.html",
+          "fact": "DATO COMPUTADO: unico de las 52 con fruta 12/12 meses — el 'piso' del jardin. Angulo estructural, no fun_fact."
+        }
+      ]
+    },
+    "B-24": {
+      "common": "Mandarina criolla",
+      "paginas_historicas": 10,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-regalo-invierno.html",
+          "fact": "citrico mas antiguo 3000aC / mandarines / fruta en julio"
+        },
+        {
+          "date": "2026-07-22",
+          "page": "2026-07-22-grupo-jardin.html",
+          "fact": "ANGULO LLUVIA: citrico da fruta en julio, lluvia = fruta mas jugosa"
+        },
+        {
+          "date": "2026-07-24",
+          "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+          "fact": "ANGULO ESTADO (jardin-hoy): 'con fruta' — chip minimalista"
+        },
+        {
+          "date": "2026-07-31",
+          "page": "2026-07-31-el-parte.html",
+          "fact": "ANGULO ESTADO INVERNAL (El Parte, lead): citrico mas antiguo (3000aC) padre de naranjas/limones / nombre por mandarines chinos — EN FRUTO ahora, el invierno es su temporada"
+        },
+        {
+          "date": "2026-08-10",
+          "page": "2026-08-10-ultima-mandarina.html",
+          "fact": "ANGULO VENTANA DE COSECHA (no fun_fact — el de los 'mandarines' se usó el 31/07, vedado hasta el 14/08): fruiting abr-ago, ultimo mes del año, cierra el 31/08 y vuelve el 23 → 8 dias. PROTAGONISTA."
+        }
+      ]
+    },
+    "B-25": {
+      "common": "Gardenia / Jazmín del Cabo",
+      "paginas_historicas": 13,
+      "featured": [
+        {
+          "date": "2026-07-20",
+          "page": "2026-07-20-guardia-jardin.html",
+          "fact": "pulgones+hormigas ganadero / 600kg flores=1L Chanel Nº22 / paciente critico"
+        },
+        {
+          "date": "2026-07-21",
+          "page": "2026-07-21-asamblea-jardin.html",
+          "fact": "ANGULO TAREA (no fun_fact): queja formal vs hormigas 'ganaderas' de pulgones — tarea real activa, link a landing"
+        },
+        {
+          "date": "2026-07-22",
+          "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
+          "fact": "ANGULO LLUVIA (no fun_fact): el agua voltea pulgones y desarma hormigas — tarea real, alivio"
+        },
+        {
+          "date": "2026-07-23",
+          "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
+          "fact": "ANGULO MEDICO+DT: tarea real activa (pulgones/hormigas), lluvia bajó plaga — paciente/jugador tocado"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
+          "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
+        },
+        {
+          "date": "2026-08-02",
+          "page": "2026-08-02-que-mas-podo.html",
+          "fact": "ANGULO RESPUESTA (pregunta directa del usuario): ventana de poda real de ficha + porque florece en madera nueva. B-25 = dosis de neem y barrera de hormigas."
+        }
+      ]
+    },
+    "B-26": {
+      "common": "Romero",
+      "paginas_historicas": 17,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-secomenta.html",
+          "fact": "unica flor en julio / memoria"
+        },
+        {
+          "date": "2026-07-21",
+          "page": "2026-07-09-wrapped(reno-21-07).html",
+          "fact": "RENEWAL Wrapped: Top5 reframe 'empujan a primavera' — romero unico que florece (fact estructural, no nuevo)"
+        },
+        {
+          "date": "2026-07-22",
+          "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
+          "fact": "ANGULO LLUVIA: mediterranea odia pies mojados = caveat honesto de drenaje; unica flor de julio"
+        },
+        {
+          "date": "2026-07-23",
+          "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
+          "fact": "ANGULO MEDICO+CHUSMERIO: única en flor en julio / riesgo pie mojado post-lluvia (Phytophthora) — dato real, no fun_fact repetido"
+        },
+        {
+          "date": "2026-07-24",
+          "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+          "fact": "ANGULO ESTADO (jardin-hoy): 'en flor' — vistazo minimalista, sin fun_fact"
+        },
+        {
+          "date": "2026-07-28",
+          "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
+          "fact": "ANGULO ESTADO REAL (no fun_fact): duelo esto-o-esto — unica en flor este mes (dato factual julio)"
+        },
+        {
+          "date": "2026-08-08",
+          "page": "2026-08-08-el-hueco.html",
+          "fact": "DATO DE GRAFICO, no fun_fact: unica especie en flor en junio Y julio -> es el AGUJERO, no la curiosidad. Ademas: multiplicar por gajo para dar volumen al mes vacio."
+        },
+        {
+          "date": "2026-08-15",
+          "page": "2026-08-15-florecio-lo-que-podaste.html",
+          "fact": "MENCION DE CONTEO solamente (una de las 6 con agosto en flowering, jun-oct). SIN fun_fact - sigue vedada para fun_fact hasta fines de agosto."
+        }
+      ]
+    },
+    "B-27": {
+      "common": "Mirto común",
+      "paginas_historicas": 6,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-19-racha-jardin.html",
+          "fact": "sagrado para Venus / licor mirto / perenne invierno"
+        },
+        {
+          "date": "2026-07-26",
+          "page": "2026-07-26-mi-primavera.html",
+          "fact": "ANGULO FLORACION/recompensa: flor perfumada Venus + baya comestible"
+        }
+      ]
+    },
+    "B-29": {
+      "common": "Lantana / Camará",
+      "paginas_historicas": 10,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-regalo-invierno.html",
+          "fact": "flores semaforo para polinizadores"
+        },
+        {
+          "date": "2026-07-27",
+          "page": "2026-07-27-mi-objetivo.html",
+          "fact": "ANGULO OBJETIVO (mas flor / fauna): florece sola, iman de mariposas"
+        },
+        {
+          "date": "2026-08-08",
+          "page": "2026-08-08-el-hueco.html",
+          "fact": "Gap-filler: lantana oct-mayo. Angulo NUEVO."
+        }
+      ]
+    },
+    "B-30": {
+      "common": "Durazno",
+      "paginas_historicas": 14,
+      "featured": [
+        {
+          "date": "2026-07-20",
+          "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
+          "fact": "coma inducido dormancia / florece agosto primero / carrera 1a flor"
+        },
+        {
+          "date": "2026-07-22",
+          "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
+          "fact": "ANGULO LLUVIA: caduco en coma invernal, recarga suelo para florecer en agosto"
+        },
+        {
+          "date": "2026-07-23",
+          "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
+          "fact": "ANGULO MEDICO: caduco en dormancia, acumula horas-frío (reposo normal, no enfermo)"
+        },
+        {
+          "date": "2026-07-24",
+          "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+          "fact": "ANGULO ESTADO (jardin-hoy): 'durmiendo' — chip minimalista"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
+          "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
+        },
+        {
+          "date": "2026-08-01",
+          "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
+          "fact": "ANGULO NUEVO 'TALLER/how-to': protocolo de poda en vaso abierto paso a paso (40-50%, 3-4 madres, 5mm sobre yema externa). NO fun_fact — tarea real urgente, ventana exacta."
+        },
+        {
+          "date": "2026-08-02",
+          "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
+          "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
+        },
+        {
+          "date": "2026-08-15",
+          "page": "2026-08-15-florecio-lo-que-podaste.html",
+          "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Poda en vaso abierto tildada 02/08 14:25 (taller-arbol-B-30)."
+        }
+      ]
+    },
+    "B-32": {
+      "common": "Viraró",
+      "paginas_historicas": 13,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-09-quiz-planta(reno-19-07).html",
+          "fact": "sepalos rosados crecen post-polinizacion / helicoptero / madera dura"
+        },
+        {
+          "date": "2026-07-26",
+          "page": "2026-07-26-mi-primavera.html",
+          "fact": "ANGULO FLORACION/recompensa: sepalos rosados sept-nov, confeti nativo"
+        },
+        {
+          "date": "2026-07-31",
+          "page": "2026-07-31-el-parte.html",
+          "fact": "ANGULO PROXIMO-DESPERTAR+NATIVA (El Parte): viraro nativo, sepalos rosados=alitas de dispersion por viento — florece agosto = corresponsal durante el viaje"
+        },
+        {
+          "date": "2026-08-08",
+          "page": "2026-08-08-el-hueco.html",
+          "fact": "PROTAGONISTA: viraro florece agosto-setiembre (esta arrancando AHORA, durante el viaje) + dioica, pie hembra arma fruto alado color salmon. Angulo NUEVO (nunca se uso la floracion ni la dioicia)."
+        },
+        {
+          "date": "2026-08-15",
+          "page": "2026-08-15-florecio-lo-que-podaste.html",
+          "fact": "MENCION DE CONTEO solamente (una de las 6 con agosto en flowering). NO protagonista y SIN el fun_fact de los sepalos rosados: ese angulo ya se uso 19/07, 26/07, 31/07 y 08/08 (protagonista) - repetirlo hoy habria violado la regla de anti-repeticion que nace del reclamo del 18/07. Descansa hasta el 22/08."
+        }
+      ]
+    },
+    "B-34": {
+      "common": "Mandioca brava (tentativa)",
+      "paginas_historicas": 10,
+      "featured": [
+        {
+          "date": "2026-07-20",
+          "page": "2026-06-29-diario-jardin(reno-20-07).html",
+          "fact": "latex cianogenico brava / nativa Cono Sur / mandioca domesticada = veneno a alimento"
+        },
+        {
+          "date": "2026-07-30",
+          "page": "2026-07-30-aguantan-solos.html",
+          "fact": "ANGULO RESISTENCIA/VIAJE (no fun_fact latex): nativa Cono Sur, tolera sequia, invierno casi sin agua = se banca 3 semanas, foto real"
+        }
+      ]
+    },
+    "B-36": {
+      "common": "Palta Haas",
+      "paginas_historicas": 12,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-secomenta.html",
+          "fact": "clon 1926 / 80% mercado"
+        },
+        {
+          "date": "2026-07-23",
+          "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
+          "fact": "ANGULO DT: palto Hass clon 1926 (~80% mercado) = figura intransferible/patrimonio"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-25-mapa-solar.html",
+          "fact": "ANGULO ORIENTACION: landmark este/fondo (palto)"
+        },
+        {
+          "date": "2026-08-10",
+          "page": "2026-08-10-ultima-mandarina.html",
+          "fact": "FUN_FACT: todas las Hass del mundo descienden de UN arbol de Rudolph Hass (1926), solo por injerto. Primer uso del fun_fact (el 25/07 fue angulo orientacion). Ventana may-oct, en la mitad."
+        }
+      ]
+    },
+    "B-37": {
+      "common": "Liquidámbar",
+      "paginas_historicas": 16,
+      "featured": [
+        {
+          "date": "2026-07-20",
+          "page": "2026-07-20-guardia-jardin.html",
+          "fact": "storax balsamo maya / dormancia = ventana limpieza copa"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-25-mapa-solar.html",
+          "fact": "ANGULO ORIENTACION (no fun_fact): landmark este/fondo, sol de mañana"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
+          "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
+        },
+        {
+          "date": "2026-07-26",
+          "page": "2026-07-26-vos-decidis.html",
+          "fact": "ANGULO DECISION/tarea (no fun_fact): rama que sombrea la palta, quien poda, vos-decidis"
+        },
+        {
+          "date": "2026-07-27",
+          "page": "2026-07-27-vos-decidis.html",
+          "fact": "ANGULO DECISION/tarea (recap): rama a la palta, la poda el usuario (paso a paso)"
+        },
+        {
+          "date": "2026-07-29",
+          "page": "2026-07-29-antes-de-irte.html + jardin-hoy",
+          "fact": "ANGULO TAREA/VIAJE: dejar la rama de sombra hecha antes de irse (mejor en dormancia) — tarea real, foto real"
+        }
+      ]
+    },
+    "B-38": {
+      "common": "Ciruela amarilla",
+      "paginas_historicas": 10,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-horoscopo(semana).html",
+          "fact": "japonesa pero china / florece agosto / vitamina C"
+        },
+        {
+          "date": "2026-07-26",
+          "page": "2026-07-26-mi-primavera.html",
+          "fact": "ANGULO FLORACION/recompensa: nube de flor blanca en agosto, de las primeras"
+        },
+        {
+          "date": "2026-08-01",
+          "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
+          "fact": "ANGULO TALLER: paso extra de madera gris >4 años improductiva + momificadas como foco de hongo. Angulo tarea real."
+        },
+        {
+          "date": "2026-08-02",
+          "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
+          "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
+        },
+        {
+          "date": "2026-08-15",
+          "page": "2026-08-15-florecio-lo-que-podaste.html",
+          "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Tilde taller-arbol-B-38 el 02/08 14:25, flor blanca misma ventana."
+        }
+      ]
+    },
+    "B-39": {
+      "common": "Pera Williams",
+      "paginas_historicas": 13,
+      "featured": [
+        {
+          "date": "2026-07-20",
+          "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
+          "fact": "reposo / flor blanca agosto / carrera 1a flor vs durazno"
+        },
+        {
+          "date": "2026-07-22",
+          "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
+          "fact": "ANGULO LLUVIA: caduco, carrera de la 1a flor vs durazno en agosto"
+        },
+        {
+          "date": "2026-07-24",
+          "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+          "fact": "ANGULO ESTADO+LOGRO: 'durmiendo' (jardin-hoy) + poda invernal cerrada 23/07 (tu-semana)"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-25-mapa-solar.html",
+          "fact": "ANGULO ORIENTACION: landmark sur, rincón sombrío/húmedo (pera Williams)"
+        },
+        {
+          "date": "2026-08-06",
+          "page": "2026-07-24-jardin-hoy.html (edición cierre pre-viaje)",
+          "fact": "ANGULO LOGRO: poda piramidal cerrada 23/07; vecina del rincón sur donde va la hortensia"
+        },
+        {
+          "date": "2026-08-08",
+          "page": "2026-08-08-el-hueco.html",
+          "fact": "Referencia de UBICACION (rincon sur sombrio/humedo) para la camelia. No featured por fun_fact."
+        },
+        {
+          "date": "2026-08-15",
+          "page": "2026-08-15-florecio-lo-que-podaste.html",
+          "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Cierre del circulo: la instruccion 'no cortes los dardos - yemas gordas' que leyo el 23/07 (plant-B-39 done 15:42) son exactamente las yemas que abren hoy. Ademas HALLAZGO NUEVO con consecuencia: su ficha pide polinizador de otra variedad y en 52 fichas hay UNA sola pera -> tap florecio-pera-companera para la reentrada del 24/08."
+        }
+      ]
+    },
+    "B-40": {
+      "common": "Madreselva china siempreverde",
+      "paginas_historicas": 7,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-horoscopo(semana).html",
+          "fact": "flores insignificantes / bayas para aves / topiaria"
+        },
+        {
+          "date": "2026-07-27",
+          "page": "2026-07-27-mi-objetivo.html",
+          "fact": "ANGULO OBJETIVO (sombra + fauna): siempreverde trepadora rapida, bayas para aves"
+        }
+      ]
+    },
+    "B-41": {
+      "common": "Caqui / Persimón (identidad en duda)",
+      "paginas_historicas": 14,
+      "featured": [
+        {
+          "date": "2026-07-21",
+          "page": "2026-07-21-asamblea-jardin.html",
+          "fact": "Diospyros='fruto de los dioses'; nunca dio flor ni fruto = identidad EN DUDA (honesto), 'exige investigacion'"
+        },
+        {
+          "date": "2026-07-22",
+          "page": "2026-07-22-grupo-jardin.html",
+          "fact": "ANGULO LLUVIA: sigue con identidad en duda (nunca flor ni fruto) — honesto"
+        },
+        {
+          "date": "2026-07-25",
+          "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
+          "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
+        },
+        {
+          "date": "2026-07-26",
+          "page": "2026-07-26-vos-decidis.html",
+          "fact": "ANGULO DECISION/tarea (no fun_fact): identidad en duda, observar vs investigar, vos-decidis"
+        },
+        {
+          "date": "2026-07-27",
+          "page": "2026-07-27-vos-decidis.html",
+          "fact": "ANGULO DECISION/tarea (recap): sigue en observación hasta primavera"
+        }
+      ]
+    },
+    "B-42": {
+      "common": "Pata de vaca",
+      "paginas_historicas": 8,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-19-nombre-apellido.html",
+          "fact": "hermanos Bauhin / hoja partida en dos"
+        },
+        {
+          "date": "2026-07-30",
+          "page": "2026-07-30-aguantan-solos.html",
+          "fact": "ANGULO RESISTENCIA/VIAJE (no fun_fact Bauhin): rustica nativa, raiz profunda + dormancia = autosuficiente en el viaje, foto real"
+        }
+      ]
+    },
+    "B-43": {
+      "common": "Pitósporo",
+      "paginas_historicas": 7,
+      "featured": [
+        {
+          "date": "2026-07-20",
+          "page": "2026-06-29-diario-jardin(reno-20-07).html",
+          "fact": "tobira=puerta japones / semilla resina pega patas aves / poda drastica costera"
+        },
+        {
+          "date": "2026-07-30",
+          "page": "2026-07-30-aguantan-solos.html",
+          "fact": "ANGULO RESISTENCIA/VIAJE (no fun_fact tobira): planta-y-olvidate costera, tolera sequia = duro de matar, foto real"
+        },
+        {
+          "date": "2026-08-17",
+          "page": "2026-08-17-preguntas-abiertas.html",
+          "fact": "ANGULO CONTRADICCION DE FICHA: catalogo dice P. tobira (flor blanca) pero la foto del usuario del 05/05 muestra flor AMARILLA. Se cierra con la flor de octubre. NO se uso el fun_fact del perfume/bonsai."
+        }
+      ]
+    },
+    "B-44": {
+      "common": "Evónimo japonés variegado",
+      "paginas_historicas": 5,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-horoscopo(semana).html",
+          "fact": "velos nupciales / color invernal"
+        },
+        {
+          "date": "2026-07-29",
+          "page": "2026-07-29-los-que-no-duermen.html",
+          "fact": "ANGULO PERENNE INVERNAL: de los pocos que dan color plateado en pleno invierno; riego bajo, foto real"
+        }
+      ]
+    },
+    "B-45": {
+      "common": "Sin identificar (al lado de la pared, atrás de B-35)",
+      "paginas_historicas": 4,
+      "featured": [
+        {
+          "date": "2026-08-17",
+          "page": "2026-08-17-preguntas-abiertas.html",
+          "fact": "ANGULO EXPEDIENTE ABIERTO + HERO de la pagina: 4 candidatas (Lonicera japonica / Solanum jasminoides / Jasminum / Plumbago) que se separan por el OLOR al atardecer. Consecuencia: trepadora agresiva vs mansa."
+        }
+      ]
+    },
+    "B-46": {
+      "common": "Vivero / Plantines",
+      "paginas_historicas": 8,
+      "featured": [
+        {
+          "date": "2026-07-21",
+          "page": "2026-07-21-asamblea-jardin.html",
+          "fact": "~30 plantines reciclados; cada plantin palmera vale 200-500 pesos — 'pedido de adopcion/reparto'"
+        },
+        {
+          "date": "2026-07-22",
+          "page": "2026-07-22-grupo-jardin.html",
+          "fact": "ANGULO LLUVIA: ~30 plantines, cuidado con encharcarlos (damping-off)"
+        },
+        {
+          "date": "2026-07-23",
+          "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
+          "fact": "ANGULO DT: vivero ~30 plantines = la cantera/inferiores a subir al plantel"
+        },
+        {
+          "date": "2026-07-24",
+          "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
+          "fact": "ANGULO LOGRO (tu-semana): vivero de palmeras reubicado 23/07"
+        },
+        {
+          "date": "2026-07-27",
+          "page": "2026-07-27-vos-decidis.html",
+          "fact": "ANGULO DECISION/tarea: ~30 plantines, destino (repartir/plantar/crecer)"
+        }
+      ]
+    },
+    "B-48": {
+      "common": "Plantín de roble joven (Quercus sp.)",
+      "paginas_historicas": 7,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-horoscopo(semana).html",
+          "fact": "roble 300 anos / bellota"
+        },
+        {
+          "date": "2026-08-17",
+          "page": "2026-08-17-preguntas-abiertas.html",
+          "fact": "CODA (no protagonista): Quercus robur (lobulo redondeado) vs palustris (puntiagudo, seno profundo) vs cerris (triangular). Se cierra con UNA foto."
+        }
+      ]
+    },
+    "B-49": {
+      "common": "Plantín trifoliado (posible glicinia o leguminosa)",
+      "paginas_historicas": 5,
+      "featured": [
+        {
+          "date": "2026-07-21",
+          "page": "2026-07-21-cuenta-regresiva.html",
+          "fact": "misterio de identidad: si florece con racimos violetas en primavera = glicinia/Wisteria — countdown a la revelacion"
+        },
+        {
+          "date": "2026-08-17",
+          "page": "2026-08-17-preguntas-abiertas.html",
+          "fact": "ANGULO BIFURCACION (diagrama SVG propio): trifoliado -> racimo violeta=glicinia (obra de hierro a 20 anios) / blanco=Robinia / amarillo=Cytisus. Consecuencia maxima del jardin."
+        }
+      ]
+    },
+    "B-47": {
+      "common": "Plantines de palmera (lote separado)",
+      "paginas_historicas": 6,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-horoscopo(semana).html",
+          "fact": "cania de butia / palmares Castillos / 56 plantines"
+        },
+        {
+          "date": "2026-08-17",
+          "page": "2026-08-17-preguntas-abiertas.html",
+          "fact": "CODA (no protagonista): butia vs pindo se separa por la hoja (segmentos rigidos en arco vs pluma laxa pendula). Se cierra con UNA foto, sin esperar primavera."
+        }
+      ]
+    },
+    "I-1": {
+      "common": "Singonio / Pata de gallo",
+      "paginas_historicas": 6,
+      "featured": [
+        {
+          "date": "2026-07-19",
+          "page": "2026-07-19-racha-jardin.html",
+          "fact": "trepa 10m / pellizcar puntas = mata densa / interior"
+        },
+        {
+          "date": "2026-07-29",
+          "page": "2026-07-29-antes-de-irte.html + 2026-07-29-los-que-no-duermen.html",
+          "fact": "ANGULO INTERIOR/INVIERNO+VIAJE: cuidado de ausencia (riego cada 14d invierno, luz indirecta) + protagonista de la guardia de invierno con foto real"
+        },
+        {
+          "date": "2026-08-06",
+          "page": "2026-07-24-jardin-hoy.html (edición cierre pre-viaje)",
+          "fact": "ANGULO VIAJE: interior = lo único que consume agua en agosto; riego a fondo antes de salir cubre las 2,5 semanas"
+        }
+      ]
+    },
+    "I-2": {
+      "common": "Difenbaquia / Caña muda",
+      "paginas_historicas": 8,
+      "featured": [
+        {
+          "date": "2026-07-18",
+          "page": "2026-07-18-secomenta.html",
+          "fact": "oxalato / cana muda"
+        },
+        {
+          "date": "2026-07-29",
+          "page": "2026-07-29-antes-de-irte.html + 2026-07-29-los-que-no-duermen.html",
+          "fact": "ANGULO INTERIOR/INVIERNO: riego cada 14d, drenaje critico, savia toxica; guardia de invierno con foto real"
+        },
+        {
+          "date": "2026-08-06",
+          "page": "2026-07-24-jardin-hoy.html (edición cierre pre-viaje)",
+          "fact": "ANGULO VIAJE: idem I-1 (difenbaquia) — riego a fondo pre-viaje"
+        }
+      ]
+    },
+    "B-5": {
+      "common": "Hortensia",
+      "paginas_historicas": 2,
+      "featured": [
+        {
+          "date": "2026-07-28",
+          "page": "2026-07-28-vos-decidis.html",
+          "fact": "ANGULO DECISION/TAREA (no fun_fact): rincon donde plantarla a tierra (carry-over sin responder del 27/07)"
+        },
+        {
+          "date": "2026-08-03",
+          "page": "2026-08-03-el-taller-2.html",
+          "fact": "ANGULO CONTRASTE (no protagonista): la hortensia florece en madera VIEJA -> es la que NO se poda ahora. Usada como contraejemplo tecnico, no como featured"
+        }
+      ]
+    },
+    "B-35": {
+      "common": "B-35",
+      "paginas_historicas": 3,
+      "featured": [
+        {
+          "date": "2026-08-01",
+          "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
+          "fact": "Nombrado como segundo ejemplar del durazno dentro del taller (mismo criterio que B-30). Angulo tarea real."
+        },
+        {
+          "date": "2026-08-02",
+          "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
+          "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
+        },
+        {
+          "date": "2026-08-15",
+          "page": "2026-08-15-florecio-lo-que-podaste.html",
+          "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Segundo durazno, mismo tilde que B-30 el 02/08."
+        }
+      ]
     }
-   ]
   },
-  "F-2": {
-   "common": "Bignonia rosada / Podranea",
-   "paginas_historicas": 8,
-   "featured": [
-    {
-     "date": "2026-07-21",
-     "page": "2026-07-21-cuenta-regresiva.html",
-     "fact": "reclasificada de Bignonia a genero propio Podranea en 1980 (tubo curvo/semillas); floracion nov-abr — countdown 103d"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-25-mapa-solar.html",
-     "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
-    },
-    {
-     "date": "2026-07-28",
-     "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
-     "fact": "ANGULO OBJETIVO-FLOR (no fun_fact): opcion en decision de prioridad de flor (poda podranea)"
-    }
-   ]
-  },
-  "F-3": {
-   "common": "Fotinia",
-   "paginas_historicas": 6,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-09-quiz-planta(reno-19-07).html",
-     "fact": "hibrido Alabama 1940 / brotes rojos viran a verde = defensa"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-25-mapa-solar.html",
-     "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
-    },
-    {
-     "date": "2026-08-08",
-     "page": "2026-08-08-el-hueco.html",
-     "fact": "Referencia de UBICACION (frente/oeste) para la salvia. No featured por fun_fact."
-    }
-   ]
-  },
-  "F-4": {
-   "common": "Ciruelo de jardín",
-   "paginas_historicas": 13,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-19-nombre-apellido.html",
-     "fact": "Pissard Persia 1880 / todos los ciruelos purpura de 1 ejemplar"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-25-mapa-solar.html",
-     "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
-    },
-    {
-     "date": "2026-08-01",
-     "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
-     "fact": "ANGULO TALLER: diferencia ornamental vs frutal — 25-35%, silueta y color púrpura, no cosecha. Angulo tarea real."
-    },
-    {
-     "date": "2026-08-02",
-     "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
-     "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
-    },
-    {
-     "date": "2026-08-02",
-     "page": "2026-08-02-que-mas-podo.html",
-     "fact": "ANGULO RESPUESTA (pregunta directa del usuario): ventana de poda real de ficha + porque florece en madera nueva. B-25 = dosis de neem y barrera de hormigas."
-    },
-    {
-     "date": "2026-08-15",
-     "page": "2026-08-15-florecio-lo-que-podaste.html",
-     "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Tilde podo-F-4 el 02/08 19:34; flor rosada desnuda, frente/oeste sol de tarde."
-    }
-   ]
-  },
-  "F-5": {
-   "common": "Coronita de novia (?)",
-   "paginas_historicas": 6,
-   "featured": [
-    {
-     "date": "2026-07-21",
-     "page": "2026-07-21-cuenta-regresiva.html",
-     "fact": "si es Spiraea, nombre viene de coronas nupciales s.XIX; floracion oct-nov — countdown 72d"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-25-mapa-solar.html",
-     "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
-    }
-   ]
-  },
-  "F-7": {
-   "common": "Abelia",
-   "paginas_historicas": 9,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-19-nombre-apellido.html",
-     "fact": "Clarke Abel China 1817 / naufragio / semillas perdidas"
-    },
-    {
-     "date": "2026-07-26",
-     "page": "2026-07-26-mi-primavera.html",
-     "fact": "ANGULO FLORACION/recompensa: florece primavera-otono sin parar, iman de abejas"
-    },
-    {
-     "date": "2026-08-08",
-     "page": "2026-08-08-el-hueco.html",
-     "fact": "Gap-filler: abelia nov-mayo, cola de temporada que se apaga en mayo. Angulo NUEVO."
-    }
-   ]
-  },
-  "F-8": {
-   "common": "Aguaribay / Molle",
-   "paginas_historicas": 9,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-19-racha-jardin.html",
-     "fact": "pimienta rosa real / repele mosquitos / sagrado incas-guaranies"
-    },
-    {
-     "date": "2026-07-27",
-     "page": "2026-07-27-mi-objetivo.html",
-     "fact": "ANGULO OBJETIVO (sombra + fauna): copa de sombra a futuro, pimienta rosa para aves"
-    }
-   ]
-  },
-  "F-9": {
-   "common": "Ligustro",
-   "paginas_historicas": 7,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-secomenta.html",
-     "fact": "invasora Sudamerica"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-25-mapa-solar.html",
-     "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
-    }
-   ]
-  },
-  "F-10": {
-   "common": "Fresno (americano)",
-   "paginas_historicas": 6,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-09-quiz-planta(reno-19-07).html",
-     "fact": "rebrota fuerte tras poda drastica / resiliencia"
-    },
-    {
-     "date": "2026-07-24",
-     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
-     "fact": "ANGULO LOGRO (tu-semana): decisión fresno/fotinia (poda agosto) 23/07"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-25-mapa-solar.html",
-     "fact": "ANGULO ORIENTACION: eje oeste/frente, sol de tarde"
-    }
-   ]
-  },
-  "B-1": {
-   "common": "Santa Rita / Buganvilia",
-   "paginas_historicas": 10,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-19-nombre-apellido.html",
-     "fact": "Jeanne Baret 1a mujer circunnavegar / nombre robado 244 anios"
-    },
-    {
-     "date": "2026-07-27",
-     "page": "2026-07-27-mi-objetivo.html",
-     "fact": "ANGULO OBJETIVO (mas flor): florece sola con sol pleno"
-    }
-   ]
-  },
-  "B-2": {
-   "common": "Jazmín (a confirmar variedad)",
-   "paginas_historicas": 7,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-09-quiz-planta(reno-19-07).html",
-     "fact": "se acoda solo / da hijos para regalar / generoso"
-    },
-    {
-     "date": "2026-07-30",
-     "page": "2026-07-30-se-multiplican-solos.html",
-     "fact": "ANGULO PROPAGACION (acodo how-to, evolucion del \"da hijos\" 19/07): foto real muestra B-2B/B-2C, separar en primavera"
-    },
-    {
-     "date": "2026-08-17",
-     "page": "2026-08-17-preguntas-abiertas.html",
-     "fact": "ANGULO EXPEDIENTE ABIERTO doble: variedad de Jasminum (mesnyi/azoricum/officinale/polyanthum) + decision de los renuevos B-2B/B-2C (cerco gratis en 2-3 anios vs arrancar ahora)."
-    }
-   ]
-  },
-  "B-3": {
-   "common": "Jazmín de leche / estrellado",
-   "paginas_historicas": 7,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-09-quiz-planta(reno-19-07).html",
-     "fact": "no es jazmin verdadero / apocinacea / flor seca infusion China"
-    },
-    {
-     "date": "2026-08-08",
-     "page": "2026-08-08-el-hueco.html",
-     "fact": "Contraste con jazmin de invierno propuesto: B-3 perfumado oct-ene vs Jasminum nudiflorum sin olor jun-ago. Angulo NUEVO."
-    }
-   ]
-  },
-  "B-4": {
-   "common": "Hibisco / Rosa china",
-   "paginas_historicas": 9,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-regalo-invierno.html",
-     "fact": "flor nacional 3 paises / codigo del pelo / muro norte"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-25-mapa-solar.html",
-     "fact": "ANGULO ORIENTACION: muro norte (hibisco), lado cálido"
-    },
-    {
-     "date": "2026-08-08",
-     "page": "2026-08-08-el-hueco.html",
-     "fact": "Referencia de UBICACION (muro norte calido) para el aloe. No featured por fun_fact."
-    }
-   ]
-  },
-  "B-5a": {
-   "common": "Hortensia",
-   "paginas_historicas": 13,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-regalo-invierno.html",
-     "fact": "clavos oxidados=azul / cal=rosa"
-    },
-    {
-     "date": "2026-07-22",
-     "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
-     "fact": "ANGULO LLUVIA: la mas sedienta, festeja el invierno lluvioso (trasplante pendiente honesto)"
-    },
-    {
-     "date": "2026-07-23",
-     "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
-     "fact": "ANGULO MEDICO: la más sedienta = alta feliz tras la lluvia (nota positiva)"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
-     "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
-    },
-    {
-     "date": "2026-07-26",
-     "page": "2026-07-26-vos-decidis.html",
-     "fact": "ANGULO DECISION/tarea (no fun_fact): trasplante tierra vs maceton, vos-decidis"
-    },
-    {
-     "date": "2026-07-27",
-     "page": "2026-07-27-vos-decidis.html",
-     "fact": "ANGULO DECISION/tarea (no fun_fact): recap 'a tierra' + decisión del rincón (sur vs fondo)"
-    },
-    {
-     "date": "2026-08-04",
-     "page": "2026-08-04-tarjeta-campo.html",
-     "fact": "ANGULO TAREA: trasplante a tierra al rincon sur; NO podar (madera vieja); los 19 mm del jueves la asientan sola"
-    },
-    {
-     "date": "2026-08-06",
-     "page": "2026-07-24-jardin-hoy.html (edición cierre pre-viaje)",
-     "fact": "ANGULO VENTANA JUSTA: única de las 3 con reloj real — trasplante en dormancia OK, con brote arrancado pierde la primera floración → 29-30/08"
-    },
-    {
-     "date": "2026-08-08",
-     "page": "2026-08-08-el-hueco.html",
-     "fact": "Referencia: ya decidido a tierra en el rincon sur; camelia es su companiera acidofila. No featured por fun_fact."
-    }
-   ]
-  },
-  "B-6": {
-   "common": "Esparraguera cola de zorro",
-   "paginas_historicas": 7,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-horoscopo(semana).html",
-     "fact": "no es helecho / cladodios / bayas toxicas"
-    },
-    {
-     "date": "2026-07-24",
-     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
-     "fact": "ANGULO LOGRO (tu-semana): poda de cola de zorro cerrada 23/07"
-    }
-   ]
-  },
-  "B-7": {
-   "common": "Azarero / Pitósporo",
-   "paginas_historicas": 6,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-horoscopo(semana).html",
-     "fact": "perfume azahar / bonsai"
-    },
-    {
-     "date": "2026-07-27",
-     "page": "2026-07-27-mi-objetivo.html",
-     "fact": "ANGULO OBJETIVO (sombra/reparo): cerco, recorte fin de agosto para tupir"
-    }
-   ]
-  },
-  "B-8": {
-   "common": "Palmera pindó",
-   "paginas_historicas": 9,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-horoscopo(semana).html",
-     "fact": "Romanzoff / golosina coco-banana / fruta julio"
-    },
-    {
-     "date": "2026-07-22",
-     "page": "2026-07-22-grupo-jardin.html",
-     "fact": "ANGULO LLUVIA: palmera nativa con fruto coco-banana ahora (mar-jul)"
-    },
-    {
-     "date": "2026-07-24",
-     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
-     "fact": "ANGULO LOGRO (tu-semana): pindó, dejar caer hojas 23/07"
-    },
-    {
-     "date": "2026-07-31",
-     "page": "2026-07-31-el-parte.html",
-     "fact": "ANGULO ESTADO+NATIVA (El Parte): pindo nativa, coquitos coco-banana golosina guarani / romanzoffiana conde ruso — EN FRUTO en invierno"
-    }
-   ]
-  },
-  "B-9": {
-   "common": "Crespón / Mirto de crepe",
-   "paginas_historicas": 17,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-19-nombre-apellido.html",
-     "fact": "Magnus von Lagerstrom amigo de Linneo / flor papel crepe"
-    },
-    {
-     "date": "2026-07-23",
-     "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
-     "fact": "ANGULO DT: caduco en pretemporada, debuta en primavera"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
-     "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
-    },
-    {
-     "date": "2026-07-27",
-     "page": "2026-07-27-mi-objetivo.html",
-     "fact": "ANGULO OBJETIVO (mas flor): poda severa agosto = flor de verano (madera nueva)"
-    },
-    {
-     "date": "2026-07-28",
-     "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
-     "fact": "ANGULO OBJETIVO-FLOR (no fun_fact): decision \"cual explota primero\" — poda agosto en madera nueva = flor de verano. Ejecuta objetivo declarado del usuario (mas flor)"
-    },
-    {
-     "date": "2026-08-02",
-     "page": "2026-08-02-que-mas-podo.html",
-     "fact": "ANGULO RESPUESTA (pregunta directa del usuario): ventana de poda real de ficha + porque florece en madera nueva. B-25 = dosis de neem y barrera de hormigas."
-    },
-    {
-     "date": "2026-08-03",
-     "page": "2026-08-03-el-taller-2.html",
-     "fact": "ANGULO TAREA (Taller nº2, monotematico): poda severa de flor 50-70%, munones 2-4 yemas, florece en madera nueva, mito del crepe murder, corteza canela + decision irreversible arbusto-vs-arbolito"
-    },
-    {
-     "date": "2026-08-04",
-     "page": "2026-08-04-tarjeta-campo.html",
-     "fact": "ANGULO TAREA (2º dia seguido, serie Taller/tarjeta): recordatorio de poda 50-70% + NUEVO: estaca de madera dura -> planta gratis"
-    },
-    {
-     "date": "2026-08-06",
-     "page": "2026-07-24-jardin-hoy.html (edición cierre pre-viaje)",
-     "fact": "ANGULO VENTANA (no fun_fact): el límite de la poda de flor es la YEMA, no el calendario — el crespón es de los últimos en despertar, el 24/08 llega con margen"
-    }
-   ]
-  },
-  "B-10": {
-   "common": "Lavanda",
-   "paginas_historicas": 12,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-regalo-invierno.html",
-     "fact": "lavare / aromaterapia / bolsita almohada"
-    },
-    {
-     "date": "2026-07-22",
-     "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
-     "fact": "ANGULO LLUVIA: mediterranea, se queja del exceso de agua (drenaje)"
-    },
-    {
-     "date": "2026-07-23",
-     "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
-     "fact": "ANGULO MEDICO: mediterránea muro norte, mismo cuadro que romero (encharcamiento)"
-    },
-    {
-     "date": "2026-07-31",
-     "page": "2026-07-31-el-parte.html",
-     "fact": "ANGULO CLIMA-INVIERNO (El Parte): lavanda mediterranea verde/aromatica en frio / lavare=lavar romanos / bolsita espanta polillas — no le hacen nada las heladas tardias"
-    },
-    {
-     "date": "2026-08-08",
-     "page": "2026-08-08-el-hueco.html",
-     "fact": "Gap-filler: florece set-mayo, una de las 4 que bancan otonio-invierno. Angulo NUEVO (cobertura anual, no fun_fact)."
-    }
-   ]
-  },
-  "B-12": {
-   "common": "Cinta / Lazo de amor",
-   "paginas_historicas": 9,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-19-racha-jardin.html",
-     "fact": "NASA aire limpio 10m2 / perenne sin licencia"
-    },
-    {
-     "date": "2026-07-30",
-     "page": "2026-07-30-se-multiplican-solos.html",
-     "fact": "ANGULO PROPAGACION (how-to, no fun_fact NASA): hijuelos colgantes del lazo de amor = plantas gratis, cast fresco rested"
-    }
-   ]
-  },
-  "B-13": {
-   "common": "Clivia / Lirio del Cabo",
-   "paginas_historicas": 10,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-19-nombre-apellido.html",
-     "fact": "duquesa Charlotte Clive / vive 100 anios / ejemplares 1830"
-    },
-    {
-     "date": "2026-07-26",
-     "page": "2026-07-26-mi-primavera.html",
-     "fact": "ANGULO FLORACION/recompensa (no fun_fact): umbela naranja fin invierno/primavera, elegí-tu-primavera"
-    },
-    {
-     "date": "2026-08-17",
-     "page": "2026-08-17-preguntas-abiertas.html",
-     "fact": "ANGULO EXPEDIENTE ABIERTO (no fun_fact): sci 'a confirmar' — miniata vs gardenii vs robusta, la vara floral de setiembre lo dice. Consecuencia: si es gardenii el forzado de sequia invernal esta corrido."
-    }
-   ]
-  },
-  "B-14": {
-   "common": "Lapachillo",
-   "paginas_historicas": 9,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-09-quiz-planta(reno-19-07).html",
-     "fact": "nativo / prima del lapacho / madera charrua-guarani"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-25-mapa-solar.html",
-     "fact": "ANGULO ORIENTACION: muro norte (lapachillo)"
-    },
-    {
-     "date": "2026-08-08",
-     "page": "2026-08-08-el-hueco.html",
-     "fact": "Referencia de UBICACION (muro norte). No featured por fun_fact."
-    }
-   ]
-  },
-  "B-15": {
-   "common": "Hiedra común",
-   "paginas_historicas": 12,
-   "featured": [
-    {
-     "date": "2026-07-20",
-     "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
-     "fact": "+400 anios / invicto del invierno / donante universal resistencia"
-    },
-    {
-     "date": "2026-07-22",
-     "page": "2026-07-22-grupo-jardin.html",
-     "fact": "ANGULO LLUVIA: +400 anios de inviernos, ni se inmuta"
-    },
-    {
-     "date": "2026-07-30",
-     "page": "2026-07-30-se-multiplican-solos.html",
-     "fact": "ANGULO PROPAGACION (esqueje al agua, no fun_fact +400anios): la mas facil de multiplicar, foto real"
-    },
-    {
-     "date": "2026-08-02",
-     "page": "2026-08-02-que-mas-podo.html",
-     "fact": "ANGULO RESPUESTA (pregunta directa del usuario): ventana de poda real de ficha + porque florece en madera nueva. B-25 = dosis de neem y barrera de hormigas."
-    },
-    {
-     "date": "2026-08-03",
-     "page": "2026-08-03-el-taller-2.html",
-     "fact": "ANGULO TAREA (opcional del Taller nº2): recorte de avances sobre el galpon antes del rebrote, no arrancar de la pared"
-    }
-   ]
-  },
-  "B-16": {
-   "common": "Anacahuita",
-   "paginas_historicas": 10,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-19-racha-jardin.html",
-     "fact": "protegida por ley desde 1986 / madera charrua"
-    },
-    {
-     "date": "2026-07-27",
-     "page": "2026-07-27-mi-objetivo.html",
-     "fact": "ANGULO OBJETIVO (fauna): nativa, bayas comida de pajaros"
-    }
-   ]
-  },
-  "B-18": {
-   "common": "Rosa de Siria / Althea",
-   "paginas_historicas": 13,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-horoscopo(semana).html",
-     "fact": "flor de un dia / escudo e himno Corea"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
-     "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
-    },
-    {
-     "date": "2026-07-27",
-     "page": "2026-07-27-mi-objetivo.html",
-     "fact": "ANGULO OBJETIVO (mas flor): poda severa = mas flor (madera nueva)"
-    },
-    {
-     "date": "2026-07-28",
-     "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
-     "fact": "ANGULO OBJETIVO-FLOR (no fun_fact): opcion en decision de prioridad de flor (poda severa althea)"
-    },
-    {
-     "date": "2026-08-02",
-     "page": "2026-08-02-que-mas-podo.html",
-     "fact": "ANGULO RESPUESTA (pregunta directa del usuario): ventana de poda real de ficha + porque florece en madera nueva. B-25 = dosis de neem y barrera de hormigas."
-    },
-    {
-     "date": "2026-08-03",
-     "page": "2026-08-03-el-taller-2.html",
-     "fact": "ANGULO TAREA (Taller nº2): poda 40-50%, munones 2-3 yemas, madera nueva, rebrote de base, flor de un solo dia / flor nacional de Corea del Sur"
-    },
-    {
-     "date": "2026-08-04",
-     "page": "2026-08-04-tarjeta-campo.html",
-     "fact": "ANGULO TAREA (2º dia seguido): recordatorio 40-50% + NUEVO: estaca de madera dura"
-    },
-    {
-     "date": "2026-08-06",
-     "page": "2026-07-24-jardin-hoy.html (edición cierre pre-viaje)",
-     "fact": "ANGULO VENTANA: la althea brota tardísimo (parece palo seco en agosto) → mayor margen de las tres, sirve hasta principios de septiembre"
-    }
-   ]
-  },
-  "B-20": {
-   "common": "Arbusto caduco a identificar",
-   "paginas_historicas": 5,
-   "featured": [
-    {
-     "date": "2026-08-17",
-     "page": "2026-08-17-preguntas-abiertas.html",
-     "fact": "ANGULO EXPEDIENTE ABIERTO: la unica de 52 sin ni siquiera genero tentativo. Brotacion set-oct = patron de yemas + hoja + flor. Consecuencia: sin ID no hay mes de poda seguro."
-    }
-   ]
-  },
-  "B-22": {
-   "common": "Palta uruguaya",
-   "paginas_historicas": 11,
-   "featured": [
-    {
-     "date": "2026-07-20",
-     "page": "2026-07-20-quiniela-jardin.html",
-     "fact": "viudo evolutivo perezosos gigantes 13000 anios / cosecha oculta"
-    },
-    {
-     "date": "2026-07-22",
-     "page": "2026-07-22-lluvia-tareas.html",
-     "fact": "ANGULO LLUVIA: caveat honesto — humedad pegada al cuello del tronco favorece hongos de base"
-    },
-    {
-     "date": "2026-07-27",
-     "page": "2026-07-27-vos-decidis.html",
-     "fact": "ANGULO DECISION/tarea: plantines de palta contra la pared sin tocar, qué hacer en primavera"
-    }
-   ]
-  },
-  "B-23": {
-   "common": "Limonero",
-   "paginas_historicas": 13,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-secomenta.html",
-     "fact": "fruta 12 meses / hibrido 2500 anos"
-    },
-    {
-     "date": "2026-07-23",
-     "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
-     "fact": "ANGULO DT: goleador 12/12 = renovar contrato (fruta todo el año)"
-    },
-    {
-     "date": "2026-07-24",
-     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
-     "fact": "ANGULO ESTADO (jardin-hoy): 'con fruta' — chip minimalista"
-    },
-    {
-     "date": "2026-07-28",
-     "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
-     "fact": "ANGULO ESTADO REAL (no fun_fact): duelo esto-o-esto — limonero cargado de fruta HOY (dato factual invierno)"
-    },
-    {
-     "date": "2026-08-10",
-     "page": "2026-08-10-ultima-mandarina.html",
-     "fact": "DATO COMPUTADO: unico de las 52 con fruta 12/12 meses — el 'piso' del jardin. Angulo estructural, no fun_fact."
-    }
-   ]
-  },
-  "B-24": {
-   "common": "Mandarina criolla",
-   "paginas_historicas": 10,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-regalo-invierno.html",
-     "fact": "citrico mas antiguo 3000aC / mandarines / fruta en julio"
-    },
-    {
-     "date": "2026-07-22",
-     "page": "2026-07-22-grupo-jardin.html",
-     "fact": "ANGULO LLUVIA: citrico da fruta en julio, lluvia = fruta mas jugosa"
-    },
-    {
-     "date": "2026-07-24",
-     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
-     "fact": "ANGULO ESTADO (jardin-hoy): 'con fruta' — chip minimalista"
-    },
-    {
-     "date": "2026-07-31",
-     "page": "2026-07-31-el-parte.html",
-     "fact": "ANGULO ESTADO INVERNAL (El Parte, lead): citrico mas antiguo (3000aC) padre de naranjas/limones / nombre por mandarines chinos — EN FRUTO ahora, el invierno es su temporada"
-    },
-    {
-     "date": "2026-08-10",
-     "page": "2026-08-10-ultima-mandarina.html",
-     "fact": "ANGULO VENTANA DE COSECHA (no fun_fact — el de los 'mandarines' se usó el 31/07, vedado hasta el 14/08): fruiting abr-ago, ultimo mes del año, cierra el 31/08 y vuelve el 23 → 8 dias. PROTAGONISTA."
-    }
-   ]
-  },
-  "B-25": {
-   "common": "Gardenia / Jazmín del Cabo",
-   "paginas_historicas": 13,
-   "featured": [
-    {
-     "date": "2026-07-20",
-     "page": "2026-07-20-guardia-jardin.html",
-     "fact": "pulgones+hormigas ganadero / 600kg flores=1L Chanel Nº22 / paciente critico"
-    },
-    {
-     "date": "2026-07-21",
-     "page": "2026-07-21-asamblea-jardin.html",
-     "fact": "ANGULO TAREA (no fun_fact): queja formal vs hormigas 'ganaderas' de pulgones — tarea real activa, link a landing"
-    },
-    {
-     "date": "2026-07-22",
-     "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
-     "fact": "ANGULO LLUVIA (no fun_fact): el agua voltea pulgones y desarma hormigas — tarea real, alivio"
-    },
-    {
-     "date": "2026-07-23",
-     "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
-     "fact": "ANGULO MEDICO+DT: tarea real activa (pulgones/hormigas), lluvia bajó plaga — paciente/jugador tocado"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
-     "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
-    },
-    {
-     "date": "2026-08-02",
-     "page": "2026-08-02-que-mas-podo.html",
-     "fact": "ANGULO RESPUESTA (pregunta directa del usuario): ventana de poda real de ficha + porque florece en madera nueva. B-25 = dosis de neem y barrera de hormigas."
-    }
-   ]
-  },
-  "B-26": {
-   "common": "Romero",
-   "paginas_historicas": 17,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-secomenta.html",
-     "fact": "unica flor en julio / memoria"
-    },
-    {
-     "date": "2026-07-21",
-     "page": "2026-07-09-wrapped(reno-21-07).html",
-     "fact": "RENEWAL Wrapped: Top5 reframe 'empujan a primavera' — romero unico que florece (fact estructural, no nuevo)"
-    },
-    {
-     "date": "2026-07-22",
-     "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
-     "fact": "ANGULO LLUVIA: mediterranea odia pies mojados = caveat honesto de drenaje; unica flor de julio"
-    },
-    {
-     "date": "2026-07-23",
-     "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
-     "fact": "ANGULO MEDICO+CHUSMERIO: única en flor en julio / riesgo pie mojado post-lluvia (Phytophthora) — dato real, no fun_fact repetido"
-    },
-    {
-     "date": "2026-07-24",
-     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
-     "fact": "ANGULO ESTADO (jardin-hoy): 'en flor' — vistazo minimalista, sin fun_fact"
-    },
-    {
-     "date": "2026-07-28",
-     "page": "2026-07-28-vos-decidis.html / 2026-07-28-esto-o-esto.html",
-     "fact": "ANGULO ESTADO REAL (no fun_fact): duelo esto-o-esto — unica en flor este mes (dato factual julio)"
-    },
-    {
-     "date": "2026-08-08",
-     "page": "2026-08-08-el-hueco.html",
-     "fact": "DATO DE GRAFICO, no fun_fact: unica especie en flor en junio Y julio -> es el AGUJERO, no la curiosidad. Ademas: multiplicar por gajo para dar volumen al mes vacio."
-    },
-    {
-     "date": "2026-08-15",
-     "page": "2026-08-15-florecio-lo-que-podaste.html",
-     "fact": "MENCION DE CONTEO solamente (una de las 6 con agosto en flowering, jun-oct). SIN fun_fact - sigue vedada para fun_fact hasta fines de agosto."
-    }
-   ]
-  },
-  "B-27": {
-   "common": "Mirto común",
-   "paginas_historicas": 6,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-19-racha-jardin.html",
-     "fact": "sagrado para Venus / licor mirto / perenne invierno"
-    },
-    {
-     "date": "2026-07-26",
-     "page": "2026-07-26-mi-primavera.html",
-     "fact": "ANGULO FLORACION/recompensa: flor perfumada Venus + baya comestible"
-    }
-   ]
-  },
-  "B-29": {
-   "common": "Lantana / Camará",
-   "paginas_historicas": 10,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-regalo-invierno.html",
-     "fact": "flores semaforo para polinizadores"
-    },
-    {
-     "date": "2026-07-27",
-     "page": "2026-07-27-mi-objetivo.html",
-     "fact": "ANGULO OBJETIVO (mas flor / fauna): florece sola, iman de mariposas"
-    },
-    {
-     "date": "2026-08-08",
-     "page": "2026-08-08-el-hueco.html",
-     "fact": "Gap-filler: lantana oct-mayo. Angulo NUEVO."
-    }
-   ]
-  },
-  "B-30": {
-   "common": "Durazno",
-   "paginas_historicas": 14,
-   "featured": [
-    {
-     "date": "2026-07-20",
-     "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
-     "fact": "coma inducido dormancia / florece agosto primero / carrera 1a flor"
-    },
-    {
-     "date": "2026-07-22",
-     "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
-     "fact": "ANGULO LLUVIA: caduco en coma invernal, recarga suelo para florecer en agosto"
-    },
-    {
-     "date": "2026-07-23",
-     "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
-     "fact": "ANGULO MEDICO: caduco en dormancia, acumula horas-frío (reposo normal, no enfermo)"
-    },
-    {
-     "date": "2026-07-24",
-     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
-     "fact": "ANGULO ESTADO (jardin-hoy): 'durmiendo' — chip minimalista"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
-     "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
-    },
-    {
-     "date": "2026-08-01",
-     "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
-     "fact": "ANGULO NUEVO 'TALLER/how-to': protocolo de poda en vaso abierto paso a paso (40-50%, 3-4 madres, 5mm sobre yema externa). NO fun_fact — tarea real urgente, ventana exacta."
-    },
-    {
-     "date": "2026-08-02",
-     "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
-     "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
-    },
-    {
-     "date": "2026-08-15",
-     "page": "2026-08-15-florecio-lo-que-podaste.html",
-     "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Poda en vaso abierto tildada 02/08 14:25 (taller-arbol-B-30)."
-    }
-   ]
-  },
-  "B-32": {
-   "common": "Viraró",
-   "paginas_historicas": 13,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-09-quiz-planta(reno-19-07).html",
-     "fact": "sepalos rosados crecen post-polinizacion / helicoptero / madera dura"
-    },
-    {
-     "date": "2026-07-26",
-     "page": "2026-07-26-mi-primavera.html",
-     "fact": "ANGULO FLORACION/recompensa: sepalos rosados sept-nov, confeti nativo"
-    },
-    {
-     "date": "2026-07-31",
-     "page": "2026-07-31-el-parte.html",
-     "fact": "ANGULO PROXIMO-DESPERTAR+NATIVA (El Parte): viraro nativo, sepalos rosados=alitas de dispersion por viento — florece agosto = corresponsal durante el viaje"
-    },
-    {
-     "date": "2026-08-08",
-     "page": "2026-08-08-el-hueco.html",
-     "fact": "PROTAGONISTA: viraro florece agosto-setiembre (esta arrancando AHORA, durante el viaje) + dioica, pie hembra arma fruto alado color salmon. Angulo NUEVO (nunca se uso la floracion ni la dioicia)."
-    },
-    {
-     "date": "2026-08-15",
-     "page": "2026-08-15-florecio-lo-que-podaste.html",
-     "fact": "MENCION DE CONTEO solamente (una de las 6 con agosto en flowering). NO protagonista y SIN el fun_fact de los sepalos rosados: ese angulo ya se uso 19/07, 26/07, 31/07 y 08/08 (protagonista) - repetirlo hoy habria violado la regla de anti-repeticion que nace del reclamo del 18/07. Descansa hasta el 22/08."
-    }
-   ]
-  },
-  "B-34": {
-   "common": "Mandioca brava (tentativa)",
-   "paginas_historicas": 10,
-   "featured": [
-    {
-     "date": "2026-07-20",
-     "page": "2026-06-29-diario-jardin(reno-20-07).html",
-     "fact": "latex cianogenico brava / nativa Cono Sur / mandioca domesticada = veneno a alimento"
-    },
-    {
-     "date": "2026-07-30",
-     "page": "2026-07-30-aguantan-solos.html",
-     "fact": "ANGULO RESISTENCIA/VIAJE (no fun_fact latex): nativa Cono Sur, tolera sequia, invierno casi sin agua = se banca 3 semanas, foto real"
-    }
-   ]
-  },
-  "B-36": {
-   "common": "Palta Haas",
-   "paginas_historicas": 12,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-secomenta.html",
-     "fact": "clon 1926 / 80% mercado"
-    },
-    {
-     "date": "2026-07-23",
-     "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
-     "fact": "ANGULO DT: palto Hass clon 1926 (~80% mercado) = figura intransferible/patrimonio"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-25-mapa-solar.html",
-     "fact": "ANGULO ORIENTACION: landmark este/fondo (palto)"
-    },
-    {
-     "date": "2026-08-10",
-     "page": "2026-08-10-ultima-mandarina.html",
-     "fact": "FUN_FACT: todas las Hass del mundo descienden de UN arbol de Rudolph Hass (1926), solo por injerto. Primer uso del fun_fact (el 25/07 fue angulo orientacion). Ventana may-oct, en la mitad."
-    }
-   ]
-  },
-  "B-37": {
-   "common": "Liquidámbar",
-   "paginas_historicas": 16,
-   "featured": [
-    {
-     "date": "2026-07-20",
-     "page": "2026-07-20-guardia-jardin.html",
-     "fact": "storax balsamo maya / dormancia = ventana limpieza copa"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-25-mapa-solar.html",
-     "fact": "ANGULO ORIENTACION (no fun_fact): landmark este/fondo, sol de mañana"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
-     "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
-    },
-    {
-     "date": "2026-07-26",
-     "page": "2026-07-26-vos-decidis.html",
-     "fact": "ANGULO DECISION/tarea (no fun_fact): rama que sombrea la palta, quien poda, vos-decidis"
-    },
-    {
-     "date": "2026-07-27",
-     "page": "2026-07-27-vos-decidis.html",
-     "fact": "ANGULO DECISION/tarea (recap): rama a la palta, la poda el usuario (paso a paso)"
-    },
-    {
-     "date": "2026-07-29",
-     "page": "2026-07-29-antes-de-irte.html + jardin-hoy",
-     "fact": "ANGULO TAREA/VIAJE: dejar la rama de sombra hecha antes de irse (mejor en dormancia) — tarea real, foto real"
-    }
-   ]
-  },
-  "B-38": {
-   "common": "Ciruela amarilla",
-   "paginas_historicas": 10,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-horoscopo(semana).html",
-     "fact": "japonesa pero china / florece agosto / vitamina C"
-    },
-    {
-     "date": "2026-07-26",
-     "page": "2026-07-26-mi-primavera.html",
-     "fact": "ANGULO FLORACION/recompensa: nube de flor blanca en agosto, de las primeras"
-    },
-    {
-     "date": "2026-08-01",
-     "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
-     "fact": "ANGULO TALLER: paso extra de madera gris >4 años improductiva + momificadas como foco de hongo. Angulo tarea real."
-    },
-    {
-     "date": "2026-08-02",
-     "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
-     "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
-    },
-    {
-     "date": "2026-08-15",
-     "page": "2026-08-15-florecio-lo-que-podaste.html",
-     "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Tilde taller-arbol-B-38 el 02/08 14:25, flor blanca misma ventana."
-    }
-   ]
-  },
-  "B-39": {
-   "common": "Pera Williams",
-   "paginas_historicas": 13,
-   "featured": [
-    {
-     "date": "2026-07-20",
-     "page": "2026-07-20-guardia-jardin.html + 2026-07-20-quiniela-jardin.html",
-     "fact": "reposo / flor blanca agosto / carrera 1a flor vs durazno"
-    },
-    {
-     "date": "2026-07-22",
-     "page": "2026-07-22-lluvia-tareas.html + grupo-jardin.html",
-     "fact": "ANGULO LLUVIA: caduco, carrera de la 1a flor vs durazno en agosto"
-    },
-    {
-     "date": "2026-07-24",
-     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
-     "fact": "ANGULO ESTADO+LOGRO: 'durmiendo' (jardin-hoy) + poda invernal cerrada 23/07 (tu-semana)"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-25-mapa-solar.html",
-     "fact": "ANGULO ORIENTACION: landmark sur, rincón sombrío/húmedo (pera Williams)"
-    },
-    {
-     "date": "2026-08-06",
-     "page": "2026-07-24-jardin-hoy.html (edición cierre pre-viaje)",
-     "fact": "ANGULO LOGRO: poda piramidal cerrada 23/07; vecina del rincón sur donde va la hortensia"
-    },
-    {
-     "date": "2026-08-08",
-     "page": "2026-08-08-el-hueco.html",
-     "fact": "Referencia de UBICACION (rincon sur sombrio/humedo) para la camelia. No featured por fun_fact."
-    },
-    {
-     "date": "2026-08-15",
-     "page": "2026-08-15-florecio-lo-que-podaste.html",
-     "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Cierre del circulo: la instruccion 'no cortes los dardos - yemas gordas' que leyo el 23/07 (plant-B-39 done 15:42) son exactamente las yemas que abren hoy. Ademas HALLAZGO NUEVO con consecuencia: su ficha pide polinizador de otra variedad y en 52 fichas hay UNA sola pera -> tap florecio-pera-companera para la reentrada del 24/08."
-    }
-   ]
-  },
-  "B-40": {
-   "common": "Madreselva china siempreverde",
-   "paginas_historicas": 7,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-horoscopo(semana).html",
-     "fact": "flores insignificantes / bayas para aves / topiaria"
-    },
-    {
-     "date": "2026-07-27",
-     "page": "2026-07-27-mi-objetivo.html",
-     "fact": "ANGULO OBJETIVO (sombra + fauna): siempreverde trepadora rapida, bayas para aves"
-    }
-   ]
-  },
-  "B-41": {
-   "common": "Caqui / Persimón (identidad en duda)",
-   "paginas_historicas": 14,
-   "featured": [
-    {
-     "date": "2026-07-21",
-     "page": "2026-07-21-asamblea-jardin.html",
-     "fact": "Diospyros='fruto de los dioses'; nunca dio flor ni fruto = identidad EN DUDA (honesto), 'exige investigacion'"
-    },
-    {
-     "date": "2026-07-22",
-     "page": "2026-07-22-grupo-jardin.html",
-     "fact": "ANGULO LLUVIA: sigue con identidad en duda (nunca flor ni fruto) — honesto"
-    },
-    {
-     "date": "2026-07-25",
-     "page": "2026-07-24-jardin-hoy.html (ed.25/07)",
-     "fact": "ANGULO TAREA (no fun_fact): tareas jul/ago en la push diaria jardin-hoy"
-    },
-    {
-     "date": "2026-07-26",
-     "page": "2026-07-26-vos-decidis.html",
-     "fact": "ANGULO DECISION/tarea (no fun_fact): identidad en duda, observar vs investigar, vos-decidis"
-    },
-    {
-     "date": "2026-07-27",
-     "page": "2026-07-27-vos-decidis.html",
-     "fact": "ANGULO DECISION/tarea (recap): sigue en observación hasta primavera"
-    }
-   ]
-  },
-  "B-42": {
-   "common": "Pata de vaca",
-   "paginas_historicas": 8,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-19-nombre-apellido.html",
-     "fact": "hermanos Bauhin / hoja partida en dos"
-    },
-    {
-     "date": "2026-07-30",
-     "page": "2026-07-30-aguantan-solos.html",
-     "fact": "ANGULO RESISTENCIA/VIAJE (no fun_fact Bauhin): rustica nativa, raiz profunda + dormancia = autosuficiente en el viaje, foto real"
-    }
-   ]
-  },
-  "B-43": {
-   "common": "Pitósporo",
-   "paginas_historicas": 7,
-   "featured": [
-    {
-     "date": "2026-07-20",
-     "page": "2026-06-29-diario-jardin(reno-20-07).html",
-     "fact": "tobira=puerta japones / semilla resina pega patas aves / poda drastica costera"
-    },
-    {
-     "date": "2026-07-30",
-     "page": "2026-07-30-aguantan-solos.html",
-     "fact": "ANGULO RESISTENCIA/VIAJE (no fun_fact tobira): planta-y-olvidate costera, tolera sequia = duro de matar, foto real"
-    },
-    {
-     "date": "2026-08-17",
-     "page": "2026-08-17-preguntas-abiertas.html",
-     "fact": "ANGULO CONTRADICCION DE FICHA: catalogo dice P. tobira (flor blanca) pero la foto del usuario del 05/05 muestra flor AMARILLA. Se cierra con la flor de octubre. NO se uso el fun_fact del perfume/bonsai."
-    }
-   ]
-  },
-  "B-44": {
-   "common": "Evónimo japonés variegado",
-   "paginas_historicas": 5,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-horoscopo(semana).html",
-     "fact": "velos nupciales / color invernal"
-    },
-    {
-     "date": "2026-07-29",
-     "page": "2026-07-29-los-que-no-duermen.html",
-     "fact": "ANGULO PERENNE INVERNAL: de los pocos que dan color plateado en pleno invierno; riego bajo, foto real"
-    }
-   ]
-  },
-  "B-45": {
-   "common": "Sin identificar (al lado de la pared, atrás de B-35)",
-   "paginas_historicas": 4,
-   "featured": [
-    {
-     "date": "2026-08-17",
-     "page": "2026-08-17-preguntas-abiertas.html",
-     "fact": "ANGULO EXPEDIENTE ABIERTO + HERO de la pagina: 4 candidatas (Lonicera japonica / Solanum jasminoides / Jasminum / Plumbago) que se separan por el OLOR al atardecer. Consecuencia: trepadora agresiva vs mansa."
-    }
-   ]
-  },
-  "B-46": {
-   "common": "Vivero / Plantines",
-   "paginas_historicas": 8,
-   "featured": [
-    {
-     "date": "2026-07-21",
-     "page": "2026-07-21-asamblea-jardin.html",
-     "fact": "~30 plantines reciclados; cada plantin palmera vale 200-500 pesos — 'pedido de adopcion/reparto'"
-    },
-    {
-     "date": "2026-07-22",
-     "page": "2026-07-22-grupo-jardin.html",
-     "fact": "ANGULO LLUVIA: ~30 plantines, cuidado con encharcarlos (damping-off)"
-    },
-    {
-     "date": "2026-07-23",
-     "page": "2026-07-23-ronda-medica.html + mercado-pases.html (+ chusmerio-reno)",
-     "fact": "ANGULO DT: vivero ~30 plantines = la cantera/inferiores a subir al plantel"
-    },
-    {
-     "date": "2026-07-24",
-     "page": "2026-07-24-jardin-hoy.html / 2026-07-24-tu-semana.html",
-     "fact": "ANGULO LOGRO (tu-semana): vivero de palmeras reubicado 23/07"
-    },
-    {
-     "date": "2026-07-27",
-     "page": "2026-07-27-vos-decidis.html",
-     "fact": "ANGULO DECISION/tarea: ~30 plantines, destino (repartir/plantar/crecer)"
-    }
-   ]
-  },
-  "B-48": {
-   "common": "Plantín de roble joven (Quercus sp.)",
-   "paginas_historicas": 7,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-horoscopo(semana).html",
-     "fact": "roble 300 anos / bellota"
-    },
-    {
-     "date": "2026-08-17",
-     "page": "2026-08-17-preguntas-abiertas.html",
-     "fact": "CODA (no protagonista): Quercus robur (lobulo redondeado) vs palustris (puntiagudo, seno profundo) vs cerris (triangular). Se cierra con UNA foto."
-    }
-   ]
-  },
-  "B-49": {
-   "common": "Plantín trifoliado (posible glicinia o leguminosa)",
-   "paginas_historicas": 5,
-   "featured": [
-    {
-     "date": "2026-07-21",
-     "page": "2026-07-21-cuenta-regresiva.html",
-     "fact": "misterio de identidad: si florece con racimos violetas en primavera = glicinia/Wisteria — countdown a la revelacion"
-    },
-    {
-     "date": "2026-08-17",
-     "page": "2026-08-17-preguntas-abiertas.html",
-     "fact": "ANGULO BIFURCACION (diagrama SVG propio): trifoliado -> racimo violeta=glicinia (obra de hierro a 20 anios) / blanco=Robinia / amarillo=Cytisus. Consecuencia maxima del jardin."
-    }
-   ]
-  },
-  "B-47": {
-   "common": "Plantines de palmera (lote separado)",
-   "paginas_historicas": 6,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-horoscopo(semana).html",
-     "fact": "cania de butia / palmares Castillos / 56 plantines"
-    },
-    {
-     "date": "2026-08-17",
-     "page": "2026-08-17-preguntas-abiertas.html",
-     "fact": "CODA (no protagonista): butia vs pindo se separa por la hoja (segmentos rigidos en arco vs pluma laxa pendula). Se cierra con UNA foto, sin esperar primavera."
-    }
-   ]
-  },
-  "I-1": {
-   "common": "Singonio / Pata de gallo",
-   "paginas_historicas": 6,
-   "featured": [
-    {
-     "date": "2026-07-19",
-     "page": "2026-07-19-racha-jardin.html",
-     "fact": "trepa 10m / pellizcar puntas = mata densa / interior"
-    },
-    {
-     "date": "2026-07-29",
-     "page": "2026-07-29-antes-de-irte.html + 2026-07-29-los-que-no-duermen.html",
-     "fact": "ANGULO INTERIOR/INVIERNO+VIAJE: cuidado de ausencia (riego cada 14d invierno, luz indirecta) + protagonista de la guardia de invierno con foto real"
-    },
-    {
-     "date": "2026-08-06",
-     "page": "2026-07-24-jardin-hoy.html (edición cierre pre-viaje)",
-     "fact": "ANGULO VIAJE: interior = lo único que consume agua en agosto; riego a fondo antes de salir cubre las 2,5 semanas"
-    }
-   ]
-  },
-  "I-2": {
-   "common": "Difenbaquia / Caña muda",
-   "paginas_historicas": 8,
-   "featured": [
-    {
-     "date": "2026-07-18",
-     "page": "2026-07-18-secomenta.html",
-     "fact": "oxalato / cana muda"
-    },
-    {
-     "date": "2026-07-29",
-     "page": "2026-07-29-antes-de-irte.html + 2026-07-29-los-que-no-duermen.html",
-     "fact": "ANGULO INTERIOR/INVIERNO: riego cada 14d, drenaje critico, savia toxica; guardia de invierno con foto real"
-    },
-    {
-     "date": "2026-08-06",
-     "page": "2026-07-24-jardin-hoy.html (edición cierre pre-viaje)",
-     "fact": "ANGULO VIAJE: idem I-1 (difenbaquia) — riego a fondo pre-viaje"
-    }
-   ]
-  },
-  "B-5": {
-   "common": "Hortensia",
-   "paginas_historicas": 2,
-   "featured": [
-    {
-     "date": "2026-07-28",
-     "page": "2026-07-28-vos-decidis.html",
-     "fact": "ANGULO DECISION/TAREA (no fun_fact): rincon donde plantarla a tierra (carry-over sin responder del 27/07)"
-    },
-    {
-     "date": "2026-08-03",
-     "page": "2026-08-03-el-taller-2.html",
-     "fact": "ANGULO CONTRASTE (no protagonista): la hortensia florece en madera VIEJA -> es la que NO se poda ahora. Usada como contraejemplo tecnico, no como featured"
-    }
-   ]
-  },
-  "B-35": {
-   "common": "B-35",
-   "paginas_historicas": 3,
-   "featured": [
-    {
-     "date": "2026-08-01",
-     "page": "2026-08-01-el-taller.html (+ 2026-07-24-jardin-hoy.html)",
-     "fact": "Nombrado como segundo ejemplar del durazno dentro del taller (mismo criterio que B-30). Angulo tarea real."
-    },
-    {
-     "date": "2026-08-02",
-     "page": "2026-08-01-el-taller.html (re-envio renovado, pedido explicito)",
-     "fact": "ANGULO TALLER (monotematico, excepcion documentada): poda de carozos paso a paso. Renovacion 02/08 = parte meteorologico real (0 mm hoy, ventanas hoy+martes) + ticks por arbol. NO es fun_fact nuevo: es la MISMA tarea real."
-    },
-    {
-     "date": "2026-08-15",
-     "page": "2026-08-15-florecio-lo-que-podaste.html",
-     "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Segundo durazno, mismo tilde que B-30 el 02/08."
-    }
-   ]
-  }
- },
- "_notas_angulos": [
-  [
-   {
-    "date": "2026-07-25",
-    "nota": "mi-huerta.html usa cast 100% FRESCO: hortalizas del calendario HUERTA (lechuga, tomate, morrón, acelga, rúcula, zanahoria, perejil, cilantro, cebolla, zapallito, albahaca) — nunca en el ledger de ornamentales. mapa-solar.html usa landmarks por ORIENTACION, no por fun_fact. Elenco de fun_facts ornamentales sigue QUEMADO: NO usar fun_facts, solo ángulos (tarea/estado/orientacion/huerta)."
-   },
-   {
-    "date": "2026-07-26",
-    "nota": "CICLO 56 pivote agencia tras 25/07 plano. vos-decidis.html = feed de DECISIONES reales (huerta ubicacion, hortensia B-5a, liquidambar B-37, caqui B-41, poda agosto) por angulo TAREA, no fun_fact. mi-primavera.html = feed de FLORACION/recompensa con cast 100% FRESCO (B-13 Clivia, B-32 Viraro, B-38 Ciruela amarilla, F-7 Abelia, B-27 Mirto — todas descansadas >=7d, usadas por floracion/recompensa no por fun_fact). Elenco de fun_facts ornamentales SIGUE QUEMADO: nunca usar fun_facts, solo angulos (tarea/estado/floracion/huerta/decision). mi-huerta dropeada pero su contenido serializado en jardin-hoy (#huerta)."
-   },
-   {
-    "date": "2026-07-27",
-    "nota": "CICLO 57. vos-decidis GANO el 56 (agencia/decision: 5 respuestas + suscripcion SI + like + 116s) → SERIALIZADO como 'una decision por dia' con loop de ejecucion (recap de lo de ayer ya hecho + 4 decisiones nuevas). mi-primavera (anticipacion) REJECTED → MUERTO. Experiencia nueva mi-objetivo.html = formato NUNCA probado (objetivo→plan de 3 pasos): el usuario declara un resultado y genero el plan con plantas reales. Cast de mi-objetivo por ANGULO OBJETIVO/funcion (no fun_fact): B-9/B-18/B-29/B-1 (flor), B-7/B-40/F-8 (sombra), B-40/B-16/F-8 (fauna) — mayoria descansada >=7d. Elenco de fun_facts ornamentales SIGUE QUEMADO. Decisiones del 56 ejecutadas en contenido (jardin-hoy + recap vos-decidis), no en data_plants (evitar romper build; si el usuario las quiere como cambios de tarea, lo pide)."
-   },
-   {
-    "date": "2026-07-30",
-    "nota": "CICLO 60. Dos experiencias 29/07 (antes-de-irte, los-que-no-duermen) = masomenos (abiertas tarde, sin senal activa) -> ambas dropped. Hoy: dos experiencias con cast 100% FRESCO (rested >7d) + FOTOS REALES (NEED validado del usuario) + SUSTANCIA real, NO gimmick. se-multiplican-solos = propagacion (cinta B-12/jazmin B-2/hiedra B-15) angulo how-to gratis. aguantan-solos = resistencia/viaje (mandioca B-34/pata de vaca B-42/pitosporo B-43) angulo tranquilidad-con-prueba. Elenco de fun_facts ornamentales SIGUE QUEMADO: usados por angulo propagacion/resistencia, no fun_fact. jardin-hoy refrescado a 30/07 (modo viaje se mantiene)."
-   },
-   "2026-08-01 — El Taller nº1: cast monotematico por tarea real (B-30/B-35/F-4/B-38), exento del criterio fun_fact.",
-   {
-    "date": "2026-08-02",
-    "nota": "CICLO 63 (domingo, dia SIN slot). Excepcion de cadencia aplicada: el usuario pidio textualmente «mandamela cuando este lindo» sobre El Taller; verifique el parte real de Montevideo (hoy 0 mm / 0% prob, unico dia limpio antes del viaje del 7/8) y encole 1 sola push a las 10:00 con la MISMA URL renovada. El Taller quedo APROBADA (love + slot lun18 si + 7/7 pasos x2 + feedback positivo) => primera experiencia RECURRENTE del sistema. El Parte (noticiero) dropped. Elenco de hoy = B-30/B-35/F-4/B-38 por segunda vez consecutiva: es la excepcion monotematica del Taller (el cast lo define la TAREA). Quedan en descanso obligatorio: los 4 carozos NO pueden protagonizar otra experiencia hasta el 09/08 salvo dentro de la misma serie."
-   },
-   {
-    "date": "2026-08-02-b",
-    "nota": "Segundo envio del dia, por PEDIDO DIRECTO del usuario ('contestame por push'). Cast B-9/B-18/F-4/B-15/B-25 — todas frescas (ninguna usada en los ultimos 7 dias) salvo F-4 que viene de la serie Taller. Los 4 carozos NO se re-featurean aca: F-4 aparece solo como pendiente de la serie. Descanso: B-9, B-18, B-15, B-25 hasta el 09/08."
-   },
-   {
-    "date": "2026-08-03",
-    "nota": "2026-08-03-el-taller-2.html = Taller nº2, monotematico: aplica la EXCEPCION documentada (el cast de un Taller lo define la TAREA, no el elenco fresco), asi que B-9/B-18/B-15 vuelven a los 1-2 dias de aparecer en que-mas-podo. Lo que SI cambia respecto del Taller nº1 es la tarea (poda de FLOR, no de carozo) y por lo tanto el cast entero: los 4 carozos B-30/B-35/F-4/B-38 NO protagonizan, solo se nombran como cerrados en el acuse. NINGUN fun_fact reciclado: el de B-9 (Magnus von Lagerstrom) no se usa; se usan el mito del crepe murder y la corteza canela. De B-18 se usa 'la flor dura un solo dia / flor nacional de Corea del Sur' (fun_fact de ficha, sin uso previo registrado en experiencia). El angulo VERTEBRADOR es nuevo y no es un fun_fact: madera NUEVA vs madera VIEJA como regla que parte al jardin en dos. QUEMADOS tras hoy: B-9, B-18, B-15 hasta el 10/08 (fuera de la serie Taller). Los carozos siguen quemados hasta el 09/08."
-   }
+  "_notas_angulos": [
+    [
+      {
+        "date": "2026-07-25",
+        "nota": "mi-huerta.html usa cast 100% FRESCO: hortalizas del calendario HUERTA (lechuga, tomate, morrón, acelga, rúcula, zanahoria, perejil, cilantro, cebolla, zapallito, albahaca) — nunca en el ledger de ornamentales. mapa-solar.html usa landmarks por ORIENTACION, no por fun_fact. Elenco de fun_facts ornamentales sigue QUEMADO: NO usar fun_facts, solo ángulos (tarea/estado/orientacion/huerta)."
+      },
+      {
+        "date": "2026-07-26",
+        "nota": "CICLO 56 pivote agencia tras 25/07 plano. vos-decidis.html = feed de DECISIONES reales (huerta ubicacion, hortensia B-5a, liquidambar B-37, caqui B-41, poda agosto) por angulo TAREA, no fun_fact. mi-primavera.html = feed de FLORACION/recompensa con cast 100% FRESCO (B-13 Clivia, B-32 Viraro, B-38 Ciruela amarilla, F-7 Abelia, B-27 Mirto — todas descansadas >=7d, usadas por floracion/recompensa no por fun_fact). Elenco de fun_facts ornamentales SIGUE QUEMADO: nunca usar fun_facts, solo angulos (tarea/estado/floracion/huerta/decision). mi-huerta dropeada pero su contenido serializado en jardin-hoy (#huerta)."
+      },
+      {
+        "date": "2026-07-27",
+        "nota": "CICLO 57. vos-decidis GANO el 56 (agencia/decision: 5 respuestas + suscripcion SI + like + 116s) → SERIALIZADO como 'una decision por dia' con loop de ejecucion (recap de lo de ayer ya hecho + 4 decisiones nuevas). mi-primavera (anticipacion) REJECTED → MUERTO. Experiencia nueva mi-objetivo.html = formato NUNCA probado (objetivo→plan de 3 pasos): el usuario declara un resultado y genero el plan con plantas reales. Cast de mi-objetivo por ANGULO OBJETIVO/funcion (no fun_fact): B-9/B-18/B-29/B-1 (flor), B-7/B-40/F-8 (sombra), B-40/B-16/F-8 (fauna) — mayoria descansada >=7d. Elenco de fun_facts ornamentales SIGUE QUEMADO. Decisiones del 56 ejecutadas en contenido (jardin-hoy + recap vos-decidis), no en data_plants (evitar romper build; si el usuario las quiere como cambios de tarea, lo pide)."
+      },
+      {
+        "date": "2026-07-30",
+        "nota": "CICLO 60. Dos experiencias 29/07 (antes-de-irte, los-que-no-duermen) = masomenos (abiertas tarde, sin senal activa) -> ambas dropped. Hoy: dos experiencias con cast 100% FRESCO (rested >7d) + FOTOS REALES (NEED validado del usuario) + SUSTANCIA real, NO gimmick. se-multiplican-solos = propagacion (cinta B-12/jazmin B-2/hiedra B-15) angulo how-to gratis. aguantan-solos = resistencia/viaje (mandioca B-34/pata de vaca B-42/pitosporo B-43) angulo tranquilidad-con-prueba. Elenco de fun_facts ornamentales SIGUE QUEMADO: usados por angulo propagacion/resistencia, no fun_fact. jardin-hoy refrescado a 30/07 (modo viaje se mantiene)."
+      },
+      "2026-08-01 — El Taller nº1: cast monotematico por tarea real (B-30/B-35/F-4/B-38), exento del criterio fun_fact.",
+      {
+        "date": "2026-08-02",
+        "nota": "CICLO 63 (domingo, dia SIN slot). Excepcion de cadencia aplicada: el usuario pidio textualmente «mandamela cuando este lindo» sobre El Taller; verifique el parte real de Montevideo (hoy 0 mm / 0% prob, unico dia limpio antes del viaje del 7/8) y encole 1 sola push a las 10:00 con la MISMA URL renovada. El Taller quedo APROBADA (love + slot lun18 si + 7/7 pasos x2 + feedback positivo) => primera experiencia RECURRENTE del sistema. El Parte (noticiero) dropped. Elenco de hoy = B-30/B-35/F-4/B-38 por segunda vez consecutiva: es la excepcion monotematica del Taller (el cast lo define la TAREA). Quedan en descanso obligatorio: los 4 carozos NO pueden protagonizar otra experiencia hasta el 09/08 salvo dentro de la misma serie."
+      },
+      {
+        "date": "2026-08-02-b",
+        "nota": "Segundo envio del dia, por PEDIDO DIRECTO del usuario ('contestame por push'). Cast B-9/B-18/F-4/B-15/B-25 — todas frescas (ninguna usada en los ultimos 7 dias) salvo F-4 que viene de la serie Taller. Los 4 carozos NO se re-featurean aca: F-4 aparece solo como pendiente de la serie. Descanso: B-9, B-18, B-15, B-25 hasta el 09/08."
+      },
+      {
+        "date": "2026-08-03",
+        "nota": "2026-08-03-el-taller-2.html = Taller nº2, monotematico: aplica la EXCEPCION documentada (el cast de un Taller lo define la TAREA, no el elenco fresco), asi que B-9/B-18/B-15 vuelven a los 1-2 dias de aparecer en que-mas-podo. Lo que SI cambia respecto del Taller nº1 es la tarea (poda de FLOR, no de carozo) y por lo tanto el cast entero: los 4 carozos B-30/B-35/F-4/B-38 NO protagonizan, solo se nombran como cerrados en el acuse. NINGUN fun_fact reciclado: el de B-9 (Magnus von Lagerstrom) no se usa; se usan el mito del crepe murder y la corteza canela. De B-18 se usa 'la flor dura un solo dia / flor nacional de Corea del Sur' (fun_fact de ficha, sin uso previo registrado en experiencia). El angulo VERTEBRADOR es nuevo y no es un fun_fact: madera NUEVA vs madera VIEJA como regla que parte al jardin en dos. QUEMADOS tras hoy: B-9, B-18, B-15 hasta el 10/08 (fuera de la serie Taller). Los carozos siguen quemados hasta el 09/08."
+      }
+    ],
+    "2026-08-04: ver arriba"
   ],
-  "2026-08-04: ver arriba"
- ],
- "_nota_vigente": "AL 17/08/2026 (lunes, dia 11 del VIAJE 7-23/08). Slot de TAREA vacio a proposito (5o de los 7 del compromiso). Slot de EXPERIENCIA 18:00 usado con la original nueva 2026-08-17-preguntas-abiertas (los 6 expedientes de identidad abiertos del catalogo). CONSUMIDOS HOY (quemados hasta el 24/08 inclusive): B-13 clivia, B-20 arbusto sin ID, B-2/B-2B/B-2C jazmin, B-43 pitosporo, B-45 la de la pared, B-49 trifoliado + B-47 y B-48 como coda menor (tambien descansan hasta el 24). SIGUEN QUEMADOS DEL 15/08 hasta el 22/08 inclusive: B-30 durazno, B-35, B-38 ciruela amarilla, F-4 ciruelo, B-39 pera Williams, B-32 viraro. Romero B-26 vedado para fun_fact hasta fines de agosto (usado 4x). Caqui B-41 NO se nombra como urgencia hasta primavera (pedido del usuario) — hoy se lo excluyo a proposito de la lista de expedientes aunque calificaba. LIBRES HOY: B-24 mandarina, B-36 palta Haas, B-23 limonero (cumplieron 7 dias), crespon B-9, althea B-18, hortensia B-5a/B-5b, B-10 lavanda, F-7 abelia, B-29 lantana, B-3 jazmin de leche, I-1, I-2, B-4 hibisco, B-14 lapachillo, B-15 hiedra, F-3 fotinia. ELENCO INTACTO PARA SAB 22 Y LA REENTRADA (sin usar hace >=18 dias): pindo B-8 (31/07), mirto B-27 (26/07), guayabo F-1 (25/07), podranea F-2 (28/07), gardenia B-25 (02/08), pata de vaca B-42 (30/07), anacahuita B-16 (27/07), santa rita B-1 (27/07), evonimo B-44 (29/07), azarero B-7 (27/07), mandioca B-34 (30/07), madreselva B-40 (27/07), aguaribay F-8 (27/07), palta uruguaya B-22 (27/07), vivero B-46 (27/07), cinta B-12 (30/07), esparraguera B-6 (24/07), coronita F-5 (25/07), fresno F-10 (25/07), ligustro F-9 (25/07). NO REPETIR EN <14 DIAS: el grafico de 12 meses de FLORACION (libre 22/08) · la tira de 12 meses de FRUTA (libre 24/08) · el par «32 vs 1» · el «3 -> 2» · el «6 -> 4» y el circuito reserva->tijera->flor (libres el 29/08) · el fun_fact de los sepalos rosados del viraro · las 4 candidatas (camelia/aloe/salvia leucantha/jazmin de invierno) · y desde hoy: la BIFURCACION del trifoliado, la clave por OLOR de B-45, la contradiccion flor-amarilla del pitosporo y el bloque «hoja converge por ambiente / flor no» (todos libres el 31/08). RESERVADO PARA LA REENTRADA (no quemar antes): la auditoria «un solo ejemplar» (44/52) · el calendario de PERFUME (9 especies oct-dic) · el reparto real de LUZ frente/fondo/interior vs ficha · el bucle poda->FRUTA en diciembre-enero · Taller no3 = pitosporo B-43."
+  "_nota_vigente": "AL 18/08/2026 (MARTES, dia 12 del VIAJE 7-23/08). Dia SIN slot en la cadencia semanal: corrida de MANTENIMIENTO PURO, 0 push encoladas y CERO CONSUMO DE ELENCO — ninguna planta ni fact se gasto hoy, asi que todos los relojes de descanso corren un dia mas a favor. QUEMADOS: B-13, B-20, B-2/B-2B/B-2C, B-43, B-45, B-49, B-47, B-48 hasta el 24/08 (gastados el 17/08 en preguntas-abiertas) · B-30, B-35, B-38, F-4, B-39, B-32 hasta el 22/08 (gastados el 15/08 en florecio-lo-que-podaste) · romero B-26 vedado para fun_fact hasta fines de agosto · caqui B-41 no se nombra como urgencia hasta primavera (pedido del usuario 28/07). ELENCO INTACTO Y DISPONIBLE PARA EL SABADO 22/08 (>=18 dias de descanso): pindo B-8, mirto B-27, guayabo F-1, podranea F-2, gardenia B-25, pata de vaca B-42, anacahuita B-16, santa rita B-1, evonimo B-44, azarero B-7, mandioca B-34, madreselva B-40, aguaribay F-8, palta uruguaya B-22, vivero B-46, cinta B-12, esparraguera B-6, coronita F-5, fresno F-10, ligustro F-9. Tambien libres: B-24, B-36, B-23, B-9, B-18, B-5a/b, B-10, F-7, B-29, B-3, I-1, I-2, B-4, B-14, B-15, F-3."
 }

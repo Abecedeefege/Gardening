@@ -380,7 +380,108 @@
   });
   window.addEventListener('pagehide', flushDwell);
 
-  function init() { trackLanding(); injectUnsubControl(); injectFeedbackControl(); }
+  // --- Barra de señal rápida (18/08) ---------------------------------------
+  // Diagnóstico que la motiva: el 17/08 el usuario abrió la experiencia a los
+  // 2 min (récord del canal) pero se fue al 41 % de scroll. TODOS los controles
+  // (1er tap 83 %, reacción 87 %, slots 90 %, caja de feedback 96 %) vivían
+  // debajo de ese punto: el "cero señal activa" no fue desinterés, fue que
+  // nunca tuvo un botón a mano. Esta barra flota apenas pasa el 25 % de scroll
+  // (o a los 25 s) y le da 😍/🙂/🙅 + atajo al texto SIN scrollear hasta el pie.
+  // Se auto-oculta al llegar al bloque de reacción real, es descartable, y no
+  // vuelve a aparecer en una página donde ya dio señal.
+  var QS_KEY = 'jardineando_quicksignal_done_v1';
+  function qsDone() { try { return JSON.parse(localStorage.getItem(QS_KEY) || '{}'); } catch (e) { return {}; } }
+  function qsMark(page) {
+    try { var m = qsDone(); m[page] = 1; localStorage.setItem(QS_KEY, JSON.stringify(m)); } catch (e) {}
+  }
+
+  function installQuickSignal() {
+    if (!document.body || document.getElementById('engage-quick-signal')) return;
+    var page = pageName();
+    if (qsDone()[page]) return;                       // ya dio señal acá
+    var slug = page.replace(/^engage\//, '').replace(/\.html$/, '');
+
+    var bar = document.createElement('div');
+    bar.id = 'engage-quick-signal';
+    bar.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%) translateY(140%);' +
+      'bottom:52px;z-index:99998;width:min(94vw,520px);box-sizing:border-box;padding:9px 10px;' +
+      'border-radius:15px;background:#14231a;border:1px solid rgba(255,255,255,.16);' +
+      'box-shadow:0 6px 22px rgba(0,0,0,.32);display:flex;align-items:center;gap:7px;' +
+      'font:400 13px/1.3 -apple-system,BlinkMacSystemFont,sans-serif;color:#eef4ec;' +
+      'transition:transform .32s cubic-bezier(.2,.8,.25,1);';
+    var bs = 'background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);' +
+      'border-radius:11px;cursor:pointer;padding:7px 9px;font-size:19px;line-height:1;';
+    bar.innerHTML =
+      '<span style="font-weight:800;font-size:12.5px;color:#b7c6bb;white-space:nowrap;">¿Va bien?</span>' +
+      '<button type="button" data-v="love"  aria-label="Me encanta" style="' + bs + '">😍</button>' +
+      '<button type="button" data-v="ok"    aria-label="Está bien"  style="' + bs + '">🙂</button>' +
+      '<button type="button" data-v="no"    aria-label="No me sirve" style="' + bs + '">🙅</button>' +
+      '<button type="button" data-v="text"  style="' + bs + 'font-size:12.5px;font-weight:800;padding:9px 10px;white-space:nowrap;">✍️ Escribir</button>' +
+      '<button type="button" data-v="close" aria-label="Cerrar" style="background:none;border:none;color:#7d8f81;' +
+      'cursor:pointer;font-size:16px;line-height:1;padding:6px 2px 6px 4px;margin-left:auto;">✕</button>';
+    document.body.appendChild(bar);
+
+    var shown = false, killed = false;
+    function show() {
+      if (shown || killed) return;
+      shown = true; bar.style.transform = 'translateX(-50%) translateY(0)';
+    }
+    function hide(permanent) {
+      if (killed) return;
+      bar.style.transform = 'translateX(-50%) translateY(140%)';
+      if (permanent) { killed = true; setTimeout(function () { if (bar.parentElement) bar.remove(); }, 400); }
+    }
+
+    bar.addEventListener('click', function (ev) {
+      var b = ev.target.closest ? ev.target.closest('button') : null;
+      if (!b) return;
+      var v = b.getAttribute('data-v');
+      if (v === 'close') {
+        logEvents([{ type: 'quicksignal_dismiss', page: page, ts: new Date().toISOString(), device: device() }]);
+        hide(true); return;
+      }
+      if (v === 'text') {
+        var box = document.getElementById('engage-feedback-box');
+        if (box) {
+          box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          var ta = box.querySelector('textarea');
+          if (ta) setTimeout(function () { ta.focus(); }, 480);
+        }
+        logEvents([{ type: 'quicksignal_to_text', page: page, ts: new Date().toISOString(), device: device() }]);
+        hide(true); return;
+      }
+      // Reacción: MISMO evento/target que el bloque de abajo (así el análisis
+      // histórico no se parte), + via:"quickbar" para poder atribuirle el mérito.
+      qsMark(page);
+      logEvents([{ type: 'reaction', target: slug, value: v, via: 'quickbar',
+        page: page, ts: new Date().toISOString(), device: device() }]);
+      bar.innerHTML = '<span style="font-weight:800;font-size:13px;color:#8fd06a;padding:4px 6px;">' +
+        '✓ Anotado. Con eso ajusto la próxima.</span>';
+      setTimeout(function () { hide(true); }, 1900);
+    });
+
+    // Gatillos de aparición: 25 % de scroll o 25 s en página.
+    function onScroll() { if (_scrollPct() >= 25) show(); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    setTimeout(function () { if (!killed) show(); }, 25000);
+
+    // Si el bloque de reacción REAL entra en pantalla, la barra sobra: se va.
+    try {
+      var anchors = Array.prototype.filter.call(
+        document.querySelectorAll('[onclick]'),
+        function (el) { return /engageReact|engageFeedback|engageApprove/.test(el.getAttribute('onclick') || ''); });
+      if (anchors.length && 'IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            if (entries[i].isIntersecting) { hide(true); io.disconnect(); return; }
+          }
+        }, { threshold: 0.35 });
+        io.observe(anchors[0]);
+      }
+    } catch (e) {}
+  }
+
+  function init() { trackLanding(); injectUnsubControl(); injectFeedbackControl(); installQuickSignal(); }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {

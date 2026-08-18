@@ -1036,7 +1036,7 @@
       "notified_by": [
         "2026-08-15-florecio-lo-que-podaste"
       ],
-      "result_notes": "⬛ CERO SEÑAL a 48 h (0 clicks, 0 taps, 0 slots, 0 feedback) — VEREDICTO SIGUE SUSPENDIDO. Enviada sáb 15/08 11:19. Ventana ciega del viaje (7-23/08): un ⬛ acá mide disponibilidad, no contenido. NOVEDAD 17/08: el dom 16/08 15:53 UY el usuario SÍ entró al sitio por su cuenta (src=direct desde ideas.html) y abrió dos experiencias VIEJAS (feed-jardin 29/06 y superpoderes-jardin 30/06), 9 y 10 s, 28-29% de scroll — pero NO abrió esta. O sea: está alcanzable y curioso, y aun así el push del sábado no se abrió. El eje (bucle cerrado acción→resultado) NO se archiva; se re-mide de cero el 24/08. Los taps florecio-pera-companera y florecio-foto-23 siguen sin activar: no son deuda comprometida. Se linkea desde la landing del 17/08 para darle una segunda chance de lectura sin gastar una push."
+      "result_notes": "Cuarto reconteo (18/08, 72 h): sigue en ⬛ CERO SEÑAL. Dato nuevo: el 17/08 quedo LINKEADA dentro de la landing de preguntas-abiertas, el usuario abrio esa landing a los 2 min y aun asi NO entro aca — pero solo scrolleo hasta el 41 %, y el link a esta pagina vive mas abajo. No es evidencia de rechazo: es no-exposicion. VEREDICTO SIGUE SUSPENDIDO, se re-mide de cero el 24/08 con push propia."
     },
     {
       "id": "2026-08-17-preguntas-abiertas",
@@ -1048,7 +1048,7 @@
       "notified_by": [
         "2026-08-17-preguntas-abiertas"
       ],
-      "result_notes": null
+      "result_notes": "MASOMENOS con el mejor dato de timing de todo el canal. Enviada lun 17/08 18:23 -03:00 (lag del dispatcher 23 min) y ABIERTA A LOS 2 MINUTOS 3 SEGUNDOS (21:23:11Z -> 21:25:14Z). Es el delay mas corto medido nunca: el record anterior era 32 min (el-taller-2, 03/08). Ademas ROMPE LA RACHA DE 5 PUSHES SIN ABRIR (04/08 al 15/08). Dwell 31 s @ 41 % de scroll, 0 taps de slot, 0 reaccion, 0 feedback de texto, 0 aprobacion. Lectura: el TITULO/gancho funciono como nunca (\"Tu jardin tiene 6 preguntas abiertas\" -> apertura instantanea), pero el cuerpo no sostuvo mas alla del 41 %. No recurre (sin aprobacion). VEREDICTO DE FONDO SUSPENDIDO hasta la reentrada del 24/08 por la regla de ventana ciega del viaje. La pagina se conserva."
     }
   ],
   "_updated_at": "2026-08-17"
