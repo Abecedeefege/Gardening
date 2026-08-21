@@ -213,6 +213,19 @@
   .engage-actions button:last-child{ background:#fff; color:var(--ink3); border:1px solid var(--line); }
   .engage-actions button:active{ opacity:.75; }
 
+  /* SENAL RAPIDA ARRIBA (regla #2 — primer tap antes del 35 % de scroll) */
+  .arranque{ background:linear-gradient(180deg,#efe4d4,#fdfaf5); border-color:rgba(138,90,43,.32); }
+  .arranque .lbl{ color:var(--madera); }
+  .arranque p{ font-size:13.5px; color:var(--ink2); margin-top:2px; }
+  .ar-btns{ display:flex; flex-direction:column; gap:8px; margin-top:12px; }
+  .ar-btns button{ border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:13px;
+    padding:13px 12px; font:800 14.5px var(--sans); text-align:left; cursor:pointer; }
+  .ar-btns button:active{ opacity:.75; }
+  .ar-btns button:disabled:not(.sel){ opacity:.4; }
+  .ar-btns .q-hint{ font-size:12.5px; font-weight:800; color:var(--verde2); min-height:15px; }
+  .ar-jump{ display:block; margin-top:11px; text-align:center; font:800 13.5px var(--sans);
+    color:var(--madera); text-decoration:none; }
+
   .pie{ text-align:center; padding:14px 0 8px; }
   .pie a{ color:var(--verde2); font-weight:800; font-size:14px; text-decoration:none; }
   .cred{ color:var(--ink3); font-size:11.5px; margin-top:10px; line-height:1.55; }
@@ -235,6 +248,20 @@
     <div class="fact"><span class="n">~90′</span><span class="l">una salida</span></div>
     <div class="fact"><span class="n">5</span><span class="l">días al viaje</span></div>
   </div>
+
+  <!-- SEÑAL RÁPIDA ARRIBA (21/08): el primer tap tiene que caer antes del 35 % de scroll.
+       Pregunta real y sin usar: ¿el Taller se abre EN EL PATIO o en el sillón? -->
+  <section class="blk arranque reveal" id="arranque">
+    <div class="lbl">📍 Antes del primer corte</div>
+    <h3>¿Estás con el árbol adelante?</h3>
+    <p>Un tap y listo. Me sirve de verdad: los pasos se escriben distinto para leer en el patio, con la tijera en la mano, que para leer sentado.</p>
+    <div class="ar-btns">
+      <button type="button" onclick="engageAnswer('el-taller-arranque','campo', this)">🌳 Estoy afuera, con la herramienta</button>
+      <button type="button" onclick="engageAnswer('el-taller-arranque','lectura', this)">📖 Lo estoy leyendo, salgo después</button>
+      <span class="q-hint"></span>
+    </div>
+    <a class="ar-jump" href="#taller">Saltar directo a los pasos ↓</a>
+  </section>
 
   <!-- ACK: respuesta directa al feedback de ayer -->
   <section class="blk ack reveal">
