@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-22T09:25:00.000Z",
+  "_updated_at": "2026-08-22T14:18:40.253Z",
   "_nota": "Sabado 22/08 = dia CON slot de experiencia (11:00) y SIN tarea: es el 7o y ultimo slot de tarea de la ventana del viaje (7 al 23/08) y el compromiso publicado el 06/08 se cumple ENTERO — 7 de 7 slots en silencio. Encolada UNA sola push de experiencia: la original nueva 2026-08-22-perfume-de-octubre, que agrupa linkeadas adentro las aprobadas (El Taller, prendida en los dos slots, en pausa hasta el lunes). Materia prima verificada: cruce flowering x prune_when de las 52 fichas -> 11 especies perfumadas, 3 con ventana de poda en agosto que florecen en madera vieja (B-7/11/31/33, B-3, B-43) + 4 que SI se podan ahora (B-10/19, B-27, B-23, F-1) + romero B-26 en flor hoy. Contradiccion real detectada en la ficha B-7 (post-floracion mayo-junio vs floracion oct-nov) -> tap de correccion que genera trabajo del agente. Parte re-verificado por 9a vez contra open-meteo: dom 23/08 (vuelta) 8,0-10,6 con 0,0 mm — QUINTA confirmacion seguida de jardin seco a la vuelta; hoy 22 corrigio de 0,0 a 0,2 mm y por eso se publica el 23, no el 22. Cero heladas en 14 dias (minima absoluta 4,7 el 25/08). El numero del 'primer calor' se movio por 4a vez (26/08: 15,4 -> 13,2) y NO se publica. Nuevo dato >72 h que TAMPOCO se publica: 9,6 mm el 27/08. Primer control interactivo medido en Chromium 390x780: 9,5 % del scroll (regla #2 cumplida, tope 35 %).",
   "notifications": [
     {
@@ -9,8 +9,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-08-22-perfume-de-octubre.html",
       "send_at": "2026-08-22T11:00:00-03:00",
       "expires_at": "2026-08-22T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-08-22T14:18:40.252Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-08-22"
     }

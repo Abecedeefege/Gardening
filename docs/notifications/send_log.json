@@ -23,6 +23,12 @@
       "nid": "2026-08-17-preguntas-abiertas",
       "ts": "2026-08-17T21:23:11.437Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-08-22-perfume-de-octubre",
+      "ts": "2026-08-22T14:18:40.252Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
