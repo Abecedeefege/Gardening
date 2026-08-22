@@ -1,0 +1,464 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🌸 El perfume de octubre — qué NO podar en los 9 días que quedan</title>
+<meta property="og:title" content="🌸 3 podas te cuestan el perfume de octubre">
+<meta property="og:description" content="Tenés 11 plantas que perfuman. 3 de ellas ya tienen los botones de octubre hechos por dentro: si las podás en agosto, los tirás. Otras 3 se podan justo ahora. Cuáles son y por qué.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
+    --sol:#e0a92e; --azul:#3f7d8a; --rojo:#b4442e; --madera:#8a5a2b; --rosa:#b8508a;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 24px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:26px 0 4px; text-align:center; }
+  .hero .em{ font-size:44px; display:block; }
+  .hero .kicker{ font-size:11.5px; font-weight:900; letter-spacing:.19em; text-transform:uppercase; color:var(--rosa); margin-top:8px; }
+  .hero h1{ font-size:34px; line-height:1.06; margin:8px 0 8px; font-weight:900; letter-spacing:-.025em; }
+  .hero .sub{ color:var(--ink2); font-size:15px; max-width:33ch; margin:0 auto; }
+
+  .facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:9px; margin:16px 0 4px; }
+  .fact{ background:var(--card); border:1px solid var(--line); border-radius:15px; padding:12px 5px; text-align:center; }
+  .fact .n{ display:block; font-size:21px; font-weight:900; color:var(--verde); line-height:1.1; }
+  .fact .l{ font-size:10px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:var(--ink3); margin-top:4px; }
+
+  .blk{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:19px 17px; margin:13px 0;
+    box-shadow:0 6px 20px rgba(45,80,22,.05); }
+  .blk h3{ font-size:17.5px; font-weight:900; margin-bottom:7px; letter-spacing:-.01em; }
+  .blk p{ color:var(--ink2); font-size:14px; }
+  .blk p + p{ margin-top:8px; }
+  .lbl{ font-size:11px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:var(--ink3); }
+  b{ color:var(--ink); }
+
+  /* ARRANQUE — primer tap arriba de todo (regla #2) */
+  .arranque{ background:linear-gradient(180deg,#f6e3ee,#fdf8fb); border-color:rgba(184,80,138,.3); }
+  .arranque .lbl{ color:var(--rosa); }
+  .ar-btns{ display:flex; flex-direction:column; gap:8px; margin-top:12px; }
+  .ar-btns button{ border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:13px;
+    padding:13px 12px; font:800 14.5px var(--sans); text-align:left; cursor:pointer; }
+  .ar-btns button:active{ opacity:.75; }
+  .ar-btns button:disabled:not(.sel){ opacity:.4; }
+  .ar-btns button.sel{ background:var(--verde3); border-color:var(--verde2); }
+  .ar-btns .q-hint{ font-size:12.5px; font-weight:800; color:var(--verde2); min-height:15px; }
+  .ar-jump{ display:block; margin-top:10px; text-align:center; font:800 13.5px var(--sans);
+    color:var(--rosa); text-decoration:none; }
+
+  /* LISTAS NO / SI */
+  .grupo{ margin-top:11px; }
+  .g-head{ display:flex; align-items:center; gap:9px; font:900 14px var(--sans); padding:9px 12px; border-radius:12px; }
+  .g-no .g-head{ background:#fdece7; color:var(--rojo); }
+  .g-si .g-head{ background:#eaf6dc; color:var(--verde); }
+  .g-esp .g-head{ background:#fdf4dd; color:#a07610; }
+  .g-head .cnt{ margin-left:auto; font-size:11.5px; font-weight:900; opacity:.75; }
+  .pl{ display:flex; gap:11px; padding:11px 12px; border:1px solid var(--line); border-radius:13px; margin-top:8px; background:#fff; }
+  .pl .cod{ flex:none; font:900 11px var(--sans); color:#fff; background:var(--ink3); border-radius:7px;
+    padding:4px 7px; height:fit-content; letter-spacing:.02em; }
+  .g-no .pl .cod{ background:var(--rojo); }
+  .g-si .pl .cod{ background:var(--verde2); }
+  .g-esp .pl .cod{ background:#c39117; }
+  .pl .b{ min-width:0; }
+  .pl h4{ font-size:14px; font-weight:900; line-height:1.25; }
+  .pl .sci{ font-size:11.5px; color:var(--ink3); font-style:italic; }
+  .pl p{ font-size:12.8px; color:var(--ink2); margin-top:5px; }
+  .pl .flor{ display:inline-block; font-size:10.5px; font-weight:900; color:var(--rosa); background:#fbeef5;
+    border:1px solid rgba(184,80,138,.25); border-radius:6px; padding:2px 7px; margin-top:6px; }
+
+  /* DIAGRAMA madera vieja / nueva */
+  .diag{ display:grid; grid-template-columns:1fr 1fr; gap:11px; margin-top:12px; }
+  .diag figure{ background:#fafcf6; border:1px solid var(--line); border-radius:15px; padding:11px 8px 9px; text-align:center; }
+  .diag figure.bad{ background:#fdf3f0; border-color:rgba(180,68,46,.24); }
+  .diag svg{ width:100%; height:auto; display:block; }
+  .diag figcaption{ font-size:12px; font-weight:800; margin-top:6px; color:var(--verde2); }
+  .diag figure.bad figcaption{ color:var(--rojo); }
+  .diag figcaption small{ display:block; font-weight:600; color:var(--ink3); font-size:11px; margin-top:2px; line-height:1.35; }
+
+  /* MAPA */
+  .mapa{ background:#fbfdf8; }
+  .mapa svg{ width:100%; height:auto; display:block; margin-top:11px; border-radius:13px; }
+  .mapa .cap{ font-size:12.5px; color:var(--ink2); margin-top:9px; }
+
+  /* ALERTA ficha */
+  .ficha{ background:linear-gradient(180deg,#fdf4dd,#fffdf6); border-color:rgba(224,169,46,.4); }
+  .ficha .lbl{ color:#b7860b; }
+  .ficha .quote{ margin-top:10px; padding:10px 12px; background:#fff; border-left:3px solid var(--sol);
+    border-radius:0 12px 12px 0; font-size:13px; color:var(--ink2); font-family:ui-monospace,Menlo,monospace; }
+
+  /* CALENDARIO */
+  .cal{ display:grid; grid-template-columns:repeat(6,1fr); gap:5px; margin-top:12px; }
+  .cal div{ text-align:center; padding:8px 2px; border-radius:9px; background:#f2f6ec; border:1px solid var(--line); }
+  .cal div .m{ display:block; font-size:10px; font-weight:900; color:var(--ink3); text-transform:uppercase; }
+  .cal div .n{ display:block; font-size:17px; font-weight:900; color:var(--ink3); line-height:1.2; }
+  .cal div.hot{ background:#fbeef5; border-color:rgba(184,80,138,.35); }
+  .cal div.hot .n{ color:var(--rosa); }
+  .cal div.zero{ background:#f7f7f5; }
+
+  /* PLAN */
+  .plan{ background:linear-gradient(180deg,#1e2a17,#2d3a22); border:none; color:#eef4e6; }
+  .plan .lbl{ color:#a9c48a; }
+  .plan h3{ color:#fff; }
+  .plan p{ color:#c9d8b8; }
+  .plan ol{ margin:12px 0 0; padding-left:19px; }
+  .plan li{ font-size:13.8px; color:#d3e2c2; margin:8px 0; }
+  .plan li b{ color:#c6e58a; }
+  .plan .err{ margin-top:11px; padding:11px 13px; background:rgba(180,68,46,.18); border-left:3px solid #d97a5f;
+    border-radius:0 12px 12px 0; font-size:13px; color:#f0cfc5; }
+  .plan .err b{ color:#ffb59e; }
+
+  /* PREGUNTA secundaria */
+  .q2{ background:linear-gradient(180deg,#eaf2f6,#f8fbfc); border-color:rgba(63,125,138,.28); }
+  .q2 .lbl{ color:var(--azul); }
+
+  /* SLOTS */
+  .slots{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border-color:rgba(90,138,46,.3); }
+  .slot{ display:flex; align-items:center; gap:10px; padding:12px 13px; background:#fff; border:1px solid var(--line);
+    border-radius:13px; margin-top:9px; }
+  .slot-lbl{ font-size:13.5px; font-weight:800; }
+  .slot-btns{ margin-left:auto; display:flex; gap:7px; flex:none; }
+  .slot-btns button{ border:1px solid var(--line); background:#f7fbf1; color:var(--ink2); border-radius:9px;
+    padding:8px 13px; font:800 12.5px var(--sans); cursor:pointer; }
+  .slot-btns .si{ background:var(--verde2); color:#fff; border-color:var(--verde2); }
+  .slot-btns button:active{ opacity:.7; }
+  .slot-btns button.sel{ background:var(--verde); color:#fff; border-color:var(--verde); }
+  .slot-btns button:disabled:not(.sel){ opacity:.4; }
+
+  /* BIBLIOTECA de aprobadas */
+  .lib a.item{ display:flex; align-items:center; gap:10px; padding:11px 12px; border:1px solid var(--line);
+    border-radius:12px; margin-top:8px; text-decoration:none; color:var(--ink); background:#fff; }
+  .lib a.item.on{ background:#eef7e0; border-color:rgba(90,138,46,.4); }
+  .lib a.item .e{ font-size:19px; }
+  .lib a.item .t{ font-size:13.5px; font-weight:800; }
+  .lib a.item .t small{ display:block; font-weight:500; color:var(--ink3); font-size:11.5px; }
+  .lib a.item .go{ margin-left:auto; color:var(--ink3); font-weight:900; }
+  .lib .on-badge{ display:inline-block; font-size:10px; font-weight:900; letter-spacing:.06em; text-transform:uppercase;
+    color:#fff; background:var(--verde2); border-radius:6px; padding:2px 7px; margin-left:7px; vertical-align:2px; }
+
+  .react{ text-align:center; }
+  .react .row{ display:flex; justify-content:center; gap:11px; margin-top:12px; }
+  .react button{ width:58px; height:58px; border-radius:50%; border:1px solid var(--line); background:#fff;
+    font-size:27px; cursor:pointer; transition:transform .15s; }
+  .react button:active{ transform:scale(.88); }
+  .react button.sel{ background:var(--verde3); border-color:var(--verde2); transform:scale(1.08); }
+
+  .fb-blk{ background:linear-gradient(180deg,#eaf2f6,#f8fbfc); border-color:rgba(63,125,138,.28); }
+  .fb-blk textarea{ width:100%; background:#fff; border:1px solid rgba(63,125,138,.22); border-radius:12px;
+    color:var(--ink); padding:11px 12px; font:14px/1.45 var(--sans); resize:vertical; margin-top:10px; }
+  .fb-blk .fb-send{ margin-top:9px; background:var(--azul); color:#fff; border:none; border-radius:12px;
+    padding:12px 22px; font:800 14.5px var(--sans); cursor:pointer; }
+  .fb-blk .fb-send:active{ opacity:.75; }
+  .fb-blk .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--azul); min-height:1.2em; }
+
+  .engage-actions{ display:flex; flex-direction:column; gap:10px; margin:20px 0 8px; }
+  .engage-actions button{ border:none; border-radius:14px; padding:15px; font:900 15px var(--sans); cursor:pointer; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:#fff; color:var(--ink3); border:1px solid var(--line); }
+  .engage-actions button:active{ opacity:.75; }
+
+  .pie{ text-align:center; padding:14px 0 8px; }
+  .pie a{ color:var(--verde2); font-weight:800; font-size:14px; text-decoration:none; }
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:10px; line-height:1.55; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <span class="em">🌸</span>
+    <div class="kicker">Sábado 22 · último día afuera</div>
+    <h1>El perfume de octubre se decide en agosto</h1>
+    <p class="sub">Tenés <b>11 plantas que perfuman</b>. A 3 de ellas los botones de octubre ya se les formaron por dentro: si las podás estos días, los tirás a la bolsa.</p>
+  </header>
+
+  <div class="facts reveal">
+    <div class="fact"><span class="n">11</span><span class="l">perfumadas</span></div>
+    <div class="fact"><span class="n">9</span><span class="l">días de agosto</span></div>
+    <div class="fact"><span class="n">0,0 mm</span><span class="l">mañana, al volver</span></div>
+  </div>
+
+  <!-- PRIMER TAP — arriba de todo (regla #2: antes del 35 % del scroll) -->
+  <section class="blk arranque reveal" id="arranque">
+    <div class="lbl">✂️ Antes de seguir</div>
+    <h3>¿Podaste algo antes de irte?</h3>
+    <p>Un tap. Cambia lo que te preparo para el lunes: si ya cortaste, el plan es distinto al de si está todo entero.</p>
+    <div class="ar-btns">
+      <button type="button" onclick="engageAnswer('perfume-podaste','si', this)">✂️ Sí, algo corté en agosto</button>
+      <button type="button" onclick="engageAnswer('perfume-podaste','no', this)">🌿 No, no toqué nada</button>
+      <button type="button" onclick="engageAnswer('perfume-podaste','nose', this)">🤔 Ni idea, lo miro cuando llegue</button>
+      <span class="q-hint"></span>
+    </div>
+    <a class="ar-jump" href="#listas">Saltar a las listas ↓</a>
+  </section>
+
+  <!-- EL MECANISMO -->
+  <section class="blk reveal">
+    <div class="lbl">🔬 Por qué</div>
+    <h3>Madera vieja y madera nueva</h3>
+    <p>No todas las plantas guardan la flor en el mismo lugar, y de eso depende si podar suma o resta.</p>
+    <div class="diag">
+      <figure class="bad">
+        <svg viewBox="0 0 120 96" role="img" aria-label="Rama de madera vieja con botones ya formados, cortada">
+          <path d="M60 92 L60 40" stroke="#8a5a2b" stroke-width="7" stroke-linecap="round" fill="none"/>
+          <path d="M60 58 L34 36 M60 52 L86 30" stroke="#8a5a2b" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <circle cx="34" cy="34" r="6.5" fill="#b8508a"/><circle cx="86" cy="28" r="6.5" fill="#b8508a"/>
+          <circle cx="60" cy="38" r="6" fill="#b8508a"/>
+          <path d="M14 20 L106 20" stroke="#b4442e" stroke-width="3" stroke-dasharray="7 5"/>
+          <path d="M18 44 L44 18 M18 18 L44 44" stroke="#b4442e" stroke-width="4" stroke-linecap="round" opacity=".0"/>
+          <path d="M60 40 L60 22" stroke="#b4442e" stroke-width="7" stroke-linecap="round" opacity=".22"/>
+          <text x="60" y="14" font-size="11" font-weight="800" fill="#b4442e" text-anchor="middle" font-family="sans-serif">✂ acá NO</text>
+        </svg>
+        <figcaption>Madera vieja<small>Los botones ya están hechos sobre la rama del año pasado. Cortás rama = cortás flor.</small></figcaption>
+      </figure>
+      <figure>
+        <svg viewBox="0 0 120 96" role="img" aria-label="Rama de madera nueva, la flor sale del brote posterior al corte">
+          <path d="M60 92 L60 52" stroke="#8a5a2b" stroke-width="7" stroke-linecap="round" fill="none"/>
+          <path d="M20 52 L100 52" stroke="#5a8a2e" stroke-width="3" stroke-dasharray="7 5"/>
+          <path d="M60 52 L40 30 M60 52 L80 30" stroke="#5a8a2e" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <circle cx="38" cy="27" r="6.5" fill="#5a8a2e"/><circle cx="82" cy="27" r="6.5" fill="#5a8a2e"/>
+          <text x="60" y="14" font-size="11" font-weight="800" fill="#5a8a2e" text-anchor="middle" font-family="sans-serif">✂ acá SÍ</text>
+        </svg>
+        <figcaption>Madera nueva<small>La flor nace del brote que sale DESPUÉS del corte. Podar ahora = más flor, no menos.</small></figcaption>
+      </figure>
+    </div>
+    <p style="margin-top:11px;font-size:13px">La ficha de una planta te dice <b>cuándo</b> florece. Cruzándolo con <b>de dónde</b> sale esa flor, sale sola la lista de abajo. Es la misma regla que te salvó los carozos en agosto: ellos florecen en madera del año anterior y por eso se podan en pleno invierno, antes de que hinchen.</p>
+  </section>
+
+  <!-- LAS LISTAS -->
+  <section class="blk reveal" id="listas">
+    <div class="lbl">📋 Tus 11, separadas</div>
+    <h3>Qué toco y qué no, hasta el 31</h3>
+
+    <div class="grupo g-no">
+      <div class="g-head">🚫 No las podes ahora<span class="cnt">3 · perderías octubre</span></div>
+
+      <div class="pl"><span class="cod">B-7<br>+3</span><div class="b">
+        <h4>Azarero / Pitósporo <span style="font-weight:600;color:var(--ink3);font-size:12px">×4 ejemplares</span></h4>
+        <div class="sci">Pittosporum tobira</div>
+        <p>El perfume más fuerte que tenés: sus flores blanco-cremosas huelen literalmente a azahar de naranjo. Ya tiene los botones formados en la punta de la rama del año pasado.</p>
+        <span class="flor">🌸 abre en octubre-noviembre</span>
+      </div></div>
+
+      <div class="pl"><span class="cod">B-3</span><div class="b">
+        <h4>Jazmín de leche / estrellado</h4>
+        <div class="sci">Trachelospermum jasminoides</div>
+        <p>Trepadora. Su ficha dice «poda fuerte en agosto si invade» — cierto para <i>domarla</i>, carísimo para <i>olerla</i>: la flor de octubre a enero sale de esos mismos brotes del año pasado. Si invade, recortá lo mínimo y dejá el grueso para febrero.</p>
+        <span class="flor">🌸 abre de octubre a enero</span>
+      </div></div>
+
+      <div class="pl"><span class="cod">B-43</span><div class="b">
+        <h4>El otro pitósporo</h4>
+        <div class="sci">Pittosporum tobira</div>
+        <p>El del rincón entre el romero y el mirto. Mismo caso, tres meses de flor por delante (oct-dic). <b>Con este tengo algo pendiente para el lunes</b> — hay un dato de la ficha que no cierra y quiero mirarlo con vos.</p>
+        <span class="flor">🌸 abre de octubre a diciembre</span>
+      </div></div>
+    </div>
+
+    <div class="grupo g-si">
+      <div class="g-head">✅ Estas sí, y ahora es el momento<span class="cnt">4 · suma flor</span></div>
+
+      <div class="pl"><span class="cod">B-10<br>B-19</span><div class="b">
+        <h4>Lavanda <span style="font-weight:600;color:var(--ink3);font-size:12px">×2</span></h4>
+        <div class="sci">Lavandula dentata</div>
+        <p>Florece sobre el brote del año, así que el corte de fin de invierno es exactamente lo que la ficha manda. Sin ese corte se abre por el medio y se pone leñosa. <b>Nunca cortes en la madera vieja gris</b>: de ahí no rebrota.</p>
+        <span class="flor">🌿 aroma todo el año en la hoja</span>
+      </div></div>
+
+      <div class="pl"><span class="cod">B-27</span><div class="b">
+        <h4>Mirto común</h4>
+        <div class="sci">Myrtus communis</div>
+        <p>La excepción elegante: florece en verano sobre brote nuevo, así que el repaso ligero de fin de invierno no le cuesta nada. Es el que suelta el olor a eucalipto-laurel cuando le frotás una hoja.</p>
+        <span class="flor">🌿 aroma en la hoja, flor en verano</span>
+      </div></div>
+
+      <div class="pl"><span class="cod">B-23</span><div class="b">
+        <h4>Limonero</h4>
+        <div class="sci">Citrus × limon</div>
+        <p>Su ficha pide agosto-septiembre, después de la cosecha grande — y llegás justo. El azahar de septiembre sale del brote que empuja después de este corte. Sacá lo seco y lo que va hacia adentro, nada más.</p>
+        <span class="flor">🌸 azahar en setiembre-noviembre</span>
+      </div></div>
+
+      <div class="pl"><span class="cod">F-1</span><div class="b">
+        <h4>Guayabo del país <span style="font-weight:600;color:var(--ink3);font-size:12px">el único del frente</span></h4>
+        <div class="sci">Acca sellowiana</div>
+        <p>Nativo. Su ficha manda junio-agosto tras la cosecha y avisa «evitar podar en floración»: florece sobre brote nuevo, así que el corte de ahora no le cuesta ni una flor. <b>Es el último fin de semana de su ventana.</b></p>
+        <span class="flor">🌸 flor comestible oct-dic · fruto aromático</span>
+      </div></div>
+    </div>
+
+    <div class="grupo g-esp">
+      <div class="g-head">⏳ Este esperá<span class="cnt">1 · está en flor</span></div>
+      <div class="pl"><span class="cod">B-26</span><div class="b">
+        <h4>Romero</h4>
+        <div class="sci">Salvia rosmarinus</div>
+        <p>Es la única de las 11 que está <b>en flor ahora mismo</b> (junio a octubre). Podarlo hoy sería cortar la flor abierta. Su ventana es octubre-noviembre, cuando termine.</p>
+        <span class="flor">🌸 en flor HOY</span>
+      </div></div>
+    </div>
+
+    <p style="margin-top:13px;font-size:12.5px;color:var(--ink3)">Las otras 3 perfumadas (gardenia B-25, liquidámbar B-37, lantana B-29) no tienen ventana de poda abierta en agosto: ninguna decisión que tomar esta semana.</p>
+  </section>
+
+  <!-- CORRECCIÓN DE FICHA -->
+  <section class="blk ficha reveal">
+    <div class="lbl">⚠️ Encontré esto revisando</div>
+    <h3>La ficha del azarero se contradice</h3>
+    <p>Cruzando los campos de las 52 fichas apareció una inconsistencia real en el catálogo:</p>
+    <div class="quote">B-7 · floración: <b>octubre, noviembre</b><br>B-7 · poda: «<b>Mayo-junio (post-floración)</b> y agosto si está muy denso»</div>
+    <p style="margin-top:10px">Si florece en octubre-noviembre, «post-floración» no es mayo-junio: es <b>diciembre-enero</b>. Y el «agosto si está muy denso» es justo lo que le cuesta el perfume. La ficha viene arrastrando esa fecha desde que se cargó.</p>
+    <div class="ar-btns" style="margin-top:12px">
+      <button type="button" onclick="engageAnswer('perfume-ficha-azarero','si', this)">🛠️ Corregila (poda: diciembre-enero)</button>
+      <button type="button" onclick="engageAnswer('perfume-ficha-azarero','no', this)">✋ Dejala como está, ya la miro</button>
+      <span class="q-hint"></span>
+    </div>
+    <p style="margin-top:10px;font-size:12.5px;color:var(--ink3)">Si tocás el primero, el lunes la ficha del catálogo queda corregida y el Timeline deja de proponerte esa poda en la fecha equivocada. El trabajo es mío; vos solo decidís.</p>
+  </section>
+
+  <!-- MAPA -->
+  <section class="blk mapa reveal">
+    <div class="lbl">🗺️ Y ya que estamos</div>
+    <h3>10 de las 11 están del mismo lado</h3>
+    <svg viewBox="0 0 340 150" role="img" aria-label="Plano del jardín: casi todas las plantas perfumadas están en el fondo, al este">
+      <rect x="0" y="0" width="340" height="150" fill="#f4f8ee" rx="12"/>
+      <rect x="118" y="34" width="104" height="82" fill="#e6e2d8" stroke="#cfc9ba" stroke-width="1.5" rx="6"/>
+      <text x="170" y="80" font-size="12" font-weight="800" fill="#a09883" text-anchor="middle" font-family="sans-serif">la casa</text>
+      <text x="14" y="20" font-size="10.5" font-weight="900" fill="#8a9a7a" font-family="sans-serif">OESTE · FRENTE</text>
+      <text x="326" y="20" font-size="10.5" font-weight="900" fill="#8a9a7a" text-anchor="end" font-family="sans-serif">ESTE · FONDO</text>
+      <text x="170" y="20" font-size="10" font-weight="800" fill="#c9c2b2" text-anchor="middle" font-family="sans-serif">norte ↑</text>
+      <g fill="#b8508a">
+        <circle cx="252" cy="46" r="7"/><circle cx="272" cy="62" r="7"/><circle cx="292" cy="46" r="7"/>
+        <circle cx="248" cy="76" r="7"/><circle cx="270" cy="92" r="7"/><circle cx="294" cy="76" r="7"/>
+        <circle cx="252" cy="108" r="7"/><circle cx="292" cy="106" r="7"/><circle cx="312" cy="64" r="7"/><circle cx="312" cy="92" r="7"/>
+      </g>
+      <circle cx="52" cy="76" r="7" fill="#b8508a"/>
+      <text x="52" y="99" font-size="10" font-weight="800" fill="#5a6b4c" text-anchor="middle" font-family="sans-serif">guayabo</text>
+      <text x="52" y="56" font-size="10" font-weight="800" fill="#5a6b4c" text-anchor="middle" font-family="sans-serif">1 sola</text>
+      <text x="280" y="130" font-size="10.5" font-weight="900" fill="#b8508a" text-anchor="middle" font-family="sans-serif">10 acá</text>
+      <path d="M170 128 L170 140" stroke="#8a9a7a" stroke-width="2"/>
+      <text x="170" y="147" font-size="9.5" font-weight="800" fill="#8a9a7a" text-anchor="middle" font-family="sans-serif">la puerta</text>
+    </svg>
+    <p class="cap">No es un error: la gardenia y el jazmín <b>quieren</b> ese sol de mañana con sombra de tarde, y ahí están bien. Pero la lavanda pide <b>sol pleno</b> y está en el este, donde el sol se le va al mediodía. Es la única de las 11 que estaría mejor adelante — y se multiplica sola con un gajo.</p>
+  </section>
+
+  <!-- CALENDARIO -->
+  <section class="blk reveal">
+    <div class="lbl">📅 Cuándo huele</div>
+    <h3>Todo el perfume cabe en un trimestre</h3>
+    <div class="cal">
+      <div class="zero"><span class="m">ago</span><span class="n">1</span></div>
+      <div><span class="m">set</span><span class="n">2</span></div>
+      <div class="hot"><span class="m">oct</span><span class="n">6</span></div>
+      <div class="hot"><span class="m">nov</span><span class="n">5</span></div>
+      <div class="hot"><span class="m">dic</span><span class="n">3</span></div>
+      <div><span class="m">ene</span><span class="n">2</span></div>
+    </div>
+    <p style="margin-top:11px;font-size:13.5px">Especies con flor perfumada abierta, mes a mes. <b>Octubre y noviembre son el pico</b> y hoy hay una sola (el romero). Las 3 de la lista roja son la mitad de ese pico: sin ellas, octubre baja de 6 a 3.</p>
+  </section>
+
+  <!-- PLAN -->
+  <section class="blk plan reveal">
+    <div class="lbl">🌱 Para setiembre, si querés perfume en la puerta</div>
+    <h3>Tres gajos de lavanda, costo cero</h3>
+    <p>La lavanda es la única perfumada que está mal ubicada por luz y la más fácil de multiplicar. No hace falta comprar nada ni mover la planta madre.</p>
+    <ol>
+      <li>Cuando la podes estos días, <b>guardá 3 puntas de 10 cm</b> del corte — brote del año, todavía verde, sin flor.</li>
+      <li>Sacale las hojas de la mitad de abajo y clavalas en una maceta con tierra arenosa, <b>bien apretada</b>. Sin hormona: la lavanda enraíza sola.</li>
+      <li>A la sombra clara y <b>apenas húmeda</b>, nunca encharcada. En 4-6 semanas tiran raíz.</li>
+      <li>En octubre van al frente, al oeste: <b>sol de tarde pleno</b>, que es lo que pide la ficha y no tiene en el fondo.</li>
+    </ol>
+    <div class="err"><b>El error clásico:</b> regar de más. La lavanda mediterránea se pudre antes de secarse — si dudás, no riegues.</div>
+  </section>
+
+  <!-- PREGUNTA 2 -->
+  <section class="blk q2 reveal">
+    <div class="lbl">💭 Una sola pregunta más</div>
+    <h3>¿Dónde te gustaría que se sienta?</h3>
+    <p style="font-size:13.5px">Con lo que toques acá te armo el plan de plantación de primavera: qué va, dónde y en qué mes, con lo que ya tenés.</p>
+    <div class="ar-btns">
+      <button type="button" onclick="engageAnswer('perfume-donde','puerta', this)">🚪 En la puerta, al llegar</button>
+      <button type="button" onclick="engageAnswer('perfume-donde','fondo', this)">🪑 Donde me siento en el fondo</button>
+      <button type="button" onclick="engageAnswer('perfume-donde','ventana', this)">🪟 Que entre por la ventana</button>
+      <button type="button" onclick="engageAnswer('perfume-donde','asi', this)">👌 Está bien como está</button>
+      <span class="q-hint"></span>
+    </div>
+  </section>
+
+  <!-- DUDA HONESTA -->
+  <section class="blk reveal">
+    <div class="lbl">🤷 Lo que no sé</div>
+    <h3>El ligustro del frente</h3>
+    <p>El ligustro F-9 florece en noviembre-diciembre y el género huele fortísimo — pero <b>su ficha no dice una palabra de perfume</b>, así que no lo conté entre las 11. No lo voy a inventar: te lo pregunto en noviembre, cuando abra, y lo confirmamos con la nariz. Si perfuma, el frente ya tenía su perfume y no lo sabíamos.</p>
+  </section>
+
+  <!-- APROBADAS -->
+  <section class="blk lib reveal">
+    <div class="lbl">📚 Lo que elegiste que vuelva</div>
+    <h3>Tus experiencias prendidas</h3>
+    <p style="font-size:13.5px">Solo vuelve lo que prendiste. <b>El Taller</b> está encendido en los dos slots desde el 2 de agosto — quedó en pausa durante el viaje y <b>vuelve el lunes con el nº 3</b>, contenido nuevo, sobre el pitósporo de arriba.</p>
+    <a class="item on" href="https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html"><span class="e">🪚</span><span class="t">El Taller<span class="on-badge">Lun 18 · Sáb 11</span><small>Poda de carozos, paso a paso · nº 1</small></span><span class="go">→</span></a>
+    <a class="item" href="https://gardening-chi.vercel.app/engage/2026-08-02-que-mas-podo.html"><span class="e">🌳</span><span class="t">¿Qué más puedo podar?<small>La respuesta a tu pregunta del 2 de agosto</small></span><span class="go">→</span></a>
+    <a class="item" href="https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html"><span class="e">🧳</span><span class="t">Tu jardín hoy<small>Las tareas, ordenadas alrededor del viaje</small></span><span class="go">→</span></a>
+  </section>
+
+  <!-- SLOTS -->
+  <section class="blk slots reveal">
+    <div class="lbl">🗓️ Slots disponibles</div>
+    <h3>¿Querés que esto vuelva?</h3>
+    <p style="font-size:13.5px">Cruces como el de hoy (tus fichas contra el calendario real) tengo para rato: perfume, luz, fruta, las 44 especies de las que tenés un solo ejemplar. Prendé el horario que te sirva — si no prendés ninguno, esta no vuelve.</p>
+    <div class="slot"><span class="slot-lbl">🗓️ Lunes · 18:00</span><span class="slot-btns"><button type="button" class="si" onclick="engageAnswer('perfume-de-octubre-slot-lun18','si', this)">Prender</button><button type="button" class="no" onclick="engageAnswer('perfume-de-octubre-slot-lun18','no', this)">No</button></span></div>
+    <div class="slot"><span class="slot-lbl">🗓️ Sábado · 11:00</span><span class="slot-btns"><button type="button" class="si" onclick="engageAnswer('perfume-de-octubre-slot-sab11','si', this)">Prender</button><button type="button" class="no" onclick="engageAnswer('perfume-de-octubre-slot-sab11','no', this)">No</button></span></div>
+  </section>
+
+  <!-- REACCION -->
+  <section class="blk react reveal">
+    <h3>¿Te sirvió?</h3>
+    <div class="row">
+      <button type="button" onclick="engageReact('perfume-de-octubre','love', this)" aria-label="Me encantó">😍</button>
+      <button type="button" onclick="engageReact('perfume-de-octubre','like', this)" aria-label="Me gustó">🙂</button>
+      <button type="button" onclick="engageReact('perfume-de-octubre','meh', this)" aria-label="Meh">😐</button>
+      <button type="button" onclick="engageReact('perfume-de-octubre','no', this)" aria-label="No">🙅</button>
+      <span class="react-hint" style="display:block;margin-top:9px;font-size:12.5px;font-weight:700;color:var(--verde2);min-height:1.2em"></span>
+    </div>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p style="font-size:13.5px">Esto lo leo yo, el agente del jardín, antes de armar la próxima. ¿Te sirve este tipo de cruce (tus fichas contra el calendario real) o preferís otra cosa para la vuelta?</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('perfume-de-octubre', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-08-22-perfume-de-octubre')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-08-22-perfume-de-octubre')">✕ No me interesa</button>
+  </div>
+
+  <footer class="pie">
+    <a href="https://gardening-chi.vercel.app/index.html">Ver la Biblioteca de especies →</a>
+    <div class="cred">Edición del sábado 22 de agosto de 2026 · las 11 perfumadas salen de los campos <b>desc</b>, <b>fun_fact</b>, <b>flowering</b>, <b>light</b> y <b>prune_when</b> de las fichas B-3, B-7/11/31/33, B-10/19, B-23, B-25, B-26, B-27, B-29, B-37, B-43 y F-1 del catálogo Pacha Mama · lluvia del 23/08 verificada contra open-meteo el 22/08 a la mañana · <a href="https://gardening-chi.vercel.app/engage/2026-08-22-perfume-de-octubre-pitch.html" style="font-size:11.5px">cómo se sostendría esto ↗</a></div>
+  </footer>
+
+</div>
+
+<script src="engage.js"></script>
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold:0.08, rootMargin:'0px 0px -6% 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+</body></html>
