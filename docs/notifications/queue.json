@@ -1,31 +1,31 @@
 {
- "_updated_at": "2026-08-24T06:10:00-03:00",
- "_nota": "LUNES 24/08 = REENTRADA. Dia con LOS DOS slots (tarea 10:00 + experiencia 18:00) -> 2 push, una por slot. (1) Canal tarea consolidado en 2026-07-24-jardin-hoy.html, REEDITADO hoy en su URL estable (mandato 24/07): cobra la promesa cumplida del viaje (7 de 7 slots de tarea en silencio, 7-23/08, verificable contra send_log: las 4 push de esa ventana fueron experiencias, ninguna tarea), publica el parte re-verificado y ordena las 12 tareas abiertas reales (verificadas contra generate_tasks_from_plants + task_states.json). Caqui B-41 NO se nombra (pedido 28/07). Los carozos figuran cerrados por tick del usuario, no se contradice. (2) Experiencia original NUEVA del slot: 2026-08-24-el-taller-3 (Taller nº3, pitosporo B-43), teaseado dos veces, en la unica linea de producto aprobada. Agrupa linkeadas adentro las aprobadas (el-taller n1, aprobada en los dos slots) + n2 + jardin-hoy: NUNCA push separadas. Trae la decision honesta que no se habia dicho: podar B-43 ahora cuesta la floracion de octubre (florece en madera vieja) -> 3 opciones reales de su propia ficha (agosto / febrero post-floracion / solo el sector del vecino). Cierra con el material sin publicar del audit_flor_poda: las dos paltas B-22/B-36 con poda programada en su mes de flor, con tap que genera trabajo mio. Parte 11a verificacion open-meteo MVD: lun-mar-mie 0,0 mm, jueves 27 = 8,2 mm (3a verificacion seguida del DIA; el mm se movio 9,6->10,0->8,2), minima 4,5 el 25, cero heladas en 10 dias de pronostico y en los 21 medidos. Regla #2 medida en Chromium 390x780: taller-3 = 9,4 % del scroll, jardin-hoy = 21,6 % (tope 35 %).",
- "notifications": [
-  {
-   "id": "2026-08-24-jardin-hoy",
-   "format": "tarea",
-   "title": "🌿 Tenés 3 días secos y 12 tareas",
-   "body": "El jueves llueve. Cumplí los 7 slots del viaje en silencio — hoy va la lista real, ordenada.",
-   "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
-   "send_at": "2026-08-24T10:00:00-03:00",
-   "expires_at": "2026-08-24T22:00:00-03:00",
-   "status": "pending",
-   "sent_at": null,
-   "fail_reason": null,
-   "created_by": "engagement-agent 2026-08-24"
-  },
-  {
-   "id": "2026-08-24-el-taller-3",
-   "title": "🪚 El Taller nº3: el pitósporo",
-   "body": "Bajarlo a pantalla te cuesta el perfume de octubre. Tres formas de resolverlo y el paso a paso.",
-   "url": "https://gardening-chi.vercel.app/engage/2026-08-24-el-taller-3.html",
-   "send_at": "2026-08-24T18:00:00-03:00",
-   "expires_at": "2026-08-24T22:00:00-03:00",
-   "status": "pending",
-   "sent_at": null,
-   "fail_reason": null,
-   "created_by": "engagement-agent 2026-08-24"
-  }
- ]
+  "_updated_at": "2026-08-24T13:11:56.915Z",
+  "_nota": "LUNES 24/08 = REENTRADA. Dia con LOS DOS slots (tarea 10:00 + experiencia 18:00) -> 2 push, una por slot. (1) Canal tarea consolidado en 2026-07-24-jardin-hoy.html, REEDITADO hoy en su URL estable (mandato 24/07): cobra la promesa cumplida del viaje (7 de 7 slots de tarea en silencio, 7-23/08, verificable contra send_log: las 4 push de esa ventana fueron experiencias, ninguna tarea), publica el parte re-verificado y ordena las 12 tareas abiertas reales (verificadas contra generate_tasks_from_plants + task_states.json). Caqui B-41 NO se nombra (pedido 28/07). Los carozos figuran cerrados por tick del usuario, no se contradice. (2) Experiencia original NUEVA del slot: 2026-08-24-el-taller-3 (Taller nº3, pitosporo B-43), teaseado dos veces, en la unica linea de producto aprobada. Agrupa linkeadas adentro las aprobadas (el-taller n1, aprobada en los dos slots) + n2 + jardin-hoy: NUNCA push separadas. Trae la decision honesta que no se habia dicho: podar B-43 ahora cuesta la floracion de octubre (florece en madera vieja) -> 3 opciones reales de su propia ficha (agosto / febrero post-floracion / solo el sector del vecino). Cierra con el material sin publicar del audit_flor_poda: las dos paltas B-22/B-36 con poda programada en su mes de flor, con tap que genera trabajo mio. Parte 11a verificacion open-meteo MVD: lun-mar-mie 0,0 mm, jueves 27 = 8,2 mm (3a verificacion seguida del DIA; el mm se movio 9,6->10,0->8,2), minima 4,5 el 25, cero heladas en 10 dias de pronostico y en los 21 medidos. Regla #2 medida en Chromium 390x780: taller-3 = 9,4 % del scroll, jardin-hoy = 21,6 % (tope 35 %).",
+  "notifications": [
+    {
+      "id": "2026-08-24-jardin-hoy",
+      "format": "tarea",
+      "title": "🌿 Tenés 3 días secos y 12 tareas",
+      "body": "El jueves llueve. Cumplí los 7 slots del viaje en silencio — hoy va la lista real, ordenada.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
+      "send_at": "2026-08-24T10:00:00-03:00",
+      "expires_at": "2026-08-24T22:00:00-03:00",
+      "status": "sent",
+      "sent_at": "2026-08-24T13:11:56.914Z",
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-08-24"
+    },
+    {
+      "id": "2026-08-24-el-taller-3",
+      "title": "🪚 El Taller nº3: el pitósporo",
+      "body": "Bajarlo a pantalla te cuesta el perfume de octubre. Tres formas de resolverlo y el paso a paso.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-08-24-el-taller-3.html",
+      "send_at": "2026-08-24T18:00:00-03:00",
+      "expires_at": "2026-08-24T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-08-24"
+    }
+  ]
 }
