@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-24T13:41:18.019Z",
+  "_updated_at": "2026-08-24T13:41:36.552Z",
   "events": [
     {
       "_id": "msw5ybnf92jyuq",
@@ -105,6 +105,15 @@
       "nid": "2026-08-24-jardin-hoy",
       "src": "push",
       "ts": "2026-08-24T13:41:17.163Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mt7abk28163tx7",
+      "type": "feedback_text",
+      "target": "jardin-hoy",
+      "text": "Vuelvo en 1 semana a Uruguay.  Mándame todo lo que haya para hacer ese dia",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-08-24T13:41:36.463Z",
       "device": "sin-nombre"
     }
   ],
