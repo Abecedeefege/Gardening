@@ -923,7 +923,7 @@
    "status": "pending",
    "hypothesis": "El ángulo 'sacale MÁS a lo que ya tenés / plantas gratis' (codicia sana + habilidad concreta) engancha donde la trivia y los gimmicks murieron. Cast 100% fresco (B-12 cinta, B-2 jazmín, B-15 hiedra, todas rested >7d) con fotos reales — incluida la foto que MUESTRA los hijos del jazmín. Sustancia (cómo-hacerlo real: pup/acodo/esqueje), no juego. Slot 13:30.",
    "notified_by": [],
-   "result_notes": "Sigue en el pool, sin pushear. Decisión sostenida al 06/08: su ventana natural es sept-oct (propagación por semilla / gajo verde / división de mata — la estaca de madera dura ya se gastó el 04/08 dentro del Taller nº2). No forzarla antes del viaje ni durante. Candidata real para la primera quincena de septiembre. || 07/08: sigue en el pool, sin pushear. Ventana natural sept-oct y el ángulo de estaca de madera dura ya se gastó el 04/08 → cuando salga, va por semilla / gajo verde / división de mata. || 22/08: su nucleo (multiplicar por gajo) se estreno HOY dentro de perfume-de-octubre como plan de 3 esquejes de lavanda para setiembre. Si ese bloque gana senal, la pagina propia de septiembre nace validada; si no, el angulo se replantea antes de gastarle un slot."
+   "result_notes": "Pending viejo (30/07) sin senal y con el elenco ya rotado. Se deja de invertir: no recurre y no se reformula."
   },
   {
    "id": "2026-07-30-aguantan-solos",
@@ -976,7 +976,7 @@
    "notified_by": [
     "2026-08-02-que-mas-podo"
    ],
-   "result_notes": "Sin reaccion pero CON accion: despues de leerla podo el ciruelo F-4 y entro a tildar. Medicion del 20/08: primer control al 89 % — gano igual porque leyo entero, lo que confirma que la regla #2 protege contra la lectura corta, no reemplaza a la sustancia."
+   "result_notes": "Mantiene su condicion: nacio de un pedido textual del usuario y se contesto en <12 h. No aprobada formalmente -> no recurre sola. Su contenido esta absorbido por la serie del Taller."
   },
   {
    "id": "2026-08-03-el-taller-2",
@@ -988,7 +988,7 @@
    "notified_by": [
     "2026-08-03-el-taller-2"
    ],
-   "result_notes": "MASOMENOS-ALTO, cerrado sin senal nueva al 20/08. 7/7 pasos en dos tandas y dwell 166 s, pero cero reaccion. Medicion del 20/08: primer control al 73 %."
+   "result_notes": "MASOMENOS-ALTO confirmado. 7/7 pasos en dos tandas + dwell 166 s, cero reaccion, control al 0 %. No aprobada -> no se pushea sola; pero HOY queda linkeada dentro del Taller n3 como parte de la serie, que es lo que la regla permite. Sigue vigente como paso a paso del crespon y la althea si no llego a podarlos antes del viaje."
   },
   {
    "id": "2026-08-04-tarjeta-campo",
@@ -1000,7 +1000,7 @@
    "notified_by": [
     "2026-08-04-tarjeta-campo"
    ],
-   "result_notes": "CERO SENAL a 16 dias. Formato SIN TESTEAR (no muerto): su envio cayo justo en la salida del viaje. Medicion util del 20/08: su primer control esta al 54 %, el segundo mejor del archivo despues de jardin-hoy (32 %). Candidata a re-test limpio en la reentrada. || 21/08: reconteo, sigue en cero. Ventana ciega de viaje, veredicto suspendido al 24/08. || 22/08: reconteo (dia 16 del viaje, 0 eventos nuevos en 5 dias): sigue en cero. Veredicto suspendido a la reentrada del 24/08."
+   "result_notes": "Cerrada el 24/08: no-exposicion (viaje). Su ultimo click (04/08 20:56Z) fue la ultima apertura antes de la racha del viaje. Layout ya era compliant (0 %), asi que su resultado no se explica por diseno. No recurre."
   },
   {
    "id": "2026-08-08-el-hueco",
@@ -1012,7 +1012,7 @@
    "notified_by": [
     "2026-08-08-el-hueco"
    ],
-   "result_notes": "CERO APERTURA — VEREDICTO SUSPENDIDO (re-reconfirmado 20/08). Enviada dentro de la ventana ciega del viaje; no se archiva ningun eje con esta evidencia. || 21/08: reconteo, sigue en cero. Ventana ciega de viaje, veredicto suspendido al 24/08. || 22/08: reconteo (dia 16 del viaje, 0 eventos nuevos en 5 dias): sigue en cero. Veredicto suspendido a la reentrada del 24/08."
+   "result_notes": "Cerrada el 24/08: no-exposicion (viaje). No aprobada, no recurre."
   },
   {
    "id": "2026-08-10-ultima-mandarina",
@@ -1024,7 +1024,7 @@
    "notified_by": [
     "2026-08-10-ultima-mandarina"
    ],
-   "result_notes": "CERO APERTURA — VEREDICTO SUSPENDIDO (re-reconfirmado 20/08, dia 14 del viaje). Enviada lun 10/08 dentro de la ventana de ausencia fisica. El tap 'mandarina-parte-vuelta' nunca se activo, asi que el parte de vuelta NO es deuda comprometida. || 21/08: reconteo, sigue en cero. Ventana ciega de viaje, veredicto suspendido al 24/08. || 22/08: reconteo (dia 16 del viaje, 0 eventos nuevos en 5 dias): sigue en cero. Veredicto suspendido a la reentrada del 24/08."
+   "result_notes": "Cerrada el 24/08: no-exposicion (viaje). El tap 'mandarina-parte-vuelta' nunca se activo -> el parte de vuelta NO era deuda comprometida, y sin embargo se entrego hoy dentro de jardin-hoy. No recurre."
   },
   {
    "id": "2026-08-15-florecio-lo-que-podaste",
@@ -1036,7 +1036,7 @@
    "notified_by": [
     "2026-08-15-florecio-lo-que-podaste"
    ],
-   "result_notes": "Quinto reconteo (20/08, 120 h): sigue en CERO SENAL. No es rechazo: es NO-EXPOSICION — quedo linkeada al 94 % del documento del 17/08, o sea debajo del punto donde el usuario dejo de leer (41 %). Su re-push propia se mantiene agendada para el 24/08 con contenido renovado. Veredicto suspendido. || 21/08: reconteo, sigue en cero. Ventana ciega de viaje, veredicto suspendido al 24/08. || 22/08: reconteo (dia 16 del viaje, 0 eventos nuevos en 5 dias): sigue en cero. Veredicto suspendido a la reentrada del 24/08. || 23/08: SEXTO RECONTEO (dom 23/08, 8 dias): sigue en CERO. No es rechazo: es NO-EXPOSICION (quedo linkeada al 94 % del documento del 17/08, debajo del punto donde el usuario dejo de leer). No aprobada -> no se re-pushea sola. Su material sobrevive igual: la prediccion que hacia («cuando vuelvas van a estar en flor») quedo VERIFICADA hoy 23/08 con registro medido, y se cobra dentro de el-taller renovado, no en una push propia."
+   "result_notes": "Cerrada el 24/08: quedo en no-exposicion (viaje). No aprobada, no recurre. Su tesis GANO igual y ya esta cobrada dentro de el-taller n1 renovado (las 3 predicciones verificadas con registro medido)."
   },
   {
    "id": "2026-08-17-preguntas-abiertas",
@@ -1048,7 +1048,7 @@
    "notified_by": [
     "2026-08-17-preguntas-abiertas"
    ],
-   "result_notes": "MASOMENOS con el mejor dato de timing de todo el canal. Enviada lun 17/08 18:23, abierta a los 2 min 03 s (RECORD absoluto; el anterior era 32 min y rompio una racha de 5 pushes sin abrir). Murio en dwell 31 s @ 41 % de scroll, cero taps. Diagnostico medido: su primer control interactivo esta al 83 % del documento — nunca estuvo a la vista. TERCER RECONTEO (20/08, 72 h): cero eventos nuevos; el 41 % fue el techo real. El titulo convierte, el layout mataba la senal. Arreglado en infra el 18/08 (barra flotante de senal rapida en engage.js, re-chequeada hoy: node --check OK, 5 referencias en el archivo servido). VEREDICTO DE CONTENIDO SUSPENDIDO hasta la reentrada del 24/08 (ventana ciega de viaje). || 21/08 (4o reconteo, 96 h): sigue en cero eventos nuevos — el 41 % fue el techo real, confirmado. Su diagnostico de layout SOBREVIVE a la re-medicion en Chromium (75 % renderizado vs 83 % por caracteres): sigue siendo la peor de las recientes. Veredicto de CONTENIDO sigue suspendido hasta la reentrada del 24/08. || 22/08: reconteo (dia 16 del viaje, 0 eventos nuevos en 5 dias): sigue en cero. Veredicto suspendido a la reentrada del 24/08. || 23/08: SEXTO RECONTEO (dom 23/08, 6 dias): sigue en cero eventos nuevos — el 41 % de scroll es el techo real, confirmado por sexta vez. Diagnostico estable: titulo record (apertura en 2 min) + layout que mataba la senal (primer control al 75 % renderizado). Es el UNICO caso del archivo donde el layout explica el resultado; ya esta arreglado en infra (barra flotante de senal rapida, 18/08). Veredicto de CONTENIDO se re-mide de cero el 24/08."
+   "result_notes": "7o reconteo (24/08): sin eventos nuevos desde el dwell del 17/08 21:25Z. Veredicto final de la ventana: MASOMENOS con el mejor timing del canal (apertura en 2 min, record) y muerte al 41 %. Unico caso del archivo donde el layout SI explico el resultado (control al 75 %, arreglado en infra el 18/08). No aprobada -> no recurre. El eje 'campos a confirmar del catalogo' no se archiva: se re-mide de cero cuando vuelva a tocarle turno."
   },
   {
    "id": "2026-08-22-perfume-de-octubre",
@@ -1060,7 +1060,19 @@
    "notified_by": [
     "2026-08-22-perfume-de-octubre"
    ],
-   "result_notes": "PRIMER RECONTEO (dom 23/08, 22 h del envio): CERO senal. Enviada sab 22/08 11:18 (-03:00), status 201, subscription pix9 active. Ningun evento nuevo en engagement.json desde el dwell del 17/08 21:25Z — o sea 6 dias sin un solo evento. No se archiva nada: el usuario volvia de viaje HOY 23, asi que el sabado 22 seguia dentro de la ventana ciega. Su layout no puede ser la causa (primer control al 9,5 % del scroll, la mejor marca del archivo). VEREDICTO SUSPENDIDO a la reentrada del 24/08: los 3 taps (perfume-ficha-azarero / perfume-podaste / perfume-donde) siguen siendo el mejor instrumento de diagnostico encolado y definen el angulo del lunes."
+   "result_notes": "Re-medida el 24/08 con la ventana ya cerrada: ENVIADA (11:18, 201) y CERO evento a las 48 h. Cayo en el ultimo sabado del viaje -> es NO-EXPOSICION, no rechazo. Layout descartado como causa (primer control al 9,5 %). Ninguno de los 3 taps de diagnostico (perfume-ficha-azarero / perfume-podaste / perfume-donde) se activo, asi que el veto con fecha sigue SIN veredicto. Queda pending: no recurre sola. Su tesis se recicla hoy dentro del Taller n3 (B-43 florece en madera vieja -> podar ahora cuesta el azahar de octubre), que es la misma idea convertida en decision ejecutable."
+  },
+  {
+   "id": "2026-08-24-el-taller-3",
+   "title": "El Taller nº3 — Bajar el pitósporo B-43 a pantalla",
+   "page": "engage/2026-08-24-el-taller-3.html",
+   "created": "2026-08-24",
+   "status": "pending",
+   "hypothesis": "El Taller es la unica linea con aprobacion real (2 x 😍, slots lun18+sab11 prendidos, 7/7 pasos x3 pasadas y ticks de poda por arbol). Hipotesis del n3: el formato gana no por la estetica sino por (a) sustancia tecnica sobre SUS plantas, (b) abrirse con la herramienta en la mano, (c) una pantalla = una decision. El n3 agrega una variable nueva y deliberada: la primera pantalla ya no es 'como se hace' sino 'cuanto te cuesta' — bajar B-43 ahora sacrifica su floracion de octubre porque florece en madera vieja, y la ficha del propio usuario ofrece dos ventanas legitimas. Si el tap 'taller3-cuando' se activa, queda probado que el usuario valora que le muestren el PRECIO de una tarea antes que la tarea, y esa se vuelve la apertura estandar del canal. Segunda apuesta en la misma pagina: el tap 'taller3-paltas' mide si delegar trabajo al agente (corregir dos fichas mal programadas del catalogo) convierte mas que informarle el error — la hipotesis que quedo sin medir el 22/08 por el viaje.",
+   "notified_by": [
+    "2026-08-24-el-taller-3"
+   ],
+   "result_notes": null
   }
  ],
  "_updated_at": "2026-08-23T09:20:00.000Z"

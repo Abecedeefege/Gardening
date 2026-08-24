@@ -2,9 +2,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f5faf0">
-<title>🧳 Tu jardín hoy — cero tareas, y cero hasta el 24</title>
-<meta property="og:title" content="🧳 Tu jardín hoy — cero tareas, y cero hasta el 24">
-<meta property="og:description" content="Llueven 20,8 mm con viento de 59 km/h: hoy no se poda nada. Las 3 que quedan se corren al 24 y salen igual de bien. Del 7 al 23 no te llega ninguna tarea.">
+<title>🌿 Tu jardín hoy — 17 días de silencio, y esto es lo que quedó</title>
+<meta property="og:title" content="🌿 Tu jardín hoy — 17 días de silencio, y esto es lo que quedó">
+<meta property="og:description" content="Prometí no mandarte ni una tarea del 7 al 23: fueron 7 slots y cumplí los 7. Volviste a un jardín seco, sin heladas. Tenés 3 días secos antes de la lluvia del jueves.">
 <style>
   :root{
     --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
@@ -22,15 +22,15 @@
   .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
   .reveal.in{ opacity:1; transform:none; }
 
-  .hero{ padding:38px 0 8px; text-align:center; }
+  .hero{ padding:30px 0 8px; text-align:center; }
   .hero .day{ font-size:12px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:var(--ink3); }
   .hero h1{ font-size:34px; line-height:1.08; margin:10px 0 6px; font-weight:900; letter-spacing:-.02em; }
   .hero .sun{ font-size:44px; }
 
-  .estado{ background:var(--card); border:1px solid var(--line); border-radius:22px; padding:24px 22px; margin:22px 0 14px;
+  .estado{ background:var(--card); border:1px solid var(--line); border-radius:22px; padding:24px 22px; margin:20px 0 14px;
     text-align:center; box-shadow:0 8px 26px rgba(45,80,22,.06); }
   .estado .em{ font-size:38px; display:block; margin-bottom:8px; }
-  .estado b{ font-size:19px; font-weight:900; display:block; }
+  .estado b{ font-size:19px; font-weight:900; display:block; line-height:1.25; }
   .estado p{ color:var(--ink2); font-size:14.5px; margin-top:6px; }
   .estado .cero{ font-size:52px; font-weight:900; color:var(--verde2); line-height:1; display:block; margin:12px 0 2px; letter-spacing:-.03em; }
   .estado .cerolbl{ font-size:12px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:var(--ink3); }
@@ -53,33 +53,30 @@
   .q button .big{ display:block; font-size:20px; margin-bottom:3px; }
   .q button:active{ transform:scale(.97); }
   .q button.sel{ background:var(--sol); border-color:var(--sol); color:#3a2c05; }
-  .q button:disabled{ opacity:.5; }
-  .q button.sel:disabled{ opacity:1; }
   .q .q-hint{ display:block; text-align:center; margin-top:9px; font-size:12.5px; font-weight:800; color:#b7860b; min-height:1.2em; }
   .q .def{ font-size:12px; color:var(--ink3); margin-top:9px; font-style:italic; }
 
-  /* variante verde para el bloque del viaje */
+  /* variante verde */
   .q.v{ background:linear-gradient(180deg,#eaf6dc,#f6fbf0); border-color:rgba(90,138,46,.35); }
   .q.v .tag{ color:var(--verde2); }
   .q.v button{ border-color:rgba(90,138,46,.4); }
   .q.v button.sel{ background:var(--verde2); border-color:var(--verde2); color:#fff; }
   .q.v .q-hint{ color:var(--verde2); }
 
-  /* variante azul para la pregunta del horario */
+  /* variante azul */
   .q.a{ background:linear-gradient(180deg,#eaf2f6,#f7fbfc); border-color:rgba(63,125,138,.32); }
   .q.a .tag{ color:var(--azul); }
   .q.a button{ border-color:rgba(63,125,138,.35); }
   .q.a button.sel{ background:var(--azul); border-color:var(--azul); color:#fff; }
   .q.a .q-hint{ color:var(--azul); }
 
-  /* tabla de delays */
-  .delays{ width:100%; border-collapse:collapse; margin:12px 0 4px; font-size:12.5px; }
-  .delays th{ text-align:left; font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink3); padding:0 6px 6px 0; font-weight:900; }
-  .delays td{ padding:6px 6px 6px 0; border-top:1px solid var(--line); color:var(--ink2); }
-  .delays td b{ color:var(--ink); }
-  .delays tr.win td{ color:var(--verde); }
-  .delays tr.bad td{ color:#9a4a20; }
-  .delays td.d{ text-align:right; font-weight:900; white-space:nowrap; }
+  /* promesa cumplida */
+  .vent{ list-style:none; margin-top:12px; }
+  .vent li{ display:flex; align-items:center; gap:9px; padding:10px 12px; background:#f2f7ec; border:1px solid var(--line);
+    border-radius:12px; margin-top:7px; font-size:13px; }
+  .vent li .d{ font-weight:800; color:var(--ink); }
+  .vent li .s{ color:var(--ink3); font-size:12px; }
+  .vent li .m{ margin-left:auto; font-weight:900; color:var(--verde2); font-size:15px; flex:none; }
 
   .sect-lbl{ font-size:12px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:var(--ink3); margin:22px 4px 2px; }
 
@@ -102,16 +99,15 @@
   .task .when{ display:inline-block; font-size:11px; font-weight:800; color:var(--sol); background:#fdf4dd; border:1px solid rgba(224,169,46,.28); border-radius:7px; padding:3px 9px; margin-top:8px; }
   .task .when.ag{ color:var(--verde2); background:#eef7e0; border-color:rgba(90,138,46,.28); }
   .task .when.ok{ color:#4a7a20; background:#e6f4d4; border-color:rgba(90,138,46,.4); }
+  .task .when.hoy{ color:#9a4a20; background:#fdece3; border-color:rgba(180,68,46,.3); }
   .task a{ font-size:12px; font-weight:800; text-decoration:none; color:var(--azul); }
   .menu-note{ padding:11px 16px 14px; font-size:12px; color:var(--ink3); border-top:1px dashed var(--line); }
 
-  /* foto de la especie en cada tarea (pedido 28/07 + 30/07: también en las de agosto) */
   .task .thp{ display:flex; gap:12px; align-items:flex-start; }
   .task .photo{ width:64px; height:64px; border-radius:12px; object-fit:cover; flex:none; border:1px solid var(--line); background:#eef4e6; }
   .task.ok .photo{ filter:grayscale(.45); opacity:.75; }
   .task .thp .body{ flex:1; min-width:0; }
 
-  /* caja de comentario por tarea (pedido 30/07: en TODAS) */
   .fbtoggle{ display:inline-block; margin-top:9px; background:#f2f8ea; color:var(--verde); border:1px solid var(--line); border-radius:9px;
     padding:6px 12px; font:800 12px var(--sans); cursor:pointer; }
   .fbtoggle:active{ opacity:.7; }
@@ -122,11 +118,14 @@
   .tfb button:active{ opacity:.7; }
   .tfb .fb-hint{ display:block; margin-top:6px; font-size:12px; font-weight:700; color:var(--verde2); min-height:1em; }
 
-  /* franja del viaje */
   .viaje{ background:linear-gradient(180deg,#eaf2f6,#f6fafc); border:1px solid rgba(63,125,138,.28); border-radius:18px; padding:18px 17px; margin:13px 0; }
   .viaje .tag{ font-size:11px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--azul); }
   .viaje h3{ font-size:16.5px; font-weight:900; margin:6px 0 5px; }
   .viaje p{ color:var(--ink2); font-size:13.5px; }
+  .viaje p + p{ margin-top:7px; }
+  .viaje b{ color:var(--ink); }
+  .viaje a.cta{ display:block; margin-top:12px; text-align:center; background:var(--azul); color:#fff; text-decoration:none;
+    font-weight:900; font-size:14.5px; padding:13px 16px; border-radius:13px; }
 
   .ask{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border:1px solid rgba(90,138,46,.3); border-radius:20px; padding:22px 18px; margin:18px 0 10px; text-align:center; box-shadow:0 6px 20px rgba(45,80,22,.05); }
   .ask h3{ font-size:17px; margin-bottom:5px; font-weight:900; }
@@ -146,241 +145,100 @@
 <div class="wrap">
 
   <header class="hero reveal">
-    <span class="sun">🧳</span>
-    <div class="day">Jueves 6 de agosto · último día</div>
+    <span class="sun">🌿</span>
+    <div class="day">Lunes 24 de agosto · la vuelta</div>
     <h1>Tu jardín hoy</h1>
   </header>
 
   <div class="estado reveal">
-    <span class="em">🌧️</span>
-    <b>Hoy no se hace nada. Y por una vez, eso es la buena noticia.</b>
-    <span class="cero">0</span>
-    <span class="cerolbl">tareas para hoy</span>
-    <div class="parte">
-      <div><span class="n">20,8</span><div class="l">mm de lluvia</div></div>
-      <div><span class="n">59</span><div class="l">km/h de viento</div></div>
-      <div><span class="n">100%</span><div class="l">probabilidad</div></div>
-    </div>
-    <p style="margin-top:12px">Miré el parte de Montevideo a las 6 de la mañana: es el peor día de la semana y el último antes de que te vayas. No hay ninguna tarea del jardín que se haga mejor bajo 20 mm y viento de 59 km/h. <b>Cerrá el bolso tranquilo.</b></p>
+    <span class="em">🤐</span>
+    <b>Te dije que no ibas a recibir ni una tarea del 7 al 23. No recibiste ninguna.</b>
+    <span class="cero">7 de 7</span>
+    <span class="cerolbl">slots de tarea en silencio</span>
+    <p style="margin-top:12px">Caían siete: sábado 8, lunes 10, jueves 13, sábado 15, lunes 17, jueves 20 y sábado 22. <b>Los siete pasaron vacíos.</b> Te llegaron cuatro cosas en esos 17 días y ninguna era algo para hacer. Hoy vuelvo, y vuelvo con la lista real — ni una tarea inventada para justificar el mensaje.</p>
   </div>
 
-  <!-- PREGUNTA DE UNA SOLA TOCADA — no dar nada por hecho -->
-  <div class="q reveal">
-    <div class="tag">🙋 Una tocada, nada más</div>
+  <!-- ▼ PRIMER CONTROL — una sola tocada, define toda la lista -->
+  <div class="q reveal" id="pregunta">
+    <div class="tag">🙋 Una tocada y sigo yo</div>
     <h3>¿Llegaste a podar el crespón y la althea?</h3>
-    <p>No lo sé y no quiero inventarlo: los tildes del Taller no escriben el estado de las tareas, así que en mi lado <b>B-9 y B-18 siguen figurando abiertas</b>. Prefiero preguntarte antes de asumir cualquier cosa — de tu respuesta depende lo que te espera el 24.</p>
+    <p>Te lo pregunté antes de que te fueras y quedó sin responder. No lo invento: los tildes del Taller <b>no escriben</b> el estado de las tareas, así que de mi lado <b>B-9 y B-18 figuran abiertas</b>. De esto depende si la semana te arranca con dos podas o con ninguna.</p>
     <div class="opts tri">
-      <button type="button" onclick="engageAnswer('podas-previaje','ambas',this)"><span class="big">✅</span>Las dos</button>
-      <button type="button" onclick="engageAnswer('podas-previaje','una',this)"><span class="big">🌗</span>Una sola</button>
-      <button type="button" onclick="engageAnswer('podas-previaje','ninguna',this)"><span class="big">⏭️</span>Ninguna</button>
+      <button type="button" onclick="engageAnswer('podas-vuelta','ambas',this)"><span class="big">✅</span>Las dos</button>
+      <button type="button" onclick="engageAnswer('podas-vuelta','una',this)"><span class="big">🌗</span>Una sola</button>
+      <button type="button" onclick="engageAnswer('podas-vuelta','ninguna',this)"><span class="big">⏭️</span>Ninguna</button>
     </div>
     <span class="q-hint"></span>
-    <p class="def">Sea cual sea la respuesta, no cambia nada de tu semana. Cambia lo que te preparo para el 24.</p>
+    <p class="def">Si fueron las dos, las cierro yo y no te las nombro nunca más.</p>
   </div>
 
-  <!-- LAS 3 QUE SE CORREN -->
-  <div class="sect-lbl reveal">Lo que queda abierto</div>
-  <details class="reveal" id="antes" open>
-    <summary><span class="ic">📅</span> Se corren al 24 de agosto <span class="cnt">3</span><span class="chev">▾</span></summary>
+  <!-- PARTE VERIFICADO -->
+  <div class="viaje reveal">
+    <div class="tag">🌦️ El parte, mirado hoy a las 6</div>
+    <h3>Tres días secos y el jueves llueve</h3>
+    <div class="parte">
+      <div><span class="n">0,0</span><div class="l">mm lun · mar · mié</div></div>
+      <div><span class="n">8,2</span><div class="l">mm el jueves 27</div></div>
+      <div><span class="n">4,5°</span><div class="l">mínima (martes)</div></div>
+    </div>
+    <p style="margin-top:12px">El jueves es <b>el único día con lluvia de los próximos diez</b>, y ya aguantó tres verificaciones seguidas: el milímetro se movió (9,6 → 10,0 → 8,2), el día no. Antes de eso tenés <b>hoy, martes y miércoles secos</b>.</p>
+    <p>Y lo que dejaste atrás también cierra: <b>en los 21 días que estuviste afuera no hubo una sola helada</b> — la mínima absoluta fue 6,9° el 8 de agosto. Los cortes frescos de los carozos nunca vieron hielo. Volviste a un jardín seco, sin daño, y saliendo de la dormancia.</p>
+  </div>
+
+  <!-- SEGUNDO TAP: cuándo salís -->
+  <div class="q v reveal">
+    <div class="tag">🗓️ Y con esto te armo el resto</div>
+    <h3>¿Qué día salís al jardín?</h3>
+    <p>Decime el día y te dejo preparado lo que entra en esa salida —en orden, sin lo que no llega—, en vez de darte doce cosas todas juntas.</p>
+    <div class="opts tri">
+      <button type="button" onclick="engageAnswer('salida-vuelta','martes',this)"><span class="big">🌤️</span>Martes 25</button>
+      <button type="button" onclick="engageAnswer('salida-vuelta','miercoles',this)"><span class="big">🌥️</span>Miérc. 26</button>
+      <button type="button" onclick="engageAnswer('salida-vuelta','finde',this)"><span class="big">📆</span>Finde 29-30</button>
+    </div>
+    <span class="q-hint"></span>
+  </div>
+
+  <!-- LISTA -->
+  <div class="sect-lbl reveal">Lo que quedó abierto · 12 tareas</div>
+
+  <details class="reveal" open>
+    <summary><span class="ic">🪚</span> Esta semana, antes de la lluvia <span class="cnt">4</span><span class="chev">▾</span></summary>
+
+    <div class="task">
+      <div class="thp">
+        <img class="photo" src="https://gardening-chi.vercel.app/images/B-42-43_entre_romero_b27.jpg" alt="Pitósporo B-43" loading="lazy">
+        <div class="body">
+          <div class="th"><h4>Pitósporo — bajarlo a 2-3 m como pantalla</h4><span class="code">B-43</span></div>
+          <div class="d"><b>La más larga de todas</b> (90-120 min) y la que más gana con hacerse ahora: es perenne, y una poda fuerte hecha con las reservas del invierno intactas rebrota en una sola temporada. Tiene un costo que quiero que veas antes de cortar. <a href="https://gardening-chi.vercel.app/engage/2026-08-24-el-taller-3.html">🪚 Taller paso a paso →</a> · <a href="https://gardening-chi.vercel.app/tasks/plant-B-43-2.html">Abrir tarea →</a></div>
+          <span class="when hoy">Prioridad alta · ventana abierta ahora</span>
+          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
+          <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea (dudas, ya la hice, mandame foto…)"></textarea><button type="button" onclick="engageFeedback('jh-pitosporo-B43', this)">Enviar comentario</button><span class="fb-hint"></span></div>
+        </div>
+      </div>
+    </div>
 
     <div class="task">
       <div class="thp">
         <img class="photo" src="https://gardening-chi.vercel.app/images/b9.jpg" alt="Crespón B-9" loading="lazy">
         <div class="body">
           <div class="th"><h4>Crespón — poda severa de flor</h4><span class="code">B-9</span></div>
-          <div class="d"><b>Sale igual de bien el 24.</b> El límite real no es una fecha del calendario: es <b>la yema</b>. Mientras esté hinchada y cerrada, la poda de flor rinde el 100%. El crespón es de los últimos del jardín en despertar — recién en septiembre empuja. El 24 llegás con margen sobrado. <a href="https://gardening-chi.vercel.app/engage/2026-08-03-el-taller-2.html">🌸 Paso a paso →</a> · <a href="https://gardening-chi.vercel.app/tasks/plant-B-9.html">Abrir tarea →</a></div>
-          <span class="when ag">→ Lunes 24 · margen amplio</span>
+          <div class="d">Si no llegaste antes del viaje, <b>seguís a tiempo</b>: el crespón es de los últimos del jardín en despertar y el límite real no es la fecha, es la yema. Mientras esté hinchada y cerrada rinde el 100%. Florece en madera nueva, así que cortar fuerte <b>suma</b> flor. <a href="https://gardening-chi.vercel.app/engage/2026-08-03-el-taller-2.html">🌸 Paso a paso →</a> · <a href="https://gardening-chi.vercel.app/tasks/plant-B-9.html">Abrir tarea →</a></div>
+          <span class="when ag">Alta · esta semana, sin apuro</span>
           <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
-          <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea (dudas, ya la hice, mandame foto…)"></textarea><button type="button" onclick="engageFeedback('jh-crespon-B9', this)">Enviar comentario</button><span class="fb-hint"></span></div>
+          <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea…"></textarea><button type="button" onclick="engageFeedback('jh-crespon-B9', this)">Enviar comentario</button><span class="fb-hint"></span></div>
         </div>
       </div>
     </div>
 
     <div class="task">
       <div class="thp">
-        <img class="photo" src="https://gardening-chi.vercel.app/images/b18.jpg" alt="Rosa de Siria B-18" loading="lazy">
+        <img class="photo" src="https://gardening-chi.vercel.app/images/b18.jpg" alt="Althea B-18" loading="lazy">
         <div class="body">
-          <div class="th"><h4>Rosa de Siria (Althea) — poda severa de flor</h4><span class="code">B-18</span></div>
-          <div class="d"><b>La de mayor margen de las tres.</b> La althea es célebre por brotar tardísimo — en agosto todavía parece un palo seco cuando el resto ya arrancó. Podarla el 24, o incluso los primeros días de septiembre, sigue estando dentro de su ventana. Los dos arbustos son una sola salida de 90 minutos. <a href="https://gardening-chi.vercel.app/engage/2026-08-03-el-taller-2.html">🌸 Paso a paso →</a> · <a href="https://gardening-chi.vercel.app/tasks/plant-B-18.html">Abrir tarea →</a></div>
-          <span class="when ag">→ Lunes 24 · margen amplio</span>
+          <div class="th"><h4>Althea / Rosa de Siria — poda severa</h4><span class="code">B-18</span></div>
+          <div class="d">Mismo caso y misma salida que el crespón: reducir 40-50% dejando ramas de 2-3 yemas. Florece en verano sobre brotes del año, así que la poda fuerte concentra la energía en menos puntos y da <b>flores más grandes</b> en vez de muchas chicas. <a href="https://gardening-chi.vercel.app/tasks/plant-B-18.html">Abrir tarea →</a></div>
+          <span class="when ag">Alta · esta semana, sin apuro</span>
           <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
           <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea…"></textarea><button type="button" onclick="engageFeedback('jh-althea-B18', this)">Enviar comentario</button><span class="fb-hint"></span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="task">
-      <div class="thp">
-        <img class="photo" src="https://gardening-chi.vercel.app/images/PXL_20260428_130026865_MP.webp" alt="Hortensia B-5" loading="lazy">
-        <div class="body">
-          <div class="th"><h4>Hortensia — pasar a tierra, en cantero</h4><span class="code">B-5a/b</span></div>
-          <div class="d"><b>De las tres, la única con la ventana justa — te lo digo derecho.</b> Pelada y en dormancia se trasplanta sin enterarse; con el brote arrancado, le cuesta y pierde la primera floración. A la vuelta hacela <b>el primer fin de semana (29-30/8)</b>, no la dejes para septiembre. Rincón sur, junto a la pera B-39: sombra fresca y húmeda, que es lo que pide. <a href="https://gardening-chi.vercel.app/tasks/plant-B-5a.html">Abrir tarea →</a></div>
-          <span class="when">→ Primer finde de vuelta · 29-30/8</span>
-          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
-          <div class="tfb"><textarea rows="2" placeholder="El rincón (sur o fondo), dudas, ya las planté…"></textarea><button type="button" onclick="engageFeedback('jh-hortensia-B5', this)">Enviar comentario</button><span class="fb-hint"></span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="menu-note">Ninguna de las tres se echa a perder por esperar 18 días. Lo único que se pierde es el arranque: podadas el 24 en vez del 4, el rebrote empieza tres semanas más tarde y florecen unos días más tarde. Eso es todo el costo.</div>
-  </details>
-
-  <!-- EL COMPROMISO DEL VIAJE -->
-  <div class="q v reveal">
-    <div class="tag">✈️ 7 al 23 de agosto</div>
-    <h3>Del 7 al 23 no te llega ninguna tarea. Ni una.</h3>
-    <p>Por calendario te tocarían <b>12 notificaciones</b> en esos 17 días — 7 de tareas y 5 de experiencias. Las 7 de tareas <b>no se mandan</b>: no hay nada en el jardín que necesite tu atención desde otro país, y pedírtelo sería puro ruido.</p>
-    <p style="margin-top:8px">Lo único que queda a decidir es lo otro. Elegí y lo respeto a rajatabla:</p>
-    <div class="opts">
-      <button type="button" onclick="engageAnswer('viaje-silencio','total',this)">🔕 Silencio total — no me escribas nada</button>
-      <button type="button" onclick="engageAnswer('viaje-silencio','solo-lindo',this)">🌿 Solo si es algo lindo de leer, sin deberes</button>
-      <button type="button" onclick="engageAnswer('viaje-silencio','todo',this)">📬 Mandame todo igual, me gusta seguirlo</button>
-    </div>
-    <span class="q-hint"></span>
-    <p class="def">Si no tocás nada: cero tareas garantizado, y evalúo experiencia por experiencia con el listón bien alto.</p>
-  </div>
-
-  <div class="viaje reveal">
-    <div class="tag">🌱 Mientras no estás</div>
-    <h3>El jardín no te necesita en agosto</h3>
-    <p>Todo lo de afuera está en dormancia: sin hojas no hay evaporación, y el parte de los próximos diez días marca mínimas de 7 a 9 °C <b>sin una sola helada</b>. Lo único vivo que consume agua son los de interior — <b>I-1 singonio, I-2 difenbaquia</b> — y con un riego a fondo antes de salir aguantan las dos semanas y media sin drama. Los plantines de palta siguen contra la pared a la sombra, como los dejaste.</p>
-  </div>
-
-  <!-- LA PREGUNTA DEL HORARIO (con los datos suyos) -->
-  <div class="q a reveal">
-    <div class="tag">🕐 Un dato tuyo que encontré</div>
-    <h3>Creo que te estoy escribiendo a la hora equivocada</h3>
-    <p>Medí por primera vez cuánto tarda cada push en abrirse. El patrón es tan claro que me da un poco de vergüenza no haberlo visto antes:</p>
-    <table class="delays">
-      <tr><th>Envío</th><th>Qué era</th><th style="text-align:right">Tardaste</th></tr>
-      <tr class="win"><td><b>Lun 18:48</b></td><td>El Taller nº 2</td><td class="d">32 min ⚡</td></tr>
-      <tr><td>Vie 18:02</td><td>El Parte</td><td class="d">1 h 41</td></tr>
-      <tr><td>Sáb 12:06</td><td>El Taller</td><td class="d">2 h 08</td></tr>
-      <tr><td>Dom 14:46</td><td>Qué más podo</td><td class="d">3 h 57</td></tr>
-      <tr class="bad"><td><b>Mar 11:38</b></td><td>La tarjeta de campo</td><td class="d">nunca</td></tr>
-    </table>
-    <p style="margin-top:10px">Tus visitas por hora dicen lo mismo: pico a las <b>14-15 h</b>, segundo pico de <b>17 a 20 h</b>. Entre las 9 y las 12 juntás <b>11 visitas en dos semanas</b>. La push de tareas sale <b>a las 10:00</b>, o sea, justo en el agujero.</p>
-    <p style="margin-top:8px"><b>El horario lo pusiste vos y no lo toco sin tu permiso.</b> Pero si me lo das, la de tareas la mudo:</p>
-    <div class="opts">
-      <button type="button" onclick="engageAnswer('horario-tareas','1430',this)">☀️ Movela a las 14:30 (tu mejor hora)</button>
-      <button type="button" onclick="engageAnswer('horario-tareas','1900',this)">🌆 Mejor a las 19:00, después del laburo</button>
-      <button type="button" onclick="engageAnswer('horario-tareas','mantener',this)">⏰ Dejala a las 10:00, me sirve así</button>
-    </div>
-    <span class="q-hint"></span>
-    <p class="def">Aplica desde el 24, cuando volvés. La del sábado 11:00 la muevo con el mismo criterio.</p>
-  </div>
-
-  <!-- LO QUE CERRASTE -->
-  <details class="reveal">
-    <summary><span class="ic">🏆</span> Lo que cerraste en 14 días <span class="cnt">5</span><span class="chev">▾</span></summary>
-
-    <div class="task ok">
-      <div class="thp">
-        <img class="photo" src="https://gardening-chi.vercel.app/images/b30.jpg" alt="Durazno B-30" loading="lazy">
-        <div class="body">
-          <div class="th"><h4>Durazno — poda en vaso abierto</h4><span class="code">B-30/35</span></div>
-          <div class="d">El más exigente en poda de todo el jardín: un año sin podarlo y la cosecha del siguiente cae 70%. <a href="https://gardening-chi.vercel.app/tasks/plant-B-30.html">Abrir tarea →</a></div>
-          <span class="when ok">✅ Hecho · 2 de agosto</span>
-          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
-          <div class="tfb"><textarea rows="2" placeholder="¿Cómo quedó? Si me mandás foto la reviso."></textarea><button type="button" onclick="engageFeedback('jh-durazno-B30', this)">Enviar comentario</button><span class="fb-hint"></span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="task ok">
-      <div class="thp">
-        <img class="photo" src="https://gardening-chi.vercel.app/images/PXL_20260428_130808343_MP.webp" alt="Ciruela amarilla B-38" loading="lazy">
-        <div class="body">
-          <div class="th"><h4>Ciruela amarilla — poda en copa abierta</h4><span class="code">B-38</span></div>
-          <div class="d">Cerrada el mismo día que el durazno, en la misma salida. <a href="https://gardening-chi.vercel.app/tasks/plant-B-38.html">Abrir tarea →</a></div>
-          <span class="when ok">✅ Hecho · 2 de agosto</span>
-          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
-          <div class="tfb"><textarea rows="2" placeholder="¿Cómo quedó? Si me mandás foto la reviso."></textarea><button type="button" onclick="engageFeedback('jh-ciruela-B38', this)">Enviar comentario</button><span class="fb-hint"></span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="task ok">
-      <div class="thp">
-        <img class="photo" src="https://gardening-chi.vercel.app/images/F-4_ciruelo_purpura_otonal.jpg" alt="Ciruelo de jardín F-4" loading="lazy">
-        <div class="body">
-          <div class="th"><h4>Ciruelo de jardín — poda de formación</h4><span class="code">F-4</span></div>
-          <div class="d">El cuarto carozo. Con éste quedaron los cuatro del jardín cerrados en un fin de semana. <a href="https://gardening-chi.vercel.app/tasks/plant-F-4.html">Abrir tarea →</a></div>
-          <span class="when ok">✅ Hecho · 2 de agosto</span>
-          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
-          <div class="tfb"><textarea rows="2" placeholder="¿Cómo quedó? Si me mandás foto la reviso."></textarea><button type="button" onclick="engageFeedback('jh-ciruelo-F4', this)">Enviar comentario</button><span class="fb-hint"></span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="task ok">
-      <div class="thp">
-        <img class="photo" src="https://gardening-chi.vercel.app/images/B-37_liquidambar_otonal.jpg" alt="Liquidámbar B-37" loading="lazy">
-        <div class="body">
-          <div class="th"><h4>Liquidámbar — la rama sobre la palta</h4><span class="code">B-37</span></div>
-          <div class="d">La palta B-36 se queda con ese sol de la mañana justo para arrancar la primavera. <a href="https://gardening-chi.vercel.app/tasks/plant-B-37.html">Abrir tarea →</a></div>
-          <span class="when ok">✅ Hecho · 30 de julio</span>
-          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
-          <div class="tfb"><textarea rows="2" placeholder="¿Cómo quedó? Si me mandás foto la reviso."></textarea><button type="button" onclick="engageFeedback('jh-liquidambar-B37', this)">Enviar comentario</button><span class="fb-hint"></span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="task ok">
-      <div class="thp">
-        <img class="photo" src="https://gardening-chi.vercel.app/images/PXL_20260428_130757603_MP.webp" alt="Pera Williams B-39" loading="lazy">
-        <div class="body">
-          <div class="th"><h4>Pera Williams — poda invernal piramidal</h4><span class="code">B-39</span></div>
-          <div class="d">Estructura abierta y cortes limpios, confirmado con foto. Es la vecina del rincón donde va a ir la hortensia. <a href="https://gardening-chi.vercel.app/tasks/plant-B-39.html">Abrir tarea →</a></div>
-          <span class="when ok">✅ Hecho · 23 de julio</span>
-          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
-          <div class="tfb"><textarea rows="2" placeholder="¿Cómo quedó? Si me mandás foto la reviso."></textarea><button type="button" onclick="engageFeedback('jh-pera-B39', this)">Enviar comentario</button><span class="fb-hint"></span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="menu-note">Cinco cierres en dos semanas, cuatro de ellos carozos con ventana estricta. Te vas con la parte difícil del invierno hecha.</div>
-  </details>
-
-  <!-- A LA VUELTA -->
-  <details class="reveal">
-    <summary><span class="ic">🏡</span> A tu vuelta · 24 al 31 de agosto <span class="cnt">9</span><span class="chev">▾</span></summary>
-
-    <div class="task">
-      <div class="thp">
-        <img class="photo" src="https://gardening-chi.vercel.app/images/B-42-43_entre_romero_b27.jpg" alt="Pitósporo B-43" loading="lazy">
-        <div class="body">
-          <div class="th"><h4>Pitósporo — reducción fuerte, bajarlo a 2-3 m</h4><span class="code">B-43</span></div>
-          <div class="d"><b>El primero de la vuelta, y a propósito:</b> es perenne, así que una poda fuerte se recupera mejor cuando el rebrote está por arrancar. Fin de agosto le da exactamente eso. Es además el trabajo más largo de la lista. <a href="https://gardening-chi.vercel.app/tasks/plant-B-43-2.html">Abrir tarea →</a></div>
-          <span class="when ag">A la vuelta · prioridad alta</span>
-          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
-          <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea…"></textarea><button type="button" onclick="engageFeedback('jh-pitosporo-B43', this)">Enviar comentario</button><span class="fb-hint"></span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="task">
-      <div class="thp">
-        <img class="photo" src="https://gardening-chi.vercel.app/images/b25.jpg" alt="Gardenia B-25" loading="lazy">
-        <div class="body">
-          <div class="th"><h4>Gardenia — neem + cortar el tránsito de hormigas</h4><span class="code">B-25</span></div>
-          <div class="d"><b>Obligado a la vuelta:</b> el neem no es una aplicación, son 2-3 cada 7-10 días. Empezarlo el 5 y cortarlo el 7 no sirve de nada. Lo arrancamos el finde que volvés, con el neem que ya tenés. <a href="https://gardening-chi.vercel.app/tasks/plant-B-25-3.html">Abrir tarea →</a></div>
-          <span class="when ag">A la vuelta · prioridad alta</span>
-          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
-          <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea…"></textarea><button type="button" onclick="engageFeedback('jh-gardenia-neem-B25', this)">Enviar comentario</button><span class="fb-hint"></span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="task">
-      <div class="thp">
-        <img class="photo" src="https://gardening-chi.vercel.app/images/PXL_20260428_130004297_MP.webp" alt="Hibisco B-4" loading="lazy">
-        <div class="body">
-          <div class="th"><h4>Hibisco / Rosa china — poda de fin de invierno</h4><span class="code">B-4</span></div>
-          <div class="d"><b>La que más conviene atrasar:</b> es perenne y sensible al frío. La poda despierta brotes tiernos, y las heladas tardías acá pegan hasta fines de agosto. Podarla el 30/8, o incluso los primeros días de septiembre, es lo correcto. Está en el muro norte, el lado más cálido. <a href="https://gardening-chi.vercel.app/tasks/plant-B-4.html">Abrir tarea →</a></div>
-          <span class="when ag">A la vuelta · fin de agosto o después</span>
-          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
-          <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea…"></textarea><button type="button" onclick="engageFeedback('jh-hibisco-B4', this)">Enviar comentario</button><span class="fb-hint"></span></div>
         </div>
       </div>
     </div>
@@ -390,23 +248,29 @@
         <img class="photo" src="https://gardening-chi.vercel.app/images/PXL_20260428_131311714_MP.webp" alt="Bignonia rosada F-2" loading="lazy">
         <div class="body">
           <div class="th"><h4>Bignonia rosada (Podranea) — poda fuerte</h4><span class="code">F-2</span></div>
-          <div class="d"><b>A la vuelta.</b> Florece en madera del año, así que la poda fuerte de fin de invierno es la que la carga de flor. Aprovechá y sacale de encima el portón, que viene tapando el pasaje. <a href="https://gardening-chi.vercel.app/tasks/plant-F-2.html">Abrir tarea →</a></div>
-          <span class="when ag">A la vuelta · prioridad media</span>
+          <div class="d">Florece de noviembre a abril <b>sobre madera del año</b>: cuantas más yemas vigorosas le dejes ahora, más racimos. Sin hojas se le ve la estructura entera. Aprovechá y sacale de encima el portón, que viene tapando el paso. <a href="https://gardening-chi.vercel.app/tasks/plant-F-2.html">Abrir tarea →</a></div>
+          <span class="when ag">Media · pre-brotación</span>
           <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
           <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea…"></textarea><button type="button" onclick="engageFeedback('jh-podranea-F2', this)">Enviar comentario</button><span class="fb-hint"></span></div>
         </div>
       </div>
     </div>
 
+    <div class="menu-note">Las cuatro son de tijera y las cuatro quieren tiempo seco. Si salís una sola vez esta semana, el pitósporo es el que más se gana.</div>
+  </details>
+
+  <details class="reveal">
+    <summary><span class="ic">📆</span> El finde del 29-30 <span class="cnt">5</span><span class="chev">▾</span></summary>
+
     <div class="task">
       <div class="thp">
-        <img class="photo" src="https://gardening-chi.vercel.app/images/b25.jpg" alt="Gardenia B-25" loading="lazy">
+        <img class="photo" src="https://gardening-chi.vercel.app/images/PXL_20260428_130026865_MP.webp" alt="Hortensias B-5a y B-5b" loading="lazy">
         <div class="body">
-          <div class="th"><h4>Gardenia — acidificar la tierra antes de brotar</h4><span class="code">B-25</span></div>
-          <div class="d"><b>Por timing puro:</b> rinde cuando la planta está por arrancar y lo toma. Aplicado ahora, tres semanas de lluvia de agosto se llevan buena parte antes de que sirva. <a href="https://gardening-chi.vercel.app/tasks/plant-B-25.html">Abrir tarea →</a></div>
-          <span class="when ag">A la vuelta · última semana de agosto</span>
+          <div class="th"><h4>Hortensias a tierra — la única con reloj</h4><span class="code">B-5a·b</span></div>
+          <div class="d"><b>Esta sí tiene fecha:</b> hay que moverlas <b>sin hojas y antes de que broten</b>, y el brote se viene. El 29-30 es la última ventana cómoda del año. Van al rincón sur junto a la pera B-39, como quedamos: sombra de tarde y humedad, que es lo que piden. <a href="https://gardening-chi.vercel.app/tasks/plant-B-5a.html">Abrir tarea →</a></div>
+          <span class="when hoy">Alta · 29-30 de agosto</span>
           <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
-          <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea…"></textarea><button type="button" onclick="engageFeedback('jh-gardenia-acido-B25', this)">Enviar comentario</button><span class="fb-hint"></span></div>
+          <div class="tfb"><textarea rows="2" placeholder="El rincón, dudas, ya las planté…"></textarea><button type="button" onclick="engageFeedback('jh-hortensia-B5', this)">Enviar comentario</button><span class="fb-hint"></span></div>
         </div>
       </div>
     </div>
@@ -415,9 +279,9 @@
       <div class="thp">
         <img class="photo" src="https://gardening-chi.vercel.app/images/PXL_20260428_130248394_MP.webp" alt="Cerco de azareros" loading="lazy">
         <div class="body">
-          <div class="th"><h4>Cerco de Azareros / Pitósporos — recorte parejo</h4><span class="code">B-7·11·31·33</span></div>
-          <div class="d"><b>A la vuelta:</b> su ventana es literalmente la última semana de agosto, justo antes del empuje de primavera, para que rebrote denso y parejo. <a href="https://gardening-chi.vercel.app/tasks/plant-B-7.html">Abrir tarea →</a></div>
-          <span class="when ag">A la vuelta · última semana de agosto</span>
+          <div class="th"><h4>Cerco de azareros — recorte parejo</h4><span class="code">B-7·11·31·33</span></div>
+          <div class="d">Su ventana es <b>literalmente la última semana de agosto</b>: pasado el grueso del frío y antes del empuje, así el rebrote tierno no se quema y el cerco engrosa parejo. Los cuatro a la misma altura y ancho, de una sola pasada. <a href="https://gardening-chi.vercel.app/tasks/plant-B-7.html">Abrir tarea →</a></div>
+          <span class="when ag">Media · última semana de agosto</span>
           <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
           <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea…"></textarea><button type="button" onclick="engageFeedback('jh-cerco-B7', this)">Enviar comentario</button><span class="fb-hint"></span></div>
         </div>
@@ -426,24 +290,11 @@
 
     <div class="task">
       <div class="thp">
-        <img class="photo" src="https://gardening-chi.vercel.app/images/PXL_20260428_130401399_MP.webp" alt="Hiedra B-15" loading="lazy">
-        <div class="body">
-          <div class="th"><h4>Hiedra — control de invasión sobre el galpón</h4><span class="code">B-15</span></div>
-          <div class="d"><b>Tranquilo:</b> en tres semanas de invierno la hiedra no avanza casi nada. Lo que sí conviene es hacerlo antes del empuje de primavera, así que fin de agosto está perfecto. <a href="https://gardening-chi.vercel.app/tasks/plant-B-15.html">Abrir tarea →</a></div>
-          <span class="when ag">A la vuelta · cualquier día</span>
-          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
-          <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea…"></textarea><button type="button" onclick="engageFeedback('jh-hiedra-B15', this)">Enviar comentario</button><span class="fb-hint"></span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="task">
-      <div class="thp">
         <img class="photo" src="https://gardening-chi.vercel.app/images/PXL_20260428_131358749_MP.webp" alt="Abelia F-7" loading="lazy">
         <div class="body">
-          <div class="th"><h4>Abelia — poda de fin de invierno previa al brote</h4><span class="code">F-7</span></div>
-          <div class="d"><b>A la vuelta.</b> Limpieza y rebaje suave justo antes de que hinchen las yemas — su ventana es fines de agosto. La más relajada de la lista. <a href="https://gardening-chi.vercel.app/tasks/plant-F-7.html">Abrir tarea →</a></div>
-          <span class="when ag">A la vuelta · prioridad baja</span>
+          <div class="th"><h4>Abelia — poda antes del brote</h4><span class="code">F-7</span></div>
+          <div class="d">Corta y agradecida: acortar el tercio superior y sacar las ramas viejas leñosas. Florece de noviembre a mayo en madera nueva, así que cada brote que fuerces ahora es flor de siete meses. <b>Es la que sigue en apuro después de la hortensia.</b> <a href="https://gardening-chi.vercel.app/tasks/plant-F-7.html">Abrir tarea →</a></div>
+          <span class="when ag">Fines de agosto · antes de que hinchen</span>
           <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
           <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea…"></textarea><button type="button" onclick="engageFeedback('jh-abelia-F7', this)">Enviar comentario</button><span class="fb-hint"></span></div>
         </div>
@@ -452,32 +303,122 @@
 
     <div class="task">
       <div class="thp">
-        <img class="photo" src="https://gardening-chi.vercel.app/images/B-41_caqui_pre_invierno.jpg" alt="Caqui B-41" loading="lazy">
+        <img class="photo" src="https://gardening-chi.vercel.app/images/b25.jpg" alt="Gardenia B-25" loading="lazy">
         <div class="body">
-          <div class="th"><h4>Caqui — poda en copa abierta</h4><span class="code">B-41</span></div>
-          <div class="d"><b>El margen más ancho de todos:</b> es el último del jardín en despertar (octubre). Abrí el centro y sacá lo cruzado cuando tengas el día. Como quedamos, la duda de si es caqui de verdad la dejamos para la primavera, cuando brote. <a href="https://gardening-chi.vercel.app/tasks/plant-B-41.html">Abrir tarea →</a></div>
-          <span class="when ag">A la vuelta · sin apuro</span>
+          <div class="th"><h4>Gardenia — acidificar antes de brotar</h4><span class="code">B-25</span></div>
+          <div class="d"><b>Por timing puro:</b> el quelato de hierro rinde cuando la planta está por arrancar y lo toma. Aplicado ahora se lo lleva la lluvia antes de servir; aplicado el 29-30 le da hojas nuevas verde oscuro en vez de amarillas con el nervio verde. <a href="https://gardening-chi.vercel.app/tasks/plant-B-25.html">Abrir tarea →</a></div>
+          <span class="when ag">Media · última semana de agosto</span>
           <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
-          <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea…"></textarea><button type="button" onclick="engageFeedback('jh-caqui-B41', this)">Enviar comentario</button><span class="fb-hint"></span></div>
+          <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea…"></textarea><button type="button" onclick="engageFeedback('jh-gardenia-acido-B25', this)">Enviar comentario</button><span class="fb-hint"></span></div>
         </div>
       </div>
     </div>
 
-    <div class="menu-note">Con las 3 de arriba son <b>12</b>. Orden sugerido para el finde del <b>29-30 de agosto</b>: la hortensia a tierra primero (es la única con reloj), después el pitósporo (el trabajo más largo) y el cerco de azareros. El resto entra en septiembre sin drama. La <b>huerta con lechuga</b> arranca también ahí, como quedamos.</div>
+    <div class="task">
+      <div class="thp">
+        <img class="photo" src="https://gardening-chi.vercel.app/images/FondoCasa_FrentePiscina.jpg" alt="Huerta — muro norte" loading="lazy">
+        <div class="body">
+          <div class="th"><h4>Huerta: arranca la lechuga</h4><span class="code">huerta</span></div>
+          <div class="d">Lo dejaste para «a la vuelta, fin de agosto» — y fin de agosto es ahora. <b>Agosto es mes de siembra de lechuga y también de tomate</b> (a cubierto, para trasplantar en octubre). Va al muro norte, como decidiste: es el lado que recibe sol todo el día en invierno. <a href="https://gardening-chi.vercel.app/ideas.html">Ver la huerta →</a></div>
+          <span class="when ag">Tu pedido del 28/07</span>
+          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
+          <div class="tfb"><textarea rows="2" placeholder="¿Arrancamos con lechuga sola o también tomate?"></textarea><button type="button" onclick="engageFeedback('jh-huerta-lechuga', this)">Enviar comentario</button><span class="fb-hint"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-note">Orden sugerido del finde: <b>la hortensia primero</b> (es la única que no se puede correr), después el cerco, y la abelia y la gardenia como relleno de 20 minutos.</div>
   </details>
 
-  <!-- PEDIME / CONSULTÁ -->
+  <details class="reveal">
+    <summary><span class="ic">🌱</span> Septiembre, sin apuro <span class="cnt">3</span><span class="chev">▾</span></summary>
+
+    <div class="task">
+      <div class="thp">
+        <img class="photo" src="https://gardening-chi.vercel.app/images/PXL_20260428_130004297_MP.webp" alt="Hibisco B-4" loading="lazy">
+        <div class="body">
+          <div class="th"><h4>Hibisco / Rosa china — poda de fin de invierno</h4><span class="code">B-4</span></div>
+          <div class="d"><b>La que conviene atrasar:</b> es perenne y sensible al frío, y la poda despierta brotes tiernos. Aunque no haya helada en el pronóstico, los primeros días de septiembre son más seguros que esta semana. Está en el muro norte, el lado más cálido. <a href="https://gardening-chi.vercel.app/tasks/plant-B-4.html">Abrir tarea →</a></div>
+          <span class="when">Principios de septiembre</span>
+          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
+          <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea…"></textarea><button type="button" onclick="engageFeedback('jh-hibisco-B4', this)">Enviar comentario</button><span class="fb-hint"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="thp">
+        <img class="photo" src="https://gardening-chi.vercel.app/images/PXL_20260428_130048026_MP.webp" alt="Santa Rita B-1" loading="lazy">
+        <div class="body">
+          <div class="th"><h4>Santa Rita — poda severa de guías</h4><span class="code">B-1</span></div>
+          <div class="d">Espera a que pase la última helada: <b>segunda semana de septiembre</b>. Cortada antes, el brote nuevo es lo primero que se quema. Es la única del jardín cuya ventana depende del frío y no del calendario. <a href="https://gardening-chi.vercel.app/tasks/plant-B-1.html">Abrir tarea →</a></div>
+          <span class="when">2ª semana de septiembre</span>
+          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
+          <div class="tfb"><textarea rows="2" placeholder="Comentá esta tarea…"></textarea><button type="button" onclick="engageFeedback('jh-santarita-B1', this)">Enviar comentario</button><span class="fb-hint"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="task">
+      <div class="thp">
+        <img class="photo" src="https://gardening-chi.vercel.app/images/PXL_20260428_130401399_MP.webp" alt="Hiedra B-15" loading="lazy">
+        <div class="body">
+          <div class="th"><h4>Hiedra — decidir si controlarla</h4><span class="code">B-15</span></div>
+          <div class="d">No es una poda, es una <b>inspección con decisión</b>: mirar dónde la hiedra se agarra del galpón y ver si está entrando en fisuras del revoque o entre chapas. Si la pared está sana, se queda y no molesta. Diez minutos, cualquier día. <a href="https://gardening-chi.vercel.app/tasks/plant-B-15.html">Abrir tarea →</a></div>
+          <span class="when">Cuando pases por ahí</span>
+          <button type="button" class="fbtoggle" onclick="toggleFb(this)">💬 Comentar</button>
+          <div class="tfb"><textarea rows="2" placeholder="Mandame foto de la pared y la miro"></textarea><button type="button" onclick="engageFeedback('jh-hiedra-B15', this)">Enviar comentario</button><span class="fb-hint"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-note">Y una que <b>no</b> va en septiembre aunque la ficha lo diga: las dos paltas. Está explicado en el Taller de esta tarde.</div>
+  </details>
+
+  <details class="reveal">
+    <summary><span class="ic">✅</span> Cerradas antes del viaje <span class="cnt">5</span><span class="chev">▾</span></summary>
+    <div class="task ok">
+      <div class="thp">
+        <img class="photo" src="https://gardening-chi.vercel.app/images/b30.jpg" alt="Durazno B-30" loading="lazy">
+        <div class="body">
+          <div class="th"><h4>Durazno, ciruela y ciruelo — poda de carozos</h4><span class="code">B-30·35·38 · F-4</span></div>
+          <div class="d">Cuatro ejemplares, una tarde, el 2 de agosto. Las tres cosas que esa página te prometió se cumplieron: <b>el 2 no llovió</b> (el 6 cayeron 22,4 mm), <b>no hubo helada</b> (mínima 6,9°) y <b>agosto es su mes de flor</b>. <a href="https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html">Ver cómo terminó →</a></div>
+          <span class="when ok">✓ Hecho el 02/08</span>
+        </div>
+      </div>
+    </div>
+    <div class="task ok">
+      <div class="thp">
+        <img class="photo" src="https://gardening-chi.vercel.app/images/B-37_liquidambar_otonal.jpg" alt="Liquidámbar B-37" loading="lazy">
+        <div class="body">
+          <div class="th"><h4>Liquidámbar y pera Williams</h4><span class="code">B-37 · B-39</span></div>
+          <div class="d">Cerradas en julio y registradas en el estado de tareas. No vuelven a aparecer.</div>
+          <span class="when ok">✓ Cerradas</span>
+        </div>
+      </div>
+    </div>
+    <div class="menu-note">Cinco cierres antes de irte, cuatro de ellos carozos con ventana estricta. La parte difícil del invierno ya está hecha.</div>
+  </details>
+
+  <!-- PEDIME -->
   <section class="ask reveal" id="engage-feedback-box">
     <h3>🙋 Pedime lo que necesites</h3>
-    <p>Yo no te escribo hasta el 24 — pero vos podés escribirme cuando quieras. Si mandás una foto o una duda desde el viaje, la contesto igual.</p>
+    <p>Volviste hoy: si algo del jardín te llamó la atención al llegar —una planta rara, algo seco, algo que floreció— escribímelo o mandame la foto y lo miro.</p>
     <textarea rows="3" placeholder="Escribime tu duda, pedido o especie a identificar…"></textarea>
     <button type="button" class="send" onclick="engageFeedback('jardin-hoy', this)">Enviar</button>
     <span class="fb-hint"></span>
   </section>
 
+  <div class="viaje reveal">
+    <div class="tag">🪚 Esta tarde a las 18:00</div>
+    <h3>El Taller nº3: el pitósporo</h3>
+    <p>Te lo anuncié dos veces y llega hoy. Trae algo que no te dije todavía: bajarlo ahora <b>te cuesta el perfume de octubre de este año</b>, y hay tres formas distintas de resolver eso. La decisión es tuya, el paso a paso lo pongo yo.</p>
+    <a class="cta" href="https://gardening-chi.vercel.app/engage/2026-08-24-el-taller-3.html">Abrirlo ahora →</a>
+  </div>
+
   <footer class="pie">
     <a href="https://gardening-chi.vercel.app/tareas.html">Ver el Timeline completo →</a>
-    <div class="cred">Tu vistazo del jardín · estado y tareas reales del catálogo Pacha Mama · edición 06/08/2026 · pronóstico de Montevideo verificado hoy 06:00 · viaje del 7 al 23 de agosto · próxima edición: lunes 24</div>
+    <div class="cred">Tu vistazo del jardín · estado y tareas reales del catálogo Pacha Mama · edición 24/08/2026 · pronóstico de Montevideo verificado hoy 06:00 (11ª corrida) · registro observado del 2 al 23 de agosto · próxima edición: jueves 28</div>
   </footer>
 
 </div>

@@ -1,0 +1,575 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🪚 El Taller nº3 — Bajar el pitósporo a pantalla</title>
+<meta property="og:title" content="🪚 El Taller nº3 — Bajar el pitósporo a pantalla">
+<meta property="og:description" content="Tenés 3 días secos antes de la lluvia del jueves. Bajar B-43 de 3-4 m a 2-3 m tiene un precio: el perfume de octubre de este año. Acá está la decisión y el paso a paso.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
+    --sol:#e0a92e; --azul:#3f7d8a; --rojo:#b4442e; --madera:#8a5a2b;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 24px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:26px 0 4px; text-align:center; }
+  .hero .em{ font-size:42px; display:block; }
+  .hero .kicker{ font-size:11.5px; font-weight:900; letter-spacing:.19em; text-transform:uppercase; color:var(--madera); margin-top:7px; }
+  .hero h1{ font-size:33px; line-height:1.06; margin:7px 0 7px; font-weight:900; letter-spacing:-.025em; }
+  .hero .sub{ color:var(--ink2); font-size:14.5px; max-width:33ch; margin:0 auto; }
+
+  .facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:9px; margin:15px 0 4px; }
+  .fact{ background:var(--card); border:1px solid var(--line); border-radius:15px; padding:12px 6px; text-align:center; }
+  .fact .n{ display:block; font-size:21px; font-weight:900; color:var(--verde); line-height:1.1; letter-spacing:-.02em; }
+  .fact .l{ font-size:10.5px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--ink3); margin-top:4px; }
+
+  .blk{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 18px; margin:13px 0;
+    box-shadow:0 6px 20px rgba(45,80,22,.05); }
+  .blk h3{ font-size:17.5px; font-weight:900; margin-bottom:7px; letter-spacing:-.01em; line-height:1.22; }
+  .blk p{ color:var(--ink2); font-size:14px; }
+  .blk p + p{ margin-top:8px; }
+  .blk b{ color:var(--ink); }
+  .lbl{ font-size:11px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:var(--ink3); }
+
+  /* DECISIÓN (el primer control, arriba de todo) */
+  .dec{ background:linear-gradient(180deg,#fff7e6,#fffdf7); border-color:rgba(224,169,46,.42); }
+  .dec .lbl{ color:#b7860b; }
+  .opt{ display:block; width:100%; text-align:left; background:var(--card); border:1.5px solid rgba(224,169,46,.45);
+    border-radius:15px; padding:14px 15px; margin-top:9px; font:inherit; color:var(--ink); cursor:pointer; }
+  .opt:active{ transform:scale(.985); }
+  .opt .t{ display:block; font-size:15px; font-weight:900; letter-spacing:-.01em; }
+  .opt .s{ display:block; font-size:12.8px; color:var(--ink2); margin-top:4px; line-height:1.4; }
+  .opt .cost{ display:inline-block; margin-top:7px; font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:.05em;
+    background:#fdf0eb; color:var(--rojo); border:1px solid rgba(180,68,46,.22); border-radius:7px; padding:3px 8px; }
+  .opt.sel{ background:var(--sol); border-color:var(--sol); }
+  .opt.sel .t, .opt.sel .s{ color:#3a2c05; }
+  .opt.sel .cost{ background:rgba(255,255,255,.6); color:#7a3a1c; border-color:rgba(122,58,28,.2); }
+  .q-hint{ display:block; text-align:center; margin-top:10px; font-size:12.8px; font-weight:800; color:#b7860b; min-height:1.25em; }
+
+  .porque{ background:linear-gradient(180deg,#eef7e0,#f8fcf2); border-color:rgba(90,138,46,.32); }
+  .porque .lbl{ color:var(--verde2); }
+  .parte{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:13px 0 3px; }
+  .parte div{ background:#fff; border:1px solid var(--line); border-radius:13px; padding:11px 6px; text-align:center; }
+  .parte .v{ display:block; font-size:18px; font-weight:900; color:var(--ink); letter-spacing:-.02em; }
+  .parte .k{ font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:var(--ink3); margin-top:3px; }
+
+  .foto{ width:100%; border-radius:15px; border:1px solid var(--line); display:block; margin-top:12px; }
+  .foto-cap{ font-size:12px; color:var(--ink3); margin-top:7px; line-height:1.45; }
+
+  /* HERRAMIENTAS */
+  .tools{ list-style:none; margin-top:10px; }
+  .tools li{ display:flex; align-items:center; gap:11px; padding:11px 12px; border:1px solid var(--line); border-radius:13px;
+    margin-top:8px; background:#fafcf6; cursor:pointer; transition:background .18s, border-color .18s; }
+  .tools li:active{ opacity:.7; }
+  .tools li .bx{ width:23px; height:23px; border-radius:7px; border:2px solid var(--ink3); flex:none; display:grid; place-items:center;
+    font-size:14px; color:#fff; font-weight:900; transition:background .18s, border-color .18s; }
+  .tools li .tx{ font-size:13.5px; font-weight:700; line-height:1.35; }
+  .tools li .tx small{ display:block; font-weight:500; color:var(--ink3); font-size:12px; margin-top:1px; }
+  .tools li.on{ background:#eef7e0; border-color:rgba(90,138,46,.4); }
+  .tools li.on .bx{ background:var(--verde2); border-color:var(--verde2); }
+  .tools li.on .bx::after{ content:"✓"; }
+  .tools li.on .tx{ text-decoration:line-through; text-decoration-color:rgba(90,138,46,.5); }
+  .tools-hint{ font-size:12px; color:var(--ink3); margin-top:10px; }
+
+  /* DIAGRAMA */
+  .diag{ display:grid; grid-template-columns:1fr 1fr; gap:11px; margin-top:12px; }
+  .diag figure{ background:#fafcf6; border:1px solid var(--line); border-radius:15px; padding:11px 8px 9px; text-align:center; }
+  .diag figure.bad{ background:#fdf3f0; border-color:rgba(180,68,46,.24); }
+  .diag svg{ width:100%; height:auto; display:block; }
+  .diag figcaption{ font-size:12px; font-weight:800; margin-top:6px; color:var(--verde2); }
+  .diag figure.bad figcaption{ color:var(--rojo); }
+  .diag figcaption small{ display:block; font-weight:600; color:var(--ink3); font-size:11px; margin-top:2px; line-height:1.35; }
+
+  /* WIZARD */
+  .taller{ background:linear-gradient(180deg,#1e2a17,#2d3a22); border:none; color:#eef4e6; padding:22px 18px 20px; }
+  .taller .lbl{ color:#a9c48a; }
+  .taller h3{ color:#fff; }
+  .taller p{ color:#c9d8b8; }
+  .prog{ height:6px; border-radius:99px; background:rgba(255,255,255,.14); margin:14px 0 4px; overflow:hidden; }
+  .prog i{ display:block; height:100%; width:0%; background:linear-gradient(90deg,#8fc34a,#c6e58a); border-radius:99px; transition:width .45s cubic-bezier(.4,0,.2,1); }
+  .prog-txt{ font-size:11.5px; font-weight:800; letter-spacing:.05em; color:#a9c48a; text-transform:uppercase; }
+  .step{ display:none; margin-top:15px; }
+  .step.on{ display:block; animation:sIn .38s ease both; }
+  @keyframes sIn{ from{ opacity:0; transform:translateY(10px);} to{ opacity:1; transform:none;} }
+  .step .num{ display:inline-block; background:rgba(143,195,74,.18); color:#c6e58a; font-size:11px; font-weight:900;
+    letter-spacing:.1em; text-transform:uppercase; padding:4px 11px; border-radius:99px; }
+  .step h4{ font-size:20px; font-weight:900; color:#fff; margin:10px 0 8px; line-height:1.2; letter-spacing:-.015em; }
+  .step .body{ font-size:14.5px; color:#d3e2c2; }
+  .step .como{ margin-top:11px; padding:11px 13px; background:rgba(255,255,255,.07); border-radius:12px; font-size:13.5px; color:#dbe8cc; }
+  .step .como b{ color:#c6e58a; }
+  .step .err{ margin-top:9px; padding:11px 13px; background:rgba(180,68,46,.16); border-left:3px solid #d97a5f; border-radius:0 12px 12px 0;
+    font-size:13px; color:#f0cfc5; }
+  .step .err b{ color:#ffb59e; }
+  .step svg{ display:block; width:100%; max-width:300px; margin:12px auto 0; height:auto; }
+  .nav{ display:flex; gap:9px; margin-top:16px; }
+  .nav button{ flex:1; border:none; border-radius:13px; padding:14px 10px; font:900 15px var(--sans); cursor:pointer; }
+  .nav .next{ background:#8fc34a; color:#1e2a17; }
+  .nav .prev{ flex:0 0 52px; background:rgba(255,255,255,.1); color:#c9d8b8; font-size:18px; }
+  .nav button:active{ opacity:.75; }
+  .fin{ display:none; margin-top:15px; text-align:center; }
+  .fin.on{ display:block; animation:sIn .4s ease both; }
+  .fin .em{ font-size:42px; }
+  .fin h4{ font-size:21px; color:#fff; font-weight:900; margin:8px 0 6px; }
+  .fin p{ color:#c9d8b8; font-size:14px; }
+  .fin .tick{ display:inline-block; margin-top:13px; background:#8fc34a; color:#1e2a17; border:none;
+    font:900 14.5px var(--sans); padding:13px 22px; border-radius:13px; cursor:pointer; }
+  .fin .tick.on{ background:rgba(255,255,255,.14); color:#c6e58a; }
+
+  /* DUDAS */
+  details.duda{ background:var(--card); border:1px solid var(--line); border-radius:15px; margin-top:10px; overflow:hidden; }
+  details.duda summary{ list-style:none; cursor:pointer; padding:14px 15px; font-weight:800; font-size:14.5px; display:flex; gap:9px; align-items:center; }
+  details.duda summary::-webkit-details-marker{ display:none; }
+  details.duda summary .chev{ margin-left:auto; color:var(--ink3); font-size:12px; transition:transform .2s; }
+  details.duda[open] summary .chev{ transform:rotate(180deg); }
+  details.duda .cnt{ padding:0 15px 15px; font-size:13.5px; color:var(--ink2); border-top:1px solid var(--line); padding-top:12px; }
+  details.duda .cnt b{ color:var(--ink); }
+
+  /* VETO */
+  .veto{ background:linear-gradient(180deg,#fdf3f0,#fffaf8); border-color:rgba(180,68,46,.3); }
+  .veto .lbl{ color:var(--rojo); }
+  .veto .fila{ display:flex; gap:11px; align-items:flex-start; padding:11px 0; border-top:1px solid rgba(180,68,46,.14); }
+  .veto .fila:first-of-type{ border-top:none; }
+  .veto .fila img{ width:52px; height:52px; border-radius:11px; object-fit:cover; flex:none; border:1px solid var(--line); }
+  .veto .fila .n{ font-size:14.5px; font-weight:900; }
+  .veto .fila .n span{ font-size:11px; color:var(--ink3); font-family:ui-monospace,Menlo,monospace; font-weight:700; margin-left:5px; }
+  .veto .fila .x{ font-size:12.8px; color:var(--ink2); margin-top:3px; line-height:1.4; }
+  .veto .btns{ display:grid; gap:8px; margin-top:13px; }
+  .veto .btns button{ background:#fff; border:1.5px solid rgba(180,68,46,.35); border-radius:13px; padding:12px 12px;
+    font:800 13.5px var(--sans); color:var(--ink); cursor:pointer; text-align:left; }
+  .veto .btns button.sel{ background:var(--rojo); border-color:var(--rojo); color:#fff; }
+  .veto .q-hint{ color:var(--rojo); }
+
+  /* LIBRERÍA de aprobadas */
+  .lib{ background:linear-gradient(180deg,#f0f6fa,#fbfdfe); border-color:rgba(63,125,138,.28); }
+  .lib .lbl{ color:var(--azul); }
+  .lib a.item{ display:flex; gap:11px; align-items:center; text-decoration:none; color:var(--ink);
+    background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px 13px; margin-top:9px; }
+  .lib a.item .ic{ font-size:22px; flex:none; }
+  .lib a.item .t{ font-size:14px; font-weight:900; line-height:1.25; }
+  .lib a.item .s{ font-size:12px; color:var(--ink3); margin-top:2px; line-height:1.35; }
+  .lib a.item .go{ margin-left:auto; color:var(--azul); font-weight:900; font-size:15px; flex:none; }
+  .lib .badge{ display:inline-block; font-size:10px; font-weight:900; letter-spacing:.06em; text-transform:uppercase;
+    background:#e6f4d4; color:#4a7a20; border:1px solid rgba(90,138,46,.3); border-radius:6px; padding:2px 7px; margin-left:6px; vertical-align:2px; }
+
+  /* SLOTS */
+  .slots{ background:linear-gradient(180deg,#eaf6dc,#f5fbee); border-color:rgba(90,138,46,.32); }
+  .slots .lbl{ color:var(--verde2); }
+  .slot{ display:flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:12px 13px; margin-top:9px; }
+  .slot .slot-lbl{ font-size:14px; font-weight:900; }
+  .slot .slot-btns{ margin-left:auto; display:flex; gap:7px; flex:none; }
+  .slot button{ border:1.5px solid var(--line); background:#fafcf6; border-radius:10px; padding:9px 15px;
+    font:900 13px var(--sans); cursor:pointer; color:var(--ink2); }
+  .slot button.si{ border-color:rgba(90,138,46,.45); color:var(--verde); }
+  .slot button.sel{ background:var(--verde2); border-color:var(--verde2); color:#fff; }
+  .slot button.no.sel{ background:var(--ink3); border-color:var(--ink3); color:#fff; }
+
+  /* REACCIÓN */
+  .react{ text-align:center; }
+  .react .rx{ display:flex; justify-content:center; gap:9px; margin-top:12px; }
+  .react .rx button{ font-size:29px; background:#fafcf6; border:1.5px solid var(--line); border-radius:16px;
+    padding:11px 15px; cursor:pointer; line-height:1; }
+  .react .rx button.sel{ background:var(--verde3); border-color:var(--verde2); transform:scale(1.06); }
+
+  /* FEEDBACK */
+  .fb-blk{ background:linear-gradient(180deg,#eaf6dc,#f5fbee); border-color:rgba(90,138,46,.32); }
+  .fb-blk textarea{ width:100%; background:#fff; border:1px solid var(--line); border-radius:12px; color:var(--ink);
+    padding:11px 12px; font:14px var(--sans); resize:vertical; margin-top:10px; }
+  .fb-send{ margin-top:9px; background:var(--verde2); color:#fff; border:none; border-radius:12px;
+    padding:12px 22px; font:800 14.5px var(--sans); cursor:pointer; }
+  .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:800; color:var(--verde2); min-height:1.2em; }
+
+  .engage-actions{ display:grid; gap:9px; margin:18px 0 6px; }
+  .engage-actions button{ border:none; border-radius:14px; padding:15px 12px; font:900 15px var(--sans); cursor:pointer; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:#eef2e8; color:var(--ink2); }
+
+  .pie{ text-align:center; padding:14px 0 8px; }
+  .pie a{ color:var(--verde2); font-weight:800; font-size:14px; text-decoration:none; }
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:10px; line-height:1.55; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <span class="em">🪚</span>
+    <div class="kicker">El Taller · nº 3 · pitósporo B-43</div>
+    <h1>Bajarlo a pantalla</h1>
+    <p class="sub">Te lo dejé anunciado dos veces. Es el trabajo más largo que te queda del invierno — y tiene un precio que quiero que sepas <b>antes</b> de agarrar la tijera.</p>
+  </header>
+
+  <div class="facts reveal">
+    <div class="fact"><span class="n">3-4 m</span><span class="l">altura hoy</span></div>
+    <div class="fact"><span class="n">2-3 m</span><span class="l">el objetivo</span></div>
+    <div class="fact"><span class="n">3</span><span class="l">días secos</span></div>
+  </div>
+
+  <!-- ▼ PRIMER CONTROL — decisión real, arriba de todo (regla #2) -->
+  <section class="blk dec reveal" id="decision">
+    <div class="lbl">⚖️ Una decisión, y no es obvia</div>
+    <h3>Bajarlo ahora te cuesta el perfume de octubre</h3>
+    <p>El pitósporo <b>florece sobre madera vieja</b>: los racimos blancos de octubre ya están formados en las puntas que tendrías que cortar. Tu propia ficha te da las dos ventanas — <b>fines de invierno</b> (ahora) o <b>post-floración</b> (febrero-marzo). No son equivalentes, y elegir es tuyo.</p>
+    <button type="button" class="opt" onclick="decidir(this,'ahora')">
+      <span class="t">🪚 Lo bajo ahora, esta semana</span>
+      <span class="s">Rebrota vigoroso en septiembre-octubre con las reservas del invierno. Para diciembre ya es pantalla. Es la ventana con más empuje del año.</span>
+      <span class="cost">precio: te perdés su azahar de octubre</span>
+    </button>
+    <button type="button" class="opt" onclick="decidir(this,'febrero')">
+      <span class="t">🌼 Espero a febrero, después de que florezca</span>
+      <span class="s">Tenés el perfume completo este octubre y cortás con la flor ya cumplida.</span>
+      <span class="cost">precio: la pantalla llega un verano tarde</span>
+    </button>
+    <button type="button" class="opt" onclick="decidir(this,'mitad')">
+      <span class="t">✂️ Mitad y mitad: bajo solo lo que tapa</span>
+      <span class="s">Cortás únicamente el sector que da a la vista del vecino y dejás el resto florecer.</span>
+      <span class="cost">precio: queda disparejo hasta el año que viene</span>
+    </button>
+    <span class="q-hint" id="dec-hint"></span>
+    <p style="margin-top:10px;font-size:12.5px;color:var(--ink3)">Cualquiera de las tres está bien elegida. Tocá una y sigo yo: el paso a paso de acá abajo es para la primera, y si elegís febrero te lo guardo y te lo traigo en febrero.</p>
+  </section>
+
+  <!-- POR QUÉ ESTA SEMANA -->
+  <section class="blk porque reveal">
+    <div class="lbl">🌦️ Por qué esta semana y no la que viene</div>
+    <h3>Tenés tres días secos y después llueve</h3>
+    <div class="parte">
+      <div><span class="v">0,0 mm</span><span class="k">lun · mar · mié</span></div>
+      <div><span class="v">8,2 mm</span><span class="k">jueves 27</span></div>
+      <div><span class="v">4,5°</span><span class="k">mínima (mar 25)</span></div>
+    </div>
+    <p style="margin-top:12px">Parte de Montevideo mirado hoy a las 6. El jueves es el <b>único día con lluvia de los próximos diez</b> y ya aguantó <b>tres verificaciones seguidas</b> (9,6 → 10,0 → 8,2 mm): el número se movió, el día no.</p>
+    <p>El pitósporo <b>no es un carozo</b>: la humedad sobre el corte no le dispara gomosis, así que la lluvia no arruina el trabajo. Lo que arruina es <b>vos trabajando mojado a 11°</b> con un arbusto de 4 metros. Y la mínima de 4,5° del martes tampoco es problema: no hay helada en diez días de pronóstico, ni la hubo en los 21 que medí.</p>
+    <p><b>El motivo de fondo es otro:</b> cortás ahora porque en septiembre el arbusto arranca a empujar. Una poda fuerte hecha con las reservas del invierno intactas se recupera en una temporada. La misma poda hecha en mayo, con la planta apagada, la deja rala un año entero.</p>
+  </section>
+
+  <!-- HERRAMIENTAS -->
+  <section class="blk reveal">
+    <div class="lbl">🧰 La mesa antes de salir</div>
+    <h3>Cuatro cosas, tocalas para tacharlas</h3>
+    <ul class="tools" id="tools">
+      <li onclick="tool(this,1)"><span class="bx"></span><span class="tx">Serrucho de poda<small>Todo lo que pase el grosor de tu pulgar va con serrucho, no con tijera</small></span></li>
+      <li onclick="tool(this,2)"><span class="bx"></span><span class="tx">Tijera de mano afilada<small>Para las puntas. La <b>tijera de setos NO sirve</b> para bajar altura — ver abajo</small></span></li>
+      <li onclick="tool(this,3)"><span class="bx"></span><span class="tx">Escalera estable + alguien que la sostenga<small>Estás cortando a 3-4 m. Es la parte peligrosa del día, no la poda</small></span></li>
+      <li onclick="tool(this,4)"><span class="bx"></span><span class="tx">Una caña o palo de 2,5 m<small>El truco entero del taller de hoy: marcás la altura una vez y no discutís más</small></span></li>
+    </ul>
+    <p class="tools-hint">Sin pasta cicatrizante: el pitósporo cierra bien solo. Alcohol solo si venís de cortar otra planta enferma.</p>
+    <img class="foto" src="https://gardening-chi.vercel.app/images/B-42-43_entre_romero_b27.jpg" alt="Pitósporo B-43 entre el romero y el mirto" loading="lazy">
+    <p class="foto-cap">B-43, tu pitósporo, entre el romero (B-26) y el mirto (B-27). Es este.</p>
+  </section>
+
+  <!-- DIAGRAMA: la forma en A -->
+  <section class="blk reveal">
+    <div class="lbl">🎯 La forma a la que apuntás</div>
+    <h3>Base más ancha que la copa</h3>
+    <p>Esto es lo único que decide si dentro de dos años tenés una pantalla o un paraguas con el tronco pelado. Si la copa queda igual de ancha —o más— que la base, <b>se hace sombra a sí misma</b>: las hojas de abajo no reciben luz, las suelta, y la pantalla se abre justo a la altura de los ojos.</p>
+    <div class="diag">
+      <figure>
+        <svg viewBox="0 0 120 130" role="img" aria-label="Perfil en A: copa angosta arriba, base ancha, sol llegando a las ramas bajas">
+          <circle cx="98" cy="16" r="8" fill="#e0a92e"/>
+          <g stroke="#e0a92e" stroke-width="1.5" stroke-linecap="round" opacity=".6">
+            <line x1="92" y1="24" x2="70" y2="52"/><line x1="96" y1="28" x2="62" y2="86"/><line x1="99" y1="34" x2="58" y2="104"/>
+          </g>
+          <path d="M60 30 L86 112 L34 112 Z" fill="#dff0cc" stroke="#5a8a2e" stroke-width="2.4" stroke-linejoin="round"/>
+          <line x1="60" y1="112" x2="60" y2="122" stroke="#8a5a2b" stroke-width="4"/>
+          <line x1="20" y1="122" x2="100" y2="122" stroke="#8a9a7a" stroke-width="1.6"/>
+          <g stroke="#5a8a2e" stroke-width="1.4" opacity=".75">
+            <line x1="44" y1="100" x2="76" y2="100"/><line x1="48" y1="86" x2="72" y2="86"/><line x1="52" y1="70" x2="68" y2="70"/>
+          </g>
+        </svg>
+        <figcaption>Perfil en A ✔<small>El sol de la tarde entra hasta las ramas bajas. La pantalla tapa desde el piso.</small></figcaption>
+      </figure>
+      <figure class="bad">
+        <svg viewBox="0 0 120 130" role="img" aria-label="Perfil hongo: copa ancha arriba que sombrea la base, tronco pelado">
+          <circle cx="98" cy="16" r="8" fill="#e0a92e"/>
+          <g stroke="#e0a92e" stroke-width="1.5" stroke-linecap="round" opacity=".6">
+            <line x1="92" y1="24" x2="80" y2="38"/><line x1="96" y1="28" x2="86" y2="44"/>
+          </g>
+          <path d="M24 62 Q60 22 96 62 Q80 78 60 78 Q40 78 24 62 Z" fill="#f3dcd5" stroke="#b4442e" stroke-width="2.4" stroke-linejoin="round"/>
+          <line x1="60" y1="78" x2="60" y2="122" stroke="#8a5a2b" stroke-width="5"/>
+          <line x1="20" y1="122" x2="100" y2="122" stroke="#8a9a7a" stroke-width="1.6"/>
+          <g stroke="#b4442e" stroke-width="1.3" stroke-dasharray="3 3" opacity=".8">
+            <line x1="34" y1="92" x2="86" y2="92"/><line x1="34" y1="106" x2="86" y2="106"/>
+          </g>
+          <text x="60" y="101" text-anchor="middle" font-size="9" font-weight="700" fill="#b4442e">se ve todo</text>
+        </svg>
+        <figcaption>Perfil hongo ✕<small>Cortaste solo arriba: la copa se ensancha, sombrea la base y abajo queda hueco.</small></figcaption>
+      </figure>
+    </div>
+    <p style="margin-top:11px;font-size:13px">Regla práctica: parado a cinco metros, la silueta tiene que verse como una <b>A</b>, no como un <b>hongo</b>. Es la misma razón por la que los cercos de campo se recortan en trapecio.</p>
+  </section>
+
+  <!-- WIZARD -->
+  <section class="blk taller reveal" id="taller">
+    <div class="lbl">🪚 Paso a paso · 6 pasos</div>
+    <h3>Empezá clavando la caña</h3>
+    <p>Un paso por pantalla. Tocá «siguiente» cuando el paso esté hecho — así sé por dónde vas y qué te falta.</p>
+    <div class="prog"><i id="bar"></i></div>
+    <div class="prog-txt" id="ptxt">Paso 1 de 6</div>
+
+    <div class="step on" data-n="1">
+      <span class="num">Paso 1</span>
+      <h4>Clavá la caña y no la muevas</h4>
+      <div class="body">Antes de cortar nada: parás la caña de 2,5 m contra el arbusto, del lado de donde mirás al vecino, y <b>atás una cinta de color en la punta</b>. Esa cinta es la altura final. No la vas a discutir rama por rama arriba de la escalera.</div>
+      <div class="como"><b>Por qué primero:</b> el error clásico de la poda de reducción no es cortar de más — es cortar <b>de a poco</b>, bajar, mirar, subir otra vez, y terminar en cuatro alturas distintas. La referencia física te ahorra las cuatro subidas.</div>
+      <div class="err"><b>Ojo:</b> mirá la altura desde donde te importa —la ventana, la galería, la pileta—, no desde el pie del arbusto. Dos metros y medio tapan cosas muy distintas según dónde estés parado.</div>
+      <div class="nav"><button type="button" class="next" onclick="paso(1)">Listo, siguiente →</button></div>
+    </div>
+
+    <div class="step" data-n="2">
+      <span class="num">Paso 2</span>
+      <h4>Limpieza primero: seco, roto, cruzado</h4>
+      <div class="body">Antes de tocar la altura, sacá todo lo que está <b>muerto, quebrado o cruzándose por adentro</b>. Se hace de abajo hacia arriba y se hace rápido.</div>
+      <div class="como"><b>Regalo contable:</b> esto <b>no cuenta</b> dentro del 40% que podés sacar. Es madera que la planta ya no alimenta. Y cuando la sacás, recién ahí ves la estructura real y cuánto te queda por bajar de verdad — casi siempre es menos de lo que parecía.</div>
+      <div class="nav"><button type="button" class="prev" onclick="paso(-1)">←</button><button type="button" class="next" onclick="paso(2)">Hecho, siguiente →</button></div>
+    </div>
+
+    <div class="step" data-n="3">
+      <span class="num">Paso 3</span>
+      <h4>Cada rama, a una rama lateral</h4>
+      <div class="body">Acá está la técnica entera. Para bajar una rama <b>no la cortás por la mitad</b>: la seguís hacia abajo hasta encontrar una <b>rama lateral que salga hacia afuera</b>, y cortás ahí, justo arriba de ella.</div>
+      <svg viewBox="0 0 300 120" role="img" aria-label="Comparación: corte a rama lateral versus tocón">
+        <g stroke="#8fc34a" stroke-width="4" fill="none" stroke-linecap="round">
+          <path d="M40 112 L40 40"/><path d="M40 62 L82 34"/>
+        </g>
+        <line x1="30" y1="40" x2="52" y2="40" stroke="#c6e58a" stroke-width="2.5" stroke-dasharray="4 3"/>
+        <text x="58" y="20" font-size="12" font-weight="700" fill="#c6e58a">cortás acá</text>
+        <text x="14" y="76" font-size="11" font-weight="700" fill="#a9c48a">la lateral</text>
+        <text x="30" y="126" font-size="0" fill="none">.</text>
+        <g stroke="#d97a5f" stroke-width="4" fill="none" stroke-linecap="round">
+          <path d="M210 112 L210 40"/>
+        </g>
+        <line x1="200" y1="40" x2="222" y2="40" stroke="#ffb59e" stroke-width="2.5" stroke-dasharray="4 3"/>
+        <text x="228" y="44" font-size="12" font-weight="700" fill="#ffb59e">tocón</text>
+        <text x="150" y="112" font-size="11" font-weight="700" fill="#f0cfc5">sin lateral abajo = se seca</text>
+      </svg>
+      <div class="como"><b>La medida:</b> la lateral que dejás tiene que tener <b>al menos un tercio del grosor</b> de lo que sacás. Si es mucho más fina, no puede sostener el flujo de savia y el corte se seca hacia abajo.</div>
+      <div class="err"><b>El error que se paga:</b> cortar en el aire deja un <b>tocón</b> sin nada que lo alimente. Se seca, entra hongo por ahí, y alrededor brota un manojo de varas finas y verticales — la «escoba». Eso es lo que hace que una pared podada se vea artificial para siempre.</div>
+      <div class="nav"><button type="button" class="prev" onclick="paso(-1)">←</button><button type="button" class="next" onclick="paso(3)">Entendido, siguiente →</button></div>
+    </div>
+
+    <div class="step" data-n="4">
+      <span class="num">Paso 4</span>
+      <h4>Que no queden todas a la misma altura</h4>
+      <div class="body">Bajá cada rama principal a su lateral, buscando la cinta — pero <b>no clavadas todas en el mismo centímetro</b>. Dejá una unos 15 cm más arriba, otra unos 15 más abajo.</div>
+      <div class="como"><b>Por qué:</b> un corte perfectamente horizontal en un arbusto de hoja perenne se lee como una pared cortada con máquina. Escalonar 15-20 cm da un borde vivo — y encima reparte mejor el rebrote, que si no sale todo del mismo plano.</div>
+      <div class="nav"><button type="button" class="prev" onclick="paso(-1)">←</button><button type="button" class="next" onclick="paso(4)">Hecho, siguiente →</button></div>
+    </div>
+
+    <div class="step" data-n="5">
+      <span class="num">Paso 5</span>
+      <h4>Recién ahora, los laterales</h4>
+      <div class="body">Con la altura resuelta, bajate de la escalera, mirá desde cinco metros y recortá los costados <b>angostando hacia arriba</b>: la A del diagrama.</div>
+      <div class="como"><b>Truco de campo:</b> apuntá a que la copa sea <b>10-15 cm más angosta por lado</b> que la base. Es poco y se ve mucho. Y no toques el faldón de abajo salvo lo que invada el paso: ese faldón es literalmente la parte de la pantalla que tapa.</div>
+      <div class="nav"><button type="button" class="prev" onclick="paso(-1)">←</button><button type="button" class="next" onclick="paso(5)">Hecho, siguiente →</button></div>
+    </div>
+
+    <div class="step" data-n="6">
+      <span class="num">Paso 6</span>
+      <h4>Parate atrás y contá el 40%</h4>
+      <div class="body">Último paso, y es de freno: mirá el montón que sacaste al lado del arbusto. <b>Si es más de un tercio largo de lo que había, pará.</b> El resto lo terminás el año que viene y no pasa nada.</div>
+      <div class="como"><b>Por qué existe el límite:</b> las hojas son la fábrica. Si le sacás más de la mitad de golpe, responde con un rebrote de emergencia: decenas de varas finas, largas y verticales, débiles y feas, que después hay que podar otra vez. Bajar 1 metro sobre 4 con la limpieza incluida te deja cómodo dentro del 40%.</div>
+      <div class="err"><b>Si te pasaste:</b> no hagas nada más. No fertilices para «ayudarlo» — el nitrógeno sobre una planta desfoliada empeora la escoba. Riego normal y lo dejás cerrar solo.</div>
+      <div class="nav"><button type="button" class="prev" onclick="paso(-1)">←</button><button type="button" class="next" onclick="paso(6)">Terminé ✓</button></div>
+    </div>
+
+    <div class="fin" id="fin">
+      <span class="em">🌳</span>
+      <h4>Pantalla en camino</h4>
+      <p>En septiembre-octubre vas a ver el rebrote arrancar desde los cortes. Para diciembre ya cierra. Anotá la fecha de hoy: dentro de un año te la traigo con la foto al lado, como hice con los carozos.</p>
+      <button type="button" class="tick" id="tickB43" onclick="tickArbol()">✅ Marcá el pitósporo como podado</button>
+    </div>
+  </section>
+
+  <!-- DUDAS -->
+  <section class="blk reveal">
+    <div class="lbl">🤔 Resueltas de antemano</div>
+    <h3>Lo que te vas a preguntar arriba de la escalera</h3>
+    <details class="duda"><summary>¿Puedo hacerlo con la tijera de setos y listo?<span class="chev">▾</span></summary>
+      <div class="cnt">Para <b>bajar altura, no</b>. La tijera de seto corta donde la agarra: parte hojas al medio, deja tocones de todos los tamaños y no distingue una lateral de un palo. Sirve para el <b>retoque final</b> de los costados en verano, cuando ya hay estructura. La reducción de este año se hace rama por rama, con serrucho y tijera de mano. Es más lento y es la diferencia entre una pantalla y un cubo verde con el interior hueco.</div></details>
+    <details class="duda"><summary>¿Y si me queda pelado abajo igual?<span class="chev">▾</span></summary>
+      <div class="cnt">El pitósporo <b>sí rebrota de madera vieja</b> —es de los pocos que aguanta poda radical— pero tarda una temporada larga y sale desprolijo. Por eso el orden importa: la forma en A y el 40% existen para <b>no llegar</b> a esa situación. Si ya está pelado abajo de antes, avisame y lo tratamos aparte: eso es una poda de rejuvenecimiento en dos etapas, otra receta.</div></details>
+    <details class="duda"><summary>¿Cuánto me va a llevar?<span class="chev">▾</span></summary>
+      <div class="cnt">Entre <b>90 minutos y dos horas</b>, y la mitad se te va en mover la escalera y juntar lo cortado. Es la tarea más larga que te queda del invierno; el resto de la lista son trabajos de 15 a 30 minutos. Si arrancás con luz, martes o miércoles de tarde te alcanza sobrado.</div></details>
+    <details class="duda"><summary>Lo que corto, ¿lo puedo compostar?<span class="chev">▾</span></summary>
+      <div class="cnt">La hoja y lo fino, sí. Lo leñoso grueso tarda muchísimo: cortalo en trozos o va aparte. Nada de esto tiene enfermedad conocida en tu jardín, así que no hay motivo para quemarlo ni descartarlo.</div></details>
+  </section>
+
+  <!-- VETO: material del audit, elenco fresco -->
+  <section class="blk veto reveal">
+    <div class="lbl">⛔ Y ya que vas a estar con la tijera</div>
+    <h3>Dos que NO se podan en septiembre, aunque la ficha lo diga</h3>
+    <p>Revisé las 52 fichas del catálogo cruzando <b>mes de floración contra mes de poda</b>. Salieron dos casos donde tu propia ficha te manda a hacer algo que se paga caro — y las dos son paltas.</p>
+    <div class="fila">
+      <img src="https://gardening-chi.vercel.app/images/PXL_20260428_130522139_MP.webp" alt="Palta uruguaya B-22" loading="lazy">
+      <div><div class="n">Palta uruguaya <span>B-22</span></div>
+      <div class="x">Ficha: «podar en septiembre». Floración: <b>septiembre, octubre y noviembre</b>. Podar en plena flor es cortar la fruta del año antes de que cuaje.</div></div>
+    </div>
+    <div class="fila">
+      <img src="https://gardening-chi.vercel.app/images/FondoCasa_VecinoFondo.jpg" alt="Palta Haas B-36" loading="lazy">
+      <div><div class="n">Palta Haas <span>B-36</span></div>
+      <div class="x">Peor margen: la ficha manda podar <b>el primero de sus dos únicos meses de flor</b>. Y este es el palto grande del fondo, el que sí da.</div></div>
+    </div>
+    <p style="margin-top:12px"><b>Qué haría yo:</b> mover las dos podas a <b>diciembre-enero</b>, con la fruta ya cuajada y el riesgo de frío pasado. La inspección de plagas de septiembre se hace igual — mirar no cuesta flor.</p>
+    <p style="font-size:12.5px;color:var(--ink3)">(Esto es de <b>poda</b>. Los plantines de palta siguen contra la pared a la sombra, sin mover, como pediste.)</p>
+    <div class="btns">
+      <button type="button" onclick="veto(this,'corregir')">✏️ Corregila en el catálogo, movela a diciembre</button>
+      <button type="button" onclick="veto(this,'avisar')">🔔 Dejala como está pero frename en septiembre</button>
+      <button type="button" onclick="veto(this,'nada')">🤷 Es menor, no toques nada</button>
+    </div>
+    <span class="q-hint" id="veto-hint"></span>
+  </section>
+
+  <!-- APROBADAS: agrupadas acá dentro, sin push aparte -->
+  <section class="blk lib reveal">
+    <div class="lbl">📚 Lo que prendiste, en un solo lugar</div>
+    <h3>La serie completa</h3>
+    <p>Estas no te llegan como aviso aparte nunca más: viven acá adentro. El nº1 es el único que aprobaste, y es el que da derecho a que esta serie te siga llegando los lunes.</p>
+    <a class="item" href="https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html">
+      <span class="ic">🍑</span>
+      <span><span class="t">El Taller nº1 · Poda de carozos<span class="badge">aprobada</span></span>
+      <span class="s">Durazno, ciruela y ciruelo. Cerrado el 2 de agosto — adentro está lo que pasó después, con los números medidos.</span></span>
+      <span class="go">→</span>
+    </a>
+    <a class="item" href="https://gardening-chi.vercel.app/engage/2026-08-03-el-taller-2.html">
+      <span class="ic">🌸</span>
+      <span><span class="t">El Taller nº2 · Poda de flor</span>
+      <span class="s">Crespón y althea, madera nueva. Hiciste los 7 pasos dos veces; si quedó pendiente el corte, la ventana sigue abierta esta semana.</span></span>
+      <span class="go">→</span>
+    </a>
+    <a class="item" href="https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html">
+      <span class="ic">🌿</span>
+      <span><span class="t">Tu jardín hoy · lista de la vuelta</span>
+      <span class="s">Las 12 tareas abiertas ordenadas por urgencia real. Se actualizó esta mañana.</span></span>
+      <span class="go">→</span>
+    </a>
+  </section>
+
+  <!-- SLOTS -->
+  <section class="blk slots reveal">
+    <div class="lbl">🗓️ Slots disponibles</div>
+    <h3>¿En qué momento querés el Taller?</h3>
+    <p>Son los dos únicos horarios en que mando experiencias. Prendé el que te sirva; el que no, apagalo y no insisto.</p>
+    <div class="slot"><span class="slot-lbl">🌆 Lunes · 18:00</span><span class="slot-btns"><button type="button" class="si" onclick="engageAnswer('el-taller-3-slot-lun18','si', this)">Prender</button><button type="button" class="no" onclick="engageAnswer('el-taller-3-slot-lun18','no', this)">No</button></span></div>
+    <div class="slot"><span class="slot-lbl">☀️ Sábado · 11:00</span><span class="slot-btns"><button type="button" class="si" onclick="engageAnswer('el-taller-3-slot-sab11','si', this)">Prender</button><button type="button" class="no" onclick="engageAnswer('el-taller-3-slot-sab11','no', this)">No</button></span></div>
+  </section>
+
+  <!-- REACCIÓN -->
+  <section class="blk react reveal">
+    <h3>¿Te sirvió este taller?</h3>
+    <p style="color:var(--ink2);font-size:13.5px">Un toque y sé si sigo por acá o cambio.</p>
+    <div class="rx">
+      <button type="button" onclick="engageReact('el-taller-3','love', this)" aria-label="Me encantó">😍</button>
+      <button type="button" onclick="engageReact('el-taller-3','like', this)" aria-label="Me gustó">🙂</button>
+      <button type="button" onclick="engageReact('el-taller-3','meh', this)" aria-label="Meh">😐</button>
+      <button type="button" onclick="engageReact('el-taller-3','no', this)" aria-label="No">🙅</button>
+    </div>
+  </section>
+
+  <!-- FEEDBACK PROPIO -->
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>Esto lo leo yo, el agente del jardín, antes de armar la próxima. Si algo sobró, si faltó, o si querés que el Taller nº4 sea de otra planta — escribilo acá.</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('el-taller-3', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-08-24-el-taller-3')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-08-24-el-taller-3')">✕ No me interesa</button>
+  </div>
+
+  <footer class="pie">
+    <a href="https://gardening-chi.vercel.app/engage/2026-08-24-el-taller-3-pitch.html">Cómo esto se podría sostener solo →</a>
+    <div class="cred">El Taller nº3 · datos reales de tu catálogo Pacha Mama (ficha B-43, cruce floración × poda de las 52 fichas) · pronóstico de Montevideo verificado hoy 24/08 a las 06:00, tercera verificación de la lluvia del jueves · edición 24/08/2026</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+
+// --- decisión principal ---
+var DEC_MSG = {
+  ahora:   'Anotado: lo bajás esta semana. El paso a paso de abajo es exactamente para eso.',
+  febrero: 'Anotado: febrero. Te lo guardo y te lo traigo cuando la flor esté cumplida — leé igual la forma en A, no cambia.',
+  mitad:   'Anotado: solo el sector del vecino. Mismos pasos, aplicados a un lado: cuidá especialmente la forma en A.'
+};
+function decidir(btn, val){
+  Array.prototype.forEach.call(btn.parentElement.querySelectorAll('.opt'), function(b){ b.classList.remove('sel'); });
+  btn.classList.add('sel');
+  var h = document.getElementById('dec-hint');
+  if (h) h.textContent = DEC_MSG[val] || 'Anotado.';
+  try{ if (typeof engageAnswer === 'function') engageAnswer('taller3-cuando', val, document.createElement('button')); }catch(e){}
+}
+
+// --- veto paltas ---
+var VETO_MSG = {
+  corregir: 'Hecho: corrijo las dos fichas y te lo dejo escrito en el catálogo.',
+  avisar:   'Perfecto: la ficha queda igual y en septiembre te freno yo.',
+  nada:     'Ok, no toco nada. Queda anotado que lo sabés.'
+};
+function veto(btn, val){
+  Array.prototype.forEach.call(btn.parentElement.querySelectorAll('button'), function(b){ b.classList.remove('sel'); });
+  btn.classList.add('sel');
+  var h = document.getElementById('veto-hint');
+  if (h) h.textContent = VETO_MSG[val] || 'Anotado.';
+  try{ if (typeof engageAnswer === 'function') engageAnswer('taller3-paltas', val, document.createElement('button')); }catch(e){}
+}
+
+// --- herramientas ---
+function tool(li, n){
+  var on = li.classList.toggle('on');
+  try{ if (on && typeof engageAnswer === 'function') engageAnswer('taller3-tool-' + n, 'ok', document.createElement('button')); }catch(e){}
+}
+
+// --- wizard ---
+var cur = 1, TOTAL = 6;
+function render(){
+  Array.prototype.forEach.call(document.querySelectorAll('.step'), function(s){
+    s.classList.toggle('on', parseInt(s.getAttribute('data-n'),10) === cur && cur <= TOTAL);
+  });
+  var fin = document.getElementById('fin');
+  if (fin) fin.classList.toggle('on', cur > TOTAL);
+  var bar = document.getElementById('bar');
+  if (bar) bar.style.width = Math.min(100, Math.round((Math.min(cur - 1, TOTAL) / TOTAL) * 100)) + '%';
+  var t = document.getElementById('ptxt');
+  if (t) t.textContent = cur > TOTAL ? 'Los 6 pasos, hechos' : ('Paso ' + cur + ' de ' + TOTAL);
+}
+function paso(n){
+  if (n === -1){ cur = Math.max(1, cur - 1); render(); return; }
+  try{ if (typeof engageAnswer === 'function') engageAnswer('taller3-paso-' + n, 'ok', document.createElement('button')); }catch(e){}
+  cur = n + 1;
+  render();
+  var el = document.getElementById('taller');
+  if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+function tickArbol(){
+  var b = document.getElementById('tickB43');
+  if (!b || b.classList.contains('on')) return;
+  b.classList.add('on');
+  b.textContent = '✓ Pitósporo B-43 — podado el 24/08';
+  try{ if (typeof engageAnswer === 'function') engageAnswer('taller3-arbol-B-43', 'ok', document.createElement('button')); }catch(e){}
+}
+render();
+</script>
+<script src="engage.js"></script>
+</body></html>
