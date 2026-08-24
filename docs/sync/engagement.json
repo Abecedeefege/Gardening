@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-08-24T22:10:31.272Z",
+  "_updated_at": "2026-08-24T22:10:34.070Z",
   "events": [
     {
       "_id": "msw5ybnf92jyuq",
@@ -149,6 +149,15 @@
       "text": "No me mandes más cosas hasta la semana que viene que vuelvo a Uruguay.  Todo esto mándamelo ahi",
       "page": "engage/2026-08-24-el-taller-3.html",
       "ts": "2026-08-24T22:10:31.951Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mt7si3kgzhyxw5",
+      "type": "dwell",
+      "seconds": 45,
+      "scroll_pct": 100,
+      "page": "engage/2026-08-24-el-taller-3.html",
+      "ts": "2026-08-24T22:10:34.768Z",
       "device": "sin-nombre"
     }
   ],
