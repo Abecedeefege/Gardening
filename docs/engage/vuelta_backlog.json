@@ -1,0 +1,90 @@
+{
+  "_doc": "Acumulador de la ventana de silencio 25-30/08/2026. Pedido textual del usuario (24/08 22:10, feedback_text sobre el-taller-3): «No me mandes mas cosas hasta la semana que viene que vuelvo a Uruguay. Todo esto mandamelo ahi» + (24/08 13:41, sobre jardin-hoy): «Vuelvo en 1 semana a Uruguay. Mandame todo lo que haya para hacer ese dia». Este archivo junta lo que se entrega TODO JUNTO el lunes 31/08. Lo lee y lo vacia la corrida del 31/08.",
+  "_updated": "2026-08-25",
+  "ventana_silencio": {
+    "desde": "2026-08-25",
+    "hasta": "2026-08-30",
+    "slots_que_caen": [
+      { "fecha": "2026-08-27", "dia": "jueves", "hora": "10:00", "canal": "tarea", "estado": "cae" },
+      { "fecha": "2026-08-29", "dia": "sabado", "hora": "10:00", "canal": "tarea", "estado": "cae" },
+      { "fecha": "2026-08-29", "dia": "sabado", "hora": "11:00", "canal": "experiencia", "estado": "cae" }
+    ],
+    "publicado_en": "docs/engage/2026-07-24-jardin-hoy.html (bloque .acuse, commit del 25/08)",
+    "cobrar_el": "2026-08-31",
+    "como_cobrarlo": "Mismo patron que el viaje 7-23/08, verificable contra send_log.json: entre el 25 y el 30 no hay ni un notification_sent. Decirlo con los tres slots nombrados, no en general."
+  },
+  "reanuda": {
+    "fecha": "2026-08-31",
+    "dia": "lunes",
+    "slots": [
+      { "hora": "10:00", "canal": "tarea", "destino": "engage/2026-07-24-jardin-hoy.html (URL estable, reedicion)" },
+      { "hora": "18:00", "canal": "experiencia", "destino": "original NUEVA + el-taller (aprobada) agrupada dentro" }
+    ],
+    "nota": "El 31/08 es el ULTIMO dia de agosto: dos tareas cierran su ventana ese mismo dia. Ese es el gancho real del canal tarea de la vuelta — no hay que inventar urgencia."
+  },
+  "cierran_el_31_08": [
+    {
+      "task_id": "plant-F-7",
+      "planta": "Abelia",
+      "codes": ["F-7"],
+      "titulo": "Poda fin de invierno previa al brote",
+      "due_label": "Fines de agosto (antes de que hinchen las yemas)",
+      "prioridad": "baja",
+      "por_que_cierra": "La ventana es 'antes de que hinchen las yemas'. El 31/08 es el ultimo dia del rango declarado en su propia ficha.",
+      "verificar_el_31": "Que la ficha siga diciendo fines de agosto y que el pronostico de esa manana permita podar (seco)."
+    },
+    {
+      "task_id": "plant-B-7",
+      "planta": "Azarero / Pitosporo (cerco, 4 ejemplares)",
+      "codes": ["B-7", "B-11", "B-31", "B-33"],
+      "titulo": "Recorte parejo de cerco (4 ejemplares)",
+      "due_label": "Ultima semana de agosto",
+      "prioridad": "media",
+      "por_que_cierra": "La ultima semana de agosto es 25-31. El 31 es el ultimo dia.",
+      "ojo": "El 22/08 se publico el hallazgo del audit sobre B-7 (solape poda x floracion). Al re-nombrarlo el 31, NO repetir el argumento 'florece en madera vieja -> podar cuesta la flor' (quemado hasta el 07/09): entrar por la ventana que se cierra, no por el hallazgo."
+    }
+  ],
+  "agosto_abiertas_sin_confirmar": [
+    { "task_id": "plant-B-43-2", "planta": "Pitosporo B-43", "estado": "Preguntado en el Taller n3 (24/08) con qid taller3-cuando. SIN RESPUESTA. Re-preguntar el 31 SOLO si sigue sin respuesta, y una sola vez." },
+    { "task_id": "plant-B-9", "planta": "Crespon B-9", "estado": "Taller n2. qid podas-vuelta preguntado el 24/08, sin respuesta. Los ticks del Taller NO escriben task_states.json." },
+    { "task_id": "plant-B-18", "planta": "Althea B-18", "estado": "Idem B-9, mismo qid podas-vuelta." },
+    { "task_id": "plant-F-2", "planta": "Bignonia rosada F-2", "estado": "Poda fuerte pre-brotacion + liberar el porton. Publicada el 24/08." },
+    { "task_id": "plant-B-4", "planta": "Hibisco B-4", "estado": "Poda fin de invierno, mediados de agosto — vencida, entra en la lista de la vuelta." },
+    { "task_id": "plant-B-15", "planta": "Hiedra B-15", "estado": "Control de invasion sobre galpon, agosto." },
+    { "task_id": "plant-B-25", "planta": "Gardenia B-25", "estado": "Acidificar tierra antes de brotacion, agosto. Tarea de bolsa, no de tijera: sirve para dia de lluvia." },
+    { "task_id": "plant-B-5a", "planta": "Hortensia B-5a/B-5b", "estado": "Trasplante 'cuando pierda TODAS las hojas'. Era la unica con reloj del finde 29-30 que cae en la ventana de silencio — pasa al 31." }
+  ],
+  "septiembre_arranca": [
+    { "task_id": "plant-B-1", "planta": "Santa Rita B-1", "cuando": "2a semana de septiembre (pasada la ultima helada)" },
+    { "task_id": "plant-B-22", "planta": "Palta uruguaya B-22", "cuando": "2a semana de septiembre", "pendiente": "qid taller3-paltas (24/08) sin responder: si contesta 'corregila', editar prune_when de B-22 y B-36 en data_plants.py + python build.py." },
+    { "task_id": "plant-B-36-2", "planta": "Palta Haas B-36", "cuando": "2a semana de septiembre", "pendiente": "Idem B-22." },
+    { "task_id": "plant-B-23", "planta": "Limonero B-23", "cuando": "2a semana de septiembre" },
+    { "task_id": "plant-B-24", "planta": "Mandarina criolla B-24", "cuando": "2a semana de septiembre" },
+    { "task_id": "plant-B-29", "planta": "Lantana B-29", "cuando": "2a semana de septiembre" },
+    { "task_id": "plant-F-3-2", "planta": "Fotinia F-3/F-6/F-11", "cuando": "mediados de septiembre (tras el 2o brote)" },
+    { "task_id": "plant-B-46-3", "planta": "Vivero B-46", "cuando": "septiembre — trasplantar a tierra los listos" },
+    { "task_id": "plant-B-46-5", "planta": "Vivero B-46 (paltas)", "cuando": "septiembre — injertar / regalar / compostar" },
+    { "task_id": "plant-B-47-3", "planta": "Plantines de palmera B-47", "cuando": "septiembre — cuantas guardar / regalar" }
+  ],
+  "preguntas_sin_responder": [
+    { "qid": "podas-vuelta", "preguntado": "2026-08-24", "que_define": "Si B-9 y B-18 estan podadas. Define si la semana arranca con dos podas o ninguna.", "politica": "Se re-pregunta el 31 UNA vez, como primer control. Es la unica que se re-pregunta." },
+    { "qid": "taller3-cuando", "preguntado": "2026-08-24", "que_define": "B-43: podar ahora / febrero post-floracion / solo el sector del vecino.", "politica": "Se re-pregunta el 31 solo si entra el pitosporo en la lista." },
+    { "qid": "taller3-paltas", "preguntado": "2026-08-24", "que_define": "Si me delega corregir prune_when de B-22/B-36 en el catalogo.", "politica": "NO re-preguntar el 31 (acumular preguntas viejas = queja de 'muy cargado'). Se reactiva cuando toque septiembre." },
+    { "qid": "salida-vuelta", "preguntado": "2026-08-24", "que_define": "Que dia concreto sale al jardin.", "politica": "Superado por los hechos: el 24/08 dijo por texto que vuelve la semana que viene. NO re-preguntar." },
+    { "qid": "viaje-silencio / horario-tareas", "preguntado": "pre-viaje", "politica": "MUERTAS. No se re-preguntan." }
+  ],
+  "no_repetir_el_31": [
+    "«florece en madera vieja -> podar cuesta la flor» (quemado hasta el 07/09)",
+    "el corte a rama lateral de 1/3 · la forma en A · el tope del 40 %",
+    "las dos paltas B-22/B-36 como hallazgo del audit",
+    "«7 de 7 slots en silencio» del viaje — el 31 se cobra el silencio NUEVO (3 slots), no aquel",
+    "las 3 predicciones verificadas de los carozos"
+  ],
+  "verificar_la_manana_del_31": [
+    "open-meteo MVD: pronostico fresco. Solo se publica lo que sigue en pie ese dia (regla de las 72 h).",
+    "task_states.json y las respuestas nuevas en engagement.json (podas-vuelta, taller3-cuando, taller3-paltas, reacciones).",
+    "docs/sync/threads/*.json, user_tasks.json y uploads.json por si dejo algo mientras estaba afuera.",
+    "push_subscription.json: status active.",
+    "Que entre el 25 y el 30 send_log.json no tenga NI UN notification_sent — es la prueba del silencio que se cobra."
+  ]
+}

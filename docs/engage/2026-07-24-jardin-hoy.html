@@ -22,6 +22,22 @@
   .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
   .reveal.in{ opacity:1; transform:none; }
 
+  /* acuse de recibo del pedido de silencio (25/08) */
+  .acuse{ background:#1e2a17; color:#eaf3e0; border-radius:20px; padding:20px 19px; margin:18px 0 4px;
+    box-shadow:0 10px 30px rgba(30,42,23,.18); }
+  .acuse-tag{ font-size:11px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:#b7d69a; margin-bottom:9px; }
+  .acuse b{ font-size:17px; line-height:1.3; font-weight:900; display:block; color:#fff; }
+  .acuse p{ font-size:14px; color:#cfe0bd; margin-top:10px; line-height:1.5; }
+  .acuse ul{ list-style:none; padding:0; margin:11px 0 0; }
+  .acuse li{ font-size:13.5px; color:#eaf3e0; padding:8px 11px; background:rgba(255,255,255,.07);
+    border-radius:11px; margin-bottom:6px; border-left:3px solid #7fae4e; }
+  .acuse li i{ color:#f0b8b8; font-style:normal; font-weight:800; }
+  .acuse-vuelve{ background:#7fae4e; color:#14200c !important; padding:12px 13px; border-radius:13px;
+    margin-top:13px !important; font-weight:600; }
+  .acuse-vuelve b{ display:inline; font-size:14.5px; color:#14200c; }
+  .acuse-pd{ font-size:12.5px !important; color:#a9bd96 !important; border-top:1px solid rgba(255,255,255,.12); padding-top:11px; }
+  .acuse-pd b{ display:inline; font-size:12.5px; color:#dceac9; }
+
   .hero{ padding:30px 0 8px; text-align:center; }
   .hero .day{ font-size:12px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:var(--ink3); }
   .hero h1{ font-size:34px; line-height:1.08; margin:10px 0 6px; font-weight:900; letter-spacing:-.02em; }
@@ -143,6 +159,20 @@
 <a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
 
 <div class="wrap">
+
+  <!-- ▼ ACUSE DE RECIBO — pedido del 24/08 22:10, publicado el 25/08 06:30 -->
+  <div class="acuse">
+    <div class="acuse-tag">🤐 Recibido · martes 25 de agosto</div>
+    <b>«No me mandes más cosas hasta la semana que viene que vuelvo a Uruguay. Todo esto mándamelo ahí.»</b>
+    <p>Listo. <b>Apago el canal hasta que vuelvas.</b> Concretamente, estos tres slots caen y no te va a llegar nada en ellos:</p>
+    <ul>
+      <li><b>Jueves 27, 10:00</b> — tarea · <i>cae</i></li>
+      <li><b>Sábado 29, 10:00</b> — tarea · <i>cae</i></li>
+      <li><b>Sábado 29, 11:00</b> — experiencia · <i>cae</i></li>
+    </ul>
+    <p class="acuse-vuelve"><b>Vuelvo el lunes 31 de agosto</b> con todo junto: la lista completa de lo que hay para hacer, acumulada, ordenada y con el pronóstico verificado de esa mañana. Nada suelto en el medio.</p>
+    <p class="acuse-pd">Y hay una razón real para que sea ese día y no otro: el <b>31 es el último día de agosto</b>, y tenés dos tareas cuya ventana se cierra ahí mismo. Te las guardo para la mañana que llegues.</p>
+  </div>
 
   <header class="hero reveal">
     <span class="sun">🌿</span>

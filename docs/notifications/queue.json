@@ -1,31 +1,5 @@
 {
-  "_updated_at": "2026-08-24T21:00:07.276Z",
-  "_nota": "LUNES 24/08 = REENTRADA. Dia con LOS DOS slots (tarea 10:00 + experiencia 18:00) -> 2 push, una por slot. (1) Canal tarea consolidado en 2026-07-24-jardin-hoy.html, REEDITADO hoy en su URL estable (mandato 24/07): cobra la promesa cumplida del viaje (7 de 7 slots de tarea en silencio, 7-23/08, verificable contra send_log: las 4 push de esa ventana fueron experiencias, ninguna tarea), publica el parte re-verificado y ordena las 12 tareas abiertas reales (verificadas contra generate_tasks_from_plants + task_states.json). Caqui B-41 NO se nombra (pedido 28/07). Los carozos figuran cerrados por tick del usuario, no se contradice. (2) Experiencia original NUEVA del slot: 2026-08-24-el-taller-3 (Taller nº3, pitosporo B-43), teaseado dos veces, en la unica linea de producto aprobada. Agrupa linkeadas adentro las aprobadas (el-taller n1, aprobada en los dos slots) + n2 + jardin-hoy: NUNCA push separadas. Trae la decision honesta que no se habia dicho: podar B-43 ahora cuesta la floracion de octubre (florece en madera vieja) -> 3 opciones reales de su propia ficha (agosto / febrero post-floracion / solo el sector del vecino). Cierra con el material sin publicar del audit_flor_poda: las dos paltas B-22/B-36 con poda programada en su mes de flor, con tap que genera trabajo mio. Parte 11a verificacion open-meteo MVD: lun-mar-mie 0,0 mm, jueves 27 = 8,2 mm (3a verificacion seguida del DIA; el mm se movio 9,6->10,0->8,2), minima 4,5 el 25, cero heladas en 10 dias de pronostico y en los 21 medidos. Regla #2 medida en Chromium 390x780: taller-3 = 9,4 % del scroll, jardin-hoy = 21,6 % (tope 35 %).",
-  "notifications": [
-    {
-      "id": "2026-08-24-jardin-hoy",
-      "format": "tarea",
-      "title": "🌿 Tenés 3 días secos y 12 tareas",
-      "body": "El jueves llueve. Cumplí los 7 slots del viaje en silencio — hoy va la lista real, ordenada.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
-      "send_at": "2026-08-24T10:00:00-03:00",
-      "expires_at": "2026-08-24T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-08-24T13:11:56.914Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-08-24"
-    },
-    {
-      "id": "2026-08-24-el-taller-3",
-      "title": "🪚 El Taller nº3: el pitósporo",
-      "body": "Bajarlo a pantalla te cuesta el perfume de octubre. Tres formas de resolverlo y el paso a paso.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-08-24-el-taller-3.html",
-      "send_at": "2026-08-24T18:00:00-03:00",
-      "expires_at": "2026-08-24T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-08-24T21:00:07.274Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-08-24"
-    }
-  ]
+  "_updated_at": "2026-08-25T06:30:00-03:00",
+  "_nota": "MARTES 25/08 = 0 PUSH, POR PARTIDA DOBLE. (1) Por cadencia: martes no tiene slot. (2) Por PEDIDO EXPLICITO del usuario, que es lo que manda de aca al 30: dos feedback_text del 24/08 — 13:41 sobre jardin-hoy «Vuelvo en 1 semana a Uruguay. Mandame todo lo que haya para hacer ese dia» y 22:10 sobre el-taller-3 «No me mandes mas cosas hasta la semana que viene que vuelvo a Uruguay. Todo esto mandamelo ahi». COMPROMISO ASUMIDO Y PUBLICADO: silencio total del 25 al 30/08 inclusive. Caen tres slots reales — jueves 27 10:00 (tarea), sabado 29 10:00 (tarea) y sabado 29 11:00 (experiencia) — y ninguno se recupera antes de tiempo. Se reanuda el LUNES 31/08 (10:00 tarea + 18:00 experiencia) con todo junto, que es literalmente lo que pidio. El compromiso quedo publicado hoy en el bloque .acuse de engage/2026-07-24-jardin-hoy.html (sin push: publicarlo por push seria romperlo) y el material acumulado vive en engage/vuelta_backlog.json. El 31 se cobra igual que el viaje: verificable contra send_log.json, que entre el 25 y el 30 no debe tener ni un notification_sent. Gancho real de la vuelta, sin urgencia inventada: el 31 es el ultimo dia de agosto y dos tareas cierran su ventana ese mismo dia (F-7 abelia «fines de agosto, antes de que hinchen las yemas» y B-7 cerco de azareros «ultima semana de agosto»).",
+  "notifications": []
 }

@@ -1060,7 +1060,7 @@
    "notified_by": [
     "2026-08-22-perfume-de-octubre"
    ],
-   "result_notes": "Re-medida el 24/08 con la ventana ya cerrada: ENVIADA (11:18, 201) y CERO evento a las 48 h. Cayo en el ultimo sabado del viaje -> es NO-EXPOSICION, no rechazo. Layout descartado como causa (primer control al 9,5 %). Ninguno de los 3 taps de diagnostico (perfume-ficha-azarero / perfume-podaste / perfume-donde) se activo, asi que el veto con fecha sigue SIN veredicto. Queda pending: no recurre sola. Su tesis se recicla hoy dentro del Taller n3 (B-43 florece en madera vieja -> podar ahora cuesta el azahar de octubre), que es la misma idea convertida en decision ejecutable."
+   "result_notes": "Cerrada el 24/08 como no-exposicion (ultimo sabado del viaje, 0 senal). No recurre. Sin cambios el 25/08."
   },
   {
    "id": "2026-08-24-el-taller-3",
@@ -1072,8 +1072,9 @@
    "notified_by": [
     "2026-08-24-el-taller-3"
    ],
-   "result_notes": null
+   "result_notes": "24/08: ABIERTA (21:00 enviada -> 22:09 click, dwell 100 s hasta el pie) y con feedback_text, la senal mas alta de la escala. Pero el texto no habla del contenido: «No me mandes mas cosas hasta la semana que viene que vuelvo a Uruguay. Todo esto mandamelo ahi». Cero reaccion, cero slot, cero aprobacion, y taller3-cuando / taller3-paltas sin responder. NO es rechazo ni masomenos: es NO-VEREDICTO por contexto — el usuario leyo entera una guia para ejecutar con la tijera en la mano estando fuera del pais. La pagina se CONSERVA (linea Taller, la unica aprobada) y sus dos preguntas quedan vivas en vuelta_backlog.json. Al no estar aprobada no recurre sola: vuelve solo agrupada dentro de la original nueva del 31/08 si el pitosporo entra en la lista. La hipotesis del PRECIO ANTES QUE LA TAREA sigue sin medirse."
   }
  ],
- "_updated_at": "2026-08-23T09:20:00.000Z"
+ "_updated_at": "2026-08-23T09:20:00.000Z",
+ "_updated": "2026-08-25"
 }
