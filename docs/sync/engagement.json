@@ -1,5 +1,5 @@
 {
- "_updated_at": "2026-08-24T22:10:34.070Z",
+ "_updated_at": "2026-08-26T06:35:00-03:00",
  "events": [
   {
    "_id": "msw5ybnf92jyuq",
@@ -668,6 +668,13 @@
    "visits": 0,
    "approvals": 0,
    "_nota": "Dia 1 de la ventana de silencio pedida (25-30/08). 0 push por diseno."
+  },
+  "2026-08-26": {
+   "sent": 0,
+   "clicked": 0,
+   "visits": 0,
+   "approvals": 0,
+   "_nota": "Dia 2 de la ventana de silencio pedida (25-30/08). 0 push por diseno (miercoles sin slot + pedido explicito). Cero señal nueva: ningun evento posterior al dwell del 24/08 22:10Z."
   }
  }
 }
