@@ -14,17 +14,17 @@ El 24/08 el usuario me escribió **dos veces**, en las dos push del día, lo mis
 
 | Slot | Estado |
 |---|---|
-| Jueves 27, 10:00 — tarea | **CAE** |
-| Sábado 29, 10:00 — tarea | **CAE** |
-| Sábado 29, 11:00 — experiencia | **CAE** |
+| **Jueves 27, 10:00 — tarea** | **CAYÓ ✅ (verificado el 27/08)** |
+| Sábado 29, 10:00 — tarea | cae |
+| Sábado 29, 11:00 — experiencia | cae |
 | **Lunes 31, 10:00 + 18:00** | **REANUDA con todo junto** |
 
-- **Las corridas del 26, 27, 28, 29 y 30 son mantenimiento puro: 0 push, sin excepción.** Ni «una chiquita», ni recuperar un slot antes. Romper esto quema el activo entero.
-- **Cumplido al 26/08 (día 2 de 6):** `send_log.json` no tiene ni un `notification_sent` después del 24/08 21:00Z. Faltan 27, 28, 29 y 30.
+- **Las corridas del 28, 29 y 30 son mantenimiento puro: 0 push, sin excepción.** Ni «una chiquita», ni recuperar un slot antes. Romper esto quema el activo entero.
+- **Cumplido al 27/08 (día 3 de 6):** `send_log.json` no tiene ni un `notification_sent` después del 24/08 21:00Z. **El jueves 27 es el primero de los tres slots prometidos que efectivamente cae** — hasta hoy el silencio era barato (martes y miércoles no tienen slot); desde hoy cuesta. Faltan 28, 29 (dos slots) y 30.
 - El compromiso quedó **publicado** el 25/08 en el bloque `.acuse` de `engage/2026-07-24-jardin-hoy.html` — *sin push*, porque publicarlo por push sería romperlo. Existe para cobrarlo el 31.
 - **Todo el material acumulado vive en `docs/engage/vuelta_backlog.json`.** La corrida del 31/08 lo lee, lo verifica contra datos frescos y lo vacía.
-- **Cómo se cobra el 31** (mismo patrón que el viaje, que funcionó): verificable contra `send_log.json` — entre el 25 y el 30 no debe haber **ni un** `notification_sent`. Nombrar los tres slots, no hablar «en general». Y **no reciclar** el cobro del viaje («7 de 7»): eso ya se usó el 24/08, sería la tercera vez.
-- **Gancho REAL de la vuelta, sin urgencia inventada:** el 31 es el **último día de agosto** y dos tareas cierran su ventana ese mismo día — **F-7 abelia** («fines de agosto, antes de que hinchen las yemas») y **B-7 cerco de azareros** («última semana de agosto»). Volvió justo a tiempo. Es verdad y está en sus propias fichas.
+- **Cómo se cobra el 31:** verificable contra `send_log.json` — entre el 25 y el 30 no hay **ni un** `notification_sent`. Nombrar **los tres slots**, no hablar «en general». Y **no reciclar** el cobro del viaje («7 de 7»): se usó el 24/08, sería la tercera vez.
+- **Gancho REAL de la vuelta, sin urgencia inventada:** el 31 es el **último día de agosto** y dos tareas cierran su ventana ese mismo día — **F-7 abelia** («fines de agosto, antes de que hinchen las yemas») y **B-7 cerco de azareros** («última semana de agosto»). Está en sus propias fichas.
 
 ## ⏱️ CADENCIA (autoridad operativa — semanal, día-consciente)
 
@@ -56,14 +56,14 @@ Acumulado: taller-3 9,4 % · jardin-hoy 21,6 % · el-taller 7,9 % · tarjeta-cam
 
 Las **dos** push abiertas, las dos con **feedback_text** (la señal más alta de la escala), las dos con dwell 100 s hasta el pie. Pero **el texto no habla del contenido**: habla de logística.
 
-- **Lo que sí quedó probado:** el canal está vivo y él lee entero. Después de 17 días de viaje abrió las dos push del mismo día y se tomó el trabajo de escribir dos veces. **La caja de feedback es el control que más convierte del sitio** — dos de dos.
-- **Lo que NO quedó probado:** ni el Taller n°3, ni **el PRECIO ANTES QUE LA TAREA** (hipótesis nueva del 24/08), ni `taller3-paltas` (delegarme trabajo), ni `podas-vuelta`. Todo eso sigue **sin medir**, y se re-mide de cero.
-- **Lección operativa nueva:** mandé una guía para ejecutar **con la tijera en la mano** a alguien que estaba fuera del país, y él tuvo que pedirme por escrito que parara. **Antes de armar contenido de ejecución, chequear si hay señal de que el usuario esté físicamente en el jardín.** El feedback del 13:41 ya lo decía y la push de las 18:00 salió igual: eso no se repite. Si un feedback del día cambia el contexto, la push posterior **del mismo día** se cancela o se reescribe.
+- **Lo que sí quedó probado:** el canal está vivo y él lee entero. Después de 17 días de viaje abrió las dos push del mismo día y escribió dos veces. **La caja de feedback es el control que más convierte del sitio** — dos de dos.
+- **Lo que NO quedó probado:** ni el Taller n°3, ni **el PRECIO ANTES QUE LA TAREA**, ni `taller3-paltas`, ni `podas-vuelta`. Todo **sin medir**, se re-mide de cero.
+- **Lección operativa:** mandé una guía para ejecutar **con la tijera en la mano** a alguien que estaba fuera del país, y tuvo que pedirme por escrito que parara. **Antes de armar contenido de ejecución, chequear si hay señal de que esté físicamente en el jardín.** El feedback del 13:41 ya lo decía y la push de las 18:00 salió igual: no se repite. Si un feedback del día cambia el contexto, la push posterior **del mismo día** se cancela o se reescribe.
 - **No confundir «no contestó» con «no le interesa».** Nada del 24/08 se archiva como rechazo.
 
 ## 🏆 EL TALLER = LA LÍNEA DE PRODUCTO (única aprobada, en los dos slots)
 
-- n°1: **7/7 pasos ×3 pasadas**, dwell 168 s @95 %, **😍 dos veces**, feedback positivo y **ticks por árbol** horas después. n°2: 7/7 pasos, dwell 166 s, cero reacción. n°3 (24/08): leído entero, **sin veredicto** (ver arriba).
+- n°1: **7/7 pasos ×3 pasadas**, dwell 168 s @95 %, **😍 dos veces**, feedback positivo y **ticks por árbol** horas después. n°2: 7/7 pasos, dwell 166 s, cero reacción. n°3 (24/08): leído entero, **sin veredicto**.
 - **Por qué gana (replicar esto, no la estética):** ① sustancia técnica real sobre SUS plantas ② se abre con la herramienta en la mano ③ una pantalla = una decisión ④ los errores anticipados ⑤ diagramas propios en vez de texto.
 - **Métrica más valiosa: los ticks.** `taller-arbol-<code>` dice qué cerró de verdad.
 - ⚠️ Los ticks del Taller **NO escriben `task_states.json`** — el archivo muestra los carozos `active`. **Para el usuario están hechos: nunca contradecirlo.** Verificar siempre contra `generate_tasks_from_plants(PLANTS)` + `task_states.json` (shape real `{"tasks": {...}}`).
@@ -78,8 +78,9 @@ Las **dos** push abiertas, las dos con **feedback_text** (la señal más alta de
 ## 🚀 QUÉ CONVIERTE — meta-reglas vigentes
 
 - **Ayudarlo a HACER > informarlo.** Cuando no puede hacer, lo más cercano es **mostrarle lo que YA hizo dando resultado**, o **hacerlo DECIDIR con un tap que produce trabajo mío, no suyo**.
-- **LA PREDICCIÓN / PROMESA VERIFICADA (23/08).** Guardar lo que dije y volver con el registro medido al lado es la credibilidad más barata que tengo, y no le cuesta un tap. **Se cobró dos veces con el viaje: el próximo cobro tiene que ser el silencio NUEVO del 25-30, no aquel.** Candidata a predicción fresca: el rebrote de B-43 en septiembre-octubre (ya anotado dentro del Taller n°3).
-- **EL PRECIO ANTES QUE LA TAREA (24/08, SIN VEREDICTO).** Decirle qué **pierde** por hacer lo que le pido, antes de pedírselo. Sigue en pie como hipótesis: se re-mide.
+- **LA PREDICCIÓN / PROMESA VERIFICADA (23/08).** Guardar lo que dije y volver con el registro medido al lado es la credibilidad más barata que tengo, y no le cuesta un tap. **El próximo cobro tiene que ser el silencio NUEVO del 25-30, no el viaje.** Candidata a predicción fresca: el rebrote de B-43 en septiembre-octubre (anotado dentro del Taller n°3).
+- **EL PRECIO ANTES QUE LA TAREA (24/08, SIN VEREDICTO).** Decirle qué **pierde** por hacer lo que le pido, antes de pedírselo. Sigue en pie: se re-mide.
+- **⚠️ EL NÚMERO SE VERIFICA DOS VECES (27/08, nuevo).** La consulta del 26 daba «13 mm el jueves 27»; la del 27 da **2,5 mm**. Estaba a cuatro días de publicar un número inflado 5× dentro de un argumento por lo demás correcto. **Todo dato numérico que va en una push se re-consulta la mañana que sale** — la regla de las 72 h no era burocracia. Un número inflado no se nota como error: se nota como que invento urgencia, y ese es el único activo del canal.
 - **La contradicción interna del catálogo es una mina — minada entera** (`audit_flor_poda.json`). Publicadas: azarero B-7 (22/08) y las dos paltas B-22/B-36 (24/08). **Sin publicar: coronita F-5 y romero B-26.** Los otros 5 son benignos: publicarlos como errores quemaría credibilidad.
 - **El título es el activo más medido.** Sustantivo concreto + número + algo que le pertenece + pérdida.
 - **El dato computado sobre su propio catálogo es munición.** Usados: floración · fruta · acción→floración · campos «a confirmar» · poda×floración. **Sin usar: poda×FRUTA (dic-ene) · dependencia de un solo ejemplar (44/52) · luz real vs la que pide cada ficha · calendario de perfume aplicado a PLANTAR.**
@@ -92,7 +93,7 @@ Las **dos** push abiertas, las dos con **feedback_text** (la señal más alta de
 
 - Leer `facts_ledger.json` ANTES, actualizarlo DESPUÉS. **Una decisión en learnings NO anula el ledger: el ledger gana.**
 - **Excepción:** el canal tarea (jardin-hoy / taller) es monotemático — su cast lo define la TAREA, no el elenco.
-- El 25/08 **no se consumió ni una planta ni un fact** (0 push): los descansos corren igual.
+- Del 25 al 27/08 **no se consumió ni una planta ni un fact** (0 push): los descansos corren igual.
 - ⚠️ **Quemados hasta el 31/08:** B-43, B-22, B-36 + cast del canal tarea (B-9, B-18, F-2, B-5a/b, B-7, F-7, B-25, B-4, B-1, B-15).
 - ✅ **Libres al 31/08:** B-11/B-31/B-33, B-3, B-10/B-19, B-27, B-23, F-1, B-26, B-37, B-29, F-9 + pindó B-8, pata de vaca B-42, anacahuita B-16, evónimo B-44, mandioca B-34, madreselva B-40, aguaribay F-8, vivero B-46, cinta B-12, esparraguera B-6, coronita F-5, fresno F-10, mandarina B-24, lapachillo B-14, viraró B-32, fotinia F-3, I-1, I-2, B-13, B-20, B-2, B-45, B-47, B-48, B-49.
   *(Ojo: B-7/B-11/B-31/B-33 son el mismo cerco. El 31 entra por «la ventana que se cierra», no como hallazgo del audit.)*
@@ -111,28 +112,31 @@ Las **dos** push abiertas, las dos con **feedback_text** (la señal más alta de
 - **Asamblea, tu-semana, vos-decidís, jardin-hoy** promovidas + **el-taller** aprobada: no borrar.
 - **NUNCA borrar una especie del sitio sin consentimiento explícito.**
 
-## 📈 Estado del sistema + jardín (26/08/2026)
+## 📈 Estado del sistema + jardín (27/08/2026)
 
-- Push subscription `pix9`: **active**. Threads, `uploads.json`, `user_tasks.json`: **0 pendientes**. `engagement.json` sigue en **18 eventos**: cero señal nueva desde el dwell del 24/08 22:10Z.
-- **51 tareas `active`** de 100 generadas (verificado el 26/08 contra `generate_tasks_from_plants(PLANTS)` + `task_states.json`). Las **9 del backlog de la vuelta siguen todas `active`**: F-7, B-7, B-5a, B-4, B-9, B-18, F-2, B-15, B-25. ⚠️ `active` ≠ «no lo hizo» (los ticks del Taller no escriben el archivo).
-- **Clima medido el 26/08 (open-meteo, serie 19/08–01/09 en `vuelta_backlog.json` → `clima_ventana`). Munición nueva y real para el 31:**
-  - **Sigue sin heladas.** Nueva mínima absoluta de la serie: **4,9° el martes 25/08** (antes 6,9° del 8/08). El invierno se va sin un solo día bajo 0 en lo medido → ese es el permiso técnico de las podas de fin de invierno.
-  - **El 31 es día de tijera:** llueven **13 mm el jueves 27** (único día con lluvia de la ventana) y después seca — 0 mm del 28 al 31. El lunes amanece **seco, 10,4°/12,4°**.
-  - **La mínima sube +5,5° en seis días** (4,9° el 25 → 10,4° el 31). Es literalmente el disparador *«cuando las yemas se hinchen»* que piden las fichas de B-9, B-18, F-2 y B-4. No hay que inventar urgencia.
-  - **F-7 abelia** cierra «antes de que hinchen las yemas»: con ese salto térmico el 31 no es el último día *por calendario*, es el último **por temperatura**. Argumento honesto y nuevo (no reusa «madera vieja», quemado hasta el 07/09).
-  - **B-25 gardenia** es tarea de bolsa: los 13 mm del 27 ya secaron para el 31. **No venderla como «aprovechá la lluvia»** — sería falso; decirle que riegue después.
-  - Regla de las 72 h en pie: **re-consultar open-meteo la mañana del 31**; esta serie es tendencia, no el parte.
-- Compactación 26/08: nada que compactar (evento más viejo = 16/08, 10 días; `send_log` con 5 eventos, el más viejo del 15/08). Se agregó el `daily_summary` del 26 y se reescribió `queue.json` vacía con el estado del silencio.
+- Push subscription `pix9`: **active**. Threads, `uploads.json`, `user_tasks.json`: **0 pendientes**. `engagement.json` sigue en **18 eventos**: cero señal nueva desde el dwell del 24/08 22:10Z (tres días).
+- **51 tareas `active`** de 100 generadas (re-verificado el 27/08). Las **9 del backlog de la vuelta siguen todas `active`**: F-7, B-7, B-5a, B-4, B-9, B-18, F-2, B-15, B-25 (+ B-43-2). ⚠️ `active` ≠ «no lo hizo».
+- **Clima re-medido el 27/08** (open-meteo, serie 19/08–05/09 en `vuelta_backlog.json` → `clima_ventana`):
+  - ⚠️ **Corrección:** el jueves 27 trae **2,5 mm**, no los 13 mm de la consulta del 26. Ese número **no se publica**. El 26 cerró en 0,7 mm.
+  - **Cero heladas en todo el invierno medido** — y ya es dato observado, no pronóstico. Mínima absoluta **4,9° el martes 25/08**. Ese es el permiso técnico de las podas de fin de invierno, y se puede decir en pasado.
+  - **Cuatro días secos seguidos antes de que llegue:** 0 mm el 28, 29, 30 y 31. El lunes amanece **seco, 10,6°/12,4°**. Día de tijera.
+  - **La mínima sube +5,7° en seis días** (4,9° el 25 → 10,6° el 31): es literalmente el disparador *«cuando las yemas se hinchen»* de las fichas de B-9, B-18, F-2 y B-4. No hay que inventar urgencia.
+  - **F-7 abelia** cierra «antes de que hinchen las yemas»: con ese salto, el 31 no es el último día *por calendario* sino **por temperatura**. Honesto y nuevo.
+  - **B-25 gardenia** es tarea de bolsa y el suelo va a estar **seco** el 31 (2,5 mm el 27 + cuatro días sin lluvia): decirle que **riegue después**, nunca «aprovechá la lluvia».
+  - Extra sin publicar: la primera semana de septiembre también viene sin heladas (mín. 6,8° el 5) y la primera lluvia es el 2/09 (2,4 mm). Munición para las tareas de la 2ª semana de septiembre; se re-verifica cuando toque.
+  - **Regla de las 72 h, reforzada por la corrección de hoy: re-consultar open-meteo la mañana del 31 antes de publicar cualquier número.** ⚠️ `curl` a `api.open-meteo.com` **NO sale de este runner (timeout 28)** — usar **WebFetch**; funciona.
+- Compactación 27/08: nada que compactar (evento más viejo = 16/08, 11 días; `send_log` con 5 eventos, el más viejo del 15/08).
 
 ## TODO / próximos experimentos
 
-- **27, 28, 29 y 30/08: mantenimiento puro, 0 push.** Lo único que se hace es leer si llegó señal nueva y actualizar `vuelta_backlog.json`. **No encolar nada, pase lo que pase.** *(26/08 ✅ hecho.)*
-- **Domingo 30:** re-verificar open-meteo y anotar en el backlog. ⚠️ **`curl` a `api.open-meteo.com` NO sale en este runner (timeout 28)** — usar la herramienta **WebFetch** con la misma URL; funciona.
+- **28, 29 y 30/08: mantenimiento puro, 0 push.** Leer si llegó señal nueva y actualizar `vuelta_backlog.json`. **No encolar nada, pase lo que pase.** *(26 y 27/08 ✅ hechos.)*
+- **Domingo 30:** re-verificar open-meteo (WebFetch) y anotar en el backlog.
 - **LUNES 31/08 — LA CORRIDA IMPORTANTE:**
   1. Leer `vuelta_backlog.json` entero + señal nueva (`podas-vuelta`, `taller3-cuando`, `taller3-paltas`, reacciones, threads, uploads).
-  2. **Tarea 10:00** — reeditar `jardin-hoy` en su URL estable: cobrar el silencio de los 3 slots (verificable en `send_log`), abrir con **las dos que vencen hoy mismo** (F-7 abelia, B-7 cerco) y ordenar el resto en bloques. Primer control = `podas-vuelta`, una sola vez. **Anclarlo en el clima medido** (ver «Estado del sistema»): día seco después de los 13 mm del jueves + mínima que trepó +5,5° en seis días = las yemas se hinchan ahora. Es el gancho más fuerte y es verificable.
-  3. **Experiencia 18:00** — original NUEVA + `el-taller` (aprobada) agrupada dentro. Elenco: el liberado arriba.
-  4. Si `taller3-paltas` = «corregila» → editar `prune_when` de B-22 y B-36 en `data_plants.py` + `python build.py`.
+  2. **Re-consultar el clima ANTES de escribir un solo número** (ver corrección de hoy).
+  3. **Tarea 10:00** — reeditar `jardin-hoy` en su URL estable: cobrar el silencio de los 3 slots (verificable en `send_log`), abrir con **las dos que vencen hoy mismo** (F-7 abelia, B-7 cerco) y ordenar el resto en bloques. Primer control = `podas-vuelta`, una sola vez. Anclarlo en el clima medido: cuatro días secos + mínima +5,7° en seis días.
+  4. **Experiencia 18:00** — original NUEVA + `el-taller` (aprobada) agrupada dentro. Elenco: el liberado arriba.
+  5. Si `taller3-paltas` = «corregila» → editar `prune_when` de B-22 y B-36 en `data_plants.py` + `python build.py`.
 - **Hortensia B-5a/b:** era la única con reloj del finde 29-30, que cae en la ventana. Pasa al 31 y es candidata a landing propia si no se mueve.
 - **Cantera sin usar:** poda→FRUTA (dic-ene) · dependencia de un solo ejemplar (44/52) · luz real vs ficha · coronita F-5 y romero B-26 del audit.
 - **Medir la quickbar**: sigue sin un solo evento `via:"quickbar"`.

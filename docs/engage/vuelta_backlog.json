@@ -1,6 +1,6 @@
 {
  "_doc": "Acumulador de la ventana de silencio 25-30/08/2026. Pedido textual del usuario (24/08 22:10, feedback_text sobre el-taller-3): «No me mandes mas cosas hasta la semana que viene que vuelvo a Uruguay. Todo esto mandamelo ahi» + (24/08 13:41, sobre jardin-hoy): «Vuelvo en 1 semana a Uruguay. Mandame todo lo que haya para hacer ese dia». Este archivo junta lo que se entrega TODO JUNTO el lunes 31/08. Lo lee y lo vacia la corrida del 31/08.",
- "_updated": "2026-08-26",
+ "_updated": "2026-08-27",
  "ventana_silencio": {
   "desde": "2026-08-25",
   "hasta": "2026-08-30",
@@ -10,7 +10,7 @@
     "dia": "jueves",
     "hora": "10:00",
     "canal": "tarea",
-    "estado": "cae"
+    "estado": "cae — CUMPLIDO (verificado el 27/08: send_log.json sin ningun notification_sent posterior al 24/08 21:00Z)"
    },
    {
     "fecha": "2026-08-29",
@@ -29,7 +29,15 @@
   ],
   "publicado_en": "docs/engage/2026-07-24-jardin-hoy.html (bloque .acuse, commit del 25/08)",
   "cobrar_el": "2026-08-31",
-  "como_cobrarlo": "Mismo patron que el viaje 7-23/08, verificable contra send_log.json: entre el 25 y el 30 no hay ni un notification_sent. Decirlo con los tres slots nombrados, no en general."
+  "como_cobrarlo": "Mismo patron que el viaje 7-23/08, verificable contra send_log.json: entre el 25 y el 30 no hay ni un notification_sent. Decirlo con los tres slots nombrados, no en general.",
+  "cumplimiento": {
+   "dia_3_de_6": "2026-08-27 verificado: 0 notification_sent desde el 24/08 21:00Z. El slot de tarea del jueves 27 10:00 PASO VACIO — es el primero de los tres prometidos que efectivamente cayo.",
+   "faltan": [
+    "2026-08-28",
+    "2026-08-29 (dos slots: 10:00 tarea + 11:00 experiencia)",
+    "2026-08-30"
+   ]
+  }
  },
  "reanuda": {
   "fecha": "2026-08-31",
@@ -219,8 +227,8 @@
   "Que entre el 25 y el 30 send_log.json no tenga NI UN notification_sent — es la prueba del silencio que se cobra."
  ],
  "clima_ventana": {
-  "_doc": "Serie open-meteo (lat -34.90 / lon -56.16, tz America/Montevideo) consultada el 26/08 a la mañana. NO es publicable tal cual el 31: la regla de las 72 h obliga a re-consultar esa misma mañana. Sirve para ver la TENDENCIA y para decidir hoy que el 31 es dia de tijera.",
-  "consultado_el": "2026-08-26",
+  "_doc": "Serie open-meteo (lat -34.90 / lon -56.16, tz America/Montevideo). RE-CONSULTADA el 27/08 (WebFetch; curl a api.open-meteo.com no sale de este runner). Los dias 19-26/08 ya son OBSERVADOS; del 27/08 en adelante es pronostico. Regla de las 72 h en pie: re-consultar la manana del 31 antes de publicar cualquier numero.",
+  "consultado_el": "2026-08-27",
   "serie": [
    {
     "fecha": "2026-08-19",
@@ -266,54 +274,83 @@
    },
    {
     "fecha": "2026-08-26",
-    "min": 6.9,
-    "max": 14.9,
-    "pp_mm": 0.4
+    "min": 7.4,
+    "max": 14.3,
+    "pp_mm": 0.7
    },
    {
     "fecha": "2026-08-27",
-    "min": 11.5,
-    "max": 13.3,
-    "pp_mm": 13.0
+    "min": 11.2,
+    "max": 12.7,
+    "pp_mm": 2.5
    },
    {
     "fecha": "2026-08-28",
-    "min": 10.3,
-    "max": 11.3,
+    "min": 10.2,
+    "max": 11.4,
     "pp_mm": 0.0
    },
    {
     "fecha": "2026-08-29",
-    "min": 8.4,
-    "max": 11.9,
+    "min": 7.2,
+    "max": 11.5,
     "pp_mm": 0.0
    },
    {
     "fecha": "2026-08-30",
-    "min": 7.8,
-    "max": 12.2,
+    "min": 8.3,
+    "max": 13.5,
     "pp_mm": 0.0
    },
    {
     "fecha": "2026-08-31",
-    "min": 10.4,
+    "min": 10.6,
     "max": 12.4,
     "pp_mm": 0.0
    },
    {
     "fecha": "2026-09-01",
-    "min": 9.2,
+    "min": 8.8,
+    "max": 11.6,
+    "pp_mm": 0.0
+   },
+   {
+    "fecha": "2026-09-02",
+    "min": 9.3,
+    "max": 14.3,
+    "pp_mm": 2.4
+   },
+   {
+    "fecha": "2026-09-03",
+    "min": 9.6,
     "max": 11.3,
+    "pp_mm": 0.0
+   },
+   {
+    "fecha": "2026-09-04",
+    "min": 8.2,
+    "max": 9.6,
+    "pp_mm": 0.6
+   },
+   {
+    "fecha": "2026-09-05",
+    "min": 6.8,
+    "max": 12.3,
     "pp_mm": 0.0
    }
   ],
   "lecturas_para_el_31": [
-   "SIGUE SIN HELADAS. La minima mas baja de toda la serie medida desde el 5/08 pasa a ser 4,9° (martes 25/08) — antes el record era 6,9° del 8/08. Cero dias bajo 0: el invierno 2026 se va sin helada registrada en el periodo medido. Ese es el permiso tecnico para las podas de fin de invierno.",
-   "DIA DE TIJERA: llueve 13 mm el jueves 27 (unico dia con lluvia real de la ventana) y despues seca — 0 mm viernes 28, sabado 29, domingo 30 y lunes 31. El 31 amanece seco a 10,4° y sube a 12,4°. Es dia podable: corte seco, herida que cierra. Verificar igual esa mañana.",
-   "LA MINIMA SUBE +5,5° EN SEIS DIAS (4,9° el 25 -> 10,4° el 31). Ese salto termico es EXACTAMENTE el disparador de 'cuando las yemas se hinchen' que llevan B-9 (crespon), B-18 (althea), F-2 (bignonia) y B-4 (hibisco) en su ficha. No es urgencia inventada: es el dato que la propia ficha pide mirar.",
-   "COROLARIO PARA F-7 (abelia): su ventana es 'fines de agosto, ANTES de que hinchen las yemas'. Con la minima trepando asi, el 31 no es 'el ultimo dia del rango' por calendario: es el ultimo dia por temperatura. Ese es el argumento honesto, y es nuevo (no reusa 'florece en madera vieja', quemado hasta el 07/09).",
-   "B-25 (gardenia, acidificar tierra): tarea de bolsa, no de tijera. Los 13 mm del 27 la favorecen (suelo humedo, el sulfato/quelato baja mejor) pero el 31 ya seco 4 dias. No venderla como 'aprovecha la lluvia': seria falso. Regarla despues, y decirlo."
-  ]
+   "SIGUE SIN HELADAS, y ya es dato observado, no pronostico. La minima mas baja de la serie es 4,9° del martes 25/08 (antes el record era 6,9° del 8/08). Cero dias bajo 0 en todo lo medido: el invierno 2026 se va sin una helada registrada. Ese es el permiso tecnico de las podas de fin de invierno, y ahora se puede decir en pasado.",
+   "DIA DE TIJERA, confirmado por segunda consulta: 0 mm el viernes 28, el sabado 29, el domingo 30 y el lunes 31. Cuatro dias secos seguidos antes de que llegue. El 31 amanece a 10,6° y sube a 12,4° — corte seco, herida que cierra. Verificar igual esa manana.",
+   "LA MINIMA SUBE +5,7° EN SEIS DIAS (4,9° el martes 25 -> 10,6° el lunes 31). El salto se confirmo en la segunda consulta (antes daba +5,5°) y es EXACTAMENTE el disparador de 'cuando las yemas se hinchen' que llevan B-9 (crespon), B-18 (althea), F-2 (bignonia) y B-4 (hibisco) en su propia ficha. No es urgencia inventada: es el dato que la ficha pide mirar.",
+   "COROLARIO PARA F-7 (abelia): su ventana es 'fines de agosto, ANTES de que hinchen las yemas'. Con la minima trepando asi, el 31 no es el ultimo dia del rango por calendario: es el ultimo por temperatura. Argumento honesto y nuevo (no reusa 'florece en madera vieja', quemado hasta el 07/09).",
+   "B-25 (gardenia, acidificar tierra): tarea de bolsa, no de tijera. OJO — con la correccion de arriba, la lluvia previa es de solo 2,5 mm el 27 y despues cuatro dias secos: el suelo va a estar SECO el 31. Se le dice que riegue bien despues de aplicar, no que 'aproveche la lluvia'.",
+   "VENTANA NUEVA (serie extendida al 05/09): la primera semana de septiembre sigue sin heladas — la minima mas baja del tramo 01-05/09 es 6,8° el sabado 5. Primera lluvia de septiembre: 2,4 mm el miercoles 2. Municion para las tareas de 'segunda semana de septiembre' (B-1 santa rita pide 'pasada la ultima helada'), pero NO se publica el 31: es pronostico a 5+ dias y se re-verifica cuando toque."
+  ],
+  "consultas_previas": [
+   "2026-08-26"
+  ],
+  "correccion_27_08": "⚠️ CORRECCION IMPORTANTE sobre la lectura del 26/08: el jueves 27 NO trae 13 mm. La corrida re-consultada el 27/08 da 2,5 mm (y el miercoles 26 cerro en 0,7 mm, no 0,4). El argumento 'llueven 13 mm el jueves' NO se publica el 31 — seria un numero inflado 5x y la credibilidad del canal es el activo. Lo que SI se sostiene, y con mas fuerza: del 28 al 31 no cae una gota."
  },
  "verificaciones": {
   "2026-08-26": "Corrida de mantenimiento. Verificado contra generate_tasks_from_plants(PLANTS) + docs/sync/task_states.json (shape {'tasks': {...}}): 100 tareas generadas, 51 active. Las 9 del backlog siguen TODAS active — plant-F-7, plant-B-7, plant-B-5a, plant-B-4, plant-B-9, plant-B-18, plant-F-2, plant-B-15, plant-B-25. Recordatorio vigente: los ticks del Taller NO escriben task_states.json, asi que 'active' aca NO significa que el usuario no lo haya hecho. Nunca contradecirlo. Señal nueva desde el 24/08: CERO (engagement.json sigue en 18 eventos, el ultimo es el dwell del 24/08 22:10Z). 0 threads pendientes, 0 uploads pendientes, 0 user_tasks sin ai_answer. Silencio cumplido: send_log sin envios post 24/08."
