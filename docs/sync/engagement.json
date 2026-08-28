@@ -682,6 +682,13 @@
    "visits": 0,
    "approvals": 0,
    "_nota": "Dia 3 de 6 de la ventana de silencio pedida (25-30/08). 0 push por diseno — y hoy es el dia que lo prueba: el jueves SI tenia slot de tarea 10:00 por cadencia, y paso vacio. Es el primero de los tres slots prometidos que efectivamente cae. Cero senal nueva: ningun evento posterior al dwell del 24/08 22:10Z."
+  },
+  "2026-08-28": {
+   "sent": 0,
+   "clicked": 0,
+   "visits": 0,
+   "approvals": 0,
+   "_nota": "Dia 4 de 6 de la ventana de silencio pedida (25-30/08). 0 push por diseno: el viernes no tiene slot por cadencia Y rige el pedido explicito del 24/08. Cero señal nueva: ningun evento posterior al dwell del 24/08 22:10Z (cuarto dia). El dia bisagra es mañana, sabado 29: caen DOS slots (tarea 10:00 + experiencia 11:00)."
   }
  }
 }

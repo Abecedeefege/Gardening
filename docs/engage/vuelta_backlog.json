@@ -1,6 +1,6 @@
 {
  "_doc": "Acumulador de la ventana de silencio 25-30/08/2026. Pedido textual del usuario (24/08 22:10, feedback_text sobre el-taller-3): «No me mandes mas cosas hasta la semana que viene que vuelvo a Uruguay. Todo esto mandamelo ahi» + (24/08 13:41, sobre jardin-hoy): «Vuelvo en 1 semana a Uruguay. Mandame todo lo que haya para hacer ese dia». Este archivo junta lo que se entrega TODO JUNTO el lunes 31/08. Lo lee y lo vacia la corrida del 31/08.",
- "_updated": "2026-08-27",
+ "_updated": "2026-08-28",
  "ventana_silencio": {
   "desde": "2026-08-25",
   "hasta": "2026-08-30",
@@ -10,7 +10,7 @@
     "dia": "jueves",
     "hora": "10:00",
     "canal": "tarea",
-    "estado": "cae — CUMPLIDO (verificado el 27/08: send_log.json sin ningun notification_sent posterior al 24/08 21:00Z)"
+    "estado": "cae — CUMPLIDO (re-verificado el 28/08: send_log.json sigue sin ningun notification_sent posterior al 24/08 21:00Z)"
    },
    {
     "fecha": "2026-08-29",
@@ -31,9 +31,9 @@
   "cobrar_el": "2026-08-31",
   "como_cobrarlo": "Mismo patron que el viaje 7-23/08, verificable contra send_log.json: entre el 25 y el 30 no hay ni un notification_sent. Decirlo con los tres slots nombrados, no en general.",
   "cumplimiento": {
-   "dia_3_de_6": "2026-08-27 verificado: 0 notification_sent desde el 24/08 21:00Z. El slot de tarea del jueves 27 10:00 PASO VACIO — es el primero de los tres prometidos que efectivamente cayo.",
+   "dia_4_de_6": "2026-08-28 verificado: 0 notification_sent desde el 24/08 21:00Z. El viernes no tiene slot por cadencia, asi que hoy el silencio vuelve a ser barato; el que costo fue el jueves 27 y el que viene a costar es el sabado 29 (DOS slots el mismo dia: tarea 10:00 + experiencia 11:00). Ese es el dia bisagra del compromiso.",
+   "dia_3_de_6": "2026-08-27 verificado: el slot de tarea del jueves 27 10:00 paso vacio — primero de los tres prometidos que efectivamente cayo.",
    "faltan": [
-    "2026-08-28",
     "2026-08-29 (dos slots: 10:00 tarea + 11:00 experiencia)",
     "2026-08-30"
    ]
@@ -353,6 +353,70 @@
   "correccion_27_08": "⚠️ CORRECCION IMPORTANTE sobre la lectura del 26/08: el jueves 27 NO trae 13 mm. La corrida re-consultada el 27/08 da 2,5 mm (y el miercoles 26 cerro en 0,7 mm, no 0,4). El argumento 'llueven 13 mm el jueves' NO se publica el 31 — seria un numero inflado 5x y la credibilidad del canal es el activo. Lo que SI se sostiene, y con mas fuerza: del 28 al 31 no cae una gota."
  },
  "verificaciones": {
-  "2026-08-26": "Corrida de mantenimiento. Verificado contra generate_tasks_from_plants(PLANTS) + docs/sync/task_states.json (shape {'tasks': {...}}): 100 tareas generadas, 51 active. Las 9 del backlog siguen TODAS active — plant-F-7, plant-B-7, plant-B-5a, plant-B-4, plant-B-9, plant-B-18, plant-F-2, plant-B-15, plant-B-25. Recordatorio vigente: los ticks del Taller NO escriben task_states.json, asi que 'active' aca NO significa que el usuario no lo haya hecho. Nunca contradecirlo. Señal nueva desde el 24/08: CERO (engagement.json sigue en 18 eventos, el ultimo es el dwell del 24/08 22:10Z). 0 threads pendientes, 0 uploads pendientes, 0 user_tasks sin ai_answer. Silencio cumplido: send_log sin envios post 24/08."
+  "2026-08-26": "Corrida de mantenimiento. Verificado contra generate_tasks_from_plants(PLANTS) + docs/sync/task_states.json (shape {'tasks': {...}}): 100 tareas generadas, 51 active. Las 9 del backlog siguen TODAS active — plant-F-7, plant-B-7, plant-B-5a, plant-B-4, plant-B-9, plant-B-18, plant-F-2, plant-B-15, plant-B-25. Recordatorio vigente: los ticks del Taller NO escriben task_states.json, asi que 'active' aca NO significa que el usuario no lo haya hecho. Nunca contradecirlo. Señal nueva desde el 24/08: CERO (engagement.json sigue en 18 eventos, el ultimo es el dwell del 24/08 22:10Z). 0 threads pendientes, 0 uploads pendientes, 0 user_tasks sin ai_answer. Silencio cumplido: send_log sin envios post 24/08.",
+  "2026-08-28": "Corrida de mantenimiento (VIERNES, sin slot por cadencia + ventana de silencio). 0 push encoladas. Re-verificado con generate_tasks_from_plants(PLANTS) + docs/sync/task_states.json: 100 tareas generadas, 51 active, y las 10 del backlog siguen TODAS active (F-7, B-7, B-5a, B-4, B-9, B-18, F-2, B-15, B-25, B-43-2). 'active' != 'no lo hizo': los ticks del Taller no escriben task_states.json. Señal nueva desde el 24/08 22:10Z: CERO — engagement.json sigue en 18 eventos (cuarto dia sin un solo evento). 0 threads pendientes, 0 uploads pending, 0 user_tasks sin ai_answer, push_subscription pix9 active. Proposals sin cambios (89: 54 dropped / 23 promoted / 10 pending / 1 approved / 1 removed). Compactacion: nada que compactar (evento mas viejo 16/08 = 12 dias; send_log 15/08 = 13 dias; queue sin entries viejas). Clima NO re-consultado hoy a proposito: la serie del 27 cubre hasta el 05/09 y la regla de las 72 h manda re-consultar el 30 y el 31, no todos los dias. Trabajo real del dia: se computo y se dejo lista la municion del lunes (ver municion_preparada_28_08) — floracion de septiembre (13 especies, 77% elenco libre), poda x fruta (la hipotesis 'dic-ene' era falsa: el solape real es feb y may-sep) y 44/52 sin repuesto. Y se DESCARTO con fundamento el angulo 'luz real vs ficha' que la cantera daba por bueno."
+ },
+ "municion_preparada_28_08": {
+  "_doc": "Preparado en la corrida de mantenimiento del viernes 28/08 (0 push). Son datos COMPUTADOS sobre el catalogo real del usuario (data_plants.py, 52 especies), no fun_facts. Cantera que learnings marcaba 'sin usar'. Todo se re-verifica el 31 antes de publicar. Cada bloque trae su propio caveat de credibilidad: el activo del canal es que nunca invento.",
+  "A_floracion_de_septiembre": {
+   "angulo": "«Volviste justo»: 13 de las 52 especies abren flor en septiembre. No es urgencia inventada — sale del campo `flowering` de sus propias fichas. Es el unico bloque que puede sostener la experiencia NUEVA del lunes 18:00 sin pisar el canal tarea.",
+   "computo": "len([p for p in PLANTS if 9 in p['flowering']]) == 13",
+   "elenco_libre": [
+    "F-4 ciruelo de jardin (flor 8-9)",
+    "B-13 clivia (9-11)",
+    "B-23 limonero (9-11 + 3-4)",
+    "B-24 mandarina criolla (9-11)",
+    "B-26 romero (6-10)",
+    "B-30/B-35 durazno (8-9)",
+    "B-32 viraro (8-9)",
+    "B-38 ciruela amarilla (8-9)",
+    "B-39 pera Williams (8-9)",
+    "B-10/B-19 lavanda (9 en adelante)"
+   ],
+   "elenco_quemado_excluir": [
+    "B-15 hiedra",
+    "B-22 palta uruguaya",
+    "B-36 palta Haas"
+   ],
+   "cumple_regla_70": "10 de 13 libres = 77% del elenco sin usar en 7 dias. OK.",
+   "gancho_honesto": "B-39 pera Williams esta al SUR (lado de menos sol invernal, CLAUDE.md) y abre igual en agosto-septiembre: la primera del jardin en arrancar pese a estar en el peor lugar de luz. Verificable en su ficha, y B-39 nunca fue protagonista.",
+   "caveat": "NO decir 'floreceran esta semana': el campo flowering es un rango mensual del catalogo, no una observacion. Se dice 'segun su ficha, estas abren en septiembre' y se le pide que confirme cual ve abierta — eso convierte el dato en un tap que produce trabajo mio, no suyo."
+  },
+  "B_poda_pisa_la_fruta": {
+   "angulo": "Cruce `pruning` x `fruiting` del catalogo: hay especies cuya ventana de poda declarada cae ENCIMA de su propia fructificacion. La cantera decia 'poda x FRUTA (dic-ene)'; el computo real da feb y may-sep, no dic-ene. Se corrige la hipotesis.",
+   "casos_libres": [
+    "B-24 mandarina criolla — poda [2,8,9], fruta [4..8]: podar en agosto le corta fruta que todavia esta en la planta. Es de la ultima semana de agosto, o sea AHORA.",
+    "B-41 caqui — poda [6,7], fruta [5,6,7]: solapa dos meses enteros.",
+    "B-8/B-21/B-28 pindo — poda [6,7], fruta [3..7]: solapa jun-jul.",
+    "F-8 aguaribay — poda [6], fruta [3..6]: solapa junio."
+   ],
+   "casos_excluidos": [
+    "B-7 azarero (publicado 22/08)",
+    "B-36 palta (publicado 24/08)",
+    "B-43 pitosporo (Taller n3, 24/08)"
+   ],
+   "caveat_fuerte": "⚠️ B-23 limonero figura con fruta los 12 meses: eso es una simplificacion de la ficha, NO un hallazgo. Publicarlo como 'error del catalogo' quemaria credibilidad (misma regla que los 5 solapes benignos de audit_flor_poda.json). B-41 caqui ademas tiene pedido explicito del 28/07: 'ignorar hasta primavera' — septiembre YA es primavera, pero se entra suave, no como reclamo.",
+   "estado": "Bloque de SEGUNDA linea. No abre la experiencia; sirve de cuerpo si el bloque A queda corto."
+  },
+  "C_44_de_52_sin_repuesto": {
+   "angulo": "44 de las 52 especies del jardin tienen UN SOLO ejemplar. Solo 8 tienen respaldo.",
+   "los_8_con_repuesto": [
+    "F-3/F-6/F-11 fotinia",
+    "B-2/B-2B/B-2C jazmin",
+    "B-5a/B-5b hortensia",
+    "B-7/B-11/B-31/B-33 azarero",
+    "B-8/B-21/B-28 pindo",
+    "B-10/B-19 lavanda",
+    "B-12/B-17 cinta",
+    "B-30/B-35 durazno"
+   ],
+   "caveat": "Es un dato de inventario, no una alarma. Dicho como 'si perdes uno no hay otro' suena a miedo inventado y el jardin no esta en riesgo. Solo sirve como pie de una decision concreta (que multiplicar en primavera, esquejes de septiembre) — nunca como titulo.",
+   "estado": "TERCERA linea. Guardar para la experiencia de multiplicacion/esquejes de septiembre."
+  },
+  "D_luz_real_vs_ficha__DESCARTADO": {
+   "veredicto": "❌ DESCARTADO el 28/08 tras computarlo. La cantera lo listaba como angulo prometedor y NO lo es: cruzar `light` con la zona marca 20 de 52 especies, y 20 de esas 20 salen flaggeadas solo porque 'fondo = este = sol hasta el mediodia' (CLAUDE.md). No es un hallazgo por planta: es una propiedad de la zona entera. Publicarlo seria decirle que medio jardin esta mal plantado sin haber medido una sola hora de sol real.",
+   "unico_resto_util": "Sin coordenadas ni horas de sol medidas por planta, no hay forma honesta de afinarlo. Si alguna vez el usuario sube fotos con hora, ahi si. Hasta entonces, sacarlo de la cantera.",
+   "accion": "Retirado de la lista 'sin usar' de learnings para que ninguna corrida futura vuelva a gastar esfuerzo aca."
+  }
  }
 }
