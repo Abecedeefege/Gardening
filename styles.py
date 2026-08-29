@@ -344,6 +344,20 @@ h2.subbrand {
 .exp-desc { color: var(--text-3); font-size: 0.86rem; line-height: 1.45; }
 .exp-go { font-size: 1.3rem; color: var(--accent); flex: 0 0 auto; opacity: .55; }
 
+/* Archivo colapsado de experiencias anteriores (era news-feed jun-jul 2026) */
+.exp-archive { margin-top: 18px; }
+.exp-archive > summary {
+  cursor: pointer; list-style: none;
+  padding: 12px 16px; border-radius: 14px;
+  background: #eef4e8; border: 1px dashed var(--border-soft);
+  font-weight: 600; color: var(--text-3); font-size: 0.92rem;
+}
+.exp-archive > summary::-webkit-details-marker { display: none; }
+.exp-archive > summary::after { content: " ▾"; opacity: .6; }
+.exp-archive[open] > summary::after { content: " ▴"; }
+.exp-archive > summary:hover { border-color: var(--accent); color: var(--accent); }
+.exp-archive-note { color: var(--text-3); font-size: 0.82rem; margin: 12px 4px; line-height: 1.5; }
+
 /* Badge "óptimo plantar AHORA" en idea-card y huerta-card */
 .now-badge {
   display: inline-block;

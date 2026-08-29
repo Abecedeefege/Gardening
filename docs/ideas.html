@@ -385,6 +385,20 @@ h2.subbrand {
 .exp-desc { color: var(--text-3); font-size: 0.86rem; line-height: 1.45; }
 .exp-go { font-size: 1.3rem; color: var(--accent); flex: 0 0 auto; opacity: .55; }
 
+/* Archivo colapsado de experiencias anteriores (era news-feed jun-jul 2026) */
+.exp-archive { margin-top: 18px; }
+.exp-archive > summary {
+  cursor: pointer; list-style: none;
+  padding: 12px 16px; border-radius: 14px;
+  background: #eef4e8; border: 1px dashed var(--border-soft);
+  font-weight: 600; color: var(--text-3); font-size: 0.92rem;
+}
+.exp-archive > summary::-webkit-details-marker { display: none; }
+.exp-archive > summary::after { content: " ▾"; opacity: .6; }
+.exp-archive[open] > summary::after { content: " ▴"; }
+.exp-archive > summary:hover { border-color: var(--accent); color: var(--accent); }
+.exp-archive-note { color: var(--text-3); font-size: 0.82rem; margin: 12px 4px; line-height: 1.5; }
+
 /* Badge "óptimo plantar AHORA" en idea-card y huerta-card */
 .now-badge {
   display: inline-block;
@@ -3635,14 +3649,53 @@ h2.subbrand {
       <div class="ideas-section">
         <div class="ideas-intro">
           <h3>✨ Experiencias de tu jardín</h3>
-          <p>Las experiencias que aprobaste quedan acá, siempre a mano. Cada vez que aprobás una nueva, se suma a esta lista.</p>
+          <p>Ordenadas por lo que de verdad te sirvió: arriba las que aprobaste o usaste, abajo el archivo. Cada vez que aprobás una nueva, se suma acá.</p>
         </div>
-        <div class="exp-grid"><a class="exp-card" href="engage/2026-07-21-asamblea-jardin.html">
+        <div class="exp-grid"><a class="exp-card" href="engage/2026-08-01-el-taller.html">
+        <span class="exp-icon" aria-hidden="true">🪚</span>
+        <span class="exp-text"><span class="exp-title">El Taller nº 1 — Poda de carozos</span>
+        <span class="exp-desc">El paso a paso con la tijera en la mano: durazno, ciruelo y damasco, un árbol por pantalla y los errores anticipados. La única que aprobaste.</span></span>
+        <span class="exp-go" aria-hidden="true">→</span>
+      </a><a class="exp-card" href="engage/2026-08-03-el-taller-2.html">
+        <span class="exp-icon" aria-hidden="true">🌸</span>
+        <span class="exp-text"><span class="exp-title">El Taller nº 2 — Poda de flor</span>
+        <span class="exp-desc">Qué se poda después de florecer y qué no: la regla de la madera vieja aplicada a tus arbustos, planta por planta.</span></span>
+        <span class="exp-go" aria-hidden="true">→</span>
+      </a><a class="exp-card" href="engage/2026-08-24-el-taller-3.html">
+        <span class="exp-icon" aria-hidden="true">🪚</span>
+        <span class="exp-text"><span class="exp-title">El Taller nº 3 — Bajar el pitósporo a pantalla</span>
+        <span class="exp-desc">Cómo convertir el pitósporo en pantalla verde sin arruinarlo, con el corte y la altura marcados.</span></span>
+        <span class="exp-go" aria-hidden="true">→</span>
+      </a><a class="exp-card" href="engage/2026-07-24-jardin-hoy.html">
+        <span class="exp-icon" aria-hidden="true">🌤️</span>
+        <span class="exp-text"><span class="exp-title">Tu jardín hoy</span>
+        <span class="exp-desc">El vistazo del día: lo que toca hacer ahora, ordenado y sin vueltas. Es la página a la que te lleva la notificación de tareas.</span></span>
+        <span class="exp-go" aria-hidden="true">→</span>
+      </a><a class="exp-card" href="engage/2026-07-24-tu-semana.html">
+        <span class="exp-icon" aria-hidden="true">✅</span>
+        <span class="exp-text"><span class="exp-title">Tu semana en el jardín</span>
+        <span class="exp-desc">El recap de lo que cerraste en la semana, en números reales de tus propias tareas.</span></span>
+        <span class="exp-go" aria-hidden="true">→</span>
+      </a><a class="exp-card" href="engage/2026-07-21-asamblea-jardin.html">
         <span class="exp-icon" aria-hidden="true">📋</span>
         <span class="exp-text"><span class="exp-title">La Asamblea del Jardín</span>
         <span class="exp-desc">Tus plantas convocan asamblea y vos presidís: cada moción es una tarea o novedad real que resolvés con humor.</span></span>
         <span class="exp-go" aria-hidden="true">→</span>
-      </a><a class="exp-card" href="engage/2026-07-10-album-figuritas.html">
+      </a><a class="exp-card" href="engage/2026-07-04-expedientes-jardin.html">
+        <span class="exp-icon" aria-hidden="true">🕵️</span>
+        <span class="exp-text"><span class="exp-title">Expedientes abiertos — Los Sin Nombre</span>
+        <span class="exp-desc">Las especies del jardín que todavía no tienen nombre confirmado, con las pistas para identificarlas. La pediste vos.</span></span>
+        <span class="exp-go" aria-hidden="true">→</span>
+      </a><a class="exp-card" href="engage/2026-06-13-rueda-ano.html">
+        <span class="exp-icon" aria-hidden="true">🌀</span>
+        <span class="exp-text"><span class="exp-title">La rueda del año</span>
+        <span class="exp-desc">El pulso anual de floración y fructificación de tus 52 plantas, animado.</span></span>
+        <span class="exp-go" aria-hidden="true">→</span>
+      </a></div>
+      <details class="exp-archive">
+        <summary>🗂️ El archivo — 14 experiencias anteriores</summary>
+        <p class="exp-archive-note">La tanda «news-feed» de junio y julio. Quedan enteras acá por si querés volver a alguna.</p>
+        <div class="exp-grid"><a class="exp-card" href="engage/2026-07-10-album-figuritas.html">
         <span class="exp-icon" aria-hidden="true">📗</span>
         <span class="exp-text"><span class="exp-title">El Álbum de tu Jardín</span>
         <span class="exp-desc">Tu jardín como álbum de figuritas: 52 láminas, 4 brillantes por rareza real y 2 fantasmas por resolver.</span></span>
@@ -3712,12 +3765,8 @@ h2.subbrand {
         <span class="exp-text"><span class="exp-title">El Diario de tu Jardín</span>
         <span class="exp-desc">Las noticias de hoy entre tus plantas, en titulares de prensa.</span></span>
         <span class="exp-go" aria-hidden="true">→</span>
-      </a><a class="exp-card" href="engage/2026-06-13-rueda-ano.html">
-        <span class="exp-icon" aria-hidden="true">🌀</span>
-        <span class="exp-text"><span class="exp-title">La rueda del año</span>
-        <span class="exp-desc">El pulso anual de floración y fructificación de tus 52 plantas, animado.</span></span>
-        <span class="exp-go" aria-hidden="true">→</span>
       </a></div>
+      </details>
       </div>
       <div class="ideas-section" id="curiosidades-section">
         <div class="filter-bar"><input type="text" class="search" placeholder="🔍 Buscar curiosidad..."></div>

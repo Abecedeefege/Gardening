@@ -1,6 +1,6 @@
 {
  "_doc": "Acumulador de la ventana de silencio 25-30/08/2026. Pedido textual del usuario (24/08 22:10, feedback_text sobre el-taller-3): «No me mandes mas cosas hasta la semana que viene que vuelvo a Uruguay. Todo esto mandamelo ahi» + (24/08 13:41, sobre jardin-hoy): «Vuelvo en 1 semana a Uruguay. Mandame todo lo que haya para hacer ese dia». Este archivo junta lo que se entrega TODO JUNTO el lunes 31/08. Lo lee y lo vacia la corrida del 31/08.",
- "_updated": "2026-08-28",
+ "_updated": "2026-08-29",
  "ventana_silencio": {
   "desde": "2026-08-25",
   "hasta": "2026-08-30",
@@ -17,14 +17,14 @@
     "dia": "sabado",
     "hora": "10:00",
     "canal": "tarea",
-    "estado": "cae"
+    "estado": "cae — CUMPLIDO (verificado el 29/08: 0 notification_sent, queue vacia todo el dia)"
    },
    {
     "fecha": "2026-08-29",
     "dia": "sabado",
     "hora": "11:00",
     "canal": "experiencia",
-    "estado": "cae"
+    "estado": "cae — CUMPLIDO (verificado el 29/08: 0 notification_sent, queue vacia todo el dia)"
    }
   ],
   "publicado_en": "docs/engage/2026-07-24-jardin-hoy.html (bloque .acuse, commit del 25/08)",
@@ -34,9 +34,10 @@
    "dia_4_de_6": "2026-08-28 verificado: 0 notification_sent desde el 24/08 21:00Z. El viernes no tiene slot por cadencia, asi que hoy el silencio vuelve a ser barato; el que costo fue el jueves 27 y el que viene a costar es el sabado 29 (DOS slots el mismo dia: tarea 10:00 + experiencia 11:00). Ese es el dia bisagra del compromiso.",
    "dia_3_de_6": "2026-08-27 verificado: el slot de tarea del jueves 27 10:00 paso vacio — primero de los tres prometidos que efectivamente cayo.",
    "faltan": [
-    "2026-08-29 (dos slots: 10:00 tarea + 11:00 experiencia)",
-    "2026-08-30"
-   ]
+    "2026-08-30 (domingo, sin slot por cadencia — mantenimiento y re-consulta de clima)"
+   ],
+   "dia_5_de_6_EL_BISAGRA": "2026-08-29 (SABADO) VERIFICADO Y CUMPLIDO — el dia caro. Caian los DOS slots juntos (tarea 10:00 + experiencia 11:00) y los dos pasaron vacios. send_log.json sigue sin ningun notification_sent posterior al 24/08 21:00:07Z, y queue.json cerro el dia con notifications: []. Con esto quedan cumplidos los TRES slots prometidos por nombre (jueves 27 10:00, sabado 29 10:00, sabado 29 11:00). Falta solo el domingo 30, que no tiene slot por cadencia.",
+   "los_tres_slots_ya_estan": "SI, al 29/08. Los tres slots nombrados uno por uno en el bloque .acuse publicado el 25/08 pasaron vacios. El cobro del 31 se puede hacer en pasado y con los tres nombrados, verificable contra send_log.json."
   }
  },
  "reanuda": {
@@ -227,9 +228,141 @@
   "Que entre el 25 y el 30 send_log.json no tenga NI UN notification_sent — es la prueba del silencio que se cobra."
  ],
  "clima_ventana": {
-  "_doc": "Serie open-meteo (lat -34.90 / lon -56.16, tz America/Montevideo). RE-CONSULTADA el 27/08 (WebFetch; curl a api.open-meteo.com no sale de este runner). Los dias 19-26/08 ya son OBSERVADOS; del 27/08 en adelante es pronostico. Regla de las 72 h en pie: re-consultar la manana del 31 antes de publicar cualquier numero.",
-  "consultado_el": "2026-08-27",
+  "_doc": "Serie open-meteo (lat -34.90 / lon -56.16, tz America/Montevideo). TERCERA consulta: 26/08, 27/08 y 29/08 (WebFetch; curl a api.open-meteo.com NO sale de este runner). Los dias 19-27/08 son OBSERVADOS y no se tocan; del 28/08 en adelante es la serie del 29/08. La del 27/08 quedo archivada en 'serie_27_08_historica' para dejar el drift a la vista. Regla de las 72 h EN PIE: re-consultar la manana del 31 antes de publicar un solo numero.",
+  "consultado_el": "2026-08-29",
   "serie": [
+   {
+    "fecha": "2026-08-19",
+    "min": 8.9,
+    "max": 10.4,
+    "pp_mm": 0.0
+   },
+   {
+    "fecha": "2026-08-20",
+    "min": 10.2,
+    "max": 11.7,
+    "pp_mm": 0.0
+   },
+   {
+    "fecha": "2026-08-21",
+    "min": 8.5,
+    "max": 9.9,
+    "pp_mm": 0.8
+   },
+   {
+    "fecha": "2026-08-22",
+    "min": 8.3,
+    "max": 11.1,
+    "pp_mm": 0.2
+   },
+   {
+    "fecha": "2026-08-23",
+    "min": 8.0,
+    "max": 10.7,
+    "pp_mm": 0.0
+   },
+   {
+    "fecha": "2026-08-24",
+    "min": 7.3,
+    "max": 9.0,
+    "pp_mm": 0.0
+   },
+   {
+    "fecha": "2026-08-25",
+    "min": 4.9,
+    "max": 10.1,
+    "pp_mm": 0.0
+   },
+   {
+    "fecha": "2026-08-26",
+    "min": 7.4,
+    "max": 14.3,
+    "pp_mm": 0.7
+   },
+   {
+    "fecha": "2026-08-27",
+    "min": 11.2,
+    "max": 12.7,
+    "pp_mm": 2.5
+   },
+   {
+    "fecha": "2026-08-28",
+    "min": 10.3,
+    "max": 12.0,
+    "pp_mm": 0.0
+   },
+   {
+    "fecha": "2026-08-29",
+    "min": 6.1,
+    "max": 11.7,
+    "pp_mm": 0.0
+   },
+   {
+    "fecha": "2026-08-30",
+    "min": 8.4,
+    "max": 13.3,
+    "pp_mm": 0.0
+   },
+   {
+    "fecha": "2026-08-31",
+    "min": 10.1,
+    "max": 12.1,
+    "pp_mm": 0.0
+   },
+   {
+    "fecha": "2026-09-01",
+    "min": 9.3,
+    "max": 11.5,
+    "pp_mm": 0.0
+   },
+   {
+    "fecha": "2026-09-02",
+    "min": 8.5,
+    "max": 16.5,
+    "pp_mm": 0.0
+   },
+   {
+    "fecha": "2026-09-03",
+    "min": 12.2,
+    "max": 14.3,
+    "pp_mm": 7.8
+   },
+   {
+    "fecha": "2026-09-04",
+    "min": 8.2,
+    "max": 12.0,
+    "pp_mm": 3.2
+   },
+   {
+    "fecha": "2026-09-05",
+    "min": 6.3,
+    "max": 8.0,
+    "pp_mm": 9.0
+   },
+   {
+    "fecha": "2026-09-06",
+    "min": 6.8,
+    "max": 7.6,
+    "pp_mm": 1.0
+   },
+   {
+    "fecha": "2026-09-07",
+    "min": 5.4,
+    "max": 9.0,
+    "pp_mm": 0.0
+   }
+  ],
+  "lecturas_para_el_31": [
+   "SIGUE SIN HELADAS, y ya es dato observado. La minima mas baja de la serie es 4,9° del martes 25/08. Cero dias bajo 0 en todo lo medido: el invierno 2026 se va sin una helada registrada. Ese es el permiso tecnico de las podas de fin de invierno, y se puede decir en pasado.",
+   "DIA DE TIJERA CON PLAZO (version 29/08, RE-VERIFICAR el 31). Seis dias secos seguidos: 28, 29, 30, 31, 1 y 2 — todos 0,0 mm. Del jueves 3 al domingo 6 llueve cuatro dias seguidos (~21 mm). El lunes que vuelve tiene TRES dias de tijera y despues se cierra. Plazo real, no inventado.",
+   "LA MINIMA SUBIO ~5° DEL 25 AL 31 (4,9° -> 10,1°), pero con un pozo de 6,1° el sabado 29 en el medio. Contarla como rampa limpia seria falso: decir punta a punta. Es el disparador «cuando las yemas se hinchen» de B-9, B-18, F-2 y B-4.",
+   "OJO CON EL FRIO DE SEPTIEMBRE: la serie nueva trae maximas de 8,0° y 7,6° el 5 y 6 de septiembre. Es la semana mas fria del tramo, DESPUES de la de la vuelta. No prometer «ya arranco la primavera» el 31."
+  ],
+  "consultas_previas": [
+   "2026-08-26"
+  ],
+  "correccion_27_08": "⚠️ CORRECCION IMPORTANTE sobre la lectura del 26/08: el jueves 27 NO trae 13 mm. La corrida re-consultada el 27/08 da 2,5 mm (y el miercoles 26 cerro en 0,7 mm, no 0,4). El argumento 'llueven 13 mm el jueves' NO se publica el 31 — seria un numero inflado 5x y la credibilidad del canal es el activo. Lo que SI se sostiene, y con mas fuerza: del 28 al 31 no cae una gota.",
+  "serie_27_08_historica": [
    {
     "fecha": "2026-08-19",
     "min": 8.9,
@@ -339,18 +472,18 @@
     "pp_mm": 0.0
    }
   ],
-  "lecturas_para_el_31": [
-   "SIGUE SIN HELADAS, y ya es dato observado, no pronostico. La minima mas baja de la serie es 4,9° del martes 25/08 (antes el record era 6,9° del 8/08). Cero dias bajo 0 en todo lo medido: el invierno 2026 se va sin una helada registrada. Ese es el permiso tecnico de las podas de fin de invierno, y ahora se puede decir en pasado.",
-   "DIA DE TIJERA, confirmado por segunda consulta: 0 mm el viernes 28, el sabado 29, el domingo 30 y el lunes 31. Cuatro dias secos seguidos antes de que llegue. El 31 amanece a 10,6° y sube a 12,4° — corte seco, herida que cierra. Verificar igual esa manana.",
-   "LA MINIMA SUBE +5,7° EN SEIS DIAS (4,9° el martes 25 -> 10,6° el lunes 31). El salto se confirmo en la segunda consulta (antes daba +5,5°) y es EXACTAMENTE el disparador de 'cuando las yemas se hinchen' que llevan B-9 (crespon), B-18 (althea), F-2 (bignonia) y B-4 (hibisco) en su propia ficha. No es urgencia inventada: es el dato que la ficha pide mirar.",
-   "COROLARIO PARA F-7 (abelia): su ventana es 'fines de agosto, ANTES de que hinchen las yemas'. Con la minima trepando asi, el 31 no es el ultimo dia del rango por calendario: es el ultimo por temperatura. Argumento honesto y nuevo (no reusa 'florece en madera vieja', quemado hasta el 07/09).",
-   "B-25 (gardenia, acidificar tierra): tarea de bolsa, no de tijera. OJO — con la correccion de arriba, la lluvia previa es de solo 2,5 mm el 27 y despues cuatro dias secos: el suelo va a estar SECO el 31. Se le dice que riegue bien despues de aplicar, no que 'aproveche la lluvia'.",
-   "VENTANA NUEVA (serie extendida al 05/09): la primera semana de septiembre sigue sin heladas — la minima mas baja del tramo 01-05/09 es 6,8° el sabado 5. Primera lluvia de septiembre: 2,4 mm el miercoles 2. Municion para las tareas de 'segunda semana de septiembre' (B-1 santa rita pide 'pasada la ultima helada'), pero NO se publica el 31: es pronostico a 5+ dias y se re-verifica cuando toque."
-  ],
-  "consultas_previas": [
-   "2026-08-26"
-  ],
-  "correccion_27_08": "⚠️ CORRECCION IMPORTANTE sobre la lectura del 26/08: el jueves 27 NO trae 13 mm. La corrida re-consultada el 27/08 da 2,5 mm (y el miercoles 26 cerro en 0,7 mm, no 0,4). El argumento 'llueven 13 mm el jueves' NO se publica el 31 — seria un numero inflado 5x y la credibilidad del canal es el activo. Lo que SI se sostiene, y con mas fuerza: del 28 al 31 no cae una gota."
+  "drift_detectado_29_08": {
+   "_por_que_importa": "Tercera vez que la serie se mueve entre consultas. El 26 daba 13 mm para el jueves 27, el 27 daba 2,5 mm (5x de diferencia). Ahora el 29 mueve la lluvia de septiembre casi una semana. Confirma que ningun numero se publica sin re-consultar la manana que sale.",
+   "cambios": [
+    "02/09: era 2,4 mm -> ahora 0,0 mm. La racha seca NO se corta el 2.",
+    "03-06/09: era practicamente seco (0,0 / 0,6 / 0,0) -> ahora 7,8 + 3,2 + 9,0 + 1,0 = 21 mm en cuatro dias seguidos.",
+    "Minima del lunes 31: era 10,6° -> ahora 10,1°. Se sostiene, el gancho no cambia.",
+    "Minima del sabado 29: era 7,2° -> 6,1°. La suba NO es monotona: baja el 29 y vuelve a subir."
+   ],
+   "lectura_que_se_CAE": "«La minima trepa +5,7° en seis dias (4,9° -> 10,6°)». Sigue siendo cierta punta a punta, pero la serie hace un pozo de 6,1° el sabado 29 en el medio. Contarla como una rampa limpia seria pintar un dato que no es. USAR LA VERSION HONESTA: del martes 25 (4,9°, la minima mas baja del invierno, OBSERVADA) al lunes 31 (10,1°) la minima subio ~5°, con un pozo el sabado. No decir «trepa dia a dia».",
+   "lectura_NUEVA_y_mas_fuerte": "LA VENTANA SECA TIENE FECHA DE CIERRE. Seis dias seguidos con 0,0 mm: viernes 28, sabado 29, domingo 30, lunes 31, martes 1 y miercoles 2. Y del jueves 3 al domingo 6 llueve cuatro dias seguidos, ~21 mm. Eso es un plazo REAL y verificable, no una urgencia inventada: el que vuelve el lunes tiene tres dias de tijera (31, 1 y 2) antes de que se cierre. Es el mejor gancho honesto que dio la ventana entera — pero se RE-CONSULTA la manana del 31 antes de escribirlo, porque es justo el tramo que ya se movio una vez.",
+   "sigue_en_pie": "Cero heladas en todo el invierno medido; la minima absoluta sigue siendo 4,9° del 25/08 (OBSERVADA). En la serie nueva la mas baja de septiembre es 5,4° el 07/09. El permiso tecnico de las podas de fin de invierno no se toca."
+  }
  },
  "verificaciones": {
   "2026-08-26": "Corrida de mantenimiento. Verificado contra generate_tasks_from_plants(PLANTS) + docs/sync/task_states.json (shape {'tasks': {...}}): 100 tareas generadas, 51 active. Las 9 del backlog siguen TODAS active — plant-F-7, plant-B-7, plant-B-5a, plant-B-4, plant-B-9, plant-B-18, plant-F-2, plant-B-15, plant-B-25. Recordatorio vigente: los ticks del Taller NO escriben task_states.json, asi que 'active' aca NO significa que el usuario no lo haya hecho. Nunca contradecirlo. Señal nueva desde el 24/08: CERO (engagement.json sigue en 18 eventos, el ultimo es el dwell del 24/08 22:10Z). 0 threads pendientes, 0 uploads pendientes, 0 user_tasks sin ai_answer. Silencio cumplido: send_log sin envios post 24/08.",
@@ -418,5 +551,11 @@
    "unico_resto_util": "Sin coordenadas ni horas de sol medidas por planta, no hay forma honesta de afinarlo. Si alguna vez el usuario sube fotos con hora, ahi si. Hasta entonces, sacarlo de la cantera.",
    "accion": "Retirado de la lista 'sin usar' de learnings para que ninguna corrida futura vuelva a gastar esfuerzo aca."
   }
+ },
+ "trabajo_hecho_en_silencio": {
+  "_doc": "Lo que se construyo durante la ventana sin mandar una sola push. Sirve para el cobro del 31: no fue 'no hice nada', fue 'no te interrumpi Y ademas ordene la casa'. Contarlo en UNA linea, sin inflarlo.",
+  "29_08_grilla_de_experiencias": "Se curo la grilla del subtab ✨ Experiencias de ideas.html — era el pendiente del 16/08. El problema medido: el 16/08 el usuario entro solo (sin push), abrio las DOS primeras de la lista (Feed y Superpoderes, era news-feed) y reboto en 9 s / 28 % de scroll. La grilla estaba ordenada por fecha descendente, o sea que lo mandaba primero a lo mas flojo, y NO incluia El Taller — la unica experiencia aprobada (😍 x2, 7/7 pasos, ticks por arbol). Ahora arriba van 8 destacadas por señal medida (los tres Talleres, jardin-hoy, tu-semana, Asamblea, Expedientes, rueda del año) y las 14 de la era news-feed bajan a un <details> 'El archivo'. NO SE BORRO NINGUNA PAGINA.",
+  "29_08_clima_tercera_consulta": "Tercera consulta de open-meteo. Dio drift otra vez y cambio el gancho del lunes: ver clima_ventana.drift_detectado_29_08.",
+  "mencionarlo_el_31_asi": "Como maximo UNA linea, y solo si suma: «mientras no te mandaba nada ordene las experiencias del sitio: arriba lo que usaste, el resto al archivo». Nada de listar el trabajo interno — el valor para el es la grilla ordenada, no mi tarea."
  }
 }

@@ -1516,10 +1516,43 @@ def build_ideas_html(img_data, timeline_modals: str = "",
     # Experiencias APROBADAS — viven en docs/engage/ como páginas permanentes.
     # Regla del usuario: cada experiencia que se aprueba se suma acá (no en la
     # nav del inicio). El agente de /engagement agrega una entrada al promover.
-    approved_experiences = [
+    #
+    # Orden por SEÑAL MEDIDA (curado el 29/08/2026, pendiente del 16/08): el 16/08
+    # el usuario entró solo acá, abrió las dos primeras de la lista (Feed y
+    # Superpoderes, era news-feed) y rebotó en 9 s / 28 % de scroll. La grilla lo
+    # mandaba a lo más flojo y no ofrecía El Taller — la ÚNICA aprobada (😍 ×2,
+    # 7/7 pasos, ticks por árbol). Arriba va lo que rindió; el resto NO se borra:
+    # baja al archivo colapsado.
+    featured_experiences = [
+        {"icon": "🪚", "title": "El Taller nº 1 — Poda de carozos",
+         "desc": "El paso a paso con la tijera en la mano: durazno, ciruelo y damasco, un árbol por pantalla y los errores anticipados. La única que aprobaste.",
+         "page": "engage/2026-08-01-el-taller.html"},
+        {"icon": "🌸", "title": "El Taller nº 2 — Poda de flor",
+         "desc": "Qué se poda después de florecer y qué no: la regla de la madera vieja aplicada a tus arbustos, planta por planta.",
+         "page": "engage/2026-08-03-el-taller-2.html"},
+        {"icon": "🪚", "title": "El Taller nº 3 — Bajar el pitósporo a pantalla",
+         "desc": "Cómo convertir el pitósporo en pantalla verde sin arruinarlo, con el corte y la altura marcados.",
+         "page": "engage/2026-08-24-el-taller-3.html"},
+        {"icon": "🌤️", "title": "Tu jardín hoy",
+         "desc": "El vistazo del día: lo que toca hacer ahora, ordenado y sin vueltas. Es la página a la que te lleva la notificación de tareas.",
+         "page": "engage/2026-07-24-jardin-hoy.html"},
+        {"icon": "✅", "title": "Tu semana en el jardín",
+         "desc": "El recap de lo que cerraste en la semana, en números reales de tus propias tareas.",
+         "page": "engage/2026-07-24-tu-semana.html"},
         {"icon": "📋", "title": "La Asamblea del Jardín",
          "desc": "Tus plantas convocan asamblea y vos presidís: cada moción es una tarea o novedad real que resolvés con humor.",
          "page": "engage/2026-07-21-asamblea-jardin.html"},
+        {"icon": "🕵️", "title": "Expedientes abiertos — Los Sin Nombre",
+         "desc": "Las especies del jardín que todavía no tienen nombre confirmado, con las pistas para identificarlas. La pediste vos.",
+         "page": "engage/2026-07-04-expedientes-jardin.html"},
+        {"icon": "🌀", "title": "La rueda del año",
+         "desc": "El pulso anual de floración y fructificación de tus 52 plantas, animado.",
+         "page": "engage/2026-06-13-rueda-ano.html"},
+    ]
+
+    # Archivo — la era «news-feed» (jun-jul 2026). Se conservan enteras y
+    # accesibles, pero fuera del camino principal: son las que menos retuvieron.
+    archive_experiences = [
         {"icon": "📗", "title": "El Álbum de tu Jardín",
          "desc": "Tu jardín como álbum de figuritas: 52 láminas, 4 brillantes por rareza real y 2 fantasmas por resolver.",
          "page": "engage/2026-07-10-album-figuritas.html"},
@@ -1562,18 +1595,24 @@ def build_ideas_html(img_data, timeline_modals: str = "",
         {"icon": "📰", "title": "El Diario de tu Jardín",
          "desc": "Las noticias de hoy entre tus plantas, en titulares de prensa.",
          "page": "engage/2026-06-29-diario-jardin.html"},
-        {"icon": "🌀", "title": "La rueda del año",
-         "desc": "El pulso anual de floración y fructificación de tus 52 plantas, animado.",
-         "page": "engage/2026-06-13-rueda-ano.html"},
     ]
-    experiences_html = '<div class="exp-grid">' + "".join(
-        f"""<a class="exp-card" href="{esc(e['page'])}">
+
+    def _exp_grid(items):
+        return '<div class="exp-grid">' + "".join(
+            f"""<a class="exp-card" href="{esc(e['page'])}">
         <span class="exp-icon" aria-hidden="true">{e['icon']}</span>
         <span class="exp-text"><span class="exp-title">{esc(e['title'])}</span>
         <span class="exp-desc">{esc(e['desc'])}</span></span>
         <span class="exp-go" aria-hidden="true">→</span>
-      </a>""" for e in approved_experiences
-    ) + "</div>"
+      </a>""" for e in items
+        ) + "</div>"
+
+    experiences_html = f"""{_exp_grid(featured_experiences)}
+      <details class="exp-archive">
+        <summary>🗂️ El archivo — {len(archive_experiences)} experiencias anteriores</summary>
+        <p class="exp-archive-note">La tanda «news-feed» de junio y julio. Quedan enteras acá por si querés volver a alguna.</p>
+        {_exp_grid(archive_experiences)}
+      </details>"""
 
     # Highlights del subtab Ornamentales: ornamentales con ventana óptima ahora.
     # (Las hortalizas óptimas aparecen primero en el pane Huerta vía huerta_sorted.)
@@ -1647,7 +1686,7 @@ def build_ideas_html(img_data, timeline_modals: str = "",
       <div class="ideas-section">
         <div class="ideas-intro">
           <h3>✨ Experiencias de tu jardín</h3>
-          <p>Las experiencias que aprobaste quedan acá, siempre a mano. Cada vez que aprobás una nueva, se suma a esta lista.</p>
+          <p>Ordenadas por lo que de verdad te sirvió: arriba las que aprobaste o usaste, abajo el archivo. Cada vez que aprobás una nueva, se suma acá.</p>
         </div>
         {experiences_html}
       </div>
