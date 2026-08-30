@@ -2,12 +2,6 @@
  "events": [
   {
    "type": "notification_sent",
-   "nid": "2026-08-15-florecio-lo-que-podaste",
-   "ts": "2026-08-15T14:19:36.858Z",
-   "status_code": 201
-  },
-  {
-   "type": "notification_sent",
    "nid": "2026-08-17-preguntas-abiertas",
    "ts": "2026-08-17T21:23:11.437Z",
    "status_code": 201
@@ -210,5 +204,5 @@
    "_nota": "Silencio pedido por el usuario (24/08). Martes sin slot igual."
   }
  },
- "_updated_at": "2026-08-25T06:30:00-03:00"
+ "_updated_at": "2026-08-30T09:04:15.538368Z"
 }

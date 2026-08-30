@@ -1,60 +1,6 @@
 {
- "_updated_at": "2026-08-27T06:15:00-03:00",
+ "_updated_at": "2026-08-30T09:04:15.537461Z",
  "events": [
-  {
-   "_id": "msw5ybnf92jyuq",
-   "type": "page_visit",
-   "page": "engage/2026-06-29-feed-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-16T18:53:52.633Z",
-   "device": "pix9"
-  },
-  {
-   "_id": "msw5yb0z25tfhj",
-   "type": "page_visit",
-   "page": "engage/2026-06-29-feed-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-16T18:53:51.824Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msw5yief4jfqvi",
-   "type": "dwell",
-   "seconds": 9,
-   "scroll_pct": 28,
-   "page": "engage/2026-06-29-feed-jardin.html",
-   "ts": "2026-08-16T18:54:01.383Z",
-   "device": "pix9"
-  },
-  {
-   "_id": "msw5ylrbvmfqfj",
-   "type": "page_visit",
-   "page": "engage/2026-06-30-superpoderes-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-16T18:54:05.735Z",
-   "device": "pix9"
-  },
-  {
-   "_id": "msw5ykz6odmy2i",
-   "type": "page_visit",
-   "page": "engage/2026-06-30-superpoderes-jardin.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-16T18:54:04.719Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msw5ytaqz7tua9",
-   "type": "dwell",
-   "seconds": 10,
-   "scroll_pct": 29,
-   "page": "engage/2026-06-30-superpoderes-jardin.html",
-   "ts": "2026-08-16T18:54:15.506Z",
-   "device": "pix9"
-  },
   {
    "_id": "msxqstuso2tp2p",
    "type": "notification_clicked",
@@ -689,6 +635,9 @@
    "visits": 0,
    "approvals": 0,
    "_nota": "Dia 4 de 6 de la ventana de silencio pedida (25-30/08). 0 push por diseno: el viernes no tiene slot por cadencia Y rige el pedido explicito del 24/08. Cero señal nueva: ningun evento posterior al dwell del 24/08 22:10Z (cuarto dia). El dia bisagra es mañana, sabado 29: caen DOS slots (tarea 10:00 + experiencia 11:00)."
+  },
+  "2026-08-16": {
+   "visits": 4
   }
  }
 }
