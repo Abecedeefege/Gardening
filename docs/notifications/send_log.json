@@ -29,6 +29,12 @@
       "nid": "2026-08-31-jardin-hoy",
       "ts": "2026-08-31T17:23:19.581Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-08-31-censo-de-primavera",
+      "ts": "2026-08-31T21:59:09.514Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
