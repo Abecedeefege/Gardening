@@ -1073,6 +1073,18 @@
     "2026-08-24-el-taller-3"
    ],
    "result_notes": "24/08: ABIERTA (21:00 enviada -> 22:09 click, dwell 100 s hasta el pie) y con feedback_text, la senal mas alta de la escala. Pero el texto no habla del contenido: «No me mandes mas cosas hasta la semana que viene que vuelvo a Uruguay. Todo esto mandamelo ahi». Cero reaccion, cero slot, cero aprobacion, y taller3-cuando / taller3-paltas sin responder. NO es rechazo ni masomenos: es NO-VEREDICTO por contexto — el usuario leyo entera una guia para ejecutar con la tijera en la mano estando fuera del pais. La pagina se CONSERVA (linea Taller, la unica aprobada) y sus dos preguntas quedan vivas en vuelta_backlog.json. Al no estar aprobada no recurre sola: vuelve solo agrupada dentro de la original nueva del 31/08 si el pitosporo entra en la lista. La hipotesis del PRECIO ANTES QUE LA TAREA sigue sin medirse."
+  },
+  {
+   "id": "2026-08-31-censo-de-primavera",
+   "title": "🌸 El censo de la primavera — recorrido de 5 paradas para confirmar que abrio de verdad",
+   "page": "engage/2026-08-31-censo-de-primavera.html",
+   "created": "2026-08-31",
+   "status": "pending",
+   "hypothesis": "Formato nunca probado: una RUTA FISICA de 5 paradas por el jardin en vez de una lista de plantas, donde cada tap es una OBSERVACION suya y no una respuesta a una trivia. La apuesta: el dia que vuelve de una semana afuera, con dos dias secos por delante, lo que mas convierte no es informarlo sino darle una excusa de 5 minutos para recorrer el jardin — y encima declarar abiertamente lo que yo NO puedo saber ('abre en septiembre' es rango de catalogo, no observacion) convierte cada tap en trabajo mio (corregir fichas) y no suyo. Incluye la parada 2 sobre los carozos que el mismo podo el 2/08, deliberadamente SIN decirle como salio. Riesgo asumido: 5 controles puede leerse como 'cargado' (eje muerto) — se mitigo agrupando 13 especies en 5 paradas fisicas en vez de 13 items.",
+   "notified_by": [
+    "2026-08-31-censo-de-primavera"
+   ],
+   "result_notes": null
   }
  ],
  "_updated_at": "2026-08-23T09:20:00.000Z",

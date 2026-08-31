@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>💡 El censo como producto — 6 modelos</title>
+<meta property="og:title" content="💡 El censo como producto — 6 modelos de negocio">
+<meta property="og:description" content="Qué pasa si el censo de floración deja de ser una página del jardín y se convierte en un producto. Tres modelos serios y tres delirantes.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#fff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
+    --rosa:#c9628a; --sol:#e0a92e;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2);
+    text-decoration:none; font-size:13px; font-weight:800; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 26px; }
+  .hero{ padding:26px 0 6px; }
+  .hero .day{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3); }
+  .hero h1{ font-size:31px; line-height:1.08; margin:9px 0 10px; font-weight:900; letter-spacing:-.025em; }
+  .hero p{ font-size:14.5px; color:var(--ink2); }
+  .hero p b{ color:var(--ink); }
+  .sect{ font-size:12px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:var(--ink3);
+    margin:26px 0 12px; padding-bottom:7px; border-bottom:1px solid var(--line); }
+  .m{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 17px; margin-bottom:12px;
+    box-shadow:0 6px 22px rgba(45,80,22,.05); }
+  .m .n{ font-size:11px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:#fff;
+    background:var(--verde2); padding:4px 10px; border-radius:20px; display:inline-block; }
+  .m.wild .n{ background:var(--rosa); }
+  .m h3{ font-size:18px; font-weight:900; margin:10px 0 6px; line-height:1.22; letter-spacing:-.015em; }
+  .m p{ font-size:14px; color:var(--ink2); margin-bottom:8px; }
+  .m p b{ color:var(--ink); }
+  .m .eco{ background:#f2f7ec; border-radius:11px; padding:10px 12px; font-size:13px; color:var(--ink2); margin-top:9px; }
+  .m .eco b{ color:var(--verde); display:block; font-size:10.5px; letter-spacing:.09em;
+    text-transform:uppercase; margin-bottom:3px; }
+  .m.wild .eco{ background:#fdeff4; }
+  .m.wild .eco b{ color:var(--rosa); }
+  .nota{ background:#fff6e0; border-left:3px solid var(--sol); border-radius:0 13px 13px 0; padding:14px 15px; margin:18px 0 6px; }
+  .nota p{ font-size:13.5px; color:#6b5518; }
+  .nota p b{ color:#4d3d0f; }
+  .pie{ text-align:center; margin-top:24px; padding-top:18px; border-top:1px solid var(--line); }
+  .pie a{ color:var(--verde2); font-weight:800; font-size:14px; text-decoration:none; }
+  .pie .cred{ font-size:11.5px; color:var(--ink3); margin-top:11px; line-height:1.5; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="day">Anexo · 31 de agosto 2026</div>
+    <h1>El censo, como producto</h1>
+    <p>El censo de floración resuelve un problema que ninguna app de jardinería resolvió: <b>la diferencia entre lo que dice el manual y lo que realmente pasa en tu patio</b>. Un calendario impreso te dice «florece en septiembre»; solo el que está parado ahí sabe si abrió. Estas seis ideas salen de ahí.</p>
+  </header>
+
+  <div class="sect">Tres modelos serios</div>
+
+  <div class="m">
+    <span class="n">Modelo 1</span>
+    <h3>Fenología ciudadana con valor comercial</h3>
+    <p>Cada censo produce un dato que hoy nadie tiene: <b>fecha real de floración, por especie, por barrio</b>. Miles de censos son una serie fenológica de Montevideo con resolución de manzana.</p>
+    <p>Quien paga por eso: viveros (cuándo poner en góndola), apicultores (mapa de floración = mapa de forraje), seguros agrícolas y facultades de agronomía, que hoy lo estiman con satélite y un puñado de estaciones.</p>
+    <div class="eco"><b>Cómo cobra</b>Suscripción B2B al dataset agregado. El usuario nunca paga: aporta el dato y a cambio recibe su propio calendario corregido.</div>
+  </div>
+
+  <div class="m">
+    <span class="n">Modelo 2</span>
+    <h3>La ficha que se corrige sola</h3>
+    <p>Toda app de plantas vende la misma base genérica de cuidados. Acá cada tap reemplaza un rango de manual por <b>una observación fechada en ese jardín</b>. Al tercer año el catálogo ya no es un manual: es el historial del terreno.</p>
+    <p>Ese historial es lo que se lleva alguien que vende la casa, lo que hereda el que la compra, y lo que necesita un paisajista para no repetir errores de suelo y luz.</p>
+    <div class="eco"><b>Cómo cobra</b>Freemium: el catálogo es gratis, el historial fechado exportable (PDF y traspaso de titularidad) es de pago. Vende en el momento exacto de la mudanza.</div>
+  </div>
+
+  <div class="m">
+    <span class="n">Modelo 3</span>
+    <h3>Ruta verificada para el que trabaja el jardín</h3>
+    <p>El recorrido de cinco paradas es, sin cambiarle nada, <b>una hoja de ruta de visita</b>. El jardinero que atiende veinte casas hoy anota en papel o no anota. Acá entra con la ruta armada, marca en el celular y sale con el registro hecho.</p>
+    <p>El dueño recibe la constancia de qué se miró y qué se hizo, con fecha. Eso es exactamente lo que hoy no puede probar ninguno de los dos.</p>
+    <div class="eco"><b>Cómo cobra</b>Licencia por profesional, por casa atendida. El valor es la constancia frente al cliente, no el software.</div>
+  </div>
+
+  <div class="sect">Tres modelos delirantes</div>
+
+  <div class="m wild">
+    <span class="n">Modelo 4</span>
+    <h3>El mercado de la primera flor</h3>
+    <p>Cada primavera se abre una apuesta pública, sin dinero: <b>¿qué especie del barrio abre primero?</b> Los vecinos apuestan con fichas, el censo de cada uno resuelve el mercado y quien acierta se lleva esquejes reales de los jardines perdedores.</p>
+    <p>La liquidez del juego son plantas. Se multiplica el jardín del barrio como efecto secundario de una apuesta.</p>
+    <div class="eco"><b>Cómo cobra</b>Comisión en esquejes: un porcentaje de cada intercambio va a un vivero comunitario que la app administra y monetiza aparte.</div>
+  </div>
+
+  <div class="m wild">
+    <span class="n">Modelo 5</span>
+    <h3>Denominación de origen doméstica</h3>
+    <p>Si el sistema tiene el registro fechado de floración y poda de un árbol, puede <b>certificar el fruto que salió de él</b>. Un QR en el frasco de dulce que abre la historia completa: qué día se podó, qué día floreció, quién lo hizo.</p>
+    <p>La feria del barrio pasa a vender trazabilidad, que es exactamente lo que la góndola del supermercado no puede ofrecer.</p>
+    <div class="eco"><b>Cómo cobra</b>Por certificado emitido, centavos por etiqueta. Escala con ferias y mercados de productores, no con usuarios.</div>
+  </div>
+
+  <div class="m wild">
+    <span class="n">Modelo 6</span>
+    <h3>El jardín como instrumento climático</h3>
+    <p>Doce de tus trece especies están del lado este. Si mil jardines aportan <b>en qué orientación abre cada especie y qué día</b>, se obtiene un mapa de microclima urbano más fino que el de cualquier red de sensores — y sin instalar un solo sensor.</p>
+    <p>Las intendencias necesitan eso para decidir arbolado de vereda y no lo tienen. La planta es el termómetro, y ya está plantada.</p>
+    <div class="eco"><b>Cómo cobra</b>Contrato con gobiernos locales por capa de datos. El jardinero no vende nada: descubre que su patio era una estación meteorológica.</div>
+  </div>
+
+  <div class="nota">
+    <p><b>Lo que tienen en común:</b> ninguno le cobra al jardinero por usar la app. Los seis monetizan <b>el dato que se produce al usarla</b> — que es la única forma honesta de que el censo siga siendo cinco minutos de mirar plantas y no una tarea administrativa.</p>
+  </div>
+
+  <footer class="pie">
+    <a href="https://gardening-chi.vercel.app/engage/2026-08-31-censo-de-primavera.html">← Volver al censo</a>
+    <div class="cred">Anexo de producto de la experiencia del 31/08/2026 · escenarios hipotéticos, ninguno implementado</div>
+  </footer>
+
+</div>
+</body></html>

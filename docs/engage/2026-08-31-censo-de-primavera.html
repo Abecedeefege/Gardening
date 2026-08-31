@@ -1,0 +1,336 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🌸 El censo de la primavera — 5 paradas, 5 minutos</title>
+<meta property="og:title" content="🌸 El censo de la primavera — 5 paradas, 5 minutos">
+<meta property="og:description" content="Tu catálogo dice que 13 especies abren flor ahora. Yo no sé cuáles están abiertas de verdad — vos lo ves en cinco minutos. Recorrido de 5 paradas por tu jardín.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
+    --rosa:#c9628a; --rosa2:#fbeaf1; --sol:#e0a92e; --azul:#3f7d8a;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 26px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:26px 0 4px; }
+  .hero .day{ font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3); }
+  .hero h1{ font-size:33px; line-height:1.06; margin:9px 0 0; font-weight:900; letter-spacing:-.025em; }
+  .hero h1 em{ font-style:normal; color:var(--rosa); }
+
+  /* premisa: lo que sé y lo que NO sé */
+  .prem{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 19px; margin:16px 0 6px;
+    box-shadow:0 8px 26px rgba(45,80,22,.06); }
+  .prem .n{ font-size:46px; font-weight:900; color:var(--rosa); line-height:1; letter-spacing:-.03em; }
+  .prem .nl{ font-size:12.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--ink3); margin:4px 0 11px; }
+  .prem p{ font-size:14.5px; color:var(--ink2); margin-bottom:9px; }
+  .prem p b{ color:var(--ink); }
+  .prem .nose{ background:#fff6e0; border-left:3px solid var(--sol); border-radius:0 12px 12px 0; padding:11px 13px; margin-top:11px; }
+  .prem .nose p{ margin:0; font-size:13.5px; color:#6b5518; }
+
+  /* mini plano */
+  .plano{ display:grid; grid-template-columns:1fr 1fr; gap:7px; margin:13px 0 2px; }
+  .plano div{ border-radius:12px; padding:11px 10px; text-align:center; border:1px solid var(--line); }
+  .plano .oeste{ background:#fdf3e3; }
+  .plano .este{ background:var(--verde3); }
+  .plano b{ display:block; font-size:22px; font-weight:900; letter-spacing:-.02em; }
+  .plano .lbl{ font-size:10.5px; font-weight:900; text-transform:uppercase; letter-spacing:.06em; color:var(--ink3); margin-top:2px; }
+  .plano .sub{ font-size:11.5px; color:var(--ink2); margin-top:5px; line-height:1.35; }
+
+  .sect{ font-size:12px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:var(--ink3);
+    margin:26px 0 11px; padding-bottom:7px; border-bottom:1px solid var(--line); }
+
+  /* parada del recorrido */
+  .par{ background:var(--card); border:1px solid var(--line); border-radius:20px; overflow:hidden; margin-bottom:14px;
+    box-shadow:0 8px 26px rgba(45,80,22,.06); }
+  .par .ph{ display:block; width:100%; height:132px; object-fit:cover; background:#e6efdc; }
+  .par .in{ padding:17px 17px 15px; }
+  .par .num{ display:inline-block; font-size:11px; font-weight:900; letter-spacing:.1em; text-transform:uppercase;
+    color:#fff; background:var(--verde2); padding:4px 10px; border-radius:20px; }
+  .par h3{ font-size:19px; font-weight:900; line-height:1.22; margin:10px 0 3px; letter-spacing:-.015em; }
+  .par .codes{ font-size:11.5px; font-weight:900; color:var(--ink3); letter-spacing:.05em; }
+  .par .txt{ font-size:14.5px; color:var(--ink2); margin-top:10px; }
+  .par .txt b{ color:var(--ink); }
+  .par .mira{ background:#f2f7ec; border-radius:13px; padding:11px 13px; margin-top:11px; font-size:13.5px; color:var(--ink2); }
+  .par .mira b{ color:var(--verde); display:block; font-size:11px; letter-spacing:.09em; text-transform:uppercase; margin-bottom:4px; }
+
+  .opts{ display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin-top:13px; }
+  .opts button{ font-family:inherit; background:#fff; border:1.5px solid var(--line); border-radius:14px; padding:11px 4px;
+    font-size:12px; font-weight:800; color:var(--ink); cursor:pointer; line-height:1.25; transition:.15s; }
+  .opts button .big{ display:block; font-size:21px; margin-bottom:3px; }
+  .opts button:active{ transform:scale(.96); }
+  .opts button.on{ background:var(--verde2); border-color:var(--verde2); color:#fff; }
+  .q-hint{ display:block; font-size:12.5px; color:var(--verde2); font-weight:700; margin-top:8px; min-height:16px; }
+
+  /* bloque "todavía no" */
+  .noaun{ background:#eef4fa; border:1px solid rgba(63,125,138,.18); border-radius:18px; padding:17px 17px; margin-bottom:14px; }
+  .noaun .tag{ font-size:11px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:var(--azul); margin-bottom:8px; }
+  .noaun h3{ font-size:17px; font-weight:900; margin-bottom:7px; letter-spacing:-.01em; }
+  .noaun p{ font-size:14px; color:#4a6068; }
+  .noaun p b{ color:#243b42; }
+
+  /* el taller: aprobada, agrupada dentro */
+  .apr{ background:#1e2a17; color:#eaf3e0; border-radius:20px; padding:20px 19px; margin:14px 0 4px;
+    box-shadow:0 10px 30px rgba(30,42,23,.18); }
+  .apr .tag{ font-size:11px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:#b7d69a; margin-bottom:9px; }
+  .apr b.t{ font-size:18px; line-height:1.25; font-weight:900; display:block; color:#fff; }
+  .apr p{ font-size:14px; color:#cfe0bd; margin-top:9px; }
+  .apr .cta{ display:block; text-align:center; background:#7fae4e; color:#14200c; text-decoration:none;
+    font-weight:900; font-size:15px; padding:14px; border-radius:14px; margin-top:13px; }
+  .apr .cta:active{ opacity:.8; }
+  .apr .mini{ font-size:12.5px !important; color:#a9bd96 !important; margin-top:11px !important;
+    border-top:1px solid rgba(255,255,255,.12); padding-top:10px; }
+
+  /* slots */
+  .slots{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 19px; margin-bottom:14px;
+    box-shadow:0 8px 26px rgba(45,80,22,.06); }
+  .slots h3{ font-size:18px; font-weight:900; margin-bottom:5px; letter-spacing:-.01em; }
+  .slots > p{ font-size:14px; color:var(--ink2); margin-bottom:13px; }
+  .slot{ border:1.5px solid var(--line); border-radius:15px; padding:13px 14px; margin-bottom:9px; }
+  .slot .sh{ display:flex; align-items:baseline; justify-content:space-between; gap:8px; }
+  .slot .sn{ font-size:15px; font-weight:900; }
+  .slot .sw{ font-size:12px; font-weight:800; color:var(--ink3); }
+  .slot .sd{ font-size:13px; color:var(--ink2); margin-top:4px; }
+  .slot .sb{ display:grid; grid-template-columns:1fr 1fr; gap:7px; margin-top:10px; }
+  .slot .sb button{ font-family:inherit; background:#f7fbf2; border:1.5px solid var(--line); border-radius:12px;
+    padding:10px 4px; font-size:13px; font-weight:800; color:var(--ink); cursor:pointer; transition:.15s; }
+  .slot .sb button:active{ transform:scale(.96); }
+  .slot .sb button.on{ background:var(--verde2); border-color:var(--verde2); color:#fff; }
+
+  /* reacción */
+  .react{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:20px 19px; margin-bottom:14px;
+    text-align:center; box-shadow:0 8px 26px rgba(45,80,22,.06); }
+  .react h3{ font-size:18px; font-weight:900; margin-bottom:12px; }
+  .react .rr{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+  .react .rr button{ font-family:inherit; background:#f7fbf2; border:1.5px solid var(--line); border-radius:15px;
+    padding:13px 3px; font-size:26px; cursor:pointer; transition:.15s; }
+  .react .rr button:active{ transform:scale(.9); }
+  .react .rr button.on{ background:var(--verde3); border-color:var(--verde2); }
+  .react .r-hint{ display:block; font-size:12.5px; color:var(--verde2); font-weight:700; margin-top:9px; min-height:16px; }
+
+  /* feedback propio */
+  .fb-blk{ background:var(--rosa2); border:1px solid rgba(201,98,138,.2); border-radius:20px; padding:20px 19px; margin-bottom:14px; }
+  .fb-blk h3{ font-size:18px; font-weight:900; margin-bottom:5px; color:#7d2f4d; }
+  .fb-blk p{ font-size:13.5px; color:#8c5a70; margin-bottom:11px; }
+  .fb-blk textarea{ width:100%; font-family:inherit; font-size:15px; padding:13px; border-radius:13px;
+    border:1.5px solid rgba(201,98,138,.28); background:#fff; color:var(--ink); resize:vertical; }
+  .fb-blk textarea:focus{ outline:none; border-color:var(--rosa); }
+  .fb-send{ font-family:inherit; width:100%; margin-top:9px; background:var(--rosa); color:#fff; border:none;
+    border-radius:13px; padding:14px; font-size:15px; font-weight:900; cursor:pointer; }
+  .fb-send:active{ opacity:.8; }
+  .fb-hint{ display:block; font-size:12.5px; color:#7d2f4d; font-weight:700; margin-top:8px; min-height:16px; }
+
+  .engage-actions{ display:grid; gap:9px; margin:20px 0 6px; }
+  .engage-actions button{ font-family:inherit; padding:15px; border-radius:15px; font-size:15px; font-weight:900;
+    cursor:pointer; border:none; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:transparent; color:var(--ink3); border:1.5px solid var(--line); }
+  .engage-actions button:active{ opacity:.75; }
+
+  .pie{ text-align:center; margin-top:24px; padding-top:18px; border-top:1px solid var(--line); }
+  .pie a{ color:var(--verde2); font-weight:800; font-size:14px; text-decoration:none; }
+  .pie .cred{ font-size:11.5px; color:var(--ink3); margin-top:11px; line-height:1.5; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <div class="day">Lunes 31 de agosto · volviste</div>
+    <h1>El censo de <em>la primavera</em></h1>
+  </header>
+
+  <div class="prem reveal">
+    <div class="n">13</div>
+    <div class="nl">especies que abren flor ahora</div>
+    <p>Salieron de tu propio catálogo: son las 13 fichas cuyo mes de floración incluye septiembre. <b>No es un pronóstico ni una estimación mía</b> — es el campo que ya está cargado en cada una.</p>
+    <div class="plano">
+      <div class="oeste"><b>1</b><div class="lbl">Frente · oeste</div><div class="sub">Solo el ciruelo F-4</div></div>
+      <div class="este"><b>12</b><div class="lbl">Fondo · este</div><div class="sub">Todas las demás</div></div>
+    </div>
+    <p style="margin-top:12px">Lo miré por zona y salió algo que no esperaba: <b>doce de las trece están en el fondo</b>. Tu primavera no arranca repartida por el jardín — arranca casi entera del lado que ve el sol de la mañana.</p>
+    <div class="nose">
+      <p><b>Y acá está lo que yo no puedo saber:</b> «abre en septiembre» es un rango de catálogo, no una observación. Cuál está <i>realmente</i> abierta hoy no lo veo desde acá. Vos lo ves en cinco minutos. Este es el recorrido: <b>cinco paradas, un toque en cada una</b>. Con lo que marques corrijo las fichas y la próxima vez el dato es tuyo, no del manual.</p>
+    </div>
+  </div>
+
+  <div class="sect reveal">El recorrido · parada 1 de 5</div>
+
+  <div class="par reveal">
+    <img class="ph" src="https://gardening-chi.vercel.app/images/F-4_ciruelo_purpura_otonal.jpg" alt="Ciruelo de jardín F-4" loading="lazy">
+    <div class="in">
+      <span class="num">① Empezá sin salir del frente</span>
+      <h3>El ciruelo de jardín</h3>
+      <div class="codes">F-4 · Prunus cerasifera 'Pissardii' · flor: agosto–septiembre</div>
+      <div class="txt">Es <b>la única de las trece que está en el frente</b>. Si vas a hacer una sola parada, hacé esta: la tenés a metros de la puerta y es la que rompe el patrón de todo el resto.</div>
+      <div class="mira"><b>Qué mirar</b>Flor chica, de cinco pétalos, blanca o rosa muy pálida, <b>pegada a la rama desnuda</b>. En esta especie la flor va antes que la hoja: si ves hojas púrpuras abiertas y nada de flor, ya pasó.</div>
+      <div class="opts">
+        <button type="button" onclick="engageAnswer('censo-p1','abierta',this)"><span class="big">🌸</span>Con flor</button>
+        <button type="button" onclick="engageAnswer('censo-p1','todavia',this)"><span class="big">🌱</span>Todavía no</button>
+        <button type="button" onclick="engageAnswer('censo-p1','nollegue',this)"><span class="big">⏭️</span>No la vi</button>
+      </div>
+      <span class="q-hint"></span>
+    </div>
+  </div>
+
+  <div class="par reveal">
+    <img class="ph" src="https://gardening-chi.vercel.app/images/b30.jpg" alt="Durazno B-30" loading="lazy">
+    <div class="in">
+      <span class="num">② Al fondo, los que podaste</span>
+      <h3>Durazno y ciruela amarilla</h3>
+      <div class="codes">B-30 · B-35 · B-38 · flor: agosto–septiembre</div>
+      <div class="txt">Estos tres los cortaste vos <b>el 2 de agosto</b>. Sus fichas dicen que abren en agosto-septiembre, o sea que ahora mismo se está viendo el resultado de aquella tarde. <b>No te voy a decir cómo salió</b>: andá y fijate. Es la única parada del recorrido donde lo que mirás es trabajo tuyo.</div>
+      <div class="mira"><b>Qué mirar</b>El durazno abre <b>rosa fuerte</b> y la ciruela amarilla <b>blanco</b>, las dos sobre madera sin hojas. Mirá sobre todo <b>las ramas que quedaron después del corte</b>: si esas traen flor, la poda entró en el momento justo.</div>
+      <div class="opts">
+        <button type="button" onclick="engageAnswer('censo-p2','abierta',this)"><span class="big">🌸</span>Con flor</button>
+        <button type="button" onclick="engageAnswer('censo-p2','todavia',this)"><span class="big">🌱</span>Todavía no</button>
+        <button type="button" onclick="engageAnswer('censo-p2','nollegue',this)"><span class="big">⏭️</span>No los vi</button>
+      </div>
+      <span class="q-hint"></span>
+    </div>
+  </div>
+
+  <div class="par reveal">
+    <img class="ph" src="https://gardening-chi.vercel.app/images/PXL_20260428_130757603_MP.webp" alt="Pera Williams B-39" loading="lazy">
+    <div class="in">
+      <span class="num">③ El punto sur</span>
+      <h3>La pera Williams</h3>
+      <div class="codes">B-39 · Pyrus communis 'Williams' · flor: agosto–septiembre</div>
+      <div class="txt">Esta parada tiene una rareza que vale la pena confirmar. La pera es <b>el punto sur del jardín</b> —así lo tenés anotado vos—, o sea el lado que menos sol directo recibe en invierno y el que más humedad acumula. En luz es el peor lugar del terreno. <b>Y aun así su ficha la pone abriendo en agosto, junto con los carozos que están mejor ubicados.</b></div>
+      <div class="mira"><b>Qué mirar</b>Corimbos <b>blancos</b>, en grupitos de cinco a siete flores, sobre ramas cortas y gruesas. Si abrió al mismo tiempo que el durazno, la sombra del sur no le está costando nada — y eso cambia lo que se puede plantar de ese lado.</div>
+      <div class="opts">
+        <button type="button" onclick="engageAnswer('censo-p3','abierta',this)"><span class="big">🌸</span>Con flor</button>
+        <button type="button" onclick="engageAnswer('censo-p3','todavia',this)"><span class="big">🌱</span>Todavía no</button>
+        <button type="button" onclick="engageAnswer('censo-p3','nollegue',this)"><span class="big">⏭️</span>No la vi</button>
+      </div>
+      <span class="q-hint"></span>
+    </div>
+  </div>
+
+  <div class="par reveal">
+    <img class="ph" src="https://gardening-chi.vercel.app/images/PXL_20260428_130952009_MP.webp" alt="Viraró B-32" loading="lazy">
+    <div class="in">
+      <span class="num">④ La trampa del recorrido</span>
+      <h3>El viraró</h3>
+      <div class="codes">B-32 · Ruprechtia laxiflora · nativo · flor: agosto–septiembre</div>
+      <div class="txt">Con este te podés equivocar, y quiero avisarte antes. En algún momento se llena de algo <b>rosado y llamativo</b> que parece floración de manual. <b>No son flores.</b> Son sépalos que se agrandan <i>después</i> de la polinización y se vuelven alitas para que el viento se lleve el fruto. Cuando ves el rosa, la flor ya pasó.</div>
+      <div class="mira"><b>Qué mirar</b>La flor de verdad es <b>chiquita, verdosa, en racimos colgantes</b>, y pasa casi desapercibida. Si ves rosa: marcá «todavía no» igual y anotámelo abajo — significa que floreció antes de lo que dice la ficha y ese dato lo corrijo yo.</div>
+      <div class="opts">
+        <button type="button" onclick="engageAnswer('censo-p4','abierta',this)"><span class="big">🌸</span>Racimo verde</button>
+        <button type="button" onclick="engageAnswer('censo-p4','rosado',this)"><span class="big">🎀</span>Ya está rosa</button>
+        <button type="button" onclick="engageAnswer('censo-p4','nollegue',this)"><span class="big">⏭️</span>No lo vi</button>
+      </div>
+      <span class="q-hint"></span>
+    </div>
+  </div>
+
+  <div class="par reveal">
+    <img class="ph" src="https://gardening-chi.vercel.app/images/b13.jpg" alt="Clivia B-13" loading="lazy">
+    <div class="in">
+      <span class="num">⑤ Bajá la vista</span>
+      <h3>Clivia, lavanda y romero</h3>
+      <div class="codes">B-13 · B-10 · B-19 · B-26 · flor: septiembre en adelante</div>
+      <div class="txt">Las cuatro paradas anteriores son de mirar hacia arriba. Esta es a la altura de la rodilla, y es la que más se pasa por alto justamente por eso. <b>Son las tres que arrancan la temporada larga:</b> la lavanda y el romero, una vez que abren, no paran hasta bien entrado el verano.</div>
+      <div class="mira"><b>Qué mirar</b><b>Clivia:</b> un tallo grueso saliendo del centro de las hojas, con el ramo naranja todavía cerrado arriba. <b>Lavanda:</b> espigas violetas asomando sobre el follaje gris. <b>Romero:</b> flores celestes diminutas pegadas al tallo — hay que acercarse.</div>
+      <div class="opts">
+        <button type="button" onclick="engageAnswer('censo-p5','abierta',this)"><span class="big">🌸</span>Alguna abrió</button>
+        <button type="button" onclick="engageAnswer('censo-p5','todavia',this)"><span class="big">🌱</span>Ninguna aún</button>
+        <button type="button" onclick="engageAnswer('censo-p5','nollegue',this)"><span class="big">⏭️</span>No llegué</button>
+      </div>
+      <span class="q-hint"></span>
+    </div>
+  </div>
+
+  <div class="noaun reveal">
+    <div class="tag">🍋 Estas no las busques hoy</div>
+    <h3>El limonero y la mandarina</h3>
+    <p><b>B-23 y B-24</b> también están entre las trece, pero sus fichas las abren <b>desde septiembre</b>, no desde agosto. Buscarles flor hoy es perder el viaje. Te las nombro para que sepas que no me las olvidé: <b>van en el censo de la vuelta</b>, más adelante en el mes.</p>
+  </div>
+
+  <div class="sect reveal">Y lo que ya prendió</div>
+
+  <div class="apr reveal">
+    <div class="tag">🪚 Aprobada por vos · sigue disponible</div>
+    <b class="t">El Taller nº1 — la poda de carozos</b>
+    <p>Es la única experiencia que marcaste como buena, y quedó donde está: paso a paso, con la tijera en la mano, árbol por árbol. <b>Hoy vuelve a servir para otra cosa</b> — es el registro de lo que hiciste el 2 de agosto, o sea el contexto de la parada ② de este recorrido.</p>
+    <a class="cta" href="https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html">Abrir El Taller nº1 →</a>
+    <p class="mini">Las que no marcás no vuelven a llegarte: cada slot trae una original nueva, y al lado solo lo que aprobaste. Este es el criterio desde ahora.</p>
+  </div>
+
+  <div class="sect reveal">Cómo querés seguir recibiéndolo</div>
+
+  <div class="slots reveal">
+    <h3>Slots disponibles</h3>
+    <p>Si el censo te sirvió, elegí en qué momento querés que vuelva. Podés prender los dos, uno solo o ninguno — y lo cambiás cuando quieras.</p>
+    <div class="slot">
+      <div class="sh"><span class="sn">🌆 Lunes 18:00</span><span class="sw">arranque de semana</span></div>
+      <div class="sd">Llega con la semana por delante y el pronóstico ya verificado. Es el slot donde entra lo que se puede planificar.</div>
+      <div class="sb">
+        <button type="button" onclick="engageAnswer('censo-slot-lun18','si',this)">Sí, prendelo</button>
+        <button type="button" onclick="engageAnswer('censo-slot-lun18','no',this)">No, gracias</button>
+      </div>
+      <span class="q-hint"></span>
+    </div>
+    <div class="slot">
+      <div class="sh"><span class="sn">☀️ Sábado 11:00</span><span class="sw">con el jardín adelante</span></div>
+      <div class="sd">Media mañana de sábado, que es cuando realmente salís. El slot natural para un recorrido como este.</div>
+      <div class="sb">
+        <button type="button" onclick="engageAnswer('censo-slot-sab11','si',this)">Sí, prendelo</button>
+        <button type="button" onclick="engageAnswer('censo-slot-sab11','no',this)">No, gracias</button>
+      </div>
+      <span class="q-hint"></span>
+    </div>
+  </div>
+
+  <div class="react reveal">
+    <h3>¿Qué te pareció el censo?</h3>
+    <div class="rr">
+      <button type="button" onclick="engageReact('censo-de-primavera','😍',this)">😍</button>
+      <button type="button" onclick="engageReact('censo-de-primavera','👍',this)">👍</button>
+      <button type="button" onclick="engageReact('censo-de-primavera','😐',this)">😐</button>
+      <button type="button" onclick="engageReact('censo-de-primavera','🙅',this)">🙅</button>
+    </div>
+    <span class="r-hint"></span>
+  </div>
+
+  <section class="fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué encontraste</h3>
+    <p>Esto lo leo yo antes de armar la próxima. Contame qué viste abierto, qué no, o qué apareció que no estaba en ninguna lista — con eso corrijo las fichas.</p>
+    <textarea rows="3" placeholder="Ej: el durazno explotó, la pera nada todavía…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('censo-de-primavera', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <div class="engage-actions">
+    <button type="button" onclick="engageApprove('2026-08-31-censo-de-primavera')">✅ Aprobar esta mejora</button>
+    <button type="button" onclick="engageRejected('2026-08-31-censo-de-primavera')">✕ No me interesa</button>
+  </div>
+
+  <footer class="pie">
+    <a href="https://gardening-chi.vercel.app/engage/2026-08-31-censo-pitch.html">💡 Cómo esto se convierte en producto →</a>
+    <div class="cred">Las 13 especies salen del campo de floración de tu propio catálogo (52 fichas) · zonas y punto sur según la orientación del jardín anotada en el proyecto · edición del 31/08/2026 · ninguna floración fue observada por mí: por eso te pido el censo</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>

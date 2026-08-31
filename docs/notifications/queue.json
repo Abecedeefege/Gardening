@@ -1,5 +1,31 @@
 {
- "_updated_at": "2026-08-30T06:20:00-03:00",
- "_nota": "DOMINGO 30/08 = 0 PUSH. Doble motivo, y conviene no confundirlos: (1) el domingo NO TIENE SLOT por la cadencia semanal vigente, asi que hoy el silencio es gratis y NO se cobra como merito el lunes; (2) igual sigue rigiendo el pedido explicito del usuario del 24/08 (dos feedback_text: 13:41 sobre jardin-hoy «Vuelvo en 1 semana a Uruguay. Mandame todo lo que haya para hacer ese dia» y 22:10 sobre el-taller-3 «No me mandes mas cosas hasta la semana que viene que vuelvo a Uruguay. Todo esto mandamelo ahi»). Con hoy la ventana 25-30/08 se cierra ENTERA y con los TRES slots reales cumplidos: jueves 27 10:00, sabado 29 10:00 y sabado 29 11:00. Verificado hoy DESPUES de compactar send_log.json: el ultimo notification_sent sigue siendo 2026-08-24T21:00:07Z. Se reanuda el LUNES 31/08 (10:00 tarea + 18:00 experiencia) con todo junto. MANTENIMIENTO DE HOY: 0 senal nueva desde el 24/08 22:10Z (sexto dia); 0 threads pendientes, 0 uploads pending, 0 user_tasks sin responder; proposals sin cambios (sin exposicion no hay veredicto); re-verificadas 51 tareas active sobre 100 y las 10 del backlog de la vuelta, todas siguen active. COMPACTACION EJECUTADA (vencia hoy): engagement.json 18 -> 12 eventos (los 6 del 16/08 cumplieron 14 dias, resumidos en daily_summary) y send_log.json 5 -> 4 (el del 15/08). TRABAJO REAL DEL DIA: cuarta consulta de clima, que dio el CUARTO drift seguido y ESTE cambio el gancho principal del lunes — la lluvia se adelanto al miercoles 2/09 (0,0 -> 5,7 mm), asi que la ventana de tijera de la vuelta pasa de TRES dias a DOS (lunes 31 y martes 1). Si salia con la serie del 29 publicaba un numero falso. Se re-consulta igual la manana del 31: quinta consulta, no opcional. Ademas se re-computo y verifico el elenco de la experiencia del 31 (13 especies que abren flor en septiembre, 10 libres = 77 %) y aparecieron dos hechos estructurales nuevos: F-4 es la UNICA del frente (las otras 12 estan en el fondo) y 5 de las 13 ya vienen abriendo desde agosto. Todo en docs/engage/vuelta_backlog.json.",
- "notifications": []
+ "_updated_at": "2026-08-31T06:20:00-03:00",
+ "_nota": "LUNES 31/08 — SE REANUDA LA CADENCIA. Dia con los DOS slots (tarea 10:00 + experiencia 18:00). La ventana de silencio 25-30/08 se cumplio entera: los TRES slots prometidos por nombre (jue 27 10:00, sab 29 10:00, sab 29 11:00) pasaron vacios y send_log.json no tiene ningun notification_sent posterior al 24/08 21:00:07Z. QUINTA CONSULTA DE CLIMA hecha esta manana por WebFetch, y dio el QUINTO drift seguido: la lluvia de septiembre volvio del dia 2 al dia 3 y subio a 12,1 mm (el 30/08 daba 5,7 mm el dia 2). Lo unico estable en las cinco series es lo que se publica: hoy 31 y manana 1 con 0,0 mm, y cero heladas en todo el invierno con minima absoluta 4,9 el 25/08 (OBSERVADA). El gancho del canal tarea es real y sale de las fichas: F-7 abelia ('fines de agosto, antes de que hinchen las yemas') y B-7 cerco de azareros ('ultima semana de agosto') cierran su ventana HOY, ultimo dia de agosto. La experiencia nueva es el censo de floracion de septiembre (13 especies del catalogo, 10 libres = 77 % del elenco sin usar en 7 dias) con El Taller n1 (unica aprobada) agrupado DENTRO de la misma landing. Primer control medido en Chromium 390x780: jardin-hoy 18,3 %, censo 21,8 % — los dos bajo el 35 %.",
+ "notifications": [
+  {
+   "id": "2026-08-31-jardin-hoy",
+   "format": "tarea",
+   "title": "🌿 Tu abelia y el cerco cierran hoy",
+   "body": "Cumpli los 3 slots en silencio. Aca esta todo junto: 11 tareas y 2 dias secos antes de que llueva el jueves.",
+   "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
+   "send_at": "2026-08-31T10:00:00-03:00",
+   "expires_at": "2026-08-31T22:00:00-03:00",
+   "status": "pending",
+   "sent_at": null,
+   "fail_reason": null,
+   "created_by": "engagement-agent 2026-08-31"
+  },
+  {
+   "id": "2026-08-31-censo-de-primavera",
+   "title": "🌸 13 en flor: ¿cuales ves vos?",
+   "body": "Tu catalogo dice que 13 especies abren ahora y doce estan del mismo lado. 5 paradas, 5 minutos.",
+   "url": "https://gardening-chi.vercel.app/engage/2026-08-31-censo-de-primavera.html",
+   "send_at": "2026-08-31T18:00:00-03:00",
+   "expires_at": "2026-08-31T22:00:00-03:00",
+   "status": "pending",
+   "sent_at": null,
+   "fail_reason": null,
+   "created_by": "engagement-agent 2026-08-31"
+  }
+ ]
 }

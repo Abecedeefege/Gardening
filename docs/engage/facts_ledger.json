@@ -1,7 +1,7 @@
 {
  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-08-30",
- "_nota_ultima_corrida": "30/08 (DOMINGO — CIERRE DE LA VENTANA DE SILENCIO): 0 push, pero este dia el silencio fue GRATIS: el domingo no tiene slot por cadencia. NO se cobra el lunes como merito; lo que se cobra son los TRES slots reales que cayeron (jue 27 10:00, sab 29 10:00, sab 29 11:00). Sexto dia seguido sin consumir ni una planta ni un fact, asi que los descansos siguieron corriendo y el elenco libre del lunes 31 es el mas amplio que tuve nunca. QUEMADOS HASTA EL 31/08: B-43, B-22, B-36 + el cast del canal tarea del 24/08 (B-9, B-18, F-2, B-5a/b, B-7, F-7, B-25, B-4, B-1, B-15) — ese cast es del canal TAREA, monotematico, se rige por la tarea y no por el elenco. ELENCO DEL 31 RE-COMPUTADO Y VERIFICADO HOY contra data_plants.py (flowering incluye el mes 9): son 13 especies, igual que el 28; excluyendo B-15 (canal tarea), B-22 y B-36 (quemadas) quedan 10 libres = 77 %, cumple el >=70 %. Libres: F-4, B-10/B-19, B-13, B-23, B-24, B-26, B-30/B-35, B-32, B-38, B-39. DOS HECHOS ESTRUCTURALES NUEVOS salieron de ese computo, los dos verificables en las fichas: (1) F-4 ciruelo de jardin es la UNICA de las 13 en el FRENTE, las otras 12 estan todas en el fondo (eje este) — la primavera de este jardin arranca casi entera del lado del sol de la manana; (2) CINCO ya vienen abriendo desde agosto (F-4, B-30/B-35, B-32, B-38, B-39 tienen flowering [8,9]) y OCHO arrancan recien en septiembre, lo que permite pedirle que CONFIRME cual ve abierta en vez de afirmarlo yo. TRABAJO REAL DE HOY: compactacion vencida (engagement 18->12, send_log 5->4) y CUARTA consulta de clima, que dio el cuarto drift seguido y esta vez cambio el gancho principal del lunes: la ventana de tijera pasa de TRES dias a DOS porque el miercoles 2/09 se mojo (0,0 -> 5,7 mm). Ver vuelta_backlog.json. NO se consumio ningun fun_fact hoy.",
+ "_updated": "2026-08-31",
+ "_nota_ultima_corrida": "31/08 (LUNES — LA VUELTA, se reanuda la cadencia con los DOS slots). Se consumio elenco por primera vez en 7 dias. EXPERIENCIA NUEVA 'El censo de la primavera' (18:00): 13 especies del catalogo que abren flor en septiembre, agrupadas en 5 PARADAS FISICAS. Elenco protagonista: F-4, B-30/B-35, B-38, B-39, B-32, B-13, B-10/B-19, B-26 (+ B-23 y B-24 mencionadas explicitamente como 'no las busques hoy'). Descansos verificados antes de publicar: el mas corto era 8 dias (F-4, B-30, B-35, B-38 usadas el 23/08) — todos cumplen el >=7. 10 de 13 libres = 77 %, cumple el >=70 %. ⚠️ DISTINCION QUE IMPORTA PARA LA PROXIMA CORRIDA: la ASERCION 'la poda del 2/08 dio flor en agosto, prediccion verificada' se uso el 15/08 y se re-edito el 23/08, y SIGUE QUEMADA hasta el 06/09. Lo que se uso hoy en la parada 2 es su INVERSO exacto — no se le dice como salio, se le pide que vaya a mirarlo. No confundir los dos en el proximo chequeo del ledger. ANGULOS NUEVOS ESTRENADOS HOY, los dos verificables en las fichas: (1) B-39 pera Williams como PUNTO SUR que abre igual que los carozos mejor iluminados — nunca usado, y B-39 nunca habia sido protagonista de un angulo propio; (2) B-32 viraro como TRAMPA de observacion (el rosado no es flor sino sepalos post-polinizacion, o sea que si lo ve rosa la floracion ya paso) — el fact es viejo (19/07, 26/07, >14 dias) pero el USO como criterio de campo es nuevo. CANAL TAREA (monotematico, se rige por la tarea y no por el elenco), re-edicion de jardin-hoy en su URL estable: F-7, B-7, B-5a, B-9, B-18, F-2, B-43, B-25, B-15, B-4, B-1. B-7 entro por la VENTANA QUE CIERRA HOY y NO por el hallazgo del audit — 'florece en madera vieja -> podar cuesta la flor' sigue quemado hasta el 07/09 y no se toco. Tampoco se usaron: el corte a rama lateral de 1/3, la forma en A, el tope del 40 %, las dos paltas, '7 de 7 slots' (se cobro el silencio NUEVO de 3 slots) ni las 3 predicciones de los carozos. QUEMADOS HASTA EL 07/09: todo el elenco de hoy (F-4, B-30/B-35, B-38, B-39, B-32, B-13, B-10/B-19, B-26, B-23, B-24) + el cast del canal tarea. LIBRES PARA EL 03/09 (jueves, solo canal tarea) y para la experiencia del 05/09 (sabado): B-3, B-27, F-1, B-37, B-29, F-9, B-8, B-42, B-16, B-44, B-34, B-40, F-8, B-46, B-12, B-6, F-5, F-10, B-14, F-3, I-1, I-2, B-20, B-2, B-45, B-47, B-48, B-49, B-41, B-21, B-28, B-11, B-31, B-33, B-17.",
  "plants": {
   "F-1": {
    "common": "Guayabo del país",
@@ -51,7 +51,7 @@
   },
   "F-2": {
    "common": "Bignonia rosada / Podranea",
-   "paginas_historicas": 9,
+   "paginas_historicas": 10,
    "featured": [
     {
      "date": "2026-07-21",
@@ -72,6 +72,11 @@
      "date": "2026-08-24",
      "page": "2026-07-24-jardin-hoy.html (reedicion 24/08)",
      "fact": "ANGULO TAREA: poda fuerte pre-brotacion + liberar el porton. Sin fun_fact."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-07-24-jardin-hoy.html (re-edicion 31/08)",
+     "fact": "CANAL TAREA — madera del ano + liberar el porton, corte al ras del nudo de origen."
     }
    ]
   },
@@ -98,7 +103,7 @@
   },
   "F-4": {
    "common": "Ciruelo de jardín",
-   "paginas_historicas": 13,
+   "paginas_historicas": 14,
    "featured": [
     {
      "date": "2026-07-19",
@@ -134,6 +139,11 @@
      "date": "2026-08-23",
      "page": "2026-08-01-el-taller.html (re-edicion)",
      "fact": "RE-EDICION de el-taller (23/08, SIN push): angulo RESULTADO verificado (poda 2/08 -> flor en agosto)."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-08-31-censo-de-primavera.html",
+     "fact": "PROTAGONISTA parada 1 — ANGULO ESTRUCTURAL NUEVO: es la UNICA de las 13 que abre en septiembre que esta en el FRENTE (las otras 12 en el fondo). Se le pide CONFIRMAR si esta abierta, no se afirma. Sin fun_fact de Pissard."
     }
    ]
   },
@@ -155,7 +165,7 @@
   },
   "F-7": {
    "common": "Abelia",
-   "paginas_historicas": 10,
+   "paginas_historicas": 11,
    "featured": [
     {
      "date": "2026-07-19",
@@ -176,6 +186,11 @@
      "date": "2026-08-24",
      "page": "2026-07-24-jardin-hoy.html (reedicion 24/08)",
      "fact": "ANGULO TAREA: poda de fin de invierno antes del brote; florece nov-may en madera nueva. Primera vez que protagoniza una fila propia."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-07-24-jardin-hoy.html (re-edicion 31/08)",
+     "fact": "CANAL TAREA (monotematico) — abre la lista: su ficha cierra la ventana HOY ('antes de que hinchen las yemas') y la minima subio ~5 desde el 25/08. Angulo EL PRECIO ANTES QUE LA TAREA: se le dice que pierde si espera."
     }
    ]
   },
@@ -239,7 +254,7 @@
   },
   "B-1": {
    "common": "Santa Rita / Buganvilia",
-   "paginas_historicas": 11,
+   "paginas_historicas": 12,
    "featured": [
     {
      "date": "2026-07-19",
@@ -255,6 +270,11 @@
      "date": "2026-08-24",
      "page": "2026-07-24-jardin-hoy.html (reedicion 24/08)",
      "fact": "ANGULO TAREA: unica del jardin cuya ventana depende de la ultima helada (2a semana de septiembre), no del calendario."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-07-24-jardin-hoy.html (re-edicion 31/08)",
+     "fact": "CANAL TAREA — 2a semana de septiembre; la unica cuya ventana la define el frio. Se aclara que la helada de septiembre todavia puede venir pese al invierno sin heladas."
     }
    ]
   },
@@ -302,7 +322,7 @@
   },
   "B-4": {
    "common": "Hibisco / Rosa china",
-   "paginas_historicas": 10,
+   "paginas_historicas": 11,
    "featured": [
     {
      "date": "2026-07-18",
@@ -323,12 +343,17 @@
      "date": "2026-08-24",
      "page": "2026-07-24-jardin-hoy.html (reedicion 24/08)",
      "fact": "ANGULO TAREA: la que conviene ATRASAR a principios de septiembre por sensibilidad al frio. Sin fun_fact."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-07-24-jardin-hoy.html (re-edicion 31/08)",
+     "fact": "CANAL TAREA — la que conviene ATRASAR a proposito (perenne sensible al frio). Muro norte a favor."
     }
    ]
   },
   "B-5a": {
    "common": "Hortensia",
-   "paginas_historicas": 14,
+   "paginas_historicas": 15,
    "featured": [
     {
      "date": "2026-07-18",
@@ -379,6 +404,11 @@
      "date": "2026-08-24",
      "page": "2026-07-24-jardin-hoy.html (reedicion 24/08)",
      "fact": "ANGULO TAREA: la UNICA con reloj real — trasplante a tierra sin hojas y antes del brote, rincon sur junto a la pera B-39. Ventana 29-30/08."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-07-24-jardin-hoy.html (re-edicion 31/08)",
+     "fact": "CANAL TAREA — la unica que no se puede correr (ventana 'cuando pierda todas las hojas'). Decision azul/rosa que se toma en el pozo."
     }
    ]
   },
@@ -400,7 +430,7 @@
   },
   "B-7": {
    "common": "Azarero / Pitósporo",
-   "paginas_historicas": 8,
+   "paginas_historicas": 9,
    "featured": [
     {
      "date": "2026-07-18",
@@ -421,6 +451,11 @@
      "date": "2026-08-24",
      "page": "2026-07-24-jardin-hoy.html (reedicion 24/08)",
      "fact": "ANGULO TAREA: recorte parejo del cerco (4 ejemplares), ultima semana de agosto. NO se repitio la contradiccion de ficha publicada el 22/08."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-07-24-jardin-hoy.html (re-edicion 31/08)",
+     "fact": "CANAL TAREA — cierra hoy ('ultima semana de agosto'). Entra por la VENTANA QUE SE CIERRA, NO por el hallazgo del audit (el argumento 'florece en madera vieja -> podar cuesta la flor' sigue quemado hasta el 07/09). Se publica el metodo del hilo entre estacas y el corte mas ancho abajo."
     }
    ]
   },
@@ -452,7 +487,7 @@
   },
   "B-9": {
    "common": "Crespón / Mirto de crepe",
-   "paginas_historicas": 18,
+   "paginas_historicas": 19,
    "featured": [
     {
      "date": "2026-07-19",
@@ -503,12 +538,17 @@
      "date": "2026-08-24",
      "page": "2026-07-24-jardin-hoy.html (reedicion 24/08)",
      "fact": "ANGULO TAREA: poda severa de flor, madera nueva; el limite es la yema hinchada y cerrada, no la fecha. Sin fun_fact."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-07-24-jardin-hoy.html (re-edicion 31/08)",
+     "fact": "CANAL TAREA — depende del primer control (podas-vuelta, re-preguntado UNA vez). Corteza canela exfoliante como valor del momento."
     }
    ]
   },
   "B-10": {
    "common": "Lavanda",
-   "paginas_historicas": 13,
+   "paginas_historicas": 14,
    "featured": [
     {
      "date": "2026-07-18",
@@ -539,6 +579,11 @@
      "date": "2026-08-22",
      "page": "2026-08-22-perfume-de-octubre.html",
      "fact": "ANGULO LUZ+VETO INVERSO: florece en brote del ano -> el corte de agosto SUMA flor; y es la unica perfumada mal ubicada por luz (pide pleno sol, esta en el este). Base del plan de 3 esquejes para setiembre. Sin fun_fact (lavare/polillas queda libre)."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-08-31-censo-de-primavera.html",
+     "fact": "Parada 5 — espigas violetas sobre follaje gris. Sin fun_fact (lavare/romanos). Sin el angulo luz del 22/08."
     }
    ]
   },
@@ -560,7 +605,7 @@
   },
   "B-13": {
    "common": "Clivia / Lirio del Cabo",
-   "paginas_historicas": 10,
+   "paginas_historicas": 11,
    "featured": [
     {
      "date": "2026-07-19",
@@ -576,6 +621,11 @@
      "date": "2026-08-17",
      "page": "2026-08-17-preguntas-abiertas.html",
      "fact": "ANGULO EXPEDIENTE ABIERTO (no fun_fact): sci 'a confirmar' — miniata vs gardenii vs robusta, la vara floral de setiembre lo dice. Consecuencia: si es gardenii el forzado de sequia invernal esta corrido."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-08-31-censo-de-primavera.html",
+     "fact": "Parada 5 — que mirar: vara gruesa saliendo del centro con el ramo naranja cerrado. Sin el fun_fact de la duquesa Clive."
     }
    ]
   },
@@ -602,7 +652,7 @@
   },
   "B-15": {
    "common": "Hiedra común",
-   "paginas_historicas": 13,
+   "paginas_historicas": 14,
    "featured": [
     {
      "date": "2026-07-20",
@@ -633,6 +683,11 @@
      "date": "2026-08-24",
      "page": "2026-07-24-jardin-hoy.html (reedicion 24/08)",
      "fact": "ANGULO TAREA: inspeccion con decision sobre el galpon (revoque/chapas), no poda. Sin fun_fact de las 2 fases vegetativas."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-07-24-jardin-hoy.html (re-edicion 31/08)",
+     "fact": "CANAL TAREA — bloque de lluvia. Inspeccion con decision + pedido explicito de foto de la pared."
     }
    ]
   },
@@ -654,7 +709,7 @@
   },
   "B-18": {
    "common": "Rosa de Siria / Althea",
-   "paginas_historicas": 14,
+   "paginas_historicas": 15,
    "featured": [
     {
      "date": "2026-07-18",
@@ -700,6 +755,11 @@
      "date": "2026-08-24",
      "page": "2026-07-24-jardin-hoy.html (reedicion 24/08)",
      "fact": "ANGULO TAREA: poda severa 40-50 % a 2-3 yemas, florece en brotes del ano. Sin fun_fact."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-07-24-jardin-hoy.html (re-edicion 31/08)",
+     "fact": "CANAL TAREA — junto con B-9. Angulo agencia: poda fuerte = menos flores mas grandes; moderada = mas cantidad. Sin el tope del 40 % (quemado)."
     }
    ]
   },
@@ -742,7 +802,7 @@
   },
   "B-23": {
    "common": "Limonero",
-   "paginas_historicas": 14,
+   "paginas_historicas": 15,
    "featured": [
     {
      "date": "2026-07-18",
@@ -773,12 +833,17 @@
      "date": "2026-08-22",
      "page": "2026-08-22-perfume-de-octubre.html",
      "fact": "ANGULO VENTANA: prune_when agosto-setiembre post-cosecha, azahar del brote nuevo. Sin fun_fact."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-08-31-censo-de-primavera.html",
+     "fact": "MENCION honesta, NO protagonista: se le dice explicitamente que NO la busque hoy porque su ficha la abre desde septiembre, no desde agosto."
     }
    ]
   },
   "B-24": {
    "common": "Mandarina criolla",
-   "paginas_historicas": 10,
+   "paginas_historicas": 11,
    "featured": [
     {
      "date": "2026-07-18",
@@ -804,12 +869,17 @@
      "date": "2026-08-10",
      "page": "2026-08-10-ultima-mandarina.html",
      "fact": "ANGULO VENTANA DE COSECHA (no fun_fact — el de los 'mandarines' se usó el 31/07, vedado hasta el 14/08): fruiting abr-ago, ultimo mes del año, cierra el 31/08 y vuelve el 23 → 8 dias. PROTAGONISTA."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-08-31-censo-de-primavera.html",
+     "fact": "MENCION honesta igual que B-23 — 'no las busques hoy, van en el censo de la vuelta'."
     }
    ]
   },
   "B-25": {
    "common": "Gardenia / Jazmín del Cabo",
-   "paginas_historicas": 15,
+   "paginas_historicas": 16,
    "featured": [
     {
      "date": "2026-07-20",
@@ -850,12 +920,17 @@
      "date": "2026-08-24",
      "page": "2026-07-24-jardin-hoy.html (reedicion 24/08)",
      "fact": "ANGULO TAREA: acidificar (quelato de hierro) justo antes de la brotacion. Sin fun_fact del Chanel n22."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-07-24-jardin-hoy.html (re-edicion 31/08)",
+     "fact": "CANAL TAREA — reubicada al bloque 'para el jueves que llueve': tarea de bolsa, no de tijera. Quelato EDDHA 5 g/L, regar antes para no quemar raiz."
     }
    ]
   },
   "B-26": {
    "common": "Romero",
-   "paginas_historicas": 18,
+   "paginas_historicas": 19,
    "featured": [
     {
      "date": "2026-07-18",
@@ -901,6 +976,11 @@
      "date": "2026-08-22",
      "page": "2026-08-22-perfume-de-octubre.html",
      "fact": "ANGULO ESTADO REAL: unica de las 11 EN FLOR hoy (jun-oct) -> esperar a oct-nov. NO se uso su fun_fact (sigue vedado)."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-08-31-censo-de-primavera.html",
+     "fact": "Parada 5 — flores celestes diminutas pegadas al tallo. Fun_fact SIGUE vedado y no se uso."
     }
    ]
   },
@@ -953,7 +1033,7 @@
   },
   "B-30": {
    "common": "Durazno",
-   "paginas_historicas": 14,
+   "paginas_historicas": 15,
    "featured": [
     {
      "date": "2026-07-20",
@@ -999,12 +1079,17 @@
      "date": "2026-08-23",
      "page": "2026-08-01-el-taller.html (re-edicion)",
      "fact": "RE-EDICION de el-taller (23/08, SIN push): la prediccion del 2/08 verificada con registro medido — 0,0 mm el 2, 22,4 mm el 6, minima 6,9 el 8. Angulo RESULTADO, no fun_fact."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-08-31-censo-de-primavera.html",
+     "fact": "Parada 2 — angulo INVERSO al del 15/08: NO se le dice que floreecio lo que podo; se le pide que vaya a mirarlo el mismo ('no te voy a decir como salio'). La ASERCION 'poda 2/08 -> flor de agosto verificada' sigue quemada hasta el 06/09; lo usado hoy es el pedido de observacion."
     }
    ]
   },
   "B-32": {
    "common": "Viraró",
-   "paginas_historicas": 13,
+   "paginas_historicas": 14,
    "featured": [
     {
      "date": "2026-07-19",
@@ -1030,6 +1115,11 @@
      "date": "2026-08-15",
      "page": "2026-08-15-florecio-lo-que-podaste.html",
      "fact": "MENCION DE CONTEO solamente (una de las 6 con agosto en flowering). NO protagonista y SIN el fun_fact de los sepalos rosados: ese angulo ya se uso 19/07, 26/07, 31/07 y 08/08 (protagonista) - repetirlo hoy habria violado la regla de anti-repeticion que nace del reclamo del 18/07. Descansa hasta el 22/08."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-08-31-censo-de-primavera.html",
+     "fact": "PROTAGONISTA parada 4 — ANGULO TRAMPA (uso nuevo de un fact viejo): el rosado llamativo NO es flor sino sepalos post-polinizacion, asi que si lo ve rosa la floracion YA PASO. El fact de los sepalos se habia usado 19/07 y 26/07 (>14 dias); aca se usa como criterio de observacion, no como curiosidad."
     }
    ]
   },
@@ -1123,7 +1213,7 @@
   },
   "B-38": {
    "common": "Ciruela amarilla",
-   "paginas_historicas": 10,
+   "paginas_historicas": 11,
    "featured": [
     {
      "date": "2026-07-18",
@@ -1154,12 +1244,17 @@
      "date": "2026-08-23",
      "page": "2026-08-01-el-taller.html (re-edicion)",
      "fact": "RE-EDICION de el-taller (23/08, SIN push): angulo RESULTADO verificado (poda 2/08 -> flor en agosto)."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-08-31-censo-de-primavera.html",
+     "fact": "Parada 2 — flor blanca sobre madera sin hojas, como marca de que mirar. Pedido de observacion."
     }
    ]
   },
   "B-39": {
    "common": "Pera Williams",
-   "paginas_historicas": 13,
+   "paginas_historicas": 14,
    "featured": [
     {
      "date": "2026-07-20",
@@ -1195,6 +1290,11 @@
      "date": "2026-08-15",
      "page": "2026-08-15-florecio-lo-que-podaste.html",
      "fact": "PROTAGONISTA - ANGULO NUEVO (bucle cerrado accion->resultado, nunca usado): la flor de agosto sale de la poda que EL hizo, con timestamp de su propio tilde. Sustancia nueva: floracion DESNUDA (flor antes que hoja) => se paga con la reserva de almidon del verano pasado, no con fotosintesis de hoy; la poda no reduce la floracion, concentra el reparto de una reserva fija. NO se uso ningun fun_fact de ficha de estas plantas. Cierre del circulo: la instruccion 'no cortes los dardos - yemas gordas' que leyo el 23/07 (plant-B-39 done 15:42) son exactamente las yemas que abren hoy. Ademas HALLAZGO NUEVO con consecuencia: su ficha pide polinizador de otra variedad y en 52 fichas hay UNA sola pera -> tap florecio-pera-companera para la reentrada del 24/08."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-08-31-censo-de-primavera.html",
+     "fact": "PROTAGONISTA parada 3 — ANGULO NUEVO nunca usado: es el PUNTO SUR del jardin (peor luz invernal, mas humedad, segun la orientacion anotada en CLAUDE.md) y aun asi su ficha la abre en agosto junto con los carozos mejor ubicados. Se le pide confirmar si eso es cierto en la practica."
     }
    ]
   },
@@ -1263,7 +1363,7 @@
   },
   "B-43": {
    "common": "Pitósporo",
-   "paginas_historicas": 9,
+   "paginas_historicas": 10,
    "featured": [
     {
      "date": "2026-07-20",
@@ -1289,6 +1389,11 @@
      "date": "2026-08-24",
      "page": "2026-08-24-el-taller-3.html",
      "fact": "PROTAGONISTA Taller n3. Angulos NUEVOS (ninguno usado antes): (a) florece sobre MADERA VIEJA -> bajarlo en agosto cuesta el azahar de octubre de ESTE ano; (b) las dos ventanas legitimas de su propia ficha (fines de invierno vs post-floracion feb-mar); (c) tecnica de reduccion: corte a rama lateral de >=1/3 del grosor, forma en A, tope 40 %. NO se reuso el fun_fact del nombre japones 'tobira' ni la resina de las semillas. Excepcion de canal tarea aplicada (estaba quemado hasta el 29/08 por perfume-de-octubre del 22/08, otro angulo)."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-07-24-jardin-hoy.html (re-edicion 31/08)",
+     "fact": "CANAL TAREA — con ADVERTENCIA HONESTA: es la mas larga y NO es la que hay que forzar en dos dias de tijera. Se linkea el Taller n3 ya mandado, no se re-argumenta."
     }
    ]
   },
@@ -1458,7 +1563,7 @@
   },
   "B-35": {
    "common": "B-35",
-   "paginas_historicas": 3,
+   "paginas_historicas": 4,
    "featured": [
     {
      "date": "2026-08-01",
@@ -1479,6 +1584,11 @@
      "date": "2026-08-23",
      "page": "2026-08-01-el-taller.html (re-edicion)",
      "fact": "RE-EDICION de el-taller (23/08, SIN push): idem B-30, angulo RESULTADO verificado."
+    },
+    {
+     "date": "2026-08-31",
+     "page": "2026-08-31-censo-de-primavera.html",
+     "fact": "Parada 2 con B-30, mismo tratamiento (pedido de observacion, no asercion)."
     }
    ]
   }
