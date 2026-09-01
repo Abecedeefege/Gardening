@@ -9,7 +9,13 @@ name: push-dispatch
 
 on:
   schedule:
-    - cron: '*/15 10-23 * * *'
+    # Minutos DESPLAZADOS a proposito (no */15). El scheduler de GitHub
+    # encola los cron en minutos redondos (:00/:15/:30/:45) junto con los
+    # de todo el mundo y los difiere bajo carga. Medido el 31/08/2026:
+    # la push de las 10:00 (send_at 13:00Z) salio 17:23Z — 4 h 23 min tarde,
+    # aterrizando 14:23 local. Un slot fijo que llega 4 h tarde rompe la
+    # promesa horaria y el contenido atado al momento del dia.
+    - cron: '7,22,37,52 10-23 * * *'
   workflow_dispatch: {}
   # El cron de GitHub deriva/saltea corridas (12/06: 100 min sin tick).
   # Trigger por push a la cola: cuando el agente encola, se despacha al

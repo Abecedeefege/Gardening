@@ -2,12 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-08-17-preguntas-abiertas",
-      "ts": "2026-08-17T21:23:11.437Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-08-22-perfume-de-octubre",
       "ts": "2026-08-22T14:18:40.252Z",
       "status_code": 201
@@ -214,7 +208,17 @@
     "2026-08-25": {
       "sent": 0,
       "_nota": "Silencio pedido por el usuario (24/08). Martes sin slot igual."
+    },
+    "2026-08-17": {
+      "sent": 1
+    },
+    "2026-08-22": {
+      "sent": 1
+    },
+    "2026-08-31": {
+      "sent": 2,
+      "_nota": "jardin-hoy send_at 13:00Z -> sent 17:23:19Z (+4h23m). censo-de-primavera send_at 21:00Z -> sent 21:59:09Z (+59m). Las dos 201. Lag medido por primera vez."
     }
   },
-  "_updated_at": "2026-08-30T09:04:15.538368Z"
+  "_updated_at": "2026-09-01T09:20:00Z"
 }

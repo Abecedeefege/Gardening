@@ -1,41 +1,6 @@
 {
- "_updated_at": "2026-08-30T09:04:15.537461Z",
+ "_updated_at": "2026-09-01T09:20:00Z",
  "events": [
-  {
-   "_id": "msxqstuso2tp2p",
-   "type": "notification_clicked",
-   "nid": "2026-08-17-preguntas-abiertas",
-   "page": "engage/2026-08-17-preguntas-abiertas.html",
-   "ts": "2026-08-17T21:25:14.401Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msxqstus2sct3j",
-   "type": "page_visit",
-   "page": "engage/2026-08-17-preguntas-abiertas.html",
-   "nid": "2026-08-17-preguntas-abiertas",
-   "src": "push",
-   "ts": "2026-08-17T21:25:14.401Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msxqsta5umacum",
-   "type": "page_visit",
-   "page": "engage/2026-08-17-preguntas-abiertas.html",
-   "nid": null,
-   "src": "direct",
-   "ts": "2026-08-17T21:25:13.658Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "msxqthengwtuq2",
-   "type": "dwell",
-   "seconds": 31,
-   "scroll_pct": 41,
-   "page": "engage/2026-08-17-preguntas-abiertas.html",
-   "ts": "2026-08-17T21:25:44.927Z",
-   "device": "sin-nombre"
-  },
   {
    "_id": "mt7ab566ckkptd",
    "type": "notification_clicked",
@@ -638,6 +603,41 @@
   },
   "2026-08-16": {
    "visits": 4
+  },
+  "2026-08-17": {
+   "sent": 1,
+   "clicked": 1,
+   "visits": 2,
+   "approvals": 0,
+   "_nota": "preguntas-abiertas: abierta desde el push, dwell 31 s @41 % y CERO respuesta a las preguntas. Unico caso donde el layout SI explico el resultado (primer control al 75 % del scroll). Compactada el 01/09."
+  },
+  "2026-08-29": {
+   "sent": 0,
+   "clicked": 0,
+   "visits": 0,
+   "approvals": 0,
+   "_nota": "Dia 5 de 6 de la ventana de silencio pedida. Dia bisagra: cayeron DOS slots (tarea 10:00 + experiencia 11:00) y los dos pasaron vacios por diseno. 0 push."
+  },
+  "2026-08-30": {
+   "sent": 0,
+   "clicked": 0,
+   "visits": 0,
+   "approvals": 0,
+   "_nota": "Dia 6 y ultimo de la ventana de silencio pedida (domingo sin slot). 0 push por diseno. Ventana cumplida entera: 3 de 3 slots reales caidos."
+  },
+  "2026-08-31": {
+   "sent": 2,
+   "clicked": 0,
+   "visits": 0,
+   "approvals": 0,
+   "_nota": "LA REENTRADA — las 2 push enviadas y confirmadas 201 (jardin-hoy + censo-de-primavera), y CERO senal: ni click, ni visita, ni reaccion, ni slot, ni feedback. Primer dia con 2 envios exitosos y 0 aperturas desde el 31/07. DOS confusores que impiden leerlo como veredicto de contenido: (1) era su dia de VUELTA al pais — el 24/08 escribio 'vuelvo la semana que viene', no dijo el dia; (2) ENTREGA TARDIA: jardin-hoy vencia 13:00Z y salio 17:23Z (+4 h 23 min), censo vencia 21:00Z y salio 21:59Z (+59 min). El slot de las 10:00 aterrizo 14:23 local."
+  },
+  "2026-09-01": {
+   "sent": 0,
+   "clicked": 0,
+   "visits": 0,
+   "approvals": 0,
+   "_nota": "Martes sin slot: 0 push por cadencia. Mantenimiento: compactacion vencida ejecutada, cron del dispatcher corregido fuera de minutos redondos, 6a consulta de clima."
   }
  }
 }
