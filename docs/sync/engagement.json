@@ -1,5 +1,5 @@
 {
- "_updated_at": "2026-09-01T09:20:00Z",
+ "_updated_at": "2026-09-02T09:20:00Z",
  "events": [
   {
    "_id": "mt7ab566ckkptd",
@@ -638,6 +638,13 @@
    "visits": 0,
    "approvals": 0,
    "_nota": "Martes sin slot: 0 push por cadencia. Mantenimiento: compactacion vencida ejecutada, cron del dispatcher corregido fuera de minutos redondos, 6a consulta de clima."
+  },
+  "2026-09-02": {
+   "sent": 0,
+   "clicked": 0,
+   "visits": 0,
+   "approvals": 0,
+   "_nota": "Miercoles sin slot: 0 push por cadencia. NOVENO dia sin un solo evento nuevo (ultimo: dwell 24/08 22:10Z). Los 2 envios del 31/08 (201 los dos) siguen con 0 aperturas a ~59 h. Mantenimiento: 7a consulta de clima (7o drift: jue 3 de 4,4 a 12,7 mm), recuento de tareas verificado contra generate_tasks_from_plants (46 done / 51 active / 3 snoozed, sin actividad nueva del usuario desde el 08/08), municion del jueves precomputada. Sin compactacion: no vence hasta el 08/09."
   }
  }
 }

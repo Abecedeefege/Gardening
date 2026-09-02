@@ -218,7 +218,15 @@
     "2026-08-31": {
       "sent": 2,
       "_nota": "jardin-hoy send_at 13:00Z -> sent 17:23:19Z (+4h23m). censo-de-primavera send_at 21:00Z -> sent 21:59:09Z (+59m). Las dos 201. Lag medido por primera vez."
+    },
+    "2026-09-01": {
+      "sent": 0,
+      "_nota": "Martes sin slot por cadencia. 0 envios."
+    },
+    "2026-09-02": {
+      "sent": 0,
+      "_nota": "Miercoles sin slot por cadencia. 0 envios. Ultimo envio del sistema: 31/08 21:59:09Z."
     }
   },
-  "_updated_at": "2026-09-01T09:20:00Z"
+  "_updated_at": "2026-09-02T09:20:00Z"
 }

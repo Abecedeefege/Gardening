@@ -1072,7 +1072,7 @@
    "notified_by": [
     "2026-08-24-el-taller-3"
    ],
-   "result_notes": "24/08: ABIERTA (21:00 enviada -> 22:09 click, dwell 100 s hasta el pie) y con feedback_text, la senal mas alta de la escala. Pero el texto no habla del contenido: «No me mandes mas cosas hasta la semana que viene que vuelvo a Uruguay. Todo esto mandamelo ahi». Cero reaccion, cero slot, cero aprobacion, y taller3-cuando / taller3-paltas sin responder. NO es rechazo ni masomenos: es NO-VEREDICTO por contexto — el usuario leyo entera una guia para ejecutar con la tijera en la mano estando fuera del pais. La pagina se CONSERVA (linea Taller, la unica aprobada) y sus dos preguntas quedan vivas en vuelta_backlog.json. Al no estar aprobada no recurre sola: vuelve solo agrupada dentro de la original nueva del 31/08 si el pitosporo entra en la lista. La hipotesis del PRECIO ANTES QUE LA TAREA sigue sin medirse."
+   "result_notes": "02/09 — sin cambios, sigue pending. Su unica senal (24/08) fue feedback_text de LOGISTICA («no me mandes mas cosas hasta la semana que viene»), no de contenido: el Taller n°3 sigue SIN VEREDICTO a 9 dias. No aprobada -> no recurre. Lo que si quedo probado es el canal: leyo los 100 s hasta el pie y la caja de feedback es el control que mas convierte del sitio (2 de 2 el 24/08)."
   },
   {
    "id": "2026-08-31-censo-de-primavera",
@@ -1084,7 +1084,7 @@
    "notified_by": [
     "2026-08-31-censo-de-primavera"
    ],
-   "result_notes": "01/09 — SIGUE PENDING (no se aprobo, no se rechazo; por regla NO recurre). Enviada 31/08 21:59:09Z (201) y a las ~15 h: cero click, cero visita, cero reaccion, cero slot, cero feedback. NO se archiva como rechazo y NO se toca la pagina: hay dos confusores que impiden leerlo como veredicto de contenido — (1) era su dia de vuelta al pais y nunca dijo que llegaba el 31; (2) la push salio con +59 min de lag y su hermana de las 10:00 con +4 h 23 min, o sea el dia entero llego corrido. La hipotesis (ruta fisica de 5 paradas + declarar lo que NO se) queda SIN MEDIR, no refutada. Se le da una ventana mas: si el jue 3 o el sab 5 aparece senal en el sitio, se re-mide; si el 07/09 sigue sin una sola apertura, ahi si se cierra el eje y se libera el elenco."
+   "result_notes": "02/09 — SIGUE PENDING, segundo recuento. Enviada 31/08 21:59:09Z (201) y a ~59 h NO tiene una sola apertura: ni click, ni visita, ni reaccion, ni slot, ni feedback. NO se archiva como rechazo y la pagina NO se toca: la lectura sigue confundida por (1) el 31 era su dia de vuelta al pais y (2) la entrega salio +59 min tarde. La hipotesis (pedir la observacion en vez de afirmarla) queda SIN MEDIR, no refutada. Ventana de re-medicion abierta hasta el 07/09: si el jue 3 o el sab 5 aparece senal, se re-mide; si el 07/09 sigue en cero, ahi se cierra el eje 'recorrido de observacion' y el sabado 5 vuelve a la forma que SI gano (El Taller, ejecutar con la herramienta en la mano). Por regla no recurre sin aprobacion."
   }
  ],
  "_updated_at": "2026-09-01T09:20:00Z",
