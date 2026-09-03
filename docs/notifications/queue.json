@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-03T09:20:00Z",
+  "_updated_at": "2026-09-03T14:29:19.607Z",
   "_nota": "JUEVES 03/09 — SLOT DE TAREA (10:00). Sin experiencia (la tabla la pone Lun 18:00 / Sab 11:00). 1 push: jardin-hoy reeditado en su URL estable. ANGULO: la lluvia de 12,7 mm parte la semana en dos — hoy NO se sale (tijera/pala salen peor con follaje y tierra empapados), y eso mismo es el contenido: 1 tarea real que se hace ADENTRO un dia de lluvia (B-12 cinta, dividir matas) + el balde de agua de lluvia que la ficha de esa misma planta pide (cloro de OSE le quema las puntas). El viernes 4 es la ventana de trasplante del mes (tierra humeda pero suelta, viento calmo) para el vivero B-46-3. Antes del sabado: viento 38 km/h + max 8,3 el domingo -> arrimar la hilera de 56 macetas de palmera B-47. Lunes 7 (unico dia limpio): lantana B-29 severa. Elenco 100% LIBRE (B-12/B-17, B-46, B-47, B-29, B-20); citricos/paltas solo en rol secundario, no protagonistas — siguen quemados hasta el 07/09. 8a CONSULTA DE CLIMA: por PRIMERA VEZ un numero se repitio (12,7 mm el jueves, 7a y 8a consulta iguales); el golpe de frio del domingo (max 8,3) aguanto las 8. Los mm del sabado/domingo drifearon otra vez (6,5->2,9 y 1,7->1,0) y por eso NO se publican — eso mismo se le cuenta como bloque de honestidad. Control interactivo mas alto medido en Chromium 390x780: 17,9 % (regla #2 OK). ⚠️ PROXIMA CORRIDA: medir sent_at - send_at de esta entry — es la PRIMERA medicion del cron corregido (7,22,37,52 en push-dispatch.yml). El 31/08 el mismo slot llego +4 h 23 min tarde.",
   "notifications": [
     {
@@ -10,8 +10,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
       "send_at": "2026-09-03T10:00:00-03:00",
       "expires_at": "2026-09-03T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-09-03T14:29:19.606Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-09-03"
     }
