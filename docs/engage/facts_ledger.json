@@ -1,7 +1,7 @@
 {
  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-09-02",
- "_nota_ultima_corrida": "02/09 (MIERCOLES — sin slot por cadencia). NO SE CONSUMIO ELENCO: cero contenido publicado, cero push encolada. El registro de quemados del 31/08 sigue INTACTO y vigente hasta el 07/09 (F-4, B-30/B-35, B-38, B-39, B-32, B-13, B-10/B-19, B-26, B-23, B-24, F-7, B-7, B-5a, B-9, B-18, F-2, B-43, B-25, B-15, B-4, B-1). LO QUE IMPORTA PARA EL JUEVES 3: la municion quedo VERIFICADA contra generate_tasks_from_plants + task_states.json (46 done / 51 active / 3 snoozed; el archivo no cambia desde el 08/08, o sea que el usuario no toco nada). De las 17 activas que vencen en septiembre, las que estan 100% en ELENCO LIBRE son: B-46-3 / B-46-5 / B-46-7 (vivero: trasplantar los listos, decidir destino de las paltas, liquidambares a sol pleno), B-47-3 / B-47-4 (palmeras: cuantas guardar, trasplantar las vigorosas), B-29 (lantana, poda severa de rejuvenecimiento), B-12 (cinta, dividir matas), F-3 y F-3-2 (fotinias del cerco) y B-20 (foto al brotar). OJO: B-22, B-23, B-24, B-36-2, B-1, B-32 y B-13-2 tambien vencen en septiembre pero estan QUEMADAS hasta el 07/09 — no usarlas como protagonistas del jueves. ANGULO NUEVO Y REAL PARA EL JUEVES, que ademas es el que la meteorologia acaba de habilitar: el jueves 3 llueve 12,7 mm. Eso PARTE la lista de septiembre en dos — la tierra mojada es la mejor condicion para trasplantar el vivero (B-46-3, B-47-4) y para dividir matas (B-12), y es la PEOR para podar citricos (B-23/B-24) porque la herida abierta con follaje mojado es via de entrada. No es una urgencia inventada: es la misma lista de siempre reordenada por un dato verificable.",
+ "_updated": "2026-09-03",
+ "_nota_ultima_corrida": "03/09 (JUEVES — slot de tarea 10:00). SE CONSUMIO ELENCO: jardin-hoy reeditado con 5 tareas. PROTAGONISTAS (todos del elenco LIBRE): B-12/B-17 cinta (dividir matas + el balde de agua de lluvia por el cloro de OSE), B-46 vivero (trasplante del viernes: dar vuelta la maceta, bola apretada = listo), B-47 palmeras (arrimar la hilera de 56 macetas antes del viento de 38 km/h), B-29 lantana (poda severa a 30 cm, DESPUES del frio del domingo, no antes), B-20 arbusto incognita (brota con esta lluvia). SECUNDARIOS, no protagonistas: citricos/paltas nombrados solo como 'lo que NO se toca con follaje mojado' (sigue vigente su veda hasta el 07/09). ANGULO ESTRENADO: 'la lluvia parte la lista en dos' — hoy no se sale y eso ES el contenido; la tarea del dia se hace adentro. FACT NUEVO USADO: cloro/fluor de OSE quema puntas de la cinta -> el agua de lluvia de hoy es el remedio. FACT NUEVO USADO: lantana nativa, charruas quemaban sus hojas como repelente. NO se toco el fact de la NASA (aire interior) — queda fresco.",
  "plants": {
   "F-1": {
    "common": "Guayabo del país",
@@ -589,7 +589,7 @@
   },
   "B-12": {
    "common": "Cinta / Lazo de amor",
-   "paginas_historicas": 9,
+   "paginas_historicas": 10,
    "featured": [
     {
      "date": "2026-07-19",
@@ -600,6 +600,11 @@
      "date": "2026-07-30",
      "page": "2026-07-30-se-multiplican-solos.html",
      "fact": "ANGULO PROPAGACION (how-to, no fun_fact NASA): hijuelos colgantes del lazo de amor = plantas gratis, cast fresco rested"
+    },
+    {
+     "date": "2026-09-03",
+     "page": "2026-07-24-jardin-hoy.html (ed. 03/09)",
+     "fact": "dividir matas un dia de lluvia (tarea de interior) + cloro/fluor de OSE quema las puntas -> balde de agua de lluvia"
     }
    ]
   },
@@ -765,12 +770,17 @@
   },
   "B-20": {
    "common": "Arbusto caduco a identificar",
-   "paginas_historicas": 5,
+   "paginas_historicas": 6,
    "featured": [
     {
      "date": "2026-08-17",
      "page": "2026-08-17-preguntas-abiertas.html",
      "fact": "ANGULO EXPEDIENTE ABIERTO: la unica de 52 sin ni siquiera genero tentativo. Brotacion set-oct = patron de yemas + hoja + flor. Consecuencia: sin ID no hay mes de poda seguro."
+    },
+    {
+     "date": "2026-09-03",
+     "page": "2026-07-24-jardin-hoy.html (ed. 03/09)",
+     "fact": "unica especie del catalogo sin identificar; la lluvia + calor la deberia hacer brotar en estos dias -> 4 fotos y se cierra"
     }
    ]
   },
@@ -1007,7 +1017,7 @@
   },
   "B-29": {
    "common": "Lantana / Camará",
-   "paginas_historicas": 11,
+   "paginas_historicas": 12,
    "featured": [
     {
      "date": "2026-07-18",
@@ -1028,6 +1038,11 @@
      "date": "2026-08-22",
      "page": "2026-08-22-perfume-de-octubre.html",
      "fact": "MENCION EN LISTA: sin ventana de poda en agosto. Sin fun_fact."
+    },
+    {
+     "date": "2026-09-03",
+     "page": "2026-07-24-jardin-hoy.html (ed. 03/09)",
+     "fact": "poda severa a 30 cm, florece solo en madera del ano; se corre al lunes 7 para no dejar cortes abiertos con el frio de 8,3; nativa, los charruas quemaban sus hojas como repelente"
     }
    ]
   },
@@ -1426,7 +1441,7 @@
   },
   "B-46": {
    "common": "Vivero / Plantines",
-   "paginas_historicas": 8,
+   "paginas_historicas": 9,
    "featured": [
     {
      "date": "2026-07-21",
@@ -1452,6 +1467,11 @@
      "date": "2026-07-27",
      "page": "2026-07-27-vos-decidis.html",
      "fact": "ANGULO DECISION/tarea: ~30 plantines, destino (repartir/plantar/crecer)"
+    },
+    {
+     "date": "2026-09-03",
+     "page": "2026-07-24-jardin-hoy.html (ed. 03/09)",
+     "fact": "ventana de trasplante sept-oct: dar vuelta la maceta, bola apretada = listo; el punto de tierra es 24-48 h POST lluvia, no durante"
     }
    ]
   },
@@ -1489,7 +1509,7 @@
   },
   "B-47": {
    "common": "Plantines de palmera (lote separado)",
-   "paginas_historicas": 6,
+   "paginas_historicas": 7,
    "featured": [
     {
      "date": "2026-07-18",
@@ -1500,6 +1520,11 @@
      "date": "2026-08-17",
      "page": "2026-08-17-preguntas-abiertas.html",
      "fact": "CODA (no protagonista): butia vs pindo se separa por la hoja (segmentos rigidos en arco vs pluma laxa pendula). Se cierra con UNA foto, sin esperar primavera."
+    },
+    {
+     "date": "2026-09-03",
+     "page": "2026-07-24-jardin-hoy.html (ed. 03/09)",
+     "fact": "56 macetas chicas en hilera separada = perfecto para luz, pesimo para viento de 38 km/h; arrimarlas a la pared antes del sabado"
     }
    ]
   },
@@ -1591,6 +1616,17 @@
      "fact": "Parada 2 con B-30, mismo tratamiento (pedido de observacion, no asercion)."
     }
    ]
+  },
+  "B-17": {
+   "common": "B-17",
+   "paginas_historicas": 1,
+   "featured": [
+    {
+     "date": "2026-09-03",
+     "page": "2026-07-24-jardin-hoy.html (ed. 03/09)",
+     "fact": "dividir matas un dia de lluvia (junto con B-12)"
+    }
+   ]
   }
  },
  "_notas_angulos": [
@@ -1627,5 +1663,5 @@
   ],
   "2026-08-04: ver arriba"
  ],
- "_nota_vigente": "AL 01/09/2026 (MARTES, mantenimiento, 0 push). ELENCO VEDADO HASTA EL 07/09 (se gasto el 31/08 entre el censo y el canal tarea, se haya leido o no): F-4, B-30, B-35, B-38, B-39, B-32, B-13, B-10, B-19, B-26, B-23, B-24, F-7, B-7, B-5a, B-9, B-18, F-2, B-43, B-25, B-15, B-4, B-1. ELENCO LIBRE Y CON >=7 DIAS DE DESCANSO PARA EL JUEVES 3 Y EL SABADO 5 (35 codigos, hay de sobra para cumplir el >=70 %): B-3, B-27, F-1, B-37, B-29, F-9, B-8, B-42, B-16, B-44, B-34, B-40, F-8, B-46, B-12, B-6, F-5, F-10, B-14, F-3, I-1, I-2, B-20, B-2, B-45, B-47, B-48, B-49, B-41, B-21, B-28, B-11, B-31, B-33, B-17. CRUCE UTIL YA COMPUTADO (01/09, contra generate_tasks_from_plants + task_states.json): de las 17 tareas active con due_month=9, las que caen en elenco LIBRE son plant-B-29 (lantana, poda severa de rejuvenecimiento), plant-F-3 y plant-F-3-2 (fotinias del cerco), plant-B-46-3/-5/-7 y plant-B-47-3/-4 (vivero y palmeras: trasplantar y decidir destino), plant-B-12 (cinta: dividir matas), plant-B-20 (foto al brotar) y plant-B-32 (vedada). Es decir: el vivero B-46/B-47 es la veta mas gorda y esta 100 % libre. OJO: plant-B-1, plant-B-22, plant-B-23, plant-B-24, plant-B-36-2 y plant-B-13-2 tambien vencen en septiembre pero su elenco esta VEDADO hasta el 07/09 — el canal tarea es la unica excepcion documentada al veto (su cast lo define la tarea, no el ledger), asi que jardin-hoy SI puede usarlas; una experiencia nueva NO."
+ "_nota_vigente": "AL 03/09/2026 (JUEVES, 1 push de tarea). ELENCO VEDADO HASTA EL 07/09 (del 31/08): F-4, B-30, B-35, B-38, B-39, B-32, B-13, B-10, B-19, B-26, B-23, B-24, F-7, B-7, B-5a, B-9, B-18, F-2, B-43, B-25, B-15, B-4, B-1. NUEVOS QUEMADOS HOY 03/09, DESCANSAN HASTA EL 10/09: B-12, B-17, B-46, B-47, B-29, B-20. ELENCO LIBRE PARA EL SABADO 5 (29 codigos, alcanza de sobra para el >=70 %): B-3, B-27, F-1, B-37, F-9, B-8, B-42, B-16, B-44, B-34, B-40, F-8, B-6, F-5, F-10, B-14, F-3, I-1, I-2, B-2, B-45, B-48, B-49, B-41, B-21, B-28, B-11, B-31, B-33. ⚠️ PARA EL SABADO: la experiencia original nueva NO puede protagonizarse con el vivero/palmeras (se gastaron hoy). Candidatos frescos con tarea real de septiembre: F-3/F-3-2 fotinias del cerco (recorte primaveral) — quemadas hasta el 07/09 por el canal tarea del 31, revisar; si no, la cantera del audit_flor_poda (coronita F-5 y romero B-26, este ultimo vedado hasta el 07) o los 44 sin repuesto para esquejes de septiembre. NO REPETIR ANTES DEL 10/09: 'la lluvia parte la lista en dos' · el punto exacto de trasplante 24-48 h post-lluvia · el balde de agua de lluvia · 'arrimar la hilera para que se sostengan entre ellas' · 'florece en madera nueva -> cortar fuerte suma flor' (usado en lantana)."
 }

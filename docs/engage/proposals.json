@@ -1084,7 +1084,7 @@
    "notified_by": [
     "2026-08-31-censo-de-primavera"
    ],
-   "result_notes": "02/09 — SIGUE PENDING, segundo recuento. Enviada 31/08 21:59:09Z (201) y a ~59 h NO tiene una sola apertura: ni click, ni visita, ni reaccion, ni slot, ni feedback. NO se archiva como rechazo y la pagina NO se toca: la lectura sigue confundida por (1) el 31 era su dia de vuelta al pais y (2) la entrega salio +59 min tarde. La hipotesis (pedir la observacion en vez de afirmarla) queda SIN MEDIR, no refutada. Ventana de re-medicion abierta hasta el 07/09: si el jue 3 o el sab 5 aparece senal, se re-mide; si el 07/09 sigue en cero, ahi se cierra el eje 'recorrido de observacion' y el sabado 5 vuelve a la forma que SI gano (El Taller, ejecutar con la herramienta en la mano). Por regla no recurre sin aprobacion."
+   "result_notes": "SIN MEDIR, no refutada. Enviada 31/08 (201) pero entregada +59 min tarde y nunca abierta (>72 h). Ventana de re-medicion abierta hasta el 07/09: sigue linkeada desde jardin-hoy (ed. 03/09) con la nota de que no vence. Si el 07/09 sigue en cero, se cierra el eje 'recorrido de observacion' y se archiva como dropped."
   }
  ],
  "_updated_at": "2026-09-01T09:20:00Z",
