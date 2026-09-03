@@ -1,650 +1,667 @@
 {
- "_updated_at": "2026-09-02T09:20:00Z",
- "events": [
-  {
-   "_id": "mt7ab566ckkptd",
-   "type": "notification_clicked",
-   "nid": "2026-08-24-jardin-hoy",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-08-24T13:41:17.163Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mt7ab566qwy8vp",
-   "type": "page_visit",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "nid": "2026-08-24-jardin-hoy",
-   "src": "push",
-   "ts": "2026-08-24T13:41:17.163Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mt7abk28163tx7",
-   "type": "feedback_text",
-   "target": "jardin-hoy",
-   "text": "Vuelvo en 1 semana a Uruguay.  Mándame todo lo que haya para hacer ese dia",
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-08-24T13:41:36.463Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mt7abnublogmyi",
-   "type": "dwell",
-   "seconds": 24,
-   "scroll_pct": 100,
-   "page": "engage/2026-07-24-jardin-hoy.html",
-   "ts": "2026-08-24T13:41:41.363Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mt7sh4xd8mrivv",
-   "type": "notification_clicked",
-   "nid": "2026-08-24-el-taller-3",
-   "page": "engage/2026-08-24-el-taller-3.html",
-   "ts": "2026-08-24T22:09:49.870Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mt7sh4xd0l45qk",
-   "type": "page_visit",
-   "page": "engage/2026-08-24-el-taller-3.html",
-   "nid": "2026-08-24-el-taller-3",
-   "src": "push",
-   "ts": "2026-08-24T22:09:49.870Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mt7si1e7m83l5o",
-   "type": "feedback_text",
-   "target": "el-taller-3",
-   "text": "No me mandes más cosas hasta la semana que viene que vuelvo a Uruguay.  Todo esto mándamelo ahi",
-   "page": "engage/2026-08-24-el-taller-3.html",
-   "ts": "2026-08-24T22:10:31.951Z",
-   "device": "sin-nombre"
-  },
-  {
-   "_id": "mt7si3kgzhyxw5",
-   "type": "dwell",
-   "seconds": 45,
-   "scroll_pct": 100,
-   "page": "engage/2026-08-24-el-taller-3.html",
-   "ts": "2026-08-24T22:10:34.768Z",
-   "device": "sin-nombre"
+  "_updated_at": "2026-09-03T15:10:47.616Z",
+  "events": [
+    {
+      "_id": "mt7ab566ckkptd",
+      "type": "notification_clicked",
+      "nid": "2026-08-24-jardin-hoy",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-08-24T13:41:17.163Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mt7ab566qwy8vp",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-08-24-jardin-hoy",
+      "src": "push",
+      "ts": "2026-08-24T13:41:17.163Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mt7abk28163tx7",
+      "type": "feedback_text",
+      "target": "jardin-hoy",
+      "text": "Vuelvo en 1 semana a Uruguay.  Mándame todo lo que haya para hacer ese dia",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-08-24T13:41:36.463Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mt7abnublogmyi",
+      "type": "dwell",
+      "seconds": 24,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-08-24T13:41:41.363Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mt7sh4xd8mrivv",
+      "type": "notification_clicked",
+      "nid": "2026-08-24-el-taller-3",
+      "page": "engage/2026-08-24-el-taller-3.html",
+      "ts": "2026-08-24T22:09:49.870Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mt7sh4xd0l45qk",
+      "type": "page_visit",
+      "page": "engage/2026-08-24-el-taller-3.html",
+      "nid": "2026-08-24-el-taller-3",
+      "src": "push",
+      "ts": "2026-08-24T22:09:49.870Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mt7si1e7m83l5o",
+      "type": "feedback_text",
+      "target": "el-taller-3",
+      "text": "No me mandes más cosas hasta la semana que viene que vuelvo a Uruguay.  Todo esto mándamelo ahi",
+      "page": "engage/2026-08-24-el-taller-3.html",
+      "ts": "2026-08-24T22:10:31.951Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mt7si3kgzhyxw5",
+      "type": "dwell",
+      "seconds": 45,
+      "scroll_pct": 100,
+      "page": "engage/2026-08-24-el-taller-3.html",
+      "ts": "2026-08-24T22:10:34.768Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtlnwrmt27x2lq",
+      "type": "notification_clicked",
+      "nid": "2026-09-03-jardin-hoy",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-09-03T15:10:47.524Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtlnwrmtlhmfh7",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-09-03-jardin-hoy",
+      "src": "push",
+      "ts": "2026-09-03T15:10:47.524Z",
+      "device": "sin-nombre"
+    }
+  ],
+  "daily_summary": {
+    "2026-06-12": {
+      "sent": 14,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-06-13": {
+      "sent": 21,
+      "clicked": 3,
+      "visits": 4,
+      "approvals": 1
+    },
+    "2026-06-14": {
+      "sent": 39,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-06-15": {
+      "sent": 19,
+      "clicked": 2,
+      "visits": 4,
+      "approvals": 0
+    },
+    "2026-06-16": {
+      "sent": 20,
+      "clicked": 1,
+      "visits": 3,
+      "approvals": 0
+    },
+    "2026-06-17": {
+      "sent": 13,
+      "clicked": 1,
+      "visits": 4,
+      "approvals": 0
+    },
+    "2026-06-18": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 3,
+      "approvals": 1
+    },
+    "2026-06-19": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-06-20": {
+      "sent": 3,
+      "clicked": 3,
+      "visits": 3,
+      "approvals": 0
+    },
+    "2026-06-21": {
+      "sent": 3,
+      "clicked": 3,
+      "visits": 3,
+      "approvals": 0
+    },
+    "2026-06-22": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-06-23": {
+      "sent": 5,
+      "clicked": 3,
+      "visits": 5,
+      "approvals": 0
+    },
+    "2026-06-24": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-06-25": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-06-26": {
+      "sent": 3,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-06-27": {
+      "sent": 3,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-06-28": {
+      "sent": 3,
+      "clicked": 0,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-06-29": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 3,
+      "approvals": 2
+    },
+    "2026-06-30": {
+      "sent": 3,
+      "clicked": 5,
+      "visits": 6,
+      "approvals": 4
+    },
+    "2026-07-01": {
+      "sent": 3,
+      "clicked": 3,
+      "visits": 5,
+      "approvals": 2
+    },
+    "2026-07-02": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 2,
+      "approvals": 1
+    },
+    "2026-07-03": {
+      "sent": 3,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 1
+    },
+    "2026-07-04": {
+      "sent": 4,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 1
+    },
+    "2026-07-05": {
+      "sent": 0,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-07-06": {
+      "sent": 5,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-07-07": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 4,
+      "approvals": 0
+    },
+    "2026-07-08": {
+      "sent": 5,
+      "clicked": 4,
+      "visits": 5,
+      "approvals": 1
+    },
+    "2026-07-09": {
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 2,
+      "sent": 4
+    },
+    "2026-07-10": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 1
+    },
+    "2026-07-11": {
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0,
+      "sent": 4
+    },
+    "2026-07-12": {
+      "sent": 5,
+      "clicked": 2,
+      "visits": 4,
+      "approvals": 0
+    },
+    "2026-07-13": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-07-14": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-07-16": {
+      "sent": 5,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-07-17": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-07-18": {
+      "sent": 0,
+      "clicked": 2,
+      "visits": 4,
+      "approvals": 0
+    },
+    "2026-07-19": {
+      "sent": 0,
+      "clicked": 3,
+      "visits": 3,
+      "approvals": 0
+    },
+    "2026-07-21": {
+      "sent": 0,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-07-22": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-07-23": {
+      "sent": 0,
+      "clicked": 4,
+      "visits": 18,
+      "approvals": 0,
+      "feedback": [
+        "Mucho texto, muy cargado, no es realmente lo que busco en una app de jardin"
+      ]
+    },
+    "2026-07-24": {
+      "sent": 0,
+      "clicked": 5,
+      "visits": 14,
+      "approvals": 0
+    },
+    "2026-07-25": {
+      "sent": 0,
+      "clicked": 3,
+      "visits": 5,
+      "approvals": 0
+    },
+    "2026-07-26": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0
+    },
+    "2026-07-27": {
+      "sent": 0,
+      "clicked": 3,
+      "visits": 3,
+      "approvals": 0,
+      "answer": 9
+    },
+    "2026-07-28": {
+      "sent": 0,
+      "clicked": 3,
+      "visits": 3,
+      "approvals": 0,
+      "answer": 7,
+      "reaction": 1,
+      "rejections": 2,
+      "feedback": [
+        "Cada tarea debería tener una caja como está de feedback así te puedo dejar comentarios.\n1- ignora lo de la lechuga, me voy de viaje en 10dias y no va a suceder antes.  A mi vuelta a fin de agosto lo v",
+        "No es mi tipo de experiencia.\n\nRevisa lo que te escribí más temprano en el liquidámbar."
+      ]
+    },
+    "2026-07-29": {
+      "sent": 0,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0
+    },
+    "2026-07-30": {
+      "sent": 0,
+      "clicked": 4,
+      "visits": 7,
+      "approvals": 0,
+      "feedback": [
+        "Ya quedó hecho esto",
+        "Agregame una foto a las especies en las tareas de agosto también así se a qué hacen referencia.  Cada especie/tarea debería tener la posibilidad de dejarte un comentario",
+        "Mi viaje va a ser del 7-23 de agosto.  Actualiza esta y todas las otras pendientes de julio y agosto para recomendarme si conviene hacerlo antes o después del viaje"
+      ]
+    },
+    "2026-07-31": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0,
+      "answers": [
+        "el-parte-slot-lun18:no",
+        "el-parte-slot-sab11:no"
+      ],
+      "reactions": [
+        "el-parte:meh"
+      ]
+    },
+    "2026-08-01": {
+      "sent": 0,
+      "clicked": 2,
+      "visits": 3,
+      "approvals": 0,
+      "answer": 17,
+      "reactions": [
+        "el-taller:love"
+      ],
+      "answers": [
+        "el-taller-slot-lun18:si"
+      ],
+      "feedback": [
+        "Genial esto.  Pero hoy está lloviendo, mándamela cuando esté lindo!"
+      ],
+      "dwell": [
+        "168s@95%",
+        "30s@100%",
+        "25s@98%"
+      ],
+      "_nota": "GANADORA el-taller: 😍 + slot lunes en «sí» + feedback positivo + dwell 168s@95%."
+    },
+    "2026-08-02": {
+      "sent": 2,
+      "clicked": 2,
+      "visits": 5,
+      "approvals": 0,
+      "answers": 11,
+      "feedback_text": 1,
+      "reactions": [
+        "el-taller:love (RE-PUSH — 2º 😍 del Taller)"
+      ],
+      "answers_clave": [
+        "el-taller-slot-sab11:si (prendió el 2º slot)",
+        "taller-paso-1..7:ok (7/7 pasos, 2ª pasada completa)",
+        "taller-arbol-B-30:ok · taller-arbol-B-38:ok (TICKS reales de poda, 17:25)",
+        "podo-F-4:ok (podó el ciruelo del frente tras leer que-mas-podo, 22:34)"
+      ],
+      "dwell": [
+        "81s@26%",
+        "4s@0%"
+      ],
+      "feedback_quotes": [
+        "Que otra cosa puedo podar?\nQue tareas puedo hacer con el aceite de Neem ya que lo voy a usar?"
+      ],
+      "_nota": "DÍA TIER-1. El Taller re-push = ÉXITO MÁXIMO (😍 + 2º slot + 3 ticks de poda reales). El clic no es la métrica; el tick sí."
+    },
+    "2026-08-03": {
+      "sent": 2,
+      "clicked": 1,
+      "visits": 8,
+      "approvals": 0,
+      "answers": 7,
+      "answers_clave": [
+        "t2-paso-1..7:ok (7/7 pasos del Taller nº2, en dos tandas 22:22 y 22:39)"
+      ],
+      "dwell": [
+        "166s@46% (el-taller-2)",
+        "33s@33% (jardin-hoy)",
+        "11s@21% (album-figuritas)",
+        "2s@13% (asamblea)"
+      ],
+      "_nota": "MASOMENOS-ALTO. 7/7 pasos del Taller nº2 + dwell 166s, cero reaccion. Ese mismo dia navego solo por 4 experiencias viejas (src=direct) y reboto en todas <11s."
+    },
+    "2026-08-04": {
+      "sent": 1,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0,
+      "feedback_text": 1,
+      "dwell": [
+        "27s@100% (el-taller-2)"
+      ],
+      "feedback_quotes": [
+        "Recordame las podas asi hago las podas manana si no llueve"
+      ],
+      "_nota": "PEDIDO DIRECTO ejecutado el mismo 04/08 (recordatorio de podas condicionado a que no lloviera, verificado contra open-meteo). El click de tarjeta-campo (20:56Z) fue la ULTIMA apertura antes de la racha de 5 pushes sin abrir del viaje. Compactado el 19/08 conservando la cita textual."
+    },
+    "2026-08-05": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-06": {
+      "sent": 1,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-07": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-08": {
+      "sent": 1,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-09": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-10": {
+      "sent": 1,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-11": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-12": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-13": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-14": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-15": {
+      "sent": 1,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-18": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-19": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-20": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-21": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0
+    },
+    "2026-08-22": {
+      "sent": 1,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "_nota": "perfume-de-octubre enviada 11:18 (201) y cero senal: ultimo sabado del viaje = no-exposicion, no rechazo."
+    },
+    "2026-08-23": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "_nota": "Domingo sin slot + dia de vuelta. 0 push por diseno. Cierra la ventana del viaje: 7 de 7 slots de tarea en silencio (7-23/08)."
+    },
+    "2026-08-24": {
+      "sent": 2,
+      "clicked": 2,
+      "visits": 2,
+      "approvals": 0,
+      "_nota": "LAS DOS push abiertas y con feedback_text (maxima senal de la escala) — pero las dos con el MISMO contenido: pausa. jardin-hoy dwell 100 s -> «Vuelvo en 1 semana a Uruguay. Mandame todo lo que haya para hacer ese dia». el-taller-3 dwell 100 s -> «No me mandes mas cosas hasta la semana que viene que vuelvo a Uruguay. Todo esto mandamelo ahi». Cero reacciones, cero slots, cero aprobacion, cero respuesta a podas-vuelta / taller3-cuando / taller3-paltas. Sin veredicto de CONTENIDO: el usuario no estaba en el jardin ni podia estarlo."
+    },
+    "2026-08-25": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "_nota": "Dia 1 de la ventana de silencio pedida (25-30/08). 0 push por diseno."
+    },
+    "2026-08-26": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "_nota": "Dia 2 de la ventana de silencio pedida (25-30/08). 0 push por diseno (miercoles sin slot + pedido explicito). Cero señal nueva: ningun evento posterior al dwell del 24/08 22:10Z."
+    },
+    "2026-08-27": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "_nota": "Dia 3 de 6 de la ventana de silencio pedida (25-30/08). 0 push por diseno — y hoy es el dia que lo prueba: el jueves SI tenia slot de tarea 10:00 por cadencia, y paso vacio. Es el primero de los tres slots prometidos que efectivamente cae. Cero senal nueva: ningun evento posterior al dwell del 24/08 22:10Z."
+    },
+    "2026-08-28": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "_nota": "Dia 4 de 6 de la ventana de silencio pedida (25-30/08). 0 push por diseno: el viernes no tiene slot por cadencia Y rige el pedido explicito del 24/08. Cero señal nueva: ningun evento posterior al dwell del 24/08 22:10Z (cuarto dia). El dia bisagra es mañana, sabado 29: caen DOS slots (tarea 10:00 + experiencia 11:00)."
+    },
+    "2026-08-16": {
+      "visits": 4
+    },
+    "2026-08-17": {
+      "sent": 1,
+      "clicked": 1,
+      "visits": 2,
+      "approvals": 0,
+      "_nota": "preguntas-abiertas: abierta desde el push, dwell 31 s @41 % y CERO respuesta a las preguntas. Unico caso donde el layout SI explico el resultado (primer control al 75 % del scroll). Compactada el 01/09."
+    },
+    "2026-08-29": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "_nota": "Dia 5 de 6 de la ventana de silencio pedida. Dia bisagra: cayeron DOS slots (tarea 10:00 + experiencia 11:00) y los dos pasaron vacios por diseno. 0 push."
+    },
+    "2026-08-30": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "_nota": "Dia 6 y ultimo de la ventana de silencio pedida (domingo sin slot). 0 push por diseno. Ventana cumplida entera: 3 de 3 slots reales caidos."
+    },
+    "2026-08-31": {
+      "sent": 2,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "_nota": "LA REENTRADA — las 2 push enviadas y confirmadas 201 (jardin-hoy + censo-de-primavera), y CERO senal: ni click, ni visita, ni reaccion, ni slot, ni feedback. Primer dia con 2 envios exitosos y 0 aperturas desde el 31/07. DOS confusores que impiden leerlo como veredicto de contenido: (1) era su dia de VUELTA al pais — el 24/08 escribio 'vuelvo la semana que viene', no dijo el dia; (2) ENTREGA TARDIA: jardin-hoy vencia 13:00Z y salio 17:23Z (+4 h 23 min), censo vencia 21:00Z y salio 21:59Z (+59 min). El slot de las 10:00 aterrizo 14:23 local."
+    },
+    "2026-09-01": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "_nota": "Martes sin slot: 0 push por cadencia. Mantenimiento: compactacion vencida ejecutada, cron del dispatcher corregido fuera de minutos redondos, 6a consulta de clima."
+    },
+    "2026-09-02": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "_nota": "Miercoles sin slot: 0 push por cadencia. NOVENO dia sin un solo evento nuevo (ultimo: dwell 24/08 22:10Z). Los 2 envios del 31/08 (201 los dos) siguen con 0 aperturas a ~59 h. Mantenimiento: 7a consulta de clima (7o drift: jue 3 de 4,4 a 12,7 mm), recuento de tareas verificado contra generate_tasks_from_plants (46 done / 51 active / 3 snoozed, sin actividad nueva del usuario desde el 08/08), municion del jueves precomputada. Sin compactacion: no vence hasta el 08/09."
+    }
   }
- ],
- "daily_summary": {
-  "2026-06-12": {
-   "sent": 14,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-06-13": {
-   "sent": 21,
-   "clicked": 3,
-   "visits": 4,
-   "approvals": 1
-  },
-  "2026-06-14": {
-   "sent": 39,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-06-15": {
-   "sent": 19,
-   "clicked": 2,
-   "visits": 4,
-   "approvals": 0
-  },
-  "2026-06-16": {
-   "sent": 20,
-   "clicked": 1,
-   "visits": 3,
-   "approvals": 0
-  },
-  "2026-06-17": {
-   "sent": 13,
-   "clicked": 1,
-   "visits": 4,
-   "approvals": 0
-  },
-  "2026-06-18": {
-   "sent": 3,
-   "clicked": 2,
-   "visits": 3,
-   "approvals": 1
-  },
-  "2026-06-19": {
-   "sent": 3,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-06-20": {
-   "sent": 3,
-   "clicked": 3,
-   "visits": 3,
-   "approvals": 0
-  },
-  "2026-06-21": {
-   "sent": 3,
-   "clicked": 3,
-   "visits": 3,
-   "approvals": 0
-  },
-  "2026-06-22": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-06-23": {
-   "sent": 5,
-   "clicked": 3,
-   "visits": 5,
-   "approvals": 0
-  },
-  "2026-06-24": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-06-25": {
-   "sent": 3,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-06-26": {
-   "sent": 3,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-06-27": {
-   "sent": 3,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-06-28": {
-   "sent": 3,
-   "clicked": 0,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-06-29": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 3,
-   "approvals": 2
-  },
-  "2026-06-30": {
-   "sent": 3,
-   "clicked": 5,
-   "visits": 6,
-   "approvals": 4
-  },
-  "2026-07-01": {
-   "sent": 3,
-   "clicked": 3,
-   "visits": 5,
-   "approvals": 2
-  },
-  "2026-07-02": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 2,
-   "approvals": 1
-  },
-  "2026-07-03": {
-   "sent": 3,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 1
-  },
-  "2026-07-04": {
-   "sent": 4,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 1
-  },
-  "2026-07-05": {
-   "sent": 0,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-07-06": {
-   "sent": 5,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-07-07": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 4,
-   "approvals": 0
-  },
-  "2026-07-08": {
-   "sent": 5,
-   "clicked": 4,
-   "visits": 5,
-   "approvals": 1
-  },
-  "2026-07-09": {
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 2,
-   "sent": 4
-  },
-  "2026-07-10": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 1
-  },
-  "2026-07-11": {
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0,
-   "sent": 4
-  },
-  "2026-07-12": {
-   "sent": 5,
-   "clicked": 2,
-   "visits": 4,
-   "approvals": 0
-  },
-  "2026-07-13": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-07-14": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-07-16": {
-   "sent": 5,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-07-17": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-07-18": {
-   "sent": 0,
-   "clicked": 2,
-   "visits": 4,
-   "approvals": 0
-  },
-  "2026-07-19": {
-   "sent": 0,
-   "clicked": 3,
-   "visits": 3,
-   "approvals": 0
-  },
-  "2026-07-21": {
-   "sent": 0,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-07-22": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-07-23": {
-   "sent": 0,
-   "clicked": 4,
-   "visits": 18,
-   "approvals": 0,
-   "feedback": [
-    "Mucho texto, muy cargado, no es realmente lo que busco en una app de jardin"
-   ]
-  },
-  "2026-07-24": {
-   "sent": 0,
-   "clicked": 5,
-   "visits": 14,
-   "approvals": 0
-  },
-  "2026-07-25": {
-   "sent": 0,
-   "clicked": 3,
-   "visits": 5,
-   "approvals": 0
-  },
-  "2026-07-26": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0
-  },
-  "2026-07-27": {
-   "sent": 0,
-   "clicked": 3,
-   "visits": 3,
-   "approvals": 0,
-   "answer": 9
-  },
-  "2026-07-28": {
-   "sent": 0,
-   "clicked": 3,
-   "visits": 3,
-   "approvals": 0,
-   "answer": 7,
-   "reaction": 1,
-   "rejections": 2,
-   "feedback": [
-    "Cada tarea debería tener una caja como está de feedback así te puedo dejar comentarios.\n1- ignora lo de la lechuga, me voy de viaje en 10dias y no va a suceder antes.  A mi vuelta a fin de agosto lo v",
-    "No es mi tipo de experiencia.\n\nRevisa lo que te escribí más temprano en el liquidámbar."
-   ]
-  },
-  "2026-07-29": {
-   "sent": 0,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0
-  },
-  "2026-07-30": {
-   "sent": 0,
-   "clicked": 4,
-   "visits": 7,
-   "approvals": 0,
-   "feedback": [
-    "Ya quedó hecho esto",
-    "Agregame una foto a las especies en las tareas de agosto también así se a qué hacen referencia.  Cada especie/tarea debería tener la posibilidad de dejarte un comentario",
-    "Mi viaje va a ser del 7-23 de agosto.  Actualiza esta y todas las otras pendientes de julio y agosto para recomendarme si conviene hacerlo antes o después del viaje"
-   ]
-  },
-  "2026-07-31": {
-   "sent": 0,
-   "clicked": 1,
-   "visits": 1,
-   "approvals": 0,
-   "answers": [
-    "el-parte-slot-lun18:no",
-    "el-parte-slot-sab11:no"
-   ],
-   "reactions": [
-    "el-parte:meh"
-   ]
-  },
-  "2026-08-01": {
-   "sent": 0,
-   "clicked": 2,
-   "visits": 3,
-   "approvals": 0,
-   "answer": 17,
-   "reactions": [
-    "el-taller:love"
-   ],
-   "answers": [
-    "el-taller-slot-lun18:si"
-   ],
-   "feedback": [
-    "Genial esto.  Pero hoy está lloviendo, mándamela cuando esté lindo!"
-   ],
-   "dwell": [
-    "168s@95%",
-    "30s@100%",
-    "25s@98%"
-   ],
-   "_nota": "GANADORA el-taller: 😍 + slot lunes en «sí» + feedback positivo + dwell 168s@95%."
-  },
-  "2026-08-02": {
-   "sent": 2,
-   "clicked": 2,
-   "visits": 5,
-   "approvals": 0,
-   "answers": 11,
-   "feedback_text": 1,
-   "reactions": [
-    "el-taller:love (RE-PUSH — 2º 😍 del Taller)"
-   ],
-   "answers_clave": [
-    "el-taller-slot-sab11:si (prendió el 2º slot)",
-    "taller-paso-1..7:ok (7/7 pasos, 2ª pasada completa)",
-    "taller-arbol-B-30:ok · taller-arbol-B-38:ok (TICKS reales de poda, 17:25)",
-    "podo-F-4:ok (podó el ciruelo del frente tras leer que-mas-podo, 22:34)"
-   ],
-   "dwell": [
-    "81s@26%",
-    "4s@0%"
-   ],
-   "feedback_quotes": [
-    "Que otra cosa puedo podar?\nQue tareas puedo hacer con el aceite de Neem ya que lo voy a usar?"
-   ],
-   "_nota": "DÍA TIER-1. El Taller re-push = ÉXITO MÁXIMO (😍 + 2º slot + 3 ticks de poda reales). El clic no es la métrica; el tick sí."
-  },
-  "2026-08-03": {
-   "sent": 2,
-   "clicked": 1,
-   "visits": 8,
-   "approvals": 0,
-   "answers": 7,
-   "answers_clave": [
-    "t2-paso-1..7:ok (7/7 pasos del Taller nº2, en dos tandas 22:22 y 22:39)"
-   ],
-   "dwell": [
-    "166s@46% (el-taller-2)",
-    "33s@33% (jardin-hoy)",
-    "11s@21% (album-figuritas)",
-    "2s@13% (asamblea)"
-   ],
-   "_nota": "MASOMENOS-ALTO. 7/7 pasos del Taller nº2 + dwell 166s, cero reaccion. Ese mismo dia navego solo por 4 experiencias viejas (src=direct) y reboto en todas <11s."
-  },
-  "2026-08-04": {
-   "sent": 1,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0,
-   "feedback_text": 1,
-   "dwell": [
-    "27s@100% (el-taller-2)"
-   ],
-   "feedback_quotes": [
-    "Recordame las podas asi hago las podas manana si no llueve"
-   ],
-   "_nota": "PEDIDO DIRECTO ejecutado el mismo 04/08 (recordatorio de podas condicionado a que no lloviera, verificado contra open-meteo). El click de tarjeta-campo (20:56Z) fue la ULTIMA apertura antes de la racha de 5 pushes sin abrir del viaje. Compactado el 19/08 conservando la cita textual."
-  },
-  "2026-08-05": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-06": {
-   "sent": 1,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-07": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-08": {
-   "sent": 1,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-09": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-10": {
-   "sent": 1,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-11": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-12": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-13": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-14": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-15": {
-   "sent": 1,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-18": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-19": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-20": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-21": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0
-  },
-  "2026-08-22": {
-   "sent": 1,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0,
-   "_nota": "perfume-de-octubre enviada 11:18 (201) y cero senal: ultimo sabado del viaje = no-exposicion, no rechazo."
-  },
-  "2026-08-23": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0,
-   "_nota": "Domingo sin slot + dia de vuelta. 0 push por diseno. Cierra la ventana del viaje: 7 de 7 slots de tarea en silencio (7-23/08)."
-  },
-  "2026-08-24": {
-   "sent": 2,
-   "clicked": 2,
-   "visits": 2,
-   "approvals": 0,
-   "_nota": "LAS DOS push abiertas y con feedback_text (maxima senal de la escala) — pero las dos con el MISMO contenido: pausa. jardin-hoy dwell 100 s -> «Vuelvo en 1 semana a Uruguay. Mandame todo lo que haya para hacer ese dia». el-taller-3 dwell 100 s -> «No me mandes mas cosas hasta la semana que viene que vuelvo a Uruguay. Todo esto mandamelo ahi». Cero reacciones, cero slots, cero aprobacion, cero respuesta a podas-vuelta / taller3-cuando / taller3-paltas. Sin veredicto de CONTENIDO: el usuario no estaba en el jardin ni podia estarlo."
-  },
-  "2026-08-25": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0,
-   "_nota": "Dia 1 de la ventana de silencio pedida (25-30/08). 0 push por diseno."
-  },
-  "2026-08-26": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0,
-   "_nota": "Dia 2 de la ventana de silencio pedida (25-30/08). 0 push por diseno (miercoles sin slot + pedido explicito). Cero señal nueva: ningun evento posterior al dwell del 24/08 22:10Z."
-  },
-  "2026-08-27": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0,
-   "_nota": "Dia 3 de 6 de la ventana de silencio pedida (25-30/08). 0 push por diseno — y hoy es el dia que lo prueba: el jueves SI tenia slot de tarea 10:00 por cadencia, y paso vacio. Es el primero de los tres slots prometidos que efectivamente cae. Cero senal nueva: ningun evento posterior al dwell del 24/08 22:10Z."
-  },
-  "2026-08-28": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0,
-   "_nota": "Dia 4 de 6 de la ventana de silencio pedida (25-30/08). 0 push por diseno: el viernes no tiene slot por cadencia Y rige el pedido explicito del 24/08. Cero señal nueva: ningun evento posterior al dwell del 24/08 22:10Z (cuarto dia). El dia bisagra es mañana, sabado 29: caen DOS slots (tarea 10:00 + experiencia 11:00)."
-  },
-  "2026-08-16": {
-   "visits": 4
-  },
-  "2026-08-17": {
-   "sent": 1,
-   "clicked": 1,
-   "visits": 2,
-   "approvals": 0,
-   "_nota": "preguntas-abiertas: abierta desde el push, dwell 31 s @41 % y CERO respuesta a las preguntas. Unico caso donde el layout SI explico el resultado (primer control al 75 % del scroll). Compactada el 01/09."
-  },
-  "2026-08-29": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0,
-   "_nota": "Dia 5 de 6 de la ventana de silencio pedida. Dia bisagra: cayeron DOS slots (tarea 10:00 + experiencia 11:00) y los dos pasaron vacios por diseno. 0 push."
-  },
-  "2026-08-30": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0,
-   "_nota": "Dia 6 y ultimo de la ventana de silencio pedida (domingo sin slot). 0 push por diseno. Ventana cumplida entera: 3 de 3 slots reales caidos."
-  },
-  "2026-08-31": {
-   "sent": 2,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0,
-   "_nota": "LA REENTRADA — las 2 push enviadas y confirmadas 201 (jardin-hoy + censo-de-primavera), y CERO senal: ni click, ni visita, ni reaccion, ni slot, ni feedback. Primer dia con 2 envios exitosos y 0 aperturas desde el 31/07. DOS confusores que impiden leerlo como veredicto de contenido: (1) era su dia de VUELTA al pais — el 24/08 escribio 'vuelvo la semana que viene', no dijo el dia; (2) ENTREGA TARDIA: jardin-hoy vencia 13:00Z y salio 17:23Z (+4 h 23 min), censo vencia 21:00Z y salio 21:59Z (+59 min). El slot de las 10:00 aterrizo 14:23 local."
-  },
-  "2026-09-01": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0,
-   "_nota": "Martes sin slot: 0 push por cadencia. Mantenimiento: compactacion vencida ejecutada, cron del dispatcher corregido fuera de minutos redondos, 6a consulta de clima."
-  },
-  "2026-09-02": {
-   "sent": 0,
-   "clicked": 0,
-   "visits": 0,
-   "approvals": 0,
-   "_nota": "Miercoles sin slot: 0 push por cadencia. NOVENO dia sin un solo evento nuevo (ultimo: dwell 24/08 22:10Z). Los 2 envios del 31/08 (201 los dos) siguen con 0 aperturas a ~59 h. Mantenimiento: 7a consulta de clima (7o drift: jue 3 de 4,4 a 12,7 mm), recuento de tareas verificado contra generate_tasks_from_plants (46 done / 51 active / 3 snoozed, sin actividad nueva del usuario desde el 08/08), municion del jueves precomputada. Sin compactacion: no vence hasta el 08/09."
-  }
- }
 }
