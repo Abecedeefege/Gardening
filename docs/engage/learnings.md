@@ -136,6 +136,16 @@ dinero/tasación · Wrapped · fútbol · **mucho texto/cargado** (23/07) · **e
 - **28/07:** lechuga/huerta → entregado el 31 como bloque de septiembre. **Caqui B-41 → ignorar hasta primavera**
   (septiembre ya es primavera: se puede entrar, suave). · **PALTA:** los plantines siguen contra la pared a la sombra, **SIN
   MOVER** (B-22/B-36 es de PODA). *Reafirmado explícitamente en la ed. 03/09.*
+- **03/09 (19:50, sesión directa con Claude Code):** pidió «TODAS las tareas de agosto atrasadas por el viaje + todas las
+  de la primera semana de septiembre + todo lo que precise actualización, incluso fotos; cada item completo, con especie/
+  lugar visible y feedback individual; mandámelo por push en cuanto esté listo». Entregado: **`puesta-al-dia.html`
+  (página FIJA, no borrar, no re-pushear suelta)** — 15 de agosto + 8 de la semana + 6 «desde el lunes 7», cada card con
+  foto de especie + foto de ubicación + botones hecha/posponer (escriben `task_states.json` vía `/api/tarea`) + foto/
+  comentario (van al **thread** de esa tarea → los procesa `/responder-tareas`, NO vos) + `engageAnswer('pad-<id>')`.
+  Push `2026-09-03-puesta-al-dia` (send_at 20:05, expira 04/09 21:00: **si sigue pending al correr, NO la borres**).
+  **`podas-vuelta` queda CERRADA:** su feedback de las 15:11Z fue «no sé cuál es el crespón y la althea» → se le mostró
+  B-9 y B-18 con foto y ubicación. No volver a preguntar; leer las cards. **Lección:** cuando nombres una especie, foto +
+  dónde está, siempre. Esta corrida tomó el clima de tu 8ª consulta (vie calmo / sáb-dom viento y 8,3° / lun limpio).
 - **Asamblea, tu-semana, vos-decidís, jardin-hoy** promovidas + **el-taller** aprobada: no borrar.
 - **NUNCA borrar una especie del sitio sin consentimiento explícito.**
 
