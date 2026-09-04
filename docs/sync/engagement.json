@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-03T15:11:51.210Z",
+  "_updated_at": "2026-09-04T00:49:18.620Z",
   "events": [
     {
       "_id": "mt7ab566ckkptd",
@@ -104,6 +104,15 @@
       "text": "Nose cual es el crespón y la althea que me preguntas al principio, por eso no contesto",
       "page": "engage/2026-07-24-jardin-hoy.html",
       "ts": "2026-09-03T15:11:51.903Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtlo05yyeyago4",
+      "type": "dwell",
+      "seconds": 159,
+      "scroll_pct": 100,
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-09-03T15:13:26.074Z",
       "device": "sin-nombre"
     }
   ],
