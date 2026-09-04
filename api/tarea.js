@@ -27,7 +27,7 @@ const UPLOADS_INDEX = 'docs/uploads.json';
 const UPLOADS_DIR = 'docs/images/uploads/';
 
 const TASK_ID_RE = /^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/;
-const PLANT_CODE_RE = /^[A-Z]{1,2}-\d{1,3}$/;
+const PLANT_CODE_RE = /^[A-Z]{1,2}-\d{1,3}[A-Za-z]?$/; // B-5a / B-5b / B-2B: sufijo de una letra permitido
 const MAX_TEXT = 2000;
 const MAX_PHOTO_B64 = 3.5 * 1024 * 1024; // ~2.6MB binario; Vercel corta el body en 4.5MB
 
