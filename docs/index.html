@@ -6958,6 +6958,39 @@ function qrEncodeSvg(text, opts = {}) {
 const GH_REPO = 'abecedeefege/gardening';
 const GH_API = `https://api.github.com/repos/${GH_REPO}/contents`;
 
+// Subida vía /api/tarea (Vercel, token del SERVIDOR): el browser NO necesita
+// PAT. Devuelve el JSON de respuesta, o null si el endpoint no existe en este
+// hosting (GitHub Pages, file://) o no responde — en ese caso el caller cae al
+// camino viejo con el PAT del device. Un 4xx/5xx del API sí es error (se lanza).
+async function apiUploadPhoto(payload) {
+  if (!/^https?:$/.test(location.protocol)) return null;
+  let r;
+  try {
+    r = await fetch('/api/tarea', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+  } catch (e) { return null; }
+  if (r.status === 404 || r.status === 405) return null;
+  const ct = r.headers.get('content-type') || '';
+  if (!ct.includes('application/json')) return null; // GitHub Pages devuelve HTML de 404
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(`/api/tarea: HTTP ${r.status} — ${data.error || ''} ${data.detail || ''}`.trim());
+  return data;
+}
+
+function friendlyUploadError(err) {
+  const msg = err.message || String(err);
+  if (/HTTP 401/.test(msg) && /Bad credentials/i.test(msg)) {
+    return `<p>El token de GitHub guardado en este dispositivo <strong>venció o fue revocado</strong> (GitHub respondió 401). Generá uno nuevo y pegalo en ⚙️ Configuración → Token de GitHub.</p><p style="font-size:0.78rem;color:#666">Detalle técnico: ${msg}</p>`;
+  }
+  const isType = err.name === 'TypeError';
+  return isType
+    ? `<p>Probable causa: CORS preflight rechazado, network error, o Service Worker viejo. Probá "Resetear SW" en ⚙️ Configuración y recargar.</p><p style="font-size:0.78rem;color:#666">Detalle técnico: ${msg}</p>`
+    : `<p>${msg}</p>`;
+}
+
 async function ghGetFile(path) {
   const token = loadGitHubToken();
   if (!token) throw new Error('Sin GitHub PAT configurado');
@@ -7530,29 +7563,39 @@ async function uploadPendingSpeciesPhoto() {
     const path = `docs/images/uploads/${plantId}/${filename}`;
     const base64 = await blobToBase64(pendingSpeciesPhotoBlob);
 
-    await ghPutFile(path, base64, `upload: foto al catálogo de ${plantId} (${plant.common})`);
+    // 1) Backend serverless (sin PAT). 2) Fallback: PAT del device (GitHub Pages).
+    const viaApi = await apiUploadPhoto({
+      type: 'species_photo', plant_code: plantId, base64,
+      text: note || null, device: loadDeviceName() || 'desconocido',
+    });
+    let repoPath = path;
+    if (viaApi && viaApi.repo_path) {
+      repoPath = viaApi.repo_path;
+    } else {
+      await ghPutFile(path, base64, `upload: foto al catálogo de ${plantId} (${plant.common})`);
 
-    const uploadsPath = 'docs/uploads.json';
-    const { sha, data } = await ghReadJsonFile(uploadsPath);
-    const idx = data || {};
-    if (!idx[plantId]) idx[plantId] = [];
-    const entry = {
-      filename,
-      uploaded_at: now.toISOString(),
-      uploaded_by: loadDeviceName() || 'desconocido',
-      context: 'species',
-      ai_status: 'n/a',
-    };
-    if (note) entry.note = note;
-    idx[plantId].push(entry);
-    const newJson = JSON.stringify(idx, null, 2) + '\n';
-    const newBase64 = btoa(unescape(encodeURIComponent(newJson)));
-    await ghPutFile(uploadsPath, newBase64, `upload: registrar ${filename} en uploads.json (especie)`, sha);
+      const uploadsPath = 'docs/uploads.json';
+      const { sha, data } = await ghReadJsonFile(uploadsPath);
+      const idx = data || {};
+      if (!idx[plantId]) idx[plantId] = [];
+      const entry = {
+        filename,
+        uploaded_at: now.toISOString(),
+        uploaded_by: loadDeviceName() || 'desconocido',
+        context: 'species',
+        ai_status: 'n/a',
+      };
+      if (note) entry.note = note;
+      idx[plantId].push(entry);
+      const newJson = JSON.stringify(idx, null, 2) + '\n';
+      const newBase64 = btoa(unescape(encodeURIComponent(newJson)));
+      await ghPutFile(uploadsPath, newBase64, `upload: registrar ${filename} en uploads.json (especie)`, sha);
+    }
 
     // Invalidar cache para que el modal de detalle muestre la nueva foto al reabrir.
     _uploadsIndexCache = null;
 
-    const fileUrl = `https://github.com/${GH_REPO}/blob/main/${path}`;
+    const fileUrl = `https://github.com/${GH_REPO}/blob/main/${repoPath}`;
     result.innerHTML = `
       <div class="task-photo-success">
         <div class="task-photo-success-title">✅ Foto agregada al catálogo</div>
@@ -7563,11 +7606,7 @@ async function uploadPendingSpeciesPhoto() {
       </div>
       <button class="btn-primary" onclick="closeModal('species-photo')">Listo</button>`;
   } catch (err) {
-    const msg = err.message || String(err);
-    const isType = err.name === 'TypeError';
-    const detail = isType
-      ? `<p>Probable causa: CORS preflight rechazado, network error, o Service Worker viejo. Probá "Resetear SW" en ⚙️ Configuración y recargar.</p><p style="font-size:0.78rem;color:#666">Detalle técnico: ${msg}</p>`
-      : `<p>${msg}</p>`;
+    const detail = friendlyUploadError(err);
     result.innerHTML = `
       <div class="task-photo-error">
         <div class="task-photo-error-title">❌ No se pudo subir</div>
@@ -7777,7 +7816,18 @@ async function uploadPendingPhoto() {
     const filename = `${task.id}_${stamp}.jpg`;
     const path = `docs/images/uploads/${plantId}/${filename}`;
     const base64 = await blobToBase64(pendingPhotoBlob);
+    const userContext = (document.getElementById('task-photo-context')?.value || '').trim();
 
+    // 0. Backend serverless (sin PAT): deja la foto en el thread de la tarea
+    //    y en uploads.json como pending — la procesa /responder-tareas.
+    const viaApi = await apiUploadPhoto({
+      type: 'photo', task_id: task.id, plant_code: plantId, base64,
+      text: userContext || null, task_title: task.title, device: loadDeviceName() || 'desconocido',
+    });
+    let repoPath = path;
+    if (viaApi && viaApi.photo_path) {
+      repoPath = 'docs/images/' + viaApi.photo_path;
+    } else {
     // 1. Push de la imagen al repo.
     await ghPutFile(path, base64, `upload: foto para ${task.id}`);
 
@@ -7786,7 +7836,6 @@ async function uploadPendingPhoto() {
     const { sha, data } = await ghReadJsonFile(uploadsPath);
     const idx = data || {};
     if (!idx[plantId]) idx[plantId] = [];
-    const userContext = (document.getElementById('task-photo-context')?.value || '').trim();
     const entry = {
       filename,
       uploaded_at: now.toISOString(),
@@ -7802,9 +7851,10 @@ async function uploadPendingPhoto() {
     const newJson = JSON.stringify(idx, null, 2) + '\n';
     const newBase64 = btoa(unescape(encodeURIComponent(newJson)));
     await ghPutFile(uploadsPath, newBase64, `upload: registrar ${filename} en uploads.json`, sha);
+    }
 
     // 3. Mostrar éxito.
-    const fileUrl = `https://github.com/${GH_REPO}/blob/main/${path}`;
+    const fileUrl = `https://github.com/${GH_REPO}/blob/main/${repoPath}`;
     result.innerHTML = `
       <div class="task-photo-success">
         <div class="task-photo-success-title">✅ Foto subida al repo</div>
@@ -7819,11 +7869,7 @@ async function uploadPendingPhoto() {
       </div>
       <button class="btn-primary" onclick="closeModal('task-photo')">Listo</button>`;
   } catch (err) {
-    const msg = err.message || String(err);
-    const isType = err.name === 'TypeError';
-    const detail = isType
-      ? `<p>Probable causa: CORS preflight rechazado, network error, o Service Worker viejo. Probá "Resetear SW" en ⚙️ Configuración y recargar.</p><p style="font-size:0.78rem;color:#666">Detalle técnico: ${msg}</p>`
-      : `<p>${msg}</p>`;
+    const detail = friendlyUploadError(err);
     result.innerHTML = `
       <div class="task-photo-error">
         <div class="task-photo-error-title">❌ No se pudo subir</div>

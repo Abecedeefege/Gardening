@@ -7,11 +7,13 @@
 //        → { ok, thread, state }  (lee FRESCO de GitHub: el thread de la tarea
 //          + su entry en task_states.json — evita esperar el deploy de Vercel)
 //
-//   POST /api/tarea  { type: "message" | "photo" | "state", task_id, ... }
+//   POST /api/tarea  { type: "message" | "photo" | "species_photo" | "state", task_id, ... }
 //        message → append a docs/sync/threads/<task_id>.json (from: "user")
 //        photo   → docs/images/uploads/<plant_code>/<task_id>_<ts>.jpg
 //                  + entry en docs/uploads.json (ai_status: "pending")
 //                  + mensaje kind:"photo" en el thread
+//        species_photo → docs/images/uploads/<plant_code>/species-<code>_<ts>.jpg
+//                  + entry en docs/uploads.json (context: "species", sin task_id)
 //        state   → merge en docs/sync/task_states.json (done/snoozed/active)
 //
 // El agente /responder-tareas (Routine horaria) procesa los mensajes con
@@ -137,7 +139,8 @@ module.exports = async (req, res) => {
     body = typeof req.body === 'string' ? JSON.parse(req.body) : (req.body || {});
   } catch (e) { return res.status(400).json({ error: 'body_invalido' }); }
 
-  const { type, task_id: taskId } = body;
+  const { type } = body;
+  const taskId = type === 'species_photo' ? (body.task_id || 'species') : body.task_id;
   if (!TASK_ID_RE.test(taskId || '')) return res.status(400).json({ error: 'task_id_invalido' });
   const device = String(body.device || 'landing').slice(0, 40);
   const now = new Date();
@@ -221,6 +224,51 @@ module.exports = async (req, res) => {
         () => newThread(taskId)
       );
       return res.status(200).json({ ok: true, message_id: msgId, photo_path: photoRelPath });
+    }
+
+    // ---------- Foto de ESPECIE (catálogo, sin tarea) ----------
+    // Mismo circuito que el botón «📷 Sumar foto» del modal de especie, pero
+    // con el token del servidor: el browser no necesita PAT.
+    if (type === 'species_photo') {
+      const plantCode = body.plant_code || '';
+      if (!PLANT_CODE_RE.test(plantCode)) return res.status(400).json({ error: 'plant_code_invalido' });
+      let b64 = String(body.base64 || '');
+      const comma = b64.indexOf(',');
+      if (b64.slice(0, 5) === 'data:' && comma > 0) b64 = b64.slice(comma + 1);
+      b64 = b64.replace(/\s/g, '');
+      if (!b64 || b64.length > MAX_PHOTO_B64) return res.status(400).json({ error: 'foto_invalida_o_muy_grande' });
+
+      const filename = 'species-' + plantCode + '_' + tsStamp(now) + '.jpg';
+      const photoRepoPath = UPLOADS_DIR + plantCode + '/' + filename;
+      const photoRelPath = 'uploads/' + plantCode + '/' + filename;
+      const putPhoto = await ghPutBinary(token, photoRepoPath, b64,
+        'upload: foto al catálogo de ' + plantCode + ' desde ' + device);
+      if (!putPhoto.ok) {
+        const detail = await putPhoto.text().catch(() => '');
+        return res.status(502).json({ error: 'github_put_foto_' + putPhoto.status, detail: detail.slice(0, 160) });
+      }
+      await updateJson(
+        token, UPLOADS_INDEX,
+        'upload: registrar ' + filename + ' en uploads.json (especie)',
+        (doc) => {
+          doc[plantCode] = doc[plantCode] || [];
+          if (!doc[plantCode].some((u) => u && u.filename === filename)) {
+            const entry = {
+              filename,
+              uploaded_at: nowIso,
+              uploaded_by: device,
+              context: 'species',
+              ai_status: 'n/a',
+              via: 'api',
+            };
+            if (text && text.trim()) entry.note = text.trim();
+            doc[plantCode].push(entry);
+          }
+          return doc;
+        },
+        () => ({})
+      );
+      return res.status(200).json({ ok: true, photo_path: photoRelPath, repo_path: photoRepoPath });
     }
 
     // ---------- Cambio de estado (hecha / posponer / reactivar) ----------
