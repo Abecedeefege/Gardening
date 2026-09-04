@@ -476,6 +476,13 @@
       },
       "user_context": "Ayer llovió durante horas.  Sigue con estas manchas negras en las hojas como si fueran tierra",
       "plant_id": "F-1"
+    },
+    {
+      "filename": "species-F-1_20260904-160859.jpg",
+      "uploaded_at": "2026-09-04T16:08:59.960Z",
+      "uploaded_by": "pix9",
+      "context": "species",
+      "ai_status": "n/a"
     }
   ],
   "F-8": [
