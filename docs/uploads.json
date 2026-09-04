@@ -313,6 +313,13 @@
         "processed_at": "2026-05-04T17:30:00.000Z"
       },
       "user_context": "Lo veo bien?"
+    },
+    {
+      "filename": "species-B-23_20260904-160059.jpg",
+      "uploaded_at": "2026-09-04T16:00:59.450Z",
+      "uploaded_by": "pix9",
+      "context": "species",
+      "ai_status": "n/a"
     }
   ],
   "B-24": [
