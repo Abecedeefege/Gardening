@@ -980,6 +980,18 @@
       "context": "species",
       "ai_status": "n/a",
       "note": "Identificada tentativamente como Manihot grahamii (mandioca brava ornamental, nativa del Cono Sur) por hojas palmadas con 7-9 lóbulos lanceolados. B-34 actualizado en data_plants.py con info completa. Urgency abierta: confirmar con flor en oct-dic 2026. Test de látex blanco al cortar una hoja confirma género en segundos."
+    },
+    {
+      "filename": null,
+      "uploaded_at": "2026-09-04T16:04:30.474Z",
+      "uploaded_by": "pix9",
+      "context": "question",
+      "task_id": "user-1788537870474-5847",
+      "task_title_snapshot": "Esta planta la saqué.  No existe más, podés eliminarla",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Esta planta la saqué.  No existe más, podés eliminarla",
+      "plant_id": "B-34"
     }
   ],
   "_general": [
