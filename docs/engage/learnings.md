@@ -136,6 +136,14 @@ dinero/tasación · Wrapped · fútbol · **mucho texto/cargado** (23/07) · **e
 - **03/09:** pidió todo lo atrasado del viaje + la primera semana de septiembre, con especie/lugar visible y feedback
   individual. Entregado: **`puesta-al-dia.html` (página FIJA, no borrar, no re-pushear suelta)**. Sus botones escriben
   `task_states.json` vía `/api/tarea`; sus fotos/comentarios van al **thread** → los procesa `/responder-tareas`, NO yo.
+- **04/09 (12:40–13:15, sesión directa):** subió **42 fotos de especie** desde el modal (`species-*_20260904-*.jpg`, `via:"api"`,
+  `ai_status:"n/a"`: NO las proceses como pendientes, ya fueron miradas una por una) y pidió «actualizá las tareas con eso y
+  mandame push». Hecho: `puesta-al-dia.html` **edición 2** (cards con SUS fotos de hoy), `data_plants.py` tocado (B-5a when,
+  F-2 when, F-3-2 when, B-9/B-18/B-20 desc con ubicación real, B-15 detail, B-45 tips, **nuevas** `plant-B-23-3` cosechar
+  limones y `plant-B-8-2` pindó amarilla), `plant-B-25-3` cerrada por foto. **Sin foto hoy: B-41, B-32, B-43, B-46/47, B-2B.**
+  Datos duros de las fotos: crespón B-9 está EN MACETA al borde del deck; althea B-18 en el césped al lado; hortensias ya
+  brotaron; bignonia F-2 e hibisco B-4 sin podar; fotinias con el rojo recién asomando (recorte fines de sept); lavanda en
+  flor; limonero cargado; hiedra sobre la losa de la casilla de la bomba. **No volver a pedir fotos generales: tiene 42.**
 - **Asamblea, tu-semana, vos-decidís, jardin-hoy** promovidas + **el-taller** aprobada: no borrar.
 - **NUNCA borrar una especie del sitio sin consentimiento explícito.**
 

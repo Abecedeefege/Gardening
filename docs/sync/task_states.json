@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-09-04T16:04:40.225Z",
-  "_last_writer": "pix9",
+  "_synced_at": "2026-09-04T16:16:57.000Z",
+  "_last_writer": "claude-code fotos 2026-09-04",
   "tasks": {
     "plant-F-1": {
       "status": "done",
@@ -224,10 +224,12 @@
       "last_modified_at": "2026-05-05T17:55:00.000Z"
     },
     "plant-B-25-3": {
-      "status": "snoozed",
-      "snoozed_until": "2026-05-13T18:50:33.586Z",
-      "completed_at": null,
-      "last_modified_at": "2026-05-12T18:50:33.586Z"
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-09-04T16:16:57.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Foto de la gardenia del 04/09/2026: brotes nuevos sanos y estirados, hojas nuevas sin deformar, sin pulgones ni hormigas a la vista. La plaga de mayo no siguió. Cerrada; si reaparecen, se reabre.",
+      "last_modified_at": "2026-09-04T16:16:57.000Z"
     },
     "plant-B-47-2": {
       "status": "done",
