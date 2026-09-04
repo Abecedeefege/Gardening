@@ -53,6 +53,12 @@
       "nid": "2026-09-04-puesta-al-dia-fotos",
       "ts": "2026-09-04T16:21:10.143Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-09-04-puesta-al-dia-fotos-b",
+      "ts": "2026-09-04T20:56:07.038Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
