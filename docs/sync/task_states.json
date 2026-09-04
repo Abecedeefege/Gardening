@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-09-04T00:52:10.731Z",
-  "_last_writer": "puesta-al-dia",
+  "_synced_at": "2026-09-04T16:04:40.225Z",
+  "_last_writer": "pix9",
   "tasks": {
     "plant-F-1": {
       "status": "done",
@@ -478,6 +478,12 @@
       "completed_at": "2026-09-04T00:52:10.731Z",
       "last_modified_at": "2026-09-04T00:52:10.731Z",
       "changed_via": "landing"
+    },
+    "user-1788537870474-5847": {
+      "status": "active",
+      "snoozed_until": null,
+      "completed_at": null,
+      "last_modified_at": "2026-09-04T16:04:34.629Z"
     }
   }
 }
