@@ -1,5 +1,19 @@
 {
-  "_updated_at": "2026-09-04T09:20:00.000Z",
+  "_updated_at": "2026-09-04T15:24:16.329719",
   "_nota": "VIERNES 04/09 — DÍA SIN SLOT (la tabla pone tarea Lun/Jue/Sáb 10:00 y experiencia Lun 18:00 / Sáb 11:00). 0 push nuevas por cadencia: hoy es mantenimiento. Las 2 entries del 03/09 (jardin-hoy + puesta-al-dia) salieron las dos y ya quedaron en send_log.json — se limpian de acá por la regla §3. ⏱️ MEDICIÓN DEL LAG (era la tarea #1 de la corrida): 2026-09-03-jardin-hoy send_at 13:00Z, sent_at 14:29:19Z = +89 min. El cron desplazado bajó el lag de +263 min (31/08) a +89, pero el slot sigue roto, así que NO era el minuto elegido: GitHub difiere y descarta ticks cron bajo carga y 13:00Z es hora pico. Contraste que lo prueba: la puesta-al-dia salió +3,3 min porque se disparó a mano (workflow_dispatch), y el slot de la tarde del 31/08 (21:00Z) llegó +59 min contra +263 del de la mañana. Fix de hoy en push-dispatch.yml: (a) cron denso cada 10 min en las horas PREVIAS a los 3 slots (12Z, 13Z, 20Z, 21Z) y (b) paso nuevo «Esperar al slot si esta inminente» — el run que arranca hasta 40 min antes duerme hasta el minuto exacto en vez de mandar tarde. Se mide el LUNES 7 (primer slot de tarea 10:00 con el fix puesto). 🏆 SEÑAL: la puesta-al-dia rompió 10 días de silencio — 3 tareas marcadas hechas (B-30, B-38, F-4) y 13,6 min de dwell, el más largo medido.",
-  "notifications": []
+  "notifications": [
+    {
+      "id": "2026-09-04-puesta-al-dia-fotos-ok",
+      "title": "📷 Arreglado: ya podés subir fotos",
+      "body": "La foto de las hortensias fallaba por un bug del servidor, ya corregido. Tu puesta al día sigue acá, con lo que marcaste anoche.",
+      "url": "https://gardening-chi.vercel.app/engage/puesta-al-dia.html",
+      "format": "tarea",
+      "send_at": "2026-09-04T12:20:00-03:00",
+      "expires_at": "2026-09-04T21:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "pedido directo del usuario 2026-09-04 (sesión Claude Code)"
+    }
+  ]
 }
