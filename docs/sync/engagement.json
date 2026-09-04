@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-04T00:49:18.620Z",
+  "_updated_at": "2026-09-04T00:49:20.145Z",
   "events": [
     {
       "_id": "mt7ab566ckkptd",
@@ -113,6 +113,23 @@
       "scroll_pct": 100,
       "page": "engage/2026-07-24-jardin-hoy.html",
       "ts": "2026-09-03T15:13:26.074Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtm8krqxj9t8ns",
+      "type": "notification_clicked",
+      "nid": "2026-09-03-puesta-al-dia",
+      "page": "engage/puesta-al-dia.html",
+      "ts": "2026-09-04T00:49:19.734Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtm8krqx1cue24",
+      "type": "page_visit",
+      "page": "engage/puesta-al-dia.html",
+      "nid": "2026-09-03-puesta-al-dia",
+      "src": "push",
+      "ts": "2026-09-04T00:49:19.734Z",
       "device": "sin-nombre"
     }
   ],
