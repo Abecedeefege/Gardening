@@ -16,6 +16,16 @@ on:
     # aterrizando 14:23 local. Un slot fijo que llega 4 h tarde rompe la
     # promesa horaria y el contenido atado al momento del dia.
     - cron: '7,22,37,52 10-23 * * *'
+    # Medicion del 03/09/2026, ya con los minutos desplazados: la misma push
+    # de las 10:00 salio 14:29Z — +89 min. Mejor que +4 h 23, pero el slot
+    # sigue roto. Conclusion: no es el minuto elegido, es que GitHub difiere
+    # y DESCARTA corridas cron bajo carga (13:00Z es hora pico). Contra eso
+    # no alcanza con elegir mejor el tick: hay que (a) tener mas ticks en la
+    # hora PREVIA a cada slot y (b) hacer que el run que si arranca ESPERE al
+    # minuto exacto en vez de mandar tarde (ver paso "Esperar al slot").
+    # Horas previas a los 3 slots fijos: 12Z (tarea 10:00), 13Z (experiencia
+    # sabado 11:00), 20Z (experiencia lunes 18:00).
+    - cron: '2,12,22,32,42,52 12,13,20,21 * * *'
   workflow_dispatch: {}
   # El cron de GitHub deriva/saltea corridas (12/06: 100 min sin tick).
   # Trigger por push a la cola: cuando el agente encola, se despacha al
@@ -48,6 +58,32 @@ jobs:
       - name: Install web-push
         working-directory: tools
         run: npm install --no-audit --no-fund
+
+      # Un tick que arranca ANTES del slot no tiene que mandar temprano ni
+      # irse: se queda esperando el minuto exacto. Asi, cualquier corrida que
+      # logre arrancar dentro de la ventana previa entrega puntual, aunque
+      # GitHub haya descartado los ticks siguientes. Tope 40 min para no
+      # ocupar el runner de gusto (el grupo de concurrency es de este mismo
+      # workflow, y el run que espera es justo el que va a mandar).
+      - name: Esperar al slot si esta inminente
+        run: |
+          SECS=$(node -e '
+            const q = require("./docs/notifications/queue.json");
+            const MAX = 40 * 60 * 1000;
+            const now = Date.now();
+            const waits = (q.notifications || [])
+              .filter(n => n.status === "pending" && n.send_at)
+              .filter(n => !n.expires_at || Date.parse(n.expires_at) > Date.parse(n.send_at))
+              .map(n => Date.parse(n.send_at) - now)
+              .filter(ms => ms > 0 && ms <= MAX);
+            console.log(waits.length ? Math.ceil(Math.min(...waits) / 1000) : 0);
+          ')
+          if [ "$SECS" -gt 0 ]; then
+            echo "Slot inminente: esperando ${SECS}s para entregar en horario."
+            sleep "$SECS"
+          else
+            echo "Sin slot inminente — sigo derecho."
+          fi
 
       - name: Send due notifications
         run: node tools/send_push.js

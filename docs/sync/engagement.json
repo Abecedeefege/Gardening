@@ -760,6 +760,36 @@
       "visits": 0,
       "approvals": 0,
       "_nota": "Miercoles sin slot: 0 push por cadencia. NOVENO dia sin un solo evento nuevo (ultimo: dwell 24/08 22:10Z). Los 2 envios del 31/08 (201 los dos) siguen con 0 aperturas a ~59 h. Mantenimiento: 7a consulta de clima (7o drift: jue 3 de 4,4 a 12,7 mm), recuento de tareas verificado contra generate_tasks_from_plants (46 done / 51 active / 3 snoozed, sin actividad nueva del usuario desde el 08/08), municion del jueves precomputada. Sin compactacion: no vence hasta el 08/09."
+    },
+    "2026-09-03": {
+      "sent": 2,
+      "clicked": 2,
+      "visits": 3,
+      "approvals": 0,
+      "feedback_text": 1,
+      "feedback_quotes": [
+        "Nose cual es el crespon y la althea que me preguntas al principio, por eso no contesto"
+      ],
+      "dwell": [
+        "159s@100% (jardin-hoy)"
+      ],
+      "_nota": "SE ROMPIO EL SILENCIO DE 10 DIAS. jardin-hoy (ed. clima-como-editor) abierta desde el push, 159 s @100 % y feedback_text — pero el feedback NO fue sobre el contenido nuevo: fue 'no se cual es el crespon y la althea'. Respondido el mismo dia en la puesta-al-dia con foto de especie + foto de ubicacion de B-9 y B-18. LAG MEDIDO: send_at 13:00Z, sent_at 14:29:19Z = +89 min con el cron ya desplazado (el 31/08 el mismo slot fue +263 min)."
+    },
+    "2026-09-04": {
+      "sent": 0,
+      "clicked": 1,
+      "visits": 2,
+      "approvals": 0,
+      "answer": 3,
+      "answers_clave": [
+        "pad-plant-B-30:done",
+        "pad-plant-B-38:done",
+        "pad-plant-F-4:done"
+      ],
+      "dwell": [
+        "305s@17% + 514s@63% (puesta-al-dia, 13,6 min = el dwell mas largo medido)"
+      ],
+      "_nota": "DIA TIER-1 SIN HABER MANDADO NADA HOY. La puesta-al-dia (push del 03/09 20:05, entregada +3,3 min porque se disparo a MANO) se abrio 21:49 local y produjo 3 escrituras reales en task_states.json: las 3 primeras cards, en orden, 21 s entre una y otra. Son exactamente las 3 podas que ya habia hecho el 02/08 (ticks taller-arbol-B-30/B-38 + podo-F-4) y que hasta anoche no estaban registradas. De la card 4 en adelante NO marco ninguna y freno en el 63 % del scroll (card 18 de 29). Lectura: el formato gano (13,6 min), la LONGITUD perdio. Viernes sin slot: 0 push por cadencia."
     }
   }
 }
