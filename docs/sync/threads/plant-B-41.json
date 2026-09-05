@@ -1,0 +1,16 @@
+{
+  "task_id": "plant-B-41",
+  "_updated_at": "2026-09-05T21:27:31.671Z",
+  "messages": [
+    {
+      "id": "m-mtow8y27-bd41o5",
+      "from": "user",
+      "kind": "text",
+      "text": "Este esta igual que siempre, 0 floracion ni nada por el momento\nVolve a preguntarme en unas semanas por el",
+      "photo": null,
+      "ts": "2026-09-05T21:27:31.477Z",
+      "device": "puesta-al-dia",
+      "status": "pending"
+    }
+  ]
+}
