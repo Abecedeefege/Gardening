@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-05T21:30:08.874Z",
+  "_updated_at": "2026-09-05T21:30:13.987Z",
   "events": [
     {
       "_id": "mt7ab566ckkptd",
@@ -405,6 +405,15 @@
       "value": "snoozed",
       "page": "engage/puesta-al-dia.html",
       "ts": "2026-09-05T21:30:11.433Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtowchm4qenpsb",
+      "type": "answer",
+      "qid": "pad-plant-B-46-5",
+      "value": "snoozed",
+      "page": "engage/puesta-al-dia.html",
+      "ts": "2026-09-05T21:30:16.492Z",
       "device": "sin-nombre"
     }
   ],
