@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-05T21:28:00.907Z",
+  "_updated_at": "2026-09-05T21:28:09.882Z",
   "events": [
     {
       "_id": "mt7ab566ckkptd",
@@ -378,6 +378,15 @@
       "nid": "2026-09-05-puesta-al-dia-solo-pendiente",
       "src": "push",
       "ts": "2026-09-05T21:28:03.338Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtow9tuhkxjikf",
+      "type": "dwell",
+      "seconds": 9,
+      "scroll_pct": 26,
+      "page": "engage/puesta-al-dia.html",
+      "ts": "2026-09-05T21:28:12.376Z",
       "device": "sin-nombre"
     }
   ],
