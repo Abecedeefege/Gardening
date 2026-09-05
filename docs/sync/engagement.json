@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-04T15:23:20.367Z",
+  "_updated_at": "2026-09-05T20:57:39.917Z",
   "events": [
     {
       "_id": "mt7ab566ckkptd",
@@ -202,6 +202,85 @@
       "scroll_pct": 28,
       "page": "engage/puesta-al-dia.html",
       "ts": "2026-09-04T15:23:20.386Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mto9bhi5b0cti8",
+      "type": "page_visit",
+      "page": "engage/puesta-al-dia.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-09-05T10:45:38.524Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mto9wiw9d6zxnv",
+      "type": "dwell",
+      "seconds": 982,
+      "scroll_pct": 0,
+      "page": "engage/puesta-al-dia.html",
+      "ts": "2026-09-05T11:02:00.105Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtohimz4blgv5x",
+      "type": "quicksignal_to_text",
+      "page": "engage/puesta-al-dia.html",
+      "ts": "2026-09-05T14:35:09.135Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtohixrdawp7q0",
+      "type": "feedback_text",
+      "target": "puesta-al-dia",
+      "text": "Quiero que saques todas las tareas que ya esten completadas para achicar la pagina",
+      "page": "engage/puesta-al-dia.html",
+      "ts": "2026-09-05T14:35:23.113Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtorgjmfod3rss",
+      "type": "answer",
+      "qid": "pad-plant-B-9",
+      "value": "done",
+      "page": "engage/puesta-al-dia.html",
+      "ts": "2026-09-05T19:13:27.639Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtorglo6uyloj9",
+      "type": "answer",
+      "qid": "pad-plant-B-18",
+      "value": "done",
+      "page": "engage/puesta-al-dia.html",
+      "ts": "2026-09-05T19:13:30.294Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtorgsxqq0zwk9",
+      "type": "answer",
+      "qid": "pad-plant-B-18",
+      "value": "done",
+      "page": "engage/puesta-al-dia.html",
+      "ts": "2026-09-05T19:13:39.710Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtoryv9mm24ie7",
+      "type": "page_visit",
+      "page": "engage/puesta-al-dia.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-09-05T19:27:42.538Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtos2qkscscuop",
+      "type": "dwell",
+      "seconds": 181,
+      "scroll_pct": 48,
+      "page": "engage/puesta-al-dia.html",
+      "ts": "2026-09-05T19:30:43.084Z",
       "device": "sin-nombre"
     }
   ],
