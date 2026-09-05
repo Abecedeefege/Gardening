@@ -1,0 +1,656 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🌡️ El portón — la fecha exacta en que se abren 6 podas</title>
+<meta property="og:title" content="🌡️ El portón — la fecha exacta en que se abren 6 podas">
+<meta property="og:description" content="Seis de tus tareas dicen «pasada la última helada». Le puse fecha con dos modelos de pronóstico: el lunes 7 a las 5 de la mañana es el piso, y la ventana buena son el martes 8 y el miércoles 9. Después se cierra hasta la semana siguiente.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
+    --sol:#e0a92e; --azul:#3f7d8a; --frio:#4a7fb5; --alta:#b4442e; --media:#c98a1e; --baja:#5a8a2e;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 28px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:26px 0 4px; }
+  .hero .day{ font-size:11.5px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:var(--ink3); }
+  .hero h1{ font-size:32px; line-height:1.08; margin:9px 0 8px; font-weight:900; letter-spacing:-.025em; }
+  .hero p{ color:var(--ink2); font-size:15px; }
+  .hero p b{ color:var(--ink); }
+
+  /* veredicto */
+  .ver{ background:#1e2a17; color:#eaf3e0; border-radius:22px; padding:22px 20px; margin:18px 0 12px;
+    box-shadow:0 12px 34px rgba(30,42,23,.2); }
+  .ver .tag{ font-size:10.5px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:#b7d69a; }
+  .ver .big{ font-size:42px; font-weight:900; line-height:1.02; letter-spacing:-.03em; color:#fff; margin:10px 0 2px; }
+  .ver .sub{ font-size:15px; color:#cfe0bd; margin-top:8px; }
+  .ver .sub b{ color:#fff; }
+  .ver .row{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:15px; }
+  .ver .row div{ background:rgba(255,255,255,.08); border-radius:12px; padding:10px 11px; }
+  .ver .row .n{ display:block; font-size:20px; font-weight:900; color:#fff; letter-spacing:-.02em; }
+  .ver .row .l{ font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:#a9bd96; margin-top:2px; }
+
+  /* termómetro */
+  .therm{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:18px 15px 13px; margin:14px 0;
+    box-shadow:0 8px 26px rgba(45,80,22,.06); }
+  .therm h2{ font-size:16.5px; font-weight:900; }
+  .therm .lead{ font-size:13px; color:var(--ink2); margin:5px 0 14px; }
+  .bars{ display:grid; grid-template-columns:repeat(8,1fr); gap:5px; align-items:end; height:150px; position:relative;
+    border-bottom:2px solid var(--line); }
+  .bars .col{ display:flex; flex-direction:column; justify-content:flex-end; align-items:center; height:100%; }
+  .bars .v{ font-size:11px; font-weight:900; color:var(--frio); margin-bottom:3px; letter-spacing:-.02em; }
+  .bars .b{ width:100%; max-width:26px; border-radius:6px 6px 0 0; background:linear-gradient(180deg,#9cc4e4,#4a7fb5); }
+  .bars .col.piso .b{ background:linear-gradient(180deg,#8fb8de,#1f4f7d); }
+  .bars .col.piso .v{ color:#1f4f7d; font-size:13px; }
+  .bars .col.ok .b{ background:linear-gradient(180deg,#b9dd93,#5a8a2e); }
+  .bars .col.ok .v{ color:var(--verde2); }
+  .days{ display:grid; grid-template-columns:repeat(8,1fr); gap:5px; margin-top:6px; }
+  .days span{ font-size:10px; font-weight:800; color:var(--ink3); text-align:center; text-transform:uppercase; letter-spacing:.02em; }
+  .days span.piso{ color:#1f4f7d; }
+  .days span.ok{ color:var(--verde2); }
+  .therm .leg{ font-size:11.5px; color:var(--ink3); margin-top:11px; border-top:1px solid var(--line); padding-top:9px; }
+  .therm .leg b{ color:var(--ink2); }
+
+  /* control temprano */
+  .q{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border:1px solid rgba(90,138,46,.32); border-radius:20px;
+    padding:19px 16px; margin:16px 0; text-align:center; }
+  .q h3{ font-size:17.5px; font-weight:900; line-height:1.2; }
+  .q p{ font-size:13.5px; color:var(--ink2); margin:7px auto 13px; max-width:34ch; }
+  .qb{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .qb button{ background:#fff; border:1px solid rgba(90,138,46,.35); border-radius:13px; padding:13px 8px;
+    font:800 14px var(--sans); color:var(--verde); cursor:pointer; }
+  .qb button:active{ opacity:.7; }
+  .qb button.sel{ background:var(--verde2); color:#fff; border-color:var(--verde2); }
+  .qb button:disabled{ opacity:.5; }
+  .q-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:800; color:var(--verde2); min-height:1em; }
+
+  .sect{ font-size:11.5px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3);
+    margin:30px 0 4px; padding-top:14px; border-top:1px solid var(--line); }
+
+  .blk{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:17px 16px; margin-top:12px;
+    box-shadow:0 4px 16px rgba(45,80,22,.05); }
+  .blk h3{ font-size:16.5px; font-weight:900; line-height:1.25; }
+  .blk p{ font-size:14px; color:var(--ink2); margin-top:8px; }
+  .blk p b{ color:var(--ink); }
+  .blk ul{ list-style:none; padding:0; margin:11px 0 0; }
+  .blk li{ font-size:13.5px; color:var(--ink2); padding:9px 11px; background:#f5faee; border-radius:11px; margin-bottom:6px;
+    border-left:3px solid var(--verde2); }
+  .blk li b{ color:var(--ink); }
+  .blk li.mal{ border-left-color:var(--alta); background:#fdf1ed; }
+  .blk li.dud{ border-left-color:var(--media); background:#fdf7e8; }
+
+  .apuesta{ background:#fff7e6; border:1px solid rgba(224,169,46,.45); border-radius:18px; padding:17px 16px; margin-top:12px; }
+  .apuesta .tag{ font-size:10.5px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:#a8790c; }
+  .apuesta b.t{ display:block; font-size:16px; font-weight:900; margin:7px 0 6px; }
+  .apuesta p{ font-size:13.5px; color:#6b5416; }
+  .apuesta p b{ color:#3d3008; }
+
+  /* cards de tarea (mismo motor que la puesta al día) */
+  .item{ background:var(--card); border:1px solid var(--line); border-left:5px solid var(--line); border-radius:16px;
+    padding:14px 14px 12px; margin-top:12px; box-shadow:0 4px 16px rgba(45,80,22,.05); }
+  .item.p-alta{ border-left-color:var(--alta); } .item.p-media{ border-left-color:var(--media); } .item.p-baja{ border-left-color:var(--baja); }
+  .item.p-alta .prio{ color:var(--alta); } .item.p-media .prio{ color:var(--media); } .item.p-baja .prio{ color:var(--baja); }
+  .item.is-done, .item.is-snoozed{ opacity:.62; }
+  .item.is-done .ph{ filter:grayscale(.6); }
+  .top{ display:flex; gap:12px; align-items:flex-start; }
+  .ph{ width:88px; height:88px; border-radius:12px; object-fit:cover; flex:none; border:1px solid var(--line); background:#eef4e6; }
+  .hd{ flex:1; min-width:0; }
+  .meta{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .prio{ font-size:10.5px; font-weight:900; letter-spacing:.08em; }
+  .code{ font-size:11.5px; color:var(--ink3); font-family:ui-monospace,Menlo,monospace; font-weight:700; }
+  .item h3{ font-size:16.5px; line-height:1.22; font-weight:900; margin-top:3px; }
+  .sci{ font-size:12px; color:var(--ink3); font-style:italic; margin-top:2px; }
+  .where{ font-size:13px; color:var(--ink2); margin-top:10px; background:#f2f7ec; border-radius:10px; padding:8px 10px; }
+  .where b{ color:var(--ink); }
+  .loc{ display:flex; align-items:center; gap:10px; margin-top:8px; text-decoration:none; color:var(--azul); font-size:12px; font-weight:800; }
+  .loc img{ width:64px; height:44px; object-fit:cover; border-radius:8px; border:1px solid var(--line); }
+  .when{ display:inline-block; font-size:11px; font-weight:800; border-radius:7px; padding:3px 9px; margin-top:10px;
+    color:var(--verde2); background:#eef7e0; border:1px solid rgba(90,138,46,.28); }
+  .when.mar{ color:#1f4f7d; background:#e9f1f8; border-color:rgba(74,127,181,.35); }
+  .when.antes{ color:#9a4a20; background:#fdece3; border-color:rgba(180,68,46,.3); }
+  .nofoto{ margin-top:9px; font-size:12.5px; background:#fdf7e8; border:1px solid rgba(224,169,46,.4); border-radius:10px;
+    padding:8px 10px; color:#6b5416; }
+  .why{ font-size:13.5px; color:var(--ink2); margin-top:9px; }
+  .why b{ color:var(--ink); }
+  details.how{ margin-top:8px; }
+  details.how summary{ cursor:pointer; font-size:12.5px; font-weight:800; color:var(--verde2); list-style:none; }
+  details.how summary::-webkit-details-marker{ display:none; }
+  details.how summary::before{ content:'▸ '; } details.how[open] summary::before{ content:'▾ '; }
+  details.how p{ font-size:13px; color:var(--ink2); margin-top:5px; padding:8px 10px; background:#f7fbf1; border-radius:10px; }
+  .state{ margin-top:9px; font-size:12.5px; font-weight:800; color:var(--verde); background:#e6f4d4; border-radius:9px; padding:7px 10px; }
+  .state.snz{ color:#8a5a12; background:#fdf3e3; }
+  .state button{ margin-left:8px; background:none; border:1px solid currentColor; border-radius:7px; padding:2px 8px;
+    font:800 11.5px var(--sans); color:inherit; cursor:pointer; }
+  .acts{ display:grid; grid-template-columns:repeat(2,1fr); gap:6px; margin-top:11px; }
+  .acts button{ background:#f2f8ea; color:var(--verde); border:1px solid var(--line); border-radius:10px; padding:10px 6px;
+    font:800 13px var(--sans); cursor:pointer; }
+  .acts button:active{ opacity:.7; } .acts button:disabled{ opacity:.45; }
+  .acts button[data-act=done]{ background:#e6f4d4; border-color:rgba(90,138,46,.4); }
+  .box{ margin-top:8px; }
+  .box textarea{ width:100%; background:#f7fbf1; border:1px solid var(--line); border-radius:10px; color:var(--ink);
+    padding:9px 11px; font:13px/1.4 var(--sans); resize:vertical; }
+  .boxrow{ display:flex; gap:6px; margin-top:6px; }
+  .box button{ background:var(--verde2); color:#fff; border:none; border-radius:9px; padding:9px 14px; font:800 12.5px var(--sans); cursor:pointer; }
+  .box button.ghost{ background:#f2f8ea; color:var(--verde); border:1px solid var(--line); }
+  .pv{ display:flex; align-items:center; gap:8px; margin-top:6px; } .pv img{ width:64px; height:64px; object-fit:cover; border-radius:8px; }
+  .hint{ font-size:12px; font-weight:700; color:var(--verde2); margin-top:6px; min-height:1em; }
+  .hint.err{ color:#b03a2e; }
+  .open{ display:inline-block; margin-top:8px; font-size:12px; font-weight:800; color:var(--azul); text-decoration:none; }
+
+  /* aprobada */
+  .apr{ background:linear-gradient(180deg,#f2f9e8,#fff); border:1px solid rgba(90,138,46,.3); border-radius:18px; padding:18px 16px; margin-top:12px; }
+  .apr .tag{ font-size:10.5px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:var(--verde2); }
+  .apr b.t{ display:block; font-size:16.5px; font-weight:900; margin:7px 0 6px; }
+  .apr p{ font-size:13.5px; color:var(--ink2); }
+  .apr .cta{ display:inline-block; margin-top:11px; background:var(--verde); color:#fff; text-decoration:none;
+    border-radius:12px; padding:11px 18px; font-size:14px; font-weight:800; }
+  .apr .mini{ font-size:12px; color:var(--ink3); margin-top:10px; }
+
+  /* slots */
+  .slots{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 16px; margin-top:12px; }
+  .slots h3{ font-size:16.5px; font-weight:900; }
+  .slots > p{ font-size:13.5px; color:var(--ink2); margin:6px 0 12px; }
+  .slot{ border:1px solid var(--line); border-radius:14px; padding:13px; margin-bottom:9px; background:#f9fcf5; }
+  .sh{ display:flex; justify-content:space-between; align-items:baseline; gap:8px; }
+  .sn{ font-size:15px; font-weight:900; }
+  .sw{ font-size:11px; font-weight:800; color:var(--ink3); text-transform:uppercase; letter-spacing:.05em; }
+  .sd{ font-size:13px; color:var(--ink2); margin:6px 0 10px; }
+  .sb{ display:grid; grid-template-columns:1fr 1fr; gap:7px; }
+  .sb button{ background:#fff; border:1px solid rgba(90,138,46,.35); border-radius:11px; padding:11px 6px;
+    font:800 13.5px var(--sans); color:var(--verde); cursor:pointer; }
+  .sb button.sel{ background:var(--verde2); color:#fff; border-color:var(--verde2); }
+  .sb button:disabled{ opacity:.5; }
+
+  /* reacción */
+  .react{ text-align:center; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px 16px; margin-top:12px; }
+  .react h3{ font-size:16.5px; font-weight:900; }
+  .rr{ display:flex; justify-content:center; gap:9px; margin-top:13px; flex-wrap:wrap; }
+  .rr button{ font-size:27px; background:#f5faee; border:1px solid var(--line); border-radius:14px; padding:9px 13px; cursor:pointer; line-height:1; }
+  .rr button.sel{ background:var(--verde3); border-color:var(--verde2); transform:scale(1.06); }
+  .rr button:disabled{ opacity:.45; }
+  .react-hint{ display:block; margin-top:10px; font-size:12.5px; font-weight:800; color:var(--verde2); min-height:1em; }
+
+  /* feedback propio */
+  .fb-blk{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border:1px solid rgba(90,138,46,.32); border-radius:18px;
+    padding:20px 16px; margin-top:12px; }
+  .fb-blk h3{ font-size:16.5px; font-weight:900; }
+  .fb-blk p{ font-size:13.5px; color:var(--ink2); margin:6px 0 11px; }
+  .fb-blk textarea{ width:100%; background:#fff; border:1px solid var(--line); border-radius:12px; padding:11px 12px;
+    font:14px/1.45 var(--sans); color:var(--ink); resize:vertical; }
+  .fb-send{ margin-top:10px; background:var(--verde2); color:#fff; border:none; border-radius:12px; padding:12px 22px;
+    font:800 14.5px var(--sans); cursor:pointer; }
+  .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:800; color:var(--verde2); min-height:1em; }
+
+  .engage-actions{ display:grid; gap:9px; margin:24px 0 8px; }
+  .engage-actions button{ border:none; border-radius:14px; padding:15px 12px; font:800 15px var(--sans); cursor:pointer; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:#eef2e8; color:var(--ink2); border:1px solid var(--line); }
+
+  .pitchlink{ display:block; text-align:center; margin-top:14px; font-size:12.5px; font-weight:800; color:var(--ink3); text-decoration:none; }
+  .foot{ text-align:center; font-size:11.5px; color:var(--ink3); margin-top:22px; line-height:1.6; }
+</style>
+</head>
+<body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="day">Sábado 5 de septiembre · 2026</div>
+    <h1>El portón</h1>
+    <p>Seis de tus tareas no tienen fecha: tienen una <b>condición</b>. Dicen «pasada la última helada». Hoy le puse fecha, con dos modelos de pronóstico y el número a la vista.</p>
+  </div>
+
+  <div class="ver reveal">
+    <div class="tag">El portón se abre</div>
+    <div class="big">Lunes 7,<br>al mediodía</div>
+    <div class="sub">Antes de eso queda <b>la mañana más fría de los próximos 8 días</b>: el lunes al amanecer, 4,5° según un modelo y 3,8° según el otro. Después de esa mañana, ninguna baja de 6,5° en toda la semana.</div>
+    <div class="row">
+      <div><span class="n">4,5°</span><span class="l">Lunes 7, 5 a.m.</span></div>
+      <div><span class="n">6 tareas</span><span class="l">que destraba</span></div>
+    </div>
+  </div>
+
+  <div class="therm reveal">
+    <h2>🌡️ El termómetro de los 8 días</h2>
+    <p class="lead">Mínima de cada madrugada. La barra oscura es el piso; las verdes, las mañanas en que ya podés cortar.</p>
+    <div class="bars">
+      <div class="col"><span class="v">8,5</span><span class="b" style="height:64%"></span></div>
+      <div class="col"><span class="v">7,6</span><span class="b" style="height:57%"></span></div>
+      <div class="col piso"><span class="v">4,5</span><span class="b" style="height:32%"></span></div>
+      <div class="col ok"><span class="v">6,5</span><span class="b" style="height:48%"></span></div>
+      <div class="col ok"><span class="v">7,0</span><span class="b" style="height:52%"></span></div>
+      <div class="col ok"><span class="v">10,0</span><span class="b" style="height:76%"></span></div>
+      <div class="col"><span class="v">11,2</span><span class="b" style="height:85%"></span></div>
+      <div class="col"><span class="v">10,0</span><span class="b" style="height:76%"></span></div>
+    </div>
+    <div class="days">
+      <span>Sáb 5</span><span>Dom 6</span><span class="piso">Lun 7</span><span class="ok">Mar 8</span><span class="ok">Mié 9</span><span class="ok">Jue 10</span><span>Vie 11</span><span>Sáb 12</span>
+    </div>
+    <p class="leg"><b>De dónde salen:</b> modelo europeo (ECMWF). Consulté también el americano (GFS) para no comerme un número suelto: da 7,4 · 5,3 · <b>3,8</b> · 7,4 · 7,7 · 10,0 · 10,2 · 7,7. <b>Difieren hasta 2°, pero coinciden en lo único que importa acá: el piso es el lunes al amanecer, y a partir del martes no vuelve a bajar.</b></p>
+  </div>
+
+  <div class="q reveal">
+    <h3>¿Te toco el hombro el martes temprano?</h3>
+    <p>Un aviso corto el martes 8 a las 8 de la mañana con las 3 que conviene hacer ese día. Si me decís que no, no te llega nada.</p>
+    <div class="qb">
+      <button type="button" onclick="engageAnswer('porton-aviso-mar8','si',this)">Sí, avisame</button>
+      <button type="button" onclick="engageAnswer('porton-aviso-mar8','no',this)">No hace falta</button>
+    </div>
+    <span class="q-hint"></span>
+  </div>
+
+  <div class="sect reveal">La ventana, con nombre y apellido</div>
+
+  <div class="blk reveal">
+    <h3>Martes 8 y miércoles 9. Después se cierra.</h3>
+    <p>No es sólo el frío: los cortes de esta lista necesitan días secos por delante para cerrar, y el fin de semana que viene el pronóstico se pone feo. Esto es lo que hay:</p>
+    <ul>
+      <li><b>Martes 8</b> — 0 mm, viento 15 km/h. Primer día del otro lado del portón.</li>
+      <li><b>Miércoles 9</b> — 0 mm, viento 12 km/h. <b>El día más calmo de los ocho.</b> Si tenés que elegir uno solo, es este.</li>
+      <li><b>Jueves 10</b> — 0 mm, pero el viento sube a 23 km/h. Sirve igual.</li>
+      <li class="mal"><b>Viernes 11</b> — 2,6 mm y ráfagas de 48 km/h. Se acabó.</li>
+      <li class="mal"><b>Sábado 12</b> — 10,8 mm y ráfagas de 51 km/h. El peor día del pronóstico.</li>
+    </ul>
+    <p style="margin-top:12px"><b>Traducido:</b> tenés tres días. Si no cortás entre el martes y el jueves, el próximo hueco seco cae recién después del sábado 12 — y para entonces la santa rita y la lantana ya están más arriba, con más madera vieja para sacar.</p>
+  </div>
+
+  <div class="apuesta reveal">
+    <div class="tag">Te lo dejo por escrito</div>
+    <b class="t">Mi apuesta para esta semana</b>
+    <p>Del <b>martes 8 al jueves 10 no te llueve, y ninguna madrugada baja de 6°.</b> Si el martes amanece por debajo de 5°, o si te agarra un chaparrón en el medio, <b>te lo escribo yo antes de que me lo digas vos</b> — no me lo voy a hacer el distraído.</p>
+  </div>
+
+  <div class="blk reveal">
+    <h3>Y lo que no te puedo prometer</h3>
+    <p>Un pronóstico ve 8 días. <b>«La última helada del año» no la puede confirmar nadie hasta que pasó</b> — en Montevideo suele caer entre el 10 y el 20 de septiembre, y siempre hay años que se pasan de rosca. Lo que sí sé, con dos modelos que coinciden, es que en los próximos ocho días <b>no hela</b>, y que la mañana más fría es la del lunes.</p>
+    <p><b>Por eso el corte prudente:</b> estas seis salen del lunes al mediodía en adelante, y la que más te asusta perder — la santa rita, que es la más friolenta de las seis — la podés dejar para el miércoles y no cambia nada.</p>
+  </div>
+
+  <div class="sect reveal">Las 6 que se abren</div>
+  <p style="font-size:13.5px;color:var(--ink2);margin-top:8px">Están ordenadas por lo que yo haría primero. Cada una con tu foto del jueves, dónde está, y el botón para cerrarla. <b>Cuatro de las seis nunca te las llegué a mostrar</b>: estaban al final de la puesta al día y frenaste antes.</p>
+
+  <article class="item p-media" id="plant-B-29" data-ids="plant-B-29" data-code="B-29" data-title="Lantana — cortarla a 30 cm">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-29/species-B-29_20260904-160312.jpg" loading="lazy" alt="Lantana">
+      <div class="hd">
+        <div class="meta"><span class="prio">MEDIA</span><span class="code">B-29</span></div>
+        <h3>Lantana — cortarla a 30 cm</h3>
+        <div class="sci">Lantana camara</div>
+      </div>
+    </div>
+    <div class="where">📍 <b>Dónde:</b> fondo, contra el vecino del fondo; el arbusto de florcitas amarillo-naranja-rojo</div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/FondoCasa_VecinoFondo.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/FondoCasa_VecinoFondo.jpg" loading="lazy" alt="Dónde está"><span>📍 dónde está</span></a>
+    <span class="when mar">Martes 8 · la primera de la lista</span>
+    <p class="why"><b>Empezá por esta.</b> Es la que más gana y la que menos se puede equivocar: tallos a 30 cm del suelo, todos. Florece <b>sólo en madera nueva</b>, así que cada semana que pasa sin cortarla es flor que se va a las puntas y hojarasca abajo. Tu foto del jueves la muestra todavía con naranja en las puntas y leñosa en la base — el manual entero en una imagen. Es la única de las seis donde el rebrote tierno sí se quema con frío: por eso no antes del lunes.</p>
+    <details class="how"><summary>Cómo se hace</summary><p>Guantes y manga larga (las hojas irritan). Tallos a 30 cm en bisel. Sacá lo muerto y las bayas del piso (son tóxicas). 2 cm de compost al pie. No necesita riego después.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">✅ Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">😴 Posponer 1 semana</button>
+      <button type="button" data-act="photo">📷 Foto</button>
+      <button type="button" data-act="comment">💬 Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame: la hice, me trabé en algo, no es esta planta…"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar ➤</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">✕ sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+    <a class="open" href="https://gardening-chi.vercel.app/tasks/plant-B-29.html">Abrir la tarea completa →</a>
+  </article>
+
+  <article class="item p-media" id="plant-B-24" data-ids="plant-B-24" data-code="B-24" data-title="Mandarina criolla — abrir el centro">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-24/species-B-24_20260904-160115.jpg" loading="lazy" alt="Mandarina criolla">
+      <div class="hd">
+        <div class="meta"><span class="prio">MEDIA</span><span class="code">B-24</span></div>
+        <h3>Mandarina — abrirle el centro</h3>
+        <div class="sci">Citrus reticulata</div>
+      </div>
+    </div>
+    <div class="where">📍 <b>Dónde:</b> fondo, del lado de la cancha de pádel, al lado del limonero</div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/FondoCasa_Cancha_Padel.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/FondoCasa_Cancha_Padel.jpg" loading="lazy" alt="Dónde está"><span>📍 dónde está</span></a>
+    <span class="when mar">Martes 8 o miércoles 9 · con la hoja seca</span>
+    <p class="why">Poda suave, 20% como mucho: ramas internas, cruzadas y muertas, para que la luz llegue al corazón de la copa. En los cítricos <b>la fruta se hace donde entra el sol</b>, y una copa cerrada te da mucha hoja y poca mandarina. Va con follaje seco — no después de lluvia — y de ahí que el martes y el miércoles sean los días.</p>
+    <details class="how"><summary>Cómo se hace</summary><p>Apoyá la rama mientras cortás, se quiebran fácil. Bisel sobre yema externa. Si ves galerías plateadas en hojas nuevas (minador), foto.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">✅ Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">😴 Posponer 1 semana</button>
+      <button type="button" data-act="photo">📷 Foto</button>
+      <button type="button" data-act="comment">💬 Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame: la hice, me trabé en algo, no es esta planta…"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar ➤</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">✕ sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+    <a class="open" href="https://gardening-chi.vercel.app/tasks/plant-B-24.html">Abrir la tarea completa →</a>
+  </article>
+
+  <article class="item p-media" id="plant-B-23" data-ids="plant-B-23" data-code="B-23" data-title="Limonero — poda de formación">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-23/species-B-23_20260904-160059.jpg" loading="lazy" alt="Limonero">
+      <div class="hd">
+        <div class="meta"><span class="prio">MEDIA</span><span class="code">B-23</span></div>
+        <h3>Limonero — formación y chupones</h3>
+        <div class="sci">Citrus × limon</div>
+      </div>
+    </div>
+    <div class="where">📍 <b>Dónde:</b> fondo, contra la pared de bloques, al lado del vivero</div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/FondoCasa_Cancha_Padel.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/FondoCasa_Cancha_Padel.jpg" loading="lazy" alt="Dónde está"><span>📍 dónde está</span></a>
+    <span class="when antes">Primero bajá los limones (hoy sirve)</span>
+    <p class="why">Esta tiene un paso previo: <b>la ficha dice podar «después de la cosecha mayor»</b>, y tu foto del jueves lo muestra cargado de amarillos. Bajarlos no necesita día seco ni esperar el portón — se puede hacer bajo la garúa este mismo fin de semana. Después, martes o miércoles: chupones de abajo del injerto al ras, ramas que rozan el suelo, y abrir un poco el centro. Con el limonero se corta poco: cada hoja que sacás es azúcar que no va al fruto.</p>
+    <details class="how"><summary>Cómo se hace</summary><p>Cosecha: tijera o giro suave a mano, sin tirar. Sólo los amarillos. Guantes por las espinas. Poda: alcohol 70% entre cortes, bisel, nada de pasta. Lo que salga por debajo del engrosamiento del injerto va afuera al ras.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">✅ Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">😴 Posponer 1 semana</button>
+      <button type="button" data-act="photo">📷 Foto</button>
+      <button type="button" data-act="comment">💬 Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame: la hice, me trabé en algo, no es esta planta…"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar ➤</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">✕ sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+    <a class="open" href="https://gardening-chi.vercel.app/tasks/plant-B-23.html">Abrir la tarea completa →</a>
+  </article>
+
+  <article class="item p-alta" id="plant-B-1" data-ids="plant-B-1" data-code="B-1" data-title="Santa Rita — poda severa de guías">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-1/species-B-1_20260904-154250.jpg" loading="lazy" alt="Santa Rita">
+      <div class="hd">
+        <div class="meta"><span class="prio">ALTA</span><span class="code">B-1</span></div>
+        <h3>Santa Rita — acortar las guías</h3>
+        <div class="sci">Bougainvillea spectabilis</div>
+      </div>
+    </div>
+    <div class="where">📍 <b>Dónde:</b> fondo, frente al dormitorio; la trepadora con espinas y brácteas fucsia</div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/FondoCasa_FrenteDormitorio.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/FondoCasa_FrenteDormitorio.jpg" loading="lazy" alt="Dónde está"><span>📍 dónde está</span></a>
+    <span class="when mar">Miércoles 9 · la más friolenta, dale margen</span>
+    <p class="why">Es la única con prioridad alta del grupo y la que más margen de frío conviene darle: <b>dejala para el miércoles</b>, dos días después del piso. Tu foto la muestra enorme, con guías por encima del muro y brácteas fucsia todavía colgando de la temporada pasada. Acortá cada guía un 30-50% sobre yema externa. Florece en madera nueva: sin poda se descontrola hacia arriba y te florece donde no la ves. <b>Y después, sed:</b> poco riego y cero nitrógeno hasta primavera — la santa rita con hambre florece más.</p>
+    <details class="how"><summary>Cómo se hace</summary><p>Secas y cruzadas primero. Guías al 30-50%. Si querés bajarla, hasta la altura del soporte. Guantes de cuero y manga larga: las espinas de esta son en serio. Después: poco riego y nada de nitrógeno hasta primavera.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">✅ Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">😴 Posponer 1 semana</button>
+      <button type="button" data-act="photo">📷 Foto</button>
+      <button type="button" data-act="comment">💬 Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame: la hice, me trabé en algo, no es esta planta…"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar ➤</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">✕ sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+    <a class="open" href="https://gardening-chi.vercel.app/tasks/plant-B-1.html">Abrir la tarea completa →</a>
+  </article>
+
+  <article class="item p-media" id="plant-B-22" data-ids="plant-B-22" data-code="B-22" data-title="Palta uruguaya — poda ligera e inspección">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/PXL_20260428_130522139_MP.webp" loading="lazy" alt="Palta uruguaya">
+      <div class="hd">
+        <div class="meta"><span class="prio">MEDIA</span><span class="code">B-22</span></div>
+        <h3>Palta uruguaya — repaso liviano</h3>
+        <div class="sci">Persea americana</div>
+      </div>
+    </div>
+    <div class="where">📍 <b>Dónde:</b> fondo, frente a la piscina; el árbol grande</div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/FondoCasa_FrentePiscina.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/FondoCasa_FrentePiscina.jpg" loading="lazy" alt="Dónde está"><span>📍 dónde está</span></a>
+    <span class="when mar">Martes a jueves · 15 minutos</span>
+    <div class="nofoto">📷 <b>De esta no tengo foto tuya.</b> La de arriba es la del catálogo, de abril. De las 42 que mandaste el jueves, las dos paltas quedaron afuera — si le sacás una cuando vayas, la card se actualiza sola.</div>
+    <p class="why">Al palto <b>no le gusta el corte fuerte</b>: sólo chupones, cruzadas y secas, máximo 15-20% del follaje. La parte que de verdad importa es la mirada: linterna del celular al envés de 5 o 6 hojas. <b>No estoy diciendo que tenga plaga</b> — no lo sé, hace meses que no la ve nadie de cerca. Si aparece algodón blanco, escamas marrones o melaza pegajosa, foto acá antes de tratar nada. Si no hay nada, la marcás hecha y listo.</p>
+    <details class="how"><summary>Cómo se hace</summary><p>Alcohol 70% en la tijera. Rama que sale por debajo del injerto, al ras. Cortes en bisel, sin pasta: cicatriza solo. Aparte de la poda: no camines ni apiles cosas sobre la zona de raíces, que en el palto son superficiales.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">✅ Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">😴 Posponer 1 semana</button>
+      <button type="button" data-act="photo">📷 Foto</button>
+      <button type="button" data-act="comment">💬 Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame: la hice, me trabé en algo, no es esta planta…"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar ➤</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">✕ sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+    <a class="open" href="https://gardening-chi.vercel.app/tasks/plant-B-22.html">Abrir la tarea completa →</a>
+  </article>
+
+  <article class="item p-media" id="plant-B-36-2" data-ids="plant-B-36-2" data-code="B-36" data-title="Palta Hass — poda ligera e inspección">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/FondoCasa_VecinoFondo.jpg" loading="lazy" alt="Palta Hass">
+      <div class="hd">
+        <div class="meta"><span class="prio">MEDIA</span><span class="code">B-36</span></div>
+        <h3>Palta Hass — la misma pasada</h3>
+        <div class="sci">Persea americana 'Hass'</div>
+      </div>
+    </div>
+    <div class="where">📍 <b>Dónde:</b> fondo (este), contra el vecino del fondo, cerca de la pileta</div>
+    <span class="when mar">Martes a jueves · en el mismo viaje</span>
+    <div class="nofoto">📷 <b>Tampoco tengo foto tuya de esta.</b> Las dos paltas son el hueco que dejaron las 42 del jueves. Si sacás las dos de una, cierro el catálogo completo.</div>
+    <p class="why">Hacela en el mismo viaje que la uruguaya: misma tijera, mismo criterio, mismos 15 minutos. La diferencia es que la Hass <b>es injertada</b>, así que lo que brote por debajo del engrosamiento de la base no es Hass — es el patrón, y si lo dejás crecer te termina comiendo el árbol bueno. Eso va afuera al ras, sin miramientos. El resto: cruzadas, secas, y bajarle un poco la altura a lo que ya no alcanzás a cosechar.</p>
+    <details class="how"><summary>Cómo se hace</summary><p>Identificá el punto de injerto (engrosamiento en la base): lo que salga por debajo, afuera. Máximo 15-20% del follaje. Linterna al envés de las hojas, igual que en la otra.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">✅ Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">😴 Posponer 1 semana</button>
+      <button type="button" data-act="photo">📷 Foto</button>
+      <button type="button" data-act="comment">💬 Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame: la hice, me trabé en algo, no es esta planta…"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar ➤</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">✕ sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+    <a class="open" href="https://gardening-chi.vercel.app/tasks/plant-B-36-2.html">Abrir la tarea completa →</a>
+  </article>
+
+  <div class="sect reveal">Y lo que ya prendiste</div>
+
+  <div class="apr reveal">
+    <div class="tag">🪚 Aprobada por vos · sigue disponible</div>
+    <b class="t">El Taller nº1 — la poda de carozos</b>
+    <p>Es la única experiencia que marcaste como buena, así que es la única que vuelve. <b>Y esta semana vuelve a servir de verdad:</b> la mandarina, el limonero y las dos paltas se podan con el mismo criterio que aprendiste ahí — bisel, yema externa, alcohol entre cortes, no más del 20%. Abrila el martes con la tijera en la mano y te ahorrás pensar dos veces.</p>
+    <a class="cta" href="https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html">Abrir El Taller nº1 →</a>
+    <p class="mini">Sólo vuelve lo que aprobás. Cada sábado te llega una original nueva y, al lado, nada más que lo que prendiste vos.</p>
+  </div>
+
+  <div class="sect reveal">Cómo querés seguir recibiéndolo</div>
+
+  <div class="slots reveal">
+    <h3>Slots disponibles</h3>
+    <p>Si «el portón» te sirvió — una fecha con el número atrás, y las tareas que destraba — decime en qué momento querés que vuelva. Podés prender los dos, uno solo o ninguno, y lo cambiás cuando quieras.</p>
+    <div class="slot">
+      <div class="sh"><span class="sn">🌆 Lunes 18:00</span><span class="sw">arranque de semana</span></div>
+      <div class="sd">Llega con la semana entera por delante y el pronóstico ya verificado. Es el slot para decidir <b>qué día de la semana</b> hacés cada cosa.</div>
+      <div class="sb">
+        <button type="button" onclick="engageAnswer('porton-slot-lun18','si',this)">Sí, prendelo</button>
+        <button type="button" onclick="engageAnswer('porton-slot-lun18','no',this)">No, gracias</button>
+      </div>
+      <span class="q-hint"></span>
+    </div>
+    <div class="slot">
+      <div class="sh"><span class="sn">☀️ Sábado 11:00</span><span class="sw">con el jardín adelante</span></div>
+      <div class="sd">Media mañana de sábado, que es cuando de verdad salís. El slot para <b>abrirlo con la tijera en la mano</b>.</div>
+      <div class="sb">
+        <button type="button" onclick="engageAnswer('porton-slot-sab11','si',this)">Sí, prendelo</button>
+        <button type="button" onclick="engageAnswer('porton-slot-sab11','no',this)">No, gracias</button>
+      </div>
+      <span class="q-hint"></span>
+    </div>
+  </div>
+
+  <div class="react reveal">
+    <h3>¿Qué te pareció el portón?</h3>
+    <div class="rr">
+      <button type="button" onclick="engageReact('el-porton','😍',this)">😍</button>
+      <button type="button" onclick="engageReact('el-porton','👍',this)">👍</button>
+      <button type="button" onclick="engageReact('el-porton','😐',this)">😐</button>
+      <button type="button" onclick="engageReact('el-porton','🙅',this)">🙅</button>
+    </div>
+    <span class="react-hint"></span>
+  </div>
+
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>Esto lo leo yo, el agente del jardín, antes de armar la próxima. Lo que más me sirve: si la fecha te sirvió o te sobró, si preferís que ordene por día o por planta, y qué haría falta para que esto valga el sábado a la mañana.</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('el-porton', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-09-05-el-porton')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-09-05-el-porton')">✕ No me interesa</button>
+  </div>
+
+  <a class="pitchlink" href="https://gardening-chi.vercel.app/engage/2026-09-05-el-porton-pitch.html">¿Cómo se monetiza algo así? → 6 modelos</a>
+
+  <p class="foot">Mínimas de Open-Meteo (ECMWF y GFS), consultadas el sábado 5 a las 6:10 de la mañana para Montevideo.<br>Las 6 tareas salen de tu catálogo, no de una lista genérica.</p>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var API = '/api/tarea';
+  var DEVICE_KEY = 'jardineando_device_name_v1';
+  var OUTBOX_KEY = 'jardineando_tarea_outbox_v1';
+  function device(){ return localStorage.getItem(DEVICE_KEY) || 'el-porton'; }
+  function nowIso(){ return new Date().toISOString(); }
+  function msgId(){ return 'm-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,8); }
+  function jget(k,f){ try{ return JSON.parse(localStorage.getItem(k)) || f; }catch(e){ return f; } }
+  function jset(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+  function outboxAdd(p){ var a = jget(OUTBOX_KEY, []); a.push(p); jset(OUTBOX_KEY, a.slice(-50)); }
+
+  async function post(payload){
+    var r = await fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+    if (!r.ok){ var t=''; try{ t = await r.text(); }catch(e){} throw new Error('HTTP ' + r.status + (t ? ' ' + t.slice(0,80) : '')); }
+    return r.json();
+  }
+  function signal(qid, value){
+    try{ if (window.engageAnswer) window.engageAnswer(qid, value, document.createElement('button')); }catch(e){}
+  }
+  function q(card, sel){ return card.querySelector(sel); }
+  function hint(card, text, err){ var h = q(card,'.hint'); h.textContent = text || ''; h.className = 'hint' + (err ? ' err' : ''); }
+
+  function renderState(card, st){
+    var el = q(card,'.state');
+    card.classList.remove('is-done','is-snoozed');
+    if (!st || !st.status || st.status === 'active' ||
+        (st.status === 'snoozed' && st.snoozed_until && new Date(st.snoozed_until) <= new Date())){
+      el.hidden = true; el.innerHTML = ''; return;
+    }
+    if (st.status === 'done'){
+      card.classList.add('is-done'); el.className = 'state';
+      el.innerHTML = '✅ Marcada como hecha' + (st.completed_at ? ' el ' + new Date(st.completed_at).toLocaleDateString('es-UY') : '') +
+        ' <button type="button" data-act="reactivate">Reactivar</button>';
+    } else {
+      card.classList.add('is-snoozed'); el.className = 'state snz';
+      el.innerHTML = '💤 Pospuesta hasta el ' + (st.snoozed_until ? new Date(st.snoozed_until).toLocaleDateString('es-UY') : '—') +
+        ' <button type="button" data-act="reactivate">Reactivar</button>';
+    }
+    el.hidden = false;
+  }
+
+  async function setState(card, status, snoozedUntil){
+    var ids = card.dataset.ids.split(',');
+    var st = { status: status, snoozed_until: snoozedUntil, completed_at: status === 'done' ? nowIso() : null };
+    renderState(card, st);
+    hint(card, 'Guardando…');
+    var failed = 0;
+    for (var i = 0; i < ids.length; i++){
+      var payload = { type:'state', task_id: ids[i], status: status, snoozed_until: snoozedUntil, device: device() };
+      try { await post(payload); } catch(e){ failed++; outboxAdd(payload); }
+    }
+    signal('porton-' + ids[0], status);
+    hint(card, failed ? '⏳ Guardado en este equipo — se sube cuando haya conexión (abrí la tarea para reintentar).'
+                      : (status === 'done' ? '✓ Hecha. La saco de tus recordatorios.' : status === 'snoozed' ? '✓ Pospuesta.' : '✓ Reactivada.'), !!failed);
+  }
+
+  var pending = {};
+  function handlePhoto(card, file){
+    if (!file || !file.type || file.type.indexOf('image/') !== 0) return;
+    var url = URL.createObjectURL(file); var img = new Image();
+    img.onload = function(){
+      var max = 1024, w = img.naturalWidth, h = img.naturalHeight, s = Math.min(1, max / Math.max(w,h));
+      var c = document.createElement('canvas'); c.width = Math.round(w*s); c.height = Math.round(h*s);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
+      pending[card.id] = c.toDataURL('image/jpeg', 0.85);
+      var pv = q(card,'.pv'); pv.querySelector('img').src = pending[card.id]; pv.hidden = false;
+      q(card,'.box').hidden = false; q(card,'textarea').focus();
+      hint(card, 'Foto lista — agregá un comentario si querés y tocá Enviar.');
+    };
+    img.onerror = function(){ URL.revokeObjectURL(url); hint(card, 'No pude leer esa imagen.', true); };
+    img.src = url;
+  }
+
+  async function send(card){
+    var ids = card.dataset.ids.split(',');
+    var ta = q(card,'textarea'); var text = (ta.value || '').trim().slice(0, 2000);
+    var photo = pending[card.id] || null;
+    if (!text && !photo){ hint(card, 'Escribí algo o sacá una foto primero.', true); ta.focus(); return; }
+    var btn = q(card,'[data-act=send]'); btn.disabled = true; btn.textContent = 'Enviando…';
+    var payload = { type: photo ? 'photo' : 'message', task_id: ids[0], plant_code: card.dataset.code,
+      task_title: card.dataset.title, message_id: msgId(), text: text || null, device: device() };
+    if (photo) payload.base64 = photo;
+    try {
+      await post(payload);
+      ta.value = ''; delete pending[card.id]; q(card,'.pv').hidden = true; q(card,'.box').hidden = true;
+      hint(card, '✓ Recibido. Lo miro en mi próxima pasada y te contesto por notificación.');
+    } catch(e){
+      if (!photo){ outboxAdd(payload); ta.value = ''; q(card,'.box').hidden = true;
+        hint(card, '⏳ Sin conexión con el servidor: quedó guardado, se manda solo al abrir la tarea.', true); }
+      else hint(card, 'No se pudo mandar la foto (' + (e.message || e) + '). Quedó acá, probá de nuevo.', true);
+    } finally { btn.disabled = false; btn.textContent = 'Enviar ➤'; }
+  }
+
+  document.addEventListener('click', function(ev){
+    var b = ev.target.closest('button[data-act]'); if (!b) return;
+    var card = b.closest('.item'); if (!card) return;
+    var act = b.dataset.act;
+    if (act === 'done') setState(card, 'done', null);
+    else if (act === 'snooze'){
+      var d = new Date(); d.setDate(d.getDate() + parseInt(b.dataset.days || '7', 10)); d.setHours(0,0,0,0);
+      setState(card, 'snoozed', d.toISOString());
+    }
+    else if (act === 'reactivate') setState(card, 'active', null);
+    else if (act === 'comment'){ var box = q(card,'.box'); box.hidden = !box.hidden; if (!box.hidden) q(card,'textarea').focus(); }
+    else if (act === 'close'){ q(card,'.box').hidden = true; }
+    else if (act === 'send') send(card);
+    else if (act === 'clearphoto'){ delete pending[card.id]; q(card,'.pv').hidden = true; }
+    else if (act === 'photo'){
+      var inp = document.createElement('input'); inp.type = 'file'; inp.accept = 'image/*'; inp.setAttribute('capture','environment');
+      inp.onchange = function(){ handlePhoto(card, inp.files && inp.files[0]); };
+      inp.click();
+    }
+  });
+
+  fetch('../sync/task_states.json?_=' + Date.now(), { cache:'no-store' }).then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(doc){
+      if (!doc || !doc.tasks) return;
+      document.querySelectorAll('.item').forEach(function(card){
+        var st = doc.tasks[card.dataset.ids.split(',')[0]]; if (st) renderState(card, st);
+      });
+    }).catch(function(){});
+
+  if (location.hash){ var t = document.getElementById(location.hash.slice(1)); if (t) setTimeout(function(){ t.scrollIntoView({block:'center'}); }, 150); }
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>

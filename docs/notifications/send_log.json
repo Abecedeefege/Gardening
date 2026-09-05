@@ -256,7 +256,25 @@
     "2026-09-02": {
       "sent": 0,
       "_nota": "Miercoles sin slot por cadencia. 0 envios. Ultimo envio del sistema: 31/08 21:59:09Z."
+    },
+    "2026-09-03": {
+      "sent": 2,
+      "clicked": 2,
+      "visits": 3,
+      "approvals": 0,
+      "_nota": "jardin-hoy send_at 13:00Z -> sent 14:29:19Z (+89 min), abierta 159 s @100% + 1 feedback_text. puesta-al-dia disparada a mano, +3,3 min: 13,6 min de dwell y 3 tareas marcadas hechas (B-30, B-38, F-4)."
+    },
+    "2026-09-04": {
+      "sent": 3,
+      "clicked": 0,
+      "visits": 1,
+      "approvals": 0,
+      "_nota": "Viernes sin slot por cadencia: las 3 salieron por pedido directo del usuario (fix del bug de fotos + las 42 fotos de especie + un reenvio). CERO clicks desde la notificacion: la unica visita (15:23:11Z, 9 s @28%) fue directa y ANTERIOR al primer envio (15:24:40Z). Leccion: ese dia estuvo en la app por su cuenta; las 3 push no aportaron."
+    },
+    "2026-09-05": {
+      "sent": 0,
+      "_nota": "Se completa al despachar: 2 encoladas (jardin-hoy 13:00Z, el-porton 14:00Z)."
     }
   },
-  "_updated_at": "2026-09-02T09:20:00Z"
+  "_updated_at": "2026-09-05T09:25:00.000Z"
 }

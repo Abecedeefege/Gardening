@@ -1,45 +1,32 @@
 {
-  "_updated_at": "2026-09-04T20:56:07.039Z",
-  "_nota": "VIERNES 04/09 — DÍA SIN SLOT (la tabla pone tarea Lun/Jue/Sáb 10:00 y experiencia Lun 18:00 / Sáb 11:00). 0 push nuevas por cadencia: hoy es mantenimiento. Las 2 entries del 03/09 (jardin-hoy + puesta-al-dia) salieron las dos y ya quedaron en send_log.json — se limpian de acá por la regla §3. ⏱️ MEDICIÓN DEL LAG (era la tarea #1 de la corrida): 2026-09-03-jardin-hoy send_at 13:00Z, sent_at 14:29:19Z = +89 min. El cron desplazado bajó el lag de +263 min (31/08) a +89, pero el slot sigue roto, así que NO era el minuto elegido: GitHub difiere y descarta ticks cron bajo carga y 13:00Z es hora pico. Contraste que lo prueba: la puesta-al-dia salió +3,3 min porque se disparó a mano (workflow_dispatch), y el slot de la tarde del 31/08 (21:00Z) llegó +59 min contra +263 del de la mañana. Fix de hoy en push-dispatch.yml: (a) cron denso cada 10 min en las horas PREVIAS a los 3 slots (12Z, 13Z, 20Z, 21Z) y (b) paso nuevo «Esperar al slot si esta inminente» — el run que arranca hasta 40 min antes duerme hasta el minuto exacto en vez de mandar tarde. Se mide el LUNES 7 (primer slot de tarea 10:00 con el fix puesto). 🏆 SEÑAL: la puesta-al-dia rompió 10 días de silencio — 3 tareas marcadas hechas (B-30, B-38, F-4) y 13,6 min de dwell, el más largo medido.",
+  "_updated_at": "2026-09-05T09:25:00.000Z",
+  "_nota": "SABADO 05/09 — DIA CON LOS DOS SLOTS (tarea 10:00 + experiencia 11:00). PEDIDO DEL USUARIO EJECUTADO: el jueves 04/09 16:04Z escribio desde la ficha de B-34 «Esta planta la saque. No existe mas, podes eliminarla». Consentimiento explicito -> B-34 (mandioca brava, Manihot grahamii) removida de data_plants.py; el bloque queda archivado en data_bajas.py por si se arrepiente. Catalogo 52 -> 51 especies, 50 tareas activas. La baja se comunica en el bloque oscuro de jardin-hoy. CLIMA (2 modelos, ECMWF + GFS, consultados 06:10 -03:00): hoy 3,7 mm / 89% / max 11,7 / rafagas 34; domingo 8,2 de maxima (el dia mas frio); LUNES 7 al amanecer = piso termico de los 8 dias (4,5 ECMWF / 3,8 GFS) y desde el martes ninguna minima baja de 6,5. Ventana seca mar 8 - jue 10 (0 mm los tres; miercoles el mas calmo con 12 km/h); viernes 11 y sabado 12 se cierra (2,6 y 10,8 mm, rafagas 48-51). De ahi salen las dos push: la tarea = las 4 que la lluvia MEJORA (tierra/agua/mano, cero tijera); la experiencia = «el porton», la fecha exacta que destraba las 6 «pasada la ultima helada». El elenco de la experiencia (B-1, B-22, B-23, B-24, B-29, B-36) es la cola de la puesta-al-dia que el usuario NUNCA vio (freno en el 63% = card 18 de 29): quemado para el ledger, fresco para el. Excepcion documentada en facts_ledger.json. ⏱️ La medicion del fix de lag sigue prevista para el lunes 7, pero HOY ya hay dos slots para medir: 13:00Z y 14:00Z.",
   "notifications": [
     {
-      "id": "2026-09-04-puesta-al-dia-fotos-ok",
-      "title": "📷 Arreglado: ya podés subir fotos",
-      "body": "La foto de las hortensias fallaba por un bug del servidor, ya corregido. Tu puesta al día sigue acá, con lo que marcaste anoche.",
-      "url": "https://gardening-chi.vercel.app/engage/puesta-al-dia.html",
+      "id": "2026-09-05-jardin-hoy",
+      "title": "🌧️ Hoy no hay tijera. Hay pala.",
+      "body": "Llueve y hay ráfagas de 34 km/h: 4 tareas que este clima MEJORA. Y saqué la mandioca brava del catálogo, como me pediste.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
       "format": "tarea",
-      "send_at": "2026-09-04T12:20:00-03:00",
-      "expires_at": "2026-09-04T21:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-09-04T15:24:40.192Z",
+      "send_at": "2026-09-05T10:00:00-03:00",
+      "expires_at": "2026-09-05T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "pedido directo del usuario 2026-09-04 (sesión Claude Code)"
+      "created_by": "engagement-agent 2026-09-05"
     },
     {
-      "id": "2026-09-04-puesta-al-dia-fotos",
-      "title": "📷 Vi tus 42 fotos: tareas al día",
-      "body": "Cerré 4, corregí 9 y sumé 2 (cosechar limones, abonar la pindó). Cada card ahora lleva tu foto de hoy. Mirá qué cambió.",
-      "url": "https://gardening-chi.vercel.app/engage/puesta-al-dia.html",
-      "format": "tarea",
-      "send_at": "2026-09-04T13:20:00-03:00",
-      "expires_at": "2026-09-04T21:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-09-04T16:21:10.143Z",
+      "id": "2026-09-05-el-porton",
+      "title": "🌡️ El lunes a las 5 AM: 4,5°",
+      "body": "Es el piso de los próximos 8 días. Después no vuelve a bajar — y eso destraba 6 podas tuyas. Te puse la fecha exacta.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-09-05-el-porton.html",
+      "format": "experiencia",
+      "send_at": "2026-09-05T11:00:00-03:00",
+      "expires_at": "2026-09-05T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "pedido directo del usuario 2026-09-04 (sesión Claude Code, fotos)"
-    },
-    {
-      "id": "2026-09-04-puesta-al-dia-fotos-b",
-      "title": "📷 Vi tus 42 fotos: tareas al día",
-      "body": "Cerré 4, corregí 9 y sumé 2 (cosechar limones, abonar la pindó). Cada card ahora lleva tu foto de hoy. Mirá qué cambió.",
-      "url": "https://gardening-chi.vercel.app/engage/puesta-al-dia.html",
-      "format": "tarea",
-      "send_at": "2026-09-04T13:30:00-03:00",
-      "expires_at": "2026-09-04T21:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-09-04T20:56:07.038Z",
-      "fail_reason": null,
-      "created_by": "pedido directo del usuario 2026-09-04 (reenvío)"
+      "created_by": "engagement-agent 2026-09-05"
     }
   ]
 }
