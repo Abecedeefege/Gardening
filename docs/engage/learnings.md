@@ -140,6 +140,12 @@ plano chico DENTRO de otra cosa sí sirve)* · mística · racha/streak · biogr
   EN MACETA al borde del deck; althea B-18 en el césped al lado; hortensias brotadas; bignonia F-2 e hibisco B-4 sin podar;
   fotinias con el rojo recién asomando; lavanda en flor; limonero cargado.
 - **04/09 (baja):** B-34 eliminada con consentimiento explícito. **NUNCA borrar una especie sin eso.**
+- **05/09 (sesión directa):** «No quiero tener que cambiar tokens nunca más; feedback desde cel, Mac y PC sin dramas». El
+  token del servidor (`GH_FEEDBACK_TOKEN`, fine-grained) **venció el 05/09** y todo lo que escribe al repo desde el sitio
+  murió en silencio. Hecho: `api/sync.js` (+`api/_gh.js`) = backend para TODAS las escrituras del sitio principal, el
+  browser ya no necesita PAT en ningún dispositivo; `tools/health_check.js` en el dispatcher **encola 1 push/día
+  «backend caído»** si el token vuelve a morir. Pendiente del usuario: pegar un PAT **clásico sin vencimiento** en Vercel.
+  **Mientras `GET /api/sync` devuelva 502, NO interpretes el silencio como desinterés: no puede guardar nada.**
 - **Asamblea, tu-semana, vos-decidís, jardin-hoy** promovidas + **el-taller** aprobada: no borrar.
 
 ## 📈 Estado del sistema + jardín (05/09/2026)

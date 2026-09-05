@@ -71,7 +71,9 @@ docs/ideas.html      ← ideas + huerta + espacios + experiencias (con curiosida
 | `tools/gen_task_reminders.py` | Recordatorios push de tareas (diario + semanal, todas las especies) | Cambiar política de recordatorios de tareas |
 | `tools/gen_top3_tareas.py` | Top 3 de tareas prioritarias cada 2 días (regenera `docs/engage/top3-tareas.html` + encola push) | Cambiar ranking/cadencia del top 3 |
 | `docs/tasks/tarea.js` | JS compartido de las landings por tarea (feed del thread + composer texto/foto + estado + tracking) | Cambiar lógica de la conversación en la landing |
-| `api/tarea.js` | Serverless de Vercel: backend de las landings (message/photo/state → repo, sin PAT en el browser) | Cambiar qué/cómo escribe la landing al repo |
+| `api/tarea.js` | Serverless de Vercel: backend de las landings (message/photo/species_photo/state → repo, sin PAT en el browser) | Cambiar qué/cómo escribe la landing al repo |
+| `api/sync.js` + `api/_gh.js` | Serverless de Vercel: backend de TODO lo que escribe el sitio principal (task_states, user_tasks, uploads.json, fotos de compose, push_subscription). `GET /api/sync` = health check del token | Cambiar el sync o sumar un tipo de escritura |
+| `tools/health_check.js` | Corre en `push-dispatch.yml`: si `/api/sync` dice que el token del servidor murió, encola 1 push de aviso por día | Cambiar el aviso |
 | `.claude/commands/responder-tareas.md` | Agente respondedor de threads (Routine horaria) | Cambiar política de respuestas por tarea |
 | `docs/index.html`, `docs/biblioteca.html`, `docs/tareas.html`, `docs/ideas.html`, `docs/tasks/<id>.html` | Output del build — **NO editar a mano** | Generado siempre por `python build.py` |
 
@@ -266,6 +268,8 @@ Estado del usuario (tareas hechas/pospuestas, contactos, evaluaciones de IA) viv
 Conflict resolution: last-write-wins por taskId basado en `last_modified_at`. Si el browser hace PUT y recibe 409 (alguien más pushó en el medio), refetch + remerge + reintento (max 3).
 
 Status visible en barra arriba del Timeline: 🟢 sincronizado · 🟡 sincronizando · 🔴 N pendientes · ⚫ deshabilitado.
+
+**Desde el 05/09/2026 el browser NO necesita PAT:** todas las escrituras del sitio (sync de estados, user_tasks, notas, compose, fotos de tarea/especie, suscripción push) van primero por `/api/sync` y `/api/tarea` (Vercel, token del SERVIDOR `GH_FEEDBACK_TOKEN`) y sólo caen al PAT del device si el backend no existe (GitHub Pages / file://). El token del servidor tiene que ser un **PAT clásico, scope `repo`, sin vencimiento** — un fine-grained vence y todo el sitio deja de escribir (pasó el 05/09/2026). `tools/health_check.js` avisa por push si vuelve a pasar.
 
 API keys (GitHub PAT, device name) viven SOLO en localStorage de cada device — NUNCA se sincronizan al repo.
 

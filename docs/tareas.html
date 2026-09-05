@@ -4973,8 +4973,14 @@ async function getLocalPushSubscription() {
   return await reg.pushManager.getSubscription();
 }
 
+async function writePushSubscriptionDoc(doc, message) {
+  // 1) backend (sin PAT) · 2) PAT del device
+  const viaApi = await apiSync({ op: 'push_subscription', doc, device: loadDeviceName() || 'browser' });
+  if (viaApi && viaApi.ok) return;
+  await ghWriteJsonFile(PUSH_SUB_PATH, doc, message);
+}
 async function uploadPushSubscription(sub) {
-  await ghWriteJsonFile(PUSH_SUB_PATH, {
+  await writePushSubscriptionDoc({
     device: loadDeviceName() || 'sin-nombre',
     subscription: sub.toJSON(),
     status: 'active',
@@ -4991,7 +4997,7 @@ async function enablePushNotifications() {
     setFb('❌ Este navegador no soporta Web Push.', 'err');
     return;
   }
-  if (!loadGitHubToken()) {
+  if (!canWrite()) {
     setFb('⚠️ Configurá el GitHub PAT primero (arriba) — la suscripción se guarda en el repo.', 'warn');
     return;
   }
@@ -5028,8 +5034,8 @@ async function disablePushNotifications() {
   try {
     const sub = await getLocalPushSubscription();
     if (sub) await sub.unsubscribe();
-    if (loadGitHubToken()) {
-      await ghWriteJsonFile(PUSH_SUB_PATH, {
+    if (canWrite()) {
+      await writePushSubscriptionDoc({
         device: loadDeviceName() || 'sin-nombre',
         subscription: null,
         status: 'disabled',
@@ -5083,7 +5089,7 @@ async function checkPushSubscriptionOnLoad() {
     const needsRepair = !local || (remote && remote.status === 'invalid') ||
       (local && remoteEndpoint && local.endpoint !== remoteEndpoint);
     if (!needsRepair) return;
-    if (loadGitHubToken()) {
+    if (canWrite()) {
       const reg = await navigator.serviceWorker.ready;
       const vapidKey = await fetchVapidPublicKey();
       const sub = local || await reg.pushManager.subscribe({
@@ -5871,22 +5877,50 @@ const GH_API = `https://api.github.com/repos/${GH_REPO}/contents`;
 // PAT. Devuelve el JSON de respuesta, o null si el endpoint no existe en este
 // hosting (GitHub Pages, file://) o no responde — en ese caso el caller cae al
 // camino viejo con el PAT del device. Un 4xx/5xx del API sí es error (se lanza).
-async function apiUploadPhoto(payload) {
-  if (!/^https?:$/.test(location.protocol)) return null;
+// _apiAvailable: null = no probado, true = hay backend (Vercel), false = no
+// hay (GitHub Pages / file://). Con backend, el sitio escribe SIN PAT desde
+// cualquier dispositivo; el PAT del device queda solo como fallback.
+let _apiAvailable = null;
+async function apiPost(path, payload) {
+  if (!/^https?:$/.test(location.protocol)) { _apiAvailable = false; return null; }
   let r;
   try {
-    r = await fetch('/api/tarea', {
+    r = await fetch(path, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
     });
   } catch (e) { return null; }
-  if (r.status === 404 || r.status === 405) return null;
+  if (r.status === 404 || r.status === 405) { _apiAvailable = false; return null; }
   const ct = r.headers.get('content-type') || '';
-  if (!ct.includes('application/json')) return null; // GitHub Pages devuelve HTML de 404
+  if (!ct.includes('application/json')) { _apiAvailable = false; return null; } // GitHub Pages devuelve HTML de 404
+  _apiAvailable = true;
   const data = await r.json().catch(() => ({}));
-  if (!r.ok) throw new Error(`/api/tarea: HTTP ${r.status} — ${data.error || ''} ${data.detail || ''}`.trim());
+  if (!r.ok) {
+    const hint = data.error === 'token_vencido' ? ' — el token del servidor venció: avisale a Claude' : '';
+    throw new Error(`${path}: HTTP ${r.status} — ${data.error || ''} ${data.detail || ''}${hint}`.trim());
+  }
   return data;
+}
+async function apiUploadPhoto(payload) { return apiPost('/api/tarea', payload); }
+async function apiSync(payload) { return apiPost('/api/sync', payload); }
+
+// Sondeo barato al cargar: ¿existe /api/sync acá? (200 o 502 = existe; 404/HTML = no)
+async function probeApi() {
+  if (!/^https?:$/.test(location.protocol)) { _apiAvailable = false; return false; }
+  try {
+    const r = await fetch('/api/sync', { cache: 'no-store' });
+    const ct = r.headers.get('content-type') || '';
+    _apiAvailable = ct.includes('application/json');
+  } catch (e) { /* sin red: no concluimos */ }
+  return _apiAvailable;
+}
+probeApi();
+
+// ¿Este dispositivo puede escribir al repo? Con backend sí, siempre; sin
+// backend solo si el usuario configuró su PAT.
+function canWrite() {
+  return _apiAvailable !== false || !!loadGitHubToken();
 }
 
 function friendlyUploadError(err) {
@@ -6378,7 +6412,7 @@ function openSpeciesPhotoModal(plant) {
   pendingSpeciesPhotoBlob = null;
   document.getElementById('species-photo-name').textContent = `🌿 ${plant.common} (${plant.id_codes.join(', ')})`;
   document.getElementById('species-photo-note').value = '';
-  const hasToken = !!loadGitHubToken();
+  const hasToken = canWrite();
   if (hasToken && !ensurePrivacyAcknowledged()) return;
   setSpeciesPhotoStage(hasToken ? 'pick' : 'setup');
   document.getElementById('species-photo-modal').classList.add('active');
@@ -6544,18 +6578,29 @@ function markStateDirty() {
 }
 
 function scheduleSyncFlush() {
-  if (!loadGitHubToken()) return;  // sin token, no hay sync write
+  if (!canWrite()) return;  // ni backend ni token: no hay sync write
   if (_syncFlushTimer) clearTimeout(_syncFlushTimer);
   _syncFlushTimer = setTimeout(flushSync, SYNC_DEBOUNCE_MS);
 }
 
 async function flushSync(retries = 5) {
   if (_syncInProgress) return;
-  if (!loadGitHubToken()) return;
+  if (!canWrite()) return;
   if (!_stateDirty) return;
   _syncInProgress = true;
   updateSyncStatus();
   try {
+    // 0. Backend (sin PAT): el servidor hace el merge LWW y devuelve el resultado.
+    const viaApi = await apiSync({ op: 'states_merge', tasks: loadStates(), device: loadDeviceName() || 'browser' });
+    if (viaApi && viaApi.tasks) {
+      saveStates(viaApi.tasks);
+      _stateDirty = false;
+      _syncInProgress = false;
+      updateSyncStatus({ ok: true });
+      return;
+    }
+    if (!loadGitHubToken()) throw new Error('Sin backend ni GitHub PAT: no se puede sincronizar');
+
     // 1. Leer remoto (cache: no-store via ghGetFile).
     const { sha, data } = await ghReadJsonFile(SYNC_PATH);
     const remoteTasks = (data && data.tasks) || {};
@@ -6583,6 +6628,7 @@ async function flushSync(retries = 5) {
     // 4. Reemplazar local con merged (ahora todos tienen last_modified_at acordado).
     saveStates(merged);
     _stateDirty = false;
+    _syncInProgress = false;
     updateSyncStatus({ ok: true });
   } catch (err) {
     console.warn(`Sync flush falló (retries restantes: ${retries}):`, err);
@@ -6605,7 +6651,7 @@ function updateSyncStatus(opts = {}) {
   const label = document.getElementById('sync-label');
   const retryBtn = document.getElementById('sync-retry-btn');
   if (!bar) return;
-  const hasToken = !!loadGitHubToken();
+  const hasToken = canWrite();
 
   if (!hasToken) {
     bar.dataset.state = 'disabled';
@@ -6800,7 +6846,7 @@ function openTaskTextModal(task) {
   pendingTextTask = task;
   document.getElementById('task-text-name').textContent = `📌 ${task.title} · ${task.plant_common} (${task.plant_codes.join(', ')})`;
   document.getElementById('task-text-content').value = '';
-  const hasToken = !!loadGitHubToken();
+  const hasToken = canWrite();
   if (hasToken && !ensurePrivacyAcknowledged()) return;
   setTaskTextStage(hasToken ? 'write' : 'setup');
   document.getElementById('task-text-modal').classList.add('active');
@@ -6878,14 +6924,17 @@ document.getElementById('btn-text-ask-ai')?.addEventListener('click', async () =
       ai_evaluation: null,
       _stamp: stamp,
     };
-    const uploadsPath = 'docs/uploads.json';
-    const { sha, data } = await ghReadJsonFile(uploadsPath);
-    const idx = data || {};
-    if (!idx[plantId]) idx[plantId] = [];
-    idx[plantId].push(entry);
-    const newJson = JSON.stringify(idx, null, 2) + '\n';
-    const newBase64 = btoa(unescape(encodeURIComponent(newJson)));
-    await ghPutFile(uploadsPath, newBase64, `text-note: respuesta de texto para ${task.id}`, sha);
+    const viaApi = await apiSync({ op: 'uploads_append', bucket: plantId, entry, device: loadDeviceName() || 'browser' });
+    if (!viaApi) {
+      const uploadsPath = 'docs/uploads.json';
+      const { sha, data } = await ghReadJsonFile(uploadsPath);
+      const idx = data || {};
+      if (!idx[plantId]) idx[plantId] = [];
+      idx[plantId].push(entry);
+      const newJson = JSON.stringify(idx, null, 2) + '\n';
+      const newBase64 = btoa(unescape(encodeURIComponent(newJson)));
+      await ghPutFile(uploadsPath, newBase64, `text-note: respuesta de texto para ${task.id}`, sha);
+    }
     result.innerHTML = `
       <div class="task-photo-success">
         <div class="task-photo-success-title">✅ Nota subida</div>
@@ -6963,8 +7012,15 @@ document.addEventListener('visibilitychange', () => {
 
 // Push de user_tasks.json al repo (full snapshot, last-write-wins por id).
 async function flushUserTasksToRepo(retries = 3) {
-  if (!loadGitHubToken()) return;
+  if (!canWrite()) return;
   try {
+    const viaApi = await apiSync({ op: 'user_tasks_merge', tasks: USER_TASKS, device: loadDeviceName() || 'browser' });
+    if (viaApi && viaApi.tasks) {
+      USER_TASKS = viaApi.tasks;
+      saveUserTasksLocal();
+      return;
+    }
+    if (!loadGitHubToken()) throw new Error('Sin backend ni GitHub PAT: no se puede sincronizar');
     const { sha, data } = await ghReadJsonFile(USER_TASKS_PATH);
     const remoteTasks = (data && data.tasks) || {};
     const merged = { ...remoteTasks };
@@ -7075,7 +7131,7 @@ function openTaskComposeModal({ mode, plantCode } = {}) {
     }
   }
 
-  const hasToken = !!loadGitHubToken();
+  const hasToken = canWrite();
   if (hasToken && !ensurePrivacyAcknowledged()) return;
   setComposeStage(hasToken ? 'write' : 'setup');
   document.getElementById('task-compose-modal').classList.add('active');
@@ -7216,7 +7272,8 @@ async function submitCompose() {
       filename = `${id}_${stamp}.jpg`;
       photoPath = `docs/images/uploads/${bucketKey}/${filename}`;
       const base64 = await blobToBase64(composeState.blob);
-      await ghPutFile(photoPath, base64, `compose: foto para ${id}`);
+      const viaApi = await apiSync({ op: 'photo_put', bucket: bucketKey, filename, base64, device: loadDeviceName() || 'browser' });
+      if (!viaApi) await ghPutFile(photoPath, base64, `compose: foto para ${id}`);
     }
 
     // 1. Crear el user_task entry y pushearlo a sync/user_tasks.json
@@ -7241,9 +7298,6 @@ async function submitCompose() {
 
     // 2. Append entry a docs/uploads.json para que /actualizar-tareas lo procese.
     const uploadsPath = 'docs/uploads.json';
-    const { sha, data } = await ghReadJsonFile(uploadsPath);
-    const idx = data || {};
-    if (!idx[bucketKey]) idx[bucketKey] = [];
     const uploadEntry = {
       filename,  // null si no hay foto
       uploaded_at: now.toISOString(),
@@ -7256,10 +7310,16 @@ async function submitCompose() {
     };
     if (text) uploadEntry.user_context = text;
     if (plantCode) uploadEntry.plant_id = plantCode;
-    idx[bucketKey].push(uploadEntry);
-    const newJson = JSON.stringify(idx, null, 2) + '\n';
-    const newBase64 = btoa(unescape(encodeURIComponent(newJson)));
-    await ghPutFile(uploadsPath, newBase64, `compose: registrar ${id} en uploads.json`, sha);
+    const viaApiIdx = await apiSync({ op: 'uploads_append', bucket: bucketKey, entry: uploadEntry, device: loadDeviceName() || 'browser' });
+    if (!viaApiIdx) {
+      const { sha, data } = await ghReadJsonFile(uploadsPath);
+      const idx = data || {};
+      if (!idx[bucketKey]) idx[bucketKey] = [];
+      idx[bucketKey].push(uploadEntry);
+      const newJson = JSON.stringify(idx, null, 2) + '\n';
+      const newBase64 = btoa(unescape(encodeURIComponent(newJson)));
+      await ghPutFile(uploadsPath, newBase64, `compose: registrar ${id} en uploads.json`, sha);
+    }
 
     // 3. Setear estado inicial active en task_states.json (para que aparezca en feed Activas).
     setTaskState(id, { status: 'active', snoozed_until: null, completed_at: null });

@@ -85,6 +85,9 @@ jobs:
             echo "Sin slot inminente — sigo derecho."
           fi
 
+      - name: Health check del backend (token del servidor)
+        run: node tools/health_check.js
+
       - name: Send due notifications
         run: node tools/send_push.js
         env:
