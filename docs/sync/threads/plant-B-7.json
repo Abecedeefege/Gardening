@@ -1,6 +1,6 @@
 {
   "task_id": "plant-B-7",
-  "_updated_at": "2026-09-05T21:04:05.769Z",
+  "_updated_at": "2026-09-05T21:04:19.200Z",
   "messages": [
     {
       "id": "m-mtovetcm-x5r0qc",
@@ -9,6 +9,16 @@
       "text": "Ahí lo pode fuerte",
       "photo": "uploads/B-7/plant-B-7_20260905-210403.jpg",
       "ts": "2026-09-05T21:04:03.820Z",
+      "device": "landing",
+      "status": "pending"
+    },
+    {
+      "id": "m-mtovf41u-grmbw9",
+      "from": "user",
+      "kind": "photo",
+      "text": "Gran poda",
+      "photo": "uploads/B-7/plant-B-7_20260905-210417.jpg",
+      "ts": "2026-09-05T21:04:17.427Z",
       "device": "landing",
       "status": "pending"
     }
