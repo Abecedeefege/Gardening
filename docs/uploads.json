@@ -1044,8 +1044,13 @@
       "context": "question",
       "task_id": "user-1788537870474-5847",
       "task_title_snapshot": "Esta planta la saqué.  No existe más, podés eliminarla",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Confirmada la baja de la Mandioca brava (B-34): fue removida del catálogo activo. Entrada archivada en data_bajas.py con la ficha completa por si se repone.",
+        "next_steps": "Ninguno -- ya ejecutado.",
+        "processed_at": "2026-09-05T12:07:11.000Z"
+      },
       "user_context": "Esta planta la saqué.  No existe más, podés eliminarla",
       "plant_id": "B-34"
     }

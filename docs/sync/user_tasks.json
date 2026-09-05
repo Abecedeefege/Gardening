@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-09-04T16:04:31.249Z",
-  "_last_writer": "pix9",
+  "_synced_at": "2026-09-05T12:07:11.000Z",
+  "_last_writer": "responder-tareas",
   "tasks": {
     "user-1778160757771-7240": {
       "id": "user-1778160757771-7240",
@@ -12,10 +12,13 @@
       "plant_zone": "",
       "created_at": "2026-05-07T13:32:37.771Z",
       "created_by": "pix9",
-      "last_modified_at": "2026-05-07T14:00:00.000Z",
+      "last_modified_at": "2026-09-05T12:07:11.000Z",
       "has_photo": false,
       "photo_filename": null,
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "Che, esta pregunta quedó colgada desde mayo -- perdón la demora. Para mayo (otoño) lo ideal era acelga, ajo, cebolla, espinaca, cilantro y lechuga. Pero ya estamos en septiembre (arranque de primavera), así que te dejo la posta de AHORA que es mucho más útil: es de los mejores meses para sembrar en la huerta -- tomate, zapallito de tronco, morrón, zanahoria, albahaca, perejil y cilantro van directo de semilla, y podés trasplantar lechuga, acelga y menta (esta última siempre en maceta, es invasora). Mirá la sección Huerta en Ideas para el detalle de cada uno con tips de siembra.",
+        "answered_at": "2026-09-05T12:07:11.000Z"
+      }
     },
     "user-1778160814168-a314": {
       "id": "user-1778160814168-a314",
@@ -27,10 +30,13 @@
       "plant_zone": "",
       "created_at": "2026-05-07T13:33:34.168Z",
       "created_by": "pix9",
-      "last_modified_at": "2026-05-07T14:00:00.000Z",
+      "last_modified_at": "2026-09-05T12:07:11.000Z",
       "has_photo": false,
       "photo_filename": null,
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "Listo, esto ya está resuelto: las 6 especies del catálogo que faltan confirmar al 100% (F-5, B-2/B-2B/B-2C, B-20, B-45, B-46, B-49) tienen cada una su propia tarea de 'foto para confirmar', la mayoría esperando la floración de primavera (sep-nov). Las vas a ver aparecer en el Timeline cuando llegue su ventana -- no hace falta que hagas nada ahora, están todas mapeadas.",
+        "answered_at": "2026-09-05T12:07:11.000Z"
+      }
     },
     "user-1778238699918-71e2": {
       "id": "user-1778238699918-71e2",
@@ -44,10 +50,13 @@
       "plant_zone": "frente",
       "created_at": "2026-05-08T11:11:39.918Z",
       "created_by": "pix9",
-      "last_modified_at": "2026-05-08T14:00:00.000Z",
+      "last_modified_at": "2026-09-05T12:07:11.000Z",
       "has_photo": true,
       "photo_filename": "user-1778238699918-71e2_20260508-111139.jpg",
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "Esto ya se resolvió: las manchas negras eran FUMAGINA (el hollín de un hongo que crece sobre la melaza que dejan insectos chupadores como cochinilla o pulgón), no una enfermedad del guayabo en sí mismo. Lo charlamos en detalle en el hilo de la tarea de poda de F-1 y terminaste sacando las ramas más afectadas -- quedó prolijo. Si en algún momento vuelve a aparecer hollín negro, mandá foto para revisar si la plaga de origen volvió.",
+        "answered_at": "2026-09-05T12:07:11.000Z"
+      }
     },
     "user-1778597583144-7d3d": {
       "id": "user-1778597583144-7d3d",
@@ -201,10 +210,13 @@
       "plant_zone": "fondo",
       "created_at": "2026-06-10T17:56:46.236Z",
       "created_by": "pix9",
-      "last_modified_at": "2026-06-10T17:56:46.236Z",
+      "last_modified_at": "2026-09-05T12:07:11.000Z",
       "has_photo": false,
       "photo_filename": null,
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "Ojo: la B-15 ya está confirmada desde mayo 2026 como Hiedra común (Hedera helix), una trepadora exótica -- no es el guayabo del país. El guayabo del país que tenés catalogado es la F-1, en el frente. Si mirando la B-15 de cerca te parece otra cosa (hojas en forma de mano, verde oscuro brillante, trepando con raicillas adhesivas es la hiedra), mandame una foto nueva bien de cerca y la reviso -- pero por ahora la identificación como hiedra sigue siendo la vigente.",
+        "answered_at": "2026-09-05T12:07:11.000Z"
+      }
     },
     "user-1785259370271-d23b": {
       "id": "user-1785259370271-d23b",
@@ -218,10 +230,13 @@
       "plant_zone": "fondo",
       "created_at": "2026-07-28T17:22:50.271Z",
       "created_by": "pix9",
-      "last_modified_at": "2026-07-28T17:22:50.271Z",
+      "last_modified_at": "2026-09-05T12:07:11.000Z",
       "has_photo": false,
       "photo_filename": null,
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "Esta quedó vieja (era de fines de julio, en plena ventana de poda jun-jul del liquidámbar) -- sobre la neblina/humedad en sí, no es problema para podar: el riesgo real es la LLUVIA cayendo sobre el corte fresco, no la humedad ambiente. Lo que sí conviene siempre es usar tijera/serrucho limpio y, si se puede, que no llueva los 1-2 días después del corte. A esta altura (septiembre, el liquidámbar ya rebrotando) mejor no hacer poda de estructura fuerte -- le saca energía a la brotación nueva. Ramas secas o cruzadas sí se pueden sacar en cualquier momento; la poda fuerte, dejala para junio-julio 2027.",
+        "answered_at": "2026-09-05T12:07:11.000Z"
+      }
     },
     "user-1785259417982-d3c8": {
       "id": "user-1785259417982-d3c8",
@@ -235,10 +250,13 @@
       "plant_zone": "fondo",
       "created_at": "2026-07-28T17:23:37.982Z",
       "created_by": "pix9",
-      "last_modified_at": "2026-07-28T17:23:37.982Z",
+      "last_modified_at": "2026-09-05T12:07:11.000Z",
       "has_photo": false,
       "photo_filename": null,
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "Es la misma pregunta que la de un ratito antes sobre podar con neblina -- ver esa respuesta. Resumen: la niebla/humedad no impide podar (el riesgo es la lluvia sobre el corte fresco, no la humedad ambiente), pero a esta altura del año mejor esperar a junio-julio 2027 para poda de estructura del liquidámbar; ahora solo sacar ramas secas o cruzadas si hace falta.",
+        "answered_at": "2026-09-05T12:07:11.000Z"
+      }
     },
     "user-1788537870474-5847": {
       "id": "user-1788537870474-5847",
@@ -252,10 +270,13 @@
       "plant_zone": "fondo",
       "created_at": "2026-09-04T16:04:30.474Z",
       "created_by": "pix9",
-      "last_modified_at": "2026-09-04T16:04:30.474Z",
+      "last_modified_at": "2026-09-05T12:07:11.000Z",
       "has_photo": false,
       "photo_filename": null,
-      "ai_answer": null
+      "ai_answer": {
+        "summary": "Listo, ya está hecho -- saqué la Mandioca brava (B-34) del catálogo activo. Sus fotos y la ficha completa quedan guardadas en data_bajas.py y docs/images/uploads/B-34/ por si en algún momento la repones o hay dudas. Si en el futuro aparece otra planta en ese lugar del fondo, avisame y la doy de alta.",
+        "answered_at": "2026-09-05T12:07:11.000Z"
+      }
     }
   }
 }
