@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-05T21:32:39.284Z",
+  "_updated_at": "2026-09-05T21:34:03.607Z",
   "events": [
     {
       "_id": "mt7ab566ckkptd",
@@ -459,6 +459,15 @@
       "value": "snoozed",
       "page": "engage/puesta-al-dia.html",
       "ts": "2026-09-05T21:32:41.842Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtowheklpz9w5p",
+      "type": "feedback_text",
+      "target": "puesta-al-dia",
+      "text": "Volverme a enviar cuando revises con mi feedback en mente",
+      "page": "engage/puesta-al-dia.html",
+      "ts": "2026-09-05T21:34:05.829Z",
       "device": "sin-nombre"
     }
   ],
