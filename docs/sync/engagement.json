@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-05T21:27:02.374Z",
+  "_updated_at": "2026-09-05T21:28:00.907Z",
   "events": [
     {
       "_id": "mt7ab566ckkptd",
@@ -361,6 +361,23 @@
       "value": "done",
       "page": "engage/puesta-al-dia.html",
       "ts": "2026-09-05T21:27:02.132Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtow9mvi24h8fd",
+      "type": "notification_clicked",
+      "nid": "2026-09-05-puesta-al-dia-solo-pendiente",
+      "page": "engage/puesta-al-dia.html",
+      "ts": "2026-09-05T21:28:03.338Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtow9mviffxrnp",
+      "type": "page_visit",
+      "page": "engage/puesta-al-dia.html",
+      "nid": "2026-09-05-puesta-al-dia-solo-pendiente",
+      "src": "push",
+      "ts": "2026-09-05T21:28:03.338Z",
       "device": "sin-nombre"
     }
   ],
