@@ -1,6 +1,6 @@
 {
   "task_id": "plant-B-7",
-  "_updated_at": "2026-09-05T21:04:19.200Z",
+  "_updated_at": "2026-09-05T21:28:47.724Z",
   "messages": [
     {
       "id": "m-mtovetcm-x5r0qc",
@@ -20,6 +20,16 @@
       "photo": "uploads/B-7/plant-B-7_20260905-210417.jpg",
       "ts": "2026-09-05T21:04:17.427Z",
       "device": "landing",
+      "status": "pending"
+    },
+    {
+      "id": "m-mtowaku8-3bqy3s",
+      "from": "user",
+      "kind": "photo",
+      "text": "Lo MEGA PODE, muchísimo",
+      "photo": "uploads/B-7/plant-B-7_20260905-212845.jpg",
+      "ts": "2026-09-05T21:28:45.963Z",
+      "device": "puesta-al-dia",
       "status": "pending"
     }
   ]
