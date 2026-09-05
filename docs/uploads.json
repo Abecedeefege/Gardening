@@ -1492,6 +1492,18 @@
       "ai_evaluation": null,
       "user_context": "Gran poda",
       "via": "landing"
+    },
+    {
+      "filename": "plant-B-7_20260905-212845.jpg",
+      "uploaded_at": "2026-09-05T21:28:45.963Z",
+      "uploaded_by": "puesta-al-dia",
+      "context": "task",
+      "task_id": "plant-B-7",
+      "task_title_snapshot": "Azareros — recorte parejo del cerco (4)",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Lo MEGA PODE, muchísimo",
+      "via": "landing"
     }
   ],
   "B-8": [
