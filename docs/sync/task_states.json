@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-09-05T20:05:21.304Z",
-  "_last_writer": "claude-check",
+  "_synced_at": "2026-09-05T21:26:57.236Z",
+  "_last_writer": "puesta-al-dia",
   "tasks": {
     "plant-F-1": {
       "status": "done",
@@ -486,6 +486,13 @@
       "snoozed_until": null,
       "completed_at": null,
       "last_modified_at": "2026-09-04T16:04:34.629Z"
+    },
+    "plant-B-9": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-09-05T21:26:57.236Z",
+      "last_modified_at": "2026-09-05T21:26:57.236Z",
+      "changed_via": "landing"
     }
   }
 }
