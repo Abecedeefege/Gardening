@@ -1480,6 +1480,18 @@
       "ai_evaluation": null,
       "user_context": "Ahí lo pode fuerte",
       "via": "landing"
+    },
+    {
+      "filename": "plant-B-7_20260905-210417.jpg",
+      "uploaded_at": "2026-09-05T21:04:17.427Z",
+      "uploaded_by": "landing",
+      "context": "task",
+      "task_id": "plant-B-7",
+      "task_title_snapshot": "Recorte parejo de cerco (4 ejemplares)",
+      "ai_status": "pending",
+      "ai_evaluation": null,
+      "user_context": "Gran poda",
+      "via": "landing"
     }
   ],
   "B-8": [
