@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-05T21:03:37.240Z",
+  "_updated_at": "2026-09-05T21:03:42.974Z",
   "events": [
     {
       "_id": "mt7ab566ckkptd",
@@ -326,6 +326,15 @@
       "page": "engage/puesta-al-dia.html",
       "ts": "2026-09-05T21:03:39.696Z",
       "device": "sin-nombre"
+    },
+    {
+      "_id": "mtovednw4ns96y",
+      "type": "page_visit",
+      "page": "tasks/plant-B-7.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-09-05T21:03:45.067Z",
+      "device": "landing"
     }
   ],
   "daily_summary": {
