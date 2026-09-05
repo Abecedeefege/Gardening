@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-05T20:57:41.023Z",
+  "_updated_at": "2026-09-05T21:02:55.691Z",
   "events": [
     {
       "_id": "mt7ab566ckkptd",
@@ -290,6 +290,23 @@
       "nid": null,
       "src": "direct",
       "ts": "2026-09-05T20:57:38.995Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtor4yuf6iy237",
+      "type": "notification_clicked",
+      "nid": "2026-09-05-reply-user-tasks-backlog",
+      "page": "tareas.html",
+      "ts": "2026-09-05T19:04:27.494Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtor4yufijqct2",
+      "type": "page_visit",
+      "page": "tareas.html",
+      "nid": "2026-09-05-reply-user-tasks-backlog",
+      "src": "push",
+      "ts": "2026-09-05T19:04:27.494Z",
       "device": "sin-nombre"
     }
   ],
