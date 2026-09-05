@@ -3,6 +3,7 @@
 // Con esto, celular / Mac / PC escriben igual, sin configurar nada.
 //
 //   GET  /api/sync            → { ok, github: <status del token> }  (health check)
+//   GET  /api/sync?doc=task_states|user_tasks → { ok, doc } leído FRESCO del repo
 //   POST /api/sync  { op, device, ... }
 //     states_merge      { tasks }            → merge LWW en docs/sync/task_states.json, devuelve el merged
 //     user_tasks_merge  { tasks }            → merge LWW en docs/sync/user_tasks.json, devuelve el merged
@@ -48,6 +49,20 @@ module.exports = async (req, res) => {
   if (!token) return res.status(500).json({ error: 'sin_token', hint: 'Falta GH_FEEDBACK_TOKEN en las env vars de Vercel' });
 
   if (req.method === 'GET') {
+    const doc = (req.query && req.query.doc) || '';
+    if (doc) {
+      // Lectura FRESCA de un doc de sync (evita esperar el deploy estático de Vercel).
+      const files = { task_states: STATES_FILE, user_tasks: USER_TASKS_FILE };
+      if (!files[doc]) return res.status(400).json({ error: 'doc_invalido' });
+      try {
+        const got = await gh.ghGetJson(token, files[doc]);
+        res.setHeader('Cache-Control', 'no-store');
+        return res.status(200).json({ ok: true, doc: got.doc || { tasks: {} } });
+      } catch (e) {
+        const msg = String(e && e.message || e);
+        return res.status(502).json({ error: /: 401\b/.test(msg) ? 'token_vencido' : 'github_get', detail: msg.slice(0, 160) });
+      }
+    }
     try {
       const status = await gh.ghTokenAlive(token);
       const ok = status === 200;
