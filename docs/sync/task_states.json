@@ -1,5 +1,5 @@
 {
-  "_synced_at": "2026-09-06T11:39:19.974Z",
+  "_synced_at": "2026-09-06T11:39:21.752Z",
   "_last_writer": "puesta-al-dia",
   "tasks": {
     "plant-F-1": {
@@ -497,8 +497,8 @@
     "plant-B-18": {
       "status": "done",
       "snoozed_until": null,
-      "completed_at": "2026-09-05T21:27:01.287Z",
-      "last_modified_at": "2026-09-05T21:27:01.287Z",
+      "completed_at": "2026-09-06T11:39:21.752Z",
+      "last_modified_at": "2026-09-06T11:39:21.752Z",
       "changed_via": "landing"
     },
     "plant-B-46-3": {
