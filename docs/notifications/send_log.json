@@ -2,12 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-08-22-perfume-de-octubre",
-      "ts": "2026-08-22T14:18:40.252Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-08-24-jardin-hoy",
       "ts": "2026-08-24T13:11:56.914Z",
       "status_code": 201
@@ -300,5 +294,5 @@
       "_nota": "Se completa al despachar: 2 encoladas (jardin-hoy 13:00Z, el-porton 14:00Z)."
     }
   },
-  "_updated_at": "2026-09-05T09:25:00.000Z"
+  "_updated_at": "2026-09-06T09:20:00.000Z"
 }

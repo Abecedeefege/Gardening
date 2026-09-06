@@ -1096,7 +1096,7 @@
       "notified_by": [
         "2026-09-05-el-porton"
       ],
-      "result_notes": null
+      "result_notes": "06/09: SIN señal. 0 clicks sobre la push de las 11:00, 0 reacciones, 0 respuestas de slot, 0 feedback. Sigue PENDING -> no recurre. Pero el dato no es limpio: esa misma noche el usuario estuvo 40 min dentro de puesta-al-dia resolviendo 10 tareas y escribiendo 2 feedbacks, o sea que estaba activo y eligio la pagina de TAREAS, no la experiencia. Lectura: no la rechazo, la desplazo — cuando tiene trabajo real pendiente, la experiencia compite y pierde. El truco del porton (condicion sin fecha -> fecha) SI vale: reusarlo DENTRO del canal tarea, no como pagina aparte."
     }
   ],
   "_updated_at": "2026-09-05T09:25:00.000Z",

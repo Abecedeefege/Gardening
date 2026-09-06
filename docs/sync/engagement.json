@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-05T21:36:56.504Z",
+  "_updated_at": "2026-09-06T09:20:00.000Z",
   "events": [
     {
       "_id": "mt7ab566ckkptd",
@@ -1083,6 +1083,14 @@
         "305s@17% + 514s@63% (puesta-al-dia, 13,6 min = el dwell mas largo medido)"
       ],
       "_nota": "DIA TIER-1 SIN HABER MANDADO NADA HOY. La puesta-al-dia (push del 03/09 20:05, entregada +3,3 min porque se disparo a MANO) se abrio 21:49 local y produjo 3 escrituras reales en task_states.json: las 3 primeras cards, en orden, 21 s entre una y otra. Son exactamente las 3 podas que ya habia hecho el 02/08 (ticks taller-arbol-B-30/B-38 + podo-F-4) y que hasta anoche no estaban registradas. De la card 4 en adelante NO marco ninguna y freno en el 63 % del scroll (card 18 de 29). Lectura: el formato gano (13,6 min), la LONGITUD perdio. Viernes sin slot: 0 push por cadencia."
+    },
+    "2026-09-05": {
+      "sent": 4,
+      "clicked": 2,
+      "visits": 7,
+      "approvals": 0,
+      "answers": 13,
+      "feedback_text": 2
     }
   }
 }
