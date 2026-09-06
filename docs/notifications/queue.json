@@ -1,19 +1,19 @@
 {
-  "_updated_at": "2026-09-06T09:20:00.000Z",
+  "_updated_at": "2026-09-06T11:01:14.724201",
   "_nota": "SABADO 05/09 — DIA CON LOS DOS SLOTS (tarea 10:00 + experiencia 11:00). PEDIDO DEL USUARIO EJECUTADO: el jueves 04/09 16:04Z escribio desde la ficha de B-34 «Esta planta la saque. No existe mas, podes eliminarla». Consentimiento explicito -> B-34 (mandioca brava, Manihot grahamii) removida de data_plants.py; el bloque queda archivado en data_bajas.py por si se arrepiente. Catalogo 52 -> 51 especies, 50 tareas activas. La baja se comunica en el bloque oscuro de jardin-hoy. CLIMA (2 modelos, ECMWF + GFS, consultados 06:10 -03:00): hoy 3,7 mm / 89% / max 11,7 / rafagas 34; domingo 8,2 de maxima (el dia mas frio); LUNES 7 al amanecer = piso termico de los 8 dias (4,5 ECMWF / 3,8 GFS) y desde el martes ninguna minima baja de 6,5. Ventana seca mar 8 - jue 10 (0 mm los tres; miercoles el mas calmo con 12 km/h); viernes 11 y sabado 12 se cierra (2,6 y 10,8 mm, rafagas 48-51). De ahi salen las dos push: la tarea = las 4 que la lluvia MEJORA (tierra/agua/mano, cero tijera); la experiencia = «el porton», la fecha exacta que destraba las 6 «pasada la ultima helada». El elenco de la experiencia (B-1, B-22, B-23, B-24, B-29, B-36) es la cola de la puesta-al-dia que el usuario NUNCA vio (freno en el 63% = card 18 de 29): quemado para el ledger, fresco para el. Excepcion documentada en facts_ledger.json. ⏱️ La medicion del fix de lag sigue prevista para el lunes 7, pero HOY ya hay dos slots para medir: 13:00Z y 14:00Z.",
   "notifications": [
     {
-      "id": "2026-09-06-puesta-al-dia-ed4",
-      "title": "Listo: saqué las 10 que cerraste",
-      "body": "Quedan 17, ordenadas por el clima: hoy y lunes sin tijera, martes a jueves la ventana. Y te cobro la apuesta.",
+      "id": "2026-09-06-puesta-al-dia-ed5",
+      "title": "📋 Puesta al día: quedan 15",
+      "body": "Cerré el azarero con tus 3 fotos (te contesté en su hilo) y pospuse el caqui hasta el 27/09. La lista, ordenada por el clima.",
       "url": "https://gardening-chi.vercel.app/engage/puesta-al-dia.html",
-      "send_at": "2026-09-06T10:30:00-03:00",
+      "format": "tarea",
+      "send_at": "2026-09-06T08:05:00-03:00",
       "expires_at": "2026-09-06T22:00:00-03:00",
       "status": "pending",
       "sent_at": null,
       "fail_reason": null,
-      "format": "tarea",
-      "created_by": "engagement-agent 2026-09-06"
+      "created_by": "pedido directo del usuario 2026-09-06 (reemplaza a ed4)"
     }
   ]
 }

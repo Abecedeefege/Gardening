@@ -1476,8 +1476,13 @@
       "context": "task",
       "task_id": "plant-B-7",
       "task_title_snapshot": "Recorte parejo de cerco (4 ejemplares)",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Poda muy fuerte del azarero B-7 confirmada por foto (tocones a 1,5-2 m, follaje bajo). Tarea cerrada.",
+        "next_steps": "Retirar leña del pie; riego cada 10 días sin lluvia; sin fertilizar hasta el rebrote; revisar tocones sin brote en noviembre.",
+        "processed_at": "2026-09-06T11:01:14.000Z"
+      },
       "user_context": "Ahí lo pode fuerte",
       "via": "landing"
     },
@@ -1488,8 +1493,13 @@
       "context": "task",
       "task_id": "plant-B-7",
       "task_title_snapshot": "Recorte parejo de cerco (4 ejemplares)",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Poda muy fuerte del azarero B-7 confirmada por foto (tocones a 1,5-2 m, follaje bajo). Tarea cerrada.",
+        "next_steps": "Retirar leña del pie; riego cada 10 días sin lluvia; sin fertilizar hasta el rebrote; revisar tocones sin brote en noviembre.",
+        "processed_at": "2026-09-06T11:01:14.000Z"
+      },
       "user_context": "Gran poda",
       "via": "landing"
     },
@@ -1500,8 +1510,13 @@
       "context": "task",
       "task_id": "plant-B-7",
       "task_title_snapshot": "Azareros — recorte parejo del cerco (4)",
-      "ai_status": "pending",
-      "ai_evaluation": null,
+      "ai_status": "processed",
+      "ai_evaluation": {
+        "resolved": true,
+        "summary": "Poda muy fuerte del azarero B-7 confirmada por foto (tocones a 1,5-2 m, follaje bajo). Tarea cerrada.",
+        "next_steps": "Retirar leña del pie; riego cada 10 días sin lluvia; sin fertilizar hasta el rebrote; revisar tocones sin brote en noviembre.",
+        "processed_at": "2026-09-06T11:01:14.000Z"
+      },
       "user_context": "Lo MEGA PODE, muchísimo",
       "via": "landing"
     }

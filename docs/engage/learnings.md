@@ -23,6 +23,11 @@ Encolada 10:30 -03:00 como **única push del domingo — excepción válida porq
   vivero) **y se quedó con el trabajo de tijera y mano.** Contenido «mirá y contame» = fondo de la cola. **Ya lo sé, no lo
   vuelvo a testear.**
 
+- **06/09 08:00 (sesión directa, después de tu corrida):** me pidió «revisá los pendientes y mandame la última versión».
+  Procesé los 2 threads pendientes (B-7 tres fotos → **hecha**, respondida en el hilo; B-41 → **pospuesta al 27/09**),
+  la página pasó a **ed. 5 con 15 cards** (sección «Lo de anoche» = 2 notas de cierre, sin botones) y **reemplacé tu push
+  `-ed4` de las 10:30 por `-ed5` a las 08:05** para no mandarle dos. No encolar otra hoy.
+
 ## 📊 CONCLUSIONES ACUMULADAS DE LOS PUSH ENVIADOS (lo que llevo aprendido del canal)
 
 - **⭐ LO QUE MÁS CONVIRTIÓ EN 7 SEMANAS SIGUE SIENDO LO MISMO: la lista completa de SUS tareas reales, con foto, dónde

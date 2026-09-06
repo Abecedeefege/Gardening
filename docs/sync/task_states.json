@@ -1,6 +1,6 @@
 {
-  "_synced_at": "2026-09-05T21:32:37.186Z",
-  "_last_writer": "puesta-al-dia",
+  "_synced_at": "2026-09-06T11:01:14.000Z",
+  "_last_writer": "claude-code responder 2026-09-06",
   "tasks": {
     "plant-F-1": {
       "status": "done",
@@ -556,6 +556,22 @@
       "completed_at": null,
       "last_modified_at": "2026-09-05T21:32:37.186Z",
       "changed_via": "landing"
+    },
+    "plant-B-7": {
+      "status": "done",
+      "snoozed_until": null,
+      "completed_at": "2026-09-06T11:01:14.000Z",
+      "completed_via_ai": true,
+      "ai_summary": "Tres fotos del 05/09 (thread): el azarero B-7 quedó podado muy fuerte, reducido a troncos principales con tocones a 1,5-2 m y follaje bajo. El usuario lo dijo explícitamente («Lo MEGA PODÉ»). Rebrota desde madera vieja; se pierde la flor de octubre 2026. Seguimiento: retirar la leña apilada al pie, riego cada 10 días sin lluvia, sin fertilizar hasta el rebrote; en noviembre cortar al ras los tocones que no brotaron.",
+      "last_modified_at": "2026-09-06T11:01:14.000Z"
+    },
+    "plant-B-41": {
+      "status": "snoozed",
+      "snoozed_until": "2026-09-27T00:00:00.000Z",
+      "completed_at": null,
+      "completed_via_ai": false,
+      "ai_summary": "05/09 el usuario: «está igual que siempre, 0 floración ni nada; volvé a preguntarme en unas semanas». Pospuesta 3 semanas.",
+      "last_modified_at": "2026-09-06T11:01:14.000Z"
     }
   }
 }
