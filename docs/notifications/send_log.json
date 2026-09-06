@@ -77,6 +77,12 @@
       "nid": "2026-09-05-puesta-al-dia-solo-pendiente",
       "ts": "2026-09-05T21:11:01.802Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-09-06-puesta-al-dia-ed5",
+      "ts": "2026-09-06T11:05:01.595Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
