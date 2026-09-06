@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-06T09:20:00.000Z",
+  "_updated_at": "2026-09-06T11:38:38.864Z",
   "events": [
     {
       "_id": "mt7ab566ckkptd",
@@ -477,6 +477,15 @@
       "scroll_pct": 25,
       "page": "engage/puesta-al-dia.html",
       "ts": "2026-09-05T21:36:49.759Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtpqnh9x2pft8q",
+      "type": "page_visit",
+      "page": "engage/puesta-al-dia.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-09-06T11:38:37.749Z",
       "device": "sin-nombre"
     }
   ],
