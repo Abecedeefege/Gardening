@@ -1,19 +1,32 @@
 {
-  "_updated_at": "2026-09-06T11:05:01.596Z",
-  "_nota": "SABADO 05/09 — DIA CON LOS DOS SLOTS (tarea 10:00 + experiencia 11:00). PEDIDO DEL USUARIO EJECUTADO: el jueves 04/09 16:04Z escribio desde la ficha de B-34 «Esta planta la saque. No existe mas, podes eliminarla». Consentimiento explicito -> B-34 (mandioca brava, Manihot grahamii) removida de data_plants.py; el bloque queda archivado en data_bajas.py por si se arrepiente. Catalogo 52 -> 51 especies, 50 tareas activas. La baja se comunica en el bloque oscuro de jardin-hoy. CLIMA (2 modelos, ECMWF + GFS, consultados 06:10 -03:00): hoy 3,7 mm / 89% / max 11,7 / rafagas 34; domingo 8,2 de maxima (el dia mas frio); LUNES 7 al amanecer = piso termico de los 8 dias (4,5 ECMWF / 3,8 GFS) y desde el martes ninguna minima baja de 6,5. Ventana seca mar 8 - jue 10 (0 mm los tres; miercoles el mas calmo con 12 km/h); viernes 11 y sabado 12 se cierra (2,6 y 10,8 mm, rafagas 48-51). De ahi salen las dos push: la tarea = las 4 que la lluvia MEJORA (tierra/agua/mano, cero tijera); la experiencia = «el porton», la fecha exacta que destraba las 6 «pasada la ultima helada». El elenco de la experiencia (B-1, B-22, B-23, B-24, B-29, B-36) es la cola de la puesta-al-dia que el usuario NUNCA vio (freno en el 63% = card 18 de 29): quemado para el ledger, fresco para el. Excepcion documentada en facts_ledger.json. ⏱️ La medicion del fix de lag sigue prevista para el lunes 7, pero HOY ya hay dos slots para medir: 13:00Z y 14:00Z.",
+  "_updated_at": "2026-09-07T09:16:36.963938Z",
+  "_nota": "LUNES 07/09 — dia con LOS DOS slots de la cadencia semanal (tarea 10:00 + experiencia 18:00). Se limpio la entry del 06/09 (ya enviada, queda en send_log). CLIMA reconsultado hoy 06:05 -03:00, 2 modelos (ECMWF ifs025 + GFS seamless): la apuesta del 05/09 quedo PARTIDA. GANE la lluvia y por mas de lo prometido (mar 0,0/0,0 · mie 0,0/0,0 · jue 0,2/0,0 mm — el jueves en disputa cayo de 1,5 a 0,2). PERDI las minimas: prometi 'ninguna baja de 6' y ECMWF da 3,1 el martes y 4,5 el miercoles al amanecer (GFS 6,0 y 7,8). Se publica la derrota en la pagina y se convierte en instruccion util: salir DESPUES de las 10, no al amanecer. Miercoles 9 = mejor dia de la semana (max 18,3/18,9 y el mas calmo, 9 km/h). Viernes 11 cierra (0,1/1,8 mm + rafagas 24-30). PUSH 1 (tarea, 10:00): puesta-al-dia ed.6 — no es lista nueva, es el REPARTO de los 8 cortes en los 3 dias secos. PUSH 2 (experiencia, 18:00): la original nueva del slot = 2026-09-07-la-bandeja.html, con El Taller (unica aprobada) agrupado ADENTRO. Una sola push por slot, sin entries separadas.",
   "notifications": [
     {
-      "id": "2026-09-06-puesta-al-dia-ed5",
-      "title": "📋 Puesta al día: quedan 15",
-      "body": "Cerré el azarero con tus 3 fotos (te contesté en su hilo) y pospuse el caqui hasta el 27/09. La lista, ordenada por el clima.",
+      "id": "2026-09-07-puesta-al-dia-ed6",
+      "title": "✂️ Mañana abrís la tijera: 3 días",
+      "body": "Le puse día a cada uno de los 8 cortes: martes los rústicos, miércoles los friolentos, jueves las paltas.",
       "url": "https://gardening-chi.vercel.app/engage/puesta-al-dia.html",
       "format": "tarea",
-      "send_at": "2026-09-06T08:05:00-03:00",
-      "expires_at": "2026-09-06T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-09-06T11:05:01.595Z",
+      "send_at": "2026-09-07T10:00:00-03:00",
+      "expires_at": "2026-09-07T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
       "fail_reason": null,
-      "created_by": "pedido directo del usuario 2026-09-06 (reemplaza a ed4)"
+      "created_by": "engagement-agent 2026-09-07"
+    },
+    {
+      "id": "2026-09-07-la-bandeja",
+      "title": "🌱 42 de tus 50 no tienen repuesto",
+      "body": "Esta semana tirás 40 ramas que enraízan solas. Bandeja de 9: tres se hacen hoy, adentro, en 15 minutos.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-09-07-la-bandeja.html",
+      "format": "experiencia",
+      "send_at": "2026-09-07T18:00:00-03:00",
+      "expires_at": "2026-09-07T22:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-09-07"
     }
   ]
 }

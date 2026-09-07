@@ -1096,7 +1096,19 @@
       "notified_by": [
         "2026-09-05-el-porton"
       ],
-      "result_notes": "06/09: SIN señal. 0 clicks sobre la push de las 11:00, 0 reacciones, 0 respuestas de slot, 0 feedback. Sigue PENDING -> no recurre. Pero el dato no es limpio: esa misma noche el usuario estuvo 40 min dentro de puesta-al-dia resolviendo 10 tareas y escribiendo 2 feedbacks, o sea que estaba activo y eligio la pagina de TAREAS, no la experiencia. Lectura: no la rechazo, la desplazo — cuando tiene trabajo real pendiente, la experiencia compite y pierde. El truco del porton (condicion sin fecha -> fecha) SI vale: reusarlo DENTRO del canal tarea, no como pagina aparte."
+      "result_notes": "07/09: segundo reconteo, sigue en CERO (0 clicks, 0 reacciones, 0 respuestas de slot, 0 feedback) mientras puesta-al-dia sumo 4 visitas mas el 06/09. Veredicto: NO fue rechazada, fue DESPLAZADA — el usuario no tiene ancho de banda para una experiencia mientras tenga tareas abiertas. Queda pending y NO recurre. Su tesis (convertir una condicion sin fecha en fecha) se muda adentro del canal tarea, que es donde el 07/09 se aplico: los 8 cortes ya tienen dia asignado."
+    },
+    {
+      "id": "2026-09-07-la-bandeja",
+      "title": "La bandeja — 9 plantas gratis con lo que ibas a tirar",
+      "page": "engage/2026-09-07-la-bandeja.html",
+      "created": "2026-09-07",
+      "status": "pending",
+      "hypothesis": "La senal mas fuerte de 7 semanas no fue leer: fue TILDAR (13 answers en una noche en puesta-al-dia). Hipotesis: si la experiencia no es un texto con un boton al final sino un OBJETO QUE SE LLENA — una bandeja de 9 casilleros que el usuario tilda con las manos sucias mientras trabaja, y que persiste entre sesiones — la conversion deberia parecerse a la del canal tarea y no a la de las experiencias (que vienen en 0). Tres apuestas concretas: (a) el 18:00 del lunes es horario de adentro, asi que las 3 primeras estacas son de INTERIOR, de noche y sin herramientas — friccion casi cero para el primer tap; (b) el contenido no compite con las tareas, las PARASITA: el material sale de las 8 podas que ya tiene agendadas mar-jue, o sea que sube el valor de la push de las 10:00 en vez de disputarle atencion (el 05/09 'el porton' se fue a 0 justamente por competir); (c) 'ejemplar unico' es la primera perdida REAL y verificable que le puedo mostrar (42 de 50), no una urgencia inventada. Falsable: si tildó >=3 casilleros, el objeto-que-se-llena gana y se serializa como formato. Si abrio y no tildo ninguno, el problema no es el formato sino que la experiencia como canal esta muerta mientras haya tareas abiertas.",
+      "notified_by": [
+        "2026-09-07-la-bandeja"
+      ],
+      "result_notes": null
     }
   ],
   "_updated_at": "2026-09-05T09:25:00.000Z",

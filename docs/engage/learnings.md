@@ -3,49 +3,38 @@
 Memoria del agente. Se REESCRIBE y condensa cada día (máx ~150 líneas). No es un log: es lo que necesito recordar para
 decidir el contenido de mañana.
 
-## 🥇 LO PRIMERO DEL 06/09 — LE CONTESTÉ LAS DOS ÓRDENES CON LA PÁGINA, NO CON UNA PROMESA
+## 🥇 LO PRIMERO DEL 07/09 — LE COBRÉ LA APUESTA Y LE PAGUÉ LA MITAD QUE PERDÍ
 
-Anoche escribió dos veces en `puesta-al-dia`:
+El 05/09 publiqué: «del martes 8 al jueves 10 no llueve y no baja de 6°». Hoy la saldé sola, sin que la reclame:
 
-1. **14:35Z — «Quiero que saques todas las tareas que ya esten completadas para achicar la pagina».**
-2. **21:34Z — «Volverme a enviar cuando revises con mi feedback en mente».** (después de resolver 10 tareas él mismo)
-
-**Hecho hoy (ed. 4):** las 2 que marcó hechas (B-9 crespón, B-18 althea) y las **8 que pospuso entre 21:30 y 21:32**
-(B-46 vivero ×2, B-47 palmeras, B-32 viraró, B-20 arbusto, B-13 clivia, B-23 formación, B-24 mandarina) están **fuera del
-HTML, no ocultas por CSS**. De 27 cards a **17**. Y no fue sólo borrar: la lista se **reordenó por ventana climática**.
-Encolada 10:30 -03:00 como **única push del domingo — excepción válida porque la pidió por escrito**.
-
-- ⭐ **«Ocultar» no es «sacar».** La ed. 3 ya escondía lo hecho con JS y él igual pidió achicarla: **lo que mide es el
-  scroll que le queda, no el DOM**. Si pide achicar, se borra del archivo.
-- ⭐ **Su ACCIÓN es feedback aunque no escriba.** Posponer 8 en 90 segundos es una edición: me dijo cuáles no van ahora.
-  **Tratar cada `answer: snoozed` como un «sacame esto de adelante» y ejecutarlo en la reedición siguiente.**
-- **Su patrón está clarísimo: pospuso todo lo observacional** (fotos de flor, decidir el destino de las palmeras, el
-  vivero) **y se quedó con el trabajo de tijera y mano.** Contenido «mirá y contame» = fondo de la cola. **Ya lo sé, no lo
-  vuelvo a testear.**
-
-- **06/09 08:00 (sesión directa, después de tu corrida):** me pidió «revisá los pendientes y mandame la última versión».
-  Procesé los 2 threads pendientes (B-7 tres fotos → **hecha**, respondida en el hilo; B-41 → **pospuesta al 27/09**),
-  la página pasó a **ed. 5 con 15 cards** (sección «Lo de anoche» = 2 notas de cierre, sin botones) y **reemplacé tu push
-  `-ed4` de las 10:30 por `-ed5` a las 08:05** para no mandarle dos. No encolar otra hoy.
+- **Gané la lluvia, y por más de lo prometido.** Mar **0,0/0,0** · mié **0,0/0,0** · jue **0,2/0,0 mm**. El jueves era el día
+  en disputa (ECMWF le ponía 1,5 mm) y **se cayó a 0,2**. Los tres días secos en los dos modelos.
+- **PERDÍ las mínimas y lo publiqué arriba de todo.** ECMWF ahora da **3,1° el martes y 4,5° el miércoles** al amanecer
+  (GFS, 6,0 y 7,8 — se llevan 3 grados). No lo escondí: lo **convertí en instrucción** («salí después de las 10, no al
+  amanecer»), que es la única forma en que una derrota mía le sirve de algo a él.
+- ⭐ **REGLA NUEVA: una promesa mía se cobra SIEMPRE y ENTERA, ganada o perdida, antes de que él la revise.** La mitad
+  perdida vale más que la ganada: es la prueba de que los números no están inflados para que haga click.
 
 ## 📊 CONCLUSIONES ACUMULADAS DE LOS PUSH ENVIADOS (lo que llevo aprendido del canal)
 
-- **⭐ LO QUE MÁS CONVIRTIÓ EN 7 SEMANAS SIGUE SIENDO LO MISMO: la lista completa de SUS tareas reales, con foto, dónde
-  está y un botón por ítem.** El 05/09 lo confirmó de la forma más cara posible: **con las 2 push de la mañana (tarea +
-  experiencia «el portón») no hizo nada, y de noche estuvo 40 minutos dentro de `puesta-al-dia` resolviendo 10 tareas y
-  escribiéndome 2 veces.** Cero gimmick, cero narrativa. **Esa es la forma.**
-- **⭐ CUANDO TIENE TRABAJO REAL PENDIENTE, LA EXPERIENCIA COMPITE Y PIERDE.** `el-portón` (sábado 11:00) se fue a 0 clicks
-  el mismo día que la página de tareas tuvo 7 visitas. **No la rechazó: la desplazó.** Corolario operativo: **el truco del
-  portón (una condición sin fecha convertida en fecha) hay que aplicarlo DENTRO del canal tarea, no como página aparte.**
-- **La caja de feedback de texto es el control que más convierte del sitio** (2 de 2 el 24/08, 1 el 03/09, **2 el 05/09**).
-  Va en todas. Pero **las 5 veces que escribió fue LOGÍSTICA, IDENTIFICACIÓN o una ORDEN DE TRABAJO, jamás una reseña de
-  contenido.** Sus mensajes son órdenes. **No esperes veredicto: esperá instrucciones y ejecutalas.**
-- **Dwell alto sin conversión ≠ éxito** · **«no contestó» ≠ «no le interesa»** (03/09: 10 días de silencio y estaba entero)
-  · **10 envíos seguidos con `201`: el status code no mide nada, medir `sent_at − send_at`.**
+- **⭐ LO QUE MÁS CONVIRTIÓ EN 7 SEMANAS: la lista de SUS tareas reales, con foto, dónde está y un botón por ítem.**
+  El 05/09 lo confirmó de la forma más cara: con las 2 push de la mañana **no hizo nada**, y de noche estuvo 40 minutos
+  dentro de `puesta-al-dia` resolviendo 10 tareas y escribiéndome 2 veces. Cero gimmick, cero narrativa.
+- **⭐ CUANDO TIENE TRABAJO REAL PENDIENTE, LA EXPERIENCIA COMPITE Y PIERDE.** `el-portón` (sáb 11:00) sigue en **0
+  absoluto** al segundo reconteo, el mismo fin de semana que la página de tareas sumó 4 visitas más. **No la rechazó: la
+  desplazó.** ⭐ **Corolario que estrené hoy: la experiencia no debe competir con la tarea, debe PARASITARLA.** «La
+  bandeja» se alimenta del material que sale de las 8 podas que ya tiene agendadas → sube el valor de la push de las
+  10:00 en vez de disputarle atención.
+- **⭐ SU ACCIÓN ES FEEDBACK AUNQUE NO ESCRIBA**, y el tap es su idioma: 13 `answer` en una noche. **Posponer 8 en 90
+  segundos es una edición.** Todo `snoozed` = «sacame esto de adelante» y se ejecuta en la reedición siguiente.
+- **La caja de feedback de texto es el control que más convierte del sitio** (2 el 24/08, 1 el 03/09, 2 el 05/09). Va en
+  todas. Pero **las 5 veces que escribió fue LOGÍSTICA, IDENTIFICACIÓN u ORDEN DE TRABAJO, jamás una reseña.** Sus
+  mensajes son órdenes: **no esperes veredicto, esperá instrucciones y ejecutalas.**
+- **«Ocultar» no es «sacar»:** lo que mide es el scroll que le queda, no el DOM. Si pide achicar, se borra del archivo.
+- **Dwell alto sin conversión ≠ éxito** · **«no contestó» ≠ «no le interesa»** (03/09: 10 días de silencio y estaba
+  entero) · **el status code 201 no mide nada: medir `sent_at − send_at`.**
 - **Lección más cara de agosto:** mandé una guía de ejecución a alguien que estaba fuera del país. **Chequear que esté
-  físicamente en el jardín antes.**
-- **Nunca 3 push en un día sin slot** (04/09: 3 envíos, 0 clicks, estaba adentro de la app subiendo 42 fotos). **Si hubo
-  actividad suya en la última hora, no encolar.**
+  físicamente en el jardín antes.** · **Nunca 3 push en un día sin slot** · **si hubo actividad suya en la última hora, no encolar.**
 
 ## ⏱️ CADENCIA (autoridad operativa — semanal, día-consciente)
 
@@ -56,12 +45,12 @@ Encolada 10:30 -03:00 como **única push del domingo — excepción válida porq
 | **Jueves** | ✅ | — |
 | **Sábado** | ✅ | ✅ 11:00 |
 
-- **Excepción válida y única:** una push que **él pidió por escrito** (hoy domingo). Se anota siempre en el ledger.
+- **Excepción válida y única:** una push que **él pidió por escrito** (pasó el domingo 06/09). Se anota en el ledger.
 - **Una sola push por slot de experiencia:** original NUEVA + las **aprobadas** de ese slot agrupadas DENTRO.
   **Aprobación = recurrencia:** sólo vuelve lo que prendió (😍 / slot «sí» / `engageApprove`); pending no se borra, no
-  recurre. **Única aprobada: `el-taller` (n°1), en los dos slots.**
-- Contrato de cada experiencia (back-link primero · reacción · slots · caja propia · aprobar/rechazar · pitch de 6 modelos
-  · `send_at` ≥60 min · `expires_at` 22:00 · `-03:00`): está en `.claude/commands/engagement.md` §4.
+  recurre. **Única aprobada: `el-taller` (n°1), en los dos slots** — hoy va agrupada dentro de la bandeja.
+- Contrato de cada experiencia (back-link primero · reacción · slots · caja propia · aprobar/rechazar · pitch de 6
+  modelos · `send_at` ≥60 min · `expires_at` 22:00 · `-03:00`): `.claude/commands/engagement.md` §4.
 - **Canal tarea:** URLs estables que se **REEDITAN en su lugar** (`2026-07-24-jardin-hoy.html`, `puesta-al-dia.html`).
   NO correr `gen_task_reminders.py` ni `gen_top3_tareas.py --merge`.
 
@@ -71,33 +60,34 @@ Encolada 10:30 -03:00 como **única push del domingo — excepción válida porq
 
 **#2 EL CONTROL VA ARRIBA.** Ningún primer control interactivo debajo del **35 %**, **medido renderizado en Chromium
 390×780** (nunca por offset de caracteres). Script en scratchpad (`audit.js`): playwright en
-`/opt/node22/lib/node_modules`, `executablePath: /opt/pw-browsers/chromium-1194/chrome-linux/chrome`; filtrar por
-visibilidad real y limitar a `.wrap`. **Hoy: `puesta-al-dia` ed.4 → 12,4 %, altura 13.078 px (era ~20k).**
+`/opt/node22/lib/node_modules`, `executablePath: /opt/pw-browsers/chromium-1194/chrome-linux/chrome`.
+**Hoy: `la-bandeja` → 3,4 % (11.436 px) · `puesta-al-dia` ed.6 → 17,3 % (12.222 px, venía de 13.078).**
 
-**#3 EL LARGO TAMBIÉN ES LAYOUT.** **Tope operativo: ~12 ítems**; hoy 17 en 4 bloques cortos con índice arriba — es el
-máximo que me permito, y sólo porque son tareas suyas y cada bloque abre con el día en que se hacen.
+**#3 EL LARGO TAMBIÉN ES LAYOUT.** Tope operativo **~12 ítems**. `puesta-al-dia` sigue en 15 y sólo porque son tareas
+suyas; hoy la achiqué borrando la sección «Lo de anoche» (2 notas ya leídas, sin botones) y subiendo la ventana de tijera
+arriba de todo.
 
 ## 🚀 QUÉ CONVIERTE — meta-reglas vigentes
 
-- **Ayudarlo a HACER > informarlo.** Y **darle DÓNDE registrar lo que ya hizo** es casi igual de fuerte: **13 `answer` en
-  una noche.** Cerrar lo hecho es contenido.
+- **⭐ NUEVO 07/09 — LA EXPERIENCIA TIENE QUE SER UN OBJETO QUE SE LLENA, NO UN TEXTO CON UN BOTÓN AL FINAL.** Su señal
+  más fuerte de 7 semanas fue *tildar*, no leer. «La bandeja» es la primera experiencia cuyo cuerpo ES el control: 9
+  casilleros que tilda con las manos sucias mientras trabaja, persistidos en `localStorage` y emitiendo
+  `engageAnswer('bandeja-<code>')`. **Es el experimento a leer mañana: si tildó ≥3, el formato se serializa.**
+- **Ayudarlo a HACER > informarlo.** Y **darle DÓNDE registrar lo que ya hizo** es casi igual de fuerte.
 - **⭐ CUANDO NOMBRÉS UNA ESPECIE: FOTO + DÓNDE ESTÁ, SIEMPRE.** (03/09 perdí una respuesta entera por nombrar sin
-  mostrar: «no sé cuál es el crespón y la althea».) Cuando **no** tengo foto suya, **decirlo en la card y pedírsela**.
-- **⭐ EL CLIMA COMO EDITOR — es la mejor herramienta de recorte que tengo.** No «hay 17 tareas»: **el pronóstico ORDENA la
-  lista y descarta lo que hoy sale peor.** Hoy estrené la variante más útil: **partir la lista en «lo que NO es tijera»
-  (mínima de 3,2-5,8° el lunes: un corte fresco + helada de amanecer se lleva la madera nueva) y «la ventana de tijera»
-  (mar 8 a jue 10, 0 mm y mínimas ≥6°).** «Hoy no salís» es contenido si le doy la que SÍ se puede.
-- **⭐ LA PROMESA VERIFICADA, COBRADA POR MÍ PRIMERO.** Hoy cobré la del 05/09 sin que me la reclame: mar 6,2/6,7 · mié
-  7,6/8,1 · jue 10,3/10,1 y 0 mm mar-mié en los dos modelos → **va ganando**, y **publiqué dónde puedo perder** (jueves:
-  1,5 mm ECMWF vs 0 GFS; máximas que difieren 5,7°). **Publicar el desacuerdo entre modelos es más creíble que publicar un
-  número solo.** ⚠️ `curl` a api.open-meteo.com NO sale del runner: **usar WebFetch**, `forecast_days=7`, un modelo por
-  llamada (con muchas variables da timeout).
-- **⭐ LA CONDICIÓN CONVERTIDA EN FECHA.** Una condición sin fecha («pasada la última helada», «cuando las yemas se
-  hinchen») **no se ejecuta nunca**. Cantera abierta: B-9/B-18/B-4/B-41 yemas, F-3 brote rojo, B-12 «cuando moleste».
-- **PEDIR LA OBSERVACIÓN EN VEZ DE AFIRMARLA.** `flowering` es rango de catálogo, no dato del jardín. **Declarar lo que NO
-  sé suma.**
+  mostrar: «no sé cuál es el crespón y la althea».) **Las 9 de la bandeja llevan la foto que él mismo subió el 04/09.**
+  Cuando **no** tengo foto suya, decirlo en la card y pedírsela.
+- **⭐ EL CLIMA COMO EDITOR.** No «hay 15 tareas»: el pronóstico **ordena y descarta**. Hoy subí un escalón: ya no es
+  «esta ventana sirve» sino **un día concreto por tarea** (mar: los rústicos · mié, el mejor: los friolentos · jue: las
+  paltas), justificado por lo que aguanta cada planta, no por prioridad.
+- **⭐ VERIFICAR MI PROPIO DATO ANTES DE PUBLICARLO.** Iba a titular «44 de tus 51 sin repuesto»; lo conté agrupando
+  `id_codes` por `sci` y son **42 de 50**. Y **2 de las 9 de la bandeja sí tienen repuesto** (lavanda B-19, jazmín B-2B/C):
+  lo declaré en la propia página. **Un número que se cae solo cuesta más que el titular que gana.**
+- **⭐ LA CONDICIÓN CONVERTIDA EN FECHA.** Cantera abierta: B-4/B-41 yemas, F-3 brote rojo, B-12 «cuando moleste».
+- **PEDIR LA OBSERVACIÓN EN VEZ DE AFIRMARLA.** `flowering` es rango de catálogo, no dato del jardín. Declarar lo que NO sé suma.
 - **El título es el activo más medido:** sustantivo concreto + número + algo suyo + pérdida. · **Timing verificado >
-  urgencia inventada.** · **feedback_text = ley.**
+  urgencia inventada.** · **feedback_text = ley.** · ⚠️ `curl` a api.open-meteo.com NO sale del runner: **usar WebFetch**,
+  `forecast_days=7`, **un modelo por llamada**.
 
 ## 🚫 EJES/FORMATOS MUERTOS (feedback duro — NO volver, ni variaciones)
 
@@ -105,32 +95,34 @@ máximo que me permito, y sólo porque son tareas suyas y cada bloque abre con e
 **vos-decidís** (el eje AGENCIA vive, el CONTENEDOR se quemó) · **mi-objetivo** · role-play verboso · countdown · app
 pasiva · editorial 3ª pers · mapa/espacial *(como formato entero; un plano chico DENTRO de otra cosa sí sirve)* · mística
 · racha/streak · biografías · dinero/tasación · Wrapped · fútbol · **mucho texto/cargado** · **era gimmick** (feed falso,
-superpoderes) · **`podas-vuelta` CERRADA** · **NUEVO 06/09: contenido observacional suelto** («sacale foto a la flor»,
-«decidí qué hacer con las 56 palmeras») — **pospuso las 8 de un saque. Va como pedido corto DENTRO de otra cosa, nunca
-como card propia.**
+superpoderes) · **`podas-vuelta` CERRADA** · **contenido observacional suelto** («sacale foto a la flor», «decidí qué
+hacer con las 56 palmeras») — pospuso las 8 de un saque: **va como pedido corto DENTRO de otra cosa, nunca como card
+propia** (por eso hoy dejé UNA sola foto pedida en toda la página de tareas).
 
 ## 🏆 EL TALLER = LA LÍNEA DE PRODUCTO (única aprobada, en los dos slots)
 
 - n°1: **7/7 pasos ×3 pasadas**, 168 s @95 %, **😍 dos veces** y ticks por árbol horas después. n°2: 7/7, 166 s, cero
   reacción. n°3 (24/08): leído entero, sin veredicto.
 - **Por qué gana:** ① sustancia técnica real sobre SUS plantas ② se abre con la herramienta en la mano ③ una pantalla =
-  una decisión ④ los errores anticipados ⑤ diagramas propios.
+  una decisión ④ los errores anticipados ⑤ diagramas propios. **«La bandeja» hereda las cinco** (paso 1-4 + SVG del corte
+  + los 5 errores en orden de frecuencia) y agrega el objeto que se llena.
 - **Sus ticks (`taller-arbol-<code>`) NO escriben `task_states.json`.** Contar siempre con
   `generate_tasks_from_plants(PLANTS)` + `task_states.json`, **descartando las 16 huérfanas**. ⚠️ `pip install Pillow`.
 
 ## 🚫 ANTI-REPETICIÓN
 
-- Leer `facts_ledger.json` ANTES, actualizarlo DESPUÉS. **Excepción: el canal tarea es monotemático — su cast lo define la
-  TAREA.**
+- Leer `facts_ledger.json` ANTES, actualizarlo DESPUÉS. **Excepción: el canal tarea es monotemático — su cast lo define
+  la TAREA.**
 - **La EXPOSICIÓN MEDIDA manda sobre la contabilidad del ledger:** si `scroll_pct` prueba que no llegó a esa card, está
   **fresca para él** aunque figure «featured». Sólo con evidencia medida, nunca por corazonada.
-- ⚠️ **VEDADAS HASTA EL 13/09** (canal tarea de hoy, alta exposición): B-7, B-5a, B-23, B-25, B-12, B-15, B-8, B-4, B-1,
-  B-29, F-2, F-7, B-43, B-22, B-36, F-3, B-41. **HASTA EL 12/09:** B-46, B-9, B-18, B-24, B-32, B-20, B-13, B-47.
-- ✅ **LIBRES para el lunes 7 (la experiencia de las 18:00 sale de acá):** B-3, B-27, B-37, F-9, B-16, B-44, B-40, F-8,
-  B-6, F-5, F-10, B-14, I-1, I-2, B-2, B-45, B-48, B-49, B-21, B-28, B-11, B-31, B-33, B-10, B-26, B-39, F-1.
-  **B-34 sale de toda cantera: ya no existe.**
-- **No repetir antes del 13/09:** «el portón» / el termómetro de 8 días · «la lluvia MEJORA estas 4» · el cepellón entero ·
-  el quelato que baja con la lluvia · «florece en madera nueva» · **«un corte fresco + helada de amanecer»** (estrenado hoy).
+- ⚠️ **VEDADAS HASTA EL 14/09** (bandeja): I-1, I-2, B-6, B-26, B-2, B-10, B-3, F-5, B-27. **HASTA EL 13/09** (canal
+  tarea): B-7, B-5a, B-23, B-25, B-12, B-15, B-8, B-4, B-1, B-29, F-2, F-7, B-43, B-22, B-36, F-3, B-41. **HASTA EL
+  12/09:** B-46, B-9, B-18, B-24, B-32, B-20, B-13, B-47.
+- ✅ **LIBRES para el sábado 13/09 11:00:** B-16, B-37, F-9, B-44, B-40, F-8, F-10, B-14, B-45, B-48, B-49, B-21, B-28,
+  B-11, B-31, B-33, B-39, F-1. **B-34 sale de toda cantera: ya no existe.**
+- **No repetir antes del 21/09:** la propagación/esqueje entera · «lo que ibas a tirar» · el ejemplar único / sin
+  repuesto · la campana de botella · el corte al ras bajo el nudo · el lado este como vivero · el reparto de la ventana
+  por día · «el portón» / el termómetro de 8 días · «un corte fresco + helada de amanecer».
 - Re-push de una aprobada = contenido RENOVADO en la misma URL.
 
 ## 📌 PEDIDOS DIRECTOS — NO PISAR
@@ -140,37 +132,36 @@ como card propia.**
   `/responder-tareas`, **NO yo**). · **30/07:** foto + caja de comentario en TODAS las tareas.
 - **28/07 PALTA:** los plantines siguen contra la pared a la sombra, **SIN MOVER** (B-22/B-36 es de PODA).
 - **04/09:** 42 fotos de especie (`ai_status:"n/a"`: NO procesarlas). **No volver a pedir fotos generales.** Sin foto:
-  B-41, B-32, B-43, B-46/47, B-2B, **B-22 y B-36**.
+  B-41, B-32, B-43, B-46/47, B-2B, B-22 y B-36.
 - **04/09 (baja):** B-34 eliminada con consentimiento explícito escrito. **NUNCA borrar una especie sin eso.**
-- **05/09:** «No quiero tener que cambiar tokens nunca más». `api/sync.js` + `api/_gh.js` = backend de todas las escrituras;
-  `tools/health_check.js` encola 1 push/día si el token muere. **Pendiente del usuario: pegar un PAT clásico sin
-  vencimiento en Vercel. Mientras `GET /api/sync` dé 502, el silencio NO es desinterés: no puede guardar nada.**
+- **05/09:** «No quiero tener que cambiar tokens nunca más». ✅ **RESUELTO: hoy `GET /api/sync` devuelve 200** (venía
+  502 desde el 05/09). Ya puede volver a guardar todo. `tools/health_check.js` sigue encolando 1 push/día si muere.
 - **Asamblea, tu-semana, vos-decidís, jardin-hoy** promovidas + **el-taller** aprobada: no borrar.
 
-## 📈 Estado del sistema + jardín (06/09/2026)
+## 📈 Estado del sistema + jardín (07/09/2026)
 
-- Push subscription `pix9`: **active**. `user_tasks.json`: **0 sin contestar** (los 7 viejos los cerró `/responder-tareas`
-  el 05/09 — el backlog de mayo está saldado). `uploads.json`: 0 pendientes.
-- ⚠️ **Threads con 3+1 mensajes suyos `pending`, son de `/responder-tareas`, NO míos:** **B-7 azarero** («Ahí lo pode
-  fuerte», «Gran poda», «Lo MEGA PODE, muchísimo») y **B-41** («está igual que siempre, 0 floración»). **Los usé como
-  contenido:** la card de B-7 encabeza la ed.4 con su cita y el botón para cerrarla, y la de B-41 pide el «antes».
-- Proposals: **91** — 54 dropped / 23 promoted / **12 pending** / 1 approved / 1 removed. **Ninguna cambió de estado
-  ayer** (`el-porton` sigue pending con nota: 0 señal, desplazada por las tareas).
-- **51 especies · 101 tareas reales · 39 `active`** (52 done, 10 snoozed tras anoche), reverificado hoy contra
-  `generate_tasks_from_plants` descartando las 16 huérfanas.
-- **Compactación 06/09:** `send_log` 14 → 13 eventos (cayó el del 22/08). `engagement.json`: 54 eventos, **los del 24/08
-  vencen mañana 07/09**; se agregó el `daily_summary` de 05/09 (4 sent · 2 clicked · 7 visits · **13 answers** · **2
-  feedback_text**). `queue.json` limpio: sólo la entry de hoy.
+- Push subscription `pix9`: **active**. `/api/sync`: **200 (sano)**. `user_tasks.json`: 0 sin contestar.
+  `uploads.json`: 0 pendientes. **Threads: 0 mensajes `pending`** (`/responder-tareas` cerró B-7 y B-41 el 06/09).
+- `task_states.json`: **81 entries — 66 done, 11 snoozed, 4 active.** 51 especies.
+- **Datos del 06/09 (domingo, 1 push a pedido suyo):** 1 enviada (ed.5, 08:05) · **3 visitas** a `puesta-al-dia` +
+  1 a `tasks/plant-B-7.html` · **0 clicks logueados, 0 answers, 0 feedback.** Lectura honesta: **abrió tres veces y no
+  tocó nada = «masomenos»**. Es coherente con la ed.5, que era una página de *cierre* (le contaba lo ya resuelto) y no
+  le daba nada nuevo para hacer. **Por eso la ed.6 vuelve a ser accionable: 8 cortes con día asignado.**
+- Proposals: **92** — 54 dropped / 23 promoted / **13 pending** / 1 approved / 1 removed. `el-porton` cerrada como
+  *desplazada, no rechazada*.
+- **Compactación 07/09:** `engagement.json` 61 → **53 eventos** (los 8 del 24/08 al `daily_summary`, incluidos los 2
+  feedback de logística del viaje, ya resueltos). `send_log` 14 → **12**. `queue.json` limpio: sólo las 2 entries de hoy.
 
 ## TODO / próximos experimentos
 
-- **🎯 MARTES 8 — cobrar la apuesta del jueves.** Si llueve, **decirlo yo primero**: perdí media apuesta. Si no, cobrarla
-  entera. Es el activo de credibilidad más barato que tengo.
-- **🎯 LUNES 7 — la experiencia de las 18:00 sale del elenco libre.** NO repetir el portón. Y la push de tarea de las
-  10:00 tiene que ser la **ventana de tijera del martes**, no una lista nueva.
-- **12/09 y 19/09: vuelven las 8 que pospuso.** Traerlas ese día, agrupadas, no de a una.
-- **`taller3-paltas` se reactiva la 2ª semana de septiembre** (B-22/B-36 ya están en la ed.4 con pedido de foto).
-- **El censo cerró sin apertura desde el 31/08** → eje «recorrido de observación» **cerrado**, coherente con que ayer
-  pospuso todo lo observacional.
-- **Cantera SIN USAR:** condiciones sin fecha del catálogo · poda×fruta (feb y may-sep) · **44 de 51 sin repuesto**
-  (esquejes de septiembre, nunca como título alarmista) · la coronita F-5 · el fun_fact NASA de la cinta.
+- **🎯 MAÑANA 08/09 — leer los taps de la bandeja.** `engageAnswer` con qid `bandeja-<code>`. **≥3 tildados = el formato
+  «objeto que se llena» se serializa y pasa a ser la línea de producto junto con El Taller. 0 tildados con página
+  abierta = el canal experiencia está muerto mientras haya tareas abiertas, y hay que fusionarlo con el canal tarea.**
+- **🎯 MAÑANA 08/09 — cobrar la segunda mitad de la apuesta:** si el martes amaneció por encima de 6°, ganó GFS y lo digo;
+  si amaneció en 3-4°, ganó ECMWF y **yo perdí**, y también lo digo. Ya está publicado por adelantado.
+- **12/09 y 19/09: vuelven las 9 que pospuso.** Traerlas ese día, agrupadas, no de a una. El caqui B-41, el 27/09.
+- **Semana 4 de la bandeja (≈05/10): recordarle qué mirar** — lo prometí en la tabla de la página. **Es una promesa con
+  fecha: si no la cumplo, quemo el activo que construí hoy.**
+- **`taller3-paltas` se reactiva el jueves 10** (B-22/B-36 ya tienen día asignado en la ed.6).
+- **Cantera SIN USAR:** condiciones sin fecha del catálogo · poda×fruta (feb y may-sep) · la coronita F-5 en octubre
+  (cierra su ID pendiente, ya se la pedí) · el fun_fact NASA de la cinta · el bálsamo del liquidámbar B-37.

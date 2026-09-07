@@ -2,18 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-08-24-jardin-hoy",
-      "ts": "2026-08-24T13:11:56.914Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-08-24-el-taller-3",
-      "ts": "2026-08-24T21:00:07.274Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-08-31-jardin-hoy",
       "ts": "2026-08-31T17:23:19.581Z",
       "status_code": 201
@@ -257,7 +245,7 @@
       "sent": 1
     },
     "2026-08-24": {
-      "sent": 2
+      "sent": 4
     },
     "2026-08-25": {
       "sent": 0,
@@ -300,5 +288,5 @@
       "_nota": "Se completa al despachar: 2 encoladas (jardin-hoy 13:00Z, el-porton 14:00Z)."
     }
   },
-  "_updated_at": "2026-09-06T09:20:00.000Z"
+  "_updated_at": "2026-09-07T09:17:08.770426Z"
 }

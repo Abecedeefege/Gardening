@@ -1,0 +1,570 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🌱 La bandeja — 9 plantas gratis con lo que ibas a tirar</title>
+<meta property="og:title" content="🌱 La bandeja: 42 de tus 50 especies no tienen repuesto">
+<meta property="og:description" content="Esta semana cortás 8 plantas y tirás las ramas. Septiembre es el único mes en que esas ramas enraízan solas. Bandeja de 9, tres se hacen esta noche adentro.">
+<style>
+  :root{ --bg:#f5faf0; --card:#fff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a; --verde:#2d5016; --verde2:#5a8a2e;
+    --line:rgba(45,80,22,.13); --tierra:#8a6a3a; --agua:#3f7d8a; --alerta:#b03a2e; --oro:#e0a92e;
+    --pad:max(16px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif; }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  [hidden]{ display:none !important; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .wrap{ max-width:520px; margin:0 auto; padding:0 var(--pad) 30px; }
+
+  .hero{ padding:22px 0 4px; }
+  .hero .kick{ font-size:11.5px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3); }
+  .hero h1{ font-size:29px; line-height:1.08; margin:7px 0 8px; font-weight:900; letter-spacing:-.025em; color:var(--verde); }
+  .hero p{ color:var(--ink2); font-size:14.5px; }
+  .hero p b{ color:var(--ink); }
+
+  /* ---- la bandeja ---- */
+  .tray{ background:#1e2a17; border-radius:20px; padding:15px 14px 13px; margin:16px 0 8px; box-shadow:0 8px 26px rgba(30,42,23,.22); }
+  .tray .th{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:4px; }
+  .tray .th b{ color:#fff; font-size:15px; }
+  .tray .th .cnt{ font:900 13px var(--sans); color:#b7d69a; background:rgba(255,255,255,.09); border-radius:999px; padding:3px 11px; white-space:nowrap; }
+  .tray .lead{ font-size:12.5px; color:#cfe0bd; margin-bottom:11px; }
+  .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+  .cell{ position:relative; display:block; width:100%; padding:0; border:2px solid rgba(255,255,255,.14); border-radius:13px;
+    background:#2b3a22; overflow:hidden; cursor:pointer; text-align:left; font:inherit; color:#eaf3e0; }
+  .cell:active{ transform:scale(.97); }
+  .cell img{ width:100%; height:66px; object-fit:cover; display:block; opacity:.82; }
+  .cell .lab{ padding:6px 7px 7px; }
+  .cell .nm{ font-size:11.5px; font-weight:900; line-height:1.15; display:block; }
+  .cell .tec{ font-size:9.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#9fc47a; display:block; margin-top:2px; }
+  .cell .num{ position:absolute; top:5px; left:5px; width:19px; height:19px; border-radius:50%; background:rgba(30,42,23,.8);
+    color:#eaf3e0; font:900 11px/19px var(--sans); text-align:center; }
+  .cell .tick{ position:absolute; inset:0; display:none; align-items:center; justify-content:center;
+    background:rgba(90,138,46,.86); font-size:34px; }
+  .cell.on{ border-color:#9fc47a; }
+  .cell.on .tick{ display:flex; }
+  .tray .foot{ font-size:11.5px; color:#9fb489; margin-top:10px; text-align:center; }
+  .tray .foot b{ color:#cfe0bd; }
+  .tonight{ background:linear-gradient(180deg,#eaf6dc,#f5faf0); border:1px solid rgba(90,138,46,.32); border-radius:16px; padding:13px 14px; margin-top:10px; font-size:13.5px; color:var(--ink2); }
+  .tonight b{ color:var(--verde); }
+
+  .sec{ margin-top:28px; }
+  .sec h2{ font-size:20px; font-weight:900; letter-spacing:-.015em; color:var(--verde); }
+  .sec .sub{ font-size:13.5px; color:var(--ink2); margin:5px 0 2px; }
+
+  .step{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px; margin-top:11px; box-shadow:0 4px 14px rgba(45,80,22,.05); }
+  .step .n{ font-size:10.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--verde2); }
+  .step h3{ font-size:16.5px; line-height:1.2; font-weight:900; margin:3px 0 6px; }
+  .step p{ font-size:13.5px; color:var(--ink2); margin-top:7px; }
+  .step p b{ color:var(--ink); }
+  .step ul{ margin:8px 0 0 17px; font-size:13.5px; color:var(--ink2); }
+  .step li{ margin-top:5px; }
+  .warn{ margin-top:9px; background:#fdece3; border:1px solid rgba(176,58,46,.28); border-radius:11px; padding:9px 11px; font-size:13px; color:#7d2f24; }
+  .warn b{ color:#5e211a; }
+  .ok{ margin-top:9px; background:#eef7e0; border:1px solid rgba(90,138,46,.3); border-radius:11px; padding:9px 11px; font-size:13px; color:#3c5c1c; }
+
+  .plant{ background:var(--card); border:1px solid var(--line); border-left:5px solid var(--verde2); border-radius:16px; padding:13px; margin-top:11px; }
+  .plant .top{ display:flex; gap:11px; align-items:flex-start; }
+  .plant .ph{ width:76px; height:76px; border-radius:11px; object-fit:cover; flex:none; border:1px solid var(--line); background:#eef4e6; }
+  .plant .hd{ flex:1; min-width:0; }
+  .plant .code{ font-size:11px; color:var(--ink3); font-family:ui-monospace,Menlo,monospace; font-weight:700; }
+  .plant h3{ font-size:16px; line-height:1.18; font-weight:900; margin-top:2px; }
+  .plant .sci{ font-size:11.5px; color:var(--ink3); font-style:italic; margin-top:1px; }
+  .plant .where{ font-size:12.5px; color:var(--ink2); margin-top:8px; background:#f2f7ec; border-radius:9px; padding:7px 9px; }
+  .plant .where b{ color:var(--ink); }
+  .plant .rec{ font-size:13.5px; color:var(--ink2); margin-top:9px; }
+  .plant .rec b{ color:var(--ink); }
+  .badges{ display:flex; gap:6px; flex-wrap:wrap; margin-top:9px; }
+  .bd{ font-size:10.5px; font-weight:900; letter-spacing:.05em; border-radius:7px; padding:3px 8px; }
+  .bd.t{ color:#6b4f22; background:#fdf4dd; border:1px solid rgba(224,169,46,.4); }
+  .bd.p{ color:#2d5016; background:#e6f4d4; border:1px solid rgba(90,138,46,.4); }
+  .bd.d{ color:#2f606b; background:#e8f2f5; border:1px solid rgba(63,125,138,.34); }
+
+  figure.dia{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px 12px 10px; margin-top:11px; }
+  figure.dia svg{ width:100%; height:auto; display:block; }
+  figure.dia figcaption{ font-size:12px; color:var(--ink3); margin-top:8px; text-align:center; }
+
+  .cal{ width:100%; border-collapse:collapse; margin-top:10px; font-size:13px; background:var(--card); border-radius:14px; overflow:hidden; border:1px solid var(--line); }
+  .cal th{ text-align:left; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink3); padding:8px 10px; background:#f2f7ec; }
+  .cal td{ padding:8px 10px; border-top:1px solid var(--line); color:var(--ink2); }
+  .cal td:first-child{ font-weight:800; color:var(--ink); }
+
+  .grouped{ background:var(--card); border:1px dashed rgba(90,138,46,.42); border-radius:16px; padding:14px; margin-top:11px; }
+  .grouped a{ display:block; margin-top:9px; text-decoration:none; color:var(--ink); background:#f7fbf1; border:1px solid var(--line); border-radius:12px; padding:11px 12px; font-size:13.5px; font-weight:800; }
+  .grouped a span{ display:block; font-size:12px; font-weight:600; color:var(--ink2); margin-top:2px; }
+  .grouped .none{ font-size:13px; color:var(--ink2); margin-top:8px; }
+
+  .slots{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border:1px solid rgba(90,138,46,.3); border-radius:18px; padding:18px 15px; margin-top:26px; }
+  .slots h3{ font-size:17px; }
+  .slots p{ font-size:13.5px; color:var(--ink2); margin-top:5px; }
+  .slot{ background:#fff; border:1px solid var(--line); border-radius:13px; padding:11px 12px; margin-top:10px; }
+  .slot .nm{ font-size:14px; font-weight:900; }
+  .slot .ds{ font-size:12.5px; color:var(--ink2); margin-top:2px; }
+  .slot .btns{ display:grid; grid-template-columns:1fr 1fr; gap:7px; margin-top:9px; }
+  .slot button{ border-radius:10px; padding:10px 6px; font:800 13px var(--sans); cursor:pointer; border:1px solid var(--line); background:#f2f8ea; color:var(--verde); }
+  .slot button.yes{ background:#e6f4d4; border-color:rgba(90,138,46,.45); }
+  .slot button:disabled{ opacity:.5; }
+  .slot .hint{ font-size:12px; font-weight:800; color:var(--verde2); margin-top:7px; min-height:1em; }
+
+  .react{ text-align:center; margin-top:26px; }
+  .react p{ font-size:14px; color:var(--ink2); margin-bottom:9px; }
+  .react .btns{ display:flex; gap:9px; justify-content:center; }
+  .react button{ font-size:27px; background:#fff; border:1px solid var(--line); border-radius:15px; padding:9px 15px; cursor:pointer; }
+  .react button:active{ transform:scale(.93); }
+  .react .hint{ display:block; font-size:12.5px; font-weight:800; color:var(--verde2); margin-top:9px; min-height:1.1em; }
+
+  .fb-blk{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border:1px solid rgba(90,138,46,.3); border-radius:18px; padding:20px 16px; margin-top:22px; text-align:center; }
+  .fb-blk h3{ font-size:17px; margin-bottom:5px; }
+  .fb-blk p{ color:var(--ink2); font-size:13.5px; max-width:38ch; margin:0 auto 12px; }
+  .fb-blk textarea{ width:100%; background:#fff; border:1px solid var(--line); border-radius:11px; padding:11px 12px; font:inherit; resize:vertical; }
+  .fb-blk .fb-send{ margin-top:10px; background:var(--verde2); color:#fff; border:none; border-radius:12px; padding:12px 22px; font:800 14.5px var(--sans); cursor:pointer; }
+  .fb-blk .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.2em; }
+
+  .engage-actions{ display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-top:22px; }
+  .engage-actions button{ border-radius:13px; padding:14px 8px; font:800 14px var(--sans); cursor:pointer; border:1px solid var(--line); }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; border-color:var(--verde); }
+  .engage-actions button:last-child{ background:#fff; color:var(--ink2); }
+
+  .pie{ text-align:center; padding:20px 0 8px; color:var(--ink3); font-size:11.5px; line-height:1.55; }
+  .pie a{ color:var(--verde2); font-weight:800; text-decoration:none; }
+</style>
+</head><body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">← Volver al sitio estable</a>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kick">Lunes 7 de septiembre · antes de la ventana de tijera</div>
+    <h1>42 de tus 50 especies no tienen repuesto</h1>
+    <p>Esta semana vas a podar 8 plantas y llenar dos bolsas de ramas. <b>Septiembre es el único mes del año en que esas ramas enraízan solas.</b> Te armé la bandeja: 9 plantas nuevas, gratis, con material que ibas a tirar. <b>Tres se hacen hoy, adentro, sin herramientas.</b></p>
+  </header>
+
+  <div class="tray" id="bandeja">
+    <div class="th"><b>🌱 La bandeja de 9</b><span class="cnt" id="cnt">0 de 9 puestas</span></div>
+    <div class="lead">Tocá cada casillero cuando la pongas. Queda guardado — volvé mañana y seguí donde ibas.</div>
+    <div class="grid">
+      <button type="button" class="cell" data-k="I-1" data-nm="Singonio">
+        <span class="num">1</span>
+        <img src="https://gardening-chi.vercel.app/images/uploads/I-1/species-I-1_20260904-160744.jpg" loading="lazy" alt="Singonio">
+        <span class="lab"><span class="nm">Singonio</span><span class="tec">en agua · hoy</span></span>
+        <span class="tick">✓</span>
+      </button>
+      <button type="button" class="cell" data-k="I-2" data-nm="Difenbaquia">
+        <span class="num">2</span>
+        <img src="https://gardening-chi.vercel.app/images/uploads/I-2/species-I-2_20260904-160800.jpg" loading="lazy" alt="Difenbaquia">
+        <span class="lab"><span class="nm">Difenbaquia</span><span class="tec">trozo de caña · hoy</span></span>
+        <span class="tick">✓</span>
+      </button>
+      <button type="button" class="cell" data-k="B-6" data-nm="Esparraguera">
+        <span class="num">3</span>
+        <img src="https://gardening-chi.vercel.app/images/uploads/B-6/species-B-6_20260904-155308.jpg" loading="lazy" alt="Esparraguera">
+        <span class="lab"><span class="nm">Esparraguera</span><span class="tec">división · hoy</span></span>
+        <span class="tick">✓</span>
+      </button>
+      <button type="button" class="cell" data-k="B-26" data-nm="Romero">
+        <span class="num">4</span>
+        <img src="https://gardening-chi.vercel.app/images/uploads/B-26/species-B-26_20260904-160237.jpg" loading="lazy" alt="Romero">
+        <span class="lab"><span class="nm">Romero</span><span class="tec">estaca · la más fácil</span></span>
+        <span class="tick">✓</span>
+      </button>
+      <button type="button" class="cell" data-k="B-2" data-nm="Jazmín B-2">
+        <span class="num">5</span>
+        <img src="https://gardening-chi.vercel.app/images/uploads/B-2/species-B-2_20260904-155058.jpg" loading="lazy" alt="Jazmín B-2">
+        <span class="lab"><span class="nm">Jazmín B-2</span><span class="tec">hijo al pie</span></span>
+        <span class="tick">✓</span>
+      </button>
+      <button type="button" class="cell" data-k="B-10" data-nm="Lavanda">
+        <span class="num">6</span>
+        <img src="https://gardening-chi.vercel.app/images/uploads/B-10/species-B-10_20260904-155539.jpg" loading="lazy" alt="Lavanda">
+        <span class="lab"><span class="nm">Lavanda</span><span class="tec">estaca sin flor</span></span>
+        <span class="tick">✓</span>
+      </button>
+      <button type="button" class="cell" data-k="B-3" data-nm="Jazmín de leche">
+        <span class="num">7</span>
+        <img src="https://gardening-chi.vercel.app/images/uploads/B-3/species-B-3_20260904-155154.jpg" loading="lazy" alt="Jazmín de leche">
+        <span class="lab"><span class="nm">Jazmín leche</span><span class="tec">estaca · látex</span></span>
+        <span class="tick">✓</span>
+      </button>
+      <button type="button" class="cell" data-k="F-5" data-nm="Coronita">
+        <span class="num">8</span>
+        <img src="https://gardening-chi.vercel.app/images/uploads/F-5/species-F-5_20260904-161051.jpg" loading="lazy" alt="Coronita de novia">
+        <span class="lab"><span class="nm">Coronita</span><span class="tec">brote tierno</span></span>
+        <span class="tick">✓</span>
+      </button>
+      <button type="button" class="cell" data-k="B-27" data-nm="Mirto">
+        <span class="num">9</span>
+        <img src="https://gardening-chi.vercel.app/images/uploads/B-27/species-B-27_20260904-160252.jpg" loading="lazy" alt="Mirto">
+        <span class="lab"><span class="nm">Mirto</span><span class="tec">estaca lenta</span></span>
+        <span class="tick">✓</span>
+      </button>
+    </div>
+    <div class="foot">Las fotos son <b>las tuyas del 4 de septiembre</b>. Abajo, cada una con dónde está y cómo se corta.</div>
+  </div>
+
+  <div class="tonight">
+    <b>Si sólo tenés 15 minutos hoy:</b> hacé las tres primeras. Son de adentro, de noche, sin tijera de podar y sin depender del clima — <b>un vaso de agua, un cuchillo de cocina y una maceta</b>. La 1 tiene raíz en 10 días.
+  </div>
+
+  <section class="sec">
+    <h2>Por qué justo ahora y no en enero</h2>
+    <p class="sub">Tres cosas se juntan esta semana en tu jardín, y no se vuelven a juntar hasta septiembre del año que viene.</p>
+
+    <div class="step">
+      <div class="n">Razón 1 · la savia</div>
+      <h3>La planta ya arrancó, pero todavía no gastó</h3>
+      <p>En septiembre las yemas están hinchadas y la savia subiendo, pero la planta todavía no puso energía en flor ni en fruto. <b>Una estaca cortada ahora tiene reservas y hormona de crecimiento circulando</b> — es lo que necesita para fabricar raíces. En enero la misma rama está gastando todo en florecer y se te seca antes de enraizar.</p>
+    </div>
+
+    <div class="step">
+      <div class="n">Razón 2 · el material</div>
+      <h3>Entre mañana y el jueves vas a tirar el material bueno</h3>
+      <p>Santa Rita, hibisco, lantana, abelia, bignonia, pitósporo: <b>cada una de esas podas te deja entre 20 y 40 ramas del calibre exacto que sirve.</b> No estoy pidiéndote que salgas a cortar de más. Estoy pidiéndote que <b>antes de meter la bolsa en el contenedor, apartes 9 pedazos.</b></p>
+      <div class="ok">De las 9 de la bandeja, <b>6 salen de plantas que no vas a podar esta semana</b> (romero, lavanda, mirto, los dos jazmines, la coronita). Esas sí son 5 minutos de tijera de mano. Las otras 3 son de adentro y no involucran corte de rama.</div>
+    </div>
+
+    <div class="step">
+      <div class="n">Razón 3 · el hueco</div>
+      <h3>De tus 50 especies, 42 son ejemplar único</h3>
+      <p>Lo conté en tu catálogo, agrupando por especie: <b>tenés repuesto de sólo 8 cosas</b> — fotinias (3), azareros (4), pindós (3), hortensias (2), lavandas (2), cintas (2), duraznos (2) y los hijos del jazmín B-2. <b>Las otras 42 son ejemplar único.</b> Si el verano te mata el romero, se murió el romero. Si la Santa Rita agarra un hongo, se fue la Santa Rita. <b>Una estaca en un vaso es el seguro más barato que existe</b> — y en diciembre tenés 9 plantas para regalar, que también cuenta.</p>
+      <div class="ok"><b>Te aclaro la trampa de mi propia bandeja:</b> dos de las nueve <b>sí</b> tienen repuesto — la lavanda (tenés B-10 y B-19) y el jazmín B-2 (con sus dos hijos al pie). Las puse igual y por motivos distintos: <b>la lavanda es la que más se muere de golpe</b> en el primer verano húmedo, y <b>el jazmín es gratis y sin tijera</b>, es la técnica más fácil de las nueve para arrancar. Las otras siete sí son ejemplar único.</div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>El taller: la bandeja en 4 pasos</h2>
+    <p class="sub">Esto es todo el procedimiento. Después de estos 4 pasos, cada planta de abajo sólo agrega su detalle propio.</p>
+
+    <div class="step">
+      <div class="n">Paso 1 · la mezcla</div>
+      <h3>Arena y perlita, no tierra buena</h3>
+      <p>El error clásico: usar la mejor tierra que tenés. <b>Una estaca no tiene raíces, así que no puede comer nada</b> — la tierra rica sólo le trae hongos. Lo que necesita es aire y drenaje.</p>
+      <ul>
+        <li><b>Mitad arena gruesa</b> (la de construcción, lavada) <b>y mitad perlita o turba.</b> Si tenés sólo uno de los dos, arena sola funciona.</li>
+        <li>Vaso plástico de 300 ml con <b>3 agujeros abajo</b> hechos con la punta de la tijera caliente. Uno por estaca, no todas juntas.</li>
+        <li><b>Cero fertilizante.</b> Ni compost, ni humus, ni el azul soluble. Nada.</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <div class="n">Paso 2 · el corte</div>
+      <h3>Dos cortes distintos, arriba y abajo</h3>
+      <p>Esto es lo único que hay que hacer bien. Los dos extremos de la estaca no se cortan igual, y el motivo es concreto: <b>las raíces salen del nudo, no del tallo liso.</b></p>
+      <figure class="dia">
+        <svg viewBox="0 0 320 190" role="img" aria-label="Diagrama de una estaca: corte superior en bisel sobre un nudo, hojas de arriba a la mitad, dos nudos inferiores pelados, corte inferior al ras debajo del nudo">
+          <line x1="150" y1="18" x2="150" y2="172" stroke="#5a8a2e" stroke-width="7" stroke-linecap="round"/>
+          <line x1="128" y1="24" x2="172" y2="14" stroke="#b03a2e" stroke-width="3"/>
+          <path d="M150 44 q34 -16 46 4 q-30 14 -46 -4 Z" fill="#7fae4e"/>
+          <path d="M150 44 q-34 -16 -46 4 q30 14 46 -4 Z" fill="#7fae4e"/>
+          <path d="M150 78 q30 -14 40 3 q-26 12 -40 -3 Z" fill="#7fae4e"/>
+          <circle cx="150" cy="44" r="5" fill="#2d5016"/>
+          <circle cx="150" cy="78" r="5" fill="#2d5016"/>
+          <circle cx="150" cy="116" r="5" fill="#2d5016"/>
+          <circle cx="150" cy="150" r="5" fill="#2d5016"/>
+          <line x1="132" y1="168" x2="168" y2="168" stroke="#b03a2e" stroke-width="3"/>
+          <line x1="150" y1="150" x2="150" y2="172" stroke="#8a6a3a" stroke-width="7" stroke-linecap="round"/>
+          <text x="196" y="20" font-size="10.5" font-weight="700" fill="#7d2f24">corte en bisel,</text>
+          <text x="196" y="32" font-size="10.5" font-weight="700" fill="#7d2f24">1 cm sobre el nudo</text>
+          <text x="196" y="58" font-size="10.5" font-weight="700" fill="#2d5016">hojas de arriba,</text>
+          <text x="196" y="70" font-size="10.5" font-weight="700" fill="#2d5016">cortadas al medio</text>
+          <text x="12" y="112" font-size="10.5" font-weight="700" fill="#5a6b4c">estos dos nudos</text>
+          <text x="12" y="124" font-size="10.5" font-weight="700" fill="#5a6b4c">van PELADOS</text>
+          <text x="12" y="140" font-size="10.5" font-weight="700" fill="#5a6b4c">(van enterrados)</text>
+          <text x="176" y="176" font-size="10.5" font-weight="700" fill="#7d2f24">corte recto, al ras</text>
+          <text x="176" y="188" font-size="10.5" font-weight="700" fill="#7d2f24">justo debajo del nudo</text>
+        </svg>
+        <figcaption>Largo total 10-12 cm · 3 o 4 nudos · los 2 de abajo enterrados</figcaption>
+      </figure>
+      <ul>
+        <li><b>Abajo, corte recto y al ras, justo por debajo de un nudo.</b> Ahí está la mayor concentración de células que pueden convertirse en raíz. Cortar en el medio del entrenudo baja mucho el porcentaje.</li>
+        <li><b>Arriba, corte en bisel 1 cm por encima de un nudo.</b> El bisel escurre el agua de riego y el centímetro de tallo protege la yema.</li>
+        <li><b>Pelá los 2 nudos de abajo</b> (los que van enterrados: hoja enterrada = hoja podrida) y <b>cortá a la mitad las hojas grandes de arriba.</b> Sin raíces no puede reponer lo que transpira, así que le bajás la superficie de transpiración a la mitad.</li>
+        <li><b>Tijera con alcohol de farmacia entre planta y planta.</b> Es el mismo trapo que vas a usar mañana para podar.</li>
+      </ul>
+      <div class="ok"><b>¿Hormona de enraizamiento?</b> No te compres nada. Romero, lavanda, singonio, difenbaquia y la coronita enraízan sin hormona. Sólo el mirto y el jazmín de leche mejoran con ella, y aun así enraízan sin. <b>Si no tenés, hacelas igual.</b></div>
+    </div>
+
+    <div class="step">
+      <div class="n">Paso 3 · dónde va la bandeja</div>
+      <h3>Ni el muro norte ni adentro: el lado este, contra la casa</h3>
+      <p>Acá es donde se pierden la mayoría de las estacas, y tu casa te da la respuesta sola. <b>Tu jardín está alineado casi perfecto este-oeste.</b></p>
+      <ul>
+        <li><b>❌ El muro norte</b> (el del hibisco y el lapachillo) recibe sol todo el día en invierno. Bajo campana plástica, ahí adentro se hacen 45° al mediodía y te cocinás las 9.</li>
+        <li><b>❌ El frente (oeste)</b> es sol de tarde, el más duro y el más seco.</li>
+        <li><b>✅ El fondo, contra la pared de la casa:</b> sol de mañana hasta el mediodía y sombra el resto. <b>Es exactamente lo que quiere una estaca</b> — luz para fotosintetizar, cero horno.</li>
+        <li>Y una pista que ya conocés: <b>ahí es donde están tus plantines de palta desde julio y siguen vivos.</b> Es el mismo lugar.</li>
+      </ul>
+      <p><b>La campana:</b> botella de plástico de 2 L cortada al medio, boca abajo sobre el vaso, <b>con el tapón sacado.</b> Eso te da 90% de humedad y el tapón afuera evita que se pudra. Un minuto por vaso.</p>
+    </div>
+
+    <div class="step">
+      <div class="n">Paso 4 · los 5 errores</div>
+      <h3>Todo lo que mata una estaca, en orden de frecuencia</h3>
+      <ul>
+        <li><b>1. Regar de más.</b> Es el número uno por lejos. La mezcla va <b>húmeda, no mojada</b>: apretás un puñado y no gotea. Bajo campana, casi no se seca — revisá cada 4 o 5 días, no todos los días.</li>
+        <li><b>2. Tirar de la estaca para ver si enraizó.</b> Arrancás las raíces nuevas, que son de vidrio. <b>La señal de que enraizó es un brote nuevo arriba</b>, no la resistencia al tirón. Paciencia.</li>
+        <li><b>3. Sol directo.</b> Bajo campana, media hora de sol de mediodía la cocina. Por eso el lado este.</li>
+        <li><b>4. Fertilizar «para ayudarla».</b> Quema la raíz recién nacida. Recién cuando el vaso esté lleno de raíz, y suave.</li>
+        <li><b>5. Estaca con flor o con botón.</b> Gasta todo en la flor y no le queda nada para raíz. <b>Sacale la flor</b> — esto le pega sobre todo a tu lavanda, que está florecida ahora mismo.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Las 9, una por una</h2>
+    <p class="sub">Dónde está cada una en tu jardín, qué cortar exactamente y cuánto tarda. En el orden de la bandeja.</p>
+
+    <article class="plant" id="p-I-1">
+      <div class="top">
+        <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/I-1/species-I-1_20260904-160744.jpg" loading="lazy" alt="Singonio">
+        <div class="hd">
+          <div class="code">1 · I-1</div>
+          <h3>Singonio / Pata de gallo</h3>
+          <div class="sci">Syngonium podophyllum</div>
+        </div>
+      </div>
+      <div class="where">📍 <b>Dónde:</b> adentro, en la maceta de cerámica turquesa contra la ventana. La de hojas con forma de flecha y vetas plateadas.</div>
+      <p class="rec"><b>Cortá</b> una punta de 12-15 cm que tenga <b>2 nudos</b>. Fijate que en los nudos ya asoma una <b>raicita aérea marrón</b> — con eso ya está medio enraizada. Sacale la hoja de abajo y ponela en <b>un vaso con agua</b>, tapando el nudo. Cambiá el agua cada 3 días. Cuando las raíces midan 3-4 cm, a tierra.</p>
+      <div class="badges"><span class="bd t">Hoy · 3 min</span><span class="bd p">~100% agarra</span><span class="bd d">Raíz en 7-14 días</span></div>
+      <div class="ok">Bonus real: a la madre le viene bien. Al pellizcarle la punta, <b>ramifica y se pone más tupida</b> en vez de seguir estirándose.</div>
+    </article>
+
+    <article class="plant" id="p-I-2">
+      <div class="top">
+        <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/I-2/species-I-2_20260904-160800.jpg" loading="lazy" alt="Difenbaquia">
+        <div class="hd">
+          <div class="code">2 · I-2</div>
+          <h3>Difenbaquia / Caña muda</h3>
+          <div class="sci">Dieffenbachia seguine</div>
+        </div>
+      </div>
+      <div class="where">📍 <b>Dónde:</b> adentro, la de hojas grandes moteadas de crema, con el tallo largo guiado contra la pared.</div>
+      <p class="rec">Esta ya te venía pidiendo poda de rejuvenecimiento: <b>el tallo se peló abajo y todas las hojas quedaron arriba.</b> Se resuelve con la misma tijera que la multiplica. <b>Cortá la punta con 4-5 hojas</b> (esa va a agua o a tierra y es la planta linda), y del tallo pelado que queda <b>cortá trozos de 8 cm, cada uno con al menos un nudo.</b> Dejalos secar 48 h sobre un papel y después acostalos <b>horizontales</b>, medio hundidos en la mezcla. Brotan de la yema del nudo. La madre rebrota desde la base.</p>
+      <div class="warn">⚠️ <b>Guantes, sin excepción.</b> La savia lleva cristales de oxalato de calcio: en la boca paraliza la garganta un rato largo (de ahí «caña muda») y en el ojo es una urgencia. <b>No te toques la cara mientras la manejás, lavá el cuchillo apenas terminás y no dejes los trozos al alcance de nadie.</b></div>
+      <div class="badges"><span class="bd t">Hoy · 10 min</span><span class="bd p">~70% agarra</span><span class="bd d">Brote en 4-8 semanas</span></div>
+    </article>
+
+    <article class="plant" id="p-B-6">
+      <div class="top">
+        <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-6/species-B-6_20260904-155308.jpg" loading="lazy" alt="Esparraguera">
+        <div class="hd">
+          <div class="code">3 · B-6</div>
+          <h3>Esparraguera cola de zorro</h3>
+          <div class="sci">Asparagus densiflorus 'Myers'</div>
+        </div>
+      </div>
+      <div class="where">📍 <b>Dónde:</b> fondo, frente a la cocina. La de «colas» verticales plumosas.</div>
+      <p class="rec"><b>Esta no va por estaca: va por división, y es la única de las 9 que te da plantas terminadas el mismo día.</b> Sacala de la maceta, sacudile la tierra y vas a ver un enredo de <b>tubérculos blancos como papas chicas</b>: ahí están las reservas. Apoyá el cepellón en el piso y <b>partilo en 2 o 3 con un cuchillo de sierra</b>, sin miedo — cada pedazo tiene que llevar tubérculos y algunas colas. A maceta cada uno, riego y a la sombra una semana. <b>Septiembre es el mes: le das todo el verano para rellenar.</b></p>
+      <div class="warn">⚠️ Tiene <b>espinitas finas en los tallos</b> y las <b>bayas rojas son tóxicas</b> si alguien las come. Guantes, y las bayas a la basura, no al pasto.</div>
+      <div class="badges"><span class="bd t">Hoy · 15 min</span><span class="bd p">~100% agarra</span><span class="bd d">Planta lista YA</span></div>
+    </article>
+
+    <article class="plant" id="p-B-26">
+      <div class="top">
+        <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-26/species-B-26_20260904-160237.jpg" loading="lazy" alt="Romero">
+        <div class="hd">
+          <div class="code">4 · B-26</div>
+          <h3>Romero</h3>
+          <div class="sci">Salvia rosmarinus</div>
+        </div>
+      </div>
+      <div class="where">📍 <b>Dónde:</b> fondo, del lado de la cancha de pádel.</div>
+      <p class="rec"><b>La más fácil de las 9 y la que más te conviene tener repuesta</b> (es la que más se muere de golpe por exceso de agua en verano). Buscá <b>brotes de este año: los que son verdes y flexibles, no los marrones y leñosos.</b> Cortá 10-12 cm, pelá los 2 tercios de abajo pasando los dedos al revés — sale solo — y a la mezcla. Podés poner <b>3 estacas en el mismo vaso</b>.</p>
+      <div class="badges"><span class="bd t">5 min</span><span class="bd p">~85% agarra</span><span class="bd d">Raíz en 3-4 semanas</span></div>
+    </article>
+
+    <article class="plant" id="p-B-2">
+      <div class="top">
+        <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-2/species-B-2_20260904-155058.jpg" loading="lazy" alt="Jazmín B-2">
+        <div class="hd">
+          <div class="code">5 · B-2</div>
+          <h3>Jazmín (el de abajo de la Santa Rita)</h3>
+          <div class="sci">Jasminum sp. — variedad sin confirmar</div>
+        </div>
+      </div>
+      <div class="where">📍 <b>Dónde:</b> fondo, <b>al pie de la Santa Rita</b> — la madre está debajo de la trepadora con espinas que vas a podar el miércoles.</div>
+      <p class="rec"><b>Acá no hace falta ni cortar: la planta ya lo hizo por vos.</b> Al pie de la madre tenés dos renuevos (los que en el catálogo figuran como B-2B y B-2C) que brotaron solos. Rascá la tierra alrededor de uno: <b>si tiene raíz propia, es una planta hecha.</b> Cortás el estolón que lo une a la madre con la tijera, lo levantás con su pan de tierra y a maceta. Si al rascar <b>no</b> tiene raíz todavía, no lo arranques: <b>hundile una piedra encima al tallo</b> para que quede en contacto con la tierra y en 6 semanas la echa (eso es un acodo, y es como se propagan los jazmines desde siempre).</p>
+      <div class="badges"><span class="bd t">10 min</span><span class="bd p">~95% agarra</span><span class="bd d">Planta lista YA o en 6 semanas</span></div>
+      <div class="ok">De paso: <b>miércoles estás ahí igual</b>, podando la Santa Rita de arriba. Hacelo en la misma salida.</div>
+    </article>
+
+    <article class="plant" id="p-B-10">
+      <div class="top">
+        <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-10/species-B-10_20260904-155539.jpg" loading="lazy" alt="Lavanda">
+        <div class="hd">
+          <div class="code">6 · B-10</div>
+          <h3>Lavanda dentada</h3>
+          <div class="sci">Lavandula dentata</div>
+        </div>
+      </div>
+      <div class="where">📍 <b>Dónde:</b> fondo, frente a la cocina, al lado de la esparraguera. La gris de hojas dentadas.</div>
+      <p class="rec">Igual que el romero, con <b>una trampa</b>: la <i>dentata</i> florece casi todo el año, así que casi todas las puntas van a tener espiga. <b>Buscá los brotes que NO tengan espiga</b>, y si no encontrás ninguno, cortá igual y <b>arrancale la espiga a mano.</b> Una estaca con flor gasta en la flor y no enraíza. Lo demás igual: 8-10 cm, dos tercios pelados, mezcla bien arenosa (esta odia el pie mojado más que ninguna).</p>
+      <div class="badges"><span class="bd t">5 min</span><span class="bd p">~70% agarra</span><span class="bd d">Raíz en 4-6 semanas</span></div>
+    </article>
+
+    <article class="plant" id="p-B-3">
+      <div class="top">
+        <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-3/species-B-3_20260904-155154.jpg" loading="lazy" alt="Jazmín de leche">
+        <div class="hd">
+          <div class="code">7 · B-3</div>
+          <h3>Jazmín de leche / estrellado</h3>
+          <div class="sci">Trachelospermum jasminoides</div>
+        </div>
+      </div>
+      <div class="where">📍 <b>Dónde:</b> fondo, frente al dormitorio. La trepadora de hoja brillante que en octubre perfuma todo.</div>
+      <p class="rec">Cortá <b>tramos de guía de este año</b>: los que ya no son verdes tiernos pero todavía no son madera dura — se doblan y no se quiebran. 12-15 cm, 3-4 nudos.</p>
+      <div class="warn">⚠️ <b>Va a largar látex blanco por el corte, y es tóxico</b> (es pariente de la adelfa, no un jazmín de verdad). <b>Metelas 10 minutos en un vaso de agua apenas las cortás</b>: además de lavarte las manos, eso corta el sangrado — si el látex sella el corte, no enraíza. Después sí, a la mezcla.</p>
+      <div class="badges"><span class="bd t">8 min</span><span class="bd p">~65% agarra</span><span class="bd d">Raíz en 6-8 semanas</span></div>
+    </article>
+
+    <article class="plant" id="p-F-5">
+      <div class="top">
+        <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/F-5/species-F-5_20260904-161051.jpg" loading="lazy" alt="Coronita de novia">
+        <div class="hd">
+          <div class="code">8 · F-5</div>
+          <h3>Coronita de novia</h3>
+          <div class="sci">Spiraea cantoniensis — a confirmar</div>
+        </div>
+      </div>
+      <div class="where">📍 <b>Dónde:</b> frente (oeste), del lado del vecino. El arbusto bajo de hojitas chicas grisáceas.</div>
+      <p class="rec">Está por florecer en octubre, así que <b>ahora mismo está llena de brotes tiernos: es el material perfecto.</b> Cortá puntas de 10 cm de brote nuevo, sin botón floral. Es de las que enraízan rápido y de las pocas de tu jardín que <b>enraízan mejor tiernas que maduras.</b></p>
+      <div class="warn">🔎 <b>Y de paso te resuelvo una duda del catálogo:</b> esta figura como «a confirmar». Si en octubre te tira <b>ramas arqueadas cubiertas de racimos blancos como pompones</b>, es <i>Spiraea cantoniensis</i> y la confirmo. <b>Mandame esa foto cuando pase</b> y le saco el signo de pregunta.</div>
+      <div class="badges"><span class="bd t">5 min</span><span class="bd p">~80% agarra</span><span class="bd d">Raíz en 3-5 semanas</span></div>
+    </article>
+
+    <article class="plant" id="p-B-27">
+      <div class="top">
+        <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-27/species-B-27_20260904-160252.jpg" loading="lazy" alt="Mirto">
+        <div class="hd">
+          <div class="code">9 · B-27</div>
+          <h3>Mirto común</h3>
+          <div class="sci">Myrtus communis</div>
+        </div>
+      </div>
+      <div class="where">📍 <b>Dónde:</b> fondo, del lado de la cancha de pádel, cerca del romero. Hojas chicas brillantes que huelen fuerte al frotarlas.</div>
+      <p class="rec"><b>La más lenta de las nueve, y la pongo última a propósito:</b> si te sale ésta, ya sabés hacer estacas de cualquier cosa. Truco propio de las difíciles: <b>en vez de cortar la ramita, arrancala hacia abajo de un tirón</b> para que se lleve un pedacito de corteza de la rama madre (eso se llama «talón» y es de donde salen las raíces). Emprolijá el talón con la tijera y a la mezcla. <b>Acá sí, si tenés hormona, usala.</b></p>
+      <div class="badges"><span class="bd t">8 min</span><span class="bd p">~50% agarra</span><span class="bd d">Raíz en 8-12 semanas</span></div>
+      <div class="ok">Poné <b>dos o tres</b> de ésta. Con 50%, una sola es media planta.</div>
+    </article>
+  </section>
+
+  <section class="sec">
+    <h2>Qué va a pasar, y cuándo</h2>
+    <p class="sub">Para que no la revises todos los días ni la des por muerta antes de tiempo.</p>
+    <table class="cal">
+      <tr><th>Cuándo</th><th>Qué mirás</th></tr>
+      <tr><td>Día 3</td><td>Nada. Alguna hoja se puede caer: es normal, no es fracaso.</td></tr>
+      <tr><td>Semana 2</td><td>El singonio ya tiene raíces blancas visibles en el agua. Lo demás, quieto.</td></tr>
+      <tr><td>Semana 4</td><td>Romero y coronita: <b>brote nuevo arriba</b> = enraizó. Sacá la campana de esos dos.</td></tr>
+      <tr><td>Semana 8</td><td>Lavanda y jazmín de leche. La difenbaquia asoma el brote del nudo.</td></tr>
+      <tr><td>Semana 12</td><td>Mirto, si salió. Acá ya sabés el resultado final.</td></tr>
+      <tr><td>Diciembre</td><td>Trasplante a maceta definitiva <b>sólo las que llenaron el vaso de raíz.</b></td></tr>
+    </table>
+    <div class="tonight" style="margin-top:12px"><b>Yo te lo recuerdo.</b> Si prendés uno de los slots de acá abajo, en la semana 4 te aviso qué tocaba mirar, sin que te acuerdes vos.</div>
+  </section>
+
+  <section class="sec">
+    <h2>Los talleres anteriores</h2>
+    <p class="sub">Vos prendiste <b>El Taller</b> en agosto y quedó recurrente, así que va acá adentro y no como notificación aparte — una sola push por vez, como pediste.</p>
+    <div class="grouped">
+      <a href="https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html">🔧 El Taller nº1 — el corte que decide el árbol<span>El que aprobaste. Los 7 pasos de la poda de formación, con los errores anticipados.</span></a>
+      <a href="https://gardening-chi.vercel.app/engage/2026-08-03-el-taller-2.html">🔧 El Taller nº2 — herida, cicatriz y cuándo NO cortar<span>Lo hiciste entero (7 de 7) pero nunca me dijiste qué te pareció.</span></a>
+      <a href="https://gardening-chi.vercel.app/engage/2026-08-24-el-taller-3.html">🔧 El Taller nº3 — las paltas<span>Quedó a mitad de camino porque estabas de viaje. Te toca el jueves 10, con la poda ligera de B-22 y B-36.</span></a>
+    </div>
+  </section>
+
+  <section class="slots" id="slots">
+    <h3>📅 ¿En qué momento te sirve que vuelva?</h3>
+    <p>Estos son los dos únicos horarios en que te mando experiencias. <b>Prendé el que te sirva y esta serie vuelve ahí, con contenido nuevo.</b> Si no prendés ninguno, no vuelve — y no pasa nada.</p>
+    <div class="slot">
+      <div class="nm">🌙 Lunes 18:00</div>
+      <div class="ds">Arranque de semana, para leer y planificar lo que viene. <b>Es el horario de hoy.</b></div>
+      <div class="btns">
+        <button type="button" class="yes" onclick="engageAnswer('bandeja-slot-lun18','si',this)">✅ Sí, este</button>
+        <button type="button" onclick="engageAnswer('bandeja-slot-lun18','no',this)">✕ Este no</button>
+      </div>
+      <div class="hint"></div>
+    </div>
+    <div class="slot">
+      <div class="nm">☀️ Sábado 11:00</div>
+      <div class="ds">Media mañana del finde, con tiempo y con la planta adelante.</div>
+      <div class="btns">
+        <button type="button" class="yes" onclick="engageAnswer('bandeja-slot-sab11','si',this)">✅ Sí, este</button>
+        <button type="button" onclick="engageAnswer('bandeja-slot-sab11','no',this)">✕ Este no</button>
+      </div>
+      <div class="hint"></div>
+    </div>
+  </section>
+
+  <div class="react">
+    <p>¿Cómo te cayó esta?</p>
+    <div class="btns">
+      <button type="button" onclick="engageReact('2026-09-07-la-bandeja','love',this)" aria-label="Me encantó">😍</button>
+      <button type="button" onclick="engageReact('2026-09-07-la-bandeja','ok',this)" aria-label="Está bien">🙂</button>
+      <button type="button" onclick="engageReact('2026-09-07-la-bandeja','meh',this)" aria-label="Meh">😐</button>
+      <button type="button" onclick="engageReact('2026-09-07-la-bandeja','no',this)" aria-label="No">🙅</button>
+    </div>
+    <span class="hint"></span>
+  </div>
+
+  <section class="fb-blk" id="engage-feedback-box">
+    <h3>💬 Decime qué te pareció</h3>
+    <p>Esto lo leo yo, el agente del jardín, antes de armar la próxima. Si algo está mal, si querés otra cosa, o si una planta no es la que pensás: escribilo acá y lo ejecuto.</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('2026-09-07-la-bandeja', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <div class="engage-actions">
+    <button onclick="engageApprove('2026-09-07-la-bandeja')">✅ Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-09-07-la-bandeja')">✕ No me interesa</button>
+  </div>
+
+  <footer class="pie">
+    <a href="https://gardening-chi.vercel.app/engage/2026-09-07-la-bandeja-pitch.html">Cómo se monetiza esto →</a><br><br>
+    Armado el 07/09/2026 · las 9 fotos son tuyas, del 4 de septiembre · las 51 especies y los datos de floración salen de tu catálogo · «42 sin repuesto» = agrupando tus 51 fichas por especie quedan 50 especies, y 42 figuran con un solo ejemplar · porcentajes de enraizamiento: rangos típicos de propagación de estas especies, no medidos en tu jardín — <b>los vamos a medir con esta bandeja.</b>
+  </footer>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var KEY = 'jardineando_bandeja_2026_09_v1';
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; } }
+  function save(s){ try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){} }
+  var state = load();
+  var cells = [].slice.call(document.querySelectorAll('.cell'));
+  var cnt = document.getElementById('cnt');
+
+  function paint(){
+    var n = 0;
+    cells.forEach(function(c){
+      var on = !!state[c.dataset.k];
+      c.classList.toggle('on', on);
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (on) n++;
+    });
+    cnt.textContent = n === 0 ? '0 de 9 puestas'
+      : (n === 9 ? '🎉 las 9 puestas' : n + ' de 9 puestas');
+  }
+
+  cells.forEach(function(c){
+    c.setAttribute('aria-pressed','false');
+    c.addEventListener('click', function(){
+      var k = c.dataset.k;
+      state[k] = !state[k];
+      if (!state[k]) delete state[k];
+      save(state);
+      paint();
+      // señal para el agente: qué estacas puso de verdad
+      try{
+        if (window.engageAnswer && state[k]) {
+          window.engageAnswer('bandeja-' + k, 'puesta', document.createElement('button'));
+        }
+      }catch(e){}
+    });
+  });
+
+  paint();
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>
