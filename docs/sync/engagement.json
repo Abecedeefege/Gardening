@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-07T09:17:08.770426Z",
+  "_updated_at": "2026-09-07T11:34:28.881Z",
   "events": [
     {
       "_id": "mtlnwrmt27x2lq",
@@ -470,6 +470,24 @@
       "scroll_pct": 0,
       "page": "engage/puesta-al-dia.html",
       "ts": "2026-09-06T20:31:45.997Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtnfqccaz3cl6g",
+      "type": "page_visit",
+      "page": "engage/puesta-al-dia.html",
+      "nid": null,
+      "src": "direct",
+      "ts": "2026-09-04T20:57:23.193Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtnfqkkx50ame2",
+      "type": "dwell",
+      "seconds": 11,
+      "scroll_pct": 2,
+      "page": "engage/puesta-al-dia.html",
+      "ts": "2026-09-04T20:57:33.873Z",
       "device": "sin-nombre"
     }
   ],
