@@ -1400,6 +1400,15 @@
       "uploaded_by": "pix9",
       "context": "species",
       "ai_status": "n/a"
+    },
+    {
+      "filename": "species-B-30_20260908-200754.jpg",
+      "uploaded_at": "2026-09-08T20:07:54.542Z",
+      "uploaded_by": "pix9",
+      "context": "species",
+      "ai_status": "n/a",
+      "via": "api",
+      "note": "Algunas hojas parecen algo arrugadas, está bien?"
     }
   ],
   "B-1": [
