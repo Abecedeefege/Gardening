@@ -1108,7 +1108,7 @@
       "notified_by": [
         "2026-09-07-la-bandeja"
       ],
-      "result_notes": null
+      "result_notes": "Al 08/09: CERO senal registrada (0 visitas, 0 ticks 'bandeja-<code>', 0 reaccion, 0 slot, 0 feedback). NO se cierra ni se descarta todavia, por dos motivos medidos: (1) la push salio +75 min tarde (22:15:10Z contra send_at 21:00Z), aterrizando 19:15 local en vez de 18:00; (2) engagement.json flushea con hasta 2,5 dias de atraso (los eventos del 04/09 20:57 llegaron el 07/09 08:34). Queda PENDING: no recurre sin aprobacion, pero el veredicto sobre el formato 'objeto que se llena' se lee el jueves 10/09, no hoy."
     }
   ],
   "_updated_at": "2026-09-05T09:25:00.000Z",

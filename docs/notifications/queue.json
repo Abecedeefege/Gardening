@@ -1,32 +1,5 @@
 {
-  "_updated_at": "2026-09-07T22:15:10.611Z",
-  "_nota": "LUNES 07/09 — dia con LOS DOS slots de la cadencia semanal (tarea 10:00 + experiencia 18:00). Se limpio la entry del 06/09 (ya enviada, queda en send_log). CLIMA reconsultado hoy 06:05 -03:00, 2 modelos (ECMWF ifs025 + GFS seamless): la apuesta del 05/09 quedo PARTIDA. GANE la lluvia y por mas de lo prometido (mar 0,0/0,0 · mie 0,0/0,0 · jue 0,2/0,0 mm — el jueves en disputa cayo de 1,5 a 0,2). PERDI las minimas: prometi 'ninguna baja de 6' y ECMWF da 3,1 el martes y 4,5 el miercoles al amanecer (GFS 6,0 y 7,8). Se publica la derrota en la pagina y se convierte en instruccion util: salir DESPUES de las 10, no al amanecer. Miercoles 9 = mejor dia de la semana (max 18,3/18,9 y el mas calmo, 9 km/h). Viernes 11 cierra (0,1/1,8 mm + rafagas 24-30). PUSH 1 (tarea, 10:00): puesta-al-dia ed.6 — no es lista nueva, es el REPARTO de los 8 cortes en los 3 dias secos. PUSH 2 (experiencia, 18:00): la original nueva del slot = 2026-09-07-la-bandeja.html, con El Taller (unica aprobada) agrupado ADENTRO. Una sola push por slot, sin entries separadas.",
-  "notifications": [
-    {
-      "id": "2026-09-07-puesta-al-dia-ed6",
-      "title": "✂️ Mañana abrís la tijera: 3 días",
-      "body": "Le puse día a cada uno de los 8 cortes: martes los rústicos, miércoles los friolentos, jueves las paltas.",
-      "url": "https://gardening-chi.vercel.app/engage/puesta-al-dia.html",
-      "format": "tarea",
-      "send_at": "2026-09-07T10:00:00-03:00",
-      "expires_at": "2026-09-07T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-09-07T15:48:11.351Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-09-07"
-    },
-    {
-      "id": "2026-09-07-la-bandeja",
-      "title": "🌱 42 de tus 50 no tienen repuesto",
-      "body": "Esta semana tirás 40 ramas que enraízan solas. Bandeja de 9: tres se hacen hoy, adentro, en 15 minutos.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-09-07-la-bandeja.html",
-      "format": "experiencia",
-      "send_at": "2026-09-07T18:00:00-03:00",
-      "expires_at": "2026-09-07T22:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-09-07T22:15:10.610Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-09-07"
-    }
-  ]
+  "_updated_at": "2026-09-08T09:40:00-03:00",
+  "_nota": "Martes 08/09: dia SIN slot por cadencia (tarea Lun/Jue/Sab 10:00; experiencia Lun 18:00 / Sab 11:00). 0 push encoladas a proposito. Proximo slot: jueves 10/09 10:00 (tarea).",
+  "notifications": []
 }

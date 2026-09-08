@@ -15,17 +15,33 @@ on:
     # la push de las 10:00 (send_at 13:00Z) salio 17:23Z — 4 h 23 min tarde,
     # aterrizando 14:23 local. Un slot fijo que llega 4 h tarde rompe la
     # promesa horaria y el contenido atado al momento del dia.
-    - cron: '7,22,37,52 10-23 * * *'
-    # Medicion del 03/09/2026, ya con los minutos desplazados: la misma push
-    # de las 10:00 salio 14:29Z — +89 min. Mejor que +4 h 23, pero el slot
-    # sigue roto. Conclusion: no es el minuto elegido, es que GitHub difiere
-    # y DESCARTA corridas cron bajo carga (13:00Z es hora pico). Contra eso
-    # no alcanza con elegir mejor el tick: hay que (a) tener mas ticks en la
-    # hora PREVIA a cada slot y (b) hacer que el run que si arranca ESPERE al
-    # minuto exacto en vez de mandar tarde (ver paso "Esperar al slot").
-    # Horas previas a los 3 slots fijos: 12Z (tarea 10:00), 13Z (experiencia
-    # sabado 11:00), 20Z (experiencia lunes 18:00).
-    - cron: '2,12,22,32,42,52 12,13,20,21 * * *'
+    #
+    # MEDICION 08/09/2026 sobre las 19 corridas scheduled del 05 al 07/09
+    # (ver learnings.md). Lo que pasa de verdad NO es que GitHub elija mal el
+    # minuto: es que ignora la enorme mayoria de los ticks declarados.
+    #   - Gap real entre corridas: media 95 min, maximo 168 min, minimo 21.
+    #     Declaramos hasta 10 ticks/hora y sale ~1 cada hora y media.
+    #   - Peor: la PRIMERA corrida del dia nunca cae al abrir la ventana.
+    #     Con el cron abriendo 10:00Z, la primera efectiva fue 13:25Z (05/09),
+    #     13:38Z (06/09) y 15:47Z (07/09) — o sea 3 h 25 a 5 h 47 despues.
+    #     El slot de tarea vive 13:00Z: caia SIEMPRE en ese pozo inicial.
+    #     Por eso el lunes 07/09 la push de las 10:00 salio 12:48 local (+168
+    #     min) y la de las 18:00 salio 19:15 (+75 min).
+    # Dos correcciones, dimensionadas con esos numeros:
+    #  (a) ABRIR LA VENTANA MUCHO ANTES (05Z en vez de 10Z). No manda nada
+    #      antes de hora — send_push.js solo despacha lo vencido (send_at <=
+    #      now) — pero corre el pozo inicial de GitHub de 5 h 47 hasta ~10:50Z,
+    #      dejando ticks disponibles antes del slot de las 13:00Z.
+    #  (b) SUBIR EL TOPE DE ESPERA a 200 min > el gap maximo medido (168).
+    #      Asi el primer tick que arranque dentro de las ~3 h previas se
+    #      queda esperando y entrega en el minuto exacto (ver "Esperar al
+    #      slot"). Repo publico = minutos de runner gratis: la espera no
+    #      cuesta nada y compra puntualidad.
+    - cron: '7,22,37,52 5-23 * * *'
+    # Densidad extra en las horas previas a los 3 slots fijos: 12Z (tarea
+    # 10:00), 13Z (experiencia sabado 11:00), 20Z (experiencia lunes 18:00).
+    # Con (a) y (b) esto ya es redundancia, no el mecanismo principal.
+    - cron: '2,12,22,32,42,52 10,11,12,13,19,20,21 * * *'
   workflow_dispatch: {}
   # El cron de GitHub deriva/saltea corridas (12/06: 100 min sin tick).
   # Trigger por push a la cola: cuando el agente encola, se despacha al
@@ -62,27 +78,42 @@ jobs:
       # Un tick que arranca ANTES del slot no tiene que mandar temprano ni
       # irse: se queda esperando el minuto exacto. Asi, cualquier corrida que
       # logre arrancar dentro de la ventana previa entrega puntual, aunque
-      # GitHub haya descartado los ticks siguientes. Tope 40 min para no
-      # ocupar el runner de gusto (el grupo de concurrency es de este mismo
-      # workflow, y el run que espera es justo el que va a mandar).
+      # GitHub haya descartado los ticks siguientes.
+      #
+      # Tope 200 min (era 40): el gap maximo medido entre corridas reales es
+      # de 168 min, con media de 95. Con 40 min de tope, la probabilidad de
+      # que un tick cayera dentro de la ventana era ~40/95 = 42 %, y para el
+      # slot de las 13:00Z era ~0 % porque la primera corrida del dia nunca
+      # llegaba antes de las 13:25Z. Con 200 > 168 alcanza con que arranque
+      # UNA corrida en las 3 h previas — y con la ventana abriendo a las 05Z
+      # hay varias. Repo publico: el runner en sleep no consume cuota.
+      #
+      # Guarda: si YA hay algo vencido, no se espera nada — se manda ahora y
+      # el proximo tick se ocupa del slot futuro. Sin esta guarda, una push
+      # atrasada quedaba retenida hasta 3 h mas por esperar a la siguiente.
       - name: Esperar al slot si esta inminente
         run: |
           SECS=$(node -e '
             const q = require("./docs/notifications/queue.json");
-            const MAX = 40 * 60 * 1000;
+            const MAX = 200 * 60 * 1000;
             const now = Date.now();
-            const waits = (q.notifications || [])
+            const pending = (q.notifications || [])
               .filter(n => n.status === "pending" && n.send_at)
-              .filter(n => !n.expires_at || Date.parse(n.expires_at) > Date.parse(n.send_at))
-              .map(n => Date.parse(n.send_at) - now)
-              .filter(ms => ms > 0 && ms <= MAX);
-            console.log(waits.length ? Math.ceil(Math.min(...waits) / 1000) : 0);
+              .filter(n => !n.expires_at || Date.parse(n.expires_at) > now);
+            // Algo ya vencido -> mandar ya, no esperar.
+            if (pending.some(n => Date.parse(n.send_at) <= now)) { console.log(0); }
+            else {
+              const waits = pending
+                .map(n => Date.parse(n.send_at) - now)
+                .filter(ms => ms > 0 && ms <= MAX);
+              console.log(waits.length ? Math.ceil(Math.min(...waits) / 1000) : 0);
+            }
           ')
           if [ "$SECS" -gt 0 ]; then
-            echo "Slot inminente: esperando ${SECS}s para entregar en horario."
+            echo "Slot inminente: esperando ${SECS}s ($((SECS / 60)) min) para entregar en horario."
             sleep "$SECS"
           else
-            echo "Sin slot inminente — sigo derecho."
+            echo "Sin slot inminente (o hay algo ya vencido) — sigo derecho."
           fi
 
       - name: Health check del backend (token del servidor)
