@@ -62,6 +62,10 @@ permissions:
 jobs:
   dispatch:
     runs-on: ubuntu-latest
+    # El paso "Esperar al slot" puede dormir hasta 330 min (ver abajo).
+    # El default de GitHub son 360; se fija explicito para que quede claro
+    # que la espera larga es intencional y entra con margen.
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
         with:
@@ -91,11 +95,36 @@ jobs:
       # Guarda: si YA hay algo vencido, no se espera nada — se manda ahora y
       # el proximo tick se ocupa del slot futuro. Sin esta guarda, una push
       # atrasada quedaba retenida hasta 3 h mas por esperar a la siguiente.
+      # MEDICION 09/09/2026 — EL HALLAZGO QUE CAMBIA EL MECANISMO PRINCIPAL.
+      # Se compararon las corridas por `schedule` contra las por `push`:
+      #   schedule -> la ventana nueva abrio 05:07Z y a las 09:15Z todavia no
+      #     habia corrido NINGUNA (ultima: 00:41Z). La correccion (a) del 08/09
+      #     no elimino el pozo: la primera corrida del dia sigue cayendo
+      #     13:25-15:47Z, siempre DESPUES del slot de las 13:00Z.
+      #   push     -> latencia medida commit -> run_started_at:
+      #     eea6f5d +7 s · 1e66047 +10 s · 715f371 +7 s · b8e6074 +4 s.
+      #     4 de 4 por debajo de 10 segundos.
+      # O sea: el trigger `push` sobre queue.json (que ya existia) es la unica
+      # via de entrega deterministica, y se estaba desperdiciando porque el
+      # tope de espera la dejaba afuera.
+      #
+      # POR ESO EL TOPE AHORA DEPENDE DEL EVENTO (env WAIT_CAP_MIN):
+      #  - push (el agente acaba de encolar): 330 min. El agente corre ~09:20Z
+      #    y el slot de tarea vive 13:00Z = 220 min. Con 200 se quedaba a 20
+      #    min de cubrirlo; con 330 la corrida que arranca a los 7 segundos de
+      #    su propio commit duerme y entrega en el minuto exacto, sin depender
+      #    del cron. Tambien cubre el slot del sabado (14:00Z = 280 min).
+      #  - schedule (redundancia): 200 min, como estaba. Alcanza de sobra para
+      #    los slots de tarde/noche (21:00Z tiene corridas desde las 17:33Z) y
+      #    evita que un tick del mediodia bloquee el grupo de concurrencia
+      #    media jornada retrasando un push `-reply-*` de /responder-tareas.
       - name: Esperar al slot si esta inminente
+        env:
+          WAIT_CAP_MIN: ${{ github.event_name == 'push' && '330' || '200' }}
         run: |
           SECS=$(node -e '
             const q = require("./docs/notifications/queue.json");
-            const MAX = 200 * 60 * 1000;
+            const MAX = Number(process.env.WAIT_CAP_MIN || 200) * 60 * 1000;
             const now = Date.now();
             const pending = (q.notifications || [])
               .filter(n => n.status === "pending" && n.send_at)
@@ -110,11 +139,23 @@ jobs:
             }
           ')
           if [ "$SECS" -gt 0 ]; then
-            echo "Slot inminente: esperando ${SECS}s ($((SECS / 60)) min) para entregar en horario."
+            echo "Slot inminente: esperando ${SECS}s ($((SECS / 60)) min) para entregar en horario (tope ${WAIT_CAP_MIN} min, evento ${GITHUB_EVENT_NAME})."
             sleep "$SECS"
           else
             echo "Sin slot inminente (o hay algo ya vencido) — sigo derecho."
           fi
+
+      # Mientras esta corrida dormia puede haber entrado algo nuevo a la cola
+      # (tipico: un push `-reply-*` de /responder-tareas), y el grupo de
+      # concurrencia impide que su propia corrida arranque hasta que esta
+      # termine. Refrescando el checkout antes de mandar, esta corrida se hace
+      # cargo tambien de eso en vez de dejarlo esperando.
+      # `reset --hard` NO borra untracked: tools/node_modules sobrevive.
+      - name: Refrescar la cola despues de la espera
+        run: |
+          git fetch origin main --quiet
+          git reset --hard origin/main --quiet
+          echo "Cola en $(git rev-parse --short HEAD)."
 
       - name: Health check del backend (token del servidor)
         run: node tools/health_check.js

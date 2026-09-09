@@ -298,7 +298,23 @@
     "2026-09-05": {
       "sent": 0,
       "_nota": "Se completa al despachar: 2 encoladas (jardin-hoy 13:00Z, el-porton 14:00Z)."
+    },
+    "2026-09-06": {
+      "sent": 1,
+      "_nota": "puesta-al-dia ed.4 por pedido escrito del usuario (domingo sin slot). send_at 11:00Z -> sent 11:05:01Z (+5 min): salio puntual porque el commit del agente disparo el trigger de push."
+    },
+    "2026-09-07": {
+      "sent": 2,
+      "_nota": "LOS DOS SLOTS, LOS DOS TARDE. ed.6 send_at 13:00Z -> 15:48:11Z (+168 min). la-bandeja send_at 21:00Z -> 22:15:10Z (+75 min). Las dos 201, cero eventos."
+    },
+    "2026-09-08": {
+      "sent": 0,
+      "_nota": "Martes sin slot: 0 envios. Se corrigio el cron (ventana 05Z, tope de espera 200 min)."
+    },
+    "2026-09-09": {
+      "sent": 0,
+      "_nota": "Miercoles sin slot: 0 envios. MEDICION QUE REFUTA LA CORRECCION DE AYER: la ventana nueva abrio 05:07Z y a las 09:15Z no habia corrido NINGUNA scheduled (ultima 00:41Z). El pozo inicial no se movio con la ventana. Contramedida nueva: la entrega deja de depender del cron y pasa al trigger `push` sobre queue.json, cuya latencia medida commit->run es de 4-10 s en 4 de 4 casos."
     }
   },
-  "_updated_at": "2026-09-07T09:17:08.770426Z"
+  "_updated_at": "2026-09-09T09:40:00-03:00"
 }

@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-08T09:40:00-03:00",
+  "_updated_at": "2026-09-09T09:40:00-03:00",
   "events": [
     {
       "_id": "mtlnwrmt27x2lq",
@@ -1118,6 +1118,24 @@
       "feedback_text": 0,
       "reactions": 0,
       "_nota": "LUNES CON LOS DOS SLOTS Y CERO SENAL REGISTRADA. Las 2 push salieron 201 (puesta-al-dia ed.6 + la-bandeja) y no hay un solo evento: ni click, ni visita, ni tick de bandeja, ni feedback. El ultimo evento de cualquier tipo sigue siendo el dwell del 06/09 20:31Z y la ultima escritura suya de task_states es del 06/09 11:39Z. CONFUSOR MEDIDO Y GRANDE — ENTREGA TARDIA EN LOS DOS SLOTS: ed.6 send_at 13:00Z / sent_at 15:48:11Z = +168 min (aterrizo 12:48 local, no 10:00); la-bandeja send_at 21:00Z / sent_at 22:15:10Z = +75 min (19:15 local, no 18:00). Causa encontrada hoy midiendo las 19 corridas scheduled del 05 al 07/09: GitHub ignora casi todos los ticks declarados (gap real medio 95 min, maximo 168) y la PRIMERA corrida de cada dia nunca cayo antes de las 13:25Z (13:25 / 13:38 / 15:47), justo despues del slot de las 13:00Z. SEGUNDO CONFUSOR: engagement.json flushea tarde — los 2 eventos del 04/09 20:57 recien llegaron el 07/09 08:34 local (2,5 dias). O sea que 'cero eventos' hoy NO prueba todavia que no abrio. RE-VERIFICAR EL JUEVES 10 antes de dar por muerto el formato bandeja."
+    },
+    "2026-09-08": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "answers": 0,
+      "feedback_text": 0,
+      "_nota": "Martes sin slot: 0 push por cadencia. Mantenimiento + correccion (a)/(b) del dispatcher y puesta-al-dia ed.7 (apuesta saldada, sin push). SI hubo actividad suya en el jardin, fuera de la app hasta la noche: subio 2 fotos de especie de B-30 (durazno) a las 20:07 y 20:08Z desde pix9 via /api/tarea. Son las primeras fotos que sube desde el 04/09."
+    },
+    "2026-09-09": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "answers": 0,
+      "feedback_text": 0,
+      "_nota": "Miercoles sin slot: 0 push por cadencia. Sigue sin llegar un solo evento de las 2 push del lunes 07/09 (ultimo evento de cualquier tipo: dwell 06/09 20:31Z) — pero hoy se encontro la causa estructural y NO es el contenido (ver send_log y learnings): la entrega depende de un cron que GitHub corre 3-6 h tarde. Sus 2 fotos de B-30 de anoche SI son senal: hay torque del duraznero (Taphrina deformans) en el brote nuevo. Es la municion del jueves 10."
     }
   }
 }

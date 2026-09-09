@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-08T09:40:00-03:00",
-  "_nota": "Martes 08/09: dia SIN slot por cadencia (tarea Lun/Jue/Sab 10:00; experiencia Lun 18:00 / Sab 11:00). 0 push encoladas a proposito. Proximo slot: jueves 10/09 10:00 (tarea).",
+  "_updated_at": "2026-09-09T09:40:00-03:00",
+  "_nota": "Miercoles 09/09: dia SIN slot por cadencia (tarea Lun/Jue/Sab 10:00; experiencia Lun 18:00 / Sab 11:00). 0 push encoladas a proposito. Proximo slot: jueves 10/09 10:00 (tarea) — y es el primero que se entrega por el trigger de push del propio commit del agente, no por cron.",
   "notifications": []
 }
