@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-10T06:25:00-03:00",
+  "_updated_at": "2026-09-10T13:00:03.576Z",
   "_nota": "JUEVES 10/09 — dia con UN solo slot segun la cadencia vigente (tarea 10:00; la experiencia es Lun 18:00 / Sab 11:00). MOTOR DEL DIA: el 08/09 a las 20:07Z el usuario subio 2 fotos de especie a la ficha del Durazno B-30 con una pregunta escrita en el campo note: «Algunas hojas parecen algo arrugadas, esta bien?». Se miraron las imagenes originales: es TORQUE / abolladura del duraznero (Taphrina deformans) — hoja del brote nuevo engrosada, ampollada, ondulada, con borde rojizo-anaranjado; la 2a foto muestra ademas la floracion rosada abierta (confirma flowering [8,9] con foto suya). La respuesta honesta es que la ventana curativa de esta temporada ya cerro. HALLAZGO DE FONDO: la ficha del durazno tenia UNA sola fecha de cobre (otonio) y son DOS — falta la de yema hinchada, fines de julio, que es la que realmente frena el torque. El usuario habia hecho bien su parte (marco la de otonio hecha el 02/05). El error era mio: por eso se agrego la urgency nueva plant-B-30-3 (alta, jul-2027) y se corrigio la nº1 de abril a mayo 2027. Ademas VENCE HOY la apuesta escrita del portan (05/09): «del martes 8 al jueves 10 no te llueve y ninguna madrugada baja de 6°» -> minimas observadas 6,4 / 7,8 / 9,8 = ganada 3 de 3; lluvia 0,0 / 0,0 / 0,9 mm y hoy llueve = PERDIDA en el ultimo dia. Se liquida entera en la pagina, con la correccion a favor del usuario: el viernes 11, que yo daba por perdido con 2,6 mm y rafagas de 48, ahora los dos modelos lo dan SECO (0,0 mm, 15,8-16,0°, rafagas 30-36). CLIMA (ECMWF + GFS cruzados, 06:20 -03:00): hoy 1,6-5,7 mm / 76-94% / max 18,3; vie 11 seco y templado (EL dia de tijera); sab 12 max 12,2 con rafagas 36-48; dom 13 seco pero amanece en 4,2 (ECMWF). De ahi las dos tareas de manana: B-1 santa rita (alta, condicion «pasada la ultima helada» YA CUMPLIDA — ninguna madrugada bajo de 6,4) y F-2 podranea (media, ficha dice «YA»), las dos florecen en madera nueva. Se FRENA explicitamente la lantana B-29 (su foto la muestra con hoja verde hasta abajo y flor en las puntas: no esta lenosa, no corre riesgo esperando) — credibilidad sobre relleno. Auditoria de layout: primer control de accion al 16,8% renderizado en Chromium 390x780 (mejor medicion hasta la fecha; el techo operativo es 35%). ENTREGA: este commit toca queue.json y por lo tanto dispara el trigger `push` de push-dispatch.yml (latencia medida 4-10 s), que con WAIT_CAP_MIN=330 duerme hasta las 13:00Z y entrega en el minuto exacto sin depender del cron. Es la prueba de la prediccion falsable anotada ayer en learnings.",
   "notifications": [
     {
@@ -10,8 +10,8 @@
       "format": "tarea",
       "send_at": "2026-09-10T10:00:00-03:00",
       "expires_at": "2026-09-10T22:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-09-10T13:00:03.575Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-09-10"
     }

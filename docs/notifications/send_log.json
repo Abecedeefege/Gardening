@@ -83,6 +83,12 @@
       "nid": "2026-09-07-la-bandeja",
       "ts": "2026-09-07T22:15:10.610Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-09-10-jardin-hoy",
+      "ts": "2026-09-10T13:00:03.575Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
