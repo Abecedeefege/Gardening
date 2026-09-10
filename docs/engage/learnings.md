@@ -62,10 +62,13 @@ El cron de GitHub no sirve: abrir la ventana a las 05Z **no** movió el pozo ini
 latencia commit → `run_started_at` de **+7, +10, +7 y +4 s** (4 de 4 bajo 10 s, contra 3–6 HORAS). Por eso
 `WAIT_CAP_MIN` depende del evento: **`push` → 330 min**, `schedule` → 200, `timeout-minutes: 350`.
 
-**🎯 Predicción falsable, se resuelve HOY:** este commit (~09:30Z) dispara la corrida en <10 s, duerme ~210 min y
-entrega **13:00Z ±1 min**. Como no hubo push el 08 ni el 09, **hoy es el primer test real**. Si falla: sacar la
-entrega de GitHub Actions (cron de Vercel contra endpoint propio; el bloqueo es que `VAPID_PRIVATE_KEY` tendría que
-existir en Vercel — **pedírselo dentro de una página**, nunca por chat).
+**🎯 Predicción falsable, primera mitad YA VERIFICADA hoy:** commit `746b4d5` pusheado 09:19:44Z →
+`run_started_at` **09:19:52Z = +8 s** (5 de 5 bajo 10 s) y la corrida **quedó `in_progress`, o sea durmiendo**
+— las de los días sin cola cerraban en ~20 s, así que el paso «esperar al slot» enganchó. Faltan **220 min** hasta
+13:00Z, dentro del tope de 330 del evento `push`. **Mañana falta la otra mitad: `sent_at − send_at` de
+`2026-09-10-jardin-hoy`.** Si el envío igual sale corrido: sacar la entrega de GitHub Actions (cron de Vercel contra
+endpoint propio; el bloqueo es que `VAPID_PRIVATE_KEY` tendría que existir en Vercel — **pedírselo dentro de una
+página**, nunca por chat).
 
 ⭐ **REGLA: antes de declarar muerto un contenido, verificar que haya llegado a horario.** 31/08 +263 min · 03/09 +89 ·
 07/09 +168 y +75: cinco slots leídos como fracaso de contenido que fueron fracasos de canal.
