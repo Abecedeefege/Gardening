@@ -1,5 +1,19 @@
 {
-  "_updated_at": "2026-09-11T09:10:00.000Z",
-  "_nota": "Viernes 11/09: dia SIN slot por la cadencia vigente (tareas Lun/Jue/Sab 10:00, experiencias Lun 18:00 + Sab 11:00). 0 push nuevas. Se compacto la entry del 10/09 (ya reflejada en send_log). Proximo slot: sabado 12/09 — tarea 10:00 + experiencia 11:00.",
-  "notifications": []
+  "_updated_at": "2026-09-11T11:12:00.000Z",
+  "_nota": "VIERNES 11/09 — dia SIN slot por cadencia, pero el usuario PIDIO POR ESCRITO el push de tareas actualizado («mandame actualizado el push de tareas», 08:02 local). Es la excepcion valida y unica documentada en learnings/engagement.md, la misma que se uso el 06/09. Se encola 1 (una) notificacion de format tarea al canal de URL estable jardin-hoy, reeditada 08:10. CONTENIDO ACTUALIZADO RESPECTO DE LA VERSION DE LAS 06:10: se volvio a consultar ECMWF+GFS a las 08:10 y el viento se corrio PARA ATRAS — a las 06:10 le dije «a las 11 ya sopla 25 y la tarde se planta en 30» y el dato nuevo da rafagas 5-16 km/h de 8 a 10h, 21-24 de 10 a 14h y el pico 30-32 recien 15-17h. O sea que la ventana de tijera NO termina a las 11: le llega hasta las 14. Es una correccion A SU FAVOR y va como titular (regla: la correccion que va a su favor vale doble). Lluvia confirmada 0,0 mm todo el dia, maxima 12,7. Tambien se corrigio el pie de la pagina, que hasta recien decia «no te mando notificacion por esto» — ahora si la lleva. send_at 09:30 -03:00 = +78 min desde el commit (margen de deploy de Vercel cubierto) y dentro de la franja de viento bajo. expires_at 17:00 en vez de las 22:00 habituales A PROPOSITO: el contenido esta acotado a una ventana que cierra a las 14, y una notificacion que aterrice de noche prometiendo una ventana vencida quema credibilidad — que es el activo principal. Layout re-auditado renderizado 390x780: primer control de accion al 15,7% (techo operativo 35%). Cast SIN CAMBIOS respecto del 10/09 (B-30/B-35 diagnostico, B-1 y F-2 tareas, B-29 freno): no se suma elenco nuevo, se suma EXPOSICION — el veto de esas 5 se corre al 18/09.",
+  "notifications": [
+    {
+      "id": "2026-09-11-jardin-hoy",
+      "format": "tarea",
+      "title": "🌳 Tu jardín hoy — la ventana creció",
+      "body": "Te dije que el viento te cortaba a las 11. Miré de nuevo: tenés hasta las 14. Santa rita y bignonia.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
+      "send_at": "2026-09-11T09:30:00-03:00",
+      "expires_at": "2026-09-11T17:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-09-11 (pedido explicito del usuario)"
+    }
+  ]
 }

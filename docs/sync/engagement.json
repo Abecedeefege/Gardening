@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-11T09:10:00-03:00",
+  "_updated_at": "2026-09-11T08:12:00-03:00",
   "events": [
     {
       "_id": "mtlnwrmt27x2lq",
@@ -1148,14 +1148,14 @@
       "_nota": "JUEVES, 1 slot (tarea 10:00). ⭐ EL DIA QUE SE ARREGLO EL CANAL, Y ESTA MEDIDO: 2026-09-10-jardin-hoy send_at 13:00:00Z / sent_at 13:00:03.575Z = +3,6 SEGUNDOS. Contra +263 min (31/08), +89 (03/09), +168 y +75 (07/09). La prediccion falsable de ayer se verifico ENTERA: (a) trigger push commit->run_started_at +8 s y la corrida quedo in_progress durmiendo hasta el slot; (b) el envio salio puntual. Cinco semanas leyendo como fracaso de contenido lo que era fracaso de canal. Contenido de la ed.: diagnostico de torque (Taphrina deformans) sobre SU foto de B-30 del 08/09 + mea culpa de ficha incompleta (faltaba el cobre de julio, se creo plant-B-30-3) + apuesta del porton saldada 3/3 en frio y perdida en lluvia. Sin senal todavia: 0 eventos. NO se puede declarar nada muerto — el ultimo evento de cualquier tipo sigue siendo el dwell del 06/09 20:31Z y el flush del cliente llego a atrasarse 2,5 dias."
     },
     "2026-09-11": {
-      "sent": 0,
+      "sent": 1,
       "clicked": 0,
       "visits": 0,
       "approvals": 0,
       "answers": 0,
       "feedback_text": 0,
       "reactions": 0,
-      "_nota": "VIERNES sin slot: 0 push por cadencia. Mantenimiento + la promesa del viernes COBRADA EN LA PAGINA, sin notificacion: jardin-hoy reeditada en su URL estable (06:10) porque decia «manana viernes» para algo que es HOY. Saldo verificado con ECMWF y GFS cruzados: seco GANADO (0,0 mm hora por hora, 0 %), «16°» PERDIDO (maxima real 12,7°), «sin rafagas» GANADO (6-19 km/h hasta las 10). Dato nuevo y accionable que ayer no existia: el viento de hoy NO es parejo (8 km/h a las 8, 25 a las 11, 30 a la tarde) -> la ventana de tijera para B-1 es la MANANA. Y el finde no sirve: sab 12 con 51 km/h + 0,6 mm, dom 13 maxima 8,9°; proxima ventana real lunes 14. Control-arriba re-medido renderizado 390x780: 16,5 % (ayer 16,8 %), sin regresion. Sigue sin llegar un solo evento del push puntual de ayer (~20 h): con el canal ya descartado, el proximo silencio SI se podra leer como contenido."
+      "_nota": "VIERNES. Empezo como dia sin slot (0 push por cadencia) y termino con 1 push POR PEDIDO ESCRITO del usuario a las 08:02 local: «mandame actualizado el push de tareas». Excepcion valida y unica, la misma del 06/09. ⭐ DOS EDICIONES DE jardin-hoy EL MISMO DIA SOBRE LA MISMA URL: (06:10, sin push) saldo de la promesa del viernes — seco GANADO (0,0 mm hora por hora), «16°» PERDIDO (maxima real 12,7°), sin rafagas GANADO; (08:10, con push) se volvio a consultar ECMWF+GFS y el viento se corrio PARA ATRAS: rafagas 5-16 km/h de 8 a 10h, 21-24 de 10 a 14h, pico 30-32 recien 15-17h. O sea que a las 06:10 le habia acortado la ventana de mas: no cierra a las 11, le llega hasta las 14. Va como titular por la regla «la correccion a su favor vale doble». Se corrigio tambien el pie, que decia «no te mando notificacion por esto» y ahora si la lleva. expires_at 17:00 en vez de 22:00 a proposito: el contenido esta acotado a una ventana que cierra a las 14. Layout 15,7% renderizado. Sigue sin llegar ningun evento del push puntual de ayer (~20 h), pero el pedido de hoy PRUEBA que la esta mirando: es la 7a vez que escribe en 9 semanas y la 1a vez que pide un re-envio de tareas sin que se lo ofrezca."
     }
   }
 }

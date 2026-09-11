@@ -18,20 +18,26 @@ llegaron a horario. La hipótesis del *objeto que se llena* está VIVA.
 ⭐ **REGLA (confirmada, no provisoria): antes de declarar muerto un contenido, verificar que haya llegado a horario.**
 Medir `sent_at − send_at`, nunca el 201.
 
-## 📌 LO DE HOY: LA PROMESA SE COBRA AUNQUE NO PUEDA MANDAR PUSH
+## 📌 LO DE HOY: LA PROMESA SE COBRA SIN PUSH — Y DESPUÉS ÉL PIDIÓ LA PUSH
 
-Viernes sin slot. Ayer le dejé por escrito *«el viernes 11 está seco, 16°, sin ráfagas: es EL día de tijera»* y esa
-promesa vencía **hoy**, el día que la cadencia me prohíbe notificar. Solución: **reeditar `jardin-hoy` en su URL
-estable, sin push.** Saldo verificado (ECMWF + GFS, coinciden número por número): **seco ✅** (0,0 mm hora por hora,
-0 %) · **«16°» ❌** (máxima real **12,7°** — le vendí 3 grados de más) · **sin ráfagas ✅** (6‑19 km/h hasta las 10).
+Viernes sin slot, **dos ediciones de `jardin-hoy` sobre la misma URL estable**:
 
-⭐ **DATO NUEVO QUE AYER NO EXISTÍA — la ventana se parte por HORA, no por día:** 8 km/h a las 8, 25 a las 11, 30 toda
-la tarde. Para la santa rita (guías largas, espinas, él estirado arriba de algo) **la mañana es otro trabajo que la
-tarde**. Y el finde no sirve: **sáb 12 → 51 km/h + 0,6 mm; dom 13 → máxima 8,9°**. Próxima ventana: **lunes 14**.
+**06:10, sin push.** Ayer le dejé por escrito *«el viernes 11 está seco, 16°, sin ráfagas: es EL día de tijera»* y esa
+promesa vencía **hoy**, el día que la cadencia me prohíbe notificar. Se cobró **dentro de la página**: **seco ✅**
+(0,0 mm hora por hora) · **«16°» ❌** (máxima real **12,7°** — le vendí 3 grados de más) · **sin ráfagas ✅**.
+
+**08:10, con push — porque la pidió por escrito:** *«mandame actualizado el push de tareas»*. Excepción válida y única
+(la misma del 06/09). Volví a consultar y **el viento se corrió para atrás**: ráfagas 5‑16 km/h de 8 a 10h, 21‑24 de
+10 a 14h, y el pico 30‑32 **recién 15‑17h**. O sea que a las 06:10 **le acorté la ventana de más**: no cierra a las
+11, le llega **hasta las 14**. Fue el titular, por la regla de la corrección a su favor.
 
 ⭐ **REGLA NUEVA: una página de URL estable que dice «mañana» para algo que es HOY está mintiendo, y se arregla el
 mismo día aunque no haya slot.** Un día sin slot limita las **notificaciones**, no las **ediciones**.
-⭐ **Y una reedición sin push NO consume elenco del ledger:** lo que quema una planta es la exposición, no el archivo.
+⭐ **Una reedición SIN push no consume elenco; CON push sí**, aunque sea el mismo archivo. Lo que quema es la exposición.
+⭐ **`expires_at` se ata a la ventana del contenido, no al 22:00 de rutina** (hoy 17:00: prometer a la noche una
+ventana que cerró a las 14 quema justo el activo que la hace valer).
+⭐ **7ª vez que escribe en 9 semanas, y la 1ª que pide un re-envío de tareas sin que se lo ofrezca.** El canal tarea es
+el único que le genera pedidos espontáneos.
 
 ## 📊 CONCLUSIONES ACUMULADAS DE LOS PUSH ENVIADOS
 
@@ -42,8 +48,8 @@ mismo día aunque no haya slot.** Un día sin slot limita las **notificaciones**
   la tarea, debe PARASITARLA** (10/09: la pieza viva del portón migró al canal tarea, que es el que sí abre).
 - **⭐ SU ACCIÓN ES FEEDBACK AUNQUE NO ESCRIBA**, y el tap es su idioma (13 `answer` en una noche). **Una foto con una
   línea de texto es la señal más rica que produce:** síntoma + planta + fecha en un solo gesto.
-- **Las 6 veces que escribió fue LOGÍSTICA, IDENTIFICACIÓN, ORDEN DE TRABAJO o CONSULTA TÉCNICA, jamás una reseña:**
-  no esperes veredicto, esperá instrucciones. La caja de feedback va igual en todas.
+- **Las 7 veces que escribió fue LOGÍSTICA, IDENTIFICACIÓN, ORDEN DE TRABAJO, CONSULTA TÉCNICA o PEDIDO DE RE-ENVÍO,
+  jamás una reseña:** no esperes veredicto, esperá instrucciones. La caja de feedback va igual en todas.
 - **«Ocultar» no es «sacar»** · **dwell alto sin conversión ≠ éxito** · **«no contestó» ≠ «no le interesa»** · **el 201
   no mide nada** · **nunca 3 push en un día sin slot** · **si hubo actividad suya en la última hora, no encolar.**
 
@@ -60,8 +66,8 @@ mismo día aunque no haya slot.** Un día sin slot limita las **notificaciones**
 
 `pix9` **active** · `uploads.json` **0 pendientes** (133 entries, leído campo por campo: ningún `note` sin contestar) ·
 **threads 0 `pending`** · `user_tasks.json` 0 sin contestar · `task_states.json` 81 entries — **53 done / 38 active /
-11 snoozed** sobre 102 tareas y 51 especies (16 huérfanas, descartarlas siempre) · última escritura suya **06/09
-11:39Z**; última actividad de cualquier tipo **08/09 20:08Z** (fotos de B-30) · proposals **92** (54 dropped /
+11 snoozed** sobre 102 tareas y 51 especies (16 huérfanas, descartarlas siempre) · última escritura suya en `task_states` **06/09 11:39Z**;
+última actividad suya de cualquier tipo **HOY 08:02** (el pedido del push) · proposals **92** (54 dropped /
 23 promoted / **13 pending** / 1 approved / 1 removed) · **compactación** no vencía hoy → **14/09** y **17/09**.
 
 ## 🚨 LAS TRES REGLAS QUE MANDAN
@@ -69,11 +75,11 @@ mismo día aunque no haya slot.** Un día sin slot limita las **notificaciones**
 **#1 SUSTANCIA > gimmick.** Ayuda técnica REAL sobre SU jardín, ejecutable con la herramienta en la mano.
 
 **#2 EL CONTROL VA ARRIBA.** Ningún primer control de ACCIÓN debajo del **35 %**, **medido renderizado en Chromium
-390×780** (nunca por offset de caracteres — hoy el offset de bytes daba 42,7 % y el render 16,5 %). `audit.js` en
+390×780** (nunca por offset de caracteres — hoy el offset de bytes daba 42,7 % y el render 15,7 %). `audit.js` en
 scratchpad — playwright en `/opt/node22/lib/node_modules`, chromium en
 `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`; descartar `fixed`/`sticky` mirando **toda la cadena de
 ancestros** y reportar el control de **acción**, no el link del índice. Últimas: ed.7 **18,9 %** · bandeja **3,4 %** ·
-jardin-hoy **16,5 %**.
+jardin-hoy **15,7 %**.
 
 **#3 EL LARGO TAMBIÉN ES LAYOUT.** Tope operativo **~12 ítems**. El día que hay una respuesta personal que dar, la
 lista se achica, no se estira.
@@ -115,7 +121,7 @@ herramienta en la mano ③ una pantalla = una decisión ④ errores anticipados 
 
 - Leer `facts_ledger.json` ANTES, actualizarlo DESPUÉS. **Excepción: el canal tarea es monotemático — su cast lo
   define la TAREA.** · **La EXPOSICIÓN MEDIDA manda sobre el ledger.** · **Una reedición sin push no consume elenco.**
-- ⚠️ **VEDADOS HASTA EL 17/09:** B-30, B-35, B-1, F-2. **HASTA EL 14/09:** I-1, I-2, B-6, B-26, B-2, B-10, B-3, F-5,
+- ⚠️ **VEDADOS HASTA EL 18/09** (exposición del 11/09): B-30, B-35, B-1, F-2. **HASTA EL 14/09:** I-1, I-2, B-6, B-26, B-2, B-10, B-3, F-5,
   B-27 *(exposición cero medida → de hecho frescos)*. **HASTA EL 13/09:** B-7, B-5a, B-25, B-12, B-15, B-8, B-4, B-43,
   B-22, B-36, F-3, B-41. **SE LIBERAN EL 12/09:** B-46, B-9, B-18, B-24, B-32, B-20, B-13, B-47.
 - ✅ **LIBRES PARA EL SÁBADO 12/09:** B-16, B-37, F-9, B-44, B-40, F-8, F-10, B-14, B-45, B-48, B-49, B-21, B-28,
