@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-09T09:40:00-03:00",
+  "_updated_at": "2026-09-11T09:10:00-03:00",
   "events": [
     {
       "_id": "mtlnwrmt27x2lq",
@@ -947,6 +947,16 @@
       "visits": 0,
       "approvals": 0
     },
+    "2026-08-16": {
+      "visits": 4
+    },
+    "2026-08-17": {
+      "sent": 1,
+      "clicked": 1,
+      "visits": 2,
+      "approvals": 0,
+      "_nota": "preguntas-abiertas: abierta desde el push, dwell 31 s @41 % y CERO respuesta a las preguntas. Unico caso donde el layout SI explico el resultado (primer control al 75 % del scroll). Compactada el 01/09."
+    },
     "2026-08-18": {
       "sent": 0,
       "clicked": 0,
@@ -1021,16 +1031,6 @@
       "visits": 0,
       "approvals": 0,
       "_nota": "Dia 4 de 6 de la ventana de silencio pedida (25-30/08). 0 push por diseno: el viernes no tiene slot por cadencia Y rige el pedido explicito del 24/08. Cero señal nueva: ningun evento posterior al dwell del 24/08 22:10Z (cuarto dia). El dia bisagra es mañana, sabado 29: caen DOS slots (tarea 10:00 + experiencia 11:00)."
-    },
-    "2026-08-16": {
-      "visits": 4
-    },
-    "2026-08-17": {
-      "sent": 1,
-      "clicked": 1,
-      "visits": 2,
-      "approvals": 0,
-      "_nota": "preguntas-abiertas: abierta desde el push, dwell 31 s @41 % y CERO respuesta a las preguntas. Unico caso donde el layout SI explico el resultado (primer control al 75 % del scroll). Compactada el 01/09."
     },
     "2026-08-29": {
       "sent": 0,
@@ -1136,6 +1136,26 @@
       "answers": 0,
       "feedback_text": 0,
       "_nota": "Miercoles sin slot: 0 push por cadencia. Sigue sin llegar un solo evento de las 2 push del lunes 07/09 (ultimo evento de cualquier tipo: dwell 06/09 20:31Z) — pero hoy se encontro la causa estructural y NO es el contenido (ver send_log y learnings): la entrega depende de un cron que GitHub corre 3-6 h tarde. Sus 2 fotos de B-30 de anoche SI son senal: hay torque del duraznero (Taphrina deformans) en el brote nuevo. Es la municion del jueves 10."
+    },
+    "2026-09-10": {
+      "sent": 1,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "answers": 0,
+      "feedback_text": 0,
+      "reactions": 0,
+      "_nota": "JUEVES, 1 slot (tarea 10:00). ⭐ EL DIA QUE SE ARREGLO EL CANAL, Y ESTA MEDIDO: 2026-09-10-jardin-hoy send_at 13:00:00Z / sent_at 13:00:03.575Z = +3,6 SEGUNDOS. Contra +263 min (31/08), +89 (03/09), +168 y +75 (07/09). La prediccion falsable de ayer se verifico ENTERA: (a) trigger push commit->run_started_at +8 s y la corrida quedo in_progress durmiendo hasta el slot; (b) el envio salio puntual. Cinco semanas leyendo como fracaso de contenido lo que era fracaso de canal. Contenido de la ed.: diagnostico de torque (Taphrina deformans) sobre SU foto de B-30 del 08/09 + mea culpa de ficha incompleta (faltaba el cobre de julio, se creo plant-B-30-3) + apuesta del porton saldada 3/3 en frio y perdida en lluvia. Sin senal todavia: 0 eventos. NO se puede declarar nada muerto — el ultimo evento de cualquier tipo sigue siendo el dwell del 06/09 20:31Z y el flush del cliente llego a atrasarse 2,5 dias."
+    },
+    "2026-09-11": {
+      "sent": 0,
+      "clicked": 0,
+      "visits": 0,
+      "approvals": 0,
+      "answers": 0,
+      "feedback_text": 0,
+      "reactions": 0,
+      "_nota": "VIERNES sin slot: 0 push por cadencia. Mantenimiento + la promesa del viernes COBRADA EN LA PAGINA, sin notificacion: jardin-hoy reeditada en su URL estable (06:10) porque decia «manana viernes» para algo que es HOY. Saldo verificado con ECMWF y GFS cruzados: seco GANADO (0,0 mm hora por hora, 0 %), «16°» PERDIDO (maxima real 12,7°), «sin rafagas» GANADO (6-19 km/h hasta las 10). Dato nuevo y accionable que ayer no existia: el viento de hoy NO es parejo (8 km/h a las 8, 25 a las 11, 30 a la tarde) -> la ventana de tijera para B-1 es la MANANA. Y el finde no sirve: sab 12 con 51 km/h + 0,6 mm, dom 13 maxima 8,9°; proxima ventana real lunes 14. Control-arriba re-medido renderizado 390x780: 16,5 % (ayer 16,8 %), sin regresion. Sigue sin llegar un solo evento del push puntual de ayer (~20 h): con el canal ya descartado, el proximo silencio SI se podra leer como contenido."
     }
   }
 }
