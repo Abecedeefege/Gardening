@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-12T09:20:00.000Z",
+  "_updated_at": "2026-09-12T13:00:03.596Z",
   "_nota": "SABADO 12/09 — dia con LOS DOS SLOTS por cadencia (tarea 10:00 + experiencia 11:00), y el primero con el canal ya sano (el 10/09 midio +3,6 s). Se encolan 2 (dos) notificaciones, cada una a un destino distinto. (1) TAREA 10:00 -> jardin-hoy reeditada en su URL estable: hoy vencieron los 7 dias de snooze de las TRES que pospuso el 05/09 (plant-B-23 poda limonero, plant-B-24 poda mandarina, plant-B-46-3 trasplante de vivero) y se traen AGRUPADAS como estaba planificado. Pero el clima manda y se le dice de entrada: ECMWF da 10,6 max / 1,8 mm / rafagas hasta 45 y GFS da 11,7 / 0,7 mm / hasta 35 -> con llovizna y 30-45 km/h NO se poda citrico (corte desgarrado + agua sobre herida fresca), y ademas la ficha de los dos exige 'pasado el riesgo de helada' y las madrugadas de la semana bajan a 3,5-4,2. Asi que se FRENAN las dos podas y se habilitan las dos que el dia si permite: cosechar los limones (no hace ninguna herida; y la carga sin cosechar le esta costando el azahar de primavera, que es dato de su propia ficha) y dar vuelta las macetas del vivero (llovizna + 11° + suelo mojado = el mejor dia de trasplante del mes). Las dos podas quedan fechadas el VIERNES 18, derivado de tres condiciones que coinciden en un solo dia de los siete: 0,0 mm en los dos modelos, rafagas 27-29 (el minimo de la semana contra 45 hoy y 52 el martes) y minima 9,3 (la unica madrugada lejos de la escarcha). Se salda tambien la apuesta del viernes con datos ya cerrados: seco GANADO (0,00 mm), pico de rafaga GANADO al kilometro (dije 30-32, fue 32,0) y temperatura PERDIDA DOS VECES — dije 16, me 'corregi' a 12,7 y la real fue 14,6, o sea que la correccion quedo MAS LEJOS que el error original (1,4 de mas contra 1,9 de menos). Se publica con el numero al lado porque va en contra mia. (2) EXPERIENCIA 11:00 -> 2026-09-12-tres-pilas, ORIGINAL NUEVA del slot, con el-taller (la unica aprobada) agrupada DENTRO y linkeada — una sola push por slot, no dos. Es la apuesta del TODO de ayer: el objeto que se llena PARASITANDO la tarea. No es una pagina sobre la tarea B-46-3: es el instrumento para hacerla (cuatro pilas con contador, se guarda en localStorage, se manda cuando el cierra el cajon) y ademas lleva una apuesta falsable sobre el propio objeto — la ficha dice '30+ plantines', yo conte 23 en su foto de mayo, y el contador resuelve quien se equivoco. Cast de la experiencia 100% fuera de veto: B-46, B-47 y B-37 (los tres se liberaron hoy o estaban libres). Layout auditado renderizado 390x780: primer control de ACCION en tres-pilas al 7,0% (el objeto ES el tope de la pagina) y en jardin-hoy al 24,0% — techo operativo 35%. expires_at atados a la ventana del contenido y no al 22:00 de rutina: la tarea vence 18:00 (es trabajo a la luz del dia, y una push que aterriza de noche prometiendo el dia de hoy quema credibilidad) y la experiencia 20:00 (el contador se puede llenar mas tarde, incluso adentro).",
   "notifications": [
     {
@@ -10,8 +10,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
       "send_at": "2026-09-12T10:00:00-03:00",
       "expires_at": "2026-09-12T18:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-09-12T13:00:03.594Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-09-12"
     },
