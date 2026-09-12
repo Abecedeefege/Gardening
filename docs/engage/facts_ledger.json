@@ -1,7 +1,7 @@
 {
  "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
- "_updated": "2026-09-11",
- "_nota_ultima_corrida": "VIERNES 11/09/2026 — dia sin slot que TERMINO CON 1 PUSH por pedido escrito del usuario («mandame actualizado el push de tareas», 08:02 local; excepcion valida y unica, igual que el 06/09). Dos ediciones de jardin-hoy el mismo dia sobre la MISMA URL estable: 06:10 sin push (saldo de la promesa del viernes) y 08:10 con push (correccion del viento a su favor: la ventana no cierra a las 11 sino a las 14). Cast sin cambios respecto del 10/09 — B-30/B-35 (diagnostico de torque), B-1 (santa rita), F-2 (podranea), B-29 (freno). NO se suma elenco nuevo pero SI se suma EXPOSICION, asi que el veto de esas cinco se corre del 17/09 al 18/09. Regla que queda fijada: una reedicion SIN push no consume elenco; una CON push si, aunque el contenido sea el mismo archivo.",
+ "_updated": "2026-09-12",
+ "_nota_ultima_corrida": "SABADO 12/09/2026 — dia con LOS DOS SLOTS y el primero de la era del canal sano (10/09 y 11/09 midieron +3,6 s los dos). 2 push, 2 destinos distintos. TAREA 10:00 (jardin-hoy, URL estable reeditada): vencieron los 7 dias de snooze de las TRES que pospuso el 05/09 y se trajeron AGRUPADAS — pero el clima partio la lista en dos y se le dijo arriba de todo: llovizna, 11° y rafagas 30-45 prohiben podar citrico (corte desgarrado + agua sobre herida + la ficha exige 'pasado el riesgo de helada' y las madrugadas de la semana bajan a 3,5-4,2), asi que se FRENARON las dos podas y se habilitaron las dos que el dia si permite: cosechar limones y dar vuelta las macetas del vivero. Las podas quedaron fechadas el VIERNES 18 por TRES condiciones que coinciden en un solo dia de siete (0,0 mm en los dos modelos, rafagas 27-29 = minimo semanal, minima 9,3 = la unica madrugada sin escarcha). EXPERIENCIA 11:00 (2026-09-12-tres-pilas, original nueva, con el-taller agrupado dentro): el objeto que se llena PARASITANDO la tarea — es el instrumento del paso 3 de la ficha de B-46-3, no una pagina sobre ella. CAST EXPUESTO HOY: B-23, B-24, B-46 (canal tarea, monotematico por la tarea) + B-46, B-47, B-37 (experiencia, 100% fuera de veto). Los cinco pasan a veto hasta el 19/09. ANGULOS ESTRENADOS HOY: (1) 'la correccion que quedo MAS LEJOS que el error original' — se publico que mi 16° fallo por 1,4 y mi propia correccion a 12,7 fallo por 1,9, con los dos numeros al lado; es la version mas dura de la mea culpa y es contra mi. (2) 'el clima que HABILITA en vez de prohibir' — la llovizna presentada como la VENTAJA del trasplante, no como el obstaculo; es el reverso del clima-como-editor y no se habia usado nunca. (3) 'la apuesta falsable sobre el propio objeto que se llena' — el contador no da puntos, resuelve si mis 23 o el 30+ de la ficha estaba mal. FUN_FACT ESTRENADO: el storax del liquidambar B-37, que estaba en la cantera sin usar desde que se anoto.",
  "plants": {
   "F-1": {
    "common": "Guayabo del país",
@@ -862,7 +862,7 @@
   },
   "B-23": {
    "common": "Limonero",
-   "paginas_historicas": 16,
+   "paginas_historicas": 17,
    "featured": [
     {
      "date": "2026-07-18",
@@ -903,12 +903,17 @@
      "date": "2026-09-05",
      "page": "2026-07-24-jardin-hoy.html (reedicion 05/09) + 2026-09-05-el-porton.html",
      "fact": "CANAL TAREA (cosecha: no necesita dia seco, y destraba la poda) + EXPERIENCIA (poda de formacion, chupones bajo injerto). Sin fun_fact."
+    },
+    {
+     "date": "2026-09-12",
+     "page": "2026-07-24-jardin-hoy.html",
+     "fact": "cosecha antes de poda: la carga sin cosechar cuesta azahar (ficha propia) + el limonero NO existe en estado silvestre, hibrido de cidro x naranja amarga + cascara 4x mas vit C que el jugo + no sigue madurando fuera del arbol + alcohol 70% entre citricos vecinos"
     }
    ]
   },
   "B-24": {
    "common": "Mandarina criolla",
-   "paginas_historicas": 12,
+   "paginas_historicas": 13,
    "featured": [
     {
      "date": "2026-07-18",
@@ -944,6 +949,11 @@
      "date": "2026-09-05",
      "page": "2026-09-05-el-porton.html",
      "fact": "EXPERIENCIA — ANGULO NUEVO: en citricos la fruta se hace donde entra el sol, por eso se abre el centro. Va con follaje seco (mar/mie)."
+    },
+    {
+     "date": "2026-09-12",
+     "page": "2026-07-24-jardin-hoy.html",
+     "fact": "abrir el centro sobre SU foto (corazon cerrado y oscuro) + Citrus reticulata como citrico ancestral del que desciende el limonero de al lado: abuelo y nieto a dos metros + minador como senal a fotografiar"
     }
    ]
   },
@@ -1283,7 +1293,7 @@
   },
   "B-37": {
    "common": "Liquidámbar",
-   "paginas_historicas": 17,
+   "paginas_historicas": 18,
    "featured": [
     {
      "date": "2026-07-20",
@@ -1319,6 +1329,11 @@
      "date": "2026-08-22",
      "page": "2026-08-22-perfume-de-octubre.html",
      "fact": "MENCION EN LISTA: sin ventana de poda en agosto. NO se uso el fun_fact del storax."
+    },
+    {
+     "date": "2026-09-12",
+     "page": "2026-09-12-tres-pilas.html",
+     "fact": "sus hijos via samaras estan en el vivero (hoja palmada 5 puntas) + de semilla el color otonal varia respecto del padre, elegir 1-2 y regalar el resto + FUN_FACT ESTRENADO: el storax, balsamo aromatico usado 3000 anos, mayas lo masticaban y aztecas lo quemaban; el nombre es literalmente ambar liquido"
     }
    ]
   },
@@ -1537,7 +1552,7 @@
   },
   "B-46": {
    "common": "Vivero / Plantines",
-   "paginas_historicas": 10,
+   "paginas_historicas": 11,
    "featured": [
     {
      "date": "2026-07-21",
@@ -1573,6 +1588,11 @@
      "date": "2026-09-05",
      "page": "2026-07-24-jardin-hoy.html (reedicion 05/09)",
      "fact": "CANAL TAREA — test de la maceta dada vuelta: bola apretada = va a tierra. Ventana sept-oct. Sin fun_fact."
+    },
+    {
+     "date": "2026-09-12",
+     "page": "2026-09-12-tres-pilas.html + 2026-07-24-jardin-hoy.html",
+     "fact": "dar vuelta la maceta como paso diagnostico (bola apretada vs tierra suelta) + los tres destinos con su tecnica real + vivero propio = forma mas barata de poblar y de regalar (ficha) + APUESTA FALSABLE: ficha dice 30+, yo conte 23 en su foto de mayo"
     }
    ]
   },
@@ -1610,7 +1630,7 @@
   },
   "B-47": {
    "common": "Plantines de palmera (lote separado)",
-   "paginas_historicas": 7,
+   "paginas_historicas": 8,
    "featured": [
     {
      "date": "2026-07-18",
@@ -1626,6 +1646,11 @@
      "date": "2026-09-03",
      "page": "2026-07-24-jardin-hoy.html (ed. 03/09)",
      "fact": "56 macetas chicas en hilera separada = perfecto para luz, pesimo para viento de 38 km/h; arrimarlas a la pared antes del sabado"
+    },
+    {
+     "date": "2026-09-12",
+     "page": "2026-09-12-tres-pilas.html",
+     "fact": "FRENO explicito: palmeras NO este septiembre — minimo 30 cm y fecha real septiembre 2027; mover ahora deshace el cepellon"
     }
    ]
   },
@@ -1777,7 +1802,8 @@
     "nota": "2026-08-03-el-taller-2.html = Taller nº2, monotematico: aplica la EXCEPCION documentada (el cast de un Taller lo define la TAREA, no el elenco fresco), asi que B-9/B-18/B-15 vuelven a los 1-2 dias de aparecer en que-mas-podo. Lo que SI cambia respecto del Taller nº1 es la tarea (poda de FLOR, no de carozo) y por lo tanto el cast entero: los 4 carozos B-30/B-35/F-4/B-38 NO protagonizan, solo se nombran como cerrados en el acuse. NINGUN fun_fact reciclado: el de B-9 (Magnus von Lagerstrom) no se usa; se usan el mito del crepe murder y la corteza canela. De B-18 se usa 'la flor dura un solo dia / flor nacional de Corea del Sur' (fun_fact de ficha, sin uso previo registrado en experiencia). El angulo VERTEBRADOR es nuevo y no es un fun_fact: madera NUEVA vs madera VIEJA como regla que parte al jardin en dos. QUEMADOS tras hoy: B-9, B-18, B-15 hasta el 10/08 (fuera de la serie Taller). Los carozos siguen quemados hasta el 09/08."
    }
   ],
-  "2026-08-04: ver arriba"
+  "2026-08-04: ver arriba",
+  "12/09 — NO REPETIR ANTES DEL 26/09: la correccion de mi propia correccion con los dos errores numerados · la llovizna como ventaja del trasplante · el abuelo y el nieto citricos a dos metros · el alcohol 70% entre citricos vecinos · el conteo de macetas apostado contra la ficha · el storax del liquidambar. NO ANTES DEL 03/10: el objeto-que-se-llena con contador (si hoy no convierte con canal sano y sin competencia de tarea, el formato muere de verdad y no se reintenta). VEDADOS HASTA EL 19/09 (exposicion con push del 12/09): B-23, B-24, B-46, B-47, B-37. SIGUEN VEDADOS HASTA EL 18/09: B-30, B-35, B-1, F-2. SE LIBERAN EL 13/09: B-7, B-5a, B-25, B-12, B-15, B-8, B-4, B-43, B-22, B-36, F-3, B-41. SE LIBERAN EL 14/09: I-1, I-2, B-6, B-26, B-2, B-10, B-3, F-5, B-27. LIBRES PARA EL LUNES 14/09: B-16, F-9, B-44, B-40, F-8, F-10, B-14, B-45, B-48, B-49, B-21, B-28, B-11, B-31, B-33, B-39, F-1, B-9, B-18, B-13, B-20, B-32 + los doce que se liberan el 13. B-34 fuera de toda cantera: ya no existe."
  ],
  "_nota_vigente": "AL 11/09/2026 (VIERNES, 1 push por PEDIDO ESCRITO del usuario, 09:30). VEDADO HASTA EL 18/09: B-30, B-35, B-1, F-2 (B-29 ya se uso como FRENO; como pedido corto todavia sirve). VEDADO HASTA EL 14/09: I-1, I-2, B-6, B-26, B-2, B-10, B-3, F-5, B-27 — con exposicion real CERO MEDIDA (la bandeja del 07/09 no registro ni una visita), asi que por la regla «la exposicion medida manda sobre el ledger» ese elenco esta de hecho FRESCO. VEDADO HASTA EL 13/09: B-7, B-5a, B-25, B-12, B-15, B-8, B-4, B-43, B-22, B-36, F-3, B-41. SE LIBERAN MANANA 12/09: B-46, B-9, B-18, B-24, B-32, B-20, B-13, B-47. LIBRES PARA EL SABADO 12/09: B-16, B-37, F-9, B-44, B-40, F-8, F-10, B-14, B-45, B-48, B-49, B-21, B-28, B-11, B-31, B-33, B-39, F-1 + los ocho que se liberan ese mismo dia. ⭐ EXCEPCION QUE APLICA MANANA: el canal tarea es monotematico y su cast lo define la TAREA — el sabado 12/09 vuelven de posponer B-23 (limonero), B-24 (mandarina) y B-46-3 (vivero), y esas tres entran por derecho propio aunque B-23 figure vedado hasta el 13/09. B-34 fuera de toda cantera: dada de baja con consentimiento escrito — NUNCA borrar una especie sin eso. NO REPETIR ANTES DEL 21/09: la propagacion/esqueje entera, «lo que ibas a tirar», el ejemplar unico / sin repuesto, la campana de botella, el corte al ras bajo el nudo, el lado este como vivero, el reparto de la ventana por dia. NO REPETIR ANTES DEL 24/09: el diagnostico sanitario sobre foto suya, la mea culpa de ficha incompleta, «la ventana de este ano ya cerro». NUEVO, NO REPETIR ANTES DEL 25/09: la ventana partida por HORA del dia (el viento de la manana vs la tarde)."
 }

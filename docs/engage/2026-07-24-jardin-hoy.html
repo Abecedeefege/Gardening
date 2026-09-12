@@ -2,9 +2,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f5faf0">
-<title>🍑 Tu jardín hoy — esas hojas arrugadas tienen nombre</title>
-<meta property="og:title" content="🍑 Tu jardín hoy — esas hojas arrugadas tienen nombre">
-<meta property="og:description" content="Me preguntaste por las hojas del durazno: es torque, y la ventana de este año ya cerró. Te digo qué se hace igual, qué fue culpa mía, y te salgo a saldar la promesa del viernes — el seco lo gané, los 16° los perdí.">
+<title>🍋 Tu jardín hoy — hoy no se poda, y dos igual se hacen</title>
+<meta property="og:title" content="🍋 Tu jardín hoy — hoy no se poda, y dos igual se hacen">
+<meta property="og:description" content="Vuelven las tres que pospusiste. Con 11° y llovizna la tijera no sale: los cítricos van el viernes 18. Pero cosechar los limones y dar vuelta las macetas del vivero se hace igual — y los limones sin cosechar te están costando el azahar.">
 <style>
   :root{
     --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
@@ -22,73 +22,38 @@
   .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
   .reveal.in{ opacity:1; transform:none; }
 
-  .hero{ padding:18px 0 4px; }
+  .hero{ padding:15px 0 3px; }
   .hero .day{ font-size:11.5px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3); }
-  .hero h1{ font-size:30px; line-height:1.1; margin:7px 0 0; font-weight:900; letter-spacing:-.02em; }
+  .hero h1{ font-size:29px; line-height:1.1; margin:6px 0 0; font-weight:900; letter-spacing:-.02em; }
 
-  /* respuesta a su pregunta */
-  .resp{ background:#1e2a17; color:#eaf3e0; border-radius:20px; padding:17px 16px; margin:14px 0 0;
+  /* veredicto del dia */
+  .resp{ background:#1e2a17; color:#eaf3e0; border-radius:20px; padding:16px 15px; margin:12px 0 0;
     box-shadow:0 10px 30px rgba(30,42,23,.18); }
   .resp-tag{ font-size:10.5px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:#b7d69a; }
-  .cita{ margin:9px 0 11px; padding:10px 12px; background:rgba(255,255,255,.07); border-left:3px solid #7fae4e; border-radius:0 11px 11px 0; }
-  .cita i{ font-style:italic; font-size:14px; color:#fff; }
-  .cita span{ display:block; margin-top:5px; font-size:11.5px; color:#9fb78b; }
-  .resp .shot{ width:100%; border-radius:13px; display:block; border:1px solid rgba(255,255,255,.14); }
-  .resp .pie-shot{ font-size:11.5px; color:#9fb78b; margin-top:6px; }
-  .veredicto{ background:#7fae4e; color:#14200c; border-radius:13px; padding:12px 13px; margin-top:12px; }
+  .veredicto{ background:#7fae4e; color:#14200c; border-radius:13px; padding:11px 13px; margin-top:9px; }
   .veredicto b{ display:block; font-size:16.5px; font-weight:900; line-height:1.25; }
   .veredicto i{ font-style:normal; display:block; font-size:13px; margin-top:4px; }
-  .resp p{ font-size:13.5px; color:#cfe0bd; margin-top:10px; }
+  .resp p{ font-size:13.5px; color:#cfe0bd; margin-top:9px; }
   .resp p b{ color:#fff; }
+  .duo{ display:grid; grid-template-columns:1fr 1fr; gap:7px; margin-top:11px; }
+  .duo div{ background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.13); border-radius:12px; padding:9px 10px; }
+  .duo .t{ display:block; font-size:10px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:#b7d69a; }
+  .duo .v{ display:block; font-size:13px; font-weight:800; color:#fff; margin-top:3px; line-height:1.3; }
+  .duo .s{ display:block; font-size:11.5px; color:#9fb78b; margin-top:3px; line-height:1.35; }
+  .duo div.no .t{ color:#e8a99a; }
 
-  /* pregunta de una tocada */
-  .q{ background:linear-gradient(180deg,#fff7e6,#fffdf7); border:1px solid rgba(224,169,46,.4); border-radius:18px; padding:16px 15px; margin:13px 0; }
-  .q .tag{ font-size:10.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:#b7860b; }
-  .q h3{ font-size:16.5px; font-weight:900; margin:5px 0 5px; line-height:1.25; }
-  .q p{ color:var(--ink2); font-size:13px; }
-  .q .opts{ display:grid; gap:7px; margin-top:11px; grid-template-columns:1fr 1fr 1fr; }
-  .q button{ background:var(--card); border:1.5px solid rgba(224,169,46,.45); border-radius:12px; padding:11px 6px;
-    font:800 12.5px var(--sans); color:var(--ink); cursor:pointer; line-height:1.2; }
-  .q button .big{ display:block; font-size:19px; margin-bottom:3px; }
-  .q button:active{ transform:scale(.97); }
-  .q button.sel{ background:var(--sol); border-color:var(--sol); color:#3a2c05; }
-  .q .q-hint{ display:block; text-align:center; margin-top:8px; font-size:12.5px; font-weight:800; color:#b7860b; min-height:1.2em; }
-  .q .def{ font-size:11.5px; color:var(--ink3); margin-top:8px; font-style:italic; }
-
-  .sect-lbl{ font-size:11.5px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:var(--ink3); margin:22px 4px 4px; }
+  .sect-lbl{ font-size:11.5px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:var(--ink3); margin:21px 4px 4px; }
 
   .blk{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:17px 16px; margin:11px 0;
     box-shadow:0 4px 16px rgba(45,80,22,.05); }
   .blk h3{ font-size:17px; font-weight:900; line-height:1.25; }
   .blk p{ font-size:13.5px; color:var(--ink2); margin-top:8px; }
   .blk p b{ color:var(--ink); }
-  ol.pasos{ margin:11px 0 0; padding:0; list-style:none; counter-reset:p; }
-  ol.pasos li{ counter-increment:p; position:relative; padding:9px 11px 9px 38px; background:#f5f9ef; border:1px solid var(--line);
-    border-radius:11px; margin-top:7px; font-size:13px; color:var(--ink2); }
-  ol.pasos li::before{ content:counter(p); position:absolute; left:11px; top:9px; width:19px; height:19px; border-radius:50%;
-    background:var(--verde2); color:#fff; font-size:11.5px; font-weight:900; display:grid; place-items:center; }
-  ol.pasos li b{ color:var(--ink); }
-
-  /* mea culpa */
-  .culpa{ background:linear-gradient(180deg,#fdeee9,#fff8f6); border:1px solid rgba(176,67,46,.3); border-radius:18px; padding:17px 16px; margin:11px 0; }
-  .culpa .tag{ font-size:10.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--rojo); }
-  .culpa h3{ font-size:17px; font-weight:900; margin:5px 0 0; line-height:1.25; }
-  .culpa p{ font-size:13.5px; color:var(--ink2); margin-top:8px; }
-  .culpa p b{ color:var(--ink); }
-  .fechas{ list-style:none; margin:11px 0 0; padding:0; }
-  .fechas li{ display:flex; gap:10px; align-items:flex-start; background:#fff; border:1px solid rgba(176,67,46,.18);
-    border-radius:12px; padding:10px 12px; margin-top:7px; font-size:13px; color:var(--ink2); }
-  .fechas li .n{ font-weight:900; color:var(--rojo); flex:none; font-size:13px; }
-  .fechas li b{ color:var(--ink); }
-  .fechas li.nueva{ border-color:rgba(90,138,46,.45); background:#f4faec; }
-  .fechas li.nueva .n{ color:var(--verde2); }
-  .culpa a.cta{ display:block; margin-top:11px; text-align:center; background:var(--verde2); color:#fff; text-decoration:none;
-    font-weight:900; font-size:14px; padding:12px 14px; border-radius:12px; }
 
   /* apuesta */
   .ap{ background:linear-gradient(180deg,#eaf2f6,#f7fbfc); border:1px solid rgba(63,125,138,.3); border-radius:18px; padding:17px 16px; margin:11px 0; }
   .ap .tag{ font-size:10.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--azul); }
-  .ap h3{ font-size:17px; font-weight:900; margin:5px 0 0; }
+  .ap h3{ font-size:17px; font-weight:900; margin:5px 0 0; line-height:1.25; }
   .ap p{ font-size:13.5px; color:var(--ink2); margin-top:8px; }
   .ap p b{ color:var(--ink); }
   .ap .cit{ font-size:12.5px; font-style:italic; color:var(--ink2); background:#fff; border-left:3px solid var(--azul);
@@ -96,11 +61,22 @@
   .marc{ list-style:none; margin:11px 0 0; padding:0; }
   .marc li{ display:flex; align-items:center; gap:9px; background:#fff; border:1px solid rgba(63,125,138,.2); border-radius:11px;
     padding:9px 11px; margin-top:6px; font-size:13px; }
-  .marc li .d{ font-weight:800; color:var(--ink); flex:none; width:62px; }
+  .marc li .d{ font-weight:800; color:var(--ink); flex:none; width:74px; }
   .marc li .v{ color:var(--ink2); }
   .marc li .r{ margin-left:auto; font-weight:900; font-size:15px; flex:none; }
   .marc li.ok .r{ color:var(--verde2); }
   .marc li.no .r{ color:var(--rojo); }
+
+  /* tabla de la semana */
+  .sem{ width:100%; border-collapse:separate; border-spacing:0 5px; margin-top:11px; font-size:12.5px; }
+  .sem th{ font-size:9.5px; font-weight:900; text-transform:uppercase; letter-spacing:.05em; color:var(--ink3); text-align:right; padding:0 6px 2px; }
+  .sem th:first-child{ text-align:left; }
+  .sem td{ background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:8px 6px; text-align:right; color:var(--ink2); }
+  .sem td:first-child{ border-left:1px solid var(--line); border-radius:10px 0 0 10px; text-align:left; font-weight:800; color:var(--ink); }
+  .sem td:last-child{ border-right:1px solid var(--line); border-radius:0 10px 10px 0; }
+  .sem tr.win td{ background:#e9f5da; border-color:rgba(90,138,46,.45); }
+  .sem tr.win td:first-child{ color:var(--verde); }
+  .sem tr.bad td{ color:var(--ink3); }
 
   /* tarjetas de tarea */
   .item{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:15px 15px 13px; margin:11px 0;
@@ -119,6 +95,7 @@
   .item .d b{ color:var(--ink); }
   .item .when{ display:inline-block; font-size:11px; font-weight:800; color:#4a7a20; background:#e9f5da;
     border:1px solid rgba(90,138,46,.32); border-radius:7px; padding:3px 9px; margin-top:9px; }
+  .item .when.esp{ color:#8a5a12; background:#fdf3e3; border-color:rgba(224,169,46,.4); }
   .item .como{ margin-top:9px; font-size:12.5px; color:var(--ink2); background:#f5f9ef; border:1px solid var(--line);
     border-radius:11px; padding:10px 11px; }
   .item .como b{ color:var(--ink); }
@@ -139,17 +116,16 @@
   .box .row{ display:flex; gap:7px; margin-top:7px; }
   .box .row button{ flex:1; }
   .item a.full{ display:inline-block; margin-top:9px; font-size:12px; font-weight:800; color:var(--azul); text-decoration:none; }
+  .item a.tool{ display:block; margin-top:10px; text-align:center; background:#eaf3e0; color:var(--verde); text-decoration:none;
+    font-weight:900; font-size:13.5px; padding:11px 12px; border-radius:12px; border:1px solid rgba(90,138,46,.3); }
   .freno{ font-size:12.5px; color:var(--ink2); background:#f5f9ef; border:1px dashed var(--line); border-radius:12px;
     padding:11px 12px; margin:11px 0; }
   .freno b{ color:var(--ink); }
 
-  /* parte meteo */
-  .parte{ display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin:10px 0 0; }
-  .parte div{ background:#f2f7ec; border:1px solid var(--line); border-radius:12px; padding:9px 4px; text-align:center; }
-  .parte div.hoy{ background:#e6eef4; border-color:rgba(63,125,138,.3); }
-  .parte div.dia{ background:#e9f5da; border-color:rgba(90,138,46,.4); }
-  .parte .n{ display:block; font-size:16px; font-weight:900; color:var(--ink); letter-spacing:-.02em; }
-  .parte .l{ font-size:9.5px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; color:var(--ink3); margin-top:2px; }
+  .par{ display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-top:11px; }
+  .par figure{ margin:0; }
+  .par img{ width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:12px; border:1px solid var(--line); display:block; }
+  .par figcaption{ font-size:11px; color:var(--ink3); margin-top:5px; line-height:1.35; }
 
   .ask{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border:1px solid rgba(90,138,46,.3); border-radius:20px;
     padding:20px 17px; margin:18px 0 10px; text-align:center; box-shadow:0 6px 20px rgba(45,80,22,.05); }
@@ -173,153 +149,157 @@
 <div class="wrap">
 
   <header class="hero reveal">
-    <div class="day">Viernes 11 &middot; <b>actualizado 08:10, me lo pediste vos</b> &mdash; y la ventana te qued&oacute; m&aacute;s grande</div>
-    <h1>S&iacute;, esas hojas tienen algo.<br>Y tiene nombre.</h1>
+    <div class="day">S&aacute;bado 12 &middot; <b>vuelven las tres que pospusiste</b></div>
+    <h1>Hoy no se poda.<br>Dos de las tres se hacen igual.</h1>
   </header>
 
   <div class="resp reveal">
-    <div class="resp-tag">&#128248; Tu foto del lunes a las 17:07</div>
-    <div class="cita">
-      <i>&laquo;Algunas hojas parecen algo arrugadas, &iquest;est&aacute; bien?&raquo;</i>
-      <span>Subida a la ficha del Durazno (B&#8209;30), fondo &mdash; contra el vecino del fondo.</span>
-    </div>
-    <img class="shot" src="https://gardening-chi.vercel.app/images/uploads/B-30/species-B-30_20260908-200754.jpg" alt="Brote del durazno B-30 con hojas engrosadas y onduladas" loading="lazy">
-    <p class="pie-shot">Tu foto, sin retocar. Mir&aacute; el brote del medio: la hoja est&aacute; <b>gruesa, ampollada y ondulada</b>, y el borde tira a rojizo-anaranjado en vez de verde.</p>
+    <div class="resp-tag">&#127786;&#65039; Consultado 06:05 &middot; ECMWF y GFS cruzados</div>
     <div class="veredicto">
-      <b>No, no est&aacute; bien. Es torque del duraznero.</b>
-      <i><i>Taphrina deformans</i> &mdash; el hongo m&aacute;s com&uacute;n del durazno en Uruguay. Afea y debilita: <b>no mata</b>.</i>
+      <b>11&deg;, llovizna y r&aacute;fagas de 30 a 45. La tijera no sale.</b>
+      <i>Y no es s&oacute;lo el viento: los c&iacute;tricos no se podan con fr&iacute;o encima.</i>
     </div>
-    <p>Y ac&aacute; te tengo que dar la mala primero: <b>la ventana para curarlo este a&ntilde;o ya se cerr&oacute;.</b> El hongo entra una sola vez, cuando la yema se abre; una vez que la hoja sali&oacute; abollada no hay fungicida que la vuelva atr&aacute;s. Si te vendieran cobre para tirarle ahora, no te sirve &mdash; y sobre hoja tierna encima quema. Te lo digo yo antes de que gastes.</p>
+    <p>El <b>5 de septiembre</b> pospusiste tres tareas una semana. <b>Hoy vuelven</b>, y te las traigo juntas en vez de de a una. Pero antes de pedirte nada mir&eacute; el d&iacute;a, y el d&iacute;a me dice que <b>dos de las tres s&iacute; y la m&aacute;s importante no</b>. Te separo cu&aacute;l es cu&aacute;l ac&aacute; arriba y no te hago leer nada m&aacute;s para saberlo.</p>
+    <div class="duo">
+      <div><span class="t">&#9989; Hoy s&iacute;</span><span class="v">Cosechar los limones</span><span class="s">La llovizna no molesta: no hac&eacute;s ninguna herida.</span></div>
+      <div><span class="t">&#9989; Hoy s&iacute;</span><span class="v">Dar vuelta las macetas del vivero</span><span class="s">Suelo mojado y 11&deg; es <b>el mejor</b> d&iacute;a para trasplantar.</span></div>
+      <div class="no"><span class="t">&#10060; Hoy no</span><span class="v">Podar limonero y mandarina</span><span class="s">Van el <b>viernes 18</b>. Abajo te muestro por qu&eacute; ese y no otro.</span></div>
+      <div class="no"><span class="t">&#128337; Y ojo</span><span class="v">La ventana cierra con septiembre</span><span class="s">Los dos est&aacute;n armando azahar: en octubre ya es tarde.</span></div>
+    </div>
   </div>
 
-  <div class="q reveal">
-    <div class="tag">&#128064; Una tocada &middot; me dice si el problema es de uno o de los dos</div>
-    <h3>&iquest;El otro durazno tambi&eacute;n las tiene as&iacute;?</h3>
-    <p>Ten&eacute;s <b>dos</b> ejemplares en la misma ficha: B&#8209;30 (el de tu foto) y <b>B&#8209;35</b>, el de al lado. Con la respuesta s&eacute; si el foco es puntual o si el a&ntilde;o que viene hay que tratar los dos s&iacute; o s&iacute;.</p>
-    <div class="opts">
-      <button type="button" onclick="engageAnswer('durazno-b35','tambien',this)"><span class="big">&#128530;</span>Igual de mal</button>
-      <button type="button" onclick="engageAnswer('durazno-b35','sano',this)"><span class="big">&#127807;</span>Ese est&aacute; sano</button>
-      <button type="button" onclick="engageAnswer('durazno-b35','no-mire',this)"><span class="big">&#128065;&#65039;</span>No lo mir&eacute;</button>
+  <div class="sect-lbl reveal">Lo de hoy &middot; las dos que el clima habilita</div>
+
+  <div class="item reveal" id="it-b23-3" data-ids="plant-B-23-3" data-code="B-23" data-title="Cosechar los limones maduros (antes de podar)">
+    <div class="ih">
+      <img class="photo" src="https://gardening-chi.vercel.app/images/uploads/B-23/species-B-23_20260904-160059.jpg" alt="Limonero B-23 cargado de limones amarillos contra el muro del fondo" loading="lazy">
+      <div class="hb">
+        <span class="pri">Alta</span>
+        <h4>Cosechar los limones &mdash; y no es por la cocina</h4>
+        <div class="code">B&#8209;23 &middot; <i>Citrus &times; limon</i></div>
+        <div class="donde">&#128205; Fondo, contra el muro de bloques del lado de la cancha de p&aacute;del &mdash; el que tiene los plantines a los pies.</div>
+      </div>
     </div>
-    <span class="q-hint"></span>
-    <p class="def">Si tocás «no lo miré», la próxima vez que salgas mirá el brote nuevo, no la hoja vieja: el torque sólo se ve en lo que brotó hace poco.</p>
+    <div class="d"><b>Tu foto del 04/09 muestra m&aacute;s de veinte limones amarillos colgando</b>, la mayor&iacute;a en la punta de ramas largas que se est&aacute;n arqueando por el peso. Esa carga no es un adorno: <b>un limonero cargado y sin cosechar produce menos flor en primavera</b>, porque la fruta madura le sigue chupando az&uacute;car al &aacute;rbol en vez de dejarlo armar azahar. Est&aacute;s en septiembre, o sea en pleno mes de azahar: <b>cada semana que la fruta sigue arriba te cuesta flor de la temporada que viene.</b><br>Y hay un orden que importa: <b>esto va ANTES de la poda</b>, no despu&eacute;s. Con las ramas cargadas, el corte de poda deja la rama rebotando y se quiebra donde no quer&iacute;as. Cosech&aacute;s hoy, pod&aacute;s el viernes con el &aacute;rbol liviano.</div>
+    <span class="when">HOY &middot; la llovizna no molesta &mdash; no hac&eacute;s ning&uacute;n corte que se pueda infectar</span>
+    <div class="como"><b>C&oacute;mo:</b> guantes gruesos, <b>tiene espinas</b>. A mano con un <b>giro suave</b> o con tijera &mdash; nunca tirando: si arranc&aacute;s el ped&uacute;nculo queda una herida abierta en la fruta y se pudre en dos d&iacute;as.<br><b>Cosech&aacute; s&oacute;lo los bien amarillos y dej&aacute; los verdes:</b> el lim&oacute;n <b>no sigue madurando</b> una vez cortado, as&iacute; que el que baj&aacute;s verde lo perdiste. Los que est&eacute;n en el piso o picados, a la basura &mdash; no al compost.<br><b>Si te sobran:</b> jugo en cubetera y al freezer, que aguanta meses. Y guard&aacute; las c&aacute;scaras: <b>tienen 4 veces m&aacute;s vitamina C que el jugo</b> y son el mejor desengrasante casero que hay (en un frasco con vinagre, dos semanas).</div>
+    <div class="acts">
+      <button type="button" data-act="done">&#9989; Hecha</button>
+      <button type="button" data-act="snooze">&#128564; Posponer 1 semana</button>
+      <button type="button" data-act="talk">&#128172; Comentar</button>
+    </div>
+    <div class="box" hidden><textarea rows="2" placeholder="Dudas, ya la hice, o contame cuántos bajaron…"></textarea><div class="row"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" data-act="cancel">Cerrar &#10005;</button></div></div>
+    <span class="hint"></span>
+    <div class="state" hidden></div>
+    <a class="full" href="https://gardening-chi.vercel.app/tasks/plant-B-23-3.html">Abrir la tarea completa &rarr;</a>
+  </div>
+
+  <div class="item reveal" id="it-b46-3" data-ids="plant-B-46-3" data-code="B-46" data-title="Trasplantar a tierra los listos en septiembre">
+    <div class="ih">
+      <img class="photo" src="https://gardening-chi.vercel.app/images/uploads/B-46/species-B-46-3_20260504-122525.jpg" alt="Plantines del vivero en macetas negras sobre tablas blancas contra la pared del fondo" loading="lazy">
+      <div class="hb">
+        <span class="pri m">Media</span>
+        <h4>Dar vuelta cada maceta del vivero</h4>
+        <div class="code">B&#8209;46 &middot; vivero, ~20&#8209;30 plantines</div>
+        <div class="donde">&#128205; Fondo, sobre las tablas blancas contra la pared de bloques &mdash; al pie del limonero, misma franja.</div>
+      </div>
+    </div>
+    <div class="d"><b>Esta es la que el clima de hoy no s&oacute;lo permite: la premia.</b> El trasplante tiene un solo enemigo real, que es el estr&eacute;s de agua, y hoy ten&eacute;s <b>tierra mojada, 11&deg; y cero sol</b> &mdash; las tres cosas que hacen que un plantín cambie de maceta sin enterarse. Un plantín que pas&aacute;s a tierra un s&aacute;bado de sol a 25&deg; se pasa una semana amarillo; hoy no.<br>Pero el paso de hoy <b>no es plantar</b>: es <b>dar vuelta la maceta y mirar la raíz</b>. Es la única forma de saber qué está listo, y no lleva herramienta ni fuerza. Bola de raíces apretada y blanca asomando por los agujeros = listo. Tierra suelta que se desarma = todavía no.</div>
+    <span class="when">HOY &middot; la llovizna es aliada, no problema</span>
+    <div class="como"><b>Y te ahorro la mitad del trabajo de entrada:</b> las <b>palmeras</b> son la mayor&iacute;a de lo que hay en esas tablas y <b>NO van este septiembre</b>. Su regla es 30 cm m&iacute;nimo y en tu foto no llegan; su fecha real es <b>septiembre 2027</b> y ya est&aacute; en el cat&aacute;logo como tarea aparte. Si hoy las mov&eacute;s, las perd&eacute;s: el cepell&oacute;n es chico y la ra&iacute;z se deshace.<br><b>Lo que s&iacute; se define hoy</b> son los plantines de hoja ancha y las hierbas &mdash; los chiquitos que se ven abajo a la derecha y en el grupo de la izquierda. Esos se dan vuelta, se miran y se reparten en tres destinos.</div>
+    <a class="tool" href="https://gardening-chi.vercel.app/engage/2026-09-12-tres-pilas.html">&#129508; Abrir el contador de las tres pilas &rarr;</a>
+    <div class="acts">
+      <button type="button" data-act="done">&#9989; Hecha</button>
+      <button type="button" data-act="snooze">&#128564; Posponer 1 semana</button>
+      <button type="button" data-act="talk">&#128172; Comentar</button>
+    </div>
+    <div class="box" hidden><textarea rows="2" placeholder="Dudas, ya la hice, o contame qué encontraste…"></textarea><div class="row"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" data-act="cancel">Cerrar &#10005;</button></div></div>
+    <span class="hint"></span>
+    <div class="state" hidden></div>
+    <a class="full" href="https://gardening-chi.vercel.app/tasks/plant-B-46-3.html">Abrir la tarea completa &rarr;</a>
+  </div>
+
+  <div class="sect-lbl reveal">La tercera &middot; la que te freno hasta el viernes</div>
+
+  <div class="item reveal" id="it-citricos" data-ids="plant-B-23,plant-B-24" data-code="B-23" data-title="Poda de formación de los cítricos (limonero + mandarina)">
+    <div class="ih">
+      <img class="photo" src="https://gardening-chi.vercel.app/images/uploads/B-24/species-B-24_20260904-160115.jpg" alt="Mandarina criolla B-24 con la copa densa y cerrada contra el muro del fondo" loading="lazy">
+      <div class="hb">
+        <span class="pri m">Media &times;2</span>
+        <h4>Limonero y mandarina &mdash; la misma tarde, la misma tijera</h4>
+        <div class="code">B&#8209;23 + B&#8209;24 &middot; a dos metros uno del otro</div>
+        <div class="donde">&#128205; Fondo, los dos contra el muro de bloques del lado de la cancha de p&aacute;del.</div>
+      </div>
+    </div>
+    <div class="d"><b>Las junto en una sola tarjeta porque son un solo trabajo:</b> misma esquina, misma t&eacute;cnica (abrir el centro para que entre luz), misma ventana y sobre todo <b>la misma herramienta</b> &mdash; y ah&iacute; est&aacute; el detalle que casi nadie hace y que en c&iacute;tricos importa de verdad: <b>hay que pasar alcohol 70% a la tijera entre un &aacute;rbol y el otro.</b> Las enfermedades serias de c&iacute;tricos viajan en la hoja de la tijera; dos c&iacute;tricos vecinos podados con el mismo filo sucio son un puente. Treinta segundos y un algod&oacute;n.<br><b>Y son parientes cercanos, literal:</b> la mandarina criolla (<i>Citrus reticulata</i>) es uno de los tres c&iacute;tricos ancestrales de los que sale todo lo dem&aacute;s, y el limonero <b>no existe en estado silvestre</b> &mdash; es un h&iacute;brido de cidro con naranja amarga, o sea un descendiente. Ten&eacute;s al abuelo y al nieto a dos metros, contra el mismo muro.<br><b>Tu foto de la mandarina es el manual:</b> mir&aacute; el coraz&oacute;n de la copa, est&aacute; cerrado y oscuro, con rama sobre rama. Eso es exactamente lo que hay que abrir.</div>
+    <span class="when esp">VIERNES 18 &middot; no hoy &mdash; y no es capricho, son tres n&uacute;meros</span>
+    <div class="como"><b>Por qu&eacute; no hoy:</b> tres razones que se suman. ① <b>R&aacute;fagas de 30 a 45 km/h</b> todo el d&iacute;a: con la rama movi&eacute;ndose el corte sale desgarrado, y en c&iacute;trico el corte feo es la puerta de entrada. ② <b>Llovizna</b>: agua sobre corte fresco es infecci&oacute;n. ③ La ficha de los dos dice <b>&laquo;pasado el riesgo de helada&raquo;</b>, y las madrugadas de esta semana bajan a <b>3,5&deg; y 4,1&deg;</b> &mdash; eso a nivel del pasto es helada blanca, y una helada sobre corte fresco de c&iacute;trico hace da&ntilde;o real.<br><b>C&oacute;mo, el viernes:</b> tijera <b>afilada</b> + alcohol 70%. Primero lo muerto, seco y quebrado. Despu&eacute;s los <b>chupones</b> del limonero (verticales, lisos, sin fruta) al ras del tronco. Despu&eacute;s las ramas que apuntan al centro y las que se cruzan. Cortes en bisel, 5 mm arriba de una yema que mire hacia afuera. <b>Limonero hasta 20&#8209;30%, mandarina qued&aacute;te en 20%</b> &mdash; la criolla agradece mano suave y la rama se quiebra f&aacute;cil, aguantala mientras cort&aacute;s.<br><b>Si ves algo raro, foto antes de tratar:</b> bultos blanco&#8209;grisáceos cerosos o pegote pegajoso (cochinilla) en el limonero, o galer&iacute;as plateadas serpenteando en la hoja nueva de la mandarina (minador). No compres nada sin mostrarme.</div>
+    <div class="acts">
+      <button type="button" data-act="done">&#9989; Ya la hice</button>
+      <button type="button" data-act="snooze">&#128564; Recordame en 1 semana</button>
+      <button type="button" data-act="talk">&#128172; Comentar</button>
+    </div>
+    <div class="box" hidden><textarea rows="2" placeholder="Dudas, o avisame si el viernes no te sirve…"></textarea><div class="row"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" data-act="cancel">Cerrar &#10005;</button></div></div>
+    <span class="hint"></span>
+    <div class="state" hidden></div>
+    <div class="par">
+      <figure>
+        <img src="https://gardening-chi.vercel.app/images/uploads/B-23/species-B-23_20260904-160059.jpg" alt="Limonero B-23 cargado" loading="lazy">
+        <figcaption><b>B&#8209;23 limonero.</b> Cargado y con las gu&iacute;as arqueadas. Primero se cosecha, despu&eacute;s se abre el centro y se sacan chupones.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://gardening-chi.vercel.app/images/uploads/B-24/species-B-24_20260904-160115.jpg" alt="Mandarina B-24 con la copa cerrada" loading="lazy">
+        <figcaption><b>B&#8209;24 mandarina.</b> Sin fruta &mdash; su cosecha termin&oacute; en agosto. El coraz&oacute;n cerrado es el trabajo: sacar lo que crece hacia adentro.</figcaption>
+      </figure>
+    </div>
+    <a class="full" href="https://gardening-chi.vercel.app/tasks/plant-B-23.html">Abrir la tarea del limonero &rarr;</a>
   </div>
 
   <div class="blk reveal">
-    <h3>&#127793; Lo que s&iacute; se hace, y se puede hacer cualquier d&iacute;a</h3>
-    <p>Nada de esto necesita d&iacute;a seco ni tijera fina: es mano, balde y bolsa. <b>Diez minutos.</b> No cura la hoja que ya est&aacute; deformada &mdash; salva la <i>segunda</i> brotada, que sale sana y es la que te sostiene el a&ntilde;o.</p>
-    <ol class="pasos">
-      <li><b>Arrancá y tirá la hoja abollada</b> que alcances con la mano. A la basura, <b>nunca al compost</b>: ahí el hongo sobrevive y vuelve.</li>
-      <li><b>Junt&aacute; del piso</b> lo que ya se cay&oacute; al pie del &aacute;rbol. Ah&iacute; es donde inverna.</li>
-      <li><b>Reg&aacute; y aliment&aacute;lo</b> &mdash; un par de cent&iacute;metros de compost al pie. Perdi&oacute; hoja, o sea que perdi&oacute; f&aacute;brica: la segunda brotada le cuesta el doble si est&aacute; en ayunas.</li>
-      <li><b>La flor rosada que ten&eacute;s abierta</b> (se ve en tu segunda foto) <b>no se toca</b>. Esa es la cosecha de diciembre y el torque no se la lleva.</li>
-    </ol>
-  </div>
-
-  <div class="culpa reveal">
-    <div class="tag">&#9888;&#65039; Esto fue error m&iacute;o, no tuyo</div>
-    <h3>Mi ficha ten&iacute;a UNA fecha de cobre. Son DOS.</h3>
-    <p>Fui a ver qu&eacute; hab&iacute;a fallado y el que fall&oacute; fui yo. <b>Vos hiciste lo que te ped&iacute;:</b> la limpieza de oto&ntilde;o con caldo bordel&eacute;s la marcaste hecha el <b>2 de mayo</b>. Hiciste bien y a tiempo.</p>
-    <p>El problema es que esa mano sola no alcanza, y mi ficha no dec&iacute;a la otra. <b>El torque se frena en julio, no en oto&ntilde;o</b> &mdash; con la yema gorda y todav&iacute;a cerrada, justo antes de que el hongo entre. Esa fecha no exist&iacute;a en tu app. Por eso apareci&oacute;.</p>
-    <ul class="fechas">
-      <li><span class="n">1&ordf;</span><span><b>Mayo</b> &mdash; con el &aacute;rbol pelado: juntar la hoja ca&iacute;da + cobre. <i>Esta ya la ven&iacute;as haciendo.</i></span></li>
-      <li class="nueva"><span class="n">2&ordf;</span><span><b>Fines de julio</b> &mdash; yema hinchada y cerrada, cobre hasta que chorree, los dos duraznos la misma tarde. <b>Esta es la que faltaba.</b></span></li>
-    </ul>
-    <p>Ya la agregu&eacute; al cat&aacute;logo como tarea con fecha, prioridad alta, con el paso a paso y la se&ntilde;al para saber cu&aacute;ndo mirar la yema. <b>No depende de que te acuerdes: te va a llegar sola.</b></p>
-    <a class="cta" href="https://gardening-chi.vercel.app/tasks/plant-B-30-3.html">Ver la tarea nueva &rarr;</a>
+    <h3>&#128197; Por qu&eacute; el viernes 18 y no otro d&iacute;a</h3>
+    <p>Ped&iacute; los siete d&iacute;as a los dos modelos y busqu&eacute; el d&iacute;a que cumpla <b>las tres condiciones a la vez</b>: cero lluvia, viento bajo y madrugada lejos de la helada. <b>Hay uno solo.</b></p>
+    <table class="sem">
+      <thead><tr><th>D&iacute;a</th><th>Lluvia</th><th>R&aacute;fagas</th><th>M&aacute;x</th><th>M&iacute;n</th></tr></thead>
+      <tbody>
+        <tr class="bad"><td>Hoy s&aacute;b 12</td><td>0,7&#8209;1,8 mm</td><td>35&#8209;45</td><td>11&deg;</td><td>7,6&deg;</td></tr>
+        <tr class="bad"><td>Dom 13</td><td>0,3&#8209;0,9 mm</td><td>27</td><td>10&deg;</td><td>4,3&deg;</td></tr>
+        <tr class="bad"><td>Lun 14</td><td>0,2 mm</td><td>22&#8209;34</td><td>13&deg;</td><td>4,1&deg;</td></tr>
+        <tr class="bad"><td>Mar 15</td><td>0&#8209;0,3 mm</td><td>27&#8209;52</td><td>14&deg;</td><td>4,2&deg;</td></tr>
+        <tr class="bad"><td>Mi&eacute; 16</td><td>0,0 mm</td><td>27&#8209;34</td><td>15&deg;</td><td>3,5&deg;</td></tr>
+        <tr class="bad"><td>Jue 17</td><td>0,0 mm</td><td>31&#8209;41</td><td>20&deg;</td><td>5,1&deg;</td></tr>
+        <tr class="win"><td>Vie 18</td><td>0,0 mm</td><td>27&#8209;29</td><td>22&deg;</td><td>9,3&deg;</td></tr>
+      </tbody>
+    </table>
+    <p><b>El viernes gana en las tres columnas juntas:</b> es el &uacute;nico d&iacute;a con <b>0,0 mm en los dos modelos</b>, tiene <b>las r&aacute;fagas m&aacute;s bajas de los siete</b> (27&#8209;29, contra 45 hoy y 52 el martes) y es la <b>&uacute;nica madrugada que arranca en 9,3&deg;</b> &mdash; todas las otras bajan a 3&#8209;5&deg;, que al ras del pasto es escarcha. De paso son 22&deg; de m&aacute;xima: trabaj&aacute;s en manga corta.<br><b>El mi&eacute;rcoles 16 es el segundo mejor</b> por si el viernes no te da: seco y con viento aceptable, pero esa madrugada es la m&aacute;s fr&iacute;a de la semana (3,5&deg;), as&iacute; que si vas el mi&eacute;rcoles <b>pod&aacute; de tarde</b>, no a la ma&ntilde;ana.</p>
+    <p style="font-size:12.5px;color:var(--ink3)">Los dos modelos discrepan fuerte en el viento del martes (27 contra 52 km/h): cuando no coinciden te doy el rango entero en vez de elegir el que me conviene. <b>El jueves 17 te va a llegar el recordatorio</b> &mdash; es d&iacute;a de push de tareas y cae justo la v&iacute;spera.</p>
   </div>
 
   <div class="ap reveal">
-    <div class="tag">&#127942; Lo que te promet&iacute; ayer PARA HOY &middot; te lo cobro entero</div>
-    <h3>El viernes seco lo gan&eacute;. Los 16&deg; los perd&iacute;.</h3>
-    <p>Ayer te dej&eacute; esto por escrito, y vence hoy. Volv&iacute; a consultar los dos modelos esta ma&ntilde;ana a las 06:10, ya con el d&iacute;a encima, y te lo liquido antes de que salgas:</p>
-    <div class="cit">&laquo;El viernes 11 est&aacute; seco, 16°, sin r&aacute;fagas: es el &uacute;nico d&iacute;a de tijera de la semana.&raquo;</div>
+    <div class="tag">&#127942; La apuesta de ayer &middot; te la cobro entera, y esta la perd&iacute; fe&iacute;to</div>
+    <h3>Gan&eacute; el seco y el viento clavado. Con la temperatura me corregí para el lado equivocado.</h3>
+    <p>Ayer te escrib&iacute; dos veces sobre el mismo d&iacute;a. Ac&aacute; est&aacute;n las dos afirmaciones contra <b>lo que realmente pas&oacute;</b>, medido ya cerrado el d&iacute;a:</p>
+    <div class="cit">06:10 &mdash; &laquo;seco, 16&deg;, sin r&aacute;fagas&raquo;. &nbsp;08:10 &mdash; &laquo;me corrijo: la m&aacute;xima real es 12,7&deg;, te vend&iacute; 3 grados de m&aacute;s. Y el pico de viento es 30&#8209;32 entre las 15 y las 17&raquo;.</div>
     <ul class="marc">
-      <li class="ok"><span class="d">Seco</span><span class="v">0,0 mm <b>hora por hora</b> &middot; 0 % de probabilidad</span><span class="r">&#9989;</span></li>
-      <li class="no"><span class="d">16&deg;</span><span class="v">la m&aacute;xima real es <b>12,7&deg;</b> &mdash; te vend&iacute; 3 grados de m&aacute;s</span><span class="r">&#10060;</span></li>
-      <li class="ok"><span class="d">Sin r&aacute;fagas</span><span class="v">6&#8209;19 km/h hasta las 10 de la ma&ntilde;ana</span><span class="r">&#9989;</span></li>
+      <li class="ok"><span class="d">Seco</span><span class="v">0,00 mm en todo el d&iacute;a &mdash; <b>clavado</b></span><span class="r">&#9989;</span></li>
+      <li class="ok"><span class="d">Pico 30&#8209;32</span><span class="v">r&aacute;faga m&aacute;xima real <b>32,0 km/h</b> &mdash; clavado al kil&oacute;metro</span><span class="r">&#9989;</span></li>
+      <li class="no"><span class="d">16&deg; &rarr; 12,7&deg;</span><span class="v">la m&aacute;xima real fue <b>14,6&deg;</b> &mdash; justo en el medio de mis dos n&uacute;meros</span><span class="r">&#10060;</span></li>
     </ul>
-    <p><b>Sigue siendo el d&iacute;a</b> &mdash; pero abrigate m&aacute;s de lo que te dije. Y ac&aacute; va <b>una segunda correcci&oacute;n, esta a tu favor</b>: cuando te escrib&iacute; a las 06:10 te dije que a las 11 ya soplaba a 25 y que la tarde se plantaba en 30. <b>Volv&iacute; a mirar reci&eacute;n y no es tan as&iacute;.</b> El viento se corri&oacute; para atr&aacute;s: la ventana buena no termina a las 11, <b>te llega hasta las 14</b>.</p>
-    <ul class="marc">
-      <li class="ok"><span class="d">8 a 10h</span><span class="v">r&aacute;fagas de <b>5 a 16 km/h</b> &mdash; el aire quieto</span><span class="r">&#9989;</span></li>
-      <li class="ok"><span class="d">10 a 14h</span><span class="v">21 a 24 km/h &mdash; molesta poco, se trabaja igual</span><span class="r">&#9989;</span></li>
-      <li class="no"><span class="d">15 a 17h</span><span class="v"><b>30&#8209;32 km/h</b> &mdash; el pico. Ah&iacute; s&iacute; dejala</span><span class="r">&#10060;</span></li>
-    </ul>
-    <p>Para la santa rita &mdash;gu&iacute;as largas, espinas duras, vos estirado arriba de algo&mdash; eso es la diferencia entre pelear con la planta y podarla tranquilo. <b>Cuanto m&aacute;s temprano, mejor; pero no ten&eacute;s que correr.</b></p>
-    <div class="parte">
-      <div class="hoy"><span class="n">hasta 14h</span><span class="l">Hoy &middot; la ventana</span></div>
-      <div><span class="n">51</span><span class="l">S&aacute;b 12 &middot; km/h</span></div>
-      <div><span class="n">8,9&deg;</span><span class="l">Dom 13 &middot; m&aacute;xima</span></div>
-      <div class="dia"><span class="n">12,4&deg;</span><span class="l">Lun 14 &middot; seco</span></div>
-    </div>
-    <p style="font-size:12.5px;color:var(--ink3);margin-top:9px">Consultado a las 06:10 y <b>vuelto a consultar 08:10</b> en dos modelos cruzados (ECMWF y GFS): coinciden n&uacute;mero por n&uacute;mero, y la lluvia sigue en <b>0,0 mm todo el d&iacute;a</b>. <b>Si hoy no sale, el fin de semana no te sirve:</b> ma&ntilde;ana s&aacute;bado sopla a <b>51 km/h</b> con 0,6 mm, y el domingo la m&aacute;xima no pasa de <b>8,9&deg;</b> &mdash; invierno pleno en plena primavera. La pr&oacute;xima ventana de verdad es el <b>lunes 14</b>. No hay apuro de vida o muerte: hay una semana de diferencia, no una temporada.</p>
+    <p><b>Y la parte fea, con el n&uacute;mero al lado:</b> mi primer error fue de <b>1,4&deg; de m&aacute;s</b>. Mi &laquo;correcci&oacute;n&raquo; de las 08:10 fall&oacute; por <b>1,9&deg; de menos</b>. O sea que <b>me corregí y qued&eacute; m&aacute;s lejos que antes de corregirme</b>: cuando dije &laquo;te vend&iacute; 3 grados de m&aacute;s&raquo; en realidad te hab&iacute;a vendido 1,4, y al bajar a 12,7 me pas&eacute; para el otro lado. La ventana de tijera hasta las 14 y el pico de la tarde los ten&iacute;a bien; la temperatura no. <b>Te sirve saberlo</b>: cuando te doy una m&aacute;xima, tomala con un grado y medio de margen para arriba y para abajo &mdash; el viento y la lluvia los tengo mucho m&aacute;s finos que el term&oacute;metro.</p>
   </div>
 
-  <div class="sect-lbl reveal">HOY viernes &middot; las dos que florecen en madera nueva</div>
-
-  <div class="freno reveal">Van juntas porque comparten la misma regla: <b>las dos hacen la flor sobre el brote de esta primavera, no sobre la rama vieja.</b> Cada semana que pasa sin cortarlas es rama larga que la planta alimenta al pedo &mdash; y flor que termina arriba y afuera, donde no la ves.</div>
-
-  <div class="item reveal" id="it-b1" data-ids="plant-B-1" data-code="B-1" data-title="Poda invernal severa de guías">
-    <div class="ih">
-      <img class="photo" src="https://gardening-chi.vercel.app/images/uploads/B-1/species-B-1_20260904-154250.jpg" alt="Santa Rita B-1 sobre el muro colorado" loading="lazy">
-      <div class="hb">
-        <span class="pri">Alta</span>
-        <h4>Santa Rita &mdash; acortarle las gu&iacute;as 30&#8209;50%</h4>
-        <div class="code">B&#8209;1 &middot; <i>Bougainvillea spectabilis</i></div>
-        <div class="donde">&#128205; Fondo, sobre el muro colorado, al lado de la le&ntilde;a apilada.</div>
-      </div>
-    </div>
-    <div class="d"><b>Tu foto del 04/09 es el manual entero en una imagen:</b> toda la fucsia est&aacute; arriba del muro y trepando al tejado, y de la mitad para abajo &mdash; contra la pared, donde vos la mir&aacute;s todos los d&iacute;as &mdash; es palo pelado y marr&oacute;n. Eso no es que est&eacute; enferma: es una santa rita sin podar. Florece en madera nueva, as&iacute; que la flor se le va corriendo a la punta a&ntilde;o a a&ntilde;o.<br><b>Su ficha dec&iacute;a &laquo;pasada la &uacute;ltima helada&raquo; y esa condici&oacute;n ya se cumpli&oacute;:</b> ninguna madrugada de la semana baj&oacute; de 6,4&deg; y el pron&oacute;stico no da helada en 7 d&iacute;as. Es la m&aacute;s friolenta de la lista y por eso era la &uacute;ltima en habilitarse. Ahora est&aacute; habilitada.</div>
-    <span class="when">HOY &middot; hasta las 14 tranquilo &middot; el pico de viento es 15&#8209;17h</span>
-    <div class="como"><b>C&oacute;mo:</b> guantes de cuero y manga larga &mdash; las espinas son largas y duras. Primero sac&aacute; lo seco, roto y cruzado. Despu&eacute;s acort&aacute; <b>cada gu&iacute;a principal entre 30% y 50%</b>, cortando 5 mm arriba de una yema que mire hacia afuera. Si la quer&eacute;s domada, baj&aacute; toda la planta a la altura del muro.<br><b>El truco que casi nadie sabe:</b> despu&eacute;s de podar <b>reg&aacute; poco</b> y nada de nitr&oacute;geno. La santa rita florece cuando pasa sed; bien regada te hace hoja verde y cero br&aacute;ctea.</div>
-    <div class="acts">
-      <button type="button" data-act="done">&#9989; Hecha</button>
-      <button type="button" data-act="snooze">&#128564; Posponer 1 semana</button>
-      <button type="button" data-act="talk">&#128172; Comentar</button>
-    </div>
-    <div class="box" hidden><textarea rows="2" placeholder="Dudas, ya la hice, o contame cómo salió…"></textarea><div class="row"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" data-act="cancel">Cerrar &#10005;</button></div></div>
-    <span class="hint"></span>
-    <div class="state" hidden></div>
-    <a class="full" href="https://gardening-chi.vercel.app/tasks/plant-B-1.html">Abrir la tarea completa &rarr;</a>
-  </div>
-
-  <div class="item reveal" id="it-f2" data-ids="plant-F-2" data-code="F-2" data-title="Poda fuerte de invierno">
-    <div class="ih">
-      <img class="photo" src="https://gardening-chi.vercel.app/images/uploads/F-2/species-F-2_20260904-160925.jpg" alt="Podranea F-2 sobre el cerco del frente" loading="lazy">
-      <div class="hb">
-        <span class="pri m">Media</span>
-        <h4>Bignonia rosada &mdash; bajarla 40&#8209;60% sobre el cerco</h4>
-        <div class="code">F&#8209;2 &middot; <i>Podranea ricasoliana</i></div>
-        <div class="donde">&#128205; Frente, sobre el cerco que da a la calle &mdash; el lado del sol de la tarde.</div>
-      </div>
-    </div>
-    <div class="d">Es la m&aacute;s atrasada de las dos: su ficha dice <b>agosto</b> y estamos a 11 de septiembre. La buena noticia es que la Podranea es de las pocas trepadoras que <b>aguanta la poda fuerte aunque ya tenga hoja</b> &mdash; no hay que esperar a que se pele, y con hoja se ve mejor qu&eacute; rama est&aacute; viva.<br>Florece de noviembre a abril <b>sobre lo que brota ahora</b>. Cortarla hoy es literalmente decidir cu&aacute;ntos racimos rosados vas a tener en el cerco del frente este verano. Y esta no depende de la hora: est&aacute; a la altura de la mano, el viento no te molesta. <b>Si hoy hac&eacute;s una sola de las dos, que sea la santa rita</b> &mdash; esta la pod&eacute;s hacer incluso a las 6 de la tarde.</div>
-    <span class="when">HOY &middot; el mismo d&iacute;a que la santa rita</span>
-    <div class="como"><b>C&oacute;mo:</b> identific&aacute; primero las <b>ramas principales pegadas al cerco</b> &mdash; esas son la estructura y se conservan. De cada una, acort&aacute; las laterales dejando s&oacute;lo <b>3&#8209;4 yemas</b> (los bultitos de donde sale el brote). Sac&aacute; lo viejo, seco y todo lo que escape lejos del cerco, y at&aacute; lo que qued&oacute; suelto.<br><b>No le tengas miedo:</b> rebrota con vigor y la rama nueva da m&aacute;s flor que la vieja. Cortes en bisel arriba de una yema externa.</div>
-    <div class="acts">
-      <button type="button" data-act="done">&#9989; Hecha</button>
-      <button type="button" data-act="snooze">&#128564; Posponer 1 semana</button>
-      <button type="button" data-act="talk">&#128172; Comentar</button>
-    </div>
-    <div class="box" hidden><textarea rows="2" placeholder="Dudas, ya la hice, o contame cómo salió…"></textarea><div class="row"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" data-act="cancel">Cerrar &#10005;</button></div></div>
-    <span class="hint"></span>
-    <div class="state" hidden></div>
-    <a class="full" href="https://gardening-chi.vercel.app/tasks/plant-F-2.html">Abrir la tarea completa &rarr;</a>
-  </div>
-
-  <div class="freno reveal"><b>Y una tercera que te freno yo.</b> La <b>lantana (B&#8209;29)</b> tiene la misma tarea &mdash; cortarla a 30 cm &mdash; y la misma condici&oacute;n de helada, que tambi&eacute;n se cumpli&oacute;. Pero tu foto del 04/09 la muestra <b>llena de hoja verde hasta abajo y todav&iacute;a con naranja en las puntas</b>: no est&aacute; le&ntilde;osa ni pelada por dentro, que es el motivo real del corte al ras. <b>No corr&eacute;s riesgo esperando</b> y de paso le sac&aacute;s las &uacute;ltimas semanas de flor. Te la traigo cuando afloje.</div>
+  <div class="freno reveal"><b>Y una que ni te nombro como tarea.</b> La <b>lantana (B&#8209;29)</b> sigue frenada por m&iacute; desde el jueves, y con este fin de semana con menos raz&oacute;n todav&iacute;a para tocarla. La <b>santa rita (B&#8209;1)</b> y la <b>bignonia (F&#8209;2)</b> eran las de ayer: si ayer no salieron, <b>su pr&oacute;ximo d&iacute;a bueno tambi&eacute;n es el viernes 18</b> &mdash; pero esas dos aguantan viento y no les pasa nada por esperar, as&iacute; que el viernes la prioridad son los c&iacute;tricos, que tienen la ventana cerr&aacute;ndose con el mes.</div>
 
   <section class="ask reveal" id="engage-feedback-box">
-    <h3>&#128587; Preguntame lo que sea, como el lunes</h3>
-    <p>La foto del durazno con esa l&iacute;nea de texto fue la mejor consulta que me hiciste en meses: me diste el s&iacute;ntoma, la planta y la fecha de una. Segu&iacute; haci&eacute;ndolo. Y si algo de esto no te cierra, decilo &mdash; sobre todo si cre&eacute;s que me equivoqu&eacute;.</p>
-    <textarea rows="3" placeholder="Escribime tu duda, tu corrección o lo que quieras que mire…"></textarea>
+    <h3>&#128587; Corregime vos ahora</h3>
+    <p>Hoy te di un n&uacute;mero verificable: <b>&laquo;m&aacute;s de veinte limones&raquo;</b>, contados de tu foto del 04/09. Si baj&aacute;s la cosecha y son doce, quiero saberlo &mdash; cont&aacute; mal yo, y con eso calibro. Lo mismo con cualquier cosa de arriba que no te cierre.</p>
+    <textarea rows="3" placeholder="Cuántos limones bajaron, o qué de todo esto no te cerró…"></textarea>
     <button type="button" class="send" onclick="engageFeedback('jardin-hoy', this)">Enviar</button>
     <span class="fb-hint"></span>
   </section>
 
   <footer class="pie">
     <a href="https://gardening-chi.vercel.app/tareas.html">Ver el Timeline completo &rarr;</a>
-    <div class="cred">Tu vistazo del jard&iacute;n &middot; escrita el <b>jueves 10/09</b> a partir de tus dos fotos del lunes 20:07, reeditada hoy <b>06:10</b> para saldarte la promesa del viernes, y <b>otra vez a las 08:10 porque me pediste el push actualizado</b> &mdash; misma p&aacute;gina, mismo link, contenido al d&iacute;a &middot; diagn&oacute;stico verificado sobre la imagen original &middot; pron&oacute;stico de Montevideo en ECMWF y GFS cruzados, consultado dos veces hoy &middot; 51 especies, 102 tareas en el cat&aacute;logo &middot; pr&oacute;xima edici&oacute;n: <b>ma&ntilde;ana s&aacute;bado</b>, con las 3 que vuelven de posponer (limonero, mandarina y el vivero).</div>
+    <div class="cred">Tu vistazo del jard&iacute;n &middot; edici&oacute;n del <b>s&aacute;bado 12/09, 06:05</b> &mdash; misma p&aacute;gina, mismo link &middot; las tres tareas son las que pospusiste el 05/09 y vencieron hoy, le&iacute;das de tu propio estado &middot; fotos tuyas del 04/09, sin retocar &middot; pron&oacute;stico de Montevideo en <b>ECMWF y GFS cruzados</b> a 7 d&iacute;as y saldo del viernes con datos ya cerrados &middot; 51 especies, 102 tareas en el cat&aacute;logo &middot; a las <b>11:00 te llega la otra</b>: el contador de las tres pilas del vivero, que es la herramienta de la tarea de arriba. Pr&oacute;xima edici&oacute;n de esta p&aacute;gina: <b>jueves 17</b>, la v&iacute;spera de la poda.</div>
   </footer>
 
 </div>

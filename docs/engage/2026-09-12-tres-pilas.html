@@ -1,0 +1,447 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>🪴 Las tres pilas — el cajón del vivero se llena hoy</title>
+<meta property="og:title" content="🪴 Las tres pilas — el cajón del vivero se llena hoy">
+<meta property="og:description" content="Dar vuelta cada maceta y repartir en tres pilas. Tu ficha dice «30+ plantines»; yo conté 23 en tu foto. Uno de los dos números está mal y el contador de abajo lo resuelve.">
+<style>
+  :root{
+    --bg:#f5faf0; --card:#ffffff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a;
+    --verde:#2d5016; --verde2:#5a8a2e; --verde3:#dff0cc; --line:rgba(45,80,22,.12);
+    --sol:#e0a92e; --azul:#3f7d8a; --rojo:#b0432e; --tierra:#8a5a2e;
+    --pad:max(18px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; width:100%; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .back:active{ opacity:.6; }
+  .wrap{ max-width:480px; margin:0 auto; padding:0 var(--pad) 22px; }
+  .reveal{ opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  .hero{ padding:14px 0 2px; }
+  .hero .day{ font-size:11px; font-weight:900; letter-spacing:.15em; text-transform:uppercase; color:var(--ink3); }
+  .hero h1{ font-size:27px; line-height:1.12; margin:5px 0 0; font-weight:900; letter-spacing:-.02em; }
+  .hero .sub{ font-size:13.5px; color:var(--ink2); margin-top:7px; }
+  .hero .sub b{ color:var(--ink); }
+
+  /* ====== EL CAJON: el objeto que se llena ====== */
+  .cajon{ background:#1e2a17; color:#eaf3e0; border-radius:20px; padding:15px 14px 13px; margin:12px 0 0;
+    box-shadow:0 12px 34px rgba(30,42,23,.2); }
+  .cajon .tag{ font-size:10px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; color:#b7d69a; }
+  .cajon h2{ font-size:17px; font-weight:900; margin:4px 0 0; line-height:1.25; color:#fff; }
+  .cajon .lead{ font-size:12.5px; color:#9fb78b; margin-top:5px; }
+  .cajon .lead b{ color:#eaf3e0; }
+
+  .bins{ display:grid; gap:8px; margin-top:12px; }
+  .bin{ background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:10px 11px;
+    display:flex; align-items:center; gap:10px; }
+  .bin .ic{ font-size:21px; flex:none; width:26px; text-align:center; }
+  .bin .tx{ flex:1; min-width:0; display:block; }
+  .bin .nm{ display:block; font-size:13.5px; font-weight:900; color:#fff; line-height:1.2; }
+  .bin .hp{ display:block; font-size:11px; color:#9fb78b; margin-top:2px; line-height:1.3; }
+  .bin .ct{ flex:none; display:flex; align-items:center; gap:6px; }
+  .bin button{ width:34px; height:34px; border-radius:11px; border:1px solid rgba(255,255,255,.22);
+    background:rgba(255,255,255,.1); color:#fff; font:900 17px var(--sans); cursor:pointer; line-height:1; }
+  .bin button.plus{ background:#7fae4e; border-color:#7fae4e; color:#14200c; }
+  .bin button:active{ transform:scale(.93); }
+  .bin .n{ min-width:26px; text-align:center; font-size:20px; font-weight:900; color:#fff; font-variant-numeric:tabular-nums; }
+  .bin.on{ background:rgba(127,174,78,.2); border-color:rgba(127,174,78,.55); }
+  .bin.esp{ border-style:dashed; }
+
+  .tot{ margin-top:12px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16); border-radius:14px; padding:11px 12px; }
+  .tot .row1{ display:flex; align-items:baseline; gap:8px; }
+  .tot .big{ font-size:30px; font-weight:900; color:#fff; line-height:1; font-variant-numeric:tabular-nums; }
+  .tot .lb{ font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:.07em; color:#b7d69a; }
+  .barra{ height:9px; border-radius:6px; background:rgba(255,255,255,.13); margin-top:9px; overflow:hidden; position:relative; }
+  .barra .f{ height:100%; width:0%; background:linear-gradient(90deg,#7fae4e,#b7d69a); border-radius:6px; transition:width .35s ease; }
+  .barra .mk{ position:absolute; top:-3px; bottom:-3px; width:2px; background:var(--sol); left:76.6%; }
+  .tot .ver{ font-size:12px; color:#cfe0bd; margin-top:8px; line-height:1.4; }
+  .tot .ver b{ color:#fff; }
+  .tot .ver.gan b{ color:#c9e88f; }
+  .cierre{ margin-top:10px; display:flex; gap:7px; }
+  .cierre button{ flex:1; border-radius:12px; border:none; padding:12px 10px; font:900 13.5px var(--sans); cursor:pointer; }
+  .cierre .send{ background:#7fae4e; color:#14200c; }
+  .cierre .reset{ background:rgba(255,255,255,.1); color:#cfe0bd; border:1px solid rgba(255,255,255,.2); flex:0 0 42%; }
+  .cierre button:active{ opacity:.8; }
+  .cj-hint{ display:block; margin-top:8px; font-size:12px; font-weight:800; color:#c9e88f; min-height:1.1em; }
+
+  .sect-lbl{ font-size:11.5px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:var(--ink3); margin:21px 4px 4px; }
+
+  .blk{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:17px 16px; margin:11px 0;
+    box-shadow:0 4px 16px rgba(45,80,22,.05); }
+  .blk h3{ font-size:17px; font-weight:900; line-height:1.25; }
+  .blk p{ font-size:13.5px; color:var(--ink2); margin-top:8px; }
+  .blk p b{ color:var(--ink); }
+  .blk .dib{ display:block; width:100%; height:auto; margin:12px 0 2px; }
+  .blk .cap{ font-size:11.5px; color:var(--ink3); text-align:center; }
+
+  .dest{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px 15px; margin:9px 0;
+    box-shadow:0 4px 14px rgba(45,80,22,.04); }
+  .dest .hd{ display:flex; align-items:center; gap:9px; }
+  .dest .hd .ic{ font-size:20px; }
+  .dest h4{ font-size:15.5px; font-weight:900; line-height:1.2; }
+  .dest .q{ font-size:11px; font-weight:800; color:var(--verde2); background:#eaf6dc; border-radius:6px; padding:2px 7px; margin-left:auto; flex:none; }
+  .dest p{ font-size:13px; color:var(--ink2); margin-top:8px; }
+  .dest p b{ color:var(--ink); }
+  .dest ol{ margin:9px 0 0; padding:0; list-style:none; counter-reset:d; }
+  .dest ol li{ counter-increment:d; position:relative; padding:7px 10px 7px 34px; background:#f5f9ef; border:1px solid var(--line);
+    border-radius:10px; margin-top:6px; font-size:12.5px; color:var(--ink2); }
+  .dest ol li::before{ content:counter(d); position:absolute; left:10px; top:7px; width:18px; height:18px; border-radius:50%;
+    background:var(--verde2); color:#fff; font-size:11px; font-weight:900; display:grid; place-items:center; }
+  .dest ol li b{ color:var(--ink); }
+
+  .liq{ background:linear-gradient(180deg,#fdeee4,#fff9f5); border:1px solid rgba(176,67,46,.26); border-radius:18px; padding:16px 15px; margin:11px 0; }
+  .liq .tag{ font-size:10.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--tierra); }
+  .liq h3{ font-size:16.5px; font-weight:900; margin:5px 0 0; line-height:1.25; }
+  .liq p{ font-size:13px; color:var(--ink2); margin-top:8px; }
+  .liq p b{ color:var(--ink); }
+  .liq .dato{ margin-top:10px; font-size:12.5px; color:var(--ink2); background:#fff; border-left:3px solid var(--tierra);
+    border-radius:0 10px 10px 0; padding:9px 11px; }
+
+  .taller{ background:linear-gradient(180deg,#eaf2f6,#f7fbfc); border:1px solid rgba(63,125,138,.3); border-radius:18px; padding:16px 15px; margin:11px 0; }
+  .taller .tag{ font-size:10.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--azul); }
+  .taller h3{ font-size:16.5px; font-weight:900; margin:5px 0 0; line-height:1.25; }
+  .taller p{ font-size:13px; color:var(--ink2); margin-top:8px; }
+  .taller p b{ color:var(--ink); }
+  .taller a{ display:block; margin-top:10px; text-align:center; background:var(--azul); color:#fff; text-decoration:none;
+    font-weight:900; font-size:13.5px; padding:11px 12px; border-radius:12px; }
+
+  .slots{ background:linear-gradient(180deg,#fff7e6,#fffdf7); border:1px solid rgba(224,169,46,.42); border-radius:18px; padding:17px 16px; margin:13px 0; }
+  .slots .tag{ font-size:10.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:#b7860b; }
+  .slots h3{ font-size:17px; font-weight:900; margin:5px 0 0; line-height:1.25; }
+  .slots p{ font-size:13px; color:var(--ink2); margin-top:8px; }
+  .slots p b{ color:var(--ink); }
+  .slot{ background:#fff; border:1px solid rgba(224,169,46,.4); border-radius:14px; padding:12px 13px; margin-top:10px; }
+  .slot .sh{ font-size:14px; font-weight:900; color:var(--ink); }
+  .slot .sd{ font-size:12px; color:var(--ink2); margin-top:3px; }
+  .slot .opts{ display:grid; grid-template-columns:1fr 1fr; gap:7px; margin-top:9px; }
+  .slot button{ background:#fffdf6; border:1.5px solid rgba(224,169,46,.45); border-radius:11px; padding:10px 6px;
+    font:800 13px var(--sans); color:var(--ink); cursor:pointer; }
+  .slot button:active{ transform:scale(.97); }
+  .slot button.sel{ background:var(--sol); border-color:var(--sol); color:#3a2c05; }
+  .slot .q-hint{ display:block; text-align:center; margin-top:7px; font-size:12px; font-weight:800; color:#b7860b; min-height:1.1em; }
+
+  .react{ text-align:center; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 16px; margin:13px 0; }
+  .react h3{ font-size:16.5px; font-weight:900; }
+  .react p{ font-size:13px; color:var(--ink2); margin-top:6px; }
+  .react .rw{ display:flex; justify-content:center; gap:9px; margin-top:12px; }
+  .react button{ background:#f5f9ef; border:1.5px solid var(--line); border-radius:14px; width:60px; height:54px;
+    font-size:25px; cursor:pointer; line-height:1; }
+  .react button:active{ transform:scale(.94); }
+  .react button.sel{ background:var(--verde3); border-color:var(--verde2); }
+  .react .react-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:800; color:var(--verde2); min-height:1.2em; }
+
+  .fb-blk{ background:linear-gradient(180deg,#eaf6dc,#f3fae9); border:1px solid rgba(90,138,46,.3); border-radius:20px;
+    padding:20px 17px; margin:13px 0; text-align:center; box-shadow:0 6px 20px rgba(45,80,22,.05); }
+  .fb-blk h3{ font-size:17px; margin-bottom:5px; font-weight:900; }
+  .fb-blk p{ color:var(--ink2); font-size:13.5px; max-width:36ch; margin:0 auto 12px; }
+  .fb-blk textarea{ width:100%; background:#fff; border:1px solid var(--line); border-radius:11px; color:var(--ink);
+    padding:11px 12px; font:inherit; resize:vertical; }
+  .fb-blk .fb-send{ margin-top:10px; background:var(--verde2); color:#fff; border:none; border-radius:12px; padding:12px 22px;
+    font:800 14.5px var(--sans); cursor:pointer; }
+  .fb-blk .fb-hint{ display:block; margin-top:9px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.2em; }
+
+  .engage-actions{ display:grid; gap:8px; margin:16px 0 6px; }
+  .engage-actions button{ border-radius:13px; padding:14px 14px; font:900 14.5px var(--sans); cursor:pointer; border:none; }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:#eef3e8; color:var(--ink2); border:1px solid var(--line); }
+
+  .pie{ text-align:center; padding:14px 0 6px; }
+  .pie a{ color:var(--verde2); font-weight:800; font-size:14px; text-decoration:none; }
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:10px; line-height:1.5; }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://gardening-chi.vercel.app/index.html">&larr; Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <div class="day">S&aacute;bado 12/09 &middot; 11:00 &middot; la herramienta de la tarea de las 10</div>
+    <h1>Las tres pilas</h1>
+    <div class="sub">Tu ficha del vivero dice <b>&laquo;~30+ plantines&raquo;</b>. Yo cont&eacute; <b>23 macetas</b> en tu foto &mdash; pero esa foto es <b>de mayo</b>, hace cuatro meses. <b>Los dos n&uacute;meros pueden estar mal</b>, y el &uacute;nico que lo puede resolver sos vos, dando vuelta maceta por maceta. Marc&aacute; ac&aacute; abajo mientras las das vuelta.</div>
+  </header>
+
+  <section class="cajon reveal">
+    <div class="tag">&#129508; El caj&oacute;n &middot; se llena con lo que encontr&aacute;s</div>
+    <h2>Dale vuelta, mir&aacute; la ra&iacute;z, toc&aacute; la pila</h2>
+    <div class="lead">No hace falta que las hagas todas de una. <b>Esto se guarda solo</b> en tu tel&eacute;fono: pod&eacute;s dejarlo a mitad y seguir m&aacute;s tarde.</div>
+
+    <div class="bins">
+      <div class="bin" data-bin="tierra">
+        <span class="ic">&#127795;</span>
+        <span class="tx"><span class="nm">A tierra</span><span class="hp">Bola de ra&iacute;ces apretada &middot; ya no le cabe m&aacute;s</span></span>
+        <span class="ct"><button type="button" data-op="-">&minus;</button><span class="n">0</span><button type="button" class="plus" data-op="+">+</button></span>
+      </div>
+      <div class="bin" data-bin="regalo">
+        <span class="ic">&#127873;</span>
+        <span class="tx"><span class="nm">Para regalar</span><span class="hp">Listo, pero repetido &mdash; ya tienes uno igual</span></span>
+        <span class="ct"><button type="button" data-op="-">&minus;</button><span class="n">0</span><button type="button" class="plus" data-op="+">+</button></span>
+      </div>
+      <div class="bin" data-bin="maceta">
+        <span class="ic">&#129716;</span>
+        <span class="tx"><span class="nm">Maceta m&aacute;s grande</span><span class="hp">Apretado, pero no quer&eacute;s darle lugar fijo todav&iacute;a</span></span>
+        <span class="ct"><button type="button" data-op="-">&minus;</button><span class="n">0</span><button type="button" class="plus" data-op="+">+</button></span>
+      </div>
+      <div class="bin esp" data-bin="espera">
+        <span class="ic">&#9203;</span>
+        <span class="tx"><span class="nm">Todav&iacute;a no</span><span class="hp">Tierra suelta que se desarma &middot; o palmera bajo 30 cm</span></span>
+        <span class="ct"><button type="button" data-op="-">&minus;</button><span class="n">0</span><button type="button" class="plus" data-op="+">+</button></span>
+      </div>
+    </div>
+
+    <div class="tot">
+      <div class="row1"><span class="big" id="cj-total">0</span><span class="lb">macetas dadas vuelta</span></div>
+      <div class="barra"><div class="f" id="cj-bar"></div><div class="mk" title="mi conteo: 23"></div></div>
+      <div class="ver" id="cj-ver">La rayita amarilla es <b>mi n&uacute;mero: 23</b>. Si la pas&aacute;s, cont&eacute; corto yo.</div>
+      <div class="cierre">
+        <button type="button" class="reset" id="cj-reset">Empezar de nuevo</button>
+        <button type="button" class="send" id="cj-send">Cerrar el caj&oacute;n y mand&aacute;rmelo</button>
+      </div>
+      <span class="cj-hint" id="cj-hint"></span>
+    </div>
+  </section>
+
+  <div class="sect-lbl reveal">La regla &middot; c&oacute;mo se sabe en cinco segundos</div>
+
+  <div class="blk reveal">
+    <h3>Bola apretada = listo. Tierra que se desarma = todav&iacute;a no.</h3>
+    <p>No hay que medir nada ni contar hojas. <b>Poné la mano abierta sobre la tierra, dale vuelta la maceta y sacala.</b> Lo que queda en tu mano te dice todo:</p>
+    <svg class="dib" viewBox="0 0 340 150" role="img" aria-label="Dos cepellones comparados: uno con la raíz formando una bola compacta y otro con tierra suelta">
+      <rect x="0" y="0" width="340" height="150" fill="#f5f9ef" rx="12"/>
+      <!-- listo -->
+      <text x="85" y="19" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="800" fill="#2d5016">LISTO &#9989;</text>
+      <path d="M45 32 L125 32 L114 112 L56 112 Z" fill="#e6d3bd" stroke="#8a5a2e" stroke-width="2"/>
+      <path d="M52 36 L118 36 L108 104 L62 104 Z" fill="#c9a982"/>
+      <g stroke="#fff" stroke-width="1.6" fill="none" opacity=".95">
+        <path d="M85 40 L85 100"/><path d="M85 52 C70 58 64 72 62 96"/><path d="M85 52 C100 58 106 72 108 96"/>
+        <path d="M85 70 C74 76 68 86 66 100"/><path d="M85 70 C96 76 102 86 104 100"/>
+        <path d="M63 98 L60 104"/><path d="M107 98 L110 104"/><path d="M85 100 L85 106"/>
+      </g>
+      <path d="M56 112 L114 112" stroke="#8a5a2e" stroke-width="2"/>
+      <text x="85" y="130" text-anchor="middle" font-family="system-ui" font-size="9.5" fill="#5a6b4c">Sale entero, se sostiene solo,</text>
+      <text x="85" y="142" text-anchor="middle" font-family="system-ui" font-size="9.5" fill="#5a6b4c">ra&iacute;z blanca dando la vuelta</text>
+      <!-- no -->
+      <text x="255" y="19" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="800" fill="#b0432e">TODAV&Iacute;A NO &#10060;</text>
+      <path d="M215 32 L295 32 L284 112 L226 112 Z" fill="#e6d3bd" stroke="#8a5a2e" stroke-width="2"/>
+      <path d="M222 36 L288 36 L278 104 L232 104 Z" fill="#c9a982"/>
+      <g stroke="#fff" stroke-width="1.6" fill="none" opacity=".95">
+        <path d="M255 40 L255 74"/><path d="M255 56 C246 60 243 66 242 74"/><path d="M255 56 C264 60 267 66 268 74"/>
+      </g>
+      <g fill="#a8875e">
+        <circle cx="238" cy="90" r="3.4"/><circle cx="252" cy="96" r="3"/><circle cx="266" cy="88" r="3.6"/>
+        <circle cx="246" cy="101" r="2.6"/><circle cx="272" cy="99" r="2.8"/><circle cx="259" cy="85" r="2.4"/>
+      </g>
+      <path d="M226 112 L284 112" stroke="#8a5a2e" stroke-width="2"/>
+      <text x="255" y="130" text-anchor="middle" font-family="system-ui" font-size="9.5" fill="#5a6b4c">Se desmorona, la tierra de abajo</text>
+      <text x="255" y="142" text-anchor="middle" font-family="system-ui" font-size="9.5" fill="#5a6b4c">queda sin ra&iacute;z: devolvela y espera</text>
+    </svg>
+    <p class="cap">Dibujado para tus macetas &mdash; corte de un cepell&oacute;n listo contra uno que no.</p>
+    <p><b>Por qu&eacute; hoy y no un s&aacute;bado de sol:</b> el trasplante tiene un solo enemigo de verdad, que es la sed del primer d&iacute;a. Hoy ten&eacute;s <b>tierra mojada, 11&deg; y cero sol</b> &mdash; las tres condiciones juntas, y no se repiten seguido. Un plantín que pasa a tierra con 25&deg; y sol se pasa una semana amarillo; el que pasa hoy no se entera. <b>La llovizna no es el obst&aacute;culo: es la ventaja.</b></p>
+    <p><b>Y te ahorro la mayor&iacute;a del trabajo de entrada:</b> las palmeras, que son el grueso de lo que hay en esas tablas, <b>NO van este septiembre.</b> Su m&iacute;nimo es 30 cm y en tu foto no llegan; su fecha real es septiembre 2027 y ya est&aacute; en el cat&aacute;logo. Si las mov&eacute;s ahora el cepell&oacute;n es tan chico que la ra&iacute;z se deshace en la mano. <b>Esas van todas a &laquo;Todav&iacute;a no&raquo; y listo</b> &mdash; con eso el caj&oacute;n se llena r&aacute;pido y te queda el trabajo real, que son diez o doce macetas.</p>
+  </div>
+
+  <div class="sect-lbl reveal">Los tres destinos &middot; qu&eacute; hacer con cada pila</div>
+
+  <div class="dest reveal">
+    <div class="hd"><span class="ic">&#127795;</span><h4>A tierra</h4><span class="q">hoy mismo</span></div>
+    <p>El destino bueno: sale de la maceta para siempre. Con el suelo como est&aacute; hoy <b>no vas a necesitar ni pico</b>.</p>
+    <ol>
+      <li><b>Pozo del doble del cepell&oacute;n</b> &mdash; ancho, no hondo. La ra&iacute;z de casi todo crece a los costados, no para abajo.</li>
+      <li><b>Compost mezclado con la tierra que sacaste</b>, no compost puro: si el pozo es m&aacute;s rico que el suelo de alrededor, la ra&iacute;z se queda dando vueltas adentro y nunca sale a explorar.</li>
+      <li><b>Al mismo nivel del cuello.</b> Enterrar la base un par de cent&iacute;metros de m&aacute;s es la forma m&aacute;s com&uacute;n de matar un plantín sano.</li>
+      <li><b>Reg&aacute; a fondo igual</b> aunque llovizne &mdash; el riego del trasplante no es por agua, es para <b>asentar la tierra contra la ra&iacute;z</b> y sacar las bolsas de aire.</li>
+      <li><b>Mulching de 5 cm</b> alrededor (hoja seca, pasto cortado, corteza), <b>sin tocar el tallo</b>.</li>
+    </ol>
+  </div>
+
+  <div class="dest reveal">
+    <div class="hd"><span class="ic">&#127873;</span><h4>Para regalar</h4><span class="q">el que m&aacute;s rinde</span></div>
+    <p>La ficha de tu vivero lo dice mejor que yo: <b>tener vivero propio es la forma m&aacute;s barata de poblar un jard&iacute;n y de hacer regalos verdes.</b> Y hay una razón práctica además de la linda: <b>dos plantines iguales compitiendo por el mismo lugar es plata y agua tirada.</b> Eleg&iacute; el m&aacute;s vigoroso, plantá ese, y el hermano se va de regalo antes de que los dos queden mediocres.</p>
+    <ol>
+      <li><b>Riegalo el d&iacute;a antes de entregarlo</b>, no el mismo d&iacute;a: viaja mejor con la tierra h&uacute;meda asentada que chorreando.</li>
+      <li><b>Peg&aacute;le un papelito con el nombre</b> y una l&iacute;nea de cuidado (sol o sombra, cada cu&aacute;nto regar). Un plantín sin nombre se muere de malentendido.</li>
+      <li><b>No lo entregues rec&iacute;en trasplantado</b> &mdash; si le cambiaste la maceta hoy, esperá dos semanas.</li>
+    </ol>
+  </div>
+
+  <div class="dest reveal">
+    <div class="hd"><span class="ic">&#129716;</span><h4>Maceta m&aacute;s grande</h4><span class="q">un solo talle</span></div>
+    <p>Para lo que ya est&aacute; apretado pero todav&iacute;a no tiene lugar definitivo decidido.</p>
+    <ol>
+      <li><b>Un tamaño m&aacute;s grande, nunca dos.</b> En una maceta muy grande de golpe la tierra del borde queda sin ra&iacute;z, se encharca y podr&iacute;s el cuello. Es el error m&aacute;s frecuente y el m&aacute;s f&aacute;cil de evitar.</li>
+      <li><b>Aflojale un poco la base del cepell&oacute;n</b> con los dedos si las ra&iacute;ces ya daban la vuelta en c&iacute;rculo &mdash; si no, siguen girando para siempre.</li>
+      <li><b>Balde recortado o botella cortada valen igual</b> que una maceta comprada, siempre que tengan agujeros abajo de verdad. Ah&iacute; ya ten&eacute;s de sobra.</li>
+    </ol>
+  </div>
+
+  <div class="liq reveal">
+    <div class="tag">&#127809; Caso aparte &middot; los hijos del liquid&aacute;mbar</div>
+    <h3>Si encontr&aacute;s hoja en estrella de cinco puntas, esos no son de nadie: son hijos de tu B&#8209;37.</h3>
+    <p>Entre los plantines hay <b>liquid&aacute;mbares nacidos de las bolitas espinosas</b> del árbol grande del fondo &mdash; semilla alada que cay&oacute; y germin&oacute; sola. No se compraron ni se regalaron: se hicieron ahí. La hoja es inconfundible, palmada, cinco puntas, tipo arce.</p>
+    <p><b>Estos van a &laquo;Todav&iacute;a no&raquo; aunque la ra&iacute;z est&eacute; apretada</b>, y la regla es de maceta hasta 2027 con sol pleno &mdash; necesitan luz fuerte para fabricar el az&uacute;car que despu&eacute;s se convierte en el pigmento rojo del oto&ntilde;o. Un liquid&aacute;mbar criado a la sombra sale de hoja amarilla mustia en abril, no borgo&ntilde;a.</p>
+    <p><b>Y una decisi&oacute;n que te conviene tomar ahora y no en 2027:</b> al venir de semilla, cada uno puede dar un color de oto&ntilde;o distinto al del padre. Eleg&iacute; <b>uno o dos, los m&aacute;s derechos y vigorosos</b>, y el resto a la pila de regalar. Un liquid&aacute;mbar adulto pide seis metros para &eacute;l solo: no tiene sentido pelear ese espacio con cinco.</p>
+    <div class="dato"><b>El dato que casi nadie sabe del &aacute;rbol que los tir&oacute;:</b> el tronco del liquid&aacute;mbar produce un b&aacute;lsamo arom&aacute;tico llamado <i>storax</i> que se us&oacute; tres mil a&ntilde;os en perfumer&iacute;a e incienso &mdash; los mayas lo masticaban como chicle y los aztecas lo quemaban como ofrenda. El nombre del &aacute;rbol es literalmente eso: <b>&laquo;&aacute;mbar l&iacute;quido&raquo;</b>. Los plantines de tus tablas son de ese linaje.</div>
+  </div>
+
+  <div class="taller reveal">
+    <div class="tag">&#128736;&#65039; La que ya prendiste &middot; sigue en su link de siempre</div>
+    <h3>El Taller &mdash; la &uacute;nica que me aprobaste</h3>
+    <p>El paso a paso guiado de poda de carozos, con las pantallas de una decisi&oacute;n cada una. <b>Es la que mejor funcion&oacute; de todo lo que te mand&eacute;</b> y por eso no la toco ni la reemplazo: queda ahí, en la misma direcci&oacute;n, para cuando la quieras abrir con la tijera en la mano.</p>
+    <p style="font-size:12px;color:var(--ink3)">Te la agrupo ac&aacute; adentro en vez de mandarte una notificaci&oacute;n aparte &mdash; <b>una sola push por slot</b>, como quedamos.</p>
+    <a href="https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html">Abrir El Taller n&ordm;1 &rarr;</a>
+  </div>
+
+  <section class="slots reveal">
+    <div class="tag">&#128337; Slots disponibles &middot; vos eleg&iacute;s si esto vuelve</div>
+    <h3>&iquest;Quer&eacute;s que el caj&oacute;n vuelva, y en qu&eacute; horario?</h3>
+    <p>Ten&eacute;s dos horarios fijos por semana para experiencias. <b>Si no prend&eacute;s ninguno, esto no vuelve</b> &mdash; y no pasa nada, la semana que viene te armo otra cosa. Pero si el caj&oacute;n te sirvi&oacute;, el vivero es justamente algo que se revisa cada tanto: en octubre, lo que hoy fue &laquo;todav&iacute;a no&raquo; ya va a estar listo.</p>
+    <div class="slot">
+      <div class="sh">&#128197; Lunes 18:00</div>
+      <div class="sd">Arranque de semana, con el fin de semana todav&iacute;a lejos para planificar.</div>
+      <div class="opts">
+        <button type="button" onclick="engageAnswer('tres-pilas-slot-lun18','si',this)">&#9989; S&iacute;, los lunes</button>
+        <button type="button" onclick="engageAnswer('tres-pilas-slot-lun18','no',this)">&#10005; No</button>
+      </div>
+      <span class="q-hint"></span>
+    </div>
+    <div class="slot">
+      <div class="sh">&#128197; S&aacute;bado 11:00</div>
+      <div class="sd">Como hoy: con la ma&ntilde;ana por delante y el jard&iacute;n a mano.</div>
+      <div class="opts">
+        <button type="button" onclick="engageAnswer('tres-pilas-slot-sab11','si',this)">&#9989; S&iacute;, los s&aacute;bados</button>
+        <button type="button" onclick="engageAnswer('tres-pilas-slot-sab11','no',this)">&#10005; No</button>
+      </div>
+      <span class="q-hint"></span>
+    </div>
+  </section>
+
+  <section class="react reveal">
+    <h3>&iquest;Esto te sirvi&oacute;?</h3>
+    <p>Una tocada. Es lo que uso para decidir qu&eacute; te mando el lunes.</p>
+    <div class="rw">
+      <button type="button" onclick="engageReact('tres-pilas','love',this)" aria-label="Me encantó">&#128525;</button>
+      <button type="button" onclick="engageReact('tres-pilas','good',this)" aria-label="Está bien">&#128522;</button>
+      <button type="button" onclick="engageReact('tres-pilas','meh',this)" aria-label="Masomenos">&#128528;</button>
+      <button type="button" onclick="engageReact('tres-pilas','no',this)" aria-label="No me sirvió">&#128581;</button>
+    </div>
+    <span class="react-hint"></span>
+  </section>
+
+  <section class="fb-blk reveal" id="engage-feedback-box">
+    <h3>&#128172; Decime qu&eacute; te pareci&oacute;</h3>
+    <p>Esto lo leo yo antes de armar la pr&oacute;xima, y lo que me escrib&iacute;s pesa m&aacute;s que cualquier m&eacute;trica. <b>Lo que m&aacute;s me sirve hoy: cu&aacute;ntas macetas hab&iacute;a de verdad</b>, y si el liquid&aacute;mbar apareci&oacute; entre los plantines o me lo invent&eacute;.</p>
+    <textarea rows="3" placeholder="Cuántas eran, qué había, o qué de esto no te sirvió…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('tres-pilas', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <div class="engage-actions">
+    <button type="button" onclick="engageApprove('2026-09-12-tres-pilas')">&#9989; Aprobar esta mejora</button>
+    <button type="button" onclick="engageRejected('2026-09-12-tres-pilas')">&#10005; No me interesa</button>
+  </div>
+
+  <footer class="pie">
+    <a href="https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html">&larr; Volver a tu jard&iacute;n hoy</a>
+    <div class="cred">Las tres pilas &middot; s&aacute;bado 12/09/2026, 11:00 &middot; es la herramienta de la tarea <b>B&#8209;46&#8209;3</b> que te volvi&oacute; hoy de posponer &mdash; no una p&aacute;gina sobre la tarea, el instrumento para hacerla &middot; las 23 macetas las cont&eacute; en <b>tu foto del 04/05 del vivero</b>; el &laquo;30+&raquo; sale de la ficha de B&#8209;46 &middot; reglas de trasplante, palmeras y liquid&aacute;mbares tomadas de las tareas B&#8209;46&#8209;3, B&#8209;46&#8209;7 y B&#8209;47&#8209;4 de tu propio cat&aacute;logo &middot; el conteo se guarda en este tel&eacute;fono y se manda s&oacute;lo cuando toc&aacute;s &laquo;cerrar el caj&oacute;n&raquo;.</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+  var KEY = 'jardineando_tres_pilas_v1';
+  var MI_CONTEO = 23;
+  var BINS = ['tierra','regalo','maceta','espera'];
+  var state = load();
+
+  function load(){
+    try{
+      var raw = JSON.parse(localStorage.getItem(KEY));
+      if (raw && typeof raw === 'object'){
+        var out = {};
+        BINS.forEach(function(b){ out[b] = Math.max(0, parseInt(raw[b], 10) || 0); });
+        return out;
+      }
+    }catch(e){}
+    var z = {}; BINS.forEach(function(b){ z[b] = 0; }); return z;
+  }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+  function total(){ return BINS.reduce(function(a,b){ return a + state[b]; }, 0); }
+
+  var elTotal = document.getElementById('cj-total');
+  var elBar   = document.getElementById('cj-bar');
+  var elVer   = document.getElementById('cj-ver');
+  var elHint  = document.getElementById('cj-hint');
+
+  function veredicto(t){
+    if (t === 0) return 'La rayita amarilla es <b>mi n&uacute;mero: 23</b>. Si la pas&aacute;s, cont&eacute; corto yo.';
+    if (t < 10)  return 'Vas ' + t + '. Segu&iacute; &mdash; esto se guarda solo, pod&eacute;s dejarlo y volver.';
+    if (t < 23)  return 'Vas ' + t + ', me faltan ' + (23 - t) + ' para llegar a mi conteo de <b>23</b>.';
+    if (t === 23) return '<b>Empatamos: 23 justas.</b> Mi conteo de tu foto era exacto &mdash; y la ficha que dice &laquo;30+&raquo; estaba inflada.';
+    if (t < 30)  return '<b>Pasaste mi n&uacute;mero: ' + t + ' contra mis 23.</b> Cont&eacute; corto yo, y la ficha tampoco llega a 30.';
+    return '<b>' + t + '. Gan&oacute; la ficha y perd&iacute; yo</b> &mdash; el &laquo;30+&raquo; era cierto y mis 23 se quedaron cortos por ' + (t - 23) + '.';
+  }
+
+  function render(){
+    document.querySelectorAll('.bin').forEach(function(bin){
+      var b = bin.dataset.bin, n = state[b];
+      bin.querySelector('.n').textContent = n;
+      bin.classList.toggle('on', n > 0);
+      bin.querySelector('[data-op="-"]').disabled = (n === 0);
+    });
+    var t = total();
+    elTotal.textContent = t;
+    elBar.style.width = Math.min(100, Math.round(t / 30 * 100)) + '%';
+    elVer.innerHTML = veredicto(t);
+    elVer.className = 'ver' + (t >= 23 ? ' gan' : '');
+  }
+
+  document.querySelectorAll('.bin button[data-op]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var bin = btn.closest('.bin'); var b = bin.dataset.bin;
+      state[b] = Math.max(0, state[b] + (btn.dataset.op === '+' ? 1 : -1));
+      save(); render();
+      if (elHint.textContent) elHint.textContent = '';
+    });
+  });
+
+  document.getElementById('cj-reset').addEventListener('click', function(){
+    BINS.forEach(function(b){ state[b] = 0; });
+    save(); render(); elHint.textContent = 'Cajón vacío. Arrancá de nuevo cuando quieras.';
+  });
+
+  document.getElementById('cj-send').addEventListener('click', function(){
+    var t = total();
+    if (t === 0){ elHint.textContent = 'Tocá al menos una maceta antes de cerrarlo.'; return; }
+    var resumen = BINS.map(function(b){ return b + ':' + state[b]; }).join('|') + '|total:' + t;
+    try{
+      if (window.engageAnswer) window.engageAnswer('tres-pilas-censo', resumen, document.createElement('button'));
+    }catch(e){}
+    var ta = document.querySelector('#engage-feedback-box textarea');
+    if (ta && !ta.value.trim()){
+      ta.value = 'Censo del vivero: ' + t + ' macetas dadas vuelta — a tierra ' + state.tierra +
+                 ', regalar ' + state.regalo + ', maceta más grande ' + state.maceta +
+                 ', todavía no ' + state.espera + '.';
+    }
+    elHint.textContent = '✓ Recibido: ' + t + ' macetas. Te lo dejé escrito abajo por si querés agregarle algo antes de mandármelo.';
+    var box = document.getElementById('engage-feedback-box');
+    if (box && box.scrollIntoView) box.scrollIntoView({ behavior:'smooth', block:'center' });
+  });
+
+  render();
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>
