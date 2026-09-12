@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-12T09:20:00.000Z",
+  "_updated_at": "2026-09-12T13:25:32.379Z",
   "events": [
     {
       "_id": "mtlnwrmt27x2lq",
@@ -488,6 +488,23 @@
       "scroll_pct": 2,
       "page": "engage/puesta-al-dia.html",
       "ts": "2026-09-04T20:57:33.873Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtyf433t13665y",
+      "type": "notification_clicked",
+      "nid": "2026-09-12-jardin-hoy",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "ts": "2026-09-12T13:25:32.726Z",
+      "device": "sin-nombre"
+    },
+    {
+      "_id": "mtyf433tgizeq2",
+      "type": "page_visit",
+      "page": "engage/2026-07-24-jardin-hoy.html",
+      "nid": "2026-09-12-jardin-hoy",
+      "src": "push",
+      "ts": "2026-09-12T13:25:32.726Z",
       "device": "sin-nombre"
     }
   ],
