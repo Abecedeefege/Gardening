@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-12T13:25:32.379Z",
+  "_updated_at": "2026-09-13T09:10:00Z",
   "events": [
     {
       "_id": "mtlnwrmt27x2lq",
@@ -1176,13 +1176,23 @@
     },
     "2026-09-12": {
       "sent": 2,
+      "clicked": 1,
+      "visits": 1,
+      "approvals": 0,
+      "answers": 0,
+      "feedback_text": 0,
+      "reactions": 0,
+      "_nota": "SABADO, los dos slots, canal sano (+3,6 s las dos). RESULTADO PARTIDO: jardin-hoy (tarea 10:00) ABIERTA a las 10:25 local — 25 min de latencia, la mejor del mes — pero CERO senal posterior: ni dwell, ni un solo tap de los 3 botones por tarjeta, ni el link del contador que estaba adentro de la tarjeta del vivero. Entro y se fue. 'Masomenos'. tres-pilas (experiencia 11:00) CERO eventos: no la abrio. Verificado contra task_states (ultima escritura 06/09), uploads (ultima 08/09) y threads (0 pending): no hay subcuento, no volvio en todo el fin de semana. LECTURA: el objeto-que-se-llena NO queda refutado — fallo la APERTURA, no el contenido; nunca se vio. Lo que queda bajo sospecha es el SLOT SABADO 11:00, a 60 min de la push de tareas: segunda vez (05/09 y 12/09) que la segunda push del dia muere cuando la primera cae cerca, y la primera vez fue con las dos en el MISMO minuto. SALDO: mis dos numeros 'finos' fallaron (49,0 km/h real contra mi techo de 45; 2,8 mm contra mi techo de 1,8) y el 'debil' acerto (12,4° contra 11°, error 1,4 dentro del ±1,5 que prometi). Los dos errores para el mismo lado: hacia arriba."
+    },
+    "2026-09-13": {
+      "sent": 0,
       "clicked": 0,
       "visits": 0,
       "approvals": 0,
       "answers": 0,
       "feedback_text": 0,
       "reactions": 0,
-      "_nota": "SABADO: LOS DOS SLOTS, y el primero con el canal probado sano dos dias seguidos (+3,6 s el 10 y el 11/09). 2 push encoladas a 2 destinos distintos: TAREA 10:00 (jardin-hoy reeditada en su URL estable, expires 18:00) y EXPERIENCIA 11:00 (2026-09-12-tres-pilas, original nueva con el-taller agrupado dentro, expires 20:00). MUNICION DEL DIA, cobrada entera: hoy vencieron los 7 dias de snooze de las TRES tareas que pospuso el 05/09 (plant-B-23, plant-B-24, plant-B-46-3) y se trajeron agrupadas como estaba prometido por escrito en el pie de la edicion de ayer. EL CLIMA PARTIO LA LISTA: ECMWF 10,6 max / 1,8 mm / rafagas 45; GFS 11,7 / 0,7 / 35 -> se FRENARON las dos podas de citrico (llovizna sobre corte fresco + rafagas + la ficha exige 'pasado el riesgo de helada' y las madrugadas de la semana bajan a 3,5-4,2) y se habilitaron las dos que el dia SI permite: cosechar limones (no hace herida; y su propia ficha dice que la carga sin cosechar cuesta azahar) y dar vuelta las macetas del vivero (suelo mojado + 11° + cero sol = el mejor dia de trasplante del mes). Las podas quedaron fechadas el VIERNES 18 por TRES condiciones coincidentes en un solo dia de siete. APUESTA DEL VIERNES SALDADA con datos ya cerrados (past_days, best_match): seco GANADO (0,00 mm), pico de rafaga GANADO al kilometro (dije 30-32, fue 32,0) y temperatura PERDIDA DOS VECES — dije 16, me corregi a 12,7 y la real fue 14,6: mi correccion quedo MAS LEJOS (1,9 de menos) que mi error original (1,4 de mas). Publicado con los dos numeros al lado. Layout auditado renderizado 390x780: tres-pilas 7,0% (el objeto ES el tope) y jardin-hoy 24,0%; techo 35%. Sin compactacion: el evento mas viejo es del 03/09 (9 dias) y el send_log mas viejo del 31/08 (12 dias) — vencen el 17/09 y el 14/09. Mantenimiento: queue del 11/09 retirada, proposals 93 (14 pending / 1 approved), ledger actualizado con 5 plantas y 3 angulos nuevos."
+      "_nota": "DOMINGO — dia sin slot por cadencia: 0 push encoladas, solo mantenimiento + ediciones. Pero NO fue dia sin trabajo: vencia la apuesta del sabado y la regla dice que una promesa se cobra el dia que vence aunque no toque escribirle. Se reedito 2026-07-24-jardin-hoy.html en su URL estable (sin notificacion) con: (a) el saldo del sabado con los tres numeros, incluida la MUERTE EN 24 HORAS de la regla que publique ayer ('el viento y la lluvia los tengo finos, el termometro no' — se dio exactamente al reves); (b) la tabla de 7 dias vuelta a pedir entera a ECMWF y GFS con el sabado ya medido; (c) el ajuste honesto del viernes 18: mi '27-29 km/h' de ayer es 26-35 hoy (ECMWF bajo a 25,6, GFS subio a 34,9) — el viernes sigue ganando como el menos ventoso de los tres dias secos, pero ya no se lo vendo como 'calmo'; (d) una pregunta nueva en la caja de feedback que solo el puede contestar: si el fondo contra el muro de la cancha de padel es mas reparado que la estacion, mis frenos por viento le estan sacando dias de poda al pedo. Sin compactacion: evento mas viejo 03/09 (10 dias, vence el 17) y send_log mas viejo 31/08 (13 dias, vence el 14)."
     }
   }
 }

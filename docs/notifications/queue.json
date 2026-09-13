@@ -1,32 +1,5 @@
 {
-  "_updated_at": "2026-09-12T14:00:03.312Z",
-  "_nota": "SABADO 12/09 — dia con LOS DOS SLOTS por cadencia (tarea 10:00 + experiencia 11:00), y el primero con el canal ya sano (el 10/09 midio +3,6 s). Se encolan 2 (dos) notificaciones, cada una a un destino distinto. (1) TAREA 10:00 -> jardin-hoy reeditada en su URL estable: hoy vencieron los 7 dias de snooze de las TRES que pospuso el 05/09 (plant-B-23 poda limonero, plant-B-24 poda mandarina, plant-B-46-3 trasplante de vivero) y se traen AGRUPADAS como estaba planificado. Pero el clima manda y se le dice de entrada: ECMWF da 10,6 max / 1,8 mm / rafagas hasta 45 y GFS da 11,7 / 0,7 mm / hasta 35 -> con llovizna y 30-45 km/h NO se poda citrico (corte desgarrado + agua sobre herida fresca), y ademas la ficha de los dos exige 'pasado el riesgo de helada' y las madrugadas de la semana bajan a 3,5-4,2. Asi que se FRENAN las dos podas y se habilitan las dos que el dia si permite: cosechar los limones (no hace ninguna herida; y la carga sin cosechar le esta costando el azahar de primavera, que es dato de su propia ficha) y dar vuelta las macetas del vivero (llovizna + 11° + suelo mojado = el mejor dia de trasplante del mes). Las dos podas quedan fechadas el VIERNES 18, derivado de tres condiciones que coinciden en un solo dia de los siete: 0,0 mm en los dos modelos, rafagas 27-29 (el minimo de la semana contra 45 hoy y 52 el martes) y minima 9,3 (la unica madrugada lejos de la escarcha). Se salda tambien la apuesta del viernes con datos ya cerrados: seco GANADO (0,00 mm), pico de rafaga GANADO al kilometro (dije 30-32, fue 32,0) y temperatura PERDIDA DOS VECES — dije 16, me 'corregi' a 12,7 y la real fue 14,6, o sea que la correccion quedo MAS LEJOS que el error original (1,4 de mas contra 1,9 de menos). Se publica con el numero al lado porque va en contra mia. (2) EXPERIENCIA 11:00 -> 2026-09-12-tres-pilas, ORIGINAL NUEVA del slot, con el-taller (la unica aprobada) agrupada DENTRO y linkeada — una sola push por slot, no dos. Es la apuesta del TODO de ayer: el objeto que se llena PARASITANDO la tarea. No es una pagina sobre la tarea B-46-3: es el instrumento para hacerla (cuatro pilas con contador, se guarda en localStorage, se manda cuando el cierra el cajon) y ademas lleva una apuesta falsable sobre el propio objeto — la ficha dice '30+ plantines', yo conte 23 en su foto de mayo, y el contador resuelve quien se equivoco. Cast de la experiencia 100% fuera de veto: B-46, B-47 y B-37 (los tres se liberaron hoy o estaban libres). Layout auditado renderizado 390x780: primer control de ACCION en tres-pilas al 7,0% (el objeto ES el tope de la pagina) y en jardin-hoy al 24,0% — techo operativo 35%. expires_at atados a la ventana del contenido y no al 22:00 de rutina: la tarea vence 18:00 (es trabajo a la luz del dia, y una push que aterriza de noche prometiendo el dia de hoy quema credibilidad) y la experiencia 20:00 (el contador se puede llenar mas tarde, incluso adentro).",
-  "notifications": [
-    {
-      "id": "2026-09-12-jardin-hoy",
-      "format": "tarea",
-      "title": "🍋 Vuelven las tres. Dos son de hoy.",
-      "body": "11° y llovizna: la tijera no sale. Pero los limones sin cosechar te están costando el azahar.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
-      "send_at": "2026-09-12T10:00:00-03:00",
-      "expires_at": "2026-09-12T18:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-09-12T13:00:03.594Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-09-12"
-    },
-    {
-      "id": "2026-09-12-tres-pilas",
-      "format": "experiencia",
-      "title": "🪴 Tu ficha dice 30. Yo conté 23.",
-      "body": "Dale vuelta cada maceta del vivero y marcá la pila. El contador dice cuál de los dos se equivocó.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-09-12-tres-pilas.html",
-      "send_at": "2026-09-12T11:00:00-03:00",
-      "expires_at": "2026-09-12T20:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-09-12T14:00:03.311Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-09-12"
-    }
-  ]
+  "_updated_at": "2026-09-13T09:10:00Z",
+  "_nota": "DOMINGO 13/09 — dia SIN SLOT por cadencia (Mar/Mie/Vie/Dom = 0 push). NO se encola ninguna notificacion nueva. Se retiran las dos entries del 12/09, ya reflejadas en send_log + daily_summary: 2026-09-12-jardin-hoy (enviada 13:00:03Z, +3,6 s del send_at — canal sano por tercer dia) y 2026-09-12-tres-pilas (enviada 14:00:03Z, +3,6 s). RESULTADO DEL SABADO: jardin-hoy ABIERTA a las 10:25 local (25 min despues del push) pero sin ninguna senal posterior — ni dwell, ni answer, ni done: 'masomenos'. tres-pilas CERO eventos, ni click: no abrio. Cruzado contra task_states.json (sin escrituras desde 06/09), uploads.json (sin fotos desde 08/09) y threads (0 pending) — no es subcuento del cliente, es que no volvio. VEREDICTO DEL OBJETO QUE SE LLENA: el formato NO queda refutado porque el fallo fue de APERTURA, no de contenido — nunca llego a verse. Lo que si queda sospechado es el SLOT: es la segunda vez (05/09 y 12/09) que la segunda push del dia muere cuando la primera cae cerca. El sabado las dos van a 60 min de distancia; el lunes van a 8 horas. El lunes 14 es el test limpio: mismo objeto, slot 18:00, sin push compitiendo. TRABAJO DE HOY (sin notificacion): se cobro la apuesta del sabado — falle las DOS variables que ayer declare 'finas' (rafagas 30-45 -> 49,0 real; 0,7-1,8 mm -> 2,8 mm real) y acerte la que declare debil (11° -> 12,4 real, dentro del ±1,5 prometido). Se reedito 2026-07-24-jardin-hoy.html en su URL estable con el saldo, la tabla de 7 dias vuelta a pedir a los dos modelos y el ajuste honesto del viernes 18 (mi '27-29 km/h' de ayer paso a 26-35 al cruzar modelos hoy: el veredicto aguanta, la precision no). Sin push: una reedicion sin notificacion no consume elenco.",
+  "notifications": []
 }
