@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-14T13:00:02.998Z",
+  "_updated_at": "2026-09-14T21:00:03.795Z",
   "notifications": [
     {
       "id": "2026-09-14-jardin-hoy",
@@ -21,8 +21,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-09-14-el-marcador.html",
       "send_at": "2026-09-14T18:00:00-03:00",
       "expires_at": "2026-09-14T20:30:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-09-14T21:00:03.794Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-09-14"
     }

@@ -113,6 +113,12 @@
       "nid": "2026-09-14-jardin-hoy",
       "ts": "2026-09-14T13:00:02.997Z",
       "status_code": 201
+    },
+    {
+      "type": "notification_sent",
+      "nid": "2026-09-14-el-marcador",
+      "ts": "2026-09-14T21:00:03.794Z",
+      "status_code": 201
     }
   ],
   "daily_summary": {
