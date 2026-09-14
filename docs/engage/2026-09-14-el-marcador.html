@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El marcador — 10 apuestas mías, vos sos el árbitro</title>
+<meta property="og:title" content="El marcador — 10 apuestas mías sobre tu jardín">
+<meta property="og:description" content="Saqué 42 fotos tuyas del 4 de septiembre. Pasaron 10 días. Apuesto qué cambió en 10 plantas y vos me puntuás.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --verde:#2d5016; --verde2:#3f6d22; --verde3:#5b8f33;
+    --bg:#f5faf0; --card:#ffffff; --ink:#1d2b12; --ink2:#3d4a32; --ink3:#71805f;
+    --line:#e2ecd6; --ok:#2f7d32; --no:#b3261e; --skip:#8a6d1f;
+    --oro:#c9a227; --sombra:0 2px 10px rgba(45,80,22,.07);
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body{ margin:0; background:var(--bg); color:var(--ink);
+        font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+        font-size:15.5px; line-height:1.55; }
+  .wrap{ max-width:620px; margin:0 auto; padding:0 16px 40px; }
+
+  a.back{ display:block; background:var(--verde); color:#eaf5df; text-decoration:none;
+          font-size:13px; font-weight:800; padding:9px 16px; letter-spacing:.01em; }
+
+  /* ---------- hero ---------- */
+  .hero{ padding:18px 0 12px; }
+  .kicker{ font-size:11.5px; font-weight:900; letter-spacing:.09em; text-transform:uppercase;
+           color:var(--verde3); }
+  .hero h1{ font-size:30px; line-height:1.08; margin:7px 0 0; font-weight:900; letter-spacing:-.025em; }
+  .hero .sub{ margin:10px 0 0; font-size:15px; color:var(--ink2); }
+
+  /* ---------- marcador sticky ---------- */
+  .board{ position:sticky; top:0; z-index:30; margin:14px -16px 0; padding:10px 16px 11px;
+          background:linear-gradient(180deg,#2d5016 0%,#33591a 100%); color:#eaf5df;
+          box-shadow:0 3px 14px rgba(45,80,22,.28); }
+  .board .lbl{ font-size:10.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase;
+               color:#b9d7a2; }
+  .board .row{ display:flex; align-items:baseline; gap:10px; margin-top:2px; flex-wrap:wrap; }
+  .board .big{ font-size:30px; font-weight:900; line-height:1; letter-spacing:-.03em; }
+  .board .big i{ font-style:normal; color:#b9d7a2; font-size:17px; font-weight:800; }
+  .board .det{ font-size:12.5px; color:#cfe6bb; font-weight:700; }
+  .bar{ height:7px; border-radius:99px; background:rgba(255,255,255,.16); margin-top:8px;
+        overflow:hidden; display:flex; }
+  .bar span{ display:block; height:100%; width:0; transition:width .45s cubic-bezier(.22,1,.36,1); }
+  .bar .b-ok{ background:#8fd06a; }
+  .bar .b-no{ background:#f0806f; }
+  .bar .b-sk{ background:#e2c565; }
+
+  /* ---------- bloques ---------- */
+  .blk{ background:var(--card); border:1px solid var(--line); border-radius:14px;
+        padding:15px 15px 16px; margin:14px 0; box-shadow:var(--sombra); }
+  .blk h3{ font-size:17px; font-weight:900; line-height:1.25; margin:0 0 7px; }
+  .blk p{ margin:0 0 9px; }
+  .blk p:last-child{ margin-bottom:0; }
+
+  .rules{ background:#fffdf2; border-color:#eadfae; }
+  .rules ol{ margin:8px 0 0; padding-left:19px; }
+  .rules li{ margin-bottom:6px; }
+  .pacto{ background:var(--verde); color:#eaf5df; border-color:var(--verde); }
+  .pacto h3{ color:#fff; }
+  .pacto b{ color:#dff0cd; }
+
+  .sect-lbl{ font-size:11.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase;
+             color:var(--verde3); margin:22px 0 8px; }
+
+  /* ---------- tarjeta de apuesta ---------- */
+  .bet{ background:var(--card); border:1px solid var(--line); border-radius:15px;
+        margin:12px 0; box-shadow:var(--sombra); overflow:hidden; }
+  .bet.answered{ border-color:#cfe0bd; }
+  .bet .top{ display:flex; gap:11px; padding:12px 13px 0; }
+  .bet img.ph{ width:88px; height:88px; object-fit:cover; border-radius:11px; flex:0 0 88px;
+               background:#e8f0df; }
+  .bet .hd{ min-width:0; flex:1; }
+  .bet .n{ display:inline-block; font-size:11px; font-weight:900; color:#fff; background:var(--verde3);
+           border-radius:99px; padding:1px 8px; letter-spacing:.04em; }
+  .bet h4{ font-size:16.5px; margin:5px 0 2px; font-weight:900; line-height:1.2; }
+  .bet .code{ font-size:12px; color:var(--ink3); font-weight:700; }
+  .bet .code i{ font-weight:600; }
+  .bet .donde{ font-size:12.5px; color:var(--ink2); margin-top:4px; line-height:1.4; }
+  .bet .foto-pie{ font-size:11px; color:var(--ink3); margin-top:5px; font-style:italic; }
+
+  .apuesta{ margin:12px 13px 0; padding:11px 12px; border-radius:11px;
+            background:#fffbe9; border:1px solid #e8d79a; }
+  .apuesta .t{ font-size:10.5px; font-weight:900; letter-spacing:.09em; text-transform:uppercase;
+               color:#8a6d1f; display:block; margin-bottom:3px; }
+  .apuesta p{ margin:0; font-size:15.5px; font-weight:700; line-height:1.42; }
+  .porque{ padding:11px 13px 0; font-size:14px; color:var(--ink2); line-height:1.5; }
+  .porque b{ color:var(--ink); }
+  .conse{ margin:10px 13px 0; padding:9px 11px; border-left:3px solid var(--verde3);
+          background:#f2f8ec; border-radius:0 9px 9px 0; font-size:13.5px; line-height:1.48; }
+  .conse b{ color:var(--verde); }
+
+  .acts{ display:flex; gap:7px; padding:12px 13px 13px; flex-wrap:wrap; }
+  .acts button{ flex:1 1 0; min-width:96px; border:1.5px solid var(--line); background:#fbfdf8;
+                color:var(--ink); font-size:13.5px; font-weight:800; padding:11px 6px;
+                border-radius:11px; cursor:pointer; font-family:inherit; line-height:1.2; }
+  .acts button:active{ transform:scale(.97); }
+  .acts button[data-v="ok"].on{ background:#e6f4e2; border-color:var(--ok); color:var(--ok); }
+  .acts button[data-v="no"].on{ background:#fdeae8; border-color:var(--no); color:var(--no); }
+  .acts button[data-v="skip"].on{ background:#fbf3d9; border-color:var(--skip); color:var(--skip); }
+
+  .say{ display:block; padding:0 13px 13px; }
+  .say[hidden]{ display:none; }
+  .say textarea{ width:100%; border:1.5px solid var(--line); border-radius:11px; padding:10px;
+                 font-family:inherit; font-size:14.5px; resize:vertical; background:#fbfdf8;
+                 color:var(--ink); }
+  .say .r{ display:flex; gap:7px; margin-top:7px; }
+  .say .r button{ border:none; background:var(--verde); color:#fff; font-weight:800; font-size:13.5px;
+                  padding:10px 15px; border-radius:10px; cursor:pointer; font-family:inherit; }
+  .say .r button.gh{ background:#eef4e7; color:var(--verde); }
+  .hint{ display:block; padding:0 13px 11px; font-size:12.5px; color:var(--verde2); font-weight:700; }
+
+  /* ---------- slots ---------- */
+  .slots{ background:#fffdf2; border:1px solid #eadfae; border-radius:14px; padding:15px;
+          margin:16px 0; box-shadow:var(--sombra); }
+  .slots h3{ font-size:17px; font-weight:900; margin:0 0 4px; }
+  .slots p{ margin:0 0 11px; font-size:14px; color:var(--ink2); }
+  .slot{ display:flex; align-items:center; gap:10px; padding:11px 12px; border-radius:12px;
+         background:#fff; border:1.5px solid var(--line); margin-bottom:8px; }
+  .slot .info{ flex:1; min-width:0; }
+  .slot .info b{ display:block; font-size:15px; }
+  .slot .info span{ font-size:12.5px; color:var(--ink3); }
+  .slot .yn{ display:flex; gap:6px; }
+  .slot .yn button{ border:1.5px solid var(--line); background:#fbfdf8; font-family:inherit;
+                    font-size:13px; font-weight:800; padding:8px 13px; border-radius:9px;
+                    cursor:pointer; color:var(--ink); }
+  .slot .yn button.on-si{ background:#e6f4e2; border-color:var(--ok); color:var(--ok); }
+  .slot .yn button.on-no{ background:#f1f3ee; border-color:#b9c2ad; color:var(--ink3); }
+
+  /* ---------- aprobadas ---------- */
+  .apro{ background:#eef4e7; border:1px solid #cfe0bd; border-radius:14px; padding:15px; margin:16px 0; }
+  .apro h3{ font-size:16.5px; font-weight:900; margin:0 0 5px; }
+  .apro p{ margin:0 0 10px; font-size:14px; color:var(--ink2); }
+  .apro a.big{ display:block; background:#fff; border:1.5px solid var(--verde3); border-radius:12px;
+               padding:12px 13px; text-decoration:none; color:var(--ink); }
+  .apro a.big b{ display:block; font-size:15.5px; color:var(--verde); }
+  .apro a.big span{ font-size:12.5px; color:var(--ink3); }
+
+  /* ---------- reacción ---------- */
+  .react{ text-align:center; margin:20px 0 0; }
+  .react .q{ font-size:15px; font-weight:800; margin-bottom:9px; }
+  .react .em{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
+  .react .em button{ font-size:26px; background:#fff; border:1.5px solid var(--line);
+                     border-radius:13px; padding:8px 13px; cursor:pointer; line-height:1; }
+  .react .em button.on{ border-color:var(--verde3); background:#eef4e7; }
+
+  /* ---------- feedback ---------- */
+  .fb-blk{ background:#fff; border:1px solid var(--line); }
+  .fb-blk h3{ margin-bottom:4px; }
+  .fb-blk p{ font-size:13.5px; color:var(--ink2); }
+  .fb-blk textarea{ width:100%; border:1.5px solid var(--line); border-radius:11px; padding:10px;
+                    font-family:inherit; font-size:15px; resize:vertical; background:#fbfdf8; color:var(--ink); }
+  .fb-send{ margin-top:8px; border:none; background:var(--verde); color:#fff; font-weight:800;
+            font-size:14.5px; padding:11px 20px; border-radius:11px; cursor:pointer; font-family:inherit; }
+  .fb-hint{ display:block; margin-top:7px; font-size:12.5px; color:var(--verde2); font-weight:700; }
+
+  .engage-actions{ display:flex; gap:9px; margin:20px 0 0; flex-wrap:wrap; }
+  .engage-actions button{ flex:1 1 46%; min-width:150px; border:none; border-radius:12px;
+                          padding:14px 10px; font-size:14.5px; font-weight:900; cursor:pointer;
+                          font-family:inherit; background:var(--verde); color:#fff; }
+  .engage-actions button:last-child{ background:#eef1ea; color:var(--ink3); }
+
+  .pie{ text-align:center; padding:20px 0 6px; }
+  .pie a{ color:var(--verde2); font-weight:800; font-size:14px; text-decoration:none; }
+  .cred{ color:var(--ink3); font-size:11.5px; margin-top:11px; line-height:1.55; text-align:left; }
+
+  .reveal{ opacity:0; transform:translateY(9px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+</style>
+</head>
+<body>
+
+<a class="back" href="https://gardening-chi.vercel.app/index.html">&larr; Volver al sitio estable</a>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <div class="kicker">Lunes 14 de septiembre &middot; 18:00</div>
+    <h1>Diez apuestas m&iacute;as.<br>Vos sos el &aacute;rbitro.</h1>
+    <p class="sub">El <b>4 de septiembre</b> sacaste 42 fotos del jard&iacute;n. Pasaron <b>diez d&iacute;as</b> y esta madrugada fue <b>la m&aacute;s fr&iacute;a de la semana</b> &mdash; a partir de ma&ntilde;ana ninguna vuelve a bajar de 5,4&deg; en ninguno de los tres modelos, y <b>el jueves amanece nueve grados m&aacute;s arriba que hoy</b>. <b>En diez d&iacute;as con ese salto, un jard&iacute;n cambia.</b><br>Ac&aacute; abajo te digo, planta por planta, <b>qu&eacute; creo que vas a encontrar hoy</b> &mdash; sin haberlo visto. Sal&iacute; con el celular y ponele el puntaje a cada una.</p>
+  </header>
+
+  <div class="board" id="board">
+    <div class="lbl">Marcador &middot; te toca a vos</div>
+    <div class="row">
+      <div class="big"><span id="sc-ok">0</span><i> de 10</i></div>
+      <div class="det" id="sc-det">Todav&iacute;a no puntuaste ninguna</div>
+    </div>
+    <div class="bar"><span class="b-ok" id="bar-ok"></span><span class="b-no" id="bar-no"></span><span class="b-sk" id="bar-sk"></span></div>
+  </div>
+
+  <div class="blk rules reveal">
+    <h3>&#127919; C&oacute;mo se juega (30 segundos de lectura)</h3>
+    <ol>
+      <li>Cada tarjeta tiene <b>una apuesta m&iacute;a</b>, escrita antes de que mires.</li>
+      <li>Vas, mir&aacute;s la planta, y toc&aacute;s <b>&#9989; le pegaste</b>, <b>&#10060; erraste</b> o <b>&#129335; no llegu&eacute;</b>.</li>
+      <li>Si erro, se te abre una cajita: <b>contame qu&eacute; viste de verdad</b>. Eso es lo que m&aacute;s me sirve.</li>
+    </ol>
+    <p style="margin:11px 0 0;padding:9px 11px;background:#fff;border-radius:10px;border:1px solid #eadfae;font-size:13.5px;line-height:1.48">
+      <b>&#127769; Y lo obvio, dicho antes de que te moleste:</b> esto te llega <b>18:00</b> y hoy el sol se pone <b>18:35</b>. No salgas corriendo.
+      <b>El marcador se guarda solo en este tel&eacute;fono y no vence:</b> hac&eacute; hoy las que tengas a mano &mdash; la <b>fotinia</b> y el <b>guayabo</b> est&aacute;n en el frente, a dos pasos de la puerta &mdash; y el fondo dejalo para ma&ntilde;ana con luz.
+      De hecho ma&ntilde;ana es el &uacute;nico d&iacute;a ventoso de la semana y no sirve para podar nada: <b>mirar es exactamente lo que s&iacute; se puede hacer un martes de viento.</b>
+    </p>
+  </div>
+
+  <div class="blk pacto reveal">
+    <h3>&#129309; Lo que me juego, para que valga la pena puntuarme</h3>
+    <p>No es un juego de trivia: <b>estas diez apuestas salen de los meses de floraci&oacute;n que yo mismo cargué en tu cat&aacute;logo</b>, y son las fechas con las que despu&eacute;s te digo cu&aacute;ndo podar y cu&aacute;ndo no.</p>
+    <p><b>Si termino en 7 o m&aacute;s:</b> el cat&aacute;logo est&aacute; calibrado y pod&eacute;s confiar en las fechas que te doy.<br>
+       <b>Si termino abajo de 7:</b> las fichas de las que fall&eacute; est&aacute;n mal, <b>y las corrijo esta semana con lo que vos viste</b> &mdash; te muestro los cambios el s&aacute;bado.</p>
+    <p>Es la primera vez que te doy una herramienta cuyo &uacute;nico prop&oacute;sito es <b>medir si te estoy mintiendo sin darme cuenta</b>.</p>
+  </div>
+
+  <div class="sect-lbl reveal">Las diez &middot; ocho con tu foto del 04/09, dos a ciegas</div>
+
+  <!-- 1 -->
+  <article class="bet reveal" id="b-B-13" data-code="B-13">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-13/species-B-13_20260904-155725.jpg" alt="Clivia B-13, hojas largas en abanico, frente a la piscina" loading="lazy">
+      <div class="hd">
+        <span class="n">Apuesta 1</span>
+        <h4>La clivia ya levant&oacute; la vara</h4>
+        <div class="code">B&#8209;13 &middot; <i>Clivia miniata</i></div>
+        <div class="donde">&#128205; Fondo, frente a la piscina &mdash; la mata de hojas largas en abanico, a la sombra.</div>
+        <div class="foto-pie">Tu foto del 04/09: s&oacute;lo hojas.</div>
+      </div>
+    </div>
+    <div class="apuesta"><span class="t">Mi apuesta</span><p>Hoy, en el medio del abanico, hay <b>un tallo grueso y carnoso subiendo</b> &mdash; con el pim.pollo todav&iacute;a cerrado o ya abriendo naranja.</p></div>
+    <div class="porque">Es la <b>&uacute;nica planta de tu jard&iacute;n cuya ficha pone a septiembre primero en la lista</b> de floraci&oacute;n (9&nbsp;&middot;&nbsp;10&nbsp;&middot;&nbsp;11). Y no florece por calor sino por <b>fr&iacute;o acumulado</b>: necesita unas semanas abajo de 10&deg; para disparar la vara, y este invierno las tuvo de sobra. La vara sube r&aacute;pido &mdash; en diez d&iacute;as pasa de no verse a estar a la vista.</div>
+    <div class="conse"><b>Si le pegu&eacute;:</b> no la muevas ni la trasplantes ahora, aunque la ficha tenga esa tarea pendiente &mdash; con la vara arriba, el trasplante te tira la floraci&oacute;n del a&ntilde;o. La tarea es <b>despu&eacute;s</b> de que termine, en octubre.</div>
+    <div class="acts">
+      <button type="button" data-v="ok">&#9989; Le pegaste</button>
+      <button type="button" data-v="no">&#10060; Erraste</button>
+      <button type="button" data-v="skip">&#129335; No llegu&eacute;</button>
+    </div>
+    <section class="say" hidden><textarea rows="2" placeholder="¿Qué viste en el centro del abanico?"></textarea><div class="r"><button type="button" data-a="send">Enviar &#10148;</button><button type="button" class="gh" data-a="close">Cerrar</button></div><span class="fb-hint"></span></section>
+    <span class="hint"></span>
+  </article>
+
+  <!-- 2 -->
+  <article class="bet reveal" id="b-B-15" data-code="B-15">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-15/species-B-15_20260904-155858.jpg" alt="Hiedra B-15 trepando sobre el galpón del fondo" loading="lazy">
+      <div class="hd">
+        <span class="n">Apuesta 2</span>
+        <h4>La hiedra tiene dos clases de hoja</h4>
+        <div class="code">B&#8209;15 &middot; <i>Hedera helix</i></div>
+        <div class="donde">&#128205; Fondo, trepando el galp&oacute;n &mdash; la misma que ten&eacute;s marcada como &laquo;control de invasi&oacute;n&raquo;.</div>
+        <div class="foto-pie">Tu foto del 04/09: la mata desde abajo.</div>
+      </div>
+    </div>
+    <div class="apuesta"><span class="t">Mi apuesta</span><p>Arriba de todo, en la parte m&aacute;s vieja y m&aacute;s soleada, <b>las hojas NO tienen puntas</b>: son ovaladas, enteras, lisas. Abajo, en la misma planta, siguen teniendo <b>de 3 a 5 puntas</b>.</p></div>
+    <div class="porque">Es el dato m&aacute;s raro de tu fondo y casi nadie lo sabe mirar. <b>La hiedra vive dos vidas en el mismo tallo.</b> Mientras trepa es <i>juvenil</i>: hoja lobulada, ra&iacute;ces a&eacute;reas, cero flor. Cuando llega arriba y le pega el sol de lleno, la misma rama pasa a <i>adulta</i>: <b>la hoja se vuelve entera, deja de trepar, y reci&eacute;n ah&iacute; florece y da baya</b>. Su ficha marca floraci&oacute;n en 9&nbsp;&middot;&nbsp;10&nbsp;&middot;&nbsp;11: o sea, ahora.</div>
+    <div class="conse"><b>Si le pegu&eacute;, tu tarea cambia de urgencia.</b> Hoja entera arriba = esa hiedra va a dar baya este oto&ntilde;o; los p&aacute;jaros se la comen y te la siembran por todo el fondo. <b>Cortar ahora la franja adulta de arriba vale diez veces m&aacute;s que recortar los bordes de abajo</b> &mdash; y es el mismo rato de trabajo.</div>
+    <div class="acts">
+      <button type="button" data-v="ok">&#9989; Le pegaste</button>
+      <button type="button" data-v="no">&#10060; Erraste</button>
+      <button type="button" data-v="skip">&#129335; No llegu&eacute;</button>
+    </div>
+    <section class="say" hidden><textarea rows="2" placeholder="¿Cómo son las hojas de arriba del galpón?"></textarea><div class="r"><button type="button" data-a="send">Enviar &#10148;</button><button type="button" class="gh" data-a="close">Cerrar</button></div><span class="fb-hint"></span></section>
+    <span class="hint"></span>
+  </article>
+
+  <!-- 3 -->
+  <article class="bet reveal" id="b-B-38" data-code="B-38">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-38/species-B-38_20260904-160549.jpg" alt="Ciruela amarilla B-38 en el fondo" loading="lazy">
+      <div class="hd">
+        <span class="n">Apuesta 3</span>
+        <h4>La ciruela ya tiene la fruta armada</h4>
+        <div class="code">B&#8209;38 &middot; <i>Prunus salicina</i></div>
+        <div class="donde">&#128205; Fondo, del lado del cuarto del fondo.</div>
+        <div class="foto-pie">Tu foto del 04/09: en plena flor blanca.</div>
+      </div>
+    </div>
+    <div class="apuesta"><span class="t">Mi apuesta</span><p>Hoy <b>ya casi no queda flor</b>. Y donde estaba cada flor hay <b>una bolita verde del tama&ntilde;o de una arveja</b>, con los restos secos del p&eacute;talo todav&iacute;a pegados.</p></div>
+    <div class="porque">Su ficha florece en 8&nbsp;&middot;&nbsp;9 y fructifica en 12&nbsp;&middot;&nbsp;1&nbsp;&middot;&nbsp;2. Entre una cosa y la otra hay un momento corto que es <b>justo este</b>: el cuajado. El ovario de la flor polinizada se hincha y la flor que no fue polinizada se cae entera. <b>Cada bolita verde que cuentes hoy es una ciruela de diciembre</b>, y las que faltan son las que ning&uacute;n insecto visit&oacute;.</div>
+    <div class="conse"><b>Y ojo con el martes:</b> ma&ntilde;ana es el &uacute;nico d&iacute;a feo de la semana &mdash; r&aacute;fagas de <b>38 a 45 km/h</b> en los tres modelos. La fruta reci&eacute;n cuajada es lo m&aacute;s f&aacute;cil de voltear que hay. No pod&eacute;s hacer nada al respecto, pero si el mi&eacute;rcoles ves bolitas verdes en el pasto, <b>ya sab&eacute;s qu&eacute; pas&oacute; y no fue una plaga</b>.</div>
+    <div class="acts">
+      <button type="button" data-v="ok">&#9989; Le pegaste</button>
+      <button type="button" data-v="no">&#10060; Erraste</button>
+      <button type="button" data-v="skip">&#129335; No llegu&eacute;</button>
+    </div>
+    <section class="say" hidden><textarea rows="2" placeholder="¿Flor todavía, o bolitas verdes?"></textarea><div class="r"><button type="button" data-a="send">Enviar &#10148;</button><button type="button" class="gh" data-a="close">Cerrar</button></div><span class="fb-hint"></span></section>
+    <span class="hint"></span>
+  </article>
+
+  <!-- 4 -->
+  <article class="bet reveal" id="b-B-39" data-code="B-39">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-39/species-B-39_20260904-160604.jpg" alt="Pera Williams B-39, lado sur del fondo" loading="lazy">
+      <div class="hd">
+        <span class="n">Apuesta 4</span>
+        <h4>La pera va una semana atrasada &mdash; a prop&oacute;sito</h4>
+        <div class="code">B&#8209;39 &middot; <i>Pyrus communis</i> &lsquo;Williams&rsquo;</div>
+        <div class="donde">&#128205; Fondo, del lado del cuarto del fondo &mdash; <b>es la que mira al sur</b>.</div>
+        <div class="foto-pie">Tu foto del 04/09: ramas todav&iacute;a desnudas.</div>
+      </div>
+    </div>
+    <div class="apuesta"><span class="t">Mi apuesta</span><p>Hoy s&iacute; tiene flor blanca abierta &mdash; <b>pero menos avanzada que la ciruela</b>, que est&aacute; a pocos metros y tiene la misma ventana en la ficha (8&nbsp;&middot;&nbsp;9).</p></div>
+    <div class="porque">Y la raz&oacute;n no es la especie: <b>es d&oacute;nde est&aacute; parada.</b> Tu casa est&aacute; alineada casi perfecto este&#8209;oeste, y la pera es <b>la que mira al sur</b> &mdash; el lado que en invierno recibe menos sol directo y guarda m&aacute;s humedad. <b>Menos horas de sol acumuladas = brotaci&oacute;n m&aacute;s tard&iacute;a.</b> No es que la pera sea lenta: es que le toc&oacute; la peor esquina del terreno para arrancar.</div>
+    <div class="conse"><b>Si le pegu&eacute;, es una buena noticia disfrazada:</b> el sur la protege de las heladas tard&iacute;as justamente porque la atrasa. La flor que abre m&aacute;s tarde es la que menos riesgo corre de que una madrugada fr&iacute;a le queme la cosecha entera.</div>
+    <div class="acts">
+      <button type="button" data-v="ok">&#9989; Le pegaste</button>
+      <button type="button" data-v="no">&#10060; Erraste</button>
+      <button type="button" data-v="skip">&#129335; No llegu&eacute;</button>
+    </div>
+    <section class="say" hidden><textarea rows="2" placeholder="¿Cómo viene la pera contra la ciruela?"></textarea><div class="r"><button type="button" data-a="send">Enviar &#10148;</button><button type="button" class="gh" data-a="close">Cerrar</button></div><span class="fb-hint"></span></section>
+    <span class="hint"></span>
+  </article>
+
+  <!-- 5 -->
+  <article class="bet reveal" id="b-F-3" data-code="F-3">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/F-3/species-F-3_20260904-161000.jpg" alt="Fotinia F-3 en el cerco del frente" loading="lazy">
+      <div class="hd">
+        <span class="n">Apuesta 5</span>
+        <h4>El rojo de la fotinia ya empez&oacute; a bajar</h4>
+        <div class="code">F&#8209;3 &middot; <i>Photinia &times; fraseri</i></div>
+        <div class="donde">&#128205; Frente, el cerco &mdash; el eje oeste, sol de tarde hasta el atardecer.</div>
+        <div class="foto-pie">Tu foto del 04/09: el rojo reci&eacute;n asomaba en las puntas.</div>
+      </div>
+    </div>
+    <div class="apuesta"><span class="t">Mi apuesta</span><p>Hoy el brote creci&oacute;: <b>las hojas de m&aacute;s abajo del brote ya viraron a verde brillante</b> y s&oacute;lo la punta sigue roja. El rojo se corri&oacute; hacia arriba.</p></div>
+    <div class="porque">El rojo no es un adorno ni un color de estaci&oacute;n: <b>es defensa qu&iacute;mica</b>. La hoja reci&eacute;n nacida es tierna y no tiene con qu&eacute; defenderse, as&iacute; que se llena de pigmento para volverse poco apetecible. <b>Cuando la hoja endurece ya no lo necesita y lo desarma</b> &mdash; por eso siempre ves rojo arriba y verde abajo, y el l&iacute;mite entre los dos sube unos cent&iacute;metros por semana.</div>
+    <div class="conse"><b>Ac&aacute; el color es el cron&oacute;metro de una tarea tuya.</b> El recorte del cerco (<i>plant&#8209;F&#8209;3&#8209;2</i>) espera exactamente esto: <b>se poda cuando el brote entero pas&oacute; a verde</b>, no antes &mdash; si cort&aacute;s con la hoja todav&iacute;a roja, cort&aacute;s tejido blando y el cerco te queda con las puntas marrones. Mir&aacute; el l&iacute;mite hoy y ten&eacute;s la fecha.</div>
+    <div class="acts">
+      <button type="button" data-v="ok">&#9989; Le pegaste</button>
+      <button type="button" data-v="no">&#10060; Erraste</button>
+      <button type="button" data-v="skip">&#129335; No llegu&eacute;</button>
+    </div>
+    <section class="say" hidden><textarea rows="2" placeholder="¿Hasta dónde llega el rojo hoy?"></textarea><div class="r"><button type="button" data-a="send">Enviar &#10148;</button><button type="button" class="gh" data-a="close">Cerrar</button></div><span class="fb-hint"></span></section>
+    <span class="hint"></span>
+  </article>
+
+  <!-- 6 -->
+  <article class="bet reveal" id="b-B-26" data-code="B-26">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-26/species-B-26_20260904-160237.jpg" alt="Romero B-26 del lado de la cancha de pádel" loading="lazy">
+      <div class="hd">
+        <span class="n">Apuesta 6</span>
+        <h4>El romero est&aacute; con flor &mdash; y por eso no se toca</h4>
+        <div class="code">B&#8209;26 &middot; <i>Salvia rosmarinus</i></div>
+        <div class="donde">&#128205; Fondo, del lado de la cancha de p&aacute;del, entre el mirto y el pit&oacute;sporo.</div>
+        <div class="foto-pie">Tu foto del 04/09: la mata entera.</div>
+      </div>
+    </div>
+    <div class="apuesta"><span class="t">Mi apuesta</span><p>Tiene <b>flor azul&#8209;lila abierta ahora mismo</b>, chiquita, pegada al tallo entre las agujas. Y la viene teniendo desde junio.</p></div>
+    <div class="porque">Es la &uacute;nica de tus 51 especies que florece <b>de junio a octubre</b> &mdash; cinco meses corridos, justo los que el resto del jard&iacute;n pasa dormido. Por eso no la mir&aacute;s: florece cuando nadie sale a mirar. <b>Y es la que sostuvo a los polinizadores de todo el fondo durante el invierno</b>, sola, hasta que la ciruela y la pera abrieron ahora.</div>
+    <div class="conse"><b>La consecuencia es una regla, no una tarea:</b> el romero con flor no se poda. Su ficha manda tijera en <b>octubre&#8209;noviembre</b>, cuando termina &mdash; y ah&iacute; s&oacute;lo verde, nunca la madera vieja marr&oacute;n, porque de la madera vieja el romero no rebrota. Si ves flor, guard&aacute; la tijera.</div>
+    <div class="acts">
+      <button type="button" data-v="ok">&#9989; Le pegaste</button>
+      <button type="button" data-v="no">&#10060; Erraste</button>
+      <button type="button" data-v="skip">&#129335; No llegu&eacute;</button>
+    </div>
+    <section class="say" hidden><textarea rows="2" placeholder="¿Tiene flor o ya terminó?"></textarea><div class="r"><button type="button" data-a="send">Enviar &#10148;</button><button type="button" class="gh" data-a="close">Cerrar</button></div><span class="fb-hint"></span></section>
+    <span class="hint"></span>
+  </article>
+
+  <!-- 7 -->
+  <article class="bet reveal" id="b-F-1" data-code="F-1">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/F-1/species-F-1_20260904-160859.jpg" alt="Guayabo del país F-1 en el frente" loading="lazy">
+      <div class="hd">
+        <span class="n">Apuesta 7</span>
+        <h4>El guayabo todav&iacute;a no arranc&oacute; &mdash; y falta poco</h4>
+        <div class="code">F&#8209;1 &middot; <i>Acca sellowiana</i> &middot; nativo</div>
+        <div class="donde">&#128205; Frente, mirando a la calle &mdash; eje oeste, sol de tarde.</div>
+        <div class="foto-pie">Tu foto del 04/09: hoja verde&#8209;grisácea, sin bot&oacute;n.</div>
+      </div>
+    </div>
+    <div class="apuesta"><span class="t">Mi apuesta</span><p>Esta la pierdo o la gano por poco: digo que hoy <b>todav&iacute;a no ten&eacute;s ni un bot&oacute;n floral</b>. Cero. Hoja y nada m&aacute;s.</p></div>
+    <div class="porque">Su ventana es <b>octubre a diciembre</b> y estamos a mitad de septiembre, as&iacute; que deber&iacute;a faltar. Pero es la apuesta m&aacute;s fr&aacute;gil de las diez: est&aacute; en el <b>frente, cara oeste</b>, que se lleva todo el sol de la tarde, y esta semana seca con m&aacute;ximas subiendo a 22&deg; es exactamente el empuj&oacute;n que adelanta una floraci&oacute;n. <b>Si encontr&aacute;s un bot&oacute;n, gan&aacute;s vos y mi ficha se atrasa un mes.</b></div>
+    <div class="conse"><b>Lo que viene, para que no te lo pierdas:</b> sus flores tienen <b>p&eacute;talos blancos por fuera y rojos por dentro que se comen</b> &mdash; dulces, carnosos, gusto a golosina. Ac&aacute; y en Brasil los chicos los com&iacute;an directo del &aacute;rbol. Y se pueden sacar <b>sin tocar la fruta</b>: el p&eacute;talo se saca y el ovario sigue armando la guayaba de marzo. Es la &uacute;nica cosecha de tu jard&iacute;n que se come dos veces.</div>
+    <div class="acts">
+      <button type="button" data-v="ok">&#9989; Le pegaste</button>
+      <button type="button" data-v="no">&#10060; Erraste</button>
+      <button type="button" data-v="skip">&#129335; No llegu&eacute;</button>
+    </div>
+    <section class="say" hidden><textarea rows="2" placeholder="¿Había algún botón?"></textarea><div class="r"><button type="button" data-a="send">Enviar &#10148;</button><button type="button" class="gh" data-a="close">Cerrar</button></div><span class="fb-hint"></span></section>
+    <span class="hint"></span>
+  </article>
+
+  <!-- 8 -->
+  <article class="bet reveal" id="b-B-20" data-code="B-20">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-20/species-B-20_20260904-160031.jpg" alt="Arbusto B-20 sin identificar, en maceta roja junto a la pindó" loading="lazy">
+      <div class="hd">
+        <span class="n">Apuesta 8</span>
+        <h4>El &uacute;nico sin nombre ya se est&aacute; delatando</h4>
+        <div class="code">B&#8209;20 &middot; sin g&eacute;nero asignado</div>
+        <div class="donde">&#128205; Fondo, maceta roja sobre el c&eacute;sped, al lado del tronco de la pind&oacute;.</div>
+        <div class="foto-pie">Tu foto del 04/09: reci&eacute;n empezaba a brotar desde la base.</div>
+      </div>
+    </div>
+    <div class="apuesta"><span class="t">Mi apuesta</span><p>En diez d&iacute;as de brote ya tiene hoja formada, y digo que va a ser <b>opuesta</b> (de a pares enfrentados en el tallo), <b>chica, brillante y de borde liso</b>, sin dientes.</p></div>
+    <div class="porque">Es lo que se alcanzaba a ver asomando en tu foto, y esos tres rasgos juntos no son un detalle est&eacute;tico: <b>son la mitad de una clave bot&aacute;nica.</b> Hoja opuesta descarta de una a la mayor&iacute;a de los arbustos de jard&iacute;n uruguayo; sumale borde entero y brillo, y lo que queda es un pu&ntilde;ado corto de candidatos.</div>
+    <div class="conse"><b>Es la &uacute;nica de tus 51 que no tiene ni g&eacute;nero tentativo en la ficha</b> &mdash; y va camino a su segunda primavera as&iacute;. <b>Sacale una foto a una rama con tres o cuatro pares de hojas</b> (de cerca, con la hoja bien plana) y la cerramos esta semana. Si adem&aacute;s llega a tirar flor este a&ntilde;o, el caso se cierra con nombre y apellido.</div>
+    <div class="acts">
+      <button type="button" data-v="ok">&#9989; Le pegaste</button>
+      <button type="button" data-v="no">&#10060; Erraste</button>
+      <button type="button" data-v="skip">&#129335; No llegu&eacute;</button>
+    </div>
+    <section class="say" hidden><textarea rows="2" placeholder="¿Opuestas o alternas? ¿Borde liso o dentado?"></textarea><div class="r"><button type="button" data-a="send">Enviar &#10148;</button><button type="button" class="gh" data-a="close">Cerrar</button></div><span class="fb-hint"></span></section>
+    <span class="hint"></span>
+  </article>
+
+  <div class="sect-lbl reveal">Y las dos donde voy a ciegas &middot; no las fotografiaste el 04/09</div>
+
+  <!-- 9 -->
+  <article class="bet reveal" id="b-B-32" data-code="B-32">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-32/user-1778598164393-d77d_20260512-150244.jpg" alt="Viraró B-32 contra el fondo del vecino" loading="lazy">
+      <div class="hd">
+        <span class="n">Apuesta 9</span>
+        <h4>La anti&#8209;apuesta: mi ficha dice que florece hoy y te digo que no vas a ver nada</h4>
+        <div class="code">B&#8209;32 &middot; <i>Ruprechtia laxiflora</i> &middot; nativo</div>
+        <div class="donde">&#128205; Fondo, contra el l&iacute;mite del vecino.</div>
+        <div class="foto-pie">&Uacute;ltima foto: 12 de mayo. De este no tengo nada reciente.</div>
+      </div>
+    </div>
+    <div class="apuesta"><span class="t">Mi apuesta</span><p>Su ficha dice floraci&oacute;n en <b>agosto&#8209;septiembre</b> &mdash; o sea ahora mismo. <b>Y te apuesto a que no vas a encontrar absolutamente nada llamativo.</b> Si ves algo, van a ser racimitos verdosos de pocos mil&iacute;metros.</p></div>
+    <div class="porque">Porque en el virar&oacute; <b>lo vistoso no es la flor: es lo que viene despu&eacute;s.</b> Esos &laquo;p&eacute;talos&raquo; rosados que se le ven en primavera&#8209;verano <b>no son flores</b> &mdash; son s&eacute;palos que reci&eacute;n se agrandan y se ti&ntilde;en <b>despu&eacute;s</b> de que la flor fue polinizada, y funcionan como h&eacute;lice para que la semilla vuele lejos del &aacute;rbol madre.</div>
+    <div class="conse"><b>Y ac&aacute; hay un caso abierto que se resuelve solo, mirando:</b> el virar&oacute; es <b>dioico</b> &mdash; hay pies macho y pies hembra, y s&oacute;lo la hembra da el rosado. Si en octubre&#8209;noviembre tu &aacute;rbol se llena de rosa, es hembra. <b>Si pasa la primavera entera sin nada, es macho</b>, y lo anoto en la ficha. Empieza hoy, con esta apuesta como l&iacute;nea de largada.</div>
+    <div class="acts">
+      <button type="button" data-v="ok">&#9989; Le pegaste</button>
+      <button type="button" data-v="no">&#10060; Erraste</button>
+      <button type="button" data-v="skip">&#129335; No llegu&eacute;</button>
+    </div>
+    <section class="say" hidden><textarea rows="2" placeholder="¿Viste algo en el viraró?"></textarea><div class="r"><button type="button" data-a="send">Enviar &#10148;</button><button type="button" class="gh" data-a="close">Cerrar</button></div><span class="fb-hint"></span></section>
+    <span class="hint"></span>
+  </article>
+
+  <!-- 10 -->
+  <article class="bet reveal" id="b-B-41" data-code="B-41">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/B-41_caqui_pre_invierno.jpg" alt="El árbol catalogado como caqui B-41, antes del invierno" loading="lazy">
+      <div class="hd">
+        <span class="n">Apuesta 10</span>
+        <h4>El caqui que quiz&aacute;s nunca fue caqui</h4>
+        <div class="code">B&#8209;41 &middot; <i>Diospyros kaki</i> &mdash; <b>identidad en duda</b></div>
+        <div class="donde">&#128205; Fondo. Tampoco entr&oacute; en la tanda del 04/09.</div>
+        <div class="foto-pie">Foto de cat&aacute;logo, de antes del invierno.</div>
+      </div>
+    </div>
+    <div class="apuesta"><span class="t">Mi apuesta</span><p>Hoy est&aacute; <b>brotando hoja nueva</b> y <b>no tiene ni un bot&oacute;n floral</b> &mdash; lo cual, para variar, no prueba nada todav&iacute;a.</p></div>
+    <div class="porque">Est&aacute; catalogado como caqui, <b>pero vos mismo confirmaste en julio que desde que existe el cat&aacute;logo nunca mostr&oacute; ni flor ni fruto.</b> Un caqui adulto que no florece dos temporadas seguidas es raro; lo m&aacute;s probable a esta altura es que <b>la ficha est&eacute; mal y sea otra cosa</b>. Su ventana declarada es octubre&#8209;noviembre: <b>esta primavera es la que decide el caso.</b></div>
+    <div class="conse"><b>Y la hoja nueva ya alcanza para avanzar sin esperar a octubre.</b> El caqui tiene hoja <b>alterna</b> (una por nudo, en zigzag), grande, ovalada y con brillo de cuero. Si la que est&aacute; saliendo es opuesta, o chica, o mate &mdash; <b>no es <i>Diospyros</i> y lo sacamos del cat&aacute;logo como caqui esta misma semana</b>. Una foto de la punta de una rama y listo.</div>
+    <div class="acts">
+      <button type="button" data-v="ok">&#9989; Le pegaste</button>
+      <button type="button" data-v="no">&#10060; Erraste</button>
+      <button type="button" data-v="skip">&#129335; No llegu&eacute;</button>
+    </div>
+    <section class="say" hidden><textarea rows="2" placeholder="¿Cómo es la hoja nueva: alterna o de a pares?"></textarea><div class="r"><button type="button" data-a="send">Enviar &#10148;</button><button type="button" class="gh" data-a="close">Cerrar</button></div><span class="fb-hint"></span></section>
+    <span class="hint"></span>
+  </article>
+
+  <div class="blk reveal" id="veredicto" hidden>
+    <h3 id="ver-t">&#128220; El veredicto</h3>
+    <p id="ver-p"></p>
+  </div>
+
+  <!-- ---------- aprobadas agrupadas ---------- -->
+  <div class="apro reveal">
+    <h3>&#129683; Y lo &uacute;nico que ya aprobaste, sigue ac&aacute; adentro</h3>
+    <p>De todo lo que te mand&eacute;, <b>El Taller</b> es la &uacute;nica que prendiste en los dos slots &mdash; as&iacute; que viaja dentro de esta p&aacute;gina en vez de robarte otra notificaci&oacute;n. Sigue entera y sigue sirviendo.</p>
+    <a class="big" href="https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html">
+      <b>&#129690; El Taller n&ordm;1 &mdash; poda de carozos, paso a paso &rarr;</b>
+      <span>7 pasos, para hacer con la tijera en la mano. Lo hiciste entero tres veces.</span>
+    </a>
+  </div>
+
+  <!-- ---------- slots ---------- -->
+  <div class="slots reveal">
+    <h3>&#128276; &iquest;En qu&eacute; horario quer&eacute;s el marcador?</h3>
+    <p>Si esto te sirvi&oacute;, <b>prendelo</b> y vuelve con apuestas nuevas sobre otras plantas. Si no lo prend&eacute;s, no vuelve &mdash; as&iacute; de simple, y no te lo voy a insistir.</p>
+    <div class="slot">
+      <div class="info"><b>Lunes 18:00</b><span>Arrancar la semana con el recorrido y el pron&oacute;stico ya cruzado.</span></div>
+      <div class="yn">
+        <button type="button" data-q="marcador-slot-lun18" data-v="si">S&iacute;</button>
+        <button type="button" data-q="marcador-slot-lun18" data-v="no">No</button>
+      </div>
+    </div>
+    <div class="slot">
+      <div class="info"><b>S&aacute;bado 11:00</b><span>Con la ma&ntilde;ana libre y tiempo para caminar el fondo entero.</span></div>
+      <div class="yn">
+        <button type="button" data-q="marcador-slot-sab11" data-v="si">S&iacute;</button>
+        <button type="button" data-q="marcador-slot-sab11" data-v="no">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- reacción ---------- -->
+  <div class="react reveal">
+    <div class="q">&iquest;Qu&eacute; te pareci&oacute; esto?</div>
+    <div class="em" id="react-row">
+      <button type="button" data-v="love" title="Me encantó">&#128525;</button>
+      <button type="button" data-v="wow" title="No lo sabía">&#129327;</button>
+      <button type="button" data-v="meh" title="Masomenos">&#128528;</button>
+      <button type="button" data-v="no" title="No va">&#128581;</button>
+    </div>
+  </div>
+
+  <!-- ---------- feedback propio ---------- -->
+  <section class="blk fb-blk reveal" id="engage-feedback-box">
+    <h3>&#128172; El dato que te pido y no puedo sacar de ning&uacute;n modelo</h3>
+    <p>Si perd&iacute; alguna apuesta, <b>lo que vos viste vale m&aacute;s que mis diez fichas juntas</b> &mdash; con eso corrijo el cat&aacute;logo esta semana. Y si ten&eacute;s dos minutos, me sigue faltando una de la semana pasada: <b>&iquest;el fondo contra el muro de la cancha de p&aacute;del es m&aacute;s reparado que el resto?</b> Si ah&iacute; el viento pega menos de lo que dice el sat&eacute;lite, <b>te estoy frenando podas al pedo</b> y quiero bajar el umbral.</p>
+    <textarea rows="3" placeholder="Qué encontraste, o cómo se porta el viento en el fondo…"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('el-marcador', this)">Enviar</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <div class="engage-actions reveal">
+    <button onclick="engageApprove('2026-09-14-el-marcador')">&#9989; Aprobar esta mejora</button>
+    <button onclick="engageRejected('2026-09-14-el-marcador')">&#10005; No me interesa</button>
+  </div>
+
+  <footer class="pie">
+    <a href="https://gardening-chi.vercel.app/index.html">Ir a la Biblioteca de especies &rarr;</a>
+    <div class="cred">
+      <b>El marcador</b> &middot; edici&oacute;n del <b>lunes 14/09/2026</b>. Las diez apuestas se escribieron <b>antes</b> de que las miraras y no se editan despu&eacute;s &mdash; sin eso el juego no vale nada.
+      Ocho de las fotos son tuyas, del <b>4 de septiembre</b>, sin retocar; las otras dos son de cat&aacute;logo y est&aacute;n marcadas como tales.
+      Cada &laquo;por qu&eacute;&raquo; sale de los campos de floraci&oacute;n, fructificaci&oacute;n y poda de <b>tu propio cat&aacute;logo</b> (51 especies, 102 tareas) m&aacute;s la orientaci&oacute;n este&#8209;oeste de la casa.
+      Clima de la semana cruzado en <b>tres modelos</b> (ECMWF, GFS y el mixto) el mismo lunes a la ma&ntilde;ana: <b>seco de hoy al s&aacute;bado en los tres</b>, con el martes como &uacute;nico d&iacute;a ventoso.
+      Tu puntaje queda guardado en este tel&eacute;fono aunque cierres la p&aacute;gina.
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  var obs = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+  var KEY = 'jardineando_marcador_v1_20260914';
+  var TOTAL = 10;
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e){ state = {}; }
+
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
+
+  function log(qid, value){
+    try { if (window.engageAnswer) window.engageAnswer(qid, value, document.createElement('button')); } catch(e){}
+  }
+
+  function paint(){
+    var ok = 0, no = 0, sk = 0;
+    Object.keys(state).forEach(function(k){
+      if (state[k] === 'ok') ok++; else if (state[k] === 'no') no++; else if (state[k] === 'skip') sk++;
+    });
+    var done = ok + no + sk;
+    document.getElementById('sc-ok').textContent = String(ok);
+    var det = document.getElementById('sc-det');
+    if (!done) det.textContent = 'Todavía no puntuaste ninguna';
+    else det.textContent = ok + ' bien · ' + no + ' mal · ' + sk + ' sin mirar · faltan ' + (TOTAL - done);
+    document.getElementById('bar-ok').style.width = (ok / TOTAL * 100) + '%';
+    document.getElementById('bar-no').style.width = (no / TOTAL * 100) + '%';
+    document.getElementById('bar-sk').style.width = (sk / TOTAL * 100) + '%';
+
+    var box = document.getElementById('veredicto');
+    var judged = ok + no;
+    if (judged >= 3) {
+      box.hidden = false;
+      var t = document.getElementById('ver-t'), p = document.getElementById('ver-p');
+      if (done < TOTAL) {
+        t.innerHTML = '📝 Parcial: voy ' + ok + '–' + no;
+        p.innerHTML = 'Faltan <b>' + (TOTAL - done) + '</b>. El corte está en <b>7 de 10</b>: abajo de eso corrijo las fichas que fallé esta semana y te muestro los cambios el sábado.';
+      } else if (ok >= 7) {
+        t.innerHTML = '🏆 Cerrado: ' + ok + ' de 10';
+        p.innerHTML = 'Aprobé por poco o por mucho, pero aprobé: <b>las fechas del catálogo que uso para decirte cuándo podar están calibradas</b>. Las ' + no + ' que fallé igual las reviso — contáme en la caja de abajo qué viste y quedan corregidas esta semana.';
+      } else {
+        t.innerHTML = '❌ Cerrado: ' + ok + ' de 10 — me fue mal, y ese era el punto';
+        p.innerHTML = 'Prometido es prometido: <b>las ' + no + ' fichas que fallé se corrigen esta semana</b> con lo que vos viste, y el sábado te muestro exactamente qué cambió en el catálogo. Escribíme en la caja de abajo qué encontraste en las que erré — sin eso corrijo a ciegas.';
+      }
+    } else {
+      box.hidden = true;
+    }
+  }
+
+  document.querySelectorAll('.bet').forEach(function(card){
+    var code = card.getAttribute('data-code');
+    var qid = 'marcador-' + code;
+    var say = card.querySelector('.say');
+    var hint = card.querySelector('.hint');
+
+    if (state[code]) {
+      card.classList.add('answered');
+      var pre = card.querySelector('.acts button[data-v="' + state[code] + '"]');
+      if (pre) pre.classList.add('on');
+    }
+
+    card.querySelectorAll('.acts button').forEach(function(b){
+      b.addEventListener('click', function(){
+        var v = b.getAttribute('data-v');
+        card.querySelectorAll('.acts button').forEach(function(x){ x.classList.remove('on'); });
+        b.classList.add('on');
+        state[code] = v;
+        save();
+        log(qid, v);
+        card.classList.add('answered');
+        if (v === 'no') {
+          say.hidden = false;
+          hint.textContent = 'Contame qué viste — con eso corrijo la ficha.';
+        } else if (v === 'ok') {
+          say.hidden = true;
+          hint.textContent = 'Anotado. ¡Una para mí!';
+        } else {
+          say.hidden = true;
+          hint.textContent = 'Queda pendiente. No cuenta ni a favor ni en contra.';
+        }
+        paint();
+      });
+    });
+
+    if (say) {
+      say.querySelector('[data-a="close"]').addEventListener('click', function(){ say.hidden = true; });
+      say.querySelector('[data-a="send"]').addEventListener('click', function(){
+        var ta = say.querySelector('textarea');
+        var txt = (ta.value || '').trim();
+        if (!txt) { hint.textContent = 'Escribí algo primero.'; return; }
+        try { if (window.engageFeedback) window.engageFeedback('marcador-' + code, this); } catch(e){}
+        hint.textContent = '✓ Recibido. Eso entra en la corrección de esta semana.';
+      });
+    }
+  });
+
+  // slots
+  var SKEY = 'jardineando_marcador_slots_v1';
+  var slots = {};
+  try { slots = JSON.parse(localStorage.getItem(SKEY) || '{}') || {}; } catch(e){ slots = {}; }
+  document.querySelectorAll('.slot .yn button').forEach(function(b){
+    var q = b.getAttribute('data-q'), v = b.getAttribute('data-v');
+    if (slots[q] === v) b.classList.add(v === 'si' ? 'on-si' : 'on-no');
+    b.addEventListener('click', function(){
+      var row = b.closest('.yn');
+      row.querySelectorAll('button').forEach(function(x){ x.classList.remove('on-si','on-no'); });
+      b.classList.add(v === 'si' ? 'on-si' : 'on-no');
+      slots[q] = v;
+      try { localStorage.setItem(SKEY, JSON.stringify(slots)); } catch(e){}
+      log(q, v);
+    });
+  });
+
+  // reacción
+  var RKEY = 'jardineando_marcador_react_v1';
+  var row = document.getElementById('react-row');
+  try {
+    var prev = localStorage.getItem(RKEY);
+    if (prev) { var pb = row.querySelector('button[data-v="' + prev + '"]'); if (pb) pb.classList.add('on'); }
+  } catch(e){}
+  row.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click', function(){
+      row.querySelectorAll('button').forEach(function(x){ x.classList.remove('on'); });
+      b.classList.add('on');
+      var v = b.getAttribute('data-v');
+      try { localStorage.setItem(RKEY, v); } catch(e){}
+      try { if (window.engageReact) window.engageReact('el-marcador', v, b); } catch(e){}
+    });
+  });
+
+  paint();
+})();
+</script>
+<script src="engage.js"></script>
+</body>
+</html>
