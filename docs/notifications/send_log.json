@@ -2,18 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-08-31-jardin-hoy",
-      "ts": "2026-08-31T17:23:19.581Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-08-31-censo-de-primavera",
-      "ts": "2026-08-31T21:59:09.514Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-09-03-jardin-hoy",
       "ts": "2026-09-03T14:29:19.606Z",
       "status_code": 201
@@ -352,5 +340,5 @@
       "_nota": "Miercoles sin slot: 0 envios. MEDICION QUE REFUTA LA CORRECCION DE AYER: la ventana nueva abrio 05:07Z y a las 09:15Z no habia corrido NINGUNA scheduled (ultima 00:41Z). El pozo inicial no se movio con la ventana. Contramedida nueva: la entrega deja de depender del cron y pasa al trigger `push` sobre queue.json, cuya latencia medida commit->run es de 4-10 s en 4 de 4 casos."
     }
   },
-  "_updated_at": "2026-09-09T09:40:00-03:00"
+  "_updated_at": "2026-09-15T09:12:15.454151Z"
 }

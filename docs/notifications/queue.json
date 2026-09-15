@@ -1,30 +1,4 @@
 {
-  "_updated_at": "2026-09-14T21:00:03.795Z",
-  "notifications": [
-    {
-      "id": "2026-09-14-jardin-hoy",
-      "format": "tarea",
-      "title": "Seis días secos. Hoy el menos ventoso",
-      "body": "El frío se terminó esta madrugada. Limones y pitósporo son de hoy; el jueves se abren cuatro podas frenadas.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
-      "send_at": "2026-09-14T10:00:00-03:00",
-      "expires_at": "2026-09-14T21:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-09-14T13:00:02.997Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-09-14"
-    },
-    {
-      "id": "2026-09-14-el-marcador",
-      "title": "Diez apuestas mías. Vos sos el árbitro",
-      "body": "Sacaste 42 fotos el 4/9. Apuesto qué cambió en 10 plantas en estos 10 días. Si bajo de 7, corrijo el catálogo.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-09-14-el-marcador.html",
-      "send_at": "2026-09-14T18:00:00-03:00",
-      "expires_at": "2026-09-14T20:30:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-09-14T21:00:03.794Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-09-14"
-    }
-  ]
+  "_updated_at": "2026-09-15T09:12:15.455399Z",
+  "notifications": []
 }
