@@ -1,0 +1,1 @@
+{"name":"jardineando","private":true,"scripts":{"build:v2":"node v2/build.mjs"},"dependencies":{"@supabase/supabase-js":"2.116.0"},"devDependencies":{"esbuild":"0.25.10"}}
