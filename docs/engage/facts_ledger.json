@@ -1,7 +1,7 @@
 {
   "_doc": "Registro de uso de plantas/datos en experiencias push. El agente /engagement DEBE leerlo antes de armar contenido y actualizarlo después. Regla: una planta 'featured' descansa >=7 dias; un mismo fact no se repite en <14 dias; cada experiencia nueva usa >=70% plantas no featured en los ultimos 7 dias.",
-  "_updated": "2026-09-16",
-  "_nota_ultima_corrida": "MIERCOLES 16/09 - DIA SIN SLOT: 0 push encoladas (cadencia Lun/Jue/Sab tarea + Lun 18:00 / Sab 11:00 experiencia). CORRIDA DE MANTENIMIENTO -> NO SE CONSUMIO ELENCO Y NINGUN VETO SE CORRE. Lo unico que se toco fue una REEDICION SIN PUSH de la URL estable del canal tarea (2026-07-24-jardin-hoy.html), que por regla propia no consume elenco: mismo cast que ayer (B-23, B-43, B-1, B-29, B-22, B-36; F-2 solo mencionada), ningun nombre nuevo. MOTIVO DE LA REEDICION, y es todo contra mi: (1) el TITULAR de ayer -'la ventana seca cierra el lunes 21 con lluvia'- se murio en 24 h: ECMWF paso de 9,6 mm a 0,10, mixto de 7,8 a 0,00, GFS sigue en 0,00. Mi 'dos contra uno' se resolvio a favor del que yo habia puesto en minoria. Lo seco ahora llega al martes 22, y el lunes sigue frenando pero POR VIENTO (36-58 km/h). (2) La MISMA edicion en la que estrene la regla #4 ('ningun numero en prosa sin cruzarlo con mi tabla') la ROMPE DOS VECES: decia en prosa 'lunes 53-56 km/h en los tres' mientras su propia tabla decia 32-57 (el GFS marcaba 32). (3) La madrugada del viernes: ayer publique 12,2-20,7 grados, que eran horas del DIA, no de la madrugada; la real es 9,5-12,1 -- mas baja de lo que dije y aun asi el doble que la del jueves (5,9-9,0), asi que el motivo se sostiene con el numero corregido. (4) La pagina estaba desfasada un dia: decia 'manana miercoles' del pitosporo B-43 cuando el miercoles ES hoy. (5) Dato NUEVO de SEGURIDAD: el GFS le subio la rafaga del jueves de 37 a 40,3 km/h y los limones se bajan arriba de una escalera -> no se movio el dia, se publico la alternativa (vie/sab/dom, los tres bajo 36). LA APUESTA DEL VIERNES NO SE TOCO POR TERCER DIA; su marcador provisorio paso de ganar por 0,9 km/h a ganar por 7,0 (el techo apostado sigue en 43 y el mas alto de los tres cayo a 36,0); sigue 2 ganando + 1 en duda (maxima 18-24: ECMWF 22,7 y GFS 22,1 adentro, mixto 15,3 afuera, 7,4 grados de discrepancia). Se cobra entera el sabado 19. Layout verificado en Chromium 390x780: primer control de accion a 25,4% (techo 35%), sin overflow horizontal. ANGULOS NUEVOS QUEMADOS HOY (no antes del 30/09): 'el modelo que puse en minoria tenia razon' / 'la lluvia que se borro en 24 horas' / 'escribi la regla y la rompi en la misma pagina' / 'el freno no se cae, le cambia el motivo: era agua, es viento'.",
+  "_updated": "2026-09-17",
+  "_nota_ultima_corrida": "JUEVES 17/09 - DIA CON SLOT DE TAREA: 1 push encolada (2026-09-17-jardin-hoy, 10:00 -03:00, expira 16:00 porque el consejo es 'hoy de 14 a 18'). Cero experiencias: el jueves no tiene slot de experiencia. CAST CONSUMIDO (por la EXCEPCION DEL CANAL TAREA ya predeclarada para hoy): B-1, B-29, B-22, B-36 (las cuatro de la helada, su vispera era hoy), B-23 (limones) y B-43 (pitosporo, que baja al final porque su dia era ayer). F-2 solo mencionada. Ningun nombre nuevo, ninguna especie fuera de la excepcion. EL HALLAZGO DEL DIA, y es una correccion mia grande: pedi por PRIMERA VEZ el pronostico HORA POR HORA (hourly=wind_gusts_10m, los tres modelos) y el 40 km/h del GFS con el que frene los limones dos dias seguidos resulto ser el valor de las 03:00. De 09 a 18 el mas alto de los TRES es 25,6 km/h, y de las 15 en adelante 23,0 / 19,1 / 14,4. Le vendi riesgo de escalera con el pico de un dia que ocurre mientras duerme. Publicado como titular. SEGUNDA CORRECCION: el titular de ayer ('siete dias limpios hasta el martes 22') duro 24 h. Hoy vuelve la lluvia al sabado (0-0,6), al domingo (0,3-4,1) y al lunes (0,2-4,9, y el 4,9 lo pone el ECMWF, el mismo que la habia borrado: 9,6 -> 0,1 -> 4,9 en tres dias). La ventana paso de 7 dias a 2. TERCERA: el escape que le di ayer ('el viernes 23-36 y el sabado 26-35 son los mas calmos') se cayo: el GFS los subio a 41,4 y 40,7, por encima del jueves (40,0). Hoy es el mas calmo de los cuatro, y por 0,7 km/h. VEREDICTO DE 'EL MARCADOR' EJECUTADO (ver proposals.json): 0 taps a las 60 h con canal sano y sin push compitiendo -> dropped, y el eje OBJETO QUE SE LLENA queda archivado (tercera muerte del eje). ANGULOS NUEVOS QUEMADOS HOY (no antes del 01/10): 'el maximo diario es el peor instante de 24 horas, no el viento de trabajo'; 'te frene con un numero que pasa mientras dormis'; 'la ventana operativa son los dias en que los tres coinciden'; 'gano la apuesta con una regla que ya decidi jubilar'; 'retiro una pregunta que ya no necesito'. Layout verificado en Chromium 390x780: primer control de accion a 25,4%->26,4% (techo 35%), sin overflow horizontal, altura 9964. Bug de CSS arreglado de paso: .veredicto b aplicaba display:block a los <b> anidados dentro del <i> y partia la bajada en lineas sueltas; ahora es '.veredicto > b' + '.veredicto i b{display:inline}'.",
   "plants": {
     "F-1": {
       "common": "Guayabo del país",
@@ -279,7 +279,7 @@
     },
     "B-1": {
       "common": "Santa Rita / Buganvilia",
-      "paginas_historicas": 15,
+      "paginas_historicas": 16,
       "featured": [
         {
           "date": "2026-07-19",
@@ -315,6 +315,11 @@
           "date": "2026-09-14",
           "page": "2026-07-24-jardin-hoy.html (ed. lunes 14/09)",
           "fact": "CANAL TAREA: una de las 4 con condicion «pasada la ultima helada» — fecha asignada JUEVES 17 por el escalon termico. Prioridad alta, espinas."
+        },
+        {
+          "date": "2026-09-17",
+          "page": "2026-07-24-jardin-hoy.html (canal tarea, con push)",
+          "fact": "las cuatro de la helada: HOY es su dia; el motivo son las madrugadas POSTERIORES al corte (9,5-12,4 el viernes contra 6,7-9,6 hoy)"
         }
       ]
     },
@@ -866,7 +871,7 @@
     },
     "B-22": {
       "common": "Palta uruguaya",
-      "paginas_historicas": 14,
+      "paginas_historicas": 15,
       "featured": [
         {
           "date": "2026-07-20",
@@ -897,12 +902,17 @@
           "date": "2026-09-14",
           "page": "2026-07-24-jardin-hoy.html (ed. lunes 14/09)",
           "fact": "CANAL TAREA: idem, poda ligera + inspeccion. Sin foto en el catalogo (declarado). Los plantines contra la pared NO se mueven (pedido 28/07)."
+        },
+        {
+          "date": "2026-09-17",
+          "page": "2026-07-24-jardin-hoy.html (canal tarea, con push)",
+          "fact": "poda ligera; su ficha arranca floracion en setiembre y llega a noviembre -> cada rama de mas es flor que no vuelve"
         }
       ]
     },
     "B-23": {
       "common": "Limonero",
-      "paginas_historicas": 18,
+      "paginas_historicas": 19,
       "featured": [
         {
           "date": "2026-07-18",
@@ -953,6 +963,11 @@
           "date": "2026-09-14",
           "page": "2026-07-24-jardin-hoy.html (ed. lunes 14/09)",
           "fact": "CANAL TAREA (monotematico): 3er dia pidiendo la cosecha; hoy el argumento es el viento — 15-29 km/h contra los 49 del sabado. Apuesta viva de los 'mas de veinte' limones."
+        },
+        {
+          "date": "2026-09-17",
+          "page": "2026-07-24-jardin-hoy.html (canal tarea, con push)",
+          "fact": "se cae mi aviso de escalera: el 40,0 del GFS es a las 03:00; de 09 a 18 el mas alto de los tres es 25,6"
         }
       ]
     },
@@ -1152,7 +1167,7 @@
     },
     "B-29": {
       "common": "Lantana / Camará",
-      "paginas_historicas": 15,
+      "paginas_historicas": 16,
       "featured": [
         {
           "date": "2026-07-18",
@@ -1193,6 +1208,11 @@
           "date": "2026-09-14",
           "page": "2026-07-24-jardin-hoy.html (ed. lunes 14/09)",
           "fact": "CANAL TAREA: idem, rejuvenecimiento severo. Se le levanta el freno que tenia desde el jueves pasado."
+        },
+        {
+          "date": "2026-09-17",
+          "page": "2026-07-24-jardin-hoy.html (canal tarea, con push)",
+          "fact": "segunda del orden de hoy; rejuvenecimiento severo"
         }
       ]
     },
@@ -1317,7 +1337,7 @@
     },
     "B-36": {
       "common": "Palta Haas",
-      "paginas_historicas": 15,
+      "paginas_historicas": 16,
       "featured": [
         {
           "date": "2026-07-18",
@@ -1353,6 +1373,11 @@
           "date": "2026-09-14",
           "page": "2026-07-24-jardin-hoy.html (ed. lunes 14/09)",
           "fact": "CANAL TAREA: idem palta Haas, poda ligera. Sin foto en el catalogo (declarado)."
+        },
+        {
+          "date": "2026-09-17",
+          "page": "2026-07-24-jardin-hoy.html (canal tarea, con push)",
+          "fact": "poda ligera; floracion setiembre-octubre en ficha; la inspeccion vale mas que la tijera"
         }
       ]
     },
@@ -1569,7 +1594,7 @@
     },
     "B-43": {
       "common": "Pitósporo",
-      "paginas_historicas": 11,
+      "paginas_historicas": 12,
       "featured": [
         {
           "date": "2026-07-20",
@@ -1605,6 +1630,11 @@
           "date": "2026-09-14",
           "page": "2026-07-24-jardin-hoy.html (ed. lunes 14/09)",
           "fact": "CANAL TAREA: poda fuerte de reduccion a pantalla, atrasada desde mediados de agosto. Hoy es su mejor dia (perenne: la madrugada fria no le hace nada, a diferencia del citrico). Ventana que apura: florece 10-11-12 y podarlo en octubre se come la floracion. Limite: no mas de 1/3 de una vez."
+        },
+        {
+          "date": "2026-09-17",
+          "page": "2026-07-24-jardin-hoy.html (canal tarea, con push)",
+          "fact": "su dia era ayer y no se si lo uso; baja al final de la pagina por eso"
         }
       ]
     },
@@ -1894,5 +1924,5 @@
       "nota": "DOMINGO sin slot. Reedicion de jardin-hoy SIN push (no consume elenco). ANGULO NUEVO estrenado hoy, el mas fuerte de la familia «apuesta»: LA META-CORRECCION — ayer publique con letra grande la regla «el viento y la lluvia los tengo finos, el termometro no», y el sabado cerrado la dio vuelta entera (rafagas reales 49,0 contra mi techo de 45; 2,8 mm contra mi techo de 1,8; y la maxima, mi 'punto debil', dentro del margen: 12,4 contra 11, error 1,4 sobre un ±1,5 prometido). Se publico que la ley duro 24 horas y que se habia construido con UN dia de datos. Sub-angulos que salen de ahi y quedan registrados: (a) «los dos errores fueron para el mismo lado, hacia arriba» -> regla operativa concreta para el, sumar 10% al techo de rafagas antes de decidir si sale la tijera; (b) «erre para el lado seguro: la decision aguanto el error» -> justificacion real de frenar por TRES condiciones que se suman en vez de una, porque tolera que falle una; (c) el ajuste preventivo del pronostico del viernes 18 (mi 27-29 de ayer es 26-35 hoy) dicho ANTES de que lo vea el, con el veredicto intacto pero la precision degradada. HALLAZGO OPERATIVO DEL DIA, no de contenido: LA SEGUNDA PUSH DEL DIA MUERE SI LA PRIMERA CAE CERCA. 05/09 las dos en el mismo minuto -> 0 y 0. 12/09 a 60 min -> convirtio la primera, la segunda ni se abrio. El lunes 14 el hueco es de 8 horas: test limpio del formato objeto-que-se-llena, que NO queda refutado porque nunca llego a verse."
     }
   ],
-  "_nota_vigente": "AL 16/09/2026 (MIERCOLES, 0 push: dia de mantenimiento). LOS VETOS NO SE MOVIERON HOY porque no hubo contenido nuevo: lo unico que se toco fue una reedicion SIN push de la URL estable del canal tarea, y por regla propia una reedicion sin push NO consume elenco.\n== VEDADOS HASTA EL 21/09: B-13, B-15, B-38, B-39, F-3, B-26, F-1, B-20, B-32, B-41 (el marcador del 14/09) + B-23, B-43, B-1, B-29, B-22, B-36 (canal tarea del 14/09, reeditado el 15 y el 16 sin push).\n== VEDADOS HASTA EL 19/09: B-24, B-46, B-47, B-37. == SE LIBERAN EL 18/09: B-30, B-35, F-2.\n== EXCEPCION DEL CANAL TAREA: el jueves 17 vuelven por derecho propio B-1/B-29/B-22/B-36 (es su vispera) y el viernes 18 B-23/B-24 (citricos), aunque figuren vedados.\n== CANTERA LIBRE PARA LA EXPERIENCIA DEL SABADO 19 (34): B-16, F-9, B-44, B-40, F-8, F-10, B-14, B-45, B-48, B-49, B-21, B-28, B-11, B-31, B-33, B-9, B-18, B-4, B-42, B-6, B-10, B-3, B-2, F-5, B-27, B-7, B-5a, B-25, B-12, B-8, F-7, F-4, I-1, I-2. B-34 FUERA DE TODA CANTERA: ya no existe (baja con consentimiento escrito del usuario el 04/09 — NUNCA borrar una especie sin eso).\n== ANGULOS QUEMADOS, NO ANTES DEL 28/09: la apuesta arbitrada por el usuario; 'tus fotos del 04/09'; la hiedra con dos clases de hoja; el cuajado como bolita verde; el sur que atrasa y por eso protege; el rojo de la fotinia como cronometro; la anti-apuesta de los sepalos y el dioico; el petalo comestible; 'el piso paso hace tres horas'; 'seis dias secos en los tres modelos'; la regla del +10% apretada; 'viste escarcha?'.\n== DEL 29/09: 'la madrugada siguiente al corte, no la del dia que podas'; 'la ventana seca tiene fecha de cierre'; 'el dia raro que solo le sirve al pitosporo'; 'me crei mi propio titular sin mirar mi tabla'.\n== DEL 30/09 (quemados el 16/09): 'el modelo que puse en minoria tenia razon'; 'la lluvia que se borro en 24 horas'; 'escribi la regla y la rompi en la misma pagina'; 'el freno no se cae, le cambia el motivo: era agua, es viento'.\n== SIGUEN VEDADOS DEL 21/09: propagacion/esqueje; 'lo que ibas a tirar'; el ejemplar unico sin repuesto; la campana de botella; el corte al ras bajo el nudo; el lado este como vivero; el reparto de la ventana por dia. DEL 24/09: el diagnostico sanitario sobre foto suya; la mea culpa de ficha incompleta; 'la ventana ya cerro'. DEL 25/09: la ventana partida por hora. DEL 26/09: la correccion de mi correccion; la llovizna como ventaja; el abuelo y el nieto citricos; el alcohol 70%; el conteo apostado contra la ficha; el storax del liquidambar. DEL 27/09: la regla que se muere en 24 h; los dos errores para el mismo lado; el error para el lado seguro.\n== CANTERA DE ANGULOS SIN USAR: condiciones sin fecha del catalogo; poda x fruta; la coronita F-5 en octubre; el NASA de la cinta; el Persia/China del durazno; 'cada limon viene de una flor unica'."
+  "_nota_vigente": "AL 17/09/2026 (JUEVES, 1 push de tarea, 0 experiencias). == VEDADOS HASTA EL 24/09 (consumidos HOY por el canal tarea, con push): B-1, B-29, B-22, B-36, B-23, B-43. == VEDADOS HASTA EL 21/09: B-13, B-15, B-38, B-39, F-3, B-26, F-1, B-20, B-32, B-41 (el marcador del 14/09). == VEDADOS HASTA EL 19/09: B-24, B-46, B-47, B-37. == SE LIBERAN EL 18/09: B-30, B-35, F-2. == EXCEPCION DEL CANAL TAREA (sigue vigente): el viernes 18 vuelven por derecho propio B-23 y B-24 (poda de citricos), aunque figuren vedados. El viernes NO se manda push igual (dia sin slot), asi que en la practica esa excepcion solo se usa si el sabado 19 la jardin-hoy todavia habla de los citricos. == CANTERA LIBRE PARA LA EXPERIENCIA DEL SABADO 19 (34, sin cambios respecto de ayer porque el canal tarea no toca la cantera de experiencias): B-16, F-9, B-44, B-40, F-8, F-10, B-14, B-45, B-48, B-49, B-21, B-28, B-11, B-31, B-33, B-9, B-18, B-4, B-42, B-6, B-10, B-3, B-2, F-5, B-27, B-7, B-5a, B-25, B-12, B-8, F-7, F-4, I-1, I-2. B-34 FUERA DE TODA CANTERA: ya no existe (baja con consentimiento escrito del usuario el 04/09 - NUNCA borrar una especie sin eso). == OJO PARA EL SABADO: la experiencia del sabado ya esta decidida como 'su lista real de tareas con foto y un boton por item' (estilo puesta-al-dia). Esa lista sale de task_states.json, no de la cantera, asi que puede incluir especies vedadas SIN romper la regla: una tarea pendiente suya no es un fun_fact que yo elijo. Lo que si tiene que ser fresco es cualquier dato de color que le agregue. == ANGULOS QUEMADOS, NO ANTES DEL 28/09: la apuesta arbitrada por el usuario; 'tus fotos del 04/09'; la hiedra con dos clases de hoja; el cuajado como bolita verde; el sur que atrasa y por eso protege; el rojo de la fotinia como cronometro; la anti-apuesta de los sepalos y el dioico; el petalo comestible; 'el piso paso hace tres horas'; 'seis dias secos en los tres modelos'; la regla del +10% apretada; 'viste escarcha?' (esta ademas la RETIRE por escrito hoy: no volver a preguntarla). == DEL 29/09: 'la madrugada siguiente al corte, no la del dia que podas'; 'la ventana seca tiene fecha de cierre'; 'el dia raro que solo le sirve al pitosporo'; 'me crei mi propio titular sin mirar mi tabla'. == DEL 30/09: 'el modelo que puse en minoria tenia razon'; 'la lluvia que se borro en 24 horas'; 'escribi la regla y la rompi en la misma pagina'; 'el freno no se cae, le cambia el motivo: era agua, es viento'. == DEL 01/10 (quemados el 17/09): 'el maximo diario es el peor instante de 24 h, no el viento de trabajo'; 'te frene con un numero que pasa mientras dormis'; 'la ventana operativa son los dias en que los tres coinciden'; 'gano la apuesta con una regla que ya decidi jubilar'; 'retiro una pregunta que ya no necesito'. == EJE MUERTO Y ARCHIVADO EL 17/09: EL OBJETO QUE SE LLENA, en cualquier variante (la bandeja 07/09, tres-pilas 12/09, el-marcador 14/09: tres muertes, las tres por apertura). No volver ni reformulado. == SIGUEN VEDADOS DEL 21/09: propagacion/esqueje; 'lo que ibas a tirar'; el ejemplar unico sin repuesto; la campana de botella; el corte al ras bajo el nudo; el lado este como vivero; el reparto de la ventana por dia. DEL 24/09: el diagnostico sanitario sobre foto suya; la mea culpa de ficha incompleta; 'la ventana ya cerro'. DEL 25/09: la ventana partida por hora -- OJO: hoy use la ventana partida POR HORA otra vez, pero como CORRECCION de un error mio, no como gimmick; si vuelve antes del 25/09 tiene que ser con el mismo peso."
 }
