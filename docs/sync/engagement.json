@@ -1,121 +1,6 @@
 {
-  "_updated_at": "2026-09-13T09:10:00Z",
+  "_updated_at": "2026-09-18T09:10:00Z",
   "events": [
-    {
-      "_id": "mtlnwrmt27x2lq",
-      "type": "notification_clicked",
-      "nid": "2026-09-03-jardin-hoy",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-09-03T15:10:47.524Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtlnwrmtlhmfh7",
-      "type": "page_visit",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "nid": "2026-09-03-jardin-hoy",
-      "src": "push",
-      "ts": "2026-09-03T15:10:47.524Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtlnwrzy3f1ifj",
-      "type": "page_visit",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-09-03T15:10:47.995Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtlny5b3d3lb51",
-      "type": "feedback_text",
-      "target": "jardin-hoy",
-      "text": "Nose cual es el crespón y la althea que me preguntas al principio, por eso no contesto",
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-09-03T15:11:51.903Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtlo05yyeyago4",
-      "type": "dwell",
-      "seconds": 159,
-      "scroll_pct": 100,
-      "page": "engage/2026-07-24-jardin-hoy.html",
-      "ts": "2026-09-03T15:13:26.074Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtm8krqxj9t8ns",
-      "type": "notification_clicked",
-      "nid": "2026-09-03-puesta-al-dia",
-      "page": "engage/puesta-al-dia.html",
-      "ts": "2026-09-04T00:49:19.734Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtm8krqx1cue24",
-      "type": "page_visit",
-      "page": "engage/puesta-al-dia.html",
-      "nid": "2026-09-03-puesta-al-dia",
-      "src": "push",
-      "ts": "2026-09-04T00:49:19.734Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtm8nmgdyqwpbw",
-      "type": "answer",
-      "qid": "pad-plant-B-30",
-      "value": "done",
-      "page": "engage/puesta-al-dia.html",
-      "ts": "2026-09-04T00:51:32.845Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtm8o2pcn5cay4",
-      "type": "answer",
-      "qid": "pad-plant-B-38",
-      "value": "done",
-      "page": "engage/puesta-al-dia.html",
-      "ts": "2026-09-04T00:51:53.904Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtm8oifffnm344",
-      "type": "answer",
-      "qid": "pad-plant-F-4",
-      "value": "done",
-      "page": "engage/puesta-al-dia.html",
-      "ts": "2026-09-04T00:52:14.283Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtm8rax0w7w55u",
-      "type": "dwell",
-      "seconds": 305,
-      "scroll_pct": 17,
-      "page": "engage/puesta-al-dia.html",
-      "ts": "2026-09-04T00:54:24.516Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtm8smtvp0xahz",
-      "type": "page_visit",
-      "page": "engage/puesta-al-dia.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-09-04T00:55:26.611Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtm93nt7ra0poc",
-      "type": "dwell",
-      "seconds": 514,
-      "scroll_pct": 63,
-      "page": "engage/puesta-al-dia.html",
-      "ts": "2026-09-04T01:04:01.098Z",
-      "device": "sin-nombre"
-    },
     {
       "_id": "mtn3sk8oimtveh",
       "type": "page_visit",
@@ -1096,7 +981,8 @@
       "dwell": [
         "159s@100% (jardin-hoy)"
       ],
-      "_nota": "SE ROMPIO EL SILENCIO DE 10 DIAS. jardin-hoy (ed. clima-como-editor) abierta desde el push, 159 s @100 % y feedback_text — pero el feedback NO fue sobre el contenido nuevo: fue 'no se cual es el crespon y la althea'. Respondido el mismo dia en la puesta-al-dia con foto de especie + foto de ubicacion de B-9 y B-18. LAG MEDIDO: send_at 13:00Z, sent_at 14:29:19Z = +89 min con el cron ya desplazado (el 31/08 el mismo slot fue +263 min)."
+      "_nota": "SE ROMPIO EL SILENCIO DE 10 DIAS. jardin-hoy (ed. clima-como-editor) abierta desde el push, 159 s @100 % y feedback_text — pero el feedback NO fue sobre el contenido nuevo: fue 'no se cual es el crespon y la althea'. Respondido el mismo dia en la puesta-al-dia con foto de especie + foto de ubicacion de B-9 y B-18. LAG MEDIDO: send_at 13:00Z, sent_at 14:29:19Z = +89 min con el cron ya desplazado (el 31/08 el mismo slot fue +263 min).",
+      "_compactado": "5 eventos compactados el 18/09 (>14 dias): 1xnotification_clicked, 2xpage_visit, 1xfeedback_text, 1xdwell"
     },
     "2026-09-04": {
       "sent": 0,
@@ -1112,7 +998,8 @@
       "dwell": [
         "305s@17% + 514s@63% (puesta-al-dia, 13,6 min = el dwell mas largo medido)"
       ],
-      "_nota": "DIA TIER-1 SIN HABER MANDADO NADA HOY. La puesta-al-dia (push del 03/09 20:05, entregada +3,3 min porque se disparo a MANO) se abrio 21:49 local y produjo 3 escrituras reales en task_states.json: las 3 primeras cards, en orden, 21 s entre una y otra. Son exactamente las 3 podas que ya habia hecho el 02/08 (ticks taller-arbol-B-30/B-38 + podo-F-4) y que hasta anoche no estaban registradas. De la card 4 en adelante NO marco ninguna y freno en el 63 % del scroll (card 18 de 29). Lectura: el formato gano (13,6 min), la LONGITUD perdio. Viernes sin slot: 0 push por cadencia."
+      "_nota": "DIA TIER-1 SIN HABER MANDADO NADA HOY. La puesta-al-dia (push del 03/09 20:05, entregada +3,3 min porque se disparo a MANO) se abrio 21:49 local y produjo 3 escrituras reales en task_states.json: las 3 primeras cards, en orden, 21 s entre una y otra. Son exactamente las 3 podas que ya habia hecho el 02/08 (ticks taller-arbol-B-30/B-38 + podo-F-4) y que hasta anoche no estaban registradas. De la card 4 en adelante NO marco ninguna y freno en el 63 % del scroll (card 18 de 29). Lectura: el formato gano (13,6 min), la LONGITUD perdio. Viernes sin slot: 0 push por cadencia.",
+      "_compactado": "8 eventos compactados el 18/09 (>14 dias): 1xnotification_clicked, 2xpage_visit, 3xanswer, 2xdwell"
     },
     "2026-09-05": {
       "sent": 4,

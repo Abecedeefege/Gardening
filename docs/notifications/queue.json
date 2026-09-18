@@ -1,17 +1,4 @@
 {
-  "_updated_at": "2026-09-17T13:00:02.825Z",
-  "notifications": [
-    {
-      "id": "2026-09-17-jardin-hoy",
-      "title": "El viento que te frené fue a las 3 AM",
-      "body": "Lo pedí hora por hora y me equivoqué: de 09 a 18 no pasa de 25,6. Hoy se abren las cuatro de la helada.",
-      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
-      "send_at": "2026-09-17T10:00:00-03:00",
-      "expires_at": "2026-09-17T16:00:00-03:00",
-      "status": "sent",
-      "sent_at": "2026-09-17T13:00:02.824Z",
-      "fail_reason": null,
-      "created_by": "engagement-agent 2026-09-17"
-    }
-  ]
+  "_updated_at": "2026-09-18T09:10:00Z",
+  "notifications": []
 }

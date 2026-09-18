@@ -2,18 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-09-03-jardin-hoy",
-      "ts": "2026-09-03T14:29:19.606Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-09-03-puesta-al-dia",
-      "ts": "2026-09-03T23:08:17.845Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-09-04-puesta-al-dia-fotos-ok",
       "ts": "2026-09-04T15:24:40.192Z",
       "status_code": 201
@@ -316,7 +304,8 @@
       "clicked": 2,
       "visits": 3,
       "approvals": 0,
-      "_nota": "jardin-hoy send_at 13:00Z -> sent 14:29:19Z (+89 min), abierta 159 s @100% + 1 feedback_text. puesta-al-dia disparada a mano, +3,3 min: 13,6 min de dwell y 3 tareas marcadas hechas (B-30, B-38, F-4)."
+      "_nota": "jardin-hoy send_at 13:00Z -> sent 14:29:19Z (+89 min), abierta 159 s @100% + 1 feedback_text. puesta-al-dia disparada a mano, +3,3 min: 13,6 min de dwell y 3 tareas marcadas hechas (B-30, B-38, F-4).",
+      "_compactado": "2 envios compactados el 18/09 (>14 dias): 2026-09-03-jardin-hoy, 2026-09-03-puesta-al-dia"
     },
     "2026-09-04": {
       "sent": 3,
@@ -346,5 +335,5 @@
       "_nota": "Miercoles sin slot: 0 envios. MEDICION QUE REFUTA LA CORRECCION DE AYER: la ventana nueva abrio 05:07Z y a las 09:15Z no habia corrido NINGUNA scheduled (ultima 00:41Z). El pozo inicial no se movio con la ventana. Contramedida nueva: la entrega deja de depender del cron y pasa al trigger `push` sobre queue.json, cuya latencia medida commit->run es de 4-10 s en 4 de 4 casos."
     }
   },
-  "_updated_at": "2026-09-15T09:12:15.454151Z"
+  "_updated_at": "2026-09-18T09:10:00Z"
 }
