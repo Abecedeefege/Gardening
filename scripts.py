@@ -1173,6 +1173,18 @@ function openCuriosidadesFromHash() {
 }
 openCuriosidadesFromHash();
 
+// Direct links from the home feed to each existing Ideas tab.
+function openIdeaTabFromHash() {
+  const sub = location.hash.slice(1);
+  if (!['espacios', 'experiencias', 'improvements', 'huerta', 'ornament'].includes(sub)) return;
+  const zone = document.querySelector('.zone-content[data-zone="ideas"]');
+  if (!zone) return;
+  const button = zone.querySelector(`.subtab-btn[data-sub="${sub}"]`);
+  if (button) button.click();
+}
+openIdeaTabFromHash();
+window.addEventListener('hashchange', openIdeaTabFromHash);
+
 window.addEventListener('hashchange', openSpeciesFromHash);
 window.addEventListener('hashchange', openTaskFromHash);
 window.addEventListener('hashchange', openCuriosidadesFromHash);

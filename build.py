@@ -29,6 +29,7 @@ from data_ideas import (
 from data_improvements import IMPROVEMENTS
 from styles import CSS, SPLASH_CSS, TAREA_LANDING_CSS
 from scripts import JS, SPLASH_JS
+from feed import render_home_feed
 
 ROOT = Path(__file__).parent
 IMAGES_DIR = ROOT / "images"
@@ -1475,6 +1476,7 @@ def _page_shell(*, title: str, description: str, og_image: str = "og-image.png",
 <meta name="twitter:image" content="{esc(og_image)}">
 
 <style>{CSS}</style>
+{'<link rel="stylesheet" href="feed.css">' if body_class == "zone-feed" else ""}
 </head>
 <body class="{body_class}">
 {splash_html}{body_html}
@@ -1482,6 +1484,7 @@ def _page_shell(*, title: str, description: str, og_image: str = "og-image.png",
 {page_globals_js}
 {JS}
 </script>
+{'<script src="feed.js"></script>' if body_class == "zone-feed" else ""}
 </body>
 </html>"""
 
@@ -1964,20 +1967,7 @@ def main():
     # species-photo, settings, etc.) para el modal de planta. Extraemos sólo eso.
     full_timeline_html = build_timeline_view(tasks, img_data)
     timeline_modals = full_timeline_html.split('</section>', 1)[1]
-    top_nav = _render_top_nav("home", ticker_html_inner, ticker_aria)
-    home_body = f"""{top_nav}
-
-<div class="container container-zones">
-  {frente_html.replace('class="zone-content"', 'class="zone-content active"', 1)}
-  {fondo_html}
-  {interior_html}
-</div>
-
-<div class="lightbox" id="lightbox">
-  <img id="lightbox-img" alt="">
-</div>
-
-{timeline_modals}"""
+    home_body = render_home_feed(globals(), img_data, stats_ticker, timeline_modals)
 
     page_globals = "\n".join([tasks_js, plants_info_js, contacts_js, templates_js, ticker_js, site_url_js])
 
@@ -1985,10 +1975,10 @@ def main():
         title="Jardineando · Pacha Mama",
         description=f"Biblioteca de especies del jardín Pacha Mama (Montevideo): {total_plants} plantas por ubicación, fichas y calendario anual.",
         og_image="og-image.png",
-        body_class="zone-frente",
+        body_class="zone-feed",
         body_html=home_body,
         page_globals_js=page_globals,
-        splash_html=render_splash(total_plants),
+        splash_html="",
     )
 
     OUTPUT.write_text(html_doc, encoding="utf-8")
