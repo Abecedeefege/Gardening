@@ -1,5 +1,5 @@
 {
-  "_updated_at": "2026-09-19T13:00:03.327Z",
+  "_updated_at": "2026-09-19T14:00:03.241Z",
   "notifications": [
     {
       "id": "2026-09-19-jardin-hoy",
@@ -21,8 +21,8 @@
       "url": "https://gardening-chi.vercel.app/engage/2026-09-19-las-nueve-horas.html",
       "send_at": "2026-09-19T11:00:00-03:00",
       "expires_at": "2026-09-19T17:00:00-03:00",
-      "status": "pending",
-      "sent_at": null,
+      "status": "sent",
+      "sent_at": "2026-09-19T14:00:03.239Z",
       "fail_reason": null,
       "created_by": "engagement-agent 2026-09-19"
     }
