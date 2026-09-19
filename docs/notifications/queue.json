@@ -1,4 +1,30 @@
 {
-  "_updated_at": "2026-09-18T09:10:00Z",
-  "notifications": []
+  "_updated_at": "2026-09-19T09:20:00Z",
+  "notifications": [
+    {
+      "id": "2026-09-19-jardin-hoy",
+      "format": "tarea",
+      "title": "🍋 Perdí la apuesta por 1,4 grados",
+      "body": "Ganó el modelo que puse en minoría, clavado. Hoy: 0,00 mm y 23-28 km/h — el último día abierto de cinco.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-07-24-jardin-hoy.html",
+      "send_at": "2026-09-19T10:00:00-03:00",
+      "expires_at": "2026-09-19T17:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-09-19"
+    },
+    {
+      "id": "2026-09-19-las-nueve-horas",
+      "title": "⏱️ Tenés 23 pendientes. Hoy entran 10.",
+      "body": "Con foto y un botón por tarea. Y las 13 que saqué, con el motivo de cada una. Mañana llueve.",
+      "url": "https://gardening-chi.vercel.app/engage/2026-09-19-las-nueve-horas.html",
+      "send_at": "2026-09-19T11:00:00-03:00",
+      "expires_at": "2026-09-19T17:00:00-03:00",
+      "status": "pending",
+      "sent_at": null,
+      "fail_reason": null,
+      "created_by": "engagement-agent 2026-09-19"
+    }
+  ]
 }

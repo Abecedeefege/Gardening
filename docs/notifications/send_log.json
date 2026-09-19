@@ -2,24 +2,6 @@
   "events": [
     {
       "type": "notification_sent",
-      "nid": "2026-09-04-puesta-al-dia-fotos-ok",
-      "ts": "2026-09-04T15:24:40.192Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-09-04-puesta-al-dia-fotos",
-      "ts": "2026-09-04T16:21:10.143Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
-      "nid": "2026-09-04-puesta-al-dia-fotos-b",
-      "ts": "2026-09-04T20:56:07.038Z",
-      "status_code": 201
-    },
-    {
-      "type": "notification_sent",
       "nid": "2026-09-05-reply-user-tasks-backlog",
       "ts": "2026-09-05T12:15:00.998Z",
       "status_code": 201
@@ -312,7 +294,8 @@
       "clicked": 0,
       "visits": 1,
       "approvals": 0,
-      "_nota": "Viernes sin slot por cadencia: las 3 salieron por pedido directo del usuario (fix del bug de fotos + las 42 fotos de especie + un reenvio). CERO clicks desde la notificacion: la unica visita (15:23:11Z, 9 s @28%) fue directa y ANTERIOR al primer envio (15:24:40Z). Leccion: ese dia estuvo en la app por su cuenta; las 3 push no aportaron."
+      "_nota": "Viernes sin slot por cadencia: las 3 salieron por pedido directo del usuario (fix del bug de fotos + las 42 fotos de especie + un reenvio). CERO clicks desde la notificacion: la unica visita (15:23:11Z, 9 s @28%) fue directa y ANTERIOR al primer envio (15:24:40Z). Leccion: ese dia estuvo en la app por su cuenta; las 3 push no aportaron.",
+      "_compactado": "3 envios compactados el 19/09 (>14 dias): puesta-al-dia-fotos-ok y los 2 reenvios del pedido directo"
     },
     "2026-09-05": {
       "sent": 0,
@@ -333,7 +316,10 @@
     "2026-09-09": {
       "sent": 0,
       "_nota": "Miercoles sin slot: 0 envios. MEDICION QUE REFUTA LA CORRECCION DE AYER: la ventana nueva abrio 05:07Z y a las 09:15Z no habia corrido NINGUNA scheduled (ultima 00:41Z). El pozo inicial no se movio con la ventana. Contramedida nueva: la entrega deja de depender del cron y pasa al trigger `push` sobre queue.json, cuya latencia medida commit->run es de 4-10 s en 4 de 4 casos."
+    },
+    "2026-09-19": {
+      "_nota": "Se completa al despachar: 2 encoladas (jardin-hoy 10:00-03:00 = 13:00Z, las-nueve-horas 11:00-03:00 = 14:00Z). expires 17:00-03:00 las dos: el contenido se muere con la ventana de trabajo."
     }
   },
-  "_updated_at": "2026-09-18T09:10:00Z"
+  "_updated_at": "2026-09-19T09:20:00Z"
 }

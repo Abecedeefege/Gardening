@@ -1,0 +1,676 @@
+<!DOCTYPE html><html lang="es-UY"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5faf0">
+<title>&#9201;&#65039; Las nueve horas &mdash; 10 de tus 23, y las 13 que saqu&eacute;</title>
+<meta property="og:title" content="&#9201;&#65039; Las nueve horas &mdash; 10 de tus 23, y las 13 que saqu&eacute;">
+<meta property="og:description" content="Ten&eacute;s 23 tareas vencidas o de este mes. Hoy de 09 a 18 es la &uacute;ltima ventana de herramienta en cinco d&iacute;as. Estas son las 10 que entran, agrupadas por lo que el clima de ma&ntilde;ana le hace a cada una &mdash; y las 13 que saqu&eacute; a prop&oacute;sito, con el motivo.">
+<style>
+  :root{ --bg:#f5faf0; --card:#fff; --ink:#1e2a17; --ink2:#5a6b4c; --ink3:#8a9a7a; --verde:#2d5016; --verde2:#5a8a2e;
+    --line:rgba(45,80,22,.13); --alta:#c0392b; --media:#b9770e; --azul:#3f7d8a; --sol:#e0a92e;
+    --pad:max(16px,env(safe-area-inset-left));
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif; }
+  *{ box-sizing:border-box; margin:0; -webkit-tap-highlight-color:transparent; }
+  [hidden]{ display:none !important; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+  .back{ display:block; padding:11px var(--pad); background:#eaf3e0; color:var(--verde2); text-decoration:none; font-size:13px; font-weight:800; }
+  .wrap{ max-width:520px; margin:0 auto; padding:0 var(--pad) 30px; }
+  .hero{ padding:20px 0 4px; }
+  .hero .day{ font-size:11.5px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:var(--ink3); }
+  .hero h1{ font-size:29px; line-height:1.08; margin:7px 0 7px; font-weight:900; letter-spacing:-.025em; color:var(--verde); }
+  .hero p{ color:var(--ink2); font-size:14.5px; }
+  .hero p b{ color:var(--ink); }
+  .strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin:13px 0 4px; }
+  .strip div{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:8px 6px; text-align:center; }
+  .strip .d{ font-size:10px; font-weight:900; letter-spacing:.06em; text-transform:uppercase; color:var(--ink3); }
+  .strip .v{ font-size:15px; font-weight:900; color:var(--verde); margin-top:2px; line-height:1.1; }
+  .strip .s{ font-size:10px; color:var(--ink3); font-weight:700; }
+  .strip div.no{ background:#fdf1ec; border-color:rgba(192,57,43,.22); } .strip div.no .v{ color:#a8392b; }
+  .strip div.si{ background:#eaf6db; border-color:rgba(90,138,46,.35); }
+  .jump{ display:block; text-align:center; background:var(--verde); color:#fff; border-radius:14px; padding:13px 14px; margin:12px 0 2px; text-decoration:none; font-size:14.5px; font-weight:900; }
+  .jump span{ display:block; font-size:11.5px; font-weight:700; color:#cfe6b4; margin-top:2px; }
+  .legend{ font-size:11.5px; color:var(--ink3); margin:9px 2px 0; line-height:1.45; }
+  .sec{ margin-top:24px; }
+  .sec h2{ font-size:19px; font-weight:900; letter-spacing:-.015em; color:var(--verde); line-height:1.18; }
+  .sec .sub{ font-size:13.5px; color:var(--ink2); margin:5px 0 8px; }
+  .sec .sub b{ color:var(--ink); }
+  .item{ background:var(--card); border:1px solid var(--line); border-left:5px solid var(--line); border-radius:16px; padding:13px 13px 11px; margin-top:11px; box-shadow:0 4px 16px rgba(45,80,22,.05); }
+  .item.p-alta{ border-left-color:var(--alta); } .item.p-media{ border-left-color:var(--media); }
+  .item.p-alta .prio{ color:var(--alta); } .item.p-media .prio{ color:var(--media); }
+  .item.is-done, .item.is-snoozed{ opacity:.6; } .item.is-done .ph{ filter:grayscale(.6); }
+  .top{ display:flex; gap:11px; align-items:flex-start; }
+  .ph{ width:84px; height:84px; border-radius:12px; object-fit:cover; flex:none; border:1px solid var(--line); background:#eef4e6; }
+  .hd{ flex:1; min-width:0; }
+  .prio{ font-size:10px; font-weight:900; letter-spacing:.07em; }
+  h3{ font-size:16px; line-height:1.22; font-weight:900; margin-top:3px; }
+  h3 .num{ display:inline-block; background:#e6f0da; color:var(--verde2); border-radius:999px; width:20px; height:20px; line-height:20px; text-align:center; font-size:11.5px; margin-right:3px; vertical-align:1px; }
+  .code{ font-size:11.5px; color:var(--ink3); font-family:ui-monospace,Menlo,monospace; font-weight:700; margin-top:4px; }
+  .loc{ display:flex; align-items:center; gap:9px; margin-top:8px; text-decoration:none; color:var(--azul); font-size:12px; font-weight:800; }
+  .loc img{ width:62px; height:42px; object-fit:cover; border-radius:8px; border:1px solid var(--line); }
+  .why{ font-size:13.5px; color:var(--ink2); margin-top:9px; } .why b{ color:var(--ink); }
+  details.how{ margin-top:8px; }
+  details.how summary{ cursor:pointer; font-size:12.5px; font-weight:800; color:var(--verde2); list-style:none; }
+  details.how summary::-webkit-details-marker{ display:none; }
+  details.how summary::before{ content:'\25B8  '; } details.how[open] summary::before{ content:'\25BE  '; }
+  details.how p{ font-size:13px; color:var(--ink2); margin-top:5px; padding:9px 11px; background:#f7fbf1; border-radius:10px; } details.how p b{ color:var(--ink); }
+  .state{ margin-top:9px; font-size:12.5px; font-weight:800; color:var(--verde); background:#e6f4d4; border-radius:9px; padding:7px 10px; }
+  .state.snz{ color:#8a5a12; background:#fdf3e3; }
+  .state button{ margin-left:8px; background:none; border:1px solid currentColor; border-radius:7px; padding:2px 8px; font:800 11.5px var(--sans); color:inherit; cursor:pointer; }
+  .acts{ display:grid; grid-template-columns:repeat(2,1fr); gap:6px; margin-top:10px; }
+  .acts button{ background:#f2f8ea; color:var(--verde); border:1px solid var(--line); border-radius:10px; padding:10px 6px; font:800 13px var(--sans); cursor:pointer; }
+  .acts button:active{ opacity:.7; } .acts button:disabled{ opacity:.45; }
+  .acts button[data-act=done]{ background:#e6f4d4; border-color:rgba(90,138,46,.4); }
+  .box{ margin-top:8px; }
+  .box textarea{ width:100%; background:#f7fbf1; border:1px solid var(--line); border-radius:10px; color:var(--ink); padding:9px 11px; font:13px/1.4 var(--sans); resize:vertical; }
+  .boxrow{ display:flex; gap:6px; margin-top:6px; }
+  .box button{ background:var(--verde2); color:#fff; border:none; border-radius:9px; padding:9px 14px; font:800 12.5px var(--sans); cursor:pointer; }
+  .box button.ghost{ background:#f2f8ea; color:var(--verde); border:1px solid var(--line); }
+  .pv{ display:flex; align-items:center; gap:8px; margin-top:6px; } .pv img{ width:64px; height:64px; object-fit:cover; border-radius:8px; }
+  .hint{ font-size:12px; font-weight:700; color:var(--verde2); margin-top:6px; min-height:1em; } .hint.err{ color:#b03a2e; }
+  .blk{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px 15px; margin-top:22px; }
+  .blk h3{ font-size:17px; color:var(--verde); margin-bottom:6px; }
+  .blk p{ font-size:13.5px; color:var(--ink2); } .blk p b{ color:var(--ink); }
+  .blk p + p{ margin-top:8px; }
+  .dark{ background:#1e2a17; color:#eaf3e0; border-color:#1e2a17; }
+  .dark h3{ color:#fff; } .dark p{ color:#cfe0bd; } .dark p b{ color:#fff; }
+  .out{ list-style:none; padding:0; margin:9px 0 0; }
+  .out li{ font-size:13px; padding:8px 11px; background:#f7fbf1; border-radius:10px; margin-top:6px; border-left:3px solid var(--sol); color:var(--ink2); }
+  .out li b{ color:var(--ink); }
+  .slots{ margin-top:10px; }
+  .slot{ background:#f7fbf1; border:1px solid var(--line); border-radius:12px; padding:11px 12px; margin-top:8px; }
+  .slot .n{ font-size:13.5px; font-weight:900; color:var(--ink); }
+  .slot .w{ font-size:12px; color:var(--ink3); font-weight:700; margin-top:1px; }
+  .slot .bs{ display:flex; gap:6px; margin-top:8px; }
+  .slot button{ flex:1; background:#fff; border:1px solid var(--line); border-radius:9px; padding:9px 6px; font:800 12.5px var(--sans); color:var(--verde); cursor:pointer; }
+  .react{ display:flex; gap:8px; justify-content:center; margin-top:10px; }
+  .react button{ background:#fff; border:1px solid var(--line); border-radius:13px; padding:9px 0; font-size:25px; cursor:pointer; flex:1; line-height:1.1; }
+  .fb-blk textarea{ width:100%; background:#f7fbf1; border:1px solid var(--line); border-radius:11px; padding:11px 12px; font:inherit; font-size:13.5px; resize:vertical; margin-top:8px; }
+  .fb-send{ margin-top:9px; background:var(--verde2); color:#fff; border:none; border-radius:12px; padding:12px 22px; font:800 14px var(--sans); cursor:pointer; }
+  .fb-hint{ display:block; margin-top:8px; font-size:12.5px; font-weight:700; color:var(--verde2); min-height:1.2em; }
+  .engage-actions{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:20px; }
+  .engage-actions button{ border-radius:13px; padding:14px 8px; font:800 13.5px var(--sans); cursor:pointer; border:1px solid var(--line); }
+  .engage-actions button:first-child{ background:var(--verde); color:#fff; border-color:var(--verde); }
+  .engage-actions button:last-child{ background:#fff; color:var(--ink2); }
+  .aprob{ display:block; background:linear-gradient(180deg,#f3e9fb,#faf5ff); border:1px solid rgba(122,79,163,.28); border-radius:14px; padding:13px 14px; margin-top:10px; text-decoration:none; color:var(--ink); }
+  .aprob .t{ font-size:10.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:#7a4fa3; }
+  .aprob .n{ font-size:15px; font-weight:900; margin-top:2px; }
+  .aprob .s{ font-size:12.5px; color:var(--ink2); margin-top:3px; }
+  .pie{ text-align:center; padding:18px 0 8px; color:var(--ink3); font-size:11.5px; line-height:1.55; }
+  .pie a{ color:var(--verde2); font-weight:800; text-decoration:none; font-size:14px; display:block; margin-bottom:8px; }
+</style>
+</head><body>
+<a class="back" href="https://gardening-chi.vercel.app/index.html">&larr; Volver al sitio estable</a>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="day">S&aacute;bado 19 de septiembre &middot; 09 a 18</div>
+    <h1>Ten&eacute;s 23 pendientes.<br>Hoy entran 10.</h1>
+    <p>Tu lista real tiene <b>23 tareas vencidas o de este mes</b>. No te las mando todas: <b>hoy es la &uacute;ltima ventana de herramienta en cinco d&iacute;as</b> y gastarla en sacar fotos ser&iacute;a un desperdicio. Estas 10 son las que el clima de hoy <i>y el de ma&ntilde;ana</i> habilitan. <b>Las otras 13 las saqu&eacute; a prop&oacute;sito y abajo te digo una por una por qu&eacute;.</b></p>
+  </header>
+
+  <div class="strip">
+    <div class="si"><div class="d">Hoy s&aacute;b</div><div class="v">0,00</div><div class="s">mm &middot; 23&#8209;28 km/h</div></div>
+    <div class="no"><div class="d">Dom</div><div class="v">3,7</div><div class="s">mm de agua</div></div>
+    <div class="no"><div class="d">Lun</div><div class="v">64</div><div class="s">km/h 09&#8209;18</div></div>
+    <div class="no"><div class="d">Mar</div><div class="v">10&deg;</div><div class="s">de m&aacute;xima</div></div>
+  </div>
+  <p class="legend">Los tres modelos (europeo, americano y mixto) pedidos en crudo hoy 06:00. Reabre el <b>jueves 24</b>. &middot; <b>&laquo;Hecha&raquo; y &laquo;En 1 semana&raquo; escriben tu lista real de tareas</b>; &laquo;Foto&raquo; y &laquo;Comentar&raquo; me llegan a m&iacute; y te contesto por notificaci&oacute;n.</p>
+
+  <a class="jump" href="#g-A">Empezar por la 1 &#8594;<span>la que ma&ntilde;ana ya no se puede</span></a>
+
+  <section class="sec" id="g-A">
+    <h2>&#127783;&#65039; Las 3 a las que el agua de ma&ntilde;ana les hace la mitad del trabajo</h2>
+    <p class="sub">No son podas. Son las tres que piden <b>tierra seca para trabajarla</b> y <b>riego abundante despu&eacute;s</b> &mdash; y hoy es el &uacute;nico d&iacute;a del mes en que ten&eacute;s las dos cosas: sexto d&iacute;a seco seguido, y ma&ntilde;ana <b>1,5 a 3,7&nbsp;mm</b> en los tres modelos. Si vas a hacer una sola cosa hoy, que sea de este grupo: son las que ma&ntilde;ana ya no se pueden.</p>
+
+  <article class="item p-alta" id="plant-B-5a" data-ids="plant-B-5a" data-code="B-5a" data-title="Trasplantar las dos hortensias &mdash; hoy las sac&aacute;s, ma&ntilde;ana te las riega la lluvia">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-5a/species-B-5a_20260904-155251.jpg" loading="lazy" alt="Hortensias en macetas chicas, foto tuya del 04/09">
+      <div class="hd">
+        <div class="meta"><span class="prio">ALTA &middot; vencida desde julio</span></div>
+        <h3><span class="num">1</span> Trasplantar las dos hortensias &mdash; hoy las sac&aacute;s, ma&ntilde;ana te las riega la lluvia</h3>
+        <div class="code">B&#8209;5a y B&#8209;5b &middot; Hydrangea macrophylla &middot; fondo</div>
+      </div>
+    </div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/FondoCasa_FrenteCocina.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/FondoCasa_FrenteCocina.jpg" loading="lazy" alt="D&oacute;nde est&aacute;"><span>&#128205; d&oacute;nde est&aacute;</span></a>
+    <div class="why">Es la m&aacute;s vencida de todas: la ficha dice <b>&laquo;YA&raquo;</b> desde julio y el 04/09 tus fotos ya las mostraban brotando. <b>Y hoy se junta con el clima en las dos puntas.</b> La ficha pide <i>&laquo;d&iacute;a sin lluvia inminente, mejor con sustrato algo seco&raquo;</i> &mdash; llev&aacute;s <b>seis d&iacute;as sin una gota</b> (12/09 fue la &uacute;ltima, 2,8&nbsp;mm medidos) y hoy vuelve a ser 0,00&nbsp;mm en los tres modelos. Y despu&eacute;s pide <i>&laquo;regar abundante&raquo;</i>: <b>ma&ntilde;ana caen 1,5 a 3,7&nbsp;mm</b>. Trasplantar hoy es la &uacute;nica combinaci&oacute;n del mes en que el suelo est&aacute; seco para trabajarlo y el riego de asentamiento te lo hace el cielo.</div>
+    <details class="how"><summary>C&oacute;mo se hace, paso a paso</summary><p>Maceta de <b>40&nbsp;cm m&iacute;nimo</b> con agujero, o pozo de 50&times;50&times;50. Mezcla: <b>50&#37; tierra negra + 30&#37; compost + 20&#37; turba o arena</b>. Sac&aacute;la con el cepell&oacute;n entero; si las ra&iacute;ces hacen pelota apretada, abr&iacute; los costados con la mano. <b>Plant&aacute; a la misma altura &mdash; no hundas el cuello.</b> Mulch de hojas o pasto seco encima y listo: el riego lo pon&eacute;s vos hoy una vez, el resto lo trae ma&ntilde;ana.<br><b>&#128161; La decisi&oacute;n del color se toma HOY y no despu&eacute;s:</b> si las quer&eacute;s <b>azules</b>, enterr&aacute; 3&#8209;5 clavos oxidados al pie; si las quer&eacute;s <b>rosas</b>, un pu&ntilde;ado de cal hidratada en el pozo. Cambiarlo m&aacute;s adelante tarda 1&#8209;2 temporadas.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">&#9989; Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">&#128564; En 1 semana</button>
+      <button type="button" data-act="photo">&#128247; Foto</button>
+      <button type="button" data-act="comment">&#128172; Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame c&oacute;mo sali&oacute;, o preguntame algo&hellip;"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">&#10005; sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+  </article>
+
+  <article class="item p-media" id="plant-B-25" data-ids="plant-B-25" data-code="B-25" data-title="Acidificar la gardenia &mdash; hoy el quelato, ma&ntilde;ana el agua de lluvia que la ficha te pide">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-25/species-B-25_20260904-160218.jpg" loading="lazy" alt="Gardenia del fondo, foto tuya del 04/09">
+      <div class="hd">
+        <div class="meta"><span class="prio">MEDIA &middot; vencida desde agosto</span></div>
+        <h3><span class="num">2</span> Acidificar la gardenia &mdash; hoy el quelato, ma&ntilde;ana el agua de lluvia que la ficha te pide</h3>
+        <div class="code">B&#8209;25 &middot; Gardenia jasminoides &middot; fondo, cancha de p&aacute;del</div>
+      </div>
+    </div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/FondoCasa_Cancha_Padel.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/FondoCasa_Cancha_Padel.jpg" loading="lazy" alt="D&oacute;nde est&aacute;"><span>&#128205; d&oacute;nde est&aacute;</span></a>
+    <div class="why">Esta no es poda: es la que hay que hacer <b>antes de que brote</b>, y la brotaci&oacute;n ya arranc&oacute;. Es la tarea a la que el agua de ma&ntilde;ana le sirve m&aacute;s de todo el jard&iacute;n, y por un motivo que est&aacute; escrito en su propia ficha: <i>&laquo;reg&aacute; con agua de lluvia cuando se pueda &mdash; el cloro del agua de OSE alcaliniza el suelo con el tiempo&raquo;</i>. Toda la tarea es <b>bajar el pH</b>; regarla con agua de canilla le trabaja en contra. <b>Aplic&aacute;s hoy y ma&ntilde;ana te lo lava hacia la ra&iacute;z con el agua correcta.</b> Eso pasa un d&iacute;a cada tanto, y hoy es ese d&iacute;a.</div>
+    <details class="how"><summary>C&oacute;mo se hace, paso a paso</summary><p><b>Quelato de hierro EDDHA</b> (ped&iacute; &laquo;Sequestrene&raquo; o &laquo;hierro EDDHA&raquo; en cualquier agroveterinaria). <b>5&nbsp;g por litro.</b> Reg&aacute; primero con agua com&uacute;n para que el sustrato est&eacute; h&uacute;medo &mdash; sobre tierra seca te quema ra&iacute;z &mdash; y despu&eacute;s tir&aacute;le <b>1 litro de la soluci&oacute;n al pie</b>. Si en 30 d&iacute;as las hojas nuevas siguen amarillas con el nervio verde, repet&iacute;s.<br><b>Si no llegás a comprarlo hoy:</b> dos clavos oxidados enterrados al pie y caf&eacute; molido usado mezclado en la tierra superficial hacen lo mismo m&aacute;s lento. Eso s&iacute; lo pod&eacute;s hacer en cinco minutos y aprovechar igual el agua de ma&ntilde;ana.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">&#9989; Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">&#128564; En 1 semana</button>
+      <button type="button" data-act="photo">&#128247; Foto</button>
+      <button type="button" data-act="comment">&#128172; Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame c&oacute;mo sali&oacute;, o preguntame algo&hellip;"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">&#10005; sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+  </article>
+
+  <article class="item p-media" id="plant-B-46-3" data-ids="plant-B-46-3" data-code="B-46" data-title="Dar vuelta las macetas del vivero &mdash; y plantar hoy las que ya est&aacute;n">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-46/species-B-46-1_20260504-122458.jpg" loading="lazy" alt="Bandeja del vivero con los plantines">
+      <div class="hd">
+        <div class="meta"><span class="prio">MEDIA &middot; volvi&oacute; sola el 12/09</span></div>
+        <h3><span class="num">3</span> Dar vuelta las macetas del vivero &mdash; y plantar hoy las que ya est&aacute;n</h3>
+        <div class="code">B&#8209;46 &middot; vivero / plantines &middot; fondo</div>
+      </div>
+    </div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/FondoCasa_VecinoFondo.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/FondoCasa_VecinoFondo.jpg" loading="lazy" alt="D&oacute;nde est&aacute;"><span>&#128205; d&oacute;nde est&aacute;</span></a>
+    <div class="why">La ficha dice literal <b>&laquo;septiembre: dar vuelta cada maceta&raquo;</b>, y septiembre se te va en once d&iacute;as. Esta la hab&iacute;as pospuesto hasta el 12 y <b>volv&iacute;a sola a tu lista hace una semana</b>. La parte de <i>dar vuelta y mirar</i> lleva diez minutos y no depende del clima; la parte de <b>plantar</b> s&iacute;, y ah&iacute; entra lo de ma&ntilde;ana: la ficha pide <i>&laquo;regar a fondo&raquo;</i> despu&eacute;s de plantar, y ese riego lo tra&eacute;n los <b>1,5 a 3,7&nbsp;mm</b> del domingo.</div>
+    <details class="how"><summary>C&oacute;mo se hace, paso a paso</summary><p>Da vuelta cada maceta apoyando la mano sobre la tierra. <b>Ra&iacute;ces en bola apretada = est&aacute; listo.</b> Tres destinos: tierra, regalar, o una maceta <b>un</b> tama&ntilde;o m&aacute;s grande (no saltes dos). Si va a tierra: pozo del <b>doble del cepell&oacute;n</b>, compost, regar y mulch.<br><b>&#9888;&#65039; Dos excepciones de tu propia ficha:</b> las <b>palmeras no van a tierra antes de los 30&nbsp;cm</b>, y las <b>paltas de carozo no se trasplantan sin decidir antes</b> qu&eacute; hac&eacute;s con ellas &mdash; echan ra&iacute;z pivotante y despu&eacute;s no las sac&aacute;s m&aacute;s. Esas dos decisiones te las dej&eacute; para el martes, abajo.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">&#9989; Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">&#128564; En 1 semana</button>
+      <button type="button" data-act="photo">&#128247; Foto</button>
+      <button type="button" data-act="comment">&#128172; Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame c&oacute;mo sali&oacute;, o preguntame algo&hellip;"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">&#10005; sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+  </article>
+  </section>
+
+  <section class="sec" id="g-B">
+    <h2>&#9986;&#65039; Las 5 de tijera &mdash; el lunes hay 55 a 64&nbsp;km/h y no se van a poder</h2>
+    <p class="sub">Todas estas piden <b>d&iacute;a seco y rama quieta</b>. Hoy los tres modelos dan entre <b>23,0 y 28,4&nbsp;km/h</b> de 09 a 18 &mdash; el mismo r&eacute;gimen que midieron los dos &uacute;ltimos d&iacute;as (23,4 y 24,1). El lunes, <b>55 a 64</b>. <b>Tres de las cinco esperaban una condici&oacute;n, no una fecha: &laquo;pasada la &uacute;ltima helada&raquo;. Esa condici&oacute;n se cumpli&oacute; y te la verifiqu&eacute; con los catorce d&iacute;as medidos.</b></p>
+
+  <article class="item p-alta" id="plant-B-1" data-ids="plant-B-1" data-code="B-1" data-title="Santa Rita: poda severa de gu&iacute;as &mdash; la &uacute;nica alta del grupo y la que m&aacute;s tiempo lleva">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-1/species-B-1_20260904-154250.jpg" loading="lazy" alt="Santa Rita sobre el muro del fondo, foto tuya del 04/09">
+      <div class="hd">
+        <div class="meta"><span class="prio">ALTA &middot; su condici&oacute;n ya se cumpli&oacute;</span></div>
+        <h3><span class="num">4</span> Santa Rita: poda severa de gu&iacute;as &mdash; la &uacute;nica alta del grupo y la que m&aacute;s tiempo lleva</h3>
+        <div class="code">B&#8209;1 &middot; Bougainvillea &middot; fondo, muro frente al dormitorio</div>
+      </div>
+    </div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/FondoCasa_FrenteDormitorio.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/FondoCasa_FrenteDormitorio.jpg" loading="lazy" alt="D&oacute;nde est&aacute;"><span>&#128205; d&oacute;nde est&aacute;</span></a>
+    <div class="why">Su ficha no tiene fecha, tiene una condici&oacute;n: <i>&laquo;pasada la &uacute;ltima helada, estimado 2&ordf; semana de septiembre&raquo;</i>. Esa semana ya pas&oacute; y <b>los datos medidos la respaldan</b>: en los &uacute;ltimos catorce d&iacute;as la m&iacute;nima m&aacute;s baja fue <b>4,2&deg; el 07/09</b>, y desde entonces ninguna baj&oacute; de 5,3&deg;. Las &uacute;ltimas tres madrugadas: 8,7&deg;, 11,6&deg; y hoy <b>13,4&deg;</b>. La condici&oacute;n est&aacute; cumplida.<br><b>Y sin esta poda el verano te la cobra:</b> la Santa Rita florece sobre madera nueva. Sin cortar, hace gu&iacute;a larga y poca br&aacute;ctea.</div>
+    <details class="how"><summary>C&oacute;mo se hace, paso a paso</summary><p><b>Guantes de cuero gruesos y manga larga</b> &mdash; las espinas son largas y duras, es la m&aacute;s inc&oacute;moda de las cinco. Primero lo seco, roto y cruzado. Despu&eacute;s <b>acort&aacute; cada gu&iacute;a principal entre 30&#37; y 50&#37;</b>, cortando 5&nbsp;mm arriba de una <b>yema externa</b> (la que mira para afuera: as&iacute; el rebrote sale hacia afuera y no al centro). Si quer&eacute;s controlar el tama&ntilde;o, baj&aacute;la entera a la altura del soporte.<br><b>&#128161; Despu&eacute;s de podar, reg&aacute; poco.</b> La Santa Rita florece cuando pasa sed. Con riego y nitr&oacute;geno te hace follaje verde y nada de color &mdash; y ma&ntilde;ana ya le entran 1,5 a 3,7&nbsp;mm, as&iacute; que no le agregues vos.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">&#9989; Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">&#128564; En 1 semana</button>
+      <button type="button" data-act="photo">&#128247; Foto</button>
+      <button type="button" data-act="comment">&#128172; Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame c&oacute;mo sali&oacute;, o preguntame algo&hellip;"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">&#10005; sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+  </article>
+
+  <article class="item p-alta" id="plant-B-43-2" data-ids="plant-B-43-2" data-code="B-43" data-title="Pit&oacute;sporo: bajarlo de 3&#8209;4&nbsp;m a 2&#8209;3&nbsp;m &mdash; la que necesita el d&iacute;a entero">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-43/species-B-43_20260505-164139.jpg" loading="lazy" alt="Pit&oacute;sporo del fondo">
+      <div class="hd">
+        <div class="meta"><span class="prio">ALTA &middot; vencida desde agosto</span></div>
+        <h3><span class="num">5</span> Pit&oacute;sporo: bajarlo de 3&#8209;4&nbsp;m a 2&#8209;3&nbsp;m &mdash; la que necesita el d&iacute;a entero</h3>
+        <div class="code">B&#8209;43 &middot; Pittosporum &middot; fondo, entre el romero y la pata de vaca</div>
+      </div>
+    </div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/B-42-43_entre_romero_b27.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/B-42-43_entre_romero_b27.jpg" loading="lazy" alt="D&oacute;nde est&aacute;"><span>&#128205; d&oacute;nde est&aacute;</span></a>
+    <div class="why">Es la m&aacute;s grande del d&iacute;a: serrucho, escalera y un rato largo. Por eso es la que <b>peor aguanta que la dejes para el lunes</b> &mdash; el lunes hay <b>55 a 64&nbsp;km/h entre las 09 y las 18</b> en los tres modelos, y eso con vos arriba de una escalera no se discute.<br>Su ficha pide <i>&laquo;fines de invierno, antes del brote&raquo;</i> y ya estamos tarde, pero todav&iacute;a entra: lo que no quer&eacute;s es cortarlo con la planta en pleno empuje de primavera.</div>
+    <details class="how"><summary>C&oacute;mo se hace, paso a paso</summary><p>Marc&aacute; la <b>altura objetivo en 2,5&nbsp;m con cinta de color</b> antes de subir &mdash; desde arriba se pierde la referencia y termin&aacute;s desparejo. Cort&aacute; <b>primero las 3&#8209;5 ramas principales</b> por encima de la marca, en bisel a 1&nbsp;cm sobre un nudo lateral que mire hacia afuera. <b>Despu&eacute;s</b> empare&aacute;s las secundarias.<br><b>&#9888;&#65039; Tope duro: 30&#8209;40&#37; del follaje en una sesi&oacute;n.</b> Si quer&eacute;s bajarlo m&aacute;s, se hace en dos a&ntilde;os. Y <b>no cortes madera vieja sin yemas visibles</b>: esa no rebrota. Pasta cicatrizante en los cortes de m&aacute;s de 3&nbsp;cm.<br><b>Rebrota lateral r&aacute;pido</b> &mdash; en 2&#8209;3 meses recupera densidad, as&iacute; que la pantalla contra el vecino no la perd&eacute;s.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">&#9989; Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">&#128564; En 1 semana</button>
+      <button type="button" data-act="photo">&#128247; Foto</button>
+      <button type="button" data-act="comment">&#128172; Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame c&oacute;mo sali&oacute;, o preguntame algo&hellip;"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">&#10005; sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+  </article>
+
+  <article class="item p-media" id="plant-B-29" data-ids="plant-B-29" data-code="B-29" data-title="Lantana: cortarla entera a 30&nbsp;cm del suelo">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-29/species-B-29_20260512-145328.jpg" loading="lazy" alt="Lantana del fondo">
+      <div class="hd">
+        <div class="meta"><span class="prio">MEDIA &middot; su condici&oacute;n ya se cumpli&oacute;</span></div>
+        <h3><span class="num">6</span> Lantana: cortarla entera a 30&nbsp;cm del suelo</h3>
+        <div class="code">B&#8209;29 &middot; Lantana camara &middot; fondo, contra el vecino</div>
+      </div>
+    </div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/FondoCasa_VecinoFondo.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/FondoCasa_VecinoFondo.jpg" loading="lazy" alt="D&oacute;nde est&aacute;"><span>&#128205; d&oacute;nde est&aacute;</span></a>
+    <div class="why">Misma condici&oacute;n que la santa rita &mdash; <i>&laquo;pasada la &uacute;ltima helada&raquo;</i> &mdash; y misma respuesta: cumplida. <b>El motivo de esperar era exacto y ya no corre:</b> la lantana es sensible al fr&iacute;o y el rebrote reci&eacute;n cortado se quema con helada; los tallos viejos, aunque feos, le proteg&iacute;an el centro todo el invierno. Ya no hacen falta.<br>Florece <b>todo el verano sobre madera nueva</b>: cuanto antes cortes, antes arranca.</div>
+    <details class="how"><summary>C&oacute;mo se hace, paso a paso</summary><p><b>Todos los tallos a 30&nbsp;cm del suelo</b>, en bisel para que escurra el agua. Tijera gruesa o serrucho de mano. Sac&aacute; todo el material muerto y las ramitas finas del a&ntilde;o pasado, limpi&aacute; la base y ech&aacute;le <b>2&nbsp;cm de compost</b> al pie.<br><b>&#9888;&#65039; Guantes y manga larga en serio:</b> el contacto con la hoja de lantana da dermatitis. Y <b>junt&aacute; las bayas del piso</b> &mdash; son t&oacute;xicas si las come un perro o un chico.<br><b>Despu&eacute;s de cortar no la riegues</b>: brota sola con la primavera.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">&#9989; Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">&#128564; En 1 semana</button>
+      <button type="button" data-act="photo">&#128247; Foto</button>
+      <button type="button" data-act="comment">&#128172; Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame c&oacute;mo sali&oacute;, o preguntame algo&hellip;"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">&#10005; sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+  </article>
+
+  <article class="item p-media" id="plant-F-2" data-ids="plant-F-2" data-code="F-2" data-title="Bignonia del port&oacute;n: poda fuerte &mdash; ya brot&oacute; y aguanta igual">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/F-2/species-F-2_20260904-160925.jpg" loading="lazy" alt="Bignonia rosada sobre el port&oacute;n del frente">
+      <div class="hd">
+        <div class="meta"><span class="prio">MEDIA &middot; vencida desde agosto</span></div>
+        <h3><span class="num">7</span> Bignonia del port&oacute;n: poda fuerte &mdash; ya brot&oacute; y aguanta igual</h3>
+        <div class="code">F&#8209;2 &middot; Podranea ricasoliana &middot; frente, sobre el port&oacute;n</div>
+      </div>
+    </div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/FrenteCasa_MiradoCalle.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/FrenteCasa_MiradoCalle.jpg" loading="lazy" alt="D&oacute;nde est&aacute;"><span>&#128205; d&oacute;nde est&aacute;</span></a>
+    <div class="why">La &uacute;nica del d&iacute;a que est&aacute; en el <b>frente</b>, o sea en el eje oeste: sol de tarde hasta que se oculta. Tu foto del 04/09 la muestra <b>sin podar, brotando y muy enredada sobre el cerco</b>.<br><b>Y ac&aacute; te corrijo algo de su propia ficha:</b> dice <i>&laquo;planta sin hojas o con muy pocas&raquo;</i> y ya no es el caso. <b>La Podranea aguanta la poda fuerte con hoja</b> &mdash; rebrota con vigor. Esperar a que se caiga la hoja significa esperar a mayo, y para entonces te comi&oacute; el port&oacute;n otra temporada.</div>
+    <details class="how"><summary>C&oacute;mo se hace, paso a paso</summary><p>Identific&aacute; las <b>ramas principales pegadas al cerco</b>: esas son la estructura y no se tocan. De cada una, <b>acort&aacute; las laterales dejando 3&#8209;4 yemas vigorosas</b>. En total sac&aacute;s un <b>40 a 60&#37;</b> de largo.<br><b>No tengas miedo de cortar fuerte:</b> las ramas nuevas dan m&aacute;s flor que las viejas, as&iacute; que esto es a favor de la floraci&oacute;n de verano, no en contra. Cortes en bisel justo arriba de una yema externa.<br><b>&#128161;</b> El olor fuerte y acre de la hoja magullada es normal de la especie. Si te llev&aacute;s flores abiertas por delante, en agua duran 3&#8209;4 d&iacute;as.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">&#9989; Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">&#128564; En 1 semana</button>
+      <button type="button" data-act="photo">&#128247; Foto</button>
+      <button type="button" data-act="comment">&#128172; Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame c&oacute;mo sali&oacute;, o preguntame algo&hellip;"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">&#10005; sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+  </article>
+
+  <article class="item p-media" id="plant-B-24" data-ids="plant-B-24" data-code="B-24" data-title="Mandarina criolla: abrirle el centro para que entre luz">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-24/species-B-24_20260904-160115.jpg" loading="lazy" alt="Mandarina criolla del fondo">
+      <div class="hd">
+        <div class="meta"><span class="prio">MEDIA &middot; volvi&oacute; sola el 12/09</span></div>
+        <h3><span class="num">8</span> Mandarina criolla: abrirle el centro para que entre luz</h3>
+        <div class="code">B&#8209;24 &middot; Citrus deliciosa &middot; fondo, cancha de p&aacute;del</div>
+      </div>
+    </div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/FondoCasa_Cancha_Padel.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/FondoCasa_Cancha_Padel.jpg" loading="lazy" alt="D&oacute;nde est&aacute;"><span>&#128205; d&oacute;nde est&aacute;</span></a>
+    <div class="why">Tambi&eacute;n esperaba la &uacute;ltima helada y tambi&eacute;n se cumpli&oacute;. Est&aacute; al lado del limonero, as&iacute; que <b>es el mismo viaje</b>: si vas a hacer los limones, hac&eacute; esta en el mismo rato.<br>El objetivo es uno solo: <b>que entre luz al coraz&oacute;n de la copa</b>. Un c&iacute;trico cerrado por dentro hace fruta s&oacute;lo en la periferia y guarda plaga en el medio.</div>
+    <details class="how"><summary>C&oacute;mo se hace, paso a paso</summary><p>Tijera afilada + <b>alcohol 70&#37; entre cortes</b> (en c&iacute;tricos esto importa de verdad: se pasan enfermedades de rama en rama). Primero lo muerto y seco. Despu&eacute;s las <b>ramas internas que crecen hacia el centro, cortadas en la base</b>, y las que se cruzan o se rozan.<br><b>&#9888;&#65039; Qued&aacute;te en el 20&#37; del follaje.</b> La criolla agradece poda suave y castiga la fuerte. Cortes en bisel 5&nbsp;mm sobre yema externa.<br><b>Casi no tiene espinas, pero la rama se quiebra f&aacute;cil</b>: apoy&aacute; la rama con la otra mano mientras cort&aacute;s. Si ves <b>galer&iacute;as plateadas serpenteando</b> en las hojas nuevas, eso es minador: sacale una foto con el bot&oacute;n de abajo y te digo qu&eacute; hacer.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">&#9989; Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">&#128564; En 1 semana</button>
+      <button type="button" data-act="photo">&#128247; Foto</button>
+      <button type="button" data-act="comment">&#128172; Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame c&oacute;mo sali&oacute;, o preguntame algo&hellip;"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">&#10005; sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+  </article>
+  </section>
+
+  <section class="sec" id="g-C">
+    <h2>&#127819; Las 2 del limonero &mdash; van juntas y en este orden</h2>
+    <p class="sub">El mismo &aacute;rbol, dos tareas, y una bloquea a la otra: <b>primero se cosecha, despu&eacute;s se poda</b>. Son las &uacute;nicas del d&iacute;a donde el orden importa.</p>
+
+  <article class="item p-alta" id="plant-B-23-3" data-ids="plant-B-23-3" data-code="B-23" data-title="Cosechar los limones maduros &mdash; y hacerlo ANTES de la tijera">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-23/species-B-23_20260904-160059.jpg" loading="lazy" alt="Limonero cargado de limones amarillos, foto tuya del 04/09">
+      <div class="hd">
+        <div class="meta"><span class="prio">ALTA &middot; &laquo;esta semana&raquo; &mdash; y la semana termina hoy</span></div>
+        <h3><span class="num">9</span> Cosechar los limones maduros &mdash; y hacerlo ANTES de la tijera</h3>
+        <div class="code">B&#8209;23 &middot; Citrus limon &middot; fondo, cancha de p&aacute;del</div>
+      </div>
+    </div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/FondoCasa_Cancha_Padel.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/FondoCasa_Cancha_Padel.jpg" loading="lazy" alt="D&oacute;nde est&aacute;"><span>&#128205; d&oacute;nde est&aacute;</span></a>
+    <div class="why">Tu foto del 04/09 muestra el &aacute;rbol <b>cargado de limones amarillos</b>. Su ficha dice <b>&laquo;esta semana &mdash; septiembre 2026&raquo;</b>, y hoy es s&aacute;bado: la semana se termina hoy.<br><b>Esta es la &uacute;nica tarea del d&iacute;a que tiene un orden obligatorio y bloquea a otra:</b> la cosecha va <b>antes</b> de la poda de la tarjeta siguiente. Si pod&aacute;s primero, tir&aacute;s fruta madura al piso.<br><b>Y el argumento que no es de calendario:</b> el lim&oacute;n <b>no sigue madurando fuera del &aacute;rbol</b> &mdash; el que est&aacute; amarillo ya lleg&oacute;. Y un limonero cargado y sin cosechar <b>produce menos flor en primavera</b>: cada fruta que queda colgando es energ&iacute;a que no va al brote.</div>
+    <details class="how"><summary>C&oacute;mo se hace, paso a paso</summary><p><b>A mano con giro suave, o tijera.</b> Nunca tirando: si arranc&aacute;s el ped&uacute;nculo, la herida que queda se pudre. Guantes &mdash; el limonero s&iacute; tiene espinas, al rev&eacute;s de la mandarina.<br>Cosech&aacute; s&oacute;lo los <b>bien amarillos</b> y dej&aacute; los verdes. Los del suelo o picados van a la <b>basura, no al compost</b>.<br><b>&#128161; Si te sobran:</b> jugo exprimido y congelado en cubeteras aguanta meses y es la &uacute;nica forma de que no se te pierdan.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">&#9989; Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">&#128564; En 1 semana</button>
+      <button type="button" data-act="photo">&#128247; Foto</button>
+      <button type="button" data-act="comment">&#128172; Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame c&oacute;mo sali&oacute;, o preguntame algo&hellip;"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">&#10005; sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+  </article>
+
+  <article class="item p-media" id="plant-B-23" data-ids="plant-B-23" data-code="B-23" data-title="Limonero: poda de formaci&oacute;n y sacar chupones &mdash; con el &aacute;rbol ya cosechado">
+    <div class="top">
+      <img class="ph" src="https://gardening-chi.vercel.app/images/uploads/B-23/species-B-23_20260904-160059.jpg" loading="lazy" alt="Limonero del fondo, foto tuya del 04/09">
+      <div class="hd">
+        <div class="meta"><span class="prio">MEDIA &middot; volvi&oacute; sola el 12/09 &mdash; va despu&eacute;s de la cosecha</span></div>
+        <h3><span class="num">10</span> Limonero: poda de formaci&oacute;n y sacar chupones &mdash; con el &aacute;rbol ya cosechado</h3>
+        <div class="code">B&#8209;23 &middot; Citrus limon &middot; fondo, cancha de p&aacute;del</div>
+      </div>
+    </div>
+    <a class="loc" href="https://gardening-chi.vercel.app/images/FondoCasa_Cancha_Padel.jpg" target="_blank" rel="noopener"><img src="https://gardening-chi.vercel.app/images/FondoCasa_Cancha_Padel.jpg" loading="lazy" alt="D&oacute;nde est&aacute;"><span>&#128205; d&oacute;nde est&aacute;</span></a>
+    <div class="why">La segunda mitad del mismo &aacute;rbol. Esperaba la &uacute;ltima helada &mdash; cumplida &mdash; y adem&aacute;s esperaba <b>la cosecha grande</b>, que es la tarjeta de arriba. Por eso van juntas y en ese orden: <b>hoy es el d&iacute;a en que las dos condiciones se cumplen a la vez.</b><br>Lo que m&aacute;s rinde ac&aacute; son los <b>chupones</b>: verticales, lisos, sin fruta. Se comen el vigor del &aacute;rbol y no devuelven nada.</div>
+    <details class="how"><summary>C&oacute;mo se hace, paso a paso</summary><p>Alcohol 70&#37; entre cortes. ① Lo muerto, seco o quebrado. ② Los <b>chupones al ras del tronco</b> &mdash; se reconocen f&aacute;cil: verticales, lisos, sin espina de fruta. ③ Lo que se cruza o crece hacia adentro. ④ Las gu&iacute;as muy largas, <b>acortadas un tercio</b>, en bisel 5&nbsp;mm sobre yema externa.<br><b>&#9888;&#65039; Tope: 20&#8209;30&#37; del follaje total</b>, y guantes gruesos por las espinas.<br><b>&#128161; Antes de tratar nada, mostr&aacute;melo:</b> si ves <b>bultos blanco&#8209;grisáceos cerosos</b> (cochinilla) o <b>pegote pegajoso</b> (melaza), saca&aacute; la foto con el bot&oacute;n de ac&aacute; abajo. Mientras est&aacute;s ah&iacute;, <b>lev&aacute;ntale la fruta ca&iacute;da y las hojas amarillas del pie</b>: eso es refugio invernal de plaga y limpia m&aacute;s que cualquier preventivo.</p></details>
+    <div class="state" hidden></div>
+    <div class="acts">
+      <button type="button" data-act="done">&#9989; Hecha</button>
+      <button type="button" data-act="snooze" data-days="7">&#128564; En 1 semana</button>
+      <button type="button" data-act="photo">&#128247; Foto</button>
+      <button type="button" data-act="comment">&#128172; Comentar</button>
+    </div>
+    <div class="box" hidden>
+      <textarea rows="2" placeholder="Contame c&oacute;mo sali&oacute;, o preguntame algo&hellip;"></textarea>
+      <div class="boxrow"><button type="button" data-act="send">Enviar &#10148;</button><button type="button" class="ghost" data-act="close">Cerrar</button></div>
+      <div class="pv" hidden><img alt=""><button type="button" class="ghost" data-act="clearphoto">&#10005; sacar foto</button></div>
+    </div>
+    <div class="hint"></div>
+  </article>
+  </section>
+  <div class="blk">
+    <h3>&#128203; Las 13 que saqu&eacute; &mdash; y d&oacute;nde las puse</h3>
+    <p>Sacarlas es la mitad del trabajo de armarte el d&iacute;a. Ninguna desaparece: <b>siguen en tu lista</b>, sin tocarles el estado. Lo que hice fue mirarlas contra los pr&oacute;ximos cinco d&iacute;as y ponerlas donde rinden.</p>
+    <ul class="out">
+      <li><b>&#128247; Las 6 de foto y decisi&oacute;n &#8594; el martes 22.</b> Clivia en flor (B&#8209;13), el arbusto sin identificar al brotar (B&#8209;20), el virar&oacute; con sus s&eacute;palos rosados (B&#8209;32), las paltas de carozo del vivero (B&#8209;46), las palmeras (B&#8209;47) y la cinta (B&#8209;12). <b>El martes llueve poco, hace 10&#8209;11&deg; de m&aacute;xima y hay r&aacute;fagas de 40: es un d&iacute;a perdido para la tijera y perfecto para el celular y para decidir.</b> Guard&aacute; el martes para esto y hoy no gastes luz en fotos.</li>
+      <li><b>&#129388; Las 2 paltas grandes (B&#8209;22 y B&#8209;36) &#8594; fuera de esta semana.</b> Esta es la &uacute;nica que saco por riesgo y no por conveniencia. El <b>mi&eacute;rcoles 23 el modelo europeo pone 4,0&deg; a las 05</b> &mdash; el n&uacute;mero m&aacute;s bajo de los siete d&iacute;as. Los otros dos lo dejan en 6,0 y 6,7, as&iacute; que <b>es uno contra dos y no te lo doy como pron&oacute;stico</b>. Pero la palta es lo m&aacute;s friolento que ten&eacute;s y no quiero abrirle heridas a cuatro d&iacute;as de eso. <b>Sus plantines contra la pared siguen donde est&aacute;n, sin mover</b>, como pediste.</li>
+      <li><b>&#127793; Las 4 que esperan a la planta, no al clima.</b> El <b>hibisco B&#8209;4</b> quiere las yemas ya hinchadas; las <b>fotinias F&#8209;3</b> quieren el segundo brote rojo; la <b>abelia F&#8209;7</b> quiere estar justo antes del brote. Podarlas hoy porque hay buen d&iacute;a ser&iacute;a podarlas antes de tiempo, y eso se paga con una temporada. La <b>hiedra B&#8209;15</b> es la excepci&oacute;n al rev&eacute;s: se puede cualquier d&iacute;a, incluso con lluvia, as&iacute; que no merece el &uacute;nico d&iacute;a bueno.</li>
+      <li><b>&#9201;&#65039; El tama&ntilde;o tambi&eacute;n es una decisi&oacute;n.</b> El <b>05/09</b> te mand&eacute; una lista de 29 tarjetas: marcaste las <b>tres primeras</b> y frenaste en la n&uacute;mero 18. <b>Le&iacute; eso como que el formato funciona y el largo no.</b> Por eso hoy son 10 y no 23.</li>
+    </ul>
+  </div>
+
+  <div class="blk dark">
+    <h3>&#129518; Por qu&eacute; te digo &laquo;condici&oacute;n cumplida&raquo; y no &laquo;ya pas&oacute; el invierno&raquo;</h3>
+    <p>Tres de las cinco podas de hoy no ten&iacute;an fecha en su ficha: ten&iacute;an la condici&oacute;n <b>&laquo;pasada la &uacute;ltima helada, estimado 2&ordf; semana de septiembre&raquo;</b>. Una condici&oacute;n as&iacute; se verifica con datos medidos, no con el almanaque. <b>Los busqu&eacute;.</b></p>
+    <p>En los &uacute;ltimos <b>catorce d&iacute;as medidos</b> (05 al 18/09), la m&iacute;nima m&aacute;s baja fue <b>4,2&deg; el 07/09</b>. Despu&eacute;s de esa, <b>ninguna baj&oacute; de 5,3&deg;</b>, y las tres &uacute;ltimas madrugadas fueron <b>8,7&deg;, 11,6&deg; y 13,4&deg;</b>. No hubo helada. La condici&oacute;n est&aacute; cumplida, y por eso hoy las tres pasan.</p>
+    <p><b>Y lo que esos mismos catorce d&iacute;as dicen en mi contra:</b> la m&aacute;xima m&aacute;s alta del per&iacute;odo fue <b>18,9&deg;</b>. Hoy el modelo europeo y el americano me dicen <b>23,9&deg; y 24,5&deg;</b> &mdash; cinco grados por encima del techo real de dos semanas. <b>No te lo voy a vender.</b> Ayer los dos me dijeron 23&deg; para el viernes, el tercer modelo dijo 16,6&deg;, yo puse al tercero en minor&iacute;a y la medici&oacute;n dio <b>16,6&deg; clavado</b>. Segunda vez seguida que gana el que dej&eacute; afuera. <b>Abrigate como los &uacute;ltimos d&iacute;as y no como si fueran 24&deg;.</b></p>
+  </div>
+
+  <div class="blk">
+    <h3>&#128257; Cu&aacute;ndo te la vuelvo a mandar</h3>
+    <p>Esta p&aacute;gina es un experimento: no vuelve sola. <b>Si la prend&eacute;s, vuelve en el slot que elijas &mdash; siempre con tu lista real del d&iacute;a, no con esta.</b> Si no la prend&eacute;s, no te llega m&aacute;s y no pasa nada.</p>
+    <div class="slots">
+      <div class="slot">
+        <div class="n">&#127769; Lunes 18:00</div>
+        <div class="w">Antes del atardecer, para planificar la semana que arranca</div>
+        <div class="bs">
+          <button type="button" onclick="engageAnswer('las-nueve-horas-slot-lun18','si',this)">&#9989; S&iacute;, los lunes</button>
+          <button type="button" onclick="engageAnswer('las-nueve-horas-slot-lun18','no',this)">&#10005; No</button>
+        </div>
+      </div>
+      <div class="slot">
+        <div class="n">&#9728;&#65039; S&aacute;bados 11:00</div>
+        <div class="w">Con el d&iacute;a entero por delante, como hoy</div>
+        <div class="bs">
+          <button type="button" onclick="engageAnswer('las-nueve-horas-slot-sab11','si',this)">&#9989; S&iacute;, los s&aacute;bados</button>
+          <button type="button" onclick="engageAnswer('las-nueve-horas-slot-sab11','no',this)">&#10005; No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="aprob" href="https://gardening-chi.vercel.app/engage/2026-08-01-el-taller.html">
+    <div class="t">&#9989; Ya aprobada por vos &middot; tambi&eacute;n para hoy</div>
+    <div class="n">&#128736;&#65039; El Taller &mdash; los 7 pasos de la poda</div>
+    <div class="s">Es la &uacute;nica que prendiste en los dos slots, y la hiciste entera tres veces. <b>Si hoy vas a podar cinco cosas, abrila en paralelo:</b> son los 7 pasos con la herramienta en la mano, desde desinfectar hasta d&oacute;nde cae el corte.</div>
+  </a>
+
+  <div class="react">
+    <button type="button" onclick="engageReact('las-nueve-horas','love',this)" aria-label="Me encant&oacute;">&#128525;</button>
+    <button type="button" onclick="engageReact('las-nueve-horas','good',this)" aria-label="Est&aacute; bien">&#128522;</button>
+    <button type="button" onclick="engageReact('las-nueve-horas','meh',this)" aria-label="Masomenos">&#128528;</button>
+    <button type="button" onclick="engageReact('las-nueve-horas','no',this)" aria-label="No me sirvi&oacute;">&#128581;</button>
+  </div>
+
+  <section class="blk fb-blk" id="engage-feedback-box">
+    <h3>&#128172; Decime qu&eacute; te pareci&oacute;</h3>
+    <p>Esto lo leo yo antes de armar la pr&oacute;xima. <b>Lo que m&aacute;s me sirve hoy:</b> &iquest;diez es el n&uacute;mero, o siguen siendo muchas? &iquest;Y agrup&aacute;rtelas por <i>qu&eacute; le hace el clima de ma&ntilde;ana a cada una</i> te sirvi&oacute;, o preferir&iacute;as verlas por zona del jard&iacute;n?</p>
+    <textarea rows="3" placeholder="Escribime lo que quieras&hellip;"></textarea>
+    <button type="button" class="fb-send" onclick="engageFeedback('las-nueve-horas', this)">Enviar feedback</button>
+    <span class="fb-hint"></span>
+  </section>
+
+  <div class="blk">
+    <h3>&#128168; Una sola pregunta, y se contesta con un bot&oacute;n</h3>
+    <p>Te la vengo haciendo hace tres d&iacute;as por escrito y no la contestaste &mdash; probablemente porque ped&iacute;a escribir. <b>Ahora es un toque.</b></p>
+    <p>El <b>fondo contra el muro de la cancha de p&aacute;del</b> (donde est&aacute;n el limonero, la mandarina y la gardenia): con viento fuerte, &iquest;ah&iacute; pega parecido que en el resto del jard&iacute;n, o est&aacute; claramente m&aacute;s reparado?</p>
+    <p><b>Qu&eacute; gan&aacute;s contestando:</b> si me dec&iacute;s que est&aacute; reparado, el <b>lunes 21 deja de ser un d&iacute;a perdido</b> &mdash; te armo la jornada con las tareas bajas de ese sector en vez de frenarte entero por los 55&#8209;64&nbsp;km/h.</p>
+    <div class="slots">
+      <div class="slot">
+        <div class="bs">
+          <button type="button" onclick="engageAnswer('viento-fondo-muro','reparado',this)">&#128737;&#65039; Ah&iacute; pega mucho menos</button>
+        </div>
+        <div class="bs">
+          <button type="button" onclick="engageAnswer('viento-fondo-muro','igual',this)">&#127786;&#65039; Pega igual que en el resto</button>
+        </div>
+        <div class="bs">
+          <button type="button" onclick="engageAnswer('viento-fondo-muro','nose',this)">&#129300; Nunca me fij&eacute;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="engage-actions">
+    <button type="button" onclick="engageApprove('2026-09-19-las-nueve-horas')">&#9989; Aprobar esta mejora</button>
+    <button type="button" onclick="engageRejected('2026-09-19-las-nueve-horas')">&#10005; No me interesa</button>
+  </div>
+
+  <div class="pie">
+    <a href="https://gardening-chi.vercel.app/index.html">&larr; Volver al sitio estable</a>
+    Armada hoy 19/09 a las 06:00 con tu lista real de tareas y los tres modelos pedidos en crudo.<br>
+    23 pendientes &middot; 10 hoy &middot; 13 con fecha. Reabre el jueves 24.
+  </div>
+
+</div>
+<script>
+(function(){
+  'use strict';
+  var API = '/api/tarea';
+  var DEVICE_KEY = 'jardineando_device_name_v1';
+  var OUTBOX_KEY = 'jardineando_tarea_outbox_v1';   // compartida con las landings: reintentan ellas
+  function device(){ return localStorage.getItem(DEVICE_KEY) || 'las-nueve-horas'; }
+  function nowIso(){ return new Date().toISOString(); }
+  function msgId(){ return 'm-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,8); }
+  function jget(k,f){ try{ return JSON.parse(localStorage.getItem(k)) || f; }catch(e){ return f; } }
+  function jset(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+  function outboxAdd(p){ var a = jget(OUTBOX_KEY, []); a.push(p); jset(OUTBOX_KEY, a.slice(-50)); }
+
+  async function post(payload){
+    var r = await fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+    if (!r.ok){ var t=''; try{ t = await r.text(); }catch(e){} throw new Error('HTTP ' + r.status + (t ? ' ' + t.slice(0,80) : '')); }
+    return r.json();
+  }
+  // Señal liviana para el agente diario (engagement.json) — best effort.
+  function signal(qid, value){
+    try{ if (window.engageAnswer) window.engageAnswer(qid, value, document.createElement('button')); }catch(e){}
+  }
+
+  function q(card, sel){ return card.querySelector(sel); }
+  function hint(card, text, err){ var h = q(card,'.hint'); h.textContent = text || ''; h.className = 'hint' + (err ? ' err' : ''); }
+
+  var _showDone = false;
+  function refreshHiddenBar(){
+    var done = document.querySelectorAll('.item.is-done');
+    var bar = document.getElementById('hidden-done'); if (!bar) return;
+    document.getElementById('hidden-done-n').textContent = done.length;
+    bar.hidden = done.length === 0;
+    document.getElementById('hidden-done-toggle').textContent = _showDone ? 'ocultar' : 'mostrar';
+    done.forEach(function(c){ c.hidden = !_showDone; });
+    document.querySelectorAll('.sec').forEach(function(sec){
+      var n = sec.querySelectorAll('.item:not(.is-done)').length;
+      var badge = sec.querySelector('h2 .n'); if (badge) badge.textContent = n;
+    });
+  }
+  document.addEventListener('click', function(ev){
+    if (ev.target && ev.target.id === 'hidden-done-toggle'){ _showDone = !_showDone; refreshHiddenBar(); }
+  });
+  function renderState(card, st){
+    var el = q(card,'.state');
+    card.classList.remove('is-done','is-snoozed');
+    card.hidden = false;
+    if (!st || !st.status || st.status === 'active' ||
+        (st.status === 'snoozed' && st.snoozed_until && new Date(st.snoozed_until) <= new Date())){
+      el.hidden = true; el.innerHTML = ''; return;
+    }
+    if (st.status === 'done'){
+      card.classList.add('is-done'); el.className = 'state';
+      card.hidden = !_showDone;
+      el.innerHTML = '✅ Marcada como hecha' + (st.completed_at ? ' el ' + new Date(st.completed_at).toLocaleDateString('es-UY') : '') +
+        ' <button type="button" data-act="reactivate">Reactivar</button>';
+    } else {
+      card.classList.add('is-snoozed'); el.className = 'state snz';
+      el.innerHTML = '💤 Pospuesta hasta el ' + (st.snoozed_until ? new Date(st.snoozed_until).toLocaleDateString('es-UY') : '—') +
+        ' <button type="button" data-act="reactivate">Reactivar</button>';
+    }
+    el.hidden = false;
+    refreshHiddenBar();
+  }
+
+  async function setState(card, status, snoozedUntil){
+    var ids = card.dataset.ids.split(',');
+    var st = { status: status, snoozed_until: snoozedUntil, completed_at: status === 'done' ? nowIso() : null, last_modified_at: nowIso() };
+    ids.forEach(function(id){ rememberState(id, st); });
+    if (status === 'done'){ card.classList.add('is-done'); card.hidden = false; setTimeout(function(){ renderState(card, st); }, 1400); }
+    else renderState(card, st);
+    hint(card, 'Guardando…');
+    var failed = 0;
+    for (var i = 0; i < ids.length; i++){
+      var payload = { type:'state', task_id: ids[i], status: status, snoozed_until: snoozedUntil, device: device() };
+      try { await post(payload); } catch(e){ failed++; outboxAdd(payload); }
+    }
+    signal('nh-' + ids[0], status);
+    hint(card, failed ? '⏳ Guardado en este equipo — se sube cuando haya conexión (abrí la tarea para reintentar).'
+                      : (status === 'done' ? '✓ Hecha. La saco de tus recordatorios.' : status === 'snoozed' ? '✓ Pospuesta.' : '✓ Reactivada.'), !!failed);
+  }
+
+  var pending = {}; // card id -> dataURL de foto lista
+  function handlePhoto(card, file){
+    if (!file || !file.type || file.type.indexOf('image/') !== 0) return;
+    var url = URL.createObjectURL(file); var img = new Image();
+    img.onload = function(){
+      var max = 1024, w = img.naturalWidth, h = img.naturalHeight, s = Math.min(1, max / Math.max(w,h));
+      var c = document.createElement('canvas'); c.width = Math.round(w*s); c.height = Math.round(h*s);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
+      pending[card.id] = c.toDataURL('image/jpeg', 0.85);
+      var pv = q(card,'.pv'); pv.querySelector('img').src = pending[card.id]; pv.hidden = false;
+      q(card,'.box').hidden = false; q(card,'textarea').focus();
+      hint(card, 'Foto lista — agregá un comentario si querés y tocá Enviar.');
+    };
+    img.onerror = function(){ URL.revokeObjectURL(url); hint(card, 'No pude leer esa imagen.', true); };
+    img.src = url;
+  }
+
+  async function send(card){
+    var ids = card.dataset.ids.split(',');
+    var ta = q(card,'textarea'); var text = (ta.value || '').trim().slice(0, 2000);
+    var photo = pending[card.id] || null;
+    if (!text && !photo){ hint(card, 'Escribí algo o sacá una foto primero.', true); ta.focus(); return; }
+    var btn = q(card,'[data-act=send]'); btn.disabled = true; btn.textContent = 'Enviando…';
+    var payload = { type: photo ? 'photo' : 'message', task_id: ids[0], plant_code: card.dataset.code,
+      task_title: card.dataset.title, message_id: msgId(), text: text || null, device: device() };
+    if (photo) payload.base64 = photo;
+    try {
+      await post(payload);
+      ta.value = ''; delete pending[card.id]; q(card,'.pv').hidden = true; q(card,'.box').hidden = true;
+      hint(card, '✓ Recibido. Lo miro en mi próxima pasada y te contesto por notificación.');
+    } catch(e){
+      if (!photo){ outboxAdd(payload); ta.value = ''; q(card,'.box').hidden = true;
+        hint(card, '⏳ Sin conexión con el servidor: quedó guardado, se manda solo al abrir la tarea.', true); }
+      else hint(card, 'No se pudo mandar la foto (' + (e.message || e) + '). Quedó acá, probá de nuevo.', true);
+    } finally { btn.disabled = false; btn.textContent = 'Enviar ➤'; }
+  }
+
+  document.addEventListener('click', function(ev){
+    var b = ev.target.closest('button[data-act]'); if (!b) return;
+    var card = b.closest('.item'); if (!card) return;
+    var act = b.dataset.act;
+    if (act === 'done') setState(card, 'done', null);
+    else if (act === 'snooze'){
+      var d = new Date(); d.setDate(d.getDate() + parseInt(b.dataset.days || '7', 10)); d.setHours(0,0,0,0);
+      setState(card, 'snoozed', d.toISOString());
+    }
+    else if (act === 'reactivate') setState(card, 'active', null);
+    else if (act === 'comment'){ var box = q(card,'.box'); box.hidden = !box.hidden; if (!box.hidden) q(card,'textarea').focus(); }
+    else if (act === 'close'){ q(card,'.box').hidden = true; }
+    else if (act === 'send') send(card);
+    else if (act === 'clearphoto'){ delete pending[card.id]; q(card,'.pv').hidden = true; }
+    else if (act === 'photo'){
+      var inp = document.createElement('input'); inp.type = 'file'; inp.accept = 'image/*'; inp.setAttribute('capture','environment');
+      inp.onchange = function(){ handlePhoto(card, inp.files && inp.files[0]); };
+      inp.click();
+    }
+  });
+
+  // Memoria local de lo que marcaste desde acá (se aplica al instante, antes de la red).
+  var LOCAL_KEY = 'jardineando_nh_states_v1';
+  function localStates(){ return jget(LOCAL_KEY, {}); }
+  function rememberState(id, st){ var all = localStates(); all[id] = st; jset(LOCAL_KEY, all); }
+  function applyStates(tasks){
+    document.querySelectorAll('.item').forEach(function(card){
+      var st = tasks[card.dataset.ids.split(',')[0]]; if (st) renderState(card, st);
+    });
+    refreshHiddenBar();
+  }
+  applyStates(localStates());
+
+  // Estado real: primero el backend (lee fresco del repo), si no el estático del último deploy.
+  (async function(){
+    var doc = null;
+    try {
+      var r = await fetch('/api/sync?doc=task_states&_=' + Date.now(), { cache:'no-store' });
+      if (r.ok && (r.headers.get('content-type') || '').indexOf('application/json') >= 0){ var j = await r.json(); doc = j && j.doc; }
+    } catch(e){}
+    if (!doc){
+      try { var r2 = await fetch('../sync/task_states.json?_=' + Date.now(), { cache:'no-store' }); if (r2.ok) doc = await r2.json(); } catch(e){}
+    }
+    if (!doc || !doc.tasks) return;
+    // Lo marcado localmente más reciente que lo remoto se respeta (LWW).
+    var merged = Object.assign({}, doc.tasks), loc = localStates();
+    Object.keys(loc).forEach(function(id){
+      var l = loc[id], r = merged[id];
+      if (!r || String(l.last_modified_at || '') >= String(r.last_modified_at || '')) merged[id] = l;
+    });
+    applyStates(merged);
+  })();
+
+  // Deep link #plant-XXX → abrir esa card.
+  if (location.hash){ var t = document.getElementById(location.hash.slice(1)); if (t) setTimeout(function(){ t.scrollIntoView({block:'center'}); }, 150); }
+})();
+</script>
+<script src="engage.js"></script>
+</body></html>

@@ -1,24 +1,6 @@
 {
-  "_updated_at": "2026-09-18T09:10:00Z",
+  "_updated_at": "2026-09-19T09:20:00Z",
   "events": [
-    {
-      "_id": "mtn3sk8oimtveh",
-      "type": "page_visit",
-      "page": "engage/puesta-al-dia.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-09-04T15:23:11.350Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtn3sr7mr0iwdy",
-      "type": "dwell",
-      "seconds": 9,
-      "scroll_pct": 28,
-      "page": "engage/puesta-al-dia.html",
-      "ts": "2026-09-04T15:23:20.386Z",
-      "device": "sin-nombre"
-    },
     {
       "_id": "mto9bhi5b0cti8",
       "type": "page_visit",
@@ -355,24 +337,6 @@
       "scroll_pct": 0,
       "page": "engage/puesta-al-dia.html",
       "ts": "2026-09-06T20:31:45.997Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtnfqccaz3cl6g",
-      "type": "page_visit",
-      "page": "engage/puesta-al-dia.html",
-      "nid": null,
-      "src": "direct",
-      "ts": "2026-09-04T20:57:23.193Z",
-      "device": "sin-nombre"
-    },
-    {
-      "_id": "mtnfqkkx50ame2",
-      "type": "dwell",
-      "seconds": 11,
-      "scroll_pct": 2,
-      "page": "engage/puesta-al-dia.html",
-      "ts": "2026-09-04T20:57:33.873Z",
       "device": "sin-nombre"
     },
     {
@@ -987,7 +951,7 @@
     "2026-09-04": {
       "sent": 0,
       "clicked": 1,
-      "visits": 2,
+      "visits": 4,
       "approvals": 0,
       "answer": 3,
       "answers_clave": [
@@ -999,7 +963,7 @@
         "305s@17% + 514s@63% (puesta-al-dia, 13,6 min = el dwell mas largo medido)"
       ],
       "_nota": "DIA TIER-1 SIN HABER MANDADO NADA HOY. La puesta-al-dia (push del 03/09 20:05, entregada +3,3 min porque se disparo a MANO) se abrio 21:49 local y produjo 3 escrituras reales en task_states.json: las 3 primeras cards, en orden, 21 s entre una y otra. Son exactamente las 3 podas que ya habia hecho el 02/08 (ticks taller-arbol-B-30/B-38 + podo-F-4) y que hasta anoche no estaban registradas. De la card 4 en adelante NO marco ninguna y freno en el 63 % del scroll (card 18 de 29). Lectura: el formato gano (13,6 min), la LONGITUD perdio. Viernes sin slot: 0 push por cadencia.",
-      "_compactado": "8 eventos compactados el 18/09 (>14 dias): 1xnotification_clicked, 2xpage_visit, 3xanswer, 2xdwell"
+      "_compactado": "12 eventos compactados en total (8 el 18/09 + 4 el 19/09, flush tardio del cliente): 1xnotification_clicked, 4xpage_visit, 3xanswer, 4xdwell"
     },
     "2026-09-05": {
       "sent": 4,
@@ -1080,6 +1044,9 @@
       "feedback_text": 0,
       "reactions": 0,
       "_nota": "DOMINGO — dia sin slot por cadencia: 0 push encoladas, solo mantenimiento + ediciones. Pero NO fue dia sin trabajo: vencia la apuesta del sabado y la regla dice que una promesa se cobra el dia que vence aunque no toque escribirle. Se reedito 2026-07-24-jardin-hoy.html en su URL estable (sin notificacion) con: (a) el saldo del sabado con los tres numeros, incluida la MUERTE EN 24 HORAS de la regla que publique ayer ('el viento y la lluvia los tengo finos, el termometro no' — se dio exactamente al reves); (b) la tabla de 7 dias vuelta a pedir entera a ECMWF y GFS con el sabado ya medido; (c) el ajuste honesto del viernes 18: mi '27-29 km/h' de ayer es 26-35 hoy (ECMWF bajo a 25,6, GFS subio a 34,9) — el viernes sigue ganando como el menos ventoso de los tres dias secos, pero ya no se lo vendo como 'calmo'; (d) una pregunta nueva en la caja de feedback que solo el puede contestar: si el fondo contra el muro de la cancha de padel es mas reparado que la estacion, mis frenos por viento le estan sacando dias de poda al pedo. Sin compactacion: evento mas viejo 03/09 (10 dias, vence el 17) y send_log mas viejo 31/08 (13 dias, vence el 14)."
+    },
+    "2026-09-19": {
+      "_nota": "SABADO, los dos slots por cadencia. Encoladas 2: jardin-hoy 10:00 (cobro de la apuesta del viernes, MEDIDO con el reanalisis: 2 de 3, PERDIDA) y las-nueve-horas 11:00 (experiencia nueva: sus 23 pendientes, 10 habilitadas hoy, 13 diferidas con motivo). Experimento del dia: la push de las 10:00 ANUNCIA la de las 11:00 por escrito, para atacar la muerte medida del segundo slot del sabado (05/09 y 12/09)."
     }
   }
 }
